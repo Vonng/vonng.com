@@ -2,7 +2,7 @@ default: dev
 
 d:dev
 dev:
-	hugo serve
+	HUGO_MODULE_REPLACEMENTS='github.com/pgsty/oink -> $(HOME)/pgsty/oink' hugo server --renderToMemory -DFE
 
 b:build
 build:
