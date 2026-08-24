@@ -1,12 +1,18 @@
 sections:
   - hero
-  - metrics
+  - type: metrics
+    partial: landing/sections/live-metrics.html
   - type: markdown
     key: bio
   - type: cards
-    key: works
+    key: project
+    partial: landing/sections/link-cards.html
+  - type: cards
+    key: publication
+    partial: landing/sections/link-cards.html
   - type: cards
     key: columns
+    partial: landing/sections/column-cards.html
   - cta
 
 hero:
@@ -17,7 +23,7 @@ hero:
     - words:
         - { text: '@Vonng' }
   lead: >-
-    [Pigsty](https://pigsty.cc) 创始人，[活跃](https://committers.top/china)的[开源贡献者](https://gitstar-ranking.com/Vonng)。<br>
+    [Pigsty](https://pigsty.cc) 创始人，[活跃](https://committers.top/singapore)的[开源贡献者](https://gitstar-ranking.com/Vonng)。<br>
     架构师，DBA，全栈工程师 @ Alibaba、TanTan、Apple。<br>
     数据库 KOL，下云布道师，资深驴友，骨灰级玩家。
   note: 本站文章以 CC BY 4.0 协议开放，欢迎转载与引用
@@ -36,20 +42,30 @@ hero:
   detail: { label: 全部文章都收录在作者主页, url: authors/vonng/ }
 
 metrics:
-  eyebrow: 一些数字
-  columns: 3
+  # Live numbers: layouts/_partials/landing/sections/live-metrics.html reads
+  # `metric` from data/metrics.yaml, refreshed at build time when the network
+  # is there. `make metrics` updates the checked-in fallback.
+  eyebrow: 数字指标
+  columns: 4
   items:
-    - value: 2018
-      label: Pigsty 起始年份
-      desc: 从一套 PostgreSQL 自动化方案，做成开源发行版
-    - value: 585
-      label: GitStar Ranking
-      desc: 全球开源贡献者排名
-      source: { label: gitstar-ranking.com, url: 'https://gitstar-ranking.com/Vonng' }
-    - value: Top 20
-      label: 中国区活跃贡献者
-      desc: GitHub 中国区活跃度排名
-      source: { label: committers.top/china, url: 'https://committers.top/china' }
+    - metric: stars
+      format: compact
+      label: GitHub Star
+      desc: 个人公开仓库累计获得的星标
+      source: { label: github.com/Vonng, url: 'https://github.com/Vonng' }
+    - metric: followers
+      label: GitHub Follower
+      desc: 在 GitHub 上关注我的开发者
+      source: { label: 'github.com/Vonng?tab=followers', url: 'https://github.com/Vonng?tab=followers' }
+    - value: No.662
+      label: GitHub Star Rank
+      desc: 个人仓库累计星标的全球排名
+      source: { label: gitstar-ranking.com/Vonng, url: 'https://gitstar-ranking.com/Vonng' }
+    - metric: rank
+      format: '#%d'
+      label: 新加坡活跃开发者
+      desc: 按公开提交数量统计的新加坡地区排名
+      source: { label: committers.top/singapore, url: 'https://committers.top/singapore' }
 
 bio:
   eyebrow: 简介
@@ -71,62 +87,45 @@ bio:
 
     我也徒步、旅行、打游戏。这些东西同样会出现在[行万里路](trip/)与[闲言随笔](misc/)里。
 
-works:
-  class: td-work-cards
-  eyebrow: 作品
+project:
+  eyebrow: 开源项目
   title: 写代码
-  text: 开源项目、工具与翻译。
+  text: 自己做的、还在维护的东西。
   columns: 3
-  link_label: 访问
-  items:
-    - title: Pigsty
-      meta: 开源 PG RDS 发行版
-      image: img/about/pigsty.jpg
-      desc: 开箱即用的 PostgreSQL 数据库发行版，本地优先的 FLOSS RDS。
-      url: 'https://pigsty.cc'
-      external: true
-    - title: pig
-      meta: PG 包管理器
-      image: img/about/pig.jpg
-      desc: 在 Linux 上一键安装 570+ PostgreSQL 扩展。
-      url: 'https://pgext.cloud/zh'
-      external: true
-    - title: pg_exporter
-      meta: 监控指标采集
-      image: img/about/pg_exporter.jpg
-      desc: Postgres / Pgbouncer 的 Prometheus 监控指标导出器。
-      url: 'https://pigsty.cc/docs/pg_exporter'
-      external: true
-    - title: DDIA
-      meta: 中文翻译本
-      image: img/about/ddia.jpg
-      desc: 《设计数据密集型应用》中文版，分布式系统的必读经典。
-      url: 'https://ddia.vonng.com'
-      external: true
-    - title: PostgreSQL 技术内幕
-      meta: 中文翻译本
-      image: img/about/pg-internal.jpg
-      desc: 《PostgreSQL Internals》中文版，讲述 PostgreSQL 内核原理。
-      url: 'https://pgint.vonng.com'
-      external: true
-    - title: CapsLock 补完计划
-      meta: 键盘改造
-      image: img/about/capslock.jpg
-      desc: 把没什么用的大写锁定键，变成第五个修饰键。
-      url: 'https://capslock.vonng.com/zh'
-      external: true
+  items_from: project       # the cards live in data/works.yaml
+
+publication:
+  eyebrow: 译作与著述
+  title: 也写书
+  text: 翻译、文库与论文。
+  columns: 3
+  items_from: publication   # the cards live in data/works.yaml
 
 columns:
   eyebrow: 专栏
   title: 也写文章
   text: 本站的文章按主题分成几个专栏，各自有独立的 RSS 订阅。
-  columns: 4
-  link_label: 进入
+  columns: 3
+  unit: 篇
   items:
-    - { title: 数据库老司机, icon: fa-solid fa-database, desc: 数据库行业的动态、新闻、调查与最佳实践。, url: db/ }
-    - { title: 云计算泥石流, icon: fa-solid fa-cloud-bolt, desc: 云计算、下云与基础设施自建的深度思考。, url: cloud/ }
-    - { title: PostgreSQL 大法师, icon: fa-solid fa-hat-wizard, desc: PG 的开发、运维、内核与生态。, url: pg/ }
-    - { title: AI 探路者, icon: fa-solid fa-robot, desc: AI、Agent、LLM，以及 AI 与数据库。, url: ai/ }
+    - page: /db
+      title: 数据库老司机
+      desc: 数据库行业的动态、新闻、调查、理念与最佳实践。
+    - page: /cloud
+      title: 云计算泥石流
+      desc: 云计算、下云与基础设施自建的深度思考与成本分析。
+    - page: /ai
+      title: Agent 探路者
+      desc: 关于 AI、Agent、LLM，以及 AI 与数据库之间的一切。
+    - page: /pg
+      title: Postgres 大法师
+      desc: PostgreSQL 生态进展，以及开发、运维、诊断与调优的经验。
+    - page: /trip
+      title: 行万里路
+      desc: 旅行、徒步与、游记与见闻。山川湖海，风物人情。
+    - page: /misc
+      title: 人生旅途
+      desc: 随笔与杂谈，闲杂记录，也许与技术有关，或者完全无关。
 
 cta:
   title: 有问题，或者想聊聊？

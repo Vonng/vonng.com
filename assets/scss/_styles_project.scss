@@ -131,30 +131,6 @@ body.td-section .td-figure img {
   margin-block-start: 2rem;
 }
 
-// -- Landing cards carrying a photograph ----------------------------------
-//
-// `.td-landing-card__media` is a 48px icon plate, which turns a screenshot
-// into a thumbnail. The About page's portfolio cards ask for the same
-// cinemascope banner the column cards use, so the section declares
-// `class: td-work-cards` and the plate becomes a full-width image.
-.td-work-cards .td-landing-card__media {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 2.35 / 1;
-  overflow: hidden;
-  background: var(--bs-secondary-bg);
-
-  img {
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    max-height: none;
-    object-fit: cover;
-  }
-}
-
-
 // -- Home: the column cards ------------------------------------------------
 //
 // One card per blog column, the whole card a link. Round logo on the left,
