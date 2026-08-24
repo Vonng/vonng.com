@@ -103,6 +103,28 @@ body.td-section .td-figure img {
   }
 }
 
+// The theme reserves 5rem on the heading's end edge so a left-aligned title
+// clears the page-actions cluster floating in the corner. This heading is
+// centred, and a reserve on one side only moves the whole column 2.5rem off
+// the axis -- which is why the portrait and the column name did not line up
+// with the centre of the card grid below, whose container carries no such
+// reserve. The reserve is not needed here: the first thing in the column is a
+// 9rem portrait, and the actions row is 29px tall and parked at the end edge,
+// so nothing centred can reach it. Dropping it puts both on one axis.
+// Matches the shape of the theme's own rule so it wins on class count rather
+// than on source order.
+.td-shell-topline--actions-only + .td-content > .td-page-heading.td-column-profile {
+  padding-inline-end: 0;
+}
+
+// The opening sits inside the hero image, and the theme's default reserve puts
+// it low enough that the portrait reads as floating in the middle of the
+// picture rather than opening the page. Lift it: the copy still clears the
+// navbar and still sits *in* the image rather than against its edge.
+.td-shell-layout--hero {
+  --td-featured-hero-space: clamp(120px, 25vh, 288px);
+}
+
 // The Hero pushes the opening down; the profile is that opening, so the card
 // grid needs the breathing room the plain title row did not.
 .td-blog-posts {
