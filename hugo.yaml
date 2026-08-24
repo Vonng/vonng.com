@@ -94,6 +94,13 @@ module:
     extended: true
     min: 0.160.1
 
+# The About page reads its GitHub numbers from the live sources at build time
+# (layouts/_partials/metrics.html); this keeps a day's builds off the network
+# and lets an offline build serve the last answer instead of the fallback.
+caches:
+  getresource:
+    maxAge: 24h
+
 params:
   # -- Identity --------------------------------------------------------------
   logo: img/vonng-logo.svg

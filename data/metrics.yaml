@@ -1,0 +1,22 @@
+# The GitHub numbers quoted on the About page, in one place.
+#
+# These values are the fallback, not the source of truth. The build fetches
+# them live (layouts/_partials/metrics.html) and only reads this file when it
+# cannot reach the network — an offline build, a rate limit, a dead endpoint.
+#
+# `make metrics` (bin/update-metrics.py) refreshes them here so the checked-in
+# fallback stays close to reality, and so anywhere else that wants to quote a
+# number has one to read.
+#
+#   stars      github.com/Vonng            — summed over every repo Vonng owns
+#   followers  github.com/Vonng?tab=followers
+#   rank       committers.top/singapore    — by public commits
+
+updated: 2026-08-24
+
+user: Vonng
+country: singapore
+
+stars: 26912
+followers: 2068
+rank: 5

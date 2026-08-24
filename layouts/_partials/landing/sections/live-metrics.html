@@ -1,0 +1,39 @@
+{{- /* The theme's metrics section, with the GitHub numbers filled in at build
+     time.
+
+       - type: metrics
+         partial: landing/sections/live-metrics.html
+
+     An item may name a number instead of carrying one:
+
+       - metric: stars          # stars | followers | rank
+         label: GitHub Stars
+
+     The value then comes from layouts/_partials/metrics.html — live from
+     GitHub and committers.top when the build can reach them, and from
+     data/metrics.yaml when it cannot. `format` shapes it: "compact" turns
+     26912 into 26.9k, anything else is a printf verb applied to the number,
+     e.g. "#%d". Items that already carry a `value` are left alone, and
+     everything else is the theme's own metrics section. */ -}}
+{{- $numbers := partialCached "metrics.html" "github" -}}
+{{- $data := .data -}}
+{{- $items := slice -}}
+{{- range $data.items -}}
+  {{- $item := . -}}
+  {{- with .metric -}}
+    {{- $value := index $numbers . -}}
+    {{- if not $value -}}
+      {{- errorf "live-metrics: unknown metric %q; data/metrics.yaml has stars, followers and rank" . -}}
+    {{- end -}}
+    {{- with $item.format -}}
+      {{- if eq . "compact" -}}
+        {{- $value = partial "landing/compact-number.html" $value -}}
+      {{- else -}}
+        {{- $value = printf . $value -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $item = merge $item (dict "value" $value) -}}
+  {{- end -}}
+  {{- $items = $items | append $item -}}
+{{- end -}}
+{{- partial "landing/sections/metrics.html" (merge . (dict "data" (merge $data (dict "items" $items)))) -}}

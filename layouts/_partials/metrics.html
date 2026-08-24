@@ -1,0 +1,51 @@
+{{- /* The three GitHub numbers behind the About page, live when the build can
+     reach their sources and from data/metrics.yaml when it cannot.
+
+     Returns a dict: stars, followers, rank — plus the user and country they
+     were read for. Call it through partialCached so one build makes at most
+     four requests no matter how many pages ask:
+
+       {{ $numbers := partialCached "metrics.html" "github" }}
+
+     Every source is fetched anonymously and every failure falls through to the
+     value checked into data/metrics.yaml, which `make metrics` refreshes. */ -}}
+{{- $data := index hugo.Data "metrics" -}}
+{{- $user := $data.user -}}
+{{- $country := $data.country -}}
+{{- $stars := $data.stars -}}
+{{- $followers := $data.followers -}}
+{{- $rank := $data.rank -}}
+
+{{- /* Stars: no single endpoint gives a user's total, so walk the repo list.
+     A partial walk undercounts, so the sum only wins if the walk ran out. */ -}}
+{{- $sum := 0 -}}
+{{- $walked := false -}}
+{{- $broke := false -}}
+{{- range seq 5 -}}
+  {{- if not (or $walked $broke) -}}
+    {{- $url := printf "https://api.github.com/users/%s/repos?per_page=100&type=owner&page=%d" $user . -}}
+    {{- with partial "fetch.html" $url -}}
+      {{- $repos := unmarshal . -}}
+      {{- range $repos -}}{{- $sum = add $sum (int .stargazers_count) -}}{{- end -}}
+      {{- if lt (len $repos) 100 -}}{{- $walked = true -}}{{- end -}}
+    {{- else -}}
+      {{- $broke = true -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if and $walked (gt $sum 0) -}}{{- $stars = $sum -}}{{- end -}}
+
+{{- /* Followers. */ -}}
+{{- with partial "fetch.html" (printf "https://api.github.com/users/%s" $user) -}}
+  {{- with (unmarshal .).followers -}}{{- $followers = int . -}}{{- end -}}
+{{- end -}}
+
+{{- /* Rank, read out of the committers.top badge: "rank: Singapore #5". */ -}}
+{{- with partial "fetch.html" (printf "https://user-badge.committers.top/%s/%s.svg" $country $user) -}}
+  {{- with findRESubmatch `rank:[^<]*#([0-9]+)` (string .) 1 -}}
+    {{- $rank = int (index (index . 0) 1) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return dict "user" $user "country" $country
+    "stars" $stars "followers" $followers "rank" $rank -}}

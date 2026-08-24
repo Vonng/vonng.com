@@ -1,0 +1,15 @@
+{{- /* GET a URL and return the body, or "" when anything goes wrong — no
+     network, a rate limit, a 404, a dead host. It never fails the build, so
+     every caller has to be happy with "" and fall back to something.
+
+     Responses are cached; see `caches.getresource` in hugo.yaml.
+
+       {{ $body := partial "fetch.html" "https://api.github.com/users/Vonng" }}
+*/ -}}
+{{- $body := "" -}}
+{{- with try (resources.GetRemote .) -}}
+  {{- with .Value -}}
+    {{- $body = .Content -}}
+  {{- end -}}
+{{- end -}}
+{{- return $body -}}
