@@ -111,17 +111,17 @@ IT 后发国家如何保证软件系统的自主可控？[瑞士政府通过开�
 
 [数据库真被卡脖子了吗？](/db/db-choke)
 
-[国产数据库是大炼钢铁吗？](https://mp.weixin.qq.com/s/aLXC7f2iYUfATNWsnyotkA)
+[国产数据库是大炼钢铁吗？](/db/great-leap-db/)
 
 [基础软件到底需要什么样的自主可控？](/db/sovereign-dbos/)
 
-[中国对PostgreSQL的贡献约等于零吗？](https://mp.weixin.qq.com/s/79_PnX-a5iSfDMgz_VUx5A)
+[中国对PostgreSQL的贡献约等于零吗？](/pg/china-pg-contribution/)
 
 [分布式数据库是伪需求吗？](/db/distributive-bullshit)
 
 [EL 兼容发行版哪家强？](/db/rhel-compatibility)
 
-[机场出租车恶性循环与国产数据库怪圈](https://mp.weixin.qq.com/s/uccjOkAR1zgur6tftHkzMg)
+[机场出租车恶性循环与国产数据库怪圈](/db/airport-taxi-db/)
 
 [“卡脖子”一说，为什么误导人](https://mp.weixin.qq.com/s?__biz=MzI0MjU2NTA1Mg==&mid=2247580340&idx=3&sn=5ada961106478ba5c3e447a82077f183&scene=21#wechat_redirect)
 
