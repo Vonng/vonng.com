@@ -326,7 +326,7 @@ MySQL 官网发布的 [“What’s New in MySQL 9.0”](https://dev.mysql.com/do
 
 ![pg17-feature.png](pg17-feature.png)
 
-而最近几年的 PostgreSQL 新增特性甚至足够专门编成一本书了。比如《[快速掌握PostgreSQL版本新特性](https://mp.weixin.qq.com/s/2bjblo9t7KNQh1isRwbs2w)》便收录了 PostgreSQL 最近七年的重要新特性 —— 将目录塞的满满当当：
+而最近几年的 PostgreSQL 新增特性甚至足够专门编成一本书了。比如《[快速掌握PostgreSQL版本新特性](/pg/pg-version-features/)》便收录了 PostgreSQL 最近七年的重要新特性 —— 将目录塞的满满当当：
 
 ![pg-features.png](pg-features.png)
 
@@ -386,7 +386,7 @@ MySQL 的知识产权被 Oracle 所拥有，它不是像 PostgreSQL 那种 “�
 
 MySQL 曾经也辉煌过，也曾经是“开源软件”的一杆标杆，但再精彩的演出也会落幕。MySQL 正在死去 —— 更新疲软，功能落后，性能劣化，质量出血，生态萎缩，此乃天命，实非人力所能改变。 而 PostgreSQL ，将带着开源软件的初心与愿景继续坚定前进 —— 它将继续走 MySQL 未走完的长路，写 MySQL 未写完的诗篇。
 
-  * [PostgreSQL取得对MySQL的压倒性优势](https://mp.weixin.qq.com/s/tuzmmkEIOsuq2-8rMbmVLw)
+  * [PostgreSQL取得对MySQL的压倒性优势](/pg/pg-beats-mysql/)
 
   * [←上一页](/db/pg-kiss-duckdb/)
   * [下一页→](/db/ai-agent-era/)
