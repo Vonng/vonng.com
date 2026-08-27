@@ -134,17 +134,17 @@ tags: [下云, 阿里云, 商业]
 2023 年底到 2024 年中，国内头部云厂商接连发生的大规模故障，给所有 CIO 上了一课。
 
 - 2025-12-05 [支付宝淘宝闲鱼崩了？又是消息队列的锅？](/cloud/alipay-crash/)
-- 2025-06-26 [阿里云故障，CDN挂了，记得申请SLA赔付](https://mp.weixin.qq.com/s/Y2PZiH63EAXRKP8gele8NQ)
-- 2025-06-06 [大故障：阿里云核心域名被拖走了](https://mp.weixin.qq.com/s/l1b-eq06NyuN61cqZoYJjA)
+- 2025-06-26 [阿里云故障，CDN挂了，记得申请SLA赔付](/cloud/aliyun-cdn-sla/)
+- 2025-06-06 [大故障：阿里云核心域名被拖走了](/cloud/aliyun-domain-seized/)
 - 2024-11-11 [支付宝崩了？双十一整活王又来了](https://mp.weixin.qq.com/s/D2XmL2YYN2kqHtwFN4FVGQ)
 - 2024-09-17 [阿里云：高可用容灾神话的破灭](/cloud/aliyun-ha/)
 - 2024-09-15 [阿里云故障预报：本次事故将持续至20年后？](https://mp.weixin.qq.com/s/G41IN2y8DrC002FQ_BXtXw)
 - 2024-09-10 [阿里云新加坡可用区C故障，网传机房着火](https://mp.weixin.qq.com/s/EDRmP7ninfSx-CgNDb8mpg)
 - 2024-08-20 [草台班子唱大戏，阿里云RDS翻车记](/cloud/rds-failure/)
-- 2024-07-02 [阿里云又挂了，这次是光缆被挖断了？](https://mp.weixin.qq.com/s/cb2Lh56uINxacM2uUaB6Vw)
+- 2024-07-02 [阿里云又挂了，这次是光缆被挖断了？](/cloud/aliyun-fiber-cut/)
 - 2024-04-20 [taobao.com 证书过期](https://mp.weixin.qq.com/s/-ntsNfdEq3b4qs5tKP7tfQ)
 - 2023-11-29 [从降本增笑到真的降本增效](/cloud/smile/)
-- 2023-11-27 [阿里云周爆：云数据库管控又挂了](https://mp.weixin.qq.com/s/3F1ud-tWB3eymu1-dxSHMA)
+- 2023-11-27 [阿里云周爆：云数据库管控又挂了](/cloud/aliyun-weekly-crash/)
 - 2023-11-14 [我们能从阿里云史诗级故障中学到什么](/cloud/aliyun/)
 - 2023-11-12 [【阿里】云计算史诗级大翻车来了](https://mp.weixin.qq.com/s/cTge3xOlIQCALQc8Mi-P8w)
 
