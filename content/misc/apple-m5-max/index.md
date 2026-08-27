@@ -37,7 +37,7 @@ tags: [AI, 硬件]
 
 老冯不是，我还真能用上。
 
-[WinStudio，一万块在本地跑200B大模型？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247490389&idx=1&sn=c80d97f60ebe69fe303273de228e14c5&scene=21#wechat_redirect)
+[WinStudio，一万块在本地跑200B大模型？](/ai/local-200b/)
 
 ![本地运行 200B 模型的示意图](200b.webp)
 
