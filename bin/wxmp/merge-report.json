@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-08-27T15:05:20+08:00",
+  "entry_count": 6,
+  "entries": [
+    {
+      "wx_title": "分布式数据库是伪需求",
+      "wx_url": "https://mp.weixin.qq.com/s/FNhTCZk-SBVQkYhQ3zi_-g",
+      "target": "db/distributive-bullshit/index.md",
+      "mode": "replace",
+      "images": 11,
+      "before_sha256": "065831920c64705c08baa04cf601ffe33d0fdf3c913e4130449946e0c0ac2858",
+      "after_sha256": "aa594a719171b1eab159547dc0227f9c1349bec359827e54c52f1b534ebed209"
+    },
+    {
+      "wx_title": "PostgreSQL荣获2024年度数据库（5冠王）",
+      "wx_url": "https://mp.weixin.qq.com/s/nm7wQ8U13YqO7SP2tI9PHw",
+      "target": "pg/pg-dbeng-2024/index.md",
+      "mode": "replace",
+      "images": 13,
+      "before_sha256": "318faf637e8d93b78b5bb7d99ef79013fb72d3255a7c40bfa1a32df5564a1d79",
+      "after_sha256": "e2377d746cee6e832d12e46c451d710a7bd352c04b455e1f562636654b514876"
+    },
+    {
+      "wx_title": "云SLA是安慰剂还是厕纸合同？",
+      "wx_url": "https://mp.weixin.qq.com/s/mgkOybNeEH3LO0gRa1rQBQ",
+      "target": "cloud/sla/index.md",
+      "mode": "replace",
+      "images": 7,
+      "before_sha256": "234adf855724582936e5bb998287b3ba9ce6039b164f267df126764f8f6d122d",
+      "after_sha256": "727eebdbe4344a2a6e01a7d828d8ff3ab0723b08ed31846d6f39e90cc787ccf8"
+    },
+    {
+      "wx_title": "理解时间：闰年，闰秒，时间与时区的原理",
+      "wx_url": "https://mp.weixin.qq.com/s/U5vj6KpmdedNEhvVdM679Q",
+      "target": "db/reason-about-time/index.md",
+      "mode": "replace",
+      "images": 2,
+      "before_sha256": "455699fa4b271d240fd21dcc1660f180cd0d9de161314c5da0fc4764daff6639",
+      "after_sha256": "97b2a97f9e709ea0da93b6a981e816e1bba8236d65d1a099d5dfdf68f911e521"
+    },
+    {
+      "wx_title": "Pigsty 1.4正式发布！",
+      "wx_url": "https://mp.weixin.qq.com/s/dKVDLcnGtaWjdARo9rZncQ",
+      "target": "pigsty/v1.4/index.md",
+      "mode": "replace_plus_local_tail",
+      "images": 25,
+      "before_sha256": "d822c5e43c989df19906a2efc7969954771a09226cd3e17c0831595b319fb1b6",
+      "after_sha256": "311215f37a3a1ecfa3df6a29a298c8996661cee94e79ac29da335808e0b4f8a9"
+    },
+    {
+      "wx_title": "Pigsty v1.1 发布/新功能介绍",
+      "wx_url": "https://mp.weixin.qq.com/s/1sFybkUlIDNidNQgPrgB3w",
+      "target": "pigsty/v1.1/index.md",
+      "mode": "replace_plus_local_tail",
+      "images": 17,
+      "before_sha256": "19d2266f2a136ef8983d479e4ac27dd789ee2a5b3fe45a15a3bd1794614f145c",
+      "after_sha256": "740f8f56d6e118dd6f838e8195810c621df25d46c9d18738e91fbc5b44295be1"
+    }
+  ]
+}

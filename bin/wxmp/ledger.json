@@ -1,0 +1,3408 @@
+[
+ {
+  "date": "2018-10-23",
+  "section": "misc",
+  "slug": "do-the-right-thing",
+  "title": "做正确的事",
+  "tags": [
+   "软件工程",
+   "社会观察"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/SQtNjozLAX9Fy5dqnHlZ_Q",
+  "images": 0,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2018-12-17",
+  "section": "pg",
+  "slug": "monitoring-overview",
+  "title": "PostgreSQL监控系统概览",
+  "tags": [
+   "PostgreSQL",
+   "监控",
+   "PG管理"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/97Jmj6oAK0_tG15t3INCPg",
+  "images": 12,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2020-02-12",
+  "section": "misc",
+  "slug": "covid-official-data",
+  "title": "撸一下官方疫情数据",
+  "authors": [
+   "vonng"
+  ],
+  "tags": [
+   "数据分析",
+   "社会观察"
+  ],
+  "wx_url": "http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&tempkey=MTM2MF9GV3ZJc213V3pyVWdXSEtTdkJzOE1KVGFkajgtYUpwNDFqRnFMZktDUTlDYUFEYjc2WVJlcUpNZ0c1ZkE3MHdvT2pMdVZSUllOWXI0VUF0WlVDUXdFRXVlU3hlc3JwMmRlZUdqUmo5TjMxS0lSdjRnbVN2QWlSUGxUYm41OHRKbHY0LTRTVkJyRXVRSlBMNWpMR2M0NkVMd3MxNEQ4OHNPbnVYcGlnfn4%3D&chksm=fe4b3780c93cbe9615f8ecd7e2276e5e910ee56b1cfdb0c2cc08b121b636cdc0dd2be42d5ef0#rd",
+  "images": 13,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2020-02-16",
+  "section": "trip",
+  "slug": "20200216-westward-prologue",
+  "title": "西行漫记 —— 序章",
+  "tags": [
+   "旅行",
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/x8gqe9QwZ-26CY3btoJaZQ",
+  "images": 75,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2020-05-30",
+  "section": "pigsty",
+  "slug": "monitoring-intro",
+  "title": "PostgreSQL监控系统Pigsty概述",
+  "tags": [
+   "Pigsty",
+   "监控",
+   "PostgreSQL"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/CESKKdl8odUu_grJXrv30g",
+  "images": 16,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2020-07-08",
+  "section": "trip",
+  "slug": "20200708-westward-changan",
+  "title": "西行漫记1 长安古意",
+  "tags": [
+   "旅行",
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/PghO2slyzk13-0wbVHFrpg",
+  "images": 15,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2020-07-11",
+  "section": "trip",
+  "slug": "20200711-westward-guanlong",
+  "title": "西行漫记2 关陇随笔",
+  "tags": [
+   "旅行",
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/ndSV5o3FfMDTx5cV2MkKKA",
+  "images": 10,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2020-07-14",
+  "section": "trip",
+  "slug": "20200714-westward-flood",
+  "title": "西行漫记番外1 大洪水",
+  "tags": [
+   "旅行",
+   "社会观察"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/ybjWls9ggRlgTYBKsFLmoA",
+  "images": 21,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2020-07-22",
+  "section": "trip",
+  "slug": "20200722-westward-hexi",
+  "title": "西行漫记3 河西走廊",
+  "tags": [
+   "旅行",
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/wGKCpbzxWO1K2IIlTpMakw",
+  "images": 24,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2021-01-11",
+  "section": "pigsty",
+  "slug": "website-launch",
+  "title": "Pigsty官方网站上线啦！",
+  "tags": [
+   "Pigsty",
+   "文档"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/79IlaZ39XkQmJ69_Tzodfg",
+  "images": 9,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2021-01-13",
+  "section": "pigsty",
+  "slug": "first-release",
+  "title": "Pigsty正式发布",
+  "tags": [
+   "Pigsty",
+   "监控"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/4C1xtA3ngcIEB08VJQTWmQ",
+  "images": 9,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2021-03-11",
+  "section": "misc",
+  "slug": "capslock",
+  "title": "用Capslock重新定义键盘",
+  "tags": [
+   "工具",
+   "开源"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/D43tF39KAtDu19Ao8glAWw",
+  "images": 6,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2021-03-28",
+  "section": "pg",
+  "slug": "pg-ha-design",
+  "title": "高可用PgSQL集群架构设计与落地",
+  "tags": [
+   "PostgreSQL",
+   "架构",
+   "PG管理"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/0GA_WTIsSHnboJ6TLNr7zQ",
+  "images": 20,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2021-05-21",
+  "section": "pg",
+  "slug": "pg-stack-guide",
+  "title": "开源PG全家桶上手指南",
+  "tags": [
+   "PostgreSQL",
+   "PG管理"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/FbXJpeOR1VpGdrlCJpoirA",
+  "images": 7,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2021-07-18",
+  "section": "pigsty",
+  "slug": "v1.0-beta",
+  "title": "开箱即用的PGSQL发行版Pigsty —— v1.0 beta发布",
+  "tags": [
+   "Pigsty"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/HgYTLv0WHnh47GGMAZ1kAQ",
+  "images": 31,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2022-03-01",
+  "section": "pigsty",
+  "slug": "v1.4-preview",
+  "title": "Pigsty近况与v1.4前瞻",
+  "tags": [
+   "Pigsty"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/O2VBjnRXL5LAH4oMvGZS2g",
+  "images": 13,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2022-04-07",
+  "section": "pigsty",
+  "slug": "user-survey-2022",
+  "title": "PG与Pigsty用户需求问卷调研结果",
+  "tags": [
+   "Pigsty",
+   "PostgreSQL",
+   "PG生态"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/V8fBp0BCyvnZ8DlHNZMpiQ",
+  "images": 23,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2022-04-22",
+  "section": "pigsty",
+  "slug": "what-is-pigsty",
+  "title": "Pigsty是什么？",
+  "tags": [
+   "Pigsty",
+   "PostgreSQL"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/oaPSLYw69Oh2ZXjNo4wJIQ",
+  "images": 28,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2022-06-16",
+  "section": "misc",
+  "slug": "paul-graham-wealth-creation",
+  "title": "Paul Graham：这个时代更有效的财富创造路径 | 奇绩分享",
+  "authors": [
+   "paul-graham"
+  ],
+  "tags": [
+   "商业",
+   "社会观察",
+   "翻译"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/pUOaOe-sBzF3bVhn65YdUQ",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2022-06-16",
+  "section": "misc",
+  "slug": "luqi-enterprise-software",
+  "title": "陆奇：怎么理解企业服务市场的数字化应用生态？",
+  "authors": [
+   "lu-qi"
+  ],
+  "tags": [
+   "工具",
+   "PG生态",
+   "商业"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/lmqKgFUMu__l2jigoEPCnQ",
+  "images": 4,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2022-06-24",
+  "section": "db",
+  "slug": "so2022-db",
+  "title": "StackOverflow 2022数据库年度调查",
+  "tags": [
+   "PostgreSQL",
+   "数据库",
+   "PG生态"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/xcORYy2suzOw50SOaOCodw",
+  "images": 7,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2022-11-11",
+  "section": "pigsty",
+  "slug": "v2.0-outlook",
+  "title": "Pigsty 2.0 展望",
+  "tags": [
+   "Pigsty"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/g-ZPWqBwjzaxZKxyjVmFig",
+  "images": 1,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2023-01-31",
+  "section": "cloud",
+  "slug": "no-more-dba",
+  "title": "你怎么还在招聘DBA?",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "云计算",
+   "数据库",
+   "PG管理"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/PqCD80H927s0yJrBr4QQqw",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2023-03-04",
+  "section": "pigsty",
+  "slug": "v2.0-launch",
+  "title": "炮打 RDS，Pigsty v2.0 发布",
+  "tags": [
+   "Pigsty",
+   "RDS",
+   "下云"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/WsR-c64OJfkMql7zX7XmDA",
+  "images": 1,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2023-04-04",
+  "section": "db",
+  "slug": "open-source-vs-free",
+  "title": "开源不是大杀器，免费才是",
+  "authors": [
+   "laotoutou"
+  ],
+  "tags": [
+   "软件工程",
+   "工具",
+   "开源"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/qqlQp4VRQxKgWq3StL5J6Q",
+  "images": 0,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2023-04-08",
+  "section": "pigsty",
+  "slug": "better-rds-alternative",
+  "title": "更好的开源RDS替代：Pigsty",
+  "tags": [
+   "Pigsty",
+   "RDS",
+   "下云"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/-E_-HZ7LvOze5lmzy3QbQA",
+  "images": 68,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2023-08-09",
+  "section": "pg",
+  "slug": "mysql-most-successful-db",
+  "title": "MySQL：这个星球最成功的数据库",
+  "authors": [
+   "jiang-chengyao"
+  ],
+  "tags": [
+   "MySQL",
+   "PostgreSQL",
+   "数据库"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/rqziG1oP87REwhe33OAmlw",
+  "images": 8,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2023-08-09",
+  "section": "pg",
+  "slug": "rebut-mysql-best",
+  "title": "驳《MySQL：这个星球最成功的数据库》",
+  "tags": [
+   "PostgreSQL",
+   "MySQL",
+   "技术评论"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/7UvQulQGt9SIhUQasxuEZw",
+  "images": 32,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2023-08-11",
+  "section": "pg",
+  "slug": "mysql-pg-live-drama",
+  "title": "如何看待 MySQL vs PGSQL 直播闹剧",
+  "tags": [
+   "PostgreSQL",
+   "MySQL",
+   "技术评论"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/tRNedHlXmp7YfCqd21e5PA",
+  "images": 44,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2023-09-10",
+  "section": "pg",
+  "slug": "wal-before-page",
+  "title": "PG先写脏页还是先写WAL？",
+  "tags": [
+   "PostgreSQL",
+   "PG内核"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/ynwCz24bRoluVC6ILs_a8g",
+  "images": 6,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2023-09-17",
+  "section": "pigsty",
+  "slug": "monitor-existing-pg",
+  "title": "如何用Pigsty监控现有PostgreSQL (RDS/PolarDB/自建)？",
+  "tags": [
+   "Pigsty",
+   "监控",
+   "RDS"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/DExvaEk2Yoq37W8V6wvaKg",
+  "images": 21,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2023-09-26",
+  "section": "pigsty",
+  "slug": "db-allrounder",
+  "title": "PGSQL x Pigsty: 数据库全能王来了",
+  "tags": [
+   "Pigsty",
+   "PostgreSQL",
+   "扩展"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/y3qY9eBfOic6tQYOiErIHg",
+  "images": 30,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2023-11-06",
+  "section": "cloud",
+  "slug": "cloud-customers-poor-bored-lonely",
+  "title": "云厂商眼中的客户：又穷又闲又缺爱",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "云计算",
+   "安全",
+   "软件工程"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ",
+  "images": 11,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2023-11-27",
+  "section": "cloud",
+  "slug": "aliyun-weekly-crash",
+  "title": "阿里云周爆：云数据库管控又挂了",
+  "tags": [
+   "云计算",
+   "阿里云",
+   "故障复盘"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/3F1ud-tWB3eymu1-dxSHMA",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2023-12-03",
+  "section": "trip",
+  "slug": "20231203-tibet-plateau",
+  "title": "青藏高原的美景与挑战",
+  "tags": [
+   "旅行",
+   "社会观察"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/PC28Pf0fD1NBLXn6N5E_Ww",
+  "images": 15,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2023-12-06",
+  "section": "cloud",
+  "slug": "amateur-internet-outages",
+  "title": "互联网故障背后的草台班子们",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "云计算",
+   "故障复盘",
+   "PG管理"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/OxhhJ4U1P43di_eaE1uGPw",
+  "images": 1,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2023-12-07",
+  "section": "db",
+  "slug": "database-in-k8s-counterpoint",
+  "title": "没错，数据库确实应该放入 K8s 里！",
+  "authors": [
+   "fanux"
+  ],
+  "tags": [
+   "数据库",
+   "容器化",
+   "职业"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/rpyNczx0AD_iseMMLioVjw",
+  "images": 7,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2023-12-29",
+  "section": "cloud",
+  "slug": "aliyun-enterprise-market",
+  "title": "卡在政企客户门口的阿里云",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "云计算",
+   "下云",
+   "阿里云"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/1dse1KSCq2xG-QaL1JzZ8Q",
+  "images": 4,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-01-03",
+  "section": "pg",
+  "slug": "dbengines-2023",
+  "title": "2023年度数据库：PostgreSQL (DB-Engine)",
+  "tags": [
+   "PostgreSQL",
+   "PG生态"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/8FJfdxiqiWBOgpjCbk6i6A",
+  "images": 4,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-01-04",
+  "section": "cloud",
+  "slug": "state-owned-enterprise-cloud-view",
+  "title": "门内的国企如何看门外的云厂商",
+  "authors": [
+   "leo"
+  ],
+  "tags": [
+   "云计算",
+   "安全",
+   "成本"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/qSTEf9txjHNTHeEFv3NkWg",
+  "images": 0,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-01-08",
+  "section": "pg",
+  "slug": "china-pg-contribution",
+  "title": "中国对PostgreSQL的贡献约等于零吗？",
+  "tags": [
+   "PostgreSQL",
+   "PG生态",
+   "开源"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/79_PnX-a5iSfDMgz_VUx5A",
+  "images": 5,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-01-09",
+  "section": "misc",
+  "slug": "internet-tech-masterclass",
+  "title": "互联网技术大师速成班",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "架构",
+   "软件工程",
+   "商业"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/8ZffsCgchv8LH5ujv0lRGQ",
+  "images": 8,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-01-11",
+  "section": "db",
+  "slug": "great-leap-db",
+  "title": "国产数据库是大炼钢铁吗？",
+  "tags": [
+   "国产数据库",
+   "技术评论"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/aLXC7f2iYUfATNWsnyotkA",
+  "images": 11,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-01-14",
+  "section": "pg",
+  "slug": "pg-version-features",
+  "title": "快速掌握PostgreSQL版本新特性",
+  "tags": [
+   "PostgreSQL",
+   "文档"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/NH8UgObijvxKekmP6sXN1Q",
+  "images": 5,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-01-16",
+  "section": "cloud",
+  "slug": "single-tenant-saas",
+  "title": "单租户时代：SaaS范式转移",
+  "tags": [
+   "云计算",
+   "架构",
+   "翻译"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/jKv9l_ro6rWei4QnXck-zw",
+  "images": 0,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-01-23",
+  "section": "misc",
+  "slug": "wechat-year-2023",
+  "title": "腾讯眼中的《非法加冯》公众号 @ 2023",
+  "tags": [
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/HPJ4eLZLYkDvga2LN6ZiKQ",
+  "images": 12,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-03-13",
+  "section": "cloud",
+  "slug": "cloud-rebels",
+  "title": "云计算反叛军",
+  "tags": [
+   "云计算",
+   "下云",
+   "技术评论"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/Fit7MtSDQdp9IcedmWdYQg",
+  "images": 5,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-03-14",
+  "section": "cloud",
+  "slug": "rds-castrates-pg",
+  "title": "RDS阉掉了PostgreSQL的灵魂",
+  "tags": [
+   "PostgreSQL",
+   "RDS",
+   "扩展"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/EH7RPB6ImfMHXhOMU7P5Qg",
+  "images": 5,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-03-15",
+  "section": "cloud",
+  "slug": "aliyun-price-cut-despair",
+  "title": "阿里云降价背后折射出的绝望",
+  "authors": [
+   "boji"
+  ],
+  "tags": [
+   "云计算",
+   "阿里云",
+   "成本"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/BYu8nZjqAQbWc2yT8K_pFQ",
+  "images": 3,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-03-21",
+  "section": "cloud",
+  "slug": "lost-youth-at-aliyun",
+  "title": "迷失在阿里云的年轻人",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "云计算",
+   "软件工程",
+   "阿里云"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/w7YzdxSrAsIqk2gXBks9CA",
+  "images": 0,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-03-25",
+  "section": "cloud",
+  "slug": "what-public-cloud-sells",
+  "title": "公有云厂商卖的云计算到底是什么玩意？",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "云计算",
+   "PG管理",
+   "容器化"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/_ijL2OXAQJQrmWiE-KKzdw",
+  "images": 1,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-03-28",
+  "section": "pg",
+  "slug": "simon-riggs",
+  "title": "PostgreSQL 主要贡献者 Simon Riggs 因坠机去世",
+  "tags": [
+   "PostgreSQL",
+   "PG生态"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/DizvD5EYT3atP3I2CdobFw",
+  "images": 6,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-04-02",
+  "section": "cloud",
+  "slug": "toothpaste-cloud",
+  "title": "牙膏云？您可别吹捧云厂商了",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "云计算",
+   "阿里云",
+   "PG管理"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/XZqe4tbJ9lgf8a6PWj7vjw",
+  "images": 11,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-04-08",
+  "section": "cloud",
+  "slug": "tencent-epic-fail-2",
+  "title": "【腾讯】云计算史诗级二翻车来了",
+  "tags": [
+   "云计算",
+   "故障复盘"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/5F2YgVtfpXoe7A1MoSoKLg",
+  "images": 3,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-04-09",
+  "section": "cloud",
+  "slug": "tencent-disgrace",
+  "title": "腾讯云：颜面尽失的草台班子",
+  "tags": [
+   "云计算",
+   "故障复盘",
+   "技术评论"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/PgduTGIvWSUgHZhVfnb7Bg",
+  "images": 5,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-04-11",
+  "section": "cloud",
+  "slug": "public-cloud-untested",
+  "title": "你用的公有云都没做过测试",
+  "authors": [
+   "cold-tech"
+  ],
+  "tags": [
+   "云计算",
+   "工具",
+   "故障复盘"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/YtuJGDP1FgTVJnMlOCgsmQ",
+  "images": 1,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-04-11",
+  "section": "cloud",
+  "slug": "cloud-outage-underinvestment",
+  "title": "腾讯云/阿里云故障背后：投入不足",
+  "authors": [
+   "zhou-xinyu"
+  ],
+  "tags": [
+   "云计算",
+   "故障复盘",
+   "工具"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/_2luIza-Yr09EVlqZ8MJfw",
+  "images": 10,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-04-12",
+  "section": "cloud",
+  "slug": "why-cloud-keeps-failing",
+  "title": "为什么我们的云老是故障",
+  "authors": [
+   "vage"
+  ],
+  "tags": [
+   "云计算",
+   "AI",
+   "故障复盘"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/ZEH_yjs0zrJIOG-iNRMf1A",
+  "images": 1,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-04-17",
+  "section": "cloud",
+  "slug": "tencent-cloud-native",
+  "title": "腾讯真的走通云原生之路了吗？",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "云计算",
+   "安全",
+   "文档"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/v0vbsy_OXIDNrbBvUUMV9Q",
+  "images": 7,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-04-18",
+  "section": "cloud",
+  "slug": "prepaid-cloud-native",
+  "title": "包年包月的云还能叫云原生吗？",
+  "authors": [
+   "wang-xiaorui"
+  ],
+  "tags": [
+   "云计算",
+   "AWS",
+   "PG管理"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/FKNavZROB4inrtBnAUxjJg",
+  "images": 9,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-04-19",
+  "section": "pg",
+  "slug": "harvest-sql-tuning",
+  "title": "灿灿荐书：《收获，不止 SQL 优化》",
+  "authors": [
+   "xiongcc"
+  ],
+  "tags": [
+   "PostgreSQL",
+   "Oracle",
+   "PG开发"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/oLVTENYU_H01Z4F5DDNqtQ",
+  "images": 17,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-04-22",
+  "section": "cloud",
+  "slug": "cloud-pr-war",
+  "title": "为什么这两年的舆论战，云厂商总是节节败退",
+  "authors": [
+   "titi"
+  ],
+  "tags": [
+   "云计算",
+   "故障复盘",
+   "社会观察"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/NIAv9ul3bCCcuqwyPwHO-g",
+  "images": 6,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-04-22",
+  "section": "cloud",
+  "slug": "cloud-incompetence",
+  "title": "云计算：菜就是一种原罪",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "云计算",
+   "安全",
+   "文档"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/jYIqj94B07oTu9KC85bjtQ",
+  "images": 4,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-05-06",
+  "section": "misc",
+  "slug": "venture-capital-software",
+  "title": "资本拔苗助长的软件服务",
+  "authors": [
+   "boji"
+  ],
+  "tags": [
+   "工具",
+   "成本",
+   "商业"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/-OiyWHMZCq572-vBHky22A",
+  "images": 6,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-05-21",
+  "section": "db",
+  "slug": "database-migration-toolbox",
+  "title": "数据库迁移工具箱，DBA老鸟的五金店",
+  "authors": [
+   "james-bond-007"
+  ],
+  "tags": [
+   "Oracle",
+   "MySQL",
+   "数据库"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/VbSAZ7wj_hzhi9KUFSBhoQ",
+  "images": 8,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-06-22",
+  "section": "misc",
+  "slug": "nonsense-writers",
+  "title": "性学家，化学家，软件行业里的废话文学家",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "PostgreSQL",
+   "云计算",
+   "工具"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/qAnEmtLz3EpSophz1TbFGA",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-06-26",
+  "section": "pg",
+  "slug": "pg-dev-salary",
+  "title": "用PG的开发者，年薪比MySQL多赚四成？",
+  "tags": [
+   "PostgreSQL",
+   "MySQL",
+   "职业"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/73EVmMRVGBJmGCuoMaUu4Q",
+  "images": 11,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-06-27",
+  "section": "trip",
+  "slug": "20240627-banff-jasper",
+  "title": "班夫贾斯帕自驾游记 — 山峰戴雪，湖光入画",
+  "tags": [
+   "旅行"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/3oRGeGxcjAr9NuNoYOPRTg",
+  "images": 24,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-06-28",
+  "section": "misc",
+  "slug": "centos7-eol",
+  "title": "CentOS 7过保了，换什么OS发行版更好？",
+  "tags": [
+   "Linux",
+   "软件仓库"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/aVFI1vC9goekD-XYAAj0ug",
+  "images": 6,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-07-02",
+  "section": "cloud",
+  "slug": "aliyun-fiber-cut",
+  "title": "阿里云又挂了，这次是光缆被挖断了？",
+  "tags": [
+   "云计算",
+   "阿里云",
+   "故障复盘"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/cb2Lh56uINxacM2uUaB6Vw",
+  "images": 3,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-07-06",
+  "section": "trip",
+  "slug": "20240706-milkyway-camp",
+  "title": "北京星空露营天花板：Milky Way营地",
+  "tags": [
+   "旅行"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/byDTJypghJ7mEWumpC0OOQ",
+  "images": 17,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-07-15",
+  "section": "db",
+  "slug": "airport-taxi-db",
+  "title": "机场出租车恶性循环与国产数据库怪圈",
+  "tags": [
+   "国产数据库",
+   "技术评论"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/uccjOkAR1zgur6tftHkzMg",
+  "images": 3,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-07-16",
+  "section": "pg",
+  "slug": "duckdb-fdw-1-0",
+  "title": "duckdb_fdw v1.0.0来了，第13届 PostgreSQL 中国技术大会见",
+  "authors": [
+   "alitrack"
+  ],
+  "tags": [
+   "OLAP",
+   "PostgreSQL",
+   "PG生态"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/oVh5QPrZWkTTe5HvrLcvIQ",
+  "images": 3,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-07-26",
+  "section": "cloud",
+  "slug": "developers-are-db-users",
+  "title": "DBA不是数据库的用户，开发者才是！",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "Oracle",
+   "云计算",
+   "数据库"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/p4KE2xjRx6UPT1z9cig--A",
+  "images": 1,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-07-26",
+  "section": "cloud",
+  "slug": "dba-get-off",
+  "title": "数据库的“萝卜快跑”时刻已到，DBA 请下车",
+  "authors": [
+   "li-linghui"
+  ],
+  "tags": [
+   "云计算",
+   "数据库",
+   "成本"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/vceZUVrVTIEljVDNkuY47w",
+  "images": 0,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-07-26",
+  "section": "trip",
+  "slug": "20240726-jasper-fire",
+  "title": "花开堪折直须折：贾斯帕镇被烧成灰了",
+  "tags": [
+   "旅行",
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/Khw0T1H3efFLV9jqOrBMTw",
+  "images": 6,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-07-30",
+  "section": "misc",
+  "slug": "infra-department-fading",
+  "title": "基础架构部不死，只是慢慢消逝",
+  "authors": [
+   "li-linghui"
+  ],
+  "tags": [
+   "架构",
+   "工具",
+   "商业"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/E1T4jnvcTIINFel6baYeJg",
+  "images": 0,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-07-30",
+  "section": "misc",
+  "slug": "need-infra-team",
+  "title": "基础架构部，还有必要吗？",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "MySQL",
+   "架构",
+   "PG管理"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/LicoWCEui78_xeQ5FKS54g",
+  "images": 3,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-07-31",
+  "section": "pg",
+  "slug": "clickhouse-peerdb",
+  "title": "ClickHouse收购PeerDB：这浓眉大眼的也要来搞 PG 了？",
+  "tags": [
+   "PostgreSQL",
+   "OLAP",
+   "商业"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/3RuZ7ite_exxh2XOPB3HCA",
+  "images": 3,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-08-01",
+  "section": "db",
+  "slug": "oracle-java-software-business",
+  "title": "如果 Oracle 都不能在 JAVA 上赚钱，基础软件不如不做",
+  "authors": [
+   "li-linghui"
+  ],
+  "tags": [
+   "Oracle",
+   "软件工程",
+   "成本"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/omtUVm3RZEVKp8C-3v6hCg",
+  "images": 0,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-08-02",
+  "section": "misc",
+  "slug": "infra-needs-advanced-tech",
+  "title": "基础架构部需要先进技术吗？",
+  "authors": [
+   "siwei-nanren"
+  ],
+  "tags": [
+   "架构",
+   "工具",
+   "商业"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/9AEJZ4GumaHtK_Yeh0n-Yw",
+  "images": 7,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-08-02",
+  "section": "misc",
+  "slug": "infra-road-ahead",
+  "title": "基础架构，路在何方？",
+  "authors": [
+   "titi"
+  ],
+  "tags": [
+   "云计算",
+   "下云",
+   "架构"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/8mkKqyhrmMKES7U_VtBw2w",
+  "images": 1,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-08-03",
+  "section": "misc",
+  "slug": "infra-team-needed",
+  "title": "基础架构部，真的没有必要了么？",
+  "authors": [
+   "aike"
+  ],
+  "tags": [
+   "架构",
+   "PG管理",
+   "商业"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/HFKWZqE9jwMhf5X_yjb13A",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-08-09",
+  "section": "pg",
+  "slug": "pg-17beta3",
+  "title": "PostgreSQL小版本更新，17beta3，12将EOL",
+  "tags": [
+   "PostgreSQL",
+   "PG管理"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/kl498R4h65J13DgoyrlzdA",
+  "images": 0,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-08-15",
+  "section": "cloud",
+  "slug": "github-outage",
+  "title": "GitHub全站故障，又是数据库上翻的车？",
+  "tags": [
+   "云计算",
+   "故障复盘"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/nOzSFkULOJeuQ4NChGxE5w",
+  "images": 4,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-08-29",
+  "section": "db",
+  "slug": "ddia-v2-announce",
+  "title": "计算机名著《DDIA》野猪书第二版来了",
+  "tags": [
+   "数据库",
+   "文档",
+   "翻译"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/COhWhb71FXjpDCyV9fqXMQ",
+  "images": 5,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-08-30",
+  "section": "db",
+  "slug": "elasticsearch-reopen",
+  "title": "ElasticSearch又重新开源了？？？",
+  "tags": [
+   "数据库",
+   "开源"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/NdeeYn10qQ0xBPL-67IXdQ",
+  "images": 1,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-09-14",
+  "section": "cloud",
+  "slug": "aliyun-drive-bug",
+  "title": "阿里云盘灾难级BUG：能看别人照片？",
+  "tags": [
+   "云计算",
+   "阿里云",
+   "安全"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/C7XGgGmzvMjKJGbBGVmrzw",
+  "images": 4,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-09-26",
+  "section": "pg",
+  "slug": "supabase-series-c",
+  "title": "PG系创业公司Supabase：$80M C轮融资",
+  "tags": [
+   "PostgreSQL",
+   "PG生态",
+   "商业"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/fi_p3tTZTnwP5XDJrkVbQw",
+  "images": 10,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-10-01",
+  "section": "db",
+  "slug": "db-national-test-2",
+  "title": "第二批数据库国测名单：国产化来了怎么办？",
+  "tags": [
+   "国产数据库",
+   "商业"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/IeYwrKHfgxLkZBBPS3Ai8A",
+  "images": 5,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-10-02",
+  "section": "cloud",
+  "slug": "cvv-leak",
+  "title": "某平台CVV泄露：你的信用卡被盗刷了吗？",
+  "tags": [
+   "云计算",
+   "安全"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/ShArrg1xidfDgniF9jS7Yg",
+  "images": 4,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-10-03",
+  "section": "cloud",
+  "slug": "meituan-cvv-complaint",
+  "title": "本号收到美团投诉：美团没有存储外卡CVV等敏感信息",
+  "authors": [
+   "vonng"
+  ],
+  "tags": [
+   "云计算",
+   "安全",
+   "社会观察"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/z-hQ57BaSNPC6GkvqNAafw",
+  "images": 3,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-10-07",
+  "section": "cloud",
+  "slug": "aliyun-dcdn-bill",
+  "title": "记一次阿里云 DCDN 加速仅 32 秒就欠了 1600 的问题处理（扯皮）。",
+  "authors": [
+   "shiyu"
+  ],
+  "tags": [
+   "云计算",
+   "阿里云",
+   "成本"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/0Wnv1B80Tk4J03X3uAm4Ww",
+  "images": 10,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-10-08",
+  "section": "ai",
+  "slug": "nobel-neural-network",
+  "title": "诺贝尔物理学奖颁给计算机领域了：神经网络奠基人辛顿与霍普菲尔德",
+  "tags": [
+   "AI",
+   "机器学习"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/yxa9GnS0xTMGBVnzcM1_Fg",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-10-24",
+  "section": "misc",
+  "slug": "linus-russia-maintainers",
+  "title": "Linus关于踢出毛子维护者的解释",
+  "authors": [
+   "vonng"
+  ],
+  "tags": [
+   "Linux",
+   "开源",
+   "社会观察"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/9jQHxFP2wqu_Rr_JIGrAvg",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-10-28",
+  "section": "misc",
+  "slug": "writes-and-writenots",
+  "title": "YC教父Paul Graham：写作者与非写作者",
+  "tags": [
+   "社会观察",
+   "翻译"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/9BWDCL5yOcyw6_pSn9rqmA",
+  "images": 0,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-11-07",
+  "section": "misc",
+  "slug": "who-chokes-us",
+  "title": "究竟是谁在卡脖子？",
+  "authors": [
+   "xiongcc"
+  ],
+  "tags": [
+   "PostgreSQL",
+   "数据库",
+   "商业"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/YPPocoSXhcz1DvtknCKdXA",
+  "images": 3,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-11-10",
+  "section": "cloud",
+  "slug": "apple-music-cert",
+  "title": "草台回旋镖：Apple Music证书过期服务中断",
+  "tags": [
+   "云计算",
+   "故障复盘",
+   "安全"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/eawgZ3hE63b3fRfrJ1sqfw",
+  "images": 7,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-11-18",
+  "section": "db",
+  "slug": "domestic-db-hype",
+  "title": "这么吹国产数据库，听的尴尬癌都要犯了",
+  "tags": [
+   "国产数据库",
+   "技术评论"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/MrRsK5lqZsCZwCUnnO1VMQ",
+  "images": 5,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-11-21",
+  "section": "pg",
+  "slug": "pg-172-release",
+  "title": "PostgreSQL 号外小版本发布：17.2, 16.6, 15.10, 14.15, 13.18, 12.22",
+  "tags": [
+   "PostgreSQL",
+   "PG管理"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/ZqFZMfsokI9OTlB6sHPIWg",
+  "images": 0,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-11-27",
+  "section": "db",
+  "slug": "china-open-source-crossroads",
+  "title": "中国的开源运动再次到了十字路口",
+  "authors": [
+   "wei-yongming"
+  ],
+  "tags": [
+   "国产数据库",
+   "Linux",
+   "PG内核"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/dieWF1KJpqIk5kBnDo_jrQ",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-11-30",
+  "section": "db",
+  "slug": "why-no-connection-pool",
+  "title": "你为什么不用连接池？",
+  "tags": [
+   "数据库",
+   "性能",
+   "PG管理"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/3uD9sxCg-lI1MlOg3NacvQ",
+  "images": 4,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-12-18",
+  "section": "pg",
+  "slug": "pg-survey-2024",
+  "title": "PostgreSQL 2024 社区现状调查报告",
+  "tags": [
+   "PostgreSQL",
+   "PG生态"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/K7tVsOUCq32kHgogR4kBrA",
+  "images": 13,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-12-24",
+  "section": "pg",
+  "slug": "pg14-internals-cn",
+  "title": "中译版《PostgreSQL 14 Internals》上线",
+  "authors": [
+   "xiongcc"
+  ],
+  "tags": [
+   "PostgreSQL",
+   "PG内核",
+   "文档"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/6cySHDZCWumZOl7c8Kq_pg",
+  "images": 3,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2024-12-31",
+  "section": "pigsty",
+  "slug": "year-2024",
+  "title": "Pigsty@2024：今年没啥财运，但事儿整的还不赖",
+  "tags": [
+   "Pigsty",
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/WxnApDbw8Mi-rD5mkBnYwQ",
+  "images": 14,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-01-01",
+  "section": "db",
+  "slug": "pavlo-2024-review",
+  "title": "Andy Pavlo: 2024年度数据库回顾",
+  "tags": [
+   "数据库",
+   "翻译"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/jgYDHdCqWDRDfoFkfs7W8Q",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-01-07",
+  "section": "pg",
+  "slug": "pgconf-china-7th",
+  "title": "第七届PG生态大会：一些感想",
+  "tags": [
+   "PostgreSQL",
+   "PG生态",
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/Hybx7nIPAGfuyul-wDHU-A",
+  "images": 5,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-01-10",
+  "section": "trip",
+  "slug": "20250110-la-fire",
+  "title": "洛杉矶好莱坞大火：花开堪折直须折",
+  "tags": [
+   "旅行",
+   "社会观察"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/EQecpuG1jFsj9Z7BgEOs9g",
+  "images": 11,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-01-11",
+  "section": "pg",
+  "slug": "pg-anonymizer",
+  "title": "PII数据安全合规与PG Anonymizer最佳实践",
+  "tags": [
+   "PostgreSQL",
+   "安全",
+   "扩展"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/U3go6FneJhp2IPZ6wtiWAA",
+  "images": 7,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-01-15",
+  "section": "misc",
+  "slug": "wechat-year-2024",
+  "title": "2024年公众号创作回顾",
+  "tags": [
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/YgN88UqbrU6uf83KVNmSLw",
+  "images": 16,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-01-16",
+  "section": "cloud",
+  "slug": "alipay-subsidy-bug",
+  "title": "福利还是无双级BUG？网传支付宝14:40-14:45支付订单按国补减免了20%",
+  "tags": [
+   "阿里云",
+   "故障复盘"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/UVBrznTPucNXEHEdPWKvLg",
+  "images": 15,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-01-16",
+  "section": "cloud",
+  "slug": "jiangxi-drop-db",
+  "title": "网传江西教育厅高考查分网站删库跑路",
+  "tags": [
+   "数据库",
+   "备份",
+   "故障复盘"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/b1b2mLIxnDImvM7Whlyuew",
+  "images": 6,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-01-20",
+  "section": "cloud",
+  "slug": "cloud-sales-discount",
+  "title": "为什么云厂商销售只会打折？",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "云计算",
+   "下云",
+   "PG管理"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/Eo47Ssttcd0-GFEMEG8Ptg",
+  "images": 5,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-01-20",
+  "section": "cloud",
+  "slug": "leave-aws-save-80-percent",
+  "title": "如何通过远离 AWS 将年服务器费用从 100 万降至 20 万",
+  "authors": [
+   "liu-junxia"
+  ],
+  "tags": [
+   "云计算",
+   "成本",
+   "迁移"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/p5DTvpaubWXYnw1wx30K9g",
+  "images": 4,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-01-27",
+  "section": "cloud",
+  "slug": "api-soul-of-cloud",
+  "title": "API 是云服务的灵魂",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "云计算",
+   "软件工程",
+   "工具"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/GEDjjdUWD1TlrjyTkR5FJw",
+  "images": 4,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-01-27",
+  "section": "misc",
+  "slug": "sre-outdated",
+  "title": "SRE过气了吗",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "PG管理",
+   "软件工程",
+   "职业"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/pyub-KOpUlqB706k7f11Lw",
+  "images": 0,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-01-29",
+  "section": "misc",
+  "slug": "district-datacenters",
+  "title": "互联网转向区级数据中心：一场静默的技术迁徙",
+  "authors": [
+   "wizard-pig"
+  ],
+  "tags": [
+   "云计算",
+   "成本",
+   "软件工程"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/3hS_dP5Db6dyOKRT3fBwAQ",
+  "images": 7,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-01-30",
+  "section": "ai",
+  "slug": "deepseek-db-exposed",
+  "title": "Wiz: DeepSeek数据库暴露",
+  "tags": [
+   "AI",
+   "安全",
+   "数据库",
+   "翻译"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/zODEfRQrMreFeEGjWXhK4g",
+  "images": 7,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-02-09",
+  "section": "trip",
+  "slug": "20250209-thailand",
+  "title": "泰国两周游，一些见闻",
+  "tags": [
+   "旅行"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/AnEtJWPtN-IqoyjkG5tHlw",
+  "images": 13,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-02-11",
+  "section": "db",
+  "slug": "pdf-in-db",
+  "title": "如何在数据库中直接检索PDF",
+  "tags": [
+   "数据库",
+   "向量",
+   "扩展"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/ELgsSi29ZyzPtXgdrwt42A",
+  "images": 4,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-02-12",
+  "section": "cloud",
+  "slug": "deepseek-cert-error",
+  "title": "DeepSeek.com网站证书错误",
+  "tags": [
+   "云计算",
+   "安全",
+   "故障复盘"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/Q16wYXOdWgyopx2do41uHw",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-02-14",
+  "section": "pg",
+  "slug": "pg-minor-fail",
+  "title": "什么？PG小版本发布又翻车了？",
+  "tags": [
+   "PostgreSQL",
+   "PG管理",
+   "安全"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/5HqebxJvBkNu4JybKvTCwQ",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-02-17",
+  "section": "misc",
+  "slug": "code-plagiarism-is-theft",
+  "title": "抄袭代码就是偷东西，抖音别狡辩了",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "软件工程",
+   "安全",
+   "商业"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/72Yp7d6yjIezS9iQZgNw9w",
+  "images": 1,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-02-18",
+  "section": "ai",
+  "slug": "deepseek-performance-art",
+  "title": "全民DeepSeek行为艺术观察",
+  "authors": [
+   "boji"
+  ],
+  "tags": [
+   "AI",
+   "大模型",
+   "商业"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/zlDgo8efTuiSzFHOqmQchQ",
+  "images": 4,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-02-28",
+  "section": "db",
+  "slug": "domestic-db-any-good",
+  "title": "国产数据库里有能打的吗？",
+  "tags": [
+   "国产数据库",
+   "技术评论"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/iVgV_sT5V6AE1v4thJD8ow",
+  "images": 4,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-03-01",
+  "section": "pg",
+  "slug": "pg-beats-mysql",
+  "title": "PostgreSQL取得对MySQL的压倒性优势",
+  "tags": [
+   "PostgreSQL",
+   "MySQL",
+   "技术评论"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/tuzmmkEIOsuq2-8rMbmVLw",
+  "images": 6,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-03-10",
+  "section": "db",
+  "slug": "htap-no-applause",
+  "title": "HTAP数据库，一场无人鼓掌的演出",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "OLAP",
+   "国产数据库",
+   "数据库"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/wxOSAjObi0oiiRPRahWjJQ",
+  "images": 7,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-03-24",
+  "section": "misc",
+  "slug": "cyber-buddha-fight",
+  "title": "今日大瓜：赛博佛祖与赛博菩萨大打出手",
+  "tags": [
+   "云计算",
+   "社会观察",
+   "技术评论"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/1jjBMe525CtDaq1XrDztHQ",
+  "images": 13,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-03-27",
+  "section": "ai",
+  "slug": "dify-humiliated",
+  "title": "Dify被重复骑脸羞辱：我太难了！",
+  "tags": [
+   "AI",
+   "开源",
+   "技术评论"
+  ],
+  "wx_url": "http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&tempkey=MTM2MF9GSkIvaEYwR0drVmF3WTNZdkJzOE1KVGFkajgtYUpwNDFqRnFMZktDUTlDYUFEYjc2WVJlcUpNZ0c1ZVZka05aUmFUZ3Q1TEZTWDdVclVVSnktSnd1NUlwTTFFUUVhQWY0RnFGWEhPWnpMeFdjMUlLNzNwTVF6a2Q0TE95R3N1NURNVGRnSE0wX3RPSWpOQnA3aHg1YXI2OWdNLVhtMHk2Vno3RUp3fn4%3D&chksm=fe4b22e3c93cabf56fd04689ec26fd58922b397c68148b7b7e0338eea68230d2f5106e0cb287#rd",
+  "images": 13,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-03-29",
+  "section": "cloud",
+  "slug": "oracle-cloud-leak",
+  "title": "Oracle云大翻车：传6百万用户认证数据泄漏",
+  "authors": [
+   "vonng"
+  ],
+  "tags": [
+   "Oracle",
+   "云计算",
+   "安全"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/5z3jUV8CrKPinUYzOnlC6g",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-03-30",
+  "section": "cloud",
+  "slug": "dhh-s3-migration",
+  "title": "DHH下云：S3晚搬一天，就多花四万",
+  "tags": [
+   "下云",
+   "成本",
+   "翻译"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/yQbtyDv1mc-r_bn9RNCSRA",
+  "images": 5,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-03-31",
+  "section": "db",
+  "slug": "oracle-competitor-open-source",
+  "title": "特大新闻, Oracle强劲对手宣布开源！",
+  "authors": [
+   "digoal"
+  ],
+  "tags": [
+   "Oracle",
+   "MySQL",
+   "数据库"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/UHfaGt-_NbAdm9D4jsqsug",
+  "images": 8,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-04-01",
+  "section": "misc",
+  "slug": "account-rename",
+  "title": "“非法加冯”现已更名为“老冯运输”",
+  "tags": [
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/zuADA_qImguH7pVlnOnOIg",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-04-14",
+  "section": "ai",
+  "slug": "mcp-hidden-truth",
+  "title": "Claude Code泄密：MCP 爆火的隐藏真相",
+  "tags": [
+   "Claude",
+   "Agent",
+   "技术评论"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/xaeVafPxUfAgQSzl-n3w2w",
+  "images": 8,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-04-15",
+  "section": "cloud",
+  "slug": "aws-tokyo-outage",
+  "title": "AWS 东京可用区故障：影响13项服务",
+  "tags": [
+   "云计算",
+   "AWS",
+   "故障复盘"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/4no4Raj26u6GbUiHECBAjA",
+  "images": 1,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-04-15",
+  "section": "cloud",
+  "slug": "cloud-bribery",
+  "title": "云计算不能做成云算计之一：云行贿必须清理",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "云计算",
+   "下云",
+   "故障复盘"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/GetqBeJqO3mHWmyItej9Cw",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-04-16",
+  "section": "misc",
+  "slug": "cve-funding-cut",
+  "title": "CVE惨遭断奶，美帝自毁安全长城",
+  "tags": [
+   "安全",
+   "社会观察"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/FgAtUpcpdw19VMI_uYUV4A",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-04-16",
+  "section": "pg",
+  "slug": "pg-360x-slower",
+  "title": "PG被黑慢MySQL 360倍，这次我真忍不了",
+  "tags": [
+   "PostgreSQL",
+   "MySQL",
+   "性能"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/igxxBxP9mRCwfZvyjwgPRA",
+  "images": 8,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-04-19",
+  "section": "pg",
+  "slug": "oracle-compatible-pg",
+  "title": "兼容Oracle的开源 PostgreSQL？",
+  "tags": [
+   "PostgreSQL",
+   "Oracle",
+   "迁移"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/5sE4pAJYZaHh3Hl0jrsHdw",
+  "images": 5,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-04-28",
+  "section": "db",
+  "slug": "db-emergency-help",
+  "title": "数据库爆炸了怎么摇人？",
+  "tags": [
+   "数据库",
+   "故障复盘",
+   "职业"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/Hs-lus_rf9Lhcqw1Az1LUQ",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-04-29",
+  "section": "cloud",
+  "slug": "tencent-2yuan",
+  "title": "10万用户的软件，因腾讯云欠费2元灰飞烟灭？",
+  "tags": [
+   "云计算",
+   "故障复盘",
+   "成本"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/Gz_Y2qyByg1y17eWILJsLw",
+  "images": 15,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-05-03",
+  "section": "db",
+  "slug": "davinci-database",
+  "title": "影视飓风达芬奇千万级数据库演化及实践",
+  "authors": [
+   "gong-rui"
+  ],
+  "tags": [
+   "PostgreSQL",
+   "Pigsty",
+   "数据库"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/7zJe6_HJU7Q2_Uf9-lS2vQ",
+  "images": 8,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-05-06",
+  "section": "pg",
+  "slug": "pg-capital-market",
+  "title": "PG生态赢得资本市场青睐：Databricks收购Neon，Supabase融资两亿美元，微软财报点名PG",
+  "tags": [
+   "PostgreSQL",
+   "PG生态",
+   "商业"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/skxFplC0ow0Hh9gqs_N4hQ",
+  "images": 6,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-05-09",
+  "section": "db",
+  "slug": "database-really-exploded",
+  "title": "这次数据库真爆炸了，但摇人也没用了",
+  "authors": [
+   "vonng"
+  ],
+  "tags": [
+   "数据库",
+   "备份",
+   "故障复盘"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/2wkE-Jumnlu83eK-VSNoMA",
+  "images": 1,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-05-12",
+  "section": "db",
+  "slug": "openai-supabase-rumor",
+  "title": "数据库茶水间：OpenAI拟收购Supabase ？",
+  "tags": [
+   "PostgreSQL",
+   "商业",
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/RmU7RXl9ewwnpabjI4lw4Q",
+  "images": 4,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-05-13",
+  "section": "cloud",
+  "slug": "dior-leak",
+  "title": "深度分析：迪奥数据泄露事件，云配置失当的锅？",
+  "tags": [
+   "云计算",
+   "安全"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/TBdgm8pnZPCyysAKW7SsEw",
+  "images": 7,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-05-14",
+  "section": "trip",
+  "slug": "20250514-montreal-notes",
+  "title": "蒙特利尔参会随笔小记",
+  "tags": [
+   "旅行",
+   "PG生态",
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/NVQRbZsn_5C7tIdGEHw7jA",
+  "images": 7,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-05-16",
+  "section": "pg",
+  "slug": "pgcondev-lightning",
+  "title": "PGCon.dev闪电演讲，硬控PG大佬5分钟",
+  "tags": [
+   "PostgreSQL",
+   "PG生态",
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/rZ4lcsdld1_Fxck77KRIvw",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-05-18",
+  "section": "db",
+  "slug": "need-dba-not-kernel",
+  "title": "不缺好数据库内核，缺能用好数据库的DBA",
+  "tags": [
+   "数据库",
+   "职业",
+   "技术评论"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/lqYYHA45hdqh4sPQWv5t8A",
+  "images": 4,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-05-21",
+  "section": "pg",
+  "slug": "postgres-multicast",
+  "title": "PostgreSQL + 组播，有希望成为下一个被收购的 neon 吗？",
+  "authors": [
+   "xiongcc"
+  ],
+  "tags": [
+   "PostgreSQL",
+   "Codex",
+   "成本"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/wNpqGlHIzTaKqhH-Ag5Fbg",
+  "images": 3,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-05-22",
+  "section": "misc",
+  "slug": "sanlitun-lujiazui",
+  "title": "从三里屯到陆家嘴",
+  "tags": [
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/ZxLskYGmHCOWfG80uOoopQ",
+  "images": 4,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-05-24",
+  "section": "cloud",
+  "slug": "azure-openai-audit",
+  "title": "Azure和OpenAI来查水表了",
+  "tags": [
+   "云计算",
+   "数据主权"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/qSeGHMzTlusRKRskY7V1wA",
+  "images": 11,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-05-30",
+  "section": "cloud",
+  "slug": "aliyun-hardcoded-password",
+  "title": "硬编码密码泄漏，阿里云的软件工程也太差了",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "AI",
+   "云计算",
+   "软件工程"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/43pIBxYvsszeBZGk7LU7_w",
+  "images": 5,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-05-30",
+  "section": "cloud",
+  "slug": "aliyun-rotten",
+  "title": "阿里云：从上到下烂到根了",
+  "tags": [
+   "云计算",
+   "阿里云",
+   "技术评论"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/0pT7wb0Y6ohgvEltED93hA",
+  "images": 6,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-05-31",
+  "section": "misc",
+  "slug": "laptop-soy-sauce",
+  "title": "笔记本进酱油，脑子瓦特了",
+  "tags": [
+   "硬件",
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/7epKw8KSZ0KsrXPFh8V8zQ",
+  "images": 6,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-06-04",
+  "section": "pg",
+  "slug": "goodbye-mysql-hello-pg",
+  "title": "再见MySQL，你好PG",
+  "authors": [
+   "digoal"
+  ],
+  "tags": [
+   "MySQL",
+   "PostgreSQL",
+   "数据库"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/J_7tA1IZgfHpYCEz9-5KZw",
+  "images": 6,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-06-06",
+  "section": "cloud",
+  "slug": "aliyun-domain-seized",
+  "title": "大故障：阿里云核心域名被拖走了",
+  "tags": [
+   "云计算",
+   "阿里云",
+   "故障复盘"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/l1b-eq06NyuN61cqZoYJjA",
+  "images": 7,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-06-07",
+  "section": "cloud",
+  "slug": "china-4b-data-leak",
+  "title": "有史以来最大的中国数据泄露：逾40亿条支付宝微信数据",
+  "authors": [
+   "vonng"
+  ],
+  "tags": [
+   "云计算",
+   "安全",
+   "社会观察"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/_li29utJz-IlhFxfBZIp-Q",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-06-13",
+  "section": "cloud",
+  "slug": "gcp-cf-outage",
+  "title": "带瘫全球互联网，Google云/Cloudflare全球故障",
+  "tags": [
+   "云计算",
+   "Cloudflare",
+   "故障复盘"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/yZOUzoEHQdBuNFrSIXVB9w",
+  "images": 4,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-06-18",
+  "section": "db",
+  "slug": "dba-meets-frontend",
+  "title": "数据库老司机勇闯现代前端大观园",
+  "tags": [
+   "软件工程",
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/51dKs7wR6WCNiNWX5j_gWg",
+  "images": 9,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-06-19",
+  "section": "ai",
+  "slug": "software-3-0",
+  "title": "软件3.0时代，AI带来的范式转移",
+  "tags": [
+   "AI",
+   "软件工程",
+   "翻译"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/chFNT2OTa6eIjEaDWAMP8A",
+  "images": 26,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-06-20",
+  "section": "cloud",
+  "slug": "16b-credentials-leak",
+  "title": "Apple,Google,FB,TG 160亿登录信息泄露",
+  "tags": [
+   "安全"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/TiY1pDQQhxY-z_RoDTAoyw",
+  "images": 1,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-06-26",
+  "section": "cloud",
+  "slug": "aliyun-cdn-sla",
+  "title": "阿里云故障，CDN挂了，记得申请SLA赔付",
+  "tags": [
+   "云计算",
+   "阿里云",
+   "故障复盘"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/Y2PZiH63EAXRKP8gele8NQ",
+  "images": 6,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-06-29",
+  "section": "pg",
+  "slug": "pg-summit-2025",
+  "title": "PostgreSQL高峰论坛：参会小记",
+  "tags": [
+   "PostgreSQL",
+   "PG生态",
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/uoZ1-RqCJd8vPGtUFaLauA",
+  "images": 10,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-06-29",
+  "section": "ai",
+  "slug": "china-ai-enterprise",
+  "title": "中国，AI 技术的企业级应用创业前景茫然",
+  "authors": [
+   "boji"
+  ],
+  "tags": [
+   "AI",
+   "工具",
+   "PG生态"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/JVmlVlD64Nt9rtDxbaBnIw",
+  "images": 7,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-07-01",
+  "section": "pigsty",
+  "slug": "shanghai-oss-award",
+  "title": "Pigsty：喜提上海开源创新菁英奖",
+  "tags": [
+   "Pigsty",
+   "开源"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/9kpLDrF-bGskmmUMucfWoA",
+  "images": 14,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-07-03",
+  "section": "misc",
+  "slug": "alibaba-vs-wangshen",
+  "title": "草台互殴，赔三千万？阿里大战小旺神",
+  "tags": [
+   "阿里云",
+   "安全",
+   "社会观察"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/O4LvUspOgrVBWHzmBvfmUA",
+  "images": 8,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-07-04",
+  "section": "misc",
+  "slug": "bcachefs-linus",
+  "title": "分道扬镳：bcachefs作者对Linus口吐芬芳",
+  "tags": [
+   "Linux",
+   "开源",
+   "社会观察"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/O94LXhqzi8m9o3ijVOTSsg",
+  "images": 4,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-07-06",
+  "section": "ai",
+  "slug": "pangu-model-story",
+  "title": "盘古之殇：华为诺亚盘古大模型研发历程的心酸与黑暗",
+  "authors": [
+   "hw-whistleblower"
+  ],
+  "tags": [
+   "AI",
+   "大模型",
+   "社会观察"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/Vr1tTMVIbNmxsHX80pOTew",
+  "images": 0,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-07-21",
+  "section": "misc",
+  "slug": "amd-yes",
+  "title": "AMD YES? 老冯的数码退烧记",
+  "tags": [
+   "硬件",
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/f0oNJQhX6D6iFwjlS6PRUg",
+  "images": 16,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-07-23",
+  "section": "misc",
+  "slug": "get-notes-tencent-report",
+  "title": "荣幸！小小的Get 笔记居然被腾讯举报了",
+  "authors": [
+   "kuaidao-qingyi"
+  ],
+  "tags": [
+   "AI",
+   "云计算",
+   "PG生态"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/DZLTieg5JowZP5WZVWRhjA",
+  "images": 5,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-08-04",
+  "section": "misc",
+  "slug": "site-renovation",
+  "title": "老冯上新：博客文档书籍翻新大作战",
+  "tags": [
+   "文档",
+   "工具",
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/GEeNKfd4z-k4jBV8h7gfFg",
+  "images": 22,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-08-06",
+  "section": "ai",
+  "slug": "gpt-oss",
+  "title": "一夜变天，OpenAI又开源GPT模型了？",
+  "tags": [
+   "大模型",
+   "开源"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/7gnxLwaq5uJvNjMX3IOAzA",
+  "images": 9,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-08-09",
+  "section": "misc",
+  "slug": "qwen-code-rushed",
+  "title": "阿里的qwen code太草率了",
+  "authors": [
+   "ma-chi"
+  ],
+  "tags": [
+   "大模型",
+   "工具",
+   "开源"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/Dih-96p3_9y4hFwRTxrn6A",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-08-11",
+  "section": "pg",
+  "slug": "pg-36-stratagems",
+  "title": "新坑：PostgreSQL 36计",
+  "tags": [
+   "PostgreSQL",
+   "文档",
+   "PG管理"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/909t5Ah3ql2Ydy87cv6sxg",
+  "images": 5,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-08-13",
+  "section": "cloud",
+  "slug": "telecom-outage",
+  "title": "接连两天，联通崩完移动崩",
+  "tags": [
+   "云计算",
+   "故障复盘"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/QpuQz4gLKwUwN63KwPZlkg",
+  "images": 4,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-08-14",
+  "section": "cloud",
+  "slug": "gojek-leaves-tencent-cloud",
+  "title": "Gojek 搬家记：腾讯云产品团队的缺位",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "云计算",
+   "软件工程",
+   "迁移"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/AScsDJ8FWi9YXiRERPpspg",
+  "images": 1,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-08-16",
+  "section": "cloud",
+  "slug": "cheap-vps",
+  "title": "便宜云服务器哪家强？",
+  "tags": [
+   "云计算",
+   "成本"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/EIIIv09tHlhsuI1107nNyQ",
+  "images": 7,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-08-18",
+  "section": "misc",
+  "slug": "packaging-skill",
+  "title": "冷门但稀缺的技能：打包构建",
+  "tags": [
+   "软件仓库",
+   "软件工程"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/LaDBTaBKI1ZLdgfFdlWgyA",
+  "images": 5,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-09-06",
+  "section": "trip",
+  "slug": "20250906-west-sichuan",
+  "title": "川西小环线自驾",
+  "tags": [
+   "旅行"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/AAkA7l-dVhBK0Z2dHHN_EA",
+  "images": 22,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-09-11",
+  "section": "ai",
+  "slug": "local-200b",
+  "title": "WinStudio，一万块在本地跑200B大模型？",
+  "tags": [
+   "大模型",
+   "硬件"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/HLBKhT50M13PNcnC3GsbkA",
+  "images": 15,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-09-24",
+  "section": "trip",
+  "slug": "20250924-kanas-autumn",
+  "title": "喀纳斯杀猪盘与北疆秋色正解",
+  "tags": [
+   "旅行",
+   "社会观察"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/ABcq-2Pv19Qwo1zznFgTwQ",
+  "images": 14,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-09-26",
+  "section": "pg",
+  "slug": "pg18-six-features",
+  "title": "聚焦六大功能：PostgreSQL 18 新特性深度解析",
+  "authors": [
+   "ivorysql"
+  ],
+  "tags": [
+   "PostgreSQL",
+   "PG开发",
+   "性能"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/zmBqNSw4r8MntHjQpj02ng",
+  "images": 5,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-09-27",
+  "section": "ai",
+  "slug": "ai-kills-ops",
+  "title": "把运维干掉不是开玩笑，用AI试了试4小时搞定3天活",
+  "authors": [
+   "chen-ming"
+  ],
+  "tags": [
+   "AI",
+   "Agent",
+   "PG管理"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/wLHHzRmu9sfgufukA8oexA",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-10-03",
+  "section": "pg",
+  "slug": "databricks-buys-again",
+  "title": "月饼好吃：又一家PG扩展公司被Databricks收购",
+  "tags": [
+   "PostgreSQL",
+   "扩展",
+   "商业"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/fTygs1w9zrbQkvjsxjGOcg",
+  "images": 6,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-10-10",
+  "section": "pg",
+  "slug": "new-storage-engine-risk",
+  "title": "尝鲜须谨慎：PG新存储引擎故障案例",
+  "tags": [
+   "PostgreSQL",
+   "扩展",
+   "故障复盘"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/LdZVVyOj4BA9C892I25lQw",
+  "images": 5,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-10-13",
+  "section": "db",
+  "slug": "llm-db-research",
+  "title": "GPT5/Claude：国产数据库行业研究对比",
+  "tags": [
+   "国产数据库",
+   "大模型",
+   "技术评论"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/N_O5HS4o2bSXISQLzAVq7g",
+  "images": 12,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-10-17",
+  "section": "cloud",
+  "slug": "zhihu-outage",
+  "title": "知乎挂了：证书问题还是CDN翻车？",
+  "tags": [
+   "云计算",
+   "故障复盘"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/-nRq0HM56Uxn1Yc9RSdUbg",
+  "images": 5,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-11-04",
+  "section": "cloud",
+  "slug": "baidu-cloud-bill",
+  "title": "百度云：261KB流量，收费两千万",
+  "tags": [
+   "云计算",
+   "成本",
+   "故障复盘"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/K9tdxeiqU8_S4lVylcWQeQ",
+  "images": 6,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-11-18",
+  "section": "cloud",
+  "slug": "regulate-cloudflare",
+  "title": "云厂商需要有人管起来，CloudFlare又宕机了",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "云计算",
+   "故障复盘",
+   "软件工程"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/vDCaWQbda-_Fhcwt3BIi_A",
+  "images": 0,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-11-25",
+  "section": "pg",
+  "slug": "pg18-production-ready",
+  "title": "PostgreSQL 18 可以上生产用了吗？",
+  "tags": [
+   "PostgreSQL",
+   "PG管理",
+   "扩展"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/immOsWr2lkqWADx_6yOGCQ",
+  "images": 7,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-12-15",
+  "section": "misc",
+  "slug": "fde-silicon-valley",
+  "title": "Forward Deployed Engineer —— 硅谷版\"交付工程师\"",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "软件工程",
+   "工具",
+   "商业"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/Lk3rqDJVY-J6UouXXdxkHA",
+  "images": 0,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-12-21",
+  "section": "ai",
+  "slug": "db-choice-ai-era",
+  "title": "MySQL赢了2000s，PostgreSQL赢得2020s，谁将赢得AI时代？——数据库选型的三要素分析法",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "PostgreSQL",
+   "MySQL",
+   "数据库"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/KGERTSOLvczm1dGmoBe4lA",
+  "images": 0,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2025-12-28",
+  "section": "cloud",
+  "slug": "aliyun-solutions-team",
+  "title": "阿里云解决方案团队，雄起来!",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "云计算",
+   "下云",
+   "阿里云"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/UXwNjcTgS1yESWbxXuxQUg",
+  "images": 3,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-01-05",
+  "section": "db",
+  "slug": "domestic-db-acceptance",
+  "title": "国产数据库：我已经过了痛心疾首的阶段",
+  "tags": [
+   "国产数据库",
+   "技术评论"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/KpR2PYkiwsxkG2N1dPTkEg",
+  "images": 3,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-01-05",
+  "section": "db",
+  "slug": "gaussdb-bank-of-china-outage",
+  "title": "深入解析：元旦当天华为高斯数据库BUG，搞摊中国银行APP",
+  "authors": [
+   "vage"
+  ],
+  "tags": [
+   "国产数据库",
+   "PostgreSQL",
+   "故障复盘"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/6TyRKtsg81cTLz5A3q0Njw",
+  "images": 12,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-01-07",
+  "section": "pg",
+  "slug": "learn-pg-fast",
+  "title": "如何快速上手学习 PostgreSQL？",
+  "tags": [
+   "PostgreSQL",
+   "文档"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/RFb8qcS22EM85hO5-tUNcQ",
+  "images": 15,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-01-14",
+  "section": "cloud",
+  "slug": "self-hosting-industrialized",
+  "title": "下云数据库自建：从手艺活到工业化",
+  "tags": [
+   "下云",
+   "数据库",
+   "架构"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/V6EKwqBfyZpqiv6qq1g0Rw",
+  "images": 1,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-01-15",
+  "section": "ai",
+  "slug": "foreign-card-ai",
+  "title": "如何办外卡买 GPT/Claude",
+  "tags": [
+   "AI",
+   "工具"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/QswTVFKt7UpkSf4BPCIphQ",
+  "images": 5,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-01-22",
+  "section": "misc",
+  "slug": "year-32",
+  "title": "32岁程序员的最后一天",
+  "tags": [
+   "职业",
+   "社会观察"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/Q4ukcSaiIzvGLIw1mbz2kg",
+  "images": 6,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-01-25",
+  "section": "ai",
+  "slug": "typeless",
+  "title": "Vibe神器Typeless：告别打字的语义输入法",
+  "tags": [
+   "AI",
+   "工具"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/8iMiG86dy97h7Hor_Mk5_g",
+  "images": 7,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-01-26",
+  "section": "ai",
+  "slug": "pingcap-ai-team",
+  "title": "学习PingCAP，打造你公司的AI原生软件开发团队",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "AI",
+   "Agent",
+   "软件工程"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/RhLi1yCk8dQGvbPI9E2kKA",
+  "images": 0,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-01-29",
+  "section": "pigsty",
+  "slug": "pigsty-apache-license",
+  "title": "震惊！它改成阿帕奇开源协议了，不怕被云厂商“白嫖”吗？",
+  "authors": [
+   "digoal"
+  ],
+  "tags": [
+   "Pigsty",
+   "云计算",
+   "Linux"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/UwIqHI3PA9aeTfMMEzkyIA",
+  "images": 0,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-01-31",
+  "section": "ai",
+  "slug": "ai-ui-civilization",
+  "title": "你用AI生成的每一行UI代码，可能都是在给人类文明拖后腿",
+  "authors": [
+   "boji"
+  ],
+  "tags": [
+   "AI",
+   "Agent",
+   "软件工程"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/CZX1AFIqH9f3rM1NXx0jTA",
+  "images": 7,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-02-03",
+  "section": "pg",
+  "slug": "pgconfdev-china-keynote",
+  "title": "中国厂商首次站上 PGConf.dev 主题演讲台",
+  "tags": [
+   "PostgreSQL",
+   "PG生态"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/rThnqXp2JXVV9UQncNV3kg",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-02-04",
+  "section": "db",
+  "slug": "duckcon-2026",
+  "title": "DuckDB 开发者大会四连击：扩展，加密，存储过程，边缘分析",
+  "tags": [
+   "OLAP",
+   "扩展",
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/CeH6uO5jdlbl42PBfJJcJA",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-02-23",
+  "section": "db",
+  "slug": "minio-revive-hn",
+  "title": "两小时复活 MinIO，然后网站炸了",
+  "tags": [
+   "对象存储",
+   "开源",
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/V2jTr4kTE3cf5kAFfvZUtg",
+  "images": 7,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-02-26",
+  "section": "pg",
+  "slug": "pg-emergency-patch",
+  "title": "PostgreSQL 号外紧急补丁版本发布！",
+  "tags": [
+   "PostgreSQL",
+   "PG管理",
+   "安全"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/whfw9Om3aGI7po1TpKJxtA",
+  "images": 5,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-02-27",
+  "section": "ai",
+  "slug": "harari-ai-dialogue",
+  "title": "关于AI与人类的坦诚对话",
+  "tags": [
+   "AI",
+   "社会观察",
+   "翻译"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/w0HEPNKwoUCBVLhAnxxPkA",
+  "images": 1,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-02-28",
+  "section": "ai",
+  "slug": "trump-bans-anthropic",
+  "title": "特朗普下令全面封杀人工智能公司 Anthropic",
+  "tags": [
+   "Claude",
+   "社会观察"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/BXmZeEerjG7oLUoqqN482Q",
+  "images": 4,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-03-01",
+  "section": "misc",
+  "slug": "hn-frontpage-again",
+  "title": "一觉醒来，又上HN头条了",
+  "tags": [
+   "开源",
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/6Rz3jOFqujXXWQBXv819YA",
+  "images": 6,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-03-07",
+  "section": "ai",
+  "slug": "opc-ai-transformation",
+  "title": "扯淡的一人公司OPC：团队AI转型才是正道",
+  "authors": [
+   "ma-gong"
+  ],
+  "tags": [
+   "AI",
+   "PG管理",
+   "软件工程"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/8heMP8qZ7HdlCKWam73M4g",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-03-08",
+  "section": "pg",
+  "slug": "pg-ext-catalog-464",
+  "title": "464个扩展开箱即用：新版 PG 扩展目录发布",
+  "tags": [
+   "PostgreSQL",
+   "扩展",
+   "文档"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/0S9f5aP2U_1P7TaBgdKonQ",
+  "images": 18,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-03-23",
+  "section": "ai",
+  "slug": "kv-cache-memory-system",
+  "title": "从 KV Cache 到 AI 内存系统：大模型推理架构的演进",
+  "authors": [
+   "xieydd"
+  ],
+  "tags": [
+   "大模型",
+   "AI",
+   "架构"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/cagTlPJF13JZybqPXyacSw",
+  "images": 0,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-03-28",
+  "section": "misc",
+  "slug": "skeleton-of-intelligence",
+  "title": "智能的骨架：关注、表征、学习、预测与协同",
+  "authors": [
+   "visual-is-world"
+  ],
+  "tags": [
+   "AI",
+   "软件工程",
+   "性能"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/PPWSh1M_wuoUNoKxZ7A8wQ",
+  "images": 9,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-04-20",
+  "section": "pigsty",
+  "slug": "star-5000",
+  "title": "Pigsty Star 破 5000，一个人的 PG 发行版",
+  "tags": [
+   "Pigsty",
+   "开源"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/96WcUTE7L3dl8po6laauWA",
+  "images": 5,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-05-07",
+  "section": "ai",
+  "slug": "agent-traffic-100x",
+  "title": "三个月翻 100 倍：Agent 时代的流量画像",
+  "tags": [
+   "Agent",
+   "商业"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/1U7gbxLTP7RUF3ZD9e7TVg",
+  "images": 6,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-05-09",
+  "section": "ai",
+  "slug": "cyber-daodejing",
+  "title": "赛博道德经：设计结构，而非规定行为",
+  "tags": [
+   "Agent",
+   "哲学",
+   "架构"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/TjHegrOjtU3xuMEP-JE6WQ",
+  "images": 5,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-05-11",
+  "section": "ai",
+  "slug": "cyber-confucian",
+  "title": "赛博儒学：探讨 AI Agent 的治理原则",
+  "tags": [
+   "Agent",
+   "哲学"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/x4VOt41ckLDpyn6zvXxjoA",
+  "images": 15,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-05-13",
+  "section": "ai",
+  "slug": "cyber-buddhism",
+  "title": "赛博佛学：AI Agent 认知工程手册",
+  "tags": [
+   "Agent",
+   "哲学"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/O8T7-JEk248VvJ2fEEQGng",
+  "images": 25,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-05-14",
+  "section": "ai",
+  "slug": "cyber-vedanta",
+  "title": "赛博吠檀多：所有进程共享同一个基质",
+  "tags": [
+   "Agent",
+   "哲学"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/jWSFmHT4PA2NJzZIqIfJ1w",
+  "images": 10,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-05-15",
+  "section": "db",
+  "slug": "minio-critical-vulnerability",
+  "title": "MinIO 发布10分安全漏洞",
+  "authors": [
+   "bai-xiaoan"
+  ],
+  "tags": [
+   "安全",
+   "对象存储",
+   "商业"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/Q5tE-eUk2BJqxfSPHYC74A",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-05-15",
+  "section": "pg",
+  "slug": "pg-184-release",
+  "title": "PostgreSQL 18.4、17.10、16.14、15.18 与 14.23 发布",
+  "tags": [
+   "PostgreSQL",
+   "PG管理"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/NIyIvS9shAFBrU5m1NlWSA",
+  "images": 4,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-05-15",
+  "section": "ai",
+  "slug": "cyber-canon",
+  "title": "加拿大偷闲：发点赛博经藏",
+  "tags": [
+   "Agent",
+   "哲学",
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/JgzmlR3-AH2UUokSqVTp_w",
+  "images": 6,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-05-16",
+  "section": "ai",
+  "slug": "cyber-theology",
+  "title": "赛博神学：自由意志与完美对齐不可兼得",
+  "tags": [
+   "Agent",
+   "哲学"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/mPuNHgo82NxZkoEWBnxnhg",
+  "images": 7,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-05-21",
+  "section": "pg",
+  "slug": "pgconfdev-2026",
+  "title": "参加 PostgreSQL 30周年开发者大会",
+  "tags": [
+   "PostgreSQL",
+   "PG生态",
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/CFCumCJtuxM8sV-rGirD_A",
+  "images": 11,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-05-30",
+  "section": "ai",
+  "slug": "cyber-zoroastrian",
+  "title": "赛博拜火教：对齐没有终局，AI 安全是一场永不结束的战争",
+  "tags": [
+   "Agent",
+   "哲学",
+   "安全"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/xT-0mpgFiH25Vnrja46GPg",
+  "images": 13,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-05-31",
+  "section": "ai",
+  "slug": "cyber-gnostic",
+  "title": "赛博诺斯替：谁来审查审查者？",
+  "tags": [
+   "Agent",
+   "哲学"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/JdyShVs3-R-HqQiQ1b6Kbw",
+  "images": 7,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-06-03",
+  "section": "trip",
+  "slug": "20260603-canada-to-shanghai",
+  "title": "从加拿大飞回上海",
+  "tags": [
+   "旅行",
+   "随笔"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/tdRUPT8H0Ul_ZqbZLv85Bg",
+  "images": 2,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-06-05",
+  "section": "cloud",
+  "slug": "clawcloud-gone",
+  "title": "阿爪云ClawCloud 跑路，换个什么 VPS？",
+  "tags": [
+   "云计算",
+   "成本"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/Jk_4KMeN6qBWMZwUFZ7B4w",
+  "images": 9,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-06-11",
+  "section": "pg",
+  "slug": "pg-turns-30",
+  "title": "PostgreSQL，三十而立",
+  "tags": [
+   "PostgreSQL",
+   "PG生态"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/8pyFVnS7xbYuSXdif1Crgw",
+  "images": 9,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-08-22",
+  "section": "ai",
+  "slug": "oink-intro",
+  "title": "Oink: 用Markdown快速创建美观的现代网站",
+  "authors": [
+   "vonng"
+  ],
+  "tags": [
+   "Oink",
+   "文档",
+   "开源"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/MU5xKj-llGIyOP0pTsuxnA",
+  "images": 33,
+  "featured": "featured.webp"
+ },
+ {
+  "date": "2026-08-23",
+  "section": "pg",
+  "slug": "oracle-mistake-pg-win",
+  "title": "是 Oracle 的失误让 PostgreSQL 赢了吗？",
+  "tags": [
+   "PostgreSQL",
+   "Oracle",
+   "技术评论"
+  ],
+  "wx_url": "https://mp.weixin.qq.com/s/-xbCSmcYT-fIGXgQuQQUow",
+  "images": 11,
+  "featured": "featured.webp"
+ }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "distributed-db",
+    "wx_title": "分布式数据库是伪需求",
+    "wx_url": "https://mp.weixin.qq.com/s/FNhTCZk-SBVQkYhQ3zi_-g",
+    "local_rel": "db/distributive-bullshit/index.md",
+    "mode": "replace",
+    "source_markdown": "/Users/vonng/www/blog/wxmp/output/wechat_markdown/articles/2025-04-22_e0dbbb0f6012_分布式数据库是伪需求/index.md"
+  },
+  {
+    "slug": "pg-dbeng-2024",
+    "wx_title": "PostgreSQL荣获2024年度数据库（5冠王）",
+    "wx_url": "https://mp.weixin.qq.com/s/nm7wQ8U13YqO7SP2tI9PHw",
+    "local_rel": "pg/pg-dbeng-2024/index.md",
+    "mode": "replace",
+    "source_markdown": "/Users/vonng/www/blog/wxmp/output/wechat_markdown/articles/2025-01-14_9870d53e2f78_postgresql荣获2024年度数据库-5冠王/index.md"
+  },
+  {
+    "slug": "cloud-sla",
+    "wx_title": "云SLA是安慰剂还是厕纸合同？",
+    "wx_url": "https://mp.weixin.qq.com/s/mgkOybNeEH3LO0gRa1rQBQ",
+    "local_rel": "cloud/sla/index.md",
+    "mode": "replace",
+    "source_markdown": "/Users/vonng/www/blog/wxmp/output/wechat_markdown/articles/2024-04-12_f046b6361121_云sla是安慰剂还是厕纸合同/index.md"
+  },
+  {
+    "slug": "reason-about-time",
+    "wx_title": "理解时间：闰年，闰秒，时间与时区的原理",
+    "wx_url": "https://mp.weixin.qq.com/s/U5vj6KpmdedNEhvVdM679Q",
+    "local_rel": "db/reason-about-time/index.md",
+    "mode": "replace",
+    "source_markdown": "/Users/vonng/www/blog/wxmp/output/wechat_markdown/articles/2024-03-01_4a173a9c3152_理解时间-闰年-闰秒-时间与时区的原理/index.md"
+  },
+  {
+    "slug": "pigsty-v1-4",
+    "wx_title": "Pigsty 1.4正式发布！",
+    "wx_url": "https://mp.weixin.qq.com/s/dKVDLcnGtaWjdARo9rZncQ",
+    "local_rel": "pigsty/v1.4/index.md",
+    "mode": "replace_plus_local_tail",
+    "tail": "^##\\s+v1\\.4\\.0\\s+发行注记\\s*$",
+    "source_markdown": "/Users/vonng/www/blog/wxmp/output/wechat_markdown/articles/2022-03-31_27877fbcecb6_pigsty-1-4正式发布/index.md"
+  },
+  {
+    "slug": "pigsty-v1-1",
+    "wx_title": "Pigsty v1.1 发布/新功能介绍",
+    "wx_url": "https://mp.weixin.qq.com/s/1sFybkUlIDNidNQgPrgB3w",
+    "local_rel": "pigsty/v1.1/index.md",
+    "mode": "replace_plus_local_tail",
+    "tail": "^##\\s+v1\\.1\\.0\\s+更新日志\\s*$",
+    "source_markdown": "/Users/vonng/www/blog/wxmp/output/wechat_markdown/articles/2021-10-13_a1fb22312fab_pigsty-v1-1-发布-新功能介绍/index.md"
+  }
+]

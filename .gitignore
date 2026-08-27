@@ -13,3 +13,6 @@ node_modules/
 review/
 bin/prompt.md
 __pycache__/
+
+# wxmp import working files (provenance kept in bin/wxmp/ledger.json)
+.wxmp-*.json
