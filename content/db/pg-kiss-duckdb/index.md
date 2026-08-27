@@ -132,7 +132,7 @@ PostgreSQL OLAP 生态的现状，正如同两年前的向量数据库插件一�
 - [谁整合好DuckDB，谁赢得OLAP数据库世界](https://mp.weixin.qq.com/s/TJk9TUW7xsEglhEK_qYi-w)
 - [阿里云rds_duckdb：致敬还是抄袭？](https://mp.weixin.qq.com/s/3M6qQCsNUETEWcMwI3eFIQ)
 - [分布式数据库是伪需求吗？](https://mp.weixin.qq.com/s/-eaCoZR9Z5srQ-1YZm1QJA)
-- [Andy Pavlo: 2024年度数据库回顾](https://mp.weixin.qq.com/s/jgYDHdCqWDRDfoFkfs7W8Q)
+- [Andy Pavlo: 2024年度数据库回顾](/db/pavlo-2024-review/)
 
 -
 -
