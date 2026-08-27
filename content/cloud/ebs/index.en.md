@@ -216,7 +216,7 @@ Staying true to the original mission is essential. Public clouds do an admirable
 
 【4】[腾讯云CDN：从入门到放弃](https://mp.weixin.qq.com/s/ANFnbDXwuhKI99fgYRZ9ug)
 
-【5】[炮打 RDS，Pigsty v2.0 发布](https://mp.weixin.qq.com/s/WsR-c64OJfkMql7zX7XmDA)
+【5】[炮打 RDS，Pigsty v2.0 发布](/pigsty/v2.0-launch/)
 
 【6】[Shannon NVMe Gen4 Series](https://en.shannon-sys.com/product.html?name=gen_4)
 
