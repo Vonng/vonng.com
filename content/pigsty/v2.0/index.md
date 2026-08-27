@@ -131,10 +131,10 @@ curl -fsSL http://download.pigsty.cc/get) | bash
 
 相关文章：
 
-- [更好的开源RDS替代：Pigsty](https://mp.weixin.qq.com/s/-E_-HZ7LvOze5lmzy3QbQA)
-- [炮打 RDS，Pigsty v2.0 发布](https://mp.weixin.qq.com/s/WsR-c64OJfkMql7zX7XmDA)
+- [更好的开源RDS替代：Pigsty](/pigsty/better-rds-alternative/)
+- [炮打 RDS，Pigsty v2.0 发布](/pigsty/v2.0-launch/)
 - [Pigsty v2 正式发布：更好的RDS PG开源替代](https://mp.weixin.qq.com/s/9lceZdyUZU9AzsqlAcpjTA)
-- [Pigsty 2.0 展望](https://mp.weixin.qq.com/s/g-ZPWqBwjzaxZKxyjVmFig)
+- [Pigsty 2.0 展望](/pigsty/v2.0-outlook/)
 
 Pigsty [v2.0.0](https://github.com/Vonng/pigsty/releases/tag/v2.0.0) 正式发布！
 
