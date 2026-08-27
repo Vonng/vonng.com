@@ -111,29 +111,29 @@ Apache 2.0是最宽松的开源许可证之一，其核心条款明确允许商�
 
 [别争了，AI时代数据库已经尘埃落定](https://mp.weixin.qq.com/s/bChEvpXgXKi5njr6Kj5YGg)
 
-[数据库茶水间：OpenAI拟收购Supabase ？](https://mp.weixin.qq.com/s/RmU7RXl9ewwnpabjI4lw4Q)
+[数据库茶水间：OpenAI拟收购Supabase ？](/db/openai-supabase-rumor/)
 
-[PG生态赢得资本市场青睐：Databricks收购Neon，Supabase融资两亿美元，微软财报点名PG](https://mp.weixin.qq.com/s/skxFplC0ow0Hh9gqs_N4hQ)
+[PG生态赢得资本市场青睐：Databricks收购Neon，Supabase融资两亿美元，微软财报点名PG](/pg/pg-capital-market/)
 
-[PG系创业公司Supabase：$80M C轮融资](https://mp.weixin.qq.com/s/fi_p3tTZTnwP5XDJrkVbQw)
+[PG系创业公司Supabase：$80M C轮融资](/pg/supabase-series-c/)
 
 [创业出海神器 Supabase 自建指南](https://mp.weixin.qq.com/s/HJDfcSC8XFL_PkDlxHbqRQ)
 
-[PG系创业公司Supabase：$80M C轮融资](https://mp.weixin.qq.com/s/fi_p3tTZTnwP5XDJrkVbQw)
+[PG系创业公司Supabase：$80M C轮融资](/pg/supabase-series-c/)
 
 [OrioleDB 奥利奥数据库来了！](https://mp.weixin.qq.com/s/QG7_UyT08fNFiBj6qujSEA)
 
 #### 阿里云
 
-[草台互殴，赔三千万？阿里大战小旺神](https://mp.weixin.qq.com/s/O4LvUspOgrVBWHzmBvfmUA)
+[草台互殴，赔三千万？阿里大战小旺神](/misc/alibaba-vs-wangshen/)
 
-[阿里云故障，CDN挂了，记得申请SLA赔付](https://mp.weixin.qq.com/s/Y2PZiH63EAXRKP8gele8NQ)
+[阿里云故障，CDN挂了，记得申请SLA赔付](/cloud/aliyun-cdn-sla/)
 
-[大故障：阿里云核心域名被拖走了](https://mp.weixin.qq.com/s/l1b-eq06NyuN61cqZoYJjA)
+[大故障：阿里云核心域名被拖走了](/cloud/aliyun-domain-seized/)
 
 [阿里云：从上到下烂到根了 去除原文版](https://mp.weixin.qq.com/s/0pT7wb0Y6ohgvEltED93hA)
 
-[硬编码密码泄漏，阿里云的软件工程也太差了](https://mp.weixin.qq.com/s/43pIBxYvsszeBZGk7LU7_w) 马工
+[硬编码密码泄漏，阿里云的软件工程也太差了](/cloud/aliyun-hardcoded-password/) 马工
 
 [花钱买罪受的大冤种：逃离云计算妙瓦底](https://mp.weixin.qq.com/s/zwJ2T2Vh_R7xD8IKPso31Q)
 
@@ -149,23 +149,23 @@ Apache 2.0是最宽松的开源许可证之一，其核心条款明确允许商�
 
 [草台班子唱大戏，阿里云RDS翻车记](https://mp.weixin.qq.com/s/kOIw8uPjZUZ0-QisC1TBOA)
 
-[阿里云又挂了，这次是光缆被挖断了？](https://mp.weixin.qq.com/s/cb2Lh56uINxacM2uUaB6Vw)
+[阿里云又挂了，这次是光缆被挖断了？](/cloud/aliyun-fiber-cut/)
 
-[云计算：菜就是一种原罪](https://mp.weixin.qq.com/s/jYIqj94B07oTu9KC85bjtQ)
+[云计算：菜就是一种原罪](/cloud/cloud-incompetence/)
 
 [taobao.com 证书过期](https://mp.weixin.qq.com/s/-ntsNfdEq3b4qs5tKP7tfQ)
 
-[牙膏云？您可别吹捧云厂商了](https://mp.weixin.qq.com/s/XZqe4tbJ9lgf8a6PWj7vjw)
+[牙膏云？您可别吹捧云厂商了](/cloud/toothpaste-cloud/)
 
 [罗永浩救不了牙膏云](https://mp.weixin.qq.com/s/s_MCdaCByDBuocXkY1tvKw)
 
-[迷失在阿里云的年轻人](https://mp.weixin.qq.com/s/w7YzdxSrAsIqk2gXBks9CA)
+[迷失在阿里云的年轻人](/cloud/lost-youth-at-aliyun/)
 
 [剖析云算力成本，阿里云真的降价了吗？](https://mp.weixin.qq.com/s/rp8Dtvyo9cItBJSsvfrKjw)
 
 [从降本增笑到真的降本增效](https://mp.weixin.qq.com/s/FIOB_Oqefx1oez1iu7AGGg)
 
-[阿里云周爆：云数据库管控又挂了](https://mp.weixin.qq.com/s/3F1ud-tWB3eymu1-dxSHMA)
+[阿里云周爆：云数据库管控又挂了](/cloud/aliyun-weekly-crash/)
 
 [我们能从阿里云史诗级故障中学到什么](https://mp.weixin.qq.com/s/OIlR0rolEQff9YfCpj3wIQ)
 
@@ -173,11 +173,11 @@ Apache 2.0是最宽松的开源许可证之一，其核心条款明确允许商�
 
 [阿里云的羊毛抓紧薅，五千的云服务器三百拿](https://mp.weixin.qq.com/s/Nh28VahZkQMdR8fDoi0_rQ)
 
-[云厂商眼中的客户：又穷又闲又缺爱](https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ) 马工
+[云厂商眼中的客户：又穷又闲又缺爱](/cloud/cloud-customers-poor-bored-lonely/) 马工
 
 #### 云与开源
 
-[ElasticSearch又重新开源了？？？](https://mp.weixin.qq.com/s/NdeeYn10qQ0xBPL-67IXdQ)
+[ElasticSearch又重新开源了？？？](/db/elasticsearch-reopen/)
 
 [Redis不开源是“开源”之耻，更是公有云之耻](https://mp.weixin.qq.com/s/W5kOLxeJCIHjnWbIHc1Pzw)
 
