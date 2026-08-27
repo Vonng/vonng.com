@@ -36,7 +36,7 @@ OpenAI 在去年在 [PostgreSQL 数据库与 pgBouncer 连接池](https://commun
 
 [我们能从阿里云史诗级故障中学到什么](https://mp.weixin.qq.com/s/OIlR0rolEQff9YfCpj3wIQ)
 
-[腾讯云：颜面尽失的草台班子](https://mp.weixin.qq.com/s/PgduTGIvWSUgHZhVfnb7Bg)
+[腾讯云：颜面尽失的草台班子](/cloud/tencent-disgrace/)
 
 [黑暗森林：打爆AWS云账单，只需要S3桶名](https://mp.weixin.qq.com/s/35ScjtPjC1GNGKaSArJhcA)
 
@@ -48,7 +48,7 @@ OpenAI 在去年在 [PostgreSQL 数据库与 pgBouncer 连接池](https://commun
 
 [草台班子唱大戏，阿里云RDS翻车记](https://mp.weixin.qq.com/s/kOIw8uPjZUZ0-QisC1TBOA)
 
-[互联网故障背后的草台班子们](https://mp.weixin.qq.com/s/OxhhJ4U1P43di_eaE1uGPw)
+[互联网故障背后的草台班子们](/cloud/amateur-internet-outages/)
 
 [数据库应该放入K8S里吗？](https://mp.weixin.qq.com/s/4a8Qy4O80xqsnytC4l9lRg)
 
