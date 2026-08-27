@@ -205,7 +205,7 @@ Perhaps it's the socialist ethos of Nordic companies that nurtures such pure fre
 
 [6] [杀猪盘真的降价了吗？](https://mp.weixin.qq.com/s/TksQ108v_nGaW11-87Es3A)
 
-[7] [炮打 RDS，Pigsty v2.0 发布](https://mp.weixin.qq.com/s/WsR-c64OJfkMql7zX7XmDA)
+[7] [炮打 RDS，Pigsty v2.0 发布](/pigsty/v2.0-launch/)
 
 [8] [垃圾腾讯云CDN：从入门到放弃](https://mp.weixin.qq.com/s/ANFnbDXwuhKI99fgYRZ9ug)
 
@@ -215,4 +215,4 @@ Perhaps it's the socialist ethos of Nordic companies that nurtures such pure fre
 
 [11] [微服务是不是个蠢主意？](https://mp.weixin.qq.com/s/mEmz8pviahEAWy1-SA8vcg)
 
-[12] [更好的开源RDS替代：Pigsty](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485518&idx=1&sn=3d5f3c753facc829b2300a15df50d237&chksm=fe4b3d95c93cb4833b8e80433cff46a893f939154be60a2a24ee96598f96b32271301abfda1f&scene=21#wechat_redirect)
+[12] [更好的开源RDS替代：Pigsty](/pigsty/better-rds-alternative/)
