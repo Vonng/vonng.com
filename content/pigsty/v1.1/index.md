@@ -9,152 +9,147 @@ series: [Pigsty]
 tags: [Pigsty]
 ---
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.1.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v110) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484774&idx=1&sn=8b9e8f5bec8fb8492ebce3ebc6b60d88&chksm=fe4b30bdc93cb9ab1dfcaed066a1a90919027f6c72d63003b3b839eb9ba2871ec663db7469f1&scene=21#wechat_redirect)
+> [微信公众号原文](https://mp.weixin.qq.com/s/1sFybkUlIDNidNQgPrgB3w)
 
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.1.0)
+好消息，好消息，时隔一月，开箱即用的开源PostgreSQL发行版 —— Pigsty  正式发布v1.1版本！v1.1带来了一些非常不错的特性，主要是关于基础设施的（毕竟部署好的数据库没人想去动它）。以下是更新摘要。
 
-Pigsty v1.1 正式发布，新增全新首页设计、Jupyter Lab、PGWeb、PEV2、PgBadger 等实用工具支持。
+![图片](wxmp-pigsty-v1-1-01.webp)
 
-----------------
+## 全新的首页
 
-## 全新首页
+一直以来，Grafana监控系统中的Home Dashboard都扮演着Pigsty“主页”的角色，现在Pigsty终于有一个看上去还不错的独立的主页啦。如果想知道主页是什么样子，可以访问公开演示：http://home.pigsty.cc
 
-Grafana 监控系统中的 Home Dashboard 一直扮演着 Pigsty "主页"的角色，现在 Pigsty 终于有了一个独立的、设计精良的首页。
+![图片](wxmp-pigsty-v1-1-02.webp)
 
-![homepage](homepage.jpg)
+比较熟悉Pigsty的用户可能一下子就能看出来，这不就是文档站抽出来改了一改吗？哈哈是的，这个首页就是一个本地版的文档站，由默认的 Nginx 提供服务。
 
-这个首页是一个本地版的文档站，由默认的 Nginx 提供服务。
+#### 服务导航
 
-### 服务导航
+这个主页提供了前往Pigsty各个服务组件的导航，包括以前就有的：Consul, Grafana, Prometheus, AlertManager，以及在1.1中新引入的 **PGWeb** 与**Jupyter Lab**。您可以直接点击首页正中的组件名称/URL，或通过导航栏右上角的`Service`下拉菜单进入。
 
-首页提供前往 Pigsty 各个服务组件的导航，包括 Consul、Grafana、Prometheus、AlertManager，以及 v1.1 新引入的 **PGWeb** 与 **Jupyter Lab**。可直接点击首页正中的组件名称/URL，或通过导航栏右上角的 `Service` 下拉菜单进入。
+#### 监控导航
 
-### 监控导航
+首页现在也可以呈现Pigsty部署中的集群与实例（可选），并提供到具体集群、实例的监控首页，流量的管控界面的的直接跳转。
 
-首页可呈现 Pigsty 部署中的集群与实例（可选），并提供到具体集群、实例监控首页及管控界面的直接跳转。
+![图片](wxmp-pigsty-v1-1-03.webp)
 
-![monitor-nav](monitor-nav.jpg)
+#### 应用导航
 
-### 应用导航
+右上角的App下拉选单将成为Pigsty扩展功能的入口，在1.1中，Pigsty自带了几个实用而有趣的应用。这些应用都可以通过配置选项添加。
 
-右上角的 App 下拉选单是 Pigsty 扩展功能的入口。在 v1.1 中，Pigsty 自带了几个实用而有趣的应用，均可通过配置选项添加。
+![图片](wxmp-pigsty-v1-1-04.webp)
 
-![app-nav](app-nav.jpg)
+#### 本地文档\
 
-### 本地文档
+在Pigsty1.1中，您可以直接从Pigsty首页访问本地离线文档，包括中英双语。
 
-在 Pigsty v1.1 中，可直接从首页访问本地离线文档，包括中英双语。
+![图片](wxmp-pigsty-v1-1-05.webp)
 
-![local-docs](local-docs.jpg)
+### Jupyter Lab
 
-----------------
+如果您曾使用Python进行数据分析，那么Jupyter一定不会陌生。Pigsty v1.0.0打包了Jupyter Lab软件包，而v1.1则更进一步，将其放入原生支持中。在演示与个人配置模板中，Jupyter Lab默认启用，在生产环境部署中则默认不启用。
 
-## Jupyter Lab
+![图片](wxmp-pigsty-v1-1-06.webp)
 
-使用 Python 进行数据分析的用户对 Jupyter 一定不陌生。Pigsty v1.0 打包了 Jupyter Lab 软件包，v1.1 则更进一步将其纳入原生支持。在演示与个人配置模板中，Jupyter Lab 默认启用；在生产环境部署中则默认不启用。
+您可以通过Jupyter Notebook，高效，敏捷地提取数据，处理、分析、转换、并进行可视化，组合使用Python与SQL的强大能力。（当然您也可以继续使用Pigsty提供的Grafana与Echarts进行可视化）
 
-![jupyter-1](jupyter-1.jpg)
+![图片](wxmp-pigsty-v1-1-07.webp)
 
-通过 Jupyter Notebook，可以高效、敏捷地提取数据，进行处理、分析、转换及可视化，组合使用 Python 与 SQL 的强大能力。
+当然，强大与便利往往也蕴涵着风险。Jupyter执行任意代码的能力对于生产环境仍然是一个过于冒险的配置，因此默认不会在生产环境配置模板中启用。
 
-![jupyter-2](jupyter-2.jpg)
+### PGWeb
 
-强大与便利往往也蕴含风险。Jupyter 执行任意代码的能力对于生产环境过于冒险，因此默认不在生产环境配置模板中启用。
+作为一个开箱即用的数据库发行版，提供一个开箱即用的图形化客户端工具也是非常重要的。PGWEB是一个使用Go编写的，小巧的，基于浏览器的Postgres图形客户端
 
-----------------
+![图片](wxmp-pigsty-v1-1-08.webp)
 
-## PGWeb
+与Jupyter类似，PGWEB在演示与个人配置模板中默认启用，在生产环境部署中则默认不启用。但PGWEB要求用户拥有访问数据库的连接串，因此相对安全，可以用于生产环境中个人用户查询少量数据的场景。
 
-作为开箱即用的数据库发行版，提供开箱即用的图形化客户端工具也很重要。PGWeb 是一个使用 Go 编写的小巧的、基于浏览器的 PostgreSQL 图形客户端。
+![图片](wxmp-pigsty-v1-1-09.webp)
 
-![pgweb-1](pgweb-1.jpg)
+用户可以浏览数据库中的模式、对象。快速浏览表中的数据，执行查询等。
 
-与 Jupyter 类似，PGWeb 在演示与个人配置模板中默认启用，在生产环境部署中则默认不启用。但 PGWeb 要求用户拥有访问数据库的连接串，因此相对安全，可用于生产环境中个人用户查询少量数据的场景。
+### PEV2
 
-![pgweb-2](pgweb-2.jpg)
+Pev2是一个实用的执行计划分析器，可以把PostgreSQL查询EXPLAIN的结果转换为一颗直观的执行计划树。![图片](wxmp-pigsty-v1-1-10.webp)
 
-用户可以浏览数据库中的模式、对象，快速浏览表中的数据，执行查询等。
+这个工具对于优化慢查询，分析auto_explain 结果都非常好用。
 
-----------------
+### PGBadger
 
-## PEV2
+PGBADGER是一个非常好用的Postgres日志分析组件，可以从CSV日志中快速生成精美全面的分析报告。
 
-PEV2 是一个实用的执行计划分析器，可将 PostgreSQL 查询 EXPLAIN 的结果转换为直观的执行计划树。
+使用`bin/pglog-summary [ip] [date]` 即可拉取特定节点特定日期的日志，并创建日志分析报告。
 
-![pev2](pev2.jpg)
+![图片](wxmp-pigsty-v1-1-11.webp)
 
-这个工具对于优化慢查询、分析 auto_explain 结果非常好用。
+为该命令添加Crontab，即可每天、或准实时地自动生成数据库运行报表。
 
-----------------
+### 软件更新
 
-## PgBadger
+PostgreSQL 14 已经正式发布了，Pigsty v1.1也第一时间进行了跟进与支持。`pigsty-pg14` 模板已经可以在生产环境中创建默认版本为14的PostgreSQL数据库了。但因为PostgreSQL的一个重要三方扩展TimescaleDB尚未正式支持PG14 （预计时间10-30），因此PG14还不是Pigsty的默认数据库版本。
 
-PgBadger 是一个优秀的 PostgreSQL 日志分析组件，可从 CSV 日志中快速生成精美全面的分析报告。
+Pigsty将于 **v1.2** 进行默认PG版本升级，将默认数据库版本升级为PG14。
 
-使用 `bin/pglog-summary [ip] [date]` 即可拉取特定节点特定日期的日志，并创建日志分析报告。
+![图片](wxmp-pigsty-v1-1-12.webp)
 
-![pgbadger](pgbadger.jpg)
+此外，其他软件也都有升级：
 
-为该命令添加 Crontab，即可每天或准实时地自动生成数据库运行报表。
+- postgres 升级至 v13.4
 
-----------------
+- pgbouncer 升级至 v1.16 (新增2监控指标)
 
-## 软件更新
+- grafana 升级至 v8.1.4
 
-PostgreSQL 14 已正式发布，Pigsty v1.1 第一时间进行了跟进与支持。`pigsty-pg14` 模板已可在生产环境中创建默认版本为 14 的 PostgreSQL 数据库。但因 TimescaleDB 尚未正式支持 PG14（预计时间 10-30），因此 PG14 暂不作为 Pigsty 的默认数据库版本。
+- prometheus 升级至 v2.2.29
 
-![pg14](pg14.jpg)
+- node_exporter 升级至 v1.2.2
 
-Pigsty 将于 **v1.2** 进行默认 PG 版本升级，将默认数据库版本升级为 PG14。
+- haproxy 升级至 v2.1.1
 
-软件升级列表：
+- consul 升级至 v1.10.2
 
-| 组件 | 版本 |
-|------|------|
-| PostgreSQL | v13.4 |
-| pgbouncer | v1.16 |
-| Grafana | v8.1.4 |
-| Prometheus | v2.2.29 |
-| node_exporter | v1.2.2 |
-| HAProxy | v2.1.1 |
-| Consul | v1.10.2 |
-| vip-manager | v1.0.1 |
+- vip-manager 升级至 v1.0.1
 
-----------------
+### 新的剧本：数据库迁移
 
-## 数据库迁移剧本
+Pigsty内置了一个 数据库在线迁移的辅助脚本：`pgsql-migration.yml` ，提供了一个开箱即用的基于逻辑复制的不停机数据库迁移方案。
 
-Pigsty 内置了一个数据库在线迁移辅助脚本：`pgsql-migration.yml`，提供开箱即用的基于逻辑复制的不停机数据库迁移方案。
+填入源集群与宿集群相关信息，该剧本即会自动创建出迁移中所需的脚本，在数据库迁移时只需要依次执行即可，包括：
 
-填入源集群与目标集群相关信息，该剧本即会自动创建迁移所需的脚本，在数据库迁移时只需依次执行即可。
+![图片](wxmp-pigsty-v1-1-13.webp)
 
-![migration-1](migration-1.jpg)
+![图片](wxmp-pigsty-v1-1-14.webp)
 
-![migration-2](migration-2.jpg)
+### 新的应用：苹果隐私日志可视化
 
-----------------
+最后，Pigsty的自带的默认演示应用里又多了一个：苹果应用隐私日志可视化（APPLOG），您可以在iOS15系统中导出应用程序访问隐私的记录，并在此应用中进行可视化，细节可以参考公众号前一篇文章 《 [微信读相册这点事](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484750&idx=1&sn=b2db051aa7b379f161ba461f56dbdbbc&chksm=fe4b3095c93cb983d3f496420fc8e291fd86400cb946e1e112f1a495b427c01930b2d072393d&scene=21#wechat_redirect) 》。
 
-## 示例应用：隐私日志可视化
+![图片](wxmp-pigsty-v1-1-15.webp)
 
-Pigsty 自带的默认演示应用新增一个：苹果应用隐私日志可视化（AppLog）。可在 iOS15 系统中导出应用程序访问隐私的记录，并在此应用中进行可视化。
+图：微信大清早偷偷访问我的相册长达4分钟
 
-![applog-1](applog-1.jpg)
+![图片](wxmp-pigsty-v1-1-16.webp)
 
-![applog-2](applog-2.jpg)
+### 一些有趣的小功能
 
-----------------
+部署好的数据库没人想去动它，但Pigsty还是在v1.1加入了一个数据库实例上的新特性：Dummy file。原理很简单，创建一个一定尺寸（例如1～4GB）的`/pg/dummy`，这样当出现磁盘写满的故障时（通常很多操作都无法正常完成了），只需要将其删除，就可以释放出一定的应急空间来。
 
-## 实用小功能
+这个功能非常实用，但对于已经创建好的数据库实例而言，手动`dd`或`filealloc`一个就可以与新版本保持一致，或者彻底无视也没有关系。
 
-**Dummy File 占位符**
+此外，v1.1中还添加了 promscale 的安装包，这是一个有趣的组件，可以将Prometheus的时序数据存储替换为TimescaleDB（Postgres），文档中的教程也更新了如何替换的细节。
 
-v1.1 加入了一个数据库实例上的新特性：Dummy File。原理很简单，创建一个一定尺寸（例如 1～4GB）的 `/pg/dummy`，当出现磁盘写满故障时（通常很多操作都无法正常完成），只需将其删除，就可以释放出一定的应急空间。
+Enjoy！
 
-**Promscale 支持**
+### 其他
 
-v1.1 添加了 Promscale 安装包，这是一个有趣的组件，可将 Prometheus 的时序数据存储替换为 TimescaleDB（PostgreSQL）。
+此外，还有一些Bug与小问题的修复，文档的例行完善等
 
-----------------
+### 变更细节
+
+![图片](wxmp-pigsty-v1-1-17.webp)
+
+---
 
 ## v1.1.0 更新日志
 
