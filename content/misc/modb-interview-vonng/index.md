@@ -46,7 +46,7 @@ tags: [随笔]
 
 Pigsty 之于 PostgreSQL，就像 RedHat 之于 Linux。**软件开源免费，服务订阅收费**。开源的管控软件也许可以自动解决 80% 的高频日常运维性事务，可低频却致命的疑难杂症兜底还是需要专家来兜底。我们便是为有需要的用户提供这样的服务。后面我们也会尝试在公有云市场上销售数据库监控 SaaS，以及开箱即用的镜像与托管服务。
 
-> 延伸阅读： 《[更好的开源 RDS 替代：Pigsty](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485518&idx=1&sn=3d5f3c753facc829b2300a15df50d237&scene=21#wechat_redirect)》
+> 延伸阅读： 《[更好的开源 RDS 替代：Pigsty](/pigsty/better-rds-alternative/)》
 
 ------
 
@@ -78,7 +78,7 @@ PostgreSQL 是 **一专多长的全栈数据库**，天生就是 HTAP，超融�
 
 我的感想是：要想有一场精彩的辩论战，你需要的是实力与人品相当的对方辩友。某 MySQL 辩友不太体面，但正所谓 **一黑顶十粉**：如果对方只能长篇大论质疑P5架构师一类细枝末节，但不敢做任何产品、技术、业务硬碰硬的PK，那其实就是变相说明 PostgreSQL 和 Pigsty 已经无懈可击了。
 
-> 延伸阅读： 《[如何看待 MySQL vs PGSQL 直播闹剧](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486025&idx=1&sn=463029f58b41b5835780b6d2203be889&scene=21#wechat_redirect)》
+> 延伸阅读： 《[如何看待 MySQL vs PGSQL 直播闹剧](/pg/mysql-pg-live-drama/)》
 
 ------
 
