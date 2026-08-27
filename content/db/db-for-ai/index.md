@@ -19,8 +19,8 @@ aliases: ["/ai/db-for-ai/"]
 
 但这并非两家数仓巨头的意气之争，而是 PostgreSQL 确实占尽了 AI 时代数据库崛起的天时 —— 加上业界正在流传的 [OpenAI 将收购 Supabase](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489695&idx=1&sn=eb0aa2286ecdbb014fd6b38023ae6749&scene=21#wechat_redirect)，不难发现，这些收购案（或者潜在收购意向）的共同点是 —— 这些都是做 PostgreSQL 的公司 —— PostgreSQL 公司正在成为资本市场最抢手的香饽饽。
 
-- [PG生态赢得资本市场青睐：Databricks收购Neon，Supabase融资两亿美元，微软财报点名PG](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489652&idx=1&sn=d68e7fc8433a82c1f1de59a9da0738ba&scene=21#wechat_redirect)
-- [数据库茶水间：OpenAI拟收购Supabase ？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489695&idx=1&sn=eb0aa2286ecdbb014fd6b38023ae6749&scene=21#wechat_redirect)
+- [PG生态赢得资本市场青睐：Databricks收购Neon，Supabase融资两亿美元，微软财报点名PG](/pg/pg-capital-market/)
+- [数据库茶水间：OpenAI拟收购Supabase ？](/db/openai-supabase-rumor/)
 
 > WSJ: Snowflake 将以 2.5 亿美元收购 Crunchy Data[1]
 
