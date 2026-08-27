@@ -20,10 +20,10 @@ tags: [云计算, 数据库, 架构, 技术评论]
 
 在这场技术界的惊涛骇浪中，需要有人透过现象看本质，脚踏实地的把各项技术的好与坏，适用场景与利弊权衡讲清楚。而我本人愿意作为一个亲历者，见证者，评叙者，参与者躬身入局，加入其中。这里拟定了一个议题列表集，名为《**正本清源：技术反思录**》，将依次撰文讨论评论业界关心的热点与技术：
 
-- [国产数据库是大炼钢铁吗？](https://mp.weixin.qq.com/s/aLXC7f2iYUfATNWsnyotkA)
-- [中国对PostgreSQL的贡献约等于零吗？](https://mp.weixin.qq.com/s/79_PnX-a5iSfDMgz_VUx5A)
+- [国产数据库是大炼钢铁吗？](/db/great-leap-db/)
+- [中国对PostgreSQL的贡献约等于零吗？](/pg/china-pg-contribution/)
 - [MySQL的正确性为何如此拉垮？](https://mp.weixin.qq.com/s/gQZ3Q5JKV8gaBNhc1puPcA)
-- [没错，数据库确实应该放入 K8s 里！](https://mp.weixin.qq.com/s/rpyNczx0AD_iseMMLioVjw)（转载SealOS）
+- [没错，数据库确实应该放入 K8s 里！](/db/database-in-k8s-counterpoint/)（转载SealOS）
 - [数据库应该放入K8S里吗？](https://mp.weixin.qq.com/s/4a8Qy4O80xqsnytC4l9lRg)
 - [把数据库放入Docker是一个好主意吗？](https://mp.weixin.qq.com/s/kFftay1IokBDqyMuArqOpg)
 - [向量数据库凉了吗？](https://mp.weixin.qq.com/s/0eBZ4zyX6XjBQO0GqlANnw)
@@ -31,18 +31,18 @@ tags: [云计算, 数据库, 架构, 技术评论]
 - [数据库真被卡脖子了吗？](https://mp.weixin.qq.com/s/vh1JE_BdaLetWtt5vvPDDw)
 - [EL系操作系统发行版哪家强？](https://mp.weixin.qq.com/s/xHG8OURTYlmnQTorFkzioA)
 - [基础软件到底需要什么样的自主可控？](https://mp.weixin.qq.com/s/hWbcc9cMM9qTjPJ0m6G0Kg)
-- [如何看待 MySQL vs PGSQL 直播闹剧](https://mp.weixin.qq.com/s/tRNedHlXmp7YfCqd21e5PA)
-- [驳《MySQL：这个星球最成功的数据库》](https://mp.weixin.qq.com/s/7UvQulQGt9SIhUQasxuEZw)
+- [如何看待 MySQL vs PGSQL 直播闹剧](/pg/mysql-pg-live-drama/)
+- [驳《MySQL：这个星球最成功的数据库》](/pg/rebut-mysql-best/)
 - [向量是新的JSON](https://mp.weixin.qq.com/s/BJkbtwl_SPx99GBOzPsJiA) 【译评】
 - [【译】微服务是不是个蠢主意？](https://mp.weixin.qq.com/s/mEmz8pviahEAWy1-SA8vcg)
 - [分布式数据库是伪需求吗？](https://mp.weixin.qq.com/s/-eaCoZR9Z5srQ-1YZm1QJA)
 - [数据库需求层次金字塔](https://mp.weixin.qq.com/s/1xR92Z67kvvj2_NpUMie1Q)
-- [StackOverflow 2022数据库年度调查](https://mp.weixin.qq.com/s/xcORYy2suzOw50SOaOCodw)
+- [StackOverflow 2022数据库年度调查](/db/so2022-db/)
 - [DBA还是一份好工作吗？](https://mp.weixin.qq.com/s/Py3o31w3db5E9FsviAZeCA)
 - [PostgreSQL会修改开源许可证吗？](https://mp.weixin.qq.com/s/qNcqGHL-wVTSB7Kxko2eNw)
 - [Redis不开源是“开源”之耻，更是公有云之耻](https://mp.weixin.qq.com/s/W5kOLxeJCIHjnWbIHc1Pzw)
 - [PostgreSQL正在吞噬数据库世界](https://mp.weixin.qq.com/s/8_uhRH93oAoHZqoC90DA6g)
-- [RDS阉掉了PostgreSQL的灵魂](https://mp.weixin.qq.com/s/EH7RPB6ImfMHXhOMU7P5Qg)
+- [RDS阉掉了PostgreSQL的灵魂](/cloud/rds-castrates-pg/)
 - [技术极简主义：一切皆用Postgres](https://mp.weixin.qq.com/s/yI06zdqnW5uWnqvKmgM-9g)
 
 [![](rethink.jpg)](https://mp.weixin.qq.com/s/Q0OtrpEhF24XN7gwMjbSRA)
