@@ -49,7 +49,7 @@ tags: [下云, 翻译]
 - [下云奥德赛](https://mp.weixin.qq.com/s/H2S3TV-AsqS43A5Hh-XMhQ)
 - [半年下云省千万：DHH下云FAQ答疑](https://mp.weixin.qq.com/s/xaa079P4DRCz0hzNovGoOA)
 - [先优化碳基BIO核，再优化硅基CPU核](https://mp.weixin.qq.com/s/Yxyir8kjRDUZwkkE_dscZQ)
-- [单租户时代：SaaS范式转移](https://mp.weixin.qq.com/s/jKv9l_ro6rWei4QnXck-zw)
+- [单租户时代：SaaS范式转移](/cloud/single-tenant-saas/)
 - [拒绝用复杂度自慰，下云也保稳定运行](https://mp.weixin.qq.com/s/yIVal-9U6_TXX-dZpVtjBg)
 
 --------
