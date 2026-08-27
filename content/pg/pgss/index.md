@@ -415,8 +415,8 @@ PGSS提供了丰富的指标，其中最重要的累积指标可以使用三种�
 
 `[3]` [利用监控系统诊断PG慢查询](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484478&idx=1&sn=ea44675df79b60a12273e78b358bb557&chksm=fe4b31e5c93cb8f325ba1e4389874112bd5441280492c87e259a32aa67e00c7e0028e7dc51eb&scene=21#wechat_redirect)
 
-`[4]` [如何用Pigsty监控现有PostgreSQL (RDS/PolarDB/自建)？](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486169&idx=1&sn=697ab3c172fe6cc28e12cff7297bb343&chksm=fe4b3f02c93cb614bbd1d5075120e074cebb5214d3a1a516363582bcee294e02bf5fd0e051ee&scene=21#wechat_redirect)
+`[4]` [如何用Pigsty监控现有PostgreSQL (RDS/PolarDB/自建)？](/pigsty/monitor-existing-pg/)
 
 `[5]` [Pigsty v2.5 发布：Ubuntu/Debian支持与监控改版/新扩展](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486283&idx=1&sn=4b63f438df33291a3deb1052bea31347&chksm=fe4b3e90c93cb786a54407a4f7e552b2c8b28478b28df852e41f5d9e2c991761dddbc9a5a813&scene=21#wechat_redirect)
 
-`[6]` [PostgreSQL监控系统Pigsty概述](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484189&idx=1&sn=19d4381c7ec4bc4498bd56c5ee9f916b&chksm=fe4b36c6c93cbfd06fba1c7a1ad3c5cba8d0060f82acb56e96f0e64694f79c2df9299f0b1115&scene=21#wechat_redirect)
+`[6]` [PostgreSQL监控系统Pigsty概述](/pigsty/monitoring-intro/)
