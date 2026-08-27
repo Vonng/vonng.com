@@ -447,3 +447,40 @@ a2a30f4b1146b3e79be91d5be57615b6  pigsty-pkg-v4.2.1.u22.aarch64.tgz
 a5574071bac1955798265f71ad73c3d4  pigsty-pkg-v4.2.1.u24.aarch64.tgz
 59a7632c650a3c034f1fe6cd589d7ab5  pigsty-pkg-v4.2.1.u24.x86_64.tgz
 ```
+
+---
+
+<!-- wxmp-update:https://mp.weixin.qq.com/s/p05FlhDt3krlKHVP9ykQYQ -->
+## v4.2.2
+
+> [微信公众号原文](https://mp.weixin.qq.com/s/p05FlhDt3krlKHVP9ykQYQ)
+
+Pigsty v4.2.2 已正式发布，这是一次例行维护更新，带来了新工具、新扩展、内核升级，以及大量基础设施软件包的版本刷新。
+
+**Insforge 自建模板**：新增 Insforge 2.0.1 自建模板，方便用户快速搭建自定义实例。[InsForge：为 Vibe Coding 而生的 Supabase](/db/insforge/)**PG 新工具**：新增数据恢复工具**pdu** 和连接池**pgdog**，补齐了 PostgreSQL 工具链的关键拼图。pdu 可用于 PostgreSQL 数据恢复，pgdog 则是一个新兴的 Rust 实现的智能连接池。**新增 Infra 软件包**：tigerfs（文件系统融合工具）、pgstream、sql-studio、rainfrog、crush 等新工具加入 Pigsty 基础设施家族。**IvorySQL 内核升级**：IvorySQL 从 5.1 升级至 5.3，保持与上游同步。**MinIO / MCLI 更新**：更新至 Pigsty 最新维护的 20260321 版本，进一步恢复了更多控制台功能，包括 Site Replication、Tiering 等特性。
+
+![图片](v4.2.2-01.webp)
+
+------------------------------------------------------------------------
+
+#### PostgreSQL 扩展更新
+
+本次共更新 6 个扩展，新增 2 个工具包：
+
+![图片](v4.2.2-02.webp)
+
+其中 pgcollection 和 pg_ttl_index 都迎来了大版本跳跃，值得关注。
+
+------------------------------------------------------------------------
+
+#### 基础设施软件包更新
+
+本次更新涉及大量 Infra 组件，以下列出部分重点更新：
+
+**监控与可观测**：Grafana 12.4.1、VictoriaMetrics 全家桶升级至 1.138.0 / 1.48.0、pg_exporter 1.2.1、pgbackrest_exporter 0.23.0**开发工具**：DuckDB 1.5.0、PostgREST 14.7、code-server 4.112.0、OpenCode 1.2.27、Codex 0.116.0、Claude 2.1.81**存储与网络**：SeaweedFS 4.17、RustFS 1.0.0-alpha.89、Rclone 1.73.2、Caddy 2.11.2、Vector 0.54.0**新增工具**：sql-studio 0.1.51、rainfrog 0.3.17、crush 0.51.2、tigerfs 0.5.0、pgstream 1.0.1**其他更新**：Hugo 0.158.0、uv 0.10.12、Pig CLI 1.3.2、TigerBeetle 0.16.77 等
+
+特别注意：etcd 3.6.9 版本引入不兼容变更，member list API 现在需要认证。目前 Pigsty 锁死在 3.6.8 版本。
+
+![图片](v4.2.2-03.webp)
+
+*数据库老司机点一个关注 ⭐️，精彩不迷路\*
