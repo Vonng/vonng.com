@@ -92,7 +92,7 @@ PostgreSQL 并不是一个简单的关系型数据库，而是一个数据管理
 
 ## 参考阅读
 
-[PGSQL x Pigsty: 数据库全能王来了](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486215&idx=1&sn=52ce37a537336a6d07448f35c7bc4cfd&scene=21#wechat_redirect)
+[PGSQL x Pigsty: 数据库全能王来了](/pigsty/db-allrounder/)
 
 [PG生态新玩家ParadeDB](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486913&idx=1&sn=3b7d8cf3f0e323932aba52c897f3c7a4&chksm=fe4b381ac93cb10cc6175c4c7978b5903946d369fe0084fbae5edf76ab08d84134260f28dffc&scene=21#wechat_redirect)
 
@@ -108,7 +108,7 @@ PostgreSQL 并不是一个简单的关系型数据库，而是一个数据管理
 
 [为什么说PostgreSQL前途无量？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484591&idx=1&sn=a6ab13d93bfa26fca969ba163b01e1d5&scene=21#wechat_redirect)
 
-[更好的开源RDS替代：Pigsty](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485518&idx=1&sn=3d5f3c753facc829b2300a15df50d237&scene=21#wechat_redirect)
+[更好的开源RDS替代：Pigsty](/pigsty/better-rds-alternative/)
 
 ### References
 
