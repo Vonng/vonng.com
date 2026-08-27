@@ -253,11 +253,11 @@ Pigsty 六点价值主张的首字母合起来，则为 Pigsty 提供了另外�
 
 [令人惊叹的PostgreSQL可伸缩性](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486832&idx=1&sn=6b6b5f03b77c8a607f43f323fdf9ee7d&chksm=fe4b38abc93cb1bd84e3360b857016a9be3329c91d47c998fe73dc37d1f4b2c5571161fb0ff2&scene=21#wechat_redirect)
 
-[中国对PostgreSQL的贡献约等于零吗？](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486763&idx=1&sn=d05db7200faa6b23f61ca51328439833&chksm=fe4b38f0c93cb1e6cebb4818d22555bbb94ed33f0a191b149383127c12ae3091add20a53f102&scene=21#wechat_redirect)
+[中国对PostgreSQL的贡献约等于零吗？](/pg/china-pg-contribution/)
 
 [展望PostgreSQL的2024 (Jonathan Katz)](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486752&idx=1&sn=b10354a0cee5b0ccd88df606787e1297&chksm=fe4b38fbc93cb1ed39b86882b596020ba3d2f5901bea530bf09cf2519e1ad248d1f93f648180&scene=21#wechat_redirect)
 
-[2023年度数据库：PostgreSQL (DB-Engine)](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486745&idx=1&sn=b92be029db148f53239c29bea912fc78&chksm=fe4b38c2c93cb1d443ac8e6babe4d735f09404b6fac23c6045dd959f291bc28f13287571a189&scene=21#wechat_redirect)
+[2023年度数据库：PostgreSQL (DB-Engine)](/pg/dbengines-2023/)
 
 [MySQL的正确性为何如此拉垮？](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486710&idx=1&sn=261e4754df6c85954b50d8f68f277abe&chksm=fe4b392dc93cb03bf26554a7a232f6217b8aa78d7e35ce0566d9404dc9526d3776141e628a2b&scene=21#wechat_redirect)
 
@@ -273,11 +273,11 @@ Pigsty 六点价值主张的首字母合起来，则为 Pigsty 提供了另外�
 
 [如何用 pg_filedump 抢救数据？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486234&idx=1&sn=d1273152e624fb31bf7be2c8f3991315&scene=21#wechat_redirect)
 
-[PGSQL x Pigsty: 数据库全能王来了](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486215&idx=1&sn=52ce37a537336a6d07448f35c7bc4cfd&scene=21#wechat_redirect)
+[PGSQL x Pigsty: 数据库全能王来了](/pigsty/db-allrounder/)
 
 [Pigsty 特性与快速上手](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486135&idx=1&sn=7d9c4920e94efba5d0e0b6af467f596c&scene=21#wechat_redirect)
 
-[PG先写脏页还是先写WAL？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486101&idx=1&sn=30dfc9b11f4f812e699af2711f93931a&scene=21#wechat_redirect)
+[PG先写脏页还是先写WAL？](/pg/wal-before-page/)
 
 [PostgreSQL：世界上最成功的数据库](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485685&idx=1&sn=688f6d6d0f4128d7f77d710f04ff9024&scene=21#wechat_redirect)
 
@@ -285,15 +285,15 @@ Pigsty 六点价值主张的首字母合起来，则为 Pigsty 提供了另外�
 
 [AI大模型与向量数据库 PGVECTOR](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485589&idx=1&sn=931f2d794e9b8486f623f746db9f00cd&scene=21#wechat_redirect)
 
-[更好的开源RDS替代：Pigsty](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485518&idx=1&sn=3d5f3c753facc829b2300a15df50d237&scene=21#wechat_redirect)
+[更好的开源RDS替代：Pigsty](/pigsty/better-rds-alternative/)
 
 [PostgreSQL 到底有多强？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485240&idx=1&sn=9052f03ae2ef21d9e21037fd7a1fa7fe&scene=21#wechat_redirect)
 
 [为什么PostgreSQL是最成功的数据库？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485216&idx=1&sn=1b59c7dda5f347145c2f39d2679a274d&scene=21#wechat_redirect)
 
-[PG与Pigsty用户需求问卷调研结果](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484979&idx=1&sn=6b7afac9905b3d07ed7c1d43f8a2e464&scene=21#wechat_redirect)
+[PG与Pigsty用户需求问卷调研结果](/pigsty/user-survey-2022/)
 
-[高可用PgSQL集群架构设计与落地](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484546&idx=1&sn=f89c7c3b87b24ee536bfc56b8b51c2d5&scene=21#wechat_redirect)
+[高可用PgSQL集群架构设计与落地](/pg/pg-ha-design/)
 
 [为什么说PostgreSQL前途无量？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484591&idx=1&sn=a6ab13d93bfa26fca969ba163b01e1d5&scene=21#wechat_redirect)
 
@@ -307,7 +307,7 @@ Pigsty 六点价值主张的首字母合起来，则为 Pigsty 提供了另外�
 
 [PostgreSQL的KPI](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484164&idx=1&sn=d69a31948d96507aca10a48587ea275c&scene=21#wechat_redirect)
 
-[PostgreSQL监控系统Pigsty概述](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484189&idx=1&sn=19d4381c7ec4bc4498bd56c5ee9f916b&scene=21#wechat_redirect)
+[PostgreSQL监控系统Pigsty概述](/pigsty/monitoring-intro/)
 
 [故障档案：PG安装扩展导致无法连接](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247483969&idx=1&sn=c5264dc6cd36d5696138bad085a72b37&scene=21#wechat_redirect)
 
@@ -315,7 +315,7 @@ Pigsty 六点价值主张的首字母合起来，则为 Pigsty 提供了另外�
 
 [把PG放入Docker是一个好主意吗？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247483950&idx=1&sn=9c233f5e9a690706ae96ceabb938bff9&scene=21#wechat_redirect)
 
-[PostgreSQL监控系统概览](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247483915&idx=1&sn=1793258171169a5b4a75944302f1ae3a&scene=21#wechat_redirect)
+[PostgreSQL监控系统概览](/pg/monitoring-overview/)
 
 [pg_dump导致的血案](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247483863&idx=1&sn=4b6851c0db5d2862e8698219800e28a7&scene=21#wechat_redirect)
 
