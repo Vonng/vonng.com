@@ -46,7 +46,7 @@ MySQL 官网发布的 ["What's New in MySQL 9.0"](https://dev.mysql.com/doc/refm
 
 ![pg17-feature.png](pg17-feature.png)
 
-而最近几年的 PostgreSQL 新增特性甚至足够专门编成一本书了。比如《[快速掌握PostgreSQL版本新特性](https://mp.weixin.qq.com/s/2bjblo9t7KNQh1isRwbs2w)》便收录了 PostgreSQL 最近七年的重要新特性 —— 将目录塞的满满当当：
+而最近几年的 PostgreSQL 新增特性甚至足够专门编成一本书了。比如《[快速掌握PostgreSQL版本新特性](/pg/pg-version-features/)》便收录了 PostgreSQL 最近七年的重要新特性 —— 将目录塞的满满当当：
 
 ![pg-features.png](pg-features.png)
 
