@@ -248,8 +248,8 @@ SELECT COUNT(*) FROM trips;
 
 - 《[基础软件需要什么样的自主可控？](https://mp.weixin.qq.com/s/hWbcc9cMM9qTjPJ0m6G0Kg)》
 - 《[国产数据库到底能不能打？](https://mp.weixin.qq.com/s/AqcYpOgVj91JnkB1B3s4sA)》
-- 《[国产数据库是大炼钢铁吗？](https://mp.weixin.qq.com/s/aLXC7f2iYUfATNWsnyotkA)》
-- 《[中国对PostgreSQL的贡献约等于零吗？](https://mp.weixin.qq.com/s/79_PnX-a5iSfDMgz_VUx5A)》
+- 《[国产数据库是大炼钢铁吗？](/db/great-leap-db/)》
+- 《[中国对PostgreSQL的贡献约等于零吗？](/pg/china-pg-contribution/)》
 - 《[EL系操作系统发行版哪家强？](https://mp.weixin.qq.com/s/xHG8OURTYlmnQTorFkzioA)》
 
 我的观点是：整个国产信创数据库行业完全基于一个事实上根本不成立的假设 —— 所谓 “数据库卡脖子” 的风险。在开源的 PostgreSQL 面前，所谓卡脖子是个伪命题
