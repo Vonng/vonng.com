@@ -107,7 +107,7 @@ AWS 官方故障隔离文档写得很直白：Region 之间相互隔离，单 Re
 
 这在普通消费者中引发了剧烈反应。
 
-[**特朗普下令全面封杀人工智能公司 Anthropic**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247491348&idx=1&sn=19e4d076c2013b354fca86af83b404b3&scene=21#wechat_redirect)。战争部长说这是“企业道德作秀”，但不得不说这个秀的效果确实极好。
+[**特朗普下令全面封杀人工智能公司 Anthropic**](/ai/trump-bans-anthropic/)。战争部长说这是“企业道德作秀”，但不得不说这个秀的效果确实极好。
 
 ### 用脚投票
 
