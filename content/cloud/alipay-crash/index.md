@@ -83,13 +83,13 @@ tags: [下云, 阿里云, 故障复盘]
 
 阿里系的稳定性问题这两年确实不少，似乎每年双十一前后都会有些幺蛾子出来：
 
-2025-06-06 [大故障：阿里云核心域名被拖走了](https://mp.weixin.qq.com/s/l1b-eq06NyuN61cqZoYJjA)
+2025-06-06 [大故障：阿里云核心域名被拖走了](/cloud/aliyun-domain-seized/)
 
 2024-11-11 [支付宝崩了？](https://mp.weixin.qq.com/s/D2XmL2YYN2kqHtwFN4FVGQ)
 
 2024-09-10 [阿里云新加坡可用区C故障，机房着火](https://mp.weixin.qq.com/s/EDRmP7ninfSx-CgNDb8mpg)
 
-2024-07-02 [阿里云又挂了，这次是光缆被挖断了？](https://mp.weixin.qq.com/s/cb2Lh56uINxacM2uUaB6Vw)
+2024-07-02 [阿里云又挂了，这次是光缆被挖断了？](/cloud/aliyun-fiber-cut/)
 
 2024-04-20 [taobao.com 证书过期](https://mp.weixin.qq.com/s/-ntsNfdEq3b4qs5tKP7tfQ)
 
