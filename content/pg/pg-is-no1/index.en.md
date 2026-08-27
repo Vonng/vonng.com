@@ -224,7 +224,7 @@ This is why we created **[Pigsty](https://pigsty.io/)** — to develop an batter
 
 2022-07 《[为什么PostgreSQL是最成功的数据库？](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485216&idx=1&sn=1b59c7dda5f347145c2f39d2679a274d&chksm=fe4b32fbc93cbbed574358a3bcf127dd2e4f458638b46efaee1a885a5702a66a5d9ca18e3f90&scene=21#wechat_redirect)》
 
-2022-06 《[StackOverflow 2022数据库年度调查](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485170&idx=1&sn=657c75be06557df26e4521ce64178f14&chksm=fe4b3329c93cba3f840283c9df0e836e96a410f540e34ac9b1b68ca4d6247d5f31c94e2a41f4&scene=21#wechat_redirect)》
+2022-06 《[StackOverflow 2022数据库年度调查](/db/so2022-db/)》
 
 2021-05 《[Why PostgreSQL Rocks!](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484604&idx=1&sn=357b3381e7636709fa9e5e06894b7273&chksm=fe4b3167c93cb8719b7c6b048fd300a7773c73319ba0c119359f4f8a6684cd969434c5abbdfd&scene=21#wechat_redirect)》
 
@@ -232,7 +232,7 @@ This is why we created **[Pigsty](https://pigsty.io/)** — to develop an batter
 
 2018 《[PostgreSQL 好处都有啥？](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247483706&idx=1&sn=b842684b41ac6dde8310448ae0a81a76&chksm=fe4b34e1c93cbdf7dcfcdae5f3ddc38bc422989421266dcda957fa2b596e361815624c92b3ec&scene=21#wechat_redirect)》
 
-2023 《[更好的开源RDS替代：Pigsty](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485518&idx=1&sn=3d5f3c753facc829b2300a15df50d237&chksm=fe4b3d95c93cb4833b8e80433cff46a893f939154be60a2a24ee96598f96b32271301abfda1f&scene=21#wechat_redirect)》
+2023 《[更好的开源RDS替代：Pigsty](/pigsty/better-rds-alternative/)》
 
 2023 《[StackOverflow 7年调研数据跟踪](http://demo.pigsty.cc/d/sf-db-survey)》
 
