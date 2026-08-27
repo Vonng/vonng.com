@@ -24,7 +24,7 @@ aliases: ["/ai/ai-dba-job/"]
 
 然而不同于 Github 上到处都是语料的编程数据样本，运维/数据库管理经验的公开数据积累是非常少的。SRE，DBA 则因为语料数据缺乏，加上反馈验证回路过长，在短期内还难以被直接替代。因此毫无疑问 AI 带来的 “革命性” 变化会首先发生在 OLAP 领域。
 
-一个鲜活的例子是，OpenAI 创始成员（[软件3.0时代，AI带来的范式转移](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489945&idx=1&sn=dbffc2a15e923cef5abb5df9b73426a4&scene=21#wechat_redirect)），Vibe Coding 之父安德烈·卡帕西（Andrej Karpathy）在 YC AI创业学院发表了主题演讲就提到过，他花了一天时间就糊出来一个菜单配图的应用，但是花了整整一周时间才把这个应用给部署上线 —— OPS 部份成了 Vibe Coding 的瓶颈。
+一个鲜活的例子是，OpenAI 创始成员（[软件3.0时代，AI带来的范式转移](/ai/software-3-0/)），Vibe Coding 之父安德烈·卡帕西（Andrej Karpathy）在 YC AI创业学院发表了主题演讲就提到过，他花了一天时间就糊出来一个菜单配图的应用，但是花了整整一周时间才把这个应用给部署上线 —— OPS 部份成了 Vibe Coding 的瓶颈。
 
 ![karpathy.webp](karpathy.webp)
 
