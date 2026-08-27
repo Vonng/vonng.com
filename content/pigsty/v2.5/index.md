@@ -148,9 +148,9 @@ Pigsty 将提供基本的（主从，但没有HA） MySQL 安装部署支持，�
 
 ## 发布注记
 
-[PGSQL x Pigsty: 数据库全能王来了](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486215&idx=1&sn=52ce37a537336a6d07448f35c7bc4cfd&chksm=fe4b3edcc93cb7ca2dc87602430c2beb09ae5e7dcb568158541a1bd026e305d69d94cea81da4&scene=21#wechat_redirect)
+[PGSQL x Pigsty: 数据库全能王来了](/pigsty/db-allrounder/)
 
-[如何用Pigsty监控现有PostgreSQL (RDS/PolarDB/自建)？](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486169&idx=1&sn=697ab3c172fe6cc28e12cff7297bb343&chksm=fe4b3f02c93cb614bbd1d5075120e074cebb5214d3a1a516363582bcee294e02bf5fd0e051ee&scene=21#wechat_redirect)
+[如何用Pigsty监控现有PostgreSQL (RDS/PolarDB/自建)？](/pigsty/monitor-existing-pg/)
 
 [Pigsty 特性与快速上手](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486135&idx=1&sn=7d9c4920e94efba5d0e0b6af467f596c&chksm=fe4b3f6cc93cb67ac570d5280b37328aed392598b13df88545ff0a06f99630801fc999db8de5&scene=21#wechat_redirect)
 
