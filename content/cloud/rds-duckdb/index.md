@@ -118,22 +118,22 @@ Deepseek 的成功也好，PostgreSQL 越做越大也好，都是脚踏实地站
 
 [阿里云新加坡可用区C故障，网传机房着火](https://mp.weixin.qq.com/s/EDRmP7ninfSx-CgNDb8mpg)
 
-[阿里云又挂了，这次是光缆被挖断了？](https://mp.weixin.qq.com/s/cb2Lh56uINxacM2uUaB6Vw)
+[阿里云又挂了，这次是光缆被挖断了？](/cloud/aliyun-fiber-cut/)
 
-[云计算：菜就是一种原罪](https://mp.weixin.qq.com/s/jYIqj94B07oTu9KC85bjtQ)
+[云计算：菜就是一种原罪](/cloud/cloud-incompetence/)
 
 [taobao.com 证书过期](https://mp.weixin.qq.com/s/-ntsNfdEq3b4qs5tKP7tfQ)
 
-[牙膏云？您可别吹捧云厂商了](https://mp.weixin.qq.com/s/XZqe4tbJ9lgf8a6PWj7vjw)
+[牙膏云？您可别吹捧云厂商了](/cloud/toothpaste-cloud/)
 
 [罗永浩救不了牙膏云](https://mp.weixin.qq.com/s/s_MCdaCByDBuocXkY1tvKw)
 
-[迷失在阿里云的年轻人](https://mp.weixin.qq.com/s/w7YzdxSrAsIqk2gXBks9CA)
+[迷失在阿里云的年轻人](/cloud/lost-youth-at-aliyun/)
 
 [剖析云算力成本，阿里云真的降价了吗？](https://mp.weixin.qq.com/s/rp8Dtvyo9cItBJSsvfrKjw)
 
-[阿里云周爆：云数据库管控又挂了](https://mp.weixin.qq.com/s/3F1ud-tWB3eymu1-dxSHMA)
+[阿里云周爆：云数据库管控又挂了](/cloud/aliyun-weekly-crash/)
 
 [【阿里】云计算史诗级大翻车来了](https://mp.weixin.qq.com/s/cTge3xOlIQCALQc8Mi-P8w)
 
-[云厂商眼中的客户：又穷又闲又缺爱](https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ) 马工
+[云厂商眼中的客户：又穷又闲又缺爱](/cloud/cloud-customers-poor-bored-lonely/) 马工
