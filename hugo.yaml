@@ -1,6 +1,6 @@
 # Vonng.com — Hugo site configuration
 #
-# Theme: OINK v0.6.0 (github.com/pgsty/oink)
+# Theme: OINK v0.8.0 (github.com/pgsty/oink)
 # Structure: top-level sections are blog columns; `/` is a landing page.
 
 baseURL: https://vonng.com
