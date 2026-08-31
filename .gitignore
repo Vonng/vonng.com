@@ -16,3 +16,7 @@ __pycache__/
 
 # wxmp import working files (provenance kept in bin/wxmp/ledger.json)
 .wxmp-*.json
+tmp/
+
+AGENTS.md
+CLAUDE.md
