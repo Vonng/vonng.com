@@ -11,7 +11,7 @@ tags: [云计算, 故障复盘]
 
 ![图片](01.webp)
 
-根据 https://www.githubstatus.com/ 的状态页消息，本次影响范围为 GitHub 全站所有服务。
+根据 <https://www.githubstatus.com/> 的状态页消息，本次影响范围为 GitHub 全站所有服务。
 
 ![图片](02.webp)
 
@@ -22,3 +22,7 @@ tags: [云计算, 故障复盘]
 无状态的服务有许多恢复手段，即时挂了也比较容易恢复。而有状态的数据库一旦出问题，就是大问题。我们尚不知道是哪种数据库故障，与哪种数据库基础设施变更导致的故障。
 
 ![图片](04.webp)
+
+---
+
+发布版本：[微信公众号](https://mp.weixin.qq.com/s/nOzSFkULOJeuQ4NChGxE5w)
