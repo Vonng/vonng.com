@@ -7,15 +7,15 @@ summary: >
 tags: [PostgreSQL, PG开发, 性能]
 ---
 
-> 原作者：IvorySQL · [微信公众号转载页](https://mp.weixin.qq.com/s/zmBqNSw4r8MntHjQpj02ng)
+> 原作者：IvorySQL
 
 PostgreSQL 全球开发组于 2025 年 5 月 8 日发布了 PostgreSQL 18 的首个 Beta 版本，正式版已于 9 月 25 日正式上线。本文 IvorySQL 社区将为大家拆解 PostgreSQL 18 的六大亮点特性。
 
-### 一、PG 异步 I/O（AIO）框架：迈出打破同步阻塞瓶颈的第一步
+## 一、PG 异步 I/O（AIO）框架：迈出打破同步阻塞瓶颈的第一步
 
 PostgreSQL 18 全新引入异步 I/O 子系统。新机制允许**特定场景下**并行执行多个异步预读操作，CPU 无需等待数据返回即可继续推进查询，一定程度上降低了等待损耗。此框架为 PG 未来更深入更彻底的异步 I/O 性能优化奠定基础，迈出了第一步。
 
-#### 核心提升场景
+### 核心提升场景
 
 **【当前仅实现异步读，没有实现异步写】** 所有 Seq Scan 场景下通过适配过异步 I/O 的 ReadStream 设施可实现并行化顺序预读，提升 Seq Scan 的性能，效果好于原有 `posix_fadvice` 的建议性预读。尤其在云存储场景下单次阻塞读 I/O 相比本地 I/O 所需时间更长，异步 I/O 加持下的并行化预读的优势更加明显。目前异步 I/O 已支持顺序扫描、位图堆扫描和 VACUUM 操作的异步读取，早期测试显示，读取密集型查询性能可提升 2-3 倍。
 
@@ -85,28 +85,28 @@ PG 18 引入异步 I/O 框架，支持通过 GUC 参数灵活配置异步 I/O：
 
 #### 对原有设施的修改
 
-1.  **扩展 smgr 接口**：新增 `smgr_startreadv` 方法以支持异步读取。
-2.  **实现回调结构**：smgr 需实现 `PgAioTargetInfo` 和 `PgAioHandleCallBacks` 回调结构。
-3.  **适配现有模块**：smgr 和 buffer manager 等模块需填充异步 I/O 抽象结构以兼容框架。
-4.  **PG 临界区处理**：同步 I/O 可在 PG 临界区内发起；异步 I/O 因分段执行且带回调，需移除回调中可能失败的操作（临界区内一切操作不能失败，如用`RelPathStr`替代 palloc 的`char*`字符串）以确保安全。
-5.  **优化上层接口**：利用异步 I/O 改造 ReadStream 等接口，实现真预读，大幅提升顺序扫描、pg_prewarm 及 ANALYZE 等操作的 I/O 性能，效果优于原有 posix_fadvise 方案。
+1. **扩展 smgr 接口**：新增 `smgr_startreadv` 方法以支持异步读取。
+2. **实现回调结构**：smgr 需实现 `PgAioTargetInfo` 和 `PgAioHandleCallBacks` 回调结构。
+3. **适配现有模块**：smgr 和 buffer manager 等模块需填充异步 I/O 抽象结构以兼容框架。
+4. **PG 临界区处理**：同步 I/O 可在 PG 临界区内发起；异步 I/O 因分段执行且带回调，需移除回调中可能失败的操作（临界区内一切操作不能失败，如用`RelPathStr`替代 palloc 的`char*`字符串）以确保安全。
+5. **优化上层接口**：利用异步 I/O 改造 ReadStream 等接口，实现真预读，大幅提升顺序扫描、pg_prewarm 及 ANALYZE 等操作的 I/O 性能，效果优于原有 posix_fadvise 方案。
 
 #### 使用注意及未来展望
 
-1.  io_uring 需要较新内核：旧版 Linux Kernel 不支持 io_uring。某些早期版本内核虽然支持 io_uring，但功能和性能表现与新内核有一定差距。
-2.  **架构限制并发粒度**：受多进程架构所限，PG 异步 I/O 期间可并行运行的计算任务较少，难以实现更细粒度的任务级异步。当前主要性能收益集中于**ReadStream 顺序预读**及等并行 I/O 操作。
-3.  **未来可能的性能提升**：Linux io_uring 支持直接 I/O（DIO）特性，为在 PG 中启用 DIO 奠定基础。未来启用直接 I/O 可免除双重 buffer（OS 层面对 I/O 数据进行 buffer，PG 层面对 I/O 进行 buffer）以减少不必要的数据复制。在高速 NVMe 上还配合 DIO 启用**IORING_SETUP_IOPOLL **选项使用轮训方式检查 I/O 完成情况，还可以进一步提升性能。
-4.  **未来更多的异步 I/O 后端**：除了`sync`模式，正式版的 PostgreSQL 18 仅支持 `worker` 和 `io_uring` 两种异步 I/O 后端。目前异步 I/O 框架设计已基本完备，未来版本有望支持 Windows IORing，IOCP，以及 Posix 异步 I/O 等 I/O 后端，为用户提供更多选择。
+1. io_uring 需要较新内核：旧版 Linux Kernel 不支持 io_uring。某些早期版本内核虽然支持 io_uring，但功能和性能表现与新内核有一定差距。
+2. **架构限制并发粒度**：受多进程架构所限，PG 异步 I/O 期间可并行运行的计算任务较少，难以实现更细粒度的任务级异步。当前主要性能收益集中于**ReadStream 顺序预读**及等并行 I/O 操作。
+3. **未来可能的性能提升**：Linux io_uring 支持直接 I/O（DIO）特性，为在 PG 中启用 DIO 奠定基础。未来启用直接 I/O 可免除双重 buffer（OS 层面对 I/O 数据进行 buffer，PG 层面对 I/O 进行 buffer）以减少不必要的数据复制。在高速 NVMe 上还配合 DIO 启用**IORING_SETUP_IOPOLL**选项使用轮训方式检查 I/O 完成情况，还可以进一步提升性能。
+4. **未来更多的异步 I/O 后端**：除了`sync`模式，正式版的 PostgreSQL 18 仅支持 `worker` 和 `io_uring` 两种异步 I/O 后端。目前异步 I/O 框架设计已基本完备，未来版本有望支持 Windows IORing，IOCP，以及 Posix 异步 I/O 等 I/O 后端，为用户提供更多选择。
 
 #### 小结
 
 PostgreSQL 18 异步 I/O 框架提升数据库系统 I/O 能力，同时也增强了 PostgreSQL 架构的可扩展性，用户只需要根据自身情况修改 GUC 参数即可获取到异步 I/O 带来的好处。目前异步 I/O 框架设计基本完备，后期支持其他异步 I/O 后端也将非常方便。任意平台 Postgres 用户可以尝试 `io_method = worker`或者`sync` 若要在非官方适配 io_uring 的旧 Linux 内核发行版上使用 io_uring 后端，需要进行充分测试后再使用。
 
-### 二、 跳跃式扫描：让 B 树索引 “提速换挡”
+### 二、跳跃式扫描：让 B 树索引 “提速换挡”
 
 在 PostgreSQL 18 之前的版本中，多列 B 树索引可用于包含该索引中任意子集列的查询条件，在对起始（最左侧）列施加约束时最为高效。对前导列的等式约束，加上对第一个不带有等式约束的列的任何不等式约束，用于限制要扫描的索引部分。
 
-例如，给定一个基于（a，b，c）非空字段的升序索引和查询条件 WHERE a = 5 AND b \>= 42 AND c \< 77，该索引将从具有 a = 5 和 b = 42 的第一个条目开始扫描，一直扫描到最后具有 a = 5 的条目。 具有 c \>= 77 的索引条目将被跳过，但它们仍需扫描。
+例如，给定一个基于（a，b，c）非空字段的升序索引和查询条件 WHERE a = 5 AND b \>= 42 AND c \< 77，该索引将从具有 a = 5 和 b = 42 的第一个条目开始扫描，一直扫描到最后具有 a = 5 的条目。具有 c \>= 77 的索引条目将被跳过，但它们仍需扫描。
 
 原则上，这种索引可以用于对 b 和/或 c 有约束条件而对 a 没有约束条件的查询——但必须扫描整个索引，所以在大多数情况下优化器更倾向于对表进行顺序扫描表，而非利用索引扫描。
 
@@ -120,7 +120,7 @@ PostgreSQL 18 异步 I/O 框架提升数据库系统 I/O 能力，同时也增�
 
 对比版本：
 
-**PostgreSQL 17 vs PostgreSQL 18**
+#### PostgreSQL 17 vs PostgreSQL 18
 
 ##### 表结构与索引
 
@@ -150,8 +150,8 @@ PostgreSQL 18 异步 I/O 框架提升数据库系统 I/O 能力，同时也增�
 
 ##### PostgreSQL 17 执行计划 选择使用并行顺序扫描
 
-                                                        QUERY PLAN
-    -------------------------------------------------------------------------------------------------------------------
+    QUERY PLAN
+
      Gather  (cost=1000.00..12986.33 rows=100 width=16) (actual time=1.125..76.076 rows=90 loops=1)
        Workers Planned: 2
        Workers Launched: 2
@@ -164,18 +164,18 @@ PostgreSQL 18 异步 I/O 框架提升数据库系统 I/O 能力，同时也增�
 
 关闭顺序扫描强制选择索引扫描，并非最优计划，执行更慢。
 
-                                                            QUERY PLAN
-    --------------------------------------------------------------------------------------------------------------------------
+    QUERY PLAN
+
      Index Scan using idx_t1_c1c2 on t1  (cost=0.42..18773.42 rows=100 width=16) (actual time=1.846..100.758 rows=90 loops=1)
        Index Cond: (c2 = 100)
      Planning Time: 0.147 ms
      Execution Time: 100.806 ms
     (4 rows)
 
-##### PostgreSQL 18 执行计划选择使用索引扫描，可以看出跳跃式扫描执行效率提升幅度非常大
+### PostgreSQL 18 执行计划选择使用索引扫描，可以看出跳跃式扫描执行效率提升幅度非常大
 
-                                                            QUERY PLAN
-    ---------------------------------------------------------------------------------------------------------------------------
+    QUERY PLAN
+
      Index Scan using idx_t1_c1c2 on t1  (cost=0.42..3900.84 rows=100 width=16) (actual time=0.225..11.464 rows=90.00 loops=1)
        Index Cond: (c2 = 100)
        Index Searches: 1002
@@ -187,8 +187,9 @@ PostgreSQL 18 异步 I/O 框架提升数据库系统 I/O 能力，同时也增�
 关闭索引扫描和位图扫描强制选择顺序扫描。
 
     postgres=# EXPLAIN ANALYZE SELECT * FROM t1 WHERE c2=100;
-                                                          QUERY PLAN
-    ----------------------------------------------------------------------------------------------------------------------
+
+    QUERY PLAN
+
      Gather  (cost=1000.00..12986.33 rows=100 width=16) (actual time=1.486..86.881 rows=90.00 loops=1)
        Workers Planned: 2
        Workers Launched: 2
@@ -201,7 +202,7 @@ PostgreSQL 18 异步 I/O 框架提升数据库系统 I/O 能力，同时也增�
      Execution Time: 86.926 ms
     (10 rows)
 
-#### 使用注意
+### 使用注意
 
 跳跃式扫描目前只能支持等值比较条件。
 
@@ -209,13 +210,13 @@ PostgreSQL 18 异步 I/O 框架提升数据库系统 I/O 能力，同时也增�
 
 PostgreSQL 18 的索引跳跃式扫描，使得多列 BTREE 索引能够被那些仅对第二个或之后的索引列进行等值引用的查询使用，大幅减少索引扫描需要访问的条目，使其效率得到明显提升。
 
-### 三、 虚拟生成列：存储与计算的 “灵活平衡”
+### 三、虚拟生成列：存储与计算的 “灵活平衡”
 
 PostgreSQL 18 开发体验相关的特性，聚焦于简化开发流程、提升代码灵活性，让开发者更高效地利用 PostgreSQL 能力。
 
 IvorySQL 数据库长期致力于 Oracle 特性兼容，其中包含了一项虚拟列的语法兼容：
 
-`column [datatype][generated always] AS (column_expression)[VIRTUAL]`
+`column [datatype][generated always] AS (column_expression) · [VIRTUAL]`
 
 这次 PostgreSQL 18 终于也带来了虚拟列功能。虚拟列是一种不存储数据的表列，其值在查询时通过动态计算得出。与存储列相比，虚拟列节省了列存储空间，查询虚拟列值时通过计算虚拟列表达式的值作为该列的值。
 
@@ -229,7 +230,7 @@ PostgreSQL 18 中虚拟列的语法和存储列的语法相似，新增加关键
 
 虚拟列的标识是在列的限制条件中表示的，通过虚拟列的限制语法标识列为虚拟列，以下为虚拟列表的创建、查询和新增虚拟列：
 
-    -- 创建包含虚拟列的表，其中price_with_tax为虚拟列
+    -- 创建包含虚拟列的表，其中 price_with_tax 为虚拟列
     CREATE TABLE products (
         id SERIAL PRIMARY KEY,
         name TEXT NOT NULL,
@@ -261,7 +262,7 @@ PostgreSQL 18 中虚拟列的语法和存储列的语法相似，新增加关键
 
 创建的表中虚拟列的存储方式和普通列的存储方式类似，其列信息都存储在 pg_attribute 系统表中，其中 attgenerated 列存储生成列信息，如果该列的值为's'，表示该列为存储列。PostgreSQL 18 新增的虚拟列在该字段中的标识符为'v'，并且将虚拟列的表达式存储于 pg_attrdef 系统表中。
 
-    --查看虚拟列信息，其attgenerated为v表示该列为虚拟列
+    --查看虚拟列信息，其 attgenerated 为 v 表示该列为虚拟列
     postgres=# select * from pg_attribute where attname='price_with_tax';
     -[ RECORD 1 ]--+---------------
     attrelid       | 16388
@@ -292,12 +293,13 @@ PostgreSQL 18 中虚拟列的语法和存储列的语法相似，新增加关键
 
     --查看虚拟列表达式存储，可以看到以下表达式为虚拟列表达式
     postgres=# select pg_get_expr(adbin, adrelid) from pg_attrdef where adnum = 5;
-                 pg_get_expr
-    -------------------------------------
+
+## pg_get_expr
+
      (price * ((1)::numeric + tax_rate))
     (1 row)
 
-##### 虚拟列的插入或更新
+### 虚拟列的插入或更新
 
 由于虚拟列的数据不占据存储空间，所以任何指定更新或插入虚拟列的操作都将被限制。
 
@@ -311,19 +313,20 @@ PostgreSQL 18 中虚拟列的语法和存储列的语法相似，新增加关键
     ERROR:  column "price_with_tax" can only be updated to DEFAULT
     DETAIL:  Column "price_with_tax" is a generated column.
 
-##### 虚拟列的查询
+#### 虚拟列的查询
 
 PostgreSQL 18 中查询虚拟列的实现是在生成执行计划阶段完成。在逻辑重写优化阶段，判断查询的范围表中是否包含虚拟列，如果包含虚拟列，则将该虚拟列的表达式从 pg_attrdef 中获取出来并替换原虚拟列名。这样查询虚拟列的值就相当于计算其表达式的值，即 `select price_with_tax` 相当于 `select (price \* ('1'::numeric + tax_rate)) as price_with_tax`。可以看到以下虚拟列被替换成了其表达式：
 
     postgres=# explain verbose SELECT name, price, tax_rate, price_with_tax
     FROM products;
-                                  QUERY PLAN
-    ----------------------------------------------------------------------
+
+    QUERY PLAN
+
      Seq Scan on public.products  (cost=0.00..23.12 rows=750 width=76)
        Output: name, price, tax_rate, (price * ('1'::numeric + tax_rate))
     (2 rows)
 
-#### 适用场景
+### 适用场景
 
 - 当考虑存储空间时，可以使用虚拟列，因为虚拟列不占用磁盘空间。
 - 当列的值需要根据依赖的列变化而变化时，需要使用虚拟列。因为虚拟列的值是动态获取的。
@@ -380,7 +383,7 @@ UUIDv7 通过在 UUID 的高位部分引入时间戳来解决生成 UUID 完全�
 | 版本号                             | 4 位  | 固定为 0111（v7）     |
 | 变体                               | 2 位  | 固定为 10（RFC 4122） |
 
-**设计关键点解析：**
+#### 设计关键点解析：
 
 - **高精度时间前缀（48 位）:** 精确到毫秒的 Unix 时间戳，确保 ID 严格按时间递增（需 NTP 时钟同步）。
 - **尾部随机位（62 位）:** 保证分布式唯一性，避免 v1 版本的 MAC 地址泄漏风险。**有序性如何解决性能问题？**
@@ -393,20 +396,20 @@ UUIDv7 通过在 UUID 的高位部分引入时间戳来解决生成 UUID 完全�
 
 PostgreSQL 18 引入了多个新函数来支持 UUIDv7，方便生成、操作和提取 UUID 信息。
 
-1.  `uuidv7()`函数：用于生成新的 UUIDv7 值。
+1. `uuidv7()`函数：用于生成新的 UUIDv7 值。
 
 <!-- -->
 
     -- 使用当前时间戳生成 UUIDv7
     SELECT uuidv7();
-    -- 输出示例: 0197f96c-b278-7f64-a32f-dae3cabe1ff0
+    -- 输出示例：0197f96c-b278-7f64-a32f-dae3cabe1ff0
 
     -- 生成 1 小时前的 UUIDv7
     SELECT uuidv7(INTERVAL '-1 hour');
     -- 生成 30 分钟后的 UUIDv7
     SELECT uuidv7(INTERVAL '30 minutes');
 
-2.  `uuidv4()`函数：作为已有函数 `gen_random_uuid()` 的别名 ，便于和 uuidv7 一起使用。
+2. `uuidv4()`函数：作为已有函数 `gen_random_uuid()` 的别名，便于和 uuidv7 一起使用。
 
 <!-- -->
 
@@ -414,13 +417,13 @@ PostgreSQL 18 引入了多个新函数来支持 UUIDv7，方便生成、操作�
     SELECT gen_random_uuid();
     SELECT uuidv4();
 
-3.  `uuid_extract_timestamp()`函数 : 该函数现在支持 UUIDv7（原本只支持 UUIDv1）。
+3. `uuid_extract_timestamp()`函数 : 该函数现在支持 UUIDv7（原本只支持 UUIDv1）。
 
 <!-- -->
 
     -- 从 UUIDv7 提取时间戳
     SELECT uuid_extract_timestamp(uuidv7());
-    -- 示例输出: 2025-09-18 12:20:49.409+00
+    -- 示例输出：2025-09-18 12:20:49.409+00
 
 `4. uuid_extract_version()`函数：用于检测 UUID 的版本：
 
@@ -453,7 +456,7 @@ PostgreSQL 数据库中使用 UUIDv7 作为主键：
 
 #### 性能优势：
 
-1.  UUIDv7 的时间戳顺序能显著减少页分裂和缓存失效，有效提升 B 树索引效率。
+1. UUIDv7 的时间戳顺序能显著减少页分裂和缓存失效，有效提升 B 树索引效率。
 
 <!-- -->
 
@@ -463,13 +466,13 @@ PostgreSQL 数据库中使用 UUIDv7 作为主键：
         id_v7 UUID DEFAULT uuidv7(),
         data TEXT DEFAULT 'sample data'
     );
-    --使用UUIDv7作为索引
+    --使用 UUIDv7 作为索引
     CREATE INDEX idx_v4 ON performance_test (id_v4);
     CREATE INDEX idx_v7 ON performance_test (id_v7);
 
 批量插入后，你可以用 `pg_statio_user_indexes` 查看索引命中情况，UUIDv7 通常表现更优。
 
-2.  UUIDv7 自带时间排序，大部分场景下显著提升排序性能。
+1. UUIDv7 自带时间排序，大部分场景下显著提升排序性能。
 
 <!-- -->
 
@@ -521,7 +524,7 @@ EXPLAIN ANALYZE 现在默认包含 BUFFER 统计信息，无需手动添加 BUFF
 
     -- 示例输出显示索引使用情况
     Index Scan using orders_pkey on orders
-    Index Searches: 1  -- 明确显示索引查找次数
+    Index Searches：1  -- 明确显示索引查找次数
     Buffers: shared hit=2 read=2
 
 #### 增强的统计信息
@@ -560,7 +563,7 @@ EXPLAIN ANALYZE 现在默认包含 BUFFER 统计信息，无需手动添加 BUFF
 执行计划：
 
     QUERY PLAN
-    ----------------------------------------------------------------------------------------------------------------------------------------
+
      WindowAgg  (cost=13.46..15.04 rows=99 width=50) (actual time=0.630..0.745 rows=100.00 loops=1)
        Window: w1 AS (PARTITION BY customer_id)
        Storage: Memory  Maximum Storage: 17kB
@@ -586,7 +589,7 @@ EXPLAIN ANALYZE 现在默认包含 BUFFER 统计信息，无需手动添加 BUFF
 - 精确的行统计信息。
 - 窗口函数的详细参数。
 
-#### WAL 日志分析
+### WAL 日志分析
 
     EXPLAIN (ANALYZE, WAL)
     INSERT INTO orders (customer_id, order_date, total_amount)
@@ -599,7 +602,7 @@ EXPLAIN ANALYZE 现在默认包含 BUFFER 统计信息，无需手动添加 BUFF
 执行计划：
 
     QUERY PLAN
-    ---------------------------------------------------------------------------------------------------------------------------------------------
+
     Insert on orders  (cost=0.00..2000.00 rows=0 width=0) (actual time=767.116..767.118 rows=0.00 loops=1)
        Buffers: shared hit=299156 read=2 dirtied=500 written=501
        WAL: records=152158 bytes=10427828 buffers full=139
@@ -615,7 +618,7 @@ WAL 统计：
 - 监控写入负载的日志生成量：WAL 缓冲区生成 1516 条日志，共 150084 个字节的数据。
 - 诊断写入性能瓶颈：缓冲区被写满了 2 次。
 
-#### 并行查询优化
+### 并行查询优化
 
     EXPLAIN (ANALYZE)
     SELECT * FROM orders WHERE customer_id IN (1, 2, 3, 4, 5, 6);
@@ -623,7 +626,7 @@ WAL 统计：
 执行计划：
 
     QUERY PLAN
-    -------------------------------------------------------------------------------------------------------------------------------------------------------
+
      Gather  (cost=2752.40..10357.99 rows=327855 width=18) (actual time=22.375..121.296 rows=330000.00 loops=1)
        Workers Planned: 2
        Workers Launched: 2
@@ -649,9 +652,9 @@ WAL 统计：
 - 每个工作进程的缓存统计详情：worker 0 命中 387 个精确块和 957 个有损块，worker 1 命中 369 个精确块和 1055 个有损块。
 - 精确块与有损块分析：出现有损块说明可能 work_mem 太小导致 bitmap 无法精准定位元组。
 
-#### 技术优势与价值
+### 技术优势与价值
 
-##### 即时性能诊断
+#### 即时性能诊断
 
 - **降低门槛**：自动化的缓冲区统计让初学者快速识别 I/O 问题。
 - **深度洞察**：为专家级用户提供更细粒度的性能数据。
@@ -667,10 +670,10 @@ WAL 统计：
 
 尽管 PostgreSQL 18 的 EXPLAIN 增强带来了显著改进，但仍有一些方面可以进一步完善：
 
-1.  **输出可读性**：随着信息量的增加，输出变得更加复杂，可能需要更好的格式化或可视化工具支持。
-2.  **历史对比**：缺乏直接与历史执行计划对比的内置机制，使得性能回归分析仍需依赖外部工具。
-3.  **阈值警报**：没有内置机制对异常值（如异常高的缓冲区读取）发出警告，需要手动分析。
-4.  **执行计划可视化**：文本形式的输出在复杂查询中仍难以直观理解，需要第三方工具补充。
+1. **输出可读性**：随着信息量的增加，输出变得更加复杂，可能需要更好的格式化或可视化工具支持。
+2. **历史对比**：缺乏直接与历史执行计划对比的内置机制，使得性能回归分析仍需依赖外部工具。
+3. **阈值警报**：没有内置机制对异常值（如异常高的缓冲区读取）发出警告，需要手动分析。
+4. **执行计划可视化**：文本形式的输出在复杂查询中仍难以直观理解，需要第三方工具补充。
 
 #### 小结
 
@@ -690,13 +693,13 @@ PostgreSQL 18 的 EXPLAIN 增强代表了数据库可观测性的重大进步。
 
 #### 服务端配置
 
-1.  选择 OAuth 认证的方式与瀚高数据库选择国密认证的方式类似，需要通过在 pg_hba.conf 文件中指定 METHOD 为 oauth，开启 OAuth 认证。
+1. 选择 OAuth 认证的方式与瀚高数据库选择国密认证的方式类似，需要通过在 pg_hba.conf 文件中指定 METHOD 为 oauth，开启 OAuth 认证。
 
     同时 OPTIONS 必须指定 issuer 和 scope 参数，除此之外还有几个可选参数：validator、map、delegate_ident_mapping，以下是一个最简配置示例：
 
         local all test oauth issuer="http://127.0.0.1:9000" scope="openid postgre"
 
-2.  指定外部 OAuth 验证器，在 postgresql.conf 文件中配置新提供的 oauth_validator_libraries 参数，配置内容为 OAuth 验证器提供的库文件。
+2. 指定外部 OAuth 验证器，在 postgresql.conf 文件中配置新提供的 oauth_validator_libraries 参数，配置内容为 OAuth 验证器提供的库文件。
 
 ##### 客户端配置
 
@@ -718,7 +721,7 @@ oauth 整体认证流程大致如下图所示：
 PostgreSQL 实现了一个**非阻塞的、基于状态机的异步网络客户端**。状态机包含 `OAUTH_STEP_INIT`、`OAUTH_STEP_DISCOVERY`、`OAUTH_STEP_DEVICE_AUTHORIZATION`、`OAUTH_STEP_TOKEN_REQUEST`、`OAUTH_STEP_WAIT_INTERVAL` 这几个状态。其核心原理包含以下几个部分：
 
 - **DISCOVERY**：客户端从用户请求中获取授权服务器元信息。
-- **DEVICE_AUTHORIZATION**：客户端向授权服务器发送请求，授权服务器返回 device_code 和 verification_uri。客户端输出信息"Visit xxxxxx and enter the code: xxxxxx"，提示用户进行操作。
+- **DEVICE_AUTHORIZATION**：客户端向授权服务器发送请求，授权服务器返回 device_code 和 verification_uri。客户端输出信息"Visit xxxxxx and enter the code：xxxxxx"，提示用户进行操作。
 - **TOKEN_REQUEST 和 WAIT_INTERVAL**：轮询访问授权服务器，直到用户完成授权，授权服务器返回 access_token 给客户端。
 - 将获取到的 `access_token` 设置到连接对象中。`libpq` 会将它作为密码发送给 PostgreSQL 服务器，服务器端的 OAuth 验证器会负责校验这个令牌。
 
@@ -742,16 +745,16 @@ PostgreSQL 实现了一个**非阻塞的、基于状态机的异步网络客户�
 
 #### 优缺点剖析
 
-**优点：**
+#### 优点：
 
-1.  OAuth2 提供了现代、标准化的身份验证机制，提高了安全性。通过 OAuth2 认证，规避了传统密码认证在数据传输过程中暴露密码导致的安全风险。
-2.  简化了数据库用户管理，支持统一的身份策略和访问控制，提高了管理效率。
+1. OAuth2 提供了现代、标准化的身份验证机制，提高了安全性。通过 OAuth2 认证，规避了传统密码认证在数据传输过程中暴露密码导致的安全风险。
+2. 简化了数据库用户管理，支持统一的身份策略和访问控制，提高了管理效率。
 
-**缺点：**
+#### 缺点：
 
-1.  相较于传统的密码认证，实现更加复杂，需要额外的配置和维护工作，包括 OAuth2 提供程序的设置和管理，提高了运维的复杂度。比如瀚高数据库的国密认证功能，同样在保障口令安全的同时仅需要通过非常简单的配置即可使用。
-2.  依赖于外部 OAuth 提供程序的可用性和可靠性，若 OAuth 提供程序出现问题，可能会影响数据库访问。
-3.  每次连接可能需要额外的网络请求来验证令牌，可能会增加连接建立的时间，特别是在高并发场景下。
+1. 相较于传统的密码认证，实现更加复杂，需要额外的配置和维护工作，包括 OAuth2 提供程序的设置和管理，提高了运维的复杂度。比如瀚高数据库的国密认证功能，同样在保障口令安全的同时仅需要通过非常简单的配置即可使用。
+2. 依赖于外部 OAuth 提供程序的可用性和可靠性，若 OAuth 提供程序出现问题，可能会影响数据库访问。
+3. 每次连接可能需要额外的网络请求来验证令牌，可能会增加连接建立的时间，特别是在高并发场景下。
 
 #### 小结
 
@@ -776,13 +779,13 @@ PostgreSQL 18 凭借六大核心特性实现了性能、功能与安全性的全
 
 活动预告：2025 年 10 月 16 日 19:30，我们将进行线上直播，为大家深度解析 PG18 的这六大新特性。欢迎预约！
 
-#### 引用链接
+### 引用链接
 
 [1]
 
-官方文档: *https://www.postgresql.org/docs/18/view-pg-aios.html*
+官方文档： *<https://www.postgresql.org/docs/18/view-pg-aios.html>*
 
-------------------------------------------------------------------------
+---
 
 ### 社区其他活动推荐
 
@@ -792,6 +795,26 @@ PostgreSQL 18 凭借六大核心特性实现了性能、功能与安全性的全
 
 [【征文启动】IvorySQL & PostgreSQL 迁移实战经验征集：分享你的技术沉淀，赢取专属好礼！](https://mp.weixin.qq.com/s?__biz=Mzg2MDc0NDg1Mg==&mid=2247497474&idx=1&sn=04876e3ce172a9ee7b4ef6272ba105e2&scene=21#wechat_redirect)
 
-**- 推荐阅读 -**[IvorySQL 4.6：DocumentDB+FerretDB 实现 MongoDB 兼容部署指南](https://mp.weixin.qq.com/s?__biz=Mzg2MDc0NDg1Mg==&mid=2247497465&idx=1&sn=d8ecb9408b2d6be968db3bc9d01f9b88&scene=21#wechat_redirect)[PostgreSQL 上的向量搜索实践](https://mp.weixin.qq.com/s?__biz=Mzg2MDc0NDg1Mg==&mid=2247497445&idx=1&sn=58802936a0edd042b5612b8cc39c9b92&scene=21#wechat_redirect)[开源协同新篇章：IvorySQL 支持 LoongArch® 龙架构，邀开发者共建国产数据库生态](https://mp.weixin.qq.com/s?__biz=Mzg2MDc0NDg1Mg==&mid=2247497444&idx=1&sn=556c6298758dbff5a4a073d56f23c351&scene=21#wechat_redirect)[版本发布｜ IvorySQL 4.6 发布](https://mp.weixin.qq.com/s?__biz=Mzg2MDc0NDg1Mg==&mid=2247497443&idx=1&sn=ab7ff98e6d2a4f5f518fbbc0b5634914&scene=21#wechat_redirect)[PostgreSQL 全表 count 优化实践：从 SeqScan 痛点分析到 heapam 改进与性能突破](https://mp.weixin.qq.com/s?__biz=Mzg2MDc0NDg1Mg==&mid=2247497602&idx=1&sn=ea452db7f92c3767dad0861bf423b573&scene=21#wechat_redirect)[AI 时代云原生数据库一体机的思考](https://mp.weixin.qq.com/s?__biz=Mzg2MDc0NDg1Mg==&mid=2247497587&idx=1&sn=4ba5313258cb6a74b0b9a6f46012dc4e&scene=21#wechat_redirect)**- 关于 IvorySQL -**\**IvorySQL 是由瀚高股份主导研发的一款开源的兼容 Oracle 的 PostgreSQL。**IvorySQL 与 PostgreSQL 国际社区紧密合作，保持与最新 PG 版本内核同步，为用户提供便捷的升级体验。基于双 Parser 架构设计，100% 与原生 PostgreSQL 兼容，支持丰富的 PostgreSQL 周边工具和扩展，并根据用户需求提供定制化工具。同时，IvorySQL 提供更全面灵活的 Oracle 兼容功能，具备高度的 SQL 和 PL/SQL 兼容性能够为企业构建更加高效、稳定和灵活的数据库解决方案。***官网：***https://www.ivorysql.org***GitHub( 欢迎点击 star 收藏 )*****：**https://github.com/IvorySQL/IvorySQL***社群*****：**微信搜索“ivorysql_official” 添加小助理进群\***在线试用：***http://trial.ivorysql.org:8080/**![图片](05.webp)
+### 推荐阅读
 
-**
+- [IvorySQL 4.6：DocumentDB + FerretDB 实现 MongoDB 兼容部署指南](https://mp.weixin.qq.com/s?__biz=Mzg2MDc0NDg1Mg==&mid=2247497465&idx=1&sn=d8ecb9408b2d6be968db3bc9d01f9b88&scene=21#wechat_redirect)
+- [PostgreSQL 上的向量搜索实践](https://mp.weixin.qq.com/s?__biz=Mzg2MDc0NDg1Mg==&mid=2247497445&idx=1&sn=58802936a0edd042b5612b8cc39c9b92&scene=21#wechat_redirect)
+- [开源协同新篇章：IvorySQL 支持 LoongArch 龙架构](https://mp.weixin.qq.com/s?__biz=Mzg2MDc0NDg1Mg==&mid=2247497444&idx=1&sn=556c6298758dbff5a4a073d56f23c351&scene=21#wechat_redirect)
+- [版本发布：IvorySQL 4.6](https://mp.weixin.qq.com/s?__biz=Mzg2MDc0NDg1Mg==&mid=2247497443&idx=1&sn=ab7ff98e6d2a4f5f518fbbc0b5634914&scene=21#wechat_redirect)
+- [PostgreSQL 全表 count 优化实践](https://mp.weixin.qq.com/s?__biz=Mzg2MDc0NDg1Mg==&mid=2247497602&idx=1&sn=ea452db7f92c3767dad0861bf423b573&scene=21#wechat_redirect)
+- [AI 时代云原生数据库一体机的思考](https://mp.weixin.qq.com/s?__biz=Mzg2MDc0NDg1Mg==&mid=2247497587&idx=1&sn=4ba5313258cb6a74b0b9a6f46012dc4e&scene=21#wechat_redirect)
+
+### 关于 IvorySQL
+
+IvorySQL 是由瀚高股份主导研发的开源 Oracle 兼容 PostgreSQL。项目与 PostgreSQL 国际社区保持同步，在兼容原生 PostgreSQL 工具和扩展的同时，提供 SQL 与 PL/SQL 兼容能力。
+
+- **官网：** <https://www.ivorysql.org/>
+- **GitHub：** <https://github.com/IvorySQL/IvorySQL>
+- **社群：** 微信搜索 `ivorysql_official` 添加小助理进群
+- **在线试用：** <http://trial.ivorysql.org:8080/>
+
+![图片](05.webp)
+
+---
+
+发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/zmBqNSw4r8MntHjQpj02ng)
