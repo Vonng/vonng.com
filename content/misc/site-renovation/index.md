@@ -7,7 +7,7 @@ summary: >
 tags: [文档, 工具, 随笔]
 ---
 
-经常有朋友问我，之前你写的那篇XXX文章叫什么来着，想不起来了。嗨，别说你们，就连我自己有时候想搜一下之前在公众号的文章，都是有点儿费劲的。当然，这都怪公众号的搜索太垃圾，以及生态太封闭。
+经常有朋友问我，之前你写的那篇 XXX 文章叫什么来着，想不起来了。嗨，别说你们，就连我自己有时候想搜一下之前在公众号的文章，都是有点儿费劲的。当然，这都怪公众号的搜索太垃圾，以及生态太封闭。
 
 所以，老冯决定专门开一个博客站点，把之前的文章都放上去。不仅可以很方便的被搜索引擎检索到，而且站内本身就有离线全文检索功能。这次选择了 Hugo + Blowfish 主题，最终成品的效果还是相当不错的。
 
@@ -15,7 +15,7 @@ tags: [文档, 工具, 随笔]
 
 ## 博客站
 
-老冯的博客站地址在： https://blog.vonng.com<sup>[1]</sup> ，备案域名。目前公众号大部分的博客文章已经搬运了上去，但还有少部分遗留，过几天有空慢慢处理。这个网站有三个主要的专栏：PostgreSQL 大法师，数据库老司机，云计算泥石流。关注的主题是一目了然。
+老冯的博客站地址是 [blog.vonng.com](/)<sup>[1]</sup>，使用备案域名。目前公众号大部分博客文章已经搬了上去，但还有少部分遗留，过几天有空慢慢处理。这个网站有三个主要专栏：PostgreSQL 大法师、数据库老司机、云计算泥石流。关注的主题一目了然。
 
 ![图片](01.webp)
 
@@ -53,7 +53,7 @@ PostgreSQL 大法师专栏，主要关注的是 PG 生态的最新进展，扩�
 
 ![图片](09.webp)
 
-这个网站的地址是 https://ddia.vonng.com<sup>[2]</sup> ，里面提供了简体中文与繁体中文的版本，另外英文原文也提供了摘要与参考文献部分供参考。当然，仅供学习之用。
+这个网站的地址是 [ddia.vonng.com](https://ddia.vonng.com/)<sup>[2]</sup>，提供简体中文与繁体中文版本，英文原文也提供摘要与参考文献部分供参考。当然，仅供学习之用。
 
 ![图片](10.webp)
 
@@ -63,7 +63,7 @@ PostgreSQL 大法师专栏，主要关注的是 PG 生态的最新进展，扩�
 
 ## PG INTERNAL
 
-另一本书是 PG INTERNAL，也就是《PostgreSQL 技术内幕》，这本书是关于 PostgreSQL 内核原理介绍的。地址在 https://pgint.vonng.com<sup>[3]</sup> 。
+另一本书是 PG INTERNAL，也就是《PostgreSQL 技术内幕》，介绍 PostgreSQL 内核原理，地址是 [pgint.vonng.com](https://pgint.vonng.com/)<sup>[3]</sup>。
 
 ![图片](12.webp)
 
@@ -77,9 +77,9 @@ Hextra 自带的 KaTeX 还挺不错的，内联 LaTeX 公式渲染的都还不�
 
 ![图片](14.webp)
 
-地址在 https://capslock.vonng.com<sup>[4]</sup> 。
+地址是 [capslock.vonng.com](https://capslock.vonng.com/)<sup>[4]</sup>。
 
-关于这个项目，老冯之前写过一篇文章介绍《[用Capslock重新定义键盘](/misc/capslock/)》，这个方案我用了快十年，不夸张的说能让我操作电脑的速度提高好几倍 —— 或者换种说法，当我偶尔需要在别人的电脑和键盘上进行大量键盘操作时，我感觉自己的速度慢了有六七倍。
+关于这个项目，老冯之前写过一篇文章介绍《[用 Capslock 重新定义键盘](/misc/capslock/)》，这个方案我用了快十年，不夸张的说能让我操作电脑的速度提高好几倍 —— 或者换种说法，当我偶尔需要在别人的电脑和键盘上进行大量键盘操作时，我感觉自己的速度慢了有六七倍。
 
 ![图片](15.webp)
 
@@ -87,17 +87,17 @@ Hextra 自带的 KaTeX 还挺不错的，内联 LaTeX 公式渲染的都还不�
 
 ## PIG 包管理器
 
-老冯搞的 PostgreSQL 包管理器 pig 本来是蹭 Pigsty 的文档的，后来又搬运到 PG 扩展目录里蹭个位置。今天老冯一不做二不休，直接给它单开了一个域名 https://pig.pgsty.com<sup>[5]</sup> ，依然是 Hextra 。
+老冯搞的 PostgreSQL 包管理器 pig 本来是蹭 Pigsty 的文档的，后来又搬到 PG 扩展目录里蹭个位置。今天老冯一不做二不休，直接给它单开了域名 [pig.pgsty.com](https://pig.pgsty.com/)<sup>[5]</sup>，依然使用 Hextra。
 
 ![图片](16.webp)
 
-向我给这种项目添加个自带的文档站，可能只要几分钟不到。把模板里的 hugo.yml ，docs 脚手架，.github CI workflow 复制到项目里一提交，加个 DNS 解析，瞬间一个全球可访问的美观专用文档站就上线了。
+向我给这种项目添加个自带的文档站，可能只要几分钟不到。把模板里的 hugo.yml，docs 脚手架，.github CI workflow 复制到项目里一提交，加个 DNS 解析，瞬间一个全球可访问的美观专用文档站就上线了。
 
 ![图片](17.webp)
 
 ## PG 扩展目录
 
-PG 扩展目录收录了 PostgreSQL 生态 423 个扩展插件的详细元数据，分类列表，下载地址与使用方式。地址： https://ext.pgsty.com<sup>[6]</sup> 。
+PG 扩展目录收录了 PostgreSQL 生态 423 个扩展插件的详细元数据、分类列表、下载地址与使用方式，地址是 [ext.pgsty.com](https://ext.pgsty.com/)<sup>[6]</sup>。
 
 ![图片](18.webp)
 
@@ -111,7 +111,7 @@ Next.js 视觉效果要比 Hugo 好，唯一的缺点就是太慢了。即使用
 
 最后，最大的这个 Pigsty 项目文档站，老冯还是用 Next.js + Fumadocs 框架开发的，显示效果其实比以前的 Hugo 强不少。
 
-https://doc.pgsty.com<sup>[7]</sup>
+[doc.pgsty.com](https://doc.pgsty.com/)<sup>[7]</sup>
 
 ![图片](20.webp)
 
@@ -119,30 +119,34 @@ https://doc.pgsty.com<sup>[7]</sup>
 
 ![图片](21.webp)
 
-不过最近刚刚发布 Pigsty v3.6 ，暂时没什么时间去折腾文档换框架这档子事儿了。既来之则安之吧，反正最近赛博菩萨 Vercel 送了我大几千美元的 Credit，不用也是白不用。
+不过最近刚刚发布 Pigsty v3.6，暂时没什么时间去折腾文档换框架这档子事儿了。既来之则安之吧，反正最近赛博菩萨 Vercel 送了我大几千美元的 Credit，不用也是白不用。
 
 ![图片](22.webp)
 
 ## 选型之旅
 
-老冯折腾博客写博客也快十多年了，当然最近两年写的比较多。我折腾过许多写文档写博客的方案，从最开始在博客园，后来自己建站，试过许多框架，Pelican，StackEditor，Editor.md + Koa / Express，Go + BlackFriday，Docsify, Hugo + Docsy, Mintlify, Quip，Wiki.js, Next.js Nextra, Fumadocs 。基本上能看上眼的框架都试了一遍，甚至还自己手搓过一两个博客框架。
+老冯折腾博客写博客也快十多年了，当然最近两年写的比较多。我折腾过许多写文档写博客的方案，从最开始在博客园，后来自己建站，试过许多框架，Pelican，StackEditor，Editor.md + Koa / Express，Go + BlackFriday，Docsify，Hugo + Docsy，Mintlify，Quip，Wiki.js，Next.js Nextra，Fumadocs。基本上能看上眼的框架都试了一遍，甚至还自己手搓过一两个博客框架。
 
 当然后来我也意识到了，写文章吧，重要的还是内容实质，框架折腾的再多，写不出来东西又有什么用呢？所以基本上上面这些方案尝试下来，最让我满意的依然是 Hugo，这个用 Go 写的静态网页生成器。
 
 其实 Next.js MDX 做博客也挺炫酷的，但是老冯真的撞上性能墙了，几千个页面与图片每次构建一次都慢的要死，而且考虑到 AI Agent 阅读干净无噪音的 Markdown 会更好，所以最后还是统一选择了 Hugo。PG 扩展目录和 PIGSTY 文档站目前是例外，还是用 Next.js + Fumadocs 搭建的，我觉得如果不考虑构建耗时的话，总体体验还是不错的。
 
-如果要我推荐的话，2025年的当下建站，静态内容站认准 Hugo 就完事了，有无数主题可供选择 —— 但好使好看的也就那么几个，博客首选 Blowfish，备选 LoveIt，文档书籍首选 Hextra，备选 Docsy。如果非要来点儿动态效果，那么还是 Next.js 糊吧，反正现在 Claude Code 糊这个还是非常好使的。
+如果要我推荐的话，2025 年的当下建站，静态内容站认准 Hugo 就完事了，有无数主题可供选择 —— 但好使好看的也就那么几个，博客首选 Blowfish，备选 LoveIt，文档书籍首选 Hextra，备选 Docsy。如果非要来点儿动态效果，那么还是 Next.js 糊吧，反正现在 Claude Code 糊这个还是非常好使的。
 
-Hugo 网站托管非常简单，在 .github/workflow 里加上一个固定的文件就可以自动 CI 了，用 Giscuss 做评论，用 GitHub Pages 做托管。如果想要更快的访问，更多域名接入，也可以用 Cloudflare Pages。 Vercel 也不仅可以托管 Next.js 项目，也可以放 Hugo 的，而且中国大陆访问速度也还行的。至于分析的话，我用的是 PostHog + Google Analytics ，也是傻瓜式一键接入就行。
+Hugo 网站托管非常简单，在 .github/workflow 里加上一个固定的文件就可以自动 CI 了，用 Giscuss 做评论，用 GitHub Pages 做托管。如果想要更快的访问，更多域名接入，也可以用 Cloudflare Pages。Vercel 也不仅可以托管 Next.js 项目，也可以放 Hugo 的，而且中国大陆访问速度也还行的。至于分析的话，我用的是 PostHog + Google Analytics，也是傻瓜式一键接入就行。
 
 总的来说，老冯这次也算折腾够了，关于文档/书籍，博客的大修基本上算是完成了，后面只要持续维护就行了。如果有朋友感兴趣，后面我也可以深入聊一聊建站的一些最佳实践。
 
 ### References
 
-`[1]`: *https://blog.vonng.com*\
-`[2]`: *https://ddia.vonng.com*\
-`[3]`: *https://pgint.vonng.com*\
-`[4]`: *https://capslock.vonng.com*\
-`[5]`: *https://pig.pgsty.com*\
-`[6]`: *https://ext.pgsty.com*\
-`[7]`: *https://doc.pgsty.com*
+- `[1]` : <https://blog.vonng.com>
+- `[2]` : <https://ddia.vonng.com>
+- `[3]` : <https://pgint.vonng.com>
+- `[4]` : <https://capslock.vonng.com>
+- `[5]` : <https://pig.pgsty.com>
+- `[6]` : <https://ext.pgsty.com>
+- `[7]` : <https://doc.pgsty.com>
+
+---
+
+发布版本：[微信公众号](https://mp.weixin.qq.com/s/GEeNKfd4z-k4jBV8h7gfFg)
