@@ -11,7 +11,7 @@ tags: [软件工程, 随笔]
 
 ![图片](01.webp)
 
-干这件事的契机是两周前在去杭州出差的路上，[俺的笔记本电脑被邻座老太太淋了酱油](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489852&idx=1&sn=d4c63c1ac9f052cb81bb1e1e175cee7e&scene=21#wechat_redirect)。笔记本里8T数据都有备份，唯独丢失了上个月 Vibe Coding 糊出来的 Pigsty 新网站首页源代码。我想这东西丢了也就丢了吧，正好我也想整个重构一遍。
+干这件事的契机是两周前在去杭州出差的路上，[俺的笔记本电脑被邻座老太太淋了酱油](/misc/laptop-soy-sauce/)。笔记本里 8T 数据都有备份，唯独丢失了上个月 Vibe Coding 糊出来的 Pigsty 新网站首页源代码。我想这东西丢了也就丢了吧，正好我也想整个重构一遍。
 
 ![图片](02.webp)
 
@@ -39,9 +39,9 @@ Pigsty 之前的网站使用的是 Hugo + Docsy 静态生成的，用了快五�
 
 总体来说，Claude Code 的使用体验是最好的，特别是最近 20 刀的套餐就能用了，绝对超值。总的来说，当兰老板不在线的时候，俺遇到的各种前端疑难杂症其实也是可以花几倍的时间让 Claude Code 慢慢折腾出来的。
 
-顺带一提，最近 Code Agent 爆火的核心原因其实老冯两个月前就提过了 ——  整个浪潮都是 Claude Code 带起来的《 [Claude Code泄密：MCP 爆火的隐藏真相](/ai/mcp-hidden-truth/)》，所以不要犹豫，赶紧试试吧。
+顺带一提，最近 Code Agent 爆火的核心原因其实老冯两个月前就提过了 ——  整个浪潮都是 Claude Code 带起来的《 [Claude Code 泄密：MCP 爆火的隐藏真相](/ai/mcp-hidden-truth/)》，所以不要犹豫，赶紧试试吧。
 
-这次搞文档用的是 Next.js + Fumadocs。Next.js 基本上已经成为现在前端的事实标准了，各种 AI SaaS 基本都是 Next.js 糊的，丢到 Vercel 或者 Cloudflare 上托管。 Fuma Docs 则是一个基于 Next.js 的文档框架，允许你用 MDX 来编写文档。MDX 是一种扩展 Markdown 语法，好处就是有许多非常不错的 UI 组件可以使用，表现力要比纯 Markdown 强太多了。
+这次搞文档用的是 Next.js + Fumadocs。Next.js 基本上已经成为现在前端的事实标准了，各种 AI SaaS 基本都是 Next.js 糊的，丢到 Vercel 或者 Cloudflare 上托管。Fuma Docs 则是一个基于 Next.js 的文档框架，允许你用 MDX 来编写文档。MDX 是一种扩展 Markdown 语法，好处就是有许多非常不错的 UI 组件可以使用，表现力要比纯 Markdown 强太多了。
 
 ![图片](05.webp)
 
@@ -49,9 +49,9 @@ Pigsty 之前的网站使用的是 Hugo + Docsy 静态生成的，用了快五�
 
 ![图片](06.webp)
 
-用 Next.js 糊网站其实没啥好说的，后面我准备专门写几个教程聊一下技术细节，所以今天就不聊这些干巴巴的东西了。本来我用惯了简简单单的静态网页生成，对于这种还要托管的框架是心存顾虑的 —— 我会不会被 Vercel 给锁定了？虽然 [Vercel 号称可以跟赛博佛祖 Cloudflare 掰手腕的赛博菩萨](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489318&idx=1&sn=5cb5629a88cf7730feda77085141f043&scene=21#wechat_redirect)，但我也不想被菩萨给套牢了。
+用 Next.js 糊网站其实没啥好说的，后面我准备专门写几个教程聊一下技术细节，所以今天就不聊这些干巴巴的东西了。本来我用惯了简简单单的静态网页生成，对于这种还要托管的框架是心存顾虑的 —— 我会不会被 Vercel 给锁定了？虽然 [Vercel 号称可以跟赛博佛祖 Cloudflare 掰手腕的赛博菩萨](/misc/cyber-buddha-fight/)，但我也不想被菩萨给套牢了。
 
-好在兰老板解答了我的疑惑，像 Next.js 这种框架可以很方便的在本地托管。一个 Node.js 的 Docker 镜像就解决了。而且也可以服务端渲染静态页面，对 SEO 非常友好。Vercel 的话免费 Plan 其实还是蛮慷慨的，我试了一下访问速度很快，而且在中国的访问速度似乎比 Cloudflare 还快不少（ https://pgsty.com ）
+好在兰老板解答了我的疑惑，像 Next.js 这种框架可以很方便的在本地托管。一个 Node.js 的 Docker 镜像就解决了。而且也可以服务端渲染静态页面，对 SEO 非常友好。Vercel 的话免费 Plan 其实还是蛮慷慨的，我试了一下访问速度很快，而且在中国的访问速度似乎比 Cloudflare 还快不少（ <https://pgsty.com> ）
 
 ![图片](07.webp)
 
@@ -59,14 +59,18 @@ Pigsty 之前的网站使用的是 Hugo + Docsy 静态生成的，用了快五�
 
 ![图片](08.webp)
 
-最后，我还了解到了现在前端创业者都是怎么做统计分析的，本来我准备继续用 Google Analytics ，不过兰老板推荐了一个开源项目/云服务 —— PostHog 。让我感觉非常不错，而且这个项目也是使用 PostgreSQL 作为主要数据存储的 —— 从这个名字也大概能猜出来。我先试了一把免费的云服务，感觉体验还是相当不错的。最主要是这个是开源的，可以进行私有化本地部署，我准备等文档的事情整完了就去在 Pigsty 里搞一个 PostHog 的自建托管模板。
+最后，我还了解到了现在前端创业者都是怎么做统计分析的，本来我准备继续用 Google Analytics，不过兰老板推荐了一个开源项目/云服务 —— PostHog。让我感觉非常不错，而且这个项目也是使用 PostgreSQL 作为主要数据存储的 —— 从这个名字也大概能猜出来。我先试了一把免费的云服务，感觉体验还是相当不错的。最主要是这个是开源的，可以进行私有化本地部署，我准备等文档的事情整完了就去在 Pigsty 里搞一个 PostHog 的自建托管模板。
 
 ![图片](09.webp)
 
 刚刚找了个新域名测试了一下
 
-总的来说，我觉得这次网站翻新的过程是一次很有趣的体验。我作为一个还算熟悉古典前端HTML/CSS/JS的现代前端门外汉，在前端大手子和AI的帮助下，糊出了一个观感不错，符合现代前端最佳实践的网站。
+总的来说，我觉得这次网站翻新的过程是一次很有趣的体验。我作为一个还算熟悉古典前端 HTML/CSS/JS 的现代前端门外汉，在前端大手子和 AI 的帮助下，糊出了一个观感不错，符合现代前端最佳实践的网站。
 
 接下来我准备把这个网站接入 Supabase 和 AI 大模型，提供认证与文档问答的功能。然后把这次学到的东西全都沉淀成软件，集成到 Pigsty 里，做成傻瓜式的一键自托管建站方案 —— 前端最佳实践 as Software.
 
-Pigsty已经有了一键拉起的 Supabase，Postgres，Nginx，Docker ，证书，一条龙建站全家桶，只要糊个 Docker Compose 模板和 GitHub 模版，任何人都可以轻松在世界各地拉起一套这样功能完备，质量上乘，美观的文档与网站，还自带本地的 DataDog 与 Google Analytics ，岂不美哉？
+Pigsty 已经有了一键拉起的 Supabase，Postgres，Nginx，Docker，证书，一条龙建站全家桶，只要糊个 Docker Compose 模板和 GitHub 模版，任何人都可以轻松在世界各地拉起一套这样功能完备，质量上乘，美观的文档与网站，还自带本地的 DataDog 与 Google Analytics，岂不美哉？
+
+---
+
+发布版本：[微信公众号](https://mp.weixin.qq.com/s/51dKs7wR6WCNiNWX5j_gWg)
