@@ -13,11 +13,11 @@ tags: [旅行]
 
 在营地用 Vision Pro 体验《邂逅恐龙》，妙手偶得之…
 
-------------------------------------------------------------------------
+---
 
 选择理由
 
-我在网上搜了一圈北京 Glamping 攻略，最后收敛到了几个选项：MilkyWay，松照，漾Life，途野。Milky Way 观星岭这个名字一下 Get 到了我，很有意境。晚上能看到星空是一个非常有吸引力的亮点。
+我在网上搜了一圈北京 Glamping 攻略，最后收敛到了几个选项：MilkyWay，松照，漾 Life，途野。Milky Way 观星岭这个名字一下 Get 到了我，很有意境。晚上能看到星空是一个非常有吸引力的亮点。
 
 当然，这个营地最独特的点是 —— 山峦起伏，**长城环绕**。边上就是黄花城水长城，这算是独一无二的文化景观了。\
 
@@ -37,7 +37,7 @@ Milky Way 营地在北京正北方向，怀柔区，高德地图直接搜就能�
 
 ![图片](03.webp)
 
-整个营地在一个公路包围的U型弯里，接近性非常好，所以也可以很方便地点外卖，也可以方便地去周围逛一逛。当然缺点是，白天偶尔有骑摩托车飙车的路过比较吵吵。
+整个营地在一个公路包围的 U 型弯里，接近性非常好，所以也可以很方便地点外卖，也可以方便地去周围逛一逛。当然缺点是，白天偶尔有骑摩托车飙车的路过比较吵吵。
 
 ![图片](04.webp)
 
@@ -47,7 +47,7 @@ Milky Way 营地在北京正北方向，怀柔区，高德地图直接搜就能�
 
 ![图片](05.webp)
 
-二期有四个特大帐篷 —— 帐篷里面有独立的卫浴。这个确实很方便，就跟酒店差不多了。工作日 ¥988，平日 ¥1588 。里面有两张双人床，塞进四五个人不成问题。
+二期有四个特大帐篷 —— 帐篷里面有独立的卫浴。这个确实很方便，就跟酒店差不多了。工作日 ¥988，平日 ¥1588。里面有两张双人床，塞进四五个人不成问题。
 
 ![图片](06.webp)
 
@@ -93,13 +93,33 @@ Milky Way 营地在北京正北方向，怀柔区，高德地图直接搜就能�
 
 ![图片](16.webp)
 
-总的来说，这个营地确实还不错，以后休息消暑，除了去洗大澡，又有一个新去处了。推荐给大家 ![图片](17.webp)
+总的来说，这个营地确实还不错，以后休息消暑，除了去洗大澡，又有一个新去处了。推荐给大家
 
-------------------------------------------------------------------------
+![图片](17.webp)
 
-## **游记**
+---
 
-**https://vonng.com/cn/blog/trip**
+## 更多游记
 
-[班夫贾斯帕自驾游记 — 山峰戴雪，湖光入画](/trip/20240627-banff-jasper/)\
-[青藏高原的美景与挑战](/trip/20231203-tibet-plateau/)[今年情人节怎么过？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484883&idx=1&sn=06319a4d8e1ea595f0450f71198b32d8&scene=21#wechat_redirect "今年情人节怎么过？")[2021回忆](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484870&idx=1&sn=18d773c3ee91a5a26fdb20f57a290ca0&scene=21#wechat_redirect "2021回忆")[七藏沟-红星海掠影](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484868&idx=1&sn=2f8e05ae8c5190d003a05c8a175d24b4&scene=21#wechat_redirect "七藏沟-红星海掠影")[巍巍南太行](/trip/20210617-taihong/)[九寨沟航拍](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484780&idx=1&sn=794a7b8d943c58538c0034fe26369252&scene=21#wechat_redirect "九寨沟航拍")[太行王莽岭](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484636&idx=1&sn=e5ec2da3eb1e6a8f7ec14c6d48fe6bf1&scene=21#wechat_redirect "太行王莽岭")[踏破天山，走过伊犁。](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484497&idx=1&sn=ca870ca0eb47a00d8cd5429202f213ea&scene=21#wechat_redirect "踏破天山，走过伊犁。")[Paradise Found — 乌孙古道2020.10](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484382&idx=1&sn=dc53b55808f4774940d912f6cf4d092b&scene=21#wechat_redirect "Paradise Found — 乌孙古道2020.10")[乌孙古道徒步](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484309&idx=1&sn=2c5d6f9da433165b8a3ca400d31c5698&scene=21#wechat_redirect "乌孙古道徒步")[西行漫记3 河西走廊](/trip/20200722-westward-hexi/)[西行漫记番外1 大洪水](/trip/20200714-westward-flood/)[西行漫记2 关陇随笔](/trip/20200711-westward-guanlong/)[西行漫记1 长安古意](/trip/20200708-westward-changan/)[西行漫记 —— 序章](/trip/20200216-westward-prologue/)[印象·青海](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247483976&idx=1&sn=3867b95b34f3df73956cade51c21a878&scene=21#wechat_redirect "印象·青海")[珠峰东坡游记](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247483840&idx=1&sn=e66a5b7db225ec04b670c645aea52e6a&scene=21#wechat_redirect "珠峰东坡游记")
+- [班夫贾斯帕自驾游记 — 山峰戴雪，湖光入画](/trip/20240627-banff-jasper/)
+- [青藏高原的美景与挑战](/trip/20231203-tibet-plateau/)
+- [今年情人节怎么过？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484883&idx=1&sn=06319a4d8e1ea595f0450f71198b32d8&scene=21#wechat_redirect "今年情人节怎么过？")
+- [2021 回忆](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484870&idx=1&sn=18d773c3ee91a5a26fdb20f57a290ca0&scene=21#wechat_redirect "2021回忆")
+- [七藏沟-红星海掠影](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484868&idx=1&sn=2f8e05ae8c5190d003a05c8a175d24b4&scene=21#wechat_redirect "七藏沟-红星海掠影")
+- [巍巍南太行](/trip/20210617-taihong/)
+- [九寨沟航拍](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484780&idx=1&sn=794a7b8d943c58538c0034fe26369252&scene=21#wechat_redirect "九寨沟航拍")
+- [太行王莽岭](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484636&idx=1&sn=e5ec2da3eb1e6a8f7ec14c6d48fe6bf1&scene=21#wechat_redirect "太行王莽岭")
+- [踏破天山，走过伊犁。](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484497&idx=1&sn=ca870ca0eb47a00d8cd5429202f213ea&scene=21#wechat_redirect "踏破天山，走过伊犁。")
+- [Paradise Found — 乌孙古道 2020.10](/trip/20201001-wusun/)
+- [乌孙古道徒步](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484309&idx=1&sn=2c5d6f9da433165b8a3ca400d31c5698&scene=21#wechat_redirect "乌孙古道徒步")
+- [西行漫记 3 河西走廊](/trip/20200722-westward-hexi/)
+- [西行漫记番外 1 大洪水](/trip/20200714-westward-flood/)
+- [西行漫记 2 关陇随笔](/trip/20200711-westward-guanlong/)
+- [西行漫记 1 长安古意](/trip/20200708-westward-changan/)
+- [西行漫记 —— 序章](/trip/20200216-westward-prologue/)
+- [印象·青海](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247483976&idx=1&sn=3867b95b34f3df73956cade51c21a878&scene=21#wechat_redirect "印象·青海")
+- [珠峰东坡游记](/trip/2018-gamagou/)
+
+---
+
+发布版本：[微信公众号](https://mp.weixin.qq.com/s/byDTJypghJ7mEWumpC0OOQ)
