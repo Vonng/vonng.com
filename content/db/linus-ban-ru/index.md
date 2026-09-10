@@ -8,7 +8,7 @@ summary: >
 tags: [Linux, 开源, 技术评论]
 ---
 
-最近Linus在项目中[**踢出了几位俄罗斯籍开发者**](https://lore.kernel.org/all/CAHk-=whNGNVnYHHSXUAsWds_MoZ-iEgRMQMxZZ0z-jY4uHT+Gg@mail.gmail.com/)，引发开源世界中的一片哀嚎声。但其实很多人都忘记了，Linux 是 Linus 的个人项目，三十年前是，现在也依然是。Linus 本人始终亲自掌握着开源项目的最高权力 —— Linux 的发布权。Linux 社区本质是帝制的 —— 而 Linus 本人就是最早且最成功的技术独裁者。
+最近 Linus 在项目中[**踢出了几位俄罗斯籍开发者**](https://lore.kernel.org/all/CAHk-=whNGNVnYHHSXUAsWds_MoZ-iEgRMQMxZZ0z-jY4uHT+Gg@mail.gmail.com/)，引发开源世界中的一片哀嚎声。但其实很多人都忘记了，Linux 是 Linus 的个人项目，三十年前是，现在也依然是。Linus 本人始终亲自掌握着开源项目的最高权力 —— Linux 的发布权。Linux 社区本质是帝制的 —— 而 Linus 本人就是最早且最成功的技术独裁者。
 
 > Ok, lots of Russian trolls out and about.
 >
@@ -24,23 +24,23 @@ tags: [Linux, 开源, 技术评论]
 
 ![fuck-nvidia.jpg](fuck-nvidia.jpg)
 
-但这个 “暴君” 几十年如一日地在挖土，并且把自己的劳动毫无保留的贡献给别人，无数操作系统公司籍此赚的钵满盆翻。而正所谓 “升米恩，斗米仇” —— 时间一长，大家习惯了他的慷慨，却忘记了这个项目从头到尾，都是 Linus 本人的 “**兴趣**” 。在 Linus 自传的书名《Just for Fun》中，这一点体现的淋漓尽致 —— **Linus 项目只是 Linux 本人的 Hobby**。
+但这个 “暴君” 几十年如一日地在挖土，并且把自己的劳动毫无保留的贡献给别人，无数操作系统公司籍此赚的钵满盆翻。而正所谓 “升米恩，斗米仇” —— 时间一长，大家习惯了他的慷慨，却忘记了这个项目从头到尾，都是 Linus 本人的 “**兴趣**”。在 Linus 自传的书名《Just for Fun》中，这一点体现的淋漓尽致 —— **Linus 项目只是 Linux 本人的 Hobby**。
 
 ![biography.jpg](biography.jpg)
 
 能够约束 Linus 本人的，也就只有 Linux 项目使用的 GPL 协议 —— 他既没有成立公司搞商业化，也没有阻止其他人复制它。开源社区就是这样，太平洋也没加盖，代码都放在那里，你行你就上，搞个 fork 分叉呗？我一点儿也不怀疑，如果 Linus 本人哪天薨了，Linux 项目很快就会散作满天星，分叉满天飞了。
 
-![](featured.webp)
+![开源“暴君”Linus 清洗整风](featured.webp)
 
-按照开源社区的习惯法，如果有人对此感到不满，完全可以自己做个 Fork 和上游比拼生产力，发起一场斯巴达克斯式的造反运动。例如 GCC 之前由于理念不同也分裂过，后来支线干的比主线好，更受开发者欢迎，这个支线（EGCS）就成新主线了。正所谓：“Talk is cheap, show me the code”, "You can you up, no can no BB" —— 而不是逼逼叨跟怨妇似的高呼：“ Linus 大王你变了” 或者 “Linus 大傻逼”，并指望天降正义。
+按照开源社区的习惯法，如果有人对此感到不满，完全可以自己做个 Fork 和上游比拼生产力，发起一场斯巴达克斯式的造反运动。例如 GCC 之前由于理念不同也分裂过，后来支线干的比主线好，更受开发者欢迎，这个支线（EGCS）就成新主线了。正所谓：“Talk is cheap，show me the code”, "You can you up，no can no BB" —— 而不是逼逼叨跟怨妇似的高呼：“ Linus 大王你变了” 或者 “Linus 大傻逼”，并指望天降正义。
 
-当然，在我看来，Linus 这次做法并不好，但不是因为他把老毛子开发者给踢了。而是因为他没有用光明正大，堂堂正正的方式踢掉老毛子。而是由二号位采取比较遮掩，含糊的形式做了这件事，然后 Linus 合并，[**并在事后用胡扯蛋式的回复**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488531&idx=1&sn=76cd7b9329dbaedde7b70e78cc253f5f&scene=21#wechat_redirect)来回应，留下了一些破坏开源社区习惯法的污点瑕疵。
+当然，在我看来，Linus 这次做法并不好，但不是因为他把老毛子开发者给踢了。而是因为他没有用光明正大，堂堂正正的方式踢掉老毛子。而是由二号位采取比较遮掩，含糊的形式做了这件事，然后 Linus 合并，[**并在事后用胡扯蛋式的回复**](/misc/linus-russia-maintainers/)来回应，留下了一些破坏开源社区习惯法的污点瑕疵。
 
 ![reply.png](reply.png)
 
 他要是光明正大的说：“我收到米帝的制裁禁令，要干老毛子”。或者干脆就两手一摊 “老子爱咋样咋样，你们管不着” —— Which is fact —— 说不定就没这么多事了。
 
-------
+---
 
 ## **老冯评论**
 
@@ -54,24 +54,28 @@ Linus 很明显已经划出了一道新的边界，将老毛子划出了社区�
 
 ## **参考阅读**
 
-[**数据库真被卡脖子了吗？**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486379&idx=1&sn=b751c51a2b73e43e61487abfdc073da3&scene=21#wechat_redirect)
+[**数据库真被卡脖子了吗？**](/db/db-choke/)
 
-[**Linus关于踢出毛子维护者的解释**](/misc/linus-russia-maintainers/)
+[**Linus 关于踢出毛子维护者的解释**](/misc/linus-russia-maintainers/)
 
-[**WordPress社区内战：论共同体划界问题**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488488&idx=1&sn=191ee82363bf58abc33ba11ce2e1463f&chksm=fe4b2633c93caf25ca32cb29ae631a1a8af72424fb56b1fe9719912fddc7ca43ee9c9a45bf87&scene=21#wechat_redirect)
+[**WordPress 社区内战：论共同体划界问题**](/cloud/wordpress-drama/)
 
 [**第二批数据库国测名单：国产化来了怎么办？**](/db/db-national-test-2/)
 
-[**国产数据库到底能不能打？**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487513&idx=1&sn=d51ad679e75833d1d71437ed35e21693&scene=21#wechat_redirect)
+[**国产数据库到底能不能打？**](/db/db-china/)
 
 [**国产数据库是大炼钢铁吗？**](/db/great-leap-db/)
 
-[**中国对PostgreSQL的贡献约等于零吗？**](/pg/china-pg-contribution/)
+[**中国对 PostgreSQL 的贡献约等于零吗？**](/pg/china-pg-contribution/)
 
 [**机场出租车恶性循环与国产数据库怪圈**](/db/airport-taxi-db/)
 
-[**EL系操作系统发行版哪家强？**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486256&idx=1&sn=15dd3001e9890e11144b42a84636d2e9&scene=21#wechat_redirect)
+[**EL 系操作系统发行版哪家强？**](/db/rhel-compatibility/)
 
-[**基础软件到底需要什么样的自主可控？**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486061&idx=1&sn=a1452dfa864f702d40bf612839a4e9e4&scene=21#wechat_redirect)
+[**基础软件到底需要什么样的自主可控？**](/db/sovereign-dbos/)
 
-[**分布式数据库是伪需求吗？**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485549&idx=1&sn=7c34439d82431129c57aba211202b5ca&scene=21#wechat_redirect)
+[**分布式数据库是伪需求吗？**](/db/distributive-bullshit/)
+
+---
+
+发布版本：[微信公众号](https://mp.weixin.qq.com/s/IcmXCMyflqGlAPA8vFzyyA)
