@@ -223,4 +223,8 @@ PG 核心代码到今天仍然是这个星球上 review 最严苛的 C 项目之
 
 Linux、SQLite、Mongo、Redis、MySQL、MariaDB ——2026 整年所有主流开源项目 CVE 公告都会变厚。就好比另一篇 MinIO 里，四月份集中曝光出一批 CVE 漏洞，甚至还有 10 分的。这不是开源项目代码质量因为 Vibe Coding 突然变烂，是「成熟开源系统被 AI 系统性拷打」的开篇。
 
-![图片](04.webp)\
+![图片](04.webp)
+
+---
+
+发布版本：[微信公众号](https://mp.weixin.qq.com/s/NIyIvS9shAFBrU5m1NlWSA)
