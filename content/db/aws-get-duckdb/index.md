@@ -37,7 +37,7 @@ Hannes 自己在表态里也把牌摊开了：AWS 带来的规模和触达，能
 
 另一个容易被略过的细节是，替 AWS 出面站台的人是 Andy Warfield：AWS 副总裁、Distinguished Engineer，S3 的掌门人。他说双方已经密切合作了两年，联手把 DuckDB 塞进了 S3 Tables 和 SageMaker Lakehouse，还夸 DuckDB 被 S3 客户广泛使用、深受喜爱。
 
-买鸭子的不是 Redshift 团队，是 S3 团队，这个差别很要紧。因为 Amazon 自己的数据仓库产品 Redshift 和 Athena 都实在太拉胯了。AWS 官方的措辞其实已经透露方向：收购 DuckLabs 是为了让 AWS analytics “faster, simpler, and more cost-effective”，比较对象是谁不言而喻。
+买鸭子的不是 Redshift 团队，是 S3 团队，这个差别很要紧。因为 Amazon 自己的数据仓库产品 Redshift 和 Athena 都实在太拉胯了。AWS 官方的措辞其实已经透露方向：收购 DuckLabs 是为了让 AWS analytics “faster，simpler，and more cost-effective”，比较对象是谁不言而喻。
 
 这几年整个云上数据基础设施都在往对象存储上搬家，各路「XXX over S3」层出不穷。文件系统与数据库这对冤家的恩怨，我在《[DB vs FS：相爱相杀 50 年](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247492480&idx=1&sn=0206fb23192ae5f7aff0d24f0a1782b8&scene=21#wechat_redirect)》里聊过。S3 自己也没闲着，先把 Iceberg catalog 直接做进存储服务（S3 Tables），现在又把这颗星球上最擅长读对象存储的查询引擎团队整个买下。对象存储正在长出计算能力，而查询引擎正在沦为存储的配件。
 
@@ -115,7 +115,7 @@ PostgreSQL 的强健，恰恰在于核心贡献者的雇主是散的：EDB、微
 
 ---
 
-**参考链接**
+### 参考链接
 
 1. [AWS to acquire DuckLabs（亚马逊官方公告）](https://www.aboutamazon.com/news/company-news/aws-ducklabs)
 2. [Techzine：Developer DuckDB to be acquired by AWS](https://www.techzine.eu/news/analytics/143855/developer-duckdb-to-be-acquired-by-aws/)
