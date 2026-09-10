@@ -23,4 +23,8 @@ tags: [云计算, 故障复盘]
 
 这世上没有不崩的神话，联通崩完移动崩，这下压力给到电信了。
 
-PS：友情提醒，阿里云[六月份两次大故障](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489996&idx=1&sn=12e7b3d5f9a70001b2a52f853aca114c&scene=21#wechat_redirect) SLA 赔付时效即将到期，再不申请赔付就没有机会了。
+PS：友情提醒，阿里云[六月份两次大故障](/cloud/aliyun-cdn-sla/) SLA 赔付时效即将到期，再不申请赔付就没有机会了。
+
+---
+
+发布版本：[微信公众号](https://mp.weixin.qq.com/s/QpuQz4gLKwUwN63KwPZlkg)
