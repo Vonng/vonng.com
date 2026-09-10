@@ -7,7 +7,7 @@ summary: >
 tags: [PostgreSQL, 扩展, 文档]
 ---
 
-今天老冯又让 Claude Code 干了一件大好事 —— 做了一个全新的 PostgreSQL 扩展目录。就放在 https://pigsty.cc/ext 这里。
+今天老冯又让 Claude Code 干了一件大好事 —— 做了一个全新的 PostgreSQL 扩展目录。就放在 <https://pigsty.cc/ext> 这里。
 
 说起来，这已经是第五版了。兜兜转转一大圈，又回到了第一版使用的 Hugo + Docsy 框架，重新融合到 Pigsty 主站。这个过程本身就是个故事，后面再聊。先说说这一版到底做了什么。
 
@@ -35,7 +35,7 @@ tags: [PostgreSQL, 扩展, 文档]
 
 目前 pigsty.cc 已经[完成了 PgBouncer、pgBackRest 和 Patroni 的文档翻译](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247491396&idx=1&sn=db1796eb86174ab3b1eb8c7f37220def&scene=21#wechat_redirect)。后续所有扩展 —— 包括 PostgreSQL 内核本身 —— 都会逐步推进并持续维护。
 
-[花一天翻完了 PG 生态三大组件的文档](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247491396&idx=1&sn=db1796eb86174ab3b1eb8c7f37220def&scene=21#wechat_redirect)
+[花一天翻完了 PG 生态三大组件的文档](/pg/pg-translate/)
 
 这也是我们的一个愿景：**成为 PG 生态中关键信息的可靠来源。**
 
@@ -97,23 +97,25 @@ tags: [PostgreSQL, 扩展, 文档]
 
 ![图片](15.webp)
 
-[小猪骑大象：PG内核与扩展包管理神器](/pg/pig/)
+[小猪骑大象：PG 内核与扩展包管理神器](/pg/pig/)
 
 第三版：基于 Next.js + Fumadocs
 
-![图片](16.webp)[数据库老司机勇闯现代前端大观园](/db/dba-meets-frontend/) 后来实在受不了动态网站的一堆破事，回归静态网站了。\
+![图片](16.webp)
+
+· [数据库老司机勇闯现代前端大观园](/db/dba-meets-frontend/) 后来实在受不了动态网站的一堆破事，回归静态网站了。\
 
 第四版：基于 Hugo + Hextra
 
 ![图片](17.webp)
 
-[PG扩展云，免翻免费解锁PG完全体](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247490551&idx=1&sn=e85d76039ecaa41576f58cd1fe49e048&scene=21#wechat_redirect)
+[PG 扩展云，免翻免费解锁 PG 完全体](/pg/pgext-cloud/)
 
 Hextra 是另一个轻量化的，类似 Fumadocs 的主题。我很喜欢，它对于小型项目来说非常合适，比如翻译书什么的。但是对于大型文档站点来说还是有些力不从心。但是老冯的几本书，教程，小项目都很喜欢用这个框架。
 
 这次挂在了独立站点 pgext.cloud 三，因为没有备案、挂在 Cloudflare 上，有国内用户反馈访问不稳定，怀疑被墙。思来想去，还是老老实实用备案过的域名来做这件事。
 
-第五版： Hugo + Docsy
+第五版：Hugo + Docsy
 
 ![图片](14.webp)
 
@@ -127,4 +129,8 @@ Hugo 这个框架我用了快十年，从来没让我失望过。折腾了这么
 
 谁说得准呢？折腾本身，也蛮有乐趣的。
 
-![图片](18.webp)\
+![图片](18.webp)
+
+---
+
+发布版本：[微信公众号](https://mp.weixin.qq.com/s/0S9f5aP2U_1P7TaBgdKonQ)
