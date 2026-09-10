@@ -69,9 +69,7 @@ tags: [PostgreSQL, PG生态]
 
 三波浪潮，波波不落，听起来像运气好到离谱。但细想一下又毫不稀奇——这恰恰就是 PG 自称"最先进"的真正含义。先进不是某个特性领先三年，那种领先半代人就被抹平了。**与时俱进的能力，才是最强的先进性。**
 
-**[PostgreSQL正在吞噬数据库世界](/pg/pg-eat-db-world/)**
-
-**\**
+### [PostgreSQL 正在吞噬数据库世界](/pg/pg-eat-db-world/)
 
 ## 五、托拉与塔木德
 
@@ -97,7 +95,7 @@ PostgreSQL 是同一个结构。**内核是它的托拉**：小、稳、保守�
 
 ![图片](06.webp)
 
-[打造一个立足中国，面向世界的PG数据库发行版](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247490641&idx=1&sn=869e106f3443c83c0120a737403cc30a&scene=21#wechat_redirect)
+[打造一个立足中国，面向世界的 PG 数据库发行版](/pg/forge-a-pg-distro/)
 
 但牢骚归牢骚，活总得有人干。旗子没人举，那我先举着——这几年，我把 PG 发行版和扩展生态这两块做了下来：几百个扩展，十几个 Linux 发行版，打包、测试、分发，开箱即用；Pigsty 也站到了全球开源 PG 发行版的第一梯队。一个人不一定能把整个平均分拉正，但至少可以让中国 “正贡献” 那一栏，不再是空的。
 
@@ -105,17 +103,17 @@ PostgreSQL 是同一个结构。**内核是它的托拉**：小、稳、保守�
 
 PGConf.Dev 改组后一共三届大会，我全都去了。第一届投稿被拒，我照样飞了过去——说白了就是去混个脸熟，把邮件列表里那些只闻其名的 ID，一个个变成饭桌上的真人。面对面，是建立信任最快的方式。没有演讲资格，我就在 Unconference 上讲了个可观测性。第二届，在 pgext Day 的闪电演讲里抢到五分钟，让大家知道我在干什么。第三届，把社区最关心的事——扩展生态——研究透了，端上桌去，于是站上了主会场的讲台。
 
-[让PG停摆一周的大会：PGCon.Dev参会记](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487796&idx=1&sn=0d8c900fd5e2a0edbd9419eebb4ed234&scene=21#wechat_redirect)
+[让 PG 停摆一周的大会：PGCon.Dev 参会记](/pg/pgcondev-2024/)
 
-[PGCon.Dev 扩展生态峰会小记 @ 温哥华](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487665&idx=1&sn=7792bc69e14bdcd606ec7780ed087101&scene=21#wechat_redirect)
+[PGCon.Dev 扩展生态峰会小记 @ 温哥华](/pg/pgcondev-2024/)
 
-[蒙特利尔PGConf.Dev 2025 参会随笔小记](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489724&idx=1&sn=3cac348796f4a7ef235b970fedeafb6f&scene=21#wechat_redirect)
+[蒙特利尔 PGConf.Dev 2025 参会随笔小记](/trip/20250514-montreal-notes/)
 
-[PGCon.dev闪电演讲，硬控PG大佬5分钟](/pg/pgcondev-lightning/)
+[PGCon.dev 闪电演讲，硬控 PG 大佬 5 分钟](/pg/pgcondev-lightning/)
 
 [中国厂商首次站上 PGConf.dev 主题演讲台](/pg/pgconfdev-china-keynote/)
 
-[扩展，为所有人而构建：PGConf.Dev 2026 演讲](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247492367&idx=1&sn=3701d67bce703e472de73ae27680236f&scene=21#wechat_redirect)
+[扩展，为所有人而构建：PGConf.Dev 2026 演讲](/pg/extensions-for-everyone/)
 
 从台下，到台边，再到台上，三年三级台阶。信任都是一点一点攒出来的。开源世界没有资本运作那一套，**信任的充值方式就是：实打实地参与，踏踏实实地做对社区有用的事。**
 
@@ -139,4 +137,8 @@ PostgreSQL 三十而立，立住了。前三十年它没错过任何一波关键
 
 愿你的下一个三十年，依然常青，依然在场。
 
-![图片](09.webp)\
+![图片](09.webp)
+
+---
+
+发布版本：[微信公众号](https://mp.weixin.qq.com/s/8pyFVnS7xbYuSXdif1Crgw)
