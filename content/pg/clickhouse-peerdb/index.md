@@ -35,15 +35,19 @@ PeerDB 现有的开源组件将继续保持开源，许可证不会发生任何�
 
 原文地址：Real-time database startup ClickHouse acquires PeerDB to expand its Postgres support<sup>[6]</sup>，Frederic Lardinois，2024-07-30
 
-### References
+## References
 
-`[1]` ClickHouse: *https://clickhouse.com/*\
-`[2]` ETL 工具: *https://en.wikipedia.org/wiki/Extract,\_transform,\_load#:~:text=In%20computing%2C%20extract%2C%20transform%2C,to%20one%20or%20more%20destinations.*\
-`[3]` Sai Srirampur: *https://www.linkedin.com/in/sai-krishna-srirampur-1741b019/*\
-`[4]` Citus Data: *https://techcrunch.com/2019/01/24/microsoft-acquires-citus-data/#:~:text=Unsurprisingly%2C%20Microsoft%20plans%20to%20work,as%20part%20of%20Microsoft%2C%20we*\
-`[5]` Yury Izrailevsky: *https://www.linkedin.com/in/yuryizrailevsky/*\
-`[6]` Real-time database startup ClickHouse acquires PeerDB to expand its Postgres support: *https://techcrunch.com/2024/07/30/real-time-database-startup-clickhouse-acquires-peerdb-to-expand-its-postgres-support/*
+- `[1]` ClickHouse: <https://clickhouse.com/>
+- `[2]` ETL 工具： <https://en.wikipedia.org/wiki/Extract,_transform,_load#:~:text=In%20computing%2C%20extract%2C%20transform%2C,to%20one%20or%20more%20destinations>
+- `[3]` Sai Srirampur: <https://www.linkedin.com/in/sai-krishna-srirampur-1741b019/>
+- `[4]` Citus Data: <https://techcrunch.com/2019/01/24/microsoft-acquires-citus-data/#:~:text=Unsurprisingly%2C%20Microsoft%20plans%20to%20work,as%20part%20of%20Microsoft%2C%20we>
+- `[5]` Yury Izrailevsky: <https://www.linkedin.com/in/yuryizrailevsky/>
+- `[6]` Real-time database startup ClickHouse acquires PeerDB to expand its Postgres support: <https://techcrunch.com/2024/07/30/real-time-database-startup-clickhouse-acquires-peerdb-to-expand-its-postgres-support/>
 
 ## 数据库老司机
 
-**欢迎微信搜索 pigsty-cc加入 PGSQL 交流群**
+### 欢迎微信搜索 pigsty-cc 加入 PGSQL 交流群
+
+---
+
+发布版本：[微信公众号](https://mp.weixin.qq.com/s/3RuZ7ite_exxh2XOPB3HCA)
