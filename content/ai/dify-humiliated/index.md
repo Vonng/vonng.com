@@ -73,3 +73,7 @@ tags: [AI, 开源, 技术评论]
 
 [^1]: [langgenius/dify PR #16640](https://github.com/langgenius/dify/pull/16640/files)
 [^2]: [langgenius/dify PR #16819](https://github.com/langgenius/dify/pull/16819/files)
+
+---
+
+发布版本：微信公众号（原发布记录已失效）
