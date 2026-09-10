@@ -9,7 +9,7 @@ tags: [AI, 安全, 数据库, 翻译]
 
 Wiz Research 发现 DeepSeek 的一套可公开访问的 ClickHouse 数据库，允许对数据库进行完全控制，包括访问内部数据。此次暴露包含超过一百万行的日志流，其中含有聊天记录、密钥、后端细节以及其他高度敏感的信息。Wiz Research 团队第一时间向 DeepSeek 负责披露了这一问题，DeepSeek 随后迅速采取了措施，修复了该暴露点。
 
-------------------------------------------------------------------------
+---
 
 ## DeepSeek 公开暴露的数据库可被完全控制
 
@@ -19,13 +19,13 @@ Gal Nagli<sup>[1]</sup> 2025 年 1 月 30 日 阅读时间 3 分钟
 
 ![图片](01.webp)
 
-------------------------------------------------------------------------
+---
 
 Wiz Research 发现 DeepSeek 的一套可公开访问的 ClickHouse 数据库，允许对数据库进行完全控制，包括访问内部数据。此次暴露包含超过一百万行的日志流，其中含有聊天记录、密钥、后端细节以及其他高度敏感的信息。Wiz Research 团队第一时间向 DeepSeek 负责披露了这一问题，DeepSeek 随后迅速采取了措施，修复了该暴露点。
 
 在本博文中，我们将详细介绍此次发现，并探讨此事件对整个行业的更广泛影响。
 
-------------------------------------------------------------------------
+---
 
 ## 概要
 
@@ -35,7 +35,8 @@ DeepSeek 是一家中国的 AI 创企，因其具有突破性的 AI 模型（尤
 
 在短短几分钟内，我们就发现 DeepSeek 有一台 ClickHouse 数据库面向公网开放，且无需任何身份验证即可访问，暴露在以下两个域名下的 9000 端口（以及 8123 端口）：
 
-•`oauth2callback.deepseek.com:9000`•`dev.deepseek.com:9000`
+- `oauth2callback.deepseek.com:9000`
+- `dev.deepseek.com:9000`
 
 该数据库包含了海量的聊天记录、后端数据以及敏感信息，其中包括日志流、API 密钥以及运营细节。
 
@@ -45,7 +46,7 @@ DeepSeek 是一家中国的 AI 创企，因其具有突破性的 AI 模型（尤
 
 ![图片](03.webp)
 
-------------------------------------------------------------------------
+---
 
 ## 暴露详情
 
@@ -53,7 +54,10 @@ DeepSeek 是一家中国的 AI 创企，因其具有突破性的 AI 模型（尤
 
 然而，当我们进一步搜索标准 HTTP 端口（80/443）以外的端口时，注意到以下两个主机名对应的**端口 8123 和 9000** 均处于开放状态：
 
-•http://oauth2callback.deepseek.com:8123<sup>[3]</sup>•http://dev.deepseek.com:8123<sup>[4]</sup>•http://oauth2callback.deepseek.com:9000<sup>[5]</sup>•http://dev.deepseek.com:9000<sup>[6]</sup>
+- `oauth2callback.deepseek.com:8123`<sup>[3]</sup>
+- `dev.deepseek.com:8123`<sup>[4]</sup>
+- `oauth2callback.deepseek.com:9000`<sup>[5]</sup>
+- `dev.deepseek.com:9000`<sup>[6]</sup>
 
 进一步调查后我们发现，这是一个**公开暴露的 ClickHouse 数据库**，无需任何身份验证即可访问，明显构成了重大风险。
 
@@ -71,13 +75,19 @@ ClickHouse 是一个开源的列式数据库管理系统，专为在大型数据
 
 “log_stream” 表内的列格外引人关注：
 
-•**timestamp** – 日志时间戳，可追溯到 **2025 年 1 月 6 日**•**span_name** – 引用 DeepSeek 内部各类 **API 接口**•**string.values** – **明文日志信息**，包括 **聊天记录、API 密钥、后端细节** 以及相关元数据•**\_service** – 指示是 **DeepSeek 的哪个服务** 生成的日志•**\_source** – 揭示了 **请求来源**，内含 **聊天记录、API 密钥、服务器目录结构以及聊天机器人元数据** 等![图片](07.webp)
+- **timestamp** – 日志时间戳，可追溯到 **2025 年 1 月 6 日**
+- **span_name** – 引用 DeepSeek 内部各类 **API 接口**
+- **string.values** – **明文日志信息**，包括 **聊天记录、API 密钥、后端细节** 以及相关元数据
+- **\_service** – 指示是 **DeepSeek 的哪个服务** 生成的日志
+- **\_source** – 揭示了 **请求来源**，内含 **聊天记录、API 密钥、服务器目录结构以及聊天机器人元数据** 等
+
+![图片](07.webp)
 
 以上信息不仅威胁到 DeepSeek 自身的安全，也可能波及其最终用户。攻击者不仅可以窃取机密日志和用户明文聊天内容，还可能利用这些信息获取更多权限，甚至可以使用诸如 `SELECT * FROM file('filename')` 等查询，从服务器中读取明文密码、本地文件以及其他专有信息（前提是 ClickHouse 配置允许）。
 
 > 注：我们本着道德规范，仅做了有限枚举查询，并未进行任何侵入性操作或访问。
 
-------------------------------------------------------------------------
+---
 
 ## 主要启示
 
@@ -87,7 +97,7 @@ ClickHouse 是一个开源的列式数据库管理系统，专为在大型数据
 
 企业在选择与越来越多的 AI 创业公司及服务商合作时，往往将敏感数据交予对方处理。由于 AI 的迅猛发展，很多团队会在速度与安全之间优先考虑实现与落地，导致安全被忽略。然而，保护客户数据必须是重中之重。安全团队和 AI 工程师需要紧密配合，确保对所用架构、工具链和模型有足够的可视性，才能有效地保护数据，防止此类暴露事件再次发生。
 
-------------------------------------------------------------------------
+---
 
 ## 结语
 
@@ -95,7 +105,7 @@ AI 是人类历史上迄今为止发展和普及速度最快的技术之一。�
 
 本次事件再次提醒我们，安全问题并不会因为新兴技术的光环而减少。无论是对 AI 公司还是其客户，在创新和高速发展的同时，也需要始终如一地关注和投入安全。
 
-------------------------------------------------------------------------
+---
 
 > **作者**：Gal Nagli **发布日期**：2025 年 1 月 30 日
 
@@ -103,20 +113,25 @@ AI 是人类历史上迄今为止发展和普及速度最快的技术之一。�
 
 ### References
 
-`[1]` Gal Nagli: *https://www.wiz.io/authors/gal-nagli*\
-`[2]` 权限提升 (privilegeescalation): *https://www.wiz.io/academy/privilege-escalation*\
-`[3]` http://oauth2callback.deepseek.com:8123: *http://oauth2callback.deepseek.com:8123/*\
-`[4]` http://dev.deepseek.com:8123: *http://dev.deepseek.com:8123/*\
-`[5]` http://oauth2callback.deepseek.com:9000: *http://oauth2callback.deepseek.com:9000/*\
-`[6]` http://dev.deepseek.com:9000: *http://dev.deepseek.com:9000/*\
-`[7]` 安全威胁: *https://www.wiz.io/academy/ai-security-risks*\
-`[8]` Wiz 研究团队: *https://www.wiz.io/academy/ai-security-risks*
+- `[1]` Gal Nagli: <https://www.wiz.io/authors/gal-nagli>
+- `[2]` 权限提升 (privilegeescalation): <https://www.wiz.io/academy/privilege-escalation>
+- `[3]` `oauth2callback.deepseek.com:8123`
+- `[4]` `dev.deepseek.com:8123`
+- `[5]` `oauth2callback.deepseek.com:9000`
+- `[6]` `dev.deepseek.com:9000`
+- `[7]` 安全威胁： <https://www.wiz.io/academy/ai-security-risks>
+- `[8]` Wiz 研究团队： <https://www.wiz.io/academy/ai-security-risks>
+
 ## 老冯评论
 
 Wiz Research 是一家专注云安全的顶尖团队，凭借在 AWS、Azure、GCP 等主流云平台上持续挖掘并披露高危漏洞而声名鹊起。他们先后发现了包括 Azure ChaosDB、OMIGOD 在内的一系列严重安全缺陷，迫使云厂商紧急修补、尴尬应对。Wiz 的核心优势在于对云环境的深度洞察与精准攻防技术，因多次让这些云计算巨头“出糗”而被称为“云安全一哥”，在业界赢得了极高的声誉与影响力。这次 Wiz 跑来挖 DeepSeek 的洞了，DS 确实是引起了海内外的极大关注。
 
-这次暴露的数据量并不算大，100万行日志就是洒洒水，而且据文章称端口已经封堵。比较敏感的就是日志里还包含了 API 密钥明文，不过目前尚不确定这是一个生产库还是测试库，所以难以评估影响。但说到底，把数据库直接暴露在公网端口对外开放，确实是非常业余与粗躁的做法。
+这次暴露的数据量并不算大，100 万行日志就是洒洒水，而且据文章称端口已经封堵。比较敏感的就是日志里还包含了 API 密钥明文，不过目前尚不确定这是一个生产库还是测试库，所以难以评估影响。但说到底，把数据库直接暴露在公网端口对外开放，确实是非常业余与粗躁的做法。
 
 从我个人角度，我非常看好欣赏 DeepSeek，对于新兴前沿探索者，也不应当苛责。但作为全村的希望与本土大模型领头羊，在不差钱的情况下，在基础设施，数据库，安全上多投资一些，显然是应该且值得的。
 
 *（提前回复上云大湿：上云解决不了这个问题，请看 SHGA 人口信息泄漏案例）。*
+
+---
+
+发布版本：[微信公众号](https://mp.weixin.qq.com/s/zODEfRQrMreFeEGjWXhK4g)
