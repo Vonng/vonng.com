@@ -133,9 +133,9 @@ PostgreSQL 从来不要求贡献者签署版权转让协议。三十年、成百
 
 需求侧的冲击是真实的，而且还在继续。Percona 对 MySQL 仓库的统计显示，年度 commit 数从 2010 年的两万两千多降到 2024 年的四千七百多，十四年降到不足四分之一；活跃贡献者在 2025 年三季度只剩约 75 人——比 2010 年 Oracle 完成收购时的 82 人还少。2025 年 9 月，Oracle 裁掉了约 70 名 MySQL 核心工程师，MySQL 之父 Monty Widenius 说自己「心碎」，Percona 创始人 Peter Zaitsev 说这可能是慢慢杀死社区版的又一步。
 
-[PZ：MySQL 还有机会赶上 PostgreSQL 吗？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488604&idx=1&sn=984fbec240098d6cc4d7c45d078631ac&scene=21#wechat_redirect)
+[PZ：MySQL 还有机会赶上 PostgreSQL 吗？](/db/can-mysql-catchup/)
 
-[Oracle 最终还是杀死了 MySQL！](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487841&idx=1&sn=07ce183e7f5eafb34551438df963fe6d&scene=21#wechat_redirect)
+[Oracle 最终还是杀死了 MySQL！](/db/oracle-kill-mysql/)
 
 但更重要的是另一件事：**治理是护城河，不是发动机。**
 
@@ -143,9 +143,9 @@ PostgreSQL 从来不要求贡献者签署版权转让协议。三十年、成百
 
 那台发动机是什么？我认为答案很明确：**可扩展性。而这颗种子是 Stonebraker 在 1986 年亲手种下的。**
 
-[PostgreSQL 正在吞噬数据库世界](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487513&idx=2&sn=ffb27fc934b6dce3d8571af0e228d21f&scene=21#wechat_redirect)
+[PostgreSQL 正在吞噬数据库世界](/pg/pg-eat-db-world/)
 
-**Oracle 先进，MySQL 开源，PostgreSQL 先进又开源。开源体现在它的社区治理结构上，而先进体现在它极致的可扩展性上。**[PostgreSQL：世界上最成功的数据库](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485933&idx=3&sn=ea360aa7a59a4cd23ad5f9a9f415a0a0&scene=21#wechat_redirect)
+**Oracle 先进，MySQL 开源，PostgreSQL 先进又开源。开源体现在它的社区治理结构上，而先进体现在它极致的可扩展性上。**[PostgreSQL：世界上最成功的数据库](/pg/pg-is-no1/)
 
 ![PostgreSQL 可扩展性与数据库生态](pg-extensibility.webp)
 
@@ -249,16 +249,16 @@ hacker 们建的不止是 PostgreSQL，还有一套让 PostgreSQL 卖不掉的�
 ### 参考资料
 
 1. Lindsay Clark, [**Postgres pioneer credits Oracle with helping his database take over the world**](https://www.theregister.com/databases/2026/08/19/postgres-pioneer-credits-oracle-with-helping-his-database-take-over-the-world/5289087), The Register, 2026-08-19.
-2. Joab Jackson, [**The database that refused to die: How Postgres survived its own creators**](https://www.theregister.com/databases/2026/06/22/the-database-that-refused-to-die-how-postgres-survived-its-own-creators/5259716), The Register, 2026-06-22（PGDay Boston 演讲报道，含 ADT 自评与 Momjian 的缺失特性清单）。
-3. [**Postgres pioneer Michael Stonebraker promises to upend the database once more**](https://www.theregister.com/2023/12/26/michael_stonebraker_feature/), The Register, 2023-12-26（“happy accident” 的出处）。
-4. Jolly Chen, [***“A huge debt of gratitude” — Michael Stonebraker***](https://www.postgresql.org/message-id/A4BA155B-E762-4022-B7D1-6F4791014851@chenfamily.com), pgsql-hackers, 2015-07-21（图灵奖演讲转录）。
+2. Joab Jackson， [**The database that refused to die：How Postgres survived its own creators**](https://www.theregister.com/databases/2026/06/22/the-database-that-refused-to-die-how-postgres-survived-its-own-creators/5259716), The Register，2026-06-22（PGDay Boston 演讲报道，含 ADT 自评与 Momjian 的缺失特性清单）。
+3. [**Postgres pioneer Michael Stonebraker promises to upend the database once more**](https://www.theregister.com/2023/12/26/michael_stonebraker_feature/), The Register，2023-12-26（“happy accident” 的出处）。
+4. Jolly Chen， [***“A huge debt of gratitude” — Michael Stonebraker***](https://www.postgresql.org/message-id/A4BA155B-E762-4022-B7D1-6F4791014851@chenfamily.com), pgsql-hackers，2015-07-21（图灵奖演讲转录）。
 5. Tom Lane, [**Postgres Core Team History and Functions**](https://wiki.postgresql.org/images/c/c1/CoreTeam_Update_pgconfdev_2024.pdf), pgconf.dev 2024.
 6. [**How I got started as a developer (& in Postgres) with Tom Lane**](https://talkingpostgres.com/episodes/how-i-got-started-as-a-developer-in-postgres-with-tom-lane/transcript), Talking Postgres 播客文字稿（Great Bridge 与 core 扩容的回忆）。
-7. [**Trademark Actions Against the PostgreSQL Community**](https://www.postgresql.org/about/news/trademark-actions-against-the-postgresql-community-2302), postgresql.org, 2021-09-13；以及 [**Updates on trademark actions**](https://www.postgresql.org/about/news/updates-on-trademark-actions-against-the-postgresql-community-2762/), 2023-12-06（和解公告）。
+7. [**Trademark Actions Against the PostgreSQL Community**](https://www.postgresql.org/about/news/trademark-actions-against-the-postgresql-community-2302), postgresql.org，2021-09-13；以及 [**Updates on trademark actions**](https://www.postgresql.org/about/news/updates-on-trademark-actions-against-the-postgresql-community-2762/), 2023-12-06（和解公告）。
 8. [**PostgreSQL Contributor Profiles**](https://www.postgresql.org/community/contributors/), postgresql.org（核心组与主要贡献者的雇主名单，本文统计口径，访问于 2026-08-23）。
 9. [**Analyzing the Heartbeat of the MySQL Server: A Look at Repository Statistics**](https://www.percona.com/blog/analyzing-the-heartbeat-of-the-mysql-server-a-look-at-repository-statistics/), Percona, 2026-03.
-10. [**Separating FUD and Reality: Has MySQL Really Been Abandoned?**](https://www.percona.com/blog/separating-fud-and-reality-has-mysql-really-been-abandoned/), Percona, 2026-03（反方意见）。
+10. [**Separating FUD and Reality：Has MySQL Really Been Abandoned?**](https://www.percona.com/blog/separating-fud-and-reality-has-mysql-really-been-abandoned/), Percona，2026-03（反方意见）。
 11. [**Monty Widenius 'heartbroken' over Oracle's MySQL job cuts**](https://www.theregister.com/software/2025/09/11/monty-widenius_heartbroken_over_oracles_mysql_job_cuts/1169295), The Register, 2025-09-11.
-12. [**What's new with Postgres at Microsoft, 2026 edition**](https://techcommunity.microsoft.com/blog/adforpostgresql/whats-new-with-postgres-at-microsoft-2026-edition/4526963), Microsoft Community Hub（Azure HorizonDB 公开预览）。
+12. [**What's new with Postgres at Microsoft，2026 edition**](https://techcommunity.microsoft.com/blog/adforpostgresql/whats-new-with-postgres-at-microsoft-2026-edition/4526963), Microsoft Community Hub（Azure HorizonDB 公开预览）。
 13. [**The Postgres Vitality Index**](https://www.enterprisedb.com/company/postgres-vitality-index), EDB, 2026-03-12.
 14. Oleg Bartunov, **PostgreSQL Had Already Solved the Oracle Problem in 2000**, LinkedIn, 2026-08-23.
