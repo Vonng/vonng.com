@@ -17,7 +17,7 @@ Pigsty v4.2 正式发布，紧随 PostgreSQL 紧急号外小版本更新。
 
 你可以用一份配置文件，把所有这些不同风味的 PostgreSQL 部署为自带监控、高可用、时间点恢复与 IaC 的企业级数据库服务。这大概就是 "Meta PG 发行版" 的含义。
 
-------
+---
 
 ## 内核大观园
 
@@ -27,12 +27,12 @@ PostgreSQL 以极致的可扩展性闻名。生态中有超过 1000 个扩展，
 
 在 Pigsty 里使用这些内核，和使用原版 PostgreSQL 几乎没有区别 —— 同样的部署流程、同样的监控面板、同样的高可用机制、同样的备份恢复。区别只是配置文件里改一个 `pg_mode` 的值。一行配置的差异，工程上的大一统。
 
-| 内核                      | pg_mode  | 定位                         | PG 基线   |
+| 内核                      | pg_mode  | 定位                         | PG 基线 |
 |:------------------------|:---------|:---------------------------|:--------|
 | **PostgreSQL**          | `pgsql`  | 原版内核 + 461 扩展              | 14 ~ 18 |
-| **Babelfish**           | `mssql`  | SQL Server 兼容（T-SQL / TDS） | 17      |
-| **IvorySQL**            | `ivory`  | Oracle 兼容（PL/iSQL）         | 18      |
-| **OrioleDB**            | `oriole` | 新存储引擎，解决 MVCC 膨胀           | 17      |
+| **Babelfish**           | `mssql`  | SQL Server 兼容（T-SQL / TDS） | 17 |
+| **IvorySQL**            | `ivory`  | Oracle 兼容（PL/iSQL）         | 18 |
+| **OrioleDB**            | `oriole` | 新存储引擎，解决 MVCC 膨胀           | 17 |
 | **pgEdge**              | `pgedge` | 多主分布式复制                    | 17      |
 | **Percona TDE**         | `tde`    | 透明数据加密                     | 17      |
 | **AgensGraph**          | `agens`  | 图数据库（Cypher）               | 16      |
@@ -44,7 +44,7 @@ PostgreSQL 以极致的可扩展性闻名。生态中有超过 1000 个扩展，
 
 十二内核，一份配置。下面逐个展开。
 
-------
+---
 
 ## 原生 PostgreSQL
 
@@ -56,7 +56,7 @@ PostgreSQL 以极致的可扩展性闻名。生态中有超过 1000 个扩展，
 
 如果你追求极致的可扩展性和最佳的稳定性，原生 PostgreSQL 始终是最佳默认选择。Pigsty 支持处于生命周期内的 PG 14 到 PG 18。值得一提的是，本版本是最后一个支持 PG 13 的版本，后续最低版本将升至 PG 14。
 
-------
+---
 
 ## pgEdge：原生多主复制
 
@@ -82,7 +82,7 @@ pgEdge 由三个核心扩展组成：
 
 在 Pigsty 中使用只需要：`configure -c pgedge`。
 
-------
+---
 
 ## AgensGraph：图数据库
 
@@ -106,7 +106,7 @@ AgensGraph 的定位是基于 PostgreSQL 的多模型图数据库 —— 在一�
 
 在 Pigsty 中使用：`configure -c agens`。
 
-------
+---
 
 ## Cloudberry：MPP 数仓
 
@@ -116,7 +116,7 @@ Cloudberry 2.0 发布后就不再提供官方二进制包了 —— 之前 1.6 �
 
 关于 Cloudberry/Greenplum 的部署脚本和监控方案，其实早在 Pigsty v1.4 就做过，后来因为用户太少就去掉了。毕竟上 MPP 数仓的体量不是一般公司能达到的。所以我们思忖再三，先将其作为 Beta 模块按需提供 —— 包已经打好放在仓库里了，你可以直接下载使用；完整的部署剧本会在后续版本中择机提供。
 
-------
+---
 
 ## Babelfish：SQL Server 兼容
 
@@ -130,7 +130,7 @@ Babelfish 是 AWS 开源的 SQL Server 兼容层 —— 让 PostgreSQL 理解 T-
 
 在 Pigsty 中使用：`configure -c mssql`。
 
-------
+---
 
 ## OrioleDB：新存储引擎
 
@@ -140,7 +140,7 @@ OrioleDB 是被 Supabase 收购的新一代 PostgreSQL 存储引擎项目，目�
 
 在 Pigsty 中使用：`configure -c oriole`。
 
-------
+---
 
 ## OpenHalo：MySQL 协议兼容
 
@@ -157,7 +157,7 @@ OpenHalo 是重建的第三个内核。它提供了 MySQL 线缆协议兼容 —
 
 在 Pigsty 中使用：`configure -c mysql`。
 
-------
+---
 
 ## 其余六位常驻选手
 
@@ -175,7 +175,7 @@ OpenHalo 是重建的第三个内核。它提供了 MySQL 线缆协议兼容 —
 
 **Supabase** 自建模板也例行升级到了最新版本。
 
-------
+---
 
 ## 一份配置，十核齐飞
 
@@ -185,13 +185,13 @@ OpenHalo 是重建的第三个内核。它提供了 MySQL 线缆协议兼容 —
 
 这不是 PPT 上的架构图，是跑得起来的代码。
 
-------
+---
 
 ## 正名：企业级
 
 眼尖的朋友可能已经发现，网站首页的 Slogan 换了。
 
-以前叫 "Battery-Included, Local-First FLOSS RDS"，现在改成了：**"开箱即用的企业级开源 PostgreSQL 发行版，自带高可用、PITR、IaC 监控与 461 个扩展"**。
+以前叫 "Battery-Included，Local-First FLOSS RDS"，现在改成了：**"开箱即用的企业级开源 PostgreSQL 发行版，自带高可用、PITR、IaC 监控与 461 个扩展"**。
 
 先澄清一件事：这不是说 Pigsty 的质量刚刚才达到"企业级"。实际上，Pigsty 从很早就在生产环境中被各行各业的企业使用了 —— 金融、政务、制造、互联网，靠的是 Patroni + pgBackRest + 可观测性这套经过实战检验的组合。有些所谓的"企业级方案"，论高可用不比 Patroni 强，论备份恢复不比 pgBackRest 好，监控系统更是一塌糊涂。能力一直在，只是之前我不太愿意给自己贴这个标签。
 
@@ -199,7 +199,7 @@ OpenHalo 是重建的第三个内核。它提供了 MySQL 线缆协议兼容 —
 
 另一个变化是 **去掉了"RDS 替代"** 的说法。以前叫自己"开源 RDS 替代"，是一种借力定位——用人们熟悉的品类锚点来解释"Pigsty 是什么"。但到了今天，我们有信心说：不需要用别人来定义自己。Pigsty 就是 Pigsty，一个企业级的 PostgreSQL 发行版。在 PostgreSQL 发行版的赛道上 —— Linux 原生这条路线里 —— Pigsty 就是最能打的。
 
-------
+---
 
 ## 其他改进
 
@@ -219,7 +219,7 @@ OpenHalo 是重建的第三个内核。它提供了 MySQL 线缆协议兼容 —
 
 **首页改版**：之前用 Claude Code 糊了一版，有人反映太丑了，批评得很有道理。这次让 Codex 重新优化了一轮，好看不少。后面有空会继续打磨。
 
-------
+---
 
 ## 后续展望
 
@@ -231,11 +231,11 @@ Pigsty 作为开源项目，我觉得已经达到了相当完善的程度。后�
 
 Pigsty 本身会继续跟着 PG 小版本的节奏走。下个版本可能会正式补上 Cloudberry 的部署剧本，加上本地 SMTP 服务器支持（maddy / stalwart）。大的新功能暂时不急 —— 当前这个架构持续稳定地跑下去，就挺好。
 
---------
+---
 
 ## v4.2.0 提交注记
 
-**亮点特性**
+### 亮点特性
 
 - 离线小版本跟进 PostgreSQL 紧急小版本：18.3、17.9、16.13、15.17、14.22。
 - PostgreSQL 扩展总数达到 461 个。
@@ -243,7 +243,7 @@ Pigsty 本身会继续跟着 PG 小版本的节奏走。下个版本可能会正
 - Babelfish 模板切换到 Pigsty 自建维护的 PG17 兼容版本，移除对 WiltonDB 仓库的依赖。
 - 更新 Supabase 镜像与自建模板至最新版本，使用自行维护的 [MinIO 分支 pgsty/minio](https://github.com/pgsty/minio)
 
-**主要变更**
+#### 主要变更
 
 - `mssql` 模板切换到 Babelfish PG17 默认：`pg_version: 17`，`pg_packages: [babelfish, pgsql-common, sqlcmd]`，并移除额外 `mssql` repo 依赖。
 - `pg_home_map` 调整：`mssql` 指向 `/usr/babelfish-$v/`，`gpsql` 指向 `/usr/local/cloudberry`，统一内核路径语义。
@@ -256,7 +256,7 @@ Pigsty 本身会继续跟着 PG 小版本的节奏走。下个版本可能会正
 - `pgbackrest` 初始化增加重试（2 次、间隔 5 秒），缓解 `stanza-create` 与 `archive-push` 锁竞争失败。
 - Vibe 模板更新：内置 `@anthropic-ai/claude-code`、`@openai/codex`、`happy-coder` 等 npm 工具，默认示例补入 `age` 扩展。
 
-**PG 软件更新**
+#### PG 软件更新
 
 - PostgreSQL 18.3, 17.9, 16.13, 15.17, 14.22
 - [RPM Changelog 2026-02-27](https://pigsty.cc/docs/repo/pgsql/rpm/#2026-02-27)
@@ -285,7 +285,7 @@ Pigsty 本身会继续跟着 PG 小版本的节奏走。下个版本可能会正
 | `cloudberry`        | -               | 2.0.0    | 仅 RPM 构建              |
 | `pg_background`     | -               | 1.8      | 仅 DEB 构建              |
 
-**基础设施软件更新**
+#### 基础设施软件更新
 
 | 名称                           | 旧版本            | 新版本            |
 |:-----------------------------|:---------------|:---------------|
@@ -328,7 +328,7 @@ Pigsty 本身会继续跟着 PG 小版本的节奏走。下个版本可能会正
 | `stalwart`                   | -              | 0.15.5         |
 | `maddy`                      | -              | 0.8.2          |
 
-**API变化**
+#### API 变化
 
 - `pg_mode` 增加 `agens` 与 `pgedge`。
 - `mssql` 默认配置改为 `pg_version: 17` + `pg_packages: [babelfish, pgsql-common, sqlcmd]`。
@@ -337,14 +337,14 @@ Pigsty 本身会继续跟着 PG 小版本的节奏走。下个版本可能会正
 - `configure` 输出路径与区域探测逻辑更新，增加离线回退告警；SSH 探测统一超时参数。
 - `grafana.ini.j2` 跟进 Grafana 12.4 新配置项与废弃项调整。
 
-**兼容性说明**
+#### 兼容性说明
 
 - 存量 Redis 配置如果仍使用 `redis_fs_main: /data`，请先改为 `/data/redis` 再执行部署。
 - Grafana 12.4 后 data link 合并行为变化，本版本已将关键链接下沉到字段 override 规避冲突；如有自定义看板，建议同步检查。
 
 **26 个提交**，122 文件变更，+2,116 / -2,215 行（`v4.1.0..v4.2.0`，2026-02-15 ~ 2026-02-28）
 
-**校验和**
+#### 校验和
 
 ```bash
 24a90427a7e7351ca1a43a7d53289970  pigsty-v4.2.0.tgz
@@ -364,13 +364,13 @@ c98972fe9226657ac1faa7b72a22498b  pigsty-pkg-v4.2.0.u22.aarch64.tgz
 00dfa86f477f3adff984906211ab3190  pigsty-pkg-v4.2.0.u24.x86_64.tgz
 ```
 
-------
+---
 
 ## v4.2.1
 
 这是一个维护版本，新增了 3 个扩展插件，
 
-**主要变更**
+### 主要变更
 
 - **新增扩展**：`pg_eviltransform` 加入 GIS 包组，`pg_pinyin` 加入 FTS 包组，`pg_qos` 加入 Admin 包组 —— 均支持 PG 14–18。
 - **移除 PG13**：所有平台变体（EL7/8/9/10、Debian 12/13、Ubuntu 22/24，x86_64 与 aarch64）中的 `pgdg13`、`pgdg13-nonfree` 仓库条目和 PG13 包别名（`pg13-*`）全部移除。
@@ -381,7 +381,7 @@ c98972fe9226657ac1faa7b72a22498b  pigsty-pkg-v4.2.0.u22.aarch64.tgz
 - **Docker 镜像**：Pigsty Docker 镜像基础包中新增 `less`。
 - **Demo 配置**：`el.yml` 和 `debian.yml` 示例配置的默认防火墙规则新增 `5432` 端口，支持直接访问 PostgreSQL。
 
-**兼容性说明**
+#### 兼容性说明
 
 PostgreSQL 13 已于 2025-11-13 [到达生命周期终点](https://www.postgresql.org/support/versioning/)。
 PGDG YUM 仓库已经归档移除 [pg13](https://yum.postgresql.org/news/pg13-end-of-life/) / [pg12](https://yum.postgresql.org/news/pg12-end-of-life/) 目录。
@@ -395,7 +395,7 @@ PGDG YUM 仓库已经归档移除 [pg13](https://yum.postgresql.org/news/pg13-en
 
 **7 个提交**，84 文件变更，+4,925 / -5,351 行（`v4.2.0..v4.2.1`，2026-03-04 ~ 2026-03-06）
 
-**PostgreSQL 软件包更新**
+#### PostgreSQL 软件包更新
 
 | 包名               | 旧版本     | 新版本     | 备注                 |
 |:-----------------|:--------|:--------|:-------------------|
@@ -408,7 +408,7 @@ PGDG YUM 仓库已经归档移除 [pg13](https://yum.postgresql.org/news/pg13-en
 | pg_eviltransform | -       | 0.0.2   | 新增扩展               |
 | pg_qos           | -       | 1.0.0   | 新增扩展，QoS 资源治理      |
 
-**基础设施软件包更新**
+#### 基础设施软件包更新
 
 | 名称                           | 旧版本            | 新版本            | 备注 |
 |:-----------------------------|:---------------|:---------------|:---|
@@ -430,7 +430,7 @@ PGDG YUM 仓库已经归档移除 [pg13](https://yum.postgresql.org/news/pg13-en
 | `sabiql`                     | -              | 1.6.2          | 新增 |
 | `agentsview`                 | -              | 0.10.0         | 新增 |
 
-**校验和**
+#### 校验和
 
 ```bash
 262b7671424a38b208872582fe835ef8  pigsty-v4.2.1.tgz
@@ -450,7 +450,8 @@ a5574071bac1955798265f71ad73c3d4  pigsty-pkg-v4.2.1.u24.aarch64.tgz
 
 ---
 
-<!-- wxmp-update:https://mp.weixin.qq.com/s/p05FlhDt3krlKHVP9ykQYQ -->
+<!-- wxmp-update:<https://mp.weixin.qq.com/s/p05FlhDt3krlKHVP9ykQYQ> -->
+
 ## v4.2.2
 
 > [微信公众号原文](https://mp.weixin.qq.com/s/p05FlhDt3krlKHVP9ykQYQ)
@@ -461,9 +462,9 @@ Pigsty v4.2.2 已正式发布，这是一次例行维护更新，带来了新工
 
 ![图片](v4.2.2-01.webp)
 
-------------------------------------------------------------------------
+---
 
-#### PostgreSQL 扩展更新
+### PostgreSQL 扩展更新
 
 本次共更新 6 个扩展，新增 2 个工具包：
 
@@ -471,7 +472,7 @@ Pigsty v4.2.2 已正式发布，这是一次例行维护更新，带来了新工
 
 其中 pgcollection 和 pg_ttl_index 都迎来了大版本跳跃，值得关注。
 
-------------------------------------------------------------------------
+---
 
 #### 基础设施软件包更新
 
@@ -484,3 +485,7 @@ Pigsty v4.2.2 已正式发布，这是一次例行维护更新，带来了新工
 ![图片](v4.2.2-03.webp)
 
 *数据库老司机点一个关注 ⭐️，精彩不迷路\*
+
+---
+
+发布版本：[微信公众号 v4.2](https://mp.weixin.qq.com/s/W7OYV2dGIyv3bT4vjCYTOA) · [v4.2.1](https://mp.weixin.qq.com/s/g490YaRS6Bj-eHAH_QgvHQ) · [v4.2.2](https://mp.weixin.qq.com/s/p05FlhDt3krlKHVP9ykQYQ)
