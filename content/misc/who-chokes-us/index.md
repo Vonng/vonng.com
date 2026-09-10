@@ -7,13 +7,13 @@ summary: >
 tags: [PostgreSQL, 数据库, 商业]
 ---
 
-> 原作者：熊灿灿 · [微信公众号转载页](https://mp.weixin.qq.com/s/YPPocoSXhcz1DvtknCKdXA)
+> 原作者：熊灿灿
 
-### 前言
+## 前言
 
 这两天，被一个和技术完全搭不上边的事情给整得直抠脑壳，最后发现，居然是 License 在作祟！实在忍不住，必须吐槽一番，且听笔者慢慢道来。
 
-### 来龙去脉
+## 来龙去脉
 
 这两天，笔者一直在折腾一个 GP 数据库。起初是客户找到我说，将数据库节点所在服务器内存缩容了之后，提示数据库连接过多。报错其实很简单：
 
@@ -23,12 +23,12 @@ tags: [PostgreSQL, 数据库, 商业]
 
 这下，我意识到可能问题并不简单，于是按照 PostgreSQL 的老套路：
 
-1.  排查是否有数据库层面的连接限制：pg_database.datconnlimit
-2.  排查用户层面是否有连接限制：pg_user/pg_role.rolconnlimit
-3.  排查最大连接数：max_connections
-4.  排查超级用户保留连接数：superuser_reserved_connections
-5.  检查当前数据库中有多少连接数：select count(\*),datname from pg_stat_activity group by 2;
-6.  ...
+1. 排查是否有数据库层面的连接限制：pg_database.datconnlimit
+2. 排查用户层面是否有连接限制：pg_user/pg_role.rolconnlimit
+3. 排查最大连接数：max_connections
+4. 排查超级用户保留连接数：superuser_reserved_connections
+5. 检查当前数据库中有多少连接数：select count(\*),datname from pg_stat_activity group by 2；
+6. ...
 
 一阵排查，发现要么没有进行限制，要么连接数很大 (max_connections = 500)，通过排查 Master 的连接数情况，**寥寥几个**，当然也特意去 Segment 上看了一下，也没有，到这就给我整懵逼了。回想用户昨天貌似还新建了两个资源队列，库内当前也使用的资源对列，于是乎，又去排查资源队列是不是哪里给限制了？
 
@@ -68,7 +68,7 @@ tags: [PostgreSQL, 数据库, 商业]
 
 至此，真相大白，是的，又被 License 给"卡脖子"了，这个数据库其实也就是开源的 GP，select version() 网上一搜还能看到是 21 年 release 的。**我很确认，数据库日志里是没有任何提示的，因为为了排查问题，我把日志前前后后翻了好几遍，只有清一色的 too many connections 报错，操作过程中也没有任何提示。并且更为离谱的是，这个 License 距离到期还有十多天，还没到期便给你上强度了，零零散散撑死十多个连接，那真到期了会如何？嗯，宕机可能是基操。**
 
-### 后话
+## 后话
 
 商业数据库使用 License 去限制功能项，这是很正常的事情，无可厚非，但是至少要给出一个明确的提示，比如快到期了，快到期了又会有什么限制等等，像笔者碰到的这一奇葩经历，搞得这一天半我都在怀疑是不是我的技术功力不到家？一个连接数问题都搞不定。关于 License 的各种奇葩问题，和朋友私下里讨论了下，五花八门，比如通过 License 让你用不了特定功能，比如 FDW (开源 PG 那自然是允许你用的)，还有下面这种：
 
@@ -76,8 +76,12 @@ tags: [PostgreSQL, 数据库, 商业]
 
 行吧，我用开源的 PG 和 GP 应该是没有这种问题的，洗洗睡吧。另外，肯定很多读者关心这是哪一家国产数据库，各位就不用多问了，写出来也只是有感而发，不吐不快，就称作为 A 国产数据库吧。
 
-------------------------------------------------------------------------
+---
 
-### 数据库老司机
+## 数据库老司机
 
 ![图片](03.webp)
+
+---
+
+发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/YPPocoSXhcz1DvtknCKdXA)
