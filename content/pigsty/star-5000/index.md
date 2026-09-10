@@ -19,9 +19,15 @@ tags: [Pigsty, 开源]
 
 ![图片](03.webp)
 
-**在全球 PostgreSQL 发行版赛道里，当前格局是这样的：**
+## 在全球 PostgreSQL 发行版赛道里，当前格局是这样的：
 
-•CloudNativePG（EDB）：8478 ⭐•Zalando Postgres Operator：5145 ⭐•**Pigsty：5002 ⭐**•Stolon：4815 ⭐•Crunchy PGO：4396 ⭐•Autobase：4131 ⭐•……
+- CloudNativePG（EDB）：8478 ⭐
+- Zalando Postgres Operator：5145 ⭐
+- **Pigsty：5002 ⭐**
+- Stolon：4815 ⭐
+- Crunchy PGO：4396 ⭐
+- Autobase：4131 ⭐
+- ……
 
 前两名都是 K8s 云原生路线。**在 Linux 原生路线里，Pigsty 是 No.1。** 第二名 Autobase 4131，在 Linux 原生 PG 发行版里，Pigsty 的 Star 是当仁不让的第一了。
 
@@ -34,3 +40,7 @@ tags: [Pigsty, 开源]
 ![图片](05.webp)
 
 感谢每一位 stargazer。感谢那些提过 issue、发过 PR、写过博客、在群里回答过别人问题的贡献者。感谢各位客户的大力支持，感谢 MiraclePlus、Cloudflare、Vercel 在不同阶段给过的支持。也感谢 PostgreSQL 这个伟大的数据库本身 —— 没有它，就没有 Pigsty。
+
+---
+
+发布版本：[微信公众号](https://mp.weixin.qq.com/s/96WcUTE7L3dl8po6laauWA)
