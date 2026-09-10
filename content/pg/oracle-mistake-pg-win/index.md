@@ -25,7 +25,12 @@ Oleg 是 Postgres Pro 的老板，他在这个社区里待了三十多年，是 
 
 Bartunov 文章的证据是一张老照片。Jan Wieck 最近把照片发给了他：2000 年 3 月，PostgreSQL 核心组在旧金山举行第一次面对面会议。Bartunov 修复照片后，辨认出了墙上纸页里的六条原则：
 
-•分散的责任•分散的技术知识•非排他的合作关系•对项目方向的掌控权•保护名称•保护声誉
+- 分散的责任
+- 分散的技术知识
+- 非排他的合作关系
+- 对项目方向的掌控权
+- 保护名称
+- 保护声誉
 
 ![图片](03.webp)
 
@@ -37,7 +42,7 @@ Bartunov 文章的证据是一张老照片。Jan Wieck 最近把照片发给了�
 
 **一个开源项目的成功，究竟应该归因于对手的失误、创始人的架构远见、志愿者的长期劳动，还是一套从来没有写进查询执行器里的制度？**
 
-------------------------------------------------------------------------
+---
 
 ## 一、归因是怎么一步步漂移的
 
@@ -126,9 +131,9 @@ PostgreSQL 从来不要求贡献者签署版权转让协议。三十年、成百
 
 需求侧的冲击是真实的，而且还在继续。Percona 对 MySQL 仓库的统计显示，年度 commit 数从 2010 年的两万两千多降到 2024 年的四千七百多，十四年降到不足四分之一；活跃贡献者在 2025 年三季度只剩约 75 人——比 2010 年 Oracle 完成收购时的 82 人还少。2025 年 9 月，Oracle 裁掉了约 70 名 MySQL 核心工程师，MySQL 之父 Monty Widenius 说自己「心碎」，Percona 创始人 Peter Zaitsev 说这可能是慢慢杀死社区版的又一步。
 
-[PZ：MySQL还有机会赶上PostgreSQL吗？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488604&idx=1&sn=984fbec240098d6cc4d7c45d078631ac&scene=21#wechat_redirect)
+[PZ：MySQL 还有机会赶上 PostgreSQL 吗？](/db/can-mysql-catchup/)
 
-[Oracle最终还是杀死了MySQL！](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487841&idx=1&sn=07ce183e7f5eafb34551438df963fe6d&scene=21#wechat_redirect)
+[Oracle 最终还是杀死了 MySQL！](/db/oracle-kill-mysql/)
 
 但更重要的是另一件事：**治理是护城河，不是发动机。**
 
@@ -136,13 +141,11 @@ PostgreSQL 从来不要求贡献者签署版权转让协议。三十年、成百
 
 那台发动机是什么？我认为答案很明确：**可扩展性。而这颗种子是 Stonebraker 在 1986 年亲手种下的。**
 
-**[PostgreSQL正在吞噬数据库世界](/pg/pg-eat-db-world/)**
+### [PostgreSQL 正在吞噬数据库世界](/pg/pg-eat-db-world/)
 
-**\**
+**Oracle 先进，MySQL 开源，PostgreSQL 先进又开源。开源体现在它的社区治理结构上，而先进体现在它极致的可扩展性上。[PostgreSQL：世界上最成功的数据库](/pg/pg-is-no1/)**
 
-**Oracle 先进，MySQL 开源，PostgreSQL 先进又开源。开源体现在它的社区治理结构上，而先进体现在它极致的可扩展性上。[PostgreSQL：世界上最成功的数据库](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485933&idx=3&sn=ea360aa7a59a4cd23ad5f9a9f415a0a0&scene=21#wechat_redirect)**
-
-![图片](08.webp)\
+![图片](08.webp)
 
 1986 年的 POSTGRES 设计论文里，最反直觉的一条不是任何一个具体特性，而是这个决定：不要把功能都做进内核，要把「往内核里加功能」这件事本身做成一等公民。用户可以定义自己的数据类型、自己的操作符、自己的函数，甚至自己的索引访问方法，然后像插模块一样插进去。
 
@@ -150,7 +153,10 @@ PostgreSQL 从来不要求贡献者签署版权转让协议。三十年、成百
 
 三十年后兑现的样子是这样的：
 
-•**PostGIS** 用一个扩展，让 PostgreSQL 成了地理信息领域事实上的标准，把一整个商业 GIS 数据库品类挤到了墙角；•**TimescaleDB / Citus** 用扩展分别解决了时序和分布式，都没有 fork 内核；•**pgvector** 几千行 C 代码，把 PG 变成了一个能打的向量数据库，顺手把一批向量数据库创业公司的估值逻辑打了个对折；•**pg_duckdb、Apache AGE、pg_cron、各类 FDW**……到今天，光是老冯自己维护的扩展目录里就收了一千六百多个扩展。
+- **PostGIS** 用一个扩展，让 PostgreSQL 成了地理信息领域事实上的标准，把一整个商业 GIS 数据库品类挤到了墙角；
+- **TimescaleDB / Citus** 用扩展分别解决了时序和分布式，都没有 fork 内核；
+- **pgvector** 几千行 C 代码，把 PG 变成了一个能打的向量数据库，顺手把一批向量数据库创业公司的估值逻辑打了个对折；
+- **pg_duckdb、Apache AGE、pg_cron、各类 FDW**……到今天，光是老冯自己维护的扩展目录里就收了一千六百多个扩展。
 
 GiST、GIN、SP-GiST 这些可扩展索引框架，恰恰是 Bartunov 和 Teodor Sigaev 这批人做的。也就是说，**Stonebraker 设计了插槽，Bartunov 们造了插进去的东西**。这场争论里两个人的功劳，在这里其实是同一件事的两面。
 
@@ -189,8 +195,6 @@ Stonebraker 自己怎么评价这件事？他在波士顿 PGDay 上说，抽象�
 于是优先级会漂。云上急需的东西—— IO 性能、逻辑复制、备份效率、存储分层——自然有人抢着做；而私有部署用户最需要的那些东西，比如开箱即用的高可用、内置连接池，社区至今没有官方答案。Bruce Momjian 在波士顿 PGDay 上列过一份「还缺什么」的清单，里面就有这几项。不是有人使坏，是**没有人在为这类需求发工资**。
 
 更要命的是价值分配。Aurora、AlloyDB、以及微软 2026 年 5 月推到公开预览的 Azure HorizonDB，卖的都是「PostgreSQL 兼容」——内核受益于社区，收入不流向社区。社区拿到的是几十份工资，云厂商拿到的是几十亿美金的营收。这个生态里绝大部分的商业价值，正在沉淀到一层社区看不见也管不着的“兼容层” 里。
-
-**\**
 
 那个让 PostgreSQL 卖不掉的结构，同时也让 PostgreSQL 打不了反击战。
 
@@ -238,25 +242,25 @@ Bartunov 那句话依然是对这段历史最漂亮的概括——
 
 hacker 们建的不止是 PostgreSQL，还有一套让 PostgreSQL 卖不掉的东西。代码可以 fork，架构可以抄，但抄不走的，是二十六年如一日地执行它。
 
-------------------------------------------------------------------------
+---
 
 ### 参考资料
 
-1.Lindsay Clark, **Postgres pioneer credits Oracle with helping his database take over the world**, The Register, 2026-08-19. https://www.theregister.com/databases/2026/08/19/postgres-pioneer-credits-oracle-with-helping-his-database-take-over-the-world/5289087<sup>[1]</sup>2.Joab Jackson, **The database that refused to die: How Postgres survived its own creators**, The Register, 2026-06-22（PGDay Boston 演讲报道，含 ADT 自评与 Momjian 的缺失特性清单）. https://www.theregister.com/databases/2026/06/22/the-database-that-refused-to-die-how-postgres-survived-its-own-creators/5259716<sup>[2]</sup>3.**Postgres pioneer Michael Stonebraker promises to upend the database once more**, The Register, 2023-12-26（"happy accident" 的出处）. https://www.theregister.com/2023/12/26/michael_stonebraker_feature/<sup>[3]</sup>4.Jolly Chen, \*"A huge debt of gratitude" — Michael Stonebraker\*, pgsql-hackers, 2015-07-21（图灵奖演讲转录）. https://www.postgresql.org/message-id/A4BA155B-E762-4022-B7D1-6F4791014851@chenfamily.com<sup>[4]</sup>5.Tom Lane, **Postgres Core Team History and Functions**, pgconf.dev 2024. https://wiki.postgresql.org/images/c/c1/CoreTeam_Update_pgconfdev_2024.pdf<sup>[5]</sup>6.**How I got started as a developer (& in Postgres) with Tom Lane**, Talking Postgres 播客文字稿（Great Bridge 与 core 扩容的回忆）. https://talkingpostgres.com/episodes/how-i-got-started-as-a-developer-in-postgres-with-tom-lane/transcript<sup>[6]</sup>7.**Trademark Actions Against the PostgreSQL Community**, postgresql.org, 2021-09-13；及 **Updates on trademark actions**, 2023-12-06（和解公告）. https://www.postgresql.org/about/news/trademark-actions-against-the-postgresql-community-2302<sup>[7]</sup> ／ https://www.postgresql.org/about/news/updates-on-trademark-actions-against-the-postgresql-community-2762/<sup>[8]</sup>8.**PostgreSQL Contributor Profiles**, postgresql.org（核心组与主要贡献者的雇主名单，本文统计口径，访问于 2026-08-23）. https://www.postgresql.org/community/contributors/<sup>[9]</sup>9.**Analyzing the Heartbeat of the MySQL Server: A Look at Repository Statistics**, Percona, 2026-03. https://www.percona.com/blog/analyzing-the-heartbeat-of-the-mysql-server-a-look-at-repository-statistics/<sup>[10]</sup>10.**Separating FUD and Reality: Has MySQL Really Been Abandoned?**, Percona, 2026-03（反方意见）. https://www.percona.com/blog/separating-fud-and-reality-has-mysql-really-been-abandoned/<sup>[11]</sup>11.**Monty Widenius 'heartbroken' over Oracle's MySQL job cuts**, The Register, 2025-09-11. https://www.theregister.com/software/2025/09/11/monty-widenius_heartbroken_over_oracles_mysql_job_cuts/1169295<sup>[12]</sup>12.**What's new with Postgres at Microsoft, 2026 edition**, Microsoft Community Hub（Azure HorizonDB 公开预览）. https://techcommunity.microsoft.com/blog/adforpostgresql/whats-new-with-postgres-at-microsoft-2026-edition/4526963<sup>[13]</sup>13.**The Postgres Vitality Index**, EDB, 2026-03-12. https://www.enterprisedb.com/company/postgres-vitality-index<sup>[14]</sup>14.Oleg Bartunov, **PostgreSQL Had Already Solved the Oracle Problem in 2000**, LinkedIn, 2026-08.h
+- `[1]` : <https://www.theregister.com/databases/2026/08/19/postgres-pioneer-credits-oracle-with-helping-his-database-take-over-the-world/5289087>
+- `[2]` : <https://www.theregister.com/databases/2026/06/22/the-database-that-refused-to-die-how-postgres-survived-its-own-creators/5259716>
+- `[3]` : <https://www.theregister.com/2023/12/26/michael_stonebraker_feature/>
+- `[4]` : <https://www.postgresql.org/message-id/A4BA155B-E762-4022-B7D1-6F4791014851@chenfamily.com>
+- `[5]` : <https://wiki.postgresql.org/images/c/c1/CoreTeam_Update_pgconfdev_2024.pdf>
+- `[6]` : <https://talkingpostgres.com/episodes/how-i-got-started-as-a-developer-in-postgres-with-tom-lane/transcript>
+- `[7]` : <https://www.postgresql.org/about/news/trademark-actions-against-the-postgresql-community-2302>
+- `[8]` : <https://www.postgresql.org/about/news/updates-on-trademark-actions-against-the-postgresql-community-2762/>
+- `[9]` : <https://www.postgresql.org/community/contributors/>
+- `[10]` : <https://www.percona.com/blog/analyzing-the-heartbeat-of-the-mysql-server-a-look-at-repository-statistics/>
+- `[11]` : <https://www.percona.com/blog/separating-fud-and-reality-has-mysql-really-been-abandoned/>
+- `[12]` : <https://www.theregister.com/software/2025/09/11/monty-widenius_heartbroken_over_oracles_mysql_job_cuts/1169295>
+- `[13]` : <https://techcommunity.microsoft.com/blog/adforpostgresql/whats-new-with-postgres-at-microsoft-2026-edition/4526963>
+- `[14]` : <https://www.enterprisedb.com/company/postgres-vitality-index>
 
-### References
+---
 
-`[1]`: *https://www.theregister.com/databases/2026/08/19/postgres-pioneer-credits-oracle-with-helping-his-database-take-over-the-world/5289087*\
-`[2]`: *https://www.theregister.com/databases/2026/06/22/the-database-that-refused-to-die-how-postgres-survived-its-own-creators/5259716*\
-`[3]`: *https://www.theregister.com/2023/12/26/michael_stonebraker_feature/*\
-`[4]`: *https://www.postgresql.org/message-id/A4BA155B-E762-4022-B7D1-6F4791014851@chenfamily.com*\
-`[5]`: *https://wiki.postgresql.org/images/c/c1/CoreTeam_Update_pgconfdev_2024.pdf*\
-`[6]`: *https://talkingpostgres.com/episodes/how-i-got-started-as-a-developer-in-postgres-with-tom-lane/transcript*\
-`[7]`: *https://www.postgresql.org/about/news/trademark-actions-against-the-postgresql-community-2302*\
-`[8]`: *https://www.postgresql.org/about/news/updates-on-trademark-actions-against-the-postgresql-community-2762/*\
-`[9]`: *https://www.postgresql.org/community/contributors/*\
-`[10]`: *https://www.percona.com/blog/analyzing-the-heartbeat-of-the-mysql-server-a-look-at-repository-statistics/*\
-`[11]`: *https://www.percona.com/blog/separating-fud-and-reality-has-mysql-really-been-abandoned/*\
-`[12]`: *https://www.theregister.com/software/2025/09/11/monty-widenius_heartbroken_over_oracles_mysql_job_cuts/1169295*\
-`[13]`: *https://techcommunity.microsoft.com/blog/adforpostgresql/whats-new-with-postgres-at-microsoft-2026-edition/4526963*\
-`[14]`: *https://www.enterprisedb.com/company/postgres-vitality-index*
+发布版本：[微信公众号](https://mp.weixin.qq.com/s/-xbCSmcYT-fIGXgQuQQUow)
