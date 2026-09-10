@@ -7,13 +7,13 @@ summary: >
 tags: [OLAP, PostgreSQL, PG生态]
 ---
 
-> 原作者：alitrack · [微信公众号转载页](https://mp.weixin.qq.com/s/oVh5QPrZWkTTe5HvrLcvIQ)
+> 原作者：alitrack
 
 ![图片](01.webp)
 
-也许是因为我一直在小公司工作，公司资源相对有限，我总是习惯寻找那些资源占用少但功能强大的项目。最早进入我视野的是 MonetDB<sup>[1]</sup>，可惜后来停止开发了。2020年，我发现了 DuckDB，感觉这正是我需要的。
+也许是因为我一直在小公司工作，公司资源相对有限，我总是习惯寻找那些资源占用少但功能强大的项目。最早进入我视野的是 MonetDB<sup>[1]</sup>，可惜后来停止开发了。2020 年，我发现了 DuckDB，感觉这正是我需要的。
 
-在2020年，我同时在学习 PostgreSQL，了解到了它的强大之处，也发现了它的短板，尤其在 OLAP 方面。因此，我萌生了一个想法：如果能够借助 DuckDB 提升 PostgreSQL 的 OLAP 分析能力，那就太好了。虽然我是 FDW 开发的外行，也不太熟悉 C/C++，但我有一个专长，就是复制和粘贴。
+在 2020 年，我同时在学习 PostgreSQL，了解到了它的强大之处，也发现了它的短板，尤其在 OLAP 方面。因此，我萌生了一个想法：如果能够借助 DuckDB 提升 PostgreSQL 的 OLAP 分析能力，那就太好了。虽然我是 FDW 开发的外行，也不太熟悉 C/C++，但我有一个专长，就是复制和粘贴。
 
 DuckDB 自称是 OLAP 版本的 SQLite，并且封装了 sqlite3_api_wrapper，因此我选择了复制和粘贴 sqlite_fdw<sup>[2]</sup>。经过简单的修改，第一个版本的 duckdb_fdw<sup>[3]</sup> 诞生了。后来由于工作原因，我暂时搁置了这个项目。
 
@@ -41,7 +41,7 @@ DuckDB 自称是 OLAP 版本的 SQLite，并且封装了 sqlite3_api_wrapper，�
 
 DuckDB 推出了 v1.0.0 版本，推动我更新了 duckdb_fdw，并在冯总的建议下，确定 duckdb_fdw 跟随 DuckDB 的版本。于是，第一个正式版本面世了。
 
-下面是macOS下编译duckdb_fdw的例子，
+下面是 macOS 下编译 duckdb_fdw 的例子，
 
     DUCKDB_VERSION=1.0.0
     PG_VERSION=16
@@ -65,14 +65,18 @@ DuckDB 推出了 v1.0.0 版本，推动我更新了 duckdb_fdw，并在冯总的
 
 于是，延伸出了另外一种做法，就是把 libduckdb_src 加进来，这样 libduckdb.so 都可以省了，减少动态库依赖导致的问题。你觉得哪种方法更好？
 
-时间过得很快，duckdb_fdw 从诞生到现在已经快4年了。恰逢第13届 PostgreSQL 中国技术大会即将召开，在德哥和冯总的鼓励下，我决定参与其中，让更多人了解 duckdb_fdw。希望在大会现场能遇到你。
+时间过得很快，duckdb_fdw 从诞生到现在已经快 4 年了。恰逢第 13 届 PostgreSQL 中国技术大会即将召开，在德哥和冯总的鼓励下，我决定参与其中，让更多人了解 duckdb_fdw。希望在大会现场能遇到你。
 
 ![图片](03.webp)
 
-##### 引用链接
+## 引用链接
 
-`[1]` MonetDB: *https://github.com/MonetDB/MonetDB*\
-`[2]` sqlite_fdw: *https://github.com/pgspider/sqlite_fdw*\
-`[3]` duckdb_fdw: *https://github.com/alitrack/duckdb_fdw*\
-`[4]` oracle_fdw: *https://github.com/laurenz/oracle_fdw*\
-`[5]` postgres_scanner: *https://github.com/duckdb/postgres_scanner*
+- `[1]` MonetDB: <https://github.com/MonetDB/MonetDB>
+- `[2]` sqlite_fdw: <https://github.com/pgspider/sqlite_fdw>
+- `[3]` duckdb_fdw: <https://github.com/alitrack/duckdb_fdw>
+- `[4]` oracle_fdw: <https://github.com/laurenz/oracle_fdw>
+- `[5]` postgres_scanner: <https://github.com/duckdb/postgres_scanner>
+
+---
+
+发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/oVh5QPrZWkTTe5HvrLcvIQ)
