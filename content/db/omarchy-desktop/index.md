@@ -11,7 +11,7 @@ tags: [Linux, Omarchy, 操作系统]
 
 最近 X 时间线上铺天盖地都是 Omarchy 的消息——这是 DHH 搞的一个 Linux 桌面发行版。这两天也传到中文世界里了，漫山遍野，到处都是。
 
-老冯之前翻译过 DHH 的整个[下云流程](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485760&idx=1&sn=97096da1077a4fbb4c43452a3c4983c7&scene=21#wechat_redirect)，也经常看他的博客，算是见证了 Omarchy 的诞生。但我确实没想到，这次 4.0 版本发布能产生这么大的反响。
+老冯之前翻译过 DHH 的整个[下云流程](/cloud/odyssey/)，也经常看他的博客，算是见证了 Omarchy 的诞生。但我确实没想到，这次 4.0 版本发布能产生这么大的反响。
 
 正好手头有一台老笔记本——2018 年的 Intel MacBook Pro，于是装了 Omarchy 玩了几天。
 
@@ -37,7 +37,7 @@ tags: [Linux, Omarchy, 操作系统]
 
 当然，也少不了一些人的刻薄讽刺嘲笑，说这就是「DHH 的 dotfiles 配置文件大合集」。这话还是有点太贬低人家了——里面确实有不少定制的匠心在。
 
-但反过来，有些粉丝把它吹成「为 AI 而生的 Agent 原生操作系统」，那也太离谱了——把 Codex、Claude Code、OpenCode 打个包这种事儿（也没预装），老冯[年前就干了](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247490846&idx=1&sn=1083f1f55a22ac88e3aab24e0907b102&scene=21#wechat_redirect)。打个包装个包就管自己叫 AI 优先的操作系统，那实在是 Bullshit。
+但反过来，有些粉丝把它吹成「为 AI 而生的 Agent 原生操作系统」，那也太离谱了——把 Codex、Claude Code、OpenCode 打个包这种事儿（也没预装），老冯[年前就干了](/ai/claude-code-intro/)。打个包装个包就管自己叫 AI 优先的操作系统，那实在是 Bullshit。
 
 ![Omarchy 的默认桌面与壁纸](wallpaper.webp)
 
