@@ -7,17 +7,17 @@ summary: >
 tags: [云计算, 下云, PG管理]
 ---
 
-> 原作者：瑞典马工 · [微信公众号转载页](https://mp.weixin.qq.com/s/Eo47Ssttcd0-GFEMEG8Ptg)
+> 原作者：瑞典马工
 
 ## 降价，打折，优惠券
 
-从事 IT 行业的朋友们，都有一个很具体的感受，云厂商的销售们手里没什么武器，无非就是三样：降价，打折扣，给优惠券。这技术含量还不如农贸市场卖豆腐的。买豆腐的要讲清楚水豆腐，油豆腐和攸县香干的区别；要提供客家酿豆腐菜谱；还要发明西汉淮南王制豆腐的故事。相比之下，卖云计算的所谓专家们只需要做一个事：把目录价格乘以从0.2到0.95不等的折扣数，所需要的全部技能是小学四年级算术。
+从事 IT 行业的朋友们，都有一个很具体的感受，云厂商的销售们手里没什么武器，无非就是三样：降价，打折扣，给优惠券。这技术含量还不如农贸市场卖豆腐的。买豆腐的要讲清楚水豆腐，油豆腐和攸县香干的区别；要提供客家酿豆腐菜谱；还要发明西汉淮南王制豆腐的故事。相比之下，卖云计算的所谓专家们只需要做一个事：把目录价格乘以从 0.2 到 0.95 不等的折扣数，所需要的全部技能是小学四年级算术。
 
-这个现象也体现在云厂商的财务报表中。大多数云厂商是不盈利的。阿里云作为唯一公开宣称盈利的厂商，2025财年第一季的 EBITA 利润率约为 8%，还不如做空调的美的利润高。产业转型升级做了这么多年，结果大家合力把高投入高回报的高科技行业硬生生干成了大规模低毛利的制造业。厂商不开心，用户也不爽，生态伙伴更是叫苦连天。
+这个现象也体现在云厂商的财务报表中。大多数云厂商是不盈利的。阿里云作为唯一公开宣称盈利的厂商，2025 财年第一季的 EBITA 利润率约为 8%，还不如做空调的美的利润高。产业转型升级做了这么多年，结果大家合力把高投入高回报的高科技行业硬生生干成了大规模低毛利的制造业。厂商不开心，用户也不爽，生态伙伴更是叫苦连天。
 
 ## 虚拟机就是大宗商品
 
-为什么搞成这样子？我有一个不太全面但是可能很核心的解释：中国云计算被做成了无差别的大宗商品。云厂商卖虚拟机和 CDN 的方法，同大宗商品交易所卖小麦的方法，基本差不多：价格取决于并且只取决于规格。巴西的二级小麦和乌克兰的二级小麦没有区别，阿里云的 8C16G 和 火山引擎的 8C16G 也没有区别，都被市场视作同一个SKU。这种产品的同质化使得厂商只在一个维度竞争：价格。
+为什么搞成这样子？我有一个不太全面但是可能很核心的解释：中国云计算被做成了无差别的大宗商品。云厂商卖虚拟机和 CDN 的方法，同大宗商品交易所卖小麦的方法，基本差不多：价格取决于并且只取决于规格。巴西的二级小麦和乌克兰的二级小麦没有区别，阿里云的 8C16G 和 火山引擎的 8C16G 也没有区别，都被市场视作同一个 SKU。这种产品的同质化使得厂商只在一个维度竞争：价格。
 
 ## 云计算缺席了客户开发过程
 
@@ -31,15 +31,15 @@ MuseAI 是一个成功的产品，爱橙科技团队也非常有竞争力。本�
 
 如原文所述，云平台并非客户默认开发平台。客户集团内部有一套完整的内部中间件帮助产品团队开发部署新业务。
 
-1.  客户的 DB 首选不是阿里云的 PolarDB 而是自研的 TDDL.
+1. 客户的 DB 首选不是阿里云的 PolarDB 而是自研的 TDDL.
 
-2.  配置管理首选不是阿里云的微服务引擎 MSE 而是自研的 Diamond。
+2. 配置管理首选不是阿里云的微服务引擎 MSE 而是自研的 Diamond。
 
-3.  连最基础的存储，客户也不用阿里云的 OSS，而选择了没有外部生态的 Pangu。
+3. 连最基础的存储，客户也不用阿里云的 OSS，而选择了没有外部生态的 Pangu。
 
-4.  客户的 CI/CD 流水线也不支持阿里云。
+4. 客户的 CI/CD 流水线也不支持阿里云。
 
-5.  我推测原文说的弹内 Schedulerx 也不是阿里云的 Schedulerx 服务。
+5. 我推测原文说的弹内 Schedulerx 也不是阿里云的 Schedulerx 服务。
 
 ![图片](01.webp)
 
@@ -55,9 +55,9 @@ MuseAI 最开始作为一个内部项目开发，只需要服务阿里员工，�
 
 > 无论采用哪种方案，都必然会面对一个问题：部分逻辑在不同环境的实现是有差异的。例如，用户体系的差异，内部通过 BUC 可以获取到用户信息，集团外可能是手机号注册等别的链路；
 
-实际上，**阿里云的 IDaaS<sup>[2]</sup>** 正好是解决这个问题的专业服务。MuseAI 的业务代码可以不用和阿里集团的 BUC 系统直接交互，而是和 IDaaS交互。IDaaS 则把阿里集团的 BUC 视作一个**身份提供方（IdP）<sup>[3]</sup>**接入其用户池。在这个架构下，阿里集团只是 MuseAI 的多个租户之一。这样 MuseAI 不仅可以获取更高质量的用户管理系统，而且可以零开发成本的接入其他集团租户。
+实际上，**阿里云的 IDaaS<sup>[2]</sup>** 正好是解决这个问题的专业服务。MuseAI 的业务代码可以不用和阿里集团的 BUC 系统直接交互，而是和 IDaaS 交互。IDaaS 则把阿里集团的 BUC 视作一个**身份提供方（IdP）<sup>[3]</sup>**接入其用户池。在这个架构下，阿里集团只是 MuseAI 的多个租户之一。这样 MuseAI 不仅可以获取更高质量的用户管理系统，而且可以零开发成本的接入其他集团租户。
 
-### API管理服务缺位
+### API 管理服务缺位
 
 MuseAI 的另外一个重要改造内容是，为了让客户“基于 Muse 平台的 AI 生成能力二次开发垂类平台”，团队
 
@@ -65,19 +65,19 @@ MuseAI 的另外一个重要改造内容是，为了让客户“基于 Muse 平�
 
 一般来说，云原生团队开发 Web 服务，都先定义 API，然后再去实现。API 是前端和后端以及不同的后端服务之间的合约。没有这个合约的话，团队只能依靠口头约定 URL，HTTP 方法，参数和返回值，沟通成本非常高。
 
-阿里云的 API Gateway 服务，正可以帮助团队开发和管理 API。他们团队写的**《阿里 API 网关最佳实践》<sup>[4]</sup>**质量非常高。文档里建议的《**API网关灰度发布最佳实践<sup>[5]</sup>**》正好可以帮助 MuseAI 团队管理他们迭代中的 API。可惜，这篇文档似乎写完就结束了，没看到它对客户有实在具体的影响。
+阿里云的 API Gateway 服务，正可以帮助团队开发和管理 API。他们团队写的**《阿里 API 网关最佳实践》<sup>[4]</sup>**质量非常高。文档里建议的《**API 网关灰度发布最佳实践<sup>[5]</sup>**》正好可以帮助 MuseAI 团队管理他们迭代中的 API。可惜，这篇文档似乎写完就结束了，没看到它对客户有实在具体的影响。
 
 如果阿里云在过去的几年有努力的推广 API 管理的最佳实践，MuseAI 上线的那一天，应该就已经发布一套比较稳定的 API 了，不至于在客户要求下才急急忙忙的补课。
 
 ### 可观测性服务缺位
 
-一个 Web 服务上线只是第一步，要保证服务的持续进化和平稳运行，可观测性系统是不可或缺的。在笔者的经验中，云原生系统的可观测性开销，往往占到云开销的 15%-25%。阿里云有非常丰富的可观测性服务，包括日志服务 SLS，云监控 CloudMonitor， 应用实时监控服务 ARMS。这些服务能够帮助团队在重构中快速定位问题，处理故障和提升客户体验。
+一个 Web 服务上线只是第一步，要保证服务的持续进化和平稳运行，可观测性系统是不可或缺的。在笔者的经验中，云原生系统的可观测性开销，往往占到云开销的 15%-25%。阿里云有非常丰富的可观测性服务，包括日志服务 SLS，云监控 CloudMonitor，应用实时监控服务 ARMS。这些服务能够帮助团队在重构中快速定位问题，处理故障和提升客户体验。
 
-鉴于文章完全没有提及可观测性，我猜测他们没有用这些服务。这显然不能责怪客户，因为阿里云虽然有logs，metrics，APM 等各种服务，但是没有一个专家在研究和教育客户怎样做可观测性。阿里云容器服务的《**可观测性最佳实践<sup>[6]</sup>**》简陋到可笑的程度。
+鉴于文章完全没有提及可观测性，我猜测他们没有用这些服务。这显然不能责怪客户，因为阿里云虽然有 logs，metrics，APM 等各种服务，但是没有一个专家在研究和教育客户怎样做可观测性。阿里云容器服务的《**可观测性最佳实践<sup>[6]</sup>**》简陋到可笑的程度。
 
 ![图片](02.webp)
 
-而阿里云文档的《**云原生可观测性最佳实践的相关内容<sup>[7]</sup>**〉更是一团糊，第一篇文章居然是莫名其妙的**最佳实践，近实时数据同步，增全量数据一体<sup>[8]</sup>**，第二篇文章则是**Fluid数据缓存优化策略最佳实践<sup>[9]</sup>**。
+而阿里云文档的《**云原生可观测性最佳实践的相关内容<sup>[7]</sup>**〉更是一团糊，第一篇文章居然是莫名其妙的**最佳实践，近实时数据同步，增全量数据一体<sup>[8]</sup>**，第二篇文章则是**Fluid 数据缓存优化策略最佳实践<sup>[9]</sup>**。
 
 这和可观测有一毛钱关系吗？
 
@@ -87,7 +87,7 @@ MuseAI 团队提到：
 
 > 此外，集团内外对于安全管控的要求也不一样
 
-这是一个非常实在的需求。MuseAI 服务内部客户的时候，安全性可以放松一些，用 IP 地址限制访问，用访问日志定位潜在恶意访问者，基本就差不多了。但是对外开放服务之后，会有新的威胁，比如 DDoS， 网络爬虫，SQL 注入，恶意 Payload 上传等。阿里云上有丰富的服务帮助客户防范这些威胁，不仅有传统的 DDoS 防护和云盾服务，也有云原生的访问控制服务 RAM 和 云操作审计服务，还有云管家等人工服务。
+这是一个非常实在的需求。MuseAI 服务内部客户的时候，安全性可以放松一些，用 IP 地址限制访问，用访问日志定位潜在恶意访问者，基本就差不多了。但是对外开放服务之后，会有新的威胁，比如 DDoS，网络爬虫，SQL 注入，恶意 Payload 上传等。阿里云上有丰富的服务帮助客户防范这些威胁，不仅有传统的 DDoS 防护和云盾服务，也有云原生的访问控制服务 RAM 和 云操作审计服务，还有云管家等人工服务。
 
 ![图片](03.webp)
 
@@ -113,31 +113,31 @@ MuseAI 团队提到：
 >
 > 我们在上云过程中看到，实现标准的云基础设施和业务应用的全面解耦，将会带来全面的研发运维效率提升。
 
-对此，笔者无法赞同。恰恰相反，大多数团队开发云原生系统时候, 不再区分基础设施和应用代码：
+对此，笔者无法赞同。恰恰相反，大多数团队开发云原生系统时候，不再区分基础设施和应用代码：
 
-1.  把基础设施作为代码管理，此即为 Infra as Code。工具有 Terraform，AWS CDK 和 Kubernetes 的 YAML。尽量避免手动在控制台修改配置。
+1. 把基础设施作为代码管理，此即为 Infra as Code。工具有 Terraform，AWS CDK 和 Kubernetes 的 YAML。尽量避免手动在控制台修改配置。
 
-2.  利用 CI/CD 把基础设施代码和应用代码的变更用同一个流程管理起来。举例来说， URL **https://magong.se/api/todos** 的域名 magong.se 可能取决于基础设施代码的 DNS 部分，路径 api 取决于基础设施代码的 API Gateway部分，而路径 todos 则取决于应用层代码。对一个良好的 CI/CD 来说， 修改基础设施代码和应用代码，没什么区别，无非就是又一次部署而已。
+2. 利用 CI/CD 把基础设施代码和应用代码的变更用同一个流程管理起来。举例来说，URL `https://magong.se/api/todos` 的域名 `magong.se` 可能取决于基础设施代码的 DNS 部分，路径 `api` 取决于基础设施代码的 API Gateway 部分，而路径 `todos` 则取决于应用层代码。对一个良好的 CI/CD 来说，修改基础设施代码和应用代码没什么区别，无非就是又一次部署而已。
 
-3.  管理应用代码的 Dev 也管理基础设施代码。由于 DevOps 的演进，目前大多数云原生开发团队已经没有专门的运维组了。Infra 也是 Dev 在管理。
+3. 管理应用代码的 Dev 也管理基础设施代码。由于 DevOps 的演进，目前大多数云原生开发团队已经没有专门的运维组了。Infra 也是 Dev 在管理。
 
-我和我的朋友们把这种基础设施和应用的耦合更推进一步，SealOS 的方海涛主张[**《**](https://mp.weixin.qq.com/s?__biz=Mzg5ODkwNTc2Ng==&mid=2247488841&idx=1&sn=ab06e5d17b33f7fcdef9de140fdbe99a&scene=21#wechat_redirect)[**云本应该就是操作系统**](https://mp.weixin.qq.com/s?__biz=Mzg5ODkwNTc2Ng==&mid=2247488841&idx=1&sn=ab06e5d17b33f7fcdef9de140fdbe99a&scene=21#wechat_redirect)》， ClapDB 的李令辉主张《[**云是一台新电脑**](https://mp.weixin.qq.com/s?__biz=Mzg2MDYzOTUzMA==&mid=2247483706&idx=1&sn=68768543f49c6f853043ef5c10abb864&scene=21#wechat_redirect)》。在这个范式下，应用调用云 API 和调用 Syscalls 是类似的。没有人会说要解耦应用和操作系统，同理，也不应该提倡解耦应用和基础设施。
+我和我的朋友们把这种基础设施和应用的耦合更推进一步，SealOS 的方海涛主张[《云本应该就是操作系统》](https://mp.weixin.qq.com/s?__biz=Mzg5ODkwNTc2Ng==&mid=2247488841&idx=1&sn=ab06e5d17b33f7fcdef9de140fdbe99a&scene=21#wechat_redirect)，ClapDB 的李令辉主张《[**云是一台新电脑**](/pg/pg-is-good/)》。在这个范式下，应用调用云 API 和调用 Syscalls 是类似的。没有人会说要解耦应用和操作系统，同理，也不应该提倡解耦应用和基础设施。
 
 虽然我不赞同张先生的观点，但是他是阿里云为数不多能够和客户谈论云原生架构 — 请注意，不是念云原生经 — 的专家。业内还有大量的伪专家，只会念“云原生就是好来，就是好，就是好！“ 或者 ”阿里双十一，十万节点，一亿用户，千亿流量，牛逼牛逼牛牛逼！“
 
 ## 云厂商拱手相让
 
-云厂商的专家无法引导业内技术潮流，給市场留下了权威空白。我的朋友冯若航非常巧妙的填补了这个真空。过去两年，他大量的撰写文章，辛辣的讽刺上云用户《[**花钱买罪受的大冤种：逃离云计算妙瓦底**](/cloud/patsy/)》，打造下云范例《[**DHH：下云超预期，能省一个亿**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488498&idx=1&sn=9950b036d3ed6ed5880592bd2ce6c8f7&scene=21#wechat_redirect)》，甚至弄个了《[**云计算泥石流：下云合订本**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488410&idx=1&sn=e44705fce4221458244e7705258ca254&scene=21#wechat_redirect)》。目前为止，没有看到一家云厂商有能力反驳他，一个下云个体户。这实在是行业莫大的讽刺。
+云厂商的专家无法引导业内技术潮流，給市场留下了权威空白。我的朋友冯若航非常巧妙的填补了这个真空。过去两年，他大量的撰写文章，辛辣的讽刺上云用户《[**花钱买罪受的大冤种：逃离云计算妙瓦底**](/cloud/patsy/)》，打造下云范例《[**DHH：下云超预期，能省一个亿**](/cloud/odyssey-done/)》，甚至弄个了《[**云计算泥石流：下云合订本**](/cloud/exit/)》。目前为止，没有看到一家云厂商有能力反驳他，一个下云个体户。这实在是行业莫大的讽刺。
 
 ## 客户自己也可以种小麦
 
 但声音大的冯老板不是最致命的，更致命的是广大不言不语却在自研替换云厂商的基础架构部。
 
-Bilibili 作为一个在线视频公司，花费人力去自研 DNS 系统，还分享为《[**B站HTTPDNS自研降本之道**](https://mp.weixin.qq.com/s?__biz=Mzg3Njc0NTgwMg==&mid=2247492578&idx=1&sn=bb87b1171165720ecdd50f58c6013ba2&scene=21#wechat_redirect)》。
+Bilibili 作为一个在线视频公司，花费人力去自研 DNS 系统，还分享为《[**B 站 HTTPDNS 自研降本之道**](https://mp.weixin.qq.com/s?__biz=Mzg3Njc0NTgwMg==&mid=2247492578&idx=1&sn=bb87b1171165720ecdd50f58c6013ba2&scene=21#wechat_redirect)》。
 
 他们的理由非常直白：
 
-> 根据内部的成本大佬们的估算，大约可以节省80%-90%的成本。收益上看非常可观！那还说什么，直接开搞。
+> 根据内部的成本大佬们的估算，大约可以节省 80%-90% 的成本。收益上看非常可观！那还说什么，直接开搞。
 
 这个决策过程，是不是很像上文所述的期货市场评估二级小麦？看并且只看价格。
 
@@ -169,52 +169,56 @@ Vivo CI/CD 的
 
 ## 降价，打折扣，送优惠券，双十一大酬宾！
 
-#### 参考资料
+### 参考资料
 
 [1]
 
-Multitenancy: *https://en.wikipedia.org/wiki/Multitenancy*
+Multitenancy: *<https://en.wikipedia.org/wiki/Multitenancy>*
 
 [2]
 
-阿里云的 IDaaS: *https://cn.aliyun.com/product/idaas?from_alibabacloud=*
+阿里云的 IDaaS： *<https://cn.aliyun.com/product/idaas?from_alibabacloud=>*
 
 [3]
 
-身份提供方（IdP）: *https://help.aliyun.com/zh/idaas/eiam/user-guide/idps/*
+身份提供方（IdP）： *<https://help.aliyun.com/zh/idaas/eiam/user-guide/idps/>*
 
 [4]
 
-《阿里 API 网关最佳实践》: *https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/download%2Fpdf%2F68134%2F%25E6%259C%2580%25E4%25BD%25B3%25E5%25AE%259E%25E8%25B7%25B5_cn_zh-CN.pdf*
+《阿里 API 网关最佳实践》: *<https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/download%2Fpdf%2F68134%2F%25E6%259C%2580%25E4%25BD%25B3%25E5%25AE%259E%25E8%25B7%25B5_cn_zh-CN.pdf>*
 
 [5]
 
-API网关灰度发布最佳实践: *https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/download%2Fpdf%2F68134%2F%25E6%259C%2580%25E4%25BD%25B3%25E5%25AE%259E%25E8%25B7%25B5_cn_zh-CN.pdf*
+API 网关灰度发布最佳实践： *<https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/download%2Fpdf%2F68134%2F%25E6%259C%2580%25E4%25BD%25B3%25E5%25AE%259E%25E8%25B7%25B5_cn_zh-CN.pdf>*
 
 [6]
 
-可观测性最佳实践: *https://help.aliyun.com/zh/ack/ack-managed-and-ack-dedicated/user-guide/best-practices-for-observability/*
+可观测性最佳实践： *<https://help.aliyun.com/zh/ack/ack-managed-and-ack-dedicated/user-guide/best-practices-for-observability/>*
 
 [7]
 
-云原生可观测性最佳实践的相关内容: *https://cn.aliyun.com/sswb/679498.html*
+云原生可观测性最佳实践的相关内容： *<https://help.aliyun.com/zh/arms/>*
 
 [8]
 
-最佳实践，近实时数据同步，增全量数据一体: *https://help.aliyun.com/zh/maxcompute/user-guide/github-near-real-time-sync-and-full-and-incremental-data-analysis*
+最佳实践，近实时数据同步，增全量数据一体： *<https://help.aliyun.com/zh/maxcompute/user-guide/github-near-real-time-sync-and-full-and-incremental-data-analysis>*
 
 [9]
 
-Fluid数据缓存优化策略最佳实践: *https://help.aliyun.com/zh/ack/cloud-native-ai-suite/user-guide/best-practices-for-optimizing-fluid-data-caching-strategies*
+Fluid 数据缓存优化策略最佳实践： *<https://help.aliyun.com/zh/ack/cloud-native-ai-suite/user-guide/best-practices-for-optimizing-fluid-data-caching-strategies>*
 
 [10]
 
-云效的安全中心: *https://help.aliyun.com/zh/yunxiao/user-guide/security-center/*
+云效的安全中心： *<https://help.aliyun.com/zh/yunxiao/user-guide/security-center/>*
 
 [11]
 
-云效推荐的几个客户案例: *https://cn.aliyun.com/product/yunxiao*
+云效推荐的几个客户案例： *<https://cn.aliyun.com/product/yunxiao>*
 
 [12]
 
-BYOCloud: *https://www.redpanda.com/blog/deploy-redpanda-clusters-cloud-aws-gcp*
+BYOCloud: *<https://www.redpanda.com/blog/deploy-redpanda-clusters-cloud-aws-gcp>*
+
+---
+
+发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/Eo47Ssttcd0-GFEMEG8Ptg)
