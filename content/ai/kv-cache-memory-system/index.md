@@ -7,8 +7,8 @@ summary: >
 tags: [大模型, AI, 架构]
 ---
 
-> 原作者：xieydd · [微信公众号转载页](https://mp.weixin.qq.com/s/cagTlPJF13JZybqPXyacSw)
-
+> 原作者：xieydd
+>
 > **摘要**\
 > 这篇文章想回答一个看似分散、其实高度统一的问题：为什么这两年围绕大模型推理的系统创新，越来越不像是在“优化一个神经网络”，反而像是在“设计一个内存系统”？\
 > \
@@ -18,32 +18,32 @@ tags: [大模型, AI, 架构]
 
 站在今天回看，真正的变化不是“某个 kernel 更快了”，而是**推理系统的重心，正在从计算图转向内存图**。本文会沿着这条线，把 Mac/Uma、NVIDIA/NVLink、FlashAttention、vLLM、RL rollout、Mooncake、LMCache、CXL，以及 2025–2026 的新论文串成一条完整主线。2
 
-------------------------------------------------------------------------
+---
 
-### 目录
+## 目录
 
-- 1. 大模型推理的本质：Prefill vs Decoding
-- 2. KV Cache：Transformer 推理的真正状态变量
-- 3. 为什么瓶颈会从 compute 转向 memory
-- 4. RL / Agent：为什么后训练把问题推向 decoding
-- 5. 为什么 Mac / UMA 会重新变重要
-- 6. 为什么 FlashAttention 救不了 decoding
-- 7. 推理优化的四层结构：kernel、engine、model、hardware
-- 8. Continuous Batching：从“请求级”到“token 级”调度
-- 9. 模型结构如何直接决定系统上限：MQA / GQA
-- 10. KV Cache 其实是一种高度冗余的外部记忆
-- 11. 为什么很多线上系统仍然在“重复计算历史”
-- 12. 第一代 KV-centric 架构：DistServe、Mooncake、LMCache
-- 13. 为什么 Mooncake / LMCache 不是终点
-- 14. 新一代 Memory-centric 架构：Strata、CAKE、R-KV、KVFlow、FastSwitch、CacheBlend
-- 15. CXL：看起来像终极答案，为什么现实里还很难
-- 16. LLM serving 正在变成一个“操作系统问题”
-- 17. KV cache 之后是什么：Mamba、RWKV 与“在线压缩记忆”
-- 18. 结语：三条真正的主线
+1. 大模型推理的本质：Prefill vs Decoding
+2. KV Cache：Transformer 推理的真正状态变量
+3. 为什么瓶颈会从 compute 转向 memory
+4. RL / Agent：为什么后训练把问题推向 decoding
+5. 为什么 Mac / UMA 会重新变重要
+6. 为什么 FlashAttention 救不了 decoding
+7. 推理优化的四层结构：kernel、engine、model、hardware
+8. Continuous Batching：从“请求级”到“token 级”调度
+9. 模型结构如何直接决定系统上限：MQA / GQA
+10. KV Cache 其实是一种高度冗余的外部记忆
+11. 为什么很多线上系统仍然在“重复计算历史”
+12. 第一代 KV-centric 架构：DistServe、Mooncake、LMCache
+13. 为什么 Mooncake / LMCache 不是终点
+14. 新一代 Memory-centric 架构：Strata、CAKE、R-KV、KVFlow、FastSwitch、CacheBlend
+15. CXL：看起来像终极答案，为什么现实里还很难
+16. LLM serving 正在变成一个“操作系统问题”
+17. KV cache 之后是什么：Mamba、RWKV 与“在线压缩记忆”
+18. 结语：三条真正的主线
 
-------------------------------------------------------------------------
+---
 
-### 1. 大模型推理的本质：Prefill vs Decoding
+## 1. 大模型推理的本质：Prefill vs Decoding
 
 现代主流 LLM，大多沿着 GPT 这条 **causal decoder-only Transformer** 路线发展：输入是“到目前为止的上下文”，输出是“下一个 token 的概率分布”。这与 BERT 这种**bidirectional encoder** 路线的根本区别在于：GPT 类模型天然支持逐 token 自回归生成，而 BERT 的预训练目标是 masked language modeling，本质上依赖左右文共同参与表示计算。换句话说，**KV cache 只对 causal decoder 天然成立**，对 BERT 这种双向编码器并不是一等机制。3
 
@@ -59,9 +59,9 @@ tags: [大模型, AI, 架构]
 
 所以，后面凡是看到有人说“LLM 推理是算力问题”或“LLM 推理是内存问题”，你都应该先追问一句：**你说的是 prefill 还是 decode？你说的是哪类 workload？**
 
-------------------------------------------------------------------------
+---
 
-### 2. KV Cache：Transformer 推理的真正状态变量
+## 2. KV Cache：Transformer 推理的真正状态变量
 
 如果只从算法式子看，自注意力似乎只是\
 `Attention(Q, K, V) = softmax(QK^T)V`。\
@@ -78,9 +78,9 @@ tags: [大模型, AI, 架构]
 
 这里还有一个经常被忽略的差别：模型参数 `weights` 是**共享且静态**的，而 KV cache 是**按请求增长且互不共享**。前者是“把知识装进模型里”；后者更像“把每次推理的思考过程存起来”。这会直接导致一个系统级分水岭：同样是显存/内存占用，**weights 的成本更偏容量，而 KV 的成本更偏容量 + 带宽 + 延迟**。这也是为什么我后面会说，未来很多场景里，KV cache 的压缩价值可能比参数压缩更大。9
 
-------------------------------------------------------------------------
+---
 
-### 3. 为什么瓶颈会从 compute 转向 memory
+## 3. 为什么瓶颈会从 compute 转向 memory
 
 很多关于 LLM 推理的争论，实际上都输在“把 workload 混为一谈”上。\
 更精确的说法不是“推理越来越偏向 decode”，而是：
@@ -92,7 +92,7 @@ tags: [大模型, AI, 架构]
 先看最容易理解的聊天场景。如果用户输入短、系统提示稳定，而输出较长，那么 prefill 只做一次，decode 却要重复几十上百次；这时 decode 的累计成本很容易压过 prefill。Sarathi-Serve、DistServe 和 OpenRLHF 都是在这种“prefill 与 decode 特性完全不同”的观察上做系统设计的。4
 
 但这并不意味着所有工作负载都如此。\
-在 RAG、长文总结、代码仓分析等任务里，输入可能有几千到几十万 token，输出却很短；这类 workload 的第一个大问题是 TTFT，因为模型必须先把长输入完整 prefill 完。LinkedIn 那篇关于 prefix reuse 调度的理论论文就明确把“long-prompt, short-output”视为一个 prefill-dominant 区间，并指出在这种场景下，prefix reuse 对 TTFT 非常关键。10
+在 RAG、长文总结、代码仓分析等任务里，输入可能有几千到几十万 token，输出却很短；这类 workload 的第一个大问题是 TTFT，因为模型必须先把长输入完整 prefill 完。LinkedIn 那篇关于 prefix reuse 调度的理论论文就明确把“long-prompt，short-output”视为一个 prefill-dominant 区间，并指出在这种场景下，prefix reuse 对 TTFT 非常关键。10
 
 真正有意思的是 **agent / reasoning / RL rollout**。\
 这些场景里，逻辑上的“上下文”确实在变长：模型思考、调用工具、读回工具输出、再继续思考，历史不断追加。但如果系统能有效复用 KV cache，那么增长的不是“每轮重新 prefill 的计算量”，而是“需要继续维护和读取的历史状态量”。也就是说，**长 history 并不自动等于更重的 prefill；它可能意味着更大的 KV cache、更高的 decode memory pressure。** OpenRLHF 明确把 long CoT 视为训练效率的关键瓶颈，并把 vLLM 接入 rollout engine 来缓解长推理链带来的推理负担。R-KV 更进一步，直接把 reasoning model 的“超长输出导致 KV cache 爆炸”作为问题出发点。1
@@ -105,19 +105,19 @@ tags: [大模型, AI, 架构]
 
 现代 API 和 serving system 的大量创新，恰恰都是围绕这个区别展开的：prompt caching、prefix reuse、PD disaggregation、hierarchical cache，本质上都在努力把“重复计算的长 prompt”转换成“可复用的长 history”。11
 
-------------------------------------------------------------------------
+---
 
-### 4. RL / Agent：为什么后训练把问题推向 decoding
+## 4. RL / Agent：为什么后训练把问题推向 decoding
 
 如果只看 SFT 时代，训练的主角还是标准的 forward/backward：数据集给定，模型吃进去，算损失、回传梯度。那是典型的“训练是核心、推理只是辅助”的时代。
 
 但后训练，尤其是 RLHF、RLVR、reasoning-oriented RL、agentic RL，不再是这样。\
 今天的一个典型 PPO/GRPO 风格循环更像：
 
-1.  1\. 给 prompt；
-2.  2\. 模型 rollout 出一条或多条答案/轨迹；
-3.  3\. 奖励模型、验证器、工具执行器或环境给反馈；
-4.  4\. 再基于这些 rollout 更新参数。
+1. 1\. 给 prompt；
+2. 2\. 模型 rollout 出一条或多条答案/轨迹；
+3. 3\. 奖励模型、验证器、工具执行器或环境给反馈；
+4. 4\. 再基于这些 rollout 更新参数。
 
 在这个 pipeline 里，**训练并不是直接对固定样本做优化，而是先生成样本，再训练**。于是系统重心自然向 rollout 倾斜。OpenRLHF 的论文给了一个非常重的判断：在 PPO 风格 RLHF/RLVR 中，**inference phase often accounts for over 90% of total runtime**，因为模型要在每个 inference step 里生成成千上万个 token。1**RLVR (Reinforcement Learning from Value Reflection)** 作为新一代 agentic RL 方法，进一步放大了这个问题：它需要模型在 rollout 过程中不断反思、修正自己的轨迹，导致轨迹长度通常比普通 RLHF 更长，KV cache 需要保留的状态也更大。最近的工程经验指出，在 terminal environment 这类复杂 agent 场景中，rollout 轨迹长度很容易达到数千 token，而且每个 policy update 需要采样多条轨迹，KV cache 的内存压力会比传统推理场景高出一个数量级。40
 
@@ -141,9 +141,9 @@ ECHO-2 直接提出把 centralized learning 和 distributed rollout inference �
 
 这也是为什么越来越多 post-training 框架会把 vLLM、SGLang 这类 serving engine 嵌进训练框架：OpenRLHF 明确把 vLLM 当作长 CoT RLHF/RLVR 的关键基础设施；其论点不是“生成顺便用一下推理引擎”，而是“推理本身已经是训练效率的核心瓶颈”。1
 
-------------------------------------------------------------------------
+---
 
-### 5. 为什么 Mac / UMA 会重新变重要
+## 5. 为什么 Mac / UMA 会重新变重要
 
 很多人谈 Mac 跑大模型，容易把它误解成“Apple GPU 能和 NVIDIA 拼训练吞吐”。这基本不是重点。\
 Mac 重新变重要，核心不是因为它在纯算力上赢了，而是因为它在**内存系统组织方式**上走了另一条路。
@@ -153,9 +153,9 @@ Apple 在官方材料里反复强调 unified memory architecture：M3 家族的�
 这对 LLM 推理意味着什么？\
 不是“Mac 的 GPU 比 H100 快”，而是：
 
-1.  1. **模型权重、KV cache、CPU-side orchestration 可以共享同一大内存池；**
-2.  2. **很多 CPU/GPU 协作场景不再需要显式拷贝；**
-3.  3. **只要容量够，单机可以把更大的 working set 放在一个统一地址空间里。**
+1. **模型权重、KV cache、CPU-side orchestration 可以共享同一大内存池；**
+2. **很多 CPU/GPU 协作场景不再需要显式拷贝；**
+3. **只要容量够，单机可以把更大的 working set 放在一个统一地址空间里。**
 
 Apple 对 MLX 的描述也很直接：MLX 利用 Apple silicon 的 unified memory architecture，CPU 和 GPU 之间运行操作时**不需要来回搬数据**。15
 
@@ -174,9 +174,9 @@ NVIDIA 仍然在 prefill、训练和高并发 serving 上拥有压倒性生态�
 
 这不是“Mac 比 NVIDIA 更强”，而是“**当 workload 从 FLOPS 转向 working set 时，内存架构开始决定体验**”。18
 
-------------------------------------------------------------------------
+---
 
-### 6. 为什么 FlashAttention 救不了 decoding
+## 6. 为什么 FlashAttention 救不了 decoding
 
 FlashAttention 是过去几年最重要的 attention kernel 创新之一，但它经常被误用为“attention 已经优化完了”的证据。实际上，FlashAttention 解决的是**prefill 的一个核心痛点**，而不是 decode 的根问题。
 
@@ -197,28 +197,28 @@ FlashAttention 的原论文把问题表述得非常明确：标准 attention 的
 这也是理解后面所有系统设计的第二把钥匙：\
 **当瓶颈是“必须读历史”时，优化方向就会从 kernel 下沉到 memory layout、cache reuse、调度和体系结构。**
 
-------------------------------------------------------------------------
+---
 
-### 7. 推理优化的四层结构：kernel、engine、model、hardware
+## 7. 推理优化的四层结构：kernel、engine、model、hardware
 
 为了不把各种技术混成一锅，我更喜欢把 LLM 推理优化分成四层：
 
-#### 第一层：kernel 层
+### 第一层：kernel 层
 
 典型代表就是 FlashAttention。\
 它关心的是：**单个 attention / decode kernel 如何更少搬 HBM、更多留在片上 SRAM，如何更高效地执行**。这层很重要，但它只回答“这一步怎么算更快”。19
 
-#### 第二层：engine 层
+### 第二层：engine 层
 
 典型代表是 Orca、vLLM、SGLang、Sarathi-Serve。\
 这层关心的是：**请求如何被动态调度、KV cache 如何被分页/复用、prefill 与 decode 如何协同、如何提高 GPU 利用率与 goodput**。Orca 把 request-level scheduling 改成 iteration-level scheduling；vLLM 用 PagedAttention 解决 KV 内存碎片；SGLang 用 RadixAttention 做前缀复用；Sarathi-Serve 通过 chunked-prefill 平衡吞吐与延迟。20
 
-#### 第三层：model 层
+### 第三层：model 层
 
 典型代表是 MQA / GQA、以及更激进的 Mamba / RWKV 方向。\
 这层关心的是：**如果 decode 慢是因为要读太多 K/V，那能不能让 K/V 变少，甚至不用 K/V？** MQA 直接共享 K/V；GQA 折中共享；Mamba/RWKV 则试图把历史压成递归状态。7
 
-#### 第四层：hardware 层
+### 第四层：hardware 层
 
 典型代表是 Apple UMA、Grace Hopper coherent memory、CXL memory pool。\
 这层关心的是：**既然历史必须读，那能不能让“读”这件事更像访问本地内存，而不是频繁跨总线搬数据？** Apple 走 unified memory；NVIDIA 用 GH200 把 coherent memory 带进 CPU+GPU；Beluga、TraCT、CXL-SpecKV 则尝试把更大的共享内存池引入集群级推理。14
@@ -228,9 +228,9 @@ FlashAttention 的原论文把问题表述得非常明确：标准 attention 的
 如果看到第三层，你会发现“模型本身就在决定系统带宽压力”。\
 如果再看到第四层，你就会明白：**今天很多所谓 AI infra 的创新，本质已经不是神经网络论文，而是 memory system 论文。**
 
-------------------------------------------------------------------------
+---
 
-### 8. Continuous Batching：从“请求级”到“token 级”调度
+## 8. Continuous Batching：从“请求级”到“token 级”调度
 
 LLM serving 的一个基本矛盾是：decode 每一步的计算量很小，不 batch 很容易吃不满 GPU；但一旦 batch，序列长度和完成时间又高度不一致，传统 static batching 会制造大量浪费。
 
@@ -254,9 +254,9 @@ Revisiting SLO and Goodput Metrics in LLM Serving、DistServe、以及一系列�
 
 这已经非常像操作系统里的在线调度问题，而不再像经典深度学习里的“固定 batch 训练”。
 
-------------------------------------------------------------------------
+---
 
-### 9. 模型结构如何直接决定系统上限：MQA / GQA
+## 9. 模型结构如何直接决定系统上限：MQA / GQA
 
 如果你理解了 decode 的核心成本是“不断读历史 K/V”，那 MQA / GQA 的意义就会变得非常清楚。
 
@@ -279,23 +279,23 @@ GQA 并不是一个脱离部署场景的纯模型创新；它是在非常明确�
 
 2024 年底到 2025 年初，这条演化路线又走出了关键几步：
 
-#### MLA：DeepSeek V3.1 的低秩压缩 KV
+### MLA：DeepSeek V3.1 的低秩压缩 KV
 
 DeepSeek V3.1 提出的 **Multi-Head Latent Attention (MLA)**，把 MQA/GQA 的思路推向了新的高度。它不再是简单共享 K/V 头，而是对 K/V 做**低秩投影压缩**，把原始 K/V 投影到更低维度的 latent space 存储，需要时再恢复。这种方法在保持模型质量的同时，能把 KV cache 体积压缩**30–50%**，显著降低了 decode 阶段的带宽压力。MLA 的意义在于：它证明了模型架构可以主动通过**表示压缩**来服务系统级的内存效率，而不只是被动等待系统层面的优化。
 
-#### Lightning Indexer：DeepSeek V3.2 的增量 KV 优化
+### Lightning Indexer：DeepSeek V3.2 的增量 KV 优化
 
 DeepSeek V3.2 进一步推出 **Lightning Indexer**，针对 MLA 做了增量推理优化。它把 KV cache 的索引结构从全局压缩变成了增量更新，新 incoming token 的 KV 可以直接写入压缩缓存而不需要重新压缩整个序列，从而在保持压缩比的同时不增加延迟开销。这再次说明：**模型结构和内存系统设计必须协同进化**——压缩带来了容量好处，但增量更新的工程问题必须一起解决才能落地。
 
-#### Attention Residuals：Kimi / MiniMax 的分层 KV 保持
+### Attention Residuals：Kimi / MiniMax 的分层 KV 保持
 
 Kimi 和 MiniMax 在近期的推理优化中都采用了类似 **Attention Residuals** 的思路：它们不再对所有层、所有 token 保留完整精度的 KV，而是只在底层保留完整 KV，高层只保留 residuals 或增量信息。这种分层压缩进一步降低了总体 KV 体积，同时因为底层 attention 更多关注局部位置，高层更多关注抽象语义，这种非均匀压缩对模型质量的影响非常有限。它代表了另一个方向：**利用 attention 机制本身的层次特性来做非均匀 KV 压缩**。
 
 这些新进展继续验证着同一个方向：模型架构设计正在越来越主动地回应推理时的内存瓶颈，而不是把所有问题都丢给系统侧解决。模型定义了 KV 的冗余结构，系统才能在这个结构上做更精细的管理。
 
-------------------------------------------------------------------------
+---
 
-### 10. KV Cache 其实是一种高度冗余的外部记忆
+## 10. KV Cache 其实是一种高度冗余的外部记忆
 
 如果说 2023 年以前，很多系统还默认“KV cache 就是该存的东西，想办法装下就好”，那么 2025 年以后，一个越来越强的共识是：
 
@@ -313,9 +313,9 @@ attention heads 在时间上的稳定性并不一样。有些 heads 会反复关
 
 如果把这三类工作放在一起看，你会发现它们共同指向一个结论：
 
-1.  1. **很多 token 的贡献是稀疏的；**
-2.  2. **很多层和很多 heads 的贡献并不对等；**
-3.  3. **很多历史状态可以被压缩、淘汰、延迟加载或部分重算。**
+1. **很多 token 的贡献是稀疏的；**
+2. **很多层和很多 heads 的贡献并不对等；**
+3. **很多历史状态可以被压缩、淘汰、延迟加载或部分重算。**
 
 这时，KV cache 就越来越像一种“外部记忆系统”而不是“固定中间结果”。\
 Transformer 过去的做法，本质上是把历史逐 token 存档；但一个更成熟的 memory system 会问：哪些应该保留在热层？哪些可以降层？哪些其实只是冗余副本？哪些应该预测性预取？哪些干脆可以忘掉？8
@@ -323,9 +323,9 @@ Transformer 过去的做法，本质上是把历史逐 token 存档；但一个�
 所以我会说，未来很多推理系统里，**KV compression 的战略价值可能比参数量化还高**。\
 参数压缩解决的是“模型能不能装下”；KV 压缩解决的是“系统能不能真正跑起来、跑得快、跑得稳”。R-KV 和 CAKE 的结果已经在很大程度上证明了这一点。8
 
-------------------------------------------------------------------------
+---
 
-### 11. 为什么很多线上系统仍然在“重复计算历史”
+## 11. 为什么很多线上系统仍然在“重复计算历史”
 
 到这里，一个自然问题是：既然 KV cache 这么重要，为什么很多线上系统没有把它彻底用好？
 
@@ -348,9 +348,9 @@ OpenAI 的 Chat Completions 文档写得很明白：请求里要提供 `messages
 
 第一代 KV-centric 系统，就是在解这个矛盾。
 
-------------------------------------------------------------------------
+---
 
-### 12. 第一代 KV-centric 架构：DistServe、Mooncake、LMCache
+## 12. 第一代 KV-centric 架构：DistServe、Mooncake、LMCache
 
 如果说 vLLM 和 SGLang 主要解决的是“单引擎或单节点内，如何更好地跑”，那么 2024 年开始的一批系统开始把问题升级为：
 
@@ -358,7 +358,7 @@ OpenAI 的 Chat Completions 文档写得很明白：请求里要提供 `messages
 
 这条线里，DistServe、Mooncake、LMCache 是三个非常关键的坐标。
 
-#### DistServe：先把 prefill 和 decode 拆开
+### DistServe：先把 prefill 和 decode 拆开
 
 DistServe 的出发点是 goodput：\
 现有 serving 系统把 prefill 与 decode 混在一起跑，会同时带来 **prefill-decoding interference** 和**resource coupling**。前者让两个阶段互相拖累；后者让资源配置无法针对 TTFT 与 TPOT 分别优化。于是 DistServe 直接做**prefill/decode disaggregation**：把 prefill 分到一批 GPU，把 decode 分到另一批 GPU，再按应用的 TTFT/TPOT 目标联合优化资源分配与并行策略。论文报告在不同模型和 workloads 上，DistServe 能在延迟约束下显著提升可服务请求率。5
@@ -366,7 +366,7 @@ DistServe 的出发点是 goodput：\
 DistServe 的重要性不在于它是唯一答案，而在于它第一次非常系统地把一个常识变成了架构原则：\
 **prefill 和 decode 不是同一类资源需求。**
 
-#### Mooncake：把 KV cache 提升为调度核心
+### Mooncake：把 KV cache 提升为调度核心
 
 Mooncake 更进一步。\
 它直接把自己定义为 **KVCache-centric disaggregated architecture**。在 Mooncake 里，prefill 集群和 decode 集群是分离的，同时系统会利用 GPU 集群里原本被低估的 CPU、DRAM、SSD、NIC 资源来构建一个分布式 KV cache；核心则是围绕 KV cache 设计的 scheduler，用来在吞吐、SLO 和过载情况下平衡调度。Mooncake 论文报告在 Kimi 相关工作负载下，真实场景里可以多处理约**75% 请求**。26
@@ -375,7 +375,7 @@ Mooncake 的思路非常值得注意：\
 它已经不再把 KV cache 当成“模型执行之后顺手留下来的临时副产品”，而是把它当成**系统调度的对象**。\
 这是一个很大的范式转变。
 
-#### LMCache：把 KV cache 变成共享层
+### LMCache：把 KV cache 变成共享层
 
 如果 Mooncake 更偏架构与调度，那么 LMCache 更像是把 KV 抽象成一个可插拔的 cache layer。\
 LMCache 论文把自己的定位说得非常清楚：它从 vLLM 和 SGLang 这类现代 LLM engine 里提取并存储 KV cache，然后**跨 queries、cross engines**共享这些 KV cache，既支持 prefix reuse，也支持 PD disaggregation 下的跨引擎 KV transfer。论文报告，和 vLLM 结合时，吞吐在一些 workload 上可提升到**15x**。27
@@ -390,15 +390,15 @@ LMCache 论文把自己的定位说得非常清楚：它从 vLLM 和 SGLang 这�
 
 有意思的是，到 2026 年初，Mooncake 和 LMCache 官方文档已经明确展示了二者的集成：Mooncake 可以作为 LMCache 的后端存储和传输引擎，官方甚至直接展示了 LMCache + Mooncake + vLLM 的 PD-disaggregated demo。也就是说，现实里它们并不是“二选一”的关系，而是常常叠加使用。29
 
-------------------------------------------------------------------------
+---
 
-### 13. 为什么 Mooncake / LMCache 不是终点
+## 13. 为什么 Mooncake / LMCache 不是终点
 
 如果 Mooncake / LMCache 已经把 KV 提成一等公民，为什么 2025 年以后还会冒出一大堆“下一代”论文？
 
 因为当你把 KV 做成系统级资源之后，新的瓶颈会立刻暴露出来。
 
-#### 第一，KV 太大，搬不动
+### 第一，KV 太大，搬不动
 
 Mooncake/LMCache 的默认设定仍然是：\
 **KV 值得存、值得搬、值得复用。**\
@@ -406,7 +406,7 @@ Mooncake/LMCache 的默认设定仍然是：\
 
 Strata 的摘要对此几乎是点名式批评：长上下文下，分层缓存不可避免，但把大块 cached contexts 重新加载回 GPU 时会遇到严重瓶颈——**paged layouts 带来的 fragmented I/O 无法吃满带宽，现有 scheduler 又不考虑 cache-loading delay，结果系统变成 loading-bound 而不是 compute-bound。**30
 
-#### 第二，prefix reuse 会和延迟目标冲突
+### 第二，prefix reuse 会和延迟目标冲突
 
 自动 prefix reuse 并不自动等于更好的 online latency。\
 LinkedIn 那篇关于 RadixAttention 调度的 NeurIPS 2025 论文做了一件很重要的事：它把“有 prefix reuse 的在线调度”形式化之后证明，**在 TTFT 约束下，这个问题是 NP-hard 的**。更直观地说，简单地贪心追求 longest-prefix-match，可能会让某些请求的 TTFT 爆掉。作者因此提出 k-LPM，用来平衡 prefix reuse 与 fairness/waiting time。10
@@ -414,17 +414,17 @@ LinkedIn 那篇关于 RadixAttention 调度的 NeurIPS 2025 论文做了一件�
 这说明什么？\
 说明 Mooncake / LMCache 把“缓存能不能用”解决了，但“缓存什么时候用、优先给谁用”还没有彻底解决。
 
-#### 第三，agent workload 的复用模式和普通 LRU 不一样
+### 第三，agent workload 的复用模式和普通 LRU 不一样
 
 KVFlow 直接把矛头指向 agentic workflows：\
 当前系统虽然会做 prefix caching，但通常采用 LRU 淘汰策略，这会在 agent 即将下一次被调用前把其 KV cache 提前丢掉。KVFlow 因而引入 workflow-aware 的 Agent Step Graph、细粒度 eviction，以及主动 prefetch。它本质上是在说：**agent 场景下，缓存管理必须理解工作流结构，而不能只看最近访问。**31
 
-#### 第四，公平性和抢占有上下文切换成本
+### 第四，公平性和抢占有上下文切换成本
 
 FastSwitch 又暴露了另一个问题：\
 现有 block-based KV cache 分配虽然减少了内存浪费，但会导致上下文切换粒度不足、切换开销高。FastSwitch 因此提出一种 fairness-aware serving system，专门优化 preemption/context switching 的效率。换句话说，**当 KV 成为状态后，抢占不再是免费动作。**32
 
-#### 第五，精确前缀命中本身就过于苛刻
+### 第五，精确前缀命中本身就过于苛刻
 
 在 RAG 这类场景里，两个请求往往不是“完全相同前缀”，而是“共享大量检索上下文但并不严格前缀一致”。CacheBlend 就是在这个问题上往前走了一步：它不再要求严格 prefix match，而是允许复用已缓存的 KV，再对少量 token 的 KV 做 selective recompute，从而在 RAG 上显著改善 TTFT 和吞吐。33
 
@@ -432,48 +432,48 @@ FastSwitch 又暴露了另一个问题：\
 它们解决的是：**让 KV 进入系统视野。**\
 而下一代工作解决的是：**当 KV 已经成为系统资源后，如何处理 I/O、调度、agent reuse、分层缓存、公平性和局部重算。**
 
-------------------------------------------------------------------------
+---
 
-### 14. 新一代 Memory-centric 架构：Strata、CAKE、R-KV、KVFlow、FastSwitch、CacheBlend
+## 14. 新一代 Memory-centric 架构：Strata、CAKE、R-KV、KVFlow、FastSwitch、CacheBlend
 
 我更愿意把 2025 年之后的工作叫做 **memory-centric**，而不是简单的 KV-centric。因为这时研究重心已经不只是“缓存有没有被复用”，而是：
 
 > **如何把 KV cache 管理成一个真正的分层内存系统。**
 
-#### Strata：分层缓存 + GPU-assisted I/O + cache-aware scheduling
+### Strata：分层缓存 + GPU-assisted I/O + cache-aware scheduling
 
 Strata 可以看作 Mooncake/LMCache 之后最系统的一次升级。\
 它关注的不是“怎样做 prefix reuse”，而是“**当长上下文 cache 被分层存储后，如何高效把它重新搬回 GPU**”。论文提出 GPU-assisted I/O、GPU/CPU layout decoupling 和 cache-aware scheduling，并报告在长上下文基准上相对 vLLM + LMCache 可实现**最高 5x 更低 TTFT**。30
 
 这类工作很关键，因为它把“KV cache 存在哪”从一个 yes/no 问题变成了一个多级层次问题：HBM、CPU DRAM、SSD，乃至更远的内存池，都是缓存层的一部分。
 
-#### CAKE：Layer-aware eviction
+### CAKE：Layer-aware eviction
 
 CAKE 的贡献，是把“删谁”这件事变得全局且结构化。\
 它不再把 eviction 看成简单 LRU，而是结合 layer-specific preference 与 temporal dynamics 去做 cascading allocation。最值得记住的不是具体算法，而是它的结果背后的信号：**很多层、很多 token、很多时刻的 KV 实际上并不值钱。**8
 
-#### R-KV：Reasoning-specific compression
+### R-KV：Reasoning-specific compression
 
 R-KV 之所以值得单独拎出来，是因为它直接对应了当下最火的 workload：reasoning。\
 作者指出 reasoning models 经常会生成 excessively long outputs，而 existing compression approach 又会在 reasoning failure 上翻车，于是他们专门针对 reasoning 冗余做压缩。结果同样非常有标志性：**10% KV 接近满血性能，16% KV 甚至能超过 baseline**。9
 
 这说明 reasoning 场景不只是“更长”，还意味着**冗余结构有别于普通聊天输出**。
 
-#### FlexiCache：按 head 稳定性做层次管理
+### FlexiCache：按 head 稳定性做层次管理
 
 FlexiCache 进一步把 memory policy 做到了 attention head 层级：\
 稳定的 heads，只保留 top-K pages 在 GPU；不稳定 heads，保留更多热页。这代表着另一个很重要的趋势：**缓存管理正在越来越细粒度地靠近模型内部结构**。24
 
-#### KVFlow：workflow-aware cache for agents
+### KVFlow：workflow-aware cache for agents
 
 KVFlow 则非常明确地站在 agent workflow 一侧。\
 它的核心思想很简单但很有力：agent workload 不是随机序列，而是带有工作流依赖的 Agent Step Graph；因此缓存策略应该“知道”哪个 agent 下一步更可能被再次激活。KVFlow 再加上 fully overlapped prefetch，本质上已经很像 CPU cache 里的“预测下一步会用什么”。31
 
-#### FastSwitch：context switching 也是成本
+### FastSwitch：context switching 也是成本
 
 FastSwitch 说明，当你把大量请求都做成可抢占的、可中断的 KV-stateful 过程时，**context switching 本身会成为瓶颈**。这和操作系统里的进程切换越来越像：不是说抢占不能做，而是抢占的粒度、上下文布局、恢复成本都必须被认真设计。32
 
-#### CacheBlend：从 exact prefix reuse 走向 approximate reuse
+### CacheBlend：从 exact prefix reuse 走向 approximate reuse
 
 CacheBlend 值得注意，是因为它指出 exact prefix reuse 过于局限。\
 对于 RAG 之类场景，共享上下文不一定是“完全一样的开头”，但仍然值得复用一大块历史。CacheBlend 用少量 selective recompute 把这种近似重用变成可能，这实际上把“缓存”和“计算”做成了连续体，而不是非此即彼。33
@@ -489,9 +489,9 @@ CacheBlend 值得注意，是因为它指出 exact prefix reuse 过于局限。\
 
 这已经完全是 memory system 的语言了。
 
-------------------------------------------------------------------------
+---
 
-### 15. CXL：看起来像终极答案，为什么现实里还很难
+## 15. CXL：看起来像终极答案，为什么现实里还很难
 
 CXL 之所以让人兴奋，是因为它表面上很像一条“兼得”的路线：\
 容量可以扩展、内存池可以共享、load/store 语义更自然、看起来又比 RDMA 更像真正的内存。
@@ -500,21 +500,21 @@ Beluga 的摘要就很有代表性：它提出通过 CXL switch 让 GPU 和 CPU 
 
 但如果因此得出“CXL 就是最终解”，那就太乐观了。
 
-#### 第一，CXL 解决的是容量，不是 HBM 级带宽
+### 第一，CXL 解决的是容量，不是 HBM 级带宽
 
 HBM 的价值不只是近，而是**又近又宽**。\
 CXL 能做出更大的共享内存池，但它不会自动给你 HBM 级吞吐。Beluga 的改进之所以成立，是相对 RDMA 等更曲折路径而言；并不意味着 CXL 可以无成本替代 GPU 本地显存。34
 
-#### 第二，CXL 不是自动 coherent 的天堂
+### 第二，CXL 不是自动 coherent 的天堂
 
 TraCT 的摘要非常有教育意义。\
-它明确指出，为了实现基于 CXL shared memory 的 rack-scale KV cache，必须处理 **synchronization, consistency, and data management on non-coherent CXL memory**。换言之，现实里的 CXL，至少在很多商用品质和部署形态下，并不是“天然全局一致的 UMA”。你还是要自己补软件协议。35
+它明确指出，为了实现基于 CXL shared memory 的 rack-scale KV cache，必须处理 **synchronization，consistency，and data management on non-coherent CXL memory**。换言之，现实里的 CXL，至少在很多商用品质和部署形态下，并不是“天然全局一致的 UMA”。你还是要自己补软件协议。35
 
-#### 第三，数据移动不见得比重算便宜
+### 第三，数据移动不见得比重算便宜
 
 只要 KV 足够大、访问足够碎、竞争足够高，跨层搬运本身就会成为主成本。TraCT 专门把 KV transfer 视为 PD disaggregation 的 fundamental bottleneck；CXL-SpecKV 则不得不引入 speculative prefetch + FPGA compression/decompression，才能把 disaggregated KV-cache 的代价压住。35
 
-#### 第四，CXL 方案经常不得不引入更多“系统补丁”
+### 第四，CXL 方案经常不得不引入更多“系统补丁”
 
 Beluga 通过 shared pool + native load/store 降低编程复杂度；TraCT 通过软件级同步机制处理 non-coherence；CXL-SpecKV 又通过 speculative prefetch 和压缩去弥补带宽/延迟问题。你会发现，CXL 不是一个“买来即用”的硬件银弹，而是一个**要求系统/软件/硬件协同设计**的平台。34
 
@@ -526,9 +526,9 @@ Beluga 通过 shared pool + native load/store 降低编程复杂度；TraCT 通�
 为什么 CXL 方案总在讨论 prefetch、压缩、shared pool、non-coherence、software sync？\
 因为它们在本质上做的是——**承认远程内存仍然更慢，然后尽量把这份慢掩盖掉。**
 
-------------------------------------------------------------------------
+---
 
-### 16. LLM serving 正在变成一个“操作系统问题”
+## 16. LLM serving 正在变成一个“操作系统问题”
 
 如果把今天的主流 LLM serving 系统和 5 年前的 DNN serving 系统一对比，最大的变化不是模型更大，而是抽象层变了。
 
@@ -551,19 +551,19 @@ Serving 时代，越来越关键的是：**TTFT、TPOT、P99、SLO attainment、
 
 这个“操作系统”要解决的事情包括：
 
-1.  1\. 如何把状态拆成页；
-2.  2\. 如何在多层存储中放置；
-3.  3\. 如何决定谁驻留 GPU；
-4.  4\. 如何预测谁下一步会用；
-5.  5\. 如何平衡公平、吞吐和尾延迟；
-6.  6\. 如何在必要时压缩、重算、抢占和迁移；
-7.  7\. 如何让 prefix sharing 和多租户服务共存。
+1. 1\. 如何把状态拆成页；
+2. 2\. 如何在多层存储中放置；
+3. 3\. 如何决定谁驻留 GPU；
+4. 4\. 如何预测谁下一步会用；
+5. 5\. 如何平衡公平、吞吐和尾延迟；
+6. 6\. 如何在必要时压缩、重算、抢占和迁移；
+7. 7\. 如何让 prefix sharing 和多租户服务共存。
 
 从这个角度看，Mooncake/LMCache 只是“把文件系统建起来”的第一步；Strata、KVFlow、FastSwitch、Beluga、TraCT，则在往“完整内存管理器”方向走。
 
-------------------------------------------------------------------------
+---
 
-### 17. KV cache 之后是什么：Mamba、RWKV 与“在线压缩记忆”
+## 17. KV cache 之后是什么：Mamba、RWKV 与“在线压缩记忆”
 
 如果把问题继续追到底，一个更激进的问题会冒出来：
 
@@ -587,25 +587,25 @@ RWKV 的表述也很直接：它想结合 Transformer 可并行训练的优点�
 
 这两条线并不冲突。相反，今天围绕 KV cache 做出的所有系统认知，都会成为理解下一代序列架构的基础。
 
-------------------------------------------------------------------------
+---
 
-### 18. 结语：三条真正的主线
+## 18. 结语：三条真正的主线
 
 如果要把整篇文章浓缩成三条主线，我会这样总结。
 
-#### 第一条：从 Compute 到 Memory
+### 第一条：从 Compute 到 Memory
 
 Transformer 训练时代，焦点是 FLOPS；\
 Transformer 推理时代，焦点越来越是 **working set、带宽、延迟、状态复用**。\
 FlashAttention 重要，但它不是终局；真正的终局问题是：**历史信息该如何被存储、访问、迁移和压缩。**19
 
-#### 第二条：从 Stateless 到 Stateful
+### 第二条：从 Stateless 到 Stateful
 
 云上 API 为了可扩展、可容错和多租户，天然偏向 stateless；\
 但 agent、多轮对话、长 CoT、RL rollout，又天然需要 stateful。\
 于是过去两年最重要的 serving 创新，几乎都在试图调和这对矛盾：prompt caching、prefix reuse、RadixAttention、LMCache、Mooncake、DistServe、KVFlow、Beluga、TraCT。它们的共同目标都是：**在不牺牲云架构弹性的前提下，尽量恢复状态复用的收益。**11
 
-#### 第三条：从 Model 到 System，再到 Memory OS
+### 第三条：从 Model 到 System，再到 Memory OS
 
 过去我们常把“模型创新”和“系统优化”分开看。\
 但今天，GQA 这种结构设计直接影响带宽；R-KV 这种压缩方法直接影响 serving 成本；KVFlow/FastSwitch/Strata 这种系统工作又在深度利用模型内部的时间稳定性、前缀结构和层间差异。到这个阶段，模型、引擎、调度、内存层级其实已经被绑在一起。23
@@ -627,52 +627,56 @@ FlashAttention 重要，但它不是终局；真正的终局问题是：**历史
 
 而这，也许才是过去两年 AI infra 最值得被认真理解的变化。
 
-------------------------------------------------------------------------
+---
 
-### 参考阅读（按主题分组）
+## 参考阅读（按主题分组）
 
-#### 基础机制
+### 基础机制
 
-1.  6. *Attention Is All You Need* — Transformer 与 masked decoder。6
-2.  7. *BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding* — 双向 encoder 路线。3
-3.  8. *Language Models are Unsupervised Multitask Learners* — GPT 路线的代表性早期文本。38
+- **[6]** *Attention Is All You Need* — Transformer 与 masked decoder。6
+- **[7]** *BERT：Pre-training of Deep Bidirectional Transformers for Language Understanding* — 双向 encoder 路线。3
+- **[8]** *Language Models are Unsupervised Multitask Learners* — GPT 路线的代表性早期文本。38
 
-#### Kernel / Engine
+### Kernel / Engine
 
-1.  19. *FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness*。19
-2.  20. *Efficient Memory Management for Large Language Model Serving with PagedAttention*（vLLM）。21
-3.  21. *Orca: A Distributed Serving System for Transformer-Based Generative Models*。20
-4.  22. *Taming Throughput-Latency Tradeoff in LLM Inference with Sarathi-Serve*。4
-5.  23. *SGLang: Efficient Execution of Structured Language Model Programs*。28
+- **[19]** *FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness*。19
+- **[20]** *Efficient Memory Management for Large Language Model Serving with PagedAttention*（vLLM）。21
+- **[21]** *Orca: A Distributed Serving System for Transformer-Based Generative Models*。20
+- **[22]** *Taming Throughput-Latency Tradeoff in LLM Inference with Sarathi-Serve*。4
+- **[23]** *SGLang: Efficient Execution of Structured Language Model Programs*。28
 
-#### 模型结构与 KV
+### 模型结构与 KV
 
-1.  7. *Fast Transformer Decoding: One Write-Head is All You Need*（MQA）。7
-2.  8. *GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints*。23
-3.  9. *CAKE: Cascading and Adaptive KV Cache Eviction with Layer Preferences*。8
-4.  10. *R-KV: Redundancy-aware KV Cache Compression for Training-Free Reasoning Models Acceleration*。9
-5.  11. *FlexiCache: Leveraging Temporal Stability of Attention Heads for Efficient KV Cache Management*。24
+- **[7]** *Fast Transformer Decoding: One Write-Head is All You Need*（MQA）。7
+- **[8]** *GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints*。23
+- **[9]** *CAKE: Cascading and Adaptive KV Cache Eviction with Layer Preferences*。8
+- **[10]** *R-KV: Redundancy-aware KV Cache Compression for Training-Free Reasoning Models Acceleration*。9
+- **[11]** *FlexiCache: Leveraging Temporal Stability of Attention Heads for Efficient KV Cache Management*。24
 
-#### 架构与系统
+### 架构与系统
 
-1.  5. *DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving*。5
-2.  6. *Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving*。26
-3.  7. *LMCache: An Efficient KV Cache Layer for Enterprise-Scale LLM Inference*。27
-4.  8. *Strata: Hierarchical Context Caching for Long Context Language Model Serving*。30
-5.  9. *KVFlow: Efficient Prefix Caching for Accelerating LLM-Based Multi-Agent Workflows*。31
-6.  10. *FastSwitch: Optimizing Context Switching Efficiency in Fairness-aware Serving Systems*。32
-7.  11. *CacheBlend: Fast Large Language Model Serving for RAG with Cached Knowledge Fusion*。33
-8.  12. *LLM Query Scheduling with Prefix Reuse and Latency Constraints*。10
-9.  13. *Revisiting SLO and Goodput Metrics in LLM Serving*。22
+- **[5]** *DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving*。5
+- **[6]** *Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving*。26
+- **[7]** *LMCache: An Efficient KV Cache Layer for Enterprise-Scale LLM Inference*。27
+- **[8]** *Strata: Hierarchical Context Caching for Long Context Language Model Serving*。30
+- **[9]** *KVFlow: Efficient Prefix Caching for Accelerating LLM-Based Multi-Agent Workflows*。31
+- **[10]** *FastSwitch: Optimizing Context Switching Efficiency in Fairness-aware Serving Systems*。32
+- **[11]** *CacheBlend: Fast Large Language Model Serving for RAG with Cached Knowledge Fusion*。33
+- **[12]** *LLM Query Scheduling with Prefix Reuse and Latency Constraints*。10
+- **[13]** *Revisiting SLO and Goodput Metrics in LLM Serving*。22
 
-#### RL / Agent / Post-training
+### RL / Agent / Post-training
 
-1.  1. *OpenRLHF: An Easy-to-use, Scalable and High-performance RLHF Framework*。1
-2.  2. *ECHO-2: A Large-Scale Distributed Rollout Framework for Cost-Efficient RL Post-Training*。12
-3.  3. *AgentRL* / *Agent Lightning* 这类 agentic RL 基础设施工作。13
+- **[1]** *OpenRLHF: An Easy-to-use, Scalable and High-performance RLHF Framework*。1
+- **[2]** *ECHO-2: A Large-Scale Distributed Rollout Framework for Cost-Efficient RL Post-Training*。12
+- **[3]** *AgentRL* / *Agent Lightning* 这类 agentic RL 基础设施工作。13
 
-#### 硬件与内存系统
+### 硬件与内存系统
 
-1.  14\. Apple 官方关于 unified memory、M2 Ultra、M3 Ultra、M5 Pro/Max、MLX 的材料。14
-2.  15\. NVIDIA Grace Hopper / GH200 官方 coherent memory 材料。39
-3.  16. *Beluga*, *TraCT*, *CXL-SpecKV* — CXL/shared memory 方向。34
+- **[14]** Apple 官方关于 unified memory、M2 Ultra、M3 Ultra、M5 Pro/Max、MLX 的材料。14
+- **[15]** NVIDIA Grace Hopper / GH200 官方 coherent memory 材料。39
+- **[16]** *Beluga*, *TraCT*, *CXL-SpecKV* — CXL/shared memory 方向。34
+
+---
+
+发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/cagTlPJF13JZybqPXyacSw)
