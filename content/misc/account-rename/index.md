@@ -21,12 +21,16 @@ tags: [随笔]
 
 ![图片](02.webp)
 
-如读者所见，公众号只是俺的副业，我的主业是搞开源 PostgreSQL 数据库发行版 —— [Pigsty](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488876&idx=1&sn=d0d6502e4e81624e2384c8beecf1e47b&scene=21#wechat_redirect) ，所以并不靠笔杆子瞎叭叭赚钱，也不接商单，主打一个直抒胸臆，想啥说啥，拒绝假大空，开喷不留情。不谦虚的说，中外互联网/云计算/数据库大厂基本都抡了个遍。
+如读者所见，公众号只是俺的副业，我的主业是搞开源 PostgreSQL 数据库发行版 —— [Pigsty](/pigsty/year-2024/)，所以并不靠笔杆子瞎叭叭赚钱，也不接商单，主打一个直抒胸臆，想啥说啥，拒绝假大空，开喷不留情。不谦虚的说，中外互联网/云计算/数据库大厂基本都抡了个遍。
 
 本号的内容包括 PostgreSQL 生态最新消息，各种脑洞大开的奇技淫巧，数据库领域的深度行业洞察与点评，云计算的阴湿后厨与杀猪内幕，Pigsty 的版本发布特性介绍与广告推销，以及乱七八糟的杂文与游记。当然，核心的内容还是围绕着两条主线进行的：
 
-[云计算泥石流：如何通过下云实现惊人的降本！](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488410&idx=1&sn=e44705fce4221458244e7705258ca254&scene=21#wechat_redirect)
+[云计算泥石流：如何通过下云实现惊人的降本！](/cloud/exit/)
 
-[数据库老司机：如何通过 PG 实现惊人的增效！](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488417&idx=1&sn=11ac37347fd159a1949da015b2cf57c7&scene=21#wechat_redirect)
+[数据库老司机：如何通过 PG 实现惊人的增效！](/db/guru/)
 
 在未来，“老冯云数” 将致力于为读者朋友们提供更有趣有料，事实准确，观点鲜明的优质内容，敬请期待，感谢关注～
+
+---
+
+发布版本：[微信公众号](https://mp.weixin.qq.com/s/zuADA_qImguH7pVlnOnOIg)
