@@ -17,7 +17,7 @@ tags: [数据库, 故障复盘, 职业]
 
 如果是 PostgreSQL 数据库爆炸了，即时只剩个文件系统残骸，我还有不少办法能解决。但如果是 MinIO 误操作，备份/多版本/垃圾回收都没开，老冯也只能很遗憾的表示爱莫能助。比较理想的情况，如果这些数据真的非常非常重要，那么就只能自己找开源老司机来慢慢拼图了。
 
-------------------------------------------------------------------------
+---
 
 这让我想起了两年前的一个案例：《[如何用 pg_filedump 抢救数据？](/pg/pg-filedump/)》，有位客户（当时还不是）自己拉了一套 Gitlab，单机版。跑在 BCACHE 缓存盘上，断电后起不来了，科技企业，大量 CI/CD，PR，项目管理都放在在 Gitlab 上，这要是丢了可真是要老命了。更要命的是，故障之后没有保留好现场，一番操作把里面的 PG 数据库彻底给烤糊了，还把备份给误删了，打电话求助。
 
@@ -29,11 +29,11 @@ tags: [数据库, 故障复盘, 职业]
 
 所以对于数据库的用户/客户来说，真正有价值的核心服务其实就是：大翻车的时候，能不能摇来真正的专家兜底。
 
-------------------------------------------------------------------------
+---
 
-不幸地是在这一点上，很多厂商都缺乏这种能力。即使是国内公有云一哥阿里云，年消费百万+的客户能在 RDS 故障上期待的“兜底”服务，也不过是 《[草台班子唱大戏，阿里云 RDS 翻车记](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488205&idx=1&sn=2c45a521d50a60e9644b95c974bb2949&scene=21#wechat_redirect)》中描述的那种 —— 客服为您提供 20% 月消费代金券，不解决实际问题。
+不幸地是在这一点上，很多厂商都缺乏这种能力。即使是国内公有云一哥阿里云，年消费百万+的客户能在 RDS 故障上期待的“兜底”服务，也不过是 《[草台班子唱大戏，阿里云 RDS 翻车记](/cloud/rds-failure/)》中描述的那种 —— 客服为您提供 20% 月消费代金券，不解决实际问题。
 
-实际上当阿里云 RDS PG 出现故障的时候[，直接去找 @德哥 Digoal 要比跟小白客服扯皮管用多了](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485093&idx=1&sn=5815f71f1d832101d35a75f5aa4acd3c&scene=21#wechat_redirect)。因为德哥是货真价实的专家，又在社区用爱发电。专家很容易就能看出问题核心，最不济至少也有能量能直接把问题 Escalte 到真正的工程师那里去。当然现在德哥已经不管 RDS 了，所以俺也不建议读者朋友们去薅德哥，毕竟这种用爱发电的事儿干多了太累了。
+实际上当阿里云 RDS PG 出现故障的时候[，直接去找 @德哥 Digoal 要比跟小白客服扯皮管用多了](/cloud/drop-rds/)。因为德哥是货真价实的专家，又在社区用爱发电。专家很容易就能看出问题核心，最不济至少也有能量能直接把问题 Escalte 到真正的工程师那里去。当然现在德哥已经不管 RDS 了，所以俺也不建议读者朋友们去薅德哥，毕竟这种用爱发电的事儿干多了太累了。
 
 当然，比起事后擦屁股，更好的办法永远是事前就做好设计：比如用高可用架构为硬件故障兜底，用 PITR 为人为误删兜底，用监控系统缩短定位故障的时间，用 IaC 减少误操作的可能。
 
@@ -49,4 +49,14 @@ tags: [数据库, 故障复盘, 职业]
 
 *\
 
-[如何用 pg_filedump 抢救数据？](/pg/pg-filedump/)[SaaS已死？AI时代，软件从数据库开始](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489605&idx=1&sn=22aa5f6f18b871b2a216bc46dbaea42c&scene=21#wechat_redirect)[分布式数据库是伪需求吗？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485549&idx=1&sn=7c34439d82431129c57aba211202b5ca&scene=21#wechat_redirect)[2025年：MySQL vs PostgreSQL](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489541&idx=1&sn=7ab3d6a9a2e4f87bfbfde7bf94beed6e&scene=21#wechat_redirect)[Claude Code泄密：MCP 爆火的隐藏真相](/ai/mcp-hidden-truth/)[草台班子唱大戏，阿里云RDS翻车记](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488205&idx=1&sn=2c45a521d50a60e9644b95c974bb2949&scene=21#wechat_redirect)[云RDS：从删库到跑路](/cloud/drop-rds/)
+- [如何用 pg_filedump 抢救数据？](/pg/pg-filedump/)
+- [SaaS 已死？AI 时代，软件从数据库开始](/ai/ai-agent-era/)
+- [分布式数据库是伪需求吗？](/db/distributive-bullshit/)
+- [2025 年：MySQL vs PostgreSQL](/db/mysql-vs-pgsql/)
+- [Claude Code 泄密：MCP 爆火的隐藏真相](/ai/mcp-hidden-truth/)
+- [草台班子唱大戏，阿里云 RDS 翻车记](/cloud/rds-failure/)
+- [云 RDS：从删库到跑路](/cloud/drop-rds/)
+
+---
+
+发布版本：[微信公众号](https://mp.weixin.qq.com/s/Hs-lus_rf9Lhcqw1Az1LUQ)
