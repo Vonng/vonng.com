@@ -7,13 +7,13 @@ summary: >
 tags: [云计算, 架构, 翻译]
 ---
 
-**作者：David Heinemeier Hansson**，网名DHH，37 Signal 联创与CTO，Ruby on Rails 作者，下云倡导者、实践者、领跑者。反击科技巨头垄断的先锋。
+**作者：David Heinemeier Hansson**，网名 DHH，37 Signal 联创与 CTO，Ruby on Rails 作者，下云倡导者、实践者、领跑者。反击科技巨头垄断的先锋。
 
-**译者：冯若航**，网名 Vonng 。磐吉云数创始人与CEO。[**Pigsty**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485518&idx=1&sn=3d5f3c753facc829b2300a15df50d237&scene=21#wechat_redirect "Pigsty") 作者，PostgreSQL 专家/布道师。公众号《[**非法加冯**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486611&idx=1&sn=658ded908f5e8a24d01a7ccc87df5bbc&scene=21#wechat_redirect "非法加冯")》主理人，[**云计算泥石流**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486813&idx=1&sn=ffb126fdd061c1e27626dd558f6fa26a&chksm=fe4b3886c93cb190e2acf7af6cfd25f298199f6ee73da566bed050c066b96753b913e3453d4f&scene=21#wechat_redirect)，数据库老司机。
+**译者：冯若航**，网名 Vonng。磐吉云数创始人与 CEO。[**Pigsty**](/pigsty/better-rds-alternative/) 作者，PostgreSQL 专家/布道师。公众号《[**非法加冯**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486611&idx=1&sn=658ded908f5e8a24d01a7ccc87df5bbc&scene=21#wechat_redirect "非法加冯")》主理人，[**云计算泥石流**](/cloud/debris/)，数据库老司机。
 
-------------------------------------------------------------------------
+---
 
-## 多租户是Web服务的复杂之源
+## 多租户是 Web 服务的复杂之源
 
 > Multi-tenancy is what’s hard about scaling web services<sup>[1]</sup>
 
@@ -21,11 +21,11 @@ tags: [云计算, 架构, 翻译]
 
 这样的理念，让 SQLite 在其经典嵌入式场景外重新引起关注。当然你不可能仅用一个 SQLite 实例来运行 HEY 或 Basecamp 并同时服务所有客户，更别说 Shopify 或者 GitHub 了 —— 我们可以用 MySQL 和 PostgreSQL 这些高效的数据库系统，它们就是为此而生的。但上述服务们的任何单一客户，都完全可以运行于单台服务器的 SQLite 上，那这又意味着什么呢？
 
-我们正试图通过 ONCE<sup>[2]</sup> 项目来探索这个问题 —— 这是我们即将推出的一系列基于Web网页的系统 —— 你可以**将其作为产品购买，而非作为服务租用**。我们的想法是，您将自己部署并运行这个产品，无论是在云上的虚拟机还是你自己的硬件上 —— 而且**只**为您自己服务：没有多租户机制，数据不会相互混杂，扩容伸缩起来也简单得多。
+我们正试图通过 ONCE<sup>[2]</sup> 项目来探索这个问题 —— 这是我们即将推出的一系列基于 Web 网页的系统 —— 你可以**将其作为产品购买，而非作为服务租用**。我们的想法是，您将自己部署并运行这个产品，无论是在云上的虚拟机还是你自己的硬件上 —— 而且**只**为您自己服务：没有多租户机制，数据不会相互混杂，扩容伸缩起来也简单得多。
 
 我们还在对这个概念进行最后的润色与打磨，所以我这里就不展开 ONCE 到底是干嘛用的了，这都不是关键。关键是现如今绝大多数的基于网络的信息系统，都是在**多租户**的范式下以 **SaaS** 的形式提供服务的。这正是我们行业在过去二十年中一直在优化的模式，它确实管用。
 
-说起 “管用” 时，我的意思是这种做法是“可行的”。因为规模一旦达到一定程度，事情就会棘手起来。云计算最初宣传说会让这件事变得容易 —— 但这[**从来没兑现过**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486366&idx=1&sn=c28407399af8b1ddeadf93e902ed23cc&chksm=fe4b3e45c93cb753dfd3cdbdd4eacd05ae6ce7d83eadf3105718cfa20180d6c3244652d88cc7&scene=21#wechat_redirect)：没有哪个拥有数百万用户的重量级网络信息系统是“容易”运行的。大多数系统都需要专门的运维团队，不断地维护这些复杂的巨兽，而这些巨无霸通常都是围绕着核心的数据存储构建的。
+说起 “管用” 时，我的意思是这种做法是“可行的”。因为规模一旦达到一定程度，事情就会棘手起来。云计算最初宣传说会让这件事变得容易 —— 但这[**从来没兑现过**](/cloud/odyssey/)：没有哪个拥有数百万用户的重量级网络信息系统是“容易”运行的。大多数系统都需要专门的运维团队，不断地维护这些复杂的巨兽，而这些巨无霸通常都是围绕着核心的数据存储构建的。
 
 而这正是为什么**单租户**、SQLite、以及将服务再次转变为产品，会是一种非常诱人的想法 —— 这样能够规避绝大部分的开发/运维复杂度。
 
@@ -39,11 +39,15 @@ tags: [云计算, 架构, 翻译]
 
 DHH 不仅在下云上引领潮流，更是在 SaaS 领域两面开火。但这两件事其实内在逻辑是一致的 —— 就是用第一性原理去重新审视技术领域的现状，挑战现有的理念，提出问题与解决方案并亲身践行。
 
-无论是云（IaaS/PaaS）还是 SaaS ，关于这些昂贵的服务，一个值得思考的问题是 —— 究竟是什么原因迫使用户只能**租赁软件服务**，而不是**直接拥有软件产品**？在这种意义上，公有云和私有云的划分并不准确 —— 它们应该叫**公租云**与**私属云**。
+无论是云（IaaS/PaaS）还是 SaaS，关于这些昂贵的服务，一个值得思考的问题是 —— 究竟是什么原因迫使用户只能**租赁软件服务**，而不是**直接拥有软件产品**？在这种意义上，公有云和私有云的划分并不准确 —— 它们应该叫**公租云**与**私属云**。
 
-抛开那些有强网络效应的服务不谈，并没有什么技术性的问题阻碍工具性/能力性的软件被用户直接拥有 —— 回想20年前的盒装买断软件，它们就是这样工作的。而现在，范式的钟摆又一次开始摆动了。
+抛开那些有强网络效应的服务不谈，并没有什么技术性的问题阻碍工具性/能力性的软件被用户直接拥有 —— 回想 20 年前的盒装买断软件，它们就是这样工作的。而现在，范式的钟摆又一次开始摆动了。
 
 ### References
 
-`[1]` Multi-tenancy is what’s hard about scaling web services: *https://world.hey.com/dhh/multi-tenancy-is-what-s-hard-about-scaling-web-services-dd1e0e81*\
-`[2]` ONCE: *https://once.com/*
+- `[1]` Multi-tenancy is what’s hard about scaling web services: <https://world.hey.com/dhh/multi-tenancy-is-what-s-hard-about-scaling-web-services-dd1e0e81>
+- `[2]` ONCE: <https://once.com/>
+
+---
+
+发布版本：[微信公众号](https://mp.weixin.qq.com/s/jKv9l_ro6rWei4QnXck-zw)
