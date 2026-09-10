@@ -7,7 +7,7 @@ summary: >
 tags: [云计算, 故障复盘, 工具]
 ---
 
-> 原作者：周新宇 · [微信公众号转载页](https://mp.weixin.qq.com/s/_2luIza-Yr09EVlqZ8MJfw)
+> 原作者：周新宇
 
 ![图片](01.webp)
 
@@ -105,30 +105,34 @@ Chaos Testing
 
 最后，既然公有云的故障无法避免，即使 AutoMQ 仅依赖了 IaaS 层云服务，如何在故障发生时进行容灾呢，我们也将在后续的文章里面分享 AutoMQ 如何以云原生的方式应对 ECS 故障、EBS 故障、S3 故障、AZ 级故障的思路和方案。
 
-**引用**
+## 引用
 
 [1]. AutoMQ 云原生方案解读：[https://mp.weixin.qq.com/s/rmGoamqBnMPlrylDeSwgEA](https://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=2651189673&idx=1&sn=3f64ea3cb46cbba9a2e4dbf4fee23117&scene=21#wechat_redirect)
 
-[2]. gRPC 性能测试大盘：https://grafana-dot-grpc-testing.appspot.com/
+[2]. gRPC 性能测试大盘：<https://grafana-dot-grpc-testing.appspot.com/>
 
-[3]. 并发场景下单元测试工具：https://github.com/awaitility/awaitility
+[3]. 并发场景下单元测试工具：<https://github.com/awaitility/awaitility>
 
-[4]. S3 Mock 组件 https://github.com/adobe/S3Mock
+[4]. S3 Mock 组件 <https://github.com/adobe/S3Mock>
 
-[5]. AutoMQ 性能测试框架：https://github.com/AutoMQ/openmessaging-benchmark
+[5]. AutoMQ 性能测试框架：<https://github.com/AutoMQ/openmessaging-benchmark>
 
-[6]. AutoMQ 性能白皮书：https://docs.automq.com/zh/docs/automq-s3kafka/CYxlwqDBHitThCkxSl2cePxrnBc
+[6]. AutoMQ 性能白皮书：<https://docs.automq.com/automq-cloud/appendix/performance-benchmark>
 
-[7]. Chaos Mesh 组件：https://chaos-mesh.org/
+[7]. Chaos Mesh 组件：<https://chaos-mesh.org/>
 
 今日好文推荐
 
-[“真男人就应该用 C 编程”！用 1000 行 C 代码手搓了一个大模型，Mac 即可运行，特斯拉前AI总监爆火科普 LLM](http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=2651201941&idx=1&sn=a88a90030a857f25d69957eb22529e55&chksm=bdbbd9c68acc50d0a58c2d4e08539c0fad336ea99d2f1bd45738d14490bcb619e3bf822b617a&scene=21#wechat_redirect)
+[“真男人就应该用 C 编程”！用 1000 行 C 代码手搓了一个大模型，Mac 即可运行，特斯拉前 AI 总监爆火科普 LLM](http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=2651201941&idx=1&sn=a88a90030a857f25d69957eb22529e55&chksm=bdbbd9c68acc50d0a58c2d4e08539c0fad336ea99d2f1bd45738d14490bcb619e3bf822b617a&scene=21#wechat_redirect)
 
 [逃离 Windows！德国又宣布迁移到 Linux，涉及数万系统、3 万余人，官员吐苦水：Windows 对硬件要求太高了](http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=2651201822&idx=1&sn=3426e28e7320c75c51cbcd4e3a032c58&chksm=bdbbd94d8acc505b83b755476510dd7fd210cbb898b1ea0138942cd52ff0c2a605a4c3744150&scene=21#wechat_redirect)\
 
 [AI 面试的“酷刑”，只有中高级管理层和 CEO 能幸免](http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=2651201725&idx=1&sn=1ec37560cbea00f119b599ea75034ee6&chksm=bdbbd8ee8acc51f88023cc74084c30fa2d8b6d51fcf29ee923ef4fa2464a57ba0e95cfb761c4&scene=21#wechat_redirect)\
 
-[蔡崇信反思阿里落后：我们砸了自己的脚；英特尔又“崩了”，亏损70亿美元；华为切割“遥遥领先”，传任正非下令禁止 \| Q资讯](http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=2651201669&idx=1&sn=78395e008eef2bd765b350591fe48347&chksm=bdbbd8d68acc51c06c6aadbf49e8c3fbe7c1730f69c0455a845f456358a8f90f3fb3785a39df&scene=21#wechat_redirect)
+[蔡崇信反思阿里落后：我们砸了自己的脚；英特尔又“崩了”，亏损 70 亿美元；华为切割“遥遥领先”，传任正非下令禁止 \| Q 资讯](http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=2651201669&idx=1&sn=78395e008eef2bd765b350591fe48347&chksm=bdbbd8d68acc51c06c6aadbf49e8c3fbe7c1730f69c0455a845f456358a8f90f3fb3785a39df&scene=21#wechat_redirect)
 
 ![图片](10.gif)
+
+---
+
+发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/_2luIza-Yr09EVlqZ8MJfw)
