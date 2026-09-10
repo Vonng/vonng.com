@@ -7,7 +7,7 @@ summary: >
 tags: [旅行, 随笔]
 ---
 
-早上起来看到新闻，加拿大最美的小镇之一贾斯帕在一夜之间被山火烧干净了。上个月我才刚刚去贾斯帕国家公园玩了一周，我也才刚刚写完一篇游记的上半部分—— 《[贾斯帕自驾游记 — 山峰戴雪，湖光入画](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487897&idx=1&sn=b7e1e2c3101f0247b33a4bb36a123bd2&chksm=fe4b2442c93cad5412001a34ad2ecf73efa8b887fe1c6194e4eee24c03d6505b4f53eb20e23c&scene=21#wechat_redirect)》
+早上起来看到新闻，加拿大最美的小镇之一贾斯帕在一夜之间被山火烧干净了。上个月我才刚刚去贾斯帕国家公园玩了一周，我也才刚刚写完一篇游记的上半部分—— 《[贾斯帕自驾游记 — 山峰戴雪，湖光入画](/trip/20240627-banff-jasper/)》
 
 ![图片](01.webp)
 
@@ -33,4 +33,8 @@ tags: [旅行, 随笔]
 
 这着实让人感慨世事无常。旅游这种事，还是**花开堪折直须折**，你要总是等等以后再去，香格里拉，巴黎圣母院，贾斯帕小镇也许就在一把火中烧干净了。
 
-前情回顾：《[贾斯帕自驾游记 — 山峰戴雪，湖光入画](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487897&idx=1&sn=b7e1e2c3101f0247b33a4bb36a123bd2&chksm=fe4b2442c93cad5412001a34ad2ecf73efa8b887fe1c6194e4eee24c03d6505b4f53eb20e23c&scene=21#wechat_redirect)》
+前情回顾：《[贾斯帕自驾游记 — 山峰戴雪，湖光入画](/trip/20240627-banff-jasper/)》
+
+---
+
+发布版本：[微信公众号](https://mp.weixin.qq.com/s/Khw0T1H3efFLV9jqOrBMTw)
