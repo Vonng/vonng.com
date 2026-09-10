@@ -7,7 +7,7 @@ summary: >
 tags: [云计算, 故障复盘, PG管理]
 ---
 
-> 原作者：瑞典马工 · [微信公众号转载页](https://mp.weixin.qq.com/s/OxhhJ4U1P43di_eaE1uGPw)
+> 原作者：瑞典马工
 
 ## 摘要
 
@@ -15,9 +15,9 @@ tags: [云计算, 故障复盘, PG管理]
 
 ## 滴滴不专业的故障沟通
 
-11月27日滴滴出行出了故障，至今没有发布一个官方的时间线，没人知道故障是什么时候开始的和什么时候彻底恢复的。目前最为详细的故障时间线，是一家财经媒体雷达财经发布的《<sup>[1]</sup>滴滴崩溃原因找到了！并非网络攻击 而是底层系统软件故障<sup>[2]</sup>》<sup>[3]</sup>。尽管和滴滴没有任何利益关系，我都感觉到一种从业者的行业羞耻感：“我这个行业怎么这么业余？还需要记者来帮我们整理时间线？”。
+11 月 27 日滴滴出行出了故障，至今没有发布一个官方的时间线，没人知道故障是什么时候开始的和什么时候彻底恢复的。目前最为详细的故障时间线，是一家财经媒体雷达财经发布的《<sup>[1]</sup>滴滴崩溃原因找到了！并非网络攻击 而是底层系统软件故障<sup>[2]</sup>》<sup>[3]</sup>。尽管和滴滴没有任何利益关系，我都感觉到一种从业者的行业羞耻感：“我这个行业怎么这么业余？还需要记者来帮我们整理时间线？”。
 
-滴滴第一次沟通和第二次沟通间隔八个小时，这段时间内，一个猜测“滴滴被网络攻击了”成了最有说服力的解释，以至于第二天滴滴要专门澄清：“没有被攻击”。如果滴滴第一时间就坦诚的和客户沟通是技术原因，并且指出数据不受影响，可以减少很多混乱和恐慌。关于这一点，我建议滴滴团队学习一下 Atlassian的故障沟通最佳实践<sup>[4]</sup>的如下部分：
+滴滴第一次沟通和第二次沟通间隔八个小时，这段时间内，一个猜测“滴滴被网络攻击了”成了最有说服力的解释，以至于第二天滴滴要专门澄清：“没有被攻击”。如果滴滴第一时间就坦诚的和客户沟通是技术原因，并且指出数据不受影响，可以减少很多混乱和恐慌。关于这一点，我建议滴滴团队学习一下 Atlassian 的故障沟通最佳实践<sup>[4]</sup>的如下部分：
 
 > Regular updates during the incident
 
@@ -25,21 +25,21 @@ tags: [云计算, 故障复盘, PG管理]
 
 ## 为了表演火中取栗，滴滴先把栗子扔进去
 
-由于滴滴不披露，大家只能自行挖掘。滴滴10月17日发布的一篇技术分享文章[《](https://mp.weixin.qq.com/s?__biz=MzU1ODEzNjI2NA==&mid=2247566470&idx=1&sn=fcb1f051b981d94806210e59c183e988&scene=21#wechat_redirect)[滴滴弹性云基于 K8S 的调度实践](https://mp.weixin.qq.com/s?__biz=MzU1ODEzNjI2NA==&mid=2247566470&idx=1&sn=fcb1f051b981d94806210e59c183e988&scene=21#wechat_redirect)[》](https://mp.weixin.qq.com/s?__biz=MzU1ODEzNjI2NA==&mid=2247566470&idx=1&sn=fcb1f051b981d94806210e59c183e988&scene=21#wechat_redirect)被挖出来，大家特别摘抄出三个点：
+由于滴滴不披露，大家只能自行挖掘。滴滴 10 月 17 日发布的一篇技术分享文章[《滴滴弹性云基于 K8S 的调度实践》](https://mp.weixin.qq.com/s?__biz=MzU1ODEzNjI2NA==&mid=2247566470&idx=1&sn=fcb1f051b981d94806210e59c183e988&scene=21#wechat_redirect)被挖出来，大家特别摘抄出三个点：
 
 > k8s 版本的升级：介绍到从 k8s 1.12 到 1.20 跨版本升级的方案。
 
-Kubernetes 1.12是2018年7月发布的，在2019年7月8日就终止支持了。也就是说在2023年10月的时候，滴滴在生产环境使用一个社区已经废弃4年多的老版本。不论是看可靠性，还是看安全性，这都是非常草台班子的做法。
+Kubernetes 1.12 是 2018 年 7 月发布的，在 2019 年 7 月 8 日就终止支持了。也就是说在 2023 年 10 月的时候，滴滴在生产环境使用一个社区已经废弃 4 年多的老版本。不论是看可靠性，还是看安全性，这都是非常草台班子的做法。
 
-在五年没有升级版本的历史债务下，滴滴团队决定孤注一掷，直接从1.12 升级到 1.20。但是 Kubernetes Deprecation Policy<sup>[5]</sup> 很清楚地说了 Beta API 有可能在三个小版本之后就被删除。一次性升8个版本，风险完全不可控，也完全没有必要。
+在五年没有升级版本的历史债务下，滴滴团队决定孤注一掷，直接从 1.12 升级到 1.20。但是 Kubernetes Deprecation Policy<sup>[5]</sup> 很清楚地说了 Beta API 有可能在三个小版本之后就被删除。一次性升 8 个版本，风险完全不可控，也完全没有必要。
 
 > 从方案可落地以及成本角度最终选取了原地升级。
 >
-> 修改原生的kubelet 实现，按hash值是否变化来决定是否重建容器的策略。
+> 修改原生的 kubelet 实现，按 hash 值是否变化来决定是否重建容器的策略。
 
-在冒险跨版本升级的前提下，还进一步选择原地升级，断绝 Plan B 的可能性，是一个更加费解的策略。实际上 Kubernetes 集群的蓝绿升级非常成熟，出问题的时候也更容易挽救。原地升级除了可以节约几个机器资源之外，没有其他好处。而升级Node不重建容器的做法，极容易引入兼容性问题，给自己的安全/调试/性能都带来极大的困难。
+在冒险跨版本升级的前提下，还进一步选择原地升级，断绝 Plan B 的可能性，是一个更加费解的策略。实际上 Kubernetes 集群的蓝绿升级非常成熟，出问题的时候也更容易挽救。原地升级除了可以节约几个机器资源之外，没有其他好处。而升级 Node 不重建容器的做法，极容易引入兼容性问题，给自己的安全/调试/性能都带来极大的困难。
 
-> 集群体量大，最大集群规模已经远远超出了社区推荐的5千个 node 上限，有问题的爆炸半径大；
+> 集群体量大，最大集群规模已经远远超出了社区推荐的 5 千个 node 上限，有问题的爆炸半径大；
 
 Kubernetes 的多集群管理工具已经非常成熟了，而且滴滴其实有多集群，所以维护超大集群没有任何意义。作者自己也清楚“爆炸半径大”，那么合理的做法就是把集群拆成合理大小的。比如把两个一万节点的集群拆成十个两千节点的集群，管理成本没有增加，而运行风险和爆炸半径得到极大的降低。
 
@@ -49,17 +49,17 @@ Kubernetes 的多集群管理工具已经非常成熟了，而且滴滴其实有
 
 ## 阿里云摧毁客户信心
 
-11月12日，阿里云出现了一次影响所有区域的全局大故障。作为云厂商的一哥，阿里云发布了详细的故障时间线<sup>[6]</sup>，但是发布的故障报告语焉不详，我建议大家参考冯若航的非官方复盘文章[《](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486468&idx=1&sn=7fead2b49f12bc2a2a94aae942403c22&scene=21#wechat_redirect)[我们能从阿里云史诗级故障中学到什么](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486468&idx=1&sn=7fead2b49f12bc2a2a94aae942403c22&scene=21#wechat_redirect)[》](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486468&idx=1&sn=7fead2b49f12bc2a2a94aae942403c22&scene=21#wechat_redirect)，目前为止这篇文章是对这次故障最为权威的分析。
+11 月 12 日，阿里云出现了一次影响所有区域的全局大故障。作为云厂商的一哥，阿里云发布了详细的故障时间线<sup>[6]</sup>，但是发布的故障报告语焉不详，我建议大家参考冯若航的非官方复盘文章[《我们能从阿里云史诗级故障中学到什么》](/cloud/aliyun/)，目前为止这篇文章是对这次故障最为权威的分析。
 
 这个故障离谱的是，尽管阿里云一再宣称自己有多区域，但是显然他们的 RAM 没有做到区域的隔离。
 
-这个故障还是对我个人的一巴掌。我和我的朋友王明松一直鼓吹大家使用 IAM， 在《云原生王四条》<sup>[7]</sup>中，我们特意详述了使用 IAM 的 Role 特性。我在故障发生之前恰好发了几篇文章[《](https://mp.weixin.qq.com/s?__biz=MzkwODMyMDE2NQ==&mid=2247484048&idx=1&sn=b57839c9dc85fe3dc6eaac01ff37b995&chksm=c0ca8e5af7bd074ca5221de40c47b82378a8ca20f348ab1c80de7d244679733ee80e29cb3381&scene=21&poc_token=HGGZbmWjDnWMQEekOMc1cBSfArTUdQtiUo0Tdx0U#wechat_redirect)[平台软件应该像数学一样严谨 --- 和阿里云RAM团队商榷](https://mp.weixin.qq.com/s?__biz=MzkwODMyMDE2NQ==&mid=2247484048&idx=1&sn=b57839c9dc85fe3dc6eaac01ff37b995&scene=21#wechat_redirect)[》](https://mp.weixin.qq.com/s?__biz=MzkwODMyMDE2NQ==&mid=2247484048&idx=1&sn=b57839c9dc85fe3dc6eaac01ff37b995&chksm=c0ca8e5af7bd074ca5221de40c47b82378a8ca20f348ab1c80de7d244679733ee80e29cb3381&scene=21&poc_token=HGGZbmWjDnWMQEekOMc1cBSfArTUdQtiUo0Tdx0U#wechat_redirect)和[《](https://mp.weixin.qq.com/s?__biz=MzkwODMyMDE2NQ==&mid=2247484064&idx=1&sn=cedf630065c88b936133001f84690c75&scene=21#wechat_redirect)[云为什么留不住客户 — 以腾讯云 CAM 为例](https://mp.weixin.qq.com/s?__biz=MzkwODMyMDE2NQ==&mid=2247484064&idx=1&sn=cedf630065c88b936133001f84690c75&scene=21#wechat_redirect)[》](https://mp.weixin.qq.com/s?__biz=MzkwODMyMDE2NQ==&mid=2247484064&idx=1&sn=cedf630065c88b936133001f84690c75&scene=21#wechat_redirect)，试图帮助云厂商提高服务质量。
+这个故障还是对我个人的一巴掌。我和我的朋友王明松一直鼓吹大家使用 IAM，在《云原生王四条》<sup>[7]</sup>中，我们特意详述了使用 IAM 的 Role 特性。我在故障发生之前恰好发了几篇文章：[《平台软件应该像数学一样严谨——和阿里云 RAM 团队商榷》](https://mp.weixin.qq.com/s?__biz=MzkwODMyMDE2NQ==&mid=2247484048&idx=1&sn=b57839c9dc85fe3dc6eaac01ff37b995&scene=21#wechat_redirect)和[《云为什么留不住客户——以腾讯云 CAM 为例》](https://mp.weixin.qq.com/s?__biz=MzkwODMyMDE2NQ==&mid=2247484064&idx=1&sn=cedf630065c88b936133001f84690c75&scene=21#wechat_redirect)，试图帮助云厂商提高服务质量。
 
-但是正如冯若航所说，“深度使用云厂商提供的 AK/SK/IAM 不仅会让自己陷入供应商锁定中，更是将自己暴露在云基础设施单点的问题里”，我不得不承认，在你无法确认云厂商能力之前，暂停使用RAM 是一个明智的工程决策。
+但是正如冯若航所说，“深度使用云厂商提供的 AK/SK/IAM 不仅会让自己陷入供应商锁定中，更是将自己暴露在云基础设施单点的问题里”，我不得不承认，在你无法确认云厂商能力之前，暂停使用 RAM 是一个明智的工程决策。
 
 ## 草台班主的哀叹
 
-HelloJava的主理人据说曾经是阿里最优秀的架构师之一。他撰文[《](https://mp.weixin.qq.com/s?__biz=MjM5MzYzMzkyMQ==&mid=2649826941&idx=1&sn=570fc045c5d913038a8d33b8aef423c9&scene=21#wechat_redirect)[稳定性，难的不是技术，而是](https://mp.weixin.qq.com/s?__biz=MjM5MzYzMzkyMQ==&mid=2649826941&idx=1&sn=570fc045c5d913038a8d33b8aef423c9&scene=21#wechat_redirect)[》](https://mp.weixin.qq.com/s?__biz=MjM5MzYzMzkyMQ==&mid=2649826941&idx=1&sn=570fc045c5d913038a8d33b8aef423c9&scene=21#wechat_redirect)向大家讲解了一些可靠性的经验。但是，非常抱歉，我认为这篇文章恰好反映了阿里技术团队的非常业余的一面。
+HelloJava 的主理人据说曾经是阿里最优秀的架构师之一。他撰文[《稳定性，难的不是技术，而是》](https://mp.weixin.qq.com/s?__biz=MjM5MzYzMzkyMQ==&mid=2649826941&idx=1&sn=570fc045c5d913038a8d33b8aef423c9&scene=21#wechat_redirect)向大家讲解了一些可靠性的经验。但是，非常抱歉，我认为这篇文章恰好反映了阿里技术团队的非常业余的一面。
 
 我对专家的期望是，他能推荐一个有效的可靠性模型，然后给出可以落地的工具推荐。实际上，作者只是零零碎碎的分享一些私人经验，像个散文家一样想到哪里说到哪里，别说没有模型，连个结构都没有。
 
@@ -69,11 +69,11 @@ HelloJava的主理人据说曾经是阿里最优秀的架构师之一。他撰�
 
 这是一个非常，非常，非常糟糕的建议。对于绝大多数业务来说，服务的可用性（Availability）的优先级应该低于数据的完整性（Integrity）。如果维持服务在线会导致数据泄漏或者数据损毁，那么应该毫不犹豫的牺牲可靠性。这个很好理解，对大多数用户来说，一天不能上钉钉和丢失钉钉联系人之间，显然后者损失更大。
 
-他下面这个建议本身是非常正确的，但是工程师可以用一个词语精炼的概括他的建议：追求故障平均修复时间（Mean Time To Recovery<sup>[8]</sup>）。MTTR是一个有精确定义的概念，与之相关的概念还有MTBF以及SLO。
+他下面这个建议本身是非常正确的，但是工程师可以用一个词语精炼的概括他的建议：追求故障平均修复时间（Mean Time To Recovery<sup>[8]</sup>）。MTTR 是一个有精确定义的概念，与之相关的概念还有 MTBF 以及 SLO。
 
 > 3.在故障出现时尽快恢复，而不是解决故障，在保留一定的现场的基础上，尽快的恢复问题比查问题重要的多，例如大家很多时候看到最有效的处理故障的方法可能是重启，有同城双活、异地多活的通常最有效的处理方法是切流量等。
 
-另外，作者使用稳定性这个词，是非常外行的。在工程学中，可靠性（Reliability）是一个专业术语，国家标准GB3187-1982《可靠性基本名词术语及定义》把这一套术语都涵盖了。而稳定性（Stability）则是计量系统的一个词汇，指一个衡器多次衡量同一个样品，应该输出一个稳定的值。淘宝用户或者特大号小编把这两个词汇搞混淆是可以原谅的，但是技术专家应该要知道这两者完全不是一回事。
+另外，作者使用稳定性这个词，是非常外行的。在工程学中，可靠性（Reliability）是一个专业术语，国家标准 GB3187-1982《可靠性基本名词术语及定义》把这一套术语都涵盖了。而稳定性（Stability）则是计量系统的一个词汇，指一个衡器多次衡量同一个样品，应该输出一个稳定的值。淘宝用户或者特大号小编把这两个词汇搞混淆是可以原谅的，但是技术专家应该要知道这两者完全不是一回事。
 
 作者在文章中号称可靠性其实“技术上真的没有那么难”，只不过：
 
@@ -85,7 +85,7 @@ HelloJava的主理人据说曾经是阿里最优秀的架构师之一。他撰�
 
 不客气地说，这是一种非常典型的大妈牢骚。工程师都应该知道，一个工程项目的资源总是有限的，工程师的任务永远都是在给定时间和成本的多重限制下，满足既定的质量要求。如果一个目标需要“大量的投入”，那么决策者在衡量投入产出比之后，降低该目标，是非常正常的项目管理动作，没有任何值得抱怨的。
 
-值得抱怨的是这两种情况：项目本来要求A级可靠性，但是最终依照C级可靠性施工。或者，项目只需要C级可靠性，却花费大量的资源用于追求A级可靠性。你把银行存款业务跑在一台树莓派上，属于前者。你把公司内部论坛在亚洲欧洲北美三个region部署，属于后者。两者都是不可取的。
+值得抱怨的是这两种情况：项目本来要求 A 级可靠性，但是最终依照 C 级可靠性施工。或者，项目只需要 C 级可靠性，却花费大量的资源用于追求 A 级可靠性。你把银行存款业务跑在一台树莓派上，属于前者。你把公司内部论坛在亚洲欧洲北美三个 region 部署，属于后者。两者都是不可取的。
 
 那么依据项目的资源和需求，制定一个可行的（Feasible）可靠性目标，是谁的责任呢？在其他行业，答案很简单，这属于可行性研究（Feasibility Study）的一部分，也是一个非功能需求的技术问题，是工程团队的责任。机械工程师们和土木工程师们非常熟悉这个任务了。如果你在可靠性目标制定上有这么多牢骚，很可能问题不在于管理者，要么你制定的目标确实不合理，要么你能力有限，无法向利益相关人有力的证明目标的合理性。
 
@@ -95,7 +95,7 @@ HelloJava的主理人据说曾经是阿里最优秀的架构师之一。他撰�
 
 ## 天生不良的教育欠缺
 
-软件工程是一门工程学科，从业者首先是个工程师，其次才是个软件工程师/硬件工程师/Java工程师。但是很可惜，由于教育的缺失，很多顶着很高头衔的从业者，其实不能算现代工业的工程师，更像一群家庭作坊的手工业者。
+软件工程是一门工程学科，从业者首先是个工程师，其次才是个软件工程师/硬件工程师/Java 工程师。但是很可惜，由于教育的缺失，很多顶着很高头衔的从业者，其实不能算现代工业的工程师，更像一群家庭作坊的手工业者。
 
 可靠性工程作为一个非常成熟的工程学科，是机械工程/土木工程的必修课。中南大学土木工程学院本科生就被要求必修《工程结构可靠度》<sup>[9]</sup>：
 
@@ -123,15 +123,15 @@ HelloJava的主理人据说曾经是阿里最优秀的架构师之一。他撰�
 >
 > ● 系统的故障对策和系统的备份与恢复
 
-国标GB/T29832 《系统与软件可靠性》有三个部分，虽然内容不一定及时更新，但是至少规定了一些基本术语和基本方法。
+国标 GB/T29832 《系统与软件可靠性》有三个部分，虽然内容不一定及时更新，但是至少规定了一些基本术语和基本方法。
 
-——— 第1部分:指标体系;
+——— 第 1 部分：指标体系；
 
-——— 第2部分:度量方法;
+——— 第 2 部分：度量方法；
 
-——— 第3部分:测试方法。
+——— 第 3 部分：测试方法。
 
-如果偏好看书，教材也有很多，中英文的都有。如果你嫌弃软件可靠性开山鼻祖John D. Musa 的《Software Reliability Engineering: More Reliable Software Faster and Cheaper 2nd Edition》是英文的，也可以读徐仁佐的《软件可靠性工程》<sup>[11]</sup>。
+如果偏好看书，教材也有很多，中英文的都有。如果你嫌弃软件可靠性开山鼻祖 John D. Musa 的《Software Reliability Engineering：More Reliable Software Faster and Cheaper 2nd Edition》是英文的，也可以读徐仁佐的《软件可靠性工程》<sup>[11]</sup>。
 
 如果有从业者学习能力实在差，不能考试，也不愿意读标准，甚至读书都会头痛，行业也提供了很多视频，比如波兰 nobl9 公司的学习园地<sup>[12]</sup>就有大量的关于可靠性的音频视频材料。该公司还主办 SLOConf 会议<sup>[13]</sup>，免费提供很多可靠性演讲。
 
@@ -149,11 +149,11 @@ HelloJava的主理人据说曾经是阿里最优秀的架构师之一。他撰�
 
 而阿里云给出的改进措施就更勉强了，几乎就是头痛医头脚痛医脚。
 
-> 增加AK服务白名单生成结果的校验及告警拦截能力。
+> 增加 AK 服务白名单生成结果的校验及告警拦截能力。
 >
-> 增加AK服务白名单更新的灰度验证逻辑，提前发现异常。
+> 增加 AK 服务白名单更新的灰度验证逻辑，提前发现异常。
 >
-> 增加AK服务白名单的快速恢复能力。
+> 增加 AK 服务白名单的快速恢复能力。
 >
 > 加强云产品侧的联动恢复能力。
 
@@ -161,56 +161,60 @@ HelloJava的主理人据说曾经是阿里最优秀的架构师之一。他撰�
 
 软件从业者在基本工程能力的欠缺，过去被高速增长的业务数据所掩盖，不被当成一个问题。但是潮水一旦落下，我们就看到一个又一个裸泳的屁股。对此，我们没有其他建议，只有一个：老老实实地补课，不要再吹牛逼了。
 
-#### 参考资料
+### 参考资料
 
 [1]
 
-《: *http://www.leidacj.com/yuanchuang/show-36978.html*
+《: *<http://www.leidacj.com/yuanchuang/show-36978.html>*
 
 [2]
 
-滴滴崩溃原因找到了！并非网络攻击 而是底层系统软件故障: *http://www.leidacj.com/yuanchuang/show-36978.html*
+滴滴崩溃原因找到了！并非网络攻击 而是底层系统软件故障： *<http://www.leidacj.com/yuanchuang/show-36978.html>*
 
 [3]
 
-》: *http://www.leidacj.com/yuanchuang/show-36978.html*
+》: *<http://www.leidacj.com/yuanchuang/show-36978.html>*
 
 [4]
 
-Atlassian的故障沟通最佳实践: *https://www.atlassian.com/incident-management/incident-communication#:~:text=Part%202%3A%20Regular%20updates%20during%20the%20incident*
+Atlassian 的故障沟通最佳实践： *<https://www.atlassian.com/incident-management/incident-communication#:~:text=Part%202%3A%20Regular%20updates%20during%20the%20incident>*
 
 [5]
 
-Kubernetes Deprecation Policy: *https://kubernetes.io/docs/reference/using-api/deprecation-policy/*
+Kubernetes Deprecation Policy: *<https://kubernetes.io/docs/reference/using-api/deprecation-policy/>*
 
 [6]
 
-阿里云发布了详细的故障时间线: *https://status.aliyun.com/#/historyEvent*
+阿里云发布了详细的故障时间线： *<https://status.aliyun.com/#/historyEvent>*
 
 [7]
 
-《云原生王四条》: *https://github.com/lipingtababa/cloud-native-best-practices/blob/main/%E4%BA%91%E5%8E%9F%E7%94%9F%E7%8E%8B%E5%9B%9B%E6%9D%A1.md*
+《云原生王四条》: *<https://github.com/lipingtababa/cloud-native-best-practices/blob/main/%E4%BA%91%E5%8E%9F%E7%94%9F%E7%8E%8B%E5%9B%9B%E6%9D%A1.md>*
 
 [8]
 
-Mean Time To Recovery: *https://en.wikipedia.org/wiki/Mean_time_to_recovery*
+Mean Time To Recovery: *<https://en.wikipedia.org/wiki/Mean_time_to_recovery>*
 
 [9]
 
-《工程结构可靠度》: *https://civil.csu.edu.cn/bksjy/kcjs/kcjs.htm#:~:text=%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84%E5%8F%AF%E9%9D%A0-,%E5%BA%A6,-%E8%8B%B1%E6%96%87%E5%90%8D%E7%A7%B0%EF%BC%9AReliability*
+《工程结构可靠度》: *<https://en.wikipedia.org/wiki/Reliability_engineering>*
 
 [10]
 
-上海交大计算机科学与技术系的课程表: *https://bjwb.seiee.sjtu.edu.cn/bkjwb/info/13371.htm*
+上海交大计算机科学与技术系的课程表： *<https://bjwb.seiee.sjtu.edu.cn/bkjwb/info/13371.htm>*
 
 [11]
 
-《软件可靠性工程》: *http://www.tup.com.cn/upload/books/yz/016476-01.pdf*
+《软件可靠性工程》: *<http://www.tup.com.cn/upload/books/yz/016476-01.pdf>*
 
 [12]
 
-波兰 nobl9 公司的学习园地: *https://www.nobl9.com/explore/learning-center*
+波兰 nobl9 公司的学习园地： *<https://www.nobl9.com/explore/learning-center>*
 
 [13]
 
-SLOConf 会议: *https://www.sloconf.com/speakers*
+SLOConf 会议： *<https://www.sloconf.com/speakers>*
+
+---
+
+发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/OxhhJ4U1P43di_eaE1uGPw)
