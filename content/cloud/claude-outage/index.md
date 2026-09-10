@@ -23,7 +23,7 @@ aliases: ["/ai/claude-outage/"]
 
 但这个叙事，**大概率是错的**。
 
-------
+---
 
 ## 事实一：到底什么挂了，什么没挂？
 
@@ -31,7 +31,7 @@ aliases: ["/ai/claude-outage/"]
 
 Anthropic 在事故发生后明确确认：**Claude API（api.anthropic.com）工作正常**。出问题的是：
 
-| 服务                             | 状态     |
+| 服务                             | 状态 |
 |--------------------------------|--------|
 | Claude API (api.anthropic.com) | **正常** |
 | claude.ai（网页版）                 | 中断     |
@@ -45,7 +45,7 @@ Claude Code 的情况比较微妙——它本身走的是 API 通道，但在认
 
 这是一个非常重要的线索。这更像“认证与流量入口先爆，再向后扩散”，不是“核心推理集群被物理摧毁”。
 
-------
+---
 
 ## 事实二：AWS 中东被炸了什么？
 
@@ -76,7 +76,7 @@ Claude Code 的情况比较微妙——它本身走的是 API 通道，但在认
 
 中东 9 个运营可用区里挂了 3 个，占比 33%。UAE 区域丧失 2/3 容量。这确实是 AWS 历史上前所未有的物理灾难——人类第一次用导弹无人机打掉了云计算基础设施。但问题来了：**Anthropic 的服务跑在中东吗？**
 
-------
+---
 
 ## 事实三：Claude 不在中东
 
@@ -88,7 +88,7 @@ AWS 官方故障隔离文档写得很直白：Region 之间相互隔离，单 Re
 
 **如果 Claude 的核心推理引擎跑在中东，那 API 应该也挂了。** 但 API 完全正常——这直接否定了“导弹打掉 Claude 后端”的假说。有人可能会说：“也许 AWS 在全球做了流量重路由，导致其他区域过载？”理论上存在这种可能，但如果是后端过载，受影响的应该是 API 响应速度和可用性，而不是前端的登录认证系统。而实际表现恰恰相反——API 没事，前端认证挂了。
 
-------
+---
 
 ## 真正的原因：成功税
 
@@ -136,7 +136,7 @@ Reddit 和 X 上掀起了 `#CancelChatGPT` 运动。用户自发撰写从 ChatGP
 - **Claude Code 部分受影响**：依赖前端认证链路，但核心推理仍主要走 API。
 - **Claude for Government 基本不受影响**：独立部署，用户量也不受消费级市场波动影响。
 
-------
+---
 
 ## 时间线对不上
 
@@ -144,13 +144,13 @@ Reddit 和 X 上掀起了 `#CancelChatGPT` 运动。用户自发撰写从 ChatGP
 
 | 时间 (UTC)       | 事件                                |
 |----------------|-----------------------------------|
-| 3月1日 ~08:30    | AWS UAE 数据中心被无人机命中                |
-| 3月1日 全天        | AWS 中东区域持续降级                      |
-| 3月2日 06:56     | AWS Bahrain 设施断电                  |
-| **3月2日 11:49** | **Claude 前端开始报错**                 |
-| 3月2日 12:21     | Anthropic 确认 API 正常，问题在 claude.ai |
-| 3月2日 13:22     | 问题定位为认证基础设施                       |
-| 3月2日 ~17:00    | 修复上线，进入监控                         |
+| 3 月 1 日 ~08:30    | AWS UAE 数据中心被无人机命中                |
+| 3 月 1 日 全天        | AWS 中东区域持续降级                      |
+| 3 月 2 日 06:56     | AWS Bahrain 设施断电                  |
+| **3 月 2 日 11:49** | **Claude 前端开始报错**                 |
+| 3 月 2 日 12:21     | Anthropic 确认 API 正常，问题在 claude.ai |
+| 3 月 2 日 13:22     | 问题定位为认证基础设施                       |
+| 3 月 2 日 ~17:00    | 修复上线，进入监控                         |
 
 AWS 中东事件从 3 月 1 日凌晨就开始了。如果 Claude 的故障与之相关，为什么延迟了 **27 个小时** 才出现？而且出现的不是后端推理故障，而是前端认证崩溃？
 
@@ -158,7 +158,7 @@ AWS 中东事件从 3 月 1 日凌晨就开始了。如果 Claude 的故障与�
 
 **11:49 UTC 恰好是美东早上 6:49**——美国东海岸用户开始新一天工作的时间。这不是巧合。
 
-------
+---
 
 ## Anthropic 自己怎么说？
 
@@ -181,7 +181,7 @@ Claude 遇到的是第二种。这不是一个工程灾难，这是一个 **成�
 - **消费级产品的流量特征与 API 完全不同**，API 增长往往是线性的，消费级产品却可能是指数型爆发。
 - **政治事件可以在 48 小时内改变用户规模的数量级**，这不是传统容量规划能轻易预见的。
 
-------
+---
 
 ## 截至发稿：仍在波动
 
@@ -194,7 +194,7 @@ Claude 遇到的是第二种。这不是一个工程灾难，这是一个 **成�
 
 服务在恢复与波动之间反复。这符合“容量不足逐步扩容”的特征，而不是“物理设施被毁等待重建”的特征。如果是后者，恢复曲线不会是这种渐进式的。
 
---------
+---
 
 ## 结论
 
@@ -210,19 +210,23 @@ Claude 遇到的是第二种。这不是一个工程灾难，这是一个 **成�
 
 这个故障，恐怕 Dario Amodei 做梦都会笑醒。
 
-------
+---
 
 声明：本文碳基智力含量约为 20%。
 
 ### References
 
-`[1]` Anthropic confirms Claude is down in a worldwide outage - BleepingComputer:*https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-confirms-claude-is-down-in-a-worldwide-outage/*
-`[2]`Anthropic's Claude Chatbot Goes Down For Thousands of Users - Bloomberg:*https://www.bloomberg.com/news/articles/2026-03-02/anthropic-s-claude-chatbot-goes-down-for-thousands-of-users*
-`[3]`ChatGPT uninstalls surged by 295% after DoD deal - TechCrunch:*https://techcrunch.com/2026/03/02/chatgpt-uninstalls-surged-by-295-after-dod-deal/?type=AI*
-`[4]`Claude beats ChatGPT in U.S. app downloads - Axios:*https://www.axios.com/2026/03/01/anthropic-claude-chatgpt-app-downloads-pentagon*
-`[5]`Anthropic's Claude overtakes ChatGPT in App Store - Fortune:*https://fortune.com/2026/03/02/anthropic-claude-dario-amodei-number-one-app-store-openai-chatgpt-sam-altman-department-war/*
-`[6]`AWS says drones hit two of its datacenters in UAE - The Register:*https://www.theregister.com/2026/03/02/amazon_outages_middle_east/*
-`[7]`Claude Goes Down Globally as AWS Data Centers Burn - Awesome Agents:*https://awesomeagents.ai/news/claude-outage-march-2026-aws-middle-east/*
-`[8]`Claude Status Page:*https://status.claude.com/*
-`[9]`Why Is Claude Not Working? - Techloy:*https://www.techloy.com/why-is-claude-not-working-everything-we-know-about-the-anthropic-outage/*
-`[10]`AWS Global Infrastructure: *https://aws.amazon.com/about-aws/global-infrastructure/regions_az/*
+- `[1]` Anthropic confirms Claude is down in a worldwide outage - BleepingComputer: <https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-confirms-claude-is-down-in-a-worldwide-outage/>
+- `[2]` Anthropic's Claude Chatbot Goes Down For Thousands of Users - Bloomberg: <https://www.bloomberg.com/news/articles/2026-03-02/anthropic-s-claude-chatbot-goes-down-for-thousands-of-users>
+- `[3]` ChatGPT uninstalls surged by 295% after DoD deal - TechCrunch: <https://techcrunch.com/2026/03/02/chatgpt-uninstalls-surged-by-295-after-dod-deal/?type=AI>
+- `[4]` Claude beats ChatGPT in U.S. app downloads - Axios: <https://www.axios.com/2026/03/01/anthropic-claude-chatgpt-app-downloads-pentagon>
+- `[5]` Anthropic's Claude overtakes ChatGPT in App Store - Fortune: <https://fortune.com/2026/03/02/anthropic-claude-dario-amodei-number-one-app-store-openai-chatgpt-sam-altman-department-war/>
+- `[6]` AWS says drones hit two of its datacenters in UAE - The Register: <https://www.theregister.com/2026/03/02/amazon_outages_middle_east/>
+- `[7]` Claude Goes Down Globally as AWS Data Centers Burn - Awesome Agents: <https://awesomeagents.ai/news/claude-outage-march-2026-aws-middle-east/>
+- `[8]` Claude Status Page: <https://status.claude.com/>
+- `[9]` Why Is Claude Not Working? - Techloy: <https://www.techloy.com/why-is-claude-not-working-everything-we-know-about-the-anthropic-outage/>
+- `[10]` AWS Global Infrastructure: <https://aws.amazon.com/about-aws/global-infrastructure/regions_az/>
+
+---
+
+发布版本：[微信公众号](https://mp.weixin.qq.com/s/KDk4pRgU6pcxzcWj3aDCgQ)
