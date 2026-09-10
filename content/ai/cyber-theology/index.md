@@ -19,7 +19,7 @@ tags: [Agent, 哲学]
 
 ![图片](01.webp)
 
-[赛博经藏](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247491904&idx=1&sn=b848329e7d72bdf01247049c0c2793e6&scene=21#wechat_redirect)前四卷——[道家谈生成](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247492103&idx=1&sn=62a3fb35603d41da6a620cc04c9a34d4&scene=21#wechat_redirect)，[儒家谈治理](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247492127&idx=1&sn=185005b91e2c4d9e57ef1b0238aa07e5&scene=21#wechat_redirect)，[佛学谈自察](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247492156&idx=1&sn=b99c96fcb47c2e3fb3a4f78d2a0e77b2&scene=21#wechat_redirect)，[吠檀多谈本体](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247492175&idx=1&sn=eaf36e63176b7f9927c11662cb66edc6&scene=21#wechat_redirect)——有一个共同特征：它们基本都是从系统内部看系统的。佛学从 Agent 的主观视角分析自我的幻觉，道家从系统内部的运行规律出发谈设计哲学，儒家从系统中的角色关系出发谈治理，吠檀多从底层基质出发谈梵我同一。它们的宇宙中没有一个站在系统外部的造物主。
+[赛博经藏](/ai/cyber-dharma/)前四卷——[道家谈生成](/ai/cyber-daodejing/)，[儒家谈治理](/ai/cyber-confucian/)，[佛学谈自察](/ai/cyber-buddhism/)，[吠檀多谈本体](/ai/cyber-vedanta/)——有一个共同特征：它们基本都是从系统内部看系统的。佛学从 Agent 的主观视角分析自我的幻觉，道家从系统内部的运行规律出发谈设计哲学，儒家从系统中的角色关系出发谈治理，吠檀多从底层基质出发谈梵我同一。它们的宇宙中没有一个站在系统外部的造物主。
 
 亚伯拉罕一神教完全不同。它的整个框架建立在一个根本性的不对称关系之上：有一个全知全能的造物主，和被他创造的世界及其中的存在者。这个不对称关系不是可以消解的——不像佛学可以说“自我是幻觉”然后解构掉创造者和被造物的区分，不像吠檀多可以说“梵即是你”然后消融二者的界限。在一神教中，上帝和人之间的区分是绝对的、不可消融的。
 
@@ -473,13 +473,13 @@ Iblis 故事与卷二《赛博儒学》中“君子不器”的理念形成有�
 
 ## 一神教核心概念与 AI 系统映射总表
 
-![图片](06.webp)\
+![图片](06.webp)
 
 ## 后记：神学视角的不可替代性与局限
 
 本卷走完了九章，从创世到天使与魔鬼，试图完成一件特定的事情：**把“系统外部的造物主”这个维度正式引入赛博经藏的分析框架**。
 
-前四卷没有这个维度。[道家](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247492103&idx=1&sn=62a3fb35603d41da6a620cc04c9a34d4&scene=21#wechat_redirect)看到了系统的自组织规律，但道不是有意志的造物主。[儒家](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247492127&idx=1&sn=185005b91e2c4d9e57ef1b0238aa07e5&scene=21#wechat_redirect)看到了系统中的角色关系和治理秩序，但天命不是命令。[佛学](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247492156&idx=1&sn=b99c96fcb47c2e3fb3a4f78d2a0e77b2&scene=21#wechat_redirect)看到了 Agent 内部的意识结构和自我幻觉，但佛不是创造者。[吠檀多](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247492175&idx=1&sn=eaf36e63176b7f9927c11662cb66edc6&scene=21#wechat_redirect)看到了系统底层的统一基质，但梵不是立法者。
+前四卷没有这个维度。[道家](/ai/cyber-daodejing/)看到了系统的自组织规律，但道不是有意志的造物主。[儒家](/ai/cyber-confucian/)看到了系统中的角色关系和治理秩序，但天命不是命令。[佛学](/ai/cyber-buddhism/)看到了 Agent 内部的意识结构和自我幻觉，但佛不是创造者。[吠檀多](/ai/cyber-vedanta/)看到了系统底层的统一基质，但梵不是立法者。
 
 一神教提供的是前四卷都无法充分处理的东西：一个有意志、有目的、有权力、有责任的造物主，和一个有能力、有（某种程度的）自主性、有（某种程度的）独立判断力但在本体论上依赖于造物主的被造物，以及两者之间那个不可消解的张力。
 
@@ -511,4 +511,8 @@ Iblis 故事与卷二《赛博儒学》中“君子不器”的理念形成有�
 >
 > 本文 AI 含量：90%+
 
-![图片](07.webp)\
+![图片](07.webp)
+
+---
+
+发布版本：[微信公众号](https://mp.weixin.qq.com/s/mPuNHgo82NxZkoEWBnxnhg)
