@@ -5,7 +5,6 @@ authors: [vonng]
 summary: >
   pgsql.cc is live, with Chinese documentation for all 11 PostgreSQL major versions from 10 through 20, a redesigned mirror of the official website, and better full-text search. Kept in sync with upstream, with no ads.
 tags: [PostgreSQL, Documentation, Translation, PG Ecosystem]
-images: [homepage.webp]
 ---
 
 **[pgsql.cc](https://pgsql.cc/)** launches today, with Chinese documentation for 11 PostgreSQL major versions, a redesigned mirror of the official website, and better full-text search. It finally fills the documentation gap in the Chinese PostgreSQL ecosystem.

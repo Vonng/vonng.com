@@ -5,7 +5,6 @@ authors: [vonng]
 summary: >
   pgsql.cc 正式上线，提供 PostgreSQL 10 到 20 共 11 个大版本的中文文档、重新美化的官网镜像与更好用的全文检索，持续跟进上游更新，不挂广告。
 tags: [PostgreSQL, 文档, 翻译, PG生态]
-images: [homepage.webp]
 ---
 
 今日 **[pgsql.cc](https://pgsql.cc/)** 上线，包含 11 个 PG 大版本的中文文档、美化后的官网，以及更好的全文检索，彻底补上了 PostgreSQL 中文生态的文档短板。
