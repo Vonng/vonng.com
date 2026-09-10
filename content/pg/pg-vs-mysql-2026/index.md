@@ -9,7 +9,7 @@ tags: [PostgreSQL, MySQL, PG生态]
 
 PostgreSQL 赢得数据库增量世界，并已在存量上与 MySQL 相当。此消彼长之下，未来数据库世界的内核之争已不再有悬念。
 
--------
+---
 
 ## 一、开发者采用率
 
@@ -41,7 +41,7 @@ PostgreSQL 赢得数据库增量世界，并已在存量上与 MySQL 相当。�
 
 中国跟全球不一样。中国互联网公司的 MySQL 浓度远高于全球，构成了极强的路径依赖。但以 Django、FastAPI、Node.js 为入口的新一代中国开发者，自然地在向 PG 倾斜。存量是 MySQL 的，增量是 PostgreSQL 的。
 
--------
+---
 
 ## 二、厂商战略动向
 
@@ -67,9 +67,9 @@ TiDB 最近的新动作是 DB9，CTO 黄东旭尝试在 TiKV 上构建一个 Pos
 
 2025 年，PostgreSQL 生态几乎拿走了数据库领域所有的大额收购：
 
-[PG生态赢得资本市场青睐：Databricks收购Neon，Supabase融资两亿美元，微软财报点名PG](/pg/pg-capital-market/)
+[PG 生态赢得资本市场青睐：Databricks 收购 Neon，Supabase 融资两亿美元，微软财报点名 PG](/pg/pg-capital-market/)
 
-[数据库茶水间：OpenAI拟收购Supabase？](/db/openai-supabase-rumor/)
+[数据库茶水间：OpenAI 拟收购 Supabase？](/db/openai-supabase-rumor/)
 
 [月饼好吃：又一家 PG 扩展公司被 Databricks 收购](/pg/databricks-buys-again/)
 
@@ -79,7 +79,7 @@ Databricks 一年内连收两家 PG 公司（Neon + Mooncake），Snowflake 紧�
 
 Stormbreaker 的 Andy Pavlo 在访谈中点破了本质：**PostgreSQL 几乎拿走了 PG 生态里所有的钱。** 数据库领域最大的几笔收购，标的全部是 PG 公司。反观 MySQL 生态，2025 年的关键词不是收购，而是公开信。
 
--------
+---
 
 ## 三、云平台数据
 
@@ -103,7 +103,7 @@ DB-Engines 是基于搜索、招聘、社交等多信号的综合热度排名。
 
 ![DB-Engines 历史分数变化](dbengines.webp)
 
--------
+---
 
 ## 五、超大规模生产案例
 
@@ -137,7 +137,7 @@ DB-Engines 是基于搜索、招聘、社交等多信号的综合热度排名。
 
 MySQL 可以支撑大规模，Meta 已经证明了这一点。但如果你今天从零开始、没有历史包袱，有极大概率会选 PG。不是因为它在所有维度上都更好，而是因为生态势能、社区活力、扩展性（`pgvector`、PostGIS）和所有主流框架的默认支持都已经倒向了这一边。
 
--------
+---
 
 ## 六、社区治理
 
@@ -155,7 +155,7 @@ Oracle 完全拥有版权和商标。2025 年秋季裁撤约 50% MySQL 工程团
 
 **MySQL 社区版至今没有原生向量搜索**，`pgvector` 在 2021 年就上线了。在 AI 定义基础设施选型的时代，这个差距的战略意义远超技术本身。
 
--------
+---
 
 ## 七、总体判断
 
@@ -176,7 +176,7 @@ PostgreSQL 赢了增量世界：新项目、新开发者、新平台、AI Agent 
 
 **增量终将成为存量。**
 
-------
+---
 
 ## 附录：数据源
 
@@ -198,27 +198,31 @@ PostgreSQL 赢了增量世界：新项目、新开发者、新平台、AI Agent 
 
 ## 延伸阅读
 
-- [MySQL 赢了 2000s，PostgreSQL 赢得 2020s，谁将赢得 AI 时代？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247490783&idx=2&sn=056d9144511a054d0430ae6b83bef2b3&scene=21#wechat_redirect)
+- [MySQL 赢了 2000s，PostgreSQL 赢得 2020s，谁将赢得 AI 时代？](/ai/db-choice-ai-era/)
 - [MySQL：互联网行业的服从测试](/db/mysql-baijiu/)
-- [2025年：MySQL vs PostgreSQL](/db/mysql-vs-pgsql/)
-- [MySQL安魂九霄，PostgreSQL驶向云外](/db/mysql-is-dead/)
-- [PG被黑慢MySQL 360倍，这次我真忍不了](/pg/pg-360x-slower/)
-- [PostgreSQL取得对MySQL的压倒性优势](/pg/pg-beats-mysql/)
-- [MySQL新版恶性Bug，表太多就崩给你看！](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488014&idx=1&sn=727b1e3e9077af728a243854ea1c2cb3&scene=21#wechat_redirect)
-- [用PG的开发者，年薪比MySQL多赚四成？](/pg/pg-dev-salary/)
-- [Oracle最终还是杀死了MySQL！](/db/oracle-kill-mysql/)
-- [MySQL性能越来越差，Sakila将何去何从？](/db/sakila-where-are-you-going/)
-- [MySQL的正确性为何如此拉垮？](/db/bad-mysql/)
+- [2025 年：MySQL vs PostgreSQL](/db/mysql-vs-pgsql/)
+- [MySQL 安魂九霄，PostgreSQL 驶向云外](/db/mysql-is-dead/)
+- [PG 被黑慢 MySQL 360 倍，这次我真忍不了](/pg/pg-360x-slower/)
+- [PostgreSQL 取得对 MySQL 的压倒性优势](/pg/pg-beats-mysql/)
+- [MySQL 新版恶性 Bug，表太多就崩给你看！](/db/mysql-is-dead/)
+- [用 PG 的开发者，年薪比 MySQL 多赚四成？](/pg/pg-dev-salary/)
+- [Oracle 最终还是杀死了 MySQL！](/db/oracle-kill-mysql/)
+- [MySQL 性能越来越差，Sakila 将何去何从？](/db/sakila-where-are-you-going/)
+- [MySQL 的正确性为何如此拉垮？](/db/bad-mysql/)
 - [如何看待 MySQL vs PGSQL 直播闹剧](/pg/mysql-pg-live-drama/)
 - [驳《MySQL：这个星球最成功的数据库》](/pg/rebut-mysql-best/)
-- [PostgreSQL正在吞噬数据库世界](/pg/pg-eat-db-world/)
-- [OpenHalo：MySQL线缆兼容的PostgreSQL来了！](/pg/openhalo-mysql/)
+- [PostgreSQL 正在吞噬数据库世界](/pg/pg-eat-db-world/)
+- [OpenHalo：MySQL 线缆兼容的 PostgreSQL 来了！](/pg/openhalo-mysql/)
 - [OrioleDB 奥利奥数据库来了！](/pg/orioledb-is-coming/)
-- [StackOverflow 2024调研](/pg/pg-is-no1-again/)
-- [为什么PostgreSQL是未来数据的基石？](/pg/pg-for-everything/)
-- [技术极简主义：一切皆用Postgres](/pg/just-use-pg/)
-- [2023年度数据库：PostgreSQL (DB-Engine)](/pg/dbengines-2023/)
+- [StackOverflow 2024 调研](/pg/pg-is-no1-again/)
+- [为什么 PostgreSQL 是未来数据的基石？](/pg/pg-for-everything/)
+- [技术极简主义：一切皆用 Postgres](/pg/just-use-pg/)
+- [2023 年度数据库：PostgreSQL (DB-Engine)](/pg/dbengines-2023/)
 - [PostgreSQL 到底有多强？](/pg/pg-performence/)
-- [为什么PostgreSQL是最成功的数据库？](/pg/pg-is-best/)
-- [StackOverflow 2022数据库年度调查](/db/so2022-db/)
-- [为什么说PostgreSQL前途无量？](/pg/pg-is-great/)
+- [为什么 PostgreSQL 是最成功的数据库？](/pg/pg-is-best/)
+- [StackOverflow 2022 数据库年度调查](/db/so2022-db/)
+- [为什么说 PostgreSQL 前途无量？](/pg/pg-is-great/)
+
+---
+
+发布版本：[微信公众号](https://mp.weixin.qq.com/s/LYDaUE6kcC3NHNKKbV1vow)
