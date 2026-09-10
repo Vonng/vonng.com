@@ -7,21 +7,19 @@ summary: >
 tags: [PostgreSQL, PG生态, 扩展]
 ---
 
-
-
 PostgreSQL 并不是一个简单的关系型数据库，而是一个数据管理的抽象框架，具有吞噬整个数据库世界的力量。而这也是正在发生的事情 —— “一切皆用 Postgres” 已经不再是少数精英团队的前沿探索，而是成为了一种进入主流视野的最佳实践。
 
-------
+---
 
 ## OLAP 领域迎来踢馆者
 
-在 2016 年的一次数据库沙龙里，我提出了一个观点： 现在 PostgreSQL 生态的一个主要遗憾是，缺少一个 **足够好** 的列式存储分析插件来做 OLAP 分析。尽管PostgreSQL 本身提供了很强大的分析功能集，应付常规的分析任务绰绰有余。但在较大数据量下全量分析的 **性能**，相比专用的实时数仓仍然有些不够看。
+在 2016 年的一次数据库沙龙里，我提出了一个观点：现在 PostgreSQL 生态的一个主要遗憾是，缺少一个 **足够好** 的列式存储分析插件来做 OLAP 分析。尽管 PostgreSQL 本身提供了很强大的分析功能集，应付常规的分析任务绰绰有余。但在较大数据量下全量分析的 **性能**，相比专用的实时数仓仍然有些不够看。
 
 以分析领域的权威评测 [**ClickBench**](https://benchmark.clickhouse.com/) 为例，我们在其中标注出了 PostgreSQL 与生态扩展插件以及兼容衍生数据库在其中的性能表现。原生未经过调优的 PostgreSQL 表现较为拉垮（**x1050**），但经过调优后可以达到（**x47**）；此外还有三个与分析有关系的扩展：列存 **Hydra**（**x42**），时序扩展 **TimescaleDB**（**x103**），以及分布式扩展 **Citus**（**x262**）。
 
 [![clickbench.png](clickbench.png)](https://benchmark.clickhouse.com/)
 
-> ClickBench c6a.4xlarge, 500gb gp2，Hot Run 执行相对耗时
+> ClickBench c6a.4xlarge，500gb gp2，Hot Run 执行相对耗时
 
 这样的分析性能表现不能说烂，因为比起 MySQL，MariaDB 这样的纯 OLTP 数据库的辣眼表现（**x3065,x19700**）确实好很多；但第三梯队的性能表现也绝对说不上足够好，与专注于 OLAP 的第一梯队组件：Umbra，ClickHouse，Databend，SelectDB（**x3~x4**）相比，在分析性能上仍然有十几倍的性能差距。食之无味，弃之可惜。
 
@@ -29,25 +27,25 @@ PostgreSQL 并不是一个简单的关系型数据库，而是一个数据管理
 
 **ParadeDB** 提供的 PG 原生扩展 **pg_analytics** 实现了第二梯队（**x10**）的性能水准，与第一梯队只有 3～4 倍的性能差距。相对于其他功能上的收益，这种程度的性能差距通常是可以接受的 —— ACID，新鲜性与实时性，无需 ETL、额外学习成本、维护独立的新服务，更别提它还提供了 ElasticSearch 质量的全文检索能力。
 
-而 **DuckDB** 则专注于 OLAP ，将分析性能这件事做到了极致（**x3.2**） —— 略过第一名 Umbra 这种学术研究型闭源数据库，DuckDB 也许是 OLAP 实战性能最快的数据库了。它并不是 PG 的扩展插件，但它是一个嵌入式文件数据库，而 [**DuckDB FDW**](https://github.com/alitrack/duckdb_fdw) 以及 [**pg_quack**](https://github.com/hydradatabase/pg_quack) 这样的 PG 生态项目，能让 PostgreSQL 充分利用 DuckDB 带来的完整分析性能红利！
+而 **DuckDB** 则专注于 OLAP，将分析性能这件事做到了极致（**x3.2**） —— 略过第一名 Umbra 这种学术研究型闭源数据库，DuckDB 也许是 OLAP 实战性能最快的数据库了。它并不是 PG 的扩展插件，但它是一个嵌入式文件数据库，而 [**DuckDB FDW**](https://github.com/alitrack/duckdb_fdw) 以及 [**pg_quack**](https://github.com/hydradatabase/pg_quack) 这样的 PG 生态项目，能让 PostgreSQL 充分利用 DuckDB 带来的完整分析性能红利！
 
 ParadeDB 与 DuckDB 的出现让 PostgreSQL 的分析性能来到了 OLAP 的第一梯队与金字塔尖，弥补了 PostgreSQL 在 OLAP 性能这最后一块关键短板。
 
-------
+---
 
 ## 分久必合的数据库领域
 
 数据库诞生伊始，并没有 OLTP 与 OLAP 的分野。OLAP 数据仓库从数据库中“独立”出来，已经是上世纪九十年代时候的事了 —— 因为传统的 OLTP 数据库难以支撑起分析场景下的查询模式，数据量与性能要求。
 
-在相当一段时间里，数据处理的最佳实践是使用 MySQL / PG 处理 OLTP 工作负载，并通过 ETL 将数据同步到专用的 OLAP 组件中去处理，比如 Greenplum, ClickHouse, Doris, Snowflake 等等。
+在相当一段时间里，数据处理的最佳实践是使用 MySQL / PG 处理 OLTP 工作负载，并通过 ETL 将数据同步到专用的 OLAP 组件中去处理，比如 Greenplum，ClickHouse，Doris，Snowflake 等等。
 
-![](ddia.png)
+![ddia](ddia.png)
 
 > 设计数据密集型应用，Martin Kleppmann，[第三章](http://ddia.vonng.com/#/ch3)
 
-与许多 “专用数据库” 一样，专业的 OLAP 组件的优势往往在于 **性能** —— 相比原生 PG 、MySQL 上有 1～3 个数量级的提升；而代价则是数据冗余、 大量不必要的数据搬运工作、分布式组件之间缺乏一致性、额外的专业技能带来的复杂度成本、学习成本、以及人力成本、 额外的软件许可费用、极其有限的查询语言能力、可编程性、可扩展性、有限的工具链、以及与OLTP 数据库相比更差的数据完整性和可用性 —— **但这是一个合理的利弊权衡**。
+与许多 “专用数据库” 一样，专业的 OLAP 组件的优势往往在于 **性能** —— 相比原生 PG、MySQL 上有 1～3 个数量级的提升；而代价则是数据冗余、大量不必要的数据搬运工作、分布式组件之间缺乏一致性、额外的专业技能带来的复杂度成本、学习成本、以及人力成本、额外的软件许可费用、极其有限的查询语言能力、可编程性、可扩展性、有限的工具链、以及与 OLTP 数据库相比更差的数据完整性和可用性 —— **但这是一个合理的利弊权衡**。
 
-然而天下大势，**分久必合，合久必分**。[硬件遵循摩尔定律又发展了三十年](/cloud/bonus/)，性能翻了几个数量级，成本下降了几个数量级。在 2024 年的当下，x86 单机可以达到几百核 (512 vCPU [EPYC 9754](https://www.amd.com/zh-hans/products/cpu/amd-epyc-9754)x2)，几个TB的内存，单卡 NVMe SSD 可达 64TB，全闪单机柜 2PB ；S3 这样对象存储更是能实现几乎没有上限的存储。
+然而天下大势，**分久必合，合久必分**。[硬件遵循摩尔定律又发展了三十年](/cloud/bonus/)，性能翻了几个数量级，成本下降了几个数量级。在 2024 年的当下，x86 单机可以达到几百核 (512 vCPU [EPYC 9754](https://www.amd.com/zh-hans/products/cpu/amd-epyc-9754)x2)，几个 TB 的内存，单卡 NVMe SSD 可达 64TB，全闪单机柜 2PB；S3 这样对象存储更是能实现几乎没有上限的存储。
 
 ![io-bandwidth.png](io-bandwidth.png)
 
@@ -55,11 +53,11 @@ ParadeDB 与 DuckDB 的出现让 PostgreSQL 的分析性能来到了 OLAP 的第
 
 正如 DuckDB 发表的宣言《[**大数据已死**](https://mp.weixin.qq.com/s/gk3BOirM6uCTQ1HFTQz3ew)》所主张的：**大数据时代已经结束了** —— 大多数人并没有那么多的数据，大多数数据也很少被查询。大数据的前沿随着软硬件发展不断后退，99% 的场景已经不再需要所谓“大数据”了。
 
-如果 99% 的场景甚至都可以放在一台计算机上用单机/主从的 DuckDB 或 PostgreSQL 搞定，那么使用专用的分析组件还有多少意义？如果每台手机都可以自由自主收发短信，那么 BP 机还有什么存在价值？（北美医院还在用BP机，正好比也还有 1% 不到的场景也许真的需要“大数据”）
+如果 99% 的场景甚至都可以放在一台计算机上用单机/主从的 DuckDB 或 PostgreSQL 搞定，那么使用专用的分析组件还有多少意义？如果每台手机都可以自由自主收发短信，那么 BP 机还有什么存在价值？（北美医院还在用 BP 机，正好比也还有 1% 不到的场景也许真的需要“大数据”）
 
 基本工作假设的变化，将重新推动数据库世界从百花齐放的“合久必分”阶段，走向“分久必合”的阶段，从大爆发到大灭绝，大浪淘沙中，新的大一统超融合数据库将会出现，重新统一 OLTP 与 OLAP。而承担重新整合数据库领域这一使命的会是谁？
 
-------
+---
 
 ## 吞食天地的 PostgreSQL
 
@@ -79,15 +77,15 @@ ParadeDB 与 DuckDB 的出现让 PostgreSQL 的分析性能来到了 OLAP 的第
 
 PostgreSQL 并不是一个简单的关系型数据库，而是一个数据管理的抽象框架，**具有囊括一切，吞噬整个数据库世界的力量**。而它的核心竞争力（除了开源与先进）来自 **可扩展性**，即基础设施的 **可复用性** 与扩展插件的 **可组合性**。
 
-------
+---
 
 ### 极致可扩展性的魔法
 
 PostgreSQL 允许用户开发功能模块，复用数据库公共基础设施，以最低的成本交付功能。例如，仅有两千行代码的向量数据库扩展 pgvector 与百万行代码的 PostgreSQL 在复杂度上相比可以说微不足道，但正是这“微不足道”的扩展，实现了完整的向量数据类型与索引能力，干翻了几乎所有专用向量数据库。
 
-为什么？因为 PGVECTOR 作者不需要操心数据库的通用额外复杂度：事务 ACID，故障恢复，备份PITR，高可用，访问控制，监控，部署，三方生态工具，客户端驱动这些需要成百上千万行代码才能解决好的问题，只需要关注自己所需问题的本质复杂度即可。
+为什么？因为 PGVECTOR 作者不需要操心数据库的通用额外复杂度：事务 ACID，故障恢复，备份 PITR，高可用，访问控制，监控，部署，三方生态工具，客户端驱动这些需要成百上千万行代码才能解决好的问题，只需要关注自己所需问题的本质复杂度即可。
 
-[![](vectordbs.jpg)](/db/svdb-is-dead)
+[![vectordbs](vectordbs.jpg)](/db/svdb-is-dead)
 
 > 向量数据库哪家强？
 
@@ -97,19 +95,19 @@ PostgreSQL 允许用户开发功能模块，复用数据库公共基础设施，
 
 > Pigsty 中提供了 [**255**](https://pgext.cloud/zh/list) 个可用扩展插件，在生态中还有 1000+ 扩展
 
-------
+---
 
 可扩展性带来的另一点巨大优势是扩展的 **可组合性**，让不同扩展相互合作，产生出 1+1 >> 2 的协同效应。例如，TimescaleDB 可以与 PostGIS 组合使用，提供时空数据支持；再比如，提供全文检索能力的 BM25 扩展可以和提供语义模糊检索的 PGVector 扩展组合使用，提供混合检索能力。
 
 再比如，**分布式** 扩展 Citus 可以将单机主从数据库集群，原地升级改造为透明水平分片的分布式数据库集群。而这个能力是可以与其他功能正交组合的，因此，PostGIS 可以成为分布式地理数据库，PGVector 可以成为分布式向量数据库，ParadeDB 可以成为分布式全文搜索数据库，诸如此类。
 
-------
+---
 
 更强大的地方在于，扩展插件是 **独立演进** 的，不需要繁琐的主干合并，联调协作。因此可以 Scale  —— PG 的可扩展性允许无数个团队并行探索数据库前研发展方向，而扩展全部都是的可选的，不会影响主干核心能力的稳定性。那些非常强大成熟的特性，则有机会以稳定的形态进入主干中。
 
 通过极致可扩展性的魔法，PostgreSQL 做到了 **守正出奇，实现了主干极致稳定性与功能敏捷性的统一。** 扎实的基本盘配上惊人的演进速度，让它成为了数据库世界中的一个异数，改变了数据库世界的游戏规则。
 
-------
+---
 
 ## 改变游戏规则的玩家
 
@@ -125,33 +123,33 @@ PostgreSQL 允许用户开发功能模块，复用数据库公共基础设施，
 
 > [**StackOverflow 2023 调研结果，PostgreSQL 三项全能王**](https://survey.stackoverflow.co/2023/#section-most-popular-technologies-databases)
 
-[![sf-trend.jpg](sf-trend.jpg)](https://demo.pigsty.cc/d/sf-survey)
+[![sf-trend.jpg](sf-trend.jpg)](http://demo.pigsty.cc/ui/d/sf-survey)
 
-> [**StackOverflow过去7年的数据库指标走势**](https://demo.pigsty.cc/d/sf-survey)
+> [**StackOverflow 过去 7 年的数据库指标走势**](http://demo.pigsty.cc/ui/d/sf-survey)
 
-在引领潮流的 HackerNews StackOverflow 上，PostgreSQL 早已成为了最受欢迎的数据库。许多新的开源项目都默认使用 PostgreSQL 作为首要，甚至唯一的数据库 —— 例如，给各种数据库做模式管理的 Bytebase。《[云时代数据库DevOps：硅谷调研](https://mp.weixin.qq.com/s/HeIGQC6JsE9ZXqJtFjiczA)》也提出，许多新一代互联网公司都开始积极拥抱并 All in PostgreSQL。
+在引领潮流的 HackerNews StackOverflow 上，PostgreSQL 早已成为了最受欢迎的数据库。许多新的开源项目都默认使用 PostgreSQL 作为首要，甚至唯一的数据库 —— 例如，给各种数据库做模式管理的 Bytebase。《[云时代数据库 DevOps：硅谷调研](https://mp.weixin.qq.com/s/HeIGQC6JsE9ZXqJtFjiczA)》也提出，许多新一代互联网公司都开始积极拥抱并 All in PostgreSQL。
 
-正如《[**技术极简主义：一切皆用 Postgres**](/pg/just-use-pg/) 》所言：简化技术栈、减少组件、加快开发速度、降低风险并提供更多功能特性的方法之一就是 **“一切皆用 Postgres”**。Postgres 能够取代许多后端技术，包括 MySQL，Kafka、RabbitMQ、ElasticSearch，Mongo和 Redis，至少到数百万用户时都毫无问题。**一切皆用 Postgres** ，已经不再是少数精英团队的前沿探索，而是成为了一种进入主流视野的最佳实践。
+正如《[**技术极简主义：一切皆用 Postgres**](/pg/just-use-pg/) 》所言：简化技术栈、减少组件、加快开发速度、降低风险并提供更多功能特性的方法之一就是 **“一切皆用 Postgres”**。Postgres 能够取代许多后端技术，包括 MySQL，Kafka、RabbitMQ、ElasticSearch，Mongo 和 Redis，至少到数百万用户时都毫无问题。**一切皆用 Postgres**，已经不再是少数精英团队的前沿探索，而是成为了一种进入主流视野的最佳实践。
 
-------
+---
 
 ## 还有什么可以做的？
 
 我们已经不难预见到数据库领域的终局。但我们又能做什么，又应该做什么呢？
 
-PostgreSQL 对于绝大多数场景都已经是一个足够完美的数据库内核了，在这个前提下，数据库内核[卡脖子纯属无稽之谈](/db/db-choke/)。这些Fork PostgreSQL 和 MySQL 并以内核魔改作为卖点的所谓“[数据库](/db/db-choke/)”基本没啥出息。
+PostgreSQL 对于绝大多数场景都已经是一个足够完美的数据库内核了，在这个前提下，数据库内核[卡脖子纯属无稽之谈](/db/db-choke/)。这些 Fork PostgreSQL 和 MySQL 并以内核魔改作为卖点的所谓“[数据库](/db/db-choke/)”基本没啥出息。
 
 这好比今天我们看 Linux 操作系统内核一样，尽管市面上有这么多的 Linux 操作系统发行版，但大家都选择使用同样的 Linux 内核，吃饱了撑着魔改内核属于没有困难创造困难也要上，会被业界当成山炮看待。
 
-同理，数据库内核本身已经不再是主要矛盾，焦点将会集中到两个方向上 —— 数据库 **扩展** 与数据库 **服务**！前者体现为数据库内部的可扩展性， 后者体现为数据库外部的可组合性。而竞争的形式，正如操作系统生态一样 —— 集中于 **数据库发行版** 上。对于数据库领域来说，只有那些以扩展和服务作为核心价值主张的发行版，才有最终成功的可能。
+同理，数据库内核本身已经不再是主要矛盾，焦点将会集中到两个方向上 —— 数据库 **扩展** 与数据库 **服务**！前者体现为数据库内部的可扩展性，后者体现为数据库外部的可组合性。而竞争的形式，正如操作系统生态一样 —— 集中于 **数据库发行版** 上。对于数据库领域来说，只有那些以扩展和服务作为核心价值主张的发行版，才有最终成功的可能。
 
-做内核的厂商不温不火，MariaDB 作为 MySQL 的亲爹 Fork 甚至都已经濒临退市，而白嫖内核自己做服务与扩展卖 RDS 的 AWS 可以赚的钵满盆翻。投资机构已经出手了许多 PG 生态的扩展插件与服务发行版：Citus，TimescaleDB，Hydra，PostgresML，ParadeDB，FerretDB，StackGres，Aiven，Neon，Supabase，Tembo，PostgresAI，以及我们正在做的 Pigsty 。
+做内核的厂商不温不火，MariaDB 作为 MySQL 的亲爹 Fork 甚至都已经濒临退市，而白嫖内核自己做服务与扩展卖 RDS 的 AWS 可以赚的钵满盆翻。投资机构已经出手了许多 PG 生态的扩展插件与服务发行版：Citus，TimescaleDB，Hydra，PostgresML，ParadeDB，FerretDB，StackGres，Aiven，Neon，Supabase，Tembo，PostgresAI，以及我们正在做的 Pigsty。
 
-![](https://pigsty.io/img/pigsty/players.png)
+![players](https://pigsty.io/img/pigsty/players.png)
 
-------
+---
 
-PostgreSQL 生态中的一个困境就是，许多扩展插件，生态工具都是独立演进，各自为战的，没有一个整合者能将他们凝聚起来形成合力。例如，提供分析的 Hydra 会打一个包一个 Docker 镜像， PostgresML 也会打自己的包和镜像，各家只发行加装了自己扩展的 Postgres 镜像。而这些朴素的镜像与包也距离 RDS 这样完整的数据库服务相距甚远。
+PostgreSQL 生态中的一个困境就是，许多扩展插件，生态工具都是独立演进，各自为战的，没有一个整合者能将他们凝聚起来形成合力。例如，提供分析的 Hydra 会打一个包一个 Docker 镜像，PostgresML 也会打自己的包和镜像，各家只发行加装了自己扩展的 Postgres 镜像。而这些朴素的镜像与包也距离 RDS 这样完整的数据库服务相距甚远。
 
 即使是类似于 AWS RDS 这样的服务提供商与生态整合者，在诸多扩展面前也依然力有所不逮，只能提供其中的少数。更多的强力扩展出于各种原因（AGPLv3 协议，多租户租赁带来的安全挑战）而无法使用。从而难以发挥 PostgreSQL 生态扩展的协同增幅作用。
 
@@ -174,17 +172,17 @@ PostgreSQL 生态中的一个困境就是，许多扩展插件，生态工具都
 > | 消息队列     | <i class="fas fa-circle-check text-success"></i> pgq 3.5.0                      |                                        <i class="fas fa-circle-xmark text-danger"></i>                                        |                                 <i class="fas fa-circle-xmark text-danger"></i>                                  |
 > | DuckDB   | <i class="fas fa-circle-check text-success"></i> duckdb_fdw 1.1                 |                                        <i class="fas fa-circle-xmark text-danger"></i>                                        |                                 <i class="fas fa-circle-xmark text-danger"></i>                                  |
 > | 模糊分词     | <i class="fas fa-circle-check text-success"></i> zhparser 1.1 / pg_bigm 1.2     |                           <i class="fas fa-circle-check text-success"></i> zhparser 1.0 / pg_jieba                            |                           <i class="fas fa-circle-check text-success"></i> pg_bigm 1.2                           |
-> | CDC抽取    | <i class="fas fa-circle-check text-success"></i> wal2json 2.5.3                 |                                        <i class="fas fa-circle-xmark text-danger"></i>                                        |                          <i class="fas fa-circle-check text-success"></i> wal2json 2.5                           |
+> | CDC 抽取    | <i class="fas fa-circle-check text-success"></i> wal2json 2.5.3                 |                                        <i class="fas fa-circle-xmark text-danger"></i>                                        |                          <i class="fas fa-circle-check text-success"></i> wal2json 2.5                           |
 > | 膨胀治理     | <i class="fas fa-circle-check text-success"></i> pg_repack 1.5.0                |                               <i class="fas fa-circle-check text-success"></i> pg_repack 1.4.8                                |                         <i class="fas fa-circle-check text-success"></i> pg_repack 1.5.0                         |
 >
 >
-> 许多关键扩展在RDS中并不可用
+> 许多关键扩展在 RDS 中并不可用
 
 扩展是 PostgreSQL 的灵魂，无法自由使用扩展的 Postgres 就像做菜不放盐。只能和 MySQL 放在同一个 RDS 的框子里同台，龙游浅水，虎落平阳。
 
 而这正是我们想要解决的首要问题之一。
 
-------
+---
 
 ## 知行合一的实践：Pigsty
 
@@ -196,7 +194,7 @@ PostgreSQL 生态中的一个困境就是，许多扩展插件，生态工具都
 
 所以我打造了 **[Pigsty](https://pigsty.io)** —— 一个开箱即用的开源 PostgreSQL 数据库发行版，旨在凝聚 PostgreSQL 生态扩展的合力，并把提供优质数据库服务的能力普及到每个用户手中。
 
-![](https://pigsty.io/img/pigsty/banner.png)
+![banner](https://pigsty.io/img/pigsty/banner.png)
 
 > Pigsty 是 **P**ostgreSQL **i**n **G**reat **STY**le 的缩写，意为 **PostgreSQL 的全盛状态**。
 
@@ -208,9 +206,9 @@ Pigsty 六点价值主张的首字母合起来，则为 Pigsty 提供了另外�
 >
 > 属于你的图形化 Postgres 基础设施服务工具箱。
 
-![](https://pigsty.io/img/pigsty/homepage.png)
+![homepage](https://pigsty.io/img/pigsty/homepage.png)
 
-**可扩展的 PostgreSQL** 是这个发行版中最重要的价值主张。在刚刚发布的 [**Pigsty v2.6**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487025&idx=1&sn=c32f102718e3e9cf55cdefa7133f259f&chksm=fe4b3beac93cb2fc25c2c2c4f9ea74d4353e565ef90c5e2bbaf5881a3a031cbdff706971af9a&scene=21#wechat_redirect) 中，我们整合了上面提到的 DuckdbFDW 与 ParadeDB 扩展，这两个插件让 PostgreSQL 的分析能力得到史诗级增强，而我们确保每个用户都能轻松用得上这样的能力。
+**可扩展的 PostgreSQL** 是这个发行版中最重要的价值主张。在刚刚发布的 [**Pigsty v2.6**](/pigsty/v2.6/) 中，我们整合了上面提到的 DuckdbFDW 与 ParadeDB 扩展，这两个插件让 PostgreSQL 的分析能力得到史诗级增强，而我们确保每个用户都能轻松用得上这样的能力。
 
 ![regards.png](regards.png)
 
@@ -220,115 +218,119 @@ Pigsty 六点价值主张的首字母合起来，则为 Pigsty 提供了另外�
 
 - [**PostGIS**](https://postgis.net/)：提供地理空间数据类型与索引支持，GIS 事实标准 （& [**pgPointCloud**](https://pgpointcloud.github.io/pointcloud/) 点云，[**pgRouting**](https://pgrouting.org/) 寻路）
 - [**TimescaleDB**](https://www.timescale.com/)：添加时间序列/持续聚合/分布式/列存储/自动压缩的能力
-- [**PGVector**](https://github.com/pgvector/pgvector)：添加 AI 向量/嵌入数据类型支持，以及 ivfflat 与 hnsw 向量索引。（& [**pg_sparse**](https://github.com/paradedb/paradedb/tree/dev/pg_sparse) 稀疏向量支持）
-- [**Citus**](https://www.citusdata.com/)：将经典的主从PG集群原地改造为水平分片的分布式数据库集群。
-- [**Hydra**](https://www.hydra.so/)：添加列式存储与分析能力，提供比肩 ClickHouse 的强力分析能力。
+- [**PGVector**](https://github.com/pgvector/pgvector)：添加 AI 向量/嵌入数据类型支持，以及 ivfflat 与 hnsw 向量索引。（& [**pg_sparse**](https://github.com/paradedb/paradedb) 稀疏向量支持）
+- [**Citus**](https://www.citusdata.com/)：将经典的主从 PG 集群原地改造为水平分片的分布式数据库集群。
+- [**Hydra**](https://github.com/hydradatabase/hydra)：添加列式存储与分析能力，提供比肩 ClickHouse 的强力分析能力。
 - [**ParadeDB**](https://www.paradedb.com/)：添加 ElasticSearch 水准的全文搜索能力与混合检索的能力。（& [**zhparser**](https://github.com/amutu/zhparser) 中文分词）
 - [**Apache AGE**](https://age.apache.org/)：图数据库扩展，为 PostgreSQL 添加类 Neo4J 的 OpenCypher 查询支持，
 - [**PG GraphQL**](https://github.com/supabase/pg_graphql)：为 PostgreSQL 添加原生内建的 GraphQL 查询语言支持。
-- [**DuckDB FDW**](https://github.com/alitrack/duckdb_fdw)：允许您通过 PostgreSQL 直接读写强力的嵌入式分析数据库 [**DuckDB**](https://github.com/Vonng/pigsty/tree/master/app/duckdb) 文件 （& DuckDB CLI 本体）。
+- [**DuckDB FDW**](https://github.com/alitrack/duckdb_fdw)：允许您通过 PostgreSQL 直接读写强力的嵌入式分析数据库 [**DuckDB**](https://duckdb.org/) 文件 （& DuckDB CLI 本体）。
 - [**Supabase**](https://github.com/Vonng/pigsty/tree/master/app/supabase)：基于 PostgreSQL 的开源的 Firebase 替代，提供完整的应用开发存储解决方案。
 - [**FerretDB**](https://github.com/Vonng/pigsty/tree/master/app/ferretdb)：基于 PostgreSQL 的开源 MongoDB 替代，兼容 MongoDB API / 驱动协议。
-- [**PostgresML**](https://github.com/Vonng/pigsty/tree/master/app/pgml)：使用SQL完成经典机器学习算法，调用、部署、训练 AI 模型。
+- [**PostgresML**](https://github.com/postgresml/postgresml)：使用 SQL 完成经典机器学习算法，调用、部署、训练 AI 模型。
 
 > Pigsty 支持的 180+ [**扩展列表**](https://pigsty.cc/docs/reference/extension/)
 
-![](https://pigsty.io/img/pigsty/desc.png)
+![desc](https://pigsty.io/img/pigsty/desc.png)
 
 开发者朋友们，你们的选择会塑造数据库世界的未来。希望我的这些工作，可以帮助你们更好的用好这世界上最先进的开源数据库内核 —— PostgreSQL。
 
-> [Medium 英文版](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4) | [GitHub 仓库: Pigsty](https://github.com/Vonng/pigsty)
+> [Medium 英文版](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4) | [GitHub 仓库：Pigsty](https://github.com/Vonng/pigsty)
 
-------
+---
 
 ## 参考阅读
 
-[Pigsty v2.6：PostgreSQL 踢馆 OLAP](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487025&idx=1&sn=c32f102718e3e9cf55cdefa7133f259f&chksm=fe4b3beac93cb2fc25c2c2c4f9ea74d4353e565ef90c5e2bbaf5881a3a031cbdff706971af9a&scene=21#wechat_redirect)
+[Pigsty v2.6：PostgreSQL 踢馆 OLAP](/pigsty/v2.6/)
 
-[技术极简主义：一切皆用Postgres](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486931&idx=1&sn=91dbe43bb6d26c760c532f4aa8d6e3cb&chksm=fe4b3808c93cb11e00194655a49bf7aa0d4d05a61a9b06ffcc57017c633de17066443ec62b6d&scene=21#wechat_redirect)
+[技术极简主义：一切皆用 Postgres](/pg/just-use-pg/)
 
-[PG生态新玩家ParadeDB](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486913&idx=1&sn=3b7d8cf3f0e323932aba52c897f3c7a4&chksm=fe4b381ac93cb10cc6175c4c7978b5903946d369fe0084fbae5edf76ab08d84134260f28dffc&scene=21#wechat_redirect)
+[PG 生态新玩家 ParadeDB](/pg/paradedb/)
 
-[DBA会被云淘汰吗？](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486903&idx=1&sn=01c57499f41e8f51045bb8dd52586595&chksm=fe4b386cc93cb17a2d2fad903e809107162cc1e67e8ad7c8bfdd51de657c97f32f912cabe550&scene=21#wechat_redirect)
+[DBA 会被云淘汰吗？](/cloud/dba-vs-rds/)
 
-[令人惊叹的PostgreSQL可伸缩性](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486832&idx=1&sn=6b6b5f03b77c8a607f43f323fdf9ee7d&chksm=fe4b38abc93cb1bd84e3360b857016a9be3329c91d47c998fe73dc37d1f4b2c5571161fb0ff2&scene=21#wechat_redirect)
+[令人惊叹的 PostgreSQL 可伸缩性](/pg/pg-scalability/)
 
-[中国对PostgreSQL的贡献约等于零吗？](/pg/china-pg-contribution/)
+[中国对 PostgreSQL 的贡献约等于零吗？](/pg/china-pg-contribution/)
 
-[展望PostgreSQL的2024 (Jonathan Katz)](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486752&idx=1&sn=b10354a0cee5b0ccd88df606787e1297&chksm=fe4b38fbc93cb1ed39b86882b596020ba3d2f5901bea530bf09cf2519e1ad248d1f93f648180&scene=21#wechat_redirect)
+[展望 PostgreSQL 的 2024 (Jonathan Katz)](/pg/pg-in-2024/)
 
-[2023年度数据库：PostgreSQL (DB-Engine)](/pg/dbengines-2023/)
+[2023 年度数据库：PostgreSQL (DB-Engine)](/pg/dbengines-2023/)
 
-[MySQL的正确性为何如此拉垮？](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486710&idx=1&sn=261e4754df6c85954b50d8f68f277abe&chksm=fe4b392dc93cb03bf26554a7a232f6217b8aa78d7e35ce0566d9404dc9526d3776141e628a2b&scene=21#wechat_redirect)
+[MySQL 的正确性为何如此拉垮？](/db/bad-mysql/)
 
-[向量数据库凉了吗？](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486505&idx=1&sn=a585c9ff22a81a8efe6b87ce9bd66cb1&chksm=fe4b39f2c93cb0e4c5d46f54e7ba9309dc0d66b5ac73bfe6722cc39f3959e47ae78210aeea1f&scene=21#wechat_redirect)
+[向量数据库凉了吗？](/db/svdb-is-dead/)
 
-[重新拿回计算机硬件的红利](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486489&idx=1&sn=f2be1be496de46ac5ca816ac39cfdf24&chksm=fe4b39c2c93cb0d4ff50dd6962370523a6271eab478fe9174c0c7a88fc88ea05fd3e51313ad3&scene=21#wechat_redirect)
+[重新拿回计算机硬件的红利](/cloud/bonus/)
 
-[数据库真被卡脖子了吗？](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486379&idx=1&sn=b751c51a2b73e43e61487abfdc073da3&chksm=fe4b3e70c93cb766625f9e18a92eabe31af437eb0fd7ed9d38b95750c743ce44934433c4dd66&scene=21#wechat_redirect)
+[数据库真被卡脖子了吗？](/db/db-choke/)
 
-[PG查询优化：观宏之道](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486349&idx=1&sn=ade54570a726c0aee0d23444372bd6b9&scene=21#wechat_redirect)
+[PG 查询优化：观宏之道](/pg/pgss/)
 
-[FerretDB：假扮成MongoDB的PostgreSQL](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486241&idx=1&sn=f39b87095837b042e74f55f8e60bb7a9&scene=21#wechat_redirect)
+[FerretDB：假扮成 MongoDB 的 PostgreSQL](/pg/ferretdb/)
 
-[如何用 pg_filedump 抢救数据？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486234&idx=1&sn=d1273152e624fb31bf7be2c8f3991315&scene=21#wechat_redirect)
+[如何用 pg_filedump 抢救数据？](/pg/pg-filedump/)
 
-[PGSQL x Pigsty: 数据库全能王来了](/pigsty/db-allrounder/)
+[PGSQL x Pigsty：数据库全能王来了](/pigsty/db-allrounder/)
 
-[Pigsty 特性与快速上手](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486135&idx=1&sn=7d9c4920e94efba5d0e0b6af467f596c&scene=21#wechat_redirect)
+[Pigsty 特性与快速上手](/pigsty/v2.0/)
 
-[PG先写脏页还是先写WAL？](/pg/wal-before-page/)
+[PG 先写脏页还是先写 WAL？](/pg/wal-before-page/)
 
-[PostgreSQL：世界上最成功的数据库](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485685&idx=1&sn=688f6d6d0f4128d7f77d710f04ff9024&scene=21#wechat_redirect)
+[PostgreSQL：世界上最成功的数据库](/pg/pg-is-no1/)
 
-[ISD数据集：分析全球120年气候变化](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485647&idx=1&sn=1ca65ee357516a06dca7ec13fa679f9a&scene=21#wechat_redirect)
+[ISD 数据集：分析全球 120 年气候变化](/misc/isd/)
 
-[AI大模型与向量数据库 PGVECTOR](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485589&idx=1&sn=931f2d794e9b8486f623f746db9f00cd&scene=21#wechat_redirect)
+[AI 大模型与向量数据库 PGVECTOR](/pg/llm-and-pgvector/)
 
-[更好的开源RDS替代：Pigsty](/pigsty/better-rds-alternative/)
+[更好的开源 RDS 替代：Pigsty](/pigsty/better-rds-alternative/)
 
-[PostgreSQL 到底有多强？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485240&idx=1&sn=9052f03ae2ef21d9e21037fd7a1fa7fe&scene=21#wechat_redirect)
+[PostgreSQL 到底有多强？](/pg/pg-performence/)
 
-[为什么PostgreSQL是最成功的数据库？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485216&idx=1&sn=1b59c7dda5f347145c2f39d2679a274d&scene=21#wechat_redirect)
+[为什么 PostgreSQL 是最成功的数据库？](/pg/pg-is-best/)
 
-[PG与Pigsty用户需求问卷调研结果](/pigsty/user-survey-2022/)
+[PG 与 Pigsty 用户需求问卷调研结果](/pigsty/user-survey-2022/)
 
-[高可用PgSQL集群架构设计与落地](/pg/pg-ha-design/)
+[高可用 PgSQL 集群架构设计与落地](/pg/pg-ha-design/)
 
-[为什么说PostgreSQL前途无量？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484591&idx=1&sn=a6ab13d93bfa26fca969ba163b01e1d5&scene=21#wechat_redirect)
+[为什么说 PostgreSQL 前途无量？](/pg/pg-is-great/)
 
-[Postgres本地化排序规则](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484489&idx=1&sn=11163ce0afdb14af07619ae587fadb59&scene=21#wechat_redirect)
+[Postgres 本地化排序规则](/pg/collate/)
 
-[PG复制标识详解（Replica Identity）](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484483&idx=1&sn=47469a6a57a497a551022b287bf1b31e&scene=21#wechat_redirect)
+[PG 复制标识详解（Replica Identity）](/pg/replica-identity/)
 
-[利用监控系统诊断PG慢查询](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484478&idx=1&sn=ea44675df79b60a12273e78b358bb557&scene=21#wechat_redirect)
+[利用监控系统诊断 PG 慢查询](/pg/slow-query/)
 
-[数据库集群管理概念与实体命名规范](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484195&idx=1&sn=cea57269d0ffec585547727170887441&scene=21#wechat_redirect)
+[数据库集群管理概念与实体命名规范](/pg/entity-and-naming/)
 
-[PostgreSQL的KPI](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484164&idx=1&sn=d69a31948d96507aca10a48587ea275c&scene=21#wechat_redirect)
+[PostgreSQL 的 KPI](/pg/pg-load/)
 
-[PostgreSQL监控系统Pigsty概述](/pigsty/monitoring-intro/)
+[PostgreSQL 监控系统 Pigsty 概述](/pigsty/monitoring-intro/)
 
-[故障档案：PG安装扩展导致无法连接](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247483969&idx=1&sn=c5264dc6cd36d5696138bad085a72b37&scene=21#wechat_redirect)
+[故障档案：PG 安装扩展导致无法连接](/pg/extension/)
 
-[PostgreSQL中的表锁](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247483964&idx=1&sn=b128086019256401b135ea0aa07b0c1c&scene=21#wechat_redirect)
+[PostgreSQL 中的表锁](/pg/pg-lock/)
 
-[把PG放入Docker是一个好主意吗？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247483950&idx=1&sn=9c233f5e9a690706ae96ceabb938bff9&scene=21#wechat_redirect)
+[把 PG 放入 Docker 是一个好主意吗？](/db/db-in-k8s/)
 
-[PostgreSQL监控系统概览](/pg/monitoring-overview/)
+[PostgreSQL 监控系统概览](/pg/monitoring-overview/)
 
-[pg_dump导致的血案](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247483863&idx=1&sn=4b6851c0db5d2862e8698219800e28a7&scene=21#wechat_redirect)
+[pg_dump 导致的血案](/pg/pg-dump-failure/)
 
-[PostgreSQL数据页面损坏修复](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247483850&idx=1&sn=b10652fc434e3f17f56bcdeaacc91974&scene=21#wechat_redirect)
+[PostgreSQL 数据页面损坏修复](/pg/page-corruption/)
 
-[PostgreSQL关系膨胀:原理，监控与处理](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247483768&idx=1&sn=8a5005a95e874e6a13522cab0b5c1883&scene=21#wechat_redirect)
+[PostgreSQL 关系膨胀：原理，监控与处理](/pg/bloat/)
 
-[探探PostgreSQL开发规约](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247483719&idx=1&sn=1a0a04fe974ea20026d378bd65cda57f&scene=21#wechat_redirect)
+[探探 PostgreSQL 开发规约](/pg/pg-convention-2018/)
 
-[并发异常那些事](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247483715&idx=1&sn=b17d3d8920a596c383745abd0dce0584&scene=21#wechat_redirect)
+[并发异常那些事](/db/concurrent-control/)
 
-[PG好处都有啥？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247483706&idx=1&sn=b842684b41ac6dde8310448ae0a81a76&scene=21#wechat_redirect)
+[PG 好处都有啥？](/pg/pg-is-good/)
 
-[IP归属地查询的高效实现](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247483692&idx=1&sn=0cdb3609daf22fa2a5614d280da96b66&scene=21#wechat_redirect)
+[IP 归属地查询的高效实现](/pg/geoip/)
 
-[PostGIS高效解决行政区划归属查询问题](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247483688&idx=1&sn=0b08c7c47e28ceae77f89a78d38b029f&scene=21#wechat_redirect)
+[PostGIS 高效解决行政区划归属查询问题](/pg/adcode-geodecode/)
+
+---
+
+发布版本：[微信公众号](https://mp.weixin.qq.com/s/8_uhRH93oAoHZqoC90DA6g)
