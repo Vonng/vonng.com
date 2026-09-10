@@ -7,8 +7,7 @@ summary: >
 tags: [下云, AWS, 故障复盘]
 ---
 
-
-2025年10月20日，AWS最关键的 us-east-1 区域发生了一场持续 15 小时的重大故障，导致全球超过 1000 家企业服务中断。
+2025 年 10 月 20 日，AWS 最关键的 us-east-1 区域发生了一场持续 15 小时的重大故障，导致全球超过 1000 家企业服务中断。
 而这场故障背后的根因，竟然仅仅是一条 AWS 内部 DNS 解析失效。
 
 从凌晨的 DNS 解析失效开始，AWS DynamoDB、EC2、Lambda 等 142 项服务相继受到影响，进而导致全球互联网的大部分功能停转。
@@ -22,11 +21,11 @@ Snapchat、Roblox、Coinbase、Signal、Reddit、Robinhood 等热门应用离线
 
 ## 赛博地震：数十亿美元在半天内蒸发
 
-这场持续15小时的故障，在全球数字经济中掀起了一场"赛博地震"。Catchpoint CEO 预估经济损失达"数十亿到数千亿美元"。
+这场持续 15 小时的故障，在全球数字经济中掀起了一场"赛博地震"。Catchpoint CEO 预估经济损失达"数十亿到数千亿美元"。
 
 金融服务首当其冲。Robinhood 在美东交易时段完全离线，数百万散户投资者被锁在账户之外；
 Coinbase 的宕机让加密货币交易者在市场波动中束手无策；
-Venmo 收到8000份故障报告，用户的数字钱包瞬间"消失"。在现代无现金社会，这相当于所有人同时失去了钱包。
+Venmo 收到 8000 份故障报告，用户的数字钱包瞬间"消失"。在现代无现金社会，这相当于所有人同时失去了钱包。
 
 游戏行业损失同样惨重。上亿日活的 Roblox 用户被迫下线，虚拟经济瞬间停摆；
 Epic Games 的 Fortnite、任天堂的 Pokémon GO、育碧的彩虹六号集体失声。
@@ -38,10 +37,10 @@ Epic Games 的 Fortnite、任天堂的 Pokémon GO、育碧的彩虹六号集体
 
 ![down-dectector.jpg](down-dectector.jpg)
 
-## 故障根因：DNS失效引发的蝴蝶效应
+## 故障根因：DNS 失效引发的蝴蝶效应
 
-太平洋夏令时2025年10月19日晚11:49，us-east-1 区域的多个服务错误率突然攀升。
-直到22分钟后，AWS 才在健康仪表板发布第一条确认。截止到10月20日下午3:53分结束，整个故障持续了近 16 小时。
+太平洋夏令时 2025 年 10 月 19 日晚 11:49，us-east-1 区域的多个服务错误率突然攀升。
+直到 22 分钟后，AWS 才在健康仪表板发布第一条确认。截止到 10 月 20 日下午 3:53 分结束，整个故障持续了近 16 小时。
 
 [![health-status.webp](health-status.webp)](#故障公告)
 
@@ -62,54 +61,58 @@ us-east-1 不是普通的数据中心，它是 AWS 全球基础设施的 **中�
 这意味着什么？即使你的应用部署在东京或法兰克福，当需要进行 IAM 认证、配置 S3、访问 DynamoDB 全局表、调用 Route 53 时，请求仍要路由到 us-east-1。
 这次故障中，英国政府网站、Lloyds 银行、加拿大 Wealthsimple —— 这些看似与美东无关的服务，都因这种隐性依赖而瘫痪。
 
-us-east-1 的特殊地位源于历史 —— 作为 AWS 的第一个区域，19年的演进让它积累了大量技术债务。
+us-east-1 的特殊地位源于历史 —— 作为 AWS 的第一个区域，19 年的演进让它积累了大量技术债务。
 重构它？数百万行代码、数千个微服务、难以计数的客户依赖，任何改动都可能引发更大灾难。
 于是 AWS 选择了维持现状，直到故障再次提醒我们这个选择的代价。
 
 ## 技术解剖：小故障如何演变为大灾难
 
-从2017年到2025年，us-east-1 的每次重大故障都暴露了相同的架构反模式，而 AWS 似乎从未真正吸取教训。
+从 2017 年到 2025 年，us-east-1 的每次重大故障都暴露了相同的架构反模式，而 AWS 似乎从未真正吸取教训。
 
-| **维度**   | **2017 S3故障**              | **2020 Kinesis故障**                                   | **2025 DNS 故障**                                        |
+| **维度**   | **2017 S3 故障**              | **2020 Kinesis 故障**                                   | **2025 DNS 故障**                                        |
 |----------|----------------------------|------------------------------------------------------|--------------------------------------------------------|
-| **触发因素** | 人为错误 (胖手指)                 | 扩容 (线程限制)                                            | DNS解析失败 (原因未披露)                                        |
+| **触发因素** | 人为错误 (胖手指)                 | 扩容 (线程限制)                                            | DNS 解析失败 (原因未披露)                                        |
 | **核心服务** | S3                         | Kinesis                                              | DynamoDB                                               |
-| **持续时间** | ~4小时                       | 17小时                                                 | 16小时                                                   |
+| **持续时间** | ~4 小时                       | 17 小时                                                 | 16 小时                                                   |
 | **级联机制** | S3 → EC2 → EBS → Lambda    | Kinesis → EventBridge → ECS/EKS → CloudWatch→Cognito | DNS → DynamoDB → IAM → EC2 → NLB → Lambda / CloudWatch |
-| **恢复挑战** | 大规模子系统重启                   | 渐进式服务器重启，路由映射重建                                      | 重试风暴，积压处理，NLB健康检查恢复                                    |
-| **监控失明** | Service Health Dashboard宕机 | CloudWatch 降级                                        | CloudWatch 和 服务健康看板受影响                                 |
-| **全局影响** | US-EAST-1,但影响依赖服务          | US-EAST-1区域                                          | 全球(IAM、全局表依赖)                                          |
-| **经济影响** | $1.5亿(S&P 500公司)           | 未公开估计                                                | 数十亿～数千亿美元                                              |
+| **恢复挑战** | 大规模子系统重启                   | 渐进式服务器重启，路由映射重建                                      | 重试风暴，积压处理，NLB 健康检查恢复                                    |
+| **监控失明** | Service Health Dashboard 宕机 | CloudWatch 降级                                        | CloudWatch 和 服务健康看板受影响                                 |
+| **全局影响** | US-EAST-1，但影响依赖服务          | US-EAST-1 区域                                          | 全球(IAM、全局表依赖)                                          |
+| **经济影响** | $1.5 亿(S&P 500 公司)           | 未公开估计                                                | 数十亿～数千亿美元                                              |
 
-**循环依赖的死亡螺旋**
-: AWS 各项基础服务深度耦合，各项基础服务（IAM，EC2管理，ELB）依赖 DynamoDB，DynamoDB 又依赖这些服务 —— 这种循环依赖会导致架构复杂度指数增长，
+### 循环依赖的死亡螺旋
+
+: AWS 各项基础服务深度耦合，各项基础服务（IAM，EC2 管理，ELB）依赖 DynamoDB，DynamoDB 又依赖这些服务 —— 这种循环依赖会导致架构复杂度指数增长，
 系统复杂度被隐藏在微服务的层层抽象之下，极大拉高故障分析定位，处理解决的难度与时长。平时岁月静好，故障时却成为死亡陷阱。
-我们已经在 [阿里云](https://mp.weixin.qq.com/s/OIlR0rolEQff9YfCpj3wIQ) ，[OpenAI](https://mp.weixin.qq.com/s/ze4y9x7VpPmibitH7tAGMQ)，[滴滴](https://mp.weixin.qq.com/s/FIOB_Oqefx1oez1iu7AGGg) 这些公司的翻车案例中见过太多类似的例子了。
+我们已经在 [阿里云](/cloud/aliyun/)，[OpenAI](/cloud/openai-failure/)，[滴滴](/cloud/smile/) 这些公司的翻车案例中见过太多类似的例子了。
 
-**中心化的单点故障**
-: 在2020年 Kinesis 故障后，AWS 大力推广蜂窝架构（Cell-Based），并公开称将自己的服务迁往这种新 Cell 架构。
+#### 中心化的单点故障
+
+: 在 2020 年 Kinesis 故障后，AWS 大力推广蜂窝架构（Cell-Based），并公开称将自己的服务迁往这种新 Cell 架构。
 但从目前来看，us-east-1 区域依然是整个 AWS 全球全局控制平面的单点，牵一发而动全身，故障爆炸半径巨大。
 尽管 AWS 声称在 us-east-1 部署了六个可用区提供冗余，但遇到 DNS 这种全局基础服务故障时，依然形同虚设。
 这揭示了一个残酷真相：**再精妙的多区域设计，也敌不过一个单点依赖**。
 
-**监控系统的自我失明**
-: 最荒谬的是，AWS 自己的监控工具也依赖被监控的服务。当故障发生时，监控系统也随之失明。这创造了一个悖论：最需要监控数据的时候，恰恰是监控系统最不可用的时候。
-外部监控平台如 Datadog 同样托管在 AWS 上，形成了"自己监控自己"的闭环。 故障发生75分钟后，AWS 状态页面仍然是 “万里江山一片绿” —— 也许不是他们在撒谎，而是监控系统自己也瘫痪了。
+#### 监控系统的自我失明
 
-**断路器的集体缺席**
+: 最荒谬的是，AWS 自己的监控工具也依赖被监控的服务。当故障发生时，监控系统也随之失明。这创造了一个悖论：最需要监控数据的时候，恰恰是监控系统最不可用的时候。
+外部监控平台如 Datadog 同样托管在 AWS 上，形成了"自己监控自己"的闭环。故障发生 75 分钟后，AWS 状态页面仍然是 “万里江山一片绿” —— 也许不是他们在撒谎，而是监控系统自己也瘫痪了。
+
+#### 断路器的集体缺席
+
 : 尽管 AWS 发布了大量关于实施断路器的最佳实践指南，但这次故障显示出，**AWS 自己的内部服务网格可能并没有实施这些机制**。
 断路器本应在检测到下游服务故障时自动"熔断"，停止发送请求，避免雪崩。但实际情况是，当 DynamoDB 出现问题，所有依赖服务继续疯狂重试，形成"重试风暴"。
 AWS 最终被迫手动介入，通过人工限流来控制局面 —— 这种原始的应对方式，与其宣扬的"自动化一切"理念形成鲜明对比。
 
 ## 知识流失：组织功能障碍的技术表现
 
-在运维圈里有句名言 —— “***It’s always DNS***” 。任何经验丰富的 SRE 遇到这种事都会优先检查 DNS。
+在运维圈里有句名言 —— “***It’s always DNS***”。任何经验丰富的 SRE 遇到这种事都会优先检查 DNS。
 但 AWS 团队却在黑暗中摸索了两个多小时，然后又在断路限流的路上挣扎了五个小时。精锐尽失的团队难堪大任，这无疑是草台班子理论的又一例证。
 
-2022-2025年间，亚马逊裁员超过27000人。内部文件显示，各个级别 "不希望流失的人才" （Regretted Attrition）的流失率高达69-81%。
-强制返回办公室政策进一步推动高级人才离职。[Justin Garrison 在2023年离职时就预言会有更多大规模故障](https://justingarrison.com/blog/2023-12-30-amazons-silent-sacking/) —— 事实证明他还是太乐观。
+2022-2025 年间，亚马逊裁员超过 27000 人。内部文件显示，各个级别 "不希望流失的人才" （Regretted Attrition）的流失率高达 69-81%。
+强制返回办公室政策进一步推动高级人才离职。[Justin Garrison 在 2023 年离职时就预言会有更多大规模故障](https://justingarrison.com/blog/2023-12-30-amazons-silent-sacking/) —— 事实证明他还是太乐观。
 
-> Regretted Attrition：**即企业本不希望他们离职、但他们仍主动离开的员工**。 即在所有离职员工中，有 69–81% 属于公司不希望失去的人。
+> Regretted Attrition：**即企业本不希望他们离职、但他们仍主动离开的员工**。即在所有离职员工中，有 69–81% 属于公司不希望失去的人。
 
 **组织记忆的流失是不可逆的**。那些知道系统隐秘依赖关系的老工程师走了，留下的新人即使再努力，也缺乏诊断复杂级联故障的直觉。
 这种隐性知识无法通过文档传承，只能通过多年的事故响应经验积累。当下一个"边缘案例"出现时，缺乏经验的团队只能眼睁睁看着系统崩溃，并花费老司机几十上百倍的时间去摸索定位与笨拙处理。
@@ -119,11 +122,11 @@ AWS 最终被迫手动介入，通过人工限流来控制局面 —— 这种�
 
 ## 冷峻未来：应对云计算带来的脆弱性
 
-在几个月前，[Google IAM 故障带崩半个互联网](https://mp.weixin.qq.com/s/yZOUzoEHQdBuNFrSIXVB9w)；仅半年不到，AWS DNS 故障再次把全球互联网拉下水。
+在几个月前，[Google IAM 故障带崩半个互联网](/cloud/gcp-cf-outage/)；仅半年不到，AWS DNS 故障再次把全球互联网拉下水。
 当一家云厂商内部的一条 DNS 记录损坏，就能让全球数千万用户的生活陷入混乱；当一个区域的数据中心网络故障，能让遍布五大洲的企业同时瘫痪，
 我们必须承认：**云计算在带来便利的同时，也创造了前所未有的系统性脆弱性。**
 
-更何况，当三家美国公司控制全球63%的云基础设施，这已经不仅是技术问题，更是地缘政治风险和数字主权挑战。单一供应商的便利性与全球性的脆弱性构成了一个危险的悖论。
+更何况，当三家美国公司控制全球 63% 的云基础设施，这已经不仅是技术问题，更是地缘政治风险和数字主权挑战。单一供应商的便利性与全球性的脆弱性构成了一个危险的悖论。
 
 ![featured.jpg](featured.jpg)
 
@@ -141,7 +144,7 @@ AWS 最终被迫手动介入，通过人工限流来控制局面 —— 这种�
 > Headline Numbers: Incidents Summary
 
 “下云” 正从异端想法变成现实选项。在此次 AWS 宕机中，马斯克旗下的社交平台 **X（原推特）因使用自己的数据中心运营而安然无恙**。老马在 X 对 AWS 发出多次嘲讽与揶揄。
-知名 SaaS 厂商 37signals 则早在 2022 年就决定将 Basecamp 和 HEY 邮件服务迁出公有云，[预计五年内节省约超过千万万美元云开支](https://mp.weixin.qq.com/s/mknFXO5DSfxw7st8hhxjBQ)。
+知名 SaaS 厂商 37signals 则早在 2022 年就决定将 Basecamp 和 HEY 邮件服务迁出公有云，[预计五年内节省约超过千万万美元云开支](/cloud/odyssey-done/)。
 Dropbox 更是在 2016 年便开始逐步减少对 AWS 的依赖，重返自建数据中心。这并不是技术倒退，而是对过度集中化风险的理性校正。
 
 ![musk.jpg](musk.jpg)
@@ -166,7 +169,7 @@ us-east-1 还会再次故障 —— 不是是否，而是何时。所以真正�
 
 [Converge: DNS Failure Triggers Multi-Service AWS Disruption in US-EAST-1](https://convergedigest.com/aws-reports-major-outage-in-us-east-1-region/)
 
---------
+---
 
 ## 故障公告
 
@@ -248,73 +251,77 @@ US‑EAST‑1 区域新建 EC2 实例启动问题的恢复取得进展，现已�
 3:53 PM PDT
 在 10 月 19 日 11:49 PM 至 10 月 20 日 2:24 AM（均为 PDT）期间，US‑EAST‑1 区域的 AWS 服务出现错误率和时延升高。此期间，依赖 US‑EAST‑1 端点的服务或功能（如 IAM、DynamoDB 全局表）也受到影响。我们于 10 月 20 日 12:26 AM 将事件触发因素定位为区域内 DynamoDB 服务端点的 DNS 解析问题。2:24 AM 解决该 DNS 问题后，各服务开始恢复，但由于 EC2 的相关内部子系统依赖 DynamoDB，我们随后在负责启动 EC2 实例的内部子系统上出现新的受损。随着我们继续处理 EC2 启动受损问题，网络负载均衡器（NLB）健康检查也出现受损，导致多项服务（如 Lambda、DynamoDB、CloudWatch）出现网络连通性问题。我们于 9:38 AM 恢复了 NLB 健康检查。作为恢复的一部分，我们临时对部分操作实施限流（如 EC2 实例启动、通过 Lambda 事件源映射处理 SQS 队列、以及异步 Lambda 调用）。随后我们逐步降低限流，并并行解决网络连通性问题，直至服务完全恢复。到 3:01 PM，所有 AWS 服务已恢复至正常运行状态。AWS Config、Redshift、Connect 等少数服务仍有消息积压，将在接下来的数小时内处理完毕。我们将分享更为详尽的事件后总结。
 
---------
+---
 
 ## 相关专栏
 
 ### **云故障**
 
-- [AWS最大区域故障，带崩多项服务](https://mp.weixin.qq.com/s/hBMaPrqoMHQOf56G5fV-ag)
-- [知乎挂了：证书问题还是CDN翻车？](/cloud/zhihu-outage/)
-- [阿里云故障，CDN挂了，记得申请SLA赔付](/cloud/aliyun-cdn-sla/)
-- [Apple,Google,FB,TG 160亿登录信息泄露](/cloud/16b-credentials-leak/)
-- [带瘫全球互联网，Google云/Cloudflare全球故障](/cloud/gcp-cf-outage/)
+- [AWS 最大区域故障，带崩多项服务](https://mp.weixin.qq.com/s/hBMaPrqoMHQOf56G5fV-ag)
+- [知乎挂了：证书问题还是 CDN 翻车？](/cloud/zhihu-outage/)
+- [阿里云故障，CDN 挂了，记得申请 SLA 赔付](/cloud/aliyun-cdn-sla/)
+- [Apple,Google,FB,TG 160 亿登录信息泄露](/cloud/16b-credentials-leak/)
+- [带瘫全球互联网，Google 云/Cloudflare 全球故障](/cloud/gcp-cf-outage/)
 - [大故障：阿里云核心域名被拖走了](/cloud/aliyun-domain-seized/)
 - [深度分析：迪奥数据泄露事件，云配置失当的锅？](/cloud/dior-leak/)
-- [10万用户的软件，因腾讯云欠费2元灰飞烟灭？](/cloud/tencent-2yuan/)
-- [AWS 东京可用区故障：影响13项服务](/cloud/aws-tokyo-outage/)
+- [10 万用户的软件，因腾讯云欠费 2 元灰飞烟灭？](/cloud/tencent-2yuan/)
+- [AWS 东京可用区故障：影响 13 项服务](/cloud/aws-tokyo-outage/)
 - [Shopify：愚人节真的翻车了](https://mp.weixin.qq.com/s/9352Km9U-mnv8dmsHhSdMg)
-- [Oracle云大翻车：6百万用户认证数据泄漏](https://mp.weixin.qq.com/s/5z3jUV8CrKPinUYzOnlC6g)
-- [OpenAI全球宕机复盘：K8S循环依赖](https://mp.weixin.qq.com/s/ze4y9x7VpPmibitH7tAGMQ)
+- [Oracle 云大翻车：6 百万用户认证数据泄漏](/cloud/oracle-cloud-leak/)
+- [OpenAI 全球宕机复盘：K8S 循环依赖](/cloud/openai-failure/)
 - [支付宝崩了？双十一整活王又来了](https://mp.weixin.qq.com/s/D2XmL2YYN2kqHtwFN4FVGQ)
-- [草台回旋镖：Apple Music证书过期服务中断](/cloud/apple-music-cert/)
-- [阿里云：高可用容灾神话的破灭](https://mp.weixin.qq.com/s/rXwEayprvDKCgba4m-naoQ)
-- [阿里云故障预报：本次事故将持续至20年后？](https://mp.weixin.qq.com/s/G41IN2y8DrC002FQ_BXtXw)
-- [阿里云盘灾难级BUG：能看别人照片？](/cloud/aliyun-drive-bug/)
-- [阿里云新加坡可用区C故障，网传机房着火](https://mp.weixin.qq.com/s/EDRmP7ninfSx-CgNDb8mpg)
-- [这次轮到WPS崩了](https://mp.weixin.qq.com/s/BLHaiMYGpUTjMhP7msGHhA)
-- [草台班子唱大戏，阿里云RDS翻车记](https://mp.weixin.qq.com/s/kOIw8uPjZUZ0-QisC1TBOA)
-- [我们能从网易云音乐故障中学到什么？](https://mp.weixin.qq.com/s/tmlP1ol9qP2SIxB9VbvpEg)
-- [GitHub全站故障，又是数据库上翻的车？](/cloud/github-outage/)
-- [全球Windows蓝屏：甲乙双方都是草台班子](https://mp.weixin.qq.com/s/s7i7bSYzNY8mrcpfkHPjOg)
+- [草台回旋镖：Apple Music 证书过期服务中断](/cloud/apple-music-cert/)
+- [阿里云：高可用容灾神话的破灭](/cloud/aliyun-ha/)
+- [阿里云故障预报：本次事故将持续至 20 年后？](/cloud/aliyun-ha/)
+- [阿里云盘灾难级 BUG：能看别人照片？](/cloud/aliyun-drive-bug/)
+- [阿里云新加坡可用区 C 故障，网传机房着火](https://mp.weixin.qq.com/s/EDRmP7ninfSx-CgNDb8mpg)
+- [这次轮到 WPS 崩了](https://mp.weixin.qq.com/s/BLHaiMYGpUTjMhP7msGHhA)
+- [草台班子唱大戏，阿里云 RDS 翻车记](/cloud/rds-failure/)
+- [我们能从网易云音乐故障中学到什么？](/cloud/netease/)
+- [GitHub 全站故障，又是数据库上翻的车？](/cloud/github-outage/)
+- [全球 Windows 蓝屏：甲乙双方都是草台班子](/cloud/bsod-friday/)
 - [阿里云又挂了，这次是光缆被挖断了？](/cloud/aliyun-fiber-cut/)
-- [删库：Google云爆破了大基金的整个云账户](https://mp.weixin.qq.com/s/eH5HBbL7cQhjQY8rm1gFLQ)
-- [云上黑暗森林：打爆云账单，只需要S3桶名](https://mp.weixin.qq.com/s/35ScjtPjC1GNGKaSArJhcA)
-- [taobao.com证书过期](https://mp.weixin.qq.com/s/-ntsNfdEq3b4qs5tKP7tfQ)
-- [我们能从腾讯云故障复盘中学到什么？](https://mp.weixin.qq.com/s/SpxKyjSb1luCrJ8xIFjylg)
-- [云SLA是安慰剂还是厕纸合同？](https://mp.weixin.qq.com/s/mgkOybNeEH3LO0gRa1rQBQ)
+- [删库：Google 云爆破了大基金的整个云账户](/cloud/gcp-unisuper/)
+- [云上黑暗森林：打爆云账单，只需要 S3 桶名](/cloud/s3-scam/)
+- [taobao.com 证书过期](https://mp.weixin.qq.com/s/-ntsNfdEq3b4qs5tKP7tfQ)
+- [我们能从腾讯云故障复盘中学到什么？](/cloud/qcloud/)
+- [云 SLA 是安慰剂还是厕纸合同？](/cloud/sla/)
 - [腾讯云：颜面尽失的草台班子](/cloud/tencent-disgrace/)
 - [【腾讯】云计算史诗级二翻车来了](/cloud/tencent-epic-fail-2/)
 - [互联网故障背后的草台班子们](/cloud/amateur-internet-outages/) 马工
-- [从降本增笑到真的降本增效](https://mp.weixin.qq.com/s/FIOB_Oqefx1oez1iu7AGGg)
+- [从降本增笑到真的降本增效](/cloud/smile/)
 - [阿里云周爆：云数据库管控又挂了](/cloud/aliyun-weekly-crash/)
-- [我们能从阿里云史诗级故障中学到什么](https://mp.weixin.qq.com/s/OIlR0rolEQff9YfCpj3wIQ)
-- [【阿里】云计算史诗级大翻车来了](https://mp.weixin.qq.com/s/cTge3xOlIQCALQc8Mi-P8w)
+- [我们能从阿里云史诗级故障中学到什么](/cloud/aliyun/)
+- [【阿里】云计算史诗级大翻车来了](/cloud/aliyun/)
 
 ### **云资源**
 
-- [花钱买罪受的大冤种：逃离云计算妙瓦底](https://mp.weixin.qq.com/s/zwJ2T2Vh_R7xD8IKPso31Q)
-- [云数据库是不是智商税](https://mp.weixin.qq.com/s/LefEAXTcBH-KBJNhXNoc7A)
-- [云盘是不是杀猪盘？](https://mp.weixin.qq.com/s/UxjiUBTpb1pRUfGtR9V3ag)
-- [剖析云上算力真实成本](https://mp.weixin.qq.com/s/rp8Dtvyo9cItBJSsvfrKjw)
-- [扒皮对象存储：从降本到杀猪](https://mp.weixin.qq.com/s/HathxpQ_KUuqxyrtyCDzWw)
-- [垃圾腾讯云CDN：从入门到放弃](https://mp.weixin.qq.com/s/ANFnbDXwuhKI99fgYRZ9ug)
-- [记一次阿里云 DCDN 加速仅 32 秒就欠了 1600 的问题处理](https://mp.weixin.qq.com/s/0Wnv1B80Tk4J03X3uAm4Ww) 转
-- [云SLA是安慰剂还是厕纸合同？](https://mp.weixin.qq.com/s/mgkOybNeEH3LO0gRa1rQBQ)
-- [FinOps终点是下云](https://mp.weixin.qq.com/s/Yp_PU8nmyK-NVq0clD98RQ)
-- [本土云计算为啥还没挖沙子赚钱？](https://mp.weixin.qq.com/s/2w0bLJI7TvUNp1tzLYbvsA)
-- [云SLA是不是安慰剂？](https://mp.weixin.qq.com/s/LC5jAhuVObRcrTLxI1FUQA)
-- [范式转移：从云到本地优先](https://mp.weixin.qq.com/s/Yp6L0hh4b4HuJQRPD3aJYw)
+- [花钱买罪受的大冤种：逃离云计算妙瓦底](/cloud/patsy/)
+- [云数据库是不是智商税](/cloud/rds/)
+- [云盘是不是杀猪盘？](/cloud/ebs/)
+- [剖析云上算力真实成本](/cloud/ecs/)
+- [扒皮对象存储：从降本到杀猪](/cloud/s3/)
+- [垃圾腾讯云 CDN：从入门到放弃](/cloud/cdn/)
+- [记一次阿里云 DCDN 加速仅 32 秒就欠了 1600 的问题处理](/cloud/aliyun-dcdn-bill/) 转
+- [云 SLA 是安慰剂还是厕纸合同？](/cloud/sla/)
+- [FinOps 终点是下云](/cloud/finops/)
+- [本土云计算为啥还没挖沙子赚钱？](/cloud/profit/)
+- [云 SLA 是不是安慰剂？](/cloud/sla/)
+- [范式转移：从云到本地优先](/cloud/paradigm/)
 
 ### **下云记**
 
-- [花钱买罪受的大冤种：逃离云计算妙瓦底](https://mp.weixin.qq.com/s/zwJ2T2Vh_R7xD8IKPso31Q)
-- [草台班子唱大戏，阿里云RDS翻车记](https://mp.weixin.qq.com/s/kOIw8uPjZUZ0-QisC1TBOA)
-- [DHH下云：S3晚搬一天，就多花四万](/cloud/dhh-s3-migration/)
-- [DHH：下云超预期，能省一个亿](https://mp.weixin.qq.com/s/mknFXO5DSfxw7st8hhxjBQ)
-- [先优化碳基BIO核，再优化硅基CPU核](https://mp.weixin.qq.com/s/Yxyir8kjRDUZwkkE_dscZQ)
-- [单租户时代：SaaS范式转移](/cloud/single-tenant-saas/)
-- [拒绝用复杂度自慰，下云也保稳定运行](https://mp.weixin.qq.com/s/yIVal-9U6_TXX-dZpVtjBg)
-- [半年下云省千万：DHH下云FAQ答疑](https://mp.weixin.qq.com/s/xaa079P4DRCz0hzNovGoOA)
-- [是时候放弃云计算了吗？](https://mp.weixin.qq.com/s/CicctyvV1xk5B-AsKfzPjw)
-- [下云奥德赛](https://mp.weixin.qq.com/s/H2S3TV-AsqS43A5Hh-XMhQ)
+- [花钱买罪受的大冤种：逃离云计算妙瓦底](/cloud/patsy/)
+- [草台班子唱大戏，阿里云 RDS 翻车记](/cloud/rds-failure/)
+- [DHH 下云：S3 晚搬一天，就多花四万](/cloud/dhh-s3-migration/)
+- [DHH：下云超预期，能省一个亿](/cloud/odyssey-done/)
+- [先优化碳基 BIO 核，再优化硅基 CPU 核](/db/bio-core-cpu-core/)
+- [单租户时代：SaaS 范式转移](/cloud/single-tenant-saas/)
+- [拒绝用复杂度自慰，下云也保稳定运行](/cloud/uptime/)
+- [半年下云省千万：DHH 下云 FAQ 答疑](/cloud/cloud-exit-faq/)
+- [是时候放弃云计算了吗？](/cloud/odyssey/)
+- [下云奥德赛](/cloud/odyssey/)
+
+---
+
+发布版本：[微信公众号](https://mp.weixin.qq.com/s/sCAOwNva__0L_iMP1QHngQ)
