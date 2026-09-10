@@ -7,7 +7,7 @@ summary: >
 tags: [社会观察, 翻译]
 ---
 
-> 原文：《WRITES AND WRITE-NOTS<sup>[1]</sup>》作者：PG 保罗·格雷厄姆，硅谷投资教父，YC创始人，《黑客与画家》作者。译者：冯若航，PostgreSQL大法师，[数据库老司机](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488417&idx=1&sn=11ac37347fd159a1949da015b2cf57c7&chksm=fe4b267ac93caf6c5a8e1c716642426421007ceb6518553816e13054245edc6cbaed3207a0d0&scene=21#wechat_redirect)，[云计算泥石流](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488410&idx=1&sn=e44705fce4221458244e7705258ca254&chksm=fe4b2641c93caf57cc46069b82827da873af95b3e157e7e8d2943977bdd1cbb547d79bc16373&scene=21#wechat_redirect)，Pigsty 作者。
+> 原文：《WRITES AND WRITE-NOTS<sup>[1]</sup>》作者：PG 保罗·格雷厄姆，硅谷投资教父，YC 创始人，《黑客与画家》作者。译者：冯若航，PostgreSQL 大法师，[数据库老司机](/db/guru/)，[云计算泥石流](/cloud/exit/)，Pigsty 作者。
 
 我通常不愿对技术做出预测，但对于这一点我相当有信心：再过二十年，会写作的人将寥寥无几。
 
@@ -21,7 +21,7 @@ tags: [社会观察, 翻译]
 
 直到最近，这种对立所产生的压力还没有方便的释放途径。你可以付钱让别人为你写，例如 JFK；或者抄袭他人的作品，例如 MLK，但如果你不能购买或偷窃文字，就只能自己动笔。因此，几乎所有被期望写作的人都不得不去学习如何写作。
 
-> 备注：**JFK** 指 约翰·F·肯尼迪，是美国第35任总统。他在1956年出版了一本名为《勇气的画像》，据称主要由他的助手西奥多·索伦森代笔。**MLK** 指 马丁·路德·金，美国著名的民权运动领袖，然而在80年代，金博士的博士论文被发现存在抄袭。
+> 备注：**JFK** 指 约翰·F·肯尼迪，是美国第 35 任总统。他在 1956 年出版了一本名为《勇气的画像》，据称主要由他的助手西奥多·索伦森代笔。**MLK** 指 马丁·路德·金，美国著名的民权运动领袖，然而在 80 年代，金博士的博士论文被发现存在抄袭。
 
 然而现在情况不再如此了 —— 人工智能已经轰开了这个世界，几乎所有的写作压力都消散了。无论是在学校还是在工作中，你都可以让 AI 为你代劳。
 
@@ -31,7 +31,7 @@ tags: [社会观察, 翻译]
 
 是的，这很糟糕。原因是我早先提到过的：**写作就是思考**。事实上，有一种思考只能通过写作才能进行。莱斯利·兰伯特对此的表述再好不过：
 
-**“若你思考而不写作，你只是自以为在思考罢了”**
+## “若你思考而不写作，你只是自以为在思考罢了”
 
 > If you're thinking without writing, you only think you're thinking.
 
@@ -41,6 +41,10 @@ tags: [社会观察, 翻译]
 
 写作也是如此。聪明的人依然存在，但也只有那些选择去成为聪明人的人。
 
-### References
+## References
 
-`[1]` WRITES AND WRITE-NOTS: *https://paulgraham.com/writes.html*
+- `[1]` WRITES AND WRITE-NOTS: <https://paulgraham.com/writes.html>
+
+---
+
+发布版本：[微信公众号](https://mp.weixin.qq.com/s/9BWDCL5yOcyw6_pSn9rqmA)
