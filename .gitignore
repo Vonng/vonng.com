@@ -2,6 +2,7 @@
 .idea/
 .claude/
 .DS_Store
+bin/
 
 # Hugo build output and caches
 public/
