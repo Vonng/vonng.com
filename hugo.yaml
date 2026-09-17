@@ -88,6 +88,12 @@ related:
     - { name: date, weight: 10 }
 
 module:
+  # Hugo's own default here is `direct`, which fetches the theme with an
+  # anonymous `git ls-remote` against GitHub on every cold build. Cloudflare
+  # Pages' build container cannot do that — anonymous github.com git fails
+  # there — so read the module from the Go proxy and keep git as the fallback
+  # for a tag the proxy has not seen yet.
+  proxy: https://proxy.golang.org,direct
   imports:
     - path: github.com/pgsty/oink
   hugoVersion:
