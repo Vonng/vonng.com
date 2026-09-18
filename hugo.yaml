@@ -64,6 +64,12 @@ markup:
       attribute:
         block: true
     extensions:
+      # Soft line breaks between CJK characters render as nothing (not a
+      # collapsed space), so source files can wrap paragraphs at ~80-90 chars
+      # without leaking spaces into the rendered Chinese text.
+      cjk:
+        enable: true
+        eastAsianLineBreaks: true
       passthrough:
         enable: true
         delimiters:
