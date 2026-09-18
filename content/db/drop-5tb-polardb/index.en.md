@@ -3,79 +3,93 @@ title: "5 TB Deleted"
 date: 2026-09-15
 authors: [vonng]
 summary: >
-  A PolarDB for PostgreSQL instance running in Docker on a single production host lost 5 TB of data. There were no backups. Watching the recovery unfold, I have a few thoughts on the value of prevention—and making timely decisions when things go wrong.
+  A PolarDB for PostgreSQL instance deployed in Docker on a single host lost 5 TB of data—no backups. Watching the recovery unfold, I would rather talk about the value of prevention, and how to make timely decisions once things go wrong.
 tags: [PostgreSQL, Database, Backup, Incident]
 images: [featured.webp]
 ---
 
-A couple of days ago, a friend from the community got in touch about a spectacular database wipe. Their production database was PolarDB for PostgreSQL, running in Docker on a single host. Several terabytes of data were gone. It supported an important business system. There were no backups. The damage was severe.
+A couple of days ago, I ran into a spectacular database drop. A friend from the community came to me: something had gone wrong. A PolarDB for PostgreSQL instance, running in Docker on a single production host—several terabytes of data, gone. It supported a fairly important business system. There were no backups. The damage was severe.
 
-Two or three years ago, I [recovered a PostgreSQL database](/en/pg/pg-filedump/) for a company in the MiraclePlus alumni network. That was a GitLab database on a machine using bcache. A power outage corrupted its files, and running `pg_resetwal` several times made things worse. I also helped look into companies offering PostgreSQL data recovery. None inspired much confidence. With my friend out of options, I rolled up my sleeves and took it on myself.
+Two or three years ago, I did a [PostgreSQL data recovery](/pg/pg-filedump/) job for a startup founded by a MiraclePlus alum (the fund formerly known as YC China). That one was a GitLab database on a machine running BCache. A power outage corrupted the files, and a few rounds of Reset WAL then amplified the damage.
 
-I used `pg_filedump` for page carving: picking through data pages on disk, identifying which table they might belong to, then extracting tuples one by one and piecing the data back together. It sounds cool. In practice, it is exhausting manual work that leaves your eyes aching. I got the data back, but that database was only 1 GB. This one is 5 TB.
+At the time, I also went around looking at the companies on the market that did PostgreSQL data recovery. None of them seemed particularly trustworthy. With my friend out of options, I rolled up my sleeves and did it myself.
 
-Five thousand times larger. At 1 GB, page carving is hard labor. At 5 TB, it is moving a mountain by hand. And you cannot take your time: the client is breathing down your neck, the business is at a standstill, and you are working around the clock for days.
+The method was `pg_filedump` doing page carving—plainly put, picking data pages off the disk one by one, figuring out which ones still look like they belong to some table, then prying the tuples out row by row and piecing the data back together. It sounds cool. In practice it is nothing but grunt work—it practically blinds you. The data did come back. But that database was only 1 GB. This one is several terabytes—and this time, even the data dictionary is gone.
 
-I've been going flat out on AI work lately and simply couldn't spare the time. I even asked a few friends at Alibaba Cloud whether the vendor offered a data recovery service for its PolarDB for PG engine. Nope. No such service there, either.
+I've been pedaling flat-out on AI work every day lately and couldn't spare myself for this one, so I made a point of asking a few friends at Alibaba Cloud: does the original vendor offer a data recovery service for your PolarDB for PG kernel? Nope. The vendor doesn't offer that either.
 
-## Calling in Help
+## Calling in the Cavalry
 
-As it happened, I knew someone who specializes in PostgreSQL data recovery: Zhang Chen, the author of PDU. Very few people in China tackle this particularly hard problem, and he is among the best. I brought him in. Recovery is still in progress, with more than 70% of the data already recovered. Given the combination of no backups, several terabytes, and a niche database engine, that is an impressive result.
+As it happened, I knew exactly the right old hand for PostgreSQL data recovery: Zhang Chen, the author of [PDU](https://github.com/wublabdubdub/PDU-PostgreSQLDataUnloader). Very few people in China take on the hard problem of PostgreSQL data recovery at all, and Zhang is without question among the best. So I rang him up and brought him in. Recovery is still underway, and more than 70% of the data is already out. Given the preconditions—no backups, a lost data dictionary, several terabytes, and a niche kernel fork—that is a genuinely impressive score.
 
-I won't go into how he did it. This is his livelihood, and those methods aren't mine to turn into a tutorial. All I can say is that watching it unfold was more gripping than a TV drama. As for the client's identity or business, I won't say a word.
+![The PDU (PostgreSQL Data Unloader) project homepage](pdu-website.webp)
 
-The incident itself, though, left me with two observations worth discussing.
+I won't go into how exactly he did it. This is the trade he lives by, and it's not mine to present here as a tutorial. All I can say is that watching from the sidelines was more thrilling than any TV drama. As for who the client is or what the business is—I won't breathe a word. Still, the incident itself left me with two observations worth pulling out on their own.
 
 ## Bian Que's Eldest Brother Doesn't Get Paid
 
-There is a famous story in the ancient Chinese text *Heguanzi*.
+There is a particularly famous anecdote in *Heguanzi*, an ancient Chinese text.
 
-King Wen of Wei asks the physician Bian Que which of the three brothers is the best doctor. “My eldest brother is the best, my second brother comes next, and I am the worst,” Bian Que replies. The king is puzzled. “Then why is yours the only name everyone knows?”
+King Wen of Wei asks the physician Bian Que: all three of you brothers practice medicine—who is the best? Bian Que answers: my eldest brother is the best, my second brother comes next, and I am the worst. The king is puzzled: then why is yours the only name the world knows?
 
-Bian Que explains: his eldest brother recognizes illness before it takes shape and eliminates it, so his reputation never travels beyond the family. His second brother treats illness at its first, slightest sign, so his reputation never travels beyond the neighborhood. Bian Que himself uses needles, powerful medicines, and surgery, intervening only when the patient is nearly dead. That is why rulers across the land know his name.
+Bian Que explains. His eldest brother treats disease by "perceiving the illness in the spirit and removing it before it takes form"—he cures you before the ailment has even shaped up, so his fame never gets past the family gate. His second brother treats disease while it is still as fine as a hair—pinning it down the moment it sprouts—so his fame never gets past the mouth of the alley. As for me, I needle the blood vessels, dose out fierce drugs, and cut into skin and flesh, stepping in only when the patient is nearly gone—which is why my name is known among the lords of every state.
 
-The database business works exactly the same way.
+![Bian Que Meets Duke Huan of Cai—original text and translation](bianque.webp)
 
-I've [seen several database wipes over the years](/db/database-really-exploded/), and the script is remarkably consistent: launch a single PostgreSQL instance in Docker, get it working, put it into production. It runs beautifully. Years go by without a problem. It reminds me of a line from the Chinese band Omnipotent Youth Society's “Kill the One from Shijiazhuang”: “Thirty years of living like this, until the building collapses.”
+The database business is exactly the same.
 
-Three incident-free years do not validate the architecture. They mean you got lucky for three years. For a production business system, even if you don't set up a standby for high availability, periodically taking a `dump` and putting it on another machine is the bare minimum of professional responsibility. The cost is a `cron` job and a few dozen lines of script. When disaster strikes, that may be the only thin barrier between you and the abyss.
+Over the years, I have [seen more than a few database drops](/db/database-really-exploded/), and the script is nearly identical every time: spin up a single PostgreSQL instance in Docker, get it working, take it to production. And not just to production—it runs merrily, for years on end, without a single incident. It reminds me of that song "Kill That Man from Shijiazhuang": living like this for thirty years, until the edifice collapses.
 
-And honestly, if you're already running a niche engine like PolarDB for PostgreSQL, you're clearly willing to tinker. Why not try Pigsty while you're at it? [Pigsty can manage PolarDB for PG](/db/domestic-db-any-good/). Alibaba Cloud once asked me to add support, saying it would bring some business my way. Not a single deal materialized. I added the support anyway. The code is right there, free.
+Three years without incident does not mean the architecture is right; it only means the luck held for three years. For a production business system—never mind standing up a standby for high availability—the bare minimum of professional hygiene is to periodically take a `dump` and put it on another machine. The cost is one `cron` entry plus a few dozen lines of script. When disaster actually strikes, it is the only paper-thin barrier between you and the abyss.
 
-Pigsty's high availability, monitoring, and point-in-time recovery (PITR) support for upstream PostgreSQL also works with PolarDB for PG, at no charge. Deploy PolarDB with Pigsty, and you have an enterprise-grade database service with high availability and PITR out of the box. Personally, I think the vast majority of people should just use upstream PostgreSQL. Why go looking for trouble with these forks? But if you insist, I have a ready-made, free option for that too.
+And anyone who has already adopted a niche kernel like PolarDB for PostgreSQL clearly has a taste for tinkering—so why not, while you are at it, stand up high availability and PITR with Pigsty? [Pigsty can manage PolarDB for PG](/db/domestic-db-any-good/).
 
-Don't know how to set it up? Spend 2,000 yuan on a consultation, and I can at least explain exactly what you need to do. With a subscription at 50,000 yuan a year, I can help you avoid most of these pitfalls before they happen. You don't need to hire a dedicated person. Most failures resolve automatically, and backups, including off-site backups, largely take care of themselves. Fifty thousand yuan a year won't even hire an intern in one of China's major cities.
+Years ago, Alibaba Cloud came around asking whether I could support it, promising to bring me some business. In the end, not a single deal ever materialized—but the support got built, honestly and completely. The code is sitting right there, open source and free.
 
-The other option is to cobble something together yourself, save that 2,000 or 50,000 yuan, and then spend hundreds of thousands of yuan on data recovery after it blows up, losing contracts worth millions or tens of millions along the way. Here is the catch: most people only start taking databases seriously after a disaster. In all these years, I've seen very few companies that understood their importance from day one. That understanding isn't something you pick up off a shelf for free. People earn it by running headfirst into a wall—and usually only after they've bloodied themselves.
+![Pigsty documentation: managing the PolarDB PG kernel fork](pigsty-polardb.webp)
 
-Preventing trouble is therefore a thankless business. Fix a problem before it happens, and there is no drama and little money in it. The rescuer brings a dying patient back to life. You prevent countless incidents that, in the client's mind, “would never have happened anyway.” To them, those two things differ in value by two orders of magnitude.
+Everything upstream PostgreSQL has—high availability, monitoring, PITR—PolarDB for PG has as well: the full set, all usable, not one cent charged. Deploy with Pigsty, and out of the box you get an enterprise-grade database service with high availability and point-in-time recovery. Of course, if you ask me, the vast majority of people should simply use vanilla PostgreSQL and be done with it. But if you insist on these forks, I have a ready-made, free solution waiting right here.
 
-Bian Que's eldest brother doesn't get paid.
+![Pigsty: 12+ kernel forks, 576 extensions](pigsty-kernels.webp)
 
-## Don't Haggle over Bandages While You're Bleeding
+What's that—you don't know how to set it up? Spend 2,000 yuan on a consultation, and I can at least spell out exactly which things you need to do. With a 50,000-yuan-a-year subscription, I will fill these pits in for you before you fall into them; you won't need a dedicated full-time DBA, most failures will heal themselves, and backups—off-site backups included—stop being your problem. Fifty thousand yuan a year won't even hire an intern in a tier-1 city.
 
-My second point: when a decision is needed, make it. Stop dragging your feet. The first two days after an incident are often spent debating whether to pay for recovery, rather than recovering anything. I'm not singling anyone out. I've seen the same sequence many times: Can you take a look for free first? Can you assess how much is recoverable? Could you get the data out before we discuss the price? We need to discuss this internally and go through our approval process—
+The other road is to hand-roll a crude setup yourself, then wait for the crash and spend hundreds of thousands of yuan on data recovery while forfeiting deals worth millions to tens of millions. And here is the subtle part: it is only after the crash that the vast majority of people start taking the database seriously. In all my years, I have seen extremely few companies that understood on Day 1 how much the database mattered. That understanding is not a free commodity on a shelf; it is beaten into you, head against a wall—and usually the head has to bleed first.
 
-And there go two days.
+The business of "treating the disease before it arises" is inherently thankless. You resolve things at the stage where nothing has yet happened: there is no drama, and there is nothing much to bill. The other guy saves a patient who was already at his last breath; you have prevented countless incidents that, in the client's mind, "would never have happened anyway." In the client's heart, those two things are two orders of magnitude apart in value.
 
-Throughout all this back-and-forth, the disk isn't waiting for you. New writes can overwrite deleted blocks at any moment. Every extra minute the business keeps running reduces the amount of data that could, in principle, be recovered. That's physics. It doesn't negotiate. Suppose a contract worth tens of millions of yuan is on the line, your database is gone, and recovery costs hundreds of thousands. What would I do? Pay the damn money, right now. The sooner, the better.
+Bian Que's eldest brother has a hard time making money.
 
-Sign the contract and pay immediately, and the specialist can work through the night, 24/7. Why should someone pull three all-nighters for you without a signed contract? The delay creates further damage that might otherwise have been avoided. Downtime, lost data: how do those costs compare with the recovery fee? The arithmetic is simple. Under stress, though, people tend to focus on a different question: “Am I being ripped off?”
+## Don't Haggle over the Bandages While You're Bleeding
 
-It's like being rushed to the emergency room in the middle of the night and haggling with the ambulance driver from your stretcher.
+My second point: when the moment calls for a decision, make it—no dithering. The first two days after an incident are often spent not on recovery, but on the question of whether to spend the money. I am not singling anyone out; I have seen it before, and the script hardly varies. Could you take a free look first? Could you first assess how much is recoverable? Could you get the data out first and talk money afterward? We need to discuss internally, run it through the process—and just like that, two days are gone.
 
-What most companies lack is not money but a sense of when to escalate. They have no plan that says: for an incident of this severity, this person can authorize this much spending within this many minutes. When something goes wrong, the report crawls up the hierarchy and everyone waits for an answer. By the time the person with authority understands what happened, the best recovery window has already closed.
+Suppose you are sitting on seven- or eight-figure deals—"A7/A8+" in the local deal-size slang—and the database is gone, with recovery priced in the hundreds of thousands. What is my call? Pay on the spot; the faster, the better. Get the contract signed and the money through immediately, and the person on the other side can work overnight for you, around the clock, 24/7. But if you hedge and stall, why exactly should they burn the midnight oil for you with no guarantee of anything? And what slips through the gap in between may be second-order damage that was entirely avoidable. The losses from downtime and lost data make the recovery bill look like pocket change. The arithmetic here is truly simple. But under stress, people tend to run a different calculation:
 
-## I'd Rather Have Less of This Business
+Am I being ripped off?
 
-Data recovery requires deep expertise and substantial effort, with no certainty about the outcome. People who can actually do it deserve to be paid accordingly.
+It is like being rushed to the ER after a midnight car crash, and haggling over the fare with the driver from the stretcher.
 
-Two thousand yuan for a consultation. Fifty thousand yuan a year for a subscription. Hundreds of thousands for recovery. Business worth millions or tens of millions. Anyone can do that arithmetic. Most people simply refuse to pick up a pencil until the building collapses. What saddens me is how much of this business should never have existed.
+At bottom, most companies lack not money but the instinct to escalate—no playbook saying: for an incident of this severity, this person commits this much money within this many minutes. When something actually breaks, the report climbs the hierarchy layer by layer, and every layer waits for a reply. By the time whoever can sign off finally understands what has happened, the best rescue window has already closed.
 
-What could have been a planned restore from backup becomes an expert doing archaeology on surviving data files. What could have been an agreed response channel becomes a desperate search for help in an incident chat. It looks like a heroic rescue. Behind it lies a pile of avoidable trouble.
+## I'd Rather Do Less of This Business
 
-So don't make “we can always find an expert to salvage it” your disaster recovery plan. An expert should be your last resort, not your only backup. I'd much rather help people put the missing pieces in place while their systems are still healthy. Fewer legends, more routine. Fewer overnight rescues, more people going home on time.
+Data recovery is work with a high professional bar, heavy investment, and irreducible uncertainty in the outcome. The people who can genuinely do it deserve to be paid accordingly.
 
-I hope the next friend who gets in touch tells me their business has grown and they need a few more databases. Not that the database is gone again, there are still no backups, and I need to find someone fast.
+Two thousand yuan for a consultation. Fifty thousand yuan a year for a subscription. Hundreds of thousands for the recovery. Seven- and eight-figure business on the line. Anyone can do this arithmetic—most people simply refuse to pick up the pencil until the day the edifice collapses. What saddens me is that a lot of this business should never have existed at all.
 
-As for “spectacular database wipe” stories, **I'd rather never have another one to write about.**
+What could have been a restore from backup, following the playbook, ends up as an expert doing archaeology on the surviving data files. What could have been a response channel settled in advance ends up as a desperate scramble for help across incident chat groups. It looks like a hero arriving to save the day; behind it sits a pile of trouble that was entirely avoidable.
+
+So don't make "we can always find an expert to fish the data out at the end" your disaster recovery plan. The expert should be the last line of remedy, not your only copy of the backup. I would much rather help people fill in what is missing while their systems are still healthy. Fewer legends, more routine; fewer all-night rescues, more going home on time.
+
+I hope the next time a friend comes to me, it is to say the business has grown and they need a few more databases—not that the database is gone again, there are still no backups, and could I please hurry up and call in the cavalry.
+
+As for "spectacular database drop" stories as a topic—**I would rather stay permanently out of stock.**
+
+## Further Reading
+
+- [How Do You Call in the Cavalry When Your Database Explodes?](/db/db-emergency-help/)
+- [This Time the Database Really Exploded, and Even the Cavalry Couldn't Help](/db/database-really-exploded/)
+- [How to Use pg_filedump for Data Recovery?](/en/pg/pg-filedump/)
+- [Cloud RDS: From Database Drop to Exit](/en/cloud/drop-rds/)
+- [Rumor: Jiangxi Education Department's Gaokao Score Site Dropped Its Database and Ran](/cloud/jiangxi-drop-db/)
