@@ -17,11 +17,17 @@ Requires **Hugo Extended 0.160.1+** and Go (Hugo Modules pull the theme).
 ```bash
 make dev     # hugo server on :1313
 make build   # production build into public/
-make sync    # build, sanity-check, and rsync to the server
+make check   # the strict build every change has to pass
 ```
 
 The theme is the [OINK](https://oink.pgsty.com/) Hugo Module, pinned in `go.mod`.
 Upgrade it with `hugo mod get github.com/pgsty/oink@vX.Y.Z && hugo mod tidy`.
+
+## Publishing
+
+A push to `main` is what publishes: Cloudflare Pages builds https://vonng.com
+and `.github/workflows/pages.yaml` builds https://blog.vonng.com. There is no
+manual deploy step, and `public/` is a local artifact only.
 
 ## Layout
 
