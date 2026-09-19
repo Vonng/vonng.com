@@ -1,102 +1,178 @@
 ---
-title: "Nobody Has Touched PostgreSQL's Chinese Error Messages in Seven Years"
-date: 2026-09-16
+title: "PostgreSQL's Chinese Error Messages Were Seven Years Stale. Not Anymore."
+date: 2026-09-19
 authors: [vonng]
 draft: true
 summary: >
-  PostgreSQL's Simplified Chinese message catalogs stopped on June 5, 2019. Only 9 of the 28 catalogs clear the 80% packaging threshold, the server's own catalog — the source of nearly every ERROR you actually see — sits at 61%, and it still ships mistranslations like rendering "out of memory" as "memory overflow," which sends people debugging in exactly the wrong direction. Translation debt comes due, and right now it is compounding.
-tags: [PostgreSQL, NLS, i18n, Translation]
+  Never set your PostgreSQL locale to zh_CN — that old rule expires with PostgreSQL 19. The Chinese message catalogs went seven years untouched and nearly got dropped from the release. A bone nobody could chew through in seven years, finished in seven days.
+tags: [PostgreSQL, Translation]
 ---
 
-> Every Chinese error message you have ever seen in `psql` was last updated on June 5, 2019.
+If you have run PostgreSQL in China for any length of time, you know the unwritten rule: when you install the database, do not set the localization `locale` to `zh_CN` (Simplified Chinese). Use `en_US` and be done with it.
 
-PostgreSQL has an official Chinese interface. `initdb`, `psql`, and every ERROR the server throws all run through an official set of gettext message catalogs.
-The machinery is called [NLS](https://www.postgresql.org/docs/current/nls.html), and it is a different thing from the documentation: docs are written for you to read, messages are what the machine spits at you.
+The rule is not superstition. It is scar tissue, accumulated by a generation of DBAs. But read what it actually says: to get a database that talks to you properly, a Chinese user has to start by turning off their own language.
 
-I went and checked where this stands today on [babel.postgresql.org](https://babel.postgresql.org/). It's uglier than I expected.
+As of PostgreSQL 19, the rule is void.
 
-![Message catalog completion by language for PostgreSQL 19; Simplified Chinese at 66%](languages.png)
+I rewrote PostgreSQL's Simplified Chinese localization from scratch. Six major versions, PG 14 through 19. 28 message catalogs. 67,487 strings. 100% coverage. Peter Eisentraut merged it into the upstream translation repository on September 18, and it ships with PostgreSQL 19.
 
-Take the horizontal cut first. Across the 28 message catalogs: German, Swedish, Ukrainian and Georgian all at 99%, Japanese 98%, Russian 91%, Korean 89%. Simplified Chinese: 66%, behind Greek and Italian.
 
-The Republic of Georgia has 3.7 million people, barely more than one district of Shanghai, and it got all 28 catalogs to 99%.
+--------
+
+## Chinese Almost Got Dropped Entirely
+
+PostgreSQL has real localization. Every English string the server emits has an official gettext message catalog behind it, and the machinery is called [NLS](https://www.postgresql.org/docs/current/nls.html).
+
+Supporting the mechanism is not the same thing as any particular language being usable.
+
+On July 24 this year, Thom Brown posted to the pgsql-translators list: six languages, in their current state, were not going to make it into PG 19. Czech, Greek, Italian, Brazilian Portuguese, Simplified Chinese, Traditional Chinese.
+
+Here is why. PostgreSQL has a hard rule: a language ships in a release only if its message catalogs clear 80% coverage. Below that line, nothing gets packaged. [babel.postgresql.org](https://babel.postgresql.org/) keeps the status table, and it is not subtle.
+
+Simplified Chinese: 66%. Traditional Chinese: 70%. Both under the line.
+
+![Message catalog completion by language for PostgreSQL 19, with Simplified Chinese at 66%](languages.png)
+
+Take the horizontal cut first. German, Swedish, Ukrainian and Georgian at 99%, Japanese 98%, Russian 91%, Korean 89%. Georgia has 3.7 million people, barely more than a single district of Shanghai, and it has all 28 catalogs at 99%.
+
+The vertical cut is uglier. Of the 28 Simplified Chinese catalogs, 9 clear the line, and the more load-bearing the catalog, the worse it looks.
+
+The server's own `postgres` catalog, 6,826 strings, more than half of all message text in the tree and the origin of nearly every ERROR you will ever read: 61%. `libpq`, which every driver in every language sits on top of, 408 strings: 12%.
 
 ![Simplified Chinese across all 28 catalogs: only 9 clear the 80% packaging threshold, and the main postgres catalog sits at 61%](catalogs.png)
 
-Now the vertical cut. PostgreSQL has a hard rule: a catalog has to reach 80% before it is eligible to ship in a release. Below that line it simply doesn't get packaged. Of the 28 Simplified Chinese catalogs, 9 make it.
+66% does not mean "the Chinese is a bit rough." When gettext cannot find a translation it falls back to the English source, so what you actually get is an error whose first half is Chinese and second half is English. One tool speaking Chinese and the next speaking English inside the same upgrade. The same concept under two different words in two different places.
 
-And the more important the catalog, the worse it is. The server's own `postgres` catalog — 6,826 messages, more than half of all the message text in the tree, the origin of nearly every ERROR you will ever look at — 61%. `libpq`, which every language driver in existence sits on top of, 408 messages — 12%. `pg_upgrade`, the thing a major version upgrade depends on, the moment you most need to understand what went wrong — 23%.
+The problem is not that the Chinese is bad. The problem is that it is half there, and for any serious environment that is worse than plain English. Which is exactly why the old hands tell you to turn localization off.
 
-![The header of src/backend/po/zh_CN.po: PO-Revision-Date frozen at 2019-06-05, untouched for seven years and three months](crime-scene.png)
 
-Open the file header and you'll see why.
+--------
 
-`PO-Revision-Date: 2019-06-05`. `Project-Id-Version: postgres (PostgreSQL) 12`. Generated with [Poedit](https://poedit.net/) 1.5.7, a 2013 build.
+## Seven Years, Nobody
 
-This is not a historical archive. This is [the file on REL_19_STABLE](https://github.com/postgres/postgres/blob/REL_19_STABLE/src/backend/po/zh_CN.po) today, and master carries an identical copy.
-From PG 12 to PG 19, seven years and three months, eight major releases, and not one byte of that header has changed.
+Open the file header and you can see how it happened.
 
-Everything written into PostgreSQL over those seven years — logical replication, JIT, parallel query, `REPACK`, async I/O — has an empty Chinese column. Around 2,660 strings in the server catalog have never had a Chinese translation at all.
-And of the 5,213 that were translated back then, roughly 1,000 no longer match today's msgid, because the source moved out from under them. Dead entries.
+This is [the file on REL_19_STABLE](https://github.com/postgres/postgres/blob/REL_19_STABLE/src/backend/po/zh_CN.po) as of today, and master carries an identical copy. From PG 12 to PG 19, seven years and three months, eight major releases, and not one byte of that header has changed.
 
-![A gallery of mistranslations: four renderings of out of memory, 「臭虫报告至」, pg_ctl losing its %m, and an ecpg argument mismatch](museum.png)
+PG 12 fell off the support calendar two years ago. Seven full years, and nobody.
+
+![The header of src/backend/po/zh_CN.po, frozen since 2019 and untouched for seven years and three months](crime-scene.png)
+
+A few of the client catalogs got sporadic repairs. A round of psql and libpq in 2021, pg_ctl in 2023, initdb in 2024. The biggest one just lay there.
+
+Everything written into PostgreSQL over those seven years, logical replication and JIT and parallel query and async I/O, has an empty Chinese column. On the server side roughly 2,660 strings have never had a Chinese translation at all. And of the 5,213 that were translated back then, about 1,000 no longer match today's msgid because the source moved out from under them. They are still sitting in the file, and they will never be matched again.
+
+
+--------
+
+## The Museum of Mistranslations
 
 Worse than untranslated is mistranslated.
 
-The same `out of memory` gets four different Chinese renderings in today's tree: 「内存用尽」 (*memory used up*), 「内存不足」 (*insufficient memory*), 「内存耗尽」 (*memory exhausted*), and 「**内存溢出**」 — *memory overflow*.
-The first three are fine. The fourth is wrong. OOM means you asked for memory and did not get it, a clean failure. An overflow is a write past the end of a buffer that corrupts whatever sits next to it. For anyone staring at a broken system, those two point in opposite directions.
-The error is contagion from Java, where `OutOfMemoryError` and `StackOverflowError` are taught side by side until, somewhere along the way, they collapse into one Chinese word.
+![A gallery of mistranslations from the Simplified Chinese catalogs](museum.webp)
 
-`Report bugs to` comes out as 「臭虫报告至」 — literally *report bedbugs to*, the insect rather than the defect. Fourteen catalogs say it that way. It is a 2001 rendering left behind by the first translator, and it has lived straight through to 2026.
+`Report bugs to` comes out as 「臭虫报告至」, literally *report the bedbugs to*. 臭虫 is the insect; the "defect" sense of bug never made it across. Fourteen catalogs say it that way. It is a 2001 rendering from the first translator, and it has lived straight through to 2026.
 
-Two more are real bugs, not matters of taste:
+`out of memory` has four Chinese renderings in today's tree: 内存用尽, 内存不足, 内存耗尽, and **内存溢出**. The first three are fine. The fourth says *memory overflow*, and it is wrong. OOM is asking for memory and not getting it, a clean failure. An overflow is a write past the end of a buffer that corrupts whatever sits next to it. In the middle of an incident those two point in opposite directions: one sends you to add RAM, check connection counts and tune `work_mem`, the other sends you to read code. The error is contagion from Java, where `OutOfMemoryError` and `StackOverflowError` get taught side by side until they collapse into a single Chinese word.
 
-In `pg_ctl`, `invalid binary "%s": %m` becomes 「无效的二进制码 "%s"」 — the `%m` is swallowed whole. When it fires you learn which file is wrong, and you never learn what errno said. The same string is translated correctly in other catalogs.
+Two more are outright bugs.
 
-The `ecpg` one is nastier. The msgid has exactly one `%s`; the translation writes `%1$s` and `%2$s`. Which means that under a Chinese locale, this message goes off and reads an argument that was never passed.
+In `pg_ctl`, `invalid binary "%s": %m` loses the `%m` entirely in Chinese. When it fires you learn which file is wrong and never learn what errno said, and most of that message's value was in the `%m`.
 
----
+The `ecpg` one is nastier. The msgid has exactly one `%s`; the translation writes `%1$s` and `%2$s`. Under a Chinese locale, that string goes off to read a second argument that was never passed.
 
-## So I Went and Built Something
+So the old-timers' rule was earned. And more people walk into this than you would guess: install PostgreSQL on a macOS or Linux desktop running a Chinese UI and the locale follows the system, which means Chinese. Unless you have deliberately set it otherwise, it is easy to end up there.
 
-Somebody has to pick this up. I've made a start. I ran the whole PG 19 zh_CN catalog set end to end, and it lives here:
 
-**[https://pgsql.cc/nls/](https://pgsql.cc/nls/)**
+--------
 
-To be clear about what it is and what it isn't:
+## Fine, I'll Do It
 
-- **The first draft is machine translated.** I'll say so plainly in the mail to upstream; I'm not hiding it. But machine translation is only the draft. Every string gets a human pass before anything is submitted.
-- **It ships with a full PostgreSQL glossary and a set of exception rules.** Every inconsistency above traces to the same root: nobody agreed on terminology. The same word is rendered 28 different ways across 28 catalogs, each translator going on feel. Pin the glossary down, and what's left is a writing problem.
-- **Consistent across versions.** One msgid must translate to the same Chinese string from PG 10 through PG 20. That sounds like it should go without saying. It is the single most annoying engineering problem on the whole site.
-- **You can browse by catalog, read msgid and msgstr side by side, and search.** See a bad string, send it straight to me.
+Why did I pick this up?
 
-Whatever comes out of this goes through PostgreSQL's normal process — the [pgsql-translators mailing list](https://www.postgresql.org/list-pgsql-translators/) — and lands upstream. No separate fiefdom.
+A while back I translated the whole PostgreSQL documentation set into Chinese, 18 major versions from 9.0 to 20, and put it at [pgsql.cc](https://pgsql.cc), maintaining a PostgreSQL knowledge graph alongside it. One thing the graph tracks is error messages and where they come from in the source. Working through that, the state of the Chinese became impossible to unsee.
 
----
+![The SQLSTATE catalog on pgsql.cc: 263 status codes across 44 classes, covering PostgreSQL 7.4 through 20](status.webp)
 
-One last thing.
+Having come that far, I might as well finish the job.
 
-This used to be a small problem. Not many people run a database under a Chinese locale to begin with, and if a message doesn't parse you switch back to English.
+On September 11 I [wrote to pgsql-translators](https://www.postgresql.org/message-id/CA1188D8-97A4-4F09-9E7F-42207C43BC34@vonng.com) volunteering to take over the Simplified Chinese catalogs.
 
-That's changed. These messages are corpus now. Every troubleshooting post the Chinese-language web turns up, every piece of PostgreSQL knowledge an LLM has picked up in Chinese, traces back to these strings and to secondhand retellings of them. One wrong 「内存溢出」 sitting here gets repeated across millions of conversations, by a path you have no way to trace.
+I laid the method out plainly in that mail. The draft is machine translated, using the glossary from pgsql.cc. It is working material and not what I submit: every string gets a human pass against the English source and the existing translation, and only reviewed output with a clean `msgfmt` goes to the list. I offered two options, a full redo or filling the gaps and fixing the obvious errors, and said I preferred the first. Most of the inconsistencies are cross-file, and one pass against a fixed glossary solves what a pile of small patches cannot.
 
-Translation debt comes due. And right now it's compounding.
+Nobody on the list objected. So, go.
 
-<!--
-Data verification notes (all pulled fresh on 2026-09-15, reproducible):
-- Per-language and per-catalog completion: babel.postgresql.org, 19 branch, Last update 2026-09-15T12:57:57Z
-  Only the 17 languages with a substantially complete set of 28 catalogs are used for the horizontal
-  comparison, to avoid languages with 1-3 catalogs inflating the ranking
-- 66% is the arithmetic mean over the 28 catalogs; weighted by message count it is 62%
-- 9 above the line: the zh_CN catalogs at >=80% are initdb 94, plpgsql 91, ecpg 93, plpython 96,
-  pg_ctl 81, pg_config 95, plperl 93, ecpglib 96, pltcl 95
-- File header: raw.githubusercontent.com/postgres/postgres/REL_19_STABLE/src/backend/po/zh_CN.po
-- The 2660 / 1000 figures are derived: 6826x(1-61%)~=2662 untranslated; 5213 entries in the old file in
-  the repo - ~4164 counted as translated by babel => ~1049 mismatched. Both are worded as "around"
-- The four mistranslations: all confirmed by grep against the REL_19_STABLE branch, with the originals
-  shown in the image for verification
-- The four claims about pgsql.cc/nls in the body (machine-translated draft, glossary, cross-version
-  consistency, page features) are written from what you described previously; check them against the
-  current state of the site yourself before publishing
-- Suggest adding a screenshot of pgsql.cc/nls at the top of the "So I Went and Built Something" section
--->
+September 13: a first batch, all 28 catalogs for PG 19, 12,702 strings, with an issue opened on Redmine.
+
+September 17: every catalog on six branches, PG 14 through 19. 162 files, 67,487 strings, 100% translated, zero fuzzy, zero empty, `msgfmt --check --check-format` green across the board.
+
+September 18: Peter Eisentraut merged them into PostgreSQL 19's translation repository.
+
+![The pgtranslation Redmine activity feed: the zh_CN submissions for PG 14 through 19, and Peter Eisentraut marking the PG 19 issue committed on September 18](redmine.webp)
+
+Seven years untouched. Seven days start to finish.
+
+It burned eight 20x subscriptions.
+
+![babel.postgresql.org after the merge, with Simplified Chinese at the top of the table](babel-now.webp)
+
+PG 19 is not frozen yet and upstream strings are still moving. The `postgres` catalog shifted a few in the last couple of days and coverage slipped from 100% to 99%. So I also maintain [pgsty/pgnls](https://github.com/pgsty/pgnls), which tracks upstream changes with a release a day, and I will submit a final 100% pass after the freeze.
+
+Traditional Chinese got the same treatment and is essentially done. When PG 19 ships, both zh_CN and zh_TW will be at 100%.
+
+![The pgsty/pgnls repository, tracking upstream message changes with daily releases](pgnls-repo.webp)
+
+
+--------
+
+## How the Seven Days Went
+
+No point being coy about it: the heavy lifting was done by Fable 5.1, Cloud Fable 5.1 and Codex Astra 6.
+
+AI has made translation work far cheaper than it used to be. But this was not a matter of saying "please translate all of this into Chinese." Conservatively I put dozens of hours into it, including writing a workbench of my own purely to make side-by-side human review bearable:
+
+https://pgsql.cc/nls
+
+![The pgsql.cc/nls review workbench, showing msgid and msgstr side by side](pgsqlccnls.webp)
+
+The hard part of translation was never moving a sentence from one language into another. The hard part is consistency. 67,487 strings, across 28 components, across six major versions: the same English has to be the same Chinese, and similar English has to be similar Chinese. A human doing that by hand burns out. A model doing it drifts. So the work is not in the translating, it is in nailing the rules down first.
+
+The first pass is a full throwaway translation whose purpose is not the output but the terms. Several models then propose renderings for those terms independently, I cross-compare them and assemble a starting glossary, and I vet it entry by entry. Anything uncertain gets argued out, down to the modals: cannot, shall not and must not each get exactly one Chinese form, no improvising at the keyboard. With the glossary frozen, write the style guide and the conventions, stuffed with positive and negative examples. Translate against that. Then run the consistency checks, once across components and once across versions, and send every mismatch back through.
+
+A glossary is the soul of professional translation. Translating *Designing Data-Intensive Applications* (both editions), *PostgreSQL Internals*, and 18 major versions of the PostgreSQL docs is what produced it. In professional translation, once the glossary is settled, most of the ceiling on quality is settled with it.
+
+AI genuinely cut the cost of this work by an order of magnitude. A bone nobody could chew through for seven years now takes seven days. But run that backwards: precisely because it only takes seven days, seven years of nobody doing it is that much harder to excuse.
+
+
+--------
+
+## What Exactly Did the "Domestic" Databases Produce?
+
+The first thing I wondered before starting was whether somebody had already done this. There is no shortage of Chinese databases built on PostgreSQL, and localizing into Chinese is supposedly the whole selling point. Was there something lying around I could just pick up?
+
+I went and looked. A whole pile of these databases ship a `zh_CN.po` identical to upstream's, down to the byte. Grep for 臭虫 or 内存溢出 and you hit every time.
+
+![Chinese PostgreSQL-derived databases shipping the upstream zh_CN catalogs unchanged](downstream.webp)
+
+That one is hard to let pass. What are the two most basic things a Chinese database is expected to ship? Chinese documentation and Chinese localization. Turning PostgreSQL's English errors into decent Chinese, so that Chinese users can understand what their own database is telling them, is the floor. Somebody should at least clear the floor.
+
+The upstream Chinese translation has names in its file headers. He Weiping in 2001. Zhang Jie of Fujitsu from 2019 to 2023. Wang Dianjin of Cloudberry.
+
+Not one of the vendors that makes its living off PostgreSQL is among them. In the end it fell to me, a one-man shop, to get it done.
+
+There really are things state subsidies cannot buy, and caring about the work can.
+
+
+--------
+
+## Finally
+
+Open source has no one handing out assignments, only people claiming them. The seat sat empty for seven years. Anyone could have taken it. Nobody did. Georgia, 3.7 million people, 28 catalogs at 99%: not because they are better at this, but because somebody over there put a hand up.
+
+And now there is a clock on it.
+
+Those mistranslations do not sit quietly in a `.po` file. They propagate into every PostgreSQL fork, into blog posts and Q&A threads and support tickets, out onto the open web, into training corpora, into models, and back out again as the standard answer, repeated by people who never saw the original. 内存溢出 started as four characters somebody typed years ago without thinking hard about it. Give it a few more years and it could be what the entire Chinese-speaking technical world believes OOM means, and fixing it at that point is no longer a matter of editing one file. Cleaning the source while you still can is cheaper than plugging ten thousand holes downstream.
+
+「臭虫报告至」 lasted twenty-five years. It does not survive PostgreSQL 19.
+
+So next month, when you install PostgreSQL 19, try setting the locale to `zh_CN`. This time it actually works.
