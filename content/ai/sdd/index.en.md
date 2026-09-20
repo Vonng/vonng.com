@@ -201,9 +201,9 @@ I will cover how the other three techniques—adversarial review, brute-force te
 
 This essay has focused on what documentation-driven development looks like in practice, with a concrete example.
 
-My [OINK framework](https://oink.pgsty.com/) has also recently stabilized. [Version 0.8.1](https://github.com/pgsty/oink/releases/tag/v0.8.1) is now out with all the essential features in place, and I have just submitted the theme to the [official Hugo theme registry](https://themes.gohugo.io/).
+My [OINK framework](https://oink.pgsty.com/) has also recently stabilized. [Version 1.0.0](https://github.com/pgsty/oink/releases/tag/v1.0.0) is now out with all the essential features in place, and I have just submitted the theme to the [official Hugo theme registry](https://themes.gohugo.io/).
 
-Using it is brutally simple: tell Codex or Claude, “Use the theme at `oink.pgsty.com`.” It will clone a [starter site](https://github.com/pgsty/oink-starter), edit the content, build it, and deploy it. You only have to write Markdown. Several friends are already using it to build documentation sites inside their companies.
+Using it is brutally simple: tell Codex or Claude, “Use the `pgsty/oink` Hugo theme.” It will clone a [starter site](https://github.com/pgsty/oink-starter), edit the content, build it, and deploy it. You only have to write Markdown. Several friends are already using it to build documentation sites inside their companies.
 
 Shipping a polished documentation site that works out of the box is far better than handing over a few scattered Markdown files crapped out across the repository.
 

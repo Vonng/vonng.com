@@ -2,7 +2,6 @@
 title: "PostgreSQL's Chinese Error Messages Were Seven Years Stale. Not Anymore."
 date: 2026-09-19
 authors: [vonng]
-draft: true
 summary: >
   Never set your PostgreSQL locale to zh_CN — that old rule expires with PostgreSQL 19. The Chinese message catalogs went seven years untouched and nearly got dropped from the release. A bone nobody could chew through in seven years, finished in seven days.
 tags: [PostgreSQL, Translation]

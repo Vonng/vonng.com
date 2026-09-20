@@ -11,6 +11,8 @@ People often ask in the comments on my articles: How did you get 10 subscription
 
 Buying them just takes a little money. **A problem you can solve with a little money isn't much of a problem.** The hard part is this: do you have problems worth spending 10 subscriptions on?
 
+---
+
 ## 1. First, Make Sure You Can Buy Them
 
 To hold 10 AI subscriptions at once, you need six things:

@@ -24,6 +24,8 @@ I'm Vonng, the author of Pigsty. **Silo is the MinIO community fork I maintain.*
 This is not the release notes. I wrote those separately, change by change, for people who need to read them against an upgrade. This is the retrospective—what actually happened over the past month or so,
 why I picked the moment two frontier models had just landed to run a vulnerability cleanup with two AIs, and why I think it was worth it.
 
+---
+
 ## How MinIO Skipped Town, One Step at a Time
 
 To explain why Silo exists, I have to lay out the timeline of how MinIO spent the last few years killing itself. This isn't a grudge; it's a documented string of dates:
@@ -51,6 +53,8 @@ Join the dots and you get a very clean piece of commercial design: **archive the
 AIStor bills by capacity at $0.02/GB/month, with the enterprise self-service support tier covering up to 400 TiB—third-party evaluations put the entry price around $96,000 a year. Yes, that is the "tidy" arrangement.
 
 Someone still has to patch the abandoned old version. That someone is me.
+
+---
 
 ## Why Me, and Why AI
 
@@ -85,6 +89,8 @@ Real maintenance is never one clean kill; it's patches stacked on patches. The L
 and that the rate-limit key has to be "source IP + normalized username" rather than a single dimension—three follow-up commits before it was solid. Grinding through work like that by hand, round after round, costs an absurd amount of time.
 
 <!-- TODO: a concrete, vivid anecdote from this cleanup where Astra and Fable deadlocked on a specific fix and I had to step in and arbitrate. -->
+
+---
 
 ## What Actually Got Fixed This Past Month
 
@@ -136,6 +142,8 @@ benchmarked against the upstream 2025-12-03 source. Let me be honest about one t
 The hard evidence I can offer is internal acceptance testing: `make verify` covers FS, erasure coding, distributed erasure coding, multi-pool, and IPv6 multi-pool, at **174 PASS / 0 FAIL**;
 a [four-node TLS cluster](https://silo.pgsty.com/blog/release/silo-20260903/) went through upload/download checksum comparison on 1,004 object pairs one by one, two-site replication, single-drive rebuild, and a full rollback drill.
 
+---
+
 ## What It Cost, and Whether It Was Worth It
 
 Honestly: quite a lot.
@@ -156,6 +164,8 @@ This isn't some grand theory about open-source resilience. It's a very concrete 
 And it holds up a lot of real deployments. [Pigsty v4.5](https://pigsty.io/blog/pigsty/v4.5/) has moved its entire object storage module to Silo; `minio_type` now accepts exactly one value, `silo`.
 Out in the world: RAGFlow's default Compose stack, Dokploy's product templates, the Helm chart for Grafana Loki, Dell's Omnia HPC platform, nixpkgs, DaoCloud's image mirror... dozens of projects already point their default image at me.
 In a certain sense, this emergency fork has become **the most active and most visible MinIO fork there is**.
+
+---
 
 ## If You're Still Running MinIO
 

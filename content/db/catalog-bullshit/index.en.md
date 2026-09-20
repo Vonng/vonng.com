@@ -7,6 +7,8 @@ summary: >
 tags: [PostgreSQL, OLAP, Object Storage, Commentary]
 ---
 
+---
+
 ## Starting with Snowflake's Governance Checklist
 
 A few days ago, Snowflake shared a poster with blue type on a black background in [an official tweet](https://x.com/Snowflake/status/2093073608851542204). Titled **THE ARCHITECT'S GOVERNANCE CHECKLIST**, it listed nine problems:
@@ -32,6 +34,8 @@ The third sentence is true, and it is the starting point of this essay: open dat
 The problem is the commercial conclusion smuggled in alongside that technical observation: multiple engines inevitably create governance gaps, so you should avoid multiple engines and put everything into a single engine. In plain English: "The standard is incomplete, so don't use standards."
 
 That leap deserves a closer look. Rather than stop at vendor sparring, let us dig beneath the Catalog: what problem does it actually solve, and why is it becoming a new control point just as its technical necessity begins to fade?
+
+---
 
 ## The Catalog's Real Job: Hold a Pointer for Object Storage
 
@@ -61,6 +65,8 @@ Now look at how the Catalogs themselves persist metadata:
 
 So while "the entire Catalog industry is a PostgreSQL table in a REST shell" is a caustic summary, it is not far from the truth. More interestingly, Snowflake has begun charging for this wrapper per REST request. From the user's perspective, the bill does look rather like rent on the table's `UPDATE`.
 
+---
+
 ## As the Technical Need Recedes, the Tollbooth Arrives
 
 A standalone Catalog once had strong technical reasons to exist. Early S3 had neither atomic rename nor a safe compare-and-swap. Object storage could not express "write the new value only if the old value still equals X," so the commit point had to be delegated to an external coordinator capable of a truly linearizable CAS.
@@ -76,6 +82,8 @@ Snowflake launched Polaris in 2024 and donated it to Apache. In April 2026, it l
 At the same time, [Snowflake Open Catalog has stopped accepting new registrations](https://docs.snowflake.com/en/user-guide/opencatalog/overview), directing new customers to Horizon Catalog, while the [Horizon Iceberg REST Catalog API](https://docs.snowflake.com/en/user-guide/tables-iceberg-access-using-external-query-engine-snowflake-horizon) is scheduled to begin charging 0.5 credits per million calls in the second half of 2026.
 
 Put those facts together and the logic is clear. Once the format is open, the Catalog becomes the new gateway. Once the Catalog is open, governance becomes the gateway one layer above. **Governance is the wedge.** The poster at the beginning is the shortest possible manual for this commercial strategy.
+
+---
 
 ## The Control Plane Is Not in the Data Path
 
@@ -113,6 +121,8 @@ Snowflake's own micro-partitions are likewise immutable; deleted data may remain
 
 **A database puts every door in the same wall. The lakehouse tears down the wall, then sells you a checklist for inspecting the doors.**
 
+---
+
 ## Twenty Years of Reinventing the Database
 
 Zoom out, and the past twenty years look like a long-running series called *Reinventing the Database*:
@@ -131,6 +141,8 @@ Twenty years and tens of billions of dollars later, the industry has reimplement
 The lakehouse breaks the whole into more than a dozen components. A company stands behind each one, and each must be bought, licensed, patched, and operated separately. Pavlo and Stonebraker's 2024 paper, "[What Goes Around Comes Around... And Around](https://db.cs.cmu.edu/papers/2024/whatgoesaround-sigmodrec2024.pdf)," examines exactly this cycle: after a decade of NoSQL churn, the industry returned to the relational model and SQL. The lakehouse is the same story on a new stage.
 
 Even the script is similar. It used to be "we don't need schemas." Now it is "we don't need databases."
+
+---
 
 ## The Catalog Should Have Been a Table All Along
 
@@ -169,6 +181,8 @@ These four rungs cover 99% of use cases. The remaining 1% genuinely needs elasti
 
 The problem was never that the 1% exists. The problem is that an architecture designed for the 1% was sold to 100% of users.
 
+---
+
 ## DuckDB Dressed as PostgreSQL
 
 We still need to face PostgreSQL's real weakness. Its executor uses a tuple-at-a-time Volcano model, with neither vectorized execution nor native columnar storage. It is no surprise that analytical scans run one or two orders of magnitude slower than in DuckDB or ClickHouse. Conventional extensions cannot fix that weakness, because an extension cannot replace the entire executor.
@@ -186,6 +200,8 @@ So "PostgreSQL will eat the data warehouse" needs a new subject:
 That is not an insult. It is the architecture's real shape: the missing execution engine already exists; the only question is which system becomes the shell. CWI established the case for vectorized execution in its 2005 [MonetDB/X100 paper](https://ir.cwi.nl/pub/16497), and DuckDB came from the same lab. PostgreSQL did not absorb that work over the next twenty years, not because nobody knew about it, but because its executor is extremely hard to change and the community is not going to rewrite the entire kernel for OLAP.
 
 Meanwhile, hardware continues to improve. A single machine with two 100 GbE links and a set of NVMe drives can already reach scan bandwidth in the tens of gigabytes per second. Most of what companies call "big data" fits on one machine and often runs faster there than on an eight-node cluster. Hardware advances every year while most companies' actual data volumes do not grow at the same pace, so this argument will only get stronger.
+
+---
 
 ## Open One Layer, Move the Tollbooth Up One Layer
 
@@ -208,6 +224,8 @@ The commercial strategy most worth studying in recent years is this upward migra
 **If you cannot stop openness, fund it; then make sure the open layer is not the layer where you collect rent.**
 
 Once the format is open, sell the Catalog. Once the Catalog is open, sell governance. If governance opens too, find another layer above it. Every time one layer opens, the tollbooth moves up. And every time it moves, the vendor tells you that the higher layer is too dangerous to manage yourself.
+
+---
 
 ## Use the Checklist on the People Who Published It
 

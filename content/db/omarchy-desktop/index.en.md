@@ -11,7 +11,7 @@ tags: [Linux, Omarchy, Operating Systems]
 
 Omarchy has been all over my X timeline lately. It is a desktop Linux distribution by DHH, and over the past couple of days the story has flooded the Chinese internet too.
 
-I previously translated DHH's entire [move off the cloud](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485760&idx=1&sn=97096da1077a4fbb4c43452a3c4983c7&scene=21#wechat_redirect), and I follow his blog regularly, so I watched Omarchy take shape. Still, I did not expect the 4.0 release to make this much noise.
+I previously translated DHH's entire [move off the cloud](/cloud/odyssey/), and I follow his blog regularly, so I watched Omarchy take shape. Still, I did not expect the 4.0 release to make this much noise.
 
 I happened to have an old laptop lying around—a 2018 Intel MacBook Pro—so I installed Omarchy and used it for a few days.
 
@@ -22,6 +22,8 @@ Here is the bottom line: **it is a tasteful, genuinely good operating system, bu
 ![Omarchy running on a 2018 Intel MacBook Pro](featured.webp)
 
 This article is **10% AI**.
+
+---
 
 ## What Omarchy Gets Right
 
@@ -37,7 +39,7 @@ T2 Linux already made it possible to run Debian or Ubuntu on an Intel Mac. Those
 
 Some people sneer that Omarchy is just “DHH's giant bundle of dotfiles.” That is too dismissive; plenty of careful customization went into it.
 
-At the other extreme, some fans market it as an “agent-native operating system built for AI.” That is absurd. Bundling Codex, Claude Code, and OpenCode—and they are not even preinstalled—is something [I did before Lunar New Year](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247490846&idx=1&sn=1083f1f55a22ac88e3aab24e0907b102&scene=21#wechat_redirect). Putting a few packages in an installer and calling yourself an AI-first operating system is bullshit.
+At the other extreme, some fans market it as an “agent-native operating system built for AI.” That is absurd. Bundling Codex, Claude Code, and OpenCode—and they are not even preinstalled—is something [I did before Lunar New Year](/en/ai/claude-code-intro/). Putting a few packages in an installer and calling yourself an AI-first operating system is bullshit.
 
 ![The default Omarchy desktop and wallpaper](wallpaper.webp)
 
@@ -46,6 +48,8 @@ Set that noise aside: Omarchy's desktop still falls well short of macOS, but its
 ![DHH responds to criticism of Omarchy](dhh-tweet.webp)
 
 As Confucius put it, understanding is no match for loving, and loving no match for delighting. Only someone like DHH—a middle-aged computer nerd who is already financially independent and truly loves computers—can pull off something like this. To make desktop Linux good, you need someone with taste, technical skill, resources, influence, and a **genuine love for it**.
+
+---
 
 ## On Linux Distributions
 
@@ -63,6 +67,8 @@ Simple, reliable, and usable—that is what matters. On a server, that is enough
 
 ![Ubuntu 26.04 LTS Resolute Raccoon](ubuntu-raccoon.webp)
 
+---
+
 ## On Ubuntu
 
 Outside China, Ubuntu is overwhelmingly dominant. Chinese developers may not feel it as strongly, but one look at the Stack Overflow Developer Survey makes its lead obvious.
@@ -73,6 +79,8 @@ Enterprise Linux is also common in China because the CentOS family has been used
 
 Ubuntu never beat Windows on the desktop, but it won decisively on servers and in the cloud. A large share of Linux instances on AWS and Azure run it, and it is the default distribution for WSL.
 
+---
+
 ## On Debian
 
 The other operating system I particularly like is Debian, Ubuntu's upstream. The two have a great deal in common.
@@ -80,6 +88,8 @@ The other operating system I particularly like is Debian, Ubuntu's upstream. The
 It is not as ready out of the box as Ubuntu, but it is pure. If you distribute software or run an open-source project, Debian will probably be your first choice for a base image.
 
 It is a rock-solid, utterly dependable operating system.
+
+---
 
 ## So What Should You Use?
 
@@ -92,6 +102,8 @@ Muscle memory is hard to migrate. Here is a concrete example. On macOS, I use a 
 I am sure Linux has similar remapping tools, but I cannot be bothered to set them up. The moment I switch to Linux, my typing and navigation speed plummets. I do not want to remember two shortcut systems; the existing one is already wired into my muscles. All that tinkering produces nothing.
 
 The same logic applies to work. I build Pigsty, which runs a full stack of databases and observability tools. On Ubuntu, I can at least ship the whole thing as `.deb` packages. If I moved to Arch Linux, would I need to build a separate set of `pacman` packages? I truly cannot be bothered.
+
+---
 
 ## It Reminds Me of the Early Ubuntu
 
@@ -106,6 +118,8 @@ He even mailed installation CDs for free. The program was called **ShipIt**. Shi
 Today Ubuntu is backed by Canonical, a commercial company, and users have started to grumble about decisions such as its aggressive promotion of the Snap package manager. It no longer feels quite as pure. If Omarchy gets good enough, that will be great news; I am all for it. But if you ask whether I would switch today, I would still choose Ubuntu.
 
 Then again, if Omarchy one day delivers a Linux experience and ecosystem that truly match macOS, I will switch without a second thought.
+
+---
 
 ## Appendix: Stack Overflow Developer Survey
 

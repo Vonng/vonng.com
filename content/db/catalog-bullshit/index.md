@@ -7,6 +7,8 @@ summary: >
 tags: [PostgreSQL, OLAP, 对象存储, 技术评论]
 ---
 
+---
+
 ## 从 Snowflake 的治理清单说起
 
 前几天，Snowflake 在[一条官方推文](https://x.com/Snowflake/status/2093073608851542204)里发了张黑底蓝字的海报，标题叫 **THE ARCHITECT’S GOVERNANCE CHECKLIST**，架构师治理清单。海报列了九个问题：
@@ -32,6 +34,8 @@ tags: [PostgreSQL, OLAP, 对象存储, 技术评论]
 问题在于，它顺手把这个技术判断推导成了一个商业结论：多引擎必然产生治理裂缝，所以不要多引擎，最好全部收进同一个引擎。翻译成中文，就是“标准还不完备，所以不要用标准”。
 
 这一步值得拆开看。与其停在厂商口水战上，不如继续往 Catalog 下面挖：它到底解决了什么问题，又为什么会在技术必要性逐渐下降的时候，反而变成新的控制点。
+
+---
 
 ## Catalog 的本职：替对象存储保管一个指针
 
@@ -61,6 +65,8 @@ UPDATE tables SET ptr = $new WHERE name = $t AND ptr = $old;
 
 所以，“整个 Catalog 行业就是一张套了 REST 壳的 PostgreSQL 表”虽然是一句刻薄的概括，却并没有偏离事实太远。更有意思的是，Snowflake 已经开始按 REST 请求为这层包装收费；从用户视角看，付的确实很像这张表的 `UPDATE` 租金。
 
+---
+
 ## 技术必要性退场，收费站开始上场
 
 独立 Catalog 当年有充分的技术理由。早期 S3 没有原子 rename，也缺少安全的 compare-and-swap；对象存储无法表达“只有旧值仍然等于 X 才写入新值”，于是提交点只能交给一个真正支持线性化 CAS 的外部协调者。
@@ -75,7 +81,9 @@ Snowflake 2024 年发起 Polaris 并将其捐给 Apache；到了 2026 年 4 月�
 
 与此同时，[Snowflake Open Catalog 已经停止接受首次注册](https://docs.snowflake.com/en/user-guide/opencatalog/overview)，新客户被引导到 Horizon Catalog；而 [Horizon Iceberg REST Catalog API](https://docs.snowflake.com/en/user-guide/tables-iceberg-access-using-external-query-engine-snowflake-horizon) 计划从 2026 年下半年开始按每百万次调用 0.5 credit 计费。
 
-把这几件事放在一起，逻辑就很清楚了：格式开放之后，Catalog 成为新的入口；Catalog 也开放之后，治理又成为更高一层的入口。**Governance is the wedge——治理就是那枚楔子。**开头那张海报，正是这套商业路径最简洁的说明书。
+把这几件事放在一起，逻辑就很清楚了：格式开放之后，Catalog 成为新的入口；Catalog 也开放之后，治理又成为更高一层的入口。**Governance is the wedge——治理就是那枚楔子。** 开头那张海报，正是这套商业路径最简洁的说明书。
+
+---
 
 ## 控制面根本不在数据路径上
 
@@ -113,6 +121,8 @@ Snowflake 自己的 micro-partition 同样不可变；在 [Time Travel 和 Fail-
 
 **数据库把所有门开在同一堵墙上。湖仓把墙拆了，然后卖给你一份检查门的清单。**
 
+---
+
 ## 二十年，重新发明数据库
 
 把时间拉长看，过去二十年很像一部不断“重新发明数据库”的连续剧：
@@ -131,6 +141,8 @@ Snowflake 自己的 micro-partition 同样不可变；在 [Time Travel 和 Fail-
 湖仓则把这个整体拆成十几个组件，每个组件背后站着一家公司，需要分别采购、授权、打补丁和运维。Pavlo 与 Stonebraker 2024 年的论文《[What Goes Around Comes Around... And Around](https://db.cs.cmu.edu/papers/2024/whatgoesaround-sigmodrec2024.pdf)》讨论的正是这种循环：NoSQL 折腾十年后回到关系模型和 SQL，湖仓只是换了一个舞台重演。
 
 连剧本都很相似。以前说“我们不需要 schema”，现在说“我们不需要数据库”。
+
+---
 
 ## Catalog 本来就该是一张表
 
@@ -169,6 +181,8 @@ Snowflake 开源的 [`pg_lake`](https://pgext.cloud/ext/pg_lake) 也走在同一
 
 问题从来不是那 1% 存在，而是为那 1% 设计的架构，被卖给了 100% 的人。
 
+---
+
 ## DuckDB 穿着 PostgreSQL 的马甲
 
 这里还需要正视 PostgreSQL 的真实短板。它的执行器采用逐行的火山模型，没有向量化执行，也没有原生列存；在分析扫描上，比 DuckDB、ClickHouse 慢一到两个数量级并不奇怪。这个短板靠普通扩展补不了，因为扩展无法把整个执行器换掉。
@@ -186,6 +200,8 @@ Snowflake 开源的 [`pg_lake`](https://pgext.cloud/ext/pg_lake) 也走在同一
 这不是贬义，而是架构真实的形状：缺失的执行引擎早已存在，现在的问题只是谁来充当外壳。向量化执行这条路，CWI 在 2005 年的 [MonetDB/X100 论文](https://ir.cwi.nl/pub/16497)里就已经论证清楚；DuckDB 也出自同一个实验室。PostgreSQL 二十年没有吸收它，并非不知道，而是执行器实在太难改，社区也不会为了 OLAP 重写整个内核。
 
 与此同时，硬件还在继续进步。一台机器配两条 100 GbE 和一组 NVMe，扫描带宽已经可以达到几十 GB/s。绝大多数公司所谓的“大数据”，一台机器放得下，也往往比八节点集群跑得更快。硬件年年增长，而多数公司的有效数据量并没有同步增长，这个判断只会越来越稳。
+
+---
 
 ## 开放一层，收费站上移一层
 
@@ -208,6 +224,8 @@ Snowflake 开源的 [`pg_lake`](https://pgext.cloud/ext/pg_lake) 也走在同一
 **开放挡不住，就资助开放；然后确保开放的那一层，不是自己收钱的那一层。**
 
 格式开放了，就卖 Catalog；Catalog 开放了，就卖治理；治理继续开放，就再往上找一层。每开放一层，收费站就上移一层。每上移一次，厂商都会告诉你：更高那层太危险，你自己搞不定。
+
+---
 
 ## 拿清单去检查发清单的人
 

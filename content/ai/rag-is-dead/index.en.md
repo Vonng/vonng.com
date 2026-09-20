@@ -20,6 +20,8 @@ The word RAG is certainly still alive. But the pipeline everyone knows — chunk
 
 Disclosure first: I build Pigsty, a PostgreSQL distribution, and pgvector was among the first extensions we packaged. Vector search is useful. That doesn't stop me from thinking it has been wildly oversold these past few years.
 
+---
+
 ## Why Did the Inventor Have to Issue a Denial?
 
 ![A still-running RAG retrieval machine raising a hand to deny the rumor, with a swappable nameplate sitting beside it](rag-still-alive.webp)
@@ -35,6 +37,8 @@ Taken literally, "retrieval-augmented generation" is indeed hard to kill. If the
 **Chunk the documents → embed → store in a vector database → embed the question → similarity search → pull the top-k → stuff it into the prompt.**
 
 That's the thing this post is about.
+
+---
 
 ## Claude Code Ended Up Picking grep
 
@@ -57,6 +61,8 @@ A single top-k retrieval is a guess made in advance about which passages might b
 Granted, codebases and documentation sites come with structure already: function names, parameter names, and section headings are all searchable. That doesn't prove grep wins everywhere. But it does show this much — when there's structure sitting right there, shredding the content and computing embeddings first isn't necessarily the smartest move.
 
 You can call this on-demand lookup RAG too, if you like. It just isn't the pipeline it used to be.
+
+---
 
 ## Don't Keep Copying the Answers from the Small-Window Era
 
@@ -88,6 +94,8 @@ grep is no silver bullet either. The user says "can't connect to the database," 
 
 Vector search can go into that loop too. There's no need to set it against agents. What should be abandoned is the wishful idea that one pass of similarity ranking is enough to answer a question.
 
+---
+
 ## Look at the Material First, Then Pick the Architecture
 
 ![Sizing up a small manual, structured documentation, and a messy archive before picking the right retrieval tool](choose-the-architecture.webp)
@@ -108,6 +116,8 @@ Extra rounds of agent page-turning have a price: more calls, higher latency. For
 
 So don't treat "RAG or no RAG" as an article of faith. The corpus, the permissions, the cost, and the latency are what you choose on.
 
+---
+
 ## Vectors Are Still Useful, Just Not Magic
 
 ![Vectors, JSON, full-text search, and raw documents sitting together in an everyday toolbox](vectors-as-a-tool.webp)
@@ -123,6 +133,8 @@ For finding similar images or similar support tickets, for recommendation and cl
 Which brings back what I said in 2023: **vectors are the JSON of the AI era.**
 
 Used everywhere, worth supporting in every database. But supporting a data type and offering a way to search it doesn't mean users should keep a separate database alive just for it.
+
+---
 
 ## The Problem with Specialized Vector Databases Is Where They Sit
 
@@ -152,6 +164,8 @@ If your scale justifies splitting out a dedicated retrieval system, split it out
 
 As for whether vectors belong in the PG core, I don't see the rush. Retrieval approaches are still shifting, and extensions can each go their own way. What users need is capability that works, not a merit badge that reads "now in core."
 
+---
+
 ## Closing
 
 ![An agent working out of ephemeral context, with a reliable database underneath holding tasks, conversations, and long-term state](agent-state.webp)
@@ -171,6 +185,8 @@ Ten years ago the question was whether to adopt NoSQL. Five years ago, whether t
 My advice is the same as it has always been:
 
 **Learn to use Postgres properly first.**
+
+---
 
 ## References
 

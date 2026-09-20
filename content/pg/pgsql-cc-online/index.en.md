@@ -21,7 +21,7 @@ It goes beyond the manuals. The whole postgresql.org website—Home, About, News
 
 The online Chinese manuals cover 11 major versions: PG 10 through PG 19 Beta, plus a PG 20 devel snapshot.
 
-I hadn't planned to take on this much. When I [**launched pg.center in March**](../../../pg/pg-center/), I started with the PG 18 manual. Then I [**added versions 14 through 17, covering all five supported releases**](../../../pg/pgdoc-cn/). (Both earlier announcements are in Chinese.) I thought that would do. But just as I finished, 19 reached Beta 3 and the devel branch moved on to 20. Suddenly there were two more major versions to cover. At that point, I figured I might as well go all the way and translate the end-of-life releases back to 10, too.
+I hadn't planned to take on this much. When I [**launched pg.center in March**](/en/pg/pg-center/), I started with the PG 18 manual. Then I [**added versions 14 through 17, covering all five supported releases**](/en/pg/pgdoc-cn/). I thought that would do. But just as I finished, 19 reached Beta 3 and the devel branch moved on to 20. Suddenly there were two more major versions to cover. At that point, I figured I might as well go all the way and translate the end-of-life releases back to 10, too.
 
 Why translate versions that no longer receive maintenance? Because people still use them. Plenty of systems in China still run PG 11 or PG 12, and upgrades scheduled for next year are hardly unusual. If the documentation covers only supported versions, those users are still left struggling through English.
 

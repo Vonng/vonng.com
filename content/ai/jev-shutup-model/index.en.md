@@ -29,6 +29,8 @@ Let me be clear up front: this is not a review of Jev. It shipped days ago, it i
 
 # Part One · What It Is
 
+---
+
 ## 1. Answering a Yes/No Question with an Essay
 
 The vast majority of places in a program that need "intelligence" do not need an essay. Which team owns this ticket, is this log line anomalous, does this input contain an injection, is this candidate document relevant, is the operation the agent is about to run dangerous—all of them are multiple choice, yes/no, or a score. The answer space is known in advance. What you want is a few bits.
@@ -44,6 +46,8 @@ Nobody ever seriously served the third customer: the program.
 A program does not need the model to sound pleasant, and does not need its reasoning written out. A program wants a type-safe return value plus a "how sure are you." It tried to call a function and got back an essay, and now it has to go find the return value inside the prose. Structured Outputs solved half of this—the JSON is guaranteed to parse—but you are still making the model *write* a well-formatted essay, and however short the essay is, it comes out one token at a time.
 
 The root of the problem is that "one token at a time."
+
+---
 
 ## 2. How the Mouth Got Sewn Shut
 
@@ -71,6 +75,8 @@ That is also its ceiling. An answer that is one bit does not mean computing that
 
 One practical rule: always leave the question an escape hatch—"other," "insufficient information," "needs further analysis." If the true answer falls outside your option set, all the type safety in the world only means the model is distributing probability inside the wrong universe.
 
+---
+
 ## 3. Intuition Is Revolution Zero, and Why Now
 
 We are used to telling the last few years as "chat → reasoning → agents," and then guessing at the next step. On that story, if "intuition" counts as a revolution at all, it would be the third or fourth.
@@ -93,6 +99,8 @@ If reading logits has been possible all along, why is it a "moment" only now? Th
 
 # Part Two · What It Is Worth
 
+---
+
 ## 4. Hauling Bricks: Why It Is Fast, Why Output Is Free
 
 A bit of computer architecture in this section. I will keep it in plain language.
@@ -113,6 +121,8 @@ How much faster depends on how long the input is and how long the output used to
 
 Unpacking the official "400x cheaper": the model is small, 10 to 20x—working backwards from the price, it is probably something with ten to twenty billion active parameters, though that is my estimate, not theirs. No output tokens, another 5 to 20x—output already costs several times more than input, and you have to add the thinking on top of that. And one state encoding answering a dozen questions makes the marginal cost near zero. Multiply the three and you get two orders of magnitude with no magic required. **The last one matters most: the cost is almost entirely in reading the state once, and one more question is almost free.**
 
+---
+
 ## 5. The OLTP Moment
 
 After a decade and a half in databases, everything looks like a database to me. This time, though, I do not think the analogy is just occupational damage.
@@ -130,6 +140,8 @@ What OLTP actually changed back then was not that reports got faster—it was th
 This is not an order of magnitude faster. It is a different position in which the thing can exist at all.
 
 The OLTP analogy brings two more things. One is predictability. How long a generation takes depends on how much it feels like saying, which makes an SLO impossible; how long a judgment takes is `max(2PL/C, W/B)`—fix the model and the input length and the latency is a number you can compute, the way an index lookup is `O(log n)` pages rather than "it depends." The formula is not an SLO; queueing and the network still move your tail latency. But at least you have a basis for a budget. Predictable is the precondition for entering the request path, doing admission control, and pricing per call. The other is discipline. That set of numbers above is really just OLTP discipline: keep rows short, keep queries to point lookups, do not scan a whole table inside a transaction—keep the state distilled, the options fixed, the questions atomic, and a fallback ready on timeout. Shoving forty pages of logs in and asking for a snap judgment is running a report against your OLTP database.
+
+---
 
 ## 6. Local Hardware: This Time It Is Real
 
@@ -166,6 +178,8 @@ Apple has in fact already built this architecture: an on-device model, escalatin
 
 # Part Three · Where It Goes
 
+---
+
 ## 7. A New Rung in the Hierarchy
 
 ![The latency ladder: two orders of magnitude per rung](ladder.webp)
@@ -185,6 +199,8 @@ A classic cache has one kind of invalidation: the underlying data changed. The j
 Naming got harder too. The cache key is the literal text of the question. "Is this alert urgent" and "does this alert need immediate attention" are two keys, two distributions, two separate histories of thresholds. Scale the team up and the same judgment gets phrased ten different ways, shattering your calibration data. So questions need to be registered, named, and versioned. When Karlton said naming was hard he meant variable names. This time the hard part is naming the question itself.
 
 And one more thing that I think is where this layer's real philosophical weight sits. Every layer of a computer is random underneath: memory flips bits, disks go bad, networks drop packets. Yet for decades the job of every layer has been to hide the randomness below it—ECC, RAID, TCP retransmission—so the software above can pretend the world is deterministic and an `if` is just an `if`. The judgment layer is the first layer that deliberately passes uncertainty upward, because it cannot hide it: a judgment about the world does not become certain by retrying it a hundred times. All you can do is hand the 0.7 up to the application as it is. That idea dates to 1984 and is called the end-to-end argument: only the endpoints know the cost of an error, so the function belongs at the endpoints. Turn it around: **only the application knows what a wrong judgment costs, so the probability has to reach the application layer and the cost has to be written at the application layer.**
+
+---
 
 ## 8. The Return of `if`, and the Cost Matrix
 
@@ -211,6 +227,8 @@ This is not a new paradigm—it is an eighties paradigm coming back to life. MYC
 Three caveats. **A cost matrix cannot be written down, only elicited.** People are terrible at judging numerical utilities. What will actually happen: the programmer supplies a pile of examples, plus every record of a human overriding the system in production, and the system infers the implied costs—preference learning, inverse reinforcement learning. **The matrix explodes.** Ten questions and five actions and the joint space cannot be tabulated; you have to write decomposed local utilities and sum them. And cost is cross-temporal—the cost of one bad page at three in the morning is not 5, it includes the raised probability of a future miss from alert fatigue. The Bellman equation shows up in your alert routing. **Every programmer gets a small alignment problem of their own.** The system optimizes the cost you wrote, the cost you wrote is a proxy for your real objective, and the gap between proxy and objective is Goodhart: write "reduce false alarms" and the system learns not to page even when it should.
 
 The escalation chain should not be hard-coded either. In the classic hierarchy, a miss falls through to the next level unconditionally; nobody asks whether going to disk is worth it. In the judgment layer, that fall-through is itself a decision: spend two seconds and a cent asking a frontier model, or act on the 0.7 you already have? Howard gave the formula in 1966, the value of information: the expected gain from asking once more, minus its price. Positive, ask; negative, do not. So the escalation chain is not four hard-coded tiers in a config file, it is computed fresh at every decision. Which gives programs a third complexity metric: beyond time and space, query complexity—how many times you queried the oracle to make this decision, and what it cost. Theoretical computer science spent decades on "how few questions does it take to decide a function" as pure mathematical recreation. Now each query is priced at $0.00004, and the game comes with an invoice.
+
+---
 
 ## 9. Every Program Grows a Query Optimizer
 
@@ -250,6 +268,8 @@ A few shorter isomorphisms, each of which lands as one concrete engineering prac
 
 Do not drag PITR across with the rest of it, though. A database can replay changes it recorded; a decision system cannot learn from its log about the world that did not happen. You woke the DBA and the outage got fixed—that does not mean nothing would have broken if you had not. Changing the threshold lets you recompute what you would have chosen at the time; it cannot compute the real consequences of the action you did not take. That needs outcome data and an evaluation design. The log is a starting point, not a time machine.
 
+---
+
 ## 10. How the Harness Changes
 
 Drop all of the above onto an agent harness and six things happen. Judgment outsourcing: termination checks, tool-result validation, relevance filtering, and safety checks all sink to the fast layer, and the large model only thinks at the real forks in the road—thirty to fifty percent of an agent's token bill goes away like this. Reasoning-budget routing: use a cheap judgment to estimate "how hard is this step" first, then decide how many thinking tokens to grant. Speculative execution: prefetch tools and precompute results along branches you might take, discard on a miss—branch prediction, in an agent. Confidence-gated autonomy: permissions stop being a static allowlist, reversible actions go on confidence and irreversible ones need a sign-off, and an action taxonomy becomes the harness's core data structure. A metacognitive layer: a fast model watching the trace and asking "are we going in circles," "have we drifted"—an agent with a hunch, for the first time. Multi-agent recedes: one reasoner plus a crowd of cheap judges is cheaper, more auditable, and easier to debug than a crowd of agents chatting to each other.
@@ -257,6 +277,8 @@ Drop all of the above onto an agent harness and six things happen. Judgment outs
 But do not take this as license to replace every rule with a probability. Maintenance windows, permissions, whether an object exists, whether a SQL statement satisfies a hard constraint—anything a program can settle, a program keeps settling. What the model fills in is the part where rules are hard to write.
 
 A side effect: once models are commodities, the harness becomes the moat. Question library, cost table, escalation policy, outcome log—hold those four and you can swap models at will.
+
+---
 
 ## 11. The Truth About Zero Hallucination
 
@@ -280,6 +302,8 @@ There is a twist, though: **calibration can be done after the fact.** Temperatur
 
 One counterargument has to go in here. Discriminative judges have a ceiling. The reward-model line of work in 2025 moved in exactly the opposite direction: GenRM and DeepSeek-GRM both found that letting the judge reason before scoring is more accurate on hard problems. On the hardest judgments, System 2 still crushes System 1. So System 1 is the floor, not the ceiling. What is valuable is not how accurate it is on its own, it is the handoff—high confidence goes automatically, low confidence escalates. Machine learning calls this selective prediction, learning to defer, model cascades. Twenty years of literature. No need to reinvent it.
 
+---
+
 ## 12. A Dependency in the Spinal Cord
 
 There is something here that matters more than whether it is new.
@@ -299,6 +323,8 @@ And every one of those pieces—compressed statistical summaries, cost parameter
 But host does not mean stuffing a model call into every transaction and holding locks through a network round trip. The database does the bookkeeping and the governance, the inference service does the compute, the execution system guards the action boundary. A SQL optimizer knows a function is expensive; filling in `COST` will never teach it what one missed incident is worth. And an external action does not un-happen because the transaction rolled back.
 
 If you want to start tomorrow, the order is unglamorous. Pick one question that recurs, has clear boundaries, and whose errors are detectable. Record the state, the judgment, what the human did, and the eventual outcome—that table matters more than the model. Write down the action costs and the hard constraints; even if you get them wrong, a wrong cost written down beats a cost hidden inside a 0.9. Run the model in shadow mode: watch how it would have judged, do not let it take over. Once the feedback covers the typical cases and enough of the weird ones, start with low-risk, reversible actions. Do not unplug the on-call phone on day one.
+
+---
 
 ## 13. Predictions
 
@@ -321,6 +347,8 @@ An article about calibration ought to have an author willing to put probabilitie
 | Total HBM demand falls as a result                                              | any horizon | 0.05 |
 
 Three things would invalidate all of this, in order of destructive power. The ceiling on discriminative judgment is too low, in which case it stays a prefilter forever and the impact halves. Calibration cannot be made to hold out of distribution, in which case it only works in closed-loop industries. Reasoning-token prices fall faster than expected, in which case the cost advantage goes to zero and only the latency advantage survives. So, once more, the two stakes in the ground: **the latency advantage is structural, the cost advantage is temporary.** Discount any argument built on "400x cheaper." Do not discount the ones built on "a hundred milliseconds, inside the request path." And all the accounting is conditional on the quality holding up—cut the accuracy along with everything else and of course you can make anything faster.
+
+---
 
 ## Epilogue: Shutting Up Is Cheap
 

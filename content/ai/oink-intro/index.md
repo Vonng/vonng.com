@@ -1,5 +1,5 @@
 ---
-title: "Oink: 用Markdown快速创建美观的现代网站"
+title: "Oink：用 Markdown 快速创建美观的现代网站"
 date: 2026-08-22
 authors: [vonng]
 summary: >
@@ -78,7 +78,7 @@ Hugo Extended 二进制
 
 这就是 Oink 最核心的产品定义。
 
-至于名字，也很简单：一边是文档与墨水的 **Ink**，另一边是 Pigsty 宇宙里小猪的叫声**Oink**。README 里那句**Open，Indexed，Navigable，Knowledge**，就当作附赠的彩蛋好了。
+至于名字，也很简单：一边是文档与墨水的 **Ink**，另一边是 Pigsty 宇宙里小猪的叫声 **Oink**。README 里那句 **Open，Indexed，Navigable，Knowledge**，就当作附赠的彩蛋好了。
 
 ---
 
@@ -206,6 +206,8 @@ Oink 的设计并不是从一张设计稿开始的，而是从十几个真实网
 我先把这些网站实际需要的能力汇总起来，再尝试寻找一组尽可能简单、稳定和统一的抽象。
 
 最终形成了几个非常明确的原则。
+
+---
 
 ## 第一，原生 Markdown 优先
 
@@ -588,7 +590,7 @@ Oink 只是试图把它变回本来该有的样子。
 
 去案例库里找一个最像你需求的网站，复制下来，把内容换成自己的，然后交给 Agent 收拾剩余细节。
 
-**把 Markdown 喂进去。****剩下的，交给这头猪。****
+**把 Markdown 喂进去。剩下的，交给这头猪。**
 
 ![图片](33.webp)
 

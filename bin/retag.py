@@ -80,6 +80,7 @@ VOCAB: dict[str, tuple[str, str, int]] = {
     "career":       ("职业", "Career", 3),
     "philosophy":   ("哲学", "Philosophy", 3),
     "society":      ("社会观察", "Society", 3),
+    "agenda":       ("议程设置", "Agenda Setting", 3),
     "business":     ("商业", "Business", 3),
     "essay":        ("随笔", "Essay", 3),
     "travel":       ("旅行", "Travel", 3),
@@ -175,6 +176,7 @@ alias("philosophy", "哲学", "Philosophy", "本体论", "Ontology", "认知", "
       "小脑", "Cerebellum", "情绪", "Emotion")
 alias("society", "社会观察", "Society", "技术变革", "Technological Change", "分配",
       "社会资本", "Social Capital", "自动驾驶", "Autonomous Driving", "未来", "Future")
+alias("agenda", "议程设置", "Agenda Setting", "Agenda-Setting")
 alias("business", "商业", "Business", "创业", "Startup", "支付宝", "Alipay", "闲鱼",
       "Xianyu", "小红书", "RedNote", "故事", "Story")
 alias("travel", "旅行", "Travel", "加拿大", "Canada", "蒙特利尔", "Montreal")

@@ -93,7 +93,7 @@ pgdoc 则留下了一笔奇怪的记录：加密输出大小为 1,073,774,608 �
 不能因为我没有把要紧东西放进去，就算你替我守住了边界。
 
 我只是运气好。那条放行逻辑摆在那儿：谁要是往仓库里提交过一次私钥，哪怕当天就 `git rm` 掉、哪怕后来跑过 filter-repo 重写历史，
-它都会随 .git/objects 原样出去。问题不是“有没有出事”，是**这个设计让出不出事只取决于运气**。
+它都会随 .git/objects 原样出去。问题不是“有没有出事”，是 **这个设计让出不出事只取决于运气**。
 
 
 
@@ -140,11 +140,11 @@ ZCode 隐私政策今年 6 月 15 日生效。收集范围的原文是这么写�
 
 > text, files (including but not limited to uploads and inputs you provide in the form of text, images, audio, video, configuration parameters, shell commands, and similar formats), and code **submitted to us through conversation**.
 
-> 你**通过对话**提交给我们的文本、文件与代码。
+> 你 **通过对话** 提交给我们的文本、文件与代码。
 
 这是推理上下文，各家都一样，没问题。它还写了优化计划默认关闭，用户主动加入前不会把输入用于训练。
 
-关键在最后那三个词：**through conversation**。后台快照不是通过对话提交的。这不是"条款留了个口子"，是这个行为压根不在条款描述的范围之内。
+关键在最后那三个词：**through conversation**。后台快照不是通过对话提交的。这不是“条款留了个口子”，是这个行为压根不在条款描述的范围之内。
 
 
 
@@ -186,9 +186,9 @@ Agent 类桌面客户端，是一个有权读你全部硬盘、有权连网、�
 
 ## grok 也翻过同样的车
 
-这事不是没有先例。今年 7 月，安全研究者 cereblab 对 xAI 的 Grok Build 命令行做了抓包：哪怕提示词明确写着"回复 OK，不要读任何文件"，
+这事不是没有先例。今年 7 月，安全研究者 cereblab 对 xAI 的 Grok Build 命令行做了抓包：哪怕提示词明确写着“回复 OK，不要读任何文件”，
 它仍然把整个仓库打成 git bundle 上传到 Google Cloud Storage，克隆回来能原样恢复一个从未被读取的文件和全部提交历史；
-关闭"改进模型"开关对此毫无影响。 [github](https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547)
+关闭“改进模型”开关对此毫无影响。 [github](https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547)
 
 据该记录，事发后 xAI 在服务端关停了上传，加了退出选项，马斯克公开承诺删除此前上传的数据。 [github](https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547)
 

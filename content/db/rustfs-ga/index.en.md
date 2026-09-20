@@ -14,6 +14,8 @@ Before I start, let me put my conflicts of interest on the table. I maintain a P
 
 Alum, competitor, packager — several relationships tangled together. So what follows contains nitpicking and congratulations, and in places the two are inseparable. Take it as one perspective and judge for yourself.
 
+---
+
 ## MinIO Handed Them the Opening
 
 On the evening of September 11 UTC, the `minio/minio` and `minio/mc` repositories vanished from Docker Hub. 404 on access, images unpullable — a repository with more than two billion pulls, just gone, with no explanation from the company while it was happening. Milvus, Grafana Mimir, DataHub, Plane, OpenCTI — one project after another that depended on it started throwing errors. Some repointed at `quay.io` overnight; others just ripped it out.
@@ -32,6 +34,8 @@ The users RustFS is talking to are more willing to take a step forward. New proj
 
 If RustFS genuinely pulls this off, I'd happily switch over and have one less thing to worry about.
 
+---
+
 ## They Have Genuinely Shipped a Lot
 
 By the company's own numbers: first line of code in February 2024, open-sourced in July 2025, Beta in April 2026, RC in August, GA in September. Fourteen months of open source, 6,600-plus commits, 135 releases, 180-plus contributors, 32k stars. They claim 2.7 million installations worldwide, more than seventy percent of them in Europe and North America, over ten million Docker Hub pulls, and paying customers in AI, energy, finance, and cloud.
@@ -47,6 +51,8 @@ The capacities in the cases I saw run from tens to a few hundred TB. Early users
 I weigh that one heavily because I actually built a 25 PB pool on MinIO — at the time probably the largest MinIO deployment in China — and ran it in real production for years, so I have a decent sense of what breaks at that scale. It's also why, when MinIO bailed, I'd rather fork it than stop using it. I no longer have the hardware to test at that scale, of course.
 
 For a team willing to dig in, though, petabyte scale is only a matter of time. Wenkai wrote a book, *From MinIO to Enterprise Cloud Storage*. Write the textbook on MinIO first, then build the replacement for it — turning your research subject into your competitor.
+
+---
 
 ## Credit Where It's Due
 
@@ -101,6 +107,8 @@ Let me be equally clear about the scope of what I tested: a single erasure set, 
 **Compatibility taken this far is enough. Don't chase it further.** Encryption compatibility means chasing MinIO's sealed format and key wrapping; rolling replacement means chasing its inter-node protocol. Go deeper than that and you end up patching whatever MinIO changes, which amounts to locking MinIO's shackles onto your own wrists.
 
 The part of the installed base that's unencrypted and can take a maintenance window, RustFS can absorb today. The part that's encrypted and can't go down can keep evaluating compatibility routes like Silo, or plan a separate migration over the S3 API — there's no need to dump every piece of historical baggage onto a from-scratch rewrite. What RustFS should be working on is RustFS.
+
+---
 
 ## RustFS's Own Homework
 

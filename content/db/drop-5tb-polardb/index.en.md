@@ -10,13 +10,15 @@ images: [featured.webp]
 
 A couple of days ago, I ran into a spectacular database drop. A friend from the community came to me: something had gone wrong. A PolarDB for PostgreSQL instance, running in Docker on a single production host—several terabytes of data, gone. It supported a fairly important business system. There were no backups. The damage was severe.
 
-Two or three years ago, I did a [PostgreSQL data recovery](/pg/pg-filedump/) job for a startup founded by a MiraclePlus alum (the fund formerly known as YC China). That one was a GitLab database on a machine running BCache. A power outage corrupted the files, and a few rounds of Reset WAL then amplified the damage.
+Two or three years ago, I did a [PostgreSQL data recovery](/en/pg/pg-filedump/) job for a startup founded by a MiraclePlus alum (the fund formerly known as YC China). That one was a GitLab database on a machine running BCache. A power outage corrupted the files, and a few rounds of Reset WAL then amplified the damage.
 
 At the time, I also went around looking at the companies on the market that did PostgreSQL data recovery. None of them seemed particularly trustworthy. With my friend out of options, I rolled up my sleeves and did it myself.
 
 The method was `pg_filedump` doing page carving—plainly put, picking data pages off the disk one by one, figuring out which ones still look like they belong to some table, then prying the tuples out row by row and piecing the data back together. It sounds cool. In practice it is nothing but grunt work—it practically blinds you. The data did come back. But that database was only 1 GB. This one is several terabytes—and this time, even the data dictionary is gone.
 
 I've been pedaling flat-out on AI work every day lately and couldn't spare myself for this one, so I made a point of asking a few friends at Alibaba Cloud: does the original vendor offer a data recovery service for your PolarDB for PG kernel? Nope. The vendor doesn't offer that either.
+
+---
 
 ## Calling in the Cavalry
 
@@ -25,6 +27,8 @@ As it happened, I knew exactly the right old hand for PostgreSQL data recovery: 
 ![The PDU (PostgreSQL Data Unloader) project homepage](pdu-website.webp)
 
 I won't go into how exactly he did it. This is the trade he lives by, and it's not mine to present here as a tutorial. All I can say is that watching from the sidelines was more thrilling than any TV drama. As for who the client is or what the business is—I won't breathe a word. Still, the incident itself left me with two observations worth pulling out on their own.
+
+---
 
 ## Bian Que's Eldest Brother Doesn't Get Paid
 
@@ -60,6 +64,8 @@ The business of "treating the disease before it arises" is inherently thankless.
 
 Bian Que's eldest brother has a hard time making money.
 
+---
+
 ## Don't Haggle over the Bandages While You're Bleeding
 
 My second point: when the moment calls for a decision, make it—no dithering. The first two days after an incident are often spent not on recovery, but on the question of whether to spend the money. I am not singling anyone out; I have seen it before, and the script hardly varies. Could you take a free look first? Could you first assess how much is recoverable? Could you get the data out first and talk money afterward? We need to discuss internally, run it through the process—and just like that, two days are gone.
@@ -71,6 +77,8 @@ Am I being ripped off?
 It is like being rushed to the ER after a midnight car crash, and haggling over the fare with the driver from the stretcher.
 
 At bottom, most companies lack not money but the instinct to escalate—no playbook saying: for an incident of this severity, this person commits this much money within this many minutes. When something actually breaks, the report climbs the hierarchy layer by layer, and every layer waits for a reply. By the time whoever can sign off finally understands what has happened, the best rescue window has already closed.
+
+---
 
 ## I'd Rather Do Less of This Business
 
@@ -85,6 +93,8 @@ So don't make "we can always find an expert to fish the data out at the end" you
 I hope the next time a friend comes to me, it is to say the business has grown and they need a few more databases—not that the database is gone again, there are still no backups, and could I please hurry up and call in the cavalry.
 
 As for "spectacular database drop" stories as a topic—**I would rather stay permanently out of stock.**
+
+---
 
 ## Further Reading
 
