@@ -21,9 +21,9 @@ columns:
       - { label: Categories, url: categories/ }
       - { label: Authors, url: authors/ }
       - { label: Series, url: series/ }
-  - title: Portfolio
+  - title: "Portfolio"
     links:
-      - { label: Pigsty, url: 'https://pigsty.io', external: true }
-      - { label: PGEXT CLOUD, url: 'https://pgext.cloud', external: true }
-      - { label: DDIA in Chinese, url: 'https://ddia.vonng.com', external: true }
-      - { label: GitHub, url: 'https://github.com/Vonng', external: true }
+      - { label: "Pigsty", url: "https://pigsty.io/", external: true }
+      - { label: "Silo", url: "https://silo.pgsty.com/", external: true }
+      - { label: "pg.center", url: "https://pg.center/", external: true }
+      - { label: "pgext.cloud", url: "https://pgext.cloud/", external: true }

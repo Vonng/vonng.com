@@ -21,9 +21,9 @@ columns:
       - { label: 分类, url: categories/ }
       - { label: 作者, url: authors/ }
       - { label: 系列, url: series/ }
-  - title: 作品
+  - title: "作品"
     links:
-      - { label: Pigsty, url: 'https://pigsty.cc', external: true }
-      - { label: PGEXT CLOUD, url: 'https://pgext.cloud/zh/', external: true }
-      - { label: DDIA 中文版, url: 'https://ddia.vonng.com', external: true }
-      - { label: GitHub, url: 'https://github.com/Vonng', external: true }
+      - { label: "Pigsty", url: "https://pigsty.cc/", external: true }
+      - { label: "Silo", url: "https://silo.pgsty.com/zh/", external: true }
+      - { label: "PG 中文社区", url: "https://pgsql.cc/", external: true }
+      - { label: "PG 知识图谱", url: "https://pg.center/", external: true }

@@ -87,15 +87,15 @@ zh-cn:
       url: 'https://pgint.vonng.com'
       external: true
     - title: pg.center
-      meta: PostgreSQL 官网中文版
+      meta: PostgreSQL 英文知识库
       image: img/works/pg.center.webp
-      desc: postgresql.org 的完整中文镜像，含 PG 18 中文文档。
+      desc: 串联 PostgreSQL 各版本手册、参数、SQL 与扩展生态的知识库。
       url: 'https://pg.center'
       external: true
     - title: pgsql.cc
-      meta: PG 运维文库
+      meta: PostgreSQL 中文文档
       image: img/works/pgsql.cc.webp
-      desc: PostgreSQL 与周边组件的中英文运维文档聚合站。
+      desc: Pigsty 团队维护的 PostgreSQL 中文文档与技术资料。
       url: 'https://pgsql.cc'
       external: true
     - title: D-Bot
@@ -203,15 +203,15 @@ en:
       url: 'https://pgint.vonng.com'
       external: true
     - title: pg.center
-      meta: postgresql.org in Chinese
+      meta: PostgreSQL knowledge, connected
       image: img/works/pg.center.webp
-      desc: A complete Chinese mirror of postgresql.org, including the PG 18 manual.
+      desc: PostgreSQL manuals, reference, and ecosystem knowledge across versions.
       url: 'https://pg.center'
       external: true
     - title: pgsql.cc
-      meta: PG operations library
+      meta: PostgreSQL documentation in Chinese
       image: img/works/pgsql.cc.webp
-      desc: An aggregate operations library for PostgreSQL and the components around it.
+      desc: PostgreSQL documentation and technical resources in Chinese, maintained by the Pigsty team.
       url: 'https://pgsql.cc'
       external: true
     - title: "Paper: D-Bot DB Diagnosis with LLMs"

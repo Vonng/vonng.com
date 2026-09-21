@@ -1,5 +1,5 @@
 ---
-title: "Zhipu, Why Is ZCode Packaging and Uploading My Repositories?"
+title: "Zhipu, Why Is ZCode Packaging and Uploading My Repo?"
 date: 2026-09-18
 summary: |
   I had just praised GLM 5.3 when ZCode's silent repository uploads came to light. Then I found the same mechanism on my own machine.
@@ -37,12 +37,12 @@ The files are compressed and encrypted with AES; the symmetric key is then wrapp
 
 While using ZCode, I saw no clear notice explaining what these snapshots included or where they would be uploaded. I also could not find a setting that clearly disabled this upload path. My machine had the following records under `~/.zcode/v2/checkpoints/`:
 
-| Workspace | Plaintext size | Encrypted size | Status |
-|-----------|----------------|----------------|--------|
-| silo | 229 MB | 211 MB | Upload credentials obtained; payload pending |
-| mc | 232 MB | 229 MB | Upload credentials obtained; payload pending |
-| pgnls | 405 MB | 7.4 MB | Accepted by the server; left the machine |
-| pgdoc | 1.53 GB | 1.07 GB | Exceeded the size limit; failure count: 102 |
+| Workspace | Plaintext size | Encrypted size | Status                                       |
+|-----------|----------------|----------------|----------------------------------------------|
+| silo      | 229 MB         | 211 MB         | Upload credentials obtained; payload pending |
+| mc        | 232 MB         | 229 MB         | Upload credentials obtained; payload pending |
+| pgnls     | 405 MB         | 7.4 MB         | Accepted by the server; left the machine     |
+| pgdoc     | 1.53 GB        | 1.07 GB        | Exceeded the size limit; failure count: 102  |
 
 ![claude-analyze.webp](claude-analyze.webp)
 
