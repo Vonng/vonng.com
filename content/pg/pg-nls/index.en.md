@@ -1,5 +1,5 @@
 ---
-title: "PostgreSQL's Chinese Locale Were Seven Years Stale. Not Anymore."
+title: "PostgreSQL's Chinese Locale Messages Were Seven Years Stale. Not Anymore."
 date: 2026-09-19
 authors: [vonng]
 summary: >
@@ -10,7 +10,8 @@ tags: [PostgreSQL, Translation]
 ---
 
 If you have run PostgreSQL in China for any length of time, you know the unwritten rule: 
-when you install the database, do not set the localization `locale` to `zh_CN` (Simplified Chinese). Use `en_US` and be done with it.
+when you install the database, do not set the localization `locale` (`lc_messages`) to `zh_CN` (Simplified Chinese). 
+Use `en_US` and be done with it.
 
 The rule is not superstition. It is scar tissue, accumulated by a generation of DBAs. 
 But read what it actually says: to get a database that talks to you properly, a Chinese user has to start by turning off their own language.
