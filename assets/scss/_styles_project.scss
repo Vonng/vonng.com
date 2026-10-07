@@ -1,12 +1,10 @@
 // Site styles, compiled after the OINK component and brand layers.
 //
-// The brand layer is a set of CSS custom properties, and light and dark have
-// to be overridden in pairs or one mode keeps the theme's own navy/copper.
-// The values below restate the Blowfish palette this site used before: blue
-// links, a cyan accent, and a blue-to-cyan brand gradient.
+// Keep the site's legacy blue links and cyan accent in Slate. The other
+// presets use their own palettes, with light and dark resolved by OINK.
 
-:root,
-[data-bs-theme='light'] {
+:root[data-td-preset='slate'],
+[data-td-preset='slate'][data-bs-theme='light'] {
   // PostgreSQL's own slate blue at rest; hover brightens toward azure. The
   // sitewide colors transition the theme puts on every anchor carries it.
   --bs-link-color: #336791; // the PostgreSQL blue
@@ -21,7 +19,7 @@
   // and the footer keeps OINK's own gradient.
 }
 
-[data-bs-theme='dark'] {
+[data-td-preset='slate'][data-bs-theme='dark'] {
   // The same pair lifted for a dark ground: a muted slate blue at rest, the
   // same azure on hover.
   --bs-link-color: #8fb4d4;
