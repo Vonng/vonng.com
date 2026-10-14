@@ -6,7 +6,6 @@ summary: |
   Solo heavy trekking on the Luoke Line, completing a 6-day route in three and a half days - nearly died on the mountain.
 tags: [Travel]
 ---
-
 > Solo heavy trekking on the Luoke Line, completing a 6-day route in three and a half days - nearly died on the mountain.
 
 <!--more-->
@@ -39,11 +38,11 @@ Originally planned to complete the Luoke Line in 5 days, ended up finishing in t
 
 ## Route
 
-![](lock-map.jpg)
+![Shangri-La: Luoke Line Trekking Journal — Route (figure 1)](lock-map.jpg)
 
 The actual route ended up exiting through the Yading scenic area. Below is the GPS track recorded by Six Feet - I only started recording from 5-6 PM on the first day, and forgot to record a section along the way, so the actual route was considerably longer than shown.
 
-![](route.jpg)
+![Shangri-La: Luoke Line Trekking Journal — Route (figure 2)](route.jpg)
 
 ## Equipment Carried
 
@@ -93,7 +92,7 @@ Food preparation was adequate, water sources in the mountains were extremely abu
 
 On the way, I shared a hired car with a married couple and another couple from Muli County to Dulu Village. The scenery along the road was quite beautiful. This shot I thought looked particularly like a Mac desktop wallpaper.
 
-![](yosemite.jpg)
+![Shangri-La: Luoke Line Trekking Journal — Before Departure (figure 3)](yosemite.jpg)
 
 ## Day One
 
@@ -101,59 +100,59 @@ First day morning, departing from Shuilo Gold Mine, red sky at dawn brings no de
 
 Started from the Shuilo Gold Mine farmhouse, departing at 7:45 AM, with the farmhouse still 4km from the actual starting point by road.
 
-![](d1-morning.jpg)
+![Shangri-La: Luoke Line Trekking Journal — Day One (figure 4)](d1-morning.jpg)
 
 The first day's route was mainly through forest with significant elevation gain, from 2200m to 4000m - a direct 1800m ascent. I walked very fast in the first half, even overtaking pack horses that had departed earlier - energy levels were simply too high on the first day. But soon ran into trouble - after passing a campsite, GPS drift led me onto the wrong path. I thought following the compass bearing would get me back to the main trail, but a river separated me farther and farther from the correct route. Just like the terrible terrain below, eventually spent over half an hour bushwhacking along the river until finding a large fallen log spanning the water to finally reach the proper trail. Slipped crossing this makeshift bridge - it was 2-3 meters above the riverbed, fortunately stabbed my trekking pole into a rock crevice below to steady myself, though the left pole tip broke off in the process.
 
-![](d1-wood.jpg)
+![Shangri-La: Luoke Line Trekking Journal — Day One (figure 5)](d1-wood.jpg)
 
 Reached the planned campsite at Mancuo Pasture by 3 PM on the first day, figured I might as well continue, so walked past Zangbie Pasture to camp on an open plain. Youth brings endless energy!
 
-![](d1-camp.jpg)
+![Shangri-La: Luoke Line Trekking Journal — Day One (figure 6)](d1-camp.jpg)
 
 I walked quite fast the first day, most of the time encountering no one else on the trail. This open camping area had only me.
 
-![](d1-camp2.jpg)
+![Shangri-La: Luoke Line Trekking Journal — Day One (figure 7)](d1-camp2.jpg)
 
 Too lazy to write more below, will fill in details later. Day two passed through Caotang Pasture and Wanhua Pool Pasture.
 
-![](d2-caotang.jpg)
+![Shangri-La: Luoke Line Trekking Journal — Day One (figure 8)](d2-caotang.jpg)
 
 Day two still had considerable forest, could see snow mountains here - very beautiful scenery. This was taken in a grove behind Wanhua Pool Pasture.
 
-![](d2-wood.jpg)
+![Shangri-La: Luoke Line Trekking Journal — Day One (figure 9)](d2-wood.jpg)
 
 Day two required crossing Zabala Pass at 4500m elevation with a very steep ascent. Standing on the pass hillside looking back toward the valley we came from.
 
-![](d2-pass.jpg)
+![Shangri-La: Luoke Line Trekking Journal — Day One (figure 10)](d2-pass.jpg)
 
 Already gasping for breath reaching the pass, one minute clear skies then suddenly hit by a torrential downpour. Trail rocks became impossibly slippery. Slipped again on the trail - trekking poles saved my life once more, though this time the left pole broke completely. At the pass summit, before I could put on rain gear, got thoroughly soaked. In the pouring rain at 4500m, having just climbed such a steep pass, I had absolutely no strength left. Crawled to shelter under a rock face, could only sit on the ground covered by rain gear, gasping. Nearly thought I'd die right there. Fortunately after several dozen minutes the rain lessened and sun came out again, quickly changed into dry clothes and pants, continued onward.
 
 The following route became incredibly painful. Knees and thighs started aching, probably from walking too aggressively yesterday. Intermittent torrential downpours continued along the way. High altitude + soaking wet + trekking was simply torturous - practically take one step, gasp twice. Maintaining this rhythm, reached the second day's camp.
 
 Day two canyon:
-![](d2-canyon.jpg)
+![Shangri-La: Luoke Line Trekking Journal — Day One (figure 11)](d2-canyon.jpg)
 
 Day two's camp was at Xinguo Pasture, below some cliff walls. With wet clothes and pants, hung them on trekking poles hoping they'd dry. The tent carried morning moisture, very damp inside.
 
 Felt dizzy and headaches in the evening, seemed like coming down with a cold. Had one black and two white pills left of the Tylenol Cold. Took one black pill plus ibuprofen and aspirin, felt somewhat better. Cooked a bag of Shan Zhi Chu for dinner, soaked some jerky, but had no appetite whatsoever - simply couldn't eat.
 
 Day two camp:
-![](d2-camp.jpg)
+![Shangri-La: Luoke Line Trekking Journal — Day One (figure 12)](d2-camp.jpg)
 
 Day three morning:
-![](d3-morning.jpg)
+![Shangri-La: Luoke Line Trekking Journal — Day One (figure 13)](d3-morning.jpg)
 
 Woke up feeling dizzy, drank the last glucose and salt beverage, felt a bit better. Today would be the most grueling trek.
 
 Day three, Snake Lake - camp on the opposite side of the lake where there are no trees.
-![](snake-lake.jpg)
+![Shangri-La: Luoke Line Trekking Journal — Day One (figure 14)](snake-lake.jpg)
 
 Day three's route required traversing two major slopes and crossing a very high pass. Before climbing the pass, got some glucose from fellow trekkers on the trail. Must say, glucose is the most effective remedy for altitude sickness in the highlands. Two tubes down, powered through the 4700m pass in one breath.
 
 After crossing the pass, hardly any green remained - all exposed rock faces and cliffs.
 
-![](d3.jpg)
+![Shangri-La: Luoke Line Trekking Journal — Day One (figure 15)](d3.jpg)
 
 Camped at Snake Lake in the evening, rained all day with only two brief hours of sunshine in the afternoon. Mountain weather changes too rapidly.
 
@@ -161,12 +160,12 @@ Severe altitude sickness that night - vomiting and diarrhea, couldn't keep anyth
 
 Day four, Milk Lake - looked pale and gaunt, incredibly weak. But fortunately the last day's route wasn't long - just one major uphill section to reach Milk Lake.
 
-![](me.jpg)
+![Shangri-La: Luoke Line Trekking Journal — Day One (figure 16)](me.jpg)
 
 Just didn't expect there'd be such a long trail inside the scenic area... stumbled down in a daze all the way, finally made it to the scenic area entrance, spent half an hour breathing oxygen at the medical station.
 
 The return route was China's most famous scenic highway 318, packed with self-driving tourists and cyclists everywhere... traffic jams beyond belief... and no cell signal.
 
-![](318.jpg)
+![Shangri-La: Luoke Line Trekking Journal — Day One (figure 17)](318.jpg)
 
 Will write the rest when I have time.

@@ -6,7 +6,6 @@ summary: |
   Taking advantage of attending the 2020 PostgreSQL China Conference, I toured Guangzhou for a day. A quite interesting place.
 tags: [Travel]
 ---
-
 Taking advantage of attending the 2020 PostgreSQL China Conference, I toured Guangzhou for a day. A quite interesting place.
 
 Among the four first-tier cities, only Guangzhou remained unvisited. This time, leveraging the PG conference opportunity, I booked a flight one day later to remedy this regret. Though making it literary would be nice, it's too time-consuming, so I'll just keep a journal.
@@ -39,18 +38,18 @@ Sky slightly tipsy, night slightly cool. I played Hacken Lee's "Moon Half Serena
 
 Shamian has a delicate small church, unfortunately due to pandemic, religious activities stopped and the church was closed. Otherwise I really wanted to see what this beautiful church looked like inside. Streets had many couples, walking hand in hand, whispering intimately, making one envious.
 
-![](church.jpeg)
+![Urban Wandering: Guangzhou Observations — Shamian: European Style (figure 2)](church.jpeg)
 > Shamian Church in the night
 
 Wandering Shamian awhile, this elegant European atmosphere was captivating, though after an hour I was somewhat tired. I'd booked 7:30 PM Pearl River night cruise tickets - now exactly 7 o'clock, I needed to quickly fill my stomach. Wanted to find a Burger King to make do, but only a French restaurant nearby - Orient Express. Though the atmosphere was nice, I could only order the quickest dish to catch the boat.
 
-![](dinner.jpeg)
+![Urban Wandering: Guangzhou Observations — Shamian: European Style (figure 3)](dinner.jpeg)
 
-![](dinner2.jpeg)
+![Urban Wandering: Guangzhou Observations — Shamian: European Style (figure 4)](dinner2.jpeg)
 
 7:30 PM, I boarded the cruise right on time. The Pearl River under night sky was illuminated golden by lights from both banks.
 
-![](river.jpeg)
+![Urban Wandering: Guangzhou Observations — Shamian: European Style (figure 5)](river.jpeg)
 
 > See how bright the evening stars shine with golden light. Sea breeze blows, blue waves ripple.
 >
@@ -60,11 +59,11 @@ Wandering Shamian awhile, this elegant European atmosphere was captivating, thou
 >
 > All sounds silent, earth enters dreamland. In quiet deep night, bright moon shines everywhere.
 
-![](me.jpg)
+![Urban Wandering: Guangzhou Observations — Shamian: European Style (figure 6)](me.jpg)
 
 Passing Guangzhou Tower "Small Waist," couldn't avoid taking a tourist photo. Guangzhou Tower at night was flashy, with huge scrolling text including socialist core values - couldn't help but criticize this aesthetic. Finally caught a shot when text finished scrolling.
 
-![](guangzhou-tower.jpeg)
+![Urban Wandering: Guangzhou Observations — Shamian: European Style (figure 7)](guangzhou-tower.jpeg)
 
 > Guangzhou Tower - actually quite spectacular viewed from below.
 
@@ -79,7 +78,7 @@ Evening returned preparing to find food, so went to commercial area near Shamian
 
 On the plaza entrance bridge lay a homeless person, contrasting sharply with the elegant European-style district and magnificent commercial plaza nearby, reminding passersby how many people still live in miserable conditions. But such scenes unlikely in Beijing, because Beijing's cold waves hit -20°C - anyone daring to sleep rough on Beijing streets this season would freeze to death. I think Shenzhen becoming a startup capital isn't without reason - even if startup fails, worst case can be a Sanhe Great God sleeping under bridges. In the north, one might consider freezing to death.
 
-![](shamian-3.jpeg)
+![Urban Wandering: Guangzhou Observations — Shamian: European Style (figure 9)](shamian-3.jpeg)
 
 For evening accommodation I chose Shamian Hotel. Though the rooms were quite rustic, internal facilities were lacking. Most unpleasant experience was Guangzhou's overly strict check-in - hearing I came from Beijing Chaoyang District, though theoretically no longer an epidemic zone, just hearing "Beijing" immediately triggered household registration mode. First all the codes routine, then several forms, then downloading police station mini-program declarations, finally reporting every day's itinerary for the past 14 days... Most excessive was 11 PM phone call waking me saying they'd reported my information up, discovered I'd been to Yunnan two weeks ago but didn't declare - I said that was exactly 15 days ago so I didn't fill it. I somewhat understood Hubei people's treatment and feelings back then.
 
@@ -120,7 +119,7 @@ Morning's first stop was Thirteen Hongs Museum - the former monopoly trade insti
 
 Next was Guangzhou Museum. Guangzhou Museum requires reservations - somewhat troublesome, but exhibits were good. Last year reportedly Zhang Xianzhong's Jiangkou sunken silver special exhibition was here - missing it was regrettable.
 
-![](guangdong-museum.jpeg)
+![Urban Wandering: Guangzhou Observations — Museum Tour (figure 18)](guangdong-museum.jpeg)
 
 Inside was a wood carving and silk exhibition, quite interesting.
 
@@ -132,7 +131,7 @@ Outside the museum is Huacheng Plaza, quite beautiful - after all Guangzhou is a
 
 Across from Huacheng Plaza is Guangzhou Tower, aka "Small Waist." Saw it yesterday by boat, heard you can go up - so let's ascend for a sky view.
 
-![](overlook.jpeg)
+![Urban Wandering: Guangzhou Observations — Museum Tour (figure 20)](overlook.jpeg)
 
 > Bird's eye view of Guangzhou city - quite spectacular.
 

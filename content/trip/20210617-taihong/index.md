@@ -5,10 +5,6 @@ authors: [vonng]
 summary: 从河南新乡翻过太行山前往山西
 tags: [旅行]
 ---
-
-
-
-
 ![01.jpg](01.jpg)
 
 ![02.webp](02.webp)

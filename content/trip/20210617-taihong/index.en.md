@@ -5,7 +5,6 @@ authors: [vonng]
 summary: From Xinxiang, Henan, crossing the Taihang Mountains to Shanxi
 tags: [Travel]
 ---
-
 ![01.jpg](01.jpg)
 
 ![02.webp](02.webp)

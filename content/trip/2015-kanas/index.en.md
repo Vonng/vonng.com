@@ -6,12 +6,11 @@ summary: |
   I never expected my first outdoor trekking experience would be in Kanas.
 tags: [Travel]
 ---
-
 I never expected my first outdoor trekking experience would be in Kanas.
 
 <!--more-->
 
-# Kanas Route
+## Kanas Route
 
 Jiadengyu - Hemu - Black Lake - Kanas - Baihaba
 
@@ -53,24 +52,24 @@ Kanas Lake head N48'41.888 E087'02.071
 
 I personally think the best way to explore the Kanas region is on foot. Take a bus from Burqin to Hemu and trek from there.
 
-## Kanas
+### Kanas
 
 No time to write a proper travel journal, just sharing some photos.
 
-![](1.jpeg)
+![Switzerland of Northern Xinjiang: Kanas Trekking — Kanas (figure 1)](1.jpeg)
 > Trail rations: five naan breads
 
-![](2.jpeg)
+![Switzerland of Northern Xinjiang: Kanas Trekking — Kanas (figure 2)](2.jpeg)
 > Waypoints recorded along the journey
 
-![](4.jpeg)
+![Switzerland of Northern Xinjiang: Kanas Trekking — Kanas (figure 3)](4.jpeg)
 > Climbed up to Fish Watching Platform from the wild mountains, caught in a snowfall
 
-![](5.jpeg)
+![Switzerland of Northern Xinjiang: Kanas Trekking — Kanas (figure 4)](5.jpeg)
 > Standing at the confluence of Hemu River, Kanas River, and Irtysh River.
 
-![](6.jpeg)
+![Switzerland of Northern Xinjiang: Kanas Trekking — Kanas (figure 5)](6.jpeg)
 > The confluence shows two different colored waters
 
-![](7.jpeg)
+![Switzerland of Northern Xinjiang: Kanas Trekking — Kanas (figure 6)](7.jpeg)
 > Mountain streams in the forest

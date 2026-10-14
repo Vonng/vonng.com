@@ -6,7 +6,6 @@ summary: >
   找了个北京精致露营营地住了一晚，体验很不错。
 tags: [旅行]
 ---
-
 周中休息两天，想找个地儿露营撒欢。因为带媳妇就懒得自己 DIY 了，想找个直接就能住进去的 Glamping 精致露营。于是研究了一下，发现了一个很不错的露营地 —— Milky Way 观星岭营地，分享给大家。
 
 [嵌入媒体](https://mp.weixin.qq.com/mp/readtemplate?t=pages/video_player_tmpl&action=mpvideo&auto=0&vid=wxv_3534105512059338753)
@@ -96,8 +95,6 @@ Milky Way 营地在北京正北方向，怀柔区，高德地图直接搜就能�
 总的来说，这个营地确实还不错，以后休息消暑，除了去洗大澡，又有一个新去处了。推荐给大家
 
 ![图片](17.webp)
-
----
 
 ## 更多游记
 

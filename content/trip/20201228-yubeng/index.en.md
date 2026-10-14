@@ -6,7 +6,6 @@ summary: |
   The disaster-filled year 2020 required proper blessings. Completed the Meili inner circuit in 3 days - Sacred Waterfall, Sacred Lake, Ice Lake.
 tags: [Travel]
 ---
-
 The disaster-filled year 2020 required proper blessings. Completed the Meili inner circuit in 3 days - Sacred Waterfall, Sacred Lake, Ice Lake.
 
 Preface: As the saying goes: "If not going to paradise, go to Yubeng." Going to Yubeng usually means heading for the Meili Snow Mountain circuit. My good brother Hai-ge and I planned to take advantage of the Christmas-New Year holiday to go to Yubeng for mountain pilgrimage blessings, also to train our physical fitness. It was a very memorable journey.
@@ -78,7 +77,7 @@ We took the beast approach, adding Sacred Lake, compressing 5 days into 3 days 2
 * Sacred Lake day trip, still stay Lower Yubeng (4)  
 * Morning walk Ice Lake, afternoon exit via Ninong (2, 5)
 
-![](route.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — Itinerary (figure 1)](route.jpg)
 
 ## D1 Lijiang-Diqing-Deqin
 
@@ -100,9 +99,9 @@ Along the way, Hai-ge and I took turns driving. Yunnan is quite interesting - ex
 
 Evening arrived Deqin County town, stayed at a Tibetan-style guesthouse, ate hotpot, though honestly due to sudden altitude gain, sleep quality was indeed poor...
 
-![](d1-1.jpg)
-![](d1-2.jpg)
-![](d1-3.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D1 Lijiang-Diqing-Deqin (figure 2)](d1-1.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D1 Lijiang-Diqing-Deqin (figure 3)](d1-2.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D1 Lijiang-Diqing-Deqin (figure 4)](d1-3.jpg)
 
 ## D2 Xidang Entry, Sacred Waterfall
 
@@ -110,48 +109,48 @@ Woke up 7 AM, still dark, ate a bowl of rice noodles at the downstairs snack sho
 
 8 o'clock dawn, we saw golden sunrise on mountains along the way.
 
-![](d2-1.jpg)
-![](d2-3.jpg)
-![](d2-4.jpg)
-![](d2-5.jpg)
-![](d2-6.jpg)
-![](d2-7.jpg)
-![](d2-8.jpg)
-![](d2-10.jpg)
-![](d2-11.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D2 Xidang Entry, Sacred Waterfall (figure 5)](d2-1.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D2 Xidang Entry, Sacred Waterfall (figure 6)](d2-3.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D2 Xidang Entry, Sacred Waterfall (figure 7)](d2-4.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D2 Xidang Entry, Sacred Waterfall (figure 8)](d2-5.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D2 Xidang Entry, Sacred Waterfall (figure 9)](d2-6.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D2 Xidang Entry, Sacred Waterfall (figure 10)](d2-7.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D2 Xidang Entry, Sacred Waterfall (figure 11)](d2-8.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D2 Xidang Entry, Sacred Waterfall (figure 12)](d2-10.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D2 Xidang Entry, Sacred Waterfall (figure 13)](d2-11.jpg)
 
 ## D3 Sacred Lake Day Trip
 
 Sacred Lake is very difficult, mostly local Tibetans go there.
 
-![](d3-0.jpg)
-![](d3-1.jpg)
-![](d3-2.jpg)
-![](d3-3.jpg)
-![](d3-4.jpg)
-![](d3-5.jpg)
-![](d3-6.jpg)
-![](d3-33.jpg)
-![](d3-45.jpg)
-![](d3-46.jpg)
-![](d3-47.jpg)
-![](d3-48.jpg)
-![](d3-49.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D3 Sacred Lake Day Trip (figure 14)](d3-0.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D3 Sacred Lake Day Trip (figure 15)](d3-1.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D3 Sacred Lake Day Trip (figure 16)](d3-2.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D3 Sacred Lake Day Trip (figure 17)](d3-3.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D3 Sacred Lake Day Trip (figure 18)](d3-4.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D3 Sacred Lake Day Trip (figure 19)](d3-5.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D3 Sacred Lake Day Trip (figure 20)](d3-6.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D3 Sacred Lake Day Trip (figure 21)](d3-33.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D3 Sacred Lake Day Trip (figure 22)](d3-45.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D3 Sacred Lake Day Trip (figure 23)](d3-46.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D3 Sacred Lake Day Trip (figure 24)](d3-47.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D3 Sacred Lake Day Trip (figure 25)](d3-48.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D3 Sacred Lake Day Trip (figure 26)](d3-49.jpg)
 
 ## D4 Ice Lake, Ninong
 
-![](d4-3.jpg)
-![](d4-4.jpg)
-![](d4-5.jpg)
-![](d4-6.jpg)
-![](d4-7.jpg)
-![](d4-8.jpg)
-![](d4-9.jpg)
-![](d4-10.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D4 Ice Lake, Ninong (figure 27)](d4-3.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D4 Ice Lake, Ninong (figure 28)](d4-4.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D4 Ice Lake, Ninong (figure 29)](d4-5.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D4 Ice Lake, Ninong (figure 30)](d4-6.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D4 Ice Lake, Ninong (figure 31)](d4-7.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D4 Ice Lake, Ninong (figure 32)](d4-8.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D4 Ice Lake, Ninong (figure 33)](d4-9.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D4 Ice Lake, Ninong (figure 34)](d4-10.jpg)
 
 ## D5 Feilai Temple, Shangri-La
 
-![](d5-1.jpg)
+![New Year Pilgrimage: Yubeng Mountain Circuit — D5 Feilai Temple, Shangri-La (figure 35)](d5-1.jpg)
 
 <video width="320" height="240" controls>
   <source src="/trip/20201228-yubeng/slide.mp4" type="video/mp4">

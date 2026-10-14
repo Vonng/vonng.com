@@ -5,7 +5,6 @@ summary: |
   Five days wandering around Montreal: ease, prices, French, AI, immigration, housing—and a city where ordinary middle-class people can still live with dignity.
 tags: [Travel]
 ---
-
 I've just spent five days wandering around Montreal. Next up is Vancouver for a few more.
 
 I will compare the two cities after I get back from Vancouver. For now, here are some loose impressions of Montreal.
@@ -27,8 +26,6 @@ The waterfront at the Old Port had the same rhythm: the river, the wind, familie
 Several small galleries sit along the old streets, with nobody at the door collecting admission. You walk in, say “Bonjour” or “Hello,” and browse as long as you like. The art is neatly displayed; nobody watches over your shoulder, and nobody pushes you to buy.
 
 These are tiny details, but they make you realize that a city's sense of ease cannot be manufactured in a tourism commercial.
-
-------
 
 ## 2. Expensive and Cheap Live in Separate Worlds
 
@@ -61,8 +58,6 @@ So the price printed on a restaurant menu is only the beginning. At checkout, fi
 On the other hand, Quebec's childcare, healthcare, parental leave, and family benefits are also among the more generous in Canada.
 
 The bargain here is not “low taxes, low burden.” It is “high taxes, high benefits.”
-
-------
 
 ## 3. Fewer Indians
 

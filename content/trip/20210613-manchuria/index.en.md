@@ -5,7 +5,6 @@ authors: [vonng]
 summary: Standing on the hills of Manchuria, on the grasslands of Hulunbuir.
 tags: [Travel]
 ---
-
 The Dragon Boat Festival holiday coincided with college entrance exams. Not wanting to see crowds everywhere, I discussed with two colleagues and decided to find a weekend for early off-peak travel.
 
 We settled on Hulunbuir - Friday night flight from Beijing to Hailar, returning Monday morning. With major transportation set, we stopped worrying and were too lazy to make detailed plans. Anyway, we'd rent a car there for a spontaneous trip. Hulunbuir is most famous for its grasslands - birthplace of Genghis Khan, reportedly (according to Hulunbuir Municipal Government itself) the world's best grassland. It also has the famous port - Manchuria.

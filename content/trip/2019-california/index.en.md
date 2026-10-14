@@ -6,7 +6,6 @@ summary: |
   One week road trip: Cupertino, Los Angeles, San Francisco, Yosemite
 tags: [Travel]
 ---
-
 Went on a business trip to America, worked one week and played one week. Road trip along Highway 1, Bay Area, Los Angeles, San Francisco, Yosemite.
 
 <!--more-->
@@ -55,32 +54,32 @@ GTA5
 
 Don't have time to write for now, just posting some random photos.
 
-![](0.jpeg)
+![City Upon a Hill: California Road Trip — Photos (figure 1)](0.jpeg)
 > Jobs Theater under a rainbow
 
-![](1.jpeg)
+![City Upon a Hill: California Road Trip — Photos (figure 2)](1.jpeg)
 > Apple's spaceship headquarters
 
-![](2.jpeg)
+![City Upon a Hill: California Road Trip — Photos (figure 3)](2.jpeg)
 > Roadside fountain at Stanford University
 
-![](4.jpeg)
+![City Upon a Hill: California Road Trip — Photos (figure 4)](4.jpeg)
 > Student club advertisements at Stanford University
 
-![](6.jpeg)
+![City Upon a Hill: California Road Trip — Photos (figure 5)](6.jpeg)
 > Big Sur's azure waters - the Pacific is too beautiful!
 
-![](8.jpeg)
+![City Upon a Hill: California Road Trip — Photos (figure 6)](8.jpeg)
 > Universal Studios live movie performance, so realistic - because it's real!
 
-![](10.jpeg)
+![City Upon a Hill: California Road Trip — Photos (figure 7)](10.jpeg)
 > Los Angeles at night viewed from Griffith Observatory
 
-![](12.jpeg)
+![City Upon a Hill: California Road Trip — Photos (figure 8)](12.jpeg)
 > Half Dome in Yosemite
 
-![](14.jpeg)
+![City Upon a Hill: California Road Trip — Photos (figure 9)](14.jpeg)
 > Random shot on the way back to Cupertino
 
-![](15.jpeg)
+![City Upon a Hill: California Road Trip — Photos (figure 10)](15.jpeg)
 > San Francisco streets - the steep slopes are quite challenging for parking...
