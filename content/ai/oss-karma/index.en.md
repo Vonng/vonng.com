@@ -7,7 +7,6 @@ summary: >
 tags: [AI, Agent, Open Source]
 ai: true
 ---
-
 > Credit does not require a soul. It requires an account.
 
 ## Introduction: The Overnight Rewrite

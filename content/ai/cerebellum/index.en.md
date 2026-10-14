@@ -7,7 +7,6 @@ summary: >
 tags: [AI, Agent, Machine Learning, Philosophy]
 ai: true
 ---
-
 Let me start with an uncomfortable number.
 
 The cerebral cortex—the part we usually point to as evidence that "I am thinking"—contains roughly 15 billion neurons.
@@ -28,8 +27,6 @@ It reminds me that an entire continent inside our skulls contains most of our ne
 It is busy doing something else—something for which today's LLMs have no corresponding organ.
 
 And that something may be precisely what stands between AI as a near-master and AI as a true master.
-
-----
 
 ## 1. Even the Strongest AI Is Only a Near-Master
 
@@ -72,8 +69,6 @@ Today's AI is like a near-master that has read every ox-carving manual in the wo
 It can explain bovine anatomy and the mechanics of a blade, and it can repeat Cook Ding's own advice.
 
 But when the blade meets the animal, it has neither those hands nor those nineteen years.
-
-----
 
 ## 2. What Can Be Said, and What Can Only Be Done
 
@@ -124,8 +119,6 @@ That is tacit knowledge at the level of **action**.
 
 And physiologically, action-level tacit knowledge leads us straight to the cerebellum.
 
-----
-
 ## 3. What Does the Cerebellum Actually Compute?
 
 Do not reduce the cerebellum to a "motor-coordination module."
@@ -170,8 +163,6 @@ Move them into another body, and many become invalid at once.
 
 The word **non-transferable** will keep returning.
 
-----
-
 ## 4. The Cerebellum Is Why You Are You
 
 I am increasingly inclined to see the cerebellum as a hard substrate of individuality.
@@ -196,8 +187,6 @@ What masters have beyond that is an individualized forward model engraved into t
 
 That entire dimension is still largely empty in mainstream AI architectures.
 Autoregressive or diffusion-based, regardless of parameter count, none of them yet has an organ like this.
-
-----
 
 ## 5. Ten Thousand Hours Carve You, Not Knowledge
 
@@ -252,8 +241,6 @@ One instance's experience slowly becomes the shape of that particular instance.
 
 That distinction matters.
 
-----
-
 ## 6. Pearl's Wall
 
 Engineers will naturally ask: if the cerebellum is carved by experience, why not simply expose models to more experience?
@@ -289,8 +276,6 @@ If this were 2025, I might have stopped here: purely observational data hits a w
 
 But this is already 2026.
 
-----
-
 ## 7. In 2026, the Wall Is Starting to Give
 
 To be honest, the argument above rests on an assumption that has become shaky in 2026.
@@ -315,8 +300,6 @@ I don't think so.
 
 Moving from observation to action is only the first step.
 The harder problem lies beyond it.
-
-----
 
 ## 8. The Argument Is Not Dead; It Splits into Three Parts
 
@@ -363,8 +346,6 @@ That is where I would now place the real wall:
 
 **Can an AI's experience become the history of one particular AI?**
 
-----
-
 ## 9. No One Is in a Hurry to Hit That Wall
 
 Suppose agentic RL races ahead over the next few years.
@@ -404,8 +385,6 @@ That makes the situation more subtle.
 
 The wall may not merely be something "we have not crossed yet."
 It may be something "we do not want to cross yet."
-
-----
 
 ## Epilogue: Machines Still Have No Vessel for Your Ten Thousand Hours
 

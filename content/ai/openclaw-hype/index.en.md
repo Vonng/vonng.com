@@ -8,7 +8,6 @@ tags: [AI, Agent, Codex, Security]
 ai: true
 aliases: ["/db/openclaw-hype/"]
 ---
-
 OpenClaw became popular because it gives people a very attractive illusion: that chatting with an agent from a phone is already the same thing as agentic productivity.
 
 It is not.

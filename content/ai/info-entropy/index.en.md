@@ -7,7 +7,6 @@ ai: true
 aliases: ["/misc/info-entropy/"]
 tags: [AI]
 ---
-
 Information theory answers two fundamental questions in communication theory:
 
 * The critical value for data compression: entropy \(H\)
@@ -23,7 +22,7 @@ Entropy is a measure of the uncertainty of random variables, and also a measure 
 
 Let \(X\) be a discrete random variable with alphabet \(\mathcal{X}\). The probability density function \(p(x) \equiv Pr(X=x),x\in \mathcal{X}\) is denoted as \(p(x)\). Then:
 
-##### Definition: Entropy
+### Definition: Entropy
 
 The entropy $H(X)$ of a discrete random variable $X$ is defined as:
 
@@ -37,12 +36,12 @@ Sometimes the above quantity is denoted as $H(p)$. When using logarithms with ba
 
 Since $p(x)$ is the probability distribution function of $X$, entropy can alternatively be viewed as the expected value of the random variable $\log{\frac{1}{p(X)}}$, denoted as $-E\log p(X)$.
 
-##### Properties
+### Properties
 
 1. $H(X) \ge 0$: Entropy is non-negative, because probability $0 \le p(x) \le 1$, so $\log\frac 1 {p(x)} ≥ 0$.
 2. $H_b(X) = (\log_b a) H_a(X)$: Base conversion for entropy, because $\log_b p = (\log_b a)\log_a p$, so $\ln(p) = \ln(a) H(X)$.
 
-##### Example
+### Example
 
 For a single Bernoulli trial with success probability $p$, if the random variable of the experimental result is $X$, its entropy is:
 
@@ -52,13 +51,13 @@ $$
 
 When $p = \frac 1 2$, the entropy of the resulting random variable $X$ is: 1 bit.
 
-##### Intuition
+### Intuition
 
 Although the definition of entropy can be derived from several properties we require, there's actually profound intuition behind this definition. For example:
 
 We need to design binary encoding for an alphabet to minimize average information length. Letters often appear with unequal probabilities, so we need to follow the principle of **higher frequency letters get shorter codes**. Optimal encoding requires assigning appropriate costs to each letter to minimize total average cost. What constitutes an appropriate cost? A simple, intuitive principle is: **the encoding cost of each letter should be proportional to its occurrence probability $p(x)$.**
 
-![](code-cost.png)
+![Fundamentals of Information Theory: Entropy — Intuition (figure 1)](code-cost.png)
 
 On the other hand, we need to consider the relationship between optimal encoding length $L(x)$ and encoding cost for letter $x$. Variable-length encoding has a problem: to ensure every message string can be unambiguously segmented and decoded, no word's code can be a prefix of another word's code, otherwise conflicts arise. For binary encoding, we can use 0 as a terminating delimiter. Thus, for four words A, B, C, D, they can be encoded as `0, 10, 110, 111` respectively. For each letter, when assigned an encoding of length $L=l$, what's the cost? In the entire encoding space, all codes with this letter's encoding as prefix can no longer be assigned. For example, after assigning B the 2-bit code `10`, all codes like `100, 101, 1000, 1001, ...` become unavailable—one-quarter of the entire encoding space is lost as cost.
 
@@ -79,7 +78,7 @@ $$
 
 Extending the entropy of a single random variable to two random variables gives us the concept of joint entropy.
 
-##### Definition: Joint Entropy
+### Definition: Joint Entropy
 
 For a pair of discrete random variables $(X,Y)$ with joint probability distribution $p(x,y)$, their joint entropy $H(X,Y)$ is defined as:
 
@@ -93,13 +92,13 @@ $$
 H(X,Y) = -E\log p(X,Y)
 $$
 
-![](joint-entropy.png)
+![Fundamentals of Information Theory: Entropy — Definition: Joint Entropy (figure 2)](joint-entropy.png)
 
 ## Conditional Entropy
 
 The entropy of one random variable given another random variable is called conditional entropy.
 
-##### Definition: Conditional Entropy
+### Definition: Conditional Entropy
 
 If $(X,Y) \sim p(x,y)$, conditional entropy $H(Y|X)$ is defined as:
 
@@ -107,13 +106,13 @@ $$
 H(Y|X) =  \sum_{x \in \mathcal{X}}p(x)\  H(Y | X = x) = -E\log p(Y | X)
 $$
 
-##### Property
+### Property
 
 $$
 H(X,Y) = H(X) + H(Y|X)
 $$
 
-![](conditional-entropy.png)
+![Fundamentals of Information Theory: Entropy — Property (figure 3)](conditional-entropy.png)
 
 ## Mutual Information
 
@@ -129,7 +128,7 @@ As an extreme case, when $X=Y$, the two random variables are perfectly correlate
 
 | Independent Variables | Non-independent Variables |
 |----------------------|---------------------------|
-| ![](dist-independent.png) | ![](dist-dependant.png) |
+| ![Fundamentals of Information Theory: Entropy — Mutual Information (figure 4)](dist-independent.png) | ![Fundamentals of Information Theory: Entropy — Mutual Information (figure 5)](dist-dependant.png) |
 
 Of course, mutual information can actually be expressed in another more intuitive way. If random variables $X,Y$ have entropies $H(X), H(Y)$ and joint entropy $H(X,Y)$, then mutual information can be expressed as:
 
@@ -139,7 +138,7 @@ $$
 
 This is easily understood, because $H(X)+H(Y)$ contains two copies of shared information, while $H(X,Y)$ contains only one.
 
-##### Property
+### Property
 
 For any two random variables $X,Y$:
 
@@ -155,7 +154,7 @@ This shows that knowing any other random variable $Y$ can only reduce the uncert
 
 A single diagram illustrates all relationships:
 
-![](entropy-relation.png)
+![Fundamentals of Information Theory: Entropy — Relationships among Mutual Information I(X;Y), Self-information H(X), Joint Information H(X,Y), Conditional Information H(Y|X) (figure 6)](entropy-relation.png)
 
 $$
 \begin{align}
@@ -167,7 +166,7 @@ H(X,Y) &= I(X;Y) + V(X,Y) \\
 \end{align}
 $$
 
-![](entropy-relation-ordinal.png)
+![Fundamentals of Information Theory: Entropy — Relationships among Mutual Information I(X;Y), Self-information H(X), Joint Information H(X,Y), Conditional Information H(Y|X) (figure 7)](entropy-relation-ordinal.png)
 
 ## Cross Entropy and Relative Entropy
 
@@ -193,11 +192,11 @@ $$
 H_q(p)  = H(p) + D(p \| q)
 $$
 
-![](cross-entropy.png)
+![Fundamentals of Information Theory: Entropy — Cross Entropy and Relative Entropy (figure 8)](cross-entropy.png)
 
 **Relative entropy $D$, also known as Kullback-Leibler divergence (KLD), information divergence, information gain, or KL distance, is a measure of distance between two random distributions. Relative entropy $D(p \|q)$ measures the inefficiency when the true distribution is $p$ but we assume distribution $q$.**
 
-##### Definition: Relative Entropy
+### Definition: Relative Entropy
 
 The relative entropy between two probability density functions $p(x)$ and $q(x)$ is defined as:
 
@@ -205,12 +204,12 @@ $$
 D(p \| q) = \sum_{x \in \mathcal{X}}{p(x)\log  \frac{p(x)}{q(x)}} = E_p\log \frac{p(X)}{q(X)}
 $$
 
-##### Properties
+### Properties
 
 * Relative entropy is always non-negative. When $p=q$, the optimal encoding for $q$ is also optimal for $p$, so $D(p \| q) = 0$.
 * Relative entropy is not symmetric: $D(p\|q) \ne D(q\|p)$.
 
-##### Applications
+### Applications
 
 Cross entropy, as a measure of difference between two distributions, is widely used in machine learning. For example, when used as a neural network cost function:
 

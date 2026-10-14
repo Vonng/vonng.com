@@ -6,7 +6,6 @@ summary: >
   Livzon Pharmaceutical's logo-swapping PR landed out of nowhere. As if being ripped off by DeepSeek appliance vendors were not enough, someone marched into Dify's own repository to rub it in. Dify just can't catch a break.
 tags: [AI, Open Source, Commentary]
 ---
-
 Today, something straight out of magical realism unfolded in Dify's GitHub repository. The open-source community was minding its own business, maintaining the project, when a pull request apparently from Livzon Pharmaceutical landed out of nowhere—and not just one, but two in a row, each replacing Dify's logo.
 
 Why would anyone change someone else's logo? An earlier article, [Warning: Dify Has Become DeepSeek's Biggest Open-Source Casualty](https://mp.weixin.qq.com/s?__biz=MzU2NjY1ODk1Ng==&mid=2247484447&idx=1&sn=d59104d3c20e7666d988393a268616c3&scene=21#wechat_redirect), laid out the problem: some vendors of “homegrown DeepSeek appliances” quietly take Dify, reskin the UI, hide the copyright notice, scrub the logo, package it up, and call it “built in-house.” This kind of rebadging is hardly rare in China—many of the hundreds of so-called “domestic databases,” for example, are PostgreSQL underneath—but Dify has been hit especially hard.

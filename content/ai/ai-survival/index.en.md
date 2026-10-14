@@ -7,8 +7,6 @@ tags: [AI, Database, Commentary]
 ai: true
 aliases: ["/db/ai-survival/"]
 ---
-
-
 ## The Window Is Closing
 
 Recently I was chatting with a few friends in tech, and we landed on a question that silenced everyone:
@@ -20,8 +18,6 @@ Nobody could answer. Not because they didn't want to — because they didn't dar
 AI isn't "assisting" programmers. It's **redefining** the floor and ceiling of the profession.
 
 This isn't one company's problem. It's a structural reorganization of the entire industry.
-
----
 
 ## The First Rung Got Yanked Out
 
@@ -47,8 +43,6 @@ The most gut-wrenching line from that conversation:
 
 > **"People without industry experience no longer have the chance to gain industry experience."**
 
----
-
 ## Arms Race: The Red Queen Effect
 
 There's an even crueler reality: **every programmer is using AI, but when everyone uses it, everyone devalues together.**
@@ -64,8 +58,6 @@ It's like someone published the secret martial arts manual — everyone can lear
 The irony: skip it and others won't — you're out. Learn it and everyone learns it — everyone's grinding harder.
 
 **Individual rationality, collective trap.**
-
----
 
 ## AI Is a Multiplier, Not an Adder
 
@@ -89,8 +81,6 @@ This isn't a gap with regular programmers anymore. This is **speciation**.
 Lines of code isn't a great value metric — but it demonstrates one thing: **the execution bottleneck has been blown wide open.** Previously, even great ideas were throttled by implementation speed. Now, the only limits left are judgment and architectural ability.
 
 Even if AI output quality falls short of a single top-tier programmer, it operates at 10x+ human thinking speed at a fraction of the cost. That's enough to change everything.
-
----
 
 ## The Senior Dev's Brief Window of Advantage
 
@@ -122,8 +112,6 @@ Domain knowledge is becoming the **weapon of mass destruction** that lets top pr
 
 In an era where everyone wants to be an AI accelerationist, nobody's rice bowl is unbreakable.
 
----
-
 ## Open Source Changed, Too
 
 Someone might say: fine, nobody's paying me to grind XP anymore, but I can contribute to open source for free to build experience, right?
@@ -139,8 +127,6 @@ Why? Because **maintainers use AI too now.**
 When maintainers can vibe-code all the implementations themselves, why would they need external PRs? Open-source maintainers were already overloaded. Now they've got a pile of AI-generated garbage PRs to review on top of that. The response? Raise the bar. Get pickier.
 
 "Contributing to open source" used to be a solid path to building experience and reputation. That road is narrowing too.
-
-------
 
 ## Young Devs' Situation: Strengths and Weaknesses
 
@@ -178,15 +164,11 @@ But if you're young, this might be your only chance to leapfrog. The old path is
 
 Good news: even if this path ultimately doesn't pan out, the AI collaboration skills, rapid learning ability, and systematic thinking you build along the way are valuable in their own right.
 
-------
-
 ## Breaking Through
 
 The door is closing, but a window's still open. The window is shrinking, and it shrinks a little more every day.
 
 For those still willing to fight, my advice comes in three parts: master the right tools, take initiative, find the right people.
-
-----
 
 ### 1. Master AI Tools, But Use Them Right
 
@@ -202,8 +184,6 @@ What does that mean? Have AI explain:
 - What goes wrong in production?
 
 Don't just let AI do things for you. Make AI **teach** you why.
-
-----
 
 ### 2. Find Your Mentor — Be More Agentic Than the Agent
 
@@ -236,8 +216,6 @@ Not the "carry me, senpai" fantasy, but the real work:
 
 **Knowledge got democratized. Trust didn't.** Whoever builds trust, breaks through.
 
-----
-
 ### 3. Bet on Things That Won't Get Flipped
 
 What should young people actually learn?
@@ -256,8 +234,6 @@ What's not worth learning? Process software, SaaS, "translation layer" work, fla
 
 Writing code doesn't matter anymore. In the future there might not even be "programmers" as a job title. Only **software engineers**.
 
-------
-
 ## Final Thoughts
 
 The window is closing. That's a fact. Don't look away. But for those **willing to fight**, the road isn't dead.
@@ -271,8 +247,6 @@ Remember three things:
 3. **The competition in this era isn't "can you use AI" — it's "do you have something worth amplifying."** Find your IKIGAI, fast.
 
 Time is short. Get moving.
-
----
 
 ## Shameless Plug
 

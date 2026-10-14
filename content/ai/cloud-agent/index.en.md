@@ -8,7 +8,6 @@ tags: [AI, Cloud, Software Engineering, Security]
 ai: true
 aliases: ["/cloud/cloud-agent/"]
 ---
-
 Before you hit "one-click deploy" on that cloud AI assistant, ask yourself: what exactly are you giving up?
 
 There's a reason why people by Mac mini rather than running clawdbot on the cloud.
@@ -26,8 +25,6 @@ Sounds great, right?
 But stop. Think.
 
 **What exactly are you about to hand over?**
-
----
 
 ## This Time It's Different
 
@@ -56,8 +53,6 @@ This is **cognitive data**. An extension of your brain.
 
 Browsing history doesn't come close.
 
----
-
 ## The Real Question: Not "Will It Leak?" But "Who Holds It?"
 
 Most people think about privacy as "will hackers steal it?" Wrong frame.
@@ -81,8 +76,6 @@ But what if the same data lands at a platform deeply integrated with your paymen
 This is why when a payment platform launches a "health AI assistant," you should think twice.
 
 What's the incentive? What can they do with this data?
-
----
 
 ## A Counterintuitive Strategy: Ecosystem Isolation
 
@@ -115,8 +108,6 @@ Running capable models locally isn't far off. When Apple ships M5 Ultra, running
 
 **This is what "ecosystem isolation" means: not that data isn't collected, but that collectors lack channels to turn it into real-world harm — or there's simply no collector.** Sure, isolation isn't absolute. Any provider can be acquired, data can leak, policies can change. But in terms of probability and attack paths, the gap between **direct leverage** and **indirect risk** is orders of magnitude.
 
----
-
 ## An Interesting Asymmetry
 
 Here's a curious phenomenon.
@@ -133,8 +124,6 @@ For Chinese users, it's the opposite:
 **This is an opportunity to exploit ecosystem asymmetry in your favor.**
 
 Same logic: an American wanting to protect privacy might be better off using European or Asian services — outside their local ecosystem. This isn't about which is better. It's about **leverage distance**.
-
----
 
 ## Practical Guide
 
@@ -163,8 +152,6 @@ If you have the skills and hardware, local deployment is the most thorough solut
 
 **Core principle: Keep data away from platforms deeply integrated with your life — or keep it on your own hardware entirely.**
 
----
-
 ## FAQ
 
 **Q: Any provider can leak data. What's the point of this strategy?**
@@ -186,8 +173,6 @@ But "not used for training" and "not retained" are different things. Under every
 Ecosystem isolation is risk management, not a silver bullet. It reduces the probability of "data being used to harm you," not the fact of "data being collected."
 
 For extremely sensitive scenarios, local deployment remains the safest choice. The good news: that choice is becoming increasingly realistic.
-
----
 
 ## Conclusion
 

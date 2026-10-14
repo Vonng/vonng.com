@@ -6,7 +6,6 @@ summary: >
   A couple of weeks ago, I just wanted a decent-looking documentation theme for a few new projects.
 tags: [Oink, Documentation, Open Source]
 ---
-
 A couple of weeks ago, I just wanted a decent-looking documentation theme for a few new projects.
 
 A couple of weeks later, I had **migrated all 18 of my websites to it**.
@@ -38,8 +37,6 @@ I have. So I think Oink is finally ready for a proper release.
 ![Image](08.webp)
 
 ![Image](09.webp)
-
----
 
 ## What is Oink?
 
@@ -80,8 +77,6 @@ That's Oink's core idea.
 
 The name is simple, too: **Ink** for writing and documentation, **Oink** for the pigs in the Pigsty family. Treat the README's **Open, Indexed, Navigable, Knowledge** as a bonus backronym.
 
----
-
 ## Why now?
 
 Because writing code has become remarkably fast.
@@ -117,8 +112,6 @@ Oink generates a corresponding `.md` version of every page and an `llms.txt` ind
 So Oink does more than claim to “support AI.”
 
 Its content model starts from one assumption: **the documentation must serve both human readers and machines**.
-
----
 
 ## I've had enough of modern documentation frameworks
 
@@ -197,8 +190,6 @@ Nothing quite fit.
 
 So I built one.
 
----
-
 ## Oink's answer: keep content clean and put complexity in the framework
 
 Oink began with the needs of more than a dozen real websites, rather than a visual mockup.
@@ -206,8 +197,6 @@ Oink began with the needs of more than a dozen real websites, rather than a visu
 I collected the capabilities those sites actually needed, then looked for the simplest, most stable abstractions they could share.
 
 A few clear principles emerged.
-
----
 
 ## First: prefer native Markdown
 
@@ -232,8 +221,6 @@ Callouts use ordinary blockquotes, steps use ordinary lists, and field descripti
 This is a practical engineering principle, not a matter of purity:
 
 **Frameworks age. Content should outlive them.**
-
----
 
 ## Second: Hugo, and nothing else
 
@@ -277,8 +264,6 @@ It means more than “you can open it on localhost.” You control the system's 
 Documentation, of all things, should work this way.
 
 It shouldn't turn into a collection of empty shells because a CDN, font service, hosted search provider, or frontend dependency stops working.
-
----
 
 ## Third: one framework, six kinds of content
 
@@ -345,8 +330,6 @@ That may sound like a way to configure fewer themes. The real benefit is larger:
 
 **One set of skills lets you maintain everything your project publishes.**
 
----
-
 ## Fourth: powerful features shouldn't make every page heavier
 
 Oink has plenty of advanced components:
@@ -370,8 +353,6 @@ In HTML, a file tree can be attractive and interactive. In print, it should expa
 Graceful degradation is part of Oink's content model, rather than an optional refinement.
 
 A reliable documentation component has to work beyond the author's current browser and theme version.
-
----
 
 ## Fifth: design for people and agents
 
@@ -409,8 +390,6 @@ I see this as a basic capability for future documentation frameworks, not an opt
 
 **The browser is one consumer of documentation. AI agents are becoming another.**
 
----
-
 ## Search, languages, and versions, already integrated
 
 These features rarely get top billing on a documentation framework's homepage, but in real projects they determine whether the system is usable.
@@ -429,8 +408,6 @@ You could assemble all of this yourself.
 
 I built Oink so you don't have to do it again.
 
----
-
 ## See fifteen production sites for yourself
 
 Oink's public showcase currently lists 15 real sites: large Chinese and English documentation sites, a company homepage, open-source projects, small tools, knowledge hubs, and three books. They range from a two-page site to distribution manuals with over a thousand content files.
@@ -446,8 +423,6 @@ That matters.
 Many of Oink's design decisions came from specific problems encountered during real migrations. One survey informing the design documents covered 11 sites using the theme and more than 5,000 Markdown files. The public showcase extends that coverage from small tools to large distribution manuals.
 
 The shared framework emerged from actual needs across those sites.
-
----
 
 ## More than a screenshot and a README
 
@@ -469,8 +444,6 @@ The approach owes something to database systems:
 - Don't let a local input error take every page down with it.
 
 It may be called Oink, but there is an engineer's sensibility underneath.
-
----
 
 ## Getting started doesn't require learning Oink first
 
@@ -522,8 +495,6 @@ Second, write content worth reading.
 
 Theme configuration, directory organization, build scripts, and deployment details are work for the tools. Documentation authors shouldn't each have to learn them all over again.
 
----
-
 ## Who is Oink for?
 
 Oink is a particularly good fit for a few groups.
@@ -550,8 +521,6 @@ With five, ten, or more projects, the benefits of a shared framework add up quic
 
 My own migration of 18 sites is a straightforward example.
 
----
-
 ## Who is Oink not for?
 
 Oink isn't a universal framework, and it doesn't need to pretend to be one.
@@ -570,8 +539,6 @@ Then Oink is the wrong choice.
 Its scope is clear: **build modern, reliable, static content sites from Markdown and structured data**.
 
 That boundary is what keeps it simple.
-
----
 
 ## Documentation should be the last thing to break
 

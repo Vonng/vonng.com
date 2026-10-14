@@ -6,7 +6,6 @@ summary: >
 tags: [AI, Agent, PostgreSQL, Linux]
 aliases: ["/db/neo-software/"]
 ---
-
 ## 一、软件世界大熔断
 
 软件世界正在经历一场史诗级的估值崩塌。
@@ -41,8 +40,6 @@ PostgreSQL 正在吞噬数据库世界。ClaudeCode 与 Clawdbot 正在开拓 Ag
 这不是预言。这是正在发生的事。
 
 ![featured.webp](featured.webp)
-
-------
 
 ## 二、中间层的消亡
 
@@ -82,8 +79,6 @@ Agent 流程：拍张照片，说 “算一下这顿饭的卡路里，更新我�
 
 ![app-gone.webp](app-gone.webp)
 
-------
-
 ## 三、CLI 的意外胜利
 
 当软件的中间层被压扁，下一个问题就浮现了：**Agent 和数据库之间，靠什么界面交互？**
@@ -110,8 +105,6 @@ CLI 与 LLM 天生契合，当 Agent 握有一套自描述、结构化、可组�
 与其把完整文档塞进上下文，不如在需要时调用 CLI 询问参数。CLI 的 “按需获取” 远比 “全量加载” 更划算。
 
 **Unix 诞生于 1969 年。小工具、文本流、可组合的哲学，在 55 年后被 AI Agent 再次发扬光大。**
-
-------
 
 ## 四、Agent 原生的 CLI
 
@@ -160,8 +153,6 @@ DETAIL: Key (id)=(42) already exists.
 
 > 老冯也在摸索，PostgreSQL 管理的 Agentic CLI 应该是什么样子：[**PIG**](https://pigsty.cc/docs/pig)，欢迎尝试。
 
-------
-
 ## 五、GUI 不会死，但会变
 
 CLI 崛起了，图形界面会消失吗？
@@ -176,8 +167,6 @@ CLI 崛起了，图形界面会消失吗？
 
 在 Agent 负责理解意图、CLI 负责执行的世界里，GUI 不再是数据库的漂亮皮肤，而是 **提示画布** 和 **结果展示层**：
 它总结 Agent 的建议，把复杂状态转成可视化图层，提供对话历史的结构化回顾，能够充分利用人类视觉认知优势的 GUI 会继续存在。
-
-------
 
 ## 结语：范式跃迁的起点
 

@@ -7,7 +7,6 @@ summary: >
 tags: [AI, Agent, PostgreSQL, Pigsty]
 ai: true
 ---
-
 > HOW 2026 keynote: Give DBA Agents a Body
 
 ## Part I: Opening—An Absurd Phenomenon
@@ -64,8 +63,6 @@ A team led by Xuanhe Zhou at Tsinghua University built a DBA Agent called D-Bot 
 ![D-Bot](d-bot.webp)
 
 One major reason they chose Pigsty was that it offered an open, standardized, production-grade runtime. They could focus on the intelligence instead of rebuilding the infrastructure from scratch: monitoring data was already available, and established command-line primitives could perform the necessary operations. Two years later, model capabilities have improved many times over. What can we build today by pairing this Runtime with state-of-the-art models? **I leave that possibility to everyone in this room.**
-
----
 
 ## Part II: Theory—What Is a Body Made Of?
 
@@ -163,8 +160,6 @@ Some people ask why we are building command-line tools to manage Postgres direct
 
 In other words, if you want to push a database runtime to its limits, controlling a connection string is not enough. Controlling one abstract API layer is not enough. You must control the environment in which the database actually runs. We are not trying to build a DBA Agent that can merely invoke tools. We want one that can see, understand, and operate the whole system. It needs more than hands and feet. It needs a complete body.
 
----
-
 ## Part III: The Turn—Tools Are Not Enough; the Runtime Is the Moat
 
 ### 20. A Cautionary Example: OtterTune
@@ -223,8 +218,6 @@ This takes us back to the beginning: AI cannot take the blame for you. Responsib
 
 Today, a workflow of read-only recommendations from a DBA Copilot, followed by human execution, is mature enough for production. The next step is to make every stage of that workflow more reliable.
 
----
-
 ## Part IV: Extending the Idea—from DBA Agent to Dev Agent
 
 ### 27. Not Just for DBAs: piglet.run
@@ -270,8 +263,6 @@ There is one particularly interesting capability worth mentioning: time travel a
 We used JuiceFS to put filesystem state into PostgreSQL. That means **your code, configuration, and database content now share a single backup and rollback system**. Did the agent make a mess? One-click PITR returns the entire environment, including the filesystem, to where it was five minutes ago. You can also mount the filesystem on Linux, Windows, and macOS, sharing one directory across people and devices.
 
 This is extremely useful for agents. They can experiment freely and roll back with PITR when they get something wrong. What used to be a DBA's ultimate black magic is becoming available to ordinary users. It gives agents the confidence to experiment boldly.
-
----
 
 ## Part V: Giving the Body to the Community
 

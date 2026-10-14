@@ -8,14 +8,11 @@ tags: [AI, Agent, Software Engineering, Open Source]
 ai: true
 images: [apes.webp]
 ---
-
 > In one month, my friend Jiang cobbled together four databases, an operating system, a programming language, a compiler, and a CPU—a microcosm of today's AI frenzy.
 
 The past six weeks have been an AI carnival. My fleet of Max subscriptions has grown to ten, each costing $200 a month. The things they have produced are too numerous to count, and new work lands faster than I can promote it. Friends at the frontier are quietly cashing in, using this window to burn a few projects into existence.
 
 Others have just been handed an AGI machine gun and cannot resist spraying bullets everywhere. The best example is my friend Jiang.
-
----
 
 ## Jiang's Machine Gun
 
@@ -53,8 +50,6 @@ Technically, I have built all four. But they were standard computer-science cour
 
 Whatever their practical value, these projects have reached a frontier that was difficult to imagine before.
 
----
-
 ## Ten Subscriptions Still Aren't Enough
 
 On this point, I envy Jiang.
@@ -66,8 +61,6 @@ The upside is that these are things I genuinely care about. People use them, and
 My current usage tells the story: ten subscriptions are still not enough. On an average day, I can exhaust the quota on two of them. With a seven-day reset cycle, ten plans cannot keep up; I survived only because of [Tibo's Reset giveaways](/en/ai/codex-reset-end/). The subscription fees are the easy part. Ten plans cost only $2,000 a month. The real constraint is human attention. I am accountable for what I ship, so much of the validation still requires me to intervene, adjudicate, and sign off. I suspect my own capacity would top out at about twenty $200-a-month plans.
 
 ![Credit-card charges from ten AI subscriptions](billing.webp)
-
----
 
 ## A Gorilla and a Maintainer of Last Resort
 
@@ -83,7 +76,7 @@ I have done something similar, though by a different route. MinIO was once one o
 
 That story is told in three essays: [*MinIO Is Dead, Long Live MinIO*](/en/db/minio-resurrect/), [*Two Months into Maintaining a MinIO Fork*](/en/db/minio-promise-kept/), and [*Silo: A Maintained, MinIO-Compatible Object Store*](/en/db/long-live-silo/).
 
-So far, I have addressed more than ten security issues, including high-severity flaws such as an authentication bypass. When upstream leaves an issue untouched, I have an agent fix it while I handle architectural decisions, risk review, regression testing, and release sign-off. [Silo's security advisories](https://github.com/pgsty/silo/blob/main/docs/security/advisories.md) and release history are public, and the fork has become one of the most active community branches in the MinIO ecosystem.
+So far, I have addressed more than ten security issues, including high-severity flaws such as an authentication bypass. When upstream leaves an issue untouched, I have an agent fix it while I handle architectural decisions, risk review, regression testing, and release sign-off. [Silo's security advisories](https://silo.pgsty.com/about/security-advisories/) and release history are public, and the fork has become one of the most active community branches in the MinIO ecosystem.
 
 [![Silo project homepage and public maintenance metrics](silo.webp)](https://github.com/pgsty/silo)
 
@@ -94,8 +87,6 @@ I simply no longer spend my time typing code line by line or tracing every imple
 That is where AI creates real value.
 
 It does not conjure professional judgment in someone who knows nothing. It frees people who already have that judgment from doing all the manual labor themselves.
-
----
 
 ## The Age of Infinite Supply
 
@@ -125,8 +116,6 @@ What is truly scarce, then, is not code. It is the right wish and the ability to
 
 Code can be infinitely abundant. Trust never has been.
 
----
-
 ## The Real Phase Change Happened This Month
 
 Curiously, this shift began in early July, when [Fable 5](https://www.anthropic.com/news/redeploying-fable-5) regained global access and [GPT-5.6](https://openai.com/index/gpt-5-6/) became broadly available. Before then, I had one $200-a-month subscription to each of ChatGPT and Claude. I still had plenty of quota left each week and would even waste the surplus translating books. Over the past month, my consumption has exploded.
@@ -142,8 +131,6 @@ A human gets only 24 hours in a day. An agent user can now put hundreds of agent
 That is why I went from two subscriptions to ten, why ten are still not enough, and why I may eventually reach twenty. I have not suddenly lost my mind. Projects once not worth starting now make sense. Work that once had to wait in a queue can proceed on a dozen or more fronts at once. An idea I once discarded because it would take three months can now get an overnight trial run.
 
 Once capability rises, demand does not grow linearly. It explodes. This is [Jevons paradox](https://zh.wikipedia.org/wiki/%E6%9D%B0%E6%96%87%E6%96%AF%E6%82%96%E8%AE%BA): stronger models drive consumption up, because they can now handle all the work you previously could not, would not, or did not dare to give them.
-
----
 
 ## Most People Haven't Entered the Arena
 
@@ -162,8 +149,6 @@ Do not let X's daily stream of new models, new projects, and new funding rounds 
 The capability is already here, but most people have not realized it. The tools have been handed out, but most people are still stuck in the chat box.
 
 That gap in awareness is the most valuable thing right now.
-
----
 
 ## What Will Actually Be Scarce
 

@@ -8,22 +8,17 @@ tags: [Agent, PostgreSQL, AI, 大模型]
 ai: true
 aliases: ["/db/google-mcp/"]
 ---
-
-
-
 在《[SaaS已死？AI时代，软件从数据库开始](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489605&idx=1&sn=22aa5f6f18b871b2a216bc46dbaea42c&scene=21#wechat_redirect)》中，微软 CEO 纳德拉曾经表示，在 Agent 时代，**SaaS is Dead**，而未来的软件形式将是 Agent + Database 。也就是直接由 Agent 在数据库上做 CRUD。当然这篇文章也有不小争议 —— 很多老司机表示，Agent 直通数据库，是嫌安全问题不够多，死的不够快吗？
 
 老实说，那种直接把整个数据库开放给世界的所谓 “MCP” 确实是这样，当个玩具可以，没人敢上生产用。不过，最近 Google 推出了一个针对数据库的 MCP 工具箱（名字就叫朴实无华 GenAI Toolbox ），为这个问题提供了一个答案。
 
-[![arch.webp](arch.webp)](https://googleapis.github.io/genai-toolbox/)
+[![arch.webp](arch.webp)](https://googleapis.github.io/mcp-toolbox/)
 
-> https://googleapis.github.io/genai-toolbox/
+> https://googleapis.github.io/mcp-toolbox/
 
 不同于以前那种直接把整个数据库对 Agent 开放的粗暴做法，这个工具箱通过封装参数模板 SQL 的方式，显著提高了数据库 MCP 的实用性与安全性，可以考虑搞起生产试点了 —— 老冯也打好了 RPM/DEB 包供大家尝鲜。
 
-> https://googleapis.github.io/genai-toolbox/getting-started/introduction/
-
-------
+> https://googleapis.github.io/mcp-toolbox/
 
 ## 快速上手
 
@@ -116,8 +111,6 @@ toolsets:
     - cancel-hotel
 ```
 
-------
-
 ## 特性说明
 
 当然，Google MCP Toolbox for Database 支持的数据库种类其实挺多的，不仅仅是 PostgreSQL（虽然文档里的例子满篇都是 PG），还有 MySQL，SQL Server，SQLite，Redis，Neo4j，AlloyDB，BigQuery，BigTable，CouchBase，Google 云上的数据库，还可以使用通用的 HTTP 数据源，堪称万金油数据库 MCP。
@@ -129,8 +122,6 @@ toolsets:
 当然，这个工具箱不仅仅是给 MCP 客户端用的，它还可以直接对 Agent 提供访问。Google ADK 就提供了开箱即用的接入，写一个 Agent ，让它去访问数据库就非常简单了。
 
 ![code.webp](code.webp)
-
-------
 
 ## 老冯评价
 
@@ -150,7 +141,7 @@ Google 数据库 MCP 工具箱解决了 MCP 上生产的一个核心问题 —�
 
 目前 MCP Toolbox for Database 提供了 macOS 下的包，以及 Linux/ Windows x86 的包。老冯把 Linux x86/ARM 平台打好了 RPM / DEB 包，在主流 Linux 系统上都可以使用 （仓库教程：https://pigsty.cc/docs/repo/infra/）
 
-```
+```text
 curl https://repo.pigsty.cc/pig | bash  # pig 包管理器
 pig repo add infra -u                   # 添加 infra 仓库
 yum install genai-toolbox               # 安装 genai 工具箱

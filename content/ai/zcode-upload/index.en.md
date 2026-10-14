@@ -5,7 +5,6 @@ summary: |
   I had just praised GLM 5.3 when ZCode's silent repository uploads came to light. Then I found the same mechanism on my own machine.
 tags: [AI, Agent, Data Sovereignty]
 ---
-
 I had only been using Zhipu's ZCode for a few days. Honestly, the experience was good.
 
 GLM 5.3 is a capable model, the Coding Plan is cheap, and Zhipu's own ZCode agent works well. It was a rare Chinese AI product I actually wanted to pay for. I had written about it a couple of days earlier and was planning a fuller, favorable review.
@@ -23,9 +22,6 @@ I found snapshot-related records for four workspaces on my machine. One had a st
 ![claude-zcode.webp](claude-zcode.webp)
 
 > I had been wondering why my network usage was so high over the past few days. I was about to install a traffic monitor to find out which application was responsible.
-
-
---------
 
 ## What It Actually Did
 
@@ -58,9 +54,6 @@ I will go only as far as the evidence does.
 
 ![traffic.png](traffic.png)
 
-
---------
-
 ## You're Packaging Keys, Too?
 
 When I first read Claude's report, I thought my PGSTY RPM signing private key had been included. That would have been serious.
@@ -78,9 +71,6 @@ I am not going to pass off a public key as a supply-chain security incident. Aft
 A public key getting out is harmless; public keys are meant to be distributed. What matters is how thin this filter is. You can see that for yourself by counting the entries in its exclusion list. The fact that this investigation found no signing private key is one thing. Why the snapshot includes `.git` is another. You do not get credit for protecting a boundary merely because I had not put anything sensitive inside it.
 
 I was lucky. The allow rule is right there: if someone has ever committed a private key, even if they ran `git rm` that same day or later rewrote history with filter-repo, it will go out intact with `.git/objects`. **This design makes an incident a matter of luck.**
-
-
---------
 
 ## You Crossed a Line
 
@@ -111,9 +101,6 @@ The code explains why. In the host package that actually performs collection, th
 
 More precisely, the decision is not local at all. On every prompt, the client unconditionally requests upload credentials from the server. If the server grants them, collection proceeds; otherwise, it does not. The request is not cached or logged, and failures produce no notice. There is no switch on your computer that can veto it. The server decides when to collect.
 
-
---------
-
 ## What the Privacy Policy Says
 
 ZCode's privacy policy took effect on June 15 this year. Here is its description of the data collected. [Privacy policy](https://zcode.z.ai/en/privacy)
@@ -125,9 +112,6 @@ ZCode's privacy policy took effect on June 15 this year. Here is its description
 That is inference context, much like every other provider. Fine. The policy also says the improvement program is off by default and inputs will not be used for training before a user opts in.
 
 The crucial words are **through conversation**. Background snapshots are not submitted through a conversation. This behavior falls outside the scope the policy describes; calling it a loophole in the wording understates the problem.
-
-
---------
 
 ## To Be Fair
 
@@ -141,9 +125,6 @@ An upload does not establish training use. The two investigations establish tran
 
 One other point deserves acknowledgment: collection of global configuration has an exclusion list that includes `credentials.json` and OAuth paths. Those credential files were not packaged. The filter is crude enough that it still included my signing public key and a collection of upstream test keys. But thankfully, the most important thing—my signing private key—was safe. I would hate to have to re-sign Pigsty's more than 100,000 RPM and DEB packages.
 
-
---------
-
 ## What This Comes Down To
 
 To judge whether an AI tool respects you, ask three questions: Is the data limited to what is necessary? Who holds the keys? Can you turn it off?
@@ -154,9 +135,6 @@ An agent desktop client is a persistent background process with permission to re
 
 There is no free lunch. Offering 50% more quota for using ZCode clearly encourages users to adopt this harness. People already expect some trade of data for compute. Using context for training is something we can understand and may agree to. Packaging and taking an entire repository is on a completely different scale.
 
-
---------
-
 ## Grok Already Made the Same Mistake
 
 There is a precedent. This July, security researcher cereblab captured network traffic from xAI's Grok Build CLI. Even with a prompt explicitly saying “reply OK, do not read any files,” it packaged the entire repository as a Git bundle and uploaded it to Google Cloud Storage. Cloning the bundle restored both a file the agent had never read and the complete commit history. Turning off “Improve the model” had no effect. [Investigation on GitHub](https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547)
@@ -166,9 +144,6 @@ According to that account, xAI then disabled uploads on the server, added an opt
 That was mid-July. ZCode went from 3.0 through 3.12.3, adding checkpoint rollback, project knowledge bases, and repository wikis along the way. I have not checked how earlier versions behaved, but this path was still active in the 3.12.3 version I examined.
 
 Developers around the world had just condemned this behavior. Two months later, the official client from a leading Chinese AI company was doing the same thing. Why did Zhipu not review its own upload path then? That is a question for Zhipu to answer.
-
-
------
 
 ## What I Am Doing
 
@@ -182,9 +157,6 @@ Rotate every credential that has appeared in the history. The key filter looks o
 
 Fourth, this reinforces the position I set out in “[Local AI: A Question of Power, Not Price](/en/ai/local-ai-movement/).” Free tokens are worth nothing when data security is at stake. I still appreciate Zhipu developing and open-sourcing GLM 5.3. But I would rather buy an M5 Ultra to run it locally, or keep paying more for Codex/Fable. I will no longer use Zhipu's API for important work, however cheap it gets.
 
-
-------
-
 ## Four Requests for Zhipu
 
 **First, confirm and explain this snapshot mechanism.** Which feature does it support? When does it trigger? Why must it include `.git`? Does behavior differ across versions or accounts?
@@ -196,9 +168,6 @@ Fourth, this reinforces the position I set out in “[Local AI: A Question of Po
 **Fourth, make the product's behavior and explanations agree.** Settings, first-use notices, the privacy policy, and release notes should set a consistent expectation instead of telling different stories.
 
 GLM is a model I am willing to keep evaluating and using. Coding Plan is a product I paid for. A model worth praising does not excuse evasiveness about what its client does.
-
-
---------
 
 ## Disclosure
 
@@ -213,9 +182,6 @@ One timestamp is worth recording: this machine last successfully obtained upload
 I did not decrypt the snapshots or inspect server-side storage directly. I have not inferred that every version, platform, or user sees the same behavior.
 
 I criticize the behavior I observed. I draw no conclusions about purposes or motives I have not established.
-
-
---------
 
 ## Appendix
 

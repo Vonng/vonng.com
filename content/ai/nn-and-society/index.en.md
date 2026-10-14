@@ -8,7 +8,6 @@ ai: true
 aliases: ["/misc/nn-and-society/"]
 tags: [AI]
 ---
-
 > Neural networks emerged inspired by the human brain, so the operational mechanisms of human society also have various similarities and connections with neural network training.
 
 This year, I dabbled in many other disciplines. Most were superficial explorations, but I still gained tremendously. Each time I dig into a new field, I habitually find connections between the new discipline and old ones. Particularly, I prefer to view this knowledge from the perspective of my major. For example, the connections between human society's operational mechanisms and training neural networks.

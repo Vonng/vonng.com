@@ -7,7 +7,6 @@ ai: true
 aliases: ["/misc/inferential-stats/"]
 tags: [AI]
 ---
-
 > The core of inferential statistics lies in hypothesis testing. The basic logic is based on an important argument from philosophy of science: **universal propositions can only be falsified, not proven**. The reasoning is simple: individual cases cannot prove a universal proposition, but they can refute it.
 
 <!--more-->
@@ -26,33 +25,33 @@ Due to sampling, samples cannot absolutely falsify the null hypothesis. In indiv
 
 ## Terminology and Concepts in Hypothesis Testing
 
-##### Concept: Alternative Hypothesis $H_1$ (alternative hypothesis)
+### Concept: Alternative Hypothesis $H_1$ (alternative hypothesis)
 
 The alternative hypothesis $H_1$ states that **differences in results under different conditions are caused by the independent variable**, usually the hypothesis we want to prove. It can be directional or nondirectional.
 
-##### Concept: Null Hypothesis $H_0$ (null hypothesis)
+### Concept: Null Hypothesis $H_0$ (null hypothesis)
 
 The null hypothesis $H_0$ states that **differences in results under different conditions are caused by random error**. The null hypothesis is the opposite of the alternative hypothesis; they are mutually exclusive and exhaustively cover all possibilities—one must be chosen. For nondirectional alternative hypotheses, the null hypothesis is: the independent variable has no effect on the dependent variable; for directional alternative hypotheses, the null hypothesis is: the independent variable has no effect on the dependent variable in the specified direction.
 
 Because the null hypothesis assumes the obtained results are due to random factors, probability theory can be used to calculate the probability distribution of random sampling results.
 
-##### Concept: Sampling Distribution
+### Concept: Sampling Distribution
 
 A statistic is a function of the sample, and the sampling distribution of a statistic represents all possible values of that statistic and their corresponding probabilities (PMF, PDF) during sampling.
 
-##### Concept: Critical Region for Rejection of $H_0$
+### Concept: Critical Region for Rejection of $H_0$
 
 The critical region for rejecting the null hypothesis refers to the area under the curve containing all values of the statistic that would lead to rejection of the null hypothesis. The critical value of the statistic is the value that delineates the critical region, determined by the α level.
 
-##### Concept: Type I Error
+### Concept: Type I Error
 
 Rejecting the null hypothesis when it is true. False Positive, called Type I error.
 
-##### Concept: Type II Error
+### Concept: Type II Error
 
 Accepting the null hypothesis when it is false. False Negative, called Type II error.
 
-##### Definition: The Power of an Experiment
+### Definition: The Power of an Experiment
 
 Experimental power is defined as: the probability that experimental results allow rejection of the null hypothesis when the independent variable has a real effect.
 
@@ -94,7 +93,7 @@ $$
 
 * p > 0.05 does not mean there is no effect; it's possible the effect is small and more samples are needed to detect it. p < 0.05 only indicates the independent variable is **significant**, meaning **this factor is not caused by random factors** and has a real effect. But significant doesn't equal important: an extremely small difference detected as significant through massive samples may be practically meaningless. Knowing how large an effect is more meaningful than knowing the effect exists, which introduces the concept of effect size.
 
-![](statistic-power.png)
+![Inferential Statistics: The Past and Present of p-values — Results of Hypothesis Testing (figure 1)](statistic-power.png)
 
 * [As shown in the figure](http://rpsychologist.com/d3/NHST/), assuming the test statistic follows a normal distribution, the left side shows the distribution of statistics sampled from the **null hypothesis population**, and the right side shows the probability distribution of statistical results sampled from the population when the independent variable has a real effect.
 
@@ -112,11 +111,11 @@ $$
 
 ## Effect Size in Hypothesis Testing
 
-##### Definition: Effect Size (ES)
+### Definition: Effect Size (ES)
 
 The degree to which a phenomenon exists in the population. The definition is relatively loose and can be various indicators of interest:
 
-![](effect-size.png)
+![Inferential Statistics: The Past and Present of p-values — Definition: Effect Size (ES) (figure 2)](effect-size.png)
 
 Generally, effect sizes have three characteristics:
 
@@ -124,7 +123,7 @@ Generally, effect sizes have three characteristics:
 * **Absolute value size consistent with effect strength**: Values should be continuous variables starting from 0; when the null hypothesis is true, the ideal ES estimate is 0.
 * **Non-sample size dependence**: ES indicators should be minimally affected by sample size.
 
-#### Role of Effect Size
+### Role of Effect Size
 
 **Effect size ES, statistical power = (1-β), α level, and sample size N are interrelated variables; knowing three allows derivation of the fourth.** Since α level is typically set at 0.05 in psychology research, and statistical power should theoretically be as high as possible, most experiments have power values between 40%-60%, with 80% being ideal. In this context, both α and statistical power (1-β) can be set, so if effect size is known, the required sample size N can be estimated.
 

@@ -7,7 +7,6 @@ summary: >
 tags: [AI, Agent, Codex, Claude]
 ai: true
 ---
-
 Folks, I haven't had time to write these past couple of days: I've been too busy pedaling the AI bike. Claude Fable and GPT-5.6 arrived one after the other, and both companies generously threw in several rounds of quota resets. Suddenly I was swimming in quota. I've been racing to spend it—who knows, they might reset again tomorrow morning, and anything left would be wasted.
 
 Yesterday hurt the most. After Fable's first reset, I decided to ration it this time so I wouldn't burn through everything in two days and spend the rest of the week staring at an empty tank. I used only 20 percent. The next day, Anthropic announced another reset. I was gutted. That was real money down the drain.

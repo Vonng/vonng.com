@@ -7,7 +7,6 @@ summary: >
 tags: [AI, Cost, Performance, Repository]
 ai: true
 ---
-
 ## Introduction: Reframe the Question
 
 "Will AI cause unemployment?" is a question guaranteed to produce garbage answers, because it comes with only two canned scripts. Optimists recite history: from the power loom to the ATM, every technological panic ultimately created more jobs than it destroyed, and the Luddites have always been wrong. Pessimists declare an exception: this time is different because AI is replacing intelligence itself. Neither side is offering analysis. Both are making professions of faith—the former treats two centuries of induction as a law of nature; the latter treats a slogan as an argument.

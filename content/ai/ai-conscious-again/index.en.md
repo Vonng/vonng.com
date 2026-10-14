@@ -8,7 +8,6 @@ tags: [AI, Philosophy]
 ai: true
 aliases: ["/misc/ai-conscious-again/"]
 ---
-
 > Adapted from a real conversation between Vonng and Claude.
 
 ## Prologue: a fruit fly starts a philosophy problem

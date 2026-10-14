@@ -7,7 +7,6 @@ summary: >
 tags: [AI, Society]
 ai_generated: 99
 ---
-
 > A price list for 2036
 
 AI-generated content: 99%.
@@ -27,8 +26,6 @@ There is a lesson here that I find more valuable than any specific technological
 Form comes from imagination, and imagination is constrained by what you have already seen. A century ago, people imagining the future of transportation could picture "flying," but not "horseless." They drew carriages with wings. Prices are different. They emerge from physics and economics and follow rules that are duller, harder, and more dependable: capacity ramps up, learning curves drive costs down, efficiency improves, and bottlenecks move.
 
 So this essay will not describe any dazzling scene from 2036. I do not know what interfaces will look like, whether humanoid robots will be able to turn a screw, or who will win. I want to do just one thing: draw up a price list for 2036. Which price tags will disappear, and which will soar?
-
----
 
 ## 2. The Collapse Zone: Thought Becomes a Consumable
 
@@ -58,8 +55,6 @@ That does not mean these professions will disappear. It means the basis for what
 
 For the first time in human history, thought is not scarce. It is a consumable input.
 
----
-
 ## 3. Jevons's Curse: The Cheaper It Gets, the Bigger the Bill
 
 But do not confuse a collapsing unit price with spending less money.
@@ -81,8 +76,6 @@ In the past, writing a separate application for every user was absurd because la
 In the past, it was absurd to cross-check all of a company's meeting notes, contracts, emails, and code commits from the previous twenty years and find every contradiction. You could never hire enough people. Ten years from now, it will be a weekly routine, as ordinary as a routine physical is today.
 
 I once wrote in another essay: any system sustained only because nobody will check it exhaustively will collapse. This section is the economic basis for that claim. Efficiency never saves resources. It simply pushes the frontier of desire one step farther out.
-
----
 
 ## 4. The Bill Is Paid in Electricity
 
@@ -118,8 +111,6 @@ Ten years from now, compute will follow electricity-price contours the way alumi
 
 As an aside, a coupled electricity-compute futures market will probably emerge within a decade, along with carbon labels for compute and specialist schedulers that arbitrage green electricity by moving workloads. All of these can be read directly from today's curves.
 
----
-
 ## 5. The First Thing to Get More Expensive: Trust
 
 That covers what collapses. Now for the longer list of things that will rise in price.
@@ -139,8 +130,6 @@ The purpose of a database has never been merely to "store data." A file can do t
 Of the four letters in ACID, the most valuable in the future will be neither atomicity nor isolation, but D: [durability](https://www.postgresql.org/docs/current/tutorial-transactions.html), the guarantee that a committed result will not simply vanish because the system failed. Durability alone does not provide non-repudiation. Only when a durable record is combined with digital signatures, audit trails, and access controls can it serve as a ledger whose entries cannot be repudiated.
 
 Take the idea into daily life. Ten years from now, "human-made" will be a label much like "organic," "handmade," or a protected designation of origin today. It will come with certification regimes, price premiums, and an entire suite of detection techniques. It will, of course, also produce rampant counterfeiting and endless litigation.
-
----
 
 ## 6. The Second Thing to Get More Expensive: Accountability
 
@@ -170,8 +159,6 @@ In plain English: the designated fall guy.
 
 This is not alarmism. It is the natural outcome of extrapolating today's incentive structure over another decade. The reviewer's only protection is the ability to understand the output—and therefore to refuse to sign. A reviewer who cannot say "I won't sign this" is legally disposable.
 
----
-
 ## 7. The Third Category to Get More Expensive: Attention, Bodies, and Atoms
 
 The third category contains the more prosaic increases.
@@ -189,8 +176,6 @@ Make a list of the most durable jobs ten years from now and it will look remarka
 AI hollows out the middle with uncanny precision: the layer that turns text into text and spreadsheets into spreadsheets. Both ends remain.
 
 Here is a thought that may sting: we spent thirty years training people to behave like machines—KPIs, processes, standardized slide decks, interchangeable cogs. Only when the machines finally arrived did we panic and remember to ask what people were for in the first place.
-
----
 
 ## 8. Organizational Collapse: A Barbell-Shaped World
 
@@ -228,8 +213,6 @@ My guess is that those who entered these fields in the mid-2020s may be the last
 
 The most frightening thing about this crisis is that it is predictable and has already begun, yet its consequences will take fifteen years to surface. By then it will be too late.
 
----
-
 ## 9. Thamus's Complaint
 
 Now, the human part.
@@ -266,8 +249,6 @@ The second is the ability to validate. The question is not whether you can produ
 
 Ten years from now, these may be the only intellectual skills still worth paying for.
 
----
-
 ## 10. One Morning in August 2036
 
 Having come this far, I want to break my opening rule and describe one scene.
@@ -293,8 +274,6 @@ Just as you once asked your grandfather: Grandpa, is it true that when you were 
 How did your grandfather answer? He probably said "yes" and left it at that. To him, the fact was hardly worth mentioning. It was not the defining feature of an era. It was simply an ordinary afternoon when he was young.
 
 To those who live through them, every great turning point looks like a succession of ordinary afternoons.
-
----
 
 ## 11. The Only Event That Truly Matters
 

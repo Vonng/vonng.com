@@ -6,7 +6,6 @@ summary: >
   君子动口不动手，Vibe Coding 神器出现了，动嘴语音输入的效果竟然能如此丝滑流畅。还能白用一个月，不要错过。
 tags: [AI, 工具]
 ---
-
 还记得这张梗图吗？2026 年 Vibe Coder 最需要的设备 —— 某种意义上来说，现在已经实现了！
 
 ![r/ClaudeAI - PROGRESS: 60% REFF ACTOR 85% TASK: CODE SUBSCRIPTION: OPUS 4.5 MODEL: CLAUDE YOLO MODE APPROVE ACTION ACCEPT CHANGES PROMPT NEXT SUGGEST RETRY SWITCHER MODEL OPEN CHAT ENTER MODEL HIGH/LOW DISCARD](01.webp)
@@ -18,8 +17,6 @@ tags: [AI, 工具]
  口述速度每分钟 196 个字，这比我打字肯定是快多了。而且这是润色过后的高质量输出字数，已经去掉了那些没用的废话和口水词儿。
 
 重要的事情放在最前头 —— **这玩意现在免费试用一个月**。用老冯的推荐码，你和俺都能获赠 5 美元免费额度。欢迎尝鲜：<https://www.typeless.com/refer?code=XVCCJNA>
-
----
 
 ## 语义输入法，而非语音输入法
 
@@ -64,7 +61,8 @@ Typeless 上手几乎没有学习成本：设个快捷键就行。我用的是�
 
 你当然可以直接用电脑自带麦克风，或者插个 USB 麦克风。但我用下来最顺手的两套是：
 
-1.**AirPods Pro**2.**DJI Mic Mini**
+1. **AirPods Pro**
+2. **DJI Mic Mini**
 
 我两样都有，对比下来我更偏向 **DJI Mic Mini**。
 

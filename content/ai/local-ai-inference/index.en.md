@@ -7,7 +7,6 @@ description: >
 tags: [AI, Hardware, Local First, Open Source]
 ai: true
 ---
-
 > When subsidies fade, hardware catches up, and open models mature, all three lines cross in 2027. "Build your own AI" goes from idea to reality.
 
 ## A Thought Triggered by a Group Chat
@@ -28,8 +27,6 @@ This is part of the broader data-sovereignty story. But I do not want to do the 
 
 My answer is: **2027.**
 
---------
-
 ## The Sweet Trap of the Subsidy Era
 
 Start with the present.
@@ -45,8 +42,6 @@ For me personally, my monthly AI usage already comes out to around $20,000 in AP
 
 So the optimal strategy right now is obvious: **milk the subsidy while it lasts.**
 But you should also plan ahead. When the subsidy tide goes out, what is your fallback?
-
---------
 
 ## The Three Layers of Local AI
 
@@ -88,8 +83,6 @@ First, memory capacity. A 400B dense model needs about 800 GB in FP16, or still 
 
 Right now, only one product shape can realistically deliver that: **DGX Station.**
 
---------
-
 ## 2027: Where Three Curves Meet
 
 Why do I call 2027 the critical moment? Because three trend lines that were moving independently happen to cross at that point.
@@ -120,8 +113,6 @@ The pace of open-model progress over the last two years has been startling. In m
 
 What would that mean? It would mean one Rubin DGX Station running a 2027 frontier open model could cover 80%-90% of your daily AI workload: coding assistant, document analysis, RAG, data processing, translation, summarization. Only the most cutting-edge reasoning and agentic tasks would still need proprietary APIs.
 
---------
-
 ## The Economics at the Turning Point
 
 Let's run a concrete model.
@@ -142,8 +133,6 @@ Let's run a concrete model.
 **Conclusion: the self-hosted option pays back in 9-12 months and saves roughly $150,000-$450,000 over three years.**
 
 That still excludes one hidden benefit: **freedom from vendor dependency**. APIs can raise prices, throttle you, or rewrite the ToS whenever they want. Your own machine sits there 24/7 under your control.
-
---------
 
 ## The Action Plan
 
@@ -168,8 +157,6 @@ If you buy the argument above, the roadmap is straightforward:
 - Deploy local inference services to cover 80%-90% of routine demand
 - Keep lightweight API subscriptions for frontier tasks
 - Enjoy the freedom of AI autonomy: effectively unlimited use, less censorship, lower latency, and no billing anxiety
-
---------
 
 ## This Is Not Just a Cost Story
 

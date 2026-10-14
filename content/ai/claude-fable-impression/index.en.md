@@ -7,7 +7,6 @@ summary: >
 tags: [AI, Claude, Agent]
 ai: true
 ---
-
 This morning, Anthropic officially released its new **Claude Fable** model—the consumer-grade, nerfed version of the much-rumored Mythos. Since it was billed as an "[AGI-level model](/en/ai/agi-is-coming/)," I naturally tried it right away to see what it could actually do.
 
 The short version: it really is strong, and it is the new SOTA. But it is expensive, and the way Anthropic is serving it up leaves a bad taste.
@@ -21,8 +20,6 @@ Two months ago, when the first word of the Mythos Preview emerged, I wrote ["AGI
 Before this release, I had already downgraded Claude to the $100 plan, where it mostly sat idle. Codex was my daily driver; Claude handled odd jobs and code review. After using Fable, my verdict is that Claude is back in the game. I immediately upgraded to the $200 Max plan. Across several real-world tasks, one quality stood out: **Fable is genuinely insightful and deserves to be called the new SOTA.**
 
 Just as I wrote in ["Cancel Claude, Switch to Codex"](/en/ai/move-to-codex/), the crown keeps changing hands in AI. A new model takes the SOTA title every few months.
-
----
 
 ## Hands-On: Can It See What Codex Misses?
 
@@ -41,8 +38,6 @@ My usual vibe-coding workflow pits two models against each other: **Codex 5.5 is
 **Case three: improving Pigsty's PITR script.** I had previously written an emergency point-in-time recovery script for the database. I asked Claude Fable to review it again, and it filled in nearly every detail the earlier work had missed. Even after the script seemed comprehensive and Codex could improve it no further, Fable still found new opportunities.
 
 ![Review of Pigsty's PITR script](pitr-review.webp)
-
----
 
 ## The Catch: Great Model, Miserable Product
 
@@ -64,8 +59,6 @@ For example, whenever I discussed one of my earlier agent/AI topics with Claude,
 
 **Gripe three: mandatory data retention.** If you use Fable, all traffic is retained for 30 days and is subject to review, whether or not you are an enterprise customer. That is a significant departure from the previous policy. It is the same old bargain: **data in exchange for compute.** For enterprise users who care about privacy and compliance, this change is impossible to ignore.
 
----
-
 ## So, Let's Do the Math
 
 What does the API cost? In ["AI Survival Guide: Where the Biggest Arbitrage Really Is"](/en/ai/ai-bonus/), I ran the numbers: if you fully exhaust a $200 subscription, you can consume roughly $10,000 worth of tokens at API list prices. Metered access is therefore about 50 times the effective price of a fully utilized subscription. Put differently, you pay dozens of times more for the same usage through the API.
@@ -82,8 +75,6 @@ My plan for the next few days is to revisit every question and feature on which 
 
 That is also what I suggest you do right now: make the most of this 12-day window, because unused access simply expires. One way or another, you should personally probe the limits of the current SOTA—or "AGI"—model. Reading a hundred reviews cannot replace that firsthand feel.
 
----
-
 ## A Few Other Interesting Cases and Updates
 
 ![Collection of Claude Fable examples](fable-cases.webp)
@@ -93,8 +84,6 @@ That is also what I suggest you do right now: make the most of this 12-day windo
 ![Fable's New York skyline and storm-battered city examples](city-simulation.webp)
 
 ![Mythos hands-on report](mythos-review.webp)
-
----
 
 ## Closing Thoughts
 

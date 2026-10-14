@@ -6,7 +6,6 @@ summary: >
   As Astra began rolling out, Tibo announced one banked reset per day for paid users still waiting for access. I'm stocking up for when Astra arrives.
 tags: [AI, Codex]
 ---
-
 > This post describes the promotion as it stood on September 4, 2026, Beijing time. “Today” refers to that date throughout. Astra's rollout later finished ahead of schedule; see the update below.
 
 Let's get to it. Astra is out, but the initial plan was to roll it out to everyone over several days. In the meantime, **for every day your paid ChatGPT account goes without Astra access, Tibo will give you one banked reset**—a reset you can save and use later.
@@ -26,8 +25,6 @@ So far, the resets appear to be limited to paying users, which means you'll also
 In effect, you're spending $8 or $20 on an “option”: bank the resets on a cheaper subscription, then, once Astra is available, upgrade to Pro at a $200 “strike price” and use them. The $8 Go version of this idea depends on whether Go actually qualifies for resets. Based on my own usage, I estimate each reset is worth roughly $50–$80 to me—and you might get more than one.
 
 I already have five accounts. Today's goal is to add five more $20-a-month Plus accounts. Once Astra arrives, I'll put those banked resets to work.
-
----
 
 ## Update: An Early Rollout, with Resets Still Included
 

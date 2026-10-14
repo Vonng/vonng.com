@@ -8,7 +8,6 @@ ai: true
 aliases: ["/misc/linear-algebra/"]
 tags: [AI]
 ---
-
 > Connecting all concepts in linear algebra through one main thread
 
 <!--more-->
@@ -41,7 +40,7 @@ There are three perspectives on vectors:
 * In linear transformations, there is an indicator that can measure the degree of area (volume) change before and after transformation. That is the determinant.
 * For linear transformations in $\mathbb{R}^2$, the absolute value of the determinant represents the multiple of area change, while the sign of the determinant represents whether the clockwise/counterclockwise relationship of the two vectors after transformation has changed (i.e., whether the transformation causes area inversion)
 
-![](r2-det.png)
+![Fundamental Concepts of Linear Algebra — Determinant (figure 1)](r2-det.png)
 
 For linear transformations in $\mathbb{R}^3$, the absolute value of the determinant represents the multiple of volume change, and the sign represents whether the handedness of $\hat{i},\hat{j},\hat{k}$ has been reversed.
 
@@ -114,7 +113,7 @@ $$
 
 The first "vector" laid horizontally can be viewed as a $1\times2$ matrix, a linear mapping from $\mathbb{R}^2$ to $\mathbb{R}$. And $[u_x]$ and $[u_y]$ are the basis vectors of this new space. Since these two vectors are collinear, they are actually two scalars.
 
-![](vector-projection.png)
+![Fundamental Concepts of Linear Algebra — Dot Product and Duality (figure 2)](vector-projection.png)
 
 The unit vector $\hat{u} = \frac{\vec{u}}{|u|}$ on the new basis number line has coordinates $(u_x, u_y)$, which are exactly the projections of unit vectors $\hat{i}, \hat{j}$ onto $\hat{u}$.
 
@@ -142,13 +141,13 @@ This property exists because linear transformations mapping multi-dimensional sp
 
 The cross product in $\mathbb{R}^2$ yields a scalar, whose sign indicates direction, and the calculation method is equivalent to the determinant of a two-dimensional matrix. But this is an illusion. The true cross product is defined in three-dimensional space $\mathbb{R}^3$.
 
-##### Properties
+### Properties
 
 Unlike the dot product, the result of the cross product is a **vector**. $\vec{v} \times \vec{w} = \vec{p}$
 
 The length of this vector equals the area of the parallelogram spanned by the two vectors, and the direction follows the right-hand rule.
 
-##### Calculation
+### Calculation
 
 Usually, the cross product of vectors is calculated by computing the determinant of a three-dimensional matrix. But using the determinant method for cross product calculation is merely a symbolic trick. We need to know why determinants can be used to calculate cross products and why we define and do it this way.
 
@@ -173,7 +172,7 @@ $$
 $$
 </div>
 
-##### Why does the cross product have such properties (geometric meaning)?
+### Why does the cross product have such properties (geometric meaning)?
 
 To explore this question, we proceed in three steps:
 
@@ -269,7 +268,7 @@ Since this is a homogeneous system of equations with linearly dependent coeffici
 * For other linear transformations, like shearing, there might be only one eigenvalue and one eigenvector.
 * There also exist cases with only one eigenvalue but infinitely many eigenvectors, such as $x \mapsto \lambda E x$
 
-##### Eigenbasis
+### Eigenbasis
 
 Linear transformations can be described using different coordinate systems. What happens if the coordinate system uses basis vectors that are exactly eigenvectors?
 

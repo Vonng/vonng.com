@@ -7,14 +7,11 @@ tags: [AI, Agent, Codex, Claude]
 ai: true
 aliases: ["/db/try-codex/"]
 ---
-
 I did not publish much last week because I was busy stress-testing OpenAI Codex 3 xHigh.
 With temporary double quota, I burned almost the full $200 budget running parallel sessions across more than ten Pigsty subprojects: core repo, CN/EN docs, blog, package manager, extension catalog, infra packages, RPM/DEB specs, and `pg_exporter` collectors.
 
 Codex is now my primary tool. Claude Code is backup. GLM is fallback after hard quota caps.
 I had some time today, so here is a direct field report.
-
-------
 
 ## Codex 5.3: Does It Actually Deliver?
 
@@ -45,8 +42,6 @@ That is a practical capability gap.
 Claude still has strengths: faster code generation and straightforward communication.
 But on code quality, especially code review, Codex 5.3 xHigh currently has the edge.
 
-------
-
 ## What I Use Codex and Claude For
 
 Some people flex daily token burn numbers.
@@ -71,8 +66,6 @@ CreateStory -> DevStory -> CodeReview -> FixThis.
 ![Story dev/review loop](story-dev-review-fix-loop.webp)
 
 I did not write a single line of implementation code in that cycle.
-
-------
 
 ## If Coding Is Cheap, What Is Expensive?
 
@@ -142,8 +135,6 @@ I still run final smoke tests myself for Pigsty.
 But most defects are already burned down in earlier loops.
 
 Also, the basics still matter: pay down technical debt, refactor regularly, reduce complexity aggressively, remove dead code, and keep cascading docs/comments tight enough to prevent context drift.
-
-------
 
 ## Where This Goes
 

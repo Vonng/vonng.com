@@ -6,8 +6,6 @@ summary: >
   A cold shower for the red-hot agent memory market—not because agents do not need memory, but because memory is the endgame moat. That moat belongs to models, harnesses, and databases, not today's "memory frameworks."
 tags: [AI, Agent, PostgreSQL, Database]
 ---
-
-
 A few months ago, I wrote [The OS Moment for AI Agents](/en/ai/agent-os/). I made a prediction there: the next frenzy in agent infrastructure would be memory. Startups and open-source projects would swarm around the question of how agents should remember things. Capital would pour in. The architecture diagrams would grow ever more elaborate.
 
 Sure enough, Mem0 raised another round. MemGPT renamed itself Letta and kept raising. Then there are Zep, Cognee, Hindsight, MemoryScope, Memobase, SuperMemory, Graphiti, LangMem, EverMemOS—the list goes on. Their technical blogs all feature roughly the same architecture diagram: an episodic layer at the bottom, a semantic layer in the middle, and a reflection or procedural layer on top, with arrows labeled consolidation, retrieval, and forgetting running between them. GitHub stars are climbing, arXiv papers are racing up the charts, and every technical conference seems to have an Agent Memory track. The hype is real.
@@ -19,8 +17,6 @@ That is intuition, not yet an argument. So let me be clear: I am not saying agen
 Those statements sound almost identical. The small distinction between them is a matter of life or death for an entire category.
 
 Here is why.
-
--------
 
 ## 1. The Endgame Is a Three-Way Split
 
@@ -49,8 +45,6 @@ That is the three-way endgame: **model, harness, and database—each independent
 
 Now we can return to the key question: where do today's memory frameworks fit?
 
--------
-
 ## 2. What Is a Memory Framework?
 
 We first need to separate these projects more carefully, so we do not condemn a whole field with one broad stroke.
@@ -64,8 +58,6 @@ The projects currently tossed into the "memory framework" bucket are not all the
 **The third category is agent runtimes or agent operating systems.** Letta/MemGPT is the clearest example. What it does is not really the job of a memory framework at all: it treats the context window as RAM, external storage as disk, and lets the model swap data between the two through tool calls. That is virtual-memory management in the operating-system sense. The technical bar is real, but the accurate name is **Agent Runtime**—an execution-engine layer beneath the harness. It belongs in the Runtime/Harness market, not the Memory market.
 
 In short: the first category will be replaced by a Skill plus a model that writes its own SQL; the second will split between models and databases; the third belongs to Runtime/Harness, not memory.
-
--------
 
 ## 3. There Is No Moat
 
@@ -89,8 +81,6 @@ Claude's Skills mechanism has already taken us halfway down this road. A user ca
 
 **What you thought was a moat is really a short Markdown file a few hundred tokens long.** In production, that file will of course connect to controlled tools and hardened database pipelines. But the harness owns the former and the database owns the latter. There is still no place for an independent memory framework.
 
--------
-
 ## 4. The Bitter Lesson
 
 The previous section argued from industry structure that memory frameworks have nowhere to stand. A deeper methodological argument cuts the same way: **The Bitter Lesson**.
@@ -102,8 +92,6 @@ That argument needs careful handling. It **does not cut down** every system abst
 The problem with memory frameworks is that they stand on that side of the line. They hard-code judgments about what is worth remembering, which layer it belongs in, when reflection should trigger, and how vector and full-text retrieval should be combined. Every one of these is an opinion about cognition made on the agent's behalf, not a general-purpose building block. The real building blocks—vector storage, full-text search, transactions, and indexes—already come from the database. Agents need these opinions today only because models are not yet strong enough. Once models can make the judgments themselves—and that is already happening—these handcrafted cognitive strategies will turn into scrap metal overnight, just as SIFT did when AlexNet arrived.
 
 Memory frameworks have no place in the industry structure, and the methodological case cuts against them too. The two lines meet here.
-
--------
 
 ## 5. Where the Real Moats Are
 
@@ -126,8 +114,6 @@ What is not on that front line? **The physical world's persistence layer.** A da
 The more powerful an agent becomes, the more it needs a reliable anchor in the physical world. The agent revolution will not diminish the value of databases. **It will magnify it.**
 
 So in the three-way endgame, the model vendors will fight until they bleed, and the harness builders are still feeling their way forward. **Only the database foundation was laid thirty years ago and will still be there thirty years from now.**
-
--------
 
 ## 6. All Roads Lead to PostgreSQL
 

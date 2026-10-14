@@ -7,9 +7,6 @@ summary: >
 tags: [AI, Agent, PostgreSQL, 数据库]
 ai: true
 ---
-
-
-
 ## 引子：几个数据库人，不约而同做了文件系统
 
 最近半年，Agent 基础设施圈发生了一件耐人寻味的事：几位资深数据库人，先后做起了“给 AI Agent 用的文件系统”。

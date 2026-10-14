@@ -7,9 +7,6 @@ summary: >
 tags: [AI, Agent, PostgreSQL, Database]
 ai: true
 ---
-
-
-
 ## Prologue: Several Database People Independently Built File Systems
 
 Something curious has happened in agent infrastructure over the past six months: several veteran database people have started building "file systems for AI agents."

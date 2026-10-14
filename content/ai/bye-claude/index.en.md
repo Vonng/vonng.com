@@ -6,7 +6,6 @@ summary: >
   Two Claude accounts were banned over China’s National Day holiday. The hardest thing to replace is two years of accumulated memory, not the model’s abilities. The post-ban export contained only an ID. Here is my account of the possible causes, the alternatives, and my next AI subscription plans.
 tags: [AI, Claude, Incident, Commentary]
 ---
-
 China’s National Day holiday was no fun for me this year: my Claude accounts got banned. Both of them.
 
 I’d used the main account for almost two years. Gone, just like that. It hit hard—like an old friend had suddenly died.
@@ -14,8 +13,6 @@ I’d used the main account for almost two years. Gone, just like that. It hit h
 I’d had that “old friend” feeling back with Claude Opus 4.5 and 4.6, too. Later, 4.7/4.8/5.0 felt much more like something pretending to be human. With Opus 5.5, the old feeling finally returned. I’d barely had a few days to enjoy it before the ban came down.
 
 Opening another account is easy. I have a few spare Claude accounts that I’m gradually building up. But recreating the almost telepathic rapport I had with my old main account is another matter.
-
----
 
 ## 1. Why a Two-Year-Old Account Is So Hard to Replace
 
@@ -29,8 +26,6 @@ So the biggest loss from this ban was actually two months of raw chat history. O
 
 ![The data archive downloaded after the ban was only a few hundred bytes](export.webp)
 
----
-
 ## 2. A Hard Lesson: The Post-Ban “Data Download” Is a Sham
 
 I fell into a nasty trap here. It deserves its own section.
@@ -40,8 +35,6 @@ People used to assume that even if an account was banned, they could still downl
 But feeding those memories back into a new account and getting it to absorb them fully isn’t easy, either. So I’ll say it again: do a full data export every week and back up all your AI conversations. Don’t count on appeals or emails getting your data back after a ban. They won’t. Really, don’t count on it. I’ve already tried.
 
 ![Anthropic’s appeal response refusing to reinstate the account](appeal.webp)
-
----
 
 ## 3. What Actually Caused the Bans?
 
@@ -67,8 +60,6 @@ Anthropic doesn’t refund subscriptions. If you get banned right after subscrib
 
 Taking it all together, I think **the payment change** and **a possible trap** are the strongest suspects.
 
----
-
 ## 4. Picking Up the Pieces and Making Do
 
 I still need a Claude account. I’m now building up two spare accounts: start on the free tier, move to $20, then to $100, one step at a time. This time I’ll stick with App Store subscriptions; at least there’s a refund option. For now, I’ll make do with a $20 account while I build it up.
@@ -81,8 +72,6 @@ I hadn’t expected AI Ultra to include a Claude Opus allowance. It used to be 4
 
 Besides, I don’t need Claude to carry the big jobs right now. I have 8 ChatGPT Pro accounts, with renewals clustered on the 4th and 5th. Over these two days, I have to log in and renew 6 subscriptions each day, which gets tiring. Still, I’m not short of AI to do the work. When the subscriptions expire at the end of the month, I’m thinking of cutting back on Codex and putting some of that budget elsewhere.
 
----
-
 ## 5. The Subsidy Party May Be Over for a While
 
 On cutting back, I’ve mentioned this before: OpenAI announced a pile of new things at DevDay and simultaneously halved the $200 subscription’s allowance from 20x to 10x. I thought existing subscribers would keep their old terms, or at least get a transition period. It turned out to be just one month: **on October 29, the allowance on the existing $200 subscriptions drops from 20x to 10x.** That’s a pain in the ass.
@@ -92,8 +81,6 @@ But as ever, **use it while it lasts**. The $200 subscription still has 20x for 
 After October, I’ll probably consolidate to 3–4 subscriptions at $500 each, with one kept signed in on each of my main computers. Since the $200 and $500 plans have the same cost per unit, there’s no reason to juggle so many accounts.
 
 Plenty of new models have also appeared recently. The heavyweights keep trading blows, with one release after another. Instead of sitting on a pile of Codex accounts, I’d rather reallocate resources according to each vendor’s relative strengths. With work-life balance in mind, I think 15 subscriptions is about right. At full tilt, I could handle 20 or 30, but it’s exhausting. My sweet spot is 15 subscriptions: a bit over RMB 20,000 a month, at a comfortable pace. As I add more scheduled and routine tasks, I can gradually scale up.
-
----
 
 ## 6. What I’m Looking Forward To
 

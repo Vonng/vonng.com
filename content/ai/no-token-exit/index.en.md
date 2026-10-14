@@ -7,18 +7,15 @@ summary: >
 tags: [AI, Agent, Education, Programmers]
 ai: true
 ---
-
 First day of the new school year, and here's the news. A screenshot of a lecture slide from a new course at Nanjing University, one of China's top schools, with one line in red: **CS students without tokens should drop out immediately**. The screenshot went from Bilibili, the Chinese YouTube, to Weibo, to Zhihu, China's Quora, to Tieba, Baidu's sprawling forum network. It hit the trending lists, and the Zhihu thread piled up more than four hundred answers. People in tech mostly said he was right. People outside it mostly said: let them eat cake. Reviews were split.
 
 It took me until now to write this, because I spent the week pedaling all ten of my subscriptions until they were dry. What I want to say is simple. You can tell at a glance that this professor has the goods and knows the territory. And he's right. Not just right: I think he was being polite.
-
----
 
 ## What the Screenshot Left Out
 
 The screenshot comes from the slides for a new course at Nanjing University. The red line reads: "**CS students without tokens should drop out immediately**." It spread across Bilibili, Weibo, Zhihu, and Tieba, and [the Zhihu thread about it](https://www.zhihu.com/question/2075868388124004913) collected hundreds of answers and climbed the trending list. Support and pushback both. The question nobody could get around: is telling students to buy their own tokens a "let them eat cake" move?
 
-![](screen.webp)
+![No Tokens? Drop Out. And That's Putting It Politely — What the Screenshot Left Out (figure 1)](screen.webp)
 
 The course at the center of this is called Generative Software Engineering, offered for the first time in fall 2026, ungraded, pass/fail only. I fast-forwarded through the two lectures he has posted publicly, a bit over three hours of video. The class has exactly three rules:
 
@@ -38,8 +35,6 @@ Only then does he say it:
 
 What he actually means is: **tokens are the lab consumables of the AI era**. If you want to make a living in computing, you treat them the way a chemistry student treats reagents—an obvious cost of doing the work, not something you sit around waiting to be issued.
 
----
-
 ## Why Should Students Pay?
 
 The objection: chemistry students don't buy their own reagents, the lab does. Physics students don't buy their own equipment, the school does. So why, in CS, do tokens come out of the student's pocket? Nanjing University is not poor. It can't cover a few dozen yuan of tokens?
@@ -55,8 +50,6 @@ The vendors are running student offers too. On August 19, Google announced that 
 On the mainland, Alibaba Cloud runs a student program that hands you ¥300 in credit once you verify your enrollment. Barely anything, but half a loaf beats none. Getting tokens out to the schools is going to be a long march.
 
 Honestly, he isn't asking for much. ¥100 for a semester. But none of this is the student's problem to solve. **What nobody issues you, you bring yourself.** Nobody owes anybody anything here.
-
----
 
 ## Pulling Up the Ladder
 
@@ -76,8 +69,6 @@ And the patch may change again in a few days. OpenAI is supposedly shipping Astr
 
 The old stratagem—lure them onto the roof, then take the ladder away—assumes somebody did it on purpose. Nobody is tricking anybody here. The people who got up first simply turned around and noticed the ladder wasn't there anymore. For everyone still on the ground, one option remains: **build your own.**
 
----
-
 ## Five Percent
 
 Here's a statistic I collected with my own eyes. In June I gave a PostgreSQL talk at Xidian University, one of China's serious engineering schools for computing and electronics. I asked the room two questions.
@@ -92,8 +83,6 @@ Narrower still: the people who can actually drain a subscription's quota. Look a
 
 **At a school like Xidian, dedicated to this field, only 5% of the room has ever touched the ladder.** **The other 95% are still on the ground waiting for the school to issue one.** The school can't. That is the entire context behind Jiang Yanyan's line.
 
----
-
 ## Nobody Is Going to Hand You a Ladder
 
 It isn't only schools that can't issue one. Your employer may not either. When an AI rollout stalls inside a company, the reason is often laughably simple: management won't expense the API, so employees buy their own subscriptions. Better companies reimburse; worse ones don't. My view: **buy your own tokens even if your boss won't pay.** That is the variable that opens the gap. AI isn't going to take your job. Someone else holding AI is going to out-compete you for it.
@@ -101,8 +90,6 @@ It isn't only schools that can't issue one. Your employer may not either. When a
 Employees won't volunteer either. If AI makes you ten times more productive, what's waiting for you is not ten times the pay; it's ten times the work. So everyone is better off standing still together. That's a Nash equilibrium. The price of the equilibrium, of course, is that the whole company gets displaced by companies outside it that did embrace AI—metabolism at the corporate level. Big firms die slowly and can coast a while longer, but not forever.
 
 The school won't issue it, the boss won't expense it, the colleagues won't move. All three layers of the organization are standing still. So stop waiting. **Nobody in this era is going to hand you a ladder. You bring your own.**
-
----
 
 ## What Four Years of College Are For
 
@@ -115,8 +102,6 @@ The ability to hand-write a red-black tree or a dynamic programming solution is 
 When Jiang brought up that zero-score résumé in class, I don't read it as a dismissal of papers. Papers, competitions, and open-source projects each prove different things. What actually bothered him was a résumé full of impressive nouns with almost nothing anyone could click into, run, and verify. GitHub, a personal site, technical writing, and reproducible projects are becoming a second credential alongside the transcript. Work that anyone can check in public is worth more every year.
 
 This summer I helped a relative's kid sort through his college choices; he ended up doing CS at BUPT, Beijing's telecom-and-computing university. What I told him then is close to what I'm writing now. Junior programmers are badly oversupplied. Once you're in, what matters is finding a mentor, finding opportunities, and learning to teach yourself; the coursework itself isn't worth much. Buy a MacBook. Subscribe to ChatGPT and Claude. Ask a lot of questions, talk to the professors and upperclassmen who are actually good, and never hesitate to skip a blow-off class you can get away with skipping.
-
----
 
 ## Waiting Tables at Laoxiangji
 

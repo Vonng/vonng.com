@@ -7,7 +7,6 @@ summary: >
 tags: [AI, Agent, Software Engineering, Documentation, OINK]
 ai: true
 ---
-
 > Documentation is not an afterthought once the code is finished. It is an input before coding begins, working memory during development, and the acceptance standard at delivery.
 
 A few days ago, I wrote [*AGI Machine Guns Are Now Standard Issue*](/en/ai/ai-machinegun-for-everyone/), about how I burned through more than a dozen AI subscriptions in a month and pushed a backlog of projects forward. The most common question in my inbox and comments was not “Which model is best?” It was: **How do you keep all that AI-generated code from becoming a mountain of crap?**
@@ -17,8 +16,6 @@ It is the right question. Once everyone has a machine gun, anyone can spray bull
 There are four: **documentation-driven development, adversarial review, brute-force testing, and complexity penalties.** Sometimes the bluntest techniques work best. Any so-called secret sounds obvious once explained—but that does not make it any less effective.
 
 This essay focuses on the first: documentation-driven development. It is the foundation for the other three, and the practice in which I have invested the most—so much that I ended up building a documentation framework specifically to put it into practice.
-
----
 
 ## Wishing and Design
 
@@ -42,8 +39,6 @@ Exploratory work is different. If you genuinely do not know which approach is go
 
 How much time should this take? In my experience, a medium-sized project deserves at least half a day—a full morning—to generate and review the PRD before implementation begins. Once that is done, let the agent run and burn through the subscription quota. Come back a day or two later for acceptance.
 
----
-
 ## Development and Repair
 
 The second problem arises during development. Coding agents are not like human engineers; they have their own temperament. The simplest way to think of one is as an **amnesiac genius**.
@@ -65,8 +60,6 @@ Left to itself, a coding agent will crap out stray Markdown files all over a pro
 
 **Both layers are essential.** You cannot put everything in one giant pile, so the top layer needs an index. But an index alone is not enough; the complete raw records must remain underneath it.
 
----
-
 ## Testing and Acceptance
 
 The third problem is testing and acceptance.
@@ -86,8 +79,6 @@ This is where documentation starts to earn its keep. Work backward from the user
 If it is a human, how do people normally start using software? They probably visit your site, click `Get Started`, and follow a tutorial from the basic features through the core workflow. That is the standard pattern.
 
 So require the agent to deliver more than code. It must also deliver instructions and a manual, maintained to the same standard as the code itself. Acceptance then means following that manual: does `Get Started` actually work? Can you really complete every step in the tutorial?
-
----
 
 ## Documentation-Driven Development
 
@@ -117,13 +108,11 @@ For these sites, I built [OINK](https://github.com/pgsty/oink), a Hugo theme bas
 2. **Everything you need.** Code blocks, tabs, steps, diagrams and charts, formulas, file trees, full-text search, multiple languages, version switching, and backlinks for knowledge management are all built in. You can ship a polished documentation site immediately. Every page also has a plain Markdown version, and the whole site exposes [`llms.txt`](https://llmstxt.org/): humans read the rendered pages, while agents fetch Markdown directly from the same source.
 3. **Minimal friction.** No giant `npm` frontend stack. A single Hugo binary builds the entire site offline at blistering speed; even a site with thousands of pages builds almost instantly, with live preview. If native Markdown can express something, OINK never reaches for a flashy component.
 
----
-
 ## Why Good Documentation Matters
 
 Why invest so much effort in documentation? Who is it actually for?
 
-First, put yourself in the user’s position. If a person or an agent wants to use your software, what will they do first? They are hardly going to poke at a binary until they figure it out. That is one possible model—another project of mine, [PIG](https://pig.pgsty.com/), follows it by embedding documentation in the binary and exposing structured documentation directly through `help`. The design is explained in [*Agent-Native CLI*](https://pig.pgsty.com/blog/design/agent-native-cli/). But I do not think this is a general solution. In most cases, users will start with your documentation.
+First, put yourself in the user’s position. If a person or an agent wants to use your software, what will they do first? They are hardly going to poke at a binary until they figure it out. That is one possible model—another project of mine, [PIG](https://pig.pgsty.com/), follows it by embedding documentation in the binary and exposing structured documentation directly through `help`. The design is explained in [*Agent-Native CLI*](https://pig.pgsty.com/design/agent-native-cli/). But I do not think this is a general solution. In most cases, users will start with your documentation.
 
 Second, documentation is not only for users. It is also for you, and it is your most important acceptance standard. Few people will inspect AI-written code line by line. You may choose not to read the code, but you must at least read the documentation. If an AI has cobbled something together and you do not have time to test every detail by hand, you should at least inspect the accompanying reference documentation.
 
@@ -145,8 +134,6 @@ The clearest example is my friend Jiang. As I described in the previous article,
 
 Objectively, that database may solve a real problem in some particular setting. Overall, however, it still belongs in the `garbage` category. Why? Because it has no decent documentation. Without documentation, nobody knows what it can do, where its boundaries lie, or how to sign off on it.
 
----
-
 ## A Concrete Example: Silo
 
 After all that theory, consider a concrete example: [Silo](https://silo.pgsty.com/).
@@ -166,8 +153,6 @@ These records are rarer and more valuable than the code itself. They turn the tr
 One more point: for medium-to-large projects, the right approach is to move quickly in small steps. Do not try to cobble together one giant system in a single shot. Break the work into small units that can be accepted independently. Complex architectures evolve; they are not designed in one pass. That evolutionary history matters enormously.
 
 Take PostgreSQL. Its code is valuable, but I would argue that its soul does not live in the code. It lives in thirty years of [community mailing lists](https://www.postgresql.org/list/) and in its exceptionally good [documentation](https://www.postgresql.org/docs/current/). After all, most users may never read PostgreSQL’s source code, but they will almost certainly consult its manual.
-
----
 
 ## What Comes Next
 
@@ -194,8 +179,6 @@ Tibo says the next major paradigm will be a highly capable orchestrator—Astra�
 I had considered burning one into existence for myself, or tinkering with an existing open-source project. But why waste time on that? Wait another two weeks and the official team will ship one. There is really no need to tinker, is there?
 
 I will cover how the other three techniques—adversarial review, brute-force testing, and complexity penalties—work in practice another time.
-
----
 
 ## Final Thoughts
 

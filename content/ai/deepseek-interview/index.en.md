@@ -7,7 +7,6 @@ summary: >
 tags: [AI, LLM, Career]
 ai: true
 ---
-
 Today's biggest tech drama began when Bojie Li criticized DeepSeek's interview process on Twitter. In short, he went in for an interview, was asked to solve online-judge coding problems, and was then suspected of cheating. Add the DeepSeek name, and the story exploded.
 
 ![Bojie Li's complaint about the interview](interview-complaint.webp)
@@ -27,8 +26,6 @@ Then people piled on Li, often viciously. What followed was even harder to keep 
 I do not know Li, and titles like Huawei's "Genius Youth" do nothing for me. But publicly pillorying someone for describing his own experience is wrong. I can understand why an expert with a proven body of work and reputation would feel insulted when a company subjects him to the same rote questions it uses for bulk résumé screening.
 
 I also know that this was surely not DeepSeek's intention. DeepSeek is a good company, and I hope it does not become an untouchable "You-Know-Who" that nobody is allowed to criticize. That would be bad for DeepSeek itself. It cannot control every overzealous fan online, but it certainly can take candidates seriously and treat them with respect.
-
----
 
 ## How Should We Evaluate Talent in the AI Era?
 

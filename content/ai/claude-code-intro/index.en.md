@@ -8,9 +8,7 @@ tags: [AI, Agent]
 ai: true
 aliases: ["/db/claude-code-intro/"]
 ---
-
-
-# Claude Code Quick Start Guide
+## Claude Code Quick Start Guide
 
 In my [2025 Year in Review](/misc/2025), I mentioned that Claude Code boosted my productivity by 20x over the past year.
 Some friends asked if I was exaggerating—not at all. If anything, I was being conservative.
@@ -21,9 +19,7 @@ A few months ago, a recent graduate asked me for job hunting advice. My only sug
 Today's tutorial shows you how to get up and running with Claude Code quickly.
 (Plus how to swap in alternative models at 1/10 the cost of Claude Opus)
 
---------
-
-## What is Claude Code?
+### What is Claude Code?
 
 Claude Code (CC for short) is an AI coding assistant from Anthropic.
 Think of it as an intelligent secretary that does work for you—you describe what you need in plain language, and it executes.
@@ -38,7 +34,7 @@ For example: the Pigsty homepage at pigsty.cc was generated with a single comman
 Can beginners use it? Yes. CC isn't just for programmers. You don't need to know how to code—just type and describe your needs.
 "Theoretically" anything you can do with a computer, CC can do too.
 
-### A Key Distinction
+#### A Key Distinction
 
 Note: CC is not a large language model—CC is an application that uses LLMs for coding, an intelligent Agent.
 Think of it as the **cockpit**, while the LLM is the engine. Good cockpit + good engine = great results.
@@ -54,9 +50,7 @@ This is the core idea of today's tutorial:
 
 > Use the best cockpit (Claude Code), but swap in cheaper alternative engines.
 
---------
-
-## Cost Considerations
+### Cost Considerations
 
 Using Claude's top-tier models can get expensive—the Max subscription runs about $200/month.
 But here's the thing: CC supports alternative model providers.
@@ -81,9 +75,7 @@ So if you ask me whether GLM 4.7 can beat Claude Opus 4.5 in capability—defini
 I use it myself as a backup when my Claude quota runs out.
 I'm planning to use openCode with GLM in Pigsty as a DBA Agent—scanning logs and monitoring dashboards. At this price, using it for grunt work doesn't hurt at all.
 
---------
-
-## Quick Start
+### Quick Start
 
 So how do you get started? Three commands, done in seconds:
 
@@ -95,7 +87,7 @@ glm                                                # Start CC (GLM mode)
 
 Works on Linux/macOS. Let me walk you through the details.
 
-### Step 1: Open Terminal and Run the Command
+#### Step 1: Open Terminal and Run the Command
 
 You'll need to enter commands in a terminal. What's a terminal? Just a window where you type commands. Don't be intimidated—think of it as "operating your computer by typing."
 
@@ -127,7 +119,7 @@ Wait a few seconds and installation is complete. I've hosted the Claude Code bin
 Once CC is installed, if you launch it directly (`claude`), it will connect to Claude's official models by default.
 To use an alternative model like GLM 4.7, you need to configure it.
 
-### Step 2: Get an API Key
+#### Step 2: Get an API Key
 
 Since we're using GLM as the engine, you'll need an API key from Zhipu.
 
@@ -149,7 +141,7 @@ ccm set glm 46b1axxxxxxxxxxxxxceYVVV # Replace with your API KEY
 This script is adapted from a Claude Code switching script [ccm](https://github.com/foreveryh/claude-code-switch) that makes it easy to switch between different models.
 You can also use other providers like Kimi, Qwen, MiniMax, DeepSeek, etc.
 
-### Step 3: Run Claude Code
+#### Step 3: Run Claude Code
 
 Starting CC is simple—the third command: just type **`glm`** and you're done.
 
@@ -171,9 +163,7 @@ If you see the model showing `GLM-4.7`, you've configured it correctly.
 
 ![configure-key.jpg](configure-key.jpg)
 
---------
-
-## What's Next?
+### What's Next?
 
 Now you can launch CC from the command line. The built-in shortcuts `xx` / `glx` are aliases for `claude --dangerously-skip-permissions`, a.k.a. "YOLO mode."
 
@@ -188,9 +178,7 @@ It will figure out how to solve the problem itself.
 
 You can try the free tier first to see how it works. Once you're satisfied, consider a subscription.
 
---------
-
-## Adding More Capabilities
+### Adding More Capabilities
 
 One of Claude Code's most powerful features is adding various capabilities through the MCP protocol.
 
@@ -211,9 +199,7 @@ claude mcp add -s user -t http zread https://open.bigmodel.cn/api/mcp/zread/mcp 
 With these capabilities, your CC can search the web in real-time, read web content, and process images.
 Various MCP marketplaces also offer all kinds of fancy capabilities. Add them as needed.
 
---------
-
-## Summary
+### Summary
 
 - Claude Code = cockpit, LLM = engine
 - Best cockpit (CC) + alternative engine (GLM/others) → high performance at lower cost

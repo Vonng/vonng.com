@@ -8,7 +8,6 @@ tags: [AI, Translation]
 ai: true
 aliases: ["/misc/vibe-coding-translate/"]
 ---
-
 Last year Andrej Karpathy coined the term "Vibe Coding."
 The rough idea is simple: you tell the AI what you want, it spits out code, you skim it, decide it looks close enough, and move on.
 
@@ -25,8 +24,6 @@ A good translation lets a concept take root. A bad one makes people shrug and ke
 "Vibe" is especially awkward because it does not have sharp edges.
 It is not a clean technical term. It is more like mood, feel, posture, or style.
 That makes the translation both interesting and difficult.
-
--------
 
 ## The Obvious Candidates
 
@@ -71,8 +68,6 @@ It also misses the relaxed "just ship it" tone inside "Vibe Coding."
 
 Funny, maybe, but not something you can actually use as a term.
 
---------
-
 ## Why "Xieyi Programming" Is Better
 
 In traditional Chinese painting, there are two broad styles: **gongbi** and **xieyi**.
@@ -108,8 +103,6 @@ If you tell someone, "I'm doing xieyi programming right now," the posture is alr
 
 ![featured.webp](featured.webp)
 
---------
-
 ## Closing
 
 A good translation is not about matching words one by one.
@@ -121,8 +114,6 @@ So the next time you open Cursor or Claude Code, describe what you want, and wat
 
 you are not just Vibe Coding.
 You are doing **Xieyi Programming**.
-
---------
 
 ## Credit
 

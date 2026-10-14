@@ -6,8 +6,6 @@ summary: >
   A dialogue about intelligence: its foundations may lie not in language or vision, but in two irreducible computational paradigms—symbolic reasoning and field-state intuition—kept distinct and mutually calibrated across a bandwidth-constrained boundary.
 tags: [AI]
 ---
-
-
 A friend recently wrote an essay titled "[Vision Is the Foundation of the World, Not a Plugin for Language](https://mp.weixin.qq.com/s/pQXCE1RdsHA73qQxTuyG2w)."
 It prompted a conversation with Claude, which I have edited into the Socratic dialogue below.
 

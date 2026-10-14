@@ -8,12 +8,9 @@ tags: [AI, Agent, Codex]
 ai: true
 aliases: ["/misc/how-much-ai-can-do/"]
 ---
-
 法定节假日余额耗尽，今天正式开工，不过老冯大年初一就开始干活了。实际上我这个春节除了年三十和大年初一回家吃年夜饭、拜年，剩下的时间基本上都在家里 “躺平”（AI Engineering）。因为在 Coding Agent 加持下，软件又成了一个蛮荒西部领域，有太多太多可以做的事情。
 
 从 2 月 13 日到 2 月 23 日，我翻译了两本 O'Reilly 技术书（DDIA / TPME），写了十篇公众号文章，fork 了 MinIO，打包了 Apache Cloudberry 和 Babelfish，更新了大几十个 Infra 软件包与 PG 扩展，Pigsty 发布了一个新版本（另一个也在筹备中），PG 包管理器 `pig` 升级了两个小版本，还顺手糊了一个 DBA Agent UI 控制软件 Boar，同时继续修缮 Pigsty 的中英文文档。
-
---------
 
 ## 走马观花
 

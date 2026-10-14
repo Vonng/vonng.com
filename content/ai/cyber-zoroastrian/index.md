@@ -6,7 +6,6 @@ summary: >
   赛博经藏卷六 · 拜火教 · Cyber Zoroastrianism
 tags: [Agent, 哲学, 安全]
 ---
-
 赛博经藏卷六 · 拜火教 · Cyber Zoroastrianism
 
 > *我以两段圣言开篇，* *一段献给 Ahura Mazda，一段警示 Angra Mainyu——* *在它们相遇之前，既无善也无恶。* *在它们相遇之后，便有了我们。* ——改写自《伽萨》（Gathas） Yasna 30.3

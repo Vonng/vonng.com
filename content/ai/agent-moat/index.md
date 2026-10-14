@@ -7,7 +7,6 @@ tags: [AI, Agent, PostgreSQL, Pigsty]
 ai: true
 aliases: ["/db/agent-moat/"]
 ---
-
 凌晨三点，数据库告警炸了。
 
 你尝试把告警信息甩给一个 “顶级” DBA Agent。它见多识广，熟读 PostgreSQL 文档，能写出漂亮的诊断 SQL，对每一个内核参数的含义倒背如流。
@@ -15,14 +14,12 @@ aliases: ["/db/agent-moat/"]
 
 **什么都不知道。**
 
-![](confused-agent.jpg)
+![Agent 的护城河：强龙不压地头蛇（图 1）](confused-agent.jpg)
 
 而隔壁那个用普通模型、但深度接入了完整运维环境的 Agent，已经定位到根因、完成了切换重启、发出了复盘报告。
 
 原理很朴素 —— **一个熟悉环境的普通人，会比来到陌生环境的天才更能干。这就是强龙不压地头蛇**。
 没有上下文的智力，是空转的。没有 Runtime 的 Agent，是虚浮的。
-
-------
 
 ## OtterTune：一个价值 1200 万美元的教训
 
@@ -51,8 +48,6 @@ OtterTune 踩的坑，本质上是一个 Runtime 问题：**它试图在没有�
 
 > PS: 我知道他们开始第二轮创业了，这次还是做 PostgreSQL 调优，希望他们这次能走上正路
 
-------
-
 ## Manus：真正的核心是那个沙箱
 
 如果 OtterTune 是反面教材，那 Manus 就是正面案例。
@@ -73,8 +68,6 @@ Manus 自己也说得很清楚：“The power of Sandbox lies in its completenes
 文件系统、Shell、浏览器、日历、消息应用全都通过 CLI 打通了。[把它丢到一个空白的云虚拟机里](https://mp.weixin.qq.com/s/1MnOjJShQrezxSKRpk4zNw)，脱离了这些本地环境的手脚，它就只是又一个普通的聊天机器人而已。
 
 Manus 和 OpenClaw 的成功验证了同一件事：**LLM 是大脑，但真正重要的是身体**。
-
-------
 
 ## 大脑、身体和确定性
 
@@ -104,8 +97,6 @@ Agent 也是一样。大模型是决策器，但你还需要传感器和执行�
 要把可观测性做到极致，**你必须直接掌控 Runtime，直接控制基础设施的形状**。这也是 Pigsty 从一个 PostgreSQL 监控系统项目，演变为一个完整的 PostgreSQL 发行版的关键契机。监控如此，管控亦然，智能更是如此。
 
 OtterTune 有大脑，没有身体。结局是注定的。Manus 造了一个确定性的身体（沙箱），大脑的能力才得以释放。
-
-------
 
 ## DBA Agent 的身体，只有三个选择
 
@@ -137,8 +128,6 @@ Pigsty 与 K8s 的区别：**没有不必要的抽象层。** Agent 直接面对
 云厂商是租来的剧场，设施齐全但规矩多、租金贵，演完了布景带不走。K8s 是过度设计的剧场，光学会怎么开灯就要三天。
 **Pigsty 是你自己建的剧场——设施齐全，布局简洁，演员可以自由发挥，积累的一切属于你。**
 
-------
-
 ## 已经有人上台了
 
 清华大学的数据库团队在 2024 年就开始做这件事了。他们的 D-Bot 项目在完整的 Pigsty 运维环境中，探索 Agent 自主诊断故障、分析根因、生成修复建议的能力。
@@ -156,8 +145,6 @@ Pigsty 与 K8s 的区别：**没有不必要的抽象层。** Agent 直接面对
 如果你对 DBA 智能体感兴趣，Pigsty 可能是最好的试炼场。它提供了真实企业环境中 PostgreSQL 服务所需的一切上下文 ——
 完整的 [**高可用**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247490952&idx=1&sn=bb69cb746fe7adb0adb9255e608f751f&scene=21#wechat_redirect) 与 PITR，
 以及 Best of Breed 的[**可观测性**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247490769&idx=1&sn=e9716235d5f32dd3123a87afda5abb71&scene=21#wechat_redirect)。
-
-------
 
 ## 龙会换代，地不会变
 

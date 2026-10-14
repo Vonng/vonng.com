@@ -8,7 +8,6 @@ tags: [AI, Agent, Codex]
 ai: true
 aliases: ["/misc/how-much-ai-can-do/"]
 ---
-
 Once the public holiday ended and work officially resumed, I realized I had effectively been working through most of Spring Festival anyway.
 
 From February 13 to February 23, I translated two O'Reilly books, wrote ten WeChat posts, forked MinIO, packaged Apache Cloudberry and Babelfish, updated a large batch of infra packages and PG extensions, shipped a Pigsty release, upgraded the `pig` package manager twice, prototyped a DBA UI called Boar, and kept maintaining Pigsty's Chinese and English docs.

@@ -7,7 +7,6 @@ summary: >
 tags: [AI, LLM, Codex, Claude]
 ai: true
 ---
-
 The past couple of days have been unusually busy for the infrastructure crowd. Ubuntu released its biennial LTS today. Alibaba's Qwen team dropped a 27B dense model yesterday that beats its own previous 397B MoE flagship. The day before that, OpenAI launched Images 2.0, then followed it yesterday with a small open-source model built specifically for data redaction. Here are a few of the more interesting developments.
 
 ## Ubuntu 26.04 LTS Is Out

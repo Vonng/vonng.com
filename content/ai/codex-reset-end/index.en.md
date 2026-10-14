@@ -7,7 +7,6 @@ summary: >
 tags: [AI, Codex, Claude]
 ai: true
 ---
-
 Last month, OpenAI seemed to lose its mind and went into full giveaway mode, replenishing everyone's Codex quota every few days—the AI equivalent of a Chinese supermarket handing out free eggs at the door to win new customers.
 
 User numbers soared past ten million. Tibo, the executive responsible for Codex and ChatGPT—and the man behind the reset button—was even canonized as “Saint Tibo” by the community. The first thing I did every morning was open X to see whether the saint had performed another miracle.
@@ -22,8 +21,6 @@ What happens after ten million? Someone asked Tibo on X whether Codex had crosse
 
 That is a shame. But the eggs themselves were never worth much. What matters is what I turned them into over that month.
 
----
-
 ## Make Hay While the Sun Shines
 
 In “[AI Survival Guide: Where the Biggest Arbitrage Really Is](/ai/ai-bonus/)” and several other posts, I repeatedly urged readers to make hay while the sun shines—to seize the opportunity while it lasts. I followed my own advice.
@@ -37,8 +34,6 @@ Of course, free quota from the Reset spree was only a cost advantage. Far more i
 In short, the whole setup wrung me dry. I pedaled the machine until it smoked. Readers may have noticed that I barely published anything on my WeChat channel over the past month. I simply had no time. The occasional articles I did squeeze out were often criticized for sounding too AI-generated, because I genuinely had no time to write—much less edit and polish.
 
 The only reason I have started writing again over the last two days is that the promotion ended and I ran every subscription dry.
-
----
 
 ## Usage and Cost
 

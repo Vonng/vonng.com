@@ -6,14 +6,11 @@ tags: [Agent, Monitoring]
 ai: true
 aliases: ["/db/claude-observability/"]
 ---
-
 Yesterday I [tweeted](https://x.com/RonVonng/status/2014972720489091514): "Built a Claude Code Grafana dashboard to see how it makes decisions, uses tools, and burns through API credits." Didn't expect so much interest.
 
 ![Tweet screenshot](tweet-dashboard.webp)
 
 So let's talk about Claude Code observability.
-
----
 
 ## Why Observability?
 
@@ -40,8 +37,6 @@ export OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE=cumulative
 
 The hard part: where do you get a monitoring stack and Grafana? Seeing the demand, I built a turnkey config template.
 
----
-
 ## The Monitoring Stack
 
 Grab a Linux box, run a few commands, and you get a complete Claude Code environment with everything pre-configured — including monitoring. Or just point your existing Claude Code at it.
@@ -51,8 +46,6 @@ Grab a Linux box, run a few commands, and you get a complete Claude Code environ
 Here's the thing: if you already use Claude Code, you don't need to understand the details. Just tell it "there's this thing that does this" and give it a VM. It'll figure out the rest. Saw someone in the comments say exactly that:
 
 ![User feedback](tweet-user-feedback.webp)
-
----
 
 ## Event Types
 
@@ -85,9 +78,7 @@ After **Tool Decision** comes **Tool Result**. The key tool execution event. Fie
 
 ![Tool Result event](event-tool-result.webp)
 
-There are other event types, but these four are the main ones. More details: https://docs.anthropic.com/en/docs/claude-code/monitoring
-
----
+There are other event types, but these four are the main ones. More details: https://code.claude.com/docs/en/monitoring-usage
 
 ## The Sandbox
 

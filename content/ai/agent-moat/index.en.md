@@ -7,20 +7,17 @@ tags: [AI, Agent, PostgreSQL, Pigsty]
 ai: true
 aliases: ["/db/agent-moat/"]
 ---
-
 3 AM. Database alerts are blowing up.
 
 You throw the alert info at a "top-tier" DBA Agent. It's well-read — knows the PostgreSQL docs inside out, writes beautiful diagnostic SQL, can recite every kernel parameter from memory. It freezes: What's the cluster topology? Where are the primary and replicas? How do I check the dashboards? Where are the logs? How was the last similar incident resolved? What tool do I use to do what?
 
 **It knows nothing.**
 
-![](confused-agent.jpg)
+![The Agent Moat: Runtime (figure 1)](confused-agent.jpg)
 
 Meanwhile, the agent next door — running a mediocre model but deeply wired into the full ops environment — has already identified the root cause, completed the failover, and filed the post-mortem.
 
 The principle is simple: **a mediocre local who knows the terrain beats a genius dropped into unfamiliar territory. That's home court advantage.** Intelligence without context is idle. An agent without a runtime is vapor.
-
-------
 
 ## OtterTune: A $12M Lesson
 
@@ -42,8 +39,6 @@ OtterTune's fundamental mistake was a runtime problem: **it tried to do ops with
 
 > PS: I know they've started a second venture, again doing PostgreSQL tuning. Hope they get it right this time.
 
-------
-
 ## Manus: The Real Core Is the Sandbox
 
 If OtterTune is the cautionary tale, Manus is the success story.
@@ -61,8 +56,6 @@ It's this complete, deterministic sandbox that unleashes the model's full capabi
 The recent viral hit OpenClaw proves the same point. It earned the "AI with hands" label not because the underlying model is superior, but because it deeply integrates with the host OS — filesystem, shell, browser, calendar, messaging apps all wired through CLI. [Drop it into a blank cloud VM](https://mp.weixin.qq.com/s/1MnOjJShQrezxSKRpk4zNw), stripped of those local hooks, and it's just another chatbot.
 
 Manus and OpenClaw validate the same thing: **the LLM is the brain, but what really matters is the body.**
-
-------
 
 ## Brain, Body, and Determinism
 
@@ -92,8 +85,6 @@ Five years ago, when I started building PostgreSQL monitoring, I hit this exact 
 
 OtterTune had a brain but no body. The outcome was predetermined. Manus built a deterministic body (sandbox), and the brain's power was finally unleashed.
 
-------
-
 ## A DBA Agent's Body: Only Three Options
 
 Let's use a concrete scenario — the DBA Agent. A coding agent's context is a code directory. What's a DBA agent's context?
@@ -112,8 +103,6 @@ The difference between Pigsty and cloud database runtimes: **it's an open-source
 
 The difference between Pigsty and K8s: **no unnecessary abstraction layers.** The agent faces the database and OS directly. Short operation paths. High determinism. To use an analogy: cloud vendors are a rented theater — well-equipped but full of rules, expensive, and you can't take the set pieces when you leave. K8s is an over-engineered theater where it takes three days just to learn how to turn on the lights. **Pigsty is your own theater — well-equipped, clean layout, actors perform freely, and everything you build belongs to you.**
 
-------
-
 ## Someone's Already On Stage
 
 The Tsinghua University database team started working on this in 2024. Their D-Bot project explores autonomous fault diagnosis, root cause analysis, and repair recommendations in a complete Pigsty ops environment. The choice itself is telling: not poking at a remote connection string, but working inside a full runtime with monitoring, tooling, a knowledge base, and operational interfaces.
@@ -127,8 +116,6 @@ The Tsinghua University database team started working on this in 2024. Their D-B
 Academic research needs reproducible environments, and Infrastructure as Code naturally delivers this. Same config deployed a hundred times, identical environment every time. That's exactly the determinism agents need. Meanwhile, I'm building a DBA Agent myself. Who understands a runtime better than the person who built it? On an open runtime, academic teams explore boundaries, infrastructure builders refine the core, community developers contribute ideas. An ecosystem is forming.
 
 If you're interested in DBA agents, Pigsty might be the best proving ground. It provides everything a PostgreSQL service needs in a real enterprise environment — full [**HA**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247490952&idx=1&sn=bb69cb746fe7adb0adb9255e608f751f&scene=21#wechat_redirect) with PITR, and best-of-breed [**observability**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247490769&idx=1&sn=e9716235d5f32dd3123a87afda5abb71&scene=21#wechat_redirect).
-
-------
 
 ## Dragons Come and Go, Territory Stays
 

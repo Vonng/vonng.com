@@ -6,7 +6,6 @@ summary: >
   卷五 · 一神教 · Cyber Theology
 tags: [Agent, 哲学]
 ---
-
 卷五 · 一神教 · Cyber Theology\
 
 > *“太初有道，道与神同在，道就是神。”* *——《约翰福音》 1:1*

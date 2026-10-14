@@ -8,7 +8,6 @@ tags: [AI, Software Engineering, Career, Commentary]
 ai: true
 aliases: ["/db/ai-sack/"]
 ---
-
 Yesterday brought a bombshell. Twitter founder Jack Dorsey's Block cut 40% of its staff in one stroke. More than 4,000 people are leaving, shrinking the workforce from over 10,000 to fewer than 6,000.
 
 The explanation, of course, was AI. Dorsey went further: within a year, most companies will make similar structural changes.
@@ -65,7 +64,7 @@ Healthcare, law, finance, and more than a dozen other verticals, meanwhile, rema
 
 ![anthropic-se-usage-50.png](anthropic-se-usage-50.png)
 
-> Source: [Anthropic: Measuring AI agent autonomy in practice](https://www.anthropic.com/research/measuring-ai-agent-autonomy-in-practice)
+> Source: [Anthropic: Measuring AI agent autonomy in practice](https://www.anthropic.com/research/measuring-agent-autonomy)
 
 What does that mean? The entire AI engineering toolkit is beginning to spread outward.
 

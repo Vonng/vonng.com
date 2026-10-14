@@ -6,7 +6,6 @@ summary: >
   What is happening is not transformation, but new species replacing old ones. Incentives and structure keep established companies from capturing AI's gains. AI-native companies will grow from scratch, with new forms of organization.
 tags: [AI, Business, Commentary]
 ---
-
 > What is happening is not transformation, but new species replacing old ones.
 
 A few days ago, I joined a [roundtable](https://mp.weixin.qq.com/s/JMjX9A_5_L5fn3g5JGpC-A). The moderator asked how a company should calculate the ROI of deploying agents. Instead of answering directly, I offered a provocation: **the whole idea of enterprise AI transformation may rest on a false premise.**

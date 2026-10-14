@@ -6,7 +6,6 @@ summary: >
   OpenAI开源GPT 20B/120B模型，水平与 o4-mini 相当，带有思维链可微调，支持函数调用等Agent功能，原生 MXFP4 量化，120b可以跑在高端笔记本或者单…
 tags: [大模型, 开源]
 ---
-
 OpenAI 开源 gpt-oss-20b 与 gpt-oss-120b 两款模型，Apache 2.0 许可证，水平与 o4-mini 相当，MoE 架构，带有思维链，可微调，本地 Agent 函数调用等功能，原生 MXFP4 量化，120b 可以跑在高端笔记本或者单块 H100 上，20b 版本可以跑在手机上。
 
 ![图片](01.webp)

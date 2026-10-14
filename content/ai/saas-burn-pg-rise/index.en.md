@@ -7,10 +7,7 @@ summary: >
 tags: [AI, Commentary]
 aliases: ["/db/saas-burn-pg-rise/"]
 ---
-
 AI stripped away software's skin, exposing the database skeleton underneath. The market isn't panic-selling — it's repricing.
-
-------
 
 ## I. The Bloodbath
 
@@ -30,8 +27,6 @@ But here's what's really interesting: amid this meltdown, data-layer infrastruct
 
 To understand how this scalpel works, we need to go back to an earlier verdict.
 
-------
-
 ## II. You Were Warned
 
 This crash didn't come out of nowhere. Back in December 2024, Microsoft CEO Satya Nadella said something on the BG2 podcast that essentially called out SaaS's structural risk. Many dismissed it as hyperbole. In hindsight, every word reads like a sentencing:
@@ -45,8 +40,6 @@ A year ago, I cited this in [Software Starts from the Database in the AI Era](/d
 The question is: if SaaS's intermediary value gets compressed, where does the remaining value collapse to?
 
 The answer lies in the software stack's structure.
-
-------
 
 ## III. The Translation Layer Gets Compressed
 
@@ -73,8 +66,6 @@ When a "super-translator" can turn natural language directly into reliable datab
 The software stack is collapsing toward a simpler structure: [**Agent + Database**](/db/ai-agent-era/).
 
 But "collapse" doesn't mean "software is dead." Because agents have two hard limitations, and these limitations determine how the market reprices.
-
-------
 
 ## IV. AI's Two Achilles' Heels
 
@@ -122,8 +113,6 @@ AI can generate copy, code, and reports — but it can't generate your company's
 
 When the translation layer gets squeezed thin by agents, what remains isn't "prettier software" — it's: **Agent + Database**. The market isn't doing a blanket panic sell — it's pricing "handle" and "bit," "skin" and "bone," separately.
 
-------
-
 ## VI. Where Value Collapse Ends
 
 Once you accept that "AI takes the shortest path to reality," a lot of seemingly emotional capital market moves suddenly look rational: money isn't fleeing software — it's fleeing "human handles" and flooding into "digital reality interfaces."
@@ -155,8 +144,6 @@ Databases are evolving from "warehouses that store data" to **"programmable real
 ![service-layer.svg](service-layer.svg)
 
 > This is also what I've been exploring with Pigsty: [**Agentic PostgreSQL Runtime**](https://pigsty.cc/docs/piglet). Making PostgreSQL not just a database, but a database runtime for the agent era.
-
-------
 
 ## VIII. Who Owns the Bones?
 

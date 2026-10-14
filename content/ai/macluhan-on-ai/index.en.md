@@ -8,12 +8,9 @@ tags: [AI, Philosophy]
 ai: true
 aliases: ["/db/macluhan-on-ai/"]
 ---
-
 Notion founder Ivan Zhao recently wrote a widely circulated essay, *Steam, Steel, and Infinite Minds*, using the Industrial Revolution as a metaphor for AI: AI gives us "infinite minds" and will fundamentally reshape the structure of knowledge work. Zhao also invokes McLuhan's rear-view mirror theory, arguing that for now we are merely "embedding AI chat boxes into existing workflows," nowhere near the real structural transformation.
 
 This essay takes McLuhan's core toolkit—"the medium is the message," extension and amputation, hot and cool media, the rear-view mirror effect, and the four laws of media—and applies each concept to AI. The goal is to see what McLuhan's framework reveals that the Industrial Revolution metaphor cannot. Industrial metaphors are good at analyzing organizational efficiency and economic structure. McLuhan goes a level deeper: how is AI changing human perception, cognitive habits, and the very capacity to understand?
-
----
 
 ## I. "The Medium Is the Message" | AI's Real Impact Is Not What It Generates
 
@@ -26,8 +23,6 @@ There are three more layers to consider:
 **AI blurs the line between creation and consumption.** If someone writes an article through a conversation with AI, are they an author or an editor? If someone generates code with AI, are they a programmer or a product manager? We do not yet have a name for the new role AI has created. It is neither "creator" nor "consumer"; perhaps "orchestrator" comes closest. Zhao describes how his cofounder Simon no longer writes code himself. Instead, he directs three or four AI coding agents at once, turning himself from a "10x engineer" into a "30–40x engineer." This orchestrator is a new species created by the new medium.
 
 **AI makes "thinking" externally visible.** Your `prompt` is a visible trace of your thought process. Once that process can be seen, recorded, and analyzed, the nature of "thinking" changes. It goes from a private, internal process to an external behavior that can be inspected and optimized.
-
----
 
 ## II. "Media Are Extensions of Man" | And Every Extension Brings an Amputation
 
@@ -53,8 +48,6 @@ AI extends language and the operations of thought. What do we become numb to? Pe
 
 This echoes Socrates' warning about writing 2,400 years ago: it gives people "the appearance of wisdom, not true wisdom." AI may be replaying that ancient danger far more powerfully than books ever did. Its explanations are more fluent, more personalized, and more convincingly shaped like understanding, making the illusion harder to detect. This is more dangerous than the decay of slow thinking because you no longer even realize that you are not thinking.
 
----
-
 ## III. "Cool Media" and "Hot Media" | AI's Cognitive Divide
 
 This is McLuhan's hardest and most controversial idea.
@@ -75,8 +68,6 @@ Of course, presenting different temperatures to different users is not unique to
 
 In McLuhan's theory, hot media tend to "hypnotize" people as they passively absorb a rich stream of information, while cool media tend to "activate" them because participation is required to obtain the information. This is the crux of AI: **for people who cannot ask questions, it is a sedative; for people who can, it is a catalyst.** This creates a positive-feedback loop. Catalyzed users get better and better at asking questions; sedated users steadily lose the desire to ask. The ultimate result is not "AI replaces humanity," but a deep rift within humanity, with metacognitive ability as the dividing line.
 
----
-
 ## IV. The "Rear-View Mirror" Theory | The Mistake We Are Making
 
 McLuhan made a brilliant observation: people always understand a new medium through the lens of the one that came before it.
@@ -90,8 +81,6 @@ We see AI as "a faster search engine," "an automated writer," or "a cheap progra
 AI is not a better search engine. Search engines retrieve existing information; AI generates new combinations from scratch. AI is not an automated writer. Writers draw on their own experience and views; AI generates text from statistical patterns. The difference is not one of efficiency but of kind.
 
 We have not yet found the right lens for understanding AI. It may not appear until the AI-native generation grows up, just as the people who truly understood the language of film were not its first audiences but the generation of directors who grew up with it.
-
----
 
 ## V. The Four Laws of Media
 
@@ -123,8 +112,6 @@ McLuhan's insight was that every medium, pushed far enough, flips into its oppos
 
 **Reversal two: from "cognitive democratization" to a new cognitive stratification.** Once everyone has AI, the difference is no longer whether you have it but how you use it. The ability to use AI is closely tied to traditional education, critical thinking, and metacognition—and people already higher on the social ladder have easier access to all three. On the surface, AI eliminates knowledge barriers. In practice, it shifts competition to a deeper level of ability that is harder to equalize. This confirms the divergence between hot and cool media discussed in the third section. The fact that the same tool presents a different temperature to different people is the micro-level mechanism behind this new stratification.
 
----
-
 ## VI. The Limits of the Framework: What McLuhan Did Not Foresee
 
 Everything above has been an application of McLuhan. But a good theoretical tool should also be tested at its limits. In two respects, AI may already exceed his framework.
@@ -140,8 +127,6 @@ This is not merely a philosophical problem. The practical consequence is that wh
 We have kept talking about brains, thinking, and knowledge. But McLuhan's "extensions" are always anchored in the body: the wheel extends the foot, the book extends the eye, and clothing extends the skin. When AI enters robotics, self-driving cars, and surgical assistance, "amputation" will mean something completely different. What a person accustomed to self-driving loses is not a cognitive skill but an embodied intuition for physical space: a sense of direction, speed, and danger. This analysis, based on today's text interactions with LLMs, is only a starting point. A complete media analysis must bring the body back in.
 
 McLuhan gave us the twentieth century's most powerful framework for analyzing media. We need his insight to begin this analysis, but we may need to go beyond him to finish it.
-
----
 
 ## VII. Conclusion: Three Implications
 

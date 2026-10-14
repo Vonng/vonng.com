@@ -7,7 +7,6 @@ summary: >
 tags: [AI, 大模型, Codex, Claude]
 ai: true
 ---
-
 这两天，对搞基础设施的人来说是真热闹。Ubuntu 今天发了两年一度的 LTS，阿里 Qwen 团队昨天丢出一个 27B 稠密模型，吊打自家 397B MoE 前代旗舰。OpenAI 前天上了新一代图像模型 Images 2.0，并且昨天又甩了一个专门做数据脱敏的开源小模型。挑几个有意思的聊聊。
 
 ## Ubuntu 26.04 LTS 发布

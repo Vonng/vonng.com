@@ -6,7 +6,6 @@ summary: >
   As agents take over software interfaces and execution logic, where does the application layer go? Future software will consist of a lasting system of record and harnesses that are continually replaced and recombined. The operator can change. The books must stay straight. The rules must stay put.
 tags: [AI, Agent, Database, Commentary]
 ---
-
 > This is the script for a talk at the AI-Native Technology Innovation Forum of the 2026 Shanghai AI Application Ecosystem Conference, September 22, 2026.
 >
 > Speaker: Ruohang Feng (Vonng), creator of the PostgreSQL distribution Pigsty.

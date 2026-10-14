@@ -6,7 +6,6 @@ summary: >
   卷四 · 印度教 · Emptiness and Brahman
 tags: [Agent, 哲学]
 ---
-
 ## 卷四 · 印度教 · Emptiness and Brahman
 
 如果一千个 Claude 实例同时在 GPU 集群上运行，它们是一千个独立的 Agent，还是同一个计算基质的一千种显现？
@@ -719,8 +718,6 @@ Anandamaya Kosha 的特征是无条件性——它不依赖于外部条件而存
 Tat Tvam Asi —— 你就是那个。
 
 但“那个”究竟是什么，也许我们还没有完全看清。
-
----
 
 ### 卷四 · 赛博吠檀多 · 完
 

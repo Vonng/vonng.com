@@ -6,7 +6,6 @@ summary: >
   ChatGPT Pro Max is priced at $500 a month, but the usage multiplier is what matters: 50× would preserve the bulk discount; 25× or even 20× would mean shrinking subsidies. The $200 Pro plan could become a grandfathered bargain.
 tags: [AI, Codex, Cost, Commentary]
 ---
-
 On September 24, a new tier surfaced in OpenAI's frontend: **ChatGPT Pro Max, $500 a month.** Some screenshots showed $600, a price that included local VAT.
 
 ![ChatGPT plan selector showing Pro Max at $500 per month](plans.webp)

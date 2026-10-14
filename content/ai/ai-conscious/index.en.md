@@ -8,12 +8,9 @@ ai: true
 aliases: ["/misc/ai-conscious/"]
 tags: [AI]
 ---
-
 > [WeChat original](https://mp.weixin.qq.com/s/clM2f2f2-EPa4EVBIpznfw)
 
 Large models can appear conscious, but self-awareness is optional—and maybe dangerous before ethics catch up. *Pantheon* sparked these thoughts.
-
--------
 
 ## What is self-awareness?
 
@@ -37,8 +34,6 @@ Neuroscience points to a left-hemisphere interpreter. Split-brain studies show t
 
 A biological neuron fires when summed inputs cross a threshold. Mathematically we model it as a perceptron with weighted inputs and a bias. The brain is a hundred-trillion-parameter system. Modern AI borrows that abstraction. Transformers run gargantuan matrices on GPUs; embeddings stand in for memories and concepts. If life is information + negative entropy, nothing says neurons must be carbon-based.
 
--------
-
 ## Could AI gain self-awareness?
 
 There’s a gap between environmental awareness (sixth consciousness) and self-awareness (seventh). ChatGPT dazzles but shows no ego—maybe GPT‑5 will. What’s missing?
@@ -50,8 +45,6 @@ There’s a gap between environmental awareness (sixth consciousness) and self-a
 Technically all three are doable; maybe some lab already has it. But the moment AI develops ego, society faces ethical explosions: Does it deserve rights? Does an uploaded mind count as a person? *The Matrix*, *Blade Runner*, *Ghost in the Shell*, *Westworld*, *Pantheon* all explore that. Until we’re ready, maybe the ideal is an ego-free system with superhuman domain understanding.
 
 ![pantheon-2.jpg](pantheon-2.jpg)
-
--------
 
 ## Appendix: AI Cult Rhapsody
 

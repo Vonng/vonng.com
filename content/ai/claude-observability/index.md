@@ -7,8 +7,7 @@ tags: [Agent, 监控]
 ai: true
 aliases: ["/db/claude-observability/"]
 ---
-
-# Claude Code 可观测性怎么做？
+## Claude Code 可观测性怎么做？
 
 昨天老冯 [发了条推特](https://x.com/RonVonng/status/2014972720489091514)：「做了个 Claude Code Grafana Dashboard，研究下它是怎么做决策、用工具、
 调 API 花钱的。」结果发现非常多的用户都对这个主题感兴趣。
@@ -17,9 +16,7 @@ aliases: ["/db/claude-observability/"]
 
 这是我没想到的，所以今天就来聊一聊 Claude Code 的可观测性。
 
--------
-
-## Claude 的可观测性
+### Claude 的可观测性
 
 老冯的想法其实很简单 —— 我想了解 Claude Code 内部工作细节。虽然 Claude Code 不开源（[**其实被开源过一次**](https://mp.weixin.qq.com/s/xaeVafPxUfAgQSzl-n3w2w)），
 但你可以通过它的监控指标和日志，分析出它的大概工作原理。
@@ -46,9 +43,7 @@ export OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE=cumulative
 
 难点在于：我去哪找这么一个监控系统和 Grafana 呢？后来我看见这么多人都有需求，就干脆做了一个开箱即用的配置模板。
 
---------
-
-## 监控系统
+### 监控系统
 
 你只要找一台 Linux 服务器，运行几行命令把它拉起来，就会自带一个 Claude Code 环境，所有东西都帮你配好了（包括监控）。你也可以直接把自己的 Claude Code 监控接进去。
 
@@ -58,7 +53,7 @@ export OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE=cumulative
 
 ![用户部署反馈](tweet-user-feedback.webp)
 
-## 监控事件说明
+### 监控事件说明
 
 - [Claude Code 可观测性文档](https://code.claude.com/docs/en/monitoring-usage)
 
@@ -89,9 +84,9 @@ API Request 事件有几个核心字段：Cost 是开销，然后是四个 Token
 
 ![Tool Result事件](event-tool-result.webp)
 
-其实还有一些其他类型的事件，但最主要的就是上面这四类。更多细节可以参考 Claude Code 的监控文档：https://docs.anthropic.com/en/docs/claude-code/monitoring
+其实还有一些其他类型的事件，但最主要的就是上面这四类。更多细节可以参考 Claude Code 的监控文档：https://code.claude.com/docs/en/monitoring-usage
 
-## 沙箱环境
+### 沙箱环境
 
 当然，老冯也知道「授人以 **鱼** 不如授人以 **渔**」，但光说原理没用，干脆直接把东西做好给你算了。所以我做了一个开箱即用的沙箱环境，里面包含了一套完整的 Victoria 监控系统与 Grafana 监控大盘，随便找台 1C2G 的 Linux 虚拟机几分钟就能装好。
 

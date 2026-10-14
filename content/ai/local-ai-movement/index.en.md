@@ -6,7 +6,6 @@ summary: >
   Anthropic's threat report, OpenAI's soap opera, the closure of the $200 subscription tier, and rising GPU and memory prices—all of this week's events tell the same story.
 tags: [AI, Local First, Privacy, Open Source, Hardware]
 ---
-
 > Anthropic's threat report, OpenAI's soap opera, the closure of the $200 subscription tier, and rising GPU and memory prices—all of this week's events tell the same story.
 
 Three things happened this week. Taken separately, each looks like industry gossip. Put them together, and a complete picture emerges.
@@ -20,8 +19,6 @@ Third, also on September 10, OpenAI suspended new subscriptions and upgrades to 
 Meanwhile, GPU prices are rising, memory prices are rising, and so is the cost of local hardware capable of running large models. Phones, computers, and game consoles are getting more expensive too. Ordinary people are already paying the AI tax.
 
 Behind all three events is the same story: your data, your ideas, and your most sensitive information are being assigned a price.
-
----
 
 ## 1. The Victim Is You, Not Anthropic
 
@@ -63,8 +60,6 @@ Your data gets copied at every stop. Each copy could feed the next training run 
 
 Ultimately, these model vendors and relay services are after the data. **You think you are getting a free ride, but you are the one paying for it.**
 
----
-
 ## 2. OpenAI's Soap Opera: It Cannot Even Say “We Didn't Train on It”
 
 The report covers Chinese vendors and relay services. OpenAI's episode brings us to the “legitimate” operators.
@@ -82,8 +77,6 @@ The answer: hard to say.
 **This is what trading data for compute looks like in plain sight.**
 
 As for the Agent API OpenAI released today, it practically lays the cards on the table. Previously, you had to provide the agent's execution environment yourself. That sounds inconvenient, but your credentials, secrets, and private information stayed local, right? If it tried anything, you could detect and block it at the gateway. But if agents all move to the cloud, doing anything useful may require you to hand over your keys, credentials, and all sorts of other things—willingly. And it would become much harder to audit how the agent used them or what it actually did.
-
----
 
 ## 3. Subscription Subsidies: A Game of Musical Chairs
 
@@ -104,8 +97,6 @@ The backdrop is OpenAI preparing for an IPO, while a leading Chinese model compa
 That is why I keep saying: use the subsidy while it lasts. If this window has only a few months or half a year left, the obvious move is to exploit it fully and use those months to make as much progress as possible. I have not changed my mind about that.
 
 But there is another side to it: while the compute flows toward you, know where your data is flowing.
-
----
 
 ## 4. What Is Your Moat, Really?
 
@@ -137,8 +128,6 @@ This is speculation. I have no evidence for it. But one point requires no guessw
 
 Privacy matters enormously. That is not an empty, politically correct slogan. **Data is power. When you hand over your data, you hand over power.**
 
----
-
 ## 5. Why I Use These Services So Heavily Myself
 
 At this point, someone will ask: you run a dozen or so subscriptions and burn hundreds of agent-hours a day. Aren't you the most enthusiastic data donor of all? Yes. And I would love them to train on all of it.
@@ -158,8 +147,6 @@ My principle is to distinguish what should be public from what should stay priva
 If you want to preserve what makes you or your company distinctive and irreplaceable, your core assets are precisely the things you cannot publish: customers, case details, formulas, strategy, and unpublished research. Hand those over casually, and you are selling the part that makes you you for $20 a month.
 
 I have quoted Palantir CEO Alex Karp before on this: AI model API calls are essentially the largest transfer of data in human history.
-
----
 
 ## 6. The Case for Local AI Is Political
 
@@ -187,8 +174,6 @@ Some places have high taxes; others have low taxes. But a low tax rate is only a
 
 My definition of local AI is practical. You do not have to cancel every cloud subscription. You do need the capability. You need a machine that can run a capable model with open weights, and it must be able to process your sensitive data without that data leaving the premises. For everyday public work, burn through your subscription tokens. Use the subsidy while it lasts.
 
----
-
 ## 7. This Is the Same Argument as Leaving the Cloud
 
 I have spent years arguing for leaving the cloud. Some people think I mean going back to a data center and building everything from the rack up. I do not. I mean getting off the SaaS and PaaS products that lock you into a cloud vendor. Buy basic cloud resources if you like. I use inexpensive infrastructure providers such as Hetzner and DMIT every day. But you should not be locked into their databases. Now I would add: you should not be locked into their models either.
@@ -206,8 +191,6 @@ I have argued before that the data world is converging on two things: PostgreSQL
 The database holds facts, object storage holds files, and the model holds intelligence. Only when you control all three are you fully your own person. Pigsty handles the first two. I am thinking about the third, but that is another article.
 
 ![A database, object storage, and a local model form three pieces of infrastructure under the user's control](sovereign-stack.webp)
-
----
 
 ## 8. A Few Predictions
 
@@ -228,8 +211,6 @@ Let them settle the distillation dispute with Anthropic. The benefits of open we
 **Sixth, companies will classify their data.** As with leaving the cloud, first distinguish what can leave and what cannot. Burn through subscriptions on data that can; keep the rest local. Over the next year or two, this will be one of the most practical tasks in enterprise AI adoption: sorting the data, not choosing the model.
 
 The last point is advice, not a prediction: **use the subsidy while it lasts, and keep a lifeboat ready.** Those two things are compatible. Make the most of the next few months, use every bit of the available capacity, and make as much progress as you can. At the same time, keep your memory in your own hands and prepare your local capability.
-
----
 
 ## Epilogue
 

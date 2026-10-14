@@ -8,12 +8,11 @@ ai: true
 aliases: ["/misc/probability-intro/"]
 tags: [AI]
 ---
-
 ## 1. Set Theory
 
 Sample space and sample points are undefined basic concepts in probability theory, like the concepts of points and lines in geometry.
 
-##### Definition: Event
+### Definition: Event
 
 Event: An event is a **set** of sample points.
 
@@ -35,7 +34,7 @@ Here we use an axiomatic method to **define** probability. As for how to **inter
 
 For every event A in sample space S, we want to assign A a number P(A) between 0 and 1, called the probability of A.
 
-##### Definition: σ-algebra/Borel field
+#### Definition: σ-algebra/Borel field
 
 A family of subsets of S is called a **σ-algebra** or **Borel field**, denoted as $\mathcal{B}$, if it satisfies the following three properties:
 
@@ -45,7 +44,7 @@ A family of subsets of S is called a **σ-algebra** or **Borel field**, denoted 
 
 There are many σ-algebras satisfying these three properties (empty set exists, closed under complement and union operations). Here we discuss the smallest σ-algebra containing all open sets in S. For countable sample spaces, usually $\mathcal{B}=\{$all subsets of S, including S itself$\}$. For uncountable sample spaces, such as $S=(-\infty,\infty)$ being the real line, we can take $\mathcal{B}$ to contain all sets of the form $[a,b],(a,b],[a,b),(a,b)$, where $a,b \in \mathbb{R}$.
 
-##### Definition: Probability function
+#### Definition: Probability function
 
 Given sample space S and σ-algebra $\mathcal{B}$, a function P defined on $\mathcal{B}$ and satisfying the following conditions is called a **probability function**:
 
@@ -75,7 +74,7 @@ Theorem: Let P be a probability function, $A,B \in \mathcal{B}$, then
 
 Counting involves much combinatorial analysis knowledge, all based on this theorem:
 
-##### Theorem: Fundamental counting theorem
+#### Theorem: Fundamental counting theorem
 
 If a task consists of k mutually independent subtasks, where the i-th task can be completed in $n_i$ ways, then the entire task can be completed in $n_1 \times n_2 \times \cdots \times n_k$ ways.
 
@@ -86,7 +85,7 @@ Two basic counting problems include:
 * Are samples ordered?
 * Is sampling with replacement?
 
-##### Definition: Population/Subpopulation/Ordered sample
+#### Definition: Population/Subpopulation/Ordered sample
 
 * Population: We use a population of size n to represent a set consisting of n elements.
 
@@ -96,7 +95,7 @@ Two basic counting problems include:
 
 * Numbering elements in a subpopulation gives an **ordered sample** of size r. There are $r!$ total ways.
 
-##### Number of ways to select r objects from n objects
+#### Number of ways to select r objects from n objects
 
 |       | Without replacement sampling                                    | With replacement sampling              |
 | ----- | ---------------------------------------- | ------------------ |
@@ -108,7 +107,7 @@ Two basic counting problems include:
 * Unordered without replacement is similar to ordered without replacement, except what's drawn is a subpopulation of size r rather than ordered sample
 * With replacement unordered sampling is most complex. Can be understood as placing r marks on n elements. Treating element boundaries as elements, n boxes have n+1 boundaries total, with r marks. Excluding the two side boundaries, there are n-1+r positions total. Choose r from these positions to place marks. So it's $\binom {n-1+r} r$
 
-##### Common combinatorial problems
+#### Common combinatorial problems
 
 * Population of size n, with replacement sampling of ordered sample of size r:
 
@@ -136,7 +135,7 @@ Two basic counting problems include:
 
 ## 3. Conditional Probability and Independence
 
-##### Definition: Conditional probability
+### Definition: Conditional probability
 
 Let A,B be events in S, with $P(B) > 0$. The conditional probability of event A occurring given that event B has occurred is denoted $P(A |B)$ and defined as:
 
@@ -149,7 +148,7 @@ Intuitively this is easy to understand: the probability of AB occurring together
 
 Naturally, the probability of A occurring given B is: probability of AB occurring together divided by probability of B occurring. Here the sample points of event B constitute the new sample space, and P(A|B) must satisfy the three probability axioms, forming a probability function on the new sample space.
 
-##### Theorem: Bayes' formula
+### Theorem: Bayes' formula
 
 Let $A_1,A_2,\cdots$ be a partition of the sample space, B be any set, then for $i=1,2,\cdots$:
 
@@ -160,7 +159,7 @@ P(A_i | B) = \frac
 {\sum_{j=1}^{\infty}{P(B|A_j)P(A_j)}}
 $$
 
-##### Definition: Statistical independence
+### Definition: Statistical independence
 
 Events A and B are called statistically independent if $P(A \cap B) = P(A)P(B)$
 
@@ -177,7 +176,7 @@ Many experiments involve a variable with generalizing power that is much simpler
 
 For example: voting results of 50 people, sample space is $2^{50}$. What we're actually interested in is just how many people agree, so define variable X = number of agreements, and the sample space becomes the integer set: $\{s| 0 \le s \le 50 \wedge s \in \mathbb{Z} \}$
 
-##### Definition: Random variable
+### Definition: Random variable
 
 A function mapping from sample space to real numbers is called a **random variable**
 
@@ -203,13 +202,13 @@ $$
 
 For any random variable, we can construct a function: **cumulative distribution function**, abbreviated as CDF.
 
-##### Definition: Cumulative distribution function
+### Definition: Cumulative distribution function
 
 The cumulative distribution function of random variable X, denoted $F_X(x)$, represents: $F_X(x) = P_X(X \le x)$
 
 The distribution of X is $F_X$, which can be abbreviated as: $X \sim  F_X(x)$, where "~" reads as "is distributed as."
 
-##### Example: Coin toss
+### Example: Coin toss
 
 Simultaneously toss three coins, let X = number of heads up, then X's cumulative distribution function is a step function:
 
@@ -228,7 +227,7 @@ $$
 
 From the definition of cumulative distribution function, $F_X(x)$ is **right-continuous**.
 
-##### Properties: Cumulative distribution function
+### Properties: Cumulative distribution function
 
 Function $F(x)$ is a cumulative distribution function if and only if it simultaneously satisfies the following three conditions:
 
@@ -236,19 +235,19 @@ Function $F(x)$ is a cumulative distribution function if and only if it simultan
 * $F(x)$ is a monotonically increasing function of $x$
 * $F(x)$ is right-continuous: $\displaystyle  \forall x_0 ( \lim_{x\rightarrow x_0^+}{F(x) } = F(x_0) )$
 
-##### Definition: Discrete/continuous random variables
+### Definition: Discrete/continuous random variables
 
 Let X be a random variable. If $F_X(x)$ is a continuous function of x, then X is called **continuous**; if $F_X(x)$ is a step function of x, then X is called **discrete**.
 
 The cumulative distribution function $F_X$ can completely determine the probability distribution of random variable X. This leads to the concept of identically distributed random variables.
 
-##### Definition: Identically distributed random variables
+### Definition: Identically distributed random variables
 
 Random variables X and Y are called **identically distributed** if for any set $A \in \mathcal{B}^1$, $P(X\in A)=P(Y\in A)$
 
 Note that two identically distributed random variables don't mean $X=Y$. For example, let X and Y respectively be the number of heads and tails when tossing three coins.
 
-##### Theorem: Properties of identically distributed random variables
+### Theorem: Properties of identically distributed random variables
 
 Random variables X and Y are identically distributed if and only if $\forall x ( F_X(x) = F_Y(x))$
 
@@ -256,7 +255,7 @@ Random variables X and Y are identically distributed if and only if $\forall x (
 
 Related to random variable X and cumulative distribution function $F_X$ is another function: if X is a continuous random variable, this function is called probability density function; if X is a discrete random variable, this function is called probability mass function. Both focus on the "point probability" of random variables.
 
-##### Definition: Probability mass function (pmf)
+### Definition: Probability mass function (pmf)
 
 The probability mass function of discrete random variable X is defined as:
 
@@ -274,7 +273,7 @@ $$
 P(X\le x) = F_X(x) = \int_{-\infty}^{x}{f_X(t)dt}
 $$
 
-##### Definition: Probability density function (pdf)
+### Definition: Probability density function (pdf)
 
 The probability density function of continuous random variable X is a function satisfying:
 
@@ -283,7 +282,7 @@ $$
 F_X(x) = \int_{-\infty}^{x}{f_X(t)dt}, \text{ for any } x
 $$
 
-##### Theorem: Properties of PDF/PMF
+### Theorem: Properties of PDF/PMF
 
 Function $f_X(x)$ is the probability density function (or probability mass function) of random variable X if and only if it satisfies both of the following conditions:
 

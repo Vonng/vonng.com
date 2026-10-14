@@ -6,7 +6,6 @@ summary: >
   丽珠医药的换 Logo PR 从天而降。被 DeepSeek 一体机厂商白嫖还没完，又有人飞龙骑脸开大羞辱，Dify 真的太难了！
 tags: [AI, 开源, 技术评论]
 ---
-
 今天 Dify 的 GitHub 仓库上演了一出魔幻现实大戏。Dify 开源社区好好地维护着自己的仓库，没想到忽然收到了一个疑似来自丽珠医药的 PR（而且不止一个，接连两个！），手起刀落就把 Dify 的 Logo 给换了。
 
 为什么要换别人的 Logo 呢？《[警惕，Dify 成为 DeepSeek 开源最大受害主体](https://mp.weixin.qq.com/s?__biz=MzU2NjY1ODk1Ng==&mid=2247484447&idx=1&sn=d59104d3c20e7666d988393a268616c3&scene=21#wechat_redirect)》这篇文章里就提醒了大家：有些「国产 DeepSeek 一体机」悄悄地把 Dify 拿回去改 UI、藏版权、抹 Logo，最后打个包装就说自己「自研」。这种「借壳上市」的花招在国内并不罕见（比如几百款「国产数据库」有很多都改自 PG），只不过 Dify 这波被白嫖得有点太狠了。

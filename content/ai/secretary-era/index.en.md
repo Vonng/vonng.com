@@ -6,7 +6,6 @@ summary: >
   From coding agents to always-on personal assistants, AI is starting to manage everyday life. A cloud computer, an identity, a wallet, and a group chat are becoming standard equipment. But first, decide what you are hiring: a digital extension of yourself, or an agent that needs permissions, audit logs, and limits.
 tags: [AI, Agent, Security, Commentary]
 ---
-
 > Dictated by Vonng and edited into an essay by Claude.
 
 Today was always going to be busy.

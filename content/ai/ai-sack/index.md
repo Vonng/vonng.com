@@ -8,7 +8,6 @@ tags: [AI, 软件工程, 职业, 技术评论]
 ai: true
 aliases: ["/db/ai-sack/"]
 ---
-
 昨天一条大新闻炸了圈。Jack Dorsey （原本推特的创始人） 的 Block 公司一刀砍掉 40% 员工，四千多人走人，从一万多缩到不到六千。
 理由当然是 AI。Dorsey 还放了句狠话：一年之内，大多数公司都会做出类似的结构性调整。
 
@@ -60,7 +59,7 @@ YC 掌门人 Garry Tan 分享过一个数据：软件工程占 AI Agent 工具�
 
 ![anthropic-se-usage-50.png](anthropic-se-usage-50.png)
 
-> 来源：[Anthropic：Measuring AI agent autonomy in practice](https://www.anthropic.com/research/measuring-ai-agent-autonomy-in-practice)
+> 来源：[Anthropic：Measuring AI agent autonomy in practice](https://www.anthropic.com/research/measuring-agent-autonomy)
 
 这意味着什么。意味着 AI Engineering 这一整套东西正在向外扩散。
 它包括 AI 辅助开发、Agent 构建、自动化工程实践，并会随着这波从大厂溢出的程序员，进入传统行业。

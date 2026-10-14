@@ -8,7 +8,6 @@ ai: true
 aliases: ["/misc/neuron-network/"]
 tags: [AI]
 ---
-
 > Neural networks are inspired by how the brain works and can be used to solve general learning problems. This article introduces the basic principles and practice of neural networks.
 
 <!--more-->
@@ -23,7 +22,7 @@ Neural networks are inspired by how the brain works and can be used to solve gen
 
 |         Biological Model          |            Mathematical Model            |
 |:---------------------:|:--------------------------:|
-| ![](neuron-model.png) | ![](neuron-math-model.png) |
+| ![Basic Principles of Neural Networks — Neuron Model (figure 1)](neuron-model.png) | ![Basic Principles of Neural Networks — Neuron Model (figure 2)](neuron-math-model.png) |
 
 The mathematical model of a neuron mainly includes:
 
@@ -36,7 +35,7 @@ The mathematical model of a neuron mainly includes:
 | Activation Function | $σ$ | Accepts weighted input, gives activation value                  |
 | Activation           | $a$ | Scalar value, $a = σ(\vec{w}·\vec{x}+b)$ |
 
-##### Activation Function Expression
+#### Activation Function Expression
 
 <div>
 $$
@@ -77,7 +76,7 @@ Now consider a single-layer neural network with $n$ inputs and $s$ neurons (outp
 | Weighted Input | $z$  | Changes from $1 × 1$ scalar to $s × 1$ column vector                  |
 | Activation  | $a$  | Changes from $1 × 1$ scalar to $s × 1$ column vector                  |
 
-##### Activation Function Vector Expression
+#### Activation Function Vector Expression
 
 <div>
 $$
@@ -113,7 +112,7 @@ Now consider an $L$-layer neural network with layer sizes: $d_1,d_2,⋯,d_L$. Th
 | Weighted Input | $z$  | Extended from $s × 1$ column vector to list of $L-1$ column vectors: $z^2_{d_2},⋯,z^L_{d_L}$ |
 | Activation  | $a$  | Extended from $s × 1$ column vector to list of **$L$** column vectors: $a^1_{d_1},a^2_{d_2},⋯,a^L_{d_L}$ |
 
-##### Activation Function Matrix Expression
+#### Activation Function Matrix Expression
 
 $$
 \left[ \begin{array}{c} a^l_1 \\ ⋮ \\ a^l_{d_l} \end{array}\right]
@@ -277,8 +276,6 @@ When error function is MSE: $C = \frac 1 2 \|\vec{y} -\vec{a}\|^2= \frac 1 2 [(y
 
 ### Proof of Backpropagation Equations
 
-------
-
 #### BP1: Output Layer Error Equation
 
 The output layer error equation provides a method to compute output layer error $δ$ based on network output $a^L$ and labeled result $y$:
@@ -304,8 +301,6 @@ $$
 Since in the error function, outputs from other neurons don't affect the partial derivative of the error function with respect to neuron $j$'s output, and coefficients cancel out. In vector form: $ (a^L - y) $. On the other hand, it's easy to prove $σ'(z^L) = (1-a^L)⊙ a^L$.
 
 QED
-
-------
 
 #### BP2: Error Propagation Equation
 
@@ -362,8 +357,6 @@ $$
 
 QED
 
-------
-
 #### BP3: Weight Gradient Equation
 
 The weight gradient $∇C_{W^l}$ for each layer can be obtained from the outer product of current layer error vector (column vector) and previous layer output vector (row vector).
@@ -413,8 +406,6 @@ $$
 - **Previous layer activation column vector**: $(a^{l-1})^T$, dimension ($1 \times d_{l-1}$)
 
 QED
-
-------
 
 #### BP4: Bias Gradient Equation
 
@@ -556,7 +547,7 @@ Sigmoid is also called the logistic curve, whose derivative $σ'$ is bell-shaped
 
 |          MSE           |          Cross Entropy           |
 | :--------------------: | :------------------------------: |
-| ![](mse.png) | ![](cross-entropy.png) |
+| ![Basic Principles of Neural Networks — Cost Function: Cross-Entropy (figure 3)](mse.png) | ![Basic Principles of Neural Networks — Cost Function: Cross-Entropy (figure 4)](cross-entropy.png) |
 
 Using **cross-entropy** error function:
 
@@ -614,7 +605,7 @@ plt.plot(xs, np.polyval(p2, xs));plt.plot(x, y, 'ro');plt.plot(xs, np.sin(xs), '
 
 |            3rd-order polynomial             |            10th-order polynomial             |
 | :--------------------------: | :---------------------------: |
-| ![](overfit-3.png) | ![](overfit-10.png) |
+| ![Basic Principles of Neural Networks — Regularization (figure 5)](overfit-3.png) | ![Basic Principles of Neural Networks — Regularization (figure 6)](overfit-10.png) |
 
 A model's true test is its predictive ability on unseen scenarios, called **generalization ability**.
 
@@ -624,7 +615,7 @@ Of course, this principle is only a belief we hold, not a true theorem: it's not
 
 Anyway, very large weight parameters usually indicate overfitting. For example, the 10th-order polynomial coefficients are quite abnormal:
 
-```
+```text
  -0.001278386964370502
  0.02826407452052734
  -0.20310716176300195
@@ -723,7 +714,7 @@ if __name__ == '__main__':
     net.gradient_descent(train_data, test_data, epoches=50, m=10, eta=0.1, lmd=5.0)
 ```
 
-```
+```text
 Round {0}: {9348}/{10000}
 Round {1}: {9538}/{10000}
 Round {2}: {9589}/{10000}

@@ -6,8 +6,6 @@ summary: >
   给火热的Agent记忆赛道泼冷水，不是因为 Agent 不需要记忆，恰恰相反。记忆是终局壁垒，只是这个壁垒不在今天那些"Memory 框架"手里，而在模型、Harness、数据库这三方手里。
 tags: [AI, Agent, PostgreSQL, 数据库]
 ---
-
-
 几个月前，老冯写过一篇《[Agent 操作系统时刻](https://vonng.com/ai/agent-os/)》。那篇文章里我做了个判断：Agent 基础设施的下一场热闹会发生在“记忆”这个方向，围绕着“Agent 该怎么记住东西”会冒出一大批创业公司和开源项目，资本会涌进来，架构图会画得越来越花。
 
 果不其然，Mem0 又融了一轮，MemGPT 改名 Letta 继续融，Zep、Cognee、Hindsight、MemoryScope、Memobase、SuperMemory、Graphiti、LangMem、EverMemOS——一抓一大把。每家的技术博客上都挂着差不多的架构图：底下一个 episodic 层，中间一个 semantic 层，顶上一个 reflection 或 procedural 层，层与层之间箭头来回穿梭，写着 consolidation、retrieval、forgetting。GitHub star 在涨，arXiv 论文在刷榜，技术大会每场都有一个 Agent Memory 的 track。热闹是真的热闹。
@@ -19,8 +17,6 @@ tags: [AI, Agent, PostgreSQL, 数据库]
 这两句话听起来像同一件事，其实差两个字，差一条赛道的生死。
 
 下面讲讲为什么。
-
--------
 
 ## 一、终局是三分天下
 
@@ -49,8 +45,6 @@ DB_URL=postgres://user:pass@host:5432/memory
 
 现在可以回头问那个关键问题：今天市面上这些 Memory 框架，坐在哪一块上？
 
--------
-
 ## 二、Memory 框架是什么？
 
 先对 Memory 框架做一次颗粒度区分，免得一竿子打翻一船人。
@@ -64,8 +58,6 @@ DB_URL=postgres://user:pass@host:5432/memory
 **第三类，Agent Runtime / Agent OS** 。代表是 Letta/MemGPT。它们做的根本不是 Memory 框架该做的事——把 context window 当 RAM、把外部存储当 Disk、让模型自己通过 tool call 在两者之间 swap——这是操作系统意义上的虚拟内存管理。它门槛不低，但它的准确名字是 **Agent Runtime** ，是 Harness 下位的执行引擎层。其实，它应该归到 Runtime / Harness 赛道，不是 Memory 赛道。
 
 第一类会被 Skill + 模型自己写 SQL 直接替代；第二类的策略层会被模型吸收，存储层会归回数据库；
-
--------
 
 ## 三、它没有壁垒
 
@@ -89,8 +81,6 @@ Claude 的 Skills 机制已经把这条路走通一半。用户写个 `memory-sk
 
 **你以为的护城河，其实是一张写着几百字的 markdown** 。生产环境里这张 markdown 背后自然会接上受控工具和固化的数据库 pipeline——但那些位置该归 Harness 的归 Harness，该归数据库的归数据库，依然没有独立 Memory 框架的位置。
 
--------
-
 ## 四、苦涩的教训
 
 上一节是从产业结构上说 Memory 框架没位置。再往深一层，从方法论上也有一把刀—— **The Bitter Lesson** 。
@@ -102,8 +92,6 @@ Sutton 2019 年那篇一千多字的博客，讲的事很简单：过去七十�
 Memory 框架的问题在于它 **站在后者那一边** 。它硬编码的那些东西——什么信息值得记、记在哪一层、什么时候触发反思、怎么组合向量和全文——每一项都是“替 Agent 做认知决策”的意见，而不是通用积木（向量存储、全文检索、事务、索引这些真正的积木，早就被数据库提供了）。今天 Agent 需要这些意见，只是因为模型还不够强；等模型强到能自己判断——这件事已经在发生——这些手工认知策略会像 SIFT 遇见 AlexNet 那样，一夜之间变成废铁。
 
 产业结构上它没位置，方法论上它也撑不住。两条线在这里合拢。
-
--------
 
 ## 五、真正的壁垒
 
@@ -126,8 +114,6 @@ Memory 框架的问题在于它 **站在后者那一边** 。它硬编码的那�
 Agent 越强大，它越需要一个可靠的物理世界锚点。Agent 革命不会削弱数据库的价值， **只会放大它** 。
 
 所以三分天下的终局里，模型那块会打到流血，Harness 那块还在摸索， **只有数据库这块地基，三十年前就定了，三十年后还会在** 。
-
--------
 
 ## 六、演化的尽头是 PostgreSQL
 

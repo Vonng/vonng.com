@@ -7,7 +7,6 @@ summary: >
 tags: [AI, LLM, Data Sovereignty, Open Source]
 ai: true
 ---
-
 On July 24, Jensen Huang posted his first-ever tweet.
 
 The account was brand-new. A man who has led the world's most valuable company for more than thirty years spoke on social media for the first time. He did not show off a GPU, tease a launch, or mention earnings. He dropped a PDF of an open letter titled *Open Weights and American AI Leadership*, with one line: the world needs both frontier closed models and frontier open-source models.
@@ -23,8 +22,6 @@ Twenty-five organizations signed the letter: NVIDIA, Microsoft, Meta, Palantir, 
 The three names missing from the list are even more revealing: OpenAI, Anthropic, and Google.
 
 You do not actually need to read the letter. The list itself says everything.
-
----
 
 ## 1. The List Is the Argument
 
@@ -46,8 +43,6 @@ Of course Jensen Huang did not post his first-ever tweet out of charity. Open-so
 That does not diminish the letter's significance. It strengthens it. In this case, **the interests of the most profitable layer in the value chain happen to align with those of nearly every user**. The combination that deserves real suspicion is: "We are taking away your control, but only for your safety." Right now, that is exactly what the three companies missing from the list are saying.
 
 There is one more subtle point in the title. The letter is called *Open Weights and American AI Leadership*. The model it is actually defending right now is Chinese.
-
----
 
 ## 2. The Definition Fight Does Not Matter. Exit Is Enough
 
@@ -74,8 +69,6 @@ When a company buys software or chooses a technology stack, only one calculation
 Once you see it this way, many of the arguments evaporate. Take the claim that "weights are an uninterpretable black box; you cannot audit 2.8 trillion floating-point numbers." That is technically correct but beside the point. If enterprises do not truly need a voice in upstream source code, they certainly do not need the even higher-order form of voice that comes from understanding the internal structure of the weights. An enterprise does not need to understand the model. It needs this: **the model runs inside my network, I control its egress, and my data cannot get out.**
 
 So we can set the definition fight aside. It is an academic question, not a procurement question.
-
----
 
 ## 3. What Data Sovereignty Really Means: No One Can Press Pause
 
@@ -122,8 +115,6 @@ The real significance of K3 is not another benchmark victory. It is this:
 
 **For the first time, the line marked "self-hostable" is beginning to overlap with the line marked "good enough."**
 
----
-
 ## 4. The Real Weakness: The Barrier to Self-Hosting
 
 All of the arguments above rest on one premise: you can actually run the model.
@@ -151,8 +142,6 @@ The real bottleneck is not compute but **system memory and VRAM**—both the mos
 **Every burst of capacity built to meet panic-driven demand eventually ends in a price collapse.**
 
 Today's price of entry—a full rack—may look very different three years from now.
-
----
 
 ## 5. Why China? Two Completely Different Kinds of Open Source
 
@@ -199,8 +188,6 @@ The former will stay open. The latter will remain open only until it no longer n
 
 **Always preserve your exit, including your exit from an open-source vendor.**
 
----
-
 ## 6. An Unenforceable Restriction—and the Funniest Line in the Letter
 
 This open letter did not appear out of nowhere. U.S. Treasury Secretary Scott Bessent said the government was reviewing whether Chinese models had used stolen American intellectual property. White House adviser Michael Kratsios directly accused Moonshot of copying American models through distillation. That is the real background noise behind the letter.
@@ -231,8 +218,6 @@ Put the two statements together, and the translation is: I can scrape all of hum
 
 Asserting upstream property rights would destroy the foundation of model training, so everything upstream must remain free. Relinquishing downstream property rights would destroy the moat, so everything downstream must be locked down.
 
----
-
 ## 7. The PostgreSQL Playbook—and Where the Analogy Breaks
 
 Let me close with an analogy from the field I know best.
@@ -262,8 +247,6 @@ The entire debate can therefore be reduced to one question:
 And note that the second outcome is not really a loss. Always being one generation behind is where PostgreSQL stood relative to Oracle in 2005.
 
 We all know what happened in the database world over the next twenty years.
-
----
 
 ## Conclusion
 

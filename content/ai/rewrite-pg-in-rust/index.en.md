@@ -8,7 +8,6 @@ aliases: ["/db/rewrite-pg-in-rust/"]
 tags: [AI, PostgreSQL, Software Engineering, Database]
 ai: true
 ---
-
 [pgrust](https://github.com/malisper/pgrust) recently hit the front page of Hacker News. With AI, its author had ported PostgreSQL to Rust and passed the core regression suite.
 
 The obvious headline was: "AI rewrote PostgreSQL in Rust."

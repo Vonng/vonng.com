@@ -7,7 +7,6 @@ summary: >
 tags: [AI, Machine Learning]
 ai: true
 ---
-
 ## 1. The Naming Mess
 
 In 2025 and 2026, "world model" became perhaps the hottest—and loosest—label in AI.
@@ -39,8 +38,6 @@ What is a "world"? What is a "model"? What do the two words promise when joined 
 
 Confucius called this "the rectification of names": if the names are wrong, the argument cannot proceed.
 Curiously, once you trace both words to their roots, you find that the ancients had already carved part of the answer into the language itself.
-
----
 
 ## 2. "World": Time, Boundaries, and the Person Inside
 
@@ -114,8 +111,6 @@ Something utterly chaotic and lawless—white noise—does not deserve to be cal
 A world is a world only because it has order.
 And because it has order, something can capture, compress, and reproduce it. That something is a model.
 
----
-
 ## 3. "Model": Negative Space and a Measuring Stick
 
 Having taken apart "world," let us do the same to the Chinese word for model, **模型** (*móxíng*).
@@ -162,8 +157,6 @@ It is more like **a state machine you can step forward**. Advance it one tick an
 
 The question "What would happen under a different action?" is exactly what separates it from a beautiful image or a convincing video.
 Judea Pearl spent a lifetime measuring that dividing line.
-
----
 
 ## 4. Pearl's Ladder of Causation: What Can a Model Answer?
 
@@ -215,8 +208,6 @@ The problem with fortune-telling is not that it lacks a story.
 It is that almost any outcome can be explained after the fact, leaving almost no explicit condition for failure.
 A technical model is the opposite: a wrong prediction is wrong. You cannot rescue it by wrapping every outcome in another explanation.
 A system that can never be wrong is not a technical model. It is a belief system.
-
----
 
 ## 5. The Spectrum of State: Five Schools, Five Mystic Arts
 
@@ -329,8 +320,6 @@ The original essay ended with a line from Patriarch Subhuti: "Within the Way are
 Then it unearthed a marginal note: "The key to the mystery is not found among the 3,600 gates."
 Every side path can bear true fruit. Each of the five approaches can succeed for its intended use, provided its validation loop closes and its errors are judged against a clear purpose.
 But the key does not lie in the school. It lies on these two axes: **where the state is defined, and how high the questions reach.**
-
----
 
 ## 6. After Getting the Name Right
 

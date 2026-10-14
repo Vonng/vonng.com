@@ -8,7 +8,6 @@ tags: [AI, Society, Career]
 ai: true
 aliases: ["/db/new-year-ai-change/"]
 ---
-
 > [Original WeChat post](https://mp.weixin.qq.com/s/sk9LLWxUUfmzvE89k5LFYA)
 
 For this generation of knowledge workers, the greatest danger is not that they "don't know how to use AI." It is that they still think they have a 20-year adjustment window. They don't.
@@ -96,8 +95,6 @@ I'm planning a new AI series: informal essays on a few topics I want to explore.
 - **Individual strategy:** Not a vague call to "embrace change," but a practical framework for judgment derived from historical patterns.
 
 Not every essay will be good, but these questions deserve serious thought.
-
----
 
 **Today is the first day of the Lunar New Year. Happy New Year, everyone.**
 

@@ -8,7 +8,6 @@ tags: [AI, 翻译]
 ai: true
 aliases: ["/misc/vibe-coding-translate/"]
 ---
-
 Andrej Karpathy 去年造了个词叫 Vibe Coding。大意是说，现在写代码可以完全凭感觉来了：
 你把想法告诉 AI，AI 把代码吐出来，你看一眼觉得“差不多”就接受，细节懒得看，反正跑起来就行。
 
@@ -21,8 +20,6 @@ Andrej Karpathy 去年造了个词叫 Vibe Coding。大意是说，现在写代�
 
 这其实挺说明问题的。一个好的译名能让概念扎根生长，一个烂的译名让人皱皱眉，然后继续说英语。
 “Vibe”本身就很微妙，不是一个有明确边界的概念，更像是一种氛围、感觉、态度。这让翻译变得有趣，也变得困难。
-
--------
 
 ## 先看看有哪些候选
 
@@ -42,8 +39,6 @@ Andrej Karpathy 去年造了个词叫 Vibe Coding。大意是说，现在写代�
  而且跟已有的 Intent-Based Programming 概念翻译撞车了。
 
 **“歪脖编程”**，谐音梗。画面倒是对的：程序员歪着脖子看 AI 吐出来的代码，似懂非懂，歪头想想“行吧” 就接受了，活灵活现。但它只能当个梗，而不是术语。
-
---------
 
 ## 为什么“写意编程”最好
 
@@ -65,8 +60,6 @@ Andrej Karpathy 去年造了个词叫 Vibe Coding。大意是说，现在写代�
 
 ![featured.webp](featured.webp)
 
---------
-
 ## 结语
 
 好的翻译不是逐字对应，而是在另一种语言里找到那个恰好在等你的词。
@@ -76,8 +69,6 @@ Andrej Karpathy 去年造了个词叫 Vibe Coding。大意是说，现在写代�
 下次你打开 Cursor 或者 Claude Code，对着 AI 说出你的想法，看着代码自己长出来的时候，
 
 你不是在 Vibe Coding，你是在 **写意编程**。
-
---------
 
 ## Credit
 

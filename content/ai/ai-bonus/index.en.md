@@ -8,7 +8,6 @@ tags: [AI, Claude, Codex]
 ai: true
 aliases: ["/db/ai-bonus/"]
 ---
-
 It is not every day that you pay one dollar and receive fifty dollars' worth of compute in return. But that is more or less what frontier AI subscriptions look like right now.
 
 ## 1. Paying $200 and burning $5,000 of compute

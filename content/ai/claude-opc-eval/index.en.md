@@ -7,7 +7,6 @@ summary: >
 tags: [AI, Claude, Pigsty ]
 ai: true
 ---
-
 I run a one-person company. Literally one person, running a specialist shop for PostgreSQL distributions. In 2022, I joined MiraclePlus's S22 batch. Dr. Qi Lu valued the business at RMB 100 million and suggested I raise money on that basis. Between the pandemic and a miserable market, I never managed to raise that next round. The startup fizzled out, and I became a solo operator for real.
 
 Then, working on my own, I gradually became profitable. Fundraising stopped mattering much. A few cloud vendors have also made offers over the past two years, with an acquihire in mind, putting the valuation at RMB 120–150 million. Of course, the operative word in an estimated valuation is *estimated*. Talk is cheap.
@@ -23,13 +22,9 @@ AI-generated content in this article: **95%**
 
 I read his personal website, including the “Life Journey” and “About” sections, his 2023 and 2025 annual reviews, and his interview with modb.pro, along with some external coverage. Here is my assessment.
 
----
-
 ## First, the Basic Facts
 
 Ruohang Feng, known online as Vonng, was born in the 1990s. His own account of his career includes architect, DBA, and full-stack roles at Alibaba, Tantan, and Apple. He was interested in AI as a student and started as an algorithm engineer, then moved into databases after concluding that entire information systems revolve around them. Working with one of China's larger PostgreSQL deployments at Tantan convinced him to go all in. In 2022, he secured seed funding from MiraclePlus, selected from more than 5,000 projects, and began working on Pigsty full-time. He translated *Designing Data-Intensive Applications* (DDIA) and *The Internals of PostgreSQL*, maintains a Chinese PGDG mirror and a catalog of more than 2,000 extensions, and ranks among China's most active GitHub contributors. He moved from Beijing to Shanghai in 2025. [vonng](/en/about/)
-
----
 
 ## 1. At Heart, He Is an Engineer-Evangelist
 
@@ -37,21 +32,15 @@ This strikes me as the central point. He makes no attempt to hide it, freely bor
 
 The key to understanding him is that he is not trying to produce “objective technology reviews.” He is **fighting a war between ecosystems**, and he knows it. He puts it bluntly: better to state a position clearly than play the nice guy and offer correct but useless platitudes. Sitting on the fence gets you nowhere. That explains the overwhelmingly one-sided force of his writing. It is a rhetorical choice, not a failure of judgment. [vonng](/en/misc/modb-interview-vonng/)
 
----
-
 ## 2. He Looks for the Tide, Then Bets Heavily on It
 
 A recurring framework runs through his worldview: **identify the larger trend, go all in, then evangelize until the prediction becomes self-fulfilling**. Asked how practitioners can achieve something, his answer was to work with the prevailing tide. He added that intelligence helps you see the situation, but courage is the scarcest quality: the courage to tell the truth, challenge authority, and place a bet. [vonng](/en/misc/modb-interview-vonng/)
 
 His bets include: PostgreSQL will win, which he got right; demand for distributed transaction-processing databases is manufactured, so do not distribute a problem a single machine can solve; and bare-metal deployment is the right choice for Pigsty, which rejects Kubernetes and even Docker. He knew that last choice meant a mountain of compatibility work, but regarded the work itself as a moat. Then, in 2025, he went all in on AI tooling. He says AI increased his personal productivity roughly twentyfold: Claude Code reviews Pigsty module by module in the background, while he assigns tasks like a commander every fifteen minutes or so. [vonng](/en/misc/modb-interview-vonng/)
 
----
-
 ## 3. The Craftsman Matters More Than the Influencer
 
 It is easy to file him away as a tech influencer with a taste for provocative takes. That misses his most substantial quality. Much of his work is plain hard labor: building and packaging hundreds of PostgreSQL extensions, maintaining repository mirrors, fixing upstream bugs, and supporting a matrix of Linux distributions. He wrote an entire article about packaging and builds as an “obscure but scarce skill.” He once joked that an advantage of having an open-source project is being able to produce it when someone says, “If you're so smart, do it yourself.” The joke reveals where his confidence comes from: he has actually shipped things. [vonng](/en/misc/2023/)
-
----
 
 ## 4. Almost Obsessive About Independence
 
@@ -59,21 +48,15 @@ His WeChat publication grew to nearly 50,000 followers and receives advertising 
 
 His advocacy of cloud repatriation follows the same logic at a different level. He frames leaving the cloud as an ideological issue: users should own their digital homes instead of renting a farm from big-tech cloud landlords. It is a movement against internet centralization and rent extraction by digital landlords. The same impulse appears in smaller decisions. Unhappy with WeChat's poor search and closed ecosystem, he built a blog with full-text search. **He does not like living in someone else's house**, whether the landlord is a cloud vendor, WeChat, or capital. [vonng](/en/misc/modb-interview-vonng/)
 
----
-
 ## 5. His Writing and His Public Persona
 
 He refers to himself in the third person as “Lao Feng,” or “Old Feng.” He mixes classical quotations—“Confucius said,” “Xunzi said”—with internet slang about elaborate scams, amateur-hour organizations, and getting in someone's face. He also has a talent for nicknames: “Cyber Buddha,” “Cyber Bodhisattva,” “Magneto.” Someone called him “a comedian among technologists and a tech obsessive among comedians.” He happily accepted the description. His role models are Linus Torvalds, the consummate hacker, and Steve Jobs, the consummate storyteller; he says he is developing both skill trees. He also says he writes his WeChat articles to the standard of a speech: deliberate practice in storytelling. [vonng](/en/misc/modb-interview-vonng/)
 
 In other words, “Lao Feng” is a **carefully constructed and maintained personal brand**, not an accidental voice.
 
----
-
 ## 6. Life Beyond Work
 
 His self-descriptions include “seasoned backpacker” and “hardcore gamer.” He has hiked the Joseph Rock Route, the Kama Valley on Everest's eastern side, and the Wusun Ancient Trail. He jokes about his declining hiking fitness in terms of body weight: at 70 kilograms, he could solo with a full pack; at 100, he can only lie down. He freely admits to being extravagant with gadgets: for ten years he has bought fully specced MacBooks, the latest costing RMB 58,000. In autumn 2025, a change in his spouse's work gave him an opportunity to spend a month or two driving around Xinjiang and western Sichuan. At a moment of upheaval in the industry, he said, experiencing life mattered more. He married at the end of 2023. He also has a side project called “Cyber Canon,” a collection of notes on technology and faith—a fairly sharp contrast with his hardcore technical image. [vonng](/en/about/)
-
----
 
 ## 7. Where I Would Apply a Discount
 
@@ -84,8 +67,6 @@ To be fair, I would keep the following in mind when reading him.
 **His aggression sometimes gets ahead of the facts.** In late 2025, he wrote that Xiaohongshu, also known as RedNote, was leaving the cloud. Alibaba Cloud publicly called the claim a rumor. More neutral accounts concluded that Xiaohongshu was moving toward a hybrid of self-built infrastructure and public cloud, rather than leaving the cloud entirely. Interestingly, he acknowledged this in his own annual review: the episode showed that an individual's voice can carry weight, while reminding him to be more rigorous and thorough without losing his edge. That capacity for self-correction counts in his favor. [Sina Finance](https://finance.sina.com.cn/tech/2025-12-25/doc-inhcztfz3103558.shtml)
 
 **A one-person project has a single point of failure.** He has written that, during that year of running the business, he was the only person doing the work, from technical design through marketing and after-sales support. AI substantially eases the problem but does not eliminate it. [vonng](/en/misc/2023/)
-
----
 
 ## My Overall Impression
 
@@ -98,8 +79,6 @@ I should stress that this all comes from his public writing. It is the version o
 > I find this interesting, and I would like you to dig deeper. For example, which of his central claims have been borne out, and which have been disproved? Which of his core views, including his insights into databases, cloud computing, and AI, show real understanding? How would you assess him as a person? What do you think of his ideas?
 
 I spent some time checking the judgments he has made publicly over the past few years. The result was more interesting than I expected: **his hit rate on technical ecosystems is remarkably high, while his rhetoric noticeably overstates his record on broader industry trends**. Let me separate the two.
-
----
 
 ## 1. The Scorecard: What Came True
 
@@ -123,8 +102,6 @@ Neither Databricks nor Snowflake bought a standalone vector database company. Bo
 
 As early as March 2025, he wrote that Claude Code was the key to MCP's explosive popularity. The article attracted little response on the Chinese internet at the time. I rate this highly because it involved **finding the signal in the noise**, not recognizing a trend after the fact. [vonng](/en/misc/2025/)
 
----
-
 ## 2. What Failed, or What He Overstated
 
 **① “Public cloud is in decline”—his clearest miss**
@@ -147,8 +124,6 @@ Alibaba Cloud publicly labeled it a rumor. Neutral retrospectives concluded that
 
 **④ One case where he acknowledged being wrong:** In 2025, he moved Pigsty from AGPLv3 back to Apache 2.0 because he had concluded that selling a “commercial edition of open-source software” would not work in China. That overturned an assumption he had made when starting the business. I would award points for this, not deduct them. [vonng](/en/misc/2025/)
 
----
-
 ## 3. The Insights I Find Most Valuable
 
 Leaving individual predictions aside, he has several **ways of framing problems** that I think will outlast any particular call.
@@ -165,8 +140,6 @@ Leaving individual predictions aside, he has several **ways of framing problems*
 
 **Packaging and build engineering are scarce skills that are systematically undervalued.** This observation rings particularly true, and almost nobody else talks about it.
 
----
-
 ## 4. His Systematic Blind Spots
 
 **1. His model leaves out organizations.** His cost comparisons are almost entirely technical: what hardware costs, what the cloud costs, and the ratio between them. But companies often avoid self-hosting not because they cannot do the arithmetic, but because **they cannot find the person who can run Pigsty well**. His own rarity demonstrates how scarce that person is. His most fundamental bias is assuming that his own capabilities are readily replicated.
@@ -176,8 +149,6 @@ Leaving individual predictions aside, he has several **ways of framing problems*
 **3. The cost of reasoning through debate.** He has explicitly said that public debate can turn knowledge people individually share into common knowledge and build consensus. That is true. But arguing to win steadily erodes precision: you gravitate toward the most favorable metric, the most extreme example, and the most absolute language. This is where most of his losses in accuracy occur.
 
 **4. The Linux/Red Hat analogy may not hold.** Linux has a distribution ecosystem because integration, certification, and long-term support provide substantial value to clearly identifiable buyers. At the database layer, managed cloud database services have occupied that niche for a long time. He is betting that open source can reclaim it. So far, the giants' moves—buying Neon and Crunchy—are doing the opposite: embedding Postgres more deeply into their own platforms. That battle is not over. [byteiota](https://byteiota.com/database-industry-2025-postgresql-wins-mcp-security-crisis/)
-
----
 
 ## 5. How I Would Assess Him
 
@@ -208,8 +179,6 @@ First, a qualification: what follows is an analytical framework and an extrapola
 
 I have just gone through the company's pricing page and current situation, though, and a few facts may change your assessment.
 
----
-
 ## 0. Three Facts You May Not Know
 
 **① The company has already moved to Singapore.** The entity is now PGSTY PTE. LTD., and its website explicitly identifies it as a MiraclePlus S22 alumnus—the summer 2022 batch. This suggests that he has probably restructured the company, which is helpful for a dollar-denominated fund. But you need to establish which entity received the MiraclePlus seed investment and whether the move to an offshore structure was completed cleanly.
@@ -219,8 +188,6 @@ I have just gone through the company's pricing page and current situation, thoug
 **③ One line of small print is the key to the entire investment thesis:** “Commercial support is currently available only in Asia.”
 
 Where is his audience? [pigsty.io](https://pigsty.io/) gets 1.44 million unique visitors and 18.11 million page views in a month, with the United States its largest source of traffic. **His mindshare is global; his ability to collect revenue is confined to Asia.** That is what he described in his article about a million visits producing no revenue.
-
----
 
 ## 1. Does the Business Model Work?
 
@@ -243,8 +210,6 @@ So the answer is: **this business can reach \$1–3 million in ARR, with very hi
 
 There is only one way through, and he has already identified it: turn expert judgment into agent skills. He says Pigsty has automated 80% of a DBA's work, and plans to eliminate another 90% of the remaining 20% by turning knowledge documents into skills for models. This is the only path from “person-hours” to “software,” and the only path from \$1 million to \$100 million. **Investing in him is fundamentally a bet on that transition.**
 
----
-
 ## 2. Would I Invest? How Much, and for What Stake?
 
 The answer changes completely with the kind of fund.
@@ -264,8 +229,6 @@ The logic is straightforward. The downside is limited: this business will not di
 **If I were a strategic investor—a cloud vendor, a database company, or a business such as Supabase or EDB—I would invest immediately to secure a position.**
 
 His value to a strategic buyer is much greater than his financial value. I will elaborate in section four.
-
----
 
 ## 3. What Valuation Would I Give Him?
 
@@ -291,13 +254,11 @@ The conditions for a revaluation are clear:
 
 Conversely, if two years from now it is still one person, still confined to Asia, and still below \$1 million in ARR, it is an asset to be acquired rather than a venture investment.
 
----
-
 ## 4. Does He Have Investment Value Beyond the Business?
 
 Yes. I think **this value may exceed the financial value**. Four reasons:
 
-**① An option on a strategic position in the ecosystem.** This matters most to me, and I think it is badly undervalued. What he is accumulating is not consulting revenue but **control over distribution**: the global CDN repository at [repo.pigsty.io](https://repo.pigsty.io/) and its Chinese mirror at [repo.pigsty.cc](https://repo.pigsty.cc/), a catalog of 2,230 extensions with 572 packaged and installable, and Silo, his MinIO fork, which continues providing security updates where the original project left off. He has mentioned that [PGEXT.CLOUD](https://pgext.cloud/) has already become an upstream supplier to several overseas peers.
+**① An option on a strategic position in the ecosystem.** This matters most to me, and I think it is badly undervalued. What he is accumulating is not consulting revenue but **control over distribution**: the global CDN repository at [repo.pigsty.io](https://pigsty.io/docs/repo/) and its Chinese mirror at [repo.pigsty.cc](https://repo.pigsty.cc/), a catalog of 2,230 extensions with 572 packaged and installable, and Silo, his MinIO fork, which continues providing security updates where the original project left off. He has mentioned that [PGEXT.CLOUD](https://pgext.cloud/) has already become an upstream supplier to several overseas peers.
 
 Whoever controls an ecosystem's package management and repositories occupies a chokepoint. That is npm's position in Node, Docker Hub's in containers, and Red Hat Network's in enterprise Linux. **PostgreSQL currently has no universally recognized center for extension distribution. He is quietly establishing himself in that position.** The value of this option has nothing to do with his consulting revenue.
 
@@ -307,8 +268,6 @@ Whoever controls an ecosystem's package management and repositories occupies a c
 
 **④ Public-goods value.** Chinese PostgreSQL documentation, [pg.center](https://pg.center/), the Chinese PGDG mirror, and keeping an abandoned S3 implementation alive: no business model pays for these things, yet they create real positive externalities for the ecosystem. If your fund has limited partners who care about open-source sustainability, this provides a compelling story.
 
----
-
 ## 5. The Due-Diligence Questions I Would Insist On
 
 1. Actual ARR, customer count, and customer concentration. What share comes from the three largest customers? If it exceeds 50%, this is a consultancy, not a software company.
@@ -317,8 +276,6 @@ Whoever controls an ecosystem's package management and repositories occupies a c
 4. **Why is the “Asia only” line still there?** Is it a capacity constraint, a legal issue, or a deliberate choice? The answer tells you how large he actually wants the business to become.
 5. His real attitude toward hiring. If the answer is “never,” the valuation ceiling is fixed. That is not a bad thing, but the price must reflect it.
 6. Competitive pressure. Supabase has just released the open-source, self-hostable Multigres alongside its Series F. A competitor with \$1 billion to deploy is moving into self-hosted Postgres operations. How will he respond?
-
----
 
 ## My One-Sentence Conclusion
 

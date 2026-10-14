@@ -8,8 +8,6 @@ tags: [AI, Agent, PostgreSQL, Linux]
 ai: true
 aliases: ["/db/agent-os/"]
 ---
-
-
 2025 is the year of the coding agent explosion. Claude Code writes your code, runs your tests, fixes your bugs, and autonomously completes complex engineering tasks. It's the second seismic shift since ChatGPT dropped.
 
 But watch how these agents actually work, and you'll notice something striking: **their underlying operations are remarkably primitive**. They directly manipulate your filesystem and terminal. Sure, there are some built-in confirmation mechanisms, but fundamentally they rely on a "trust model" rather than an "isolation model." It's like early programs that could overwrite arbitrary memory addresses—system security depends entirely on programmer discipline.
@@ -23,8 +21,6 @@ DOS worked. You could write programs, edit documents, play games. But it lacked 
 **Today's AI agents are standing at the same starting point.**
 
 It took us 30 years to evolve from DOS to modern operating systems. The agent ecosystem is speedrunning that history. My core thesis: **the evolution of operating systems is the best lens for understanding agent infrastructure's future**. This analogy doesn't just explain the present—it predicts the most critical technical directions (and biggest opportunities) for the next 2-3 years.
-
----
 
 ## The Framework: Five Subsystems of Agent OS
 
@@ -45,8 +41,6 @@ What sits between applications and resources? The abstraction we call an "operat
 | Security | Permissions, audit, sandbox | Isolation, observability, decision audit | About to explode (E2B etc.) |
 
 These five subsystems form the skeleton of Agent OS. Let me break them down by importance.
-
----
 
 ## Memory Management: The Most Important Battlefield
 
@@ -104,8 +98,6 @@ A 64GB RAM machine still needs virtual memory—efficient resource management is
 
 > My 64GB laptop had Word eat 200GB of memory. It somehow didn't immediately die. Modern OSes are weirdly magical.
 
----
-
 ## External Storage: The Highest-Certainty Opportunity
 
 When discussing memory management, a natural question emerges: where does swapped-out data go?
@@ -142,8 +134,6 @@ A more radical, more interesting possibility: PostgreSQL doesn't just play stora
 
 Theoretically, `psql` command-line functionality is a superset of bash. It might just have a shot at becoming Yet Another Runtime—at which point the database isn't an external store anymore, but the orchestration core. How far this path goes remains to be validated, but "Database as Runtime" is genuinely interesting—and it's the direction I'm currently exploring.
 
----
-
 ## Process Management: the Deep Water Is Empty
 
 At their core, virtually all current agent frameworks are the same while loop:
@@ -156,7 +146,7 @@ while not done:
     context.update(result)
 ```
 
-Think → Act → Observe → Repeat. LangGraph, CrewAI, AutoGen... peel off the branding, and the cores are eerily similar. A Braintrust engineer [wrote bluntly](https://www.braintrust.dev/blog/agents): "The canonical agent architecture is a while loop with tools."
+Think → Act → Observe → Repeat. LangGraph, CrewAI, AutoGen... peel off the branding, and the cores are eerily similar. A Braintrust engineer [wrote bluntly](https://www.braintrust.dev/blog/agent-while-loop): "The canonical agent architecture is a while loop with tools."
 
 When the core abstraction is simple enough for any undergrad to implement, it can't be a moat. Even more fatal: model vendors naturally have the best runtimes. OpenAI's Assistants API, Anthropic's Claude Code—these are already top-tier agent execution environments. Cloud vendors are also harvesting: Azure Agent Loop, Google ADK, AWS Bedrock Agents. When runtime becomes a platform standard, what can independent framework companies even sell?
 
@@ -172,8 +162,6 @@ If we take the OS analogy seriously, process management is far more than a while
 Current frameworks have almost no good answers to these questions. The reason is simple: most agent applications today are still at the "single agent, short task, one-shot execution" stage—like single-tasking DOS programs. **They don't need complex process management.** Slap a chat interface on it, and you're probably good enough.
 
 But this stage won't last long. When agents become long-running background services—like a 7×24 DBA agent monitoring your databases, or a support agent continuously processing tickets—real process management needs will emerge. That's where the "fake red ocean" may hide a real blue ocean.
-
----
 
 ## I/O Management: The Protocol War vs. The Real Issue
 
@@ -197,8 +185,6 @@ But adoption isn't the same thing as technical destiny. MCP's success is largely
 My prediction: **the winner won't be MCP, nor bare CLI, but "Agent-native CLI"**—command-line tools with structured output, standardized error codes, and built-in discovery mechanisms. Imagine: every command has a `--json` output option, error codes follow unified semantics (like HTTP status codes), and commands include `--desc` parameters outputting machine-readable capability descriptions. This doesn't require inventing new protocols—just making existing tools more consistent. Like how RESTful APIs didn't invent HTTP, just made it more principled.
 
 > I just built an [cli toool for PostgreSQL](https://pigsty.io/docs/pig/pg/), to practice this idea.
-
----
 
 ## Security and Observability: The Trust Infrastructure
 
@@ -233,8 +219,6 @@ Sandboxing solves the "distrust" problem. Observability solves the "building tru
 ![claude-mon.webp](claude-mon.webp)
 
 > I recently built an [observability solution for Claude Code](https://pigsty.io/docs/piglet)—you can see the complete details of its decision-making process.
-
----
 
 ## Conclusion: The Missing Kernel
 

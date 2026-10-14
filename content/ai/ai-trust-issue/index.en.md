@@ -7,7 +7,6 @@ summary: >
 tags: [AI, Agent, Open Source, Society]
 ai: true
 ---
-
 The most dangerous change in the AI era is not that machines can write articles, draw images, or generate video.
 The real danger is that **content itself is losing its standing as evidence**.
 
@@ -36,8 +35,6 @@ But the most alarming second-order effect is that AI is dismantling the scaffold
 This runs deeper than any particular problem involving jobs, copyright, or security.
 People who lose jobs can find new ones. Copyright law can be rewritten. Security holes can be patched.
 But once trust collapses, rebuilding it takes generations.
-
---------
 
 ## 2. Trust Is Not One Thing
 

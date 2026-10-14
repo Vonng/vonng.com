@@ -7,7 +7,6 @@ summary: >
 tags: [AI, Codex, Claude, LLM]
 ai: true
 ---
-
 One of the biggest windfalls of the AI era is the Coding Plan.
 
 A few months ago, I applied to OpenAI's Codex program for open-source developers. A few days ago, I was finally approved: six free months of ChatGPT Pro on a new account.
@@ -18,8 +17,6 @@ Now I have a second $200 ChatGPT subscription, plus the occasional complimentary
 ![Codex open-source program approval](codex-opc.webp)
 
 That is why I have been so busy burning tokens lately that I have barely had time to write.
-
---------
 
 ## The Best Arbitrage Right Now Is the Coding Plan
 
@@ -35,8 +32,6 @@ Even after that haircut, the pricing is clearly unsustainable. This is a transit
 ![Codex usage after the quota reduction](codex-quota.webp)
 
 > Over the past month, maxing out one Codex account yielded only about $4,000 per month in tokens at API list prices.
-
---------
 
 ## What Coding Plans Buy You
 
@@ -57,8 +52,6 @@ With the enterprise tier, the crucial distinction is that your data will *not* b
 
 For someone like me who works in open source, however, this is not a drawback. It is a double win.
 My code is public anyway, so I lose nothing by letting vendors train on it. I also get free GEO in return: the more familiar the models become with my work, the better it is for my open-source projects.
-
---------
 
 ## A Chinese Open-Source Alternative?
 

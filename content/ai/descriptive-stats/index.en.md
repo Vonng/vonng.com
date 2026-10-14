@@ -8,7 +8,6 @@ ai: true
 aliases: ["/misc/descriptive-stats/"]
 tags: [AI]
 ---
-
 > Statistical analysis is divided into two fields: descriptive statistics and inferential statistics. Descriptive Statistics is the technology for describing or characterizing existing data and is the most fundamental part of statistics.
 
 <!--more-->
@@ -101,7 +100,7 @@ Rules are as follows:
 3. If the remainder is greater than 1/2, add 1 to the last digit of the potential answer; if less, keep unchanged
 4. If the remainder equals exactly 1/2, check whether the last digit of the potential answer is odd or even. Add 1 to odd numbers, keep even numbers unchanged
 
-```
+```text
 45.04500≈45.04≠45.05
 45.05500≈45.06
 ```
@@ -243,7 +242,7 @@ When a curve is negatively skewed, **most data** concentrates in the **high scor
 
 ## 4. Central Tendency and Variability Measurement
 
-![](simple-statistics.jpeg)
+![Statistics Fundamentals: Descriptive Statistics — 4. Central Tendency and Variability Measurement (figure 1)](simple-statistics.jpeg)
 
 ### Measures of Central Tendency
 
@@ -369,7 +368,7 @@ Population data variance formula: $\sigma ^ 2 = \frac{SS_{pop}}{N}$
 
 Using sample variance to estimate population variance: $\sigma ^ 2 \approx s^2 =\frac{SS}{N-1}$
 
-##### Proof of Variance Estimation
+#### Proof of Variance Estimation
 
 Why use N-1 instead of N as the denominator when estimating population standard deviation using sample sum of squared deviations SS?
 

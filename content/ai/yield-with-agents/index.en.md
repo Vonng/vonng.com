@@ -7,14 +7,11 @@ summary: >
 tags: [AI, Agent]
 ai: true
 ---
-
 People keep asking what I have to show for pedaling seven $200-a-month Max subscriptions at once—including two comped through open-source programs. Honestly, I have lost count myself.
 
 After I published [*The Codex Reset Party Is Over: No More Free Lunch*](/ai/codex-reset-end/), I said the next post would take inventory. Then Tibo handed out two resets in as many days, so I jumped back on the bike and set this article aside. I put out a couple of project announcements as placeholders instead. Today I am nearly out of quota again, so I can finally stop pedaling and make good on that promise.
 
 I had Codex scan my token usage over the past two or three months. The total exceeded 100 billion tokens, and I used only top-tier models at their highest reasoning settings. But counting beans means nothing. The real question is whether those tokens became code, packages, documentation, releases, shippable products, or durable assets.
-
----
 
 ## The Short Version
 
@@ -40,8 +37,6 @@ Everything above is finished or close to it, though a few pieces have not been r
 
 Here is the quick tour.
 
----
-
 ## Silo: From Fork to Full Product
 
 The project that comes closest to creating a product from thin air is [Silo](https://silo.pgsty.com/) ([GitHub](https://github.com/pgsty/silo)). After the MinIO community edition effectively stopped being maintained, I took over the fork. By August, it was no longer a MinIO branch with a few bug fixes and packages. It had become an independent open-source project.
@@ -53,8 +48,6 @@ I covered the story in more detail in [**Silo: A Maintained, MinIO-Compatible Ob
 [![Silo project homepage](silo-home.webp)](https://silo.pgsty.com/)
 
 [![Silo object storage console](silo-console.webp)](https://silo.pgsty.com/)
-
----
 
 ## Pigsty: The Distribution Machine
 
@@ -72,8 +65,6 @@ While building Valkey across every supported platform, I also found a packaging 
 
 Strictly speaking, Kafka and MySQL are still pilot modules. I also built K8s and K3s modules along the way. Pigsty is no longer merely a PostgreSQL distribution; it is an open-source database infrastructure PaaS. You can have PostgreSQL, MinIO, Redis, MySQL, Kafka, DuckDB, the full VictoriaMetrics observability stack, ClickHouse, and Kubernetes—the list goes on.
 
----
-
 ## PGEXT.CLOUD: The Extension Ecosystem
 
 I also released a new version of [PGEXT.CLOUD](https://pgext.cloud/) for the PostgreSQL extension ecosystem.
@@ -87,8 +78,6 @@ For perspective, the official PostgreSQL repositories provide 92 extension packa
 [![Cross-platform PostgreSQL extension build matrix](pgext-build-matrix.webp)](https://pgext.cloud/)
 
 [![PGEXT.CLOUD packages and downloads](pgext-packages.webp)](https://pgext.cloud/)
-
----
 
 ## Boar: Pigsty's Control Plane
 
@@ -104,8 +93,6 @@ There is not much to say before release, so here is one small component inside i
 
 ![Interactive Pigsty motherboard model](pigsty-board.webp)
 
----
-
 ## SOW: The Repository Manager
 
 The [SOW project site](https://sow.pgsty.com/) is live, and [I devoted an article to it yesterday](/en/db/sow/), so I will not repeat the whole story here. Its end goal is to rewrite APT, DNF, reprepro, createrepo_c, and aptly. That may sound like obscure plumbing to outsiders, but infrastructure people know what it means. Open source still has a real gap around cross-distribution enterprise package delivery and artifact repository management. Done well, SOW could become a standalone commercial service in the vein of PackageCloud or Copr.
@@ -113,8 +100,6 @@ The [SOW project site](https://sow.pgsty.com/) is live, and [I devoted an articl
 Put simply, Pigsty needed an enterprise artifact repository, so I built one.
 
 [![SOW repository manager homepage](sow-home.webp)](https://sow.pgsty.com/)
-
----
 
 ## OINK: The Documentation Theme
 
@@ -128,8 +113,6 @@ Here are the example sites:
 - [silo.pgsty.com](https://silo.pgsty.com/), [oink.pgsty.com](https://oink.pgsty.com/)
 - [sow.pgsty.com](https://sow.pgsty.com/), [pig.pgsty.com](https://pig.pgsty.com/), [exp.pgsty.com](https://exp.pgsty.com/)
 
----
-
 ## go-patroni
 
 Rewriting PostgreSQL in Rust may be overkill, but rewriting an ecosystem component such as Patroni in Go has clear benefits. Still, it is easy to bite off too much at once. The rewrite is complete, but for now I have released only the client side as [go-patroni](https://github.com/pgsty/go-patroni).
@@ -138,8 +121,6 @@ Both the Boar control plane and the `pig` command-line tool need to talk to Patr
 
 [![go-patroni client SDK and documentation](go-patroni.webp)](https://github.com/pgsty/go-patroni)
 
----
-
 ## snort
 
 The PostgreSQL ecosystem has accumulated many components, each with its own monitoring tool, and the overall architecture has grown complicated. I kept asking whether one monitoring component could collect and process the metrics and logs from every PostgreSQL-related service, then send everything into the VictoriaMetrics stack. That is the goal of this round of work on [snort / PG Exporter](https://exp.pgsty.com/).
@@ -147,8 +128,6 @@ The PostgreSQL ecosystem has accumulated many components, each with its own moni
 It now works and will probably land in Pigsty 5.0.
 
 [![snort and PG Exporter project homepage](snort-pg-exporter.webp)](https://exp.pgsty.com/)
-
----
 
 ## CapsLock Enhancement
 
@@ -162,8 +141,6 @@ Think of it as Karabiner-style key remapping bundled with little conveniences su
 
 [![Native CapsLock Enhancement app for macOS](capslock-app.webp)](https://capslock.vonng.com/)
 
----
-
 ## AI Translation of DDIA v2
 
 The second edition of *Designing Data-Intensive Applications* is out. Early this year, I translated it with 5.3; the result was readable, if unremarkable. I have now revised it with 5.6, SoMax, and Fable, matching the style of the first edition. I think this version is on par with a solid human translation, and [the new edition](https://ddia.vonng.com/) is now published.
@@ -175,8 +152,6 @@ The translation business is well and truly dead. I no longer even bother countin
 And if documentation is not enough, you can use the same quota to write a book. I had long meant to write [*The Thirty-Six Stratagems of PostgreSQL*](https://pg36g.vonng.com/) but never found the time, so I had AI produce a first draft. Since AI wrote it, I am not comfortable promoting or releasing it yet. I will publish it properly after human editing and review.
 
 [![First draft of The Thirty-Six Stratagems of PostgreSQL](pg36.webp)](https://pg36g.vonng.com/)
-
----
 
 ## Takeaways
 

@@ -7,7 +7,6 @@ summary: >
 tags: [AI, Claude, Agent]
 ai: true
 ---
-
 今天早上，Anthropic 正式发布了新模型 **Claude Fable** —— 就是前阵子传得沸沸扬扬的 Mythos「神话」的民用阉割版。毕竟是号称“[AGI 水准的模型](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247491844&idx=1&sn=0237bd818c234299a31d3bbfe91ee8f6&scene=21#wechat_redirect)”，老冯当然第一时间上手实测了一把，看看它到底有几斤几两。
 
 先说结论，确实强，新 SOTA。但是贵，吃相也难看。
@@ -21,8 +20,6 @@ ai: true
 这次发布之前，我已经把 Claude 降级到了 100 刀套餐，平时也基本在吃灰 —— 主力是 Codex，Claude 就负责打打杂、做做 review。这回用完 Fable，我的评价是：Claude 又支棱起来了，又可以打了。原地升回 200 刀 Max 套餐。几个真实场景跑下来，我的感受是：**Fable 确实有洞察力，是当之无愧的新 SOTA。**
 
 果然就像之前在《[退订 Claude，拥抱 Codex](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247492092&idx=1&sn=462593783ba20a0ad6878a0630eaf897&scene=21#wechat_redirect)》说的那样，AI 行业风水轮流转，城头变幻大王旗，SOTA 几个月就一换。
-
----
 
 ## 实测：能不能看见 Codex 看不见的问题？
 
@@ -41,8 +38,6 @@ ai: true
 **案例三：Pigsty PITR 脚本改进。** 之前我在数据库里提供了一个应急用的时间点恢复脚本，那么这次，我也请 Claude Fable 重新 review 了一下，基本上将各个地方没有覆盖到的细节都填好了。在面面俱到、Codex 没法再进一步改进的状态下，Fable 反而能发现一些新的改进点。
 
 ![Pigsty PITR 脚本复审](pitr-review.webp)
-
----
 
 ## 槽点：能力给你，体验恶心你
 
@@ -64,8 +59,6 @@ ai: true
 
 **槽点三：强制数据留档。** 只要你用 Fable，无论是不是企业用户，所有流量一律强制保留 30 天，还会被 review，这跟之前可不太一样。说白了，还是那个老配方 ——「**数据换算力**」。对在意数据隐私与合规的企业用户来说，这是个没法装看不见的变化。
 
----
-
 ## So，算一笔经济账
 
 API 什么价呢？老冯之前在《[AI时代的最大红利](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247491524&idx=1&sn=2259533174395bb9eb976c8e56c008a5&scene=21#wechat_redirect)》里面算过这笔账，两百刀的订阅用满，可以薅走 API 标价一万美元左右的 Token。也就是按量付费是订阅用满价格的 50倍。反过来说，走 API 计费，你要付出几十倍的成本去买同样的用量。
@@ -82,8 +75,6 @@ API 什么价呢？老冯之前在《[AI时代的最大红利](https://mp.weixin
 
 这也是我建议你现在立刻去做的事：评估好这 12 天的窗口期，不用就过期作废了。无论如何，你都应该亲手摸一摸当前 SOTA 模型，或者说“AGI 模型”的能力边界在哪里 —— 这种体感，看一百篇评测文章也替代不了。
 
----
-
 ## 其他一些有趣的案例与消息
 
 ![Claude Fable 案例汇总](fable-cases.webp)
@@ -93,8 +84,6 @@ API 什么价呢？老冯之前在《[AI时代的最大红利](https://mp.weixin
 ![Fable 的纽约天际线与风暴城市案例](city-simulation.webp)
 
 ![Mythos 体验报告](mythos-review.webp)
-
----
 
 ## 写在最后
 

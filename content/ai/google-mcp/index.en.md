@@ -8,20 +8,17 @@ tags: [Agent, PostgreSQL, AI, LLM]
 ai: true
 aliases: ["/db/google-mcp/"]
 ---
-
 In "[SaaS is Dead? In the AI Era, Software Starts with Databases](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489605&idx=1&sn=22aa5f6f18b871b2a216bc46dbaea42c&scene=21#wechat_redirect)", Microsoft CEO Nadella once stated that in the Agent era, **SaaS is Dead**, and the future form of software will be Agent + Database. That is, Agents directly performing CRUD operations on databases. Of course, this article was quite controversial — many seasoned developers said that having Agents directly access databases is like asking for security problems and begging for a quick death.
 
 Honestly, the kind of "MCP" that directly opens up entire databases to the world is indeed like that — fine as a toy, but no one dares to use it in production. However, Google recently launched a database MCP toolbox (named simply and practically "GenAI Toolbox") that provides an answer to this problem.
 
-[![arch.webp](arch.webp)](https://googleapis.github.io/genai-toolbox/)
+[![arch.webp](arch.webp)](https://googleapis.github.io/mcp-toolbox/)
 
-> https://googleapis.github.io/genai-toolbox/
+> https://googleapis.github.io/mcp-toolbox/
 
 Unlike the previous crude approach of directly exposing entire databases to Agents, this toolbox significantly improves the practicality and security of database MCP by encapsulating parameterized template SQL, making it ready for production pilots — Vonng has also packaged RPM/DEB packages for everyone to try.
 
-> https://googleapis.github.io/genai-toolbox/getting-started/introduction/
-
-------
+> https://googleapis.github.io/mcp-toolbox/
 
 ## Quick Start
 
@@ -114,8 +111,6 @@ toolsets:
     - cancel-hotel
 ```
 
-------
-
 ## Feature Overview
 
 Of course, Google MCP Toolbox for Database supports quite a variety of database types, not just PostgreSQL (although the documentation examples are full of PG). It also supports MySQL, SQL Server, SQLite, Redis, Neo4j, AlloyDB, BigQuery, BigTable, CouchBase, Google Cloud databases, and can use generic HTTP data sources — truly a catch-all database MCP.
@@ -127,8 +122,6 @@ One toolbox handles mainstream database integration — this alone saves a lot o
 Of course, this toolbox isn't just for MCP clients — it can also directly provide access to Agents. Google ADK provides out-of-the-box integration, making it very simple to write an Agent that accesses databases.
 
 ![code.webp](code.webp)
-
-------
 
 ## Vonng's Assessment
 
@@ -148,7 +141,7 @@ Therefore, I believe the AI era greatly favors [multi-modal, full-featured, exte
 
 Currently, MCP Toolbox for Database provides packages for macOS and Linux/Windows x86. Vonng has packaged RPM/DEB packages for Linux x86/ARM platforms, usable on mainstream Linux systems (repository tutorial: https://pigsty.io/docs/repo/infra/).
 
-```
+```text
 curl https://repo.pigsty.cc/pig | bash  # pig package manager
 pig repo add infra -u                   # add infra repository
 yum install genai-toolbox               # install genai toolbox

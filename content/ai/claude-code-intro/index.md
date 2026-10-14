@@ -8,9 +8,7 @@ tags: [AI, Agent]
 ai: true
 aliases: ["/db/claude-code-intro/"]
 ---
-
-
-# Claude Code 免翻墙安装使用教程
+## Claude Code 免翻墙安装使用教程
 
 在《[2025年度总结](/misc/2025)》里老冯提到过，过去一年 Claude Code 让我的生产力翻了 20 倍。
 有朋友问我是不是吹牛——真没有，其实老冯说的还保守了。
@@ -21,9 +19,7 @@ aliases: ["/db/claude-code-intro/"]
 今天这篇教程，就是教你怎么在完全不翻墙的情况下，用上 Claude Code。
 （以及用 1/10 的国产开源替代 GLM 换掉 Claude Opus）
 
---------
-
-## 什么是 Claude Code？
+### 什么是 Claude Code？
 
 Claude Code（下面简称 CC）是美国 Anthropic 公司出品的 AI 编程助手。
 你可以把它理解成一个能帮你干活的智能秘书 —— 你用中文告诉它要做什么，它就自动帮你执行。
@@ -38,7 +34,7 @@ Claude Code（下面简称 CC）是美国 Anthropic 公司出品的 AI 编程助
 小白能用吗？ 能。CC 不只是程序员的工具。你不需要会写代码，只需要会打字、会描述需求就行。
 “理论上” 任何你用电脑能干的事情，CC 都能做。
 
-### 一个关键概念区分
+#### 一个关键概念区分
 
 注意，CC 不是大模型，CC 是使用大模型进行写代码的应用，是一个智能 Agent。
 你可以把它想象成 **驾驶舱**，而大模型则是发动机。驾驶舱好，发动机好，效果才好。
@@ -54,9 +50,7 @@ CC 默认搭配的是 Claude Opus 4.5，编程能力当前最强的大模型。�
 
 > 驾驶舱用最好的（Claude Code），发动机用便宜且不用翻墙的国产替代（GLM 4.7）。
 
---------
-
-## 国内使用 Claude Code 有什么挑战
+### 国内使用 Claude Code 有什么挑战
 
 想在国内用 Claude 模型并不容易 —— 这玩意是两边一起封锁。
 你至少需要：① 能翻墙 ② 有外币信用卡或外区 Apple ID，这两道门槛拦住了 99% 的人。
@@ -90,9 +84,7 @@ CC 默认搭配的是 Claude Opus 4.5，编程能力当前最强的大模型。�
 我准备用 openCode 配 GLM，放在 Pigsty 里当 DBA Agent，
 哗哗哗扫描日志看监控 —— 这个价格拿来干粗活，真是一点都不心疼。
 
---------
-
-## 快速上手
+### 快速上手
 
 那么言归正传，国内不翻墙该怎么用呢？简单来说就是三行命令，几秒就搞定：
 
@@ -104,7 +96,7 @@ glm                                               # CC 启动（GLM 模式）
 
 Linux/MacOS 都可以，不需要翻墙，下面老冯会详细说明。
 
-### 第一步：打开终端贴命令
+#### 第一步：打开终端贴命令
 
 接下来要在终端里敲命令。终端是什么？ 就是一个打字输入命令的窗口。别被这词吓到，你就把它当成"用打字来操作电脑"就行。
 
@@ -136,7 +128,7 @@ irm https://repo.pigsty.cc/cc.ps1 | iex
 CC 装好了如果你直接启动它（`claude`），它会默认去连 Claude 官方模型（需要翻墙）
 所以为了全程不翻墙，你还需要配置一个国产的模型，比如 GLM 4.7。
 
-### 第二步，注册GLM拿密钥
+#### 第二步，注册GLM拿密钥
 
 既然要用 GLM 当发动机，首先得去智谱那边拿一把"钥匙"（API Key）。
 
@@ -158,7 +150,7 @@ ccm set glm 46b1axxxxxxxxxxxxxceYVVV # 替换成你的 API KEY，写入配置文
 这个脚本，其实老冯找了个 Claude Code 切换脚本改了改 [ccm](https://github.com/foreveryh/claude-code-switch) 可以很方便的切换不同模型。
 你也可以用 kimi，qwen，glm，minmax，deepseek 等其他家的模型。
 
-### 第三步：运行 claude code
+#### 第三步：运行 claude code
 
 启动 CC 很简单，第三条命令：**`glm`** 一敲就完事了。
 
@@ -180,9 +172,7 @@ ccm   # Claude Code 切换脚本
 
 ![configure-key.jpg](configure-key.jpg)
 
---------
-
-## 接下来干点什么？
+### 接下来干点什么？
 
 接下来，你可以从命令行中启动 CC 了，这里内置了简短的别名 `xx` / `glx` 是 `claude --dangerously-skip-permissions` 的别名，也就是 “放手去干” / YOLO 模式。
 
@@ -197,9 +187,7 @@ ccm   # Claude Code 切换脚本
 
 你可以先用免费档位的 GLM 4.7 试用一阵子，看看效果怎么样。等用爽了再考虑买套餐。
 
---------
-
-## 添加更多能力
+### 添加更多能力
 
 Claude Code 最强大的功能之一就是通过 MCP 协议，添加各种 “功能”。
 
@@ -227,9 +215,7 @@ claude mcp add -s user -t http zread https://open.bigmodel.cn/api/mcp/zread/mcp 
 
 > 老冯的推荐码链接：[https://www.bigmodel.cn/glm-coding?ic=AUWYSKOKLN](https://www.bigmodel.cn/glm-coding?ic=AUWYSKOKLN)
 
---------
-
-## 总结
+### 总结
 
 - Claude Code = 驾驶舱，大模型 = 发动机
 - 驾驶舱用最好的（CC），发动机用国产的（GLM）→ 不翻墙也能用

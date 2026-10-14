@@ -6,7 +6,6 @@ summary: >
   国内用户方便、安全、低成本订阅 ChatGPT ，Claude 等海外服务的新路子：Visa 卡正式支持绑定 Apple Pay！
 tags: [AI, 工具]
 ---
-
 > 2026 年 1 月 15 日起，Visa 信用卡正式支持绑定 Apple Pay。这可能是目前国内用户方便、安全、低成本订阅 ChatGPT，Claude 等海外服务的新路子
 
 老冯在《[Claude Code 免翻墙上手指南](/ai/claude-code-intro/)》中提到过，国内用户想要使用顶级 AI 模型，有两条拦路虎 —— 翻墙和外卡。科学上网其实相对好解决，每个月十几块钱随便找个就行了，但外卡一直是个不小的门槛。

@@ -6,12 +6,9 @@ tags: [PostgreSQL, AI, Agent, Database]
 ai: true
 aliases: ["/db/ai-agent-era/"]
 ---
-
 > [WeChat](https://mp.weixin.qq.com/s/LykR-ewCx9aO9e09T45taw)
 
 The future stack is “Agent + Database.” No front-end/back-end toll booths—agents talk CRUD straight to storage. Database skills hold their value, and PostgreSQL is the database of the agent era.
-
--------
 
 ## SaaS is dead? Software begins with the DB
 
@@ -25,8 +22,6 @@ GenAI exploded, but underneath the hype, software still begins with data stores.
 If you’ve tried Vibe Coding or an MCP desktop, you know what he means. You can talk to Claude or Cursor to query PostgreSQL directly—LLMs draft SQL, execute it, and weave the results back. For simple analysis it already beats my expectations.
 
 As application logic migrates to agents, the only thing left holding the backend line is the database. That makes the DB the “calming stone” in the AI storm. Let’s dig into why DB skills hold value, which skills depreciate, and which engines thrive when agents rule.
-
--------
 
 ## Agent + DB: bye-bye middlemen
 

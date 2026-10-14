@@ -7,14 +7,11 @@ summary: >
 tags: [AI, Agent]
 ai: true
 ---
-
 很多人问我：你同时蹬着 7 个每月 200 美元的 Max 订阅（包括开源白送的两个），最后到底烧出了什么？说实话，我自己也已经数不过来了。
 
 上一篇《[Codex Reset 狂欢结束，免费的鸡蛋没了](/ai/codex-reset-end/)》发出去以后，我说下一篇会专门盘点产出。不过这两天 Tibo 连续 Reset 两次，老冯又开始蹬车，这篇就搁置了。随便找了两个项目发布公告糊弄一下，今天额度差不多又快烧完了，也就不急了，补上这篇。
 
 我让 Codex 扫了一下最近两三个月的 Token 用量，累计超过千亿 Token，而且我一律只用顶级模型最高强度。当然，单纯数豆子没有任何意义。真正有意义的是：这些词元最后有没有变成代码、软件包、文档、发布版本、可以交付的产品，或沉淀下来的资产？
-
----
 
 ## 先说结论
 
@@ -40,8 +37,6 @@ ai: true
 
 下面简单过一下吧。
 
----
-
 ## Silo：从 Fork 到一整套产品
 
 这一个月里，最像“凭空造出一个新产品”的项目，还是 [Silo](https://silo.pgsty.com/zh/)（[GitHub](https://github.com/pgsty/silo)）。MinIO 社区版事实上停止维护以后，老冯接手做了这个 fork。到了 8 月，它已经不再只是“修几个 bug + 打包的 MinIO 分支”，而成为了一个独立的开源项目。
@@ -53,8 +48,6 @@ ai: true
 [![Silo 项目主页](silo-home.webp)](https://silo.pgsty.com/zh/)
 
 [![Silo 对象存储控制台](silo-console.webp)](https://silo.pgsty.com/zh/)
-
----
 
 ## Pigsty：发行版这台大机器
 
@@ -72,8 +65,6 @@ v4.5 有很多新东西。我们有个客户想要在 Pigsty 里使用 Kafka。�
 
 当然，Kafka 和 MySQL 严格来说还是试点模块；另外还顺手做了 K8s 和 K3s 两个模块。如此一来，Pigsty 已经不再是一个 PostgreSQL 数据库发行版，而是一套开源数据库基础设施 PaaS。你可以拥有 PG、MinIO、Redis、MySQL、Kafka、DuckDB、Victoria 监控全家桶、ClickHouse，以及 Kubernetes……
 
----
-
 ## PGEXT.CLOUD：扩展生态
 
 在 PG 扩展生态里，老冯发布了新版本的 [PGEXT.CLOUD](https://pgext.cloud/zh/)。
@@ -87,8 +78,6 @@ v4.5 有很多新东西。我们有个客户想要在 Pigsty 里使用 Kafka。�
 [![PG 扩展全平台构建矩阵](pgext-build-matrix.webp)](https://pgext.cloud/zh/)
 
 [![PGEXT.CLOUD 软件包与下载](pgext-packages.webp)](https://pgext.cloud/zh/)
-
----
 
 ## Boar：Pigsty 管控平台
 
@@ -104,8 +93,6 @@ v4.5 有很多新东西。我们有个客户想要在 Pigsty 里使用 Kafka。�
 
 ![Pigsty 可交互主板模型](pigsty-board.webp)
 
----
-
 ## SOW：仓库管理器
 
 [SOW 项目网站](https://sow.pgsty.com/zh/)已经上线，[昨天也专门写了文章介绍这个项目](/db/sow/)，这里就不展开了。这个东西的最终目标是重写 APT、DNF、reprepro、createrepo_c 和 aptly。外行看热闹，内行看门道。跨发行版的企业级分发与仓库制品管理，在开源世界还是一个空白生态位。做好了完全可以专门商业化成一个服务——类似 PackageCloud、Copr 仓库之类的。
@@ -113,8 +100,6 @@ v4.5 有很多新东西。我们有个客户想要在 Pigsty 里使用 Kafka。�
 说白了，就是 Pigsty 要搞企业级制品仓库，需要用到这个，就自己做了一个。
 
 [![SOW 软件仓库管理器主页](sow-home.webp)](https://sow.pgsty.com/zh/)
-
----
 
 ## OINK：文档主题
 
@@ -128,8 +113,6 @@ v4.5 有很多新东西。我们有个客户想要在 Pigsty 里使用 Kafka。�
 - [silo.pgsty.com](https://silo.pgsty.com/)、[oink.pgsty.com](https://oink.pgsty.com/)
 - [sow.pgsty.com](https://sow.pgsty.com/)、[pig.pgsty.com](https://pig.pgsty.com/)、[exp.pgsty.com](https://exp.pgsty.com/)
 
----
-
 ## go-patroni
 
 用 Rust 重写 PostgreSQL 可能是吃饱撑的，但是用 Go 重写 Patroni 这样的生态组件，我认为还是有不少收益的。当然，步子迈太大容易扯到蛋。虽然重写完了，目前我也只先把 [go-patroni](https://github.com/pgsty/go-patroni) 客户端部分发布出来。
@@ -138,8 +121,6 @@ v4.5 有很多新东西。我们有个客户想要在 Pigsty 里使用 Kafka。�
 
 [![go-patroni 客户端 SDK 与文档](go-patroni.webp)](https://github.com/pgsty/go-patroni)
 
----
-
 ## snort
 
 原本 PG 生态有很多组件，每个组件都有自己的监控工具，整个架构变得比较复杂。所以我一直在考虑一个问题：能不能用一个监控组件，把所有 PG 相关组件的监控指标和日志都采集好、处理好，统一丢到 Victoria 平台上去？这就是 [snort／PG Exporter](https://exp.pgsty.com/zh/) 这一轮强化的目标。
@@ -147,8 +128,6 @@ v4.5 有很多新东西。我们有个客户想要在 Pigsty 里使用 Kafka。�
 现在这件事已经实现了，大概会在 Pigsty 5.0 版本实装。
 
 [![snort 与 PG Exporter 项目主页](snort-pg-exporter.webp)](https://exp.pgsty.com/zh/)
-
----
 
 ## CapsLock Enhancement
 
@@ -162,8 +141,6 @@ v4.5 有很多新东西。我们有个客户想要在 Pigsty 里使用 Kafka。�
 
 [![CapsLock Enhancement 原生 macOS 应用](capslock-app.webp)](https://capslock.vonng.com/zh/)
 
----
-
 ## AI 翻译 DDIA v2
 
 《设计数据密集型应用》这本书的第二版已经出来了。年初的时候，我用 5.3 翻译过一版，质量凑合能看。现在我用 5.6、SoMax 和 Fable，参照第一版的风格重新校正了一版。这一版我认为就跟人翻译的差不多了，目前[这个新版本](https://ddia.vonng.com/)也已经发布了。
@@ -175,8 +152,6 @@ v4.5 有很多新东西。我们有个客户想要在 Pigsty 里使用 Kafka。�
 当然，除了翻译文档，你也可以拿来写书。比如说，老冯之前挖了个坑——[《PG 三十六计》](https://pg36g.vonng.com/)，一直没时间写，反正我先让 AI 写了一版。但既然是 AI 写的，我也不好意思去宣传发布，到时候人工校审之后，再正式发布吧。
 
 [![《PG 三十六计》初稿](pg36.webp)](https://pg36g.vonng.com/)
-
----
 
 ## 小结
 

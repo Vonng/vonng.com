@@ -7,7 +7,6 @@ summary: >
 tags: [AI, Agent, Codex, Claude]
 ai: true
 ---
-
 Two days ago, I wrote one line in [*Pedaling the Codex/Claude Bike Until the Wheels Smoke*](/en/ai/bicycle/): **use it or lose it**.
 
 Last night, I had just burned through three $200-a-month subscriptions across Claude Fable and Codex. Then I woke up to the jackpot: Codex had reset my quota.
@@ -44,8 +43,6 @@ This round demonstrates a simple truth once again: only competition delivers rea
 
 Give any vendor a monopoly and it will start imposing quotas, raising prices, and drip-feeding improvements. Only when the two sides genuinely fight do the limits loosen, the quotas grow, and users get a bargain.
 
----
-
 ## Codex Can Really Deliver
 
 I have recently put my two Codex accounts to work on several major jobs.
@@ -68,8 +65,6 @@ From a pure execution standpoint, I am already extremely happy with Codex 5.6 So
 
 ![“At least you still have Codex” meme](codex-meme.webp)
 
----
-
 ## Fable Thinks; Codex Executes
 
 I no longer try to make one model do everything. I assign work by task type. For everyday thinking, article writing, open-ended ideation, and greenfield product design, I prefer Fable whenever I need stronger abstraction, creativity, and overall judgment.
@@ -81,8 +76,6 @@ I use a similar workflow for code review. I usually ask Codex to assemble the pr
 I recently rescanned a batch of older projects this way and did find and fix problems that had previously gone unnoticed. This kind of adversarial two-model review is far more reliable than asking a single model to question and grade its own work.
 
 Models should not be treated merely as substitutes for one another. The efficient pattern is to let the model that excels at design handle the design, let the model that excels at execution do the implementation, and then have another model challenge the result.
-
----
 
 ## Codex's “Last Task” Trick
 
@@ -99,8 +92,6 @@ In other words, under ideal conditions, one quota reset can provide nearly two w
 When your weekly quota is nearly gone, do not grind away the final scraps on a series of tiny questions. Prepare one enormous task with a clear objective, complete context, and enough scope to run for a long time, then use the last of your quota to launch it.
 
 That is a much more efficient use of the remaining allowance. I hear a recent Codex update has closed this loophole; if you want to test it, hold off on updating for now.
-
----
 
 ## A $200 Subscription Can Unlock Thousands of Dollars in Compute
 

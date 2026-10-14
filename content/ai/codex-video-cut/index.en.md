@@ -6,7 +6,6 @@ summary: >
   I gave Codex three panel recordings and a casually dictated prompt. Forty-eight minutes later, it delivered a finished edit with subtitles, at an estimated amortized subscription cost of about 8 yuan. Coding agents are finding their way into everyday life.
 tags: [AI, Codex, Tools]
 ---
-
 > [WeChat article](https://mp.weixin.qq.com/s/JMjX9A_5_L5fn3g5JGpC-A)
 
 When GPT-6 Astra came out a little while ago, I heard that people were using it with Codex to edit videos, with pretty good results. With another update out, I finally had to try it myself.

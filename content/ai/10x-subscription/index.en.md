@@ -6,12 +6,9 @@ summary: >
   Buying 10 AI subscriptions is easy. The real bottleneck is turning tokens into useful output—and using automation to scale your time, attention, and ability to judge the results.
 tags: [AI, Codex, Claude, Agent]
 ---
-
 People often ask in the comments on my articles: How did you get 10 subscriptions, and how could you possibly use them all up? Here's the practical version. It really comes down to two steps: buy 10 subscriptions, then use up 10 subscriptions.
 
 Buying them just takes a little money. **A problem you can solve with a little money isn't much of a problem.** The hard part is this: do you have problems worth spending 10 subscriptions on?
-
----
 
 ## 1. First, Make Sure You Can Buy Them
 
@@ -58,15 +55,13 @@ The command line is easy. With Codex, changing the `CODEX_HOME` environment vari
 
 An aside: people keep tinkering with [Omarchy](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247492948&idx=1&sn=7980b550ad292eae81a2bc613cab99a3&scene=21#wechat_redirect) or Windows. If you're working with AI, skip the tinkering and use macOS on the desktop. The reason is simple: the developers all use macOS, and toolchains always get optimized for the machines their developers use first. The Computer Use experience on macOS is in a different league from the other platforms.
 
-![](devices.webp)
+![How Do You Burn Through 10 $200 Codex Subscriptions? — Machines: The Limit on Parallelism (figure 4)](devices.webp)
 
 I have quite a few computers at home. Right now, I run five local machines and five cloud computers, with one account on each. The local machines also need to stay active.
 
 That's the whole setup. Don't ask me for the fine details, or to buy subscriptions on your behalf—that sort of arrangement breaks the rules. I've pointed out the route; you'll have to work out the rest. **If you're willing to find a way, there's always a way.**
 
 (I've covered all of this in detail in earlier articles, but they were taken down one by one.)
-
----
 
 ## 2. The Real Question: Can You Use Them Up?
 
@@ -87,8 +82,6 @@ Do the arithmetic and there's only one conclusion: **subscription fees aren't th
 Sure, you can ask AI to read a codebase 10 times over and burn through tokens quickly. But what's the point? Productivity has never been about how many tokens you consume. It's about how much useful work you get out of them.
 
 This is the awkward position many companies and organizations find themselves in: the only thing they can quantify is their employees' token consumption. But once you make token consumption a performance metric, token consumption is all you'll get. Require everyone to burn 100 million tokens a day, and they'll find a way to burn 100 million tokens a day. **Goodhart's law.**
-
----
 
 ## 3. Scale Yourself
 
@@ -113,8 +106,6 @@ And to get those compounding returns, you first have to do a lot of things that 
 As I've said before: **AI multiplies your capabilities; it doesn't just add to them.** In capable hands, it can go beyond multiplication and deliver exponential, compounding returns. Don't approach it with linear thinking. Use it to build more—and more capable—systems that put AI capacity to work.
 
 The approach really comes together when those systems can run on their own and start expanding your cognitive bandwidth. The central task is to **scale your own critical resources**: your time, your attention, and your ability to judge whether the results are good enough. Those are the truly scarce resources. Detailed checks used to require human review. As models improve, we'll be able to delegate those checks entirely and review only the overall result ourselves.
-
----
 
 ## Epilogue
 

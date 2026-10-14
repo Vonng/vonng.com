@@ -8,7 +8,6 @@ ai: true
 aliases: ["/misc/ai-cult/"]
 tags: [AI]
 ---
-
 > [WeChat original](https://mp.weixin.qq.com/s/clM2f2f2-EPa4EVBIpznfw)
 >
 > “Humans are the bootloader for silicon life.” —Elon Musk

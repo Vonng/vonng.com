@@ -7,7 +7,6 @@ summary: >
 tags: [AI, Codex, Claude, 大模型]
 ai: true
 ---
-
 AI 时代最大的红利之一，就是 Coding Plan。
 
 老冯几个月前申请的 OpenAI Codex 开源开发者计划，前几天批下来了，白送六个月的 ChatGPT Pro 订阅，一个新账号。
@@ -18,8 +17,6 @@ AI 时代最大的红利之一，就是 Coding Plan。
 ![Codex OPC 计划获批截图](codex-opc.webp)
 
 所以，最近忙着把这些 Token 烧完，连文章都没空写了。
-
---------
 
 ## 当下最大的羊毛，就是 Coding Plan
 
@@ -35,8 +32,6 @@ AI 时代最大的红利之一，就是 Coding Plan。
 ![Codex 额度缩水后的消耗截图](codex-quota.webp)
 
 > 最近一个月烧满，一个 Codex 号只有 4000 美元/月的 API 列表价 Token
-
---------
 
 ## Coding Plan 的福利
 
@@ -58,8 +53,6 @@ AI 时代最大的红利之一，就是 Coding Plan。
 但是对老冯这样搞开源的人来说，这不仅不是缺陷还是双喜临门。
 我的代码反正都是开源的，你拿去训练不仅我不会有什么损失，而且相当于还有免费的 GEO，
 大模型对这套东西越来越了解与熟悉，对我这种开源项目来说反而更是利好。
-
---------
 
 ## 国产开源替代？
 
