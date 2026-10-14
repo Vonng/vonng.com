@@ -7,7 +7,6 @@ summary: >
   No new features — just working builds, a restored console, and timely security fixes.
 tags: [Object Storage, Security, Open Source]
 ---
-
 Two months ago in ["MinIO is Dead, Long Live MinIO,"](/en/db/minio-resurrect) I promised I'd keep the MinIO fork patched.
 The recurring objection on HN is fair: can one person actually maintain something like this?
 The real answer isn't clicking fork. It's what happens when CVEs start landing.
@@ -15,13 +14,11 @@ The real answer isn't clicking fork. It's what happens when CVEs start landing.
 Between April 15 and 17, `pgsty/minio` shipped [RELEASE.2026-04-17](https://github.com/pgsty/minio/releases/tag/RELEASE.2026-04-17T00-00-00Z),
 closing four CVEs and a handful of related vulnerabilities disclosed in the same window.
 
-[![gh-release.webp](gh-release.webp)](https://silo.pigsty.io/reference/release-note)
+[![gh-release.webp](gh-release.webp)](https://silo.pgsty.com/blog/release/)
 
 The scope I committed to originally was narrow: no new features, keep the supply chain running,
 handle reproducible bugs and security issues as they come in.
 This release is what it looks like when that promise gets tested.
-
-------
 
 ## What happened upstream
 
@@ -41,11 +38,9 @@ It's a clean arrangement: archive the repo so there's no obligation to patch, ke
 
 Someone still has to patch the old one.
 
-------
-
 ## What this release fixes
 
-Full write-ups, CVSS arithmetic, and PoCs are in the [release notes](https://silo.pigsty.cc/reference/release-note). The short version:
+Full write-ups, CVSS arithmetic, and PoCs are in the [release notes](https://silo.pgsty.com/blog/release/). The short version:
 
 - **CVE-2026-33322 (OIDC JWT algorithm confusion, CVSS 9.8)**: under certain IdP configurations, an attacker who knows the OIDC ClientSecret can mint a token claiming any identity — including `consoleAdmin` — and MinIO will accept it. Vulnerable window: November 2022 through March 2026. About three and a half years.
 - **CVE-2026-33419 (LDAP STS enumeration and brute-force)**: the login endpoint leaks which usernames are real, and there's no rate limiting on the subsequent password guessing. End of the chain is an STS credential.
@@ -56,8 +51,6 @@ Full write-ups, CVSS arithmetic, and PoCs are in the [release notes](https://sil
 Plus the usual dependency cleanup from `go-jose`, `go.opentelemetry.io`, and the Go 1.26.2 upgrade itself — about twenty security items in total counting transitive dependencies.
 
 ![issue.webp](issue.webp)
-
-------
 
 ## How it got fixed
 
@@ -83,8 +76,6 @@ A few things I noticed about how this runs in practice.
 **It forces the tradeoffs into writing.** When two implementations diverge, someone has to say why A over B. That exchange is the thing I can actually act on as the person deciding what to merge.
 
 **Real maintenance is patch-on-patch, not one-shot.** The LDAP STS fix is a good example. The first version landed, and then we realized: successful requests shouldn't count against the rate limit; `X-Forwarded-For` shouldn't be trusted by default; the limiter should key on source IP plus normalized username, not just one. Three follow-up commits before it settled. Iterating through that by hand would have cost a lot more time.
-
-------
 
 ## Why this fork exists
 

@@ -7,7 +7,6 @@ summary: >
   A conversation between Mike Stonebraker (MIT CSAIL, Turing Award Winner, Creator of PostgreSQL), Andy Pavlo (Carnegie Mellon University), and the DBOS team.
 tags: [PostgreSQL, Database, PG Ecosystem]
 ---
-
 Transcription of [Data 2025:  The year in review with Mike Stonebraker](https://www.dbos.dev/webcast-2025-in-review-with-mike-stonebraker-and-andy-pavlo)
 
 ## Data 2025: The Year in Review with Mike Stonebraker & Andy Pavlo
@@ -15,8 +14,6 @@ Transcription of [Data 2025:  The year in review with Mike Stonebraker](https://
 **Recorded on December 10, 2025**
 
 *A conversation between Mike Stonebraker (MIT CSAIL, Turing Award Winner, Creator of PostgreSQL), Andy Pavlo (Carnegie Mellon University), and the DBOS team.*
-
----
 
 ### Introduction
 
@@ -35,8 +32,6 @@ Today, DBOS stands for Durable Backends that are Observable and Scalable—I had
 Michael will talk a little bit more about the relationship between durability and agentic AI in a moment. But that's DBOS. So if you're building software and you want to make it error-proof and observable really easily, check out the DBOS open source libraries.
 
 You may wonder why—if we're not a database—then why are we hosting a webinar on database R&D? As you know, Mike Stonebraker, the inventor of Postgres, is the co-founder of DBOS. We're also very good friends with Andy Pavlo at CMU, the inventor of "databaseology" and also the founder of "So You Don't Have To" AI, which is an AI-powered database tuning service. I encourage you to check that out. And without further ado, let's jump into the agenda and hear from Andy and Mike.
-
----
 
 ### Part 1: How is AI Impacting Data Management?
 
@@ -84,8 +79,6 @@ As I say, this should be taken with huge grains of salt. Number one, I'm only in
 
 With that, Andy Pavlo has a more optimistic view of the world.
 
----
-
 ### Part 2: Andy Pavlo on LLMs and Vibe Coding
 
 **[15:21] Andy Pavlo:** I think I would say also the Wikipedia article about me got taken down because I think the bio said I was born in the streets of Baltimore—which is like, I was born in Baltimore, obviously not in the streets.
@@ -115,8 +108,6 @@ The point I was going to make about the performance of these algorithms is: the 
 **[21:21]** Now the other cool thing we're looking at with LLMs—and why I'm very bullish on this—is the reasoning agents: the ability to identify issues or problems and then identify what sub-agent or what tool you want to invoke to solve it. So if there's an anomaly detection, there's some kind of latency issue in your database system, the reasoning agent can then decide, "Oh, I want to run this tool because that's going to build my indexes because that's the problem I think I have right now. I want to run this other tool because I need to optimize my storage capabilities."
 
 That's the really cool thing that I think is going to come out in the next year or so: the ability to now start looking at a bunch of different problems simultaneously and deciding which sub-agent to call out to. And the sub-agent could be an LLM, it could be one of these bespoke algorithms. So I think that's pretty exciting, and I think LLMs are certainly a game changer in this space.
-
----
 
 ### Part 3: Agentic AI and Database Technology
 
@@ -164,8 +155,6 @@ And it's also well known that vibe coding does best if stuff is well-structured.
 
 So I think we have to change the way enterprises actually write software in order to take maximum advantage of vibe coding. I think there's lots and lots of work to be done.
 
----
-
 ### Part 4: 2025 Industry Recap - M&A and Market Trends
 
 **[31:43] Andy Pavlo:** Well, it's not just M&A—it was a wild year in databases. I feel like this year there was more activity than maybe the year before.
@@ -205,8 +194,6 @@ One more thing also to mention too—there's two major efforts announced to make
 What's really fascinating about this is like this is not the first time people have tried to make distributed versions of Postgres. There was a bunch of work in the late 2000s, early 2010s from companies like Translattice, Greenplum—I think Huawei had a project in this space. But no one's really successfully done this for OLTP workloads.
 
 And so I think there's enough energy now where the time is actually right where you actually can finally have a scale-out distributed version of Postgres—either through Multigres or Naki. That's one major thing that I'm looking forward to next year that I think will come out.
-
----
 
 ### Part 5: The Future of Postgres and Vector Databases
 
@@ -262,8 +249,6 @@ So to the extent that you have read-only small data, I think the vector indexes 
 
 **[46:54] Andy Pavlo:** I mean, not super consistent, right? Because sometimes some of these indexes you got to rerun the clustering algorithm, and that means you got to rescan everything all over again. It's the same challenge with the full-text search inverted indexes. They might have a sort of side buffer. You absorb all the writes and then eventually you got to run the more expensive rebuild job.
 
----
-
 ### Part 6: GPU Databases and IBM's Acquisitions
 
 **[47:21] Host:** Thanks. One other question about the market. Andy, you mentioned that Voltron shut down. There was a question about what that might say about the future of GPU-accelerated databases.
@@ -295,8 +280,6 @@ With Kafka, that remains to be seen. But again, Jay at Confluent is a smart dude
 What's clearly happening is IBM customers have been asking for these two systems. So IBM has enough cash to just buy them.
 
 But I think IBM has a legacy hardware business and a monumental legacy software business. And they are going to continue to milk that until everyone on this call is safely retired.
-
----
 
 ### Part 7: The Future of Computer Science Education and Careers
 
@@ -336,8 +319,6 @@ So the end goal shouldn't necessarily be to go work at Google or Apple or whoeve
 
 But again, I would say you still need to understand the fundamentals.
 
----
-
 ### Part 8: Q&A - Core Database Fundamentals
 
 **[56:36] Host:** There was a question related to the fundamentals. A few of them actually. People are asking: what do you think are the most important fundamental database internal concepts somebody should learn or master to improve their career opportunities?
@@ -353,8 +334,6 @@ So those are sort of the high-level fundamentals. And as a part of that, you got
 If you like algorithms, there's a lot of work in that space you can look at. If you like networking, you could do that. If you like programming languages, there's a bunch of attempts to make SQL better or change SQL.
 
 Whatever you're interested in, you can do in the context of databases. And oftentimes people pay you a lot of money for it. So that's why I'm pretty bullish about things.
-
----
 
 ### Part 9: Why Did You Become a Database Researcher?
 
@@ -392,8 +371,6 @@ But I did try to propose to my wife in prison. They never actually put me in jai
 
 **[1:02:25] Host:** Um, okay. Not the answers I was expecting, but excellent.
 
----
-
 ### Closing
 
 **[1:02:31] Host:** All right, so I think we're going to have to wrap up now. I'm sorry we couldn't get to every question.
@@ -406,15 +383,13 @@ Want to wish you guys and everybody online a great holiday season and happy new 
 
 *End of transcript.*
 
---------
-
-# Summary & Translator's Commentary
+## Summary & Translator's Commentary
 
 > *The following section contains the translator's (Vonng's) summary and commentary on the key points discussed in this conversation.*
 
-## Mike Stonebraker's Core Views
+### Mike Stonebraker's Core Views
 
-### 1. Skeptical of LLMs for Text-to-SQL
+#### 1. Skeptical of LLMs for Text-to-SQL
 
 **Summary:** Testing LLMs on real enterprise data warehouses yields near-zero accuracy. Four key reasons: non-public data, idiosyncratic terminology, semantic overlap, and complex queries. Mike advocates wrapping data sources in SQL and letting query optimizers solve the problem rather than relying on LLMs.
 
@@ -422,9 +397,7 @@ Want to wish you guys and everybody online a great holiday season and happy new 
 
 This reveals a fundamental limitation of LLMs: **they're pattern matchers, not reasoning engines**. The "dark knowledge" of enterprise data—implicit business rules, legacy terminology—isn't in the training corpus, so LLMs are helpless. Mike's "SQL wrapper + query optimizer" approach essentially admits: **structured problems still need structured solutions**.
 
----
-
-### 2. Agentic AI Needs ACID, Database Technology Will Shine
+#### 2. Agentic AI Needs ACID, Database Technology Will Shine
 
 **Summary:** Current agentic AI is "read-only"; it will soon become "read-write." Once updates are involved (like online shopping flows), you need transaction semantics—atomicity, durability, rollback capability. This is exactly what database technology has solved for decades.
 
@@ -434,9 +407,7 @@ Mike's bicycle shop example is clear: check inventory → verify credit → coll
 
 I fully agree with this assessment: **in the next 1-2 years, database technology (especially workflow transactions, Saga patterns) will become core infrastructure for Agentic AI**. DBOS has positioned itself well here.
 
----
-
-### 3. Postgres Has Won, Betting on Postgres is Correct
+#### 3. Postgres Has Won, Betting on Postgres is Correct
 
 **Summary:** All major cloud vendors have chosen the Postgres wire protocol. Postgres's governance model is "open source as it should be"—community-owned, no single enterprise in control. Oracle's acquisition of MySQL soured community trust; Postgres benefited.
 
@@ -446,9 +417,7 @@ As the creator of Postgres, Mike saying this might seem self-serving, but object
 
 One addition: **Postgres won the "protocol war," but this also means the PG distribution war is about to begin**.
 
----
-
-### 4. Vector Databases are "In-Memory Graph Indexes + Relational Blobs," Narrow Moat
+#### 4. Vector Databases are "In-Memory Graph Indexes + Relational Blobs," Narrow Moat
 
 **Summary:** Vector databases are essentially JSON blobs with graph-structured indexes. Two major limitations: only works in memory (performance cliff when data is large), updating indexes is a nightmare.
 
@@ -458,11 +427,9 @@ Indeed—after pgvector emerged, most scenarios don't need specialized vector da
 
 Vector database companies' way out: either achieve extreme performance (serving that 1% of large-scale scenarios), or transform into complete databases (add transactions, add SQL)—but the latter means competing head-on with Postgres, essentially a dead end.
 
----
+### Andy Pavlo's Core Views
 
-## Andy Pavlo's Core Views
-
-### 1. Vibe Coding is Real, LLMs are Changing Software Development
+#### 1. Vibe Coding is Real, LLMs are Changing Software Development
 
 **Summary:** Andrej Karpathy's "vibe coding" concept is becoming reality. CMU's course projects can now be almost entirely solved by LLMs. Code quality is about the same as human-written—because both learned from the same code corpus.
 
@@ -472,9 +439,7 @@ But Andy has a key caveat often overlooked: **vibe coding only works for greenfi
 
 So vibe coding's real impact may be: **accelerated new application development, but legacy system maintenance remains a nightmare**. This will exacerbate the polarization between new and old—more new systems written with AI, old systems increasingly untouchable.
 
----
-
-### 2. Database Auto-Tuning Needs LLM + Specialized Algorithms Combined
+#### 2. Database Auto-Tuning Needs LLM + Specialized Algorithms Combined
 
 **Summary:** Specialized tuning algorithms are 2-3x better than LLMs, but LLMs are much faster (15 minutes vs 50 minutes). The future direction is using "reasoning agents" to orchestrate—sometimes calling LLMs, sometimes specialized algorithms.
 
@@ -484,9 +449,7 @@ The "LLM + specialized algorithm" combined approach is very pragmatic: LLMs exce
 
 However, I've always had a question: **does database tuning really need to be this complex?** Most Postgres performance issues can be identified by an experienced DBA in 10 minutes. With a distribution like Pigsty, important parameters are already automatically tuned to "good enough for production"—what's the marginal gain of going from "good enough" to "optimal"?
 
----
-
-### 3. Core of CS Education Unchanged: Understand Fundamentals
+#### 3. Core of CS Education Unchanged: Understand Fundamentals
 
 **Summary:** LLMs can solve CMU's assignments, but students still need to understand fundamentals—ACID, data structures, algorithmic complexity, concurrency control. Languages and tools will change, fundamentals don't.
 
@@ -498,17 +461,13 @@ The implication: **programming is bifurcating—top talent designs systems, AI w
 
 Brutal, but possibly the real future.
 
----
-
-### 4. Vector Database Moat Isn't Wide, pgvector is Enough for 99%
+#### 4. Vector Database Moat Isn't Wide, pgvector is Enough for 99%
 
 **Summary:** Vector indexes are just indexes; Postgres added them within a year. Vector databases either specialize (secondary index) or add transactions/SQL to become complete databases—the latter means competing directly with Postgres.
 
 **Commentary:** Andy completely agrees with Mike on this point—indicating this is the database community's consensus.
 
-------
-
-## Comparison of Views
+### Comparison of Views
 
 | Topic                    | Mike Stonebraker                                                   | Andy Pavlo                                                        |
 |--------------------------|--------------------------------------------------------------------|-------------------------------------------------------------------|
@@ -519,9 +478,7 @@ Brutal, but possibly the real future.
 | **CS education**         | Top universities fine, vocational training graduates will struggle | Fundamentals unchanged, but barrier to building things is lowered |
 | **Career motivation**    | Avoiding Vietnam War draft                                         | Avoiding prison                                                   |
 
-------
-
-## My Overall Assessment
+### My Overall Assessment
 
 **Mike Stonebraker** represents "old-school wisdom"—50 years of database experience keeps him vigilant against technology hype. His skepticism isn't from not understanding AI, but from having seen too many boom-bust cycles. His judgment that **Agentic AI needs ACID databases** is very precise—possibly the most valuable insight from this conversation.
 

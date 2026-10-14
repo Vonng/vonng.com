@@ -6,7 +6,6 @@ summary: >
   I installed Omarchy, then removed it. Why? Who is it for, and who isn't it for? Does the Linux desktop still have a future?
 tags: [Linux, Omarchy, Operating Systems]
 ---
-
 > [WeChat](https://mp.weixin.qq.com/s/eRa3tnzV9WBuGEBgtbCDVQ)
 
 Omarchy has been all over my X timeline lately. It is a desktop Linux distribution by DHH, and over the past couple of days the story has flooded the Chinese internet too.
@@ -22,8 +21,6 @@ Here is the bottom line: **it is a tasteful, genuinely good operating system, bu
 ![Omarchy running on a 2018 Intel MacBook Pro](featured.webp)
 
 This article is **10% AI**.
-
----
 
 ## What Omarchy Gets Right
 
@@ -49,8 +46,6 @@ Set that noise aside: Omarchy's desktop still falls well short of macOS, but its
 
 As Confucius put it, understanding is no match for loving, and loving no match for delighting. Only someone like DHH—a middle-aged computer nerd who is already financially independent and truly loves computers—can pull off something like this. To make desktop Linux good, you need someone with taste, technical skill, resources, influence, and a **genuine love for it**.
 
----
-
 ## On Linux Distributions
 
 As the author of a PostgreSQL distribution, I know Linux distributions inside out.
@@ -67,8 +62,6 @@ Simple, reliable, and usable—that is what matters. On a server, that is enough
 
 ![Ubuntu 26.04 LTS Resolute Raccoon](ubuntu-raccoon.webp)
 
----
-
 ## On Ubuntu
 
 Outside China, Ubuntu is overwhelmingly dominant. Chinese developers may not feel it as strongly, but one look at the Stack Overflow Developer Survey makes its lead obvious.
@@ -79,8 +72,6 @@ Enterprise Linux is also common in China because the CentOS family has been used
 
 Ubuntu never beat Windows on the desktop, but it won decisively on servers and in the cloud. A large share of Linux instances on AWS and Azure run it, and it is the default distribution for WSL.
 
----
-
 ## On Debian
 
 The other operating system I particularly like is Debian, Ubuntu's upstream. The two have a great deal in common.
@@ -88,8 +79,6 @@ The other operating system I particularly like is Debian, Ubuntu's upstream. The
 It is not as ready out of the box as Ubuntu, but it is pure. If you distribute software or run an open-source project, Debian will probably be your first choice for a base image.
 
 It is a rock-solid, utterly dependable operating system.
-
----
 
 ## So What Should You Use?
 
@@ -102,8 +91,6 @@ Muscle memory is hard to migrate. Here is a concrete example. On macOS, I use a 
 I am sure Linux has similar remapping tools, but I cannot be bothered to set them up. The moment I switch to Linux, my typing and navigation speed plummets. I do not want to remember two shortcut systems; the existing one is already wired into my muscles. All that tinkering produces nothing.
 
 The same logic applies to work. I build Pigsty, which runs a full stack of databases and observability tools. On Ubuntu, I can at least ship the whole thing as `.deb` packages. If I moved to Arch Linux, would I need to build a separate set of `pacman` packages? I truly cannot be bothered.
-
----
 
 ## It Reminds Me of the Early Ubuntu
 
@@ -118,8 +105,6 @@ He even mailed installation CDs for free. The program was called **ShipIt**. Shi
 Today Ubuntu is backed by Canonical, a commercial company, and users have started to grumble about decisions such as its aggressive promotion of the Snap package manager. It no longer feels quite as pure. If Omarchy gets good enough, that will be great news; I am all for it. But if you ask whether I would switch today, I would still choose Ubuntu.
 
 Then again, if Omarchy one day delivers a Linux experience and ecosystem that truly match macOS, I will switch without a second thought.
-
----
 
 ## Appendix: Stack Overflow Developer Survey
 

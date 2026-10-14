@@ -5,10 +5,9 @@ authors: [vonng]
 summary: The database world is full of hype and marketing fog. This column cuts through it with blunt commentary, case studies, and technical deep dives.
 tags: [Database, Commentary]
 ---
-
 > [WeChat](https://mp.weixin.qq.com/s/Q0OtrpEhF24XN7gwMjbSRA)
 
-### Sovereignty & Self-Reliance
+## Sovereignty & Self-Reliance
 
 - [Build a China-rooted, world-facing PG distribution](https://mp.weixin.qq.com/s/kYl31hRXDvE65i_eewJ68A)
 - [Supply-chain trust: I won’t bet on absentee maintainers](https://mp.weixin.qq.com/s/ka7Akl6BeG_holMwEsdC9w)
@@ -25,7 +24,7 @@ tags: [Database, Commentary]
 - [Which EL distros actually work?](https://mp.weixin.qq.com/s/xHG8OURTYlmnQTorFkzioA)
 - [What kind of “self-control” do we actually need?](https://mp.weixin.qq.com/s/hWbcc9cMM9qTjPJ0m6G0Kg)
 
-### Industry Insight
+## Industry Insight
 
 - [Open data standards: Postgres, OTel, Iceberg](https://mp.weixin.qq.com/s/L7rWXFo8UYJLzqXeLoAanw)
 - [The lost decade of “small data”](https://mp.weixin.qq.com/s/rfv_oSRD4LS-W9xFd_WB9g)
@@ -43,7 +42,7 @@ tags: [Database, Commentary]
 - [Are distributed DBs a fake need?](https://mp.weixin.qq.com/s/-eaCoZR9Z5srQ-1YZm1QJA)
 - [Database hierarchy of needs](https://mp.weixin.qq.com/s/1xR92Z67kvvj2_NpUMie1Q)
 
-### DBA / RDS
+## DBA / RDS
 
 - [We’re not short of DB kernels, we’re short of DBAs who can wield them](https://mp.weixin.qq.com/s/lqYYHA45hdqh4sPQWv5t8A)
 - [This time the database really exploded—and paging people didn’t help](https://mp.weixin.qq.com/s/2wkE-Jumnlu83eK-VSNoMA)
@@ -58,7 +57,7 @@ tags: [Database, Commentary]
 - [Why are you still hiring DBAs?](https://mp.weixin.qq.com/s/PqCD80H927s0yJrBr4QQqw)
 - [Is DBA still a good job?](https://mp.weixin.qq.com/s/Py3o31w3db5E9FsviAZeCA)
 
-### PostgreSQL Ecosystem
+## PostgreSQL Ecosystem
 
 - [Why PG will dominate the AI era](https://mp.weixin.qq.com/s/dkQaj4xt11uHrwGK6Dm4QA)
 - [Build a China-rooted, world-facing PG distro](https://mp.weixin.qq.com/s/kYl31hRXDvE65i_eewJ68A)

@@ -6,7 +6,6 @@ summary: >
   今天早上照例打开 GitHub，看到之前写 MinIO 那篇博客下面多了一条英文留言：
 tags: [对象存储, 开源, 随笔]
 ---
-
 今天早上照例打开 GitHub，看到之前写 MinIO 那篇博客下面多了一条英文留言：
 
 > "I love what you did. You're right about the Claude Code improvements to productivity. Thank you for maintaining a stable version of Minio."

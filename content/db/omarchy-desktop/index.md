@@ -6,7 +6,6 @@ summary: >
   装了 Omarchy，然后又卸载了。Why？谁适合？谁不适合？Linux 桌面发行版还有出路吗？
 tags: [Linux, Omarchy, 操作系统]
 ---
-
 > [微信公众号](https://mp.weixin.qq.com/s/eRa3tnzV9WBuGEBgtbCDVQ)
 
 最近 X 时间线上铺天盖地都是 Omarchy 的消息——这是 DHH 搞的一个 Linux 桌面发行版。这两天也传到中文世界里了，漫山遍野，到处都是。
@@ -22,8 +21,6 @@ tags: [Linux, Omarchy, 操作系统]
 ![装有 Omarchy 的 2018 款 Intel MacBook Pro](featured.webp)
 
 本文 AI 含量：**10%**
-
----
 
 ## Omarchy 好在哪
 
@@ -49,8 +46,6 @@ tags: [Linux, Omarchy, 操作系统]
 
 正所谓，知之者不如好之者，好之者不如乐之者。也就是 DHH 这种已经财富自由、又真心热爱计算机的中登，才能搞出这种事情来。想做好 Linux 桌面，需要的正是这种集品味、技术、资源、影响力于一身，并且 **真的热爱它** 的人，才能成事。
 
----
-
 ## 关于各种 Linux
 
 作为一个 PostgreSQL 发行版的作者，老冯对 Linux 发行版可以说是如数家珍。
@@ -67,8 +62,6 @@ tags: [Linux, Omarchy, 操作系统]
 
 ![Ubuntu 26.04 LTS Resolute Raccoon](ubuntu-raccoon.webp)
 
----
-
 ## 关于 Ubuntu
 
 Ubuntu 在海外有着压倒性的主导地位。这一点国内的开发者可能没有太大感触，但看一眼 Stack Overflow 的开发者调查就明白了，它是很明显的绝对主力。
@@ -79,8 +72,6 @@ Ubuntu 是衍生自 Debian 的。Debian 也是我很喜欢的一个操作系统�
 
 桌面市场终究没打赢 Windows，但 Ubuntu 在服务器和云上赢得非常彻底：AWS、Azure 上的 Linux 实例大量跑的是它，WSL 的默认发行版也是它。
 
----
-
 ## 关于 Debian
 
 另一个我比较喜欢的操作系统就是 Debian，也就是 Ubuntu 的上游，很多东西都是共通的。
@@ -88,8 +79,6 @@ Ubuntu 是衍生自 Debian 的。Debian 也是我很喜欢的一个操作系统�
 我觉得它没有 Ubuntu 那样开箱即用，但是它足够纯粹。如果你是做分发或者开源项目的，大概率基础镜像都会优先选择 Debian。
 
 一个很扎实的操作系统，稳如老狗。
-
----
 
 ## 所以，到底该用什么
 
@@ -102,8 +91,6 @@ Ubuntu 是衍生自 Debian 的。Debian 也是我很喜欢的一个操作系统�
 到 Linux 上，我知道应该也有类似的改键工具，但我实在懒得去折腾。一换到 Linux，我的输入和操作效率立刻大幅下降；而且我真不想记两套快捷键体系，肌肉记忆已经长在那儿了，实在不想去换。折腾来折腾去，没有实际产出。
 
 工作上也是同样的道理。老冯做 Pigsty，跑数据库和可观测性全家桶这一套东西，Ubuntu 至少能用 `.deb` 包整个跑起来；要是换成 Arch Linux，难道还要我专门去打一套 `pacman` 包？我是真懒得折腾。
-
----
 
 ## 它让我想起了当年的 Ubuntu
 
@@ -118,8 +105,6 @@ Ubuntu 是衍生自 Debian 的。Debian 也是我很喜欢的一个操作系统�
 当然，现在 Ubuntu 有了商业公司 Canonical，用户也开始有些微词了，比如强推自己的包管理器 Snap 之类的，确实感觉没以前那么纯粹了。所以如果 Omarchy 能做得足够好，那真的是一件大好事，老冯非常支持。但你要说让我现在就换过去，我肯定还是选 Ubuntu。
 
 不过话说回来——如果哪天 Omarchy 真的能在 Linux 上实现媲美 macOS 的同等体验和生态，那老冯肯定二话不说，直接就换了。
-
----
 
 ## 附录：Stack Overflow 开发者调研
 

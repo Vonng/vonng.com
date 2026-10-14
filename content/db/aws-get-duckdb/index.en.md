@@ -6,7 +6,6 @@ summary: >
   AWS bought the people who build the duck and left the duck itself to the foundation.
 tags: [DuckDB, AWS, Database, Open Source]
 ---
-
 > [Original on WeChat](https://mp.weixin.qq.com/s/xaXQvJMFfZ1tpPMd6vFaxA) | August 26, 2026
 
 On August 26, Amazon made it official: AWS has signed a definitive agreement to acquire DuckLabs, the company behind DuckDB. The deal is expected to close in early September; the price was not disclosed. The team will remain in Amsterdam, while DuckDB, DuckLake, and Quack will stay open source under the MIT license and be governed by the independent DuckDB Foundation.
@@ -18,8 +17,6 @@ One sentence in the announcement was particularly well crafted: “We are not ac
 First, some background. DuckLabs is an academic spin-off from CWI, the Dutch national research institute for mathematics and computer science in Amsterdam. Hannes Mühleisen and Mark Raasveldt began building DuckDB at CWI in 2018, then founded the company around it.
 
 DuckLabs has roughly 30 people, no VC funding, and no shareholders beyond its founders and employees. Support and development contracts paid the bills: a classic small European shop. Yet this tiny outfit built an analytical database now downloaded more than three million times a day and ran circles around competitors that had raised hundreds of millions of dollars. AWS has now bought the whole operation.
-
----
 
 ## The Timing
 
@@ -35,8 +32,6 @@ Hannes put his cards on the table as well: AWS brings the scale and reach to put
 
 That last clause is a product announcement in disguise. So here is a prediction that may age badly: at re:Invent this December, we will probably see a managed service built on DuckDB. It may take the form of a native query engine for S3, or it may simply be called Amazon DuckDB or Amazon Quack.
 
----
-
 ## This Is an S3 Deal, Not a Redshift Deal
 
 Another easy-to-miss detail is who spoke for AWS: Andy Warfield, an AWS vice president and Distinguished Engineer who leads S3. He said the two sides had worked closely for two years, integrating DuckDB into S3 Tables and SageMaker Lakehouse, and described DuckDB as widely used and loved by S3 customers.
@@ -46,8 +41,6 @@ The buyer here is not the Redshift team. It is the S3 team, and that distinction
 Cloud data infrastructure has spent the past few years migrating onto object storage. Every imaginable flavor of “XXX over S3” has appeared. I covered the long-running feud between filesystems and databases in [“DB vs. FS: 50 Years of Love and War”](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247492480&idx=1&sn=0206fb23192ae5f7aff0d24f0a1782b8&scene=21#wechat_redirect). S3 has not been idle either. First it embedded an Iceberg catalog directly into the storage service as S3 Tables. Now it has acquired the entire team behind the query engine that reads object storage better than anything else on the planet. Object storage is growing compute capabilities, while query engines are becoming storage accessories.
 
 The competitive map makes the logic even clearer. Databricks has Delta and Unity Catalog. Snowflake has Polaris. AWS now has S3 Tables + DuckDB + DuckLake. All three sides are fully armed for the lakehouse war.
-
----
 
 ## Buy the People, Not the Project
 
@@ -63,8 +56,6 @@ To be fair, this is a respectable outcome for DuckLabs. As early as 2022, the co
 
 Put plainly, DuckLabs once had to sell support to survive. With Amazon paying the salaries, it can afford to open the ecosystem further. The arrangement resembles SQLite's consortium-backed model, with one critical difference: SQLite has a consortium of patrons, while DuckDB will now have only one. That single patron is the real problem.
 
----
-
 ## One Belongs to the World; One Belongs to Amazon
 
 I have argued before that the data world is converging on a few default answers. The default database is PostgreSQL. The default object store is S3. And the default analytical engine will be DuckDB. By making this acquisition, AWS has validated my third claim with real money.
@@ -79,8 +70,6 @@ The three defaults now stand like this: PostgreSQL belongs to the world; S3 belo
 
 ![A duck and a crocodile in the Amazon rainforest](featured.webp)
 
----
-
 ## MotherDuck Has the Most to Worry About
 
 There is another duck in this deal, and its position suddenly looks awkward: MotherDuck.
@@ -90,8 +79,6 @@ For readers who do not know the company, MotherDuck is a VC-backed startup that 
 Once AWS acquires DuckLabs, AWS indirectly becomes a MotherDuck shareholder. The contractor that develops MotherDuck's core engine becomes a wholly owned AWS subsidiary. And the product MotherDuck sells is exactly what AWS is most likely to start selling itself. Client, vendor, shareholder, and landlord are now all members of the same family.
 
 In an extra twist, just a day or two before the announcement, MotherDuck acquired Tower, a small infrastructure company that supports its data-pipeline features, to strengthen its own engineering team.
-
----
 
 ## The Duck Pattern: Metadata in PostgreSQL, Data in S3
 
@@ -104,8 +91,6 @@ Crunchy Data, recently acquired by Snowflake, is pursuing almost the same idea w
 Data in object storage, metadata in PostgreSQL: this pattern is becoming the default architecture for a new generation of data systems. You do not have to look far. A friend of mine, Jiang, has recently built four database systems. Whether it is a graph database or a message queue, every one uses this architecture. This is no coincidence. It is a paradigm. Now that the people who originated it are joining AWS, the pattern will spread even faster as an industry standard.
 
 The second is the era itself. DuckDB gets more than three million downloads a day. Do you really think there are three million data analysts behind them? A substantial share comes from AI agents. Zero configuration, one binary, in-process execution, and disposable by design: DuckDB is the instinctive choice when an agent needs to work with data. DeepSeek's smallpond, which pairs DuckDB with 3FS for distributed analytics, is a ready-made example. AWS is buying more than an OLAP engine. It is buying the default way agents process data.
-
----
 
 ## Epilogue
 
@@ -126,8 +111,6 @@ With one command on your own Linux servers, you can deploy a production-grade, h
 Amazon has already educated the market on everyone else's behalf. What remains is a choice: entrust your data assets to the rainforest, or keep them in your own hands.
 
 It took 30 years for the data world to converge on three default answers. It takes only one signed agreement for one of them to change hands. May the duck fly high in the rainforest—and when it lands, may it still remember the way back to the foundation.
-
----
 
 ### References
 

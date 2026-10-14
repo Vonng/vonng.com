@@ -8,12 +8,9 @@ series: ["信创国产化"]
 series_weight: 2
 tags: [Domestic Database, Linux, PG Admin, Database]
 ---
-
 Many users have asked me what operating system is best for running databases. Especially considering that CentOS 7.9 will reach EOL next year, many users should need to upgrade their OS, so today I'm sharing some experience.
 
-[![](featured.jpg)](https://mp.weixin.qq.com/s/xHG8OURTYlmnQTorFkzioA)
-
-------
+[![Which EL-Series OS Distribution Is Best? (figure 1)](featured.jpg)](https://mp.weixin.qq.com/s/xHG8OURTYlmnQTorFkzioA)
 
 ## TL;DR
 
@@ -25,11 +22,9 @@ For EL major versions, EL7 is currently the most stable but will EOL soon, and m
 
 Currently, EL8 is the mainstream choice: software versions are new enough and stable enough. For specific versions, I recommend RockyLinux 8.9 (Green Obsidian) or OpenAnolis 8.8 (rhck kernel). Aggressive users can try 9.3, conservative users can stick with CentOS 7.9.
 
-------
-
 ## Testing Methodology
 
-We build the out-of-the-box PostgreSQL database distribution [Pigsty](https://pigsty.io/zh/), without using containers/orchestration solutions, so we inevitably deal with various operating systems. We've basically tested all EL-series OS distributions and recently completed adaptation for Anolis/Euler as well as Ubuntu/Debian. We have some experience with OS EL compatibility.
+We build the out-of-the-box PostgreSQL database distribution [Pigsty](https://pigsty.cc/), without using containers/orchestration solutions, so we inevitably deal with various operating systems. We've basically tested all EL-series OS distributions and recently completed adaptation for Anolis/Euler as well as Ubuntu/Debian. We have some experience with OS EL compatibility.
 
 Pigsty's scenario is very representative — running [the world's most advanced and popular open-source relational database PostgreSQL](/pg/pg-is-no1) on bare operating systems, along with complete software components needed for enterprise-grade database services. This includes 5 major versions of PostgreSQL (12-16) and over a hundred extension plugins. There are also dozens of commonly used host node packages, the complete Prometheus/Grafana observability stack, and auxiliary components like ETCD/MinIO/Redis.
 
@@ -64,8 +59,6 @@ Test results can basically be divided into three categories: 100% compatible, mi
 
 RockyLinux is 100% compatible, with very smooth software package installation and no issues encountered. OpenAnolis has a user experience basically identical to Rocky. AlmaLinux, OracleLinux, and CentOS Stream have some missing software packages that can be fixed and supplemented. Overall, they have minor errors but can be overcome. Euler belongs in its own tier of major troubles - encountering massive version dependency error crashes, with almost all packages requiring targeted compilation. Some packages are even difficult to compile due to system dependency version conflicts. The adaptation cost as an EL OS distribution is even higher than Ubuntu/Debian.
 
-------------------
-
 ## User Experience
 
 RockyLinux has the best user experience. Its founder is the original founder of CentOS who started a new fork after CentOS was acquired by Red Hat. It has basically occupied CentOS's original ecological niche.
@@ -95,8 +88,6 @@ OpenEuler belongs in the worst tier, claiming EL compatibility but being complet
 We have a major client who had to use this OS, so we had to do compatibility adaptation. Adapting this OS is a nightmare - the workload is greater than supporting Debian/Ubuntu series OS. It truly achieves **world-leading** excellence in tormenting users.
 
 BTW, there's an article on Zhihu that also introduces the pitfalls and comparisons of these OS distributions - worth reading:
-
-------------------
 
 ## Some Thoughts
 

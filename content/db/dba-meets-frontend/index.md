@@ -6,7 +6,6 @@ summary: >
   在前端大手子与Claude Code帮助下，从JQuery原始人迈入Next.js现代前端时代。
 tags: [软件工程, 随笔]
 ---
-
 老冯已经很久没有折腾过前端了，上一次密集和前端打交道已经是十年前了，还是 JQuery 的古典前端时代。这次在一位前端大师，Claude Code，Cursor 以及 GPT 的帮助下，重新用 Next.js 把整个 Pigsty 的网站糊了一遍，跑步进入现代化。
 
 ![图片](01.webp)

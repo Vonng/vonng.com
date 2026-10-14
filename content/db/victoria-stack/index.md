@@ -7,8 +7,6 @@ summary: >
   Victoria是朴实无华的强悍— — 用几分之一的资源，实现Prometheus + Loki几倍的效果。Pigsty v4.0将全面采用Victoria全家桶。
 tags: [监控]
 ---
-
-
 最近几周老冯都在忙一件事，准备 Pigsty v4.0 —— 最主要的工作就是将 Prometheus 和 Loki 换为 Victoria 全家桶。**Victoria 是朴实无华的强悍** ——效果非常炸裂。这一部分已经完工，发布一个 Beta 版本让有需要的朋友先耍一耍。
 
 ## VictoriaMetrics 初体验
@@ -118,8 +116,6 @@ Loki 的设计哲学是“不索引全文，只索引标签”。听起来很美
 ![Self Monitoring Dashboard](self-monitoring-dashboard.png)
 
 从某种意义上来说，现在的 Pigsty 不仅仅是一个 PostgreSQL 数据库发行版了，**还是一个 Observability 可观测性发行版！**
-
---------
 
 ## 快速上手
 

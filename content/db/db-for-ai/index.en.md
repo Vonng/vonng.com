@@ -8,9 +8,6 @@ tags: [AI, PostgreSQL, Database, Open Source]
 ai: true
 aliases: ["/ai/db-for-ai/"]
 ---
-
-
-
 This morning, the industry exploded with news of an acquisition. Following Databricks' $1 billion acquisition of Neon, its rival Snowflake immediately followed by acquiring CrunchyData.
 
 According to insiders, this deal was priced at $250 million. While the price is 1/4 of Neon's, unlike Databricks' stock swap, this time Snowflake paid real cash, giving it a distinctly "whatever Databricks buys, I buy" confrontational flavor.
@@ -23,8 +20,6 @@ But this isn't just a grudge match between two data warehouse giants - PostgreSQ
 - [Database Tea Room: OpenAI to Acquire Supabase?](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489695&idx=1&sn=eb0aa2286ecdbb014fd6b38023ae6749&scene=21#wechat_redirect)
 
 > WSJ: Snowflake to acquire Crunchy Data for $250 million[1]
-
--------
 
 ## Why PostgreSQL?
 

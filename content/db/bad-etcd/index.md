@@ -6,8 +6,6 @@ summary: >
   因为Etcd而翻车的公司并非少数。Etcd有一个坑爹的默认设计：写满2GB数据就挂了。如果你在自己折腾Kubernetes或使用Patroni做PostgreSQL高可用，大概率会在这上面翻车。
 tags: [数据库, 分布式系统, 容器化, 故障复盘]
 ---
-
-
 前几天 [影视飓风分享的 Pigsty / PostgreSQL 高可用案例](https://mp.weixin.qq.com/s/7zJe6_HJU7Q2_Uf9-lS2vQ) 里面踩的一个雷在 X 上引起网友热议。
 “因为 etcd 未开启自动压实功能，且默认仅为 2GB 容量”，ayanamist 评论到：“ _我倒要看看 etcd 这个傻逼 2G 的设计可以坑多少公司_ ”。
 
@@ -15,8 +13,6 @@ etcd 的 slogan 是：“一个分布式的、可靠的键-值存储，用于存
 目前最常见的场景是用于存储 K8S 的元数据。当然类似 Patroni 这样的 PostgreSQL 高可用方案也可能会用到 etcd 作为 DCS。
 
 在 Ayanamist 这条推的评论下，可以看到许多人都踩过这个雷。大部分是 K8S 用户，也有在 PG 高可用场景上翻车的例子。
-
--------
 
 ## etcd 的缺陷
 
@@ -43,8 +39,6 @@ auto-compaction-retention: "24h"
 
 最后，这个问题还不会在 etcd 开始服务时立即暴露，而是会在使用几个月之后突然爆雷。
 
--------
-
 ## PostgreSQL 的例子
 
 其实在很早的时候（8.0, 2005 年前） PostgreSQL 也有这个问题。 PostgreSQL 使用与 etcd 类似的 MVCC 逻辑，每次写入也都是创建新版本/标记删除，所以会留下许多历史版本。
@@ -55,11 +49,9 @@ auto-compaction-retention: "24h"
 
 然而，并非所有数据库都像 PostgreSQL 这样 “靠谱贴心”，给用户设置了足够好的 “默认值”，可以开箱即用。etcd 就是一个非常典型的例子。
 
--------
-
 ## Pigsty 的例子
 
 Pigsty 也在这个问题上翻过车。从 2023-02-28 发布的 v2.0.0 首次引入 etcd 作为 DCS 开始，到 2024-02-13 v2.6.0 修复 etcd 的这个问题，
-整整一年的版本都受到 etcd 这个问题的影响。我们在文档的 [漏洞缺陷](https://pigsty.cc/docs/bug/) 与 [ETCD FAQ](https://pigsty.cc/docs/etcd/faq/) 中多次强调过这个问题。
+整整一年的版本都受到 etcd 这个问题的影响。我们在文档的 [漏洞缺陷](/pigsty/v2.6/) 与 [ETCD FAQ](https://pigsty.cc/docs/etcd/faq/) 中多次强调过这个问题。
 
 在这里还是要特别提醒一下使用 Pigsty v2.0 ~ v2.5 的用户，请尽快更新升级一下 Etcd 的配置。

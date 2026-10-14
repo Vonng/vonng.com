@@ -7,7 +7,6 @@ summary: >
   PostgreSQL是无聊数据库之王？2025年值得深入学习的七个数据库：PostgreSQL、SQLite、DuckDB、ClickHouse、FoundationDB、TigerBeetle、CockroachDB，每个都值得花一周时间研究。
 tags: [PostgreSQL, OLAP, 数据库, 翻译]
 ---
-
 > 作者：Matt Blewitt，原文：七周七数据库（2025年）
 >
 > 译者：Vonng，数据库老司机，云计算泥石流
@@ -18,13 +17,9 @@ https://matt.blwt.io/post/7-databases-in-7-weeks-for-2025/
 
 ![A line drawing of a bookshelf, with the books labelled for each database covered - PostgreSQL, SQLite, DuckDB, ClickHouse, FoundationDB, TigerBeetle and CockroachDB](https://matt.blwt.io/7-databases-in-7-weeks-for-2025/header.webp)
 
---------
-
 ## 前言
 
 这不是 “七大最佳数据库” 之类的文章，更不是给报菜单念书名式的列表做铺垫——这里只是我认为值得你花一周左右时间认真研究的七个数据库。你可能会问，“为什么不选Neo4j、MongoDB、MySQL / Vitess 或者其他数据库呢？”答案大多是：我觉得它们没啥意思。同时，我也不会涉及 Kafka 或其他类似的流数据服务——它们确实值得你花时间学习，但不在本文讨论范围内。
-
---------
 
 ## 目录
 
@@ -36,8 +31,6 @@ https://matt.blwt.io/post/7-databases-in-7-weeks-for-2025/
 6. [TigerBeetle](#6-tigerbeetle)
 7. [CockroachDB](#7-cockroachdb)
 8. [小结](https://matt.blwt.io/post/7-databases-in-7-weeks-for-2025/#wrap-up)
-
---------
 
 ## 1. PostgreSQL
 
@@ -51,8 +44,6 @@ https://matt.blwt.io/post/7-databases-in-7-weeks-for-2025/
 
 花一周时间了解 Postgres 的各种可能性，同时也了解它的一些限制 ——[MVCC](https://www.geeksforgeeks.org/multiversion-concurrency-control-mvcc-in-postgresql/) 可能有些任性。用你最喜欢的编程语言实现一个简单的CRUD应用程序，甚至可以尝试构建一个 Postgres 扩展。
 
---------
-
 ## 2. SQLite
 
 ### 本地优先数据库
@@ -65,8 +56,6 @@ https://matt.blwt.io/post/7-databases-in-7-weeks-for-2025/
 
 花一周时间使用 SQLite ，探索一下本地优先架构，你甚至可以研究下是否能将使用 Postgres 的客户端-服务器模型迁移到只使用 SQLite 的模式上。
 
---------
-
 ## 3. DuckDB
 
 ### 万能查询数据库
@@ -78,8 +67,6 @@ DuckDB 的亮点在于它作为一个“万能查询”数据库，使用 SQL �
 与 Postgres 类似，DuckDB 也有 [扩展](https://duckdb.org/docs/extensions/overview)，尽管生态系统没有那么丰富 —— 毕竟DuckDB还相对年轻。许多社区贡献的扩展可以在[社区扩展列表](https://duckdb.org/community_extensions/list_of_extensions)中找到，我特别喜欢[`gsheets`](https://duckdb.org/community_extensions/extensions/gsheets.html)。
 
 花一周时间使用DuckDB进行一些数据分析和处理——无论是通过 Python Notebook，还是像[Evidence](https://evidence.dev/)这样的工具，甚至看看它如何与SQLite的“本地优先”方法结合，将SQLite数据库的分析查询卸载到DuckDB，毕竟 DuckDB 也[可以读取SQLite数据](https://duckdb.org/docs/guides/database_integration/sqlite.html)。
-
---------
 
 ## 4. ClickHouse
 
@@ -94,8 +81,6 @@ ClickHouse 专注于分析工作负载，并且通过[横向扩展](https://clic
 我建议你了解 ClickHouse 的另一个原因是它的操作体验极佳 —— 部署、扩展、备份等都有[详尽的文档](https://clickhouse.com/docs/en/architecture/cluster-deployment)——甚至包括设置 [合适的 CPU Governor](https://clickhouse.com/docs/en/operations/tips)。
 
 花一周时间探索一些更大的分析数据集，或者将上面 DuckDB 分析转换为 ClickHouse 部署。ClickHouse 还有一个嵌入式版本 —— [chDB](https://clickhouse.com/docs/en/chdb)—— 可以提供更直接的对比。
-
---------
 
 ## 5. FoundationDB
 
@@ -113,8 +98,6 @@ FoundationDB 针对特定的工作负载而设计，并使用仿真方法试进�
 
 花一周时间浏览 [教程](https://apple.github.io/foundationdb/tutorials.html)，思考如何使用FoundationDB替代像 [RocksDB](https://rocksdb.org/) 这样的数据库。也许可以看看一些 [设计方案](https://apple.github.io/foundationdb/design-recipes.html) 并阅读 [论文](https://www.foundationdb.org/files/fdb-paper.pdf)。
 
---------
-
 ## 6. TigerBeetle
 
 ### 极致正确数据库
@@ -126,8 +109,6 @@ FoundationDB 针对特定的工作负载而设计，并使用仿真方法试进�
 另一个有趣的点是，TigerBeetle是用 [Zig](https://ziglang.org/) 编写的——这是一门相对新兴的系统编程语言，但显然与 TigerBeetle 团队的目标非常契合。
 
 花一周时间在本地部署的 TigerBeetle 中建模你的金融账户——按照 [快速入门](https://docs.tigerbeetle.com/quick-start) 操作，并看看[系统架构](https://docs.tigerbeetle.com/coding/system-architecture)文档，了解如何将其与上述更通用的数据库结合使用。
-
---------
 
 ## 7. CockroachDB
 
@@ -141,13 +122,9 @@ CockroachDB 实现了跨多个地理区域的数据库伸缩能力，生态位�
 
 CockroachDB 的另一个有趣特性是如何使用[多区域配置](https://www.cockroachlabs.com/docs/stable/multiregion-overview)，包括[表的本地性](https://www.cockroachlabs.com/docs/stable/table-localities)，根据你想要的读写利弊权衡提供不同的选项。花一周时间在你选择的语言和框架中重新实现 [`movr`](https://www.cockroachlabs.com/docs/v24.3/movr) 示例吧。
 
---------
-
 ## 总结
 
 我们探索了许多不同的数据库，这些数据库都被地球上一些最大的公司在生产环境中使用，希望这能让你接触到一些之前不熟悉的技术。带着这些知识，去解决有趣的问题吧！
-
---------
 
 ## 老冯评论
 

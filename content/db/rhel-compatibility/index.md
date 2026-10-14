@@ -7,12 +7,9 @@ summary: >
 series: ["信创国产化"]
 tags: [国产数据库, Linux, PG管理, 数据库]
 ---
-
 有很多用户都问过我，跑数据库用什么操作系统比较好。特别是考虑到 CentOS 7.9 明年就 EOL了，应该有不少用户需要升级OS了，所以今天分享一些经验之谈。
 
-[![](featured.jpg)](https://mp.weixin.qq.com/s/xHG8OURTYlmnQTorFkzioA)
-
-------
+[![EL系操作系统发行版哪家强？（图 1）](featured.jpg)](https://mp.weixin.qq.com/s/xHG8OURTYlmnQTorFkzioA)
 
 ## 太长不看
 
@@ -24,11 +21,9 @@ tags: [国产数据库, Linux, PG管理, 数据库]
 
 目前综合来看，EL8 是主流的选择：软件版本足够新，也足够稳定。具体的版本上建议使用 RockyLinux 8.9（Green Obsidian） 或 OpenAnolis 8.8 (rhck内核)。 激进的用户可以试试 9.3 ，保守稳妥的用户可以使用 CentOS 7.9 。
 
-------
-
 ## 测试方法论
 
-我们做开箱即用 PostgreSQL 数据库发行版 [Pigsty](https://pigsty.io/zh/)，不使用容器/编排方案，因此免不了与各种操作系统打交道，基本上 EL 系的 OS 发行版我们都测试过一遍，最近刚刚把 Anolis / Euler  以及 Ubuntu / Debian 的适配做完。关于 OS EL兼容性还是有一些经验心得的。
+我们做开箱即用 PostgreSQL 数据库发行版 [Pigsty](https://pigsty.cc/)，不使用容器/编排方案，因此免不了与各种操作系统打交道，基本上 EL 系的 OS 发行版我们都测试过一遍，最近刚刚把 Anolis / Euler  以及 Ubuntu / Debian 的适配做完。关于 OS EL兼容性还是有一些经验心得的。
 
 Pigsty 的场景非常具有代表性 —— 在裸操作系统上[运行世界上最先进且最流行的开源关系型数据库 PostgreSQL](/pg/pg-is-no1)，以及企业级数据库服务所需要的完整软件组件。包括了 PostgreSQL 生命周期中的5个大版本（12 - 16）以及一百多个扩展插件。还有几十个常用的主机节点软件包，Prometheus / Grafana 可观测性全家桶，以及 ETCD / MinIO / Redis 等辅助组件。
 
@@ -63,8 +58,6 @@ repo_packages:
 
 RockyLinux 属于 100% 兼容，各种软件包安装非常流畅，没有遇到任何问题，OpenAnolis 的使用体验与 Rocky 基本一致。AlmaLinux 和 OracleLinux，以及 CentOS Stream 有少量软件包缺失，有办法补上修复，总的来说有些小错误，但可以克服。Euler 属于独一档的大麻烦，软件包遇到了大量版本依赖错误崩溃，几乎所有包都需要针对性编译，有的包因为系统依赖版本冲突问题连编译都困难了，作为EL系OS发行版的适配成本甚至比 Ubuntu/Debian 还高。
 
-------------------
-
 ## 使用体验
 
 RockyLinux 的使用体验最好，它的创始人就是原来 CentOS 的创始人，CentOS 被红帽收购后又另起炉灶搞的新 Fork。目前基本已经占据了原本 CentOS 的生态位。
@@ -94,8 +87,6 @@ OpenEuler 属于最拉跨的独一档，号称 EL兼容，但用起来完全不�
 我们有个大客户不得不用这个 OS，所以我们也不得不去做兼容性适配。适配这种操作系统简直是一种梦魇：工作量比支持 Debian / Ubuntu 系列操作系统还要大，在折腾用户这件事上确实做到了 **遥遥领先**。
 
 BTW，知乎上有篇文章也介绍了这几个OS发行版的坑与对比，可以看看：
-
-------------------
 
 ## 一些感想
 

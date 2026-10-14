@@ -7,7 +7,6 @@ summary: >
 series: ["正本清源"]
 tags: [云计算, 数据库, 架构, 技术评论]
 ---
-
 最近在技术圈有一些热议的话题，[云数据库是不是智商税？](/cloud/rds/)？[公有云是不是杀猪盘](/cloud/ebs/)？[分布式数据库是不是伪需求](/db/distributive-bullshit/)？[微服务是不是蠢主意](/db/microservice-bad-idea/)？[你还需要运维和 DBA 吗](https://mp.weixin.qq.com/s/Gk9bG_EOIv0IAkim41XRHg)？[中台是不是一场彻头彻尾的自欺欺人](https://mp.weixin.qq.com/s/VgTU7NcOwmrX-nbrBBeH_w)？在 Twitter 与 HackerNews 上也有大量关于这类话题的讨论与争辩。
 
 在这些议题的背后的脉络是大环境的改变：**降本增效压倒其他一切，成为绝对的主旋律**。开发者体验，架构可演化性，研发效率这些属性依然重要，但在 **ROI** 面前都要让路 —— **社会思潮与根本价值观的变化会触发所有技术的重新估值。**
@@ -46,8 +45,6 @@ tags: [云计算, 数据库, 架构, 技术评论]
 - [技术极简主义：一切皆用 Postgres](/pg/just-use-pg/)
 
 [![rethink](rethink.jpg)](https://mp.weixin.qq.com/s/Q0OtrpEhF24XN7gwMjbSRA)
-
----
 
 ## 写作计划
 

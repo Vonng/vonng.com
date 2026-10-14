@@ -7,7 +7,6 @@ summary: >
   Is PostgreSQL the king of boring databases? Here are seven databases worth studying in 2025: PostgreSQL, SQLite, DuckDB, ClickHouse, FoundationDB, TigerBeetle, and CockroachDB—each deserving a week of deep exploration.
 tags: [PostgreSQL, OLAP, Database, Translation]
 ---
-
 > Author: Matt Blewitt, Original: 7 Databases in 7 Weeks (2025)
 >
 > Translator: Feng Ruohang, database veteran, cloud computing mudslide
@@ -18,13 +17,9 @@ For a long time, I've been running Databases-as-a-Service, and there's always so
 
 ![A line drawing of a bookshelf, with the books labelled for each database covered - PostgreSQL, SQLite, DuckDB, ClickHouse, FoundationDB, TigerBeetle and CockroachDB](https://matt.blwt.io/7-databases-in-7-weeks-for-2025/header.webp)
 
---------
-
 ## Foreword
 
 This isn't a "7 Best Databases" type of article, nor is it laying groundwork for a menu-style list of books — these are simply seven databases I think are worth spending about a week seriously studying. You might ask, "Why not Neo4j, MongoDB, MySQL/Vitess, or other databases?" The answer is mostly: I don't find them interesting. Also, I won't be covering Kafka or other similar streaming data services — they're definitely worth your time to learn, but they're outside the scope of this article.
-
---------
 
 ## Table of Contents
 
@@ -36,8 +31,6 @@ This isn't a "7 Best Databases" type of article, nor is it laying groundwork for
 6. [TigerBeetle](#6-tigerbeetle)
 7. [CockroachDB](#7-cockroachdb)
 8. [Wrap-up](https://matt.blwt.io/post/7-databases-in-7-weeks-for-2025/#wrap-up)
-
---------
 
 ## 1. PostgreSQL
 
@@ -51,8 +44,6 @@ Because of this, Postgres shines as an excellent "default" database, and we're s
 
 Spend a week exploring the various possibilities of Postgres, while also understanding some of its limitations — [MVCC](https://www.geeksforgeeks.org/multiversion-concurrency-control-mvcc-in-postgresql/) can be somewhat temperamental. Implement a simple CRUD application in your favorite programming language, or even try building a Postgres extension.
 
---------
-
 ## 2. SQLite
 
 ### The Local-First Database
@@ -65,8 +56,6 @@ Thanks to [Ruby on Rails 8.0](https://rubyonrails.org/2024/9/27/rails-8-beta1-no
 
 Spend a week using SQLite, exploring local-first architecture, and you might even research whether you can migrate from a Postgres client-server model to a SQLite-only pattern.
 
---------
-
 ## 3. DuckDB
 
 ### The Universal Query Database
@@ -78,8 +67,6 @@ DuckDB's highlight is as a "universal query" database, using SQL as the preferre
 Like Postgres, DuckDB also has [extensions](https://duckdb.org/docs/extensions/overview), though the ecosystem isn't as rich — after all, DuckDB is relatively young. Many community-contributed extensions can be found in the [community extensions list](https://duckdb.org/community_extensions/list_of_extensions), and I particularly like [`gsheets`](https://duckdb.org/community_extensions/extensions/gsheets.html).
 
 Spend a week using DuckDB for data analysis and processing — whether through Python Notebooks, tools like [Evidence](https://evidence.dev/), or even see how it combines with SQLite's "local-first" approach, offloading analytical queries from SQLite databases to DuckDB, since DuckDB can also [read SQLite data](https://duckdb.org/docs/guides/database_integration/sqlite.html).
-
---------
 
 ## 4. ClickHouse
 
@@ -94,8 +81,6 @@ ClickHouse has advantages when you need to run analytical queries on large datas
 Another reason I recommend learning ClickHouse is its excellent operational experience — deployment, scaling, backup, etc. all have [detailed documentation](https://clickhouse.com/docs/en/architecture/cluster-deployment) — even including setting up [appropriate CPU Governors](https://clickhouse.com/docs/en/operations/tips).
 
 Spend a week exploring larger analytical datasets, or converting the DuckDB analysis above to ClickHouse deployment. ClickHouse also has an embedded version — [chDB](https://clickhouse.com/docs/en/chdb) — which can provide more direct comparisons.
-
---------
 
 ## 5. FoundationDB
 
@@ -113,8 +98,6 @@ But why is it a "layered" database? Because it proposes the [concept of layers](
 
 Spend a week going through the [tutorials](https://apple.github.io/foundationdb/tutorials.html), thinking about how to use FoundationDB as a replacement for databases like [RocksDB](https://rocksdb.org/). Maybe look at some [design patterns](https://apple.github.io/foundationdb/design-recipes.html) and read the [paper](https://www.foundationdb.org/files/fdb-paper.pdf).
 
---------
-
 ## 6. TigerBeetle
 
 ### The Extremely Correct Database
@@ -126,8 +109,6 @@ Why is it worth looking at? Single-purpose databases are rare, and databases as 
 Another interesting point is that TigerBeetle is written in [Zig](https://ziglang.org/) — a relatively new systems programming language, but apparently very aligned with the TigerBeetle team's goals.
 
 Spend a week modeling your financial accounts in a locally deployed TigerBeetle — follow the [quick start](https://docs.tigerbeetle.com/quick-start) and look at the [system architecture](https://docs.tigerbeetle.com/coding/system-architecture) documentation to understand how to combine it with the more general-purpose databases mentioned above.
-
---------
 
 ## 7. CockroachDB
 
@@ -141,13 +122,9 @@ CockroachDB achieves database scaling across multiple geographic regions, with a
 
 Another interesting feature of CockroachDB is how it uses [multi-region configuration](https://www.cockroachlabs.com/docs/stable/multiregion-overview), including [table localities](https://www.cockroachlabs.com/docs/stable/table-localities), providing different options based on your desired read-write trade-offs. Spend a week reimplementing the [`movr`](https://www.cockroachlabs.com/docs/v24.3/movr) example in your language and framework of choice.
 
---------
-
 ## Summary
 
 We've explored many different databases, all used in production by some of the world's largest companies. Hopefully, this exposes you to some technologies you weren't familiar with before. Armed with this knowledge, go solve interesting problems!
-
---------
 
 ## Feng's Comments
 

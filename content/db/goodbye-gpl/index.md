@@ -7,8 +7,6 @@ summary: >
   DDIA作者Martin Kleppmann认为应远离GPL及相关许可证，因为它们未能实现其目的，造成的麻烦比产生的价值更大。在2020年代，计算自由的敌人是云软件，本文倡导本地优先软件的概念。
 tags: [本地优先, 开源, 翻译]
 ---
-
-
 原文由 Martin Kleppmann 于2021年4月14日发表，译者：Vonng。[原文地址](https://martin.kleppmann.com/2021/04/14/goodbye-gpl.html)
 
 > Martin Kleppmann是《设计数据密集型应用》（a.k.a DDIA）的作者，译者 Vonng 为该书中文译者。
@@ -20,8 +18,6 @@ tags: [本地优先, 开源, 翻译]
 首先简单介绍一下背景：GPL系列许可证的定义性特征是 [copyleft](https://en.wikipedia.org/wiki/Copyleft) 的概念，它指出，如果你用了一些GPL许可的代码并对其进行修改或构建，你也必须在同一许可证下免费提供你的修改/扩展（被称为"[衍生作品](https://en.wikipedia.org/wiki/Derivative_work)"）（大致意思）。这样一来，GPL的源代码就不能被纳入闭源软件中。乍看之下，这似乎是个好主意。那么问题在哪里？
 
 [![featured.jpg](featured.jpg)](https://mp.weixin.qq.com/s/DJsDRO18saZaxe3oyzzYrA)
-
-------
 
 ## 敌人变了
 
@@ -35,13 +31,11 @@ tags: [本地优先, 开源, 翻译]
 这些“云软件”也许有一个客户端组件（手机App，网页App，跑在你浏览器中的JavaScript），但它们只能与供应商的服务端共同工作。而云软件存在很多问题：
 
 - 如果提供云软件的公司倒闭，或决定[停产](https://killedbygoogle.com/)，软件就没法工作了，而你用这些软件创造的文档与数据就被锁死了。对于初创公司编写的软件来说，这是一个很常见的问题：这些公司可能会被[大公司收购](https://ourincrediblejourney.tumblr.com/)，而大公司没有兴趣继续维护这些初创公司的产品。
-- 谷歌和其他云服务可能在没有任何警告和[追索手段](https://www.paullimitless.com/google-account-suspended-no-reason-given/)的情况下，[突然暂停你的账户](https://twitter.com/Demilogic/status/1358661840402845696)。例如，您可能在完全无辜的情况下，被自动化系统判定为违反服务条款：其他人可能入侵了你的账户，并在你不知情的情况下使用它来发送恶意软件或钓鱼邮件，触发违背服务条款。因而，你可能会突然发现自己用Google Docs或其它App创建的文档全部都被永久锁死，无法访问了。
+- 谷歌和其他云服务可能在没有任何警告和[追索手段](https://www.paullimitless.com/google-account-suspended-no-reason-given/)的情况下，突然暂停你的账户（原链接失效）。例如，您可能在完全无辜的情况下，被自动化系统判定为违反服务条款：其他人可能入侵了你的账户，并在你不知情的情况下使用它来发送恶意软件或钓鱼邮件，触发违背服务条款。因而，你可能会突然发现自己用Google Docs或其它App创建的文档全部都被永久锁死，无法访问了。
 - 而那些运行在你自己的电脑上的软件，即使软件供应商破产了，它也可以继续运行，直到永远。（如果软件不再与你的操作系统兼容，你也可以在虚拟机和模拟器中运行它，当然前提是它不需要联络服务器来检查许可证）。例如，互联网档案馆有一个[超过10万个历史软件](https://archive.org/details/softwarelibrary)的软件集锦，你可以在浏览器中的模拟器里运行！相比之下，如果云软件被关闭，你没有办法保存它，因为你从来就没有服务端软件的副本，无论是源代码还是编译后的形式。
 - 20世纪90年代，无法定制或扩展你所使用的软件的问题，在云软件中进一步加剧。对于在你自己的电脑上运行的闭源软件，至少有人可以对它的数据文件格式进行逆向工程，这样你还可以把它加载到其他的替代软件里（例如[OOXML](https://en.wikipedia.org/wiki/Office_Open_XML)之前的微软Office文件格式，或者[规范](https://www.adobe.com/devnet-apps/photoshop/fileformatashtml/)发布前的Photoshop文件）。有了云软件，甚至连这个都做不到了，因为数据只存储在云端，而不是你自己电脑上的文件。
 
 如果所有的软件都是免费和开源的，这些问题就都解决了。然而，开源实际上并不是解决云软件问题的必要条件；即使是闭源软件也可以避免上述问题，只要它运行在你自己的电脑上，而不是供应商的云服务器上。请注意，互联网档案馆能够在没有源代码的情况下维持历史软件的正常运行：如果只是出于存档的目的，在模拟器中运行编译后的机器代码就够了。也许拥有源码会让事情更容易一些，但这并不是不关键，最重要的事情，还是要有一份软件的副本。
-
-------
 
 ## 本地优先的软件
 
@@ -49,21 +43,17 @@ tags: [本地优先, 开源, 翻译]
 
 云软件，而不是闭源软件，才是对软件自由的真正威胁，原因在于：云厂商能够突然心血来潮随心所欲地锁定你的所有数据，其危害要比无法查看和修改你的软件源码的危害大得多。因此，普及本地优先的软件显得更为重要和紧迫。如果在这一过程中，我们也能让更多的软件开放源代码，那也很不错，但这并没有那么关键。我们要聚焦在最重要与最紧迫的挑战上。
 
-------
-
 ## 促进软件自由的法律工具
 
 Copyleft软件许可证是一种法律工具，它试图迫使更多的软件供应商公开其源码。尤其是[AGPL](https://en.wikipedia.org/wiki/Affero_General_Public_License)，它尝试迫使云厂商发布其服务器端软件的源代码。然而这并没有什么用：大多数云厂商只是简单拒绝使用AGPL许可的软件：要么使用一个采用更宽松许可的替代实现版本，要么自己重新实现必要的功能，或者直接[购买一个没有版权限制的商业许可](https://www.elastic.co/pricing/faq/licensing)。有些代码无论如何都不会开放，我不认为这个许可证真的有让任何本来没开源的软件变开源。
 
 作为一种促进软件自由的法律工具，我认为 copyleft 在很大程度上是失败的，因为它们在阻止云软件兴起上毫无建树，而且可能在促进开源软件份额增长上也没什么用。开源软件已经很成功了，但这种成功大部分都属于 non-copyleft 的项目（如Apache、MIT或BSD许可证），即使在GPL许可证的项目中（如Linux），我也怀疑版权方面是否真的是项目成功的重要因素。
 
-对于促进软件自由而言，我相信更有前景的法律工具是政府监管。例如，GDPR提出了[数据可移植权](https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/individual-rights/right-to-data-portability/)，这意味着用户必须可以能将他们的数据从一个服务转移到其它的服务中。现有的可移植性的实现，例如[谷歌Takeout](https://en.wikipedia.org/wiki/Google_Takeout)，是相当初级的（你真的能用一堆JSON压缩档案做点什么吗？），但我们可以游说监管机构[推动更好的可移植性/互操作性](https://interoperability.news/)，例如，要求相互竞争的两个供应商在它们的两个应用程序之间，实时双向同步你的数据。
+对于促进软件自由而言，我相信更有前景的法律工具是政府监管。例如，GDPR提出了[数据可移植权](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/individual-rights/right-to-data-portability/)，这意味着用户必须可以能将他们的数据从一个服务转移到其它的服务中。现有的可移植性的实现，例如[谷歌Takeout](https://en.wikipedia.org/wiki/Google_Takeout)，是相当初级的（你真的能用一堆JSON压缩档案做点什么吗？），但我们可以游说监管机构[推动更好的可移植性/互操作性](https://interoperability.news/)，例如，要求相互竞争的两个供应商在它们的两个应用程序之间，实时双向同步你的数据。
 
 另一条有希望的途径是，推动[公共部门的采购倾向于开源、本地优先的软件](https://joinup.ec.europa.eu/sites/default/files/document/2011-12/OSS-procurement-guideline%20-final.pdf)，而不是闭源的云软件。这为企业开发和维护高质量的开源软件创造了积极的激励机制，而版权条款却没有这样做。
 
 你可能会争论说，软件许可证是开发者个人可以控制的东西，而政府监管和公共政策是一个更大的问题，不在任何一个个体权力范围之内。是的，但你选择一个软件许可证能产生多大的影响？任何不喜欢你的许可证的人可以简单地选择不使用你的软件，在这种情况下，你的力量是零。有效的改变来自于对大问题的集体行动，而不是来自于一个人的小开源项目选择一种许可证而不是另一种。
-
-------
 
 ## GPL-家族许可证的其他问题
 
@@ -73,19 +63,15 @@ Copyleft软件许可证是一种法律工具，它试图迫使更多的软件供
 
 最后，GPL许可证家族在实际使用中的一个问题是，它们[与其他广泛使用的许可证不兼容](http://gplv3.fsf.org/wiki/index.php/Compatible_licenses)，这使得在同一个项目中使用某些库的组合变得更为困难，且不必要地分裂了开源生态。如果GPL许可证有其他强大的优势，也许这个问题还值得忍受。但正如上面所述，我不认为这些优势存在。
 
-------
-
 ## 结论
 
 GPL和其他 copyleft 许可证并不坏，我只是认为它们毫无意义。它们有实际问题，而且被FSF的行为所玷污；但最重要的是，我不认为它们对软件自由做出了有效贡献。现在唯一真正在用 copyleft 的商业软件厂商（[MongoDB](https://www.mongodb.com/licensing/server-side-public-license/faq), [Elastic](https://www.elastic.co/pricing/faq/licensing)） —— 它们想阻止亚马逊将其软件作为服务提供，这当然很好，但这纯粹是出于商业上的考虑，而不是软件自由。
 
-开源软件已经取得了巨大的成功，自由软件运动源于1990年代的反微软情绪，它已经走过了很长的路。我承认自由软件基金会对这一切的开始起到了重要作用。然而30年过去了，生态已经发生了变化，而自由软件基金会却没有跟上，而且[变得越来越不合群](https://r0ml.medium.com/free-software-an-idea-whose-time-has-passed-6570c1d8218a)。它没能对云软件和其他最近对软件自由的威胁做出清晰的回应，只是继续重复着几十年前的老论调。现在，通过恢复Stallman的地位和驳回对他的关注，FSF正在[积极地伤害](https://lu.is/blog/2021/04/07/values-centered-npos-with-kmaher/)自由软件的事业。我们必须与FSF和他们的世界观保持距离。
+开源软件已经取得了巨大的成功，自由软件运动源于1990年代的反微软情绪，它已经走过了很长的路。我承认自由软件基金会对这一切的开始起到了重要作用。然而30年过去了，生态已经发生了变化，而自由软件基金会却没有跟上，而且[变得越来越不合群](https://r0ml.medium.com/free-software-an-idea-whose-time-has-passed-6570c1d8218a)。它没能对云软件和其他最近对软件自由的威胁做出清晰的回应，只是继续重复着几十年前的老论调。现在，通过恢复Stallman的地位和驳回对他的关注，FSF正在积极地伤害（原链接失效）自由软件的事业。我们必须与FSF和他们的世界观保持距离。
 
 基于所有这些原因，我认为抓着GPL和 copyleft 已经没有意义了，放手吧。相反，我会鼓励你为你的项目采用一种宽容的许可协议（例如[MIT](https://opensource.org/licenses/MIT)， [BSD](https://opensource.org/licenses/BSD-2-Clause)， [Apache 2.0](https://opensource.org/licenses/Apache-2.0)），然后把你的精力放在真正能对软件自由产生影响的事情上。[抵制](https://www.inkandswitch.com/local-first.html)云软件的垄断效应，发展可持续的商业模式，让开源软件茁壮成长，并推动监管，将软件用户的利益置于供应商的利益之上。
 
 * 感谢[Rob McQueen](https://ramcq.net/)对本帖草稿的反馈。
-
-------
 
 ## 参考文献
 
@@ -98,14 +84,14 @@ GPL和其他 copyleft 许可证并不坏，我只是认为它们毫无意义。�
 7. 衍生作品的定义：https://en.wikipedia.org/wiki/Derivative_work
 8. x.ai被Bizzabo收购：https://ourincrediblejourney.tumblr.com/
 9. Google Account Suspended No Reason Given：https://www.paullimitless.com/google-account-suspended-no-reason-given/
-10. Google暂停用户账户：https://twitter.com/Demilogic/status/1358661840402845696
+10. Google暂停用户账户：`https://twitter.com/Demilogic/status/1358661840402845696`（原链接失效）
 11. 互联网历史软件归档：https://archive.org/details/softwarelibrary
 12. Office Open XML：https://en.wikipedia.org/wiki/Office_Open_XML
 13. Photoshop File Formats Specification：https://www.adobe.com/devnet-apps/photoshop/fileformatashtml/
 14. 本地优先软件：https://www.inkandswitch.com/local-first.html
 15. AGPL协议：https://en.wikipedia.org/wiki/Affero_General_Public_License
 16. Elastic商业许可证：https://www.elastic.co/cn/pricing/faq/licensing
-17. 数据可移植权：https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/individual-rights/right-to-data-portability/
+17. 数据可移植权：https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/individual-rights/right-to-data-portability/
 18. 谷歌Takeout（带走你的数据）：https://en.wikipedia.org/wiki/Google_Takeout
 19. 互操作性新闻：https://interoperability.news/
 20. 欧盟开源软件采购指南：https://joinup.ec.europa.eu/sites/default/files/document/2011-12/OSS-procurement-guideline%20-final.pdf
@@ -113,4 +99,4 @@ GPL和其他 copyleft 许可证并不坏，我只是认为它们毫无意义。�
 22. MongoDB SSPL协议FAQ：https://gplv3.fsf.org/wiki/index.php/Compatible_licenses
 23. Elastic许可变更问题汇总：https://gplv3.fsf.org/wiki/index.php/Compatible_licenses
 24. “自由软件”：一个过时的想法：https://r0ml.medium.com/free-software-an-idea-whose-time-has-passed-6570c1d8218a
-25. 一条FSF未曾设想的路：https://lu.is/blog/2021/04/07/values-centered-npos-with-kmaher/
+25. 一条FSF未曾设想的路：`https://lu.is/blog/2021/04/07/values-centered-npos-with-kmaher/`（原链接失效）

@@ -7,14 +7,11 @@ summary: >
   PG社区开始骑在Oracle头上输出了。Cybertec专家对比Oracle和PostgreSQL事务系统的特性，帮助用户理解两者差异，为从Oracle迁移到PostgreSQL提供关键参考，避免性能和数据完整性问题。
 tags: [PostgreSQL, Oracle, 数据库, 事务]
 ---
-
 > 原文：**[Laurenz Albe](https://www.cybertec-postgresql.com/en/comparison-of-the-transaction-systems-of-oracle-and-postgresql/)**
 
 事务系统是关系型数据库的核心组成部分，在应用开发中，为确保 **数据完整性** 提供了重要支持。 SQL 标准规范了数据库事务的一些功能，但并未明确规定许多细节。因此，关系型数据库的事务系统可能存在显著差异。
 
 近年来，许多人尝试从 Oracle 数据库迁移到 PostgreSQL。为了顺利将应用从 Oracle 迁移到 PostgreSQL，理解两者事务系统之间的差异至关重要。 否则，您可能会遇到一些令人头痛的意外情况，危及到性能和数据完整性。所以，我认为有必要编写一篇文章，对比 Oracle 和 PostgreSQL 事务系统的特性。
-
--------
 
 ## ACID：数据库事务提供的服务
 
@@ -27,8 +24,6 @@ tags: [PostgreSQL, Oracle, 数据库, 事务]
 
 接下来，我们将详细讨论这些类别。
 
--------
-
 ## Oracle 与 PostgreSQL 事务的相似之处
 
 首先，描述一下 Oracle 和 PostgreSQL 在事务管理中相同的部分是有帮助的。幸运的是，许多重要的特性都属于这一类：
@@ -38,8 +33,6 @@ tags: [PostgreSQL, Oracle, 数据库, 事务]
   * 两个数据库系统都将 [行锁](https://www.cybertec-postgresql.com/en/row-locks-in-postgresql/) 保存在行本身，而不是在锁表中。因此，锁定一行可能会导致额外的磁盘写入，但不需要进行 _锁升级_ 。
   * 两个数据库系统都支持 `SELECT ... FOR UPDATE` 进行显式的并发控制。更多关于差异的讨论，后面会说。
   * 两个数据库系统都使用 `READ COMMITTED` 作为默认的事务隔离级别，这在两个系统中的行为非常相似。
-
--------
 
 ## 原子性对比
 
@@ -67,8 +60,6 @@ tags: [PostgreSQL, Oracle, 数据库, 事务]
 
 在 PostgreSQL 中则没有这种限制。除了少数例外（如 `VACUUM`、`CREATE DATABASE`、`CREATE INDEX CONCURRENTLY` 等），您可以 **回滚任何 SQL 语句** 。
 
--------
-
 ## 一致性对比
 
 在这一领域，Oracle 和 PostgreSQL 之间差异不大；两者都会确保事务不违反约束。
@@ -88,7 +79,6 @@ tags: [PostgreSQL, Oracle, 数据库, 事务]
     COMMIT;
     ```
     
-
 在 PostgreSQL 中，同样的脚本会报错：
 
     CREATE TABLE tab (id numeric PRIMARY KEY);
@@ -98,10 +88,7 @@ tags: [PostgreSQL, Oracle, 数据库, 事务]
     ERROR: duplicate key value violates unique constraint "tab_pkey"
     DETAIL: Key (id)=(2) already exists.
     
-
 原因在于，PostgreSQL 默认在每行变化时检查约束（不同于SQL标准），而 Oracle 在语句结束时检查约束。 不过这个问题可以通过将约束创建为 `DEFERRABLE` 来解决，这样 PostgreSQL 会在语句结束时检查约束，并与 Oracle 的行为保持一致。
-
--------
 
 ## 隔离性对比
 
@@ -143,7 +130,6 @@ Oracle 只提供 `READ COMMITTED` 和 `SERIALIZABLE` 隔离级别。然而后者
     
     COMMIT;
     
-
 如果这些事务串行执行，第二个事务的结果应该是 count 为 1。
 
 除了不准确，Oracle 的实现还存在许多问题。例如，如果您创建一个表时未指定 `SEGMENT CREATION IMMEDIATE`，然后在 `SERIALIZABLE` 事务中尝试插入第一行，就会遇到序列化错误。 虽然这在技术上是合法的，但如果在更高的隔离级别遇到问题时，Oracle 会经常抛出序列化错误。
@@ -165,13 +151,9 @@ PostgreSQL 支持所有四个隔离级别，但它会默默地将 `READ UNCOMMIT
   * PostgreSQL 只重新评估被锁定的行，操作较快，但可能会导致不一致的结果
   * Oracle 会 **重新执行完整查询** ，尽管速度较慢，但能够提供一致的结果
 
--------
-
 ## 持久性对比
 
 两个数据库系统都通过事务日志实现持久性（Oracle 中为“REDO 日志”，PostgreSQL 中为“WAL日志”）。在这一领域，Oracle 和 PostgreSQL 提供的保证是相同的。
-
--------
 
 ## 其他事务差异
 
@@ -195,13 +177,9 @@ PostgreSQL 支持所有四个隔离级别，但它会默默地将 `READ UNCOMMIT
 
 这些编号来自一个 32 位整型计数器，最终会发生回卷。 所以 PostgreSQL 需要执行维护操作（`FREEZE`）来避免出现事务ID回卷。在高事务量（TPS）的系统中，这可能成为一个需要特别关注和调整的问题。
 
--------
-
 ## 结论
 
 在大多数方面，Oracle 和 PostgreSQL 的事务行为非常相似。但它们之间确实存在差异，如果您计划迁移到 PostgreSQL，了解这些差异是很重要的。本文中的对比有助于您在迁移过程中识别潜在的问题。
-
--------
 
 ## 老冯评论
 
@@ -218,4 +196,4 @@ PostgreSQL 支持所有四个隔离级别，但它会默默地将 `READ UNCOMMIT
   * [←上一页](/db/db-is-the-arch/)
   * [下一页→](/db/pg-kiss-duckdb/)
 
-最后修改 2025-02-27: [optimize image (7cb69ff)](https://github.com/pgsty/web.cc/commit/7cb69ff32df80eba158e90dfd39b124ff85b79ab)
+最后修改 2025-02-27: optimize image (7cb69ff)（原链接失效）

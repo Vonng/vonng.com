@@ -8,7 +8,6 @@ summary: >
   reveals just how far AI has come.
 tags: [Distributed Systems, Database, Translation]
 ---
-
 This morning, I ran ten Codex sessions in parallel and, in less than half a day,
 translated the final four newly released chapters of DDIA's second edition.
 
@@ -32,8 +31,6 @@ But here is the point I care about more: now that AI is taking off, DDIA is even
 more worth reading than it was eight years ago.
 
 Preview: https://ddia.vonng.com
-
----
 
 ## First, Some Context: Why DDIA Is Worth the Trouble
 
@@ -73,8 +70,6 @@ DDIA is not an entry-level book, of course. Some chapters are so dense that they
 feel like an entire course compressed into one chapter. Nor will it teach you
 how to configure a particular system from scratch. Its purpose has always been
 clear: it gives you judgment, not a runbook.
-
----
 
 ## A Repository That Captures the Evolution of AI
 
@@ -134,8 +129,6 @@ to act as the final judge. But the central fact remains: the shift from three
 months to one morning—two orders of magnitude—is etched into that repository's
 Git history.
 
----
-
 ## The Stronger AI Gets, the More DDIA Is Worth Reading
 
 If AI can translate all of DDIA in a morning, do people still need to read it?
@@ -189,8 +182,6 @@ making the call. Making the call requires a framework, not a glossary.
 **DDIA is not a manual for operating databases; AI will replace manuals.
 It is a book about how to think about data systems, and frameworks for thinking
 will not be replaced.**
-
----
 
 ## What Is New in the Second Edition: Trade-Offs Take Center Stage
 
@@ -252,8 +243,6 @@ more practical, and more modern. Yet the core principles—B-trees vs. LSM-trees
 replication and partitioning, consistency models—remain solid. That fact itself
 validates the first edition's strategy: focus on principles, not tools.
 
----
-
 ## How to Read It: Advice for Different Readers
 
 - **Newcomers:** Start with the overview and foundational chapters. Your goal is
@@ -268,8 +257,6 @@ validates the first edition's strategy: focus on principles, not tools.
   review AI's work. When AI writes 99 percent of your code, you still need to
   judge the critical decisions in the other one percent. DDIA gives you that
   judgment.
-
----
 
 ## On Translation Quality
 
@@ -298,8 +285,6 @@ It is a preview. When the Early Access period ends and the book is formally
 released, I will conduct a complete human review. If you find a problem while
 reading, please open an issue. Translation suffers from sloppiness, not
 scrutiny.
-
----
 
 ## DDIA and My Eight Years
 
@@ -334,8 +319,6 @@ fads, do not bet on buzzwords, and try to make systems understandable,
 maintainable, and operable. Looking back, DDIA gave me a lens for seeing through
 the noise to the essential benefits, costs, and trade-offs behind an
 architecture.
-
----
 
 ## Conclusion
 

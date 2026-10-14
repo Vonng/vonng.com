@@ -5,7 +5,6 @@ summary: >
   A fun but devious challenge: solve the 24-point card game in SQL. Here is the PostgreSQL answer.
 tags: [PostgreSQL, MySQL, Database]
 ---
-
 Here is the challenge: [Database Programming Contest: Solve the 24-Point Card Game with One SQL Query](https://www.ninedata.cloud/sql_poker24), hosted by the database tooling platform NineData.
 
 There is a table named `cards`. Its auto-incrementing numeric primary key is `id`, and it has 4 additional columns: `c1`, `c2`, `c3`, and `c4`. Each contains a random integer from 1 through 10. Contestants must use a single SQL statement to produce a formula that evaluates to 24, returning rows in the format shown on the right.
@@ -32,8 +31,6 @@ MySQL ships with `COMPRESS` and `UNCOMPRESS`. Vanilla PostgreSQL does not; it ne
 
 Here is the PostgreSQL solution:
 
------------
-
 ## Create a Random Test Table
 
 ```sql
@@ -49,8 +46,6 @@ FROM generate_series(1, 1000000) i;
 
 ALTER TABLE poker24.cards ADD PRIMARY KEY (id);
 ```
-
------------
 
 ## Solution
 
@@ -73,8 +68,6 @@ FROM poker24.cards c LEFT JOIN a a ON a.i =
 The query text here is over 10,000 characters—10,896, to be exact. There are several ways to trim it: turn that enormous `CASE` into an inline function, then replace the decimal primary-key literals with hexadecimal ones, and the query would fit under 10 KB.
 But the rules forbid user-defined functions and stored procedures, so we need another route. The real problem is how to compress that giant string in the middle.
 
------------
-
 ## Compression
 
 Again, the query text is over 10,000 characters—10,896, to be exact. We therefore need extra compression support to meet the contest limit. Pigsty ships with the `pgsql-gzip` extension:
@@ -95,15 +88,13 @@ SELECT c.id, c1, c2, c3, c4, result FROM poker24.cards c LEFT JOIN a a ON a.i =
 *CASE c4 WHEN 1 THEN 2 WHEN 2 THEN 3 WHEN 3 THEN 5 WHEN 4 THEN 7 WHEN 5 THEN 11 WHEN 6 THEN 13 WHEN 7 THEN 17 WHEN 8 THEN 19 WHEN 9 THEN 23 WHEN 10 THEN 29 END);
 ```
 
------------
-
 ## Results
 
 On my local M1 MacBook Pro, the single-core execution time is about 0.58 seconds, slightly faster than the winning entry's 0.67 seconds.
 
 Of course, NineData's PostgreSQL instance does not have the gzip extension, so I did not submit this result on their 4-core, 32 GB platform.
 
-```
+```text
  Merge Right Join  (cost=118104.17..768224.17 rows=5000000 width=68) (actual time=457.485..555.265 rows=1000000 loops=1)
    Merge Cond: (((split_part(kv.kv, ':'::text, 1))::integer) = ((((CASE c.c1 WHEN '1'::double precision THEN 2 WHEN '2'::double precision THEN 3 WHEN '3'::double precision THEN 5 WHEN '4'::double precision THEN 7 WHEN '5'::double precision THEN 11 WHEN '6'::double precision THEN 13 WHEN '7'::double precision THEN 17 WHEN '8'::double precision THEN 19 WHEN '9'::double precision THEN 23 WHEN '10'::double precision THEN 29 ELSE NULL::integer END * CASE c.c2 WHEN '1'::double precision THEN 2 WHEN '2'::double precision THEN 3 WHEN '3'::double precision THEN 5 WHEN '4'::double precision THEN 7 WHEN '5'::double precision THEN 11 WHEN '6'::double precision THEN 13 WHEN '7'::double precision THEN 17 WHEN '8'::double precision THEN 19 WHEN '9'::double precision THEN 23 WHEN '10'::double precision THEN 29 ELSE NULL::integer END) * CASE c.c3 WHEN '1'::double precision THEN 2 WHEN '2'::double precision THEN 3 WHEN '3'::double precision THEN 5 WHEN '4'::double precision THEN 7 WHEN '5'::double precision THEN 11 WHEN '6'::double precision THEN 13 WHEN '7'::double precision THEN 17 WHEN '8'::double precision THEN 19 WHEN '9'::double precision THEN 23 WHEN '10'::double precision THEN 29 ELSE NULL::integer END) * CASE c.c4 WHEN '1'::double precision THEN 2 WHEN '2'::double precision THEN 3 WHEN '3'::double precision THEN 5 WHEN '4'::double precision THEN 7 WHEN '5'::double precision THEN 11 WHEN '6'::double precision THEN 13 WHEN '7'::double precision THEN 17 WHEN '8'::double precision THEN 19 WHEN '9'::double precision THEN 23 WHEN '10'::double precision THEN 29 ELSE NULL::integer END)))
    ->  Sort  (cost=62.33..64.83 rows=1000 width=64) (actual time=0.851..0.872 rows=566 loops=1)

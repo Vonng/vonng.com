@@ -8,7 +8,6 @@ series: ["Xinchang Localization"]
 series_weight: 5
 tags: [Domestic Database, Cloud, Database]
 ---
-
 > [WeChat Public Account](https://mp.weixin.qq.com/s/AqcYpOgVj91JnkB1B3s4sA)
 
 Yesterday, a bidding news attracted attention and heated discussion: "The IT industry is broken... 16.1 million dollar contract... 2.9 million (won)... maintenance fee 0.01 yuan... PolarDB unit price 130 yuan". When I first saw this title, I wasn't particularly surprised, because I'm very familiar with the unit price of PolarDB database on the cloud - the price per vCPU per month is around ¥250-400. Considering that big customers can negotiate 20-30% discounts, that's about 50-120 yuan, so the "unit price" of 130 yuan isn't an outrageous quote.

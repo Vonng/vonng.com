@@ -7,7 +7,6 @@ summary: >
   The hard part of maintaining a PostgreSQL distribution is not compiling packages. At 100,000 artifacts, deduplication, indexing, snapshots, atomic cutovers, and incremental publishing become the real challenge. SOW puts all of that into one self-contained binary, turning RPM and DEB repository management from ad hoc directory scripts into a recoverable, auditable state system.
 tags: [PostgreSQL, Pigsty, Repository]
 ---
-
 Today, let's talk about *Postpartum Care for Sows*—a Chinese meme for the sort of absurdly specialized practical topic nobody expects to discuss. This time, the sow in question is my new open-source project, SOW.
 
 When you maintain a PostgreSQL distribution, compiling the software is rarely the most painful part. The real pain is dealing with everything the build produces.
@@ -32,8 +31,6 @@ In one sentence: **SOW puts the small job of “generating repository indexes”
 
 **I built this tool entirely to solve my own problems. But if you also maintain a large software repository spanning multiple Linux distributions, it should help you too—though admittedly, there probably aren't many of us.**
 
----
-
 ## Why SOW?
 
 The name deserves an explanation. We previously built a companion project, [**Pig—PostgreSQL Install Genius**](/en/pg/pig/), the package manager for the PostgreSQL ecosystem. If a little Pig installs the packages, then the tool that produces, stores, organizes, and distributes those artifacts naturally has to be its mother: SOW.
@@ -43,8 +40,6 @@ The name deserves an explanation. We previously built a companion project, [**Pi
 It also expands neatly to **Software Object Warehouse**, a name that fits naturally into the software supply chain. Better yet, the pig metaphor has roots in industrial history. In traditional pig-iron casting, molten iron flowed down a central channel and branched into rows of smaller molds. The cooled ingots were called **pigs**, while the main runner that fed them was the **sow**. Seen from above, one large channel feeding rows of ingots looked like a sow nursing her piglets.
 
 ![The historical origin of the sow and pig terminology in pig-iron casting](pig-iron.webp)
-
----
 
 ## Why Build Another Repository Tool?
 
@@ -83,8 +78,6 @@ The deeper problem surfaced when I wanted to add repository channels. How do you
 You can script each requirement in isolation. Put them together, however, and those scripts metastasize into a shadow database with no transactions, schema, or audit trail. There are already tools such as `createrepo_c`, `dpkg-scanpackages`, `reprepro`, and `aptly`, along with general-purpose synchronization and object-storage tools. But I could not find a lightweight open-source tool that brought RPM and DEB support, a single package pool, immutable snapshots, atomic publishing, and incremental delivery into one clear model.
 
 Fortunately, building your own tools has never been cheaper.
-
----
 
 ## Two Levels of Complexity, Two Modes
 
@@ -135,8 +128,6 @@ A `noarch` RPM or `all` DEB can appear in several architecture indexes without c
 
 The boundary of “store only one copy” must be stated precisely: it is one Repository or one publication prefix, not an entire Workspace, `bucket`, or the whole world. SOW does not deduplicate implicitly across Repositories, because deduplication must not destroy ownership boundaries. Deleting one repository must never remove a shared object that another repository still needs.
 
----
-
 ## Desired, Built, and Generation
 
 Managed mode divides repository state into three concepts:
@@ -163,8 +154,6 @@ Incremental synchronization therefore no longer begins with “scan 100,000 file
 
 ![SOW's capability matrix for Plain and Managed modes](sow-capabilities.webp)
 
----
-
 ## The Secret to Atomic Cutovers: Move the Pointer Last
 
 A software repository has no global transaction spanning multiple files or objects. SOW does not pretend otherwise. Instead, it turns publication order into a protocol whose safety can be reasoned about:
@@ -184,8 +173,6 @@ Object stores do not support atomic commits across several keys. SOW therefore p
 
 This is the essential difference between SOW and a single `rclone sync` command. Moving files is easy. The hard parts are knowing **what to transfer, when the operation counts as committed, which direction recovery should take after failure, and what is truly safe to delete**.
 
----
-
 ## At 100,000 Objects, Performance Needs Proof
 
 Most of the work in SOW 0.3 was not adding more features. It was making an already sound model work at real repository scale.
@@ -199,8 +186,6 @@ Optimizations like these matter only when they show up in the numbers.
 In the project benchmark, membership expansion for a Dist with 5,000 objects fell from about **4.1 seconds to 33 milliseconds**. At 50,000 objects, the old implementation still had not finished after ten minutes; the new one takes about **300 milliseconds**. Payload promotion now uses bounded, single-writer group commits, capped at 512 objects or 1 GiB per batch. This both reduces `fsync` storms and prevents file-descriptor use and recovery state from growing without bound as the repository expands.
 
 These numbers are not there to decorate a benchmark slide. They simply demonstrate that once a repository truly holds 100,000 artifacts, “the state model is correct” is only the passing grade. Whether routine small changes remain cheap enough determines whether the tool stays viable over time.
-
----
 
 ## Tearing Down V1 and Rebuilding from a Minimal End-to-End Core
 
@@ -226,8 +211,6 @@ This path looks slower than building everything for one grand reveal, but it is 
 
 ![SOW command index](sow-commands.webp)
 
----
-
 ## Where SOW Goes Next
 
 SOW 0.3 can create repositories, manage membership and snapshots, calculate changesets, and publish to filesystems and R2. It is still some distance from the complete software-artifact control plane I have in mind.
@@ -242,8 +225,6 @@ The roadmap has four main tracks:
 Most of these capabilities existed in some form in the first version. I will not port the old code wholesale. As with 0.2 and 0.3, I will bring back one sharply bounded, independently testable capability at a time.
 
 No more disappearing to build the grand design in one shot. Ship small, complete systems continuously.
-
----
 
 ## The Pig Family Keeps Growing
 

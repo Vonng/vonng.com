@@ -7,7 +7,6 @@ summary: >
   This post explains how a community fork restores the admin console and ships binaries via CI/CD pipeline.
 tags: [Object Storage, Open Source]
 ---
-
 MinIO's open-source repo has been officially archived. No more maintenance.
 End of an era — but open source doesn't die that easily.
 
@@ -15,8 +14,6 @@ I created a MinIO fork, restored the admin console, rebuilt the binary distribut
 
 If you're running MinIO, swap `minio/minio` for `pgsty/minio`.
 Everything else stays the same. ([CVE fixed](https://nvd.nist.gov/vuln/detail/CVE-2025-62506), and the console GUI is back)
-
-------
 
 ## The Death Certificate
 
@@ -52,8 +49,6 @@ Looking back at the timeline over the past years, this wasn't a sudden death. It
 
 A company that raised $126M at a billion-dollar valuation spent five years methodically dismantling the open-source ecosystem it built.
 
-------
-
 ## But Open Source Endures
 
 Normally this is where the story ends — a collective sigh, and everyone moves on.
@@ -72,8 +67,6 @@ So — **MinIO is dead, but MinIO can live again.**
 
 That said, forking is the easy part. Anyone can click the Fork button.
 The real question isn't "can we fork it" but **"can someone actually maintain it as a production component?"**
-
-------
 
 ## Why would I do that?
 
@@ -101,8 +94,6 @@ As early as December 2025, when MinIO announced maintenance mode, I had already 
 [![releases.webp](releases.webp)](https://github.com/pgsty/minio/releases/tag/RELEASE.2025-12-03T12-00-00Z)
 
 > [pgsty/minio RELEASE.2025-12-03T12-00-00Z](https://github.com/pgsty/minio/releases/tag/RELEASE.2025-12-03T12-00-00Z)
-
-------
 
 ## What We've Done
 
@@ -169,8 +160,6 @@ The docs use the same CC Attribution 4.0 license as the original, with necessary
 
 ![doc.webp](doc.webp)
 
-------
-
 ## Commitments
 
 Some things worth stating up front to set expectations.
@@ -235,8 +224,6 @@ which lets us verify compatibility, reliability, and security in practice.
 Consider: Elon cut X/Twitter's engineering team down to ~30 people and the system still runs.
 Maintaining a MinIO fork without new features is considerably less daunting
 
-------
-
 ## Just Fork It
 
 MinIO Inc. can archive a GitHub repo, but they can't archive the demand behind 60k stars,
@@ -249,8 +236,6 @@ A company can abandon a project, but open-source licenses are specifically desig
 Fork is the most powerful spell in open source. When a company decides to shut the door, the community only needs two words:
 
 **Fork it.**
-
--------
 
 ## Reference
 

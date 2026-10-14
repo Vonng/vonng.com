@@ -8,7 +8,6 @@ tags: [AI, Agent, Security]
 ai: true
 aliases: ["/ai/claude-360-claw/"]
 ---
-
 The security community recently noticed something remarkable:
 360's newly released AI Agent product, **360 Secure Lobster**,
 an OpenClaw-based one-click deployment client, shipped with the **private SSL key** for the wildcard certificate `*.myclaw.360.cn` inside its public installer package.
@@ -20,8 +19,6 @@ A company that markets itself on security shipped its own wildcard certificate p
 ![Disclosure screenshot](disclosure.webp)
 
 ![Repost screenshot](repost.webp)
-
-------
 
 ## What Happened
 
@@ -36,8 +33,6 @@ Security researchers unpacked the installer and found certificate and private ke
 That directory contained the **Wildcard DV certificate** for `*.myclaw.360.cn` along with its corresponding **RSA private key**.
 
 The certificate was issued by **WoTrus CA**, valid from March 12, 2026 through April 12, 2027, and covered all subdomains under `*.myclaw.360.cn`.
-
-------
 
 ## Technical Verification
 
@@ -54,8 +49,6 @@ On X (formerly Twitter), several users also posted the full PEM-encoded certific
 I also repeated the OpenSSL verification locally against the certificate and key files and got the same modulus match.
 
 ![Local OpenSSL verification](openssl.webp)
-
-------
 
 ## What This Means
 
@@ -79,8 +72,6 @@ If auto-update, configuration delivery, or other client trust flows depend on HT
 
 To be clear, these are the objective risks created by wildcard private-key exposure.
 They do **not** imply that such attacks actually occurred.
-
-------
 
 ## Revocation and the Awkward Reality of OCSP
 
@@ -121,8 +112,6 @@ The certificate was in fact revoked.
 But the episode exposed a serious reliability issue in certificate infrastructure:
 **even after a certificate is genuinely revoked, OCSP may continue to report it as valid for a meaningful window of time.**
 
-------
-
 ## From a Software Engineering Perspective
 
 There are well-understood defensive controls against exactly this class of failure.
@@ -139,8 +128,6 @@ None of these are exotic requirements.
 They are baseline industry practice.
 For a company whose brand centers on **security**, they should be table stakes.
 
-------
-
 ## Advice for End Users
 
 If you installed 360 Secure Lobster, the cautious approach would be:
@@ -149,15 +136,11 @@ If you installed 360 Secure Lobster, the cautious approach would be:
 2. If you configured LLM API keys in the client, regenerate those keys from the provider side.
 3. Watch for follow-up security announcements from 360.
 
-------
-
 ## Appendix: Launch Event Photos
 
 ![Launch event](launch.webp)
 
 ![Presentation slide](slides.webp)
-
-------
 
 ## Sources
 

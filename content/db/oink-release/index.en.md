@@ -7,7 +7,6 @@ summary: >
   After six years of trying eight approaches, I used Codex to combine Docsy's engineering depth, Fumadocs' modern UX, and Hugo's simple delivery model into OINK.
 tags: [Codex, Documentation, Open Source]
 ---
-
 > Building a documentation site is not hard. The hard part is keeping it useful five years later.
 
 At first, you only want to put a few Markdown files online.
@@ -25,7 +24,6 @@ That is why I built [OINK](https://oink.pgsty.com/zh/).
 ![OINK project homepage](oink-home.webp)
 
 ![OINK blog](oink-blog.webp)
-
 
 ## 1. Six Years, Eight Approaches, Not One I Liked
 
@@ -60,7 +58,6 @@ So why not write my own?
 
 Because I genuinely did not have the time. Frontend work devours time and energy, and it has little to do with my day job. I am a database veteran, not a frontend engineer. Wrestling with CSS and JavaScript for a documentation theme never made economic sense. I ran the numbers for six years; they never worked.
 
-
 ## 2. Until Frontend Delivery Became an On-Demand Commodity
 
 Starting last month, the math suddenly changed.
@@ -76,7 +73,6 @@ To be honest, I built this with help from Codex and other AI tools. But this was
 A few days ago, someone asked what I had to show for seven AI subscriptions and all the tokens they burn every day.
 
 This is one result. The entire framework, plus six or seven documentation sites, took only two or three days from start to finish. In fact, I had so many bigger jobs on my plate that I never found time to write this article until now.
-
 
 ## 3. Why OINK?
 
@@ -101,7 +97,6 @@ For a more serious explanation, the four letters even make a respectable acronym
 
 ![OINK tools and components](toolkit.webp)
 
-
 ## 4. What I Cut: Downstream Sites Need Only Hugo
 
 OINK's most important design decision was to shrink the **build boundary for downstream sites to Hugo Extended**.
@@ -119,7 +114,6 @@ Bootstrap, Font Awesome, fonts, Lunr search, Mermaid, KaTeX, Markmap, Swagger UI
 The benefits are straightforward: reproducible builds, an auditable supply chain, and easy deployment to intranets and network-isolated environments. When I distribute offline documentation, it must remain readable and searchable without an internet connection. For me, that is a requirement, not a bonus.
 
 Once you have the complete theme, Hugo compiles the content, configuration, layouts, and assets into a `public/` directory in one pass. You can then host it on object storage, GitHub Pages, Cloudflare Pages, Nginx, or an internal file server. The hosting layer does not need to know what OINK is.
-
 
 ## 5. What I Added: A Modern Documentation Shell
 
@@ -139,7 +133,6 @@ This boundary matters: **configuration should express what a site wants, not exp
 One optimization deserves a special mention. Once a site grows large, its full-text search index can reach tens of megabytes. One of my sites used to transfer more than 800 GB a month, and the index accounted for more than half of it. The homepage no longer downloads it; the index is first loaded only when a user actually opens search. The bandwidth bill and the user experience, for once, improve in the same direction.
 
 ![Building an OINK bilingual site with Hugo](build.webp)
-
 
 ## 6. Engineering Content Should Not Be Reduced to Screenshots
 
@@ -169,7 +162,6 @@ That is also what I mean by "feature-rich": authors can reach for any capability
 
 ![OINK documentation navigation on mobile](mobile.webp)
 
-
 ## 7. Multilingual Does Not Mean Copying a `/zh` Directory
 
 OINK builds its language model directly on Hugo's multilingual page objects. It does not guess the language from a domain name or a hard-coded URL.
@@ -179,7 +171,6 @@ With only one language, the language selector hides itself. With two or more, th
 Each language gets an independent local search index, so English results do not leak into Chinese searches. HTML `lang`, text direction, canonical, `hreflang`, and Open Graph locale values all come from the same set of translation objects. This prevents the interface from switching to Chinese while the SEO metadata still claims the page is English.
 
 ![OINK Chinese full-text search](search.webp)
-
 
 ## 8. Eating My Own Dog Food
 
@@ -221,7 +212,6 @@ OINK was designed for open-source projects and engineering documentation, but it
 
 ![A data systems book site built with OINK](book-data.webp)
 
-
 ## 9. Get Started in Three Minutes
 
 OINK 0.2.0 requires Git, Go, and Hugo Extended 0.160.1 or later. The current project site has been validated with Hugo Extended 0.164.0.
@@ -250,7 +240,6 @@ hugo server
 For a complete bilingual site structure, configuration, and deployment setup, see the [OINK getting-started guide](https://oink.pgsty.com/zh/docs/tutorial/). If you want to see it in action first, browse the [OINK project site](https://oink.pgsty.com/zh/). The theme source is in [`pgsty/oink`](https://github.com/pgsty/oink), while the complete project site and its tests are in [`pgsty/oink.pgsty.com`](https://github.com/pgsty/oink.pgsty.com).
 
 If you already have a Docsy site, you can migrate directly—in theory, any Docsy site can move over. With so many example sites above, you can download any one of them, adapt it, and get started.
-
 
 ## 10. Who Is OINK For—and Not For?
 

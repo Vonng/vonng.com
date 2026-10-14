@@ -7,7 +7,6 @@ summary: >
 series: ["Back to Basics"]
 tags: [Cloud, Database, Architecture, Commentary]
 ---
-
 Recently, there have been some hotly debated topics in the tech community: [Are cloud databases an IQ tax?](/cloud/rds/) [Is public cloud a pig-killing scam](/cloud/ebs/)? [Are distributed databases a false need](/db/distributive-bullshit/)? [Are microservices a stupid idea](/db/microservice-bad-idea/)? [Do you still need ops and DBAs](https://mp.weixin.qq.com/s/Gk9bG_EOIv0IAkim41XRHg)? [Is the middle platform just self-deception](https://mp.weixin.qq.com/s/VgTU7NcOwmrX-nbrBBeH_w)? There are also extensive discussions and debates about these topics on Twitter and HackerNews.
 
 Behind these issues is a fundamental shift in the environment: **cost reduction and efficiency improvement have overwhelmed everything else, becoming the absolute main theme**. Developer experience, architectural evolvability, and R&D efficiency remain important, but they all must yield to **ROI** — **changes in social trends and fundamental values trigger a revaluation of all technologies.**
@@ -45,9 +44,7 @@ In this storm in the tech world, someone needs to see through phenomena to essen
 - [RDS Has Castrated PostgreSQL's Soul](https://mp.weixin.qq.com/s/EH7RPB6ImfMHXhOMU7P5Qg)
 - [Tech Minimalism: Use Postgres for Everything](https://mp.weixin.qq.com/s/yI06zdqnW5uWnqvKmgM-9g)
 
-[![](rethink.jpg)](https://mp.weixin.qq.com/s/Q0OtrpEhF24XN7gwMjbSRA)
-
-----------------
+[![Back to Basics: Tech Reflection Chronicles (figure 1)](rethink.jpg)](https://mp.weixin.qq.com/s/Q0OtrpEhF24XN7gwMjbSRA)
 
 ## Writing Plan
 

@@ -6,8 +6,6 @@ summary: >
   database concepts, while the framing can make it feel newer and more differentiated than it really is.
 tags: [Database, Philosophy, Commentary]
 ---
-
-
 ## I. Two Kinds of Faces
 
 By late 2025, Palantir's market cap had blown past $400 billion — a 20x run in just two years.
@@ -34,8 +32,6 @@ in the room unable to object — because you can't exactly tell the VP,
 
 Lately I've seen too many people mystifying this concept, so today I'm going to point out
 what is core technology and what is branding.
-
-------
 
 ## II. The Rosetta Stone
 
@@ -66,8 +62,6 @@ and sold for millions per year.
 Palantir's 2025 annual report discloses: the top 20 customers average **$93.9 million** each per year.
 Across all 954 customers, the average is roughly **$4.7 million/year**.
 That gives a sense of the commercial scale attached to this model.
-
-------
 
 ## III. The Same Idea, Reframed Five Times
 
@@ -105,8 +99,6 @@ Now Palantir's Ontology rides the AI narrative, catapulting the company from und
 
 This is less a brand-new invention and more conceptual reincarnation.
 What changes each cycle isn't the idea — it's the wrapping paper, and the people willing to pay for wrapping paper.
-
-------
 
 ## IV. The Cognitive Tax of a Philosophy Term
 
@@ -146,8 +138,6 @@ This is the fate of every rigid schema. For Palantir, it can also align with the
 Model out of date? Pay a few million to update it. Business changed? Buy another round of consulting.
 The rigidity of Ontology may not be a flaw for the vendor, because it naturally increases switching costs.
 
-------
-
 ## V. A Few Lines of SQL vs. $30 Million
 
 Let's drop from the conceptual level to the engineering level. Every core primitive of Palantir's Ontology
@@ -168,8 +158,6 @@ In navigating Pentagon procurement. None of these have anything to do with "Onto
 They're product engineering, consulting services, and government relations.
 
 Packaging hard implementation work inside a philosophy term is part of Palantir's go-to-market strength.
-
-------
 
 ## VI. Where the Growth Comes From
 
@@ -199,8 +187,6 @@ Instead, they say: "Our core competitive advantage is **Ontology**."
 It lets a company that fundamentally wins deals through political connections and delivers through on-site manpower
 look like a software platform company with an irreplaceable technical moat.
 Think of it as the American version of "data middle platform" plus staff augmentation.
-
-------
 
 ## VII. A Product with a Heavy Services Layer
 
@@ -248,8 +234,6 @@ Translation: the strategy appears focused on growing wallet share within existin
 
 That's a consulting firm's growth model, not a software platform's.
 
-------
-
 ## VIII. The Ontology Buyer Profile
 
 Who actually buys Palantir?
@@ -283,8 +267,6 @@ the cost of migration becomes prohibitive.
 That's the secret behind Palantir's 134% net revenue retention rate.
 It's not because the product is so good that customers voluntarily buy more.
 It's because **lock-in** means buying more is the only option.
-
-------
 
 ## IX. Summary
 

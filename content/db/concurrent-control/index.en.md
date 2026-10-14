@@ -6,14 +6,11 @@ summary: >
   Concurrent programs are hard to write correctly and even harder to write well. Many programmers simply throw these problems at the database... But even the most sophisticated databases won't help if you don't understand concurrency anomalies and isolation levels.
 tags: [Database, Transactions, PG Kernel]
 ---
-
 Concurrent programs are hard to write correctly and even harder to write well. Many programmers haven't truly figured out these problems - they just dump them all on the database. Concurrency anomalies aren't just theoretical problems: these anomalies have caused significant financial losses and consumed countless hours of financial auditors' efforts. But even the most popular and powerful relational databases (usually considered "ACID" databases) use weak isolation levels, so they may not prevent these concurrency anomalies from occurring.
 
 Rather than blindly relying on tools, we should have a deep understanding of the types of concurrency problems that exist and how to prevent them. This article will explain the isolation levels defined in the SQL92 standard and their flaws, as well as isolation levels in modern models and the anomalous phenomena that define these levels.
 
-[![](featured.jpg)](https://mp.weixin.qq.com/s/xw_rwxXgIuCL-pcRZHF03w)
-
--------------
+[![Concurrency Anomalies Explained (figure 1)](featured.jpg)](https://mp.weixin.qq.com/s/xw_rwxXgIuCL-pcRZHF03w)
 
 ## 0x01 Introduction
 
@@ -36,8 +33,6 @@ For this reason, databases have long tried to hide concurrency problems from app
 Unfortunately, isolation isn't that simple in practice. **Serializability** has performance costs, and many databases and applications are unwilling to pay this price. Therefore, systems usually use **weaker isolation levels** to prevent some, but not all, concurrency problems. These weak isolation levels are difficult to understand and can lead to subtle bugs, but they're still used in practice. Some popular databases like Oracle 11g don't even implement serializability. Oracle has an isolation level called "serializable", but it actually implements something called **snapshot isolation**, **which provides weaker guarantees than serializability**.
 
 Before studying real-world concurrency anomalies, let's first review the transaction isolation levels defined by the SQL92 standard.
-
--------------
 
 ## 0x02 SQL92 Standard
 
@@ -88,8 +83,6 @@ The standard has other problems, such as P3 only mentioning creation/insertion c
 > ### Phenomena vs Anomalies
 >
 > **Phenomena** and **anomalies** are not the same. **Phenomena** are not necessarily **anomalies**, but **anomalies** are definitely **phenomena**. For example, in the dirty read case, if T1 rolls back and T2 commits, this is definitely an **anomaly**: seeing something that doesn't exist. But regardless of whether T1 and T2 choose to roll back or commit, this is a **phenomenon** that could lead to dirty reads. Generally speaking, **anomalies** are strict interpretations, while **phenomena** are broad interpretations.
-
--------------
 
 ## 0x03 Modern Model
 
@@ -165,8 +158,6 @@ MySQL's RR isolation level is considered not to provide true snapshot isolation/
 
 Reference test cases: [ept/hermitage/mysql](https://github.com/ept/hermitage)
 
--------------
-
 ## 0x04 Concurrency Anomalies
 
 ![conncurrent-isolation-level.png](conncurrent-isolation-level.png)
@@ -177,7 +168,7 @@ For example, in this diagram: RR and SI are clearly stronger than RC. But the re
 
 Preventing dirty writes and dirty reads can be simply prevented by read locks and write locks on data items, formalized as:
 
-```
+```text
 P0: w1[x]...w2[x]...((c1 or a1) and (c2 or a2)) in any order)
 
 P1: w1[x]...r2[x]...((c1 or a1) and (c2 or a2)) in any order)
@@ -347,7 +338,7 @@ This rather trivial distinction exists because lock-based isolation level implem
 
 Formal representation of phantom read:
 
-```
+```text
 P3: r1[P]...w2[y in P]...((c1 or a1) and (c2 or a2) any order)
 A3: r1[P]...w2[y in P]...c2...r1[P]...c1
 ```
@@ -607,8 +598,6 @@ When transaction 2 commits, it discovers the rows it read have been changed by T
 PostgreSQL uses SSI to implement serializable isolation level, which is an optimistic concurrency control mechanism: if there's enough spare capacity and contention between transactions isn't too high, optimistic concurrency control techniques often perform much better than pessimistic ones.
 
 Database **constraints** and **materializing conflicts** are convenient in some scenarios. If application constraints can be represented by database constraints, transactions will realize conflicts and abort conflicting transactions during writes or commits. But not all problems can be solved this way - serializable isolation level is a more general solution.
-
--------------
 
 ## 0x06 Concurrency Control Techniques
 

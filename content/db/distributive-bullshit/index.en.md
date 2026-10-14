@@ -6,7 +6,6 @@ summary: >
   As hardware technology advances, the capacity and performance of standalone databases have reached unprecedented heights. which makes distributed (TP) databases appear utterly powerless, much like the "data middle platform," donning the emperor's new clothes in a state of self-deception.  
 tags: [Database, Distributed Systems, Commentary]
 ---
-
 > [WeChat Column](https://mp.weixin.qq.com/s/-eaCoZR9Z5srQ-1YZm1QJA)
 
 As hardware technology advances, the capacity and performance of standalone databases have reached unprecedented heights. In this transformative era, distributed (TP) databases appear utterly powerless, much like the "data middle platform," donning the emperor's new clothes in a state of self-deception.
@@ -19,8 +18,6 @@ As hardware technology advances, the capacity and performance of standalone data
 - [The Struggles in Confusion](#the-struggles-in-confusion)
 - [References](#references)
 
-----------------
-
 ## TL; DR
 
 The core trade-off of distributed databases is: "**quality for quantity**," sacrificing functionality, performance, complexity, and reliability for greater data capacity and throughput. However, "what divides must eventually converge," and hardware innovations have propelled centralized databases to new heights in capacity and throughput, rendering distributed (TP) databases obsolete.
@@ -30,8 +27,6 @@ Hardware, exemplified by NVMe SSDs, follows Moore's Law, evolving at an exponent
 Scenarios truly requiring distributed databases are few and far between, with typical mid-sized internet companies/banks handling request volumes ranging from tens to hundreds of thousands of QPS, and non-repetitive TP data at the hundred TB level. **In the real world, over 99% of scenarios do not need distributed databases**, and the remaining 1% can likely be addressed through classic engineering solutions like horizontal/vertical partitioning.
 
 Top-tier internet companies might have a few genuine use cases, yet these companies have no intention to pay. The market simply cannot sustain so many distributed database cores, and the few products that do survive don't necessarily rely on distribution as their selling point. HATP and the integration of distributed and standalone databases represent the struggles of confused distributed TP database vendors seeking transformation, but they are still far from achieving product-market fit.
-
-----------------
 
 ## The Pull of the Internet
 
@@ -50,8 +45,6 @@ As an industry solution, distributed databases have successfully met the needs o
 **Are the scenarios of internet companies applicable to other industries?**
 
 **Could distribute OLTP databases be a false necessity?**
-
-----------------
 
 ## The Trade-Offs of Distributive
 
@@ -76,8 +69,6 @@ In the past, the trade-offs of distributed databases were justified: the interne
 ![distributive-bullshit-3.png](distributive-bullshit-3.png)
 
 > Times have changed, My lord!
-
-----------------
 
 ## The Impact of New Hardware
 
@@ -109,8 +100,6 @@ Previously, users might have had to invest millions in high-end storage solution
 
 **Cost-effectiveness is the primary product strength**. The cost-effectiveness of high-performance, large-capacity storage has improved by three orders of magnitude over a decade, making the once-highlighted value of distributed databases appear weak in the face of such remarkable hardware evolution.
 
-----------------
-
 ## The Predicament of False Needs
 
 Nowadays, sacrificing functionality, performance, complexity for scalability is most likely to be a fake-demands in most scenarios.
@@ -131,8 +120,6 @@ For large-scale data analytics (OLAP), distributed technology is **indispensable
 
 **OLTP** databases have a history spanning several decades, with existing cores developing to a mature stage. Standards in the TP domain are gradually converging towards three Wire Protocols: PostgreSQL, MySQL, and Oracle. If the discussion is about tinkering with database auto-sharding and adding global transactions as a form of "distribution," it's definitely a dead end. If a "distributed" database manages to break through, it's likely not because of the "pseudo-requirement" of "distribution," but rather due to new features, open-source ecosystems, compatibility, ease of use, domestic innovation, and self-reliance.
 
-----------------
-
 ## The Struggles in Confusion
 
 The greatest challenge for distributed databases stems from the market structure: **Internet companies, the most likely candidates to utilize distributed TP databases, are paradoxically the least likely to pay for them**. Internet companies can serve as high-quality users or even contributors, offering case studies, feedback, and PR, but they inherently resist the notion of financially supporting software, clashing with their **meme instincts**. Even leading distributed database vendors face the challenge of being applauded but not financially supported.
@@ -151,8 +138,6 @@ There are still many areas within the TP database field worthy of focus: Leverag
 
 Time changes, and a wise man adapts. It is hoped that distributed database vendors will find their Product-Market Fit and focus on what users truly need.
 
-----------------
-
 ## References
 
 [1] [数据库需求层次金字塔](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485399&idx=1&sn=0b7d5a7dc24295afcc56ec688b2c2d06&chksm=fe4b320cc93cbb1a369f9c9a7c50811c6a4f784fd2dd070f6ce5b16378502b8e5c7c76b716e1&scene=21#wechat_redirect): *https://mp.weixin.qq.com/s/1xR92Z67kvvj2_NpUMie1Q*
@@ -161,7 +146,7 @@ Time changes, and a wise man adapts. It is hoped that distributed database vendo
 
 [3] SSD Performence in 2013 : *https://www.snia.org/sites/default/files/SNIASSSI.SSDPerformance-APrimer2013.pdf*
 
-[4] 2022 Micron NVMe SSD Spec: *https://media-www.micron.com/-/media/client/global/documents/products/product-flyer/9400_nvme_ssd_product_brief.pdf*
+[4] 2022 Micron NVMe SSD Spec: *https://assets.micron.com/adobe/assets/urn%3Aaaid%3Aaem%3A22960b43-a7e5-4557-b005-c9b8ff4f72af/renditions/original/as/9400-nvme-ssd-product-brief.pdf*
 
 [5] 2013-2030 SSD Pricing : *https://blocksandfiles.com/2021/01/25/wikibon-ssds-vs-hard-drives-wrights-law/*
 

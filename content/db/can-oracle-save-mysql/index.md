@@ -8,7 +8,6 @@ summary: >
 series: ["MySQL走好"]
 tags: [MySQL, Oracle, 数据库, 技术评论]
 ---
-
 > 作者：[Peter Zaitsev](https://www.percona.com/blog/author/pz/) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信原文](https://mp.weixin.qq.com/s/0OgcduKvmprBcECgtn73Cg) | [Percona's Blog](https://www.percona.com/blog/can-oracle-save-mysql/)
 
 Percona 作为 MySQL 生态的主要扛旗者，开发了一系列用户耳熟能详的工具：PMM 监控，XtraBackup 备份，PT 系列工具，以及 MySQL 发行版。
@@ -56,8 +55,6 @@ PostgreSQL 确实是一个出色的数据库，有着活跃的社区，并且近
 PostgreSQL 和 MariaDB 是出色的数据库，如果没有它们，开源社区将被绑死在 Oracle 的贼船上，陷入糟糕的境地，但它们今天都还不能完全替代 MySQL。
 MySQL 社区的最好结果应该是 Oracle 与达成协议，共同努力，尽可能一起建设好 MySQL。如果不行，MySQL 社区需要一个计划B。
 
-------
-
 ## 参考阅读
 
 [Can Oracle Save MySQL?](https://www.percona.com/blog/can-oracle-save-mysql/)
@@ -75,8 +72,6 @@ MySQL 社区的最好结果应该是 Oracle 与达成协议，共同努力，尽
 [Postgres vs MySQL: the impact of CPU overhead on performance](https://smalldatum.blogspot.com/2023/10/postgres-vs-mysql-impact-of-cpu.html)
 
 [Perf regressions in MySQL from 5.6.21 to 8.0.36 using sysbench and a small server](https://smalldatum.blogspot.com/2024/02/perf-regressions-in-mysql-from-5621-to.html)
-
---------
 
 ## 英文原文
 

@@ -6,7 +6,6 @@ summary: >
   最近知乎上的老问题 “postgresql也很强大，为何在中国大陆，mysql成为主流，postgresql屈
 tags: [数据库, 职业, 技术评论]
 ---
-
 最近知乎上的老问题 “postgresql 也很强大，为何在中国大陆，mysql 成为主流，postgresql 屈居二线呢？” 冒出来几个新答案
 
 ![图片](01.webp)

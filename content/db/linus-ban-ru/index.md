@@ -7,7 +7,6 @@ summary: >
   Linus踢出了几位俄罗斯籍开发者，引发开源世界一片哀嚎。但Linux是Linus的个人项目，三十年前是，现在也依然是。Linux社区本质是帝制的，而Linus本人就是最早且最成功的技术独裁者。
 tags: [Linux, 开源, 技术评论]
 ---
-
 最近 Linus 在项目中[**踢出了几位俄罗斯籍开发者**](https://lore.kernel.org/all/CAHk-=whNGNVnYHHSXUAsWds_MoZ-iEgRMQMxZZ0z-jY4uHT+Gg@mail.gmail.com/)，引发开源世界中的一片哀嚎声。但其实很多人都忘记了，Linux 是 Linus 的个人项目，三十年前是，现在也依然是。Linus 本人始终亲自掌握着开源项目的最高权力 —— Linux 的发布权。Linux 社区本质是帝制的 —— 而 Linus 本人就是最早且最成功的技术独裁者。
 
 > Ok, lots of Russian trolls out and about.
@@ -39,8 +38,6 @@ tags: [Linux, 开源, 技术评论]
 ![reply.png](reply.png)
 
 他要是光明正大的说：“我收到米帝的制裁禁令，要干老毛子”。或者干脆就两手一摊 “老子爱咋样咋样，你们管不着” —— Which is fact —— 说不定就没这么多事了。
-
----
 
 ## **老冯评论**
 

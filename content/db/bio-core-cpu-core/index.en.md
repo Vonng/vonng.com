@@ -7,8 +7,6 @@ summary: >
   Programmers are expensive, scarce biological computing cores, the anchor point of software costs — please prioritize optimizing biological cores before optimizing CPU cores.
 tags: [Software Engineering, Performance, Database, Translation]
 ---
-
-
 ## Optimize Bio Cores First, Silicon Cores Second
 
 A big part of the reason that companies are going ga-ga over AI right now is the promise that it might materially lower their payroll for programmers. If a company currently needs 10 programmers to do a job, each having a cost of $200,000/year, then that's a $2M/year problem. If AI could even cut off 1/4 of that, they would have saved half a million! Cut double that, and it's a million. Efficiency gains add up quick on the bottom line when it comes to programmers!
@@ -37,8 +35,6 @@ So, whenever you hear a discussion about computing efficiency, you should always
 >
 > [Optimize for bio cores first, silicon cores second](https://world.hey.com/dhh/optimize-for-bio-cores-first-silicon-cores-second-112a6c3f) @ 2024-09-06
 
---------
-
 ## Feng's Commentary
 
 DHH's blog is as insightful as ever — though the truth might not sound pleasant, programmers are essentially a type of biological computing core — Bio Core, and many programmers have forgotten this point.
@@ -57,8 +53,6 @@ So, traditional database kernels are a sunset industry that will become low-marg
 The high-tech industry must rely on technological innovation as the driver. If you can use open-source PG kernel to replace Oracle and SQL Server, others can too — the best result is nothing more than Oracle and Microsoft both abandoning traditional databases to transform into cloud services, with traditional databases becoming low-profit manufacturing. Just like the PC industry twenty years ago. Twenty years ago, IBM, Dell, and HP were all international players, and China's Lenovo said it wanted to be world-class. Today, Lenovo indeed achieved this, but the PC industry is no longer a high-tech industry — just the most boring ordinary manufacturing.
 
 Even the [truly self-developed distributed database kernels](/db/distributive-bullshit) that look quite capable domestically, if they choose the wrong track, the best ending they can expect is to become the Changhong of the database industry, earning a five-point profit margin. Then being crushed by cloud vendor RDS and local-first RDS services using open-source PostgreSQL kernels, ultimately becoming the "Kilo-Girl" of the database field.
-
---------
 
 ## Optimize for bio cores first, silicon cores second
 

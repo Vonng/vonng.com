@@ -6,12 +6,9 @@ summary: >
   How did “far, far ahead,” “homegrown,” “innovation,” “domestic,” and “open source” become their own antonyms in China's tech industry? This essay traces a systemic inflation of language and credibility—and the bill it has left for engineering, open source, and the industry's ability to correct itself.
 tags: [Database, Open Source, Commentary]
 ---
-
 > A brief history of credibility inflation in China's tech industry
 
 ![Innovation, homegrown, open source, ecosystem, and expert stamped until the words decay](featured.webp)
-
----
 
 ## Introduction
 
@@ -28,8 +25,6 @@ But if you think this was an isolated linguistic accident, you underestimate the
 This was no accident. It was systemic credibility inflation.
 
 Every bout of inflation has an issuance sequence and a division of blame: a first mover and a final escalator. This essay tries to sort out that order. Lumping them together as “all the same” would be the last—and most avoidable—loss in this bankruptcy.
-
----
 
 ## I. Inventing the Grammar
 
@@ -58,8 +53,6 @@ One fact deserves unqualified recognition: it also spent a decade building a [di
 Its posture at the time was roughly: I may boast, but I will not deny whose shoulders I stand on.
 
 That is not a high bar. Only later did the company discover that, in this market, even that bar was a fatal competitive liability.
-
----
 
 ## II. Removing the Floor
 
@@ -147,8 +140,6 @@ The boss personally signed a directive saying the company would not build cars. 
 
 Boasting to outsiders is unremarkable; the job may demand it. Trying the same trick on a document signed by your own boss is something else.
 
----
-
 ## III. The Prisoner's Dilemma
 
 Now the third company enters the story.
@@ -196,8 +187,6 @@ One final detail says more than all the flame wars. A company that built its rep
 When this came to light, the company apologized and offered compensation. Its response was fast by the standards of the domestic auto industry, and that deserves acknowledgment.
 
 But look at the path itself. A company that conquered the market through transparent specifications was tripped by specification theater. Nobody else corrupted it. This is what happens when the same talent is pushed too far. If a company's greatest skill is making a number sound impressive, someone in a meeting will eventually calculate that the number will sell even without the substance behind it.
-
----
 
 ## IV. The Bill
 
@@ -299,8 +288,6 @@ Where did the most demanding users go?
 
 The most dangerous moment for an infrastructure company is not when people criticize it. It is when the people who understand it best leave without a word. They may contribute little revenue, but they contribute judgment.
 
----
-
 ## V. The Differences Matter
 
 The easiest conclusion at this point is: “They are all the same. They are all rotten.”
@@ -327,8 +314,6 @@ If engineers arrive, there is still hope for the company.
 
 If attacks arrive, it is no longer a technology company.
 
----
-
 ## VI. Credit Where It Is Due
 
 This essay has been an extended indictment, but omitting a few facts would turn it into factional cheerleading.
@@ -340,8 +325,6 @@ The third company's [public hardware net-margin pledge](https://s1.mi.com/m/shop
 All of that is true.
 
 But good deeds are not licenses for bad ones. Quite the opposite: precisely because these companies can build real things, none of this was necessary.
-
----
 
 ## VII. This Country Has Judged People Like This Before
 
@@ -408,8 +391,6 @@ But one punishment took effect immediately and could never be reversed: words th
 After Wang Mang, the Chinese term for voluntary abdication, *shanrang*, became an ironic label. Bai Juyi's line—“The Duke of Zhou feared slander; Wang Mang was humble before he usurped”—became the word's epitaph. After Emperor Zhenzong, no one dared perform *fengshan* again. After Zhao Gao, “calling a deer a horse” became the name of an offense.
 
 Their real legacy was not their official accomplishments, but a handful of Chinese words that could never again be used normally.
-
----
 
 ## Epilogue: Paraquat
 

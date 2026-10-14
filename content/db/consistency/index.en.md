@@ -6,14 +6,13 @@ summary: >
   The term "consistency" is heavily overloaded, representing different concepts in different contexts. For example, the C in ACID and the C in CAP actually refer to different concepts.
 tags: [Database, Distributed Systems, Transactions]
 ---
-
 The term **consistency** is heavily overloaded, representing different things in different contexts and situations:
 
 - In the context of transactions, such as the C in ACID, it refers to the usual **Consistency**
 - In the context of distributed systems, such as the C in CAP, it actually refers to **Linearizability**
 - Additionally, "consistency" in terms like "consistent hashing" and "eventual consistency" also has different meanings.
 
-[![](featured.jpg)](https://www.zhihu.com/question/275845393/answer/386816571)
+[![Consistency: An Overloaded Term (figure 1)](featured.jpg)](https://www.zhihu.com/question/275845393/answer/386816571)
 
 --------------
 
@@ -27,8 +26,6 @@ These consistencies are different yet have intricate connections, so they often 
 
 These two "consistencies" are completely different things, but there are subtle connections between them, and the bridge between them is **Consensus**.
 
---------------
-
 ## Simply Put
 
 - **Distributed transaction consistency** introduces availability problems due to coordinator single points of failure
@@ -36,8 +33,6 @@ These two "consistencies" are completely different things, but there are subtle 
 - **Solving the consensus problem** is equivalent to implementing **linearizable** storage
 - **Solving the consensus problem** is equivalent to implementing **total order broadcast**
 - **Paxos/Raft implement total order broadcast**
-
---------------
 
 ## Specifically Speaking
 
@@ -52,8 +47,6 @@ These two "consistencies" are completely different things, but there are subtle 
 
 The Raft algorithm solves the total order broadcast problem. **Maintaining consistency among multiple replica logs actually means having all nodes agree on the same global operation order, which actually means making the log system have linearizability.** Thus solving the consensus problem. (Of course, because the consensus problem is equivalent to implementing strongly consistent storage, Raft's specific implementation `etcd` is actually a linearizable distributed database.)
 
---------------
-
 ## To Summarize
 
 - [Linearizability](https://en.wikipedia.org/wiki/Linearizability) is a precisely defined term. Linearizability is a **[consistency model](https://en.wikipedia.org/wiki/Consistency_model)** that makes very strong guarantees about distributed system behavior.
@@ -64,4 +57,4 @@ The Raft algorithm solves the total order broadcast problem. **Maintaining consi
 
 ## Reference Reading
 
-[1] [Consistency and Consensus](https://github.com/Vonng/ddia/blob/master/ch9.md)
+[1] [Consistency and Consensus](https://github.com/Vonng/ddia/blob/main/content/v1/ch9.md)

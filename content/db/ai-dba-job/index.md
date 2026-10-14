@@ -8,7 +8,6 @@ tags: [AI, 数据库, PG管理, 职业]
 ai: true
 aliases: ["/ai/ai-dba-job/"]
 ---
-
 前天在 HOW 2025 大会的圆桌上，萧主席问了一些关于 AI，数据库 DBA 有趣的问题，以下是老冯的观点，整理发出。
 
 ## OLTP / OLAP，谁先被革命？

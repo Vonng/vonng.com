@@ -6,11 +6,7 @@ summary: >
   数据库是业务架构的核心，这是不言自明的共识。但如果更进一步，将数据库作为业务架构本身，将业务逻辑、Web Server甚至整个前后端都放入数据库中，又会擦出怎样的火花？
 tags: [PostgreSQL, 数据库, 架构, PG生态]
 ---
-
-
 数据库是业务架构的核心，是不言自明的共识。但如果我们更进一步，**将数据库作为业务架构本身**，将业务逻辑，Web Server，甚至是整个前后端都放入数据库中，又会擦出怎么样的火花？未来会是一个数据库吞噬后端，前端，操作系统，甚至一切的世界吗？
-
---------
 
 ## 驱动未来的数据库
 
@@ -42,8 +38,6 @@ SET query = (SELECT omni_httpd.cascading_query(name, query) FROM
 > 天啊，PostgreSQL 数据库竟然拉起来了一个 HTTP 服务器，默认跑在 `8080` 端口！你可以把它当成 Nginx 用！
 > 除了实现 httpd 之外，他还以 PG 扩展的形式实现了许多 “标准库”，这包括一个由 33 个扩展插件组成的全家桶，提供在 PostgreSQL 中进行完整 Web 应用开发的能力！
 
---------
-
 ## 数据库是架构的核心
 
 > *“If you show me your software architecture, I learn nothing about your business. But if you show me your data model, I can guess exactly what your business is.”*。 —— Michael Stonebraker
@@ -52,7 +46,7 @@ SET query = (SELECT omni_httpd.cascading_query(name, query) FROM
 
 无独有偶，微软 CEO 纳德拉 [也在最近公开表示](https://mp.weixin.qq.com/s/8t5qdz9DvHO7xt8VA8vzsQ)：我们今天所称的软件，你喜欢的那些应用程序，不过是包装精美的数据库操作界面而已。
 
-![](msceo.png)
+![数据库即业务架构：数据库是架构的核心（图 2）](msceo.png)
 
 > BTW 他还说 SaaS is Dead：因为以后 Agent 可以直接绕过中间商，代替前后端去读写数据库
 
@@ -61,8 +55,6 @@ SET query = (SELECT omni_httpd.cascading_query(name, query) FROM
 
 无论业务架构怎么折腾，底层的东西万变不离其宗。数据库是业务架构的核心，早已是不言自明的共识。
 但如果我们更进一步，**将数据库作为业务架构本身**，又会如何？
-
---------
 
 ## 什么，还能这么玩
 
@@ -93,11 +85,9 @@ SET query = (SELECT omni_httpd.cascading_query(name, query order by priority des
 
 如果是熟悉 Oracle 的用户可能会发现，这有点类似于 Oracle Apex。但在 PostgreSQL 中，你可以用二十多种编程语言来开发存储过程，而不仅仅局限于 PL/SQL！
 
-![](pl.png)
+![数据库即业务架构：什么，还能这么玩（图 4）](pl.png)
 
 除了这里的 `httpd` 扩展外，Omnigres 还提供了另外 33 个扩展插件，这套扩展全家桶，提供了在 PostgreSQL 中进行完整 Web 应用开发的能力！
-
---------
 
 ## 这会是一个好主意吗？
 
@@ -116,8 +106,6 @@ SET query = (SELECT omni_httpd.cascading_query(name, query order by priority des
 但现在时过境迁，LLM 的出现与硬件的发展让这种做法变得更加可行起来：
 GPT 已经达到了能够熟练编写存储过程的中高级开发者的水准，而遵循摩尔定律发展的硬件直接把单机性能推到了一个匪夷所思的地步。
 因此，将业务逻辑放到数据库中，甚至让数据库成为整个业务架构本身，这种做法在当下成为一种非常值得探索的实践。
-
---------
 
 ## 吞噬一切的数据库
 
@@ -139,8 +127,6 @@ Supabase 实际上就是 “吃掉” 了后端的数据库，如果这种架构
 
 这也许意味着软件架构领域的钟摆正在重新回归简单与常识 —— 前端绕开花里胡哨的中间件，直接访问数据库，螺旋上升回归到最初的 C/S，B/S 架构上去。
 或者像纳德拉所说，Agent 可以直接绕过中间商，代替前后端与软件去读写数据库，出现一种新的 A(gent)/D(atabase) 架构也未尝不可。
-
---------
 
 ## 拥抱新趋势
 

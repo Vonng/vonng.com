@@ -6,10 +6,9 @@ summary: >
   Those who only know how to code are just programmers; learn databases well, and you can at least make a living; but for excellent engineers, merely using databases is far from enough.
 tags: [Database, Career]
 ---
-
 > Our school offers a database systems principles course. But I'm still confused. From the first few classes, the teacher started with a bunch of mind-numbing terms and concepts. I thought knowing "how to design and build tables" and "how to perform CRUD operations in MySQL" would be enough... So why do we need to understand relational schema representation, computation, normalization... conceptual models... mutual conversions between various models, and why do we need to know about relational algebra, Cartesian products... these theoretical knowledge? I'm very confused. What exactly is the purpose of this course or this textbook trying to teach students through these theoretical concepts?
 
-![](why-learn-database.jpg)
+![Why Study Database Principles (figure 1)](why-learn-database.jpg)
 
 Those who only know how to code are just programmers; **learn databases well, and you can at least make a living**; if you also master **operating systems and computer networks** on top of that, you can become a decent programmer. If you can further master discrete mathematics, digital circuits, computer architecture, data structures/algorithms, and compiler principles, plus rich practical experience and domain-specific knowledge, you can be considered an excellent engineer. (Don't argue about frontend being IO-intensive applications)
 
@@ -29,7 +28,7 @@ In the broadest sense, **wherever there is state, there are databases**. They ar
 
 One of the most important abilities of an architect is understanding the performance characteristics and application scenarios of these components, being able to flexibly weigh trade-offs and integrate these data systems. Most engineers won't build storage engines from scratch because when developing applications, databases are already perfect tools. Relational databases are the most widely used components among all data systems - they're the programmer's main breadwinner, and their importance is self-evident.
 
-![](why-learn-db-1.jpg)
+![Why Study Database Principles (figure 2)](why-learn-db-1.jpg)
 
 **Understanding the WHY is more important than understanding the HOW**. But a regrettable reality is that for most students, and even a considerable portion of companies, the real problems they encounter could probably be handled by a few files or even in-memory storage (requirements are simple enough that low-level abstractions can handle them). **Without opportunities to encounter the problems databases really solve, it's hard to have genuine motivation to use and learn databases, let alone database principles**. Only when hardware and software failures turn data into a mess (reliability); when single tables exceed memory size and concurrent users increase (scalability); when code complexity explodes and development gets bogged down (maintainability) - only then do people truly realize the importance of databases. So I understand the predicament of current cramming education: after starting work, it's hard to have such large chunks of complete time to learn principles, so teachers have to force-feed first, at least giving students some impression of this knowledge. When students encounter these problems after joining the workforce, they might remember learning something called **databases** in college, and this knowledge will start to ruminate.
 
@@ -45,13 +44,13 @@ For example, **normalization theory** in **data model design** was proposed to s
 
 The principles of relational algebra and indexes play important roles in query optimization - **they're about doing things fast (performance, scalability)**. When data volumes grow larger and SQL becomes more complex, their significance becomes apparent: **how to write equivalent but more efficient queries?** When query optimizers aren't that intelligent, humans need to do this work. **Such optimizations often have extremely low cost but huge benefits**. For example, a KNN query that takes several seconds can be optimized to within 1 millisecond by rewriting the query and creating a GIST index if you understand R-tree index principles - a thousand-fold performance improvement. **Without understanding index and query design principles, it's difficult to fully utilize database performance.**
 
-![](why-learn-db-2.jpg)
+![Why Study Database Principles (figure 3)](why-learn-db-2.jpg)
 
 **Transaction and concurrency control principles are about doing things correctly (reliability)**. Transactions are one of the greatest abstractions in data processing. They provide many useful guarantees (ACID), **but what do these guarantees actually mean?** Transaction **atomicity** allows you to abort transactions and discard all writes at any time before committing. Correspondingly, transaction **durability** promises that once a transaction is successfully committed, any written data won't be lost even if hardware failures or database crashes occur. This makes error handling incredibly simple: either succeed completely or fail and retry. With this "undo pill," programmers no longer have to worry about crashes halfway through leaving behind horrific accident scenes.
 
 On the other hand, transaction **isolation** ensures that concurrently executing transactions cannot affect each other (Serializable). Databases provide different isolation levels for programmers to **trade off between performance and correctness**. Writing concurrent programs isn't easy. Under loads of tens of thousands of TPS, all kinds of extremely low-probability, mind-boggling problems appear: transactions stepping on each other, lost updates, phantom reads and write skew, slow queries dragging down fast queries causing connection pile-ups, single-table database performance deteriorating rapidly with increased concurrency, and even mysterious hiccups when both fast and slow queries decrease but their proportions change. These problems lurk under low loads and suddenly jump out as scale increases, giving you big surprises. The [various anomalies](https://github.com/ept/hermitage) that can actually occur in reality are far more complex than the few simple exceptions in SQL standards. **Not understanding transaction principles means application correctness and data integrity may suffer unnecessary losses.**
 
-![](why-learn-db-3.webp)
+![Why Study Database Principles (figure 4)](why-learn-db-3.webp)
 
 Fault recovery and replication principles might not be as important for programmers, but architects and DBAs must understand them clearly. High availability is a goal many applications pursue, but what is high availability, and how is it guaranteed? Read-write separation? Fast-slow separation? Multi-region active-active? Multi-site multi-center? The core technology underneath is actually **replication** (plus **automatic failover**). There are endless pitfalls here: various mysterious phenomena caused by replication lag, network partitions and split-brain, transactions in doubt, blah blah. **Without understanding replication principles, high availability is out of the question.**
 

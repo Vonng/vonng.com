@@ -6,11 +6,7 @@ summary: >
   Databases are the core of business architecture, but what happens if we go further and let databases become the business architecture itself?
 tags: [PostgreSQL, Database, Architecture, PG Ecosystem]
 ---
-
-
 Databases are the core of business architecture - this is self-evident consensus. But what if we go further and **treat databases as business architecture itself**, putting business logic, web servers, and even entire front and back ends into databases? What sparks would that create? Will the future be a world where databases devour backends, frontends, operating systems, and even everything?
-
---------
 
 ## Database Drives the Future
 
@@ -42,8 +38,6 @@ This means you can stuff a complete frontend-backend-database three-tier archite
 > My god, PostgreSQL database actually pulled up an HTTP server, running on port `8080` by default! You can use it as Nginx!
 > Besides implementing httpd, he also implemented many "standard libraries" as PG extensions, including a complete package of 33 extension plugins, providing complete web application development capabilities within PostgreSQL!
 
---------
-
 ## Databases are the Core of Architecture
 
 > *"If you show me your software architecture, I learn nothing about your business. But if you show me your data model, I can guess exactly what your business is."* — Michael Stonebraker
@@ -52,7 +46,7 @@ Database patriarch Mike Stonebraker has a famous saying: "If you show me your so
 
 Coincidentally, Microsoft CEO Nadella [also recently stated publicly](https://mp.weixin.qq.com/s/8t5qdz9DvHO7xt8VA8vzsQ): What we call software today, those applications you love, are nothing more than beautifully packaged database operation interfaces.
 
-![](msceo.png)
+![Database as Business Architecture — Databases are the Core of Architecture (figure 2)](msceo.png)
 
 > BTW he also said SaaS is Dead: because in the future Agents can directly bypass middlemen and replace front and back ends to read and write databases
 
@@ -61,8 +55,6 @@ So-called database sharding, multi-region multi-center, active-active across reg
 
 No matter how business architectures are twisted, the underlying fundamentals remain constant. Databases being the core of business architecture has long been self-evident consensus.
 But what if we go further and **treat databases as business architecture itself**?
-
---------
 
 ## What, You Can Play Like This?
 
@@ -93,11 +85,9 @@ Of course, you can choose any programming language you like to create PostgreSQL
 
 Users familiar with Oracle might find this somewhat similar to Oracle Apex. But in PostgreSQL, you can develop stored procedures in over twenty programming languages, not just limited to PL/SQL!
 
-![](pl.png)
+![Database as Business Architecture — What, You Can Play Like This? (figure 4)](pl.png)
 
 Besides the `httpd` extension here, Omnigres also provides another 33 extension plugins. This complete extension suite provides complete web application development capabilities within PostgreSQL!
-
---------
 
 ## Would This Be a Good Idea?
 
@@ -116,8 +106,6 @@ And at that time (2017), databases were usually the performance bottleneck of en
 But times have changed. LLM emergence and hardware development make this approach much more feasible:
 GPT has reached the level of skilled mid-to-senior developers who can write stored procedures proficiently, while hardware following Moore's Law has pushed single-machine performance to incredible levels.
 Therefore, putting business logic into databases, even making databases become entire business architectures themselves, becomes a very worthwhile practice to explore in the current era.
-
---------
 
 ## Database Devouring Everything
 
@@ -139,8 +127,6 @@ Of course, there might be even more radical attempts - for example, Stonebraker'
 
 This might mean the pendulum in software architecture is swinging back to simplicity and common sense - frontends bypassing fancy middleware to directly access databases, spiraling back to original C/S and B/S architectures.
 Or as Nadella said, Agents could directly bypass middlemen, replacing front and back ends and software to read and write databases - a new A(gent)/D(atabase) architecture wouldn't be impossible.
-
---------
 
 ## Embracing New Trends
 

@@ -6,7 +6,6 @@ summary: >
   9 月 11 日，MinIO 把 Docker Hub 上的 minio/minio 与 minio/mc 仓库整个删除，跑路跑完了最后一步。过去一个多月，我带着两个互相拆台的 AI Agent，给我维护的 MinIO 社区 fork Silo 做了一轮大清理：四个版本、210 个提交、8 个 CVE，外加兼容性加固与零成本迁移方案。一个人加一堆顶配订阅，现在真能扛住一个中等规模 Go 项目的安全维护。
 tags: [MinIO, Silo, 对象存储, 开源, AI]
 ---
-
 我先把一个日期钉在这儿：**2026 年 9 月 11 日**，UTC 时间 18:31 到 19:36 之间，MinIO 把 Docker Hub 上的 `minio/minio` 和 `minio/mc` 两个仓库，**直接删了**。
 
 不是限流，不是换个 tag，是整个仓库返回 404——“repository does not exist”。
@@ -23,8 +22,6 @@ Docker Hub 对“不存在的仓库”和“需要登录的私有仓库”返回
 
 这篇不是 release notes。Release notes 我另外写了，一条一条列变更，那是给要升级的人对着看的。这篇是篇总结——讲讲过去这一个多月到底发生了什么，
 为什么我要在两个前沿模型刚发布的节骨眼上，带着两个 AI 干了一场“漏洞大清理”，以及，为什么我觉得这事儿值。
-
----
 
 ## MinIO 是怎么一步步跑路的
 
@@ -53,8 +50,6 @@ Docker Hub 对“不存在的仓库”和“需要登录的私有仓库”返回
 AIStor 按容量收费，$0.02/GB/月，400 TiB 以内适用企业自助支持层——据第三方评测，起步价大概九万六千美元一年。对，就是这么个“清爽”的安排。
 
 那总得有人来修那个被抛弃的老版本吧。这个人就是我。
-
----
 
 ## 为什么是我，为什么用 AI
 
@@ -90,8 +85,6 @@ Fable 转过来做核对和对抗性 review。** 你去翻 [Silo 的 commit 记�
 
 【待补：这一轮大清理里，有一次 Astra 和 Fable 在某个具体修复上僵住、我出面调解的真实细节，可在此补一个有画面感的小故事。】
 
----
-
 ## 这一个多月，到底修了什么
 
 好，讲点硬的。
@@ -110,7 +103,7 @@ Fable 转过来做核对和对抗性 review。** 你去翻 [Silo 的 commit 记�
   没有公开的 CVSS 数字，但性质是 critical 级的。
 - **CVE-2026-42600，ReadMultiple 存储层路径穿越。** 这个更值得一说——我们一开始只是删了那个没人用的内部端点，就宣布“修好了”。后来做审计才发现，端点是删了，
   **根本病因还在另外三个协议面上活着**：请求体和 grid 帧从不经过校验中间件，存储层也没有围栏。
-  于是有了 [SN-2026-002](https://github.com/pgsty/silo/blob/main/docs/security/advisories.md)，把剩下的账还清：路径和卷两个维度的穿越、一个每帧就能弄崩一个节点的除零 panic、
+  于是有了 [SN-2026-002](https://silo.pgsty.com/about/security-advisories/)，把剩下的账还清：路径和卷两个维度的穿越、一个每帧就能弄崩一个节点的除零 panic、
   把截断分片误报成完整的元数据、三处按调用方声明值分配的内存……**12 个缺陷，全是从上游继承的，我们的 diff 在受影响文件上是纯删除、零新增行。**
   这个教训我[专门写了篇复盘](https://silo.pgsty.com/blog/security/cve-2026-42600/)：修一个端点，不等于关掉一整类漏洞；当你决定把下面那层先不管，一定要写在下一个人会绊到的地方。
 
@@ -142,8 +135,6 @@ Fable 转过来做核对和对抗性 review。** 你去翻 [Silo 的 commit 记�
 能给的硬证据是内部验收：`make verify` 覆盖 FS、纠删码、分布式纠删码、多池、IPv6 多池，**174 PASS / 0 FAIL**；
 [四节点 TLS 集群](https://silo.pgsty.com/blog/release/silo-20260903/)做过 1004 对对象的上传下载校验和逐一对比、双站点复制、单盘重建、完整回滚演练。
 
----
-
 ## 这事儿到底花了多少，值不值
 
 说实话，花了不少。
@@ -164,8 +155,6 @@ Fable 转过来做核对和对抗性 review。** 你去翻 [Silo 的 commit 记�
 而且它托住了很多真实的部署。[Pigsty v4.5](https://pigsty.io/blog/pigsty/v4.5/) 已经把对象存储模块整个切到了 Silo，`minio_type` 现在只接受 `silo` 这一个值。
 外面 RAGFlow 的默认 Compose、Dokploy 的产品模板、Grafana Loki 的 Helm chart、Dell 的 Omnia HPC 平台、nixpkgs、DaoCloud 镜像……几十个项目已经把默认镜像指向了我这儿。
 这个应急 fork，某种意义上已经成了 **最活跃、最显眼的那个 MinIO 分支**。
-
----
 
 ## 如果你还在跑 MinIO
 

@@ -7,13 +7,11 @@ summary: >
   图灵奖得主 + CMU 教授：2025 数据库圈最犀利的一场对话。关于数据库，LLM，Agent，AI 落地的实际效果，程序员的职业生涯……
 tags: [PostgreSQL, 数据库]
 ---
-
-
 > 原文地址：https://www.cs.cmu.edu/~pavlo/blog/2026/01/2025-databases-retrospective.html
 >
 > 作者：Andy Pavlo，翻译与评论：冯若航
 
-# 2025 数据库世界年度回顾
+## 2025 数据库世界年度回顾
 
 **作者**: Andy Pavlo - 卡内基梅隆大学  
 **发布日期**: 2026 年 1 月 4 日  
@@ -42,19 +40,17 @@ SurrealDB 发布了漂亮的基准测试数据，但后来被发现是因为他�
 - [2022 数据库年度回顾](https://www.cs.cmu.edu/~pavlo/blog/2022/12/2022-databases-retrospective.html)
 - [2021 数据库年度回顾](https://www.cs.cmu.edu/~pavlo/blog/2021/12/2021-databases-retrospective.html)
 
----
-
-## PostgreSQL 持续称霸
+### PostgreSQL 持续称霸
 
 2021 年，我首次写到 PostgreSQL 正在 [**吞噬整个数据库世界**](https://www.cs.cmu.edu/~pavlo/blog/2021/12/2021-databases-retrospective.html#dominance-of-postgresql)。这一趋势丝毫没有减缓，数据库领域最有趣的进展大多数还是围绕 PostgreSQL 展开。最新版本（[v18](https://www.postgresql.org/about/news/postgresql-18-released-3142/)）于 2025 年 11 月发布，最亮眼的特性是新的[异步 I/O 存储子系统](https://www.cybertec-postgresql.com/en/postgresql-18-and-beyond-from-aio-to-direct-io/)，这将最终让 PostgreSQL 摆脱对操作系统页面缓存的依赖。此外还增加了 [Skip Scan](https://www.pgedge.com/blog/postgres-18-skip-scan-breaking-free-from-the-left-most-index-limitation) 支持：即使缺少前导键（即前缀），查询仍可使用多键 B+ 树索引。查询优化器也有一些改进（例如[消除冗余自连接](https://betterstack.com/community/guides/databases/postgresql-18-new-features/#optimizer-and-query-planning-improvements)）。
 
 资深数据库鉴赏家们肯定会急着指出：这些功能并不是什么开创性的东西，其他数据库早就有了。PostgreSQL 是唯一仍依赖操作系统页面缓存的主流数据库，而 Oracle 早在 2002 年（9i 版本）就[支持 Skip Scan](https://richardfoote.wordpress.com/2008/03/10/index-skip-scan-does-index-column-order-matter-any-more-warning-sign/) 了！那你可能会问：为什么我还说 2025 年数据库领域最火热的动作都发生在 PostgreSQL 身上？
 
-### 收购与发布
+#### 收购与发布
 
 原因在于：数据库领域的大部分能量和活动都涌向了 PostgreSQL 相关的公司、产品、项目和衍生系统。过去一年，最火的数据初创公司（[Databricks](https://www.databricks.com/)）花了 [10 亿美元收购了一家 PostgreSQL DBaaS 公司](https://www.wsj.com/articles/databricks-to-buy-startup-neon-for-1-billion-fdded971)（[Neon](https://neon.com/)）。紧接着，全球最大的数据库公司之一（[Snowflake](https://www.snowflake.com/en/)）又花了 [2.5 亿美元买下另一家 PostgreSQL DBaaS 公司](https://www.wsj.com/articles/snowflake-to-buy-crunchy-data-for-250-million-233543ab)（[CrunchyData](https://www.crunchydata.com/)）。然后，地球上最大的科技公司之一（Microsoft）[推出了新的 PostgreSQL DBaaS](https://techcommunity.microsoft.com/blog/adforpostgresql/announcing-azure-horizondb/4469710)（HorizonDB）。Neon 和 HorizonDB 沿用了 Amazon Aurora 在 2010 年代的[原始高层架构](https://doi.org/10.1145/3035918.3056101)：单主节点、计算存储分离。目前 Snowflake 的 PostgreSQL DBaaS 使用的核心架构与标准 PostgreSQL 相同，因为他们基于 [Crunchy Bridge](https://www.crunchydata.com/products/crunchy-bridge) 构建。
 
-### 分布式 PostgreSQL
+#### 分布式 PostgreSQL
 
 上述服务都是单主节点架构——应用把写请求发给主节点，主节点再把变更同步给从副本。但 2025 年，有两个新项目宣布要为 PostgreSQL 构建横向扩展（即水平分片）服务。
 
@@ -62,7 +58,7 @@ SurrealDB 发布了漂亮的基准测试数据，但后来被发现是因为他�
 
 Multigres 消息发布一个月后，PlanetScale [宣布](https://planetscale.com/blog/planetscale-for-postgres#neki-vitess-for-postgres)了自己的 Vitess-for-PostgreSQL 项目 [Neki](https://www.neki.io/)。PlanetScale 于 2025 年 3 月推出了其初始 [PostgreSQL DBaaS](https://planetscale.com/blog/announcing-metal)，但核心架构就是标准的 [PostgreSQL + pgBouncer](https://planetscale.com/blog/planetscale-for-postgres#performance-and-reliability)。
 
-### 商业格局
+#### 商业格局
 
 随着 2025 年 Microsoft 推出 HorizonDB，所有主要云厂商现在都有了自己认真打造的增强版 PostgreSQL 产品。Amazon 自 2013 年提供 [RDS PostgreSQL](https://en.wikipedia.org/wiki/Amazon_Relational_Database_Service#History)，2017 年推出 [Aurora PostgreSQL](https://aws.amazon.com/about-aws/whats-new/2017/04/announcing-open-preview-of-amazon-aurora-with-postgresql-compatibility/)。Google 在 2022 年推出 [AlloyDB](https://venturebeat.com/data-infrastructure/google-announces-alloydb-a-faster-hosted-version-of-postgresql)。就连老古董 IBM 也从 2018 年就有[云版 PostgreSQL](https://cloud.ibm.com/docs/databases-for-postgresql?topic=databases-for-postgresql-postgresql-relnotes)。Oracle 在 2023 年发布了 [PostgreSQL 服务](https://docs.oracle.com/en-us/iaas/releasenotes/changes/9a4b73b5-d4d6-4c89-bd31-b1fa2098fa34/index.htm)，但有传言说其内部 PostgreSQL 团队在 2025 年 9 月的 [MySQL OCI 裁员](https://www.theregister.com/2025/09/11/oracle_slammed_for_mysql_job/)中被波及。ServiceNow 在 2024 年推出了 [RaptorDB 服务](https://www.investing.com/news/company-news/servicenow-unveils-raptordb-pro-and-future-knowledge-graph-93CH-3609528)，基于其 2021 年对 Swarm64 的[收购](https://www.zdnet.com/article/servicenow-acquires-database-performance-company-swarm64/)。
 
@@ -70,7 +66,7 @@ Multigres 消息发布一个月后，PlanetScale [宣布](https://planetscale.co
 
 仍有一些独立软件供应商（ISV）的 PostgreSQL DBaaS 公司。[Supabase](https://supabase.com/) 按实例数量可能是最大的。其他包括 [YugabyteDB](https://www.yugabyte.com/)、[TigerData](https://www.tigerdata.com/)（前身为 TimeScale）、[PlanetScale](https://planetscale.com/)、[Xata](https://xata.io/)、[PgEdge](https://www.pgedge.com/) 和 [Nile](https://www.thenile.dev/)。还有一些系统提供 Postgres 兼容的前端，但后端系统并非基于 PostgreSQL（例如 [CockroachDB](https://www.cockroachlabs.com/docs/stable/postgresql-compatibility)、[CedarDB](https://cedardb.com/docs/compatibility/)、[Spanner](https://docs.cloud.google.com/spanner/docs/postgresql-interface)）。Xata 最初架构基于 [Amazon Aurora](https://xata.io/blog/serverless-postgres-platform#:~:text=AWS%20Aurora%20under%20the%20hood)，但今年宣布[切换到自己的基础设施](https://xata.io/blog/xata-postgres-with-data-branching-and-pii-anonymization)。[Tembo](https://www.tembo.io/) 在 2025 年[放弃了托管 PostgreSQL](https://tembo-io.notion.site/Tembo-Cloud-Migration-Guide-1de7c9367d6a80349570e7469ba7f17b)，转型为可以做一些数据库调优的编码 Agent。[ParadeDB](https://www.paradedb.com/) 尚未宣布其托管服务。[Hydra](https://www.hydra.so/) 和 PostgresML 在 2025 年倒闭了（见下文），出局了。还有像 [Aiven](https://aiven.io/) 和 [Tessel](https://www.tessell.com/) 这样的托管公司也提供 PostgreSQL DBaaS，但同时也提供其他系统。
 
-### Andy 的看法
+#### Andy 的看法
 
 在 Databricks 和 Snowflake 收购 PostgreSQL 公司之后，下一个大买家会是谁还不清楚。再说一遍，每家大科技公司都已经有了 Postgres 产品。EnterpriseDB 是最老牌的 PostgreSQL ISV，但错过了过去五年最重大的两笔 PostgreSQL 收购。不过他们可以继续跟着 Bain Capital 混，或者指望 HPE 收购他们，尽管那个[合作关系](https://community.hpe.com/t5/oem-solutions/recap-hpe-greenlake-launch-discover-2017-madrid/ba-p/6991195)已经是八年前的事了。这种并购格局让人想起 2000 年代末的 OLAP 收购潮，当时 [Vertica](https://investor.hp.com/news-events/news/news-details/2011/HP-to-Acquire-Vertica-Customers-Can-Analyze-Massive-Amounts-of-Big-Data---at-Speed-and-Scale/default.aspx) 是最后一个在公交站等车的，等 [AsterData](https://techcrunch.com/2011/03/03/teradata-buys-aster-data-263-million/)、[Greenplum](https://techcrunch.com/2010/07/06/emc-acquires-data-warehousing-and-analytics-company-greenplum/) 和 [DATAllegro](https://news.microsoft.com/source/2008/07/24/microsoft-to-acquire-datallegro/) 都被收购之后。
 
@@ -78,9 +74,7 @@ Multigres 消息发布一个月后，PlanetScale [宣布](https://planetscale.co
 
 PlanetScale 那帮人[对对手毫不客气](https://youtu.be/CvgIRHhyRQE?t=143)，公开怼 [Neon](https://blog.alexoglou.com/posts/database-decisions/) 和 [Timescale](https://twitter.com/samlambert/status/1984010289348780137)。数据库公司互喷不是什么新鲜事（参见 [Yugabyte vs. CockroachDB](https://www.linkedin.com/posts/bobdoyleyugabyte_cockroach-labs-activity-7311530387271237634-xR78/)）。我猜随着 PostgreSQL 战争升温，以后这种情况会更多。我建议这些小公司[把枪口对准大型云厂商](https://twitter.com/samlambert/status/1996035931057652125)，而不是内斗。
 
----
-
-## 全民 MCP 时代
+### 全民 MCP 时代
 
 如果说 2023 年是[每个 DBMS 都加入向量索引](https://www.cs.cmu.edu/~pavlo/blog/2024/01/2023-databases-retrospective.html#vector)的一年，那么 2025 年就是每个 DBMS 都加入 Anthropic [Model Context Protocol](https://en.wikipedia.org/wiki/Model_Context_Protocol)（MCP）支持的一年。MCP 是一个标准化的客户端-服务器 JSON-RPC 接口，让 LLM 无需自定义胶水代码就能与外部工具和数据源交互。MCP 服务器充当数据库前面的中间件，暴露它提供的工具、数据和操作列表。MCP 客户端（例如 Claude 或 ChatGPT 等 LLM 宿主）发现并使用这些工具，通过向服务器发送请求来扩展模型能力。对于数据库来说，MCP 服务器将这些查询转换为适当的数据库查询（如 SQL）或管理命令。换句话说，MCP 就是那个让数据库和 LLM 互相信任并做生意的[中间人](https://youtu.be/VXuwljCWZMU)，负责把账算清楚。
 
@@ -90,7 +84,7 @@ Anthropic 在 2024 年 11 月[宣布](https://www.theverge.com/2024/11/25/243057
 
 一个对 Agent 特别有用的有趣功能是数据库分支。虽然不是 MCP 服务器特有的，但分支允许 Agent 快速测试数据库变更而不影响生产应用。Neon 在 2025 年 7 月报告说 Agent [创建了他们 80% 的数据库](https://www.linkedin.com/posts/amitkumarvsingh_ai-agents-are-creating-more-databases-on-activity-7336398117862371328-Q6pO/)。Neon 从一开始就设计为支持[分支](https://dev.to/semaphore/a-first-look-at-neon-a-postgres-database-that-branches-10e6)（Nikita 在系统还叫"[Zenith](https://dbdb.io/db/neon#history)"的时候给我展示过早期演示），而其他系统是后来才加入分支支持的。可以看看 Xata 最近关于数据库分支的[对比文章](https://xata.io/blog/neon-vs-supabase-vs-xata-postgres-branching-part-1)。
 
-### Andy 的看法
+#### Andy 的看法
 
 一方面，我很高兴现在有了一个标准来将数据库暴露给更多应用。但没人应该信任一个对数据库有不受限访问权限的应用，无论是通过 MCP 还是系统的常规 API。最佳实践仍然是只给账户最小权限。当无人监管的 Agent 可能在你的数据库里撒野时，限制账户权限尤为重要。这意味着给每个账户管理员权限、或所有服务使用同一账户这种偷懒做法，在 LLM 开始胡来时会翻车。当然，如果你的公司把数据库[敞开给全世界](https://www.theregister.com/2025/01/30/deepseek_database_left_open/)的同时还让[最富有公司的股价暴跌 6000 亿美元](https://www.theregister.com/2025/01/30/deepseek_database_left_open/)，那失控的 MCP 请求就不是你最大的问题了。
 
@@ -98,17 +92,15 @@ Anthropic 在 2024 年 11 月[宣布](https://www.theverge.com/2024/11/25/243057
 
 企业级 DBMS 已经有了开源系统所缺乏的自动化护栏和其他安全机制，因此它们更好地为 Agent 生态做好了准备。例如，[IBM Guardium](https://www.ibm.com/docs/en/gdp/12.x?topic=overview-guardium) 和 [Oracle Database Firewall](https://www.oracle.com/security/database-security/audit-vault-database-firewall/) 可以识别和阻止异常查询。我不是在为这些大科技公司打广告，我知道未来会有更多 Agent 毁掉生活的例子，比如[不小心删除数据库](https://twitter.com/emil_priver/status/1783399265366052877)。将 MCP 服务器与代理（如连接池）结合，是引入自动化保护机制的好机会。
 
----
-
-## MongoDB, Inc. 诉 FerretDB Inc.
+### MongoDB, Inc. 诉 FerretDB Inc.
 
 MongoDB 二十年来一直是 NoSQL 的中坚力量。FerretDB 由 Percona 高管于 2021 年创立，提供一个中间件代理，将 MongoDB 查询转换为 SQL 发送到 PostgreSQL 后端。这个代理让 MongoDB 应用无需重写查询就能切换到 PostgreSQL。
 
-他们共存了几年，直到 2023 年 MongoDB 向 FerretDB 发送了[律师函](https://blocksandfiles.com/wp-content/uploads/2025/04/Letter-from-MongoDB-to-FerretDB_3-Nov-2023-signed.pdf)，指控 FerretDB 侵犯了 MongoDB 的专利、版权和商标，并违反了 MongoDB 对其文档和线协议规范的许可。2025 年 5 月，MongoDB 对 FerretDB 提起联邦诉讼，这封信才公开。他们的主要争议之一是 FerretDB 对外声称拥有 MongoDB 的"[即插即用替代品](https://blog.ferretdb.io/ferretdb-1-0-ga-opensource-mongodb-alternative/#:~:text=drop%2Din%20replacement%20for%20MongoDB)"而没有获得授权。MongoDB 的[法庭文件](https://storage.courtlistener.com/recap/gov.uscourts.ded.89247/gov.uscourts.ded.89247.1.0.pdf)包含所有标准投诉：(1) 误导开发者，(2) 稀释商标，(3) 损害声誉。
+他们共存了几年，直到 2023 年 MongoDB 向 FerretDB 发送了律师函（原链接失效），指控 FerretDB 侵犯了 MongoDB 的专利、版权和商标，并违反了 MongoDB 对其文档和线协议规范的许可。2025 年 5 月，MongoDB 对 FerretDB 提起联邦诉讼，这封信才公开。他们的主要争议之一是 FerretDB 对外声称拥有 MongoDB 的"[即插即用替代品](https://blog.ferretdb.io/ferretdb-1-0-ga-opensource-mongodb-alternative/#:~:text=drop%2Din%20replacement%20for%20MongoDB)"而没有获得授权。MongoDB 的[法庭文件](https://storage.courtlistener.com/recap/gov.uscourts.ded.89247/gov.uscourts.ded.89247.1.0.pdf)包含所有标准投诉：(1) 误导开发者，(2) 稀释商标，(3) 损害声誉。
 
 故事因 Microsoft 宣布将其 MongoDB 兼容的 [DocumentDB](https://documentdb.io/) 捐赠给 [Linux Foundation](https://www.linuxfoundation.org/press/linux-foundation-welcomes-documentdb-to-advance-open-developer-first-nosql-innovation) 而更加复杂。项目网站提到 DocumentDB 与 MongoDB 驱动兼容，并旨在"[构建一个 MongoDB 兼容的开源文档数据库](https://documentdb.io/#:~:text=our%20mission%20is%20to%20build%20a%20MongoDB%20compatible%20open%20source%20document%20database)"。Amazon 和 Yugabyte 等其他主要数据库厂商也参与了该项目。粗略一看，这些措辞似乎与 MongoDB 指控 FerretDB 做的事情类似。
 
-### Andy 的看法
+#### Andy 的看法
 
 我找不到数据库公司因复制 API 而起诉另一家的先例。最接近的是 Oracle 起诉 Google 在 Android 中使用洁净室实现的 Java API。最高法院最终以合理使用为由[判决 Google 胜诉](https://en.wikipedia.org/wiki/Google_LLC_v._Oracle_America%2C_Inc.)，该案影响了重新实现在法律上的处理方式。
 
@@ -118,9 +110,7 @@ MongoDB 二十年来一直是 NoSQL 的中坚力量。FerretDB 由 Percona 高�
 
 最后，MongoDB 的法庭文件声称他们"……开创了'非关系型'数据库的发展"。这种说法是错误的。第一批通用 DBMS 就是非关系型的，因为关系模型当时还没被发明。General Electric 的 [Integrated Data Store](https://en.wikipedia.org/wiki/Integrated_Data_Store)（1964）使用[网状数据模型](https://en.wikipedia.org/wiki/Network_model)，IBM 的 [Information Management System](https://en.wikipedia.org/wiki/IBM_Information_Management_System)（1966）使用[层次数据模型](https://en.wikipedia.org/wiki/Hierarchical_database_model)。MongoDB 也不是第一个文档数据库。那个头衔属于 1980 年代末的面向对象数据库（如 [Versant](http://www.versant.com/products/versant-object-database)）或 2000 年代的 XML 数据库（如 [MarkLogic](https://www.progress.com/marklogic)）。当然，MongoDB 是这些方法中最成功的（除了可能是 IMS）。
 
----
-
-## 文件格式大战
+### 文件格式大战
 
 文件格式是数据系统中过去十年基本处于休眠状态的领域。2011 年，Meta 发布了用于 Hadoop 的列式存储格式 [RCFile](https://en.wikipedia.org/wiki/RCFile)。两年后，Meta 改进了 RCFile 并宣布了基于 PAX 的 [ORC](https://orc.apache.org/)（Optimized Record Columnar File）格式。ORC 发布一个月后，Twitter 和 Cloudera 发布了 [Parquet](https://parquet.apache.org/) 的第一个版本。近 15 年后，Parquet 是主导的开源文件格式。
 
@@ -142,7 +132,7 @@ MongoDB 二十年来一直是 NoSQL 的中坚力量。FerretDB 由 Percona 高�
 
 这场新竞争点燃了 Parquet 开发者社区[现代化其功能](https://docs.google.com/document/d/e/2PACX-1vSDHW7gvG8eO6aIxaIVPrZSqYYhtRDb5W1imnbpM4QRYNPsTwEO1fU5z7SEhVIFa4YqWJeSRJ9tcXYS/pub)的热情。可以看看 Parquet PMC 主席（[Julien Le Dem](http://julien.ledem.net/)）对列式文件格式现状的[深入技术分析](https://sympathetic.ink/2025/12/11/Column-Storage-for-the-AI-era.html)。
 
-### Andy 的看法
+#### Andy 的看法
 
 Parquet 的主要问题不在于格式本身，规范可以而且已经在演进。没人期望组织会重写 PB 级的遗留文件来更新到最新 Parquet 版本。问题在于有太多不同语言的读写库实现，每个都支持规范的不同子集。我们对野生 Parquet 文件的[分析](https://bsky.app/profile/andypavlo.bsky.social/post/3m256lckmec2z)发现，94% 的文件只使用了 2013 年 v1 的功能，尽管它们的创建时间戳在 2020 年之后。这种最低公分母意味着，如果有人使用 v2 功能创建 Parquet 文件，不清楚系统是否有正确的版本来读取它。
 
@@ -152,13 +142,11 @@ Parquet 的主要问题不在于格式本身，规范可以而且已经在演进
 
 当然，每当讨论这个话题时，总有人会发这张 [xkcd 竞争标准漫画](https://xkcd.com/927/)。我看过了，不用再发给我了。
 
----
-
-## 杂项动态
+### 杂项动态
 
 数据库是大生意。让我们逐一过一遍！
 
-### 收购
+#### 收购
 
 今年的并购很多。Pinecone 在 9 月[更换了 CEO](https://venturebeat.com/data-infrastructure/pinecone-founder-edo-liberty-appoints-googler-ash-as-ceo) 以[准备被收购](https://archive.is/N5h2a)，但之后我没听到任何消息。以下是已经完成的收购：
 
@@ -228,13 +216,13 @@ Parquet 的主要问题不在于格式本身，规范可以而且已经在演进
 **Kuzu → ???**
 : 来自 Waterloo 大学的嵌入式图数据库被一家未具名公司在 2025 年收购。KuzuDB 公司随后宣布放弃开源项目。[LadybugDB](https://ladybugdb.com/) 项目是维护 Kuzu 代码分叉的尝试。
 
-### 合并
+#### 合并
 
 2025 年 10 月，[Fivetran](https://www.fivetran.com/) 和 [dbt Labs](https://www.getdbt.com/) 宣布[合并](https://www.reuters.com/business/a16z-backed-data-firms-fivetran-dbt-labs-merge-all-stock-deal-2025-10-13)为一家公司，这是意想不到的消息。
 
 我能想到的数据库领域上一次合并是 2019 年 [Cloudera 和 Hortonworks 的合并](https://techcrunch.com/2018/10/03/cloudera-and-hortonworks-announce-5-2-billion-merger/)。但那笔交易就是[厨房里被掺了水的货](https://youtu.be/9qkOyiWJIXI)：两家在 Hadoop 市场挣扎求存的公司合并成一家来寻找市场定位（剧透：他们没找到）。2022 年 MariaDB Corporation 通过 [SPAC](https://en.wikipedia.org/wiki/Special-purpose_acquisition_company) 与 [Angel Pond Holdings Corporation](https://mariadb.com/newsroom/press-releases/mariadb-completes-merger-and-lands-on-nyse-as-mrdb/) 的合并在技术上也算，但那笔交易是为了让 MariaDB 走后门上市。而且[投资者](https://www.bizjournals.com/sanjose/news/2022/12/19/mariadb-goes-public-in-spac-merger.html)的结局并不好。Fivetran + dbt 合并不同（也更好），他们是两家互补的技术公司合并成为 ETL 巨头，为不久的将来正式 IPO 做准备。
 
-### 融资
+#### 融资
 
 除非我漏掉了或者没有公布，今年数据库初创公司的早期融资轮次没有那么多。向量数据库的热度已经消退，VC 只给 LLM 公司开支票。
 
@@ -253,7 +241,7 @@ Parquet 的主要问题不在于格式本身，规范可以而且已经在演进
 * **SereneDB** - [210 万美元 Pre-Seed](https://tech.eu/2025/12/03/serenedb-lands-21m-to-fuse-search-analytics-and-postgres-into-one-engine/)
 * **Starburst** - [金额未公布](https://www.prnewswire.com/news-releases/starburst-announces-strategic-investment-from-citi-302456950.html)
 
-### 改名
+#### 改名
 
 我年度总结中的新类别：数据库公司改名。
 
@@ -266,7 +254,7 @@ Parquet 的主要问题不在于格式本身，规范可以而且已经在演进
 **Timescale → TigerData**
 : 这是数据库公司将自己重命名以区别于其主要数据库产品的罕见案例。通常是公司把自己重命名为数据库的名字（如"Relational Software, Inc."改为"Oracle Systems Corporation"，"10gen, Inc."改为"MongoDB, Inc."）。但对公司来说，试图摆脱被视为专业时序数据库的印象，转而被看作通用应用的增强版 PostgreSQL 是有意义的，因为后者的市场规模要大得多。
 
-### 死亡
+#### 死亡
 
 完全披露：我曾是其中两家失败创业公司的技术顾问。到目前为止，我作为顾问的成功率很糟糕。我也是 [Splice Machine](https://dbdb.io/db/splice-machine) 的顾问，但他们 2021 年就关门了。在我辩护一下：我只和这些公司讨论技术想法，不是商业策略。我确实告诉过 Fauna 他们应该添加 SQL 支持，但他们没采纳我的建议。
 
@@ -290,7 +278,7 @@ Parquet 的主要问题不在于格式本身，规范可以而且已经在演进
 
 最后，虽然不是商业公司，但我不得不提一下 [IBM Research Almaden](https://en.wikipedia.org/wiki/IBM_Research#Almaden_in_Silicon_Valley) 的[关闭](https://www.siliconvalley.com/2025/07/10/ibm-san-jose-tech-data-ai-internet-property-real-estate-economy-web/)。IBM 于 1986 年建造了这个园区，几十年来一直是数据库研究的圣地。我 [2013 年在 Almaden 面试](https://twitter.com/andy_pavlo/status/306455280823177216)时，发现那里的风景很美。IBM Research 数据库组已不是[当年的样子](https://dl.acm.org/doi/10.1145/126482.126493)了。但这片神圣的数据库土地的校友名单令人印象深刻：[Rakesh Agrawal](https://en.wikipedia.org/wiki/Rakesh_Agrawal_(computer_scientist))、[Donald Chamberlin](https://en.wikipedia.org/wiki/Donald_D._Chamberlin)、[Ronald Fagin](https://en.wikipedia.org/wiki/Ronald_Fagin)、[Laura Haas](https://en.wikipedia.org/wiki/Laura_M._Haas)、[Mohan](https://en.wikipedia.org/wiki/C._Mohan)、[Pat Selinger](https://en.wikipedia.org/wiki/Patricia_Selinger)、[Moshe Vardi](https://en.wikipedia.org/wiki/Moshe_Vardi)、[Jennifer Widom](https://en.wikipedia.org/wiki/Jennifer_Widom) 和 [Guy Lohman](https://scholar.google.com/citations?user=wUkamYwAAAAJ&hl=en)。
 
-### Andy 的看法
+#### Andy 的看法
 
 有人[声称](https://news.ycombinator.com/item?id=42571405)我根据支持公司筹集的资金多少来判断数据库的质量。这显然不对。我追踪这些动态是因为数据库研究领域竞争激烈、能量充沛。我不仅要与其他大学的学者"竞争"，大科技公司和小型创业公司也在推出我需要关注的有趣系统。除了 Microsoft Research 仍在积极招聘顶尖人才并做出令人难以置信的工作外，行业研究实验室已不是当年的样子了。
 
@@ -302,21 +290,19 @@ Voltron 的死亡和 HEAVY 的类似收购整合似乎延续了 GPU 加速数据
 
 最后，向 [Nikita Shamgunov](https://www.linkedin.com/in/nikitashamgunov) 致敬。据我所知，他是唯一一个联合创立的两家数据库公司（[SingleStore](https://hackernoon.com/founder-interviews-nikita-shamgunov-of-memsql-8a9ca8d33552) 和 [Neon](https://www.madrona.com/building-a-modern-database-neon-nikita-shamgunov-serverless-postgres/)）都在同一年被收购的人。就像 DMX（RIP）在同一年发行了两张冠军专辑（[It's Dark and Hell Is Hot](https://en.wikipedia.org/wiki/It%27s_Dark_and_Hell_Is_Hot)、[Flesh of My Flesh](https://en.wikipedia.org/wiki/Flesh_of_My_Flesh,_Blood_of_My_Blood)）一样，我认为短期内不会有人打破 Nikita 的记录。
 
----
-
-## 巅峰男性的极致表现
+### 巅峰男性的极致表现
 
 对数据库界 OG（元老）Larry Ellison 来说，这是辉煌的一年。这位 81 岁的老人在一年内取得的成就比大多数人一辈子都多。我按时间顺序一一道来。
 
 Larry 年初时是全球第三富有的人。比 Mark Zuckerberg 身价低这件事让他夜不能寐。有人说 Larry 失眠是因为他[买了一家著名的英国酒吧](https://www.bbc.com/news/uk-england-oxfordshire-67221202)后改变了饮食，吃了更多的派。但我向你保证，Larry 30 年来的"[素食海鲜](https://tech.yahoo.com/science/articles/80-old-billionaire-larry-ellison-105236014.html)"饮食没有改变。然后在 2025 年 4 月，消息传来：Larry 成为了[全球第二富有的人](https://www.msn.com/en-in/autos/photos/larry-ellison-becomes-second-richest-person-beats-zuckerberg-bezos-after-oracle-stock-soars/ar-AA1GKdbu)。他睡得好了一点，但还是不够。他生活中还有很多事让他压力很大。比如，Larry 终于决定出售他那辆稀有的、半合法上路的 [McLaren F1 超级跑车](https://www.forbes.com/sites/maryroeloffs/2025/08/05/larry-ellisons-old-mclaren-f1-could-break-a-sales-record/)，附带手套箱里的原始车主手册。
 
-2025 年 7 月，Larry 发布了他 13 年来的[第三条推文](https://twitter.com/larryellison/status/1945229587929337947)（Larry 爱好者如我称之为"#3"）。这是关于 Larry 在牛津大学附近建立的 [Ellison Institute of Technology](https://eit.org/)（EIT）的更新。从名字 EIT 及其与牛津的关联来看，它听起来像是一个纯粹的研究性非营利机构，类似于斯坦福的 [SRI](https://en.wikipedia.org/wiki/SRI_International) 或 CMU 的 [SEI](https://en.wikipedia.org/wiki/Software_Engineering_Institute)。但事实证明，它是一系列由加州有限责任公司持有的营利性公司的伞形组织。当然，一群怪人回复 #3，承诺[区块链驱动的冷冻保存](https://twitter.com/SFCryptoRounder/status/1946047224779030564)或[室温超导体](https://twitter.com/JackSarfatti/status/1975985052204101709)。Larry 告诉我他忽略那些。还有像[这位仁兄](https://twitter.com/aseemchandra/status/1945509650201301304)才是懂的。
+2025 年 7 月，Larry 发布了他 13 年来的第三条推文（原链接失效）（Larry 爱好者如我称之为"#3"）。这是关于 Larry 在牛津大学附近建立的 [Ellison Institute of Technology](https://eit.org/)（EIT）的更新。从名字 EIT 及其与牛津的关联来看，它听起来像是一个纯粹的研究性非营利机构，类似于斯坦福的 [SRI](https://en.wikipedia.org/wiki/SRI_International) 或 CMU 的 [SEI](https://en.wikipedia.org/wiki/Software_Engineering_Institute)。但事实证明，它是一系列由加州有限责任公司持有的营利性公司的伞形组织。当然，一群怪人回复 #3，承诺[区块链驱动的冷冻保存](https://twitter.com/SFCryptoRounder/status/1946047224779030564)或[室温超导体](https://twitter.com/JackSarfatti/status/1975985052204101709)。Larry 告诉我他忽略那些。还有像[这位仁兄](https://twitter.com/aseemchandra/status/1945509650201301304)才是懂的。
 
 年度（可能是世纪）最大的数据库新闻在 2025 年 9 月 10 日星期三下午约 3:00（美东时间）降临。在等待了几十年之后，Larry Joseph Ellison 终于加冕为[全球首富](https://www.theguardian.com/technology/2025/sep/10/larry-ellison-dislodges-elon-musk-as-worlds-richest-person)。[$ORCL](https://finance.yahoo.com/quote/ORCL/) 当天上午股价上涨 40%，由于 Larry 仍持有公司 40% 的股份，他的估计总身价达到 [3930 亿美元](https://www.bbc.com/news/articles/cx2rp992y88o)。从这个角度来看，这不仅使他成为世界上最富有的人，也是人类历史上最富有的人。[John D. Rockefeller](https://en.wikipedia.org/wiki/John_D._Rockefeller) 和 [Andrew Carnegie](https://en.wikipedia.org/wiki/Andrew_Carnegie)（是的，CMU 的那个"C"）经通胀调整后的峰值净资产分别只有 [3400 亿美元](https://www.buysidedigest.com/insights/the-top-10-wealthiest-historical-figures-adjusted-for-inflation/)和 [3100 亿美元](https://www.celebritynetworth.com/richest-businessmen/richest-billionaires/andrew-carnegie-net-worth/)。
 
 在 Larry 登顶世界之巅的同时，Oracle 还参与了[收购控制 TikTok 的美国公司](https://www.npr.org/2025/12/18/nx-s1-5648844/tiktok-deal-oracle-trump)的交易，Larry 还[资助 Paramount](https://variety.com/2025/tv/news/paramount-skydance-larry-ellison-irrevocable-personal-guarantee-warner-bros-discovery-1236614728/)（由他第四次婚姻的儿子控制）竞标[收购华纳兄弟](https://www.nytimes.com/2025/12/24/business/media/larry-david-ellison-warner-bros-discovery-cbs.html)。美国总统甚至敦促 Larry [控制 CNN 新闻部门](https://www.theguardian.com/us-news/2025/nov/20/warner-bros-discovery-takeover-paramount-skydance-larry-ellison)，因为 Larry 是 Paramount 的大股东。
 
-### Andy 的看法
+#### Andy 的看法
 
 我都不知道从哪里开始。当然，当我得知 Larry Ellison 成为世界首富，而且全靠数据库，我[深受鼓舞](https://twitter.com/andy_pavlo/status/1965865919223312495)，终于有好事发生在我们生活中了。我不在乎 Oracle 的股票是被[大肆宣传的 AI 数据中心交易](https://www.investors.com/news/technology/oracle-stock-orcl-ai-analyst-targets/)而不是传统软件业务人为抬高的。我不在乎他在两个月内[个人损失了 1300 亿美元](https://www.bloomberg.com/news/articles/2025-11-21/oracle-slump-sends-ellison-sliding-down-ranks-of-world-s-richest)后排名下滑。这就像你我[把一个月工资全砸在 FortuneCoins 上](https://www.reddit.com/r/gambling/comments/1j4xby2/blew_my_whole_paycheck/)。有点疼，我们不得不吃两周混着从 Taco Bell 顺来的过期辣酱包的米饭和豆子，但我们会没事的。
 
@@ -324,9 +310,7 @@ Larry 年初时是全球第三富有的人。比 Mark Zuckerberg 身价低这件
 
 事实是，Larry Ellison 已经征服了企业数据库世界、[竞技帆船](https://sg.finance.yahoo.com/news/why-oracle-founder-larry-ellison-205016907.html)和[科技兄弟养生水疗](https://www.businessinsider.com/larry-ellison-hawaii-wellness-spa-sensei-lanai-photos-2021-2)。显而易见的下一步是接管一个每天有成千上万人在机场等候时观看的有线电视频道。每次我和 Larry 交流，他都明确表示他一点也不在乎别人怎么说或怎么想他。他知道他的[粉丝爱他](https://twitter.com/HolgersenTobias/status/1945239198572712323)。他（新）妻子爱他。归根结底，这才是最重要的。
 
----
-
-## 结语
+### 结语
 
 在结束之前，我想简单致敬几位。首先是 PT，在监狱里用 Turso [保持数据库技术的精进](https://turso.tech/blog/working-on-databases-from-prison)（出来再见）。向 JT 表示慰问，因为私藏 [KevoDB](https://github.com/KevoDB/kevo) 数据库小三而[丢了工作](https://twitter.com/canoozie/status/1952305339824574576)。我和我的博士生们也有一个新的[创业公司](https://sydht.ai/)。希望很快能分享更多。一言为定。
 
@@ -334,9 +318,7 @@ Larry 年初时是全球第三富有的人。比 Mark Zuckerberg 身价低这件
 
 *原文链接：https://www.cs.cmu.edu/~pavlo/blog/2026/01/2025-databases-retrospective.html*
 
---------
-
-## 老冯评论
+### 老冯评论
 
 Andy Pavlo 这篇年终总结写得确实精彩，嘻哈梗玩得飞起，
 这篇文章是 2025 年数据库领域最好的年终总结，没有之一。
@@ -344,7 +326,7 @@ Andy Pavlo 这篇年终总结写得确实精彩，嘻哈梗玩得飞起，
 
 作为一个在战壕里的前沿创业者，老冯也从不同的角度来聊聊两个主要问题。
 
-### 一、PostgreSQL 赢了，然后呢？
+#### 一、PostgreSQL 赢了，然后呢？
 
 早在从十年前，老冯就坚定的相信 PostgreSQL 一定会赢，但那时候这么说，也就自说自话罢了，应者寥寥。
 到两年前，老冯写了《PostgreSQL 正在吞噬数据库世界》，在 HackerNews 上火了，点燃了 PG 社区的激情。一些观点成为了社区的共识。
@@ -364,7 +346,7 @@ PostgreSQL 生态里需要一个真正体现自由软件精神的发行版立起
 不是又一个 DBaaS，不是又一个被 VC 催着变现的创业公司，而是一个像 Debian 之于 Linux 那样的存在——坚持开放、坚持可自托管、坚持用户对自己数据的完全掌控权。
 当所有人都被云厂商赶进围墙花园的时候，这样的项目就是那扇还没上锁的门。而老冯的 Pigsty，要做的就是这样的事情。
 
-### 二、分布式的 PG 是伪需求吗？
+#### 二、分布式的 PG 是伪需求吗？
 
 Andy 花了不少笔墨写 Multigres 和 Neki 的对决，但他没有触及一个更根本的问题：为什么之前所有的分布式 PostgreSQL 尝试都 “失败了”？
 

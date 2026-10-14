@@ -8,14 +8,11 @@ series: ["Homegrown"]
 series_weight: 3
 tags: [Domestic Database, Database, Commentary]
 ---
-
 > [WeChat](https://mp.weixin.qq.com/s/vh1JE_BdaLetWtt5vvPDDw) | [Zhihu](https://zhuanlan.zhihu.com/p/664816961)
 
 If "[cloud databases](/cloud/rds/)" can be considered passable products with slightly underwhelming cost ROI, then many "domestic databases" are simply shoddy, inferior products that can't be helped. Xinchuang OS/databases are essentially **IT pre-made meals in schools**. Users hold their noses while migrating, developers pretend to work hard, and everyone plays along with leaders who neither understand nor care about technology. Massive human and financial resources are squandered on worthless endeavors, wasting real opportunities. The [infrastructure software](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486061&idx=1&sn=a1452dfa864f702d40bf612839a4e9e4&chksm=fe4b3fb6c93cb6a0aa5aef59d4381c49354ee0f741dd7e92c91549864ac58597f93a6ab886ed&scene=21#wechat_redirect) industry isn't being strangled by anyone - the real chokehold comes from the so-called "insiders."
 
 [![featured.jpg](featured.jpg)](https://mp.weixin.qq.com/s/vh1JE_BdaLetWtt5vvPDDw)
-
-------
 
 ## Monopolistic Relationship Business
 
@@ -33,8 +30,6 @@ Open-source community-led projects have become deeply globalized. It's nearly im
 
 Such companies probably dream of national technological blockades: **doors can only be firmly shut when closed from both sides**. Once the doors are tightly shut, **whoever controls the technical IV drip controls the profit source**: those "domestic software" companies that master **exclusive wall-jumping privileges** only need to periodically collect breadcrumbs from the global open-source ecosystem and translate them in. Starving domestic users will then be grateful and cry out about "leading the world."
 
-------
-
 ## Who Gets Hurt?
 
 **Users are the most hurt**: their business systems were running fine, then suddenly they're required to "upgrade and transform." If it were positive transformation, there'd at least be some value, but what's being used to replace existing systems are all sorts of monsters and demons. If it were just pure open-source re-skinning, that would be one thing - buying some service support would still have value. The most outrageous are those who make self-righteous "optimizations" - castrated modification versions. Precious time that could be spent on more valuable things is now wasted on cutting feet to fit shoes, drinking watered-down beer, and being guinea pigs stepping on landmines.
@@ -49,8 +44,6 @@ Not to mention compared to open source, even Oracle is still a Paper License wit
 
 > "[What Kind of Autonomous Control Do Infrastructure Software Need?](/db/sovereign-dbos)"
 
-------
-
 ## Bad Money Drives Out Good
 
 In CSDN's recent developer survey, 70% of respondents held negative impressions of "domestic databases": "**technically backward**", "**lacking innovation**" - this is a relatively mild way of putting it. Users' true inner evaluations are probably more direct: **false advertising, grandiose claims, backward productivity**. Why do domestic databases have such poor reputations? Is it because software engineers aren't patriotic?
@@ -62,8 +55,6 @@ According to statistics from CAICT and MoTianLun, there are now over 260 "domest
 Truly self-developed databases show polarization: the very few products with genuine innovation contributions and usage value cherish their reputation and won't deliberately flaunt being "domestic." Most of the rest are often closed-door, technically backward homebrew databases, or inferior wheels from early open-source forks with negative castration. **There are indeed good companies doing solid work in domestic databases, but the "domestic" label has been polluted by a large number of mediocre and inferior products that have drilled into the database field**.
 
 Even more heartbreaking is bad money driving out good money. The already scarce database R&D talent, squandered this way, will truly strangle the neck of the domestic database industry. Especially in the core OLTP/relational database field - due to the existence of open source, there's no shortage of sufficiently good kernels. Being able to use PostgreSQL/MySQL well and provide service support is far more valuable than the self-deceptive grand kernel smelting.
-
-------
 
 ## Where Will the Way Out Be?
 
@@ -79,8 +70,6 @@ Focusing on these two directions can generate real incremental user value, stand
 
 If China wants to build its own world system and become a responsible major power, it should have global vision and carry the flag of the open-source movement: demonstrating the superiority of socialist public ownership in software information internet fields, **actively sponsoring, participating in, and leading global open-source software development, deeply participating in global software supply chains, and improving discourse power in global communities**. Closing doors behind open-source communities to pick up breadcrumbs, constantly doing re-skinning and shell-swapping modifications, creating software forks without usage value not only suppresses real technical innovation potential but also invites ridicule/self-isolation from global software supply chains, lowering one's own competitiveness. This must be carefully observed.
 
----------
-
 ## Lao Feng's Commentary
 
 How can IT follower countries ensure autonomous control of software systems? [Switzerland's government passing open-source legislation](https://mp.weixin.qq.com/s/2fwQi0pf34sCnUzix2_ouw) walks at the forefront of the times, setting an example for other countries. It mentions that the US government's acceptance of open source (relative to Europe) is low because America has countless commercial software and cloud computing service companies - it's the IT world's hegemon, innovation source, and first mover.
@@ -93,19 +82,13 @@ European countries have always walked at the forefront of this. Even semi-Europe
 Some people have carefully woven a massive lie - "[**strangling**](/db/db-choke/)" to deceive the motherland, distorting the country's real need for software "[autonomous control](/db/sovereign-dbos/)" into the pseudo-need of "domestication" for private gain.
 Even worse are those using unlimited nationalist marketing to seek unfair competitive advantages, polluting open-source software ecosystems through low-level repetitive construction and malicious hard-forking communities, creating division and decoupling to monopolize technical discourse power by isolating the software industry from the world - this poison will harm for unknown years.
 
-------
-
 General Secretary pointed out at the 11th collective study session of the 20th Central Political Bureau: "**Developing new quality productive forces is an inherent requirement and important focus for promoting high-quality development**". So what are new quality productive forces? In the infrastructure software field, open source is new quality productive forces, while "domesticated software" that re-skins and modifies open source, [this path won't lead to the world's forefront](/db/db-china/).
 
 Abandoning the delusional requirement of "not changing a single line of code" in applications, open-source database kernels like PostgreSQL can replace Oracle long ago. Many domestic databases wearing PG's skin, under the banner of solving "Oracle" strangling, rush to do so-called "Oracle compatibility," but [completely miss the frontier development directions in the database field](https://mp.weixin.qq.com/s/79_PnX-a5iSfDMgz_VUx5A) - cloud vendors like AWS take open-source PostgreSQL/MySQL kernels with their own [RDS management](/cloud/dba-vs-rds) and dominate, punching Oracle, kicking SQL Server, already becoming the database market leader.
 
-------
-
 High-tech industries must rely on technological innovation. If you can use open-source PG to replace Oracle, so can others - the best outcome is nothing more than Oracle abandoning traditional databases to transform into cloud services, with traditional databases becoming low-profit manufacturing. Just like twenty years of PC industry. Twenty years ago, IBM, Dell, and HP were international players, and China's Lenovo said it wanted to become world-class. Today, Lenovo indeed achieved this, but the PC industry long ceased being high-tech - it's just the most boring ordinary manufacturing.
 
 Even seemingly most capable [truly self-developed domestic distributed databases](/db/distributive-bullshit) like OB and Ti, the best ending they can expect is becoming the Changhong of the database industry, earning five points of profit. Then being ridden and ground into the ground by cloud vendor RDS and local-first RDS using open-source PostgreSQL kernels, along with the Oracle they obsess about replacing - just like IBM IMS twenty years ago, flushed into history's toilet.
-
---------
 
 ## Further Reading
 

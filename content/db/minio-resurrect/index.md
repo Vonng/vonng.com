@@ -6,13 +6,10 @@ summary: >
   MinIO 仓库正式归档并彻底放弃维护，开源对象存储用户将何去何从？AI Agent 如何助力 MinIO 起死回生？
 tags: [对象存储, 开源]
 ---
-
 MinIO 开源仓库正式归档，不再维护。一个时代落幕，但开源的精神不死。
 老冯 Fork 了 MinIO，复活了管理控制台，重建了二进制分发渠道，让 MinIO 浴火重生。
 
 如果你正在用 MinIO，把 `minio/minio` 换成 `pgsty/minio` ，其他一切照旧。
-
-------
 
 ## MinIO 的死亡证明
 
@@ -50,8 +47,6 @@ Percona 创始人 Peter Zaitsev 也在 LinkedIn 上表达了对开源基础设�
 一家融了1.26亿美元、估值十亿美金的公司，花了五年时间，亲手把自己建立的开源生态一砖一瓦地拆干净。
 
 这比跑路还让人难受 —— 因为跑路至少是一次性的，MinIO 选择了凌迟。
-
-------
 
 ## 但开源不死
 
@@ -93,8 +88,6 @@ MinIO 公司可以归档一个仓库，但它归档不了 [AGPL](https://github.
 [![releases.webp](releases.webp)](https://github.com/pgsty/minio/releases/tag/RELEASE.2025-12-03T12-00-00Z)
 
 > [pgsty/minio RELEASE.2025-12-03T12-00-00Z](https://github.com/pgsty/minio/releases/tag/RELEASE.2025-12-03T12-00-00Z)
-
-------
 
 ## 我们做了什么
 
@@ -158,8 +151,6 @@ MinIO 的官方文档同样面临风险 —— 原本的链接已指向它们的
 
 ![doc.webp](doc.webp)
 
-------
-
 ## 我们的承诺与原则
 
 一些话需要提前说清楚，免得产生误解。
@@ -219,8 +210,6 @@ AGPLv3 虽然允许我们合法 Fork 和分发，但商标法是另一个领域�
 
 **老冯行，老冯自己就上了。**
 
-------
-
 ## Just Fork it!
 
 MinIO 公司可以归档一个 GitHub 仓库，但它归档不了六万颗 Star 背后的需求，
@@ -233,8 +222,6 @@ MinIO 的情况其实更有利 —— AGPL 比 BSL 更友好，社区 Fork 没�
 `git clone` 是开源世界最强大的魔法。当一个公司决定关门的时候，社区只需要两个字：
 
 **Fork it.**
-
--------
 
 ## 参考阅读
 

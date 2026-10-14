@@ -7,7 +7,6 @@ summary: >
   MongoDB has a terrible track record on integrity, lackluster products and technology, gets beaten by PG in correctness, performance, and functionality, with collapsing developer reputation, declining popularity, stock price halving, and expanding losses. Provocative marketing against PG can't save it with "good marketing."
 tags: [MongoDB, PostgreSQL, Database, PG Ecosystem]
 ---
-
 These past few days, MongoDB's marketing stunts have been dazzling: "[MongoDB Declares War on PostgreSQL](https://mp.weixin.qq.com/s/ypV31fanKB6ZsFzuRYTwmQ)", "[MongoDB Defeats PostgreSQL to Win $30 Billion Project](https://mp.weixin.qq.com/s/SJw6S6k82bxOq1pWP3kDfw)", and the original article from The Register "[MongoDB Prepares to Pummel PostgreSQL After Beating Strong Opponent](https://www.theregister.com/2024/08/30/mongodb_postgresql/)", presenting a stance of wanting to beat the old master with wild punches.
 
 ![300b.jpg](300b.jpg)
@@ -22,33 +21,29 @@ Currently, MongoDB is lackluster in products and technology; gets crushed by Pos
 
 However, integrity is the foundation of business, "good marketing can't save a rotten mango," and marketing built on lies and deception won't end well. Today I'll show everyone what rotten cotton is stuffed inside MongoDB's marketing silk brocade cover.
 
----------
-
 ## Bad Product Rises Through Marketing
 
 Turing Award winner, database grandmaster Stonebraker made a brilliant assessment in his famous paper "[What goes around comes around... And Around](https://db.cs.cmu.edu/papers/2024/whatgoesaround-sigmodrec2024.pdf)" published at SIGMOD 2024: "Never underestimate the impact of good marketing on **bad products** - **like MySQL and MongoDB**."
 
-![](stonebraker.png)
+![MongoDB Has No Future: Good Marketing Can't Save a Rotten Mango — Bad Product Rises Through Marketing (figure 2)](stonebraker.png)
 
 There are many bad databases in this world - but those that can successfully blow bad products into treasures and sell them with silver tongues, MongoDB claims first place, and MySQL would only admit to second place.
 
 Among all the stories about MongoDB's great deceptions, the most memorable is this LinkedIn post "[MongoDB 3.2 - Now Powered by PostgreSQL](https://mp.weixin.qq.com/s/e3_32Neoy5RVRBSozsa_7A)".
 The brilliance of this article lies in it being a bloody accusation from a MongoDB partner: MongoDB ignored their partner's loyal advice, took a PostgreSQL and disguised it as their own analytics engine, then deceived users at the launch event.
 
-![](mongo-powered-by-pg.webp)
+![MongoDB Has No Future: Good Marketing Can't Save a Rotten Mango — Bad Product Rises Through Marketing (figure 3)](mongo-powered-by-pg.webp)
 
 As a MongoDB partner in the analytics field, the author was completely disheartened and publicly wrote an accusation - "*MongoDB's analytics engine is a PostgreSQL, so you might as well just use PostgreSQL directly*."
 
 Such cases of deliberate fraud and deception are far from isolated. MongoDB also has many records of disparaging competing products to elevate itself. For example, in the official website article "[Migrating from PostgreSQL to MongoDB](https://www.mongodb.com/resources/compare/mongodb-postgresql/dsl-migrating-postgres-to-mongodb)", MongoDB claims to be a "**scalable, flexible, next-generation modern general-purpose database**",
 while PostgreSQL is a "**complex and error-prone legacy monolithic relational database**". This completely ignores the fact that it's actually beaten by PostgreSQL in overall performance, functionality, correctness, and even its own touted big data throughput and scalability.
 
------------
-
 ## Functionality Covered by PostgreSQL
 
 JSON documents are indeed a feature beloved by internet application developers. However, databases providing this capability aren't limited to MongoDB. PostgreSQL provided SOTA-level JSON support ten years ago and continues to evolve and improve.
 
-![](pg-jsonb.png)
+![MongoDB Has No Future: Good Marketing Can't Save a Rotten Mango — Functionality Covered by PostgreSQL (figure 4)](pg-jsonb.png)
 
 PostgreSQL's JSON support is the most mature and earliest among all relational databases (2012-2014), predating the SQL/JSON standard or directly influencing the establishment of the SQL/JSON standard (2016).
 More importantly, its document feature implementation quality is high. In comparison - MySQL, which also claims to support JSON in marketing, is actually a crude BLOB skin change, [comparable to the 9.0 vector type](https://mp.weixin.qq.com/s/JgGCn9o2-DNPNqazPZXTtA).
@@ -71,15 +66,13 @@ In terms of usability, major cloud vendors all offer ready-to-use PG RDS service
 
 Furthermore, compared to MongoDB's SSPL license (no longer an open source license), PostgreSQL's BSD-like open source license is obviously much friendlier. PG can provide better superior functional replacement without software licensing fees - Do more pay less! Hard not to win.
 
------------
-
 ## Crushed in Correctness and Performance
 
 For databases, **correctness is paramount** - the neutral distributed transaction testing framework JEPSEN evaluated MongoDB's correctness: the results can be described as "**a complete mess**" (BTW: another troubled brother is [**MySQL**](/db/bad-mysql)).
 
 Of course, MongoDB's strength is shameless "deception." Despite JEPSEN raising so many issues, on MongoDB's official website, their introduction to Jespen's evaluation goes: "*So far, causal consistency has generally been limited to research projects... MongoDB is one of the first commercial databases we know of to provide an implementation*"
 
-![](jepsen-mongo.webp)
+![MongoDB Has No Future: Good Marketing Can't Save a Rotten Mango — Crushed in Correctness and Performance (figure 6)](jepsen-mongo.webp)
 
 This example once again demonstrates MongoDB's marketing shamelessness - using extremely refined language arts, carefully selecting an undigested peanut from a pile of bullshit, while glossing over various fatal flaws in correctness/consistency.
 
@@ -95,15 +88,13 @@ This discussion piqued my interest. Are these propositions valid? So I did some 
 
 A [PG vs Mongo performance comparison evaluation report](https://info.enterprisedb.com/rs/069-ALB-339/images/PostgreSQL_MongoDB_Benchmark-WhitepaperFinal.pdf) from ONGRES and EDB detailed the performance comparison between the two in OLTP/OLAP, with clear results.
 
-![](mongo-pg-bench.png)
+![MongoDB Has No Future: Good Marketing Can't Save a Rotten Mango — Crushed in Correctness and Performance (figure 7)](mongo-pg-bench.png)
 
 Another more recent [performance comparison](https://medium.com/@yurexus/can-postgresql-with-its-jsonb-column-type-replace-mongodb-30dc7feffaf3) focused on testing performance under JSONB/GIN indexes, concluding: PostgreSQL JSONB columns are MongoDB replacements.
 
 Currently, [**single-machine PostgreSQL performance**](/pg/pg-performence/) can easily scale to tens of TB to hundreds of TB, supporting hundreds of thousands of point write QPS and millions of point query QPS. Using only PostgreSQL to support business to millions of daily active users / millions in revenue or even direct IPO is no problem.
 
 Honestly, MongoDB's performance is completely outdated, and its proud "built-in sharding" scalability appears meaningless in the current era of [**rapid software architecture and performance advancement**](/pg/pg-scalability) and [**hardware following Moore's Law exponential development**](/cloud/bonus/).
-
---------
 
 ## Declining Popularity and Heat
 
@@ -120,13 +111,11 @@ In StackOverflow's annual global developer survey, it provides migration relatio
 MongoDB and MySQL are typical "beginner-oriented" databases that made many unprincipled compromising designs to please novices - from statistics, it's clear their usage rates are higher among beginners than among professional developers.
 The opposite is PostgreSQL, which has much higher usage among professional developers than among beginners.
 
-![](transition.png)
+![MongoDB Has No Future: Good Marketing Can't Save a Rotten Mango — Declining Popularity and Heat (figure 10)](transition.png)
 
 Every developer goes through a beginner state. I initially started dealing with databases through MySQL/Mongo, but many people stop there, while ambitious engineers continuously learn and improve, enhancing their taste and technical discrimination, using better and more powerful technologies to update their arsenal.
 
 The trend is: more and more users are migrating from MongoDB and MySQL to the superior replacement PostgreSQL during their improvement process. This has created the new generation of the world's most popular database - PostgreSQL.
-
---------
 
 ## Reputation Already Stinks
 
@@ -139,29 +128,23 @@ During this process, I also deeply studied MongoDB's query language and translat
 Overall, during this deep usage and migration process, I was very disappointed with MongoDB, feeling my time was wasted on meaningless things.
 Of course, I later discovered I wasn't the only one with this feeling. On HN and Reddit, there are countless mockeries and complaints about MongoDB:
 
-- [Goodbye MongoDB. Hello PostgreSQL](http://developer.olery.com/blog/goodbye-mongodb-hello-postgresql/)
+- Goodbye MongoDB. Hello PostgreSQL (original link unavailable)
 - [Postgres outperforms MongoDB and ushers new developer reality](http://www.enterprisedb.com/postgres-plus-edb-blog/marc-linster/postgres-outperforms-mongodb-and-ushers-new-developer-reality)
 - [MongoDB is dead. Long live PostgreSQL :)](https://github.com/errbit/errbit/issues/614)
 - [Why you should never use MongoDB](http://www.sarahmei.com/blog/2013/11/11/why-you-should-never-use-mongodb/)
 - [SQL vs NoSQL Duel. Postgres vs Mongo](https://www.airpair.com/postgresql/posts/sql-vs-nosql-ko-postgres-vs-mongo)
-- [Why I migrated away from MongoDB](http://svs.io/post/31724990463/why-i-migrated-away-from-mongodb)
+- Why I migrated away from MongoDB (original link unavailable)
 - [Why you should never ever ever use MongoDB](http://cryto.net/~joepie91/blog/2015/07/19/why-you-should-never-ever-ever-use-mongodb/)
-- [Is Postgres NoSQL database better than MongoDB?](http://www.aptuz.com/blog/is-postgres-nosql-database-better-than-mongodb/)
+- Is Postgres NoSQL database better than MongoDB? (original link unavailable)
 - [Goodbye MongoDB. Hello PostgreSQL](https://www.userlike.com/en/blog/2015/10/09/bye-by-mysql-and-mongodb-guten-tag-postgresql)
-
---------
 
 **About this "MongoDB Challenges PG" news, HN comments are like this:**
 
 ![hackernews.webp](hackernews.webp)
 
---------
-
 **About MongoDB, Reddit comments are like this:**
 
 ![reddit-comment.png](reddit-comment.png)
-
---------
 
 **Developers specifically taking time to write articles criticizing it, MongoDB's malicious marketing deserves credit:**
 
@@ -172,8 +155,6 @@ Of course, I later discovered I wasn't the only one with this feeling. On HN and
 Partners [breaking into curses and whistleblowing](https://mp.weixin.qq.com/s/e3_32Neoy5RVRBSozsa_7A), I think MongoDB is unique:
 
 ![shotgun.webp](shotgun.webp)
-
---------
 
 ## MongoDB Has No Future
 

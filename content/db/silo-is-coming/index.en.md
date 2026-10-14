@@ -6,7 +6,6 @@ summary: >
   On September 11, MinIO deleted the minio/minio and minio/mc repositories from Docker Hub outright, finishing its walk out the door. Over the past month or so I put two mutually adversarial AI agents to work on Silo, the MinIO community fork I maintain, and ran a full cleanup: four releases, 210 commits, 8 CVEs, plus compatibility hardening and a zero-cost migration path. One person with a pile of top-tier subscriptions can now genuinely carry the security maintenance of a mid-sized Go project.
 tags: [MinIO, Silo, Object Storage, Open Source, AI]
 ---
-
 Let me nail a date to the wall first: **September 11, 2026**, sometime between 18:31 and 19:36 UTC, MinIO **flat-out deleted** the `minio/minio` and `minio/mc` repositories on Docker Hub.
 
 Not rate-limited. Not retagged. The whole repository returns 404—"repository does not exist."
@@ -23,8 +22,6 @@ I'm Vonng, the author of Pigsty. **Silo is the MinIO community fork I maintain.*
 
 This is not the release notes. I wrote those separately, change by change, for people who need to read them against an upgrade. This is the retrospective—what actually happened over the past month or so,
 why I picked the moment two frontier models had just landed to run a vulnerability cleanup with two AIs, and why I think it was worth it.
-
----
 
 ## How MinIO Skipped Town, One Step at a Time
 
@@ -53,8 +50,6 @@ Join the dots and you get a very clean piece of commercial design: **archive the
 AIStor bills by capacity at $0.02/GB/month, with the enterprise self-service support tier covering up to 400 TiB—third-party evaluations put the entry price around $96,000 a year. Yes, that is the "tidy" arrangement.
 
 Someone still has to patch the abandoned old version. That someone is me.
-
----
 
 ## Why Me, and Why AI
 
@@ -90,8 +85,6 @@ and that the rate-limit key has to be "source IP + normalized username" rather t
 
 <!-- TODO: a concrete, vivid anecdote from this cleanup where Astra and Fable deadlocked on a specific fix and I had to step in and arbitrate. -->
 
----
-
 ## What Actually Got Fixed This Past Month
 
 All right, let's get concrete.
@@ -110,7 +103,7 @@ these holes will **never** be fixed in the MinIO community edition, and the offi
   with no published CVSS numbers, but they're critical in nature.
 - **CVE-2026-42600, ReadMultiple path traversal in the storage layer.** This one deserves more words. We started by deleting the unused internal endpoint and declaring it fixed. The audit afterward found that the endpoint was indeed gone,
   but **the underlying disease was still alive on three other protocol surfaces**: request bodies and grid frames never pass through the validation middleware, and the storage layer has no fence of its own.
-  That produced [SN-2026-002](https://github.com/pgsty/silo/blob/main/docs/security/advisories.md), which settled the rest of the bill: traversal in both the path and volume dimensions, a divide-by-zero panic that crashes a node with a single frame,
+  That produced [SN-2026-002](https://silo.pgsty.com/about/security-advisories/), which settled the rest of the bill: traversal in both the path and volume dimensions, a divide-by-zero panic that crashes a node with a single frame,
   metadata that reports a truncated shard as complete, three places that allocate memory from a caller-declared value... **12 defects, every one inherited from upstream, and our diff against the affected files is pure deletion with zero added lines.**
   I wrote [a full postmortem](https://silo.pgsty.com/blog/security/cve-2026-42600/) on that lesson: fixing one endpoint is not the same as closing a whole class of vulnerability, and when you decide to leave the layer below alone, write it down where the next person will trip over it.
 
@@ -142,8 +135,6 @@ benchmarked against the upstream 2025-12-03 source. Let me be honest about one t
 The hard evidence I can offer is internal acceptance testing: `make verify` covers FS, erasure coding, distributed erasure coding, multi-pool, and IPv6 multi-pool, at **174 PASS / 0 FAIL**;
 a [four-node TLS cluster](https://silo.pgsty.com/blog/release/silo-20260903/) went through upload/download checksum comparison on 1,004 object pairs one by one, two-site replication, single-drive rebuild, and a full rollback drill.
 
----
-
 ## What It Cost, and Whether It Was Worth It
 
 Honestly: quite a lot.
@@ -164,8 +155,6 @@ This isn't some grand theory about open-source resilience. It's a very concrete 
 And it holds up a lot of real deployments. [Pigsty v4.5](https://pigsty.io/blog/pigsty/v4.5/) has moved its entire object storage module to Silo; `minio_type` now accepts exactly one value, `silo`.
 Out in the world: RAGFlow's default Compose stack, Dokploy's product templates, the Helm chart for Grafana Loki, Dell's Omnia HPC platform, nixpkgs, DaoCloud's image mirror... dozens of projects already point their default image at me.
 In a certain sense, this emergency fork has become **the most active and most visible MinIO fork there is**.
-
----
 
 ## If You're Still Running MinIO
 

@@ -5,10 +5,7 @@ date: 2025-04-17
 tags: [MySQL, PostgreSQL, Database, Software Engineering]
 series: [MySQL走好]
 ---
-
 In 2025, PostgreSQL has opened a clear lead over MySQL on features, correctness, performance, and ecosystem—and the gap keeps widening. Here’s the panoramic view.
-
--------
 
 ## Features
 
@@ -32,17 +29,13 @@ Abigale Kim (CMU) benchmarked [extensibility across major DBMSes](https://abigal
 
 MySQL’s “innovation releases” should usher in bold changes. Instead they ship timid tweaks, leaving glaring gaps.
 
--------
-
 ## Performance
 
-Benchmarks are context-specific, but low-hanging comparisons are telling. Pigsty’s [TPC-H](https://pigsty.cc/blog/db/tpch/#pigsty) run on 8 vCPU x86 hardware shows PostgreSQL beating MySQL 9.x across all baseline queries. With `pg_duckdb`/`pg_mooncake` plugging into ClickHouse/DuckDB grade tooling, Postgres lands in the CH/StarRocks class for analytics.
+Benchmarks are context-specific, but low-hanging comparisons are telling. Pigsty’s TPC-H (original link unavailable) run on 8 vCPU x86 hardware shows PostgreSQL beating MySQL 9.x across all baseline queries. With `pg_duckdb`/`pg_mooncake` plugging into ClickHouse/DuckDB grade tooling, Postgres lands in the CH/StarRocks class for analytics.
 
 Even MySQL’s traditional OLTP speed edge is gone. In December 2024, a straightforward sysbench/wrk test on identical hardware showed PostgreSQL 16 matching or exceeding MySQL 9.0 by simply turning on `prepared statements` and `cache prepared statements`. No black magic.
 
 In short: PostgreSQL now outclasses MySQL in both OLTP and OLAP.
-
--------
 
 ## Quality & Correctness
 
@@ -68,8 +61,6 @@ Correctness shouldn’t be optional. MySQL chose performance over ACID fidelity 
 
 Both DBs have been inching toward SQL compliance, but details matter. Example: collations. With ICU, PostgreSQL offers 42 encodings and 815 collations. MySQL ships five core charsets and a few dozen collations—a stark reminder of where engineering effort goes.
 
--------
-
 ## Ecosystem
 
 Usage drives ecosystem health. MySQL’s slogan “the world’s most popular open-source RDBMS” no longer matches data.
@@ -92,8 +83,6 @@ The biggest recent rounds ([example](https://mp.weixin.qq.com/s/fi_p3tTZTnwP5XDJ
 
 Manufacturing, finance, non-internet orgs lean on PG’s correctness and feature set. During my stint at Apple we recorded factory IIoT data in PostgreSQL, with internal communities around it. Legacy internet giants still run piles of MySQL due to inertia, but upstarts—Cursor, Dify, Notion, Stripe components—default to PG. Cloudflare, Vercel, and major Node.js projects do too (Prisma’s PG support is markedly better).
 
--------
-
 ## What Happened to MySQL?
 
 Did PostgreSQL “kill” MySQL? Peter Zaitsev argues in “[Oracle Finally Killed MySQL](/db/oracle-kill-mysql/)” that Oracle’s neglect and mismanagement did. “[Can Oracle Save MySQL?](https://pigsty.cc/blog/db/can-oracle-save-mysql)” lays out the root cause: MySQL’s IP belongs to Oracle. It isn’t community-owned like PostgreSQL. Neither MySQL nor MariaDB has broad independent contributors. They’re company-controlled codebases.
@@ -101,8 +90,6 @@ Did PostgreSQL “kill” MySQL? Peter Zaitsev argues in “[Oracle Finally Kill
 Cloud vendors (AWS et al.) built services atop MySQL without contributing back. Oracle saw no reason to invest in a product competitors monetized more than they did, so they focused on proprietary MySQL HeatWave. AWS cares about RDS/Aurora, not upstream. The community withered—and hyperscalers share the blame.
 
 ![dbms-market.png](dbms-market.png)
-
--------
 
 ## Summing Up
 

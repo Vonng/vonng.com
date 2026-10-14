@@ -5,7 +5,6 @@ authors: [vonng]
 draft: true  
 tags: [MySQL, PostgreSQL, Database, Commentary]
 ---
-
 This July, MySQL 9.0 was finally released—a full eight years after its last major version, 8.0 ([@2016-09](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-0.html)). Yet, this hollow "innovation" release feels like a bad joke, signaling that **MySQL is on its deathbed**.
 
 While PostgreSQL continues to surge ahead, MySQL's sunset is painfully acknowledged by Percona, a major flag-bearer of the MySQL ecosystem, through a series of poignant posts:
@@ -28,8 +27,6 @@ Some databases are [eating the DBMS world](/en/pg/pg-eat-db-world/), while other
 - [Shrinking Ecosystem](#the-shrinking-ecosystem-scale)
 - [Who Really Killed MySQL?](#who-really-killed-mysql)
 - [PostgreSQL Ascends as MySQL Rests in Peace](#who-really-killed-mysql)
-
-------
 
 ## Hollow Innovations
 
@@ -55,8 +52,6 @@ And MySQL’s support for JavaScript stored procedures? It's an **enterprise-onl
 
 After an eight-year wait, the "innovative update" delivers two "old features," one of which is gated behind an enterprise edition. The term "**innovation**" here seems bitterly ironic and sarcastic.
 
-------
-
 ## Sloppy Vector Types
 
 In the past few years, AI has exploded in popularity, boosting interest in vector databases. Nearly every mainstream DBMS now supports vector data types—**except for MySQL**.
@@ -79,15 +74,13 @@ Comparing `pgvector` with MySQL 9's "vector" support might seem unfair, as MySQL
 
 [**Vectors are the new JSON**](/en/db/svdb-is-dead/), but the party at the vector database table has ended, and MySQL hasn’t even managed to serve its dish. It has completely missed the growth engine of the next AI decade, just as it missed the JSON document database wave of the internet era in the previous decade.
 
-------
-
 ## Belated JavaScript Functions
 
 Another "blockbuster" feature of MySQL 9.0 is **JavaScript Stored Procedures**.
 
 However, using JavaScript for stored procedures isn't a novel concept—back in 2011, PostgreSQL 9.1 could already script JavaScript stored procedures through the [`plv8`](https://github.com/plv8/plv8/tree/v0.1.0) extension, and MongoDB began supporting JavaScript around the same time.
 
-A glance at the past twelve years of the "[Database Popularity Trend](https://demo.pigsty.cc/d/db-analysis/db-engine-analysis?orgId=1&var-year=2012)" on DB-Engine shows that only PostgreSQL and Mongo have truly led the pack. MongoDB (2009) and PostgreSQL 9.2 (2012) were quick to grasp internet developers' needs, adding [JSON feature support](https://www.postgresql.org/docs/current/datatype-json.html) (document databases) right as the "Rise of JSON" began, thereby capturing the largest growth share in the database realm over the last decade.
+A glance at the past twelve years of the "[Database Popularity Trend](https://demo.pigsty.cc/ui/d/db-analysis/db-engine-analysis?orgId=1&var-year=2012)" on DB-Engine shows that only PostgreSQL and Mongo have truly led the pack. MongoDB (2009) and PostgreSQL 9.2 (2012) were quick to grasp internet developers' needs, adding [JSON feature support](https://www.postgresql.org/docs/current/datatype-json.html) (document databases) right as the "Rise of JSON" began, thereby capturing the largest growth share in the database realm over the last decade.
 
 ![db-engine.webp](db-engine.webp)
 
@@ -98,8 +91,6 @@ Oracle allows stored procedures to be written in C, SQL, PL/SQL, Python, Java, a
 ![pg-pl.jpg](pg-pl.jpg)
 
 Unlike PostgreSQL and Oracle's development philosophy, MySQL's best practices generally discourage using stored procedures—making JavaScript functions a rather superfluous feature for MySQL. Even so, Oracle made JavaScript stored procedures a **MySQL Enterprise Edition exclusive**—considering most MySQL users opt for the open-source community version, this feature essentially went unnoticed.
-
---------
 
 ## Falling Behind: Features and Flexibility
 
@@ -114,8 +105,6 @@ While MySQL remains confined to its "relational OLTP database" niche, PostgreSQL
 [PostgreSQL is devouring the database world](/en/pg/pg-eat-db-world/), internalizing the entire database realm through its plugin architecture. "[Just use Postgres](/en/pg/just-use-pg/)" has moved from being a fringe exploration by elite teams to a mainstream best practice.
 
 In contrast, MySQL shows a lackluster enthusiasm for new functionalities—a major version update that should be rife with innovative 'breaking changes' turns out to be either lackluster features or insubstantial enterprise gimmicks.
-
---------
 
 ## Deteriorated Performance
 
@@ -138,8 +127,6 @@ Peter Zaitsev commented in his post "[Oracle Has Finally Killed MySQL](/db/oracl
 Years ago, the industry consensus was that PostgreSQL and MySQL performed comparably in simple OLTP CRUD scenarios. However, as PostgreSQL has continued to improve, it has vastly outpaced MySQL in performance. PostgreSQL now significantly exceeds MySQL in various read and write scenarios, with throughput improvements ranging from 200% to even 500% in some cases.
 
 **The performance edge that MySQL once prided itself on no longer exists.**
-
-------
 
 ## The Incurable Isolation Levels
 
@@ -166,8 +153,6 @@ It's clear that the best correctness implementation (no yellow A) is PostgreSQL�
 **Doing things right is critical, and correctness should not be a trade-off**. Early on, the open-source relational database giants MySQL and PostgreSQL chose divergent paths: MySQL sacrificed correctness for performance, while the academically inclined PostgreSQL opted for correctness at the expense of performance.
 
 During the early days of the internet boom, MySQL surged ahead due to its performance advantages. However, as performance becomes less of a core concern, correctness has emerged as MySQL’s **fatal flaw**. What's more tragic is that even the performance MySQL sacrificed correctness for is no longer competitive, a fact that's disheartening.
-
-------
 
 ## The Shrinking Ecosystem Scale
 
@@ -210,8 +195,6 @@ Although I am a staunch supporter of PostgreSQL, I agree with Peter Zaitsev's vi
 At least, MySQL can serve as a spur to motivate the PostgreSQL community to maintain cohesion and a sense of urgency, continuously improve its technical level, and continue to promote open, transparent, and fair community governance, thus driving the advancement of database technology.
 
 MySQL had its days of glory and was once a benchmark of "open-source software," but even the best shows must end. MySQL is dying—lagging updates, falling behind in features, degrading performance, quality issues, and a shrinking ecosystem are inevitable, beyond human control. Meanwhile, PostgreSQL, carrying the original spirit and vision of open-source software, will continue to forge ahead—it will continue on the path MySQL could not finish and write the chapters MySQL did not complete.
-
---------
 
 ## Reference
 

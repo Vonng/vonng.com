@@ -6,7 +6,6 @@ summary: >
   GPT5 Pro vs ClaudeOpus 4.1 深入研究，哪个锐评更犀利？
 tags: [国产数据库, 大模型, 技术评论]
 ---
-
 这两天墨天轮社区找我写个 《10 月中国数据库排行榜》解读。老实说，老冯已经好一阵子没关注过国产数据库了，但我觉得这是个挺有趣的问题，可以丢给 OpenAI ChatGPT 和 Claude Opus 4.1 去研究，看看哪个 AI 水平更高。
 
 老冯每个月在 OpenAI Pro 订阅上花 200 美金，在 Claude Max 20x 订阅上花 250 美金。反正闲着也是浪费，就让他们来 PK 一下，搞点儿研究也不错。
@@ -74,7 +73,5 @@ OpenAI GPT 5 pro 用起来感觉更 “天真” 一些，很容易受到厂商�
 [第二批数据库国测名单：国产化来了怎么办？](/db/db-national-test-2/)
 
 ### 微信搜 pigsty-cc 小助手
-
----
 
 发布版本：[微信公众号](https://mp.weixin.qq.com/s/N_O5HS4o2bSXISQLzAVq7g)

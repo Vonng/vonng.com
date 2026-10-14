@@ -9,7 +9,6 @@ summary: >
 series: ["MySQL走好"]
 tags: [MySQL, 数据库, 性能, 技术评论]
 ---
-
 > 作者： [Marco Tusa](https://www.percona.com/blog/author/tusa) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信原文](https://mp.weixin.qq.com/s/nKD00j84R-EcOU1VPL1ibA) | [Percona's Blog](https://www.percona.com/blog/sakila-where-are-you-going/)
 
 在 Percona，我们时刻关注用户的需求，并尽力满足他们。我们特别监控了 MySQL 版本的分布和使用情况，发现了一个引人注目的趋势：从版本 5.7 迁移到 8.x 的步伐明显缓慢。更准确地说，许多用户仍需坚持使用 5.7 版本。
@@ -28,8 +27,6 @@ tags: [MySQL, 数据库, 性能, 技术评论]
 >
 > 译者：Vonng，Pigsty 作者，PostgreSQL 专家与布道师。下云倡导者，数据库下云实践者。
 
------
-
 ## 测试
 
 ### 假设
@@ -47,8 +44,6 @@ tags: [MySQL, 数据库, 性能, 技术评论]
 
 - [sysbench](https://github.com/Tusamarco/benchmarktools/blob/main/software/fill_sysbench_map.sh)
 - [TPC-C](https://github.com/Tusamarco/benchmarktools/blob/main/software/fill_tpcc_map.sh)
-
-------
 
 ## 结果
 
@@ -88,8 +83,6 @@ Oracle 最近决定在 8.4 中修改许多参数的默认值，也证实了这�
 
 1. 使用默认值的 MySQL 5.7 ，在两种情况（大小数据集）下的表现都更好。
 2. MySQL 8.0.36 因为默认配置参数不佳，使其在第一种（小数据集）的情况表现拉垮。但只要进行一些优化调整，就能让它的性能表现超过 8.4，并更接近 5.7。
-
-------
 
 ### TPC-C 测试
 
@@ -137,8 +130,6 @@ Oracle 最近决定在 8.4 中修改许多参数的默认值，也证实了这�
 正如预期的那样，MySQL 8.4 在这里的表现也不佳，只有 MariaDB 表现更差来垫底。
 顺便一提，Percona Server for MySQL 8.0.36 是唯一能处理好并发争用增加的 MySQL。
 
-------
-
 ## 这些测试说明了什么？
 
 坦白说，我们在这里测出来的结果，也是我们大多数用户的亲身经历 —— **MySQL 的性能随着版本增加而下降**。
@@ -171,8 +162,6 @@ Oracle 最近决定在 8.4 中修改许多参数的默认值，也证实了这�
 
 在这种情况下，我们需要问一下自己：我的业务可以应对这样的性能劣化吗？
 
-------
-
 ## 一些思考
 
 当年 MySQL 被卖给 SUN Microsystems 时，我就在 MySQL AB 工作，我对这笔收购非常不高兴。
@@ -202,8 +191,6 @@ MySQL 只不过是更大场景中的一块乐高积木而已，在这个场景�
 ![fin.jpg](fin.jpg)
 
 祝大家使用 MySQL 快乐。
-
-------
 
 ## 参考阅读
 

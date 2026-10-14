@@ -8,12 +8,11 @@ summary: >
   server either segfaults or silently stops accepting writes until you restart it.
 tags: [Redis, Linux, Repository, Open Source]
 ---
-
 I was updating the Redis module in Pigsty recently, adding Valkey as an alternative engine, and hit an upstream bug while packaging it.
 
 **If your Valkey runs on Debian or Ubuntu, and one day the disk fills up or the data directory permissions go wrong so snapshots stop saving — every failed save drops the instance's memory counter a little. Once it goes below zero it wraps to `18446744073709518664`. From then on, if you have `maxmemory` set, the server refuses every write until you restart it.**
 
-```
+```text
 > SET foo bar
 (error) OOM command not allowed when used memory > 'maxmemory'.
 > GET foo
@@ -27,8 +26,6 @@ There is plenty of free memory. Nothing appears in the logs. `used_memory_rss` s
 The cause is a single line in a packaging patch. Its lineage goes back to 2017, it was fixed once in Redis, came back in Valkey, and eventually got copied into Valkey's own release pipeline — so **every `.deb` on `download.valkey.io`**, from 7.2 through 9.1, carried it.
 
 The fix is now merged. Here's how it surfaced.
-
----
 
 ## What's wrong
 
@@ -52,7 +49,7 @@ Step two is wrong unconditionally. This allocation never went through Valkey's a
 
 Whether steps one and three break depends on which jemalloc the binary was linked against. With the system `libjemalloc.so` (Debian, Ubuntu, and the official `.deb`s), the pointer at least belongs to the right heap, so nothing crashes and you only get the corrupted counter. With the bundled private jemalloc — upstream's default — it can't find the pointer in its own bookkeeping and dereferences null:
 
-```
+```text
 valkey-server(je_malloc_usable_size+0x68)
 valkey-server(valkey_free+0x28)
 valkey-server(rdbSave+0x18c)
@@ -85,7 +82,7 @@ Nobody had reported it.
 
 The patch header goes back further than I expected:
 
-```
+```text
 From: Chris Lamb <lamby@debian.org>
 Date: Thu, 16 Nov 2017 03:40:26 +0900
 Subject: Use get_current_dir_name over PATHMAX, etc.
@@ -110,7 +107,7 @@ Two channels, handled separately.
 
 **Debian takes email.** No account needed — send a **plain text** message to `submit@bugs.debian.org` with pseudo-headers as the first lines of the body:
 
-```
+```text
 Package: src:valkey
 Version: 8.1.4+dfsg1-2
 Severity: normal
@@ -119,7 +116,7 @@ Tags: patch
 
 My first attempt bounced, saying the body didn't start with `Package:`, so "**your message has been ignored completely**". Which was baffling, because it did:
 
-```
+```text
 00000000: 5061 636b 6167 653a      Package:
 ```
 

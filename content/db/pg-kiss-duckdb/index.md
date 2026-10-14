@@ -6,7 +6,6 @@ summary: >
   老冯很看好"DuckDB + PostgreSQL深度融合"这条路径，它可能会引爆数据库世界下一场"火星撞地球"式的变革。相比折腾分布式DuckDB，这才是更有前景的方向。
 tags: [PostgreSQL, OLAP, 数据库]
 ---
-
 ## 蹭热点引出的好话题
 
 昨晚在直播间，我与几位国内 DuckDB 先锋进行了一场对谈。话题跨度很大，从 DeepSeek 团队在开源周推出的分布式 DuckDB 分析框架 “Smallpond”，聊到 PostgreSQL 与 DuckDB 的深度融合，相当热闹。
@@ -16,8 +15,6 @@ DeepSeek 的开源的 “小池塘”用把 DuckDB 改为分布式的用法，�
 那么如果不去折腾 “分布式”，DuckDB 未来更有前景的方向是什么？相比之下，我更加看好 **“ DuckDB + PostgreSQL 深度融合”** 这路径。我甚至认为，它可能会引爆数据库世界下一场“火星撞地球”式的变革。
 
 ![img](featured.jpg)
-
----
 
 ## DuckDB：OLAP 挑战者
 
@@ -30,8 +27,6 @@ DuckDB 的起源来自作者们对数据库用户痛点的观察：数据科学�
 DuckDB 整个数据库软件源代码就是一个头文件一个 c++文件，编译出来就是一个独立二进制，数据库本身也就一个简单的文件。使用兼容 PostgreSQL 的解析器与语法，简单到几乎没有任何上手门槛。尽管 DuckDB 看上去非常简单，但它最了不起的一点在于 —— **简约而不简单，分析性能也是绝冠群雄**。例如，在 ClickHouse 自己的主场 ClickBench 上，有着能够吊打东道主 ClickHouse 的表现。
 
 同时，DuckDB 使用极为友善的 MIT 许可证开源：**一个有着顶尖性能表现，而使用门槛低到地板，还开源免费，允许随意包装套壳的数据库，想不火都难**。
-
----
 
 ## 取长补短的黄金组合
 
@@ -49,29 +44,25 @@ DuckDB 能很好的解决 PostgreSQL 的分析短板，甚至还可以通过读�
 
 实际上，[这正是数据库世界中正在发生的事情](/db/pavlo-2024-review/)，许多团队和厂商已经投入到 DuckDB + PostgreSQL 的缝合当中，试图率先抢得这个潜力巨大的新市场。
 
----
-
 ## 群雄逐鹿的缝合赛道
 
 当我们把目光投向业界，不难发现 [已经有诸多玩家入局了](/pg/pg-duckdb/)：
 
-最早进入这条赛道的是国内个人开发者李红艳开发的 [`duckdb_fdw`](https://pigsty.cc/ext/olap/duckdb_fdw/)，一直算是不温不火的状态。然而在 《[PostgreSQL 正在吞噬数据库世界](/pg/pg-eat-db-world/)》以向量数据库的例子预言了 OLAP 赛道的机会之后，PG 社区对征服 OLAP 缝合 DuckDB 的热情被彻底点燃。
+最早进入这条赛道的是国内个人开发者李红艳开发的 [`duckdb_fdw`](https://pgext.cloud/e/duckdb_fdw/)，一直算是不温不火的状态。然而在 《[PostgreSQL 正在吞噬数据库世界](/pg/pg-eat-db-world/)》以向量数据库的例子预言了 OLAP 赛道的机会之后，PG 社区对征服 OLAP 缝合 DuckDB 的热情被彻底点燃。
 
 ![duck-star.png](duck-star.png)
 
-就在 2024 年 3 月的时间点上，一切骤然加速。ParadeDB 的 [`pg_analytics`](https://pigsty.cc/ext/olap/pg_analytics/) 插件立即切换了技术路线，改为缝合 DuckDB。
+就在 2024 年 3 月的时间点上，一切骤然加速。ParadeDB 的 [`pg_analytics`](https://pgext.cloud/e/pg_analytics/) 插件立即切换了技术路线，改为缝合 DuckDB。
 
-PG 生态发起 `pg_quack` 项目的 HYDRA 与 DuckDB 母公司 MotherDuck 开始合作，发起了 [`pg_duckdb`](https://pigsty.cc/ext/olap/pg_duckdb/)。官方开始下场， “不误正业” 地不去折腾 DuckDB，反而搞起了 PostgreSQL 插件。
+PG 生态发起 `pg_quack` 项目的 HYDRA 与 DuckDB 母公司 MotherDuck 开始合作，发起了 [`pg_duckdb`](https://pgext.cloud/e/pg_duckdb/)。官方开始下场， “不误正业” 地不去折腾 DuckDB，反而搞起了 PostgreSQL 插件。
 
-接下来，在数据库热点上一向嗅觉敏锐的 Neon 赞助了 [`pg_mooncake`](https://pigsty.cc/ext/olap/pg_mooncake/) 项目，这个新玩家选择站在 pg_duckdb 的肩膀上，不仅要把 DuckDB 的计算能力给缝合入 PG，还要将 DuckDB / Parquet 开放分析存储格式原生融合到 PG 的表访问接口中，把存储和计算能力一起缝合到 PG 中。
+接下来，在数据库热点上一向嗅觉敏锐的 Neon 赞助了 [`pg_mooncake`](https://pgext.cloud/e/pg_mooncake/) 项目，这个新玩家选择站在 pg_duckdb 的肩膀上，不仅要把 DuckDB 的计算能力给缝合入 PG，还要将 DuckDB / Parquet 开放分析存储格式原生融合到 PG 的表访问接口中，把存储和计算能力一起缝合到 PG 中。
 
 一些头部云厂商，比如 [阿里云 rds](/cloud/rds-duckdb/) 也在尝试缝合包装 DuckDB，标志着已经有大玩家开始忍不住准备下场了。
 
 这种场面很容易让人联想到早两年的“向量数据库热”。当 AI 检索和语义搜索成为热点，不少厂商都“闻风而动”，基于 PostgreSQL 开发向量数据库插件，AI 爆火之后，PG 生态里就涌现出了至少六款向量数据库扩展（ `pgvector`，`pgvector.rs`，`pg_embedding`，`latern`，`pase`，`pgvectorscale`），并在你追我赶的赛马中卷出了新高度。
 
 最后 `pgvector` 在以 AWS 为代表的厂商大力投入加注之下，在其他数据库比如 Oracle / MySQL / MariaDB 的糊弄版本姗姗来迟之前，就已经把整个专用向量数据库细分领域给荡平了，吃下了 RAG / 向量数据库带来巨大增量里的最大蛋糕。而现在，似乎是这种赛事在 OLAP 领域的又一次预演。
-
----
 
 ## 为什么是 DuckDB+PG？
 
@@ -93,8 +84,6 @@ PostgreSQL 与 DuckDB 是一对完美的组合，体现在三点上：功能互�
 
 这意味着，**“PG + DuckDB”** 的融合，是一条“阻力最小、价值最大”的康庄大道，大自然厌恶真空，因此自然会有许多玩家下场来填补这里的空白生态位。
 
----
-
 ## 统一 OLTP 与 OLAP 的梦想
 
 在数据库领域，OLTP 与 OLAP 的分裂由来已久。所有的“数据仓库 + 关系型数据库”架构、ETL 和 CDC 流程，都是在修修补补这道裂痕。如果 **PostgreSQL** 在保留其 OLTP 优势的同时，能嫁接上 **DuckDB** 的 OLAP 性能，企业还有必要再维护一套专门的分析数据库吗？
@@ -105,8 +94,6 @@ PostgreSQL 被视为“数据库界的 Linux 内核” —— 它的开源精神
 
 只要一个优秀的集成方案出现，能让 DuckDB 提供的高性能分析与 PostgreSQL 的生态完美融合，整个大数据分析领域或许会因此大变天。那些专门的 OLAP 产品，能否顶住这场“核爆级”冲击？是否会像那些 “专用向量数据库” 一样凋零，现在没人愿意给出答案，但我相信到时候大家都会有自己的判断。
 
----
-
 ## 为 PG 与 DuckDB 缝合铺好路
 
 PostgreSQL OLAP 生态的现状，正如同两年前的向量数据库插件一样，还处于早期阶段。但这已经足够令人兴奋：新技术的魅力就在于，你能预见它的潜力，就能率先拥抱它的爆发。
@@ -116,8 +103,6 @@ PostgreSQL OLAP 生态的现状，正如同两年前的向量数据库插件一�
 作为一名深耕数据库领域的从业者，我正在把当前各家与 DuckDB 融合的 PostgreSQL 插件 全部打包成可直接安装使用的 RPM 或 DEB 包，并在主流的十个 Linux 发行版上提供，与 PGDG 官方内核完全兼容，开箱即用，让普通用户也能轻松体验“DuckDB + PG”融合的威力。最重要的是，提供一个缝合大赛的“竞技舞台”，让所有玩家都平等参与进来。
 
 诚然，现在不少插件仍处于早期阶段，稳定性和功能尚未达到“企业级”的标准。也有很多细节待完善，比如并发访问控制、数据类型兼容、算子优化等。机会总是属于勇于拥抱新技术的人，而我相信，这场“PG + DuckDB”融合的大戏，将会是数据库领域的下一个风口。
-
----
 
 ## 真正的爆炸即将开始
 

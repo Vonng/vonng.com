@@ -9,7 +9,6 @@ tags: [PostgreSQL, AI, Agent, Pigsty]
 ai: true
 aliases: ["/ai/agent-state-db/"]
 ---
-
 A year ago, I wrote an article called [**PGFS: Using a Database as a Filesystem**](/en/pg/pgfs/). It started with a request from the Odoo community: make files and the PostgreSQL database recoverable together with point-in-time recovery, so both could be rolled back to the same moment.
 
 The solution has worked quite well. It delivers entirely in software a capability that once required expensive dedicated continuous data protection hardware: rolling the filesystem and database back together to any point in time. Performance is respectable too—more than enough for applications such as Odoo and Dify.
@@ -21,8 +20,6 @@ But recently I discovered that PGFS was attracting an unexpected group of users.
 The idea is simple: PGFS mounts a PostgreSQL database as a local directory. Reading from or writing to that directory actually reads from or writes to a remote database. Put the AI agent's working directory, configuration files, and memory there, and all of its state lives in PostgreSQL.
 
 That made me realize PGFS may be far more useful than I originally imagined. I know of at least one company building a commercial OpenClaw distribution that already uses PGFS as its underlying shared-memory mechanism.
-
-------
 
 ## Does an Agent Actually Need a Database?
 
@@ -48,8 +45,6 @@ So what unique value can a database offer an AI agent?
 
 I see two killer features.
 
-------
-
 ## Killer Feature One: A Time Machine
 
 The first is **point-in-time recovery (PITR)**.
@@ -73,8 +68,6 @@ More concretely, when you write a file into a PGFS-mounted directory, its data i
 This also unlocks another capability: **instant cloning and branching**. Because the code's state is ultimately data inside the database, you can create a new database instance from any point in time, with its filesystem state and database state perfectly aligned. It is like a Git branch, except the business data in the database branches with the code. Different agents can work on different "branches" without interfering with one another. Broke something? Roll back. Want to try another approach? Fork a fresh environment. A filesystem-only design cannot do this.
 
 For AI agents, it is hard to overstate the value of this capability. It gives you an "unlimited undo" safety net—or, in video-game terms, a save system you can load at any time.
-
-------
 
 ## Killer Feature Two: A Shared Brain
 
@@ -167,8 +160,6 @@ Experienced users will immediately see the trick: move the dot-directories that 
 And the best part is that performance is quite respectable. PGFS will certainly deliver less throughput than a native filesystem, but actual measurements are not bad: file reads and writes deliver roughly 100 MB/s, and JuiceFS has a local caching mechanism as well. That is more than enough for workloads such as Odoo and coding agents.
 
 Of course, the real highlight is the black magic of rolling the entire environment back to any point in time with a single PITR operation after an agent wrecks it.
-
-------
 
 ## Conclusion
 

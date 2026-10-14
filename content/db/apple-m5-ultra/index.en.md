@@ -7,7 +7,6 @@ summary: >
   No teaser, no rumors—the website simply changed. For local AI, this may be the most important machine of the year.
 tags: [Apple, Mac Studio, Local AI]
 ---
-
 > [Original article on WeChat](https://mp.weixin.qq.com/s/iIzW0B-FSO0Fi5eYQsyeCw)
 
 There was no event today. No teaser campaign. Not even a credible rumor.
@@ -29,8 +28,6 @@ That does not make the MacBook Pro a bad purchase. It is still a portable 128 GB
 So far, we can see that the 256 GB / 16 TB configuration costs RMB 143,000. Based on Apple's pricing pattern, 512 GB / 16 TB will probably add another RMB 50,000–60,000, putting a fully loaded system close to RMB 200,000. Even a 512 GB / 2 TB configuration will likely cost around RMB 140,000–150,000. It is not cheap.
 
 ![Price of the Mac Studio configured with 256 GB of unified memory and 16 TB of storage](pricing.webp)
-
----
 
 ## 1. Why 512 GB Matters
 
@@ -62,8 +59,6 @@ Putting a 400–450 GB model into 512 GB leaves little headroom, but **there is 
 
 The GPUs are only the first line on the bill. Then come the case, power supply, motherboard, server CPU, cooling, noise, electrical requirements, and system tuning. The Mac Studio's value is that it packs all of that trouble into a 20-centimeter aluminum box that sits on a desk. Plug it in and get to work.
 
----
-
 ## 2. Capacity Is One Thing; Speed Is Another
 
 Having 512 GB does not make the Mac Studio faster than an RTX 5090. It helps to separate inference into two stages.
@@ -93,8 +88,6 @@ Apple's website quotes **relative gains**, such as “up to 4× faster prompt pr
 Dozens of tokens per second already outpace normal human reading. Aggregate concurrent throughput of 50–100 tokens per second means the machine could support several coding agents, retrieval agents, document-analysis jobs, and background automation workflows at once. That is the threshold at which local AI becomes meaningfully productive.
 
 Apple also specifically says that multiple Mac Studios can use Thunderbolt 5 + RDMA to form a shared memory pool, with a four-machine cluster delivering three times the distributed-inference performance of one system.
-
----
 
 ## 3. An Easy Upgrade to Miss: PCIe 6.0 Storage
 
@@ -128,8 +121,6 @@ It will not replace a real data warehouse. High availability, concurrency, acces
 
 (I even caught myself wondering whether to build a macOS-based Pigsty appliance: databases, agents, and AI packaged as a ready-to-run distribution.)
 
----
-
 ## 4. It May Not Be Worth Buying Just for “Token Freedom”
 
 Honestly, if your only goal is to save on subscription fees, I would not recommend a top-end Mac Studio.
@@ -145,8 +136,6 @@ So if you mainly want to chat, write code, look things up, or simply finish the 
 What you are really buying with this machine is not cheap tokens.
 
 You are buying **a piece of computational territory that belongs entirely to you.**
-
----
 
 ## 5. The Real Keyword Is Data Sovereignty
 
@@ -164,8 +153,6 @@ But at least the technology finally lets you control where the data goes, who ca
 
 That is why I believe this machine is far more valuable to teams in law, medicine, research, finance, manufacturing, and confidential development than it is to the average individual user.
 
----
-
 ## 6. This Is Not the Same Product as a DGX Station
 
 NVIDIA's latest DGX Station uses Blackwell Ultra—the GB300—with HBM3e and LPDDR5X attached to the Grace CPU, for nearly 800 GB of tiered coherent memory in total. In raw AI compute and HBM bandwidth, it is obviously far more powerful than a Mac Studio.
@@ -180,8 +167,6 @@ Nor is it a data-center server. It has no redundant power supplies, remote manag
 
 But as a personal AI workstation for an office, lab, or home, it has almost no direct competitor.
 
----
-
 ## 7. A Brief Note on the New Mac mini
 
 The M6 Mac mini tops out at 32 GB of unified memory and 170 GB/s of bandwidth. It is not designed for enormous models.
@@ -193,8 +178,6 @@ The version local AI users should really watch is the **M5 Pro model**. It suppo
 ![Mac mini with M5 Pro and 64 GB of unified memory](mini.webp)
 
 It cannot run a full DeepSeek-V4, let alone a GLM model with hundreds of billions of parameters. But it is already quite practical for a quantized model in the Qwen 27B class. For a home AI service, coding agent, knowledge base, speech processing, or an always-on automation node, it may be the best-value small machine of this generation.
-
----
 
 ## Final Thoughts
 

@@ -7,7 +7,6 @@ summary: >
   Redis "going non-open source" is not a disgrace to Redis, but a disgrace to "open source/OSI" and even more so to public cloud. What truly matters has always been software freedom, while open source is just one means to achieve software freedom.
 tags: [Redis, Cloud, Database, Open Source]
 ---
-
 Recently, Redis changed its license, causing controversy: starting from version 7.4, it uses RSALv2 and SSPLv1, no longer meeting OSI's definition of "open source software." But don't get it wrong: **Redis "going non-open source" is not a disgrace to Redis, but a disgrace to "open source/OSI"** — it reflects the obsolescence of open source [**organizations**](https://opensource.org/) and ideologies.
 
 **The number one enemy of software freedom today is public cloud services**. "**Open source**" versus "**closed source**" is no longer the core contradiction in the software industry; the focus of struggle has shifted to "**cloud services**" versus "**local-first**." Public cloud vendors have been freeloading on open source software and parasitically benefiting from community achievements, which is destined to provoke strong community backlash.
@@ -15,8 +14,6 @@ Recently, Redis changed its license, causing controversy: starting from version 
 In practice to resist cloud vendor freeloading, changing licenses is the most common approach: but AGPLv3 is too strict and can harm both enemies and allies, while SSPL is not considered open source because it explicitly expresses this enemy-ally discrimination. The industry needs a new discriminatory software license that can legitimately distinguish between friend and foe.
 
 What truly matters has always been software freedom, while "open source" is just one means to achieve software freedom. If the "open source" ideology cannot adapt to the needs of the new stage of contradiction and struggle, and even hinders software freedom, it will also become obsolete and no longer important, eventually being replaced by new ideologies and practices.
-
-------
 
 ## Open-Source Software Changing Licenses
 
@@ -32,7 +29,7 @@ Unfortunately, you can force a company to provide source code for their GPL/SSPL
 
 When Redis announced the license change, AWS employees immediately jumped out to fork Redis — "Redis is no longer open source, our fork is truly open source!" Then the AWS CTO came out to [applaud](https://twitter.com/Werner/status/1771324218506108995), hypocritically saying: this is our employee's personal action — it's literally a real-life example of murder and character assassination.
 
-[![](twitter.png)](https://twitter.com/Werner/status/1771324218506108995)
+[![Redis Going Non-Open-Source is a Disgrace to "Open-Source" and Public Cloud — Open-Source Software Changing Licenses (figure 1)](twitter.png)](https://twitter.com/Werner/status/1771324218506108995)
 
 > Image: AWS CTO [retweet](https://twitter.com/Werner/status/1771324218506108995) of employee forking Redis
 
@@ -51,8 +48,6 @@ Some veteran open source projects like PostgreSQL, as PG core member Jonathan sa
 Including our own PostgreSQL distribution Pigsty, which switched from Apache license to [AGPLv3 license](https://pigsty.cc/docs/about/license) when version 2.0 was released. The motivation behind this is similar — to fight back against the biggest enemy of software freedom — cloud vendors. We can't change existing stock, but for incremental functionality, effective counterattack and change are possible.
 
 In practice to resist cloud vendor freeloading, changing licenses is the most common approach: AGPLv3 is a relatively mainstream practice, while the more radical SSPL is not considered open source because it explicitly expresses this enemy-ally discrimination. Using dual licensing for clear boundary distinction is also becoming a mainstream open source commercialization practice. But importantly: **the industry needs a new discriminatory software license that can legitimately distinguish friend from foe and treat them differently — to solve the biggest challenge software freedom faces today — cloud services.**
-
--------------------
 
 ## Paradigm Shift in the Software Industry
 
@@ -73,8 +68,6 @@ Once, **the biggest enemy of software freedom was commercial closed source softw
 **Open source is not a business model; it even strongly violates commercialization logic**. However, any sustainable model needs to acquire resources to pay costs, and open source is no exception. Open source's real model is — creating high-paying technical expert positions through free software. Open source experts distributed across different enterprises and organizations, prosumers, are the core force of (pure-blood) open source software communities — **free open source software attracts users, user demand creates open source expert positions, open source experts collaboratively create better open source software**. Open source experts, as organizational agents, draw strength from open source communities and collective wisdom achievements. Organizations enjoy the benefits of open source software (software freedom, no commercial software licensing fees), while distributed employers can easily cover these experts' salary costs.
 
 However, public cloud, especially cloud software, has destroyed this ecological cycle — a few cloud giants attempt to monopolize open source expert supply, trying to achieve the monopoly that commercial software failed to achieve in the dimension of **using open source software well** (services). Cloud vendors write management software for open source software, form expert pools, capture most of the value in the software lifecycle through providing maintenance, and through freeloading behavior, make the entire open source community bear the biggest cost — **R&D**. More damagingly, [**truly valuable management/monitoring code is never contributed back to open source communities**](/en/cloud/dba-vs-rds/#cloud-database-models-and-new-challenges). The greater harm is — public cloud, like top livestream hosts eliminating many local convenience stores, destroys many open source job opportunities, cutting off talent flow and supply to open source communities.
-
--------------------
 
 ## The Number One Enemy of Computing Freedom
 
@@ -105,15 +98,11 @@ Today, **cloud software, not closed source or commercial software, has become th
 
 **"Open source" versus "closed source" is no longer the core contradiction in the software industry; the focus of struggle has shifted to "cloud" versus "local-first."**
 
--------------------
-
 ## How Does the Free World Respond to Challenges?
 
 > [!SUCCESS] What's important has always been software freedom
 
 Where there's force, there's reaction force. The rise of cloud software will trigger new balancing forces. Facing cloud service challenges, many software organizations/companies have already responded, including but not limited to: using discriminatory open source licenses, legal tools and collective action, seizing cloud computing definition rights.
-
--------------------
 
 ### Modifying Open-Source Licenses
 
@@ -127,19 +116,15 @@ Using Copyleft license families can exclude public cloud vendors from communitie
 
 For example, our free PostgreSQL distribution Pigsty uses AGPLv3 license, but we added [supplementary exemption clauses](https://pigsty.cc/docs/about/license#补充条款) for ordinary users — we only reserve the right to pursue violations against public cloud providers and copycat peers, while for ordinary end users it actually executes Apache 2.0 equivalent clauses — customers purchasing our service subscriptions can also get written commitments: no pursuit for violating AGPLv3 license — in a sense, this is also a "dual licensing" practice.
 
--------------------
-
 ### Legal Tools and Collective Action
 
-Copyleft software licenses are legal tools attempting to force more software vendors to open their source code. But for promoting software freedom, [Martin Keppmann believes more promising legal tools are government regulations](/db/goodbye-gpl/#促进软件自由的法律工具). For example, GDPR proposes [data portability rights](https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/individual-rights/right-to-data-portability/), meaning users must be able to transfer their data from one service to others. Another hopeful path is promoting [public sector procurement preferences for open source, local-first software](https://joinup.ec.europa.eu/sites/default/files/document/2011-12/OSS-procurement-guideline-final.pdf) rather than closed source cloud software. This creates positive incentives for enterprises to develop and maintain high-quality open source software, which copyright clauses don't do.
+Copyleft software licenses are legal tools attempting to force more software vendors to open their source code. But for promoting software freedom, [Martin Keppmann believes more promising legal tools are government regulations](/db/goodbye-gpl/#促进软件自由的法律工具). For example, GDPR proposes [data portability rights](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/individual-rights/right-to-data-portability/), meaning users must be able to transfer their data from one service to others. Another hopeful path is promoting [public sector procurement preferences for open source, local-first software](https://joinup.ec.europa.eu/sites/default/files/document/2012-07/Public_Open_Source_Software_Procurement_Models_The_Next_Generation.pdf) rather than closed source cloud software. This creates positive incentives for enterprises to develop and maintain high-quality open source software, which copyright clauses don't do.
 
 I believe effective change comes from collective action on big problems, not just from some open source projects choosing one license over another. The public cloud rebel alliance should unite all forces that can be united — open source alternative software communities, developers and users; server and hardware vendors, IaaS-holding resource clouds, operator clouds, IDCs and IDC 2.0, even IaaS departments of public cloud vendors. Take all actions allowed within legal frameworks to advance this.
 
 One effective countermeasure is providing open source alternatives for the entire cloud computing technology stack. For example, as mentioned in "[Cloud Computing Rebels](https://mp.weixin.qq.com/s/Fit7MtSDQdp9IcedmWdYQg)" — the cloud computing world needs an alternative solution representing open source values. Open source software communities can compete with cloud vendors on productivity — forming a rebel alliance for collective action. **Developing open source alternatives one by one for management software essential for public cloud vendor services**.
 
 Before open source/local-first alternatives appear for cloud software, public cloud vendors can harvest wildly, extracting monopoly profits. But once better, easier, much lower-cost open source alternatives appear, the good days will end. For example, Kubernetes/SealOS/OpenStack/KVM/Proxmox can be understood as open source alternatives to cloud vendor EC2/ECS/VPS management software; MinIO/Ceph aim to be open source alternatives to cloud vendor S3/OSS management software; while **Pigsty**/various database Operators are open source alternatives to RDS cloud database management software. These open source alternatives will directly shatter public cloud computing's core technical barriers — management software, democratizing cloud capabilities directly to every user.
-
--------------------
 
 ### Seizing Cloud Computing Definition Rights
 
@@ -148,8 +133,6 @@ If public cloud can infiltrate open source communities to stir up trouble, then 
 This concept can be summarized with a single term: "local-first", which directly opposes cloud services. "**Local-first**" versus "**cloud**" opposition manifests in various forms: sometimes "**Native Cloud**" vs "**Cloud Native**", sometimes "private cloud" vs "public cloud", mostly overlapping with "open source" vs "closed source", and in some sense involving "autonomous and controllable" vs "dependent on others".
 
 Local-first software runs on your own hardware using local data storage but doesn't exclude running on cloud IaaS, while retaining cloud software advantages like real-time collaboration, simplified operations, cross-device synchronization, resource scheduling, flexible scaling, etc. Open source local-first software is certainly very good, but this isn't necessary — 90% of local-first software's advantages also apply to closed source software. Similarly, free software is certainly good, but local-first software doesn't exclude commercialization and paid services.
-
--------------------
 
 ### Legitimately Fighting for Resources
 
@@ -160,8 +143,6 @@ Some users mistakenly think their relationship with maintainers is commercial, t
 **Open source doesn't equal free**, although most open source software provides conditions for users to use freely, free open source software is an unconditional **gift**. As recipients, users only have the right to choose to accept or not; as gift-givers, expecting specific returns is foolish. As open source contributors, please put on your own oxygen mask before helping others. If an open source enterprise can't even support itself, then choosing to generate electricity with love and generously give gifts everywhere is unwise.
 
 Therefore, full-time open source software developers and companies must carefully consider their business models — to keep projects and organizations sustainable, resources are indispensable. Whether creating dedicated enterprise versions, providing service support and subscriptions, setting dual licenses, seeking sponsorships and selling merchandise, or simply using so-called "non-open source" licenses like Redis, **this is all understandable and should be legitimate and confident**. Actually, because open source software provides users with additional "**software freedom**" — therefore charging higher fees than cloud rental software under the same quality is completely moral and reasonable!
-
--------------------
 
 ## Where Will the Game Equilibrium Go?
 

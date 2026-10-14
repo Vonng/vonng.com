@@ -6,7 +6,6 @@ summary: >
   MinIO just entered maintenance mode. What replaces it? Can RustFS step in? I tested the contenders so you don’t have to.
 tags: [Object Storage, Database, Open Source]
 ---
-
 MinIO announced maintenance mode two days ago. I ranted in “[MinIO Is Dead](/en/db/minio-is-dead)” and immediately got flooded with “so what now?”
 
 The usual suspects: Ceph, RustFS, SeaweedFS, Garage. I packaged all of them for Linux (RPM/DEB) and ran them through the grinder.
@@ -40,8 +39,6 @@ RustFS has potential, but I worry it’ll retrace MinIO’s path. I asked the AI
 
 The red flags match MinIO’s history: Apache 2.0 license + copyright assignment CLA + single commercial gatekeeper. With that risk profile, I’m downgrading RustFS from “optimistic” to “cautious wait-and-see.”
 
---------
-
 ## So what now?
 
 Pigsty bundles MinIO as an optional module for PostgreSQL backups or as an on-prem S3 for apps like Supabase. After surveying the alternatives, I’m not eager to swap it out. I might add a pgBackRest-native backup server option, but ripping out MinIO today feels premature.
@@ -49,8 +46,6 @@ Pigsty bundles MinIO as an optional module for PostgreSQL backups or as an on-pr
 **Best plan:** stay on the latest MinIO release, lock the version, isolate it on the network, and wait a few months. Maybe the community forks it; maybe RustFS matures. Adjust when reality changes.
 
 RustFS still has a golden window to seize MinIO’s niche with a safer, community-friendly fork. That window is measured in months, not years.
-
---------
 
 ## If you stick with MinIO
 

@@ -6,7 +6,6 @@ summary: >
   Imagine a “closed-course” shootout for domestic databases and clouds, the way Dongchedi just humiliated 30+ autonomous cars. This industry needs its own stress test.
 tags: [PostgreSQL, Database, Commentary, Society]
 ---
-
 I rented a car today, drove from Shanghai back to Ningbo. Yesterday I watched Dongchedi’s autonomous-driving showdown—closed highway + real city roads + 30+ “smart driving” models. Everyone faceplanted except Tesla. The episode aired and every Tesla at the local rental counter vanished, so I ended up in a gas car. Next time.
 
 The video cured my decision fatigue: if I ever buy an EV, it’ll be a Tesla. I don’t care about sofas or fridges; I just want to stop being my own chauffeur. Competent autpilot is the only product feature that matters.

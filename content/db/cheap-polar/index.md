@@ -7,7 +7,6 @@ summary: >
 series: ["信创国产化"]
 tags: [国产数据库, 云计算, 数据库]
 ---
-
 > [微信公众号](https://mp.weixin.qq.com/s/AqcYpOgVj91JnkB1B3s4sA)
 
 昨天一篇中标新闻引起关注与热议：《[IT 行业烂了。。。1610 万大单。。。290 万（中）。。。维保 0.01 元。。。PolarDB 单价 130 元](https://mp.weixin.qq.com/s/hw2pVyf-Y6VX6ZA_mbFylQ)》。刚看到这个标题时，我也没特别惊讶，因为云上 PolarDB 数据库的单价我是非常清楚的，每vCPU·每月的价格在 ¥250 - ¥400，考虑到大客可以干到两三折的折扣也就是 50 ～ 120 块钱，“单价” 130 ¥ 并不算是什么离谱的报价数字。

@@ -6,7 +6,6 @@ summary: >
   Similar to Maslow's hierarchy of needs, user demands for databases also have a progressive hierarchy: physiological needs, safety needs, belonging needs, esteem needs, cognitive needs, aesthetic needs, self-actualization needs, and transcendence needs.
 tags: [Database, Architecture, Software Engineering]
 ---
-
 Similar to Maslow's hierarchy of needs, user demands for databases also have a progressive hierarchy. User demands for databases can be divided into eight levels from bottom to top, corresponding to human needs:
 
 - [Physiological Needs](#physiological-needs): Functionality - kernel/correctness/ACID
@@ -18,15 +17,13 @@ Similar to Maslow's hierarchy of needs, user demands for databases also have a p
 - [Self-Actualization](#self-actualization): Intelligence - standardization/productization/automation
 - [Transcendence Needs](#transcendence-needs): Transformation - true autonomous databases
 
-[![](pyramid.png)](https://mp.weixin.qq.com/s/1xR92Z67kvvj2_NpUMie1Q)
+[![Database Demand Hierarchy Pyramid (figure 1)](pyramid.png)](https://mp.weixin.qq.com/s/1xR92Z67kvvj2_NpUMie1Q)
 
 Safety needs and physiological needs both belong to **basic needs**. A serious database system for production environments should at least satisfy these two types of needs to be considered **qualified**. Belonging needs and esteem needs belong to **advanced needs**. Satisfying these two types of needs can be called **decent**. Cognitive needs and aesthetic needs belong to **high-level needs**. Satisfying these two types of needs deserves the word **taste**.
 
 For self-actualization and **transcendence needs**, different types of users may have different requirements. For example, ordinary engineers' transcendence needs might be promotions, raises, achievements, and making big money; while top users might focus on meaning, innovation, and industry transformation.
 
 **However, for basic needs and advanced needs, all types of users are almost highly consistent.**
-
-------
 
 ## Physiological Needs
 
@@ -39,8 +36,6 @@ For database users, physiological needs refer to **functionality**:
 - **ACID:** Does it support core functionality ensuring correctness - transactions?
 
 For databases, **functional requirements** are the most basic physiological needs. Correctness and ACID are the most fundamental requirements for databases: while some less important data and edge systems can use more flexible data models, NoSQL databases, KV storage, for critical core data, classic ACID relational databases remain irreplaceable. Additionally, if users need PostGIS's geospatial data processing capabilities or TimescaleDB's time-series data capabilities, database kernels without these features will be immediately rejected.
-
-------
 
 ## Safety Needs
 
@@ -56,8 +51,6 @@ Safety needs are crucial for both databases and humans. If databases are lost, b
 
 Safety needs and physiological needs both belong to **basic needs**. A serious database system for production environments should at least satisfy these two types of needs to be considered **qualified**.
 
-------
-
 ## Belonging Needs
 
 Love and belonging needs (often called "social needs") belong to advanced needs, such as: needs for friendship, love, and affiliation relationships.
@@ -72,8 +65,6 @@ Database reliability needs can be compared to human needs for love and belonging
 
 Belonging needs are **advanced needs**. When basic needs (functionality/safety) are satisfied, users begin to have needs for monitoring, alerting, and high availability. For a decent database service, monitoring, alerting, and high availability are indispensable.
 
-------
-
 ## Esteem Needs
 
 Esteem needs refer to people's respect for themselves and confidence, as well as the need to gain respect from others, belonging to advanced level needs. For databases, esteem needs mainly include:
@@ -86,8 +77,6 @@ For databases, safety and reliability are basic duties; being high-quality and c
 
 Belonging needs and esteem needs both belong to **advanced needs**. Only database systems satisfying these two types of needs can be called **decent**. Users whose basic and advanced needs are satisfied will begin to have higher level needs: cognitive and aesthetic.
 
-------
-
 ## Cognitive Needs
 
 Cognitive needs refer to people's needs for knowledge, understanding, and mastering new skills, belonging to advanced level needs. For databases, cognitive needs mainly include:
@@ -99,8 +88,6 @@ Cognitive needs refer to people's needs for knowledge, understanding, and master
 People need self-reflection for progress and development, and cognitive needs are equally important for databases: "monitoring" in belonging needs only focuses on basic survival states of databases, while cognitive needs focus on **understanding and insight** into databases and environments. Modern observability technology stacks collect rich monitoring metrics and present them visually, while DBA/R&D/ops/data analysis personnel extract insights from data and visualization, forming understanding and cognition of systems.
 
 **Without observation, there's no control**. **Observability is for controllability; omniscience equals omnipotence**. Only with deep cognition of databases can one truly achieve effortless control, doing whatever one wants without overstepping bounds.
-
-------
 
 ## Aesthetic Needs
 
@@ -116,8 +103,6 @@ For databases, aesthetic needs mean higher-level **control capabilities**: simpl
 
 **Insight** and **control** both belong to **high-level needs**. Database systems satisfying these two types of needs deserve the word **taste**. These two are also foundations for satisfying higher **transcendence** level needs.
 
-------
-
 ## Self-Actualization
 
 Self-actualization refers to people's pursuit of the highest level of self-realization and personal growth needs, belonging to transcendence level needs. For databases, self-actualization needs mainly include:
@@ -128,8 +113,6 @@ Self-actualization refers to people's pursuit of the highest level of self-reali
 
 Database self-actualization is similar to humans: **reproduction** and **evolution**. For continuous existence, databases need to "reproduce" and expand existence scale, requiring standardization and productization rather than project-by-project approaches. Relational database kernel functionality has SQL as a standard for standardization, but methods for using databases and people who manage databases are far behind: relying more on master craftsmen's intuition and experience. Large models represented by GPT4 reveal the possibility of AI replacing experts (domain models). Soon or later, modeled DBAs will evolve, achieving complete automation in perception-decision-execution levels.
 
-------
-
 ## Transcendence Needs
 
 Transcendence needs (Self-transcendence) refer to people's pursuit of higher-level values and meaning, belonging to the highest level needs. For databases, this might mean a **true autonomous database system** that requires almost no human participation.
@@ -137,8 +120,6 @@ Transcendence needs (Self-transcendence) refer to people's pursuit of higher-lev
 When all previous needs are satisfied, transcendence needs appear. To achieve true database autonomy, the prerequisite is automation and intelligence in perception, thinking, and execution. Cognitive level needs solve "information systems," responsible for perception functions; aesthetic level needs solve "action systems," responsible for implementation control; self-actualization level solves "model systems," responsible for decision-making.
 
 This can also be called one of the holy grails and ultimate goals in the database field.
-
-------
 
 ## What's Next?
 
@@ -148,6 +129,6 @@ Although I'm the author of Pigsty, I'm more of a senior Party A user. I made thi
 
 Recently released Pigsty 2.0.1 version, install with one command:
 
-```
+```text
 curl -fsSL https://repo.pigsty.io/get | bash
 ```

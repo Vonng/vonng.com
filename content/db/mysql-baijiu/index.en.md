@@ -8,7 +8,6 @@ summary: >
 series: [MySQL走好]
 tags: [MySQL, Database, Commentary, Career]
 ---
-
 ## 1. Two Painful Shots
 
 Remember your first sip of baijiu? It scorched down your throat like a wire of fire. Your face contorted, eyes watered, stomach flipped. Every instinct screamed: **this isn’t food, it’s poison.**
@@ -31,8 +30,6 @@ Learn databases from scratch and PostgreSQL feels “how it should be.” MySQL 
 
 Yet the veterans shrug: “You’ll get used to it.” No explanation. Just adaptation. Exactly like baijiu. “You’ll get used to it” is where every form of discipline begins.
 
---------
-
 ## 2. How Discipline Forms
 
 Nobody is born liking baijiu. Ancient Chinese drank rice wine; “煮酒论英雄” wasn’t about Erguotou. Baijiu’s dominance is recent—a top-down spread: a specific organizational culture → bureaucracy → society. A powerful system declares something “the rule,” and the rule seeps everywhere via people and incentives. It’s not because baijiu tastes good; it’s because “the people upstairs drink it.” Copying authority is human nature.
@@ -44,8 +41,6 @@ MySQL rode the same pipeline. In the 2000s, the authority in tech was Silicon Va
 Generations of engineers grew up with “MySQL is the internet default.” They never evaluated other databases; the belief was preloaded. Questioning it felt like saying “I don’t drink baijiu” at a banquet—people wonder what’s wrong with you.
 
 **Discipline isn’t organic. Power builds it, then dresses it up as “tradition.”**
-
---------
 
 ## 3. Obedience Tests
 
@@ -63,8 +58,6 @@ Suggest PostgreSQL and you need detailed reports, stakeholder negotiations, and 
 
 **MySQL requires no justification; alternatives require a defense.** That’s discipline at work: obedience is default, thinking requires effort.
 
---------
-
 ## 4. I’ve Lived It
 
 I joined a major domestic cloud years ago. Our internal poster listed “technology values”: “embrace open source, pursuit of excellence.” Reality? Everyone was told: “all new systems use MySQL. PostgreSQL is forbidden, Oracle is legacy only.” Reasons? “Oracle maintenance is expensive.” “PostgreSQL is unfamiliar.” Translation: “Don’t rock the boat.”
@@ -74,8 +67,6 @@ I sat behind a developer who spent weeks debugging MySQL master-slave data diver
 I’ve watched countless engineers nitpick every Postgres feature—“MySQL can do that,” “your benchmark isn’t fair”—while ignoring MySQL’s fatal flaws. They’re not doing technical due diligence; they’re protecting their comfort zone. Admitting MySQL’s issues means admitting years of sunk cost. That cognitive dissonance hurts, so they fight the messenger.
 
 I get it. Empathy doesn’t equal agreement.
-
---------
 
 ## 5. The Tide Turns
 
@@ -93,8 +84,6 @@ There’s good news: discipline is cracking.
 [DB-Engines trends plus StackOverflow/JetBrains surveys](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247490182&idx=1&sn=cf0b4bc25902467ef61494c4b782a9c8&scene=21#wechat_redirect) all say the same thing: **Postgres is the fastest-growing database of the past decade.** It’s the new default for startups and AI projects—exactly where MySQL used to sit.
 
 Teams are finally asking: **“Why must we use MySQL?”** That question is the beginning of the end for any discipline.
-
---------
 
 ## 6. Courage to Choose
 

@@ -6,12 +6,9 @@ authors: [vonng]
 summary: Thou shalt not run a prod database inside a container
 tags: [Database, Containers, Architecture]
 ---
-
 For stateless app services, containers are an almost perfect devops solution. However, for stateful services like databases, it's not so straightforward. Whether production databases should be containerized remains controversial.
 
 From a developer's perspective, I'm a big fan of Docker & Kubernetes and believe that they might be the future standard for software deployment and operations. But as a database administrator, I think hosting production databases in Docker/K8S is still a bad idea.
-
---------------
 
 ## What problems does Docker solve?
 
@@ -22,8 +19,6 @@ Containers were originally designed for **stateless** apps, where temporary data
 But when it comes to containerizing the production database itself, the scenario changes: databases are stateful. To maintain their state without losing it when the container stops, database containers need to "punch a hole" to the underlying OS, which is named data volumes.
 
 Such containers are no longer ephemeral entities that can be freely created, destroyed, moved, or transferred; they become bound to the underlying environment. Thus, the many advantages of using containers for traditional apps are not applicable to database containers.
-
---------------
 
 ## Reliability
 
@@ -62,8 +57,6 @@ Docker provides process-level isolation, which generally benefits applications b
 A subtle **real-world case** involved starting two PostgreSQL server on the same data directory, either on the host or one in the host and another inside a container. On bare metal, the second instance would fail to start as PostgreSQL recognizes the existing instance and refuses to launch; however, Docker's **isolation** allows the second instance to start obliviously, potentially **toast** the data files if proper fencing mechanisms (like host port or PID file exclusivity) aren't in place.
 
 Do databases need isolation? Absolutely, but not this kind. Databases often demand dedicated physical machines for performance reasons, with only the database process and essential tools running. Even in containers, they're typically bound exclusively to physical/virtual machines. Thus, the type of isolation Docker provides is somewhat irrelevant for such deployments, though it is a handy feature for cloud providers to efficiently oversell in a multi-tenant environment.
-
---------------
 
 ## Maintainability
 
@@ -130,15 +123,11 @@ Similar issues arise with some failure detection tools and common system command
 
 Treating Docker like a VM, many tools may still function, but this defeats much of Docker's purpose, reducing it to just another package manager. Some argue that Docker enhances system reliability through standardized deployment, given the more controlled environment. While this is true, I believe that if the personnel managing the database understand how to configure the database environment, there's no fundamental difference between scripting environment initialization in a Shell script or in a Dockerfile.
 
---------------
-
 ## Scalability
 
 Performance is another point that people concerned a lot. From the performance perspective, the basic principle of  database deployment is: The close to hardware, The better it is.  Additional isolation & abstraction layer is bad for database performance. More isolation means more overhead, even if it is just an additional `memcpy` in the kernel .
 
 For performance-seeking scenarios, some databases choose to bypass the operating system's page management mechanism to operate the disk directly, while some databases may even use FPGA or GPU to speed up query processing. Docker as a lightweight container, performance suffers not much, and the impact to performance-insensitive scenarios may not be significant, but the extra abstract layer will definitely make performance worse than make it better.
-
---------------
 
 ## Summary
 

@@ -5,7 +5,6 @@ summary: >
   Palantir's Ontology is, technically, data modeling. The more interesting question is how a philosophy term got repurposed to market system integration and data modeling, and why that story is so likely to turn into another round of concept inflation in China's tech ecosystem.
 tags: [OLAP, Data Sovereignty, Philosophy, Commentary]
 ---
-
 Last month I wrote a post called ["The Palantir Ontology Scam"](https://vonng.com/db/ontology-bullshit/).
 The core point was simple and summarized in a Rosetta Stone-style comparison table:
 Palantir's Ontology is, at the technical level, database modeling.
@@ -16,8 +15,6 @@ The debate result itself was not especially interesting. The audience vote ended
 The previous article did the demolition.
 This one is about the deeper layer:
 what ontology actually is, what Palantir did to the term, and why Chinese imitators are likely to fail if they try to copy the story.
-
----
 
 ## TL;DR
 
@@ -63,8 +60,6 @@ There is no local equivalent of a constant Hacker News or Reddit instinct that s
 
 That is why I keep mocking ontology.
 Not because data modeling is worthless, but because concept pollution matters.
-
----
 
 ## 1. The Fact Pattern: Ontology Is Data Modeling
 
@@ -124,8 +119,6 @@ Michael Burry later used this as an example of Palantir's moat being migration f
 
 Gruber designed ontology to build bridges.
 Palantir turns the bridge into a wall.
-
----
 
 ## 2. The Incentive Story: Carrots and Radar
 
@@ -189,8 +182,6 @@ Michael Burry once described Palantir bluntly as "a consulting company disguised
 The existence of the FDE model is one of the strongest pieces of evidence for that view.
 
 If your ontology platform were really that magical, why does it need so many human babysitters?
-
----
 
 ## 3. Ontology Proper: Databases Are the Closest Practical Version
 
@@ -296,8 +287,6 @@ Customers get the bones.
 
 **Palantir sells Types. Ontology, in the serious sense, asks whether the Types themselves are the right ones.**
 
----
-
 ## 4. Waiting on the Bamboo Runway
 
 ### Cargo Cult
@@ -348,8 +337,6 @@ If you call it "a data warehouse project," people stay more rational.
 
 Ontology is currently in that same expectation-inflation phase in China.
 Five years from now, many of today's ontology chasers will look exactly like the middle-platform chasers of 2019.
-
----
 
 ## 5. Concept Sanitation
 

@@ -7,7 +7,6 @@ summary: >
 series: ["MySQL走好"]
 tags: [MySQL, 数据库, 事务]
 ---
-
 MySQL **曾经** 是世界上最流行的开源关系型数据库，然而流行并不意味着先进，流行的东西也会出大问题。[JEPSEN](https://jepsen.io/analyses/mysql-8.0.34) 对 MySQL 的隔离等级评测捅穿了这层窗户纸 —— 在 **正确性** 这个体面数据库产品必须的基本属性上，MySQL 的表现一塌糊涂。
 
 MySQL 文档声称实现了 **可重复读/RR** 隔离等级，但实际提供的正确性保证却弱得多。JEPSEN 在 Hermitage 的研究基础上进一步指出，MySQL 的 可重复读/RR 隔离等级实际上并不可重复读，甚至既不 **原子** 也不 **单调**，连 **单调原子视图/MAV** 的基本水平都不满足。
@@ -25,9 +24,7 @@ MySQL 文档声称实现了 **可重复读/RR** 隔离等级，但实际提供�
 - [正确性与性能的利弊权衡](#正确性与性能的利弊权衡)
 - [参考](#参考)
 
-[![](featured.jpg)](https://mp.weixin.qq.com/s/gQZ3Q5JKV8gaBNhc1puPcA)
-
---------------------
+[![MySQL正确性竟如此垃圾？（图 1）](featured.jpg)](https://mp.weixin.qq.com/s/gQZ3Q5JKV8gaBNhc1puPcA)
 
 ## 正确性为什么很重要？
 
@@ -48,8 +45,6 @@ RDBMS 允许使用不同的 **隔离级别**，供用户在 **性能** 与 **正
 为了确保正确性，用户可以使用额外的并发控制机制，例如显式加锁或 SELECT FOR UPDATE ，但这会引入额外的复杂度并影响系统的简单性。对于金融场景而言，正确性是极其重要的 —— 记账错漏，对账不平很可能会在现实世界中产生严重后果；然而对于糙猛快的互联网场景而言，错漏几条数据并非不可接受 —— 正确性的优先级通常会让位于性能。
 这也为伴随互联网东风而流行的 **MySQL** 的正确性问题埋下了祸根。
 
---------------------
-
 ## Hermitage的结果怎么说？
 
 在介绍 JEPSEN 的研究之前，我们先来回顾一下 [Hermitage](https://github.com/ept/hermitage)  项目。。这是互联网名著 《DDIA》 作者 Martin Kelppmann 在 **2014** 年发起的项目，旨在评测各种主流关系数据库的 **正确性**。项目设计了一系列并发运行的事务场景，用于评定数据库标称隔离等级的实际水平。
@@ -65,8 +60,6 @@ MySQL 的问题更为显著：因为默认使用的 **可重复读/RR** 隔离�
 需要指出 ANSI SQL 92 隔离等级是一个糟糕简陋且广为诟病的标准，它只定义了三种异常现象并用它们区分出四个隔离等级 —— 但实际上的异常种类/隔离等级要多得多。著名的《A Critique of ANSI SQL Isolation Levels》论文对此提出了修正，并介绍了几种重要的新隔离等级，并给出了它们之间的强弱关系偏序图（图左）。
 
 在新的模型下，许多数据库的 “**读已提交/RC**” 与 “**可重复读/RR**” 实际上是更为实用的 “**单调原子视图/MAV**” 和 “**快照隔离/SI**” 。但 MySQL 确实别具一格：在 Hermitage 的评测中，MySQL的 **可重复读/RR** 与 **快照隔离/SI** 相距甚远，也不满足 ANSI 92 **可重复读/RR** 的标准，实际水平为 **单调原子视图/MAV。** 而 JEPSEN 的研究进一步指出，MySQL **可重复读/RR** 实际上连 **单调原子视图/MAV** 都不满足，仅仅略强于 **读已提交/RC** 。
-
---------------------
 
 ## JEPSEN 又有什么新发现？
 
@@ -87,8 +80,6 @@ MySQL 8.0.34 的 **RU**，**RC**，**SR** 隔离等级符合 ANSI 标准的描�
  MySQL RR 下的事务观察到了违反内部一致性、单调性、原子性的现象。这使得其评级被进一步调整至一个仅略高于 RC 的未定隔离等级水平上。
 
 在 JEPSEN 的测试中共披露了六项异常，其中在2014年已知的问题我们先跳过，这里重点关注 JEPSEN 的新发现的异常，下面是几个具体的例子。
-
---------------------
 
 ## 隔离性问题：不可重复读
 
@@ -117,8 +108,6 @@ COMMIT;
 但是在测试结果中 ，9048个事务中的126个出现了 **内部一致性错误** —— 尽管是在 可重复读 隔离等级上运行的，但是实际读到的名字还是出现了变化。这样的行为与 MySQL 的[隔离级别文档](https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html#isolevel_repeatable-read)矛盾，该文档声称：“同一事务中的一致读取，会读取第一次读取建立的快照”。它与 MySQL 的[一致性读文档](https://dev.mysql.com/doc/refman/8.0/en/innodb-consistent-read.html)相矛盾，该文档特别指出，“InnoDB 在事务的第一次读时分配一个时间点，并发事务的影响不应出现在后续的读取中”。
 
 ANSI / Adya 可重复读实质是：一旦事务观察到某个值，它就可以指望该值在事务的其余部分保持稳定。MySQL 则相反：**写入请求是邀请另一个事务潜入，并破坏用户刚刚读取的状态**。这样的隔离设计与行为表现确实是难以置信地愚蠢。但这儿还有更离谱的事情 —— 比如 **单调性** 和 **原子性** 问题。
-
---------------------
 
 ## 原子性问题：非单调视图
 
@@ -161,8 +150,6 @@ MySQL 的[一致性读取文档](https://dev.mysql.com/doc/refman/8.0/en/innodb-
 
 ![mysql-atom.png](mysql-atom.png)
 
---------------------
-
 ## 串行化问题：鸡肋且糟糕
 
 **可串行化/SR** 可以阻止上面的并发异常出现吗？理论上可以，可串行化就是为这个目的而设计的。但令人深感不安的是，JEPSEN 在 AWS RDS 集群中观察到，MySQL 在 **可串行化/SR** 隔离等级下也出现了 “Fractured Read-Like” 异常，这是G2异常的一个例子。这种异常是被 **RR** 所禁止的，应该只会在 **RC** 或更低级别出现。
@@ -183,8 +170,6 @@ MySQL 的[一致性读取文档](https://dev.mysql.com/doc/refman/8.0/en/innodb-
 
 李海翔教授在专文《[一无是处的MySQL](https://mp.weixin.qq.com/s/__mnrLBN88RPgpET0kq3vg)》对此有过详细分析：尽管MySQL的 **可串行化/SR** 可以通过大面积使用死锁检测算法保证正确性，但这样处理并发异常，会严重影响数据库的 **性能与实用价值**。
 
---------------------
-
 ## 正确性与性能的利弊权衡
 
 李海翔教授在《[第三代分布式数据库：踢球时代](https://mp.weixin.qq.com/s/zz_184uqiSXQ1nSYENGuxg)》中抛出了一个问题：**如何对系统的正确性与性能进行利弊权衡？**
@@ -201,7 +186,7 @@ MySQL 的[一致性读取文档](https://dev.mysql.com/doc/refman/8.0/en/innodb-
 
 ![consistency.png](mysql-consistency.png)
 
-而使用弱隔离等级性能更好的刻板印象可能源于 MySQL —— 大面积使用 **死锁检测**（标红）实现的 SR 性能确实糟糕。**但对于其他 DBMS 来说并非必然如此**。例如，PostgreSQL 在 9.1 引入的 **可串行化快照隔离（SSI）** 算法可以在提供完整可串行化前提下，相比 **快照隔离/SI** [并没有多少性能损失](https://lchsk.com/benchmarking-concurrent-operations-in-postgresql)。
+而使用弱隔离等级性能更好的刻板印象可能源于 MySQL —— 大面积使用 **死锁检测**（标红）实现的 SR 性能确实糟糕。**但对于其他 DBMS 来说并非必然如此**。例如，PostgreSQL 在 9.1 引入的 **可串行化快照隔离（SSI）** 算法可以在提供完整可串行化前提下，相比 **快照隔离/SI** 并没有多少性能损失（原链接失效）。
 
 ![pgbench.png](mysql-pgbench.png)
 
@@ -216,8 +201,6 @@ MySQL 的[一致性读取文档](https://dev.mysql.com/doc/refman/8.0/en/innodb-
 ![sf2023.png](mysql-sf2023.png)
 
 PostgreSQL 在 2023 年 StackOverflow 的全球开发者用户调研中，开发者使用率正式超过了 MySQL ，成为[世界上最流行的数据库](https://mp.weixin.qq.com/s/xewE87WEaZHp-K5hjuk65A)。而在正确性上一塌糊涂，且与高性能难以得兼的 MySQL ，确实应该好好思考一下自己的破局之路了。
-
-------
 
 ## 参考
 
@@ -241,6 +224,6 @@ PostgreSQL 在 2023 年 StackOverflow 的全球开发者用户调研中，开发
 
 `[13]` 与弱隔离等级相关的错误的数量和影响被广泛低估: *https://dl.acm.org/doi/10.1145/3035918.3064037*
 
-`[14]` 测试PostgreSQL的并行性能: *https://lchsk.com/benchmarking-concurrent-operations-in-postgresql*
+`[14]` 测试PostgreSQL的并行性能: *`https://lchsk.com/benchmarking-concurrent-operations-in-postgresql`（原链接失效）*
 
 `[15]` 在单台服务器上跑起推特: *https://thume.ca/2023/01/02/one-machine-twitter/*

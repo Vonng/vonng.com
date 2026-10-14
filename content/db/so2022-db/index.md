@@ -6,7 +6,6 @@ summary: >
   什么，PostgreSQL已经成为最流行，最先进，开发者最想学习使用的数据库了？最近，StackOverfl
 tags: [PostgreSQL, 数据库, PG生态]
 ---
-
 什么，PostgreSQL 已经成为最流行，最先进，开发者最想学习使用的数据库了？
 
 最近，StackOverflow 公布了在 5 月份进行的一次开发者调研报告。其中 PostgreSQL 获得了三连冠：

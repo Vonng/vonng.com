@@ -8,15 +8,11 @@ tags: [PostgreSQL, AI, Agent, Database]
 ai: true
 aliases: ["/ai/agent-native-db/"]
 ---
-
-
 When we talk about “databases for the AI era,” it is easy to fall into a familiar trap: assuming the shift requires a brand-new storage engine, a revolutionary index structure, or a disruptive query language.
 
 But a clear-eyed look at the problem suggests the opposite: **the real transformation is not in the database kernel, but in the layer above it.**
 
 > [Original WeChat post](https://mp.weixin.qq.com/s/zFpFECMOCbllihvuh-2BaQ)
-
-------
 
 ## 1. A Brain in a Vat
 
@@ -30,8 +26,6 @@ What is the root cause?
 
 It is not that databases are too slow or their indexes too weak. It is that **agents lack a unified “digital body”**—an integrated container that brings together skills, memory, and reasoning.
 
-------
-
 ## 2. Three Missing Organs
 
 If we use human intelligence as our model, today’s agent architectures are missing exactly three critical “organs”:
@@ -44,8 +38,6 @@ If we use human intelligence as our model, today’s agent architectures are mis
 
 Together, these three missing pieces put a ceiling on agent autonomy. Without muscle memory, an agent reacts slowly. Without associative memory, it is blind to context. Without counterfactual simulation, it cannot afford to take risks.
 
-------
-
 ## 3. Three Dimensions of a Paradigm Shift
 
 Once we understand the problem, the shape of the solution comes into focus.
@@ -55,8 +47,6 @@ Once we understand the problem, the shape of the solution comes into focus.
 **Second: from keyword search to associative memory.** Vector similarity search alone cannot answer a question such as, “Who is the CEO of the company that released GPT-4?” which requires multihop reasoning. We must erase the boundary between vectors and graphs and build dynamic semantic graphs that support both fuzzy semantic matching and traversal over structural relationships. GraphRAG experiments show that this fused architecture can reach 87% accuracy on multihop reasoning tasks, versus just 23% for vector-only approaches.
 
 **Third: from CRUD to counterfactual simulation.** Agents need “Git for Data”: the ability to create database branches instantly, simulate the consequences of different decisions in isolated environments, and then selectively merge or discard the results. This gives an agent real “imagination.” It can experiment boldly in parallel universes without risking damage to production.
-
-------
 
 ## 4. An Overlooked Truth
 
@@ -69,8 +59,6 @@ The underlying mechanisms these capabilities need—ACID transactions, B-tree in
 In other words, the Agent-Native Database revolution is not about a new kernel, a new storage layer, or a new engine. Agents still need the database core as a precision instrument, and nothing is replacing it. **The real transformation comes from combining these “boring” technologies to support seemingly flashy new capabilities.**
 
 This distinction is crucial. It tells us where to focus.
-
-------
 
 ## 5. PostgreSQL’s Overwhelming Advantage
 
@@ -90,8 +78,6 @@ Pinecone only does vectors; Neo4j only does graphs. That is not a criticism: foc
 
 One PostgreSQL instance is a complete cognitive infrastructure.
 
-------
-
 ## 6. Where the Real Competition Is
 
 If PostgreSQL is the settled foundation, where does the real competition happen?
@@ -106,8 +92,6 @@ We can already see the outlines of this competition.
 
 Databricks’ acquisition of Neon for roughly $1 billion is a landmark event in this competition. It validates a thesis: **database infrastructure has strategic value in the agent era, and that value lies not in the underlying kernel, but in ecosystem integration.**
 
-------
-
 ## 7. The Shape of a New Species
 
 Over the next few years, we have reason to expect a new species to emerge from the PostgreSQL ecosystem: some form of **Agent-Native Platform**.
@@ -119,8 +103,6 @@ It will support MCP or similar protocols natively, allowing agent frameworks to 
 It may include built-in abstractions for memory hierarchies. The distinctions among working, episodic, and semantic memory will no longer be implemented in the application layer; the platform will support them natively, including automatic memory consolidation and forgetting policies.
 
 This new species may evolve from an existing player or come from a disruptive newcomer. Either way, its foundation will inevitably be PostgreSQL, because only PostgreSQL has the extension depth and ecosystem breadth required to support such a unified platform.
-
-------
 
 ## 8. Body and Soul
 

@@ -7,10 +7,7 @@ summary: >
   MongoDB 3.2's analytics subsystem turned out to be an embedded PostgreSQL database? A whistleblowing story from MongoDB's partner about betrayal and disillusionment.
 tags: [MongoDB, PostgreSQL, Database, Commentary]
 ---
-
--------------
-
-#### Preface
+## Preface
 
 Tomorrow I'll publish an article criticizing MongoDB, as a response to their recent malicious marketing that provocatively targets PostgreSQL. But before that, I want to share a brilliant article from 2015 that exposes some of MongoDB's dark history.
 
@@ -28,9 +25,9 @@ The most classic aspect of this article is that it's a tearful complaint from a 
 
 When I finally pieced together all the clues, I was *shocked*. If my speculation was correct, [MongoDB](http://mongodb.com/) might be about to commit what I believe is the **biggest mistake** in database company history.
 
-I am a developer of an [open source analytics tool](http://github.com/slamdata/slamdata) that supports connections to NoSQL databases like MongoDB, and I spend every day working to help these next-generation database vendors succeed.
+I am a developer of an open source analytics tool (original link unavailable) that supports connections to NoSQL databases like MongoDB, and I spend every day working to help these next-generation database vendors succeed.
 
-In fact, I recently presented to a [packed room](https://twitter.com/slamdata/status/672166743255592960) at [MongoDB Days Silicon Valley](https://www.mongodb.com/events/mongodb-days-siliconvalley), giving a [talk](http://www.slideshare.net/jdegoes/slamdata-how-mongodb-is-powering-a-revolution-in-visual-analytics) about the many benefits of adopting these new databases.
+In fact, I recently presented to a [packed room](https://twitter.com/slamdata/status/672166743255592960) at MongoDB Days Silicon Valley (original link unavailable), giving a [talk](http://www.slideshare.net/jdegoes/slamdata-how-mongodb-is-powering-a-revolution-in-visual-analytics) about the many benefits of adopting these new databases.
 
 So when I realized this potentially destructive secret, I immediately sounded the alarm. On November 12, 2015, I sent an email to Asya Kamsky, MongoDB's Lead Product Manager.
 
@@ -67,8 +64,6 @@ I pleaded for more details, but no, that was strictly confidential. I would have
 I passed this news to my co-founder Jeff Carr, and we shared a brief moment of panic. For our four-person, self-funded startup, the biggest fear was that MongoDB would announce their own analytics tool, which could hurt our chances of raising money.
 
 To our relief, we discovered the next day that MongoDB's big announcement wasn't an analytics tool, but rather a solution called the *MongoDB BI Connector*, a headline feature of the upcoming 3.2 release.
-
---------
 
 ## MongoDB 3.2 BI Connector
 
@@ -142,8 +137,6 @@ Jeff was speechless. He didn't say a word. But I could tell exactly what he was 
 
 **Shit. This is bad news for MongoDB. Really bad.**
 
---------
-
 ## PostgreSQL: The MongoDB Killer
 
 PostgreSQL is a popular open source relational database. It's so popular that it currently [ranks](http://db-engines.com/en/ranking) almost neck-and-neck with MongoDB.
@@ -152,21 +145,19 @@ This database poses *fierce competition* for MongoDB, primarily because it has a
 
 Every month or so, someone writes an article recommending PostgreSQL over MongoDB. These articles often go viral and rocket to the top of HackerNews. Here are links to some of these articles:
 
-- [Goodbye MongoDB. Hello PostgreSQL](http://developer.olery.com/blog/goodbye-mongodb-hello-postgresql/)
+- Goodbye MongoDB. Hello PostgreSQL (original link unavailable)
 - [Postgres Outperforms MongoDB and Ushers in New Developer Reality](http://www.enterprisedb.com/postgres-plus-edb-blog/marc-linster/postgres-outperforms-mongodb-and-ushers-new-developer-reality)
 - [MongoDB is dead. Long live PostgreSQL :)](https://github.com/errbit/errbit/issues/614)
 - [Why You Should Never Use MongoDB](http://www.sarahmei.com/blog/2013/11/11/why-you-should-never-use-mongodb/)
 - [SQL vs NoSQL KO. Postgres vs Mongo](https://www.airpair.com/postgresql/posts/sql-vs-nosql-ko-postgres-vs-mongo)
-- [Why I Migrated Away from MongoDB](http://svs.io/post/31724990463/why-i-migrated-away-from-mongodb)
+- Why I Migrated Away from MongoDB (original link unavailable)
 - [Why you should never, ever, ever use MongoDB](http://cryto.net/~joepie91/blog/2015/07/19/why-you-should-never-ever-ever-use-mongodb/)
-- [Is Postgres NoSQL Better than MongoDB?](http://www.aptuz.com/blog/is-postgres-nosql-database-better-than-mongodb/)
+- Is Postgres NoSQL Better than MongoDB? (original link unavailable)
 - [Bye Bye MongoDB. Guten Tag PostgreSQL](https://www.userlike.com/en/blog/2015/10/09/bye-by-mysql-and-mongodb-guten-tag-postgresql)
 
 The largest company commercializing PostgreSQL is [EnterpriseDB](http://enterprisedb.com/) (though there are many others, some older or equally active), which maintains a [large content repository](http://www.enterprisedb.com/nosql-for-enterprise) on their official website arguing that PostgreSQL is a better NoSQL database than MongoDB.
 
 Whatever your opinion on this point, one thing is clear: MongoDB and PostgreSQL are locked in a fierce, bloody battle for developer mindshare.
-
---------
 
 ## From Prototype to Production
 
@@ -181,8 +172,6 @@ Indeed, Tableau's press release wording even suggested the PostgreSQL driver dep
 Perhaps, I thought, MongoDB 3.2's release would ship with the *real deal*: a BI connector that exposes the rich data structures MongoDB supports (instead of flattening, null-padding, and discarding data), executes all queries 100% within the database, and has no dependencies on competing databases.
 
 In July, more than a month after MongoWorld, I visited MongoDB's Palo Alto offices during a business trip. What I learned was very encouraging.
-
-------
 
 ## A Visit to MongoDB
 
@@ -200,13 +189,11 @@ I explained what my company was doing to Asya and helped her get our open source
 
 We both seemed to share the same view: BI software needs to gain the ability to understand more complex data. The alternative, which involves dumbing down data to fit the limitations of older BI software, means throwing away so much information that you lose the ability to solve [key problems](http://slamdata.com/whitepapers/characteristics-of-nosql-analytics-systems/) in NoSQL analytics.
 
-Asya thought MongoDB's BI connector should expose native MongoDB data structures, such as arrays, without any flattening or transformations. This characteristic, which I call an *isomorphic data model*, is one of the key requirements for general-purpose NoSQL analytics systems, a topic I've written about extensively in [multiple articles](http://www.infoworld.com/article/2983953/nosql/how-to-choose-a-nosql-analytics-system.html).
+Asya thought MongoDB's BI connector should expose native MongoDB data structures, such as arrays, without any flattening or transformations. This characteristic, which I call an *isomorphic data model*, is one of the key requirements for general-purpose NoSQL analytics systems, a topic I've written about extensively in multiple articles (original link unavailable).
 
 I was very encouraged that Asya had independently reached the same conclusion, and I felt confident that MongoDB understood the problem. I thought MongoDB's analytics future looked very bright.
 
 Unfortunately, I couldn't have been more wrong.
-
---------
 
 ## MongoDB: Built for Giant ~~Ideas~~ Mistakes
 
@@ -240,8 +227,6 @@ Eliot Horowitz would deliver a keynote, Asya Kamsky would speak, and Ron Avnur w
 
 That would be my best chance to convince MongoDB to abandon the BI connector shenanigans.
 
---------
-
 ## MongoDB Days 2015, Silicon Valley
 
 Thanks to MongoDB's excellent marketing team, and based on the success of a similar talk I gave in Seattle at a MongoDB roadshow, I got a 45-minute presentation slot at the MongoDB Days conference.
@@ -270,7 +255,7 @@ It turns out the BI connector was a leading feature of the keynote, having its o
 
 Eliot introduced the BI connector by loudly proclaiming, *"MongoDB has no native analytics tools."*
 
-I found this somewhat amusing, since I had written a guest post for MongoDB titled [Native Analytics for MongoDB with SlamData](https://www.mongodb.com/blog/post/native-sql-analytics-mongodb-slamdata). (Editor's note: MongoDB has since taken down this blog post, but as of 15:30 MDT, it's still [in the search index](https://www.mongodb.com/blog?utf8=✓&search=slamdata#)). SlamData is also a MongoDB partner and sponsored the MongoDB Days conference.
+I found this somewhat amusing, since I had written a guest post for MongoDB titled Native Analytics for MongoDB with SlamData (original link unavailable). (Editor's note: MongoDB has since taken down this blog post, but as of 15:30 MDT, it's still [in the search index](https://www.mongodb.com/blog?utf8=✓&search=slamdata#)). SlamData is also a MongoDB partner and sponsored the MongoDB Days conference.
 
 When introducing the BI connector's purpose, Eliot seemed to stumble a bit (getting actions from... actionable insights? *Pesky analytics!*). He looked relieved when he handed the presentation over to Asya Kamsky, who had prepared a nice demo for the event.
 
@@ -309,8 +294,6 @@ After my conversation with Dev, it finally sunk in that I wouldn't be able to ch
 I was disappointed, but at the same time, I felt a huge wave of relief. I had talked to everyone I could reach. I had pulled out all the stops. I had given it my all.
 
 As I left the cocktail reception and headed back to my hotel, I couldn't help but speculate on why the company was making decisions I so strongly opposed.
-
---------
 
 ## MongoDB: An Island of One
 
@@ -358,8 +341,6 @@ The goal should be for MongoDB to drive enough revenue from the database that th
 
 You can judge for yourself, but I think it's pretty clear which is the winning strategy.
 
---------
-
 ## Goodbye, MongoDB!
 
 Obviously, I cannot support product decisions like shipping a competing relational database as the definitive solution for analytics on a post-relational database like MongoDB.
@@ -390,9 +371,7 @@ Which is, sadly, *exactly* what MongoDB has done in reverse.
 
 *The "Shame" photo was taken by [Grey World](https://www.flickr.com/photos/greyworld/), copyright Grey World, and licensed under [CC By 2.0](https://creativecommons.org/licenses/by/2.0/).*
 
---------
-
-# MongoDB 3.2: Now Powered by PostgreSQL
+## MongoDB 3.2: Now Powered by PostgreSQL
 
 > John De Goes — Challenging the status quo at Ziverge
 
@@ -402,9 +381,9 @@ Published: December 8, 2015
 
 When I finally pieced together all the clues, I was *shocked*. If I was right, [MongoDB](http://mongodb.com/) was about to make what I would call the *biggest mistake ever made* in the history of database companies.
 
-I work on an [open source analytics tool](http://github.com/slamdata/slamdata) that connects to NoSQL databases like MongoDB, so I spend my days rooting for these next-generation database vendors to succeed.
+I work on an open source analytics tool (original link unavailable) that connects to NoSQL databases like MongoDB, so I spend my days rooting for these next-generation database vendors to succeed.
 
-In fact, I just presented to a [packed room](https://twitter.com/slamdata/status/672166743255592960) at [MongoDB Days Silicon Valley](https://www.mongodb.com/events/mongodb-days-siliconvalley), [making a case](http://www.slideshare.net/jdegoes/slamdata-how-mongodb-is-powering-a-revolution-in-visual-analytics) for companies to adopt the new database.
+In fact, I just presented to a [packed room](https://twitter.com/slamdata/status/672166743255592960) at MongoDB Days Silicon Valley (original link unavailable), [making a case](http://www.slideshare.net/jdegoes/slamdata-how-mongodb-is-powering-a-revolution-in-visual-analytics) for companies to adopt the new database.
 
 So when I uncovered a secret this destructive, I hit the panic button: on November 12th, 2015, I sent an email to Asya Kamsky, Lead Product Manager at MongoDB.
 
@@ -416,9 +395,7 @@ This is the story of what I discovered, how I pieced together the clues from pre
 
 The story begins on June 1st 2015, at the annual MongoWorld conference in New York City.
 
---------
-
-## MongoWorld 2015
+### MongoWorld 2015
 
 [SlamData](http://slamdata.com/), my new analytics startup, was sponsoring MongoWorld 2015, so I got a rare ticket to the VIP party the night before the conference.
 
@@ -446,9 +423,7 @@ I passed along the tip to my co-founder, Jeff Carr, and we shared a brief moment
 
 Much to our relief, we'd find out the following day that MongoDB's big announcement wasn't an analytics tool. Instead, it was a solution called *MongoDB BI Connector*, a headline feature of the upcoming 3.2 release.
 
---------
-
-## The MongoDB 3.2 BI Connector
+### The MongoDB 3.2 BI Connector
 
 Eliot had the honor of announcing the BI connector. Of all the things he was announcing, Eliot seemed least interested in the connector, so it got barely more than a mention.
 
@@ -462,7 +437,7 @@ News of the connector [caught fire](https://twitter.com/search?f=tweets&vertical
 
 Given the nature of the announcement, the media hoopla was probably justified.
 
-### When Worlds Collide
+#### When Worlds Collide
 
 MongoDB, like many other NoSQL databases, does not store relational data. It stores rich data structures that relational BI software cannot understand.
 
@@ -478,7 +453,7 @@ A couple months earlier, I had chatted with Ron Avnur, VP of Products at MongoDB
 
 This meant that MongoDB had gone from *nothing* to *magic* in just a few months.
 
-### Pulling Back the Curtain
+#### Pulling Back the Curtain
 
 After the announcement, Jeff and I headed back to our sponsor booth, and Jeff asked me the most obvious question: *"How did they go from nothing to a BI connector that works with all possible BI tools in just a couple months?!?"*
 
@@ -522,9 +497,7 @@ Jeff was speechless. He didn't say a word. But I could tell *exactly* what he wa
 
 *Shit. This is bad news for MongoDB. Really bad.*
 
---------
-
-## PostgreSQL: The MongoDB Killer
+### PostgreSQL: The MongoDB Killer
 
 PostgreSQL is a popular open source relational database. So popular, in fact, it's currently [neck-and-neck with MongoDB](http://db-engines.com/en/ranking).
 
@@ -532,23 +505,21 @@ The database is *fierce competition* for MongoDB, primarily because it has acqui
 
 Every month or so, someone writes an article that recommends PostgreSQL over MongoDB. Often, the article goes viral and skyrockets to the top of hacker websites. A few of these articles are shown below:
 
-- [Goodbye MongoDB. Hello PostgreSQL](http://developer.olery.com/blog/goodbye-mongodb-hello-postgresql/)
+- Goodbye MongoDB. Hello PostgreSQL (original link unavailable)
 - [Postgres Outperforms MongoDB and Ushers in New Developer Reality](http://www.enterprisedb.com/postgres-plus-edb-blog/marc-linster/postgres-outperforms-mongodb-and-ushers-new-developer-reality)
 - [MongoDB is dead. Long live Postgresql :)](https://github.com/errbit/errbit/issues/614)
 - [Why You Should Never Use MongoDB](http://www.sarahmei.com/blog/2013/11/11/why-you-should-never-use-mongodb/)
 - [SQL vs NoSQL KO. Postgres vs Mongo](https://www.airpair.com/postgresql/posts/sql-vs-nosql-ko-postgres-vs-mongo)
-- [Why I Migrated Away from MongoDB](http://svs.io/post/31724990463/why-i-migrated-away-from-mongodb)
+- Why I Migrated Away from MongoDB (original link unavailable)
 - [Why you should never, ever, ever use MongoDB](http://cryto.net/~joepie91/blog/2015/07/19/why-you-should-never-ever-ever-use-mongodb/)
-- [Is Postgres NoSQL Better than MongoDB?](http://www.aptuz.com/blog/is-postgres-nosql-database-better-than-mongodb/)
+- Is Postgres NoSQL Better than MongoDB? (original link unavailable)
 - [Bye Bye MongoDB. Guten Tag PostgreSQL](https://www.userlike.com/en/blog/2015/10/09/bye-by-mysql-and-mongodb-guten-tag-postgresql)
 
 The largest company commercializing PostgreSQL is [EnterpriseDB](http://enterprisedb.com/) (though there are plenty of others, some older or just as active), which maintains a [large repository of content](http://www.enterprisedb.com/nosql-for-enterprise) on the official website arguing that PostgreSQL is a better NoSQL database than MongoDB.
 
 Whatever your opinion on that point, one thing is clear: MongoDB and PostgreSQL are locked in a vicious, bloody battle for mind share among developers.
 
---------
-
-## From Prototype to Production
+### From Prototype to Production
 
 As any engineer worth her salt will tell you, *prototypes aren't for production*.
 
@@ -562,9 +533,7 @@ Perhaps, I thought, the 3.2 release of MongoDB would ship with the *real deal*: 
 
 In July, more than a month after MongoWorld, I dropped by MongoDB's offices in Palo Alto during a business trip. And I was very encouraged by what I learned.
 
---------
-
-## A Trip to MongoDB
+### A Trip to MongoDB
 
 By Palo Alto's standards, MongoDB's office is quite large.
 
@@ -580,15 +549,13 @@ I explained to Asya what my company was doing, and helped her get our open sourc
 
 We both seemed to share the same view: that BI software needs to gain the ability to understand more complex data. The alternative, which involves dumbing down the data to fit the limitations of older BI software, means throwing away so much information, you lose the ability to solve [key problems](http://slamdata.com/whitepapers/characteristics-of-nosql-analytics-systems/) in NoSQL analytics.
 
-Asya thought a BI connector for MongoDB should expose the native MongoDB data structures, such as arrays, without any flattening or transformations. This characteristic, which I have termed *isomorphic data model*, is one of the key requirements for a general-purpose NoSQL analytics, a topic I've [written about](http://www.infoworld.com/article/2983953/nosql/how-to-choose-a-nosql-analytics-system.html) extensively.
+Asya thought a BI connector for MongoDB should expose the native MongoDB data structures, such as arrays, without any flattening or transformations. This characteristic, which I have termed *isomorphic data model*, is one of the key requirements for a general-purpose NoSQL analytics, a topic I've written about (original link unavailable) extensively.
 
 I was very encouraged that Asya had independently come to the same conclusion, and felt confident that MongoDB understood the problem. I thought the future of analytics for MongoDB looked very bright.
 
 Unfortunately, I could not have been more wrong.
 
---------
-
-## MongoDB: For Giant ~~Ideas~~ Mistakes
+### MongoDB: For Giant ~~Ideas~~ Mistakes
 
 Delighted that MongoDB was on the right track, I paid little attention to the BI connector for the next couple of months, though I did exchange a few emails with Asya and Ron.
 
@@ -620,9 +587,7 @@ Eliot Horowitz was delivering a keynote, Asya Kamsky would be speaking, and Ron 
 
 That's when I'd have my best chance of convincing MongoDB to ditch the BI connector shenanigans.
 
---------
-
-## MongoDB Days 2015, Silicon Valley
+### MongoDB Days 2015, Silicon Valley
 
 Thanks to the wonderful marketing team at MongoDB, and based on the success of a similar talk I gave in Seattle at a MongoDB road show, I had a 45 minute presentation at the MongoDB Days conference.
 
@@ -646,11 +611,11 @@ I wondered what Eliot would say about the BI connector. Would he even mention it
 
 Turns out, the BI connector was a leading feature of the keynote, having its own dedicated segment and even a whiz-bang demo.
 
-### The BI Connector
+#### The BI Connector
 
 Eliot introduced the BI connector by loudly making the proclamation, *"MongoDB has no native analytics tools."*
 
-I found that somewhat amusing, since I wrote a guest post for MongoDB titled [Native Analytics for MongoDB with SlamData](https://www.mongodb.com/blog/post/native-sql-analytics-mongodb-slamdata) *(Edit: MongoDB has taken down the blog post, but as of 15:30 MDT, it's [still in the search index](https://www.mongodb.com/blog?utf8=✓&search=slamdata#))*. SlamData is also a MongoDB partner and sponsored the MongoDB Days conference.
+I found that somewhat amusing, since I wrote a guest post for MongoDB titled Native Analytics for MongoDB with SlamData (original link unavailable) *(Edit: MongoDB has taken down the blog post, but as of 15:30 MDT, it's [still in the search index](https://www.mongodb.com/blog?utf8=✓&search=slamdata#))*. SlamData is also a MongoDB partner and sponsored the MongoDB Days conference.
 
 Eliot seemed to stumble a bit when describing the purpose of the BI connector (getting actions from... actionable insights? *Pesky analytics*!). He looked relieved when he handed the presentation over to Asya Kamsky, who had prepared a nice demo for the event.
 
@@ -658,7 +623,7 @@ During the presentation, Asya seemed uncharacteristically nervous to me. She cho
 
 All my feedback hadn't even slowed the BI connector down.
 
-### Pulling Out All the Stops
+#### Pulling Out All the Stops
 
 After the keynote, the swarm of conference attendees proceeded to the cocktail reception in the adjacent room. Attendees spent most of their time talking to other attendees, while MongoDB employees tended to congregate in bunches.
 
@@ -692,7 +657,7 @@ I was disappointed, but at the same time, I felt a huge wave of relief. I had ta
 
 As I left the cocktail reception, and headed back to my hotel, I couldn't help but speculate on why the company was making decisions that I so strongly opposed.
 
-## MongoDB: An Island of One
+### MongoDB: An Island of One
 
 After much reflection, I now think that MongoDB's poor product decisions are caused by an inability to focus on the core database. This inability to focus is caused by an inability to cultivate a NoSQL ecosystem.
 
@@ -738,7 +703,7 @@ The goal should be for MongoDB to drive enough revenue off the database that pro
 
 You be the judge, but I think it's pretty clear which is the winning strategy.
 
-## Bye-Bye, MongoDB
+### Bye-Bye, MongoDB
 
 Clearly, I cannot get behind product decisions like shipping a competing relational database as the definitive answer to analytics on a post-relational database like MongoDB.
 

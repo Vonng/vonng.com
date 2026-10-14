@@ -6,7 +6,6 @@ summary: >
   Andy Pavlo 的年度数据库回顾，算是行业里的经典材料。附上数据库老司机点评。
 tags: [数据库, 翻译]
 ---
-
 ## Andy Pavlo 发表于 2025 年 1 月 1 日，译评：冯若航
 
 ## 就像突然有人一记“脑瓜冲天炮”般直击（这里有视频佐证<sup>[1]</sup>），我又来了！为大家奉上我每年的数据库大乱斗总结。没错，以前我是在 OtterTune<sup>[2]</sup> 的博客上写这些东西，然而公司已经 Game Over（愿它安息）。现在我就跑回自己的教授个人博客来搞事。
@@ -20,8 +19,6 @@ tags: [数据库, 翻译]
 - 2023 年数据库回顾<sup>[3]</sup>
 - 2022 年数据库回顾<sup>[4]</sup>
 - 2021 年数据库回顾<sup>[5]</sup>
-
----
 
 ## 这是我的数据库，想怎么改许可证就怎么改！
 
@@ -65,8 +62,6 @@ Elasticsearch 的情况大同小异：公司宣布改许可证，外面就冒出
 
 > 老冯评论：在《[**云计算泥石流**](/cloud/exit/)》专栏中，我已多次聊过这件事了：公有云 PaaS 云软件白嫖开源软件（数据库）的行径是[**行业毒瘤**](/cloud/profit/)，必将招致反噬 —— 而这将成为这个时代的行业核心议题。比如：[云遣返运动](/cloud/odyssey/)
 
----
-
 ## Databricks vs. Snowflake 的街头帮派混战还在继续
 
 Databricks 和 Snowflake 之间的互怼依然火力全开。这俩大厂的恩怨情仇，绝对是一场“经典数据库之战”，已经从性能打到了生态、从台面斗到了台下。
@@ -83,8 +78,6 @@ Databricks 和 Snowflake 之间的互怼依然火力全开。这俩大厂的恩�
 
 不过这种竞争对用户来说是好事。狼多肉少，才能逼着技术进步、价格往下走。就像 Snowflake 现在把 Polaris 也捐给了 Apache<sup>[68]</sup>，这不就是多一分开源、多一些平价选择嘛。可别整成过去 Oracle 和 SalesForce 那种“两个土豪 CEO 互相喷口水”，大把烧钱然后用户也没啥实际好处。
 
----
-
 ## DuckDB 缝合大赛开始！
 
 **就像做在线业务时，首选数据库是** **PostgreSQL** **一样，如今做分析时的 “默认之王” 就是 DuckDB**。以前大家可能还会说用 Pandas，但现在几乎一开口就是“DuckDB 走起”。这货特别轻便，所以很多人想把它塞进那些本身对 OLAP 支持不是特别好的数据库。今年，我们就看到四款把 DuckDB 集成到 Postgres 的扩展相继亮相。
@@ -93,13 +86,13 @@ Databricks 和 Snowflake 之间的互怼依然火力全开。这俩大厂的恩�
 
 2024 年 6 月，ParadeDB 发布<sup>[73]</sup>了一个开源扩展（pg_analytics<sup>[74]</sup>），用 Postgres 的 FDW API 去调用 DuckDB。在此之前，他们用的是 DataFusion（pg_lakehouse<sup>[75]</sup>），后来改用 DuckDB。
 
-> **老冯评论：**我帮助 ParadeDB 打好了所有 Linux 上的二进制包，他们的创始人 Noel 曾经问我 PostgreSQL 分析引擎应该怎么做，我说：赶紧去缝 DuckDB 吧。他们是仅次于 duckdb_fdw 后第二个入阵的玩家。
+> **老冯评论：** 我帮助 ParadeDB 打好了所有 Linux 上的二进制包，他们的创始人 Noel 曾经问我 PostgreSQL 分析引擎应该怎么做，我说：赶紧去缝 DuckDB 吧。他们是仅次于 duckdb_fdw 后第二个入阵的玩家。
 
 8 月，官方版的 DuckDB-for-Postgres 出炉了（pg_duckdb<sup>[76]</sup>），托管在 DuckDB Labs<sup>[77]</sup> 的 GitHub 下，算是名正言顺的 DuckDB 官方插件。原本宣传说这是 MotherDuck<sup>[78]</sup>、Hydra<sup>[79]</sup>、Microsoft 和 Neon<sup>[80]</sup> 联合开发，结果后来据说 Microsoft 和 Neon 因为开发管理问题被“踢出去”了，就跟 阿拉伯王子<sup>[81]</sup> 离开 NWA 一样。现在只剩 MotherDuck 和 Hydra 继续干。
 
 11 月又来一个 pg_mooncake<sup>[82]</sup> 插件（博文<sup>[83]</sup>），这次是 Mooncake Labs 出品。它跟前面三个不太一样，是可以通过 Postgres 把数据写进 Iceberg 表里，还支持事务。
 
-> **老冯评论：**国内开发者李红艳还有一个 DuckDB FDW 是另一个 Andy Pavlo 没有提到的 DuckDB 缝合玩家。起了个大早，占领了一个相当独特的生态位。(同样在 Pigsty 中可用，可惜与 pg_duckdb 不能同时安装)
+> **老冯评论：** 国内开发者李红艳还有一个 DuckDB FDW 是另一个 Andy Pavlo 没有提到的 DuckDB 缝合玩家。起了个大早，占领了一个相当独特的生态位。(同样在 Pigsty 中可用，可惜与 pg_duckdb 不能同时安装)
 
 ### Andy 的看法：DuckDB 与 PostgreSQL
 
@@ -129,7 +122,7 @@ DuckDB 的便携和轻量，让它在 Postgres 社区倍受欢迎。虽说 Click
 
 **Amazon Aurora DSQL** 目前公开信息不多，只知道它是个 “Spanner-like” 数据库，AWS 自己的 Mark Brooker<sup>[92]</sup> 也只说了点架构八卦：用分布式日志服务（据说是基于已经下线的 QLDB），加上 Time Sync<sup>[93]</sup> 实现类似“时间戳排序”。感觉 AWS 也知道 “Aurora” 这牌子非常响，所以给这全新数据库也挂了 Aurora 的名号，其实跟原先的 Aurora Postgres 似乎没啥关系。
 
-> **老冯评论：**Amazon Aurora DSQL 号称自己 PostgreSQL 兼容，但是从他们文档中不支持的 PostgreSQL 特性列表来看，我认为他们应该使用更务实的说法 —— PostgreSQL 线缆协议（WireProtocol）兼容。
+> **老冯评论：** Amazon Aurora DSQL 号称自己 PostgreSQL 兼容，但是从他们文档中不支持的 PostgreSQL 特性列表来看，我认为他们应该使用更务实的说法 —— PostgreSQL 线缆协议（WireProtocol）兼容。
 >
 > 总的来说这也从另一个角度反映出 MySQL 确实过气了，因为很久以前 AWS 这种新品都是 MySQL 先上，这次连影子都没有了。
 
@@ -212,8 +205,6 @@ Databricks 今年再一次把数据库圈的融资总额甩在身后，狂砸 10
 
 更多 2024 年新出的数据库可见 Database of Databases<sup>[132]</sup>。
 
----
-
 ## 无法停歇，Ellison 不服老
 
 你可知道谁在今年迎来 80 大寿？正是我们传奇的 Larry Ellison！是的，这位拒绝认命、拒绝给自己设限的狠角色，又在这一年创下了一系列壮举。今年他富到自己都快挤进 世界富豪榜前三<sup>[133]</sup>。2024 年 3 月，Oracle 股价疯涨，他一天就赚了 150 亿美元<sup>[134]</sup>。拿到钱后，7 月他又花 60 亿<sup>[135]</sup>把派拉蒙影业买给他儿子（第三任老婆所生）。接着他又以 2.77 亿美元<sup>[136]</sup>在棕榈滩买了个度假村，只当小玩意儿收着。别忘了，这些都只是他 2024 年的花钱小插曲，背后都是靠数据库发家致富啊。
@@ -227,8 +218,6 @@ Databricks 今年再一次把数据库圈的融资总额甩在身后，狂砸 10
 我对 Larry 的最新成就真是打心底里佩服。他本身连大学都没毕业，跟密歇根大学本来一点关系都没有，却因为他现任太太十年前在密歇根读过书，就愿意掏上千万美金去帮忙挖来橄榄球明星，也就占他净资产的 0.0055%……我跟他说，这事对我来说也很意义非凡，因为我以前的头号博士生<sup>[141]</sup>现在是密歇根大学计算机系的教授，而且那儿的数据库小组<sup>[142]</sup>也很牛。
 
 更让人激动的是，Larry 再一次在爱情里找到了感觉！现如今，约会软件五花八门，却也都难找到真爱。很多人线下活动也尴尬，甚至有人想在操场守株待兔结果被当做“怪蜀黍”。就算好不容易遇上对方，可能又因一些小毛病（比如不爱洗袜子，或者喜欢往麦片里加辣酱）而崩盘。所以当初人人都说 Larry 第四任婚姻（2010 年离<sup>[143]</sup>）之后不会再结婚；然后他在 2020 年跟第五任<sup>[144]</sup>也分了，大家更坚定他不会再进婚姻殿堂。可谁知道，他还是找到了真爱，这次是第六任——Keren Zhu！
-
----
 
 ## 结语
 

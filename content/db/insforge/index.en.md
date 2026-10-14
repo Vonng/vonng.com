@@ -6,7 +6,6 @@ summary: >
   InsForge tries to package PostgreSQL, auth, storage, deployment, and an MCP-facing semantic layer into a backend stack designed for AI agents. It feels like a Supabase rebuilt for the vibe-coding era.
 tags: [AI, PostgreSQL, Open Source]
 ---
-
 InsForge is one of the more interesting projects I have seen recently. Its pitch is simple: a Supabase-like backend stack designed specifically for AI coding agents.
 
 Apache 2.0 licensed, roughly 2,000 GitHub stars, built around PostgreSQL + PostgREST + Deno + TypeScript, and deployable with five containers. That combination alone makes it worth paying attention to.

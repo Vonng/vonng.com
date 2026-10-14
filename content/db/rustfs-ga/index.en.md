@@ -7,14 +7,11 @@ summary: >
 tags: [MinIO, RustFS, Object Storage, Open Source]
 images: [featured.webp]
 ---
-
 Li Wenkai, who runs RustFS — an S3-compatible object store written from scratch in Rust — is a friend of mine and a fellow alum of MiraclePlus (the fund formerly known as YC China); his batch was S26, mine was S22. Last night they shipped 1.0 GA, and he asked me to write something today to help get the word out, with one specific instruction: Feng, make it a little controversial or nobody reads it, and say a few nice things about us while you're at it.
 
 Before I start, let me put my conflicts of interest on the table. I maintain a PostgreSQL distribution called Pigsty, which uses MinIO for object storage. When [MinIO bailed](/en/db/minio-resurrect/), I started maintaining my own fork — [Silo](/en/db/long-live-silo/) — which makes me, in that sense, a RustFS competitor. On the other hand, I'm genuinely not married to any particular object store, so Pigsty also supports swapping MinIO out for RustFS: I build the RPM/DEB packages for RustFS and ship the deployment playbooks, which makes me one of its distribution channels too.
 
 Alum, competitor, packager — several relationships tangled together. So what follows contains nitpicking and congratulations, and in places the two are inseparable. Take it as one perspective and judge for yourself.
-
----
 
 ## MinIO Handed Them the Opening
 
@@ -34,8 +31,6 @@ The users RustFS is talking to are more willing to take a step forward. New proj
 
 If RustFS genuinely pulls this off, I'd happily switch over and have one less thing to worry about.
 
----
-
 ## They Have Genuinely Shipped a Lot
 
 By the company's own numbers: first line of code in February 2024, open-sourced in July 2025, Beta in April 2026, RC in August, GA in September. Fourteen months of open source, 6,600-plus commits, 135 releases, 180-plus contributors, 32k stars. They claim 2.7 million installations worldwide, more than seventy percent of them in Europe and North America, over ten million Docker Hub pulls, and paying customers in AI, energy, finance, and cloud.
@@ -51,8 +46,6 @@ The capacities in the cases I saw run from tens to a few hundred TB. Early users
 I weigh that one heavily because I actually built a 25 PB pool on MinIO — at the time probably the largest MinIO deployment in China — and ran it in real production for years, so I have a decent sense of what breaks at that scale. It's also why, when MinIO bailed, I'd rather fork it than stop using it. I no longer have the hardware to test at that scale, of course.
 
 For a team willing to dig in, though, petabyte scale is only a matter of time. Wenkai wrote a book, *From MinIO to Enterprise Cloud Storage*. Write the textbook on MinIO first, then build the replacement for it — turning your research subject into your competitor.
-
----
 
 ## Credit Where It's Due
 
@@ -107,8 +100,6 @@ Let me be equally clear about the scope of what I tested: a single erasure set, 
 **Compatibility taken this far is enough. Don't chase it further.** Encryption compatibility means chasing MinIO's sealed format and key wrapping; rolling replacement means chasing its inter-node protocol. Go deeper than that and you end up patching whatever MinIO changes, which amounts to locking MinIO's shackles onto your own wrists.
 
 The part of the installed base that's unencrypted and can take a maintenance window, RustFS can absorb today. The part that's encrypted and can't go down can keep evaluating compatibility routes like Silo, or plan a separate migration over the S3 API — there's no need to dump every piece of historical baggage onto a from-scratch rewrite. What RustFS should be working on is RustFS.
-
----
 
 ## RustFS's Own Homework
 

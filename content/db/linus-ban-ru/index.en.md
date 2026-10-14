@@ -7,7 +7,6 @@ summary: >
   The Linux community is essentially imperial — and Linus himself is the earliest and most successful technical dictator. People are used to Linus's generosity but forget this point.
 tags: [Linux, Open Source, Commentary]
 ---
-
 Recently, Linus [**kicked out several Russian developers**](https://lore.kernel.org/all/CAHk-=whNGNVnYHHSXUAsWds_MoZ-iEgRMQMxZZ0z-jY4uHT+Gg@mail.gmail.com/) from the project, triggering an outcry in the open source world. But many people forget that Linux is Linus's personal project — it was 30 years ago, and it still is today. Linus himself has always personally held the supreme power of the open source project — the right to release Linux. The Linux community is essentially imperial — and Linus himself is the earliest and most successful technical dictator.
 
 > Ok, lots of Russian trolls out and about.
@@ -30,7 +29,7 @@ But this "tyrant" has been digging in the trenches day after day for decades, co
 
 The only thing that can constrain Linus himself is the GPL license used by the Linux project — he neither established a company for commercialization nor prevented others from copying it. That's just how the open source community works — the Pacific Ocean doesn't have a lid, the code is all there, if you can do better, go ahead and fork it! I don't doubt for a moment that if Linus were to pass away someday, the Linux project would quickly scatter like stars across the sky, with forks everywhere.
 
-![](featured.webp)
+![Open-Source "Tyrant" Linus's Purge (figure 3)](featured.webp)
 
 According to open source community conventions, if anyone is dissatisfied with this, they can completely create their own fork and compete with upstream in productivity, launching a Spartacus-style rebellion. For example, GCC previously split due to ideological differences, and later the branch performed better than the mainline and was more popular with developers, so this branch (EGCS) became the new mainline. As they say: "Talk is cheap, show me the code", "You can you up, no can no BB" — not whining like a resentful housewife shouting "King Linus, you've changed" or "Linus is a big fool" and expecting justice to fall from heaven.
 
@@ -39,8 +38,6 @@ Of course, in my view, Linus's approach this time wasn't good — not because he
 ![reply.png](reply.png)
 
 If he had openly said: "I received sanctions orders from the US, I have to deal with the Russians," or simply shrugged and said "I do whatever I want, it's none of your business" — which is fact — there might not have been so much trouble.
-
-------
 
 ## **Vonng's Commentary**
 

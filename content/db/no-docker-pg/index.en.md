@@ -6,7 +6,6 @@ summary: >
   Tons of users running the official docker postgres image got burned during recent minor version upgrades. A friendly reminder: think twice before containerizing production databases.
 tags: [PostgreSQL, Containers, Incident]
 ---
-
 Back in 2019, I wrote about ["Is running postgres in docker a good idea?"](/en/db/pg-in-docker) —
 **Don't run PostgreSQL in containers for production**, because you'll likely hit a pile of issues that simply don't exist on bare metal or VMs.
 
@@ -181,8 +180,6 @@ OK, commercial's over. This post covered why you **shouldn't run PostgreSQL in c
 Next time, I'll detail PostgreSQL installation practices — **If not containers, how should I install PG!**
 
 ![featured.jpg](featured.jpg)
-
-------
 
 ## Further Reading
 

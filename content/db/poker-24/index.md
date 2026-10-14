@@ -5,7 +5,6 @@ summary: >
   虽然有趣，但是很鸡贼的题目，用 SQL 计算扑克24点。PostgreSQL 的正解。
 tags: [PostgreSQL, MySQL, 数据库]
 ---
-
 题目如下： 《[数据库编程大赛：一条SQL计算扑克牌24点](https://www.ninedata.cloud/sql_poker24)》
 
 有一张表 cards，id 是自增字段的数字主键，另外有4个字段 c1,c2,c3,c4 ，每个字段随机从 1~10 之间选择一个整数 要求选手使用一条 SQL 给出 24 点的计算公式，返回的内容示例如右图：
@@ -32,8 +31,6 @@ MySQL 是带有 COMPRESS 和 UNCOMPRESS 函数的，而 PostgreSQL 原生是没�
 
 下面是使用 PostgreSQL 的解法：
 
------------
-
 ## 创建随机测试数据表
 
 ```sql
@@ -49,8 +46,6 @@ FROM generate_series(1, 1000000) i;
 
 ALTER TABLE poker24.cards ADD PRIMARY KEY (id);
 ```
-
------------
 
 ## 解法
 
@@ -73,8 +68,6 @@ FROM poker24.cards c LEFT JOIN a a ON a.i =
 当然，这里的字符串长度超过了 10000： 10896 个。我们可以用一些手段来压缩，比如把这个巨长的 CASE 弄成一个 inline 函数，然后再把主键从十进制数字字面值换成十六进制，其实长度就在 10KB 以内了。
 不过规则禁止我们使用存储过程，这就要想其他办法了。主要就是如何压缩中间那个长字符串。
 
------------
-
 ## 压缩优化
 
 当然，这里的字符串长度超过了 10000： 10896 个。所以需要用到额外的压缩功能，来满足题目要求。 Pigsty 原生提供了 `pgsql-gzip` 扩展：
@@ -95,15 +88,13 @@ SELECT c.id, c1, c2, c3, c4, result FROM poker24.cards c LEFT JOIN a a ON a.i =
 *CASE c4 WHEN 1 THEN 2 WHEN 2 THEN 3 WHEN 3 THEN 5 WHEN 4 THEN 7 WHEN 5 THEN 11 WHEN 6 THEN 13 WHEN 7 THEN 17 WHEN 8 THEN 19 WHEN 9 THEN 23 WHEN 10 THEN 29 END);
 ```
 
------------
-
 ## 结果
 
 在本地 M1 Macbook Pro 上单核执行时间大约是 0.58 秒，比第一名 0.67s 稍微快一点。
 
 当然，因为 NineData 上面那个 PostgreSQL 没有 gzip 扩展，所以我也没用他们的平台（4c 32G）去提交成绩。
 
-```
+```text
  Merge Right Join  (cost=118104.17..768224.17 rows=5000000 width=68) (actual time=457.485..555.265 rows=1000000 loops=1)
    Merge Cond: (((split_part(kv.kv, ':'::text, 1))::integer) = ((((CASE c.c1 WHEN '1'::double precision THEN 2 WHEN '2'::double precision THEN 3 WHEN '3'::double precision THEN 5 WHEN '4'::double precision THEN 7 WHEN '5'::double precision THEN 11 WHEN '6'::double precision THEN 13 WHEN '7'::double precision THEN 17 WHEN '8'::double precision THEN 19 WHEN '9'::double precision THEN 23 WHEN '10'::double precision THEN 29 ELSE NULL::integer END * CASE c.c2 WHEN '1'::double precision THEN 2 WHEN '2'::double precision THEN 3 WHEN '3'::double precision THEN 5 WHEN '4'::double precision THEN 7 WHEN '5'::double precision THEN 11 WHEN '6'::double precision THEN 13 WHEN '7'::double precision THEN 17 WHEN '8'::double precision THEN 19 WHEN '9'::double precision THEN 23 WHEN '10'::double precision THEN 29 ELSE NULL::integer END) * CASE c.c3 WHEN '1'::double precision THEN 2 WHEN '2'::double precision THEN 3 WHEN '3'::double precision THEN 5 WHEN '4'::double precision THEN 7 WHEN '5'::double precision THEN 11 WHEN '6'::double precision THEN 13 WHEN '7'::double precision THEN 17 WHEN '8'::double precision THEN 19 WHEN '9'::double precision THEN 23 WHEN '10'::double precision THEN 29 ELSE NULL::integer END) * CASE c.c4 WHEN '1'::double precision THEN 2 WHEN '2'::double precision THEN 3 WHEN '3'::double precision THEN 5 WHEN '4'::double precision THEN 7 WHEN '5'::double precision THEN 11 WHEN '6'::double precision THEN 13 WHEN '7'::double precision THEN 17 WHEN '8'::double precision THEN 19 WHEN '9'::double precision THEN 23 WHEN '10'::double precision THEN 29 ELSE NULL::integer END)))
    ->  Sort  (cost=62.33..64.83 rows=1000 width=64) (actual time=0.851..0.872 rows=566 loops=1)

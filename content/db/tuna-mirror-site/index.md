@@ -6,8 +6,6 @@ summary: >
   在严肃的生产环境里，你不能依赖一个明确说"我不提供任何保证"的上游。当别人告诉你"别指望我"，最好的回应是"那我自己来"。从TUNA镜像站的争议谈开源软件供应链信任问题。
 tags: [软件仓库, PG管理, 开源]
 ---
-
-
 昨天，老冯的一篇文章《[从PG“断供”看软件供应链中的信任问题](/pg/pg-mirror-pigsty/)》收到一条评论，
 评论者称是高校开源镜像站的管理员（清华 TUNA），向老冯提出批评抗议，内容如下：
 
@@ -17,7 +15,7 @@ tags: [软件仓库, PG管理, 开源]
 
 老冯看到评论之后也做了回复：
 
-> 感谢 [回复与评论](https://vonng.com/pg/pg-mirror-pigsty/)，也感谢这些年 TUNA 以及国内各高校镜像站为开源镜像生态投入的时间和精力。我看到最近几天 TUNA 的 PostgreSQL 仓库已经 [恢复了和上游的同步](https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/yum/18/)，这一点先点个赞。
+> 感谢 [回复与评论](https://vonng.com/pg/pg-mirror-pigsty/)，也感谢这些年 TUNA 以及国内各高校镜像站为开源镜像生态投入的时间和精力。我看到最近几天 TUNA 的 PostgreSQL 仓库已经 恢复了和上游的同步（原链接失效），这一点先点个赞。
 >
 > 最初发现问题时，我用的是阿里云的 PostgreSQL 镜像。后来注意到 TUNA 上也存在同样的情况，就纯粹出于开源道义在 [向 TUNA 邮件列表反馈问题](https://groups.google.com/g/tuna-general/c/BU8P7X3y4sI)，得到的是一句（本邮件列表是 TUNA 的邮件列表，与阿里云无关）与长期的沉默，这样的感受会体现在文章的情绪中。
 >
@@ -129,8 +127,6 @@ tags: [软件仓库, PG管理, 开源]
 
 当高校镜像站把丑话说在前面，下游又应当如何自处？当别人告诉你“别指望我”，最稳妥的回应永远是“那我自己来”。
 
---------
-
 ## 广告时间
 
 写文章不打广告约等于没写，也许老冯提供的服务正好能帮到你。以下三个国内镜像仓库，免费对公众提供服务：
@@ -140,14 +136,14 @@ tags: [软件仓库, PG管理, 开源]
 ### PGDG镜像
 
 定期同步全球 PostgreSQL 开发组官方软件仓库（el 7-10, debian 11-13, ubuntu 20-24）
-最近同步于今天，每周更新，中国大陆区域镜像地址： https://repo.pigsty.cc/apt/pgdg / https://repo.pigsty.cc/yum/pgdg
+最近同步于今天，每周更新，中国大陆区域镜像地址： https://pigsty.cc/docs/repo/pgdg/ / https://pigsty.cc/docs/repo/pgdg/
 
 ### PIGSTY PGSQL
 
 PIGSTY PGSQL 仓库：提供 [几款不同风味的 PG 内核分支](https://pigsty.cc/docs/pgsql/kernel) (PolarDB, IvorySQL, Babelfish, OrioleDB, OpenHaloDB, Percona TDE, Supabase,... )
 ，与 PGDG 官方仓库配合使用，提供多达 [437 个 PG 扩展插件](https://pgext.cloud/list) 与生态常用工具。支持 [14 个 Linux 发行版大版本](https://pgext.cloud/os)。
 
-镜像地址： https://repo.pigsty.cc/apt/pgsql / https://repo.pigsty.cc/yum/pgsql
+镜像地址： https://pigsty.cc/docs/repo/pgsql/ / https://pigsty.cc/docs/repo/pgsql/
 
 ![extensions.png](extensions.png)
 
@@ -155,7 +151,7 @@ PIGSTY PGSQL 仓库：提供 [几款不同风味的 PG 内核分支](https://pig
 
 提供各类数据库相关工具，Grafana，Prometheus，以及 Exporter 可观测性全家桶
 
-镜像地址： https://repo.pigsty.cc/apt/infra / https://repo.pigsty.cc/yum/infra
+镜像地址： https://pigsty.cc/docs/repo/infra/ / https://pigsty.cc/docs/repo/infra/
 
 |                             **DBMS**                              |                |                               **Prometheus**                                |         |                                          **Grafana**                                           |        |
 |:-----------------------------------------------------------------:|:--------------:|:---------------------------------------------------------------------------:|:-------:|:----------------------------------------------------------------------------------------------:|:------:|
@@ -166,12 +162,12 @@ PIGSTY PGSQL 仓库：提供 [几款不同风味的 PG 内核分支](https://pig
 |            [kafka](https://kafka.apache.org/downloads)            |     4.0.0      |    [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics)    | 1.129.1 |         [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/)         | 3.6.0  |
 |            [duckdb](https://github.com/duckdb/duckdb)             |     1.4.2      | [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) | 1.37.2  |   [grafana-vmlogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/)    | 0.21.4 |
 |         [ferretdb](https://github.com/FerretDB/FerretDB)          |     2.7.0      |             [pg_exporter](https://github.com/Vonng/pg_exporter)             |  1.0.3  | [grafana-vmetrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) | 0.19.6 |
-|     [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle)     |    0.16.60     |     [pgbackrest_ex...](https://github.com/woblerr/pgbackrest_exporter)      | 0.21.0  |     [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/noarch/grafana-plugins)     | 12.0.0 |
+|     [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle)     |    0.16.60     |     [pgbackrest_ex...](https://github.com/woblerr/pgbackrest_exporter)      | 0.21.0  |     [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/grafana-plugins)     | 12.0.0 |
 |          [juicefs](https://github.com/juicedata/juicefs)          |     1.3.0      |        [node_exporter](https://github.com/prometheus/node_exporter)         | 1.10.2  |                                                                                                |        |
 |           [dblab](https://github.com/danvergara/dblab)            |     0.34.2     |      [keepalived_exp...](https://github.com/mehdy/keepalived-exporter)      |  1.7.0  |                                              **UTILS**                                         |        |
 |            [vray](https://github.com/v2fly/v2ray-core)            |     5.28.0     |   [nginx_exporter](https://github.com/nginxinc/nginx-prometheus-exporter)   |  1.5.1  |                          [sealos](https://github.com/labring/sealos)                           | 5.1.1  |
 |                [pig](https://github.com/pgsty/pig)                |     0.7.2      |    [zfs_exporter](https://github.com/waitingsong/zfs_exporter/releases/)    |  3.8.1  |                      [rclone](https://github.com/rclone/rclone/releases/)                      | 1.71.2 |
 | [vip-manager](https://github.com/cybertec-postgresql/vip-manager) |     4.0.0      |      [mysqld_exporter](https://github.com/prometheus/mysqld_exporter)       | 0.18.0  |                           [restic](https://github.com/restic/restic)                           | 0.18.1 |
-| [pev2](https://github.com/pgsty/infra-pkg/tree/main/noarch/pev2)  |     1.17.0     |        [redis_exporter](https://github.com/oliver006/redis_exporter)        | 1.80.0  |                            [mtail](https://github.com/google/mtail)                            | 3.0.8  |  
+| [pev2](https://github.com/pgsty/infra-pkg/tree/main/pev2)  |     1.17.0     |        [redis_exporter](https://github.com/oliver006/redis_exporter)        | 1.80.0  |                            [mtail](https://github.com/google/mtail)                            | 3.0.8  |
 |    [promscale](https://github.com/timescale/promscale)            |     0.17.0     |            [kafka_exporter](https://github.com/danielqsj/kafka_exporter)    |  1.9.0  |                  [genai-toolbox](https://github.com/googleapis/genai-toolbox)                  | 0.18.0 |
 |         [pgschema](https://github.com/pgschema/pgschema)          |   1.4.2        |       [mongodb_exporter](https://github.com/percona/mongodb_exporter)       | 0.47.1  |                        [sqlcmd](https://github.com/microsoft/go-sqlcmd)                        | 1.8.0  |

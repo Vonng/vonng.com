@@ -6,7 +6,6 @@ summary: >
   Starting with Stonebraker's remark that PostgreSQL should "thank Oracle," this essay looks at the community's unusual governance model and the challenges it now faces.
 tags: [PostgreSQL, Open Source, Governance, Cloud]
 ---
-
 > [Original WeChat article](https://mp.weixin.qq.com/s/-xbCSmcYT-fIGXgQuQQUow)
 
 On August 19, 2026, The Register published an interview with Michael Stonebraker. The Turing Award winner who started the Berkeley Postgres project—and is still founding companies in his eighties—was asked why PostgreSQL had won. His answer was a little unexpected:
@@ -44,8 +43,6 @@ On the surface, this is an argument about who deserves the credit. Underneath it
 
 **What makes an open-source project succeed: a rival's mistakes, its founder's architectural foresight, decades of volunteer labor, or an institution that never appears anywhere in the query executor?**
 
----
-
 ## 1. How the Story's Center of Gravity Shifted
 
 Stonebraker's account of this history has quietly changed emphasis over the past decade.
@@ -73,8 +70,6 @@ There is another piece of context. In 2021, PostgreSQL committer Peter Geoghegan
 
 In other words, the person telling this history was absent from the history he was describing. That is the subtext of Bartunov's line: "I am looking at this story from inside the community, not as an outside observer."
 
----
-
 ## 2. The Wall Was Not the Only Evidence
 
 Bartunov's evidence is a photograph. On its own, that is weak evidence. The notes on the wall could have come from any brainstorming session, and twenty-six years later it is hard to rule out hindsight polishing the story.
@@ -97,8 +92,6 @@ The people remained. The project remained. The company did not.
 
 Bartunov closes his article by saying that companies came, invested money, hired hackers, and sometimes disappeared—but PostgreSQL remained. Great Bridge was the first example, and it happened in the very same year: 2000.
 
----
-
 ## 3. The Real Moat Is Written at the Top of Every Source File
 
 Bartunov briefly makes a point whose importance is easy to miss: the project has no single owner.
@@ -115,8 +108,6 @@ This is the strongest sense in which PostgreSQL had "solved the Oracle problem" 
 
 The only exception is the name. A trademark has to be held by a legal entity or someone else can register it. PostgreSQL therefore placed the trademark with the nonprofit PostgreSQL Community Association in Canada, which completed the registration in 2003. That is the real-world counterpart to "protect the name" on the wall.
 
----
-
 ## 4. The System Has Been Tested in a Real Fight
 
 In 2020, a Spanish nonprofit called Fundación PostgreSQL applied in the European Union and the United States to register the trademarks "PostgreSQL" and "PostgreSQL Community," having already registered them in Spain. The Core Team and PGCA sent legal demands and filed a formal opposition with EUIPO. In 2021 they sued in Madrid, and Fundación filed an additional application for "Postgres." The dispute did not settle until November 17, 2023. Fundación PostgreSQL returned all the trademarks and became an authorized user of the community's marks.
@@ -132,8 +123,6 @@ To anyone unfamiliar with open-source governance, this may look like an overreac
 The Core Team's steady habit of giving away its own power matters too. In his 2024 history of the Core Team at pgconf.dev, Tom Lane described how responsibility for security response was delegated in 2007 and infrastructure in 2011; the 2015 developer meeting decided to delegate committer selection as well. Asked why the early core members were those particular people, he gave the plainest answer possible: "Because they were the ones doing the work."
 
 An organization built on the principle that the people doing the work should have a voice will naturally keep distributing power, because the number of people doing the work keeps growing. This is what Bartunov means by "distributed responsibility" and "distributed knowledge." Its opposite is easy to imagine: a project in which every decision converges on a handful of people, or on one company, can collapse all at once when that company is acquired.
-
----
 
 ## 5. But Stonebraker Is Not Wrong—He Planted the Seed
 
@@ -177,8 +166,6 @@ How does Stonebraker judge the result? At PGDay Boston, he said abstract data ty
 If Stonebraker deserves credit for one thing, then, it is not that Oracle helped. It is the architectural decision he made forty years ago—the very point Bartunov acknowledges when he says that Stonebraker planted Postgres.
 
 What grew from that seed also leads into the second half of the story. When an ecosystem's value is spread across thousands of extensions, dozens of companies, and countless independent authors, acquiring one company cannot give you control. **PostgreSQL is hard to strangle at a single choke point because governance protects one half and architecture protects the other.**
-
----
 
 ## 6. The Real Test Is Not Oracle. It Is the Cloud
 
@@ -230,8 +217,6 @@ This is what I am building with Pigsty: an open-source distribution that reprodu
 
 You have bargaining power only when you retain the right to exit. Without the ability to self-host, "multi-cloud" and "hybrid cloud" are illusions. Your only choice is which vendor will lock you in. The governance problem cannot be solved outright, but it can be hedged: as long as the self-hosted road stays open, a cloud vendor's proprietary layer remains one option rather than the only possible destination.
 
----
-
 ## Conclusion: The Enemy of the New Era
 
 Twenty-five years ago, open source's enemy number one was Microsoft. There were the Halloween documents in 1998, Steve Ballmer calling Linux a cancer in 2001, and the "embrace, extend, extinguish" playbook. The enemy was easy to recognize because it wanted to kill you.
@@ -255,8 +240,6 @@ Bartunov still has the best summary of this history:
 > Stonebraker planted Postgres. The hackers built PostgreSQL.
 
 The hackers built more than PostgreSQL. They built the institution that makes PostgreSQL impossible to sell. Code can be forked. Architecture can be copied. What cannot be copied is twenty-six years of consistently enforcing the rules.
-
----
 
 ### References
 

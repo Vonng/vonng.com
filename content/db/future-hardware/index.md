@@ -7,8 +7,6 @@ summary: >
   本文是一篇关于硬件发展如何影响数据库设计的综述，介绍了网络、存储、计算三个领域的关键硬件进展。充分利用好新硬件而非折腾分布式，才是数据库内核发展的正路。
 tags: [数据库, 硬件, 性能, 翻译]
 ---
-
-
 > 作者：Alex Miller 2024-11-19 @ Snowflake, Apple, Google
 >
 > 译者：Vonng & GPT o1，PG 大法师，数据库老司机，云计算泥石流
@@ -22,8 +20,6 @@ tags: [数据库, 硬件, 性能, 翻译]
 [原文：Modern Hardware for Future Databases](https://transactional.blog/blog/2024-modern-database-hardware)
 
 我们正处于一个令人兴奋的数据库时代，每个主要资源领域都在不断进步，每一项进步都有可能影响最优的数据库架构。总的来说，我希望在未来十年内，能看到数据库架构发生一些有趣的转变，但我不确定是否能有必要的硬件支持。
-
---------
 
 ## 网络
 
@@ -41,13 +37,11 @@ tags: [数据库, 硬件, 性能, 翻译]
 
 > **注释**：为什么将丢包检测和流量控制下放到硬件对于 RDMA 是可接受的，但 Linux 维护者一直拒绝对 TCP 这样做？因为这是一个不同且受限得多的 API，减少了网卡与主机之间的复杂性。[《TCP 卸载是一个愚蠢但已经到来的想法》](https://scholar.google.com/scholar?cluster=4106138525527042387) 是在这个领域一篇有趣的阅读材料。（来自 2003 年！）
 
-将 RDMA 作为低延迟和高吞吐量的网络原语，改变了人们设计数据库的方式。[《神话的终结：分布式事务可以扩展》](https://www.vldb.org/pvldb/vol10/p685-zamanian.pdf/) 显示了 RDMA 的低延迟使经典的 2PL+2PC 能够扩展到大型集群。[《云中可扩展的 OLTP 是一个已解决的问题吗？》](https://www.cidrdb.org/cidr2023/papers/p50-ziegler.pdf) 提出了在节点之间共享可写页面缓存的想法，因为低延迟使组件的更紧密耦合变得可行。RDMA 不仅适用于 OLTP 数据库；BigQuery 使用了基于 [RDMA Shuffle 的连接](https://cloud/.google.com/blog/products/bigquery/in-memory-query-execution-in-google-bigquery)，因为其高吞吐量。改变给定吞吐量下的延迟和 CPU 利用率，改变了最佳设计的选择，或者解锁了以前被认为不可行的新设计[^3]。
+将 RDMA 作为低延迟和高吞吐量的网络原语，改变了人们设计数据库的方式。[《神话的终结：分布式事务可以扩展》](https://www.vldb.org/pvldb/vol10/p685-zamanian.pdf/) 显示了 RDMA 的低延迟使经典的 2PL+2PC 能够扩展到大型集群。[《云中可扩展的 OLTP 是一个已解决的问题吗？》](https://www.cidrdb.org/cidr2023/papers/p50-ziegler.pdf) 提出了在节点之间共享可写页面缓存的想法，因为低延迟使组件的更紧密耦合变得可行。RDMA 不仅适用于 OLTP 数据库；BigQuery 使用了基于 [RDMA Shuffle 的连接](https://cloud.google.com/blog/products/bigquery/in-memory-query-execution-in-google-bigquery)，因为其高吞吐量。改变给定吞吐量下的延迟和 CPU 利用率，改变了最佳设计的选择，或者解锁了以前被认为不可行的新设计。
 
 > **注释**：要使用 RDMA，我强烈建议使用 [libfabric](https://ofiwg.github.io/libfabric/)，因为它对所有不同的 RDMA 供应商和库进行了抽象。[RDMAmojo 博客](https://rdmamojo.com/) 有多年关于 RDMA 的专业内容，是学习 RDMA 各个方面的最佳资源之一。
 
 最后，还有一类更新的硬件，延续了将更多计算能力放入网卡本身的趋势，即 SmartNIC 或数据处理单元（DPUs）。它们允许将任意计算下放到网卡，并可能响应其他网卡的请求而被调用。这些技术相当新颖，我建议查看 [《DPDPU：使用 DPU 进行数据处理》](https://scholar.google.com/scholar?cluster=14622696590036176289) 以获取概览，[《DDS：DPU 优化的分布式存储》](https://scholar.google.com/scholar?cluster=12305794631120951674) 了解如何将它们集成到数据库中，以及 [《Azure 加速网络：公共云中的 SmartNIC》](https://www.microsoft.com/en-us/research/uploads/prod/2018/03/Azure_SmartNIC_NSDI_2018.pdf) 了解部署细节。总体而言，我预计 SmartNIC 会将 RDMA 从简单的读写扩展到允许绕过 CPU 的通用 RPC（用于计算成本低的请求回复）。
-
---------
 
 ## 存储
 
@@ -63,8 +57,6 @@ tags: [数据库, 硬件, 性能, 翻译]
 
 作为 SSD 功能的倒数第二步，**SmartSSD** 正在出现，它允许在 SSD 中集成任意计算。[《在 SmartSSD 上进行查询处理：机会与挑战》](http://pages.cs.wisc.edu/~yxy/cs764-f20/papers/SmartSSD.pdf) 综述了它们在查询处理任务中的应用。将过滤器下推到存储总是有利的；我经常引用之前的工作，如利用 S3 Select 的 [PushdownDB](https://marcoserafini.github.io/assets/pdf/pushdown.pdf)，作为分析领域的优秀案例。使用 SmartSSD，我们有像 [《POLARDB 与计算存储的融合》](https://www.usenix.org/conference/fast20/presentation/cao-wei) 这样的论文。即使没有专门的集成，也有人认为，即使是透明的驱动器内压缩也能在写放大方面缩小 B+ 树和 LSM 之间的差距（[参考](https://www.usenix.org/conference/fast22/presentation/qiao)）。利用 SmartSSD 仍然是一个新兴的研究领域，但其潜在影响巨大。
 
---------
-
 ## 计算
 
 ### 事务处理
@@ -79,7 +71,7 @@ tags: [数据库, 硬件, 性能, 翻译]
 
 硬件事务内存有着相当不幸的历史。[Sun 的 Rock 处理器](https://www.theregister.com/2007/08/21/sun_transactional_memory_rock/)具备硬件事务内存功能，直到 Sun 被收购并且 Rock 项目被终止。英特尔曾两次尝试发布它，但两次都不得不禁用。在将硬件事务内存应用于内存数据库的主题上有一些有趣的工作，但除了找到一些旧的 CPU 进行实验之外，我们都必须等待 CPU 制造商宣布他们计划再次尝试。
 
-> **注释**：第一次是由于[一个错误](http://techreport.com/news/26911/errata-prompts-intel-to-disable-tsx-in-haswell-early-broadwell-cpus)，第二次是由于[一个破坏 KASLR 的侧信道攻击](https://www.blackhat.com/docs/us-16/materials/us-16-Jang-Breaking-Kernel-Address-Space-Layout-Randomization-KASLR-With-Intel-TSX-wp.pdf)。还有一个通过[误解CTF 挑战的意图](https://blog.ret2.io/2019/06/26/attacking-intel-tsx/)而发现的投机执行定时攻击。
+> **注释**：第一次是由于一个错误（原链接失效），第二次是由于[一个破坏 KASLR 的侧信道攻击](https://www.blackhat.com/docs/us-16/materials/us-16-Jang-Breaking-Kernel-Address-Space-Layout-Randomization-KASLR-With-Intel-TSX-wp.pdf)。还有一个通过[误解CTF 挑战的意图](https://blog.ret2.io/2019/06/26/attacking-intel-tsx/)而发现的投机执行定时攻击。
 
 ### 查询处理
 
@@ -90,8 +82,6 @@ tags: [数据库, 硬件, 性能, 翻译]
 还有机会使用更高能效的硬件。最新的神经处理单元（NPU）和张量处理单元（TPU）已经在类似 [《TCUDB：使用张量处理器加速数据库》](https://dl.acm.org/doi/pdf/10.1145/3514221.3517869) 的工作中被证明可用于查询处理。一些公司尝试利用 FPGA。[Swarm64](https://dbdb.io/db/swarm64) 曾试图（但可能失败了）进入这个市场。AWS 自己也以 [Redshift AQUA](https://aws.amazon.com/blogs/aws/new-aqua-advanced-query-accelerator-for-amazon-redshift/) 进行了尝试。即使是最大的公司，走到 ASIC 这一步似乎也不值得，因为连 Oracle 都在 2017 年[停止了他们的 SPARC 开发](https://www.hpcwire.com/2017/09/07/oracle-layoffs-reportedly-hit-sparc-solaris-hard/)。我对 FPGA 到 ASIC 的前景并不十分乐观，因为内存带宽无论如何都会在某个时候成为主要瓶颈，但 [ADMS](https://adms-conf.org/) 是关注该领域论文的会议。
 
 > **注释**：严格来说，ADMS 是附属于 VLDB 的一个研讨会，但我不知道泛指会议、期刊和研讨会的词是什么。
-
---------
 
 ## 云端可用性
 
@@ -109,7 +99,7 @@ SmartNIC 在任何公开场合都不可用。这其中有充分的理由：微�
 
 阿里巴巴也是唯一一家在 SmartSSD 上进行投资的云供应商，与 ScaleFlux 合作在 PolarDB 上进行了研究。这仍然意味着 SmartSSD 对公众不可用，但即使论文也承认，这是“首次在公开文献中报道的、使用计算存储驱动器的云原生数据库的实际部署”。
 
-在计算方面，情况终于有所改善。云完全允许 Unikernel，TPM 也广泛可用，但据我所知，只有 [AWS](https://aws.amazon.com/ec2/nitro/nitro-enclaves/) 和 [Azure](https://learn.microsoft.com/en-us/azure/confidential-computing/confidential-computing-enclaves)支持安全飞地。时间同步已可用，但没有承诺的误差范围使得无法关键依赖。（硬件事务内存不可用，但这很难责怪云供应商。）AI 的爆炸式增长意味着有足够的资金支持更高效的计算资源。GPU 在所有云中都可用。AWS[^5]、Azure、IBM 和阿里巴巴提供了 FPGA 实例。（GCP 和 OCI 没有。）不幸的现实是，只有当计算成为瓶颈时，更快的计算才有意义。GPU 和 FPGA 都受到内存限制的影响，因此无法在其本地内存中维护数据库。相反，需要依赖数据的流入和流出，这意味着受到 PCIe 速度的限制。所有这些都会鼓励在本地设备中进行周到的主板布局和总线设计，但这在云中是不可行的。
+在计算方面，情况终于有所改善。云完全允许 Unikernel，TPM 也广泛可用，但据我所知，只有 [AWS](https://aws.amazon.com/ec2/nitro/nitro-enclaves/) 和 [Azure](https://learn.microsoft.com/en-us/azure/confidential-computing/confidential-computing-enclaves)支持安全飞地。时间同步已可用，但没有承诺的误差范围使得无法关键依赖。（硬件事务内存不可用，但这很难责怪云供应商。）AI 的爆炸式增长意味着有足够的资金支持更高效的计算资源。GPU 在所有云中都可用。AWS、Azure、IBM 和阿里巴巴提供了 FPGA 实例。（GCP 和 OCI 没有。）不幸的现实是，只有当计算成为瓶颈时，更快的计算才有意义。GPU 和 FPGA 都受到内存限制的影响，因此无法在其本地内存中维护数据库。相反，需要依赖数据的流入和流出，这意味着受到 PCIe 速度的限制。所有这些都会鼓励在本地设备中进行周到的主板布局和总线设计，但这在云中是不可行的。
 
 > **注释**：理想情况下，人们希望有对等 DMA 支持，能够直接从磁盘读取数据到 FPGA 中，而至少 AWS 的 F1 不支持这一点。
 

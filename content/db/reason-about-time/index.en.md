@@ -6,16 +6,12 @@ summary: >
   A proper understanding of time is very helpful for correctly handling time-related issues in work and life. For example, time representation and processing in computers, as well as time handling in databases and programming languages.
 tags: [PG Development, Database]
 ---
-
-
 A few days ago, we encountered the quadrennial leap year February 29th. Every time this day comes around, some poorly written software experiences major failures. If you're unlucky, this type of problem might take four years to surface.
 For example, today's fresh cases: Hesai Technology's lidar and New Zealand gas stations both became unusable due to leap year bugs.
 
 Let's discuss the principles of leap years, leap seconds, time and time zones, as well as considerations in databases and programming languages.
 
-[![](featured.jpg)](https://mp.weixin.qq.com/s/JNLMAzpLnk6y9lCSpClPlQ)
-
---------------
+[![Understanding Time - Leap Years, Leap Seconds, Time and Time Zones (figure 1)](featured.jpg)](https://mp.weixin.qq.com/s/JNLMAzpLnk6y9lCSpClPlQ)
 
 ## 0x01 Seconds and Timekeeping
 
@@ -59,8 +55,6 @@ This is the **leap second** mechanism. UTC is based on TAI, so it also runs fast
 
 So GMT and UTC are different - you can see `2016-12-31 23:59:60` in UTC time, but not in GMT.
 
---------------
-
 ## 0x02 Local Time and Time Zones
 
 The times discussed so far assume a premise: time at the prime meridian (0° longitude). We also need to consider other places on Earth: after all, when it's broad daylight in America, it's still midnight in China.
@@ -69,7 +63,7 @@ Local time, as the name suggests, is time calculated based on the local sun: noo
 
 Would it be fine if everyone used UTC time? Of course it would - after all, China spans three time zones but uses only Beijing time. As long as everyone gets used to it, it works. But everyone is already accustomed to local noon being 12 o'clock. Forcing the world's people to use unified time actually goes against historical habits. Time zone settings allow long-distance travelers to easily know local people's schedules: roughly everyone works 9-to-5. This reduces communication costs. Hence the concept of time zones. Of course, like Xinjiang stubbornly using Beijing time, the result is that tourists might be confused when they first see locals going to work at 11 or 12 o'clock.
 
-![](reason-about-time-1.png)
+![Understanding Time - Leap Years, Leap Seconds, Time and Time Zones — 0x02 Local Time and Time Zones (figure 2)](reason-about-time-1.png)
 
 But within a unified country, using unified time also helps reduce communication costs. If a Xinjiang person and a Heilongjiang person make a phone call, one using Urumqi time and the other using Beijing time, they'd talk past each other. Both agree on 12 o'clock, but there's actually a two-hour difference. Time zone selection isn't entirely based on geographical longitude - there are many other considerations (such as administrative divisions).
 
@@ -82,8 +76,6 @@ Actually, whether there's a geographical region doesn't matter - the key is the 
 For example, UTC and GMT time zones are both `+0`, meaning no offset. China's East 8th zone has an offset of `+8`, meaning when calculating local time, 8 hours must be added to UTC time.
 
 **Daylight Saving Time (DST)** can be viewed as a special time zone offset correction. It refers to moving clocks forward by one hour (not necessarily one hour) during summer when daylight comes earlier, thereby saving energy (lighting). China briefly used daylight saving time between 1986 and 1992. The EU has used daylight saving time since 1996, though recent EU polls show 84% of citizens want to abolish daylight saving time. For programmers, daylight saving time is also an additional hassle - hopefully it can be swept into the dustbin of history soon.
-
---------------
 
 ## 0x03 Time Representation
 
@@ -124,8 +116,6 @@ date -r 1500000000 '+%Y-%m-%d %H:%M:%S'		# MacOS, BSD
 Long ago, when the battery on the motherboard died, the system clock would automatically reset to 0. Many software bugs also caused timestamps to be 0, i.e., `1970-01-01`. This epoch time became known to many non-programmers.
 
 Of course, the 4-byte Unix timestamp limit of 2038 is no longer distant from today (2024), and software that hasn't been updated to use 8-byte timestamps will face a much more severe Y2K problem than leap day gas station outages - they'll simply stop working, like the idiot MySQL that still hasn't been updated.
-
---------------
 
 ## PostgreSQL Time Storage
 

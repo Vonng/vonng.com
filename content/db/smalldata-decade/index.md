@@ -7,7 +7,6 @@ summary: >
   如果2012年DuckDB问世，也许那场数据分析向分布式架构的大迁移根本就不会发生。在2012年的MacBook上运行TPC-H评测显示，数据分析确实在分布式架构上走了十年弯路。数据其实没那么大。
 tags: [OLAP, 数据库, 分布式系统]
 ---
-
 > [英文原文](https://duckdb.org/2025/05/19/the-lost-decade-of-small-data.html) | [微信原文](https://mp.weixin.qq.com/s/rfv_oSRD4LS-W9xFd_WB9g) | 2025年05月23日
 
 如果 2012 年 DuckDB 问世，也许那场数据分析向分布式架构的大迁移根本就不会发生。通过在2012年的Macbook笔记本上运行 TPC-H 评测，我们发现数据分析确实在分布式架构上走了十年弯路。
@@ -32,8 +31,6 @@ tags: [OLAP, 数据库, 分布式系统]
 
 巧的是，我现在手头仍有这样一台笔记本放在 [DuckDB Labs](https://duckdblabs.com/) 办公室，我的孩子们平时来玩时，会用它来刷 Youtube 看动画片。那么，这台老古董还跑得动现代版本的 DuckDB 吗？它的性能和现代的 MacBook 相比如何？ 我们可以在 2012 年就迎来当今的数据革命吗？让我们一探究竟！
 
-* * *
-
 ## 软件
 
 首先来说说操作系统。为了让这次跨年代的对比更公平，我们特地把 Retina 本的系统 **降级** 到 OS X 10.8.5 “Mountain Lion”——这正是该笔记本上市几周后的 2012 年 7 月发布的操作系统版本。虽然这台 Retina 笔记本实际上可以运行 10.15 (Catalina)，但我们觉得要做真正的 2012 年对比，就该使用那个年代的操作系统。下面这张截图展示了当年的系统界面，我们这些上了年纪的人看了不禁有点感慨。
@@ -41,8 +38,6 @@ tags: [OLAP, 数据库, 分布式系统]
 ![Mac OS X Mountain Lion UI](desktop.png)
 
 再来说 DuckDB 本身。在 DuckDB 团队，我们对可移植性和依赖有着近乎宗教般的坚持（更准确的说是 “**零依赖** ”）。正因如此，要让 DuckDB 在古老的 Mountain Lion 上跑起来几乎不费吹灰之力：DuckDB 的预编译二进制默认兼容到 OS X 11.0 (Big Sur)，我们只需调整一个编译标志重新编译，就使 DuckDB 1.2.2 顺利运行在了 Mountain Lion 上。我们本想尝试用 2012 年的老旧编译器来构建 DuckDB，无奈 C++11 在当年还太新，编译器对它的支持根本跟不上。话虽如此，生成的二进制运行良好——实际上，只要费些功夫绕过编译器的几个 bug，当年也是可以把它编译出来的。或者，我们大可以像 [**其他人那样**](https://www.youtube.com/watch?v=zsvafrKvTTY&t=54s) 干脆直接手写汇编。
-
-* * *
 
 ## 基准测试
 
@@ -85,8 +80,6 @@ tags: [OLAP, 数据库, 分布式系统]
   
 但是，这些冰冷的数字实际上意味着什么呢？令人窃喜的是，这台老电脑居然真的用 DuckDB 跑完了所有基准查询！如果仔细看看那些耗时，每个查询大致在几分钟到半小时之间。这种数据量下跑分析型查询，这样的等待时间一点也不离谱。老天，要是在 2012 年，你光等 Hadoop YARN 去调度你的作业就得更久，最后很可能它只会朝你吐出一堆错误堆栈。
 
-* * *
-
 ## 2023 年的改进
 
 那么这些结果与一台当代 MacBook 比又如何呢？作为比较，我们使用了一台现代 ARM 架构 [M3 Max MacBook Pro](https://everymac.com/systems/apple/macbook_pro/specs/macbook-pro-m3-max-16-core-cpu-40-core-gpu-14-late-2023-specs.html)（碰巧就在同一张桌子上）。这两台 MacBook 之间代表了超过十年的硬件发展差距。
@@ -122,13 +115,9 @@ tags: [OLAP, 数据库, 分布式系统]
   
 显而易见，我们获得了可观的加速效果，最低约 7 倍，最高超过 50 倍。运行时间的[几何平均数](https://en.wikipedia.org/wiki/Geometric_mean) 从 218 秒降低到了 12 秒，整体提升了约 20 倍。
 
-* * *
-
 ## 可复现性
 
 所有二进制文件、脚本、查询和结果都已发布在 [GitHub](https://github.com/hannes/old-macbook-tpch) 上供大家查阅。我们还提供了 [TPC-H SF1000 数据库文件](https://github.com/hannes/old-macbook-tpch) 下载，这样你就不用自己生成。不过请注意，文件非常大。
-
-* * *
 
 ## 讨论
 
@@ -163,4 +152,4 @@ DuckDB 的例子进一步证明了在当代，分布式数据库已经成为了�
   * [←上一页](/db/openai-pg/)
   * [下一页→](/db/guru/)
 
-最后修改 2025-05-24: [add smalldata (6760279)](https://github.com/pgsty/web.cc/commit/6760279cb9f6c860db678883e1835cec56198fff)
+最后修改 2025-05-24: add smalldata (6760279)（原链接失效）

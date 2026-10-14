@@ -5,14 +5,11 @@ date: 2025-02-27
 authors: ["laurenz-albe"]
 tags: [PostgreSQL, Oracle, Database, Transactions]
 ---
-
 > Original by [Laurenz Albe](https://www.cybertec-postgresql.com/en/comparison-of-the-transaction-systems-of-oracle-and-postgresql/). Translation and commentary by Feng Ruohang.
 
 Transactions sit at the heart of relational databases. They guarantee **data integrity** for applications. SQL defines some transactional behavior but leaves plenty unspecified, so implementations differ wildly.
 
 With many orgs migrating from Oracle to PostgreSQL, understanding those differences keeps you from getting burned. Here’s the comparison.
-
--------
 
 ## ACID recap
 
@@ -23,8 +20,6 @@ ACID stands for:
 - **Isolation** – concurrent transactions don’t produce anomalies; you only see states achievable via some serial order.
 - **Durability** – once committed, a transaction survives crashes.
 
--------
-
 ## Where Oracle and PostgreSQL align
 
 Plenty of fundamentals match:
@@ -34,8 +29,6 @@ Plenty of fundamentals match:
 - Row locks live in the rows themselves, not in lock tables—no lock escalation, at the cost of extra writes.
 - Both support `SELECT ... FOR UPDATE` for explicit concurrency control (details differ later).
 - Default isolation is `READ COMMITTED` with very similar semantics.
-
--------
 
 ## Atomicity differences
 
@@ -60,8 +53,6 @@ Well-structured apps typically roll back on errors anyway, but for long-running 
 Oracle executes an implicit `COMMIT` before and after every DDL, so **DDL isn’t transactional**. PostgreSQL treats DDL like any other statement and guarantees atomicity, but DDL errors abort the entire transaction.
 
 PG also has `SET CONSTRAINTS` to defer constraint checks; Oracle lacks the on/off toggles.
-
--------
 
 ## Isolation differences
 
@@ -93,13 +84,9 @@ Both databases see the latest committed data, but differ:
 - PostgreSQL only re-evaluates the locked rows—fast but potentially inconsistent.
 - Oracle reruns the entire query—slower but consistent.
 
--------
-
 ## Durability
 
 Both use write-ahead logging (Oracle “redo,” Postgres WAL). Guarantees are equivalent.
-
--------
 
 ## Other differences
 
@@ -119,13 +106,9 @@ Crucially, in PostgreSQL you shouldn’t use `FOR UPDATE` unless you’re deleti
 
 Only PostgreSQL suffers from [transaction ID wraparound](https://www.cybertec-postgresql.com/en/autovacuum-wraparound-protection-in-postgresql/). Each row stores a 32-bit transaction ID; as it wraps, rows must be `FREEZE`d. High-TPS systems must tune around it.
 
--------
-
 ## Conclusion
 
 Oracle and PostgreSQL largely behave alike, but key differences matter—especially when migrating. Knowing them upfront avoids surprises.
-
--------
 
 ## Commentary
 
@@ -136,4 +119,4 @@ This piece reads neutral but lands the punch: ACID’s “A,” “C,” “D”
 - [← Previous](/en/db/db-is-the-arch/)
 - [Next →](/en/db/pg-kiss-duckdb/)
 
-Last updated 2025-02-27 — [optimize image (7cb69ff)](https://github.com/pgsty/web.cc/commit/7cb69ff32df80eba158e90dfd39b124ff85b79ab)
+Last updated 2025-02-27 — optimize image (7cb69ff) (original link unavailable)

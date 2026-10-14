@@ -6,7 +6,6 @@ summary: >
   Over China’s seven-day National Day holiday, I upgraded my home network to 10GbE, replaced two NAS boxes, and packed six machines into a rolling 12U rack. AI helped with hardware selection, rack layout, and setup. One person can now build a complete infrastructure stack.
 tags: [Cloud-Exit, Hardware, Local First]
 ---
-
 The joke goes that a middle-aged man has three hobbies: **NAS boxes, routers, and chargers**.
 
 I stayed home for all seven days of China’s National Day holiday. I had no desire to fight the crowds, so I put my head down and worked.

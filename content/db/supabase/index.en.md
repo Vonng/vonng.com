@@ -6,16 +6,11 @@ authors: [vonng]
 summary: Supabase is great, own your own Supabase is even better. A tutorial for self-hosting production-grade supabase on local/cloud/ VM/BMs.
 tags: [Database, PG Ecosystem]
 ---
-
-
-
 Supabase is great, but having your own Supabase is even better.
 Pigsty helps you build enterprise-grade Supabase on your own servers (physical/virtual machines/cloud servers) with one-click deployment —
 [more extensions](https://pgext.cloud), better performance, deeper control, and much more cost-effective.
 
 > Pigsty is one of the three 3rd party self-hosting tutorials listed in the [official Supabase docs](https://supabase.com/docs/guides/self-hosting#third-party-guides)
-
---------
 
 ## Quick Start [#short-version]
 
@@ -32,9 +27,7 @@ vi pigsty.yml              # Edit domain, passwords, keys...
 
 After installation, visit port `8000` in your browser to access Supa Studio, username `supabase`, password `pigsty`.
 
-![](https://pigsty.io/img/pigsty/supabase.webp)
-
-------
+![Self-Hosting Supabase on PostgreSQL — Quick Start short-version (figure 1)](https://pigsty.io/img/pigsty/supabase.webp)
 
 ## Table of Contents
 
@@ -47,8 +40,6 @@ After installation, visit port `8000` in your browser to access Supa Studio, use
 - [Advanced Topic: Using SMTP](#advanced-topic-using-smtp)
 - [Advanced Topic: True High Availability](#advanced-topic-true-high-availability)
 
-------
-
 ## What is Supabase?
 
 [Supabase](https://supabase.com/) is a BaaS (Backend as Service), an open-source Firebase alternative, and the most popular database + backend solution in the AI Agent era.
@@ -60,8 +51,6 @@ Developers can quickly complete a full application with just frontend developmen
 
 Currently, Supabase is the most popular open-source project in the [PostgreSQL open-source ecosystem](https://ossrank.com/cat/368-postgresql-ecosystem), with [80,000](https://github.com/supabase/supabase/) stars on GitHub.
 Supabase also provides "generous" free cloud service quotas for small entrepreneurs — 500 MB of free space, which is sufficient for storing user tables, view counts, and similar data.
-
-------
 
 ## Why Self-Host?
 
@@ -100,8 +89,6 @@ Additionally, Pigsty handles the automatic setup of underlying [high availabilit
 In this self-hosting deployment architecture, you gain the freedom to use different kernels (PostgreSQL 15-17, OrioleDB), the freedom to install [**440**](https://pgext.cloud/list/) extensions, the freedom to scale Supabase/Postgres/MinIO,
 the freedom from database operational chores, and the freedom from vendor lock-in to run locally indefinitely. Compared to the cost of using cloud services, the price is just preparing servers and typing a few more commands.
 
-------
-
 ## Single Node Quick Start
 
 Let's start with single-node Supabase deployment. We'll introduce multi-node high availability deployment methods later.
@@ -126,7 +113,7 @@ If it's just local development testing, you can skip this for now. We'll introdu
 If configured correctly, after about ten minutes, you can access the Supabase Studio graphical management interface locally via `http://<your_ip_address>:8000`.
 The default username and password are: `supabase` and `pigsty`.
 
-![](https://pigsty.io/img/pigsty/supabase.webp)
+![Self-Hosting Supabase on PostgreSQL — Single Node Quick Start (figure 3)](https://pigsty.io/img/pigsty/supabase.webp)
 
 <Callout title="DockerHub blocked in mainland China" type="warning">
 
@@ -148,8 +135,6 @@ The default username and password are: `supabase` and `pigsty`.
 
 </Callout>
 
-------
-
 ## Key Technical Decisions for Self-Hosting
 
 Here are some key technical decisions involved in self-hosting Supabase for your reference:
@@ -167,8 +152,6 @@ Some Supabase functionality requires sending emails, so SMTP services are needed
 If your service is directly exposed to the public network, we strongly recommend using real domains and HTTPS certificates and accessing through [Nginx Portal](https://pigsty.io/docs/infra/admin/portal/).
 
 Next, we'll discuss some advanced topics in sequence: how to further improve Supabase security, availability, and performance based on single-node deployment.
-
-------
 
 ## Advanced Topic: Security Hardening
 
@@ -215,8 +198,6 @@ After modifying Supabase credentials, you can restart Docker Compose containers 
 ```bash tab="Manual"
 cd /opt/supabase; make up
 ```
-
-------
 
 ## Advanced Topic: Domain Integration
 
@@ -265,13 +246,11 @@ Complete domain/HTTPS configuration can refer to the [Certificate Management](ht
 
 [![asciicast](https://asciinema.org/a/731211.svg)](https://asciinema.org/a/731211)
 
-------
-
 ## Advanced Topic: External Object Storage
 
 You can use S3 or S3-compatible services as object storage for PostgreSQL backups and Supabase usage. Here we use Alibaba-Cloud OSS object storage as an example.
 
-> Pigsty provides a [`terraform/spec/aliyun-meta-s3.tf`](https://github.com/pgsty/pigsty/blob/main/terraform/spec/aliyun-meta-s3.tf) template
+> Pigsty provides a [`terraform/spec/aliyun-meta-s3.tf`](https://github.com/pgsty/pigsty/blob/v3.4.0/terraform/spec/aliyun-meta-s3.tf) template
 > that can be used to deploy a server and an OSS bucket on Alibaba-Cloud.
 
 First, modify the S3-related configuration in `all.children.supa.vars.apps.[supabase].conf`, pointing it to the Alibaba-Cloud OSS bucket:
@@ -326,8 +305,6 @@ Then specify using the `aliyun` backup repository in `all.vars.pgbackrest_method
 
 Pigsty will switch the backup repository to external object storage. More backup configurations can refer to [PostgreSQL Backup](https://pigsty.io/docs/pgsql/backup) documentation.
 
-------
-
 ## Advanced Topic: Using SMTP
 
 You can use SMTP to send emails by modifying the supabase application configuration and adding SMTP information:
@@ -350,8 +327,6 @@ all:
 ```
 
 Don't forget to use `app.yml` to reload the configuration
-
-------
 
 ## Advanced Topic: True High Availability
 

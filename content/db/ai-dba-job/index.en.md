@@ -8,8 +8,6 @@ tags: [AI, Database, PG Admin, Career]
 ai: true
 aliases: ["/ai/ai-dba-job/"]
 ---
-
-
 The day before yesterday at the HOW 2025 conference roundtable, Chairman Xiao asked some interesting questions about AI, databases, and DBAs. Here are Feng's views, organized and published.
 
 ## OLTP / OLAP: Who Gets Revolutionized First?

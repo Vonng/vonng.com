@@ -8,7 +8,6 @@ summary: >
 series: ["正本清源"]
 tags: [云计算, 架构, 容器化, 技术评论]
 ---
-
 亚马逊的Prime Video团队发表了一篇非常引人注目的案例研究[2] ，讲述了他们为什么放弃了微服务与Serverless架构而改用单体架构。这一举措让他们在运营成本上节省了惊人的 90%，还简化了系统复杂度，堪称一个巨大的胜利。
 
 但除了赞扬他们的明智之举之外，我认为这里还有一个重要洞察适用于我们整个行业：
@@ -23,7 +22,7 @@ SOA 在亚马逊的规模下很有意义，没有任何一个团队能够知道�
 
 但正如很多“好主意”一样，**这种模式在脱离了原本的场景用在其他地方后，就开始变得极为有害了**：特别是塞进单一应用架构内部时 —— 而人们就是这么搞微服务的。
 
-![](microservice-bad-idea-1.jpeg)
+![微服务是不是个蠢主意？（图 1）](microservice-bad-idea-1.jpeg)
 
 从很多层面上来说，微服务是一种僵尸架构，是一种顽强的思想病毒：从 J2EE 的黑暗时代（Remote Server Beans，有人听说过吗），一直到 WS-Deathstar[3] 死星式的胡言乱语，再到现在微服务与 Serverless 的形式，它一直在吞噬大脑，消磨人们的智力。
 
@@ -33,7 +32,7 @@ SOA 在亚马逊的规模下很有意义，没有任何一个团队能够知道�
 >
 > 人们沉迷于这些与时髦术语绑定的热钱与炒作，因为微服务带来了大量的新开销，招聘机会与工作岗位，唯独对于解决他们的问题来说实际上并没有必要。“
 
-![](microservice-bad-idea-2.png)
+![微服务是不是个蠢主意？（图 2）](microservice-bad-idea-2.png)
 
 没错，当你拥有一个连贯的单一团队与单体应用程序时，用网络调用和服务拆分取代方法调用与模块切分，在几乎所有情况下都是一个无比疯狂的想法。
 
@@ -47,9 +46,9 @@ SOA 在亚马逊的规模下很有意义，没有任何一个团队能够知道�
 
 原题为  Even Amazon can't make sense of serverless or microservices[1] 。即《亚马逊自个都觉得微服务和Serverless扯淡了》
 
-[![](featured.jpg)](https://mp.weixin.qq.com/s/mEmz8pviahEAWy1-SA8vcg)
+[![微服务是不是个蠢主意？（图 3）](featured.jpg)](https://mp.weixin.qq.com/s/mEmz8pviahEAWy1-SA8vcg)
 
-### References
+## References
 
 `[1]` Even Amazon can't make sense of serverless or microservices: *https://world.hey.com/dhh/even-amazon-can-t-make-sense-of-serverless-or-microservices-59625580*
 `[2]` 引人注目的案例研究: *https://www.primevideotech.com/video-streaming/scaling-up-the-prime-video-audio-video-monitoring-service-and-reducing-costs-by-90*

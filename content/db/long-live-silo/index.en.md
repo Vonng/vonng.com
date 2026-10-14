@@ -7,7 +7,6 @@ summary: >
   restored and improved the console, and grown from an emergency fork into an independent open-source project.
 tags: [Object Storage, Open Source]
 ---
-
 Several months ago, I forked MinIO for a simple reason: [Pigsty](https://pigsty.io) depended on it, and upstream had abandoned the open-source project. I said I would keep packages and security fixes flowing. Here is the recent report:
 
 - The Docker image has been pulled more than **500,000 times**, and the repository has **2,000+ GitHub stars**.
@@ -26,8 +25,6 @@ It turned out that many other people needed the same thing.
 
 The latest release, [`RELEASE.2026-08-06T00-00-00Z`](https://github.com/pgsty/silo/releases/tag/RELEASE.2026-08-06T00-00-00Z), is a good point to take stock. It is more than a rename, so here is what changed.
 
----
-
 ## A Complete Rename
 
 In February's [MinIO Is Dead, Long Live MinIO](/en/db/minio-resurrect), I wrote that the fork's largest unresolved risk was the MinIO trademark. MinIO is open source, but an open-source license does not grant trademark rights.
@@ -39,8 +36,6 @@ That was tolerable when I was the only user. It is not tolerable after more than
 I made it clear throughout the repository that PGSTY SILO was an independent community fork with no connection to MinIO, Inc. Even so, MinIO, Inc. could file a trademark complaint and ask GitHub or Docker Hub to remove the repository or image. That would break the supply chain overnight.
 
 A supply chain built on someone else's trademark, and vulnerable to being severed by a lawyer's letter, is itself a supply-chain risk. I decided to remove that risk before it became a problem. The project, repository, binary, and every other brand-facing surface have now been renamed from MinIO to PGSTY SILO, or Silo for short.
-
----
 
 ## Why "Silo"?
 
@@ -55,8 +50,6 @@ But a silo is also a place to store grain, which makes it a natural name for obj
 I settled on the name when I wrote the first post six months ago. This release finally makes it real. The GitHub repository, Docker repository, binary, RPM and DEB packages, and image names now all use the Silo name.
 
 To be clear, only names tied to branding and trademarks have changed. We are not changing APIs, on-disk formats, metrics, or configuration keys. Those are not trademarks, and renaming them would create work and risk for users for no benefit.
-
----
 
 ## Compatibility: What Changed and What Did Not
 
@@ -92,8 +85,6 @@ If you use [RPM or DEB packages](https://silo.pgsty.com/compatibility/binary/), 
 
 The rename is not the whole release. Four other things deserve a closer look: the console, security, the website, and a manifesto.
 
----
-
 ## The Console Speaks Chinese
 
 In May 2025, upstream stripped the full administration console from the community edition and left only a bare-bones [object browser](https://silo.pgsty.com/administration/minio-console/).
@@ -119,8 +110,6 @@ The old console queried MinIO Metrics v2. Both MinIO and Silo now expose v3 metr
 We cleaned out the remaining SUBNET, license-management, and telemetry code tied to upstream's commercial edition. No analytics, no telemetry, no tracking hooks, and no external scripts or fonts.
 
 ![Silo object browser](console-browser.webp)
-
----
 
 ## Security: A 9.1 Vulnerability with No CVE
 
@@ -155,8 +144,6 @@ We do more than publish patches. The reasoning and decisions behind them are pub
 
 ![Silo inter-node path-traversal advisory](security-advisory.webp)
 
----
-
 ## The Website: silo.pgsty.com
 
 Until now, the fork's entire homepage amounted to a few lines in its GitHub README.
@@ -182,8 +169,6 @@ The part of the compatibility audit I care about most is *what differs*. That in
 ![Silo and MinIO server compatibility audit](compat.webp)
 
 ![Silo downloads and installation](download.webp)
-
----
 
 ## The Silo Manifesto
 
@@ -221,8 +206,6 @@ That comes with a commitment: every change must pass CI and human review, and ev
 
 I am not going to hide the AI work and pretend this was made entirely by hand. That would not be true, and it would not make the result better. This is what one person maintaining a mid-sized infrastructure project looks like in 2026. Hiding it would be dishonest.
 
----
-
 ## Use It
 
 For downloads and installation, see [PGSTY SILO Downloads](https://silo.pgsty.com/download/).
@@ -237,8 +220,6 @@ For downloads and installation, see [PGSTY SILO Downloads](https://silo.pgsty.co
 | Production deployment | [Pigsty MinIO module](https://pigsty.io/docs/minio/), a free, open-source, ready-to-use HA deployment |
 
 The old `pgsty/minio` repository and images will remain available, frozen at `RELEASE.2026-08-04` as an archive. They will not be deleted, but all future updates will ship only under `pgsty/silo`.
-
----
 
 ## Further Reading
 

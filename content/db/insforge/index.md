@@ -6,14 +6,11 @@ summary: >
   InsForge 试图把数据库、认证、文件存储和语义层一起打包成一个更适合 AI Agent 的后端底座，像一个专为 Vibe Coding 设计的 Supabase。
 tags: [AI, PostgreSQL, 开源]
 ---
-
 老冯最近发现了一个有意思的项目：**InsForge**。口号是——为 AI 编程设计的 Supabase。
 
 Apache 2.0 开源，GitHub 约 2000 Star，核心技术栈是 PostgreSQL + PostgREST + Deno + TypeScript，5 个容器就能跑起来。老冯收集大宝贝的毛病又犯了，赶紧把它加入到 Pigsty 代自建全家桶里来（随下个版本一起发布）。
 
 这个项目触及了一个真实的痛点，值得展开聊聊。
-
---------
 
 ## Vibe Coding 的“最后一公里”
 
@@ -28,8 +25,6 @@ Apache 2.0 开源，GitHub 约 2000 Star，核心技术栈是 PostgreSQL + Postg
 ![Karpathy 关于部署最后一公里的说法](last-mile.webp)
 
 InsForge 想解决的，就是这个“最后一公里”。老冯的 Pigsty 之前其实也有过类似的原型——目录里写好 CLAUDE.md，你用 Claude Code 说“给我做一个应用”，它也会用 PostgreSQL 给你搞出来。现在好了，有个更完整的开源方案出来了，也省老冯的事儿了。
-
---------
 
 ## 它到底是什么？
 
@@ -48,13 +43,11 @@ InsForge 想解决的，就是这个“最后一公里”。老冯的 Pigsty 之
 
 听起来跟 Supabase 差不多？差别在架构层面。
 
---------
-
 ## 关键差异：语义层
 
 InsForge 的核心设计是在 AI Agent 和后端原语之间加了一层 **语义层（Semantic Layer）**，通过 MCP 协议暴露给 Agent：
 
-```
+```text
 AI Coding Agent（Cursor / Claude Code / Copilot / ...）
         │
         ▼
@@ -72,8 +65,6 @@ InsForge Semantic Layer（MCP Server）
 这层语义层做三件事：**暴露上下文**——Agent 通过 MCP 直接“看到”后端的表结构、Schema、RLS 规则；**操作原语**——Agent 直接通过 MCP 工具调用来建表、配 OAuth、部署函数，不需要你在 Dashboard 上点来点去；**检查状态**——执行完可以查日志、验证结果，形成闭环。
 
 用他们的话说，这叫 **Context Engineering for AI Agents**。
-
---------
 
 ## 实际体验
 
@@ -102,8 +93,6 @@ npx @insforge/install --client cursor \
 
 接下来就可以在编辑器里对 Agent 说：“帮我创建一个用户表，包含 email 和 name 字段，然后搞一个注册登录流程”。Agent 会自动通过 MCP 了解 InsForge 的能力、创建表、配置认证、生成前端代码。整个过程 **你不需要打开任何 Dashboard、不需要手动配置任何东西**。
 
---------
-
 ## 老冯的看法
 
 **InsForge 做对了一件事：把“Agent 能不能理解后端”作为第一优先级来设计。** 传统 BaaS（Supabase、Firebase）是为人设计的，Dashboard 做得再漂亮，对 AI Agent 来说也是不可见的。Agent 需要的是结构化的 API、一致的响应格式、可检查的状态——InsForge 围绕这个需求重新设计了接口。
@@ -117,8 +106,6 @@ npx @insforge/install --client cursor \
 说到底，它的组件（PostgREST + Deno + JWT）单个来看都不新，核心壁垒是那层 MCP 语义层的工程实现。
 
 但从趋势上看，**“Agent-Native Infrastructure” 这个方向是真实存在的**。当越来越多的代码由 AI Agent 写出来时，后端基础设施如何更好地服务于 Agent，而不是继续要求人类在 Dashboard 上点鼠标，这是一个值得认真思考的问题。
-
---------
 
 ## 架构拆解：简化版 Supabase
 
@@ -138,8 +125,6 @@ npx @insforge/install --client cursor \
 Insforge 策略很清楚：砍掉 Supabase 里的重量级组件（GoTrue、Realtime Elixir Server、Kong、Supavisor、imgproxy），全部用 TypeScript 重写，换来极简部署。对于 Vibe Coding 的典型场景——快速原型、个人项目、黑客松——够了。
 
 最关键的是，**PostgreSQL 仍然是绝对的核心**。所有数据存在 PG 里，所有 API 从 PG Schema 自动生成，认证信息加密存储在 PG 中，RLS 策略在 PG 层面执行。InsForge 本质上就是一个围绕 PostgreSQL 构建的、面向 AI Agent 的薄封装层。
-
---------
 
 ## 纳入 Pigsty 全家桶
 

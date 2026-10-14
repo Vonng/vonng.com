@@ -6,7 +6,6 @@ summary: >
   HTAP 价值主张太单薄，撑不起中国数据库出海的宏大目标，恐怕连客户门都敲不开。
 tags: [OLAP, 国产数据库, 数据库]
 ---
-
 > 原作者：瑞典马工
 
 最近，有很多软件从业者转发阳振坤先生的演讲[《起初，没有人愿意用我们的产品，直到十年前的那次“双十一”｜阳振坤》](https://mp.weixin.qq.com/s?__biz=MzIwNTQxMjY0MQ==&mid=2247601017&idx=1&sn=469963c3108982d02cea306cf96b1af7&scene=21#wechat_redirect)。演讲本身很优秀，我推荐给身边的年轻人。但是作为一个工程师，我对阳振坤先生的一个观点有一些不同意见。
@@ -45,7 +44,7 @@ OLAP 和 OLTP 都源自于同一个祖先，是 **Edgar F. Codd<sup>[3]</sup>** 
 
 退一步，即使厂家利用云计算或者其他硬件解决了 OLAP 和 OLTP 的架构冲突，还面临一个更严重的问题：OLAP 和 OLTP 并没有太多的共享数据。
 
-在 IBM 垄断计算机市场的古代，企业数据很少，存储方式也很单一，基本就是 ERP 那几个数据库。**阿里云 CDP 架构图<sup>[5]</sup>**就基于这种认知：
+在 IBM 垄断计算机市场的古代，企业数据很少，存储方式也很单一，基本就是 ERP 那几个数据库。**阿里云 CDP 架构图<sup>[5]</sup>** 就基于这种认知：
 
 ![loading](03.webp)
 
@@ -81,7 +80,7 @@ OLAP 和 OLTP 都源自于同一个祖先，是 **Edgar F. Codd<sup>[3]</sup>** 
 
 ## 作业帮
 
-**作业帮架构<sup>[11]</sup>**如下：
+**作业帮架构<sup>[11]</sup>** 如下：
 
 同样可以看出，OLTP 用的是 MySQL，然后把数据通过 OMS 加载到 Oceanbase，这也是典型的 OLAP 用途。
 
@@ -95,7 +94,7 @@ OLAP 和 OLTP 都源自于同一个祖先，是 **Edgar F. Codd<sup>[3]</sup>** 
 
 ## Classin
 
-**Classin 这位客户<sup>[12]</sup>**非常坦率
+**Classin 这位客户<sup>[12]</sup>** 非常坦率
 
 > 其次，翼鸥教育会重点关注 OceanBase 4.0 版本，并尝试新功能。
 >
@@ -123,7 +122,7 @@ real time analytics: *<https://www.gartner.com/en/information-technology/glossar
 
 [3]
 
-Edgar F. Codd: *<https://en.wikipedia.org/wiki/Edgar_F.\_Codd>*
+Edgar F. Codd: *https://en.wikipedia.org/wiki/Edgar_F._Codd*
 
 [4]
 

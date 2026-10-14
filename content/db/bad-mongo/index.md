@@ -7,8 +7,6 @@ summary: >
   MongoDB在诚信上劣迹斑斑，在产品和技术上乏善可陈，在正确性、性能、功能上被PostgreSQL吊打，开发者口碑崩塌，热度下滑，股价腰斩，亏损扩大。碰瓷引战PG，好营销也救不了它。
 tags: [MongoDB, PostgreSQL, 数据库, PG生态]
 ---
-
-
 这两天 MongoDB 整的营销花活让人眼花缭乱：《[MongoDB向PostgreSQL宣战](https://mp.weixin.qq.com/s/ypV31fanKB6ZsFzuRYTwmQ)》，《[MongoDB 击败 PostgreSQL 赢下价值 300 亿美元项目](https://mp.weixin.qq.com/s/SJw6S6k82bxOq1pWP3kDfw)》，以及原文 The Register 的《[MongoDB在战胜强敌之后准备乱拳干翻 PostgreSQL](https://www.theregister.com/2024/08/30/mongodb_postgresql/)》，活生生一副要乱拳打死老师傅的架势。
 
 ![300b.jpg](300b.jpg)
@@ -21,33 +19,29 @@ tags: [MongoDB, PostgreSQL, 数据库, PG生态]
 
 然而诚信是商业的根本，“好营销救不了烂芒果”，建立在谎言与忽悠之上的营销不会有好下场。今天我就来带大家看看，MongoDB 营销的锦绣丝绸被套里，填进去的都是些什么烂棉花。
 
----------
-
 ## 烂产品靠营销上位
 
 图灵奖得主，数据库祖师爷 Stonebraker 老爷子在最近在 SIGMOD 2024 发表的名著级论文《[What goes around comes around... And Around](https://db.cs.cmu.edu/papers/2024/whatgoesaround-sigmodrec2024.pdf)》中对此有过精辟的评价：“绝对不要低估好营销对 **烂产品** 的影响 —— **比如 MySQL 与 MongoDB**”。
 
-![](stonebraker.png)
+![MongoDB没有未来：好营销救不了烂芒果：烂产品靠营销上位（图 2）](stonebraker.png)
 
 这个世界上有许多烂数据库 —— 但能用三寸不烂之舌把烂货成功吹成宝贝卖出去的，MongoDB 说自己是第一，MySQL 也只自认老二屈居人下。
 
 在所有关于 MongoDB 大忽悠的故事中，最让人印象深刻的是 LinkedIn 上的这篇《[MongoDB 3.2 —— 现由 PostgreSQL 强力驱动](https://mp.weixin.qq.com/s/e3_32Neoy5RVRBSozsa_7A)》 。
 这篇文章的精彩之处在于，它是由 MongoDB 合作伙伴发出的血泪控诉：MongoDB 无视了自己合作伙伴的忠言劝告，拿了一个 PostgreSQL 伪装成自己的分析引擎，并在发布会上忽悠用户。
 
-![](mongo-powered-by-pg.webp)
+![MongoDB没有未来：好营销救不了烂芒果：烂产品靠营销上位（图 3）](mongo-powered-by-pg.webp)
 
 作者作为 MongoDB 在分析领域的合作伙伴彻底灰心丧气，公开撰文发起控诉 —— “*MongoDB 的分析引擎是一个 PostgreSQL ，那你们真还不如直接去用 PostgreSQL*”。
 
 像这样刻意造假忽悠的案例绝非个例，MongoDB 还在贬低同业产品自抬身价上有诸多记录。例如在官网文章《[从PostgreSQL迁移到MongoDB](https://www.mongodb.com/resources/compare/mongodb-postgresql/dsl-migrating-postgres-to-mongodb)》中，MongoDB 宣称自己是 “**可扩展灵活的新一代现代通用数据库**”，
 而 PostgreSQL 是 “**复杂且容易出错的老旧单片关系数据库**”。完全无视了其实自己在整体的性能，功能，正确性，甚至自己标榜的应对大数据量的吞吐与可伸缩性上完全被 PostgreSQL 吊打的事实。
 
------------
-
 ## 功能被PGSQL覆盖
 
 JSON 文档确实是一个很受互联网应用开发者喜爱的特性。然而提供这一能力的数据库并非只有 MongoDB 。PostgreSQL 在十年前就已经提供了 SOTA 水平的 JSON 支持，并且仍然在不断演进改善。
 
-![](pg-jsonb.png)
+![MongoDB没有未来：好营销救不了烂芒果：功能被PGSQL覆盖（图 4）](pg-jsonb.png)
 
 PostgreSQL 的 JSON 支持是所有关系型数据库中最成熟与最早的（2012-2014），早于 SQL/JSON 标准或者说直接影响了 SQL/JSON 标准建立（2016）。
 更重要的是，它的文档特性实现质量很高。相比之下 —— 同样在营销上号称支持 JSON 的MySQL，实际上是个简陋的 BLOB 换皮，[跟 9.0 向量类型有一拼](https://mp.weixin.qq.com/s/JgGCn9o2-DNPNqazPZXTtA)）。
@@ -66,11 +60,9 @@ PostgreSQL 在功能上是 MongoDB 的上位替代，所以可以对 MongoDB 的
 
 ![ferret.webp](ferret.webp)
 
-在易用性上，各家云厂商都推出了开箱即用的 PG RDS 服务，想要开源自建也有 [**Pigsty**](https://pigsty.cc/zh/) 这样开箱即用的解决方案，还有 Serverless 的 Neon 更是让PG上手门槛低到一行命令就能直接用起来。
+在易用性上，各家云厂商都推出了开箱即用的 PG RDS 服务，想要开源自建也有 [**Pigsty**](https://pigsty.cc/) 这样开箱即用的解决方案，还有 Serverless 的 Neon 更是让PG上手门槛低到一行命令就能直接用起来。
 
 此外，相比于 MongoDB 使用的 SSPL 协议（已经不再是一个开源协议了），PostgreSQL 使用的类 BSD 开源协议显然要友善的多，PG可以在不需要软件授权费的情况下，提供更好的上位功能替代 —— Do more pay less! 不赢都难。
-
------------
 
 ## 正确性与性能被吊打
 
@@ -78,7 +70,7 @@ PostgreSQL 在功能上是 MongoDB 的上位替代，所以可以对 MongoDB 的
 
 当然，MongoDB 的强项就是面不改色心不跳的 “忽悠“，尽管 JEPSEN 提了这么多的问题，在 MongoDB 官网上，关于 Jespen 的评测是这么介绍的：”*到目前为止，因果一致性通常仅限于研究项目......MongoDB 是我们所知的第一个提供实现的商业数据库之一*“
 
-![](jepsen-mongo.webp)
+![MongoDB没有未来：好营销救不了烂芒果：正确性与性能被吊打（图 6）](jepsen-mongo.webp)
 
 这个例子再次体现了 MongoDB 在营销上的脸皮 —— 用一种极其精致的语言艺术，从一大坨 Bullshit 中精心挑选出了一颗未消化的花生米，而一笔带过在正确性/一致性上的各种致命硬伤。
 
@@ -94,15 +86,13 @@ PostgreSQL 在功能上是 MongoDB 的上位替代，所以可以对 MongoDB 的
 
 来自 ONGRES 与 EDB 的一份 [PG vs Mongo 性能对比评测报告](https://info.enterprisedb.com/rs/069-ALB-339/images/PostgreSQL_MongoDB_Benchmark-WhitepaperFinal.pdf)  详细对比了两者在 OLTP / OLAP 上的性能，结果一目了然。
 
-![](mongo-pg-bench.png)
+![MongoDB没有未来：好营销救不了烂芒果：正确性与性能被吊打（图 7）](mongo-pg-bench.png)
 
 另一份更近一点的[性能对比](https://medium.com/@yurexus/can-postgresql-with-its-jsonb-column-type-replace-mongodb-30dc7feffaf3) 着重测试了 JSONB / GIN 索引下的表现对比，得出的结论也是：PostgreSQL JSONB 列是 MongoDB 的替代。
 
 在当下，[**单机 PostgreSQL 性能**](/pg/pg-performence) 可以轻松 Scale 到几十TB ～ 几百TB数量级，支撑几十万的点写入 QPS 与几百万的点查询 QPS。只用 PostgreSQL 支撑业务到百万日活 / 百万美元营收甚至直接 IPO 都毫无问题。
 
 老实说，MongoDB 的性能已经完全跟不上时代了，而它引以为傲的“内置分片”可伸缩性，[**在软件架构与性能突飞猛进**](/pg/pg-scalability)，[**硬件遵循摩尔定律指数发展**](/cloud/bonus/) 的当下显得毫无意义。
-
---------
 
 ## 流行度热度在衰退
 
@@ -119,13 +109,11 @@ PostgreSQL 在功能上是 MongoDB 的上位替代，所以可以对 MongoDB 的
 MongoDB 和 MySQL 属于那种典型的 “面向初学者” 的数据库，针对小白做了许多无底线讨好性的妥协设计 —— 从统计中不难看出它们在新手中的使用率比专业开发者中更高。
 与之相反的则是 PostgreSQL，在专业开发者中的使用比例要比新手中高得多。
 
-![](transition.png)
+![MongoDB没有未来：好营销救不了烂芒果：流行度热度在衰退（图 10）](transition.png)
 
 任何开发者都会经历初学者状态，我最初也是从 MySQL / Mongo 开始与数据库打交道的，但很多人就止步于此，而有追求的工程师则会不断学习进步，提升自己的品味与技术鉴别力，使用更好用、更强大的技术来更新自己的武器库。
 
 而趋势是：越来越多的用户在提升的过程中，从 MongoDB 和 MySQL 迁移到了上位替代 PostgreSQL 中。从而成就了新一代世界上最流行的数据库 —— PostgreSQL。
-
---------
 
 ## 风评已然臭不可闻
 
@@ -138,29 +126,23 @@ MongoDB 和 MySQL 属于那种典型的 “面向初学者” 的数据库，针
 总体来说，在这趟深度使用与迁移过程中，我对 MongoDB 感到非常失望，感觉到自己的时间被毫无意义的东西给浪费掉了。
 当然后来我也发现，并不是只有我一个人有这种感受，在 HN 和 Reddit 上有无数关于 MongoDB 的嘲讽与吐槽：
 
-- [告别 MongoDB。迎接 PostgreSQL](http://developer.olery.com/blog/goodbye-mongodb-hello-postgresql/)
+- 告别 MongoDB。迎接 PostgreSQL（原链接失效）
 - [Postgres 性能优于 MongoDB，并引领开发者新现实](http://www.enterprisedb.com/postgres-plus-edb-blog/marc-linster/postgres-outperforms-mongodb-and-ushers-new-developer-reality)
 - [MongoDB 已死。PostgreSQL 万岁 :)](https://github.com/errbit/errbit/issues/614)
 - [你永远不应该使用 MongoDB 的理由](http://www.sarahmei.com/blog/2013/11/11/why-you-should-never-use-mongodb/)
 - [SQL vs NoSQL 决斗。Postgres vs Mongo](https://www.airpair.com/postgresql/posts/sql-vs-nosql-ko-postgres-vs-mongo)
-- [为什么我放弃了 MongoDB](http://svs.io/post/31724990463/why-i-migrated-away-from-mongodb)
+- 为什么我放弃了 MongoDB（原链接失效）
 - [为什么你永远永远永远不该使用 MongoDB](http://cryto.net/~joepie91/blog/2015/07/19/why-you-should-never-ever-ever-use-mongodb/)
-- [Postgres NoSQL 比 MongoDB 更好吗？](http://www.aptuz.com/blog/is-postgres-nosql-database-better-than-mongodb/)
+- Postgres NoSQL 比 MongoDB 更好吗？（原链接失效）
 - [再见 MongoDB。你好 PostgreSQL](https://www.userlike.com/en/blog/2015/10/09/bye-by-mysql-and-mongodb-guten-tag-postgresql)
-
---------
 
 **关于这篇《MongoDB挑战PG》的新闻，HN评论区是这样的：**
 
 ![hackernews.webp](hackernews.webp)
 
---------
-
 **关于 MongoDB，Reddit 里的评论是这样的：**
 
 ![reddit-comment.png](reddit-comment.png)
-
---------
 
 **能让开发者专门抽出时间写文章来骂它，MongoDB 的恶劣营销功不可没：**
 
@@ -171,8 +153,6 @@ MongoDB 和 MySQL 属于那种典型的 “面向初学者” 的数据库，针
 能让合作伙伴[破口大骂，吹哨揭发](https://mp.weixin.qq.com/s/e3_32Neoy5RVRBSozsa_7A)，我看 MongoDB 也是独此一家：
 
 ![shotgun.webp](shotgun.webp)
-
---------
 
 ## MongoDB没有未来
 

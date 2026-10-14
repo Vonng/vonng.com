@@ -7,7 +7,6 @@ summary: >
 series: ["正本清源"]
 tags: [数据库, 分布式系统, 技术评论]
 ---
-
 ## 老冯按：最近关于分布式的讨论又开始热闹起来，比如白老师就发了一篇《[分布式数据库真的是伪需求吗](https://mp.weixin.qq.com/s?__biz=MzA5MzQxNjk1NQ==&mid=2647854211&idx=1&sn=160cacf17971f850fd589774586b131e&scene=21#wechat_redirect)》。回头看看两年前写的《[分布式数据库是伪需求吗？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485549&idx=1&sn=7c34439d82431129c57aba211202b5ca&scene=21#wechat_redirect)》，依然非常应景。所以在此修订重发。
 
 ### 随着硬件技术的进步，单机数据库的容量和性能已达到了前所未有的高度。而分布式(TP)数据库在这种变革面前极为无力，和“数据中台”一样穿着皇帝的新衣，处于自欺欺人的状态里。
@@ -34,11 +33,11 @@ tags: [数据库, 分布式系统, 技术评论]
 
 作为一个行业解决方案，分布式数据库成功满足了互联网公司的场景需求。但是如果想把它抽象沉淀成一个产品对外输出，还需要想清楚几个问题：
 
-**十年前的利弊权衡，在今天是否依然成立？****互联网公司的场景，对其他行业是否适用？****分布式事务数据库，会不会是一个伪需求？**
+**十年前的利弊权衡，在今天是否依然成立？** **互联网公司的场景，对其他行业是否适用？** **分布式事务数据库，会不会是一个伪需求？**
 
 ### 分布式的权衡
 
-“***分布式***” 同 “*HTAP*”、 “*存算分离*”、“*Serverless*”、“*湖仓一体*” 这样的 Buzzword 一样，对企业用户来说没有意义。务实的甲方关注的是实打实的属性与能力：功能性能、安全可靠、投入产出、成本效益。**真正重要的是利弊权衡：分布式数据库相比经典集中式数据库，牺牲了什么换取了什么？****\**
+“***分布式***” 同 “*HTAP*”、 “*存算分离*”、“*Serverless*”、“*湖仓一体*” 这样的 Buzzword 一样，对企业用户来说没有意义。务实的甲方关注的是实打实的属性与能力：功能性能、安全可靠、投入产出、成本效益。**真正重要的是利弊权衡：分布式数据库相比经典集中式数据库，牺牲了什么换取了什么？** **\**
 
 ![图片](wxmp-distributed-db-01.webp)
 
@@ -114,7 +113,7 @@ NewSQL 的祖师爷 Google Spanner 是为了解决海量数据伸缩性的问题
 
 ![图片](wxmp-distributed-db-10.webp)
 
-另一种思路是**单机分布式一体化**：**打不过就加入**：添加一个单机模式以规避代价高昂的网络 RPC 开销，起码在那些用不上分布式的 99% 场景中，不至于在硬指标上被集中式数据库碾压得一塌糊涂 ——***用不上分布式没关系，先拽上车别被其他人截胡！******目前 Oceanbase 是这样做的。***但这里的问题本质与 HTAP 是一样的：强行整合异质数据系统没有意义，如果这样做有价值，那么为什么没人去把所有异构数据库整合一个什么都能做的巨无霸二进制 ——**数据库全能王？**因为这样违背了 KISS 原则：***K**eep**I**t**S**imple,**S**tupid！***
+另一种思路是**单机分布式一体化**：**打不过就加入**：添加一个单机模式以规避代价高昂的网络 RPC 开销，起码在那些用不上分布式的 99% 场景中，不至于在硬指标上被集中式数据库碾压得一塌糊涂 —— ***用不上分布式没关系，先拽上车别被其他人截胡！*** ***目前 Oceanbase 是这样做的。*** 但这里的问题本质与 HTAP 是一样的：强行整合异质数据系统没有意义，如果这样做有价值，那么为什么没人去把所有异构数据库整合一个什么都能做的巨无霸二进制 —— **数据库全能王？** 因为这样违背了 KISS 原则：_**K**eep **I**t **S**imple, **S**tupid！_
 
 ![图片](wxmp-distributed-db-11.webp)
 
@@ -126,8 +125,8 @@ TP 数据库领域还有很多地方值得投入精力：Leveraging new hardware
 
 #### References
 
-- `[1]` [[数据库需求层次金字塔](/db/demand-pyramid/)](/db/demand-pyramid/)
-- `[2]` [[PostgreSQL 到底有多强？](/pg/pg-performence/)](/pg/pg-performence/)
+- `[1]` [数据库需求层次金字塔](/db/demand-pyramid/)
+- `[2]` [PostgreSQL 到底有多强？](/pg/pg-performence/)
 - `[3]` 2013 年 SSD 性能： <https://www.snia.org/sites/default/files/SNIASSSI.SSDPerformance-APrimer2013.pdf>
 - `[4]` 2022 年镁光 9400 NVMe SSD 规格说明： <https://assets.micron.com/adobe/assets/urn%3Aaaid%3Aaem%3A22960b43-a7e5-4557-b005-c9b8ff4f72af/renditions/original/as/9400-nvme-ssd-product-brief.pdf>
 
@@ -139,7 +138,7 @@ TP 数据库领域还有很多地方值得投入精力：Leveraging new hardware
 
 - `[8]` [中台：一场彻头彻尾的自欺欺人](https://mp.weixin.qq.com/s/VgTU7NcOwmrX-nbrBBeH_w)
 
-***\***
+---
 
 - [分布式数据库是伪需求吗？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485549&idx=1&sn=7c34439d82431129c57aba211202b5ca&scene=21#wechat_redirect)
 - [分布式数据库真的是伪需求吗](https://mp.weixin.qq.com/s?__biz=MzA5MzQxNjk1NQ==&mid=2647854211&idx=1&sn=160cacf17971f850fd589774586b131e&scene=21#wechat_redirect)

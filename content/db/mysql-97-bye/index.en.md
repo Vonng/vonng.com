@@ -8,7 +8,6 @@ summary: >
 series: ["MySQL走好"]
 tags: [MySQL, PostgreSQL, Database, Commentary]
 ---
-
 Two years ago, I wrote [**MySQL Is Dead, Long Live PostgreSQL**](/db/mysql-is-dead/). MySQL 9.0 had just shipped, and Oracle had unveiled a `VECTOR` data type with great fanfare, billing it as "MySQL for the AI era." One look was enough: **it was a `BLOB` in a cheap disguise**. No distance functions, no vector indexes—nothing beyond storing a bunch of floating-point numbers in a column.
 
 Over the next two years, MySQL went from 9.0 to 9.6: seven quarterly Innovation Releases. Percona looked at all seven and shipped none of them. PMM telemetry showed adoption of Innovation Releases hovering around 1%, barely registering in the statistics. The world's largest third-party MySQL vendor voted with its silence.
@@ -20,8 +19,6 @@ Why talk about 9.7 now? Because it is the **first LTS release in the MySQL 9.x l
 Some tech outlets are already beside themselves: "MySQL 9.7 Released! A Leap in Performance!" "MySQL Enters the AI Era!" Never mind that, as of April 2026, it has not even reached GA. Oracle merely published an Early Access test binary at the end of March. I pulled it down and tried it.
 
 **It was the same old leftovers, reheated.**
-
-------
 
 ## Vector Support Is Still All Show
 
@@ -39,8 +36,6 @@ How did MySQL sink this low? Even its own ecosystem has had enough. MariaDB 11.7
 
 What was HeatWave's slogan again? "The only MySQL with vector." In plain English: **want vector search? Move to OCI and buy our cloud.**
 
-------
-
 ## The Optimizer, Years Late
 
 MySQL 9.7 does contain one substantive update: the Hypergraph Optimizer is now available in Community Edition (WL #17265).
@@ -51,8 +46,6 @@ Sounds good. Except this optimizer has existed since 2021 and spent five years l
 
 PostgreSQL's standard planner has long supported dynamic-programming `JOIN` enumeration and bushy plans. When the number of tables gets large, it automatically switches to the GEQO genetic algorithm. After more than two decades of production use, it is rock-solid. Congratulations to MySQL: in 2026, Community Edition users finally get access to this feature—and it is still switched off by default.
 
-------
-
 ## The Rest, Item by Item
 
 **Foreign keys finally moved up a layer.** MySQL had always implemented foreign keys inside the InnoDB storage engine. Foreign-key cascades could not be recorded correctly in the binlog, so primary-replica consistency was not guaranteed when they were involved. This defect survived for more than twenty years. MySQL 9.6 finally moved foreign-key handling into the SQL layer and fixed it (WL #11249). Alibaba's coding standards once said, "Do not use foreign keys." Perhaps the real reason was simply that foreign keys in MySQL had always been a joke.
@@ -62,8 +55,6 @@ PostgreSQL's standard planner has long supported dynamic-programming `JOIN` enum
 **PBKDF2 authentication improvements** (WL #17160). PostgreSQL made SCRAM-SHA-256 its default authentication in 2017; MySQL is nine years late. **Five Enterprise components moved to Community Edition**—operational features such as replication monitoring and flow-control statistics that should never have been paywalled in the first place. **Date-function behavior fixes** (WL #16895)—it is 2026, and MySQL is still fixing corner cases in `TIMEDIFF` and `DAYNAME`. **The Clone Plugin can now clone across LTS releases**—with MySQL 8.0 approaching EOL, upgrades require a three-version hop: 8.0 → 8.4 → 9.7. You cannot skip a level. **OpenSSL upgraded to 3.5.0 and zlib to 1.3.2**—even dependency upgrades made the release notes.
 
 **That is the LTS report card produced by three years and seven Innovation Releases.**
-
-------
 
 ## Now Look at PostgreSQL
 
@@ -78,8 +69,6 @@ How many extensions like these exist in the PostgreSQL ecosystem? I have catalog
 This is the underlying reason PostgreSQL has ridden three successive waves: extreme extensibility. In the traditional software era, PostGIS won the enterprise GIS market. In the mobile internet era, JSONB helped PostgreSQL overtake MySQL. In the AI era, pgvector wiped out an entire category of dedicated vector databases. PostgreSQL caught all three waves; MySQL missed all three. Once is chance. Twice is coincidence. Three times is a pattern.
 
 The numbers on Docker Hub already tell the story: **PostgreSQL's official image gets exactly four times as many weekly downloads as MySQL's**. Developers are voting with their feet.
-
-------
 
 ## How Did MySQL End Up Here?
 
@@ -100,8 +89,6 @@ Meanwhile, reports in September 2025 said Oracle had made sweeping cuts to the M
 An ecosystem that could have flourished has had its energy drained and its possibilities locked away by its owner.
 
 PostgreSQL is the mirror image. No owner, only a community. Nothing hoarded, everything open. No company can decide PostgreSQL's fate, so every company is willing to bet on it. More than a thousand extensions, a thriving ecosystem, and perfect positioning for three consecutive technology waves—none of this came from the foresight of a genius architect. It is the natural result of open governance and extreme extensibility.
-
-------
 
 ## Farewell, MySQL
 

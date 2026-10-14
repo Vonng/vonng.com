@@ -6,14 +6,9 @@ summary: >
   Without understanding the basic principles of character encoding, even simple string operations like comparison, sorting, and random access can easily lead you into pitfalls. This article attempts to clarify these issues through a comprehensive explanation.
 tags: [PG Development, Database]
 ---
-
-
-
 Programmers deal with **Code** (both programming code and encoding), and character encoding is the most fundamental type of encoding. The problem of **how to represent characters using binary numbers** - this **character encoding** problem is not as simple as it appears. In fact, its complexity far exceeds most people's imagination: input, comparison and sorting, search, reversal, line breaks and word segmentation, case conversion, locale settings, control characters, combining characters and normalization, collation rules, handling special requirements in different languages, variable-length encoding, byte order and BOM, surrogates, historical compatibility, regex compatibility, subtle and serious security issues, and much more.
 
 Without understanding the basic principles of character encoding, even simple operations like string comparison, sorting, and random access can easily lead you into pitfalls. Based on my observations, many engineers and programmers know almost nothing about character encoding itself, having only vague intuitive understanding of terms like ASCII, Unicode, and UTF. Therefore, I'm attempting to write this educational article, hoping to clarify these issues.
-
-------------
 
 ## 0x01 Basic Concepts
 
@@ -29,7 +24,7 @@ From a programmer's perspective, we have many **fundamental** data types: intege
 
 Any 'high-level' data type has encoding and decoding processes with its underlying binary representation. For example, single-precision floating-point numbers - this seemingly fundamental type also has a quite complex encoding process. In `float32`, 1.0 and -2.0 are represented as the following binary strings:
 
-````
+````text
 0 01111111 00000000000000000000000 = 1
 1 10000000 00000000000000000000000 = −2
 ````
@@ -44,7 +39,7 @@ Characters refer to letters, numbers, punctuation, ideographic writing (like Chi
 
 Abstract characters are abstract symbols, independent of concrete forms: distinguishing **characters** from **glyphs** is very important. What we see on screen as tangible things are **glyphs** - they are visual representations of abstract characters. Abstract **characters** are presented as **glyphs** through **rendering**. The **glyphs** presented by the user interface are perceived by the human eye, cognized by the human brain, and finally restored to abstract entity concepts in the human mind. Glyphs serve as media in this process but should never be equated with abstract characters themselves.
 
-![](char-glyph.png)
+![Understanding Character Encoding Principles — Characters (figure 1)](char-glyph.png)
 
 Note that while **most** of the time glyphs and characters correspond one-to-one, there are still some many-to-many cases: one glyph might be composed of multiple characters, for example, the abstract character `à` (the fourth tone 'a' in Pinyin). We consider it a single 'character', but it can either be truly a single character or be composed of character `a` and the grave accent character `◌̀`.
 
@@ -65,8 +60,6 @@ Computer science originated in Europe and America, so text processing initially 
 
 Fortunately, in computer science, there's a saying: "*Any problem in computer science can be solved by adding another level of indirection*". The model and architecture of character encoding has also evolved continuously with history. Let's first overview the architectural system of modern encoding models.
 
-------------
-
 ## 0x02 Model Overview
 
 Modern encoding models are divided into five levels from bottom to top:
@@ -81,7 +74,7 @@ Many familiar terms can be categorized into corresponding levels of this model. 
 
 The relationships between these concepts can be represented by the following diagram:
 
-![](char-encoding.png)
+![Understanding Character Encoding Principles — 0x02 Model Overview (figure 2)](char-encoding.png)
 
 We can see that to convert an abstract character to binary, it actually goes through several conceptual conversions. Between abstract character sequences and byte sequences, there are two intermediate forms: code point sequences and code unit sequences. Simply put:
 
@@ -99,8 +92,6 @@ Why doesn't the Unicode standard directly map abstract characters to binary repr
 * Character encoding schema solves byte order problems (resolving transmission ambiguity).
 
 Let's look at the details between each level.
-
-------------
 
 ## 0x03 Character Sets
 
@@ -151,8 +142,6 @@ The difference between abstract character repertoires and coded character sets i
 Unfortunately, there's another problem. Character sets can be open or closed. For example, the ASCII character set defines 128 abstract characters and will never add more. It's a closed character set. Unicode attempts to collect all characters and is constantly expanding. As of Unicode 9.0.0 in June 2016, it has collected 128,237 characters and will continue to grow in the future. It's an open character set. Open means the number of characters has no upper limit - new characters can be added at any time, like Emoji, with new expression characters introduced to Unicode almost every year. This creates an inherent contradiction: **the contradiction between infinite natural numbers and finite integer values**.
 
 Character Encoding Form is designed to solve this problem.
-
-------------
 
 ## 0x04 Character Encoding Form
 
@@ -209,7 +198,7 @@ Of course, UTF-8 also has costs. For Chinese, UTF-8 usually uses three bytes for
 
 A huge advantage of UTF-8 is that it has no byte order issues. UTF-16 and UTF-32 have to worry about whether big-endian or little-endian bytes come first. This problem is usually solved in **Character Encoding Schema** through BOM.
 
-![](char-utf.png)
+![Understanding Character Encoding Principles — UTF8 (figure 3)](char-utf.png)
 
 ### Character Encoding Schema
 
@@ -230,8 +219,6 @@ Character Encoding Schema is essentially Character Encoding Form with byte seria
 UTF-8 uses bytes as code units, so there's actually no byte order problem. The other two UTFs have three corresponding character encoding schemas each: a big-endian version, a little-endian version, and an adaptive big-little-endian version with BOM.
 
 Note that in the current context, UTF-8, UTF-16, UTF-32 are actually CES-level concepts - i.e., CEF with byte serialization schemes - which can confuse with CEF-level concepts with the same names. Therefore, when discussing UTF-8, UTF-16, UTF-32, we must distinguish whether they're CEF or CES. For example, UTF-16 as an encoding schema produces byte sequences with BOM, while UTF-16 as an encoding form produces code unit sequences without the BOM concept.
-
-------------
 
 ## 0x05 UTF-8
 
@@ -273,8 +260,6 @@ func UTF8Encode(i uint32) (b []byte) {
 	return
 }
 ```
-
-------------
 
 ## 0x06 Character Encoding in Programming Languages
 

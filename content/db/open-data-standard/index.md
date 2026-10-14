@@ -7,7 +7,6 @@ summary: >
   数据世界正在浮出水面的三大新标准：Postgres、Open Telemetry，以及Iceberg。Postgres已是事实标准，OTel和Iceberg尚在成长，但它们具备当年让Postgres走红的同样配方——关键在于开源的姿势本身。
 tags: [PostgreSQL, OLAP, 数据库, 监控]
 ---
-
 > 作者：Paul Copplestone，Supabase CEO 译者：Vonng，Pigsty Founder，数据库老司机
 > 原文地址: https://supabase.com/blog/open-data-standards-postgres-otel-iceberg
 
@@ -18,8 +17,6 @@ tags: [PostgreSQL, OLAP, 数据库, 监控]
 [Postgres](https://www.postgresql.org/) 基本已经是事实标准；[OTel](https://opentelemetry.io/) 和 [Iceberg](https://iceberg.apache.org/) 尚在成长， 但它们具备当年让 Postgres 走红的同样配方。常有人问我：“为什么最后是 Postgres 赢了？” 标准答案是“可扩展性” —— 对，但不完整。
 
 除了产品本身优秀，Postgres 还踩中了开源生态爆点 —— 关键在于“开源的姿势”本身。
-
--------
 
 ## 开源的三个信条
 
@@ -33,8 +30,6 @@ tags: [PostgreSQL, OLAP, 数据库, 监控]
 
 Postgres 点满了 “开源” 技能点，但它也并非在所有数据场景里都是银弹。
 
--------
-
 ## 三类数据角色
 
 数据领域里主要有三种 “操盘手” 及其趁手工具：
@@ -46,8 +41,6 @@ Postgres 点满了 “开源” 技能点，但它也并非在所有数据场景
 数据生命周期通常是 `1 → 2 → 3`：先有应用，再加点基础遥测（很多时候直接塞进 OLTP 系统），等表长到塞不下，就得上数仓了。
 
 三类角色各玩各的，但行业正整体“左移”：工具越发友好，观测与数仓也慢慢被开发者收编。SRE 和数据岗并非故意让贤，只是数据库本身越来越能打，创业团队能撑更久再招专家。
-
--------
 
 ## 三大开放数据标准
 
@@ -70,27 +63,19 @@ Postgres 点满了 “开源” 技能点，但它也并非在所有数据场景
 
 下面逐一展开深入探讨。
 
--------
-
 ### Postgres：开放式 OLTP 标准
 
 Postgres 虽是一款数据库，却已成 **“标准接口”** 。 几乎所有新数据库都宣称“兼容 Postgres [wire 协议](https://www.postgresql.org/docs/current/protocol.html)”。 因为谁也管不了 Postgres，各大云厂商要么主动，要么被用户倒逼着上架 Postgres —— 连 Oracle Cloud 都供着。 体验差？一句 `pg_dump` 走人。Postgres 用 [PostgreSQL License](https://www.postgresql.org/about/licence/) —— 功能上和 MIT 相当。
 
--------
-
 ### OTel：开放式遥测标准
 
 “open telemetry” 的名字是字面含义：开放遥测。[OTel](https://opentelemetry.io/) 仍年轻且[颇为复杂](https://news.ycombinator.com/item?id=42655102)，但契合开源三信条：Apache 2.0，厂商中立。 正如云厂商拥抱 Postgres，主流观测平台也在集体投 OTel，包括 [Datadog](https://docs.datadoghq.com/integrations/otel/)、[Honeycomb](https://docs.honeycomb.io/send-data/opentelemetry/)、[Grafana Labs](https://grafana.com/grafana/dashboards/15983-opentelemetry-collector/) 与 [Elastic](https://www.elastic.co/docs/solutions/observability/apm/use-opentelemetry-with-apm)。 想自托管？可选 [SigNoz](https://github.com/SigNoz/signoz)、[OpenObserve](https://github.com/openobserve/openobserve)，再不济用官方 [OTel 工具集](https://github.com/open-telemetry/opentelemetry-collector)。
-
--------
 
 ### Iceberg：开放式 OLAP 标准
 
 [开放表格式](https://www.startdataengineering.com/post/what_why_table_format/) 算是新赛道：大家约定目录+元数据格式，任何计算引擎都能查询。 虽有 [DeltaLake](https://delta.io/)、[Hudi](https://hudi.apache.org/) 等对手，但目前 [Iceberg](https://iceberg.apache.org/) 已然领跑。
 
 各大数仓陆续“投靠” Iceberg：包括 [Databricks](https://docs.databricks.com/aws/en/delta/uniform)、[Snowflake](https://docs.snowflake.com/en/user-guide/tables-iceberg) 和 [ClickHouse](https://clickhouse.com/docs/engines/table-engines/integrations/iceberg)。 最关键的商业推手是 AWS —— 2024 年底官宣 [S3 Tables](https://aws.amazon.com/blogs/aws/new-amazon-s3-tables-storage-optimized-for-analytics-workloads/)，在 S3 上提供开箱即用的 Iceberg。
-
--------
 
 ## S3：终极数据基础设施
 
@@ -104,8 +89,6 @@ AWS S3 团队连环上新，把 “S3 当数据库” 的幻想推向现实。�
 
   * **OLTP** ：性能要命，S3 与 NVMe 永远隔着物理网线。因此重点是 Zero ETL & 分层存储：冷热数据自由搬迁。Postgres 现有多种读 Iceberg 的方式，如 [pg_mooncake](https://github.com/Mooncake-Labs/pg_mooncake)、[pg_duckdb](https://github.com/duckdb/pg_duckdb) 及 [Iceberg FDW](https://github.com/supabase/wrappers/pull/462)。
   * **遥测 / 数仓** ：关键字是“基数”。S3 越便宜，大家越把海量数据往里倒，催生“存算分离”的架构。于是出现一堆以计算层自居的嵌入式数据库：如 [DuckDB](https://duckdb.org/2021/10/29/duckdb-wasm.html)（OLAP）、SQLite 的[云后端存储](https://sqlite.org/cloudsqlite/doc/trunk/www/index.wiki)、[turbopuffer](https://turbopuffer.com/)（向量）、[SlateDB](https://slatedb.io/)（KV）、[Tonbo](https://tonbo.io/)（Arrow）。它们既可嵌入应用，也能单飞。
-
--------
 
 ## Supabase 的数据蓝图
 
@@ -121,8 +104,6 @@ AWS S3 团队连环上新，把 “S3 当数据库” 的幻想推向现实。�
   * 通过扩展和 FDW，让 Postgres 能读能写 Iceberg。
 
 接下来，我们押注三大开放数据标准：**Postgres、OTel、Iceberg** 。敬请期待。
-
--------
 
 ## 老冯点评
 
@@ -169,4 +150,4 @@ Supabase 还在想其他方法构建壁垒，例如他们去年收购了 OrioleD
   * [←上一页](/db/guru/)
   * 下一页→
 
-最后修改 2025-05-27: [add new blog (18509bc)](https://github.com/pgsty/web.cc/commit/18509bc1c1af9bf2f3005fb5c8e1f82a4b399c25)
+最后修改 2025-05-27: add new blog (18509bc)（原链接失效）

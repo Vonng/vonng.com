@@ -6,7 +6,6 @@ summary: >
   ElasticSearch官宣使用AGPLv3协议“再次开源”，老实说再不这么搞，生态位就全被Tantivy，PostgreSQL和Grafana占走了。
 tags: [数据库, 开源]
 ---
-
 就在刚刚，ElasticSearch 官方博客发表了一篇新的公告《ElasticSearch 开源了，又一次》。宣布 ES 和 Kibana 重新使用一个新的 AGPLv3 协议，而不是 EL / SSPL 了。其实原因也很简单，ES 要是再不改许可证，生态位就会被 Tantivy 换皮和 Grafana 彻底占领了。
 
 ## Elasticsearch is Open Source, Again

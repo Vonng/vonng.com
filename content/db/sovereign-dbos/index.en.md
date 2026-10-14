@@ -8,7 +8,6 @@ series: ["信创国产化"]
 series_weight: 1
 tags: [Domestic Database, Database]
 ---
-
 > [WeChat](https://mp.weixin.qq.com/s/hWbcc9cMM9qTjPJ0m6G0Kg) | [Zhihu Original](https://zhuanlan.zhihu.com/p/653583260)
 
 **When we talk about self-reliance and control, what are we really talking about?**
@@ -32,8 +31,6 @@ For example, a so-called "self-research" database that needs license files or im
 Open source is a global collaborative software **R&D** model with overwhelming dominance in infrastructure software kernels (operating systems/databases). The open source model has already solved infrastructure software **R&D** problems well but hasn't solved software **operations** problems well - and this is exactly what truly meaningful self-reliance should solve. Software's ultimate value is realized in its **usage process**, not **development process**. Truly meaningful self-reliance is helping nations/users make good use of existing mature open source OS/database kernels — **providing distributions and professional technical services based on open source kernels**. While maintaining stable operation of existing/incremental systems, respond to the "community of shared future for mankind" initiative, actively participate in global open source software supply chain governance, and expand domestic suppliers' international influence.
 
 In summary, we believe **operational self-reliance** focuses on: replacing uncontrollable third-party services and restricted commercial software, encouraging domestic suppliers to provide technical services and distributions based on popular open source infrastructure software. For open source infrastructure software with significant practical value, encourage learning, exploration, research, and contribution. Incubate and cultivate domestic open source communities, maintain fair competitive environments and healthy commercial ecosystems. **R&D self-reliance** focuses on: actively participating in global open source software supply chain governance, improving domestic software companies' and teams' voice in global top infrastructure software open source projects, cultivating technical teams with global vision and advanced R&D capabilities. Should stop low-level repetitive "domestic OS/database kernel forks" and focus on building internationally influential services and software distributions.
-
-----------
 
 ## Appendix: Different Levels of Self-Reliance and Control
 

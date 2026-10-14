@@ -6,7 +6,6 @@ summary: >
   国产数据库是土法大炼钢铁吗？尽管有着各种国产化乱象，但市场最终还是会大浪淘沙出几个能打的。
 tags: [国产数据库, 技术评论]
 ---
-
 飞总批评完《[**2023 年，中国对 PostgreSQL 的贡献≈0**](https://mp.weixin.qq.com/s?__biz=MzI5OTM3MjMyNA==&mid=2247497341&idx=1&sn=7df1e74b9bba5af00577c422f8a411c5&scene=21#wechat_redirect "2023年，中国对PostgreSQL的贡献≈0！！！")》后，又对国产数据库开了一炮：《[**2023 年，国产数据库大炼钢**](http://mp.weixin.qq.com/s?__biz=MzI5OTM3MjMyNA==&mid=2247497354&idx=1&sn=c50c7e6b50049e5ab3e2f35c2c3e7433&chksm=ec952cc1dbe2a5d72f7ac65d45e1d8d50a6b0dd84372d5c71fbaec812785bf006d713612d99c&scene=21#wechat_redirect)》。那么国产数据库真的是大炼钢铁吗？
 
 ## 大炼数据库

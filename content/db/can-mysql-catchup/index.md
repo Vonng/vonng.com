@@ -9,7 +9,6 @@ summary: >
 series: ["MySQL走好"]
 tags: [MySQL, PostgreSQL, 数据库, 技术评论]
 ---
-
 > 作者：[Peter Zaitsev](https://www.percona.com/blog/author/pz/) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)）| [微信公众号](https://mp.weixin.qq.com/s/xveP91NMYF4NFlIX_JcpYA)
 
 Percona 的老板 Peter Zaitsev最近发表一篇博客，讨论了MySQL是否还能跟上PostgreSQL的脚步。

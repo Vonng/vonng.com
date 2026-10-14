@@ -7,15 +7,10 @@ summary: >
   Supabase 非常棒，拥有你自己的 Supabase 那就是棒上加棒！本文介绍了如何在本地/云端物理机/裸金属/虚拟机上自建企业级 Supabase。
 tags: [数据库, PG生态]
 ---
-
-
-
 Supabase 很好，拥有属于你自己的 supabase 则好上加好。
 Pigsty 可以帮助您在自己的服务器上（物理机/虚拟机/云服务器），一键自建企业级 supabase —— 更多扩展，更好性能，更深入的控制，更合算的成本。
 
 > Pigsty 是 Supabase 官网文档上列举的三种自建部署之一：[Self-hosting: Third-Party Guides](https://supabase.com/docs/guides/self-hosting#third-party-guides)
-
---------
 
 ## 简短版本
 
@@ -32,9 +27,7 @@ vi pigsty.yml              # 编辑域名、密码、密钥...
 
 安装完毕后，使用浏览器访问 `8000` 端口造访 Supa Studio，用户名 `supabase`，密码 `pigsty`。
 
-![](https://pigsty.cc/img/pigsty/supabase.webp)
-
-------
+![自建Supabase：创业出海的首选数据库：简短版本（图 1）](https://pigsty.cc/img/pigsty/supabase.webp)
 
 ## 目录
 
@@ -47,8 +40,6 @@ vi pigsty.yml              # 编辑域名、密码、密钥...
 - [进阶主题：使用SMTP](#进阶主题使用smtp)
 - [进阶主题：真·高可用](#进阶主题真高可用)
 
-------
-
 ## Supabase是什么？
 
 [Supabase](https://supabase.com/) 是一个 BaaS （Backend as Service），开源的 Firebase，是 AI Agent 时代最火爆的数据库 + 后端解决方案。
@@ -60,8 +51,6 @@ Supabase 旨在为开发者提供一条龙式的后端解决方案，减少开�
 
 目前，Supabase 是 [PostgreSQL 开源生态](https://ossrank.com/cat/368-postgresql-ecosystem) 中人气最高的开源项目，在 GitHub 上已有 [八万](https://github.com/supabase/supabase/) Star。
 Supabase 还为小微创业者提供了“慷慨”的免费云服务额度 —— 免费的 500 MB 空间，对于存个用户表，浏览数之类的东西绰绰有余。
-
-------
 
 ## 为什么要自建？
 
@@ -100,8 +89,6 @@ Supabase 内置了一系列由他们自己开发维护的 PG 扩展插件，并�
 在这一自建部署架构中，您获得了使用不同内核的自由（PG 15-17，OrioleDB），加装 [**440**](https://pgext.cloud/list/) 个扩展的自由，扩容与伸缩 Supabase / Postgres / MinIO 的自由，
 免于数据库运维杂务的自由，以及免于供应商锁定，本地运行到地老天荒的自由。 而相比于使用云服务需要付出的代价，不过是准备服务器和多敲几行命令而已。
 
-------
-
 ## 单节点自建快速上手
 
 让我们先从单节点 Supabase 部署开始，我们会在后面进一步介绍多节点高可用部署的方法。
@@ -126,7 +113,7 @@ vi pigsty.yml              # 编辑域名、密码、密钥...
 如果配置无误，大约十分钟后，就可以在本地网络通过 `http://<your_ip_address>:8000` 访问到 Supabase Studio 图形管理界面了。
 默认的用户名与密码分别是： `supabase` 与 `pigsty`。
 
-![](https://pigsty.cc/img/pigsty/supabase.webp)
+![自建Supabase：创业出海的首选数据库：单节点自建快速上手（图 3）](https://pigsty.cc/img/pigsty/supabase.webp)
 
 <Callout title="中国大陆地区 DockerHub 被墙" type="warning">
 
@@ -148,8 +135,6 @@ vi pigsty.yml              # 编辑域名、密码、密钥...
 
 </Callout>
 
-------
-
 ## 自建关键技术决策
 
 以下是一些自建 Supabase 会涉及到的关键技术决策，供您参考：
@@ -167,8 +152,6 @@ Supabase 的部分功能需要发送邮件，所以要用到 SMTP 服务。除�
 如果您的服务直接向公网暴露，我们强烈建议您使用真正的域名与 HTTPS 证书，并通过 [Nginx 门户](https://pigsty.cc/docs/infra/admin/portal/) 访问。
 
 接下来，我们会依次讨论一些进阶主题。如何在单节点部署的基础上，进一步提升 Supabase 的安全性、可用性与性能。
-
-------
 
 ## 进阶主题：安全加固
 
@@ -214,8 +197,6 @@ Supabase 部分的凭据修改后，您可以重启 Docker Compose 容器以应�
 ```bash tab="手工"
 cd /opt/supabase; make up
 ```
-
-------
 
 ## 进阶主题：域名接入
 
@@ -264,13 +245,11 @@ all:
 
 [![asciicast](https://asciinema.org/a/731211.svg)](https://asciinema.org/a/731211)
 
-------
-
 ## 进阶主题：外部对象存储
 
 您可以使用 S3 或 S3 兼容的服务，来作为 PGSQL 备份与 Supabase 使用的对象存储。这里我们使用一个 阿里云 OSS 对象存储作为例子。
 
-> Pigsty 提供了一个 [`terraform/spec/aliyun-meta-s3.tf`](https://github.com/pgsty/pigsty/blob/main/terraform/spec/aliyun-meta-s3.tf) 模板，
+> Pigsty 提供了一个 [`terraform/spec/aliyun-meta-s3.tf`](https://github.com/pgsty/pigsty/blob/v3.4.0/terraform/spec/aliyun-meta-s3.tf) 模板，
 > 可以用于在阿里云上拉起一台服务器，以及一个 OSS 存储桶。
 
 首先，我们修改 `all.children.supa.vars.apps.[supabase].conf` 中 S3 相关的配置，将其指向阿里云 OSS 存储桶：
@@ -325,8 +304,6 @@ all:
 
 Pigsty 会将备份仓库切换到外部对象存储上，更多备份配置可以参考 [PostgreSQL 备份](https://pigsty.cc/docs/pgsql/backup) 文档。
 
-------
-
 ## 进阶主题：使用SMTP
 
 你可以使用 SMTP 来发送邮件，修改 supabase 应用配置，添加 SMTP 信息：
@@ -349,8 +326,6 @@ all:
 ```
 
 不要忘了使用 `app.yml` 来重载配置
-
-------
 
 ## 进阶主题：真·高可用
 

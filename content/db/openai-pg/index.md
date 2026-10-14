@@ -9,8 +9,6 @@ tags: [PostgreSQL, Codex, 性能, 架构]
 ai: true
 aliases: ["/ai/openai-pg/"]
 ---
-
-
 在 [**PGConf.Dev 2025**](https://2025.pgconf.dev/schedule.html) 全球 PG 开发者大会上， 来自 OpenAI 的 [Bohan Zhang](https://www.linkedin.com/in/bohan-zhang-52b17714b) 分享了 [OpenAI 在 PostgreSQL 上的最佳实践](https://www.pgevents.ca/events/pgconfdev2025/schedule/session/433-scaling-postgres-to-the-next-level-at-openai/)， 让我们得以一窥最牛独角兽内部的数据库使用情况。
 
 > “在 OpenAI，我们在使用一写多读的未分片架构，证明了 PostgreSQL 在海量读负载下也可以伸缩自如”
@@ -23,8 +21,6 @@ Bohan Zhang 是 OpenAI Infra 组成员，师从 CMU 网红教授 Andy Pavlo ，�
 
 > Hacker News Discussion: [OpenAI: Scaling Postgres to the Next Level](https://news.ycombinator.com/item?id=44071418#44072781)
 
-------
-
 ## 背景
 
 **PostgreSQL 是 OpenAI 绝大多数关键系统的核心支撑数据库**，如果 Postgres 挂了，OpenAI 的很多关键服务就直接宕掉了 —— 而这是有不少先例的，PostgreSQL 相关的故障曾经在过去导致多次 ChatGPT 的故障。
@@ -33,8 +29,6 @@ Bohan Zhang 是 OpenAI Infra 组成员，师从 CMU 网红教授 Andy Pavlo ，�
 
 OpenAI 使用 Azure 上的托管 PostgreSQL 数据库，没有使用分片与Sharding， 而是一个主库 + 四十多个从库的经典 PostgreSQL 主从复制架构。 对于像 OpenAI 这样拥有五亿活跃用户的服务而言，可伸缩性是一个重要的问题。
 
-------
-
 ## 挑战
 
 在 OpenAI 一主多从的 PostgreSQL 架构中，PG 的的读伸缩性表现极好，“写请求” 成为了一个主要的瓶颈。 OpenAI 已经在这上面进行了许多优化，例如将能移走的写负载尽可能移走，避免把新业务放进主数据库中。
@@ -42,8 +36,6 @@ OpenAI 使用 Azure 上的托管 PostgreSQL 数据库，没有使用分片与Sha
 ![3.webp](3.webp)
 
 PostgreSQL 的 MVCC 设计存在一些已知的问题，例如表膨胀与索引膨胀，自动垃圾回收调优较为复杂，每次写入都会产生一个完整新版本， 索引访问也可能需要额外的回表可见性检查。这些设计会带来一些 “扩容读副本” 的挑战： 例如更多 WAL 通常会导致复制延迟变大，而且当从库数量疯狂增长时，网络带宽可能成为新的瓶颈。
-
-------
 
 ## 措施
 
@@ -88,8 +80,6 @@ PostgreSQL 的 MVCC 设计存在一些已知的问题，例如表膨胀与索引
 
 ![7.webp](7.webp)
 
-------
-
 ## 结果
 
 - 将 Azure 上的 PostgreSQL 伸缩至百万 QPS，支撑了 OpenAI 的关键服务
@@ -101,8 +91,6 @@ PostgreSQL 的 MVCC 设计存在一些已知的问题，例如表膨胀与索引
 
 > “在 OpenAI，我们在使用一写多读的未分片架构，证明了 PostgreSQL 在海量读负载下也可以伸缩自如”
 
-------
-
 ## 故障案例
 
 此外，OpenAI 还分享了几个问题案例研究，第一个案例是缓存故障导致的雪崩。
@@ -112,8 +100,6 @@ PostgreSQL 的 MVCC 设计存在一些已知的问题，例如表膨胀与索引
 第二个故障比较有趣，是极高 CPU 使用率下触发了一个 BUG。导致即使 CPU 水位恢复，WALSender 也一直在自旋循环而不是干正事发送 WAL 日志给从库，从而导致复制延迟增大。
 
 ![10.webp](10.webp)
-
-------
 
 ## 功能需求
 
@@ -137,8 +123,6 @@ PostgreSQL 的 MVCC 设计存在一些已知的问题，例如表膨胀与索引
 
 ![14.webp](14.webp)
 
-------
-
 ## 老冯评论
 
 尽管 PGConf.Dev 2025 主要关注的是开发，但也经常可以看到一些用户侧的 Use Case 分享。 比如这次 OpenAI 的 PostgreSQL 伸缩实践。其实这类主题对于内核开发者来说还是很有趣的， 因为很多内核开发者确实对极端场景下的 PostgreSQL 用例没有概念，而这类分享会很有帮助。
@@ -157,15 +141,11 @@ PostgreSQL 的 MVCC 设计存在一些已知的问题，例如表膨胀与索引
 
 ![selfie.jpeg](selfie.jpeg)
 
-------
-
 ## 老冯答疑
 
 关于 Bohan 提出的几个问题与特性建议，老冯倒是可以在这里做一个解答。
 
 其实大部分 OpenAI 想要的功能特性需求 PostgreSQL 生态中已经有了，只不过不一定在原生 PG 内核与云数据库环境中可用。
-
-------
 
 ### 关于禁用索引
 
@@ -175,7 +155,7 @@ PostgreSQL 其实是有禁用索引的“功能”，只需要更新 [`pg_index`
 
 但回到最原始的需求 —— 害怕误删索引，这个问题有更简单的解决办法，直接从监控视图中确认索引在主从上都没有访问即可。你只要知道了很长时间都没人用这个索引，就可以放心删除它。
 
-> 使用 Pigsty 监控系统 [PGSQL TABLES](https://demo.pigsty.cc/d/pgsql-tables?viewPanel=panel-354) 查阅在线切换索引的过程
+> 使用 Pigsty 监控系统 [PGSQL TABLES](https://demo.pigsty.cc/ui/d/pgsql-tables?viewPanel=panel-354) 查阅在线切换索引的过程
 >
 > ![17.webp](17.webp)
 
@@ -187,29 +167,23 @@ CREATE UNIQUE INDEX CONCURRENTLY pgbench_accounts_pkey2 ON pgbench_accounts USIN
 UPDATE pg_index SET indisvalid = false WHERE indexrelid = 'pgbench_accounts_pkey'::regclass;
 ```
 
-------
-
 ### 关于可观测性
 
-其实 [**`pg_stat_statements`**](https://pigsty.cc/ext/stat/pg_stat_statements/) 提供了均值与标准差，可以使用正态分布的性质来估算出分位点指标。 但这只能作为模糊的参考，而且需要定时重置计数器，否则全量历史统计值的效果会越来越差。
+其实 [**`pg_stat_statements`**](https://pgext.cloud/e/pg_stat_statements/) 提供了均值与标准差，可以使用正态分布的性质来估算出分位点指标。 但这只能作为模糊的参考，而且需要定时重置计数器，否则全量历史统计值的效果会越来越差。
 
 PGSS 在短期内可能并不会提供 P95, P99 RT 这样的百分位点指标，因为这会导致这个扩展所需的内存翻个几十倍 —— 对于现代服务器来说这倒也不算什么，但对于一些极端保守的场景就会有问题。我在 [Unconference](https://wiki.postgresql.org/wiki/PGConf.dev_2025_Developer_Unconference#The_Future_of_pg_stat_statements) 上问了 PGSS 的维护者这个问题，短期内可能并不会发生。 我也问了 Pgbouncer 的维护者 Jelte 是否可能在链接池层面解决这个问题，短期内也不会有这样的特性出现。
 
-然而这个问题其实也是有其他解法的，首先 [**`pg_stat_monitor`**](https://pigsty.cc/ext/stat/pg_stat_monitor/) 这个扩展就明确提供了详细的分位点 RT 指标，可以解决这个问题，但也要考虑分位点指标采集对集群性能造成的影响。 通用，无侵入，且无数据库性能损耗的办法，是在应用层面 DAL 直接添加查询 RT 监控，但这需要应用端的配合与努力。
+然而这个问题其实也是有其他解法的，首先 [**`pg_stat_monitor`**](https://pgext.cloud/e/pg_stat_monitor/) 这个扩展就明确提供了详细的分位点 RT 指标，可以解决这个问题，但也要考虑分位点指标采集对集群性能造成的影响。 通用，无侵入，且无数据库性能损耗的办法，是在应用层面 DAL 直接添加查询 RT 监控，但这需要应用端的配合与努力。
 
 此外，使用 ebpf 旁路采集 RT 指标是一个很棒的想法，不过考虑到他们用的 Azure 托管 PostgreSQL，不会给服务器权限，所以这条路可能被堵死了。
 
-------
-
 ### 关于模式变更记录
 
-其实 PostgreSQL 的日志已经提供这个选项了，只要把 [**`log_statement`**](https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-STATEMENT) 设置为 `ddl` （或更高级的 `mod`, `all`），所有 DDL 日志就会保留下来。扩展插件 [**`pgaudit`**](https://pigsty.cc/ext/sec/pgaudit/) 也提供了类似的功能。
+其实 PostgreSQL 的日志已经提供这个选项了，只要把 [**`log_statement`**](https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-STATEMENT) 设置为 `ddl` （或更高级的 `mod`, `all`），所有 DDL 日志就会保留下来。扩展插件 [**`pgaudit`**](https://pgext.cloud/e/pgaudit/) 也提供了类似的功能。
 
-但我猜他们想要的不是这种 DDL 日志，而是类似提供一个可以通过 SQL 查询的系统视图。所以另一种选项是 [`CREATE EVENT TRIGGER`](https://www.postgresql.org/docs/current/sql-createeventtrigger.html) ， 使用事件触发器直接在数据表中记录 DDL 事件即可。扩展 [**`pg_ddl_historization`**](https://pigsty.cc/ext/util/ddl_historization/) 提供了更简便的记录方式，我也编译打包了这个扩展。
+但我猜他们想要的不是这种 DDL 日志，而是类似提供一个可以通过 SQL 查询的系统视图。所以另一种选项是 [`CREATE EVENT TRIGGER`](https://www.postgresql.org/docs/current/sql-createeventtrigger.html) ， 使用事件触发器直接在数据表中记录 DDL 事件即可。扩展 [**`pg_ddl_historization`**](https://pgext.cloud/e/ddl_historization/) 提供了更简便的记录方式，我也编译打包了这个扩展。
 
 创建事件触发器也需要 superuser 权限，AWS RDS 有一些特殊处理可以使用这个功能，不过 Azure 上的 PostgreSQL 似乎就不支持了。
-
-------
 
 ### 关于监控视图语义
 
@@ -221,15 +195,11 @@ PGSS 在短期内可能并不会提供 P95, P99 RT 这样的百分位点指标�
 
 但我也怀疑在 Azure PostgreSQL 是否提供了这种控制的可能性。
 
-------
-
 ### 关于默认参数
 
 PostgreSQL 的默认参数相当保守，例如 [默认使用 128 MB 内存](https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-SHARED-BUFFERS)（最小可以设置 128 KB ！） 从好的方面讲这让他的默认配置能在几乎所有环境中都能跑起来。从坏的方面讲我真的见过 1TB 物理内存使用 128 MB 默认配置运行的案例……（因为双缓冲，竟然还真跑了很久生产业务）。
 
 但总体来说，我觉得默认参数保守点不是坏事，这个问题可以在更灵活的动态配置过程中解决。 RDS 和 Pigsty 都提供了足够好的 [初始参数启发式配置规则](https://github.com/pgsty/pigsty/blob/main/roles/pgsql/templates/oltp.yml#L13)，充分解决这个问题了。 但这个特性确实可以加入到 PG 命令行工具中，比如在 [`initdb`](https://www.postgresql.org/docs/current/app-initdb.html) 时自动检测 CPU/内存数量，磁盘大小与介质并相应设置优化的参数值。
-
-------
 
 ### 自建 PostgreSQL ？
 
@@ -238,5 +208,3 @@ OpenAI 提出的几个问题，挑战其实并不是来自 PostgreSQL 本身，�
 实际上，老冯的 [Pigsty](https://pigsty.cc/) 就是为了解决类似规模下 PostgreSQL 挑战而给自己做的云数据库解决方案。 It scales well ，支撑起了探探 25K vCPU 的 PostgreSQL 集群与 2.5 M QPS。 包括上面这些问题，甚至是许多 OpenAI 还没有遇到的问题也都有了解决方案，并做到了 Pigsty 中，并开源免费，开箱即用。
 
 如果 OpenAI 感兴趣，我当然乐意提供一些支持，不过我觉得狂飙增长的时候，折腾数据库 Infra 可能并非高优先级的事项。 好在，他们还是有着非常优秀的 PostgreSQL DBA，能够继续探索出这些道路来。
-
--

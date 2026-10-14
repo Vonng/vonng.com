@@ -8,7 +8,6 @@ tags: [AI, PostgreSQL, 数据库, 开源]
 ai: true
 aliases: ["/ai/db-for-ai/"]
 ---
-
 今天早上业界爆出一个收购案，继 Databricks 以十亿美元收购 Neon 之后，它的老对手 Snowflake 紧接着收购了 CrunchyData。
 
 据知情人士透露，这笔交易的价格为 2.5 亿美元。虽然价格是 Neon 的 1/4，但不同于 DataBricks 股票置换，这次 SnowFlake 是真金白银出了钱的，颇有 “Databricks 买啥我买啥” 针锋相对的意味。
@@ -21,8 +20,6 @@ aliases: ["/ai/db-for-ai/"]
 - [数据库茶水间：OpenAI 拟收购 Supabase？](/db/openai-supabase-rumor/)
 
 > WSJ：Snowflake 将以 2.5 亿美元收购 Crunchy Data[1]
-
----
 
 ## 为什么是 PostgreSQL？
 
