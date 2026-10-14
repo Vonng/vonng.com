@@ -6,10 +6,7 @@ summary: >
   ParadeDB 旨在成为 Elasticsearch 的替代：用于搜索和分析的 PostgreSQL。
 tags: [PostgreSQL, PG生态, 扩展]
 ---
-
 > [微信公众号原文链接](https://mp.weixin.qq.com/s/bx2dRxlrtLcM6AD2qsplQQ)
-
----------------
 
 ## PG生态新玩家ParadeDB
 
@@ -21,15 +18,13 @@ ParadeDB 实际上是由三个 PostgreSQL 扩展组成：`pg_bm25`，`pg_analyti
 
 我翻译了 ParadeDB 的官网介绍与四篇博客文章，为您介绍这个 PostgreSQL 生态的新星。 今天是第一篇 —— 概览
 
-![](paradedb-rank.webp)
-
----------------
+![PG生态新玩家：ParadeDB：PG生态新玩家ParadeDB（图 1）](paradedb-rank.webp)
 
 ## ParadeDB
 
 我们荣幸地向您介绍 ParadeDB：针对搜索场景优化的 PostgreSQL 数据库。**ParadeDB** 是第一个旨在成为 Elasticsearch 替代的 Postgres 数据库构建，被设计为可以在PG表上进行闪电般快速的全文检索、语义检索、以及混合检索。
 
-![](paradedb-logo.png)
+![PG生态新玩家：ParadeDB：ParadeDB（图 2）](paradedb-logo.png)
 
 ### ParadeDB解决什么问题？
 

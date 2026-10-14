@@ -7,7 +7,6 @@ summary: >
   使用 Postgres 替代 Kafka、RabbitMQ、ElasticSearch、Mongo 和 Redis 是切实可行的方式，可以极大降低系统复杂度。
 tags: [PostgreSQL, PG生态, 翻译]
 ---
-
 本文由 Stephan Schmidt @ KingOfCoders **发表于 Hacker News 并引发热议**[1]：使用 Postgres 替代 Kafka、RabbitMQ、ElasticSearch、Mongo 和 Redis 是一种切实可行的方式，这样做可以极大降低系统复杂度，并将敏捷性发挥到极致。
 
 ---
@@ -20,15 +19,11 @@ tags: [PostgreSQL, PG生态, 翻译]
 
 ## 附言：全面使用 Postgres 并不意味着单台器搞定一切 ;-)
 
----
-
 ### **简单来说，一切皆可用 Postgres 解决**
 
 请神容易送神难，让 **复杂度** 溜进家里，再送走就没那么容易了。
 
 ![just use pg 1](just-use-pg-1.png)
-
----
 
 ### 然而，我们有极致简化的方案
 
@@ -58,13 +53,9 @@ tags: [PostgreSQL, PG生态, 翻译]
 
 我已明言，**一切皆可 Postgres**。
 
----
-
 ### 关于作者 Stephan
 
 作为一名 CTO、临时 CTO、CTO 教练以及开发者，斯蒂芬在许多快速成长的初创公司的技术部门中都留下了自己的足迹。他在 1981 年左右，因为想编写视频游戏，就在一家百货公司自学了编程。斯蒂芬在乌尔姆大学（University of Ulm）学习计算机科学，专攻分布式系统和人工智能，并且还学习了哲学。90 年代互联网进入德国时，他作为几家初创公司的首位编程员工。他创办过一家获风险资本投资的初创公司，在其他获得风险资本投资的快速成长的初创公司中负责架构、流程和成长挑战，曾在 ImmoScout 担任管理职位，并且是一家 eBay Inc.公司的 CTO。在他的妻子成功出售了她的初创公司后，他们搬到了海边，斯蒂芬开始从事 CTO 辅导工作。你可以在 LinkedIn 上找到他，或者在 Twitter 上关注 @KingOfCoders。
-
----
 
 ### 译者评论
 
@@ -87,8 +78,6 @@ tags: [PostgreSQL, PG生态, 翻译]
 PostgreSQL 并不是一个简单的关系型数据库，而是一个数据管理的抽象框架，具有囊括一切，吞噬整个数据库世界的潜力。在十年前，这仅仅是一种潜力与可能性，在十年后，它已经兑现成为真正的影响力。而我很高兴能见证这个过程，并推动这一进程。
 
 > [**PostgreSQL is for Everything!**](/pigsty/db-allrounder/)
-
----
 
 ## 参考阅读
 

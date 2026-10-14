@@ -6,7 +6,6 @@ summary: |
   The same forces that once led MongoDB and MySQL toward closure are now at work in the PostgreSQL ecosystem. The PG world needs a distribution that represents "software freedom" values.
 tags: [PostgreSQL, PG Ecosystem]
 ---
-
 Percona is a banner-bearer and major third-party vendor in the MySQL ecosystem, and has been advancing into the PostgreSQL space in recent years. The English original of this article was published on the Percona blog this morning.
 Of course, Percona is mainly trying to advertise itself, but that's fine - this issue genuinely exists. So I'm translating and commenting on this article to discuss this problem with everyone.
 

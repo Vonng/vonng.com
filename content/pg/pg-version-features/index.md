@@ -6,7 +6,6 @@ summary: >
   如何学习 PostgreSQL？这里推荐一本新书《快速掌握PostgreSQL版本新特性》
 tags: [PostgreSQL, 文档]
 ---
-
 最近朋友新出了一本书，书名朴实无华简单直接：《**快速掌握 PostgreSQL 版本新特性**》。内容是详细介绍了 PostgreSQL 最近 7 个大版本的新特性。我收到了一本样书，浏览了一遍之后，感觉写的确实不错，所以推荐给大家。
 
 ![图片](01.webp)
@@ -29,7 +28,7 @@ PostgreSQL 内核主干每年发布一个新的大版本，每个大版本都会
 
 最近，PG 11 刚刚 EOL，脱离了支持生命周期。这也正好是抛弃历史包袱，出这样一本特性介绍编年史的好时机。这本书收录了从 10 到 16 这 7 个大版本的新特性，范围还是很合理的，基本涵盖了 PG 黄金十年的主要特性介绍。
 
-过去的十年，是 PostgreSQL 发展的黄金十年，无数强大的新特性，新扩展让 PostgreSQL 从一个相对小众的选择，逐步成为了今天**[世界上最成功的数据库](/pg/pg-is-no1/)**。StackOverflow 历年全球开发者调研结果，DB Engine 流行度排名结果，以及搜索引擎热度的变化趋势都佐证了这一点。
+过去的十年，是 PostgreSQL 发展的黄金十年，无数强大的新特性，新扩展让 PostgreSQL 从一个相对小众的选择，逐步成为了今天[**世界上最成功的数据库**](/pg/pg-is-no1/)。StackOverflow 历年全球开发者调研结果，DB Engine 流行度排名结果，以及搜索引擎热度的变化趋势都佐证了这一点。
 
 ![图片](05.webp)
 
@@ -37,7 +36,7 @@ PostgreSQL 内核主干每年发布一个新的大版本，每个大版本都会
 
 要跟进并掌握所有这些新特性并不是一件容易的事——能有这样一本书，按照编年史的方式介绍 PostgreSQL 的功能特性，对于学习 PG 来说无疑是很有帮助的。即使是 PostgreSQL 老司机，也很难完全记住一些特性到底是在哪个版本引入的，本书就可以当作一本不错的案前参考手册备用。
 
-尽管新特性很有用，但也要实操才能真正掌握。在这一点上，有兴趣学习 PostgreSQL 的人，不妨**[弄台虚拟机](/cloud/cheap-ecs/)**搭建一套 [**Pigsty**](/pigsty/better-rds-alternative/)  —— 一键拉起 1:1 复刻生产环境的本地 PostgreSQL 集群，150+ [**生态扩展**](/pigsty/db-allrounder/)开箱即用，并带有最强监控系统可供观察系统状态；如果您主要对开发者特性感兴趣，也可以试试德哥制作的《[最强 PostgreSQL 学习 Docker 镜像](http://mp.weixin.qq.com/s?__biz=MzA5MTM4MzY1Mw==&mid=2247484237&idx=1&sn=9ea4b4f91d5ce1962ffa53daf5c2c33a&chksm=907c7147a70bf8514254f261cf94ed2ce9db4a76e870fb5a34affa3716bca6d3974f214d6507&scene=21#wechat_redirect)》。纸上得来终觉浅，绝知此事要躬行。
+尽管新特性很有用，但也要实操才能真正掌握。在这一点上，有兴趣学习 PostgreSQL 的人，不妨[**弄台虚拟机**](/cloud/cheap-ecs/)搭建一套 [**Pigsty**](/pigsty/better-rds-alternative/)  —— 一键拉起 1:1 复刻生产环境的本地 PostgreSQL 集群，150+ [**生态扩展**](/pigsty/db-allrounder/)开箱即用，并带有最强监控系统可供观察系统状态；如果您主要对开发者特性感兴趣，也可以试试德哥制作的《[最强 PostgreSQL 学习 Docker 镜像](http://mp.weixin.qq.com/s?__biz=MzA5MTM4MzY1Mw==&mid=2247484237&idx=1&sn=9ea4b4f91d5ce1962ffa53daf5c2c33a&chksm=907c7147a70bf8514254f261cf94ed2ce9db4a76e870fb5a34affa3716bca6d3974f214d6507&scene=21#wechat_redirect)》。纸上得来终觉浅，绝知此事要躬行。
 
 ---
 

@@ -5,7 +5,6 @@ authors: [vonng]
 summary: "How to modify PostgreSQL column types online? A general approach"
 tags: [PostgreSQL, PG Admin, Migration]
 ---
-
 ## Scenario
 
 In the lifecycle of a database, there's a common type of requirement: modifying column types. For example:
@@ -37,7 +36,7 @@ where c.castmethod = 'b';
 
 Excluding PostgreSQL internal types, binary compatible type conversions are as follows:
 
-```
+```text
 text     → varchar 
 xml      → varchar 
 xml      → text    

@@ -6,8 +6,7 @@ summary: >
   Backups are a DBA's lifeline — but what if your PostgreSQL database has already exploded and you have no backups? Maybe pg_filedump can help you!
 tags: [PostgreSQL, PG Admin, Incident]
 ---
-
-![](featured.jpg)
+![How to Use pg_filedump for Data Recovery? (figure 1)](featured.jpg)
 
 > Backups are a DBA's lifeline — but what if your PostgreSQL database has already exploded and you have no backups? Maybe pg_filedump can help you!
 
@@ -20,8 +19,6 @@ Seeing this case, I was indeed speechless: it's already a complete mess, what's 
 Data recovery quotes are usually charged by file count, ranging from ¥1000 to ¥5000 per file. The GitLab database has thousands of files, with about 1000 tables by count. Full recovery might not cost hundreds of thousands, but definitely over a hundred thousand. But after a day, no one took the job, which really made me feel frustrated: if no one can take this job, wouldn't it make the PG community look incompetent?
 
 I thought about it — this job looks frustrating but quite challenging and interesting. Let's treat it as a dead horse and try to revive it, no charge if I can't fix it — how do we know if it works without trying? So I took it on myself.
-
-----------
 
 ## Tools
 
@@ -48,8 +45,6 @@ This system view has many fields, but we mainly care about the first two: `oid` 
 ![pg-filedump-1.png](pg-filedump-1.png)
 
 As you can see, each row of data starts with `COPY`. Here we found the target database `gitlabhq_production` with OID **16386**. So all files within this database should be located in the `base/16386` subdirectory.
-
-----------
 
 ## Recovering Data Dictionary
 
@@ -163,8 +158,6 @@ Normally, each record starts with `COPY:` or `Error:`. The former represents suc
 
 Of course, the devil is in the details, and data recovery would be easy if it were this simple.
 
-----------
-
 ## The Devil is in the Details
 
 When handling data recovery, there are many small details to pay attention to. Here I'll mention a few important points.
@@ -192,8 +185,6 @@ You can choose to directly use Python scripts to parse raw binary from record co
 Fortunately, PostgreSQL itself already provides some C language helper functions & macros that can help you complete most of the work, and luckily, arrays in GitLab are all one-dimensional arrays, types are limited to integer arrays and string arrays. Other data pages with complex types can also be rebuilt from other tables, so the overall workload is still acceptable.
 
 ![pg-filedump-9.png](pg-filedump-9.png)
-
-----------
 
 ## Epilogue
 

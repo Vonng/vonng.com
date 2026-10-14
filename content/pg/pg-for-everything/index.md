@@ -8,7 +8,6 @@ summary: >
   如今软件开发中最大的趋势之一，是PostgreSQL正在成为事实上的数据库标准。直到现在还没有多少文章能解释这一现象背后的原因。
 tags: [PostgreSQL, PG生态, 翻译]
 ---
-
 如今，软件开发中最大的趋势之一，是 PostgreSQL 正在成为事实上的数据库标准。已经有一些博客阐述了如何做到 万物皆用 PostgreSQL，但还没有多少文章能解释这一现象背后的原因。（更重要的是，为什么这件事很重要） —— 所以我写下了这篇文章。
 
 > 本文作者为 Ajay Kulkarni，TimescaleDB CEO ，原文发表于 TimescaleDB 博客：《[Why PostgreSQL Is the Bedrock for the Future of Data](https://www.timescale.com/blog/postgres-for-everything/)》。
@@ -22,19 +21,17 @@ tags: [PostgreSQL, PG生态, 翻译]
 - 03 PostgreSQL 王者归来
 - 04 解放双手，构建未来，拥抱 PostgreSQL
 
----------
-
 ## PostgreSQL 正成为事实上的数据库标准
 
 在过去几个月里，“一切皆可用 PostgreSQL 解决” 已经成为开发者们的战斗口号：
 
 > PostgreSQL 并不是一个简单的关系型数据库，而是一个数据管理的抽象框架，具有吞噬整个数据库世界的力量。而这也是正在发生的事情 —— “一切皆用 Postgres” 已经不再是少数精英团队的前沿探索，而是成为了一种进入主流视野的最佳实践。
 >
-> —— 《[PostgreSQL正在吞噬数据库世界](https://pigsty.io/zh/pg/pg-eat-db-world/)》，冯若航（me！）
+> —— 《[PostgreSQL正在吞噬数据库世界](/pg/pg-eat-db-world/)》，冯若航（me！）
 
 > 在初创公司中简化技术栈、减少组件、加快开发速度、降低风险并提供更多功能特性的方法之一就是 **“一切皆用 Postgres”**。Postgres 能够取代许多后端技术，包括 Kafka、RabbitMQ、ElasticSearch，Mongo和 Redis ，至少到数百万用户时都毫无问题。
 >
-> ——《[技术极简主义：一切皆用Postgres](https://pigsty.io/zh/pg/just-use-pg/)》， Stephan Schmidt
+> ——《[技术极简主义：一切皆用Postgres](/pg/just-use-pg/)》， Stephan Schmidt
 
 > 听说 Postgres 被称为“数据库届的瑞士军刀”，嗯…… 是的，听起来很准确！ 不确定是谁第一个提出来的，但这是一个非常恰当的观察！ —— [Gergely Orosz](https://twitter.com/GergelyOrosz/status/1780210365369885009) 。
 
@@ -54,25 +51,25 @@ tags: [PostgreSQL, PG生态, 翻译]
 
 凭借其坚如磐石的基础，加上其原生功能与扩展插件带来的强大功能集，开发者现在可以单凭 PostgreSQL 解决所有问题，用简洁明了的方式，取代复杂且脆弱的数据架构。
 
-![](pg-for-everything-1.png)
+![为什么PostgreSQL是未来数据库的事实标准？：PostgreSQL 正成为事实上的数据库标准（图 1）](pg-for-everything-1.png)
 
 > 来源：[Just Use Postgres for Everything](https://www.amazingcto.com/postgres-for-everything/)
 
 这也许可以解释为什么去年 PostgreSQL 在专业开发者中，在最受欢迎的数据库排行榜上，从MySQL手中夺得了榜首位置（60,369 名受访者）：
 
-![](pg-for-everything-2.png)
+![为什么PostgreSQL是未来数据库的事实标准？：PostgreSQL 正成为事实上的数据库标准（图 2）](pg-for-everything-2.png)
 
 **在过去一年中，你在哪些数据库环境中进行了大量开发工作，以及在接下来的一年中你想在哪些数据库环境中工作？超过49%的受访者选择了PostgreSQL。** —— 来源：[StackOverflow 2023 年度用户调研](/pg/pg-is-no1/)
 
 这些结果来自 2023 年的 [Stack Overflow开发者调查](https://survey.stackoverflow.co/2023/#most-popular-technologies-database-prof)。如果纵观过去几年，可以看到 PostgreSQL 的使用率在过去几年中有着稳步增长的趋势：
 
-![](pg-for-everything-3.png)
+![为什么PostgreSQL是未来数据库的事实标准？：PostgreSQL 正成为事实上的数据库标准（图 3）](pg-for-everything-3.png)
 
 在 2020 ~ 2022 年间，根据 StackOverflow 的开发者调查显示，PostgreSQL 是第二受欢迎的数据库，其使用率持续上升。来源： [**2020**](https://survey.stackoverflow.co/2020#technology-databases)，[**2021**](https://survey.stackoverflow.co/2021/#section-most-popular-technologies-databases)，[**2022**](https://survey.stackoverflow.co/2022#section-most-popular-technologies-databases)。
 
 这不仅仅是小型初创公司和业余爱好者里的趋势。实际上，在各种规模的组织中，PostgreSQL 的使用率都在增长。
 
-![](pg-for-everything-4.png)
+![为什么PostgreSQL是未来数据库的事实标准？：PostgreSQL 正成为事实上的数据库标准（图 4）](pg-for-everything-4.png)
 
 > PostgreSQL 使用率变化，按公司规模划分（ [TimescaleDB 2023 社区调研](https://www.timescale.com/state-of-postgres/2023)）
 
@@ -83,8 +80,6 @@ tags: [PostgreSQL, PG生态, 翻译]
 直到现在。
 
 但要理解为什么会发生这种情况，我们必须先了解一个更为基础的趋势以及这个趋势是如何改变人类现实的基本性质的。
-
-----------------
 
 ## 02 一切都变成了电脑
 
@@ -112,8 +107,6 @@ tags: [PostgreSQL, PG生态, 翻译]
 
 我们是如何走到这一步的？
 
-----------------
-
 ### 第一部分：逐波递进的计算浪潮
 
 无处不在的计算带来了无处不在数据，这一变化并非一夜之间发生，而是在几十年中逐波递进：
@@ -137,8 +130,6 @@ tags: [PostgreSQL, PG生态, 翻译]
 
 计算浪潮不是孤立的，而是像多米诺骨牌一样相互影响。最初的数据涓流很快变成了数据洪流。接着，数据洪流又促使越来越多的数据库的创建。
 
-----------------
-
 ### 第二部分：数据库持续增长
 
 所有这些新的数据来源，都需要新的地方来存储 —— 即数据库。
@@ -148,8 +139,6 @@ tags: [PostgreSQL, PG生态, 翻译]
 互联网的协作力量促进了开源软件的崛起，包括第一个开源数据库：[MySQL](https://en.wikipedia.org/wiki/MySQL)（1995 年），[PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL)（1996 年）。智能手机推动了 [SQLite](https://en.wikipedia.org/wiki/SQLite)（2000 年）的广泛传播。
 
 互联网还产生了大量数据，这导致了第一批非关系型（NoSQL）数据库的出现：[Hadoop](https://en.wikipedia.org/wiki/Apache_Hadoop)（2006 年）；[Cassandra](https://en.wikipedia.org/wiki/Apache_Cassandra)（2008 年）；[MongoDB](https://en.wikipedia.org/wiki/MongoDB)（2009 年）。有人将这个时期称为 “大数据” 时代。
-
-----------------
 
 ### 第三部分：数据库爆炸式增长
 
@@ -161,23 +150,19 @@ tags: [PostgreSQL, PG生态, 翻译]
 
 二十年前，可行的数据库选项可能只有五种。如今，却有[数百种](https://db-engines.com/en/ranking)，它们大多专为特定用例设计，每个月都有新的数据库出现。虽然早期数据库已经承诺 *通用的全能性*，这些专用的数据库提供了*特定场景下的利弊权衡*，而这些权衡是否有意义，取决于您的具体用例。
 
-----------------
-
 ### 第四部分：数据库越多，问题越多
 
 面对这种数据洪流，以及各种具有不同利弊权衡的专用数据库，开发者别无选择，只能拼凑复杂的架构。
 
 这些架构通常包括一个关系数据库（为了可靠性）、一个非关系数据库（为了可扩展性）、一个数据仓库（用于数据分析）、一个对象存储（用于便宜的归档），甚至更专用的组件，如时间序列或向量数据库，用于那些特定的用例。
 
-![](pg-for-everything-5.png)
+![为什么PostgreSQL是未来数据库的事实标准？：第四部分：数据库越多，问题越多（图 5）](pg-for-everything-5.png)
 
 但是，越复杂的架构就越脆弱，就需要更复杂的应用逻辑，并且会拖慢开发速度，留给开发的时间就越少。
 
 **这意味着开发者 ——  花费越来越多的时间，在管理内部架构上，而不是去塑造未来。**
 
 有更好的办法解决这个问题。
-
-----------------
 
 ## PostgreSQL王者归来
 
@@ -187,8 +172,6 @@ tags: [PostgreSQL, PG生态, 翻译]
 
 与此同时，一个由几家小型独立公司赞助的分布式开发者社区，正在慢慢地让 PostgreSQL 变得越来越好。他们默默地添加了强大的功能，例如全文检索（2008年）、窗口函数（2009年）和 JSON 支持（2012年）。他们还通过流复制、热备份、原地升级（2010年）、逻辑复制（2017年）等功能，使数据库更加坚固可靠，同时勤奋地修复缺陷，并优化粗糙的边缘场景。
 
-----------------
-
 ### PostgreSQL 已经成为一个平台
 
 在此期间，PostgreSQL 添加的最具影响力的功能之一，是支持 **扩展**（Extension）：可以为 PostgreSQL 添加功能的软件模块（2011年）。[扩展让更多开发者能够独立、迅速且几乎无需协调地为 PostgreSQL 添加功能](https://www.timescale.com/learn/postgres-extensions)。
@@ -196,8 +179,6 @@ tags: [PostgreSQL, PG生态, 翻译]
 得益于扩展机制，PostgreSQL 开始变成不仅仅是一个出色的关系型数据库。得益于 PostGIS，它成为了一个出色的地理空间数据库；得益于 TimescaleDB，它成为了一个出色的时间序列数据库；+ hstore，键值存储数据库；+ AGE，图数据库；+ pgvector，向量数据库。PostgreSQL 成为了一个平台。
 
 现在，开发者出于各种目的选用 PostgreSQL。例如为了可靠性、为了可伸缩性（替代NoSQL）、为了数据分析（替代数仓）。
-
-----------------
 
 ### 大数据则何如？
 
@@ -209,8 +190,6 @@ tags: [PostgreSQL, PG生态, 翻译]
 
 PostgreSQL 是答案。PostgreSQL 是我们解放自我，并构建未来的方式。
 
-----------------
-
 ## 解放自我，构建未来，拥抱 PostgreSQL
 
 相比于在各种异构数据库系统中纠结（每一种都有自己的查询语言和怪癖！），我们可以依靠世界上功能最丰富，而且可能是最可靠的数据库：PostgreSQL。我们可以不再耗费大量时间在基础设施上，而将更多时间用于构建未来。
@@ -219,19 +198,17 @@ PostgreSQL 是答案。PostgreSQL 是我们解放自我，并构建未来的方�
 
 ![pigsty-ecosystem.png](https://pigsty.io/img/pigsty/ecosystem.jpg)
 
-> 今天的 PostgreSQL 生态 —— 《[PostgreSQL正在吞噬数据库世界](https://pigsty.io/zh/pg/pg-eat-db-world/)》
+> 今天的 PostgreSQL 生态 —— 《[PostgreSQL正在吞噬数据库世界](/pg/pg-eat-db-world/)》
 
 同样，也有更多创新的独立公司围绕着 PostgreSQL 内核开发，以改善其使用体验：[Supabase](https://supabase.com/)（2020年）正在将 PostgreSQL 打造成一个适用于网页和移动开发者的 Firebase 替代品；[Neon](https://neon.tech/)（2021年）和 [Xata](https://xata.io/)（2022年）都在实现将 PostgreSQL “伸缩至零”， 以适应间歇性 Serverless 工作负载；[Tembo](https://tembo.io/)（2022年）为各种用例提供开箱即用的技术栈；[Nile](https://www.thenile.dev/)（2023年）正在使 PostgreSQL 更易于用于 SaaS 应用；还有许多其他公司。当然，还有我们，[**Timescale**](https://www.timescale.com/)（2017年）。
 
 > 此处省略三节关于 TimescaleDB 的介绍
 
-----------------
-
 ## 尾声：尤达？
 
 我们的现实世界，无论是物理的还是虚拟的，离线的还是在线的，都充满着数据。正如尤达所说，数据环绕着我们，约束着我们。这个现实越来越多地由软件所掌控，而这些软件正是由我们这些开发者编写的。
 
-![](pg-for-everything-yoda.gif)
+![为什么PostgreSQL是未来数据库的事实标准？：尾声：尤达？（图 7）](pg-for-everything-yoda.gif)
 
 这一点值得赞叹。特别是不久之前，在2002年，当我还是MIT的研究生时，世界曾经对软件失去了信心。我们当时正在从互联网泡沫破裂中复苏。主流媒体 “[IT并不重要](https://hbr.org/2003/05/it-doesnt-matter)”。那时对一个软件开发者来说，在金融行业找到一份好工作比在科技行业更容易——这也是我许多 MIT 同学所选择的道路，我自己也是如此。
 

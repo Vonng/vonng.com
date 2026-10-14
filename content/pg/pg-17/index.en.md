@@ -7,7 +7,6 @@ summary: >
   PostgreSQL is now the world's most advanced open-source database and has become the preferred open-source database for organizations of all sizes, matching or exceeding top commercial databases.
 tags: [PostgreSQL]
 ---
-
 The annual PostgreSQL major version release is here! What surprises does PostgreSQL 17 bring us this time?
 
 In this major version release announcement, the PostgreSQL global community has finally come clean — **Sorry, no more pretending** — "**PostgreSQL is now the world's most advanced open-source database and has become the preferred open-source database for organizations of all sizes**." While not naming names explicitly, the official statement has come infinitely close to declaring "overthrowing top commercial databases" (Oracle).
@@ -28,8 +27,6 @@ Countless capital has also flooded into the PostgreSQL ecosystem, with [PostgreS
 
 ![eco.png](eco.png)
 
-----------
-
 ## Original: PostgreSQL 17 Release Announcement
 
 The PostgreSQL [Global Development Group](https://www.postgresql.org/) today officially (2024-09-26) announced the release of [PostgreSQL 17](https://www.postgresql.org/docs/17/release-17.html), the latest version of the world's most advanced open-source database.
@@ -44,8 +41,6 @@ PostgreSQL core team member Jonathan Katz stated: "PostgreSQL 17 demonstrates ho
 
 PostgreSQL is an innovative data management system known for reliability, robustness, and extensibility. Benefiting from over 25 years of open-source development by the global developer community, **it has become the preferred open-source relational database for organizations of all types**.
 
---------
-
 ## Comprehensive System Performance Improvements
 
 PostgreSQL's [`vacuum`](https://www.postgresql.org/docs/17/routine-vacuuming.html) process is crucial for healthy system operation, but vacuum operations consume server instance resources. PostgreSQL 17 introduces a new vacuum internal memory structure that reduces memory consumption to 1/20th of the original. This not only improves vacuum speed but also reduces shared resource usage, freeing up more available resources for user workloads.
@@ -54,8 +49,6 @@ PostgreSQL 17 also continues optimizing performance at the I/O layer. Due to imp
 
 PostgreSQL 17 also improves query execution performance. For `IN` clause queries using [B-tree](https://www.postgresql.org/docs/17/indexes-types.html#INDEXES-TYPES-BTREE) indexes (PostgreSQL's default index method), performance has improved. Additionally, [BRIN](https://www.postgresql.org/docs/17/brin.html) indexes now support parallel construction.
 PostgreSQL 17 made several query planning improvements, including optimizations for `NOT NULL` constraints and improved handling of CTEs ([`WITH`](https://www.postgresql.org/docs/17/queries-with.html) queries). In this release, SIMD (Single Instruction Multiple Data) acceleration is more widely applied, such as using `AVX-512` instructions in the [`bit_count`](https://www.postgresql.org/docs/17/functions-bitstring.html) function.
-
---------
 
 ## Further Enhanced Developer Experience
 
@@ -71,8 +64,6 @@ The PostgreSQL foreign data wrapper ([`postgres_fdw`](https://www.postgresql.org
 
 PostgreSQL 17 also includes a built-in, platform-independent, immutable collation provider to ensure collation immutability and provides sorting semantics similar to the `C` collation but using `UTF-8` encoding instead of `SQL_ASCII`. Using this new collation provider ensures your text queries return the same sorting results regardless of where PostgreSQL runs.
 
---------
-
 ## Logical Replication Improvements for High Availability and Major Version Upgrades
 
 In many use cases, [logical replication](https://www.postgresql.org/docs/17/logical-replication.html) is used for real-time data transmission.
@@ -81,8 +72,6 @@ Starting with PostgreSQL 17, users no longer need to drop logical replication sl
 
 PostgreSQL 17 now includes failover capabilities for logical replication, making it more reliable when deployed in high-availability environments.
 Additionally, PostgreSQL 17 introduces the command-line tool [`pg_createsubscriber`](https://www.postgresql.org/docs/17/app-pgcreatesubscriber.html) for converting physical standby servers to new logical standby servers.
-
---------
 
 ## More Security and Operations Management Options
 
@@ -96,13 +85,9 @@ PostgreSQL 17 also enhances monitoring and analysis capabilities. The [`EXPLAIN`
 PostgreSQL 17 now also reports [index VACUUM progress](https://www.postgresql.org/docs/17/progress-reporting.html#VACUUM-PROGRESS-REPORTING)
 and adds the new system view [`pg_wait_events`](https://www.postgresql.org/docs/17/view-pg-wait-events.html), which when used with the `pg_stat_activity` view provides deeper insight into why active sessions are waiting.
 
---------
-
 ## Other Features
 
 PostgreSQL 17 adds many other new features and improvements that may benefit your use cases. Please refer to the [release notes](https://www.postgresql.org/docs/17/release-17.html) for a complete list of new features and changes.
-
---------
 
 ## About PostgreSQL
 
@@ -111,17 +96,13 @@ PostgreSQL continues to develop at an unparalleled pace: **PostgreSQL provides a
 
 > Translator's note: Yes, they're talking about you, Oracle
 
---------
-
 ## About Pigsty
 
 Incidentally, Pigsty v3.0.3, which closely follows PostgreSQL 17's release, now officially supports using the PostgreSQL 17 kernel. Welcome to try it out.
 
-[**Pigsty**](https://pigsty.cc/en) is open-source, free, local-first, ready-to-use PostgreSQL RDS that allows users to locally deploy production-grade PostgreSQL cloud database services with one click, complete with 390 ready-to-use PostgreSQL extensions, self-healing high availability, top-tier monitoring systems, PITR backup and recovery, IaC command-line tools, and SOP management procedures.
+[**Pigsty**](https://pigsty.io/) is open-source, free, local-first, ready-to-use PostgreSQL RDS that allows users to locally deploy production-grade PostgreSQL cloud database services with one click, complete with 390 ready-to-use PostgreSQL extensions, self-healing high availability, top-tier monitoring systems, PITR backup and recovery, IaC command-line tools, and SOP management procedures.
 
 ![pigsty-home.webp](pigsty-home.webp)
-
---------
 
 ## Additional Reading References
 

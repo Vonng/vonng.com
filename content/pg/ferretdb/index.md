@@ -6,8 +6,6 @@ summary: >
   FerretDB旨在提供一个基于 PostgreSQL 的，真正开源的 MongoDB 替代。
 tags: [PostgreSQL, MongoDB, PG生态, 扩展]
 ---
-
-
 **MongoDB** 曾经是一项令人惊叹的技术，让开发者能够抛开关系型数据库的“模式束缚”，快速构建应用程序。然而随着时间推移，MongoDB 放弃了它的开源本质，这使得许多开源项目和早期商业项目无法使用它。
 
 大多数 MongoDB 用户其实并不需要 MongoDB 提供的高级功能，但他们确实需要一个易于使用的 **开源** 文档数据库解决方案。PostgreSQL 的 JSON 功能支持已经足够完善了：二进制存储 JSONB，GIN 任意字段索引 ，各种 JSON 处理函数，JSON PATH 和 JSON Schema，PG早已是一个功能完备，性能强大的文档数据库了。但是提供替代的功能，和 **直接仿真** 还是不一样的。
@@ -20,13 +18,11 @@ FerretDB 作为一个选装组件，对丰富 PostgreSQL 生态大有裨益。Pi
 
 本文简单介绍了 FerretDB 的安装、部署与使用。
 
-------
-
 ## 配置
 
 在部署 Mongo (FerretDB) 集群前，你需要先在配置清单中使用相关参数定义好它。下面的例子将默认的单节点 `pg-meta` 集群的 `meta` 数据库作为 FerretDB 的底层存储：
 
-```
+```text
 ferret:
   hosts: { 10.10.10.10: { mongo_seq: 1 } }
   vars:
@@ -38,7 +34,7 @@ ferret:
 
 您可以使用 服务 来接入高可用的 PostgreSQL 集群，并部署多个 FerretDB 实例副本并绑定 L2 VIP 以实现 FerretDB 层本身的高可用。
 
-```
+```text
 ferret-ha:
   hosts:
     10.10.10.45: { mongo_seq: 1 }
@@ -52,8 +48,6 @@ ferret-ha:
     vip_address: 10.10.10.99
     vip_interface: eth1
 ```
-
-------
 
 ## 管理
 
@@ -113,13 +107,11 @@ Pigsty 管理的 PostgreSQL 集群默认使用 `scram-sha-256` 作为默认的�
 mongosh 'mongodb://dbuser_dba:DBUser.DBA@10.10.10.10:27017?authMechanism=PLAIN'
 ```
 
-------
-
 ## 快速上手
 
 你可以连接到 FerretDB 并假装它是一个 MongoDB 集群。
 
-```
+```text
 $ mongosh 'mongodb://dbuser_meta:DBUser.Meta@10.10.10.10:27017?authMechanism=PLAIN'
 ```
 
@@ -185,8 +177,6 @@ mongosh 'mongodb://dbuser_meta:DBUser.Meta@10.10.10.10:27017?authMechanism=PLAIN
     - collection name must be valid UTF-8 characters;
 9. FerretDB offers the same validation rules for the `scale` parameter in both the `collStats` and `dbStats` commands. If an invalid `scale` value is provided in the `dbStats` command, the same error codes will be triggered as with the `collStats` command.
 
-------
-
 ## 剧本
 
 Pigsty 提供了一个内置的剧本： `mongo.yml`，用于在节点上安装 FerretDB 集群。
@@ -199,8 +189,6 @@ Pigsty 提供了一个内置的剧本： `mongo.yml`，用于在节点上安装 
 * `mongo_cert` ：签发 mongo/ferretdb SSL证书
 * `mongo_launch` ：启动 mongo/ferretdb 服务•`mongo_register`：将 mongo/ferretdb 注册到 Prometheus 监控中
 
-------
-
 ## 监控
 
 MONGO 模块提供了一个简单的监控面板：Mongo Overview
@@ -211,9 +199,7 @@ Mongo Overview: Mongo/FerretDB 集群概览
 
 这个监控面板提供了关于 FerretDB 的基本监控指标，因为 FerretDB 底层使用了 PostgreSQL，所以更多的监控指标，还请参考 PostgreSQL 本身的监控。
 
-![](ferretdb-dashboard.png)
-
-------
+![FerretDB：假扮成MongoDB的PG：Mongo Overview（图 1）](ferretdb-dashboard.png)
 
 ## 参数
 

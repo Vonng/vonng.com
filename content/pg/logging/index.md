@@ -6,9 +6,6 @@ summary: >
   建议配置PostgreSQL的日志格式为CSV，方便分析，而且可以直接导入PostgreSQL数据表中。
 tags: [PostgreSQL, PG管理, 监控]
 ---
-
-
-
 建议配置PostgreSQL的日志格式为CSV，方便分析，而且可以直接导入PostgreSQL数据表中。
 
 ## 日志相关配置项

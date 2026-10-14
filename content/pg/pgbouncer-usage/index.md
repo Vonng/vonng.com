@@ -6,19 +6,16 @@ summary: >
   Pgbouncer是一个轻量级的数据库连接池，这里简单介绍Pgbouncer的配置、管理与使用。
 tags: [PostgreSQL, PG管理]
 ---
-
-
-
 Pgbouncer是一个轻量级的数据库连接池。
 
-### 概要
+## 概要
 
 ```bash
 pgbouncer [-d][-R][-v][-u user] <pgbouncer.ini>
 pgbouncer -V|-h
 ```
 
-### 描述
+## 描述
 
 **pgbouncer** 是一个PostgreSQL连接池。 任何目标应用程序都可以连接到 **pgbouncer**， 就像它是PostgreSQL服务器一样，**pgbouncer** 将创建到实际服务器的连接， 或者它将重用其中一个现有的连接。
 
@@ -40,7 +37,7 @@ pgbouncer -V|-h
 
 **pgbouncer** 的管理界面由连接到特殊'虚拟'数据库 **pgbouncer** 时可用的一些新的 `SHOW` 命令组成。
 
-### 上手
+## 上手
 
 基本设置和用法如下。
 
@@ -100,7 +97,7 @@ pgbouncer -V|-h
    pgbouncer=# RELOAD;
    ```
 
-### 命令行开关
+## 命令行开关
 
 | -d             | 在后台运行。没有它，进程将在前台运行。 注意：在Windows上不起作用，**pgbouncer** 需要作为服务运行。 |
 | -------------- | ------------------------------------------------------------ |
@@ -113,11 +110,11 @@ pgbouncer -V|-h
 | --regservice   | Win32：注册pgbouncer作为Windows服务运行。 **service_name** 配置参数值用作要注册的名称。 |
 | --unregservice | Win32: 注销Windows服务。                                     |
 
-### 管理控制台
+## 管理控制台
 
 通过正常连接到数据库 **pgbouncer** 可以使用控制台
 
-```
+```bash
 $ psql -p 6543 pgbouncer
 ```
 
@@ -125,9 +122,9 @@ $ psql -p 6543 pgbouncer
 
 另外，如果通过Unix套接字登录，并且客户端具有与运行进程相同的Unix用户uid， 允许用户名 **pgbouncer** 不使用密码登录。
 
-### SHOW命令
+## SHOW命令
 
-#### `SHOW STATS;`
+### `SHOW STATS;`
 
 显示统计信息。
 
@@ -153,7 +150,7 @@ $ psql -p 6543 pgbouncer
 
 TOTAL实际上是Counter，而AVG通常是Guage。监控时建议采集TOTAL，查看时建议查看AVG。
 
-#### `SHOW SERVERS`
+### `SHOW SERVERS`
 
 | 字段           | 说明                                                         |
 | -------------- | ------------------------------------------------------------ |
@@ -170,7 +167,7 @@ TOTAL实际上是Counter，而AVG通常是Guage。监控时建议采集TOTAL，�
 | `link`         | 服务器配对的客户端连接地址。                                 |
 | `remote_pid`   | 后端服务器进程的pid。如果通过unix套接字进行连接， 并且OS支持获取进程ID信息，则为OS pid。 否则它将从服务器发送的取消数据包中提取出来，如果服务器是Postgres， 则应该是PID，但是如果服务器是另一个PgBouncer，则它是一个随机数。 |
 
-#### `SHOW CLIENTS`
+### `SHOW CLIENTS`
 
 | 字段           | 说明                                                         |
 | -------------- | ------------------------------------------------------------ |
@@ -187,7 +184,7 @@ TOTAL实际上是Counter，而AVG通常是Guage。监控时建议采集TOTAL，�
 | `link`         | 配对的服务器端连接地址。                                     |
 | `remote_pid`   | 如果通过unix套接字进行连接， 并且OS支持获取进程ID信息，则为OS pid。 |
 
-#### SHOW POOLS;
+### SHOW POOLS;
 
 为每对(database, user)创建一个新的连接池选项。
 
@@ -235,7 +232,7 @@ TOTAL实际上是Counter，而AVG通常是Guage。监控时建议采集TOTAL，�
 
   正在使用的连接池模式。
 
-#### SHOW LISTS;
+### SHOW LISTS;
 
 在列（不是行）中显示以下内部信息：
 
@@ -271,7 +268,7 @@ TOTAL实际上是Counter，而AVG通常是Guage。监控时建议采集TOTAL，�
 
   使用了的服务器计数。
 
-#### SHOW USERS;
+### SHOW USERS;
 
 - name
 
@@ -281,7 +278,7 @@ TOTAL实际上是Counter，而AVG通常是Guage。监控时建议采集TOTAL，�
 
   用户重写的pool_mode，如果使用默认值，则返回NULL。
 
-#### SHOW DATABASES;
+### SHOW DATABASES;
 
 - name
 
@@ -311,7 +308,7 @@ TOTAL实际上是Counter，而AVG通常是Guage。监控时建议采集TOTAL，�
 
   数据库的重写pool_mode，如果使用默认值则返回NULL。
 
-#### SHOW FDS;
+### SHOW FDS;
 
 内部命令 - 显示与附带的内部状态一起使用的fds列表。
 
@@ -351,7 +348,7 @@ TOTAL实际上是Counter，而AVG通常是Guage。监控时建议采集TOTAL，�
 
   对应服务器/客户端的fd。如果空闲则为NULL。
 
-#### SHOW CONFIG;
+### SHOW CONFIG;
 
 显示当前的配置设置，一行一个，带有下列字段：
 
@@ -367,7 +364,7 @@ TOTAL实际上是Counter，而AVG通常是Guage。监控时建议采集TOTAL，�
 
   **yes** 或者 **no**，显示运行时变量是否可更改。 如果是 **no**，则该变量只能在启动时改变。
 
-#### SHOW DNS_HOSTS;
+### SHOW DNS_HOSTS;
 
 显示DNS缓存中的主机名。
 
@@ -383,7 +380,7 @@ TOTAL实际上是Counter，而AVG通常是Guage。监控时建议采集TOTAL，�
 
   地址的逗号分隔的列表。
 
-#### SHOW DNS_ZONES
+### SHOW DNS_ZONES
 
 显示缓存中的DNS区域。
 
@@ -399,41 +396,41 @@ TOTAL实际上是Counter，而AVG通常是Guage。监控时建议采集TOTAL，�
 
   属于此区域的主机名。
 
-### 过程控制命令
+## 过程控制命令
 
-#### `PAUSE [db];`
+### `PAUSE [db];`
 
 PgBouncer尝试断开所有服务器的连接，首先等待所有查询完成。 所有查询完成之前，命令不会返回。在数据库重新启动时使用。如果提供了数据库名称，那么只有该数据库将被暂停。
 
-#### `DISABLE db;`
+### `DISABLE db;`
 
 拒绝给定数据库上的所有新客户端连接。
 
-#### `ENABLE db;`
+### `ENABLE db;`
 
 在上一个的 **DISABLE** 命令之后允许新的客户端连接。
 
-#### `KILL db;`
+### `KILL db;`
 
 立即删除给定数据库上的所有客户端和服务器连接。
 
-#### `SUSPEND;`
+### `SUSPEND;`
 
 所有套接字缓冲区被刷新，PgBouncer停止监听它们上的数据。 在所有缓冲区为空之前，命令不会返回。在PgBouncer在线重新启动时使用。
 
-#### `RESUME [db];`
+### `RESUME [db];`
 
 从之前的 **PAUSE** 或 **SUSPEND** 命令中恢复工作。
 
-#### `SHUTDOWN;`
+### `SHUTDOWN;`
 
 PgBouncer进程将会退出。
 
-#### `RELOAD;`
+### `RELOAD;`
 
 PgBouncer进程将重新加载它的配置文件并更新可改变的设置。
 
-### 信号
+## 信号
 
 - SIGHUP
 
@@ -447,11 +444,11 @@ PgBouncer进程将重新加载它的配置文件并更新可改变的设置。
 
   立即关闭。与在控制台上发出 **SHUTDOWN;** 相同。
 
-### Libevent设置
+## Libevent设置
 
 来自libevent的文档:
 
-```
+```text
 可以通过分别设置环境变量EVENT_NOEPOLL、EVENT_NOKQUEUE、
 VENT_NODEVPOLL、EVENT_NOPOLL或EVENT_NOSELECT来禁用对
 epoll、kqueue、devpoll、poll或select的支持。
@@ -459,11 +456,11 @@ epoll、kqueue、devpoll、poll或select的支持。
 通过设置环境变量EVENT_SHOW_METHOD，libevent显示它使用的内核通知方法。 
 ```
 
-# Pgbouncer参数配置
+## Pgbouncer参数配置
 
-##
 
-## 默认配置
+
+### 默认配置
 
 ```ini
 ;; 数据库名 = 连接串

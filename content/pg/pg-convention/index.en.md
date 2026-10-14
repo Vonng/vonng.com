@@ -6,8 +6,7 @@ summary: >
   No rules, no standards. Some developer conventions for PostgreSQL 16.
 tags: [PostgreSQL, PG Development]
 ---
-
-![](pg-convention.jpg)
+![PostgreSQL Convention 2024 (figure 1)](pg-convention.jpg)
 
 - [Background](#0x00-background)
 - [0x01 Naming Convention](#0x01-naming-convention)
@@ -16,8 +15,6 @@ tags: [PostgreSQL, PG Development]
 - [0x01 Admin Convention](#0x04-administration-convention)
 
 > Roughly translated from [PostgreSQL Convention 2024](/pg/pg-convention/) with Google.
-
----------
 
 ## 0x00 Background
 
@@ -28,8 +25,6 @@ The functions of PostgreSQL are very powerful, but to use PostgreSQL well requir
 This article has compiled a development/operation and maintenance protocol based on the principles and characteristics of the PostgreSQL database, hoping to reduce the confusion you encounter when using the PostgreSQL database: hello, me, everyone.
 
 The first version of this article is mainly for PostgreSQL 9.4 - PostgreSQL 10. The latest version has been updated and adjusted for PostgreSQL 15/16.
-
-------------
 
 ## 0x01 naming convention
 
@@ -135,8 +130,6 @@ The first version of this article is mainly for PostgreSQL 9.4 - PostgreSQL 10. 
 
 - Try your best to provide comments ( `COMMENT`) for various objects. Comments should be in English, concise and concise, and one line should be used.
 - When the object's schema or content semantics change, be sure to update the annotations to keep them in sync with the actual situation.
-
-------
 
 ## 0x02 Design Convention
 
@@ -312,8 +305,6 @@ The first version of this article is mainly for PostgreSQL 9.4 - PostgreSQL 10. 
 - If a field to be indexed in a query has only a limited number of values, several corresponding partial indexes can also be established.
 - If the columns in some indexes are frequently updated, please pay attention to the expansion of these indexes.
 
-------
-
 ## 0x03 Query Convention
 
 > The limits of my language mean the limits of my world.
@@ -468,8 +459,6 @@ rh 09 **Do not use count when judging the existence of a result.**
 **Use arrays instead of temporary tables**
 
 - Consider using an array instead of a temporary table, for example when obtaining corresponding records for a series of IDs. `=ANY(ARRAY[1,2,3])`Better than temporary table JOIN.
-
-------
 
 ## 0x04 Administration Convention
 

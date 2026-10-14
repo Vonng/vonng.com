@@ -7,7 +7,6 @@ summary: >
   2025 年的 SO 全球开发者调研结果新鲜出炉，PostgreSQL 连续第三年成为全球最流行，最受喜爱，需求量最高的数据库。
 tags: [PostgreSQL, PG生态]
 ---
-
 [2025 年 StackOverflow 全球开发者调研结果](https://survey.stackoverflow.co/2025/technology#2-databases)已经新鲜出炉
 ，来自 177 个国家与地区的 5 万名开发者给出了高质量的问卷反馈。
 作为数据库老司机，我最关注的还是 “数据库” 这一项调研结果，今天就来带大家解读一下这份数据，看看数据库领域的最新趋势。
@@ -58,8 +57,6 @@ Oracle 和 MySQL 今年的使用率还有 0.1% ~ 0.2% 的增长，不过在数�
 很遗憾的是，曾经最具代表性的国产数据库头部玩家 TiDB 在这一次跌出了三个榜单。TiDB 以及 Oceanbase 选择了分布式 + MYSQL 兼容的路线（双重押错宝）（参见：[分布式数据库是伪需求吗？](/db/distributive-bullshit)）。
 在当下 [硬件发展](/cloud/bonus/) 与 PG生态繁荣的大背景下相当不合时宜。同样押宝分布式路线，但选择兼容 PostgreSQL 生态的 CockroachDB 就在今年取得了10%相对增长，成功留在了榜单里。
 
-------
-
 ## 喜爱度
 
 另外两项重要的数据是数据库的喜爱度（红色）与需求度（蓝色）：[全体开发者在过去一年最喜爱与最想要使用的数据库](https://survey.stackoverflow.co/2025/technology#2-databases)，按需求度排序。
@@ -86,8 +83,6 @@ Supabase 的喜爱度已经在去年兑现，今年掉落到 **47.2%** 开始出
 一些成长起来的 Supabase 用户规模已经超出了云服务的舒适区，已经到了需要自建 Supabase 的阶段了。
 而 Supabase 官方提供的 Docker Compose 玩具自建模版相比他们的云服务来说槽点确实很多。
 
-------
-
 ## 需求度
 
 需求者占总体的比例，就是 **需求率**（Wanted），或 **渴望度**（Desired），在上图中用蓝点表示。
@@ -104,16 +99,12 @@ Supabase 的喜爱度已经在去年兑现，今年掉落到 **47.2%** 开始出
 而 MySQL 的需求度在去年被 SQLite 反超，从2023年的第二名跌落至 2024 年的第三，又在今年被 Redis 干掉，掉落到第四名，
 难兄难弟 MongoDB 则是从 2017-2020 开发者最想使用的数据库（第一名）一路掉到第五名。口碑断崖式塌方，怎一个惨字了得？
 
-------
-
 ## 迁移图
 
 在 2025 年的调研中，最有趣的莫过于这个数据库迁移图 —— 用一句概括的话就是，所有数据库都在往 PostgreSQL 跑 ——
 不同于其他领域的技术有来有往（比如语言，工具），数据库世界的生态出现了明显的大一统的趋势。
 
 ![sf-flow.jpg](sf-flow.jpg)
-
-------
 
 ## 小结
 
@@ -130,8 +121,6 @@ PostgreSQL 已经成为数据库世界的 Linux 内核，与数据库世界的�
 
 像 Amazon RDS，Supabase，EDB，Pigsty，Percona，Crunchy，StackGres 这样的 PostgreSQL 发行版，将会竞争数据库世界的 RetHat，Ubuntu，Debian，SUSE 生态位。
 值得老冯自豪的是，Pigsty 作为一个开源的 PostgreSQL 发行版，已经在这场发行版大乱斗中取得了一张入场券。
-
---------
 
 ## 广告时间
 

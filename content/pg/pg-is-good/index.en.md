@@ -6,18 +6,15 @@ summary: >
   PostgreSQL's slogan is "The World's Most Advanced Open-Source Relational Database," but I think the most vivid characterization should be: The Full-Stack Database That Does It All - one tool to rule them all.
 tags: [PostgreSQL, PG Ecosystem]
 ---
-
 PostgreSQL's slogan is "**The world's most advanced open source relational database**", but I think this slogan isn't catchy enough, and it looks like it's targeting MySQL's "**The world's most popular open source relational database**" slogan, which seems like riding on coattails. I think the most vivid slogan that captures PostgreSQL's characteristics should be: **A versatile full-stack database**, one trick that eats everywhere.
 
 ![pggood](pg-is-good-1.png)
 
-----------------
-
-### Full-Stack Database
+## Full-Stack Database
 
 Mature applications might use many different data components (functions): caching, OLTP, OLAP/batch processing/data warehouse, stream processing/message queues, search indexes, NoSQL/document databases, geographic databases, spatial databases, time series databases, graph databases. Traditional architecture selection might combine multiple components, typically like: Redis + MySQL + Greenplum/Hadoop + Kafka/Flink + ElasticSearch, a combination that can handle most requirements. However, what's quite troublesome is heterogeneous system integration: lots of code consists of repetitive and tedious glue code, doing the work of moving data from component A to component B.
 
-![](pg-is-good-2.png)
+![What Are PostgreSQL's Advantages? — Full-Stack Database (figure 2)](pg-is-good-2.png)
 
 Here, MySQL can only play the role of an OLTP relational database, but if it's PostgreSQL, it can wear multiple hats, handling them all:
 
@@ -67,8 +64,6 @@ Designing for unnecessary scale is a waste of effort, which is actually a form o
 
 When business scale grows to a certain level, you might have to use microservice/bus-based architectures, separating database functions into multiple components. But PostgreSQL's existence greatly delays the threshold where this trade-off arrives, and it can continue to play an important role even after separation.
 
-----------------
-
 ## Operations-Friendly
 
 Of course, besides powerful functionality, another important advantage of PostgreSQL is being **operations-friendly**. It has many very practical features:
@@ -95,8 +90,6 @@ Of course, besides powerful functionality, another important advantage of Postgr
 
   FDW can conveniently let one instance access data or metadata from other instances. It has wonderful uses in cross-partition operations, database monitoring metric collection, data migration scenarios. It can also interface with many heterogeneous data systems.
 
-----------------
-
 ## Healthy Ecosystem
 
 PostgreSQL's ecosystem is also very healthy, with a quite active community.
@@ -108,8 +101,6 @@ Of course, many derivative products will give back to the mainline, like `timesc
 PostgreSQL's code quality is quite high, with very clear comments. The C code reads like Go, and the code can serve as documentation. You can learn a lot from it. In comparison, other databases like MongoDB - I gave up interest in reading after one glance.
 
 As for MySQL, the community edition uses the GPL license, which is actually quite painful. If not for GPL contagion, why would there be so many MySQL-based databases open sourced? And MySQL is still in Oracle's hands, letting someone else control your family jewels isn't a wise choice, especially when it's an industry cancer? Facebook's React license controversy storm serves as a cautionary tale.
-
-----------------
 
 ## Problems
 
@@ -154,7 +145,7 @@ In my first job, I deeply tasted the benefits of using PostgreSQL - one person's
 
 - PostgreSQL's [FDW](https://wiki.postgresql.org/wiki/Foreign_data_wrappers) is a powerful mechanism allowing access to various data sources with a unified SQL interface. It has wonderful uses:
 
-- - Built-in extensions like `file_fdw` can interface any program's output into data tables. The simplest application is [monitoring system information](https://github.com/Vonng/pg/blob/master/fdw/file_fdw-intro.md).
+  - Built-in extensions like `file_fdw` can interface any program's output into data tables. The simplest application is [monitoring system information](/en/pg/file_fdw/).
   - When managing multiple PostgreSQL instances, you can use the built-in `postgres_fdw` in a metadata database to import data dictionaries from all remote databases. Unified access to metadata from all database instances, one line of SQL to pull real-time metrics from all databases - monitoring systems become incredibly convenient.
   - Something I've done before is using [hbase_fdw](https://github.com/Vonng/hbase_fdw) and MongoFDW to wrap historical batch data from HBase and current real-time data from MongoDB as PostgreSQL data tables, implementing a Lambda architecture that fuses batch and stream processing with a simple view.
   - Using `redis_fdw` for cache update pushing; using `mongo_fdw` to complete data migration from MongoDB to PostgreSQL; using `mysql_fdw` to read MySQL data and store in data warehouse; implementing cross-database, even cross-data-component JOINs; using one line of SQL to complete complex ETL that would otherwise require many lines of code - what a beautiful thing.

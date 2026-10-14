@@ -7,7 +7,6 @@ summary: >
   Hold off on fresh deployments and upgrades, then update promptly after the out-of-cycle releases ship on 2026-02-26.
 tags: [PostgreSQL, PG Admin]
 ---
-
 > The 18.2 minor-release train introduced two bugs. Hold off on fresh deployments and upgrades, then update promptly after 18.3 ships next week.
 
 One week ago, the PostgreSQL community shipped its routine February minor releases, and [Pigsty v4.1 followed the same day](/en/pigsty/v4.1/).
@@ -108,7 +107,7 @@ If you are not a seasoned database operator and no CVE or severe bug is forcing 
 
 ## Original Announcement
 
-#### PostgreSQL Plans an Out-of-Cycle Emergency Update for February 26, 2026
+### PostgreSQL Plans an Out-of-Cycle Emergency Update for February 26, 2026
 
 Released by the PostgreSQL Global Development Group on **2026-02-16**
 

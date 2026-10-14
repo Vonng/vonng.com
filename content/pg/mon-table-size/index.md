@@ -6,9 +6,7 @@ summary: >
   PostgreSQL中的表对应着许多物理文件，本文介绍如何统计一张表在PostgreSQL的实际大小。
 tags: [PostgreSQL, PG管理, 监控]
 ---
-
-
-### 表的空间布局
+## 表的空间布局
 
 宽泛意义上的 **表（Table）**，包含了 **本体表** 与 **TOAST表** 两个部分：
 
@@ -39,7 +37,7 @@ tags: [PostgreSQL, PG管理, 监控]
 
 而每个关系实际上可能又包含了1~3个分支：`main`（必定存在），`fsm`，`vm`。
 
-### 获取表的附属关系
+## 获取表的附属关系
 
 使用下列查询，列出所有的分支oid。
 
@@ -60,14 +58,14 @@ from
 where nspname not in ('pg_catalog', 'information_schema') and rel.relkind = 'r';
 ```
 
-```
+```text
  nspname |  relname   |  nspid  |  relid  | toastid | toastindexid |      indexes
 ---------+------------+---------+---------+---------+--------------+--------------------
  public  | aoi        | 4310872 | 4320271 | 4320274 |      4320276 | {4325606,4325605}
  public  | poi        | 4310872 | 4332324 | 4332327 |      4332329 | {4368886}
 ```
 
-### 统计函数
+## 统计函数
 
 PG提供了一系列函数用于确定各个部分占用的空间大小。
 
@@ -99,7 +97,7 @@ PG提供了一系列函数用于确定各个部分占用的空间大小。
 
 注意，TOAST表也有自己的索引，但有且仅有一个，因此使用 `pg_total_relation_size(reltoastrelid)` 可计算TOAST表的整体大小。
 
-### 例：统计某一张表及其相关关系UDTF
+## 例：统计某一张表及其相关关系UDTF
 
 ```sql
 SELECT
@@ -157,7 +155,7 @@ SELECT * FROM pg_table_size_detail(16418);
 
 返回结果样例：
 
-```
+```text
 geo=# select * from  pg_table_size_detail(4325625);
    id    |   pid   |        relname        | nspname  | relkind |  tuples  |  pages  |    size
 ---------+---------+-----------------------+----------+---------+----------+---------+-------------
@@ -172,7 +170,7 @@ geo=# select * from  pg_table_size_detail(4325625);
  4420044 | 4325625 | poi_position_geohash6 | gaode    | i       | 62685464 |  172058 |  1409499136
 ```
 
-### 例：关系大小详情汇总
+## 例：关系大小详情汇总
 
 ```sql
 select

@@ -7,7 +7,6 @@ summary: >
   pig v1.5 新增 pig pg clone 与 pig pg fork，把 PostgreSQL 18 的瞬间克隆能力封装成 Agent Native CLI。
 tags: [PostgreSQL, Pigsty, 工具]
 ---
-
 老冯在半年前（2026-01-08）写过一篇文章《[**Git for Data：瞬间克隆 PG 数据库与实例**](/pg/pg-clone/)》，介绍了 PostgreSQL 18 和 Pigsty v4.0 的一个新特性：瞬间克隆新数据库。利用文件系统 CoW 机制，以及 PG 18 的 `file_copy_method = clone` 新参数，**可以在秒级克隆一个非常大的数据库，而且不占用额外的存储**。
 
 这玩意儿其实非常适合 AI Agent 使用。我在《[Agent 需要什么样的数据库](/db/agent-native-db/)》里提到过：极低成本的数据库克隆对于反事实推演至关重要。所以当时趁着 4.0 上线的时候，给 Pigsty 里 PG 数据库 Provisioning 的地方加上了这个功能。
@@ -62,7 +61,7 @@ tags: [PostgreSQL, Pigsty, 工具]
 
 这次 `pig` 命令行工具发布，新增了很多管理功能，包括对 PostgreSQL、Patroni、pgBackRest 组件的各种管理。现在它们都封装成上面 `pg clone` 与 `pg fork` 这类 Agent Native CLI，同时方便人类 DBA 与 AI Agent 使用。过几天会专门写篇文章详细介绍一下。
 
-![](featured.webp)
+![瞬间克隆 PostgreSQL 数据库，无需黑魔法：实例级 Fork（图 9）](featured.webp)
 
 ## 参考阅读
 

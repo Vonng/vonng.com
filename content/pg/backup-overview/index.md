@@ -6,8 +6,6 @@ summary: >
   备份是DBA的安身立命之本，有备份，就不用慌。
 tags: [PostgreSQL, PG管理, 备份]
 ---
-
-
 备份是DBA的安身立命之本，有备份，就不用慌。
 
 备份有三种形式：SQL转储，文件系统备份，连续归档
@@ -59,7 +57,7 @@ psql --set ON_ERROR_STOP=on dbname < infile
 * 恢复时可以使用单个事务来保证要么完全正确恢复，要么完全回滚。使用 `-1` 或 `--single-transaction`
 * pg_dump和psql可以通过管道on-the-fly做转储与恢复
 
-```
+```text
 pg_dump -h host1 dbname | psql -h host2 dbname
 ```
 
@@ -67,7 +65,7 @@ pg_dump -h host1 dbname | psql -h host2 dbname
 
 一些信息属于数据库集簇，而不是单个数据库的，例如角色、表空间。如果希望转储这些，可使用 `pg_dumpall`
 
-```
+```text
 pg_dumpall > outfile
 ```
 
@@ -75,7 +73,7 @@ pg_dumpall > outfile
 
 转储的结果可以使用psql恢复，通常将转储载入到一个空集簇中可以用 `postgres` 作为数据库名
 
-```
+```text
 psql -f infile postgres
 ```
 
@@ -567,20 +565,20 @@ drwxr-xr-x   6 vonng  wheel   192B Jan 25 18:51 ..
 
 通常主从、副本、备机这些属于高可用的话题。但从另一个角度来讲，备机也是备份的一种。
 
-#### 创建目录
+### 创建目录
 
 ```bash
 sudo mkdir /var/lib/pgsql && sudo chown postgres:postgres /var/lib/pgsql/
 mkdir -p /var/lib/pgsql/master /var/lib/pgsql/slave /var/lib/pgsql/wal
 ```
 
-#### 制作主库
+### 制作主库
 
 ```bash
 pg_ctl -D /var/lib/pgsql/master init && pg_ctl -D /var/lib/pgsql/master start
 ```
 
-#### 创建用户
+### 创建用户
 
 创建备库需要一个具有 `REPLICATION` 权限的用户，这里在Master中创建 `replication` 用户
 
@@ -595,7 +593,7 @@ local   replication     all                                     trust
 host    replication     all             127.0.0.1/32            trust
 ```
 
-#### 制作备库
+### 制作备库
 
 通过 `pg_basebackup` 创建一个slave实例。实际上是连接到Master实例，并复制一份数据目录到本地。
 
@@ -605,7 +603,7 @@ pg_basebackup -Fp -Pv -R -c fast -U replication -h localhost -D /var/lib/pgsql/s
 
 这里的关键是通过 `-R` 选项，在备份的制作过程中自动将主机的连接信息填入 `recovery.conf`，这样使用 `pg_ctl` 启动时，数据库会意识到自己是备机，并从主机自动拉取WAL追赶进度。
 
-#### 启动从库
+### 启动从库
 
 ```bash
 pg_ctl -D /var/lib/pgsql/slave -o "-p 5433" start
@@ -626,7 +624,7 @@ primary_conninfo = 'user=replication passfile=''/Users/vonng/.pgpass'' host=loca
 
 拉取WAL有两种办法，通过 `primary_conninfo` 流式复制拉取（9.0后的新特性，推荐，默认），或者通过 `restore_command` 来手工指明WAL的获取方式（老办法，恢复时使用）。
 
-#### 查看状态
+### 查看状态
 
 主库的所有从库可以通过系统视图 `pg_stat_replication` 查阅：
 

@@ -6,12 +6,9 @@ summary: >
   详细介绍PostgreSQL中的各种锁：表级锁、行级锁、页级锁、咨询锁等。
 tags: [PostgreSQL, PG开发, PG管理]
 ---
-
 PostgreSQL的并发控制以 **快照隔离（SI）** 为主，以 **两阶段锁定（2PL）** 机制为辅。PostgreSQL对DML（`SELECT, UPDATE, INSERT, DELETE` 等命令）使用SSI，对DDL（`CREATE TABLE` 等命令）使用2PL。
 
 PostgreSQL有好几类锁，其中最主要的是 **表级锁** 与 **行级锁**，此外还有页级锁，咨询锁等，**表级锁** 通常是各种命令执行时自动获取的，或者通过事务中的 `LOCK` 语句显式获取；而行级锁则是由 `SELECT FOR UPDATE|SHARE` 语句显式获取的。执行数据库命令时，都是先获取表级锁，再获取行级锁。本文主要介绍PostgreSQL中的表锁。
-
------------------
 
 ## 表级锁
 
@@ -27,7 +24,7 @@ PostgreSQL有好几类锁，其中最主要的是 **表级锁** 与 **行级锁*
 
 ### 表级锁的演化
 
-![](pg-lock-envolve.webp)
+![PostgreSQL中的锁：表级锁的演化（图 1）](pg-lock-envolve.webp)
 
 最开始只有两种锁：`Share` 与 `Exclusive`，共享锁与排它锁，即所谓 **读锁** 与 **写锁**。读锁的目的是阻止表数据的变更，而写锁的目的是阻止一切并发访问。这很好理解。
 
@@ -79,8 +76,6 @@ PostgreSQL的表级锁的命名有些诘屈聱牙，这是因为一些历史因�
   - 意向锁两种：`RowShare`,`RowExclusive`
   - 自斥意向锁一种：`ShareUpdateExclusive`
 
------------------
-
 ## 显式加锁
 
 通常表级锁会在相应命令执行中自动获取，但也可以手动显式获取。使用LOCK命令加锁的方式：
@@ -107,8 +102,6 @@ LOCK TABLE tbl IN EXCLUSIVE MODE;
 -- DO Something
 COMMIT
 ```
-
------------------
 
 ## 锁的查询
 
@@ -156,9 +149,9 @@ CREATE TABLE pg_locks
 | `granted`            | `boolean`  | 为真表示已经获得的锁，为假表示还在等待的锁                                                                                          |
 | `fastpath`           | `boolean`  | 为真表示锁是通过fastpath获取的                                                                                            |
 
-#### 样例数据
+### 样例数据
 
-![](pg-lock-sample.png)
+![PostgreSQL中的锁：样例数据（图 2）](pg-lock-sample.png)
 
 这个视图需要一些额外的知识才能解读。
 
@@ -183,8 +176,6 @@ CREATE TABLE pg_locks
 > 	LocalTransactionId localTransactionId;	/* 后端内本地使用的命令标ID，类似自增计数器 */
 > } VirtualTransactionId;
 > ```
-
------------------
 
 ## 应用
 

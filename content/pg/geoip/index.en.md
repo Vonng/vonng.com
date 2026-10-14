@@ -6,13 +6,9 @@ summary: >
   A common requirement in application development is GeoIP conversion - converting source IP addresses to geographic coordinates or administrative divisions (country-state-city-county-town-village)
 tags: [PostgreSQL, PG Development, Extension, GIS]
 ---
-
-
 > Efficient implementation of IP geolocation lookups
 
 In application development, a 'very common' requirement is GeoIP conversion - converting source IP addresses from requests into corresponding geographic coordinates or administrative divisions (country-state-city-county-town-village). This functionality has many uses, such as analyzing geographic sources of website traffic or doing some shady things. Using PostgreSQL can achieve this requirement elegantly and efficiently with high performance and cost effectiveness.
-
--------------
 
 ## 0x01 Approach and Methods
 
@@ -50,8 +46,6 @@ Fortunately, for PostgreSQL, these are not problems. The four issues above can b
 * GiST indexes: Can be applied to both IP address ranges and geographic location points.
 * Exclude constraints: Generalized advanced UNIQUE constraints that fundamentally ensure data integrity.
 
--------------
-
 ## 0x01 Network Address Types
 
 PostgreSQL provides data types for storing IPv4, IPv6, and MAC addresses, including `cidr`, `inet`, and `macaddr`, along with many common operation functions, eliminating the need to implement tedious repetitive functionality in programs.
@@ -86,8 +80,6 @@ SELECT (random() * 4294967295)::BIGINT::INET;
 ```
 
 Size comparison between `inet` values is also quite straightforward - just use size comparison operators directly. The actual comparison is of the underlying integer values. This solves the first problem.
-
--------------
 
 ## 0x02 Range Types
 
@@ -136,8 +128,6 @@ res | t
 ```
 
 With range types, we can start building our data table.
-
--------------
 
 ## 0x03 Range Indexes
 
@@ -199,8 +189,6 @@ If you need to convert geographic coordinates to administrative divisions, you c
 
 One geocoding also takes about 100 microseconds. The overall QPS for converting from IP to province-city-district-county on a single machine can easily handle tens of thousands (full load all day is equivalent to seven to eight billion calls, you simply can't max it out).
 
--------------
-
 ## 0x04 EXCLUDE Constraints
 
 The problem has been basically solved at this point, but there's still one issue. How to avoid the embarrassing situation of one IP returning two records?
@@ -224,8 +212,6 @@ create table geoips
 ```
 
 Here `EXCLUDE USING gist (ips WITH &&)` means that overlapping ranges are not allowed on the `ips` field - newly inserted fields cannot overlap with any existing ranges (`&&` being true). And `DEFERRABLE INITIALLY IMMEDIATE` means to check constraints on all rows at the end of the statement. Creating this constraint will automatically create a GIST index on the `ips` field, so manual creation is unnecessary.
-
--------------
 
 ## 0x05 Summary
 

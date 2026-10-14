@@ -6,7 +6,6 @@ draft: true
 summary: "Some tips for interacting between PostgreSQL and Bash."
 tags: [PostgreSQL, PG Admin, Tools]
 ---
-
 Some tips for interacting between PostgreSQL and Bash.
 
 ## Using Strict Mode for Bash Scripts

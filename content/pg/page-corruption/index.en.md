@@ -6,7 +6,6 @@ authors: [vonng]
 summary: "Using binary editing to repair PostgreSQL data pages, and how to make a primary key query return two records."
 tags: [PostgreSQL, PG Admin, Incident]
 ---
-
 PostgreSQL is a very reliable database, but even the most reliable database will struggle when faced with unreliable hardware. This article introduces methods for dealing with data page corruption in PostgreSQL.
 
 ## The Initial Problem
@@ -178,7 +177,7 @@ SELECT pg_relation_filepath(oid) FROM pg_class WHERE relname = 'test';
 base/12630/16385
 ```
 
-```
+```text
 $ hexdump /pg/d1/base/12630/16385 | head -n 20
 0000000 00 00 00 00 d0 22 02 03 00 00 00 00 a0 03 c0 03
 0000010 00 20 04 20 00 00 00 00 e0 9f 34 00 c0 9f 34 00

@@ -6,8 +6,6 @@ summary: >
   FerretDB aims to provide a truly open-source MongoDB alternative based on PostgreSQL.
 tags: [PostgreSQL, MongoDB, PG Ecosystem, Extension]
 ---
-
-
 **MongoDB** was once an amazing technology that allowed developers to break free from relational database "schema constraints" and quickly build applications. However, over time, MongoDB abandoned its open-source nature, making it unavailable for many open-source projects and early commercial ventures.
 
 Most MongoDB users don't actually need the advanced features MongoDB provides, but they do need an easy-to-use **open-source** document database solution. PostgreSQL's JSON functionality support is already comprehensive: binary storage JSONB, GIN arbitrary field indexing, various JSON processing functions, JSON PATH and JSON Schema. PostgreSQL has long been a fully-featured, high-performance document database. But providing alternative functionality is different from **direct emulation**.
@@ -20,13 +18,11 @@ FerretDB, as an optional component, greatly benefits the enrichment of the Postg
 
 This article briefly introduces FerretDB's installation, deployment, and usage.
 
-------
-
 ## Configuration
 
 Before deploying a Mongo (FerretDB) cluster, you need to define it using relevant parameters in the configuration inventory. The following example uses the `meta` database of the default single-node `pg-meta` cluster as the underlying storage for FerretDB:
 
-```
+```text
 ferret:
   hosts: { 10.10.10.10: { mongo_seq: 1 } }
   vars:
@@ -38,7 +34,7 @@ Here, `mongo_cluster` and `mongo_seq` are essential identity parameters. For Fer
 
 You can use services to access highly available PostgreSQL clusters and deploy multiple FerretDB instance replicas with L2 VIP binding to achieve high availability at the FerretDB layer itself.
 
-```
+```text
 ferret-ha:
   hosts:
     10.10.10.45: { mongo_seq: 1 }
@@ -52,8 +48,6 @@ ferret-ha:
     vip_address: 10.10.10.99
     vip_interface: eth1
 ```
-
-------
 
 ## Management
 
@@ -114,13 +108,11 @@ You can also use other PostgreSQL users to access FerretDB by specifying them in
 mongosh 'mongodb://dbuser_dba:DBUser.DBA@10.10.10.10:27017?authMechanism=PLAIN'
 ```
 
-------
-
 ## Quick Start
 
 You can connect to FerretDB and pretend it's a MongoDB cluster.
 
-```
+```text
 $ mongosh 'mongodb://dbuser_meta:DBUser.Meta@10.10.10.10:27017?authMechanism=PLAIN'
 ```
 
@@ -186,8 +178,6 @@ You can check FerretDB's supported MongoDB commands, along with some [known diff
     - collection name must be valid UTF-8 characters;
 9. FerretDB offers the same validation rules for the `scale` parameter in both the `collStats` and `dbStats` commands. If an invalid `scale` value is provided in the `dbStats` command, the same error codes will be triggered as with the `collStats` command.
 
-------
-
 ## Playbooks
 
 Pigsty provides a built-in playbook: `mongo.yml`, for installing FerretDB clusters on nodes.
@@ -205,8 +195,6 @@ This playbook consists of the following subtasks:
 * `mongo_launch`: Start mongo/ferretdb services
 * `mongo_register`: Register mongo/ferretdb with Prometheus monitoring
 
-------
-
 ## Monitoring
 
 The MONGO module provides a simple monitoring dashboard: Mongo Overview
@@ -217,9 +205,7 @@ Mongo Overview: Mongo/FerretDB cluster overview
 
 This monitoring dashboard provides basic monitoring metrics for FerretDB. Since FerretDB uses PostgreSQL as the underlying storage, for more monitoring metrics, please refer to PostgreSQL's own monitoring.
 
-![](ferretdb-dashboard.png)
-
-------
+![FerretDB: PostgreSQL Disguised as MongoDB — Mongo Overview (figure 1)](ferretdb-dashboard.png)
 
 ## Parameters
 

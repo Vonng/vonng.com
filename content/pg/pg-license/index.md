@@ -7,12 +7,9 @@ summary: >
   PostgreSQL 不会改变其许可证。本文是 PostgreSQL 核心组成员对此问题的回答。
 tags: [PostgreSQL, PG生态, 开源, 翻译]
 ---
-
 > 作者：[Jonathan Katz](https://jkatz05.com/post/postgres/)，PostgreSQL 核心组成员（1 of 7），AWS RDS 首席产品经理
 >
 > 译者：[Vonng](https://vonng.com)，PostgreSQL 专家，Free RDS PG Alternative —— Pigsty 作者
-
------------
 
 ## PostgreSQL会修改开源许可证吗
 
@@ -44,8 +41,6 @@ PostgreSQL 的网站上其实 [有答案](https://www.postgresql.org/about/licen
 
 尽管 PostgreSQL 项目确实有不完美之处（我当然也对这些不完美的地方有所贡献），但 PostgreSQL 许可证对PostgreSQL 社区和整个开源界来说，确实是一份真正的礼物，我们将继续珍惜并帮助保持 PostgreSQL 真正的自由和开源。毕竟，[官网上也是这么说的](https://www.postgresql.org/about/licence/) ;)
 
-------
-
 ## 译者评论
 
 能被 PostgreSQL 全球社区核心组成员提名推荐，我感到非常荣幸。上文中 Jonathan 提到我的文章是《[PostgreSQL正在吞噬数据库世界](https://mp.weixin.qq.com/s/8_uhRH93oAoHZqoC90DA6g)》，英文版为《[PostgreSQL is Eating The Database World](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4)》。发布于 Medium：https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4 ，并在 HackerNews ，X，LinkedIn 上引起相当热烈的讨论。
@@ -69,8 +64,6 @@ Redis 切换为更为严格的 SSPL 协议的核心原因，用 Redis Labs CEO �
 在抵御云厂商白嫖的实践中，修改协议是最常见的做法：但AGPLv3 过于严格容易敌我皆伤，SSPL 因为明确表达这种敌我歧视，不被算作开源。业界需要一种新的歧视性软件许可证协议，来达到名正言顺区分敌我的效果。使用双协议进行明确的边界区分，也开始成为一种主流的开源商业化实践。
 
 真正重要的事情一直都是软件自由，而“开源”只是实现软件自由的一种手段。而如果“开源”的理念无法适应新阶段矛盾斗争的需求，甚至会妨碍软件自由，它一样会过气，并不再重要，并最终被新的理念与实践所替代 —— 比如“本地优先”。
-
-------
 
 ## 英文原文
 

@@ -7,7 +7,6 @@ summary: >
   On July 8, 1996, the PostgreSQL community picked up the flame from Postgres95. Thirty years later, it has grown from a Berkeley research project into a default foundation of the global database ecosystem.
 tags: [PostgreSQL, PG Ecosystem, Open Source]
 ---
-
 Today, July 8, 2026, is PostgreSQL's 30th birthday.
 
 Thirty years ago, Marc Fournier made a commit named "Postgres95 1.01 Distribution - Virgin Sources" into a newly created CVS repository.
@@ -37,8 +36,6 @@ It belonged to a self-organizing global community.
 The project was renamed PostgreSQL in the same year, then restarted as version 6.0 in January 1997.
 Stonebraker himself received the Turing Award in 2014, with POSTGRES as one of his signature works.
 
----------
-
 ## Birthday Details: July 8 or July 9?
 
 Careful readers may notice a small puzzle: the timestamp of the "Virgin Sources" commit is actually 1996-07-09 06:22:35 UTC. So should the birthday be July 8 or July 9?
@@ -55,8 +52,6 @@ The "one-day difference" is just those 37 minutes straddling midnight.
 
 From the place of birth, PostgreSQL was indeed born on July 8.
 
----------
-
 ## Thirty Years In
 
 The milestones of these thirty years are easy to list: 6.5 introduced MVCC, 7.1 brought WAL, 8.0 added native Windows support,
@@ -72,8 +67,6 @@ Hundreds of extensions mean PostgreSQL is no longer just a database. It is a dat
 
 For years, PostgreSQL has stayed near the top of Stack Overflow's "most popular database" rankings.
 It has become the default choice. Or, in in other words: [**PostgreSQL is eating the database world**](/pg/pg-eat-db-world/).
-
----------
 
 ## The Next Thirty Years
 

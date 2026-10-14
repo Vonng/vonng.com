@@ -6,12 +6,9 @@ summary: >
   When GIN indexes are used to search with very long keyword lists, performance degrades significantly. This article explains why GIN index keyword search has O(n^2) time complexity.
 tags: [PostgreSQL, PG Development]
 ---
-
 When GIN indexes are used to search with very long keyword lists, performance degrades significantly. This article explains why GIN index keyword search has O(n^2) time complexity.
 
 Here is the detail of why that query have O(N^2) inside GIN implementation.
-
-----------
 
 ## Details
 
@@ -100,7 +97,7 @@ opckeytype   | 2283
 
 Find four operator corresponding to operator family `array_ops`
 
-```
+```text
 postgres=# select * from pg_amop where amopfamily =2745;
 -[ RECORD 1 ]--+-----
 amopfamily     | 2745

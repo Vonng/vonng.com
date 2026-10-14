@@ -6,7 +6,6 @@ summary: >
   Use Distinct On extension clause to quickly find records with maximum/minimum values within groups
 tags: [PostgreSQL, PG Development]
 ---
-
 Distinct On is a unique syntax provided by PostgreSQL that can efficiently solve typical query problems, for example, quickly finding records with maximum/minimum values within groups.
 
 ## Introduction
@@ -35,7 +34,7 @@ FROM generate_series('2019-01-01'::TIMESTAMP, '2019-05-01'::TIMESTAMP, '1h'::INT
 
 Here we can create some random data:
 
-```
+```text
 5	2019-01-01 00:00:00.000000
 0	2019-01-01 01:00:00.000000
 9	2019-01-01 02:00:00.000000

@@ -6,10 +6,7 @@ summary: >
   PostgreSQL并不是一个简单的关系型数据库，而是一个数据管理的抽象框架，具有吞噬整个数据库世界的力量。"一切皆用Postgres"已经成为主流视野的最佳实践。
 tags: [PostgreSQL, PG生态, 扩展]
 ---
-
 PostgreSQL 并不是一个简单的关系型数据库，而是一个数据管理的抽象框架，具有吞噬整个数据库世界的力量。而这也是正在发生的事情 —— “一切皆用 Postgres” 已经不再是少数精英团队的前沿探索，而是成为了一种进入主流视野的最佳实践。
-
----
 
 ## OLAP 领域迎来踢馆者
 
@@ -30,8 +27,6 @@ PostgreSQL 并不是一个简单的关系型数据库，而是一个数据管理
 而 **DuckDB** 则专注于 OLAP，将分析性能这件事做到了极致（**x3.2**） —— 略过第一名 Umbra 这种学术研究型闭源数据库，DuckDB 也许是 OLAP 实战性能最快的数据库了。它并不是 PG 的扩展插件，但它是一个嵌入式文件数据库，而 [**DuckDB FDW**](https://github.com/alitrack/duckdb_fdw) 以及 [**pg_quack**](https://github.com/hydradatabase/pg_quack) 这样的 PG 生态项目，能让 PostgreSQL 充分利用 DuckDB 带来的完整分析性能红利！
 
 ParadeDB 与 DuckDB 的出现让 PostgreSQL 的分析性能来到了 OLAP 的第一梯队与金字塔尖，弥补了 PostgreSQL 在 OLAP 性能这最后一块关键短板。
-
----
 
 ## 分久必合的数据库领域
 
@@ -57,8 +52,6 @@ ParadeDB 与 DuckDB 的出现让 PostgreSQL 的分析性能来到了 OLAP 的第
 
 基本工作假设的变化，将重新推动数据库世界从百花齐放的“合久必分”阶段，走向“分久必合”的阶段，从大爆发到大灭绝，大浪淘沙中，新的大一统超融合数据库将会出现，重新统一 OLTP 与 OLAP。而承担重新整合数据库领域这一使命的会是谁？
 
----
-
 ## 吞食天地的 PostgreSQL
 
 数据库领域有许多“细分领域”：时序数据库，地理空间数据库，文档数据库，搜索数据库，图数据库，向量数据库，消息队列，对象数据库。而 PostgreSQL 在任何一个领域都不会缺席。
@@ -67,7 +60,7 @@ ParadeDB 与 DuckDB 的出现让 PostgreSQL 的分析性能来到了 OLAP 的第
 
 同样的事情已经发生过很多次，而现在，我们将在拆分最早，地盘最大的一个子领域 OLAP 分析中再次见证这一点。但 PostgreSQL 要替代的可不仅仅是 OLAP 数仓，它的野望是整个数据库世界！
 
-[![ecosystem.jpg](ecosystem.jpg)](https://pigsty.cc/docs/reference/extension/)
+[![ecosystem.jpg](ecosystem.jpg)](https://pigsty.cc/docs/pgsql/ext/)
 
 然 PostgreSQL 有何德何能，可当此大任？诚然 PostgreSQL 先进，但 Oracle 也先进；PostgreSQL 开源，但 MySQL 也开源。PostgreSQL **先进且开源**，这是它与 Oracle / MySQL 竞争的底气，但要说其独一无二的特点，那还得是它的 **极致可扩展性，与繁荣的扩展生态**！
 
@@ -76,8 +69,6 @@ ParadeDB 与 DuckDB 的出现让 PostgreSQL 的分析性能来到了 OLAP 的第
 > TimescaleDB 2022 社区调研：用户[选择 PostgreSQL 的原因](/pg/pg-is-best/)：开源，先进，**扩展**。
 
 PostgreSQL 并不是一个简单的关系型数据库，而是一个数据管理的抽象框架，**具有囊括一切，吞噬整个数据库世界的力量**。而它的核心竞争力（除了开源与先进）来自 **可扩展性**，即基础设施的 **可复用性** 与扩展插件的 **可组合性**。
-
----
 
 ### 极致可扩展性的魔法
 
@@ -95,19 +86,13 @@ PostgreSQL 允许用户开发功能模块，复用数据库公共基础设施，
 
 > Pigsty 中提供了 [**255**](https://pgext.cloud/zh/list) 个可用扩展插件，在生态中还有 1000+ 扩展
 
----
-
 可扩展性带来的另一点巨大优势是扩展的 **可组合性**，让不同扩展相互合作，产生出 1+1 >> 2 的协同效应。例如，TimescaleDB 可以与 PostGIS 组合使用，提供时空数据支持；再比如，提供全文检索能力的 BM25 扩展可以和提供语义模糊检索的 PGVector 扩展组合使用，提供混合检索能力。
 
 再比如，**分布式** 扩展 Citus 可以将单机主从数据库集群，原地升级改造为透明水平分片的分布式数据库集群。而这个能力是可以与其他功能正交组合的，因此，PostGIS 可以成为分布式地理数据库，PGVector 可以成为分布式向量数据库，ParadeDB 可以成为分布式全文搜索数据库，诸如此类。
 
----
-
 更强大的地方在于，扩展插件是 **独立演进** 的，不需要繁琐的主干合并，联调协作。因此可以 Scale  —— PG 的可扩展性允许无数个团队并行探索数据库前研发展方向，而扩展全部都是的可选的，不会影响主干核心能力的稳定性。那些非常强大成熟的特性，则有机会以稳定的形态进入主干中。
 
 通过极致可扩展性的魔法，PostgreSQL 做到了 **守正出奇，实现了主干极致稳定性与功能敏捷性的统一。** 扎实的基本盘配上惊人的演进速度，让它成为了数据库世界中的一个异数，改变了数据库世界的游戏规则。
-
----
 
 ## 改变游戏规则的玩家
 
@@ -131,8 +116,6 @@ PostgreSQL 允许用户开发功能模块，复用数据库公共基础设施，
 
 正如《[**技术极简主义：一切皆用 Postgres**](/pg/just-use-pg/) 》所言：简化技术栈、减少组件、加快开发速度、降低风险并提供更多功能特性的方法之一就是 **“一切皆用 Postgres”**。Postgres 能够取代许多后端技术，包括 MySQL，Kafka、RabbitMQ、ElasticSearch，Mongo 和 Redis，至少到数百万用户时都毫无问题。**一切皆用 Postgres**，已经不再是少数精英团队的前沿探索，而是成为了一种进入主流视野的最佳实践。
 
----
-
 ## 还有什么可以做的？
 
 我们已经不难预见到数据库领域的终局。但我们又能做什么，又应该做什么呢？
@@ -147,15 +130,13 @@ PostgreSQL 对于绝大多数场景都已经是一个足够完美的数据库内
 
 ![players](https://pigsty.io/img/pigsty/players.png)
 
----
-
 PostgreSQL 生态中的一个困境就是，许多扩展插件，生态工具都是独立演进，各自为战的，没有一个整合者能将他们凝聚起来形成合力。例如，提供分析的 Hydra 会打一个包一个 Docker 镜像，PostgresML 也会打自己的包和镜像，各家只发行加装了自己扩展的 Postgres 镜像。而这些朴素的镜像与包也距离 RDS 这样完整的数据库服务相距甚远。
 
 即使是类似于 AWS RDS 这样的服务提供商与生态整合者，在诸多扩展面前也依然力有所不逮，只能提供其中的少数。更多的强力扩展出于各种原因（AGPLv3 协议，多租户租赁带来的安全挑战）而无法使用。从而难以发挥 PostgreSQL 生态扩展的协同增幅作用。
 
 > 这里列出了一些重要扩展，对比基于最新的 PostgreSQL 16 主干版本进行，截止至 2024-02-28
 >
-> | **扩展类目** | [**Pigsty RDS**](https://pigsty.cc/docs/reference/extension) / PGDG 官方仓库                      | [**阿里云 RDS**](https://help.aliyun.com/zh/rds/apsaradb-rds-for-postgresql/extensions-supported-by-apsaradb-rds-for-postgresql) | [**AWS RDS PG**](https://docs.aws.amazon.com/AmazonRDS/latest/PostgreSQLReleaseNotes/postgresql-extensions.html) |
+> | **扩展类目** | [**Pigsty RDS**](https://pigsty.cc/docs/pgsql/ext/) / PGDG 官方仓库                      | [**阿里云 RDS**](https://help.aliyun.com/zh/rds/apsaradb-rds-for-postgresql/extensions-supported-by-apsaradb-rds-for-postgresql) | [**AWS RDS PG**](https://docs.aws.amazon.com/AmazonRDS/latest/PostgreSQLReleaseNotes/postgresql-extensions.html) |
 > |----------|---------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------:|
 > | 加装扩展     | <i class="fas fa-circle-check text-success"></i> 自由加装                           |                                      <i class="fas fa-circle-xmark text-danger"></i> 不允许                                      |                               <i class="fas fa-circle-xmark text-danger"></i> 不允许                                |
 > | 地理空间     | <i class="fas fa-circle-check text-success"></i> PostGIS 3.4.2                  |                          <i class="fas fa-circle-check text-success"></i> PostGIS 3.3.4 / Ganos 6.1                           |                          <i class="fas fa-circle-check text-success"></i> PostGIS 3.4.1                          |
@@ -181,8 +162,6 @@ PostgreSQL 生态中的一个困境就是，许多扩展插件，生态工具都
 扩展是 PostgreSQL 的灵魂，无法自由使用扩展的 Postgres 就像做菜不放盐。只能和 MySQL 放在同一个 RDS 的框子里同台，龙游浅水，虎落平阳。
 
 而这正是我们想要解决的首要问题之一。
-
----
 
 ## 知行合一的实践：Pigsty
 
@@ -229,15 +208,13 @@ Pigsty 六点价值主张的首字母合起来，则为 Pigsty 提供了另外�
 - [**FerretDB**](https://github.com/Vonng/pigsty/tree/master/app/ferretdb)：基于 PostgreSQL 的开源 MongoDB 替代，兼容 MongoDB API / 驱动协议。
 - [**PostgresML**](https://github.com/postgresml/postgresml)：使用 SQL 完成经典机器学习算法，调用、部署、训练 AI 模型。
 
-> Pigsty 支持的 180+ [**扩展列表**](https://pigsty.cc/docs/reference/extension/)
+> Pigsty 支持的 180+ [**扩展列表**](https://pigsty.cc/docs/pgsql/ext/)
 
 ![desc](https://pigsty.io/img/pigsty/desc.png)
 
 开发者朋友们，你们的选择会塑造数据库世界的未来。希望我的这些工作，可以帮助你们更好的用好这世界上最先进的开源数据库内核 —— PostgreSQL。
 
 > [Medium 英文版](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4) | [GitHub 仓库：Pigsty](https://github.com/Vonng/pigsty)
-
----
 
 ## 参考阅读
 

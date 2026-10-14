@@ -6,11 +6,7 @@ summary: >
   介绍 PostgreSQL 扩展生态，并讨论其交付问题 —— 一个共享的交付层，如何同时让用户、扩展作者、厂商和 PostgreSQL 内核开发者受益。
 tags: [PostgreSQL, PG生态, 扩展]
 ---
-
-
 > 在线幻灯片：[人人都能用上的 PostgreSQL 扩展](https://vonng.com/work/extensions-for-everyone/index.html)
-
---------
 
 ## 第一部分：引言
 
@@ -83,8 +79,6 @@ tags: [PostgreSQL, PG生态, 扩展]
 所以这件事本质上是一个共享交付层。它不只是为了方便，也提供了可见性。在谈交付之前，我们先看一下生态本身。我们需要先理解，我们到底要交付什么。
 
 [![04. 谁会受益？](04.webp)](https://vonng.com/work/extensions-for-everyone/04-who-benefits.html)
-
---------
 
 ## 第二部分：生态全景
 
@@ -159,8 +153,6 @@ PostgreSQL 到底有多少扩展？社区里有一个很有名的、由大家共
 现在，我们从「存在什么」转向「什么真的可以被交付」。
 
 [![09. 维度分析](09.webp)](https://vonng.com/work/extensions-for-everyone/09-dimension-analysis.html)
-
---------
 
 ## 第三部分：交付层
 
@@ -289,8 +281,6 @@ Christoph 和 Devrim 维护的 PGDG YUM 与 APT 仓库已经完成了基础工�
 这就是交付层：目录、仓库、CLI，以及它们背后的构建矩阵。纸面上看起来很清晰。但在实践中，矩阵才是真正困难的地方。
 
 [![20. CLI：PIG](20.webp)](https://vonng.com/work/extensions-for-everyone/20-the-cli-pig.html)
-
---------
 
 ## 第四部分：野外维护
 

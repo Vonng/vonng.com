@@ -6,15 +6,11 @@ summary: >
   用性能数据说话，为什么PostgreSQL是世界上最先进的开源关系型数据库。MySQL和PgSQL性能谁好？分布式数据库到底怎么样？
 tags: [PostgreSQL, PG生态, 性能]
 ---
-
-
 上回，我们通过分析 StackOverflow 的用户调研数据，说明了《[为什么PostgreSQL是最成功的数据库](/pg/pg-is-no1/)》。
 
 而这一次我们将用性能数据来说话，聊聊最成功的 PostgreSQL 到底有多强，帮助大家做到“**心中有数**”。
 
-![](pg-performence-1.jpg)
-
-------
+![PostgreSQL 到底有多强？（图 1）](pg-performence-1.jpg)
 
 ## 太长不看
 
@@ -32,8 +28,6 @@ tags: [PostgreSQL, PG生态, 性能]
   c5d.metal 用1年的价格，可以把服务器买下来托管用5年。对应规格云数据库用1年的价格，可以供你买同样的EC2用20年
 
 详细测试过程与原始数据放置于：[github.com/Vonng/pgtpc](https://github.com/Vonng/pgtpc)
-
-------
 
 ## PGBENCH
 
@@ -94,8 +88,6 @@ PGBENCH是 PostgreSQL 自带的压测工具，默认使用类 TPC-B 的查询，
 但 RDS for PostgreSQL 则完全是另一个故事了，如果您想使用类似规格的云数据库，最接近的规格是 db.m5.24xlarge，96C，384G，配置 3.6T / 80000 IOPS 的 io1存储（c5d.metal 3.6T NVME SSD 8K RW IOPS 大约95K左右，普通 io1 存储最高 IOPS 为 80K），则每月成本为 24万¥，每年成本为286,7630¥ ，**是同规格 EC2 自建的近 20 倍**。
 
 > AWS价格计算器：[https://calculator.amazonaws.cn/](https://calculator.amazonaws.cn/)
-
-------
 
 ## SYSBENCH
 
@@ -175,8 +167,6 @@ MySQL 并没有提供一个官方的 sysbench 测试结果，只是在官网上�
 
 通常来说，分布式数据库的核心利弊权衡是质量换规模，但让人没想到的是牺牲掉的不仅仅是功能与稳定性，还有如此可观的性能。高德纳曰：“过早优化是万恶之源”，为了不需要的规模（万亿级+，TP百TB+）牺牲如此大的性能（以及功能与稳定性）毫无疑问是过早优化的一种形式，而能有多少业务场景会有 Google 量级的数据非要分布式数据库不可，仍然是一个问号。
 
------------------
-
 ## TPC-H分析性能
 
 TP不行，AP来凑。尽管分布式数据库在 TP 领域如此拉胯，但数据分析 AP 才是分布式数据库的基本盘，因此很多分布式数据库喜欢炒作 HTAP 的概念。而衡量 AP 系统的能力，我们会用到 TPC-H 测试。
@@ -238,8 +228,6 @@ TPC-H 是一个模拟数仓，包含8张数据表，与22条复杂分析类SQL�
 
 > StackOverflow 近六年数据库开发者调研结果
 
------------------
-
 ## 参考
 
 [1]  [Vonng: PGTPC](https://github.com/Vonng/pgtpc)
@@ -256,7 +244,7 @@ TPC-H 是一个模拟数仓，包含8张数据表，与22条复杂分析类SQL�
 
 [7]  [OceanBase 3.1 Sysbench 性能测试报告](https://www.oceanbase.com/docs/community/observer-cn/V3.1.4/10000000000450311)
 
-[8]  [Cockroach 22.15 Benchmarking Overview](https://www.cockroachlabs.com/docs/stable/performance.html)
+[8]  Cockroach 22.15 Benchmarking Overview（原链接失效）
 
 [9]  [Benchmark YSQL performance using sysbench (v2.15)](https://docs.yugabyte.com/preview/benchmark/sysbench-ysql/)
 

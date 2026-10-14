@@ -7,20 +7,15 @@ summary: >
   最近有业务要求通过PostgreSQL FDW去访问MongoDB，但是MongoDB FDW编译起来真是要人命啊。
 tags: [PostgreSQL, PG管理, 扩展]
 ---
-
 > 更新：最近MongoFDW已经由Cybertech接手维护，也许没有这么不堪了。
 
 最近有业务要求通过PostgreSQL FDW去访问MongoDB。开始我觉得这是个很轻松的任务。但接下来的事真是让人恶心的吐了。MongoDB FDW编译起来真是要人命：混乱的依赖，临时下载和Hotpatch，错误的编译参数，以及最过分的是错误的文档。总算，我在生产环境(Linux RHEL7u2)和开发环境(Mac OS X 10.11.5)都编译成功了。赶紧记录下来，省的下次蛋疼。
-
-----------
 
 ## 环境概述
 
 理论上编译这套东西，GCC版本至少为4.1。
 生产环境 (RHEL7.2 + PostgreSQL9.5.3 + GCC 4.8.5)
 本地环境 (Mac OS X 10.11.5 + PostgreSQL9.5.3 + clang-703.0.31)
-
-----------
 
 ## `mongo_fdw` 的依赖
 
@@ -30,13 +25,11 @@ tags: [PostgreSQL, PG管理, 扩展]
 
 * [json-c 0.12](https://github.com/json-c/json-c/tree/json-c-0.12 "json-c 0.12")
 * [libmongoc-1.3.1](https://github.com/mongodb/mongo-c-driver/tree/r1.3 "libmongoc-1.3.1")
-* [libbson-1.3.1](https://github.com/mongodb/libbson/tree/r1.3 "libbson-1.3.1")
+* [libbson-1.3.1](https://github.com/mongodb/libbson/tree/1.3.1 "libbson-1.3.1")
 
 总的来说，mongo_fdw是使用mongo提供的C驱动程序完成功能的。所以我们需要安装libbson与libmongoc。其中libmongoc就是MongoDB的C语言驱动库，它依赖于libbson。
 所以最后的安装顺序是：
 `libbson` &rarr; `libmongoc` &rarr; `json-c`&rarr; `mongo_fdw`
-
-----------
 
 ## 间接依赖
 
@@ -45,8 +38,6 @@ tags: [PostgreSQL, PG管理, 扩展]
 `m4-1.4.17` &rarr; `autoconf-2.69` &rarr; `automake-1.15` &rarr; `libtool-2.4.6` &rarr; `pkg-config-0.29.1`。
 
 总之，用yum也好，apt也好，homebrew也好，都是一行命令能搞定的事。 还有一个依赖是libmongoc的依赖：`openssl-devel`，不要忘记装。
-
-----------
 
 ### 安装 `libbson-1.3.1`
 
@@ -58,8 +49,6 @@ git checkout 1.3.1;
 make && sudo make install;
 make test;
 ```
-
-----------
 
 ### 安装 `libmongoc-1.3.1`
 
@@ -75,8 +64,6 @@ make && sudo make install;
 
 这里为什么要使用1.3.1的版本？这也是有讲究的。因为mongo_fdw中默认使用的是1.3.1的mongo-c-driver。但是它在文档里说只要1.0.0+就可以，其实是在放狗屁。mongo-c-driver与libbson版本是一一对应的。1.0.0版本的libbson脑子被驴踢了，使用了超出C99的特性，比如复数类型。要是用了默认版本就傻逼了。
 
-----------
-
 #### 安装 `json-c`
 
 首先，我们来解决json-c的问题
@@ -90,8 +77,6 @@ git checkout json-c-0.12
 - `./configure` 完了可不要急着Make，这个版本的json-c编译参数有问题。
 - 打开Makefile，找到 `CFLAGS`,在编译参数后面添加 `-fPIC`
 - 这样GCC会生成位置无关代码，不这样做的话mongo_fdw链接会报错。
-
-----------
 
 ### 安装 `mongo_fdw`
 
@@ -122,8 +107,6 @@ sudo ldconfig
 ```
 
 回到mongo_fdw根目录 `make`，不出意外，这个 `mongo_fdw.so` 就出来了。
-
-----------
 
 ### 试一试吧？
 

@@ -6,7 +6,6 @@ summary: >
   PostgreSQL 官方 APT 仓库正式加入对龙芯 loong64 架构的支持。从 2024 年温哥华的一次提问，到龙芯 3B6000 构建主机落地，两年后，龙芯正式进入 PGDG 的持续构建、签名发布与安全更新链路。
 tags: [PostgreSQL, PG生态, 硬件]
 ---
-
 今天下午几个群里朋友 @ 我：PostgreSQL 官方仓库正式上架龙芯 CPU 支持。
 
 ![群友转发龙架构软件包上线 PGDG APT 源的消息](loong64-community-announcement.webp)
@@ -24,8 +23,6 @@ tags: [PostgreSQL, PG生态, 硬件]
 新闻本身，几句话就说完了。但这件事为什么值得专门写一篇文章？
 
 因为它确实不容易——而且难的地方，跟大多数人想的不一样。
-
----
 
 ## 卡住的，不是 PostgreSQL 内核
 
@@ -56,8 +53,6 @@ sudo apt install postgresql-18
 
 这两条命令本身平平无奇。真正有意义的是：从今天起，龙芯用户也可以走这条全世界通用的标准路径了。
 
----
-
 ## 2024：一条门缝
 
 2024 年 5 月，我[第一次去温哥华参加 PGConf.Dev](/pg/pgcondev-2024/)——PG 开发者大会改组之后的第一届。
@@ -79,8 +74,6 @@ sudo apt install postgresql-18
 但 Debian 里的 PG 包和 PGDG 还是有区别的。真正管着 apt.postgresql.org 的人，是 Christoph Berg。很遗憾，那一年他没来。所以我从温哥华带回来的结论很清楚：内核没问题；YUM 没戏；APT 有可能——但一要等 Debian 的地基成熟，二要找到 Christoph 本人。我把这一段原原本本写进了当年的参会记，算是埋了个伏笔。
 
 没想到这一埋，就是两年。
-
----
 
 ## 凭什么给你干活？
 
@@ -107,8 +100,6 @@ sudo apt install postgresql-18
 ![s390x 停止支持后出现的第一位报障用户](s390x-first-user-report.webp)
 
 一场活了 20 个月的实验，就此谢幕。所以 Christoph 前脚刚被 IBM 的大型机坑完。连 IBM 的 CPU 都是这个下场，凭什么相信一个中国国产 CPU 会不一样？
-
----
 
 ## 2026：把人和机器对上
 
@@ -144,8 +135,6 @@ sudo apt install postgresql-18
 
 最后，龙芯这边的朋友落实了一块 3B6000 主板，由 loongfans.cn 社区提供，径直寄到 Christoph 那里，成为 PGDG 的正式构建主机。从 5 月 22 日 PGConf.Dev，到 7 月 22 日官宣上线，整整两个月，这事儿闭环了。
 
----
-
 ## 从“能跑”，到“能维护”
 
 这件事到底改变了什么？
@@ -161,8 +150,6 @@ sudo apt install postgresql-18
 对在信创环境里干活的 DBA 来说，这意味着少掉一大堆毫无价值的手工劳动。对我自己来说，今后真有用户要在龙芯上跑 PostgreSQL、跑 Pigsty，最底下软件包这条路，已经铺通了。当然，这次打通的只是 APT 这半边。YUM 仓库还得等 EL 系操作系统真正支持龙芯，那是另一场更长的马拉松，急不来。先把这一半走通已经很好了。
 
 细数各路国产 CPU，除了走天然搭便车 x86、ARM 授权路线的，龙芯大概是第一个以“自主架构”的身份走出国门、拿到顶流开源基础软件原生支持的国产 CPU——先是[成为 Debian 官方支持架构](https://lwn.net/Articles/1051576/)，如今再成为 PostgreSQL 官方仓库支持的架构，这是实打实的从零到一。
-
----
 
 ## 在全球开源生态里发挥影响力
 

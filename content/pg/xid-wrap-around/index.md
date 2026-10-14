@@ -7,9 +7,6 @@ summary: >
   XID WrapAround也许是PostgreSQL特有的一种故障。
 tags: [PostgreSQL, PG管理, 故障复盘]
 ---
-
-
-
 遇到一次磁盘坏块导致的事务回卷故障：
 
 * 主库（PostgreSQL 9.3）磁盘坏块导致几张表上的VACUUM FREEZE执行失败。
@@ -18,14 +15,10 @@ tags: [PostgreSQL, PG管理, 故障复盘]
 * 提升从库后，需要紧急VACUUM FREEZE才能继续服务，进一步延长了故障时间。
 * 主库进入保护状态后提交日志（clog）没有及时复制到从库，从库产生存疑事务拒绝服务。
 
-----------------
-
 ## 摘要
 
 这是一个即将下线老旧库，疏于管理。坏块征兆在一周前就已经出现，没有及时跟进年龄。
 通常AutoVacuum会保证很难出现这种故障，但一旦出现往往意味着祸不单行…让救火更加困难了……
-
-----------------
 
 ## 背景
 
@@ -88,7 +81,7 @@ WHERE c.relkind IN ('r', 'm') order by 2 desc;
 SELECT *, age(datfrozenxid) FROM pg_database; 
 ```
 
-#### 清理
+### 清理
 
 执行 `VACUUM FREEZE` 可以冻结老旧事务的ID
 

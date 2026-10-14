@@ -5,7 +5,6 @@ authors: [vonng]
 summary: "Similar to JDBC, Go also has a standard database access interface. This article details how to use database/sql in Go and important considerations."
 tags: [PostgreSQL, Software Engineering]
 ---
-
 The conventional way Go uses SQL and SQL-like databases is through the standard library [database/sql](http://golang.org/pkg/database/sql/). This is a generic abstraction for relational databases that provides a standard, lightweight, row-oriented interface. However, the documentation for the `database/sql` package only explains what it does, without mentioning how to use it. Quick guides are far more useful than piling up facts. This article explains how to use `database/sql` and its considerations.
 
 ## 1. High-Level Abstraction
@@ -238,7 +237,7 @@ Preparing before querying is idiomatic in Go; query statements used multiple tim
 
 PostgreSQL uses `$N` as placeholders, where `N` is an integer starting from 1 and incrementing, representing parameter position, convenient for parameter reuse. MySQL uses `?` as placeholders, SQLite supports both placeholders, while Oracle uses the `:param1` form.
 
-```
+```text
 MySQL               PostgreSQL            Oracle
 =====               ==========            ======
 WHERE col = ?       WHERE col = $1        WHERE col = :col
@@ -380,7 +379,7 @@ But there are always situations where users don't know in advance how many colum
 
 In such cases, use `rows.Columns()` to get the column name list. When column types are unknown, use `sql.RawBytes` as the receiving variable type. Parse the results yourself after getting them.
 
-```
+```text
 cols, err := rows.Columns()
 if err != nil {
 	// handle this....

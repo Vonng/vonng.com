@@ -7,8 +7,7 @@ summary: |
   Database users are developers, but what about developers' preferences, likes, and choices? Looking at StackOverflow survey results over the past six years, it's clear that in 2022, PostgreSQL has won all three categories, becoming literally the "most successful database"
 tags: [PostgreSQL, PG Ecosystem]
 ---
-
-![](pg-is-best-1.jpg)
+![Why PostgreSQL is the Most Successful Database? (figure 1)](pg-is-best-1.jpg)
 
 When we say a database is "successful," what exactly do we mean? Is it about features, performance, usability, or cost, ecosystem, complexity? There are many metrics, but ultimately users decide.
 
@@ -20,11 +19,9 @@ Looking at these six years of survey results, it's clear that in 2022, PostgreSQ
 * PostgreSQL became the **most loved** database among developers! (Loved)
 * PostgreSQL became the **most wanted** database among developers! (Wanted)
 
-![](pg-is-best-2.png)
+![Why PostgreSQL is the Most Successful Database? (figure 2)](pg-is-best-2.png)
 
 Popularity reflects current momentum, demand indicates future dynamics, and love represents long-term potential. Time and momentum are on PostgreSQL's side. Let's look at more specific data and results.
-
----------------
 
 ## Most Popular
 
@@ -37,7 +34,7 @@ In recent years, MySQL has dominated the database popularity charts, fitting its
 Among **professional developers**, PostgreSQL surpassed MySQL for the first time with 46.5% usage, while MySQL dropped to second place with 45.7%.
 As the most versatile **open source** relational databases, PGSQL and MySQL in first and second place have pulled far ahead of other databases.
 
-![](pg-is-best-3.png)
+![Why PostgreSQL is the Most Successful Database? — Most Popular (figure 3)](pg-is-best-3.png)
 
 > TOP 9 Database Popularity Evolution (2017-2022)
 
@@ -45,13 +42,11 @@ The popularity difference between PGSQL and MySQL isn't large. Notably, among **
 
 But from the chart below, PostgreSQL shows significant growth momentum, while other databases, particularly MySQL, SQL Server, and Oracle, have seen declining usage in recent years. Over time, PostgreSQL's lead will further expand.
 
-![](pg-is-best-4.png)
+![Why PostgreSQL is the Most Successful Database? — Most Popular (figure 4)](pg-is-best-4.png)
 
 > Popularity Comparison of Four Major Relational Databases
 
 **Popularity** reflects current database scale momentum, while **love** reflects future database growth potential.
-
----------------
 
 ## Most Loved
 
@@ -64,7 +59,7 @@ Redis is a simple and easy-to-use data structure cache server, often used with r
 
 In contrast, MySQL and Oracle performed poorly. People who like and dislike MySQL are roughly equal; while only 35% of users like Oracle, meaning nearly 2/3 of developers dislike Oracle.
 
-![](pg-is-best-5.png)
+![Why PostgreSQL is the Most Successful Database? — Most Loved (figure 5)](pg-is-best-5.png)
 
 > TOP 9 Database Love Evolution (2017-2022)
 
@@ -80,8 +75,6 @@ Of course, Oracle is only the third worst on this list, the most unpopular is IB
 Of course, not all potential can be converted into real momentum.
 User love doesn't necessarily translate into action, which is what the third survey seeks to answer.
 
----------------
-
 ## Most Wanted
 
 > PostgreSQL — The database developers most want to use! (Wanted)
@@ -95,15 +88,13 @@ In this year's survey, PostgreSQL unceremoniously pushed aside MongoDB to claim 
 A high 19% of respondents indicated they want to use PostgreSQL environment for development next year.
 Following closely are MongoDB (17%) and Redis (14%), these three databases' demand significantly pulls ahead of others by a tier.
 
-![](pg-is-best-6.png)
+![Why PostgreSQL is the Most Successful Database? — Most Wanted (figure 6)](pg-is-best-6.png)
 
 Previously, MongoDB consistently topped the "most wanted" database list, but recently began showing signs of losing steam.
 There are multiple reasons: for example, MongoDB itself faces competition from PostgreSQL.
 PostgreSQL includes complete JSON features and can be used directly as a document database, with projects like FerretDB (formerly MangoDB) providing MongoDB API directly on PG.
 
 MongoDB and Redis are both main forces of the NoSQL movement. But unlike MongoDB, Redis demand continues to grow. PostgreSQL and Redis, as leaders of SQL and NoSQL respectively, maintain strong demand and rapid growth with bright futures.
-
----------------
 
 ## Why?
 
@@ -113,15 +104,13 @@ But we want to know: why is PostgreSQL so successful?
 
 Actually, the secret is hidden in its slogan: "The world's **most advanced** **open source** **relational database**."
 
----------------
-
 ## Relational Database
 
 Relational databases are so ubiquitous and important that all other database categories combined - key-value, document, search engine, time-series, graph, vector - might not match even a fraction of their presence. When people talk about databases, unless specifically noted, they implicitly mean "relational databases." No other database category dares call itself "mainstream" in its presence.
 
 Take [DB-Engines](https://db-engines.com/en/ranking_trend) for example. DB-Engines ranking criteria include search engine results when searching system names, Google trends, Stack Overflow discussions, Indeed job mentions, profile counts in professional networks like LinkedIn, mentions in social networks like Twitter, etc., understood as database "comprehensive popularity."
 
-![](pg-is-best-7.png)
+![Why PostgreSQL is the Most Successful Database? — Relational Database (figure 7)](pg-is-best-7.png)
 
 > Database Popularity Trends: https://db-engines.com/en/ranking_trend
 
@@ -130,7 +119,7 @@ We only need to focus on these four core **relational databases**: Oracle, MySQL
 
 Relational databases occupy highly overlapping ecological niches, their relationship can be viewed as zero-sum game. Setting aside Microsoft's relatively independent commercial database SQL Server, the relational database world stages a three-kingdom drama.
 
-![](pg-is-best-8.png)
+![Why PostgreSQL is the Most Successful Database? — Relational Database (figure 8)](pg-is-best-8.png)
 
 > Oracle has talent but no virtue, MySQL has shallow talent and thin virtue, only PostgreSQL has both talent and virtue.
 
@@ -142,8 +131,6 @@ As an established commercial database, Oracle's **talent** is unquestionable, bu
 
 PostgreSQL's secret to virtuous victory is being **advanced** and **open source**!
 
----------------
-
 ## The Virtue of Open-Source
 
 > **PG's "virtue" lies in open source**. A grandmaster-level open source project, the great achievement of global developer collaboration.
@@ -154,13 +141,13 @@ What is "virtue"? Conforming to the "way" is virtue. And this "way" is **open so
 
 PostgreSQL is a historically venerable grandmaster-level open source project, exemplifying global developer collaboration.
 
-![](pg-is-best-9.jpg)
+![Why PostgreSQL is the Most Successful Database? — The Virtue of Open-Source (figure 9)](pg-is-best-9.jpg)
 
 > Prosperous ecosystem, rich extensions, branching widely, descendants everywhere
 
 Long ago, developing software/information services required very expensive commercial database software like Oracle and SQL Server: software licensing alone could cost six or seven figures, plus similar hardware and service subscription costs. Oracle charges over 100,000 yuan per CPU core annually - even wealthy Alibaba couldn't afford it and had to de-IOE. The rise of open source databases represented by PostgreSQL/MySQL gave users a new choice: free software. "Free" open source databases allow us to use database software freely, profoundly impacting industry development: from nearly 10,000¥/core·month commercial databases to 20¥/core·month pure hardware costs. Databases entered ordinary enterprises, making free information services possible.
 
-![](pg-is-best-10.jpg)
+![Why PostgreSQL is the Most Successful Database? — The Virtue of Open-Source (figure 10)](pg-is-best-10.jpg)
 
 Open source has great **virtue**. Internet history is open source software history. A core reason IT industry has today's prosperity and people enjoy so many free information services is open source software. Open source is a truly successful **Communism** of developers aimed at software freedom: software, IT's core means of production, becomes publicly owned by global developers, distributed by need. Developers contribute according to ability, everyone for all, all for everyone.
 
@@ -168,15 +155,13 @@ When an open source programmer works, their labor may embody the crystallized wi
 
 Through open source, all community developers form synergy, greatly reducing wheel-reinventing waste. This advances the entire industry's technical level at an incredible pace. Open source momentum snowballs - today it's unstoppable. Basically except for special scenarios and path dependencies, closed-door self-reliance in software development has become a joke.
 
-![](pg-is-best-11.jpg)
+![Why PostgreSQL is the Most Successful Database? — The Virtue of Open-Source (figure 11)](pg-is-best-11.jpg)
 
 The more foundational the software, the greater open source's advantage. Open source is PostgreSQL's greatest confidence against Oracle.
 
 Oracle is advanced, but PostgreSQL isn't far behind. PostgreSQL has the best Oracle compatibility among open source databases, natively supporting 85% of Oracle's features, with professional distributions achieving 96% compatibility. But more importantly, Oracle is expensive while PG is open source and free. Overwhelming cost advantage gives PG huge ecological niche foundation: it doesn't need to surpass Oracle in feature advancement to succeed - cheap 90% correctness is enough to crush Oracle.
 
 PostgreSQL can be viewed as an open source "Oracle," the only database truly threatening Oracle. As the "de-O" flag bearer, PG has many descendants - 36% of "domestic databases" are directly "developed" based on PG, supporting many **autonomous and controllable** database companies, truly meritorious. More importantly, PostgreSQL community doesn't oppose such behavior - BSD license allows it. This open-mindedness is incomparable to Oracle-owned, GPL-licensed MySQL.
-
----------------
 
 ## The Talent of Being Advanced
 
@@ -188,13 +173,13 @@ PostgreSQL can be viewed as an open source "Oracle," the only database truly thr
 
 PostgreSQL is the most cost-effective choice among relational databases: it not only handles traditional CRUD OLTP business, but **data analysis** is its forte. Various special features provide entry into multiple industries: PostGIS-based geospatial data processing and analysis, Timescale-based time-series financial IoT data processing and analysis, stored procedure trigger-based stream processing, inverted index full-text search engines, FDW connecting and unifying various external data sources. PG is truly a versatile full-stack database, capable of much richer functionality than pure OLTP databases.
 
-![](pg-is-best-12.png)
+![Why PostgreSQL is the Most Successful Database? — The Talent of Being Advanced (figure 12)](pg-is-best-12.png)
 
 At considerable scale, PostgreSQL can independently play multiple roles, one component serving as many. **Single database component selection can greatly reduce project complexity, meaning significant cost savings. It turns what requires ten people into what one person can handle.** Not that PG should beat ten others and overturn all other databases' rice bowls: professional components' strength in professional fields is unquestionable. But remember, **designing for unnecessary scale is wasted effort**, a form of **premature optimization**. If one technology can meet all your needs, using it is the best choice, not trying to reimplement with multiple components.
 
 Take Tantan for example - at 2.5M TPS and 200TB data scale, **single PostgreSQL selection** still stably and reliably supports the business. At considerable scale it achieves versatility - besides its main OLTP job, PG also served as cache, OLAP, batch processing, even message queue for quite some time. Of course, even immortal turtles have their end. Eventually these part-time functions must be **split off** to specialized components, but that's only at nearly ten million DAU.
 
-![](pg-is-best-13.jpg)
+![Why PostgreSQL is the Most Successful Database? — The Talent of Being Advanced (figure 13)](pg-is-best-13.jpg)
 
 ### vs MySQL
 
@@ -212,8 +197,6 @@ Advanced causes reflect as popular effects, popular things become outdated due t
 
 The trend is set, the outcome decided. As they say: When fortune comes, heaven and earth assist; when luck goes, heroes cannot help themselves. Advanced and open source are PostgreSQL's two greatest weapons. Oracle is advanced, MySQL is open source, PostgreSQL is both advanced and open source. With time, place, and people aligned, how can great achievements not be accomplished?
 
----------------
-
 ## Looking Forward
 
 > Software eats the world, open source eats software, and cloud eats open source.
@@ -223,7 +206,7 @@ But the real threat to PostgreSQL open source community is no longer other datab
 
 Initially, developing software/information services required expensive **commercial software** (Oracle, SQL Server, Unix). With the rise of **open source** software like Linux/PostgreSQL, users had new choices. Open source software is indeed free, but using it well has high barriers - users must hire open source software experts to help them use it properly.
 
-![](pg-is-best-15.jpg)
+![Why PostgreSQL is the Most Successful Database? — Looking Forward (figure 15)](pg-is-best-15.jpg)
 
 > When databases scale up, hiring open source DBAs for self-building is always cost-effective, but good DBAs are too scarce.
 
@@ -237,7 +220,7 @@ This shared outsourcing model concentrates open source software jobs at cloud ve
 
 "**In 2020, the enemy of computing freedom is cloud software**."
 
-This is the [manifesto](https://pg.vonng.com/#/post/goodbye-gpl) proposed by DDIA author Martin Kleppmann in his "local-first software" movement. Cloud software refers to software running on vendor servers, like: Google Docs, Trello, Slack, Figma, Notion. And the most core cloud software, **cloud databases**.
+This is the [manifesto](/db/goodbye-gpl/) proposed by DDIA author Martin Kleppmann in his "local-first software" movement. Cloud software refers to software running on vendor servers, like: Google Docs, Trello, Slack, Figma, Notion. And the most core cloud software, **cloud databases**.
 
 In the post-cloud era, how should open source communities respond to cloud software challenges? The Cloud Native movement provides the answer. This is a great movement to reclaim software freedom from public cloud, with databases at its core focus.
 
@@ -249,6 +232,6 @@ This is what we want to solve with **out-of-box open source PostgreSQL database 
 
 Pigsty comes with out-of-box RDS/PaaS/SaaS integration; an incomparable PG monitoring system and autopilot high-availability cluster architecture; one-click installation deployment, providing Database as Code easy experience; while matching or exceeding cloud database experience, data is autonomously controllable with 50%-90% cost reduction. We hope it can greatly lower PostgreSQL usage barriers, letting more users use **good databases** and **use databases well**.
 
-![](pg-is-best-17.png)
+![Why PostgreSQL is the Most Successful Database? — Looking Forward (figure 17)](pg-is-best-17.png)
 
 Of course, due to space limitations, cloud databases and the post-cloud era database future is a story for the next article.

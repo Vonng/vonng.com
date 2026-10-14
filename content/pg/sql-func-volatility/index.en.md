@@ -6,7 +6,6 @@ summary: >
   PostgreSQL functions have three volatility levels by default. Proper use can significantly improve performance.
 tags: [PostgreSQL, PG Development]
 ---
-
 PostgreSQL functions have three volatility levels by default. Proper use can significantly improve performance.
 
 ## Core Differences
@@ -47,7 +46,7 @@ $$ LANGUAGE PLPGSQL STABLE;
 
 When using the `STABLE` tag, it actually calls 10 times, but when using the `IMMUTABLE` tag, it's optimized to a single call.
 
-```
+```text
 vonng=# select return2() from generate_series(1,10);
 NOTICE:  INVOKED
 NOTICE:  INVOKED

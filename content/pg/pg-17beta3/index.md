@@ -6,18 +6,13 @@ summary: >
   PostgreSQL全球开发组发布了例行小版本更新，包括16.4、15.8、14.13、13.16， 12.20 以及 17 beta3，此外，PG 12 即将 EOL。
 tags: [PostgreSQL, PG管理]
 ---
-
 ## PostgreSQL 全球开发组发布了所有受支持 PG 大版本的更新，包括 16.4、15.8、14.13、13.16 和 12.20 版本，以及 PostgreSQL 17 的第三个 beta 测试版。此次发布修复了 1 个安全漏洞和过去几个月报告的 55 个 BUG。
 
 ## 欲了解更多变更详情，请查阅发布说明<sup>[1]</sup>。
 
----
-
 ## PostgreSQL 12 终止支持通知
 
 PostgreSQL 12 将于 2024 年 11 月 14 日停止发布修复补丁。如果您在生产环境中运行 PostgreSQL 12，我们建议您计划升级到更新的、受支持的 PostgreSQL 大版本。更多信息请参阅我们的版本政策<sup>[2]</sup>。
-
----
 
 ## 安全问题
 
@@ -30,8 +25,6 @@ CVSS v3.1 基础分值：8.8<sup>[4]</sup>
 能够创建和删除非临时对象的攻击者，在超级用户并发执行的 `pg_dump` 过程中有可能注入 SQL 代码，并由超级用执行。攻击涉及用视图或外部表替换序列或类似对象，这些对象将执行恶意代码。为防止此类攻击，引入了一个新的服务器参数 `restrict_nonsystem_relation_kind`，可以禁用非内置视图的展开以及访问外部表，并教授 pg_dump 在可用时设置它。请注意，只有当 pg_dump 和导出数据的 Server 版本都足够新，才能阻止此攻击。
 
 PostgreSQL 项目感谢 Noah Misch 报告此问题。
-
----
 
 ## 错误修复和改进
 
@@ -74,8 +67,6 @@ PostgreSQL 项目感谢 Noah Misch 报告此问题。
 
 更多详情，请查阅发布说明<sup>[20]</sup>。
 
----
-
 ## 关于 PostgreSQL 17 测试版的说明
 
 此版本标志着 PostgreSQL 17 的第三个测试版本，并使社区更接近预计在第三季度末的正式发布。
@@ -86,13 +77,9 @@ PostgreSQL 项目感谢 Noah Misch 报告此问题。
 
 <https://www.postgresql.org/developer/beta/>
 
----
-
 ## 升级到 PostgreSQL 17 Beta 3
 
 要从 PostgreSQL 的早期版本升级到 PostgreSQL 17 Beta 3，您将需要使用类似于在 PostgreSQL 的主要版本之间升级的策略（例如`pg_upgrade`或`pg_dump` / `pg_restore`）。有关更多信息，请访问升级<sup>[22]</sup>文档部分。
-
----
 
 ## 自 Beta 2 以来的更改
 
@@ -110,8 +97,6 @@ PostgreSQL 17 Beta 3 的修复和变更包括：
 
 请参阅发布说明<sup>[23]</sup>以获取新功能和更改功能的完整列表，并查看 PostgreSQL 17 未决问题<sup>[24]</sup>以了解更多修复和变更详情。
 
----
-
 ## 测试错误和兼容性
 
 每个 PostgreSQL 版本的稳定性很大程度上取决于您，社区，通过您的工作负载和测试工具测试即将发布的版本，以便在正式发布 PostgreSQL 17 之前发现错误和回归。由于这是一个测试版，数据库行为、功能详情和 API 的细微更改仍然是可能的。您的反馈和测试将帮助确定新功能的最终调整，因此请在近期进行测试。用户测试的质量有助于确定我们何时可以进行最终发布。
@@ -119,8 +104,6 @@ PostgreSQL 17 Beta 3 的修复和变更包括：
 未决问题<sup>[25]</sup>的列表在 PostgreSQL wiki 中公开可见。您可以使用 PostgreSQL 网站上的此表格报告错误<sup>[26]</sup>：
 
 <https://www.postgresql.org/account/submitbug/>
-
----
 
 ### References
 
@@ -164,12 +147,8 @@ PostgreSQL 17 Beta 3 的修复和变更包括：
 - `[38]` <pgsql-www@lists.postgresql.org>
 - `[39]` 邮件列表： <https://www.postgresql.org/list/>
 
----
-
 ## 数据库老司机
 
 ### 欢迎微信搜索 pigsty-cc 加入 PGSQL 交流群
-
----
 
 发布版本：[微信公众号](https://mp.weixin.qq.com/s/kl498R4h65J13DgoyrlzdA)

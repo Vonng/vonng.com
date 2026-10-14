@@ -6,12 +6,9 @@ summary: >
   GIN索引如果使用很长的关键词列表进行搜索，会导致性能显著下降。本文解释了为什么GIN索引关键词搜索的时间复杂度为O(n²)。
 tags: [PostgreSQL, PG开发]
 ---
-
 GIN索引如果使用很长的关键词列表进行搜索，会导致性能显著下降。本文解释了为什么GIN索引关键词搜索的时间复杂度为O(n^2)
 
 Here is the detail of why that query have O(N^2) inside GIN implementation.
-
-----------
 
 ## Details
 
@@ -100,7 +97,7 @@ opckeytype   | 2283
 
 Find four operator corresponding to operator faimily `array_ops`
 
-```
+```text
 postgres=# select * from pg_amop where amopfamily =2745;
 -[ RECORD 1 ]--+-----
 amopfamily     | 2745

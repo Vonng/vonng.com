@@ -6,17 +6,13 @@ summary: >
   Understanding the golden monitoring metrics in PostgreSQL
 tags: [PostgreSQL, PG Admin, Monitoring]
 ---
-
-
-----------------
-
 ## Preface
 
 Playing with databases and playing with cars have something in common - they both require frequently checking the dashboard.
 
 What are you doing staring at the dashboard? Looking at metrics. Why look at metrics? You need to understand the current operating state to effectively apply control.
 
-![](img/blog/golden-metrics-car.jpeg)
+![Golden Monitoring Metrics: Errors, Latency, Throughput, Saturation — Preface (figure 1)](img/blog/golden-metrics-car.jpeg)
 
 Cars have many metrics: speed, tire pressure, torque, brake pad wear, various temperatures, and so on - all kinds of different ones.
 
@@ -31,13 +27,11 @@ Golden metrics are those few critical core data points that need constant attent
 
 Today let's talk about PostgreSQL's core metrics. What are the core metrics for databases?
 
-----------------
-
 ## Database Metrics
 
 Before discussing database core metrics, let's take a look at what metrics are available.
 
-```
+```text
 avg(count by (ins) ({__name__=~"pg.*"}))
 avg(count by (ins) ({__name__=~"node.*"}))
 ```
@@ -49,8 +43,6 @@ These metrics are all data treasures, and mining and visualization can extract t
 But for daily management, only a few core metrics are needed.
 
 With thousands of available metrics, which ones are the core metrics?
-
-----------------
 
 ## Core Metrics
 
@@ -74,8 +66,6 @@ In emergency situations: Errors are always the first priority golden metric.
 In normal situations: Application perspective golden metrics: QPS and RT
 
 In normal situations: DBA perspective golden metrics: DB saturation (water level)
-
-----------------
 
 ## Why These?
 

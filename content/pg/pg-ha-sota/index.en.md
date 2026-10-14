@@ -7,7 +7,6 @@ summary: >
   A deep dive into the SOTA approach for PostgreSQL HA. RTO/RPO breakdown, from theory to production. If you're still wrestling with PG HA, this might save you years.
 tags: [PostgreSQL, PG Admin]
 ---
-
 Seven or eight years ago, I was managing a hundred large-scale PostgreSQL clusters across 200+ beefy bare-metal servers, and I started evaluating HA solutions. I went through every option with a name: Patroni, Corosync + Pacemaker, repmgr, Stolon, PAF, pgpool-II...
 
 I picked Patroni. The results were rock-solid: dozens of real hardware failures over the years, RTO consistently in the 20-30 second range. The best part? When alerts fired at 3 AM, I didn't have to jump out of bed — traffic switched automatically, and I could investigate at leisure the next morning.
@@ -15,8 +14,6 @@ I picked Patroni. The results were rock-solid: dozens of real hardware failures 
 In hindsight, this choice saved me seven years of detours. Today, whether you look at traditional Linux distribution approaches (Pigsty, Percona, AutoBase, etc.) or K8s Operators (Crunchy PGO, etc.), mainstream PG distributions virtually all build on Patroni. Patroni's GitHub stars (8.1K) exceed all other HA components combined.
 
 So why did Patroni become the de facto standard? What makes it good? How should you actually do PostgreSQL HA? Let's break it down.
-
-------
 
 ## Availability, RTO, and RPO
 
@@ -49,8 +46,6 @@ The highest tier typically requires RTO in the minutes range (~tens of seconds) 
 
 But clearly, due to information asymmetry, many people don't know this. So today I'll walk you through the SOTA de facto standard for PostgreSQL HA — [**Patroni**](https://patroni.readthedocs.io/en/).
 
---------
-
 ## TL;DR
 
 With proper configuration, Patroni easily achieves **RTO < 30s with RPO = 0**. This is backed by both theoretical analysis and production experience.
@@ -58,8 +53,6 @@ With proper configuration, Patroni easily achieves **RTO < 30s with RPO = 0**. T
 For RPO, Patroni can implement Oracle's Maximum Performance / Maximum Availability / Maximum Protection modes — and even offers stronger consistency options than Oracle's Maximum Protection. For RTO, Patroni achieves end-to-end RTO < 30s on commodity hardware, including fault detection, primary-replica switchover, and load balancer health check — the full chain.
 
 Let's dig into the RPO and RTO trade-offs in detail.
-
---------
 
 ## RPO Trade-offs
 
@@ -94,8 +87,6 @@ In fact, by configuring Patroni and PostgreSQL, you can achieve even stronger co
 > JEPSEN has documented a very rare edge case — we'll cover that in a dedicated article.
 
 For the vast majority of workloads, async replication (Maximum Performance) provides sufficient RPO guarantees. For strict data integrity requirements, use Maximum Availability / Maximum Protection mode to ensure RPO = 0.
-
---------
 
 ## RTO Trade-offs
 
@@ -204,8 +195,6 @@ By contrast, shared-nothing architecture is much cleaner: explicitly manage mult
 
 My take: anyone pushing shared-storage HA solutions in 2026 is likely selling hardware or cloud disks. I'll skip the detailed critique here, but may write a dedicated piece on the real performance and costs of RAC and distributed databases, and why Corosync + Pacemaker — that absurdly complex relic — belongs in a museum.
 
---------
-
 ## On Practice
 
 Theory covered. Let's talk about getting it done. I know many readers are thinking: sure, makes sense, but setting up Etcd, Patroni, and HAProxy box by box? No way.
@@ -223,8 +212,6 @@ However, most solutions using Patroni ship with completely default parameters. N
 One more thing: HA alone isn't enough. Patroni handles hardware failures, but for accidental data deletion or logical errors, you need PITR as a backstop. So today covered Patroni as the de facto standard for PostgreSQL HA; next up will be pgBackRest as the de facto standard for backup/restore.
 
 Friends, stop hand-rolling PG HA! DIY setups don't really help your technical growth or your business. Understand the principles, know how to use it — that's enough. Instead of reinventing the wheel, spend your time learning PG itself. There are so many extensions to explore — way more interesting than fiddling with HA and PITR.
-
---------
 
 ## Summary
 

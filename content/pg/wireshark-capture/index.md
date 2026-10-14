@@ -6,8 +6,6 @@ summary: >
   Wireshark是一个很有用的工具，特别适合用来分析网络协议，这里简单介绍使用Wireshark抓包分析PostgreSQL协议的方法。
 tags: [PostgreSQL, PG管理, 工具]
 ---
-
-
 Wireshark是一个很有用的工具，特别适合用来分析网络协议。
 
 这里简单介绍使用Wireshark抓包分析PostgreSQL协议的方法。
@@ -23,9 +21,7 @@ Wireshark是一个很有用的工具，特别适合用来分析网络协议。
 5. 添加显示过滤器 `pgsql`，这样就可以滤除无关的TCP协议报文。
 6. 然后就可以执行一些操作，观察并分析协议了
 
-![](wireshark-capture.png)
-
------------------
+![Wireshark抓包分析协议：快速开始（图 1）](wireshark-capture.png)
 
 ## 抓包样例
 
@@ -43,7 +39,7 @@ psql postgres://localhost:5432/postgres?sslmode=disable -c 'SELECT 1 AS a, 2 AS 
 * 简单查询协议：客户端发送查询命令，服务器回送查询结果。
 * 终止：客户端中断连接。
 
-![](wireshark-capture-sample.png)
+![Wireshark抓包分析协议：抓包样例（图 2）](wireshark-capture-sample.png)
 
 Wireshark内建了对PGSQL的解码，允许我们方便地查看PostgreSQL协议报文的内容。
 
@@ -52,8 +48,6 @@ Wireshark内建了对PGSQL的解码，允许我们方便地查看PostgreSQL协�
 简单查询阶段，客户端发送了一条 `Query (F)` 消息，将SQL语句 `SELECT 1 AS a, 2 AS b;` 直接作为内容发送给服务器。服务器依次返回了 `RowDescription(T)`,`DataRow(D)`,`CommandComplete(C)`,`ReadyForQuery(Z)`.
 
 终止阶段，客户端发送了一条 `Terminate(X)` 消息，终止连接。
-
------------------
 
 ## 题外话：使用Mac进行无线网络嗅探
 

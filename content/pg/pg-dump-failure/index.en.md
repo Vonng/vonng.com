@@ -6,10 +6,7 @@ authors: [vonng]
 summary: "Sometimes, interactions between components manifest in subtle ways. For example, using pg_dump to export data from a connection pool can cause connection pool contamination issues."
 tags: [PostgreSQL, PG Admin, Incident]
 ---
-
 PostgreSQL is great, but that doesn't mean it's Bug-Free. This time in the production environment, I encountered another very interesting case: a production incident caused by `pg_dump`. This is a very subtle bug triggered by Pgbouncer, `search_path`, and special `pg_dump` operations.
-
--------------------
 
 ## Background Knowledge
 
@@ -29,13 +26,11 @@ Web applications frequently establish large numbers of database connections, so 
 
 Transaction pooling mode also has some issues, such as **connection contamination**. When a client modifies the connection state and returns the connection to the pool, other applications may be affected unexpectedly. As shown in the diagram below:
 
-![](pg-dump-failure.png)
+![Incident-Report: Connection-Pool Contamination Caused by pg_dump — Connection Contamination (figure 1)](pg-dump-failure.png)
 
 Assume there are four client connections (frontend connections) C1, C2, C3, C4, and two server connections (backend connections) S1, S2. The database default search path is configured as: `app,$user,public`, and the application knows this assumption and uses `SELECT * FROM tbl;` to access table `app.tbl` in schema `app` by default. Now suppose client C2 executed `set search_path = ''` while using server connection S2, clearing the search path on connection S2. When S2 is reused by another client C3, C3 executing `SELECT * FROM tbl` will error because it cannot find the corresponding table in the `search_path`.
 
 When client assumptions about connections are broken, various errors can easily occur.
-
--------------------
 
 ## Incident Investigation
 
@@ -94,8 +89,6 @@ PQclear(ExecuteSqlQueryForSingleRow(AH, ALWAYS_SECURE_SEARCH_PATH_SQL));
 #define ALWAYS_SECURE_SEARCH_PATH_SQL \
    "SELECT pg_catalog.set_config('search_path', '', false)" 
 ```
-
--------------------
 
 ## Bug Reproduction
 
@@ -159,8 +152,6 @@ $ psql postgres://vonng:123456@:6432/data -c 'show search_path;'
 
 (1 row)
 ```
-
--------------------
 
 ## Solution
 

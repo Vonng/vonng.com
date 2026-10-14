@@ -6,12 +6,9 @@ summary: >
   TimescaleDB is a PostgreSQL extension plugin that provides time-series database functionality.
 tags: [PostgreSQL, PG Admin, Extension]
 ---
-
 * Official website: https://www.timescale.com
 * Official documentation: https://docs.timescale.com/v0.9/main
 * Github: https://github.com/timescale/timescaledb
-
----------------
 
 ## Why Use TimescaleDB
 
@@ -21,7 +18,7 @@ We keep talking about what "time-series data" is, how it differs from other data
 
 Many applications or databases actually take too narrow a view and equate time-series data with specific forms of server metrics:
 
-```
+```text
 Name:    CPU
 
 Tags:    Host=MyServer, Region=West
@@ -35,7 +32,7 @@ Data:
 
 But in reality, in many monitoring applications, different metrics are typically collected (e.g., CPU, memory, network statistics, battery life). Therefore, considering each metric separately doesn't always make sense. Consider this alternative "broader" data model that maintains correlation between simultaneously collected metrics.
 
-```
+```text
 Metrics: CPU, free_mem, net_rssi, battery
 
 Tags:    Host=MyServer, Region=West
@@ -75,8 +72,6 @@ Time-series data is everywhere, but some environments particularly create torren
 - **Environmental monitoring**: Temperature, humidity, pressure, pH, pollen count, air flow, carbon monoxide (CO), nitrogen dioxide (NO2), particulate matter (PM10).
 - (and more)
 
----------------
-
 ## Time-Series Data Model
 
 TimescaleDB uses a "wide table" data model, which is very common in relational databases. This distinguishes Timescale from most other time-series databases, which typically use a "narrow table" model.
@@ -115,7 +110,7 @@ In this model, each metric/tag set combination is considered a separate "time se
 
 Using our example above, this approach would result in 9 different "time series", each defined by a unique set of tags.
 
-```
+```text
 1. {name:  cpu_1m_avg,  device_id: abc123,  location_id: 335,  dev_type: field}
 2. {name:  cpu_1m_avg,  device_id: def456,  location_id: 335,  dev_type: roof}
 3. {name:  cpu_1m_avg,  device_id: ghi789,  location_id:  77,  dev_type: roof}
@@ -179,8 +174,6 @@ With joins, metadata can be stored independently and mappings updated more easil
 
 For example, if we wanted to update our "region" for `location_id` 77 (e.g., from "MA" to "Boston"), we can make this change without having to go back and overwrite historical data.
 
----------------
-
 ## Architecture & Concepts
 
 TimescaleDB is implemented as a PostgreSQL extension, meaning Timescale databases run within entire PostgreSQL instances. This extension model allows databases to leverage many of PostgreSQL's attributes, like reliability, security, and connectivity with various third-party tools. At the same time, TimescaleDB fully leverages the high customization available to extensions by adding hooks within PostgreSQL's query planner, data model, and execution engine.
@@ -219,8 +212,6 @@ Chunks are right-sized to ensure that all B-trees of a table's indexes can resid
 
 Additionally, by avoiding overly large chunks, we can avoid expensive "vacuum" operations when deleting deleted data according to automated retention policies. These operations can be performed at runtime by simply dropping chunks (internal tables) rather than deleting individual rows.
 
----------------
-
 ## Single-Node vs. Cluster
 
 TimescaleDB performs this extensive partitioning on both **single-node** deployments and **cluster** deployments (in development). While partitioning is traditionally only used for scaling across multiple machines, it also allows us to scale to high write rates (and improves parallel queries) even on single machines.
@@ -236,8 +227,6 @@ Once data is large enough that we can't fit all pages of indexes (e.g., B-trees)
 However, since each chunk created by TimescaleDB is itself stored as a separate database table, all its indexes are only built on these much smaller tables rather than a single table representing the entire dataset. So if we size these chunks correctly, we can put the latest tables (and their B-trees) entirely in memory and avoid the problem of swapping to disk, while maintaining support for multiple indexes.
 
 For more information about the motivation and design of TimescaleDB's adaptive space/time chunking, see the [architecture discussion](https://docs.timescale.com/introduction/architecture#benefits-chunking).
-
----------------
 
 ## TimescaleDB vs. PostgreSQL
 
@@ -275,7 +264,7 @@ On single-disk machines, many simple queries that only perform index lookups or 
 
 For example, on a 100M row table with indexed time, hostname, and CPU usage information, the following query takes less than 5ms for each database:
 
-```
+```sql
 SELECT date_trunc('minute', time) AS minute, max(user_usage)
   FROM cpu
   WHERE hostname = 'host_1234'
@@ -285,7 +274,7 @@ SELECT date_trunc('minute', time) AS minute, max(user_usage)
 
 Similar queries involving basic scans of indexes are also equivalent between the two:
 
-```
+```sql
 SELECT * FROM cpu
   WHERE usage_user > 90.0
     AND time >= '2017-01-01' AND time < '2017-01-02';
@@ -295,7 +284,7 @@ Larger queries involving time-based GROUP BY - common in time-oriented analysis 
 
 For example, the following query touching 33M rows is **5x** faster in TimescaleDB when the entire (hyper)table is 100M rows, and about **2x** faster at 1B rows.
 
-```
+```sql
 SELECT date_trunc('hour', time) as hour,
     hostname, avg(usage_user)
   FROM cpu
@@ -308,7 +297,7 @@ Additionally, queries that can leverage time ordering can perform *much* better 
 
 For example, TimescaleDB introduces a time-based "merge append" optimization to minimize the number of groups that must be processed to perform the following operation (considering that time is already sorted). For our 100M row table, this results in query latency **396x** faster than PostgreSQL (82ms vs. 32566ms).
 
-```
+```sql
 SELECT date_trunc('minute', time) AS minute, max(usage_user)
   FROM cpu
   WHERE time < '2017-01-01'
@@ -336,7 +325,7 @@ TimescaleDB includes *new* functionality for time-oriented analytics, including 
 
 These types of functions enable very natural time-oriented queries. For example, the following financial query prints opening, closing, high, and low prices for each asset.
 
-```
+```sql
 SELECT time_bucket('3 hours', time) AS period
     asset_code,
     first(price, time) AS opening, last(price, time) AS closing,
@@ -351,7 +340,7 @@ The ability to order by auxiliary columns (even different from the set) enables 
 
 The following query returns daily prices for each asset, ordered by the latest recorded price.
 
-```
+```sql
 SELECT time_bucket('1 day', time) AS day,
     asset_code,
     last(price, time_recorded)
@@ -371,15 +360,13 @@ In practice, it's common to combine this with continuous aggregation, so you can
 
 TimescaleDB allows efficient deletion of old data at the **chunk** level rather than row level through its `drop_chunks` functionality.
 
-```
+```sql
 SELECT drop_chunks(interval '7 days', 'conditions');
 ```
 
 This will drop all chunks in the 'conditions' hypertable containing only data older than this duration (files), rather than deleting any individual data rows within chunks. This avoids fragmentation in underlying database files, which in turn avoids the need for vacuum that can be too expensive in very large tables.
 
 For more details, see our [data retention](https://docs.timescale.com/api/data-retention) discussion, including how to automate data retention policies.
-
----------------
 
 ## TimescaleDB vs. NoSQL
 
@@ -401,8 +388,6 @@ Then, you might not want to use TimescaleDB if any of the following are true:
 - **Very sparse or unstructured data**: Although TimescaleDB leverages PostgreSQL's support for JSON/JSONB formats and handles sparsity quite efficiently (bitmaps for null values), in some cases, schema-less architectures might be more appropriate.
 - **Heavy compression is a priority**: Benchmarks show TimescaleDB running on ZFS achieves about 4x compression ratio, but compression-optimized column stores might be more suitable for higher compression ratios.
 - **Infrequent or offline analytics**: If slower response times are acceptable (or response times are limited to a small number of pre-computed metrics), and you don't expect many applications/users to access the data simultaneously, you can avoid using databases and just store data in distributed file systems.
-
----------------
 
 ## Installation
 
@@ -432,8 +417,6 @@ wget https://timescalereleases.blob.core.windows.net/rpm/timescaledb-0.9.0-postg
 sudo yum install timescaledb
 ```
 
----------------
-
 ## Configuration
 
 Add the following configuration to `postgresql.conf` to load this plugin when PostgreSQL starts.
@@ -448,15 +431,13 @@ Execute the following command in the database to create the timescaledb extensio
 CREATE EXTENSION timescaledb;
 ```
 
----------------
-
 ## Tuning
 
 A parameter that's quite important for timescaledb is the number of locks.
 
 TimescaleDB relies heavily on table partitioning to scale time-series workloads, which has implications for [lock management](https://www.postgresql.org/docs/current/static/runtime-config-locks.html). During queries, hypertables need to acquire locks on many chunks (sub-tables), which can exhaust the default limit of allowed locks. This can cause warnings like:
 
-```
+```text
 psql: FATAL:  out of shared memory
 HINT:  You might need to increase max_locks_per_transaction.
 ```
@@ -473,15 +454,13 @@ This configuration considers that queries on hypertables might request locks rou
 
 Note this parameter isn't a precise limit; it only controls the **average** number of object locks per transaction.
 
----------------
-
 ## Creating Hypertables
 
 To create a hypertable, you start with a regular SQL table, then convert it to a hypertable through the `create_hypertable` function ([API reference](https://docs.timescale.com/api#create_hypertable)).
 
 The following example creates a hypertable that can track temperature and humidity across a series of devices over time.
 
-```
+```sql
 -- We start by creating a regular SQL table
 
 CREATE TABLE conditions (
@@ -494,7 +473,7 @@ CREATE TABLE conditions (
 
 Next, convert it to a hypertable using `create_hypertable`:
 
-```
+```sql
 -- This creates a hypertable that is partitioned by time
 --   using the values in the `time` column.
 
@@ -507,20 +486,18 @@ SELECT create_hypertable('conditions', 'time');
 SELECT create_hypertable('conditions', 'time', 'location', 4);
 ```
 
----------------
-
 ## Insert and Query
 
 Insert data into the hypertable through normal SQL `INSERT` commands, for example using millisecond timestamps:
 
-```
+```sql
 INSERT INTO conditions(time, location, temperature, humidity)
   VALUES (NOW(), 'office', 70.0, 50.0);
 ```
 
 Similarly, querying data is done through normal SQL `SELECT` commands.
 
-```
+```sql
 SELECT * FROM conditions ORDER BY time DESC LIMIT 100;
 ```
 

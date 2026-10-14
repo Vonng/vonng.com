@@ -6,10 +6,7 @@ summary: >
   Understanding the TCP protocol used for communication between PostgreSQL server and client, and printing messages using Go
 tags: [PostgreSQL, PG Development, PG Kernel]
 ---
-
 Understanding the TCP protocol used for communication between PostgreSQL server and client
-
-------------------
 
 ## Startup Phase
 
@@ -101,8 +98,6 @@ Output result:
 [QUERY] query complete
 ```
 
-------------------
-
 ## Connection Proxy
 
 Based on `jackc/pgx/pgproto3`, you can easily write some middleware. For example, the following code is a very simple "connection proxy":
@@ -191,7 +186,7 @@ $ psql postgres://127.0.0.1:5433/data?sslmode=disable -c 'SELECT * FROM pg_stat_
 
 You can observe message exchanges during this process:
 
-```
+```text
 [B2F] *pgproto3.ParameterStatus &{application_name psql}
 [B2F] *pgproto3.ParameterStatus &{client_encoding UTF8}
 [B2F] *pgproto3.ParameterStatus &{DateStyle ISO, MDY}

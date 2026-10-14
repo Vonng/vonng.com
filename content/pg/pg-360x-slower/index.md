@@ -6,7 +6,6 @@ summary: >
   昨天，至少在十几个微信群里都有人 @ 我，发给我这条消息 《有图有真相，MySQL性能是PG的360倍，DS还
 tags: [PostgreSQL, MySQL, 性能]
 ---
-
 昨天，至少在十几个微信群里都有人 @ 我，发给我这条消息 《[有图有真相，MySQL 性能是 PG 的 360 倍，DS 还建议抛弃 PG](https://mp.weixin.qq.com/s?__biz=MjM5NzAzMTY4NQ==&mid=2653941901&idx=1&sn=455bd6f5bb5038900f98e31b19cae828&scene=21#wechat_redirect "有图有真相，MySQL性能是PG的360倍，DS还建议抛弃PG")》。大意就是推特上有个人发了个火焰图，说他有一个“秘密案例”：“PostgreSQL 比 MySQL 慢了 360 倍，难怪中国互联网公司不用 PG”，十几万的浏览。
 
 ![图片](01.webp)

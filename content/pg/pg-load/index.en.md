@@ -6,10 +6,7 @@ authors: [vonng]
 summary: "Managing databases is similar to managing people - both need KPIs (Key Performance Indicators). So what are database KPIs? This article introduces a way to measure PostgreSQL load: using a single horizontally comparable metric that is basically independent of workload type and machine type, called PG Load."
 tags: [PostgreSQL, PG Admin, Monitoring]
 ---
-
 Managing databases is similar to managing people - both need KPIs (Key Performance Indicators). So what are database KPIs? This article introduces a way to measure PostgreSQL load: using a single horizontally comparable metric that is basically independent of workload type and machine type, called **PG Load**.
-
-------
 
 ## 0x01 Introduction
 
@@ -26,8 +23,6 @@ Unfortunately, defining how "saturated" a system is isn't easy and often require
 
 These indicators all have reference value for database performance evaluation, but they also have various problems.
 
-------
-
 ## 0x02 Problems with Common Evaluation Indicators
 
 Let's look at what problems these existing common indicators have.
@@ -41,8 +36,6 @@ Traffic-type indicators have great potential, especially QPS and TPS which are q
 Compared to QPS/TPS, RT (Response Time) indicators actually have more reference value. Because increasing response time is often a precursor to system saturation. According to experience, the higher the database load, the higher the average response time for queries and transactions. One advantage of RT over QPS is that **RT can have utilization targets set**, such as setting an absolute threshold for RT: not allowing production OLTP databases to have slow queries with RT exceeding 1ms. But indicators like QPS are hard to draw red lines for. However, RT has its own problems. The first problem is that it's still qualitative rather than quantitative - latency increases are warnings of system saturation but can't precisely measure system saturation. The second problem is that RT statistics indicators usually available from databases and middleware are averages, but what truly provides warning effects might be statistics like P99, P999.
 
 After criticizing all common indicators here, what kind of indicators are suitable as database saturation indicators?
-
-------
 
 ## 0x03 Measuring PG Load
 
@@ -89,7 +82,7 @@ Let's first consider PG load in single-process scenarios. Suppose we need an ind
 
 As shown in Figure 1, within a one-second statistical period, PG is in active state (executing queries or transactions) for 0.6 seconds, so the PG load for this second is 60%. If this unique PG process is busy throughout the entire statistical period and has 0.4 seconds of tasks queuing, then PG load can be considered 140%.
 
-![](/pg/img/pg-load-fig.png)
+![PostgreSQL's KPI — Database Load (PG Load) (figure 1)](/pg/img/pg-load-fig.png)
 
 For parallel scenarios, the calculation method is similar to multi-core CPU utilization. First, sum up the active time of all PG processes within the statistical period (1s), then divide by "**available PG processes/connections**", or "**available parallelism**", to get PG's own utilization indicator, as shown in Figure 3. Two PG backend processes have active durations of 200ms+400ms and 800ms respectively, so overall load level is: `(0.2s + 0.4s + 0.8s) / 1s / 2 = 70%`
 
@@ -106,8 +99,6 @@ Since the quotient of the first two items is actually the total active duration 
 `rate(pg_active_seconds[time_period]) / parallel`
 
 `time_period` is usually a fixed constant (1, 5, 15 minutes), so the problem becomes how to obtain the PG process total active time indicator `pg_active_seconds` and how to evaluate the database's available parallelism `max_parallel`.
-
-------
 
 ## 0x04 Calculating PG Load Saturation
 
@@ -174,8 +165,6 @@ Therefore, PG Load can be viewed as a derived indicator composed of three core i
 
 TPS and RT each have their problems for load evaluation, but when combined through simple multiplication into a new composite indicator, they suddenly show magical power (although actually calculated through other more accurate methods).
 
-------
-
 ## 0x05 Actual Effects of PG Load
 
 Next, let's look at PG Load's performance in actual production environments.
@@ -190,7 +179,7 @@ In terms of effect, PG Load1 and PG Load0 (real-time load) are quite sensitive i
 
 PG Load utilization targets have some empirical values: yellow line is usually 50%, meaning threshold requiring attention; red line is usually 70%, meaning alert line requiring immediate action; 500% or higher usually means this instance has been overwhelmed.
 
-![](pg-load-compare.png)
+![PostgreSQL's KPI — Case 1: Used for Alerting: Service Unavailability Due to Slow Query Accumulation (figure 2)](pg-load-compare.png)
 
 ### Case 2: Used for Utilization Assessment and Capacity Planning
 
@@ -202,9 +191,7 @@ CPU utilization is another very important capacity evaluation indicator. We can 
 
 When system load is long-term at 30%~50%, expansion should be considered.
 
-![](pg-load-cluster.png)
-
-------
+![PostgreSQL's KPI — Case 2: Used for Utilization Assessment and Capacity Planning (figure 3)](pg-load-cluster.png)
 
 ## 0x06 Conclusion
 

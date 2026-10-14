@@ -6,7 +6,6 @@ authors: [vonng]
 summary: "Data migration typically involves stopping services for updates. Zero-downtime data migration is a relatively advanced operation."
 tags: [PostgreSQL, PG Admin, Migration]
 ---
-
 Data migration typically involves stopping services for updates. Zero-downtime data migration is a relatively advanced operation.
 
 Zero-downtime data migration can essentially be viewed as consisting of three operations:
@@ -23,7 +22,7 @@ Using logical replication is a relatively stable approach, and there are several
 
 Several logical replication methods each have their advantages and disadvantages. We adopted application-layer logical replication, which includes four steps:
 
-#### 1. Replication
+### 1. Replication
 
 - Fork the target table schema from the old database in the new database, along with all dependent functions, sequences, permissions, owners, and other objects.
 - Application adds dual-write logic, simultaneously writing the same data to both new and old databases.
@@ -33,19 +32,19 @@ Several logical replication methods each have their advantages and disadvantages
 - Application reads still go to the old database.
 - When problems occur, rollback application to the original single-write version.
 
-#### 2. Synchronization
+### 2. Synchronization
 
 - Add exclusive table-level lock to old table `LOCK TABLE <xxx> IN EXCLUSIVE MODE`, blocking all writes.
 - Execute full synchronization `pg_dump | psql`
 - Verify data consistency, determine if migration was successful.
 - When problems occur, simply clear corresponding tables in the new database.
 
-#### 3. Read Migration
+### 3. Read Migration
 
 - Application modified to read data from new database.
 - When problems occur, rollback to version that reads from old database.
 
-#### 4. Single Write
+### 4. Single Write
 
 - After observing for some time without issues, application modified to write only to new database.
 - When problems occur, rollback to dual-write version.

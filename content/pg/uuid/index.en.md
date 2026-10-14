@@ -6,7 +6,6 @@ summary: >
   UUID properties, principles and applications, and how to manipulate UUIDs using PostgreSQL stored procedures.
 tags: [PostgreSQL, PG Development, Architecture]
 ---
-
 A recent project needed to generate business transaction IDs with the following requirements:
 
 * IDs must be generated in a distributed manner, cannot depend on central node allocation while ensuring global uniqueness.
@@ -15,16 +14,16 @@ A recent project needed to generate business transaction IDs with the following 
 
 Before reinventing the wheel, first check if there are existing solutions.
 
-### Serial
+## Serial
 
 Traditional practice often implements business transaction IDs through database auto-increment sequences or ID generation services.
 `MySQL`'s `Auto Increment`, `Postgres`'s `Serial`, or writing a small ID generation service with `Redis+lua` are all convenient and quick solutions. This approach can guarantee global uniqueness, but creates central node dependency: each node needs to access the database once to get a sequence number. This creates availability issues: if we can generate transaction IDs locally and return responses directly, why must we use a network access to get IDs? If the database goes down, nodes also fail. So this is not an ideal solution.
 
-### SnowflakeID
+## SnowflakeID
 
 Then there's Twitter's [SnowflakeID](http://www.lanindex.com/twitter-snowflake%EF%BC%8C64%E4%BD%8D%E8%87%AA%E5%A2%9Eid%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3/), which is a BIGINT: first bit unused, 41-bit timestamp, 10-bit node ID, 12-bit millisecond sequence number. The bit field lengths for timestamp, worker machine ID, and sequence number can vary based on business requirements.
 
-```
+```text
     0                   1                   2                   3
     0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -41,7 +40,7 @@ But I think SnowflakeID has two fatal problems:
 * Although ID generation doesn't require central node allocation, worker machine IDs still need manual allocation or central node coordination, essentially improving rather than solving the problem.
 * Cannot solve time rollback issues - once server time is adjusted, duplicate IDs will almost certainly be generated.
 
-### UUID  (Universally Unique IDentifier)
+## UUID  (Universally Unique IDentifier)
 
 Actually, this type of problem already has classic solutions, such as: [UUID by RFC 4122](https://tools.ietf.org/html/rfc4122). The famous IDFA is a type of UUID.
 
@@ -58,7 +57,7 @@ UUID is a format with 5 versions. I ultimately chose v1 as the final solution. B
 
 Considering all factors, this is indeed the most perfect solution I could find.
 
-### UUID Overview
+## UUID Overview
 
 ```bash
 # Simple way to generate a random UUID in shell
@@ -105,7 +104,7 @@ But bit field division is based on C struct representation convenience. Logicall
 
 The actual bit fields occupied by these five parts are shown below:
 
-```
+```text
     0                   1                   2                   3
     0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+

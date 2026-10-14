@@ -5,7 +5,6 @@ date: 2025-11-12
 summary: Free, open, no VPN. Install PostgreSQL and 431 extensions on 14 Linux distros × 6 PG versions via native RPM/DEB—and a tiny CLI.
 tags: [PostgreSQL, Extension]
 ---
-
 > [WeChat link](https://mp.weixin.qq.com/s/oHHzhbbt5suSxnJhyxTwQQ)
 
 PostgreSQL’s killer feature is extensibility. PostGIS, pgvector, pg_duckdb, pg_search—extensions turn PG into GIS engine, vector DB, analytics warehouse, search cluster. But compiling and shipping them reliably across distros is a nightmare, especially when official mirrors freeze or your network can’t reach upstream.

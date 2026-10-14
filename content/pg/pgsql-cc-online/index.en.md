@@ -6,7 +6,6 @@ summary: >
   pgsql.cc is live, with Chinese documentation for all 11 PostgreSQL major versions from 10 through 20, a redesigned mirror of the official website, and better full-text search. Kept in sync with upstream, with no ads.
 tags: [PostgreSQL, Documentation, Translation, PG Ecosystem]
 ---
-
 **[pgsql.cc](https://pgsql.cc/)** launches today, with Chinese documentation for 11 PostgreSQL major versions, a redesigned mirror of the official website, and better full-text search. It finally fills the documentation gap in the Chinese PostgreSQL ecosystem.
 
 ![The pgsql.cc homepage in Chinese](homepage.webp)
@@ -15,8 +14,6 @@ It goes beyond the manuals. The whole postgresql.org website—Home, About, News
 
 ![Chinese PostgreSQL documentation search results and document preview](doc-search.webp)
 
----
-
 ## First, the Documentation
 
 The online Chinese manuals cover 11 major versions: PG 10 through PG 19 Beta, plus a PG 20 devel snapshot.
@@ -24,8 +21,6 @@ The online Chinese manuals cover 11 major versions: PG 10 through PG 19 Beta, pl
 I hadn't planned to take on this much. When I [**launched pg.center in March**](/en/pg/pg-center/), I started with the PG 18 manual. Then I [**added versions 14 through 17, covering all five supported releases**](/en/pg/pgdoc-cn/). I thought that would do. But just as I finished, 19 reached Beta 3 and the devel branch moved on to 20. Suddenly there were two more major versions to cover. At that point, I figured I might as well go all the way and translate the end-of-life releases back to 10, too.
 
 Why translate versions that no longer receive maintenance? Because people still use them. Plenty of systems in China still run PG 11 or PG 12, and upgrades scheduled for next year are hardly unusual. If the documentation covers only supported versions, those users are still left struggling through English.
-
----
 
 ## Why the Gap Persisted
 
@@ -38,8 +33,6 @@ But the relay stalled at 15. The branches for 16 and 17 are still sitting in the
 A Chinese translation of 18.3 appeared later, but it looked machine-translated to me, and nobody seemed to maintain it afterward. It has sat at 18.3 for nearly half a year now. On August 13, upstream released five minor versions—18.6, 17.11, 16.15, 15.19, and 14.24—fixing 28 security vulnerabilities along the way. PostgreSQL 19 Beta 3 came out too. That translation hasn't moved.
 
 Some sites make matters worse with large pop-up ads. You're trying to look up how to configure `pg_hba.conf`, and up pops “Try Database X Free for a Limited Time.” It's painful.
-
----
 
 ## How I Translated It This Time
 
@@ -58,8 +51,6 @@ The real headache is consistency across versions. Most of the content is shared 
 Two days of burning tokens later, it was done. I went through it myself and was reasonably happy with the result. Of course, at this scale there will be awkward translations and outright mistakes. If you find any, tell me—by email or a GitHub issue. Fixes are quick.
 
 That is the biggest difference from a machine-translation site that publishes once and walks away. This documentation will keep moving with upstream. When 18.7 comes out, I'll update it. When 19 gets its final release, I'll update its docs too. We'll track every minor release as soon as it arrives.
-
----
 
 ## While I Was at It, I Fixed Up the Website
 
@@ -91,15 +82,11 @@ A few other things came along with the work:
 
 The site largely follows the official website's structure and content. If you know your way around postgresql.org, there's almost nothing to learn. You get Chinese content, better styling, better search, and complete manuals for 11 major versions.
 
----
-
 ## About the Domain
 
 The March launch used pg.center. The move to pgsql.cc has a practical reason: `.center` isn't eligible for ICP filing in China, the registration required to host a website in mainland China. It simply isn't on the Ministry of Industry and Information Technology's list of approved domain suffixes. A memorable domain is of little use if it can't go through the required process.
 
 `pgsql.cc` is a domain I registered years ago. It is eligible for ICP filing, and the name is straightforward: PGSQL + CC, for China / Chinese Community. The old domain will stay online. Going forward, **pg.center** will develop into a global, multilingual PostgreSQL knowledge graph and information site. **pgsql.cc** will focus on Chinese documentation, the official website mirror, and community information.
-
----
 
 ## A Few Ground Rules
 
@@ -108,8 +95,6 @@ The March launch used pg.center. The move to pgsql.cc has a practical reason: `.
 **No ads.** At most, there will be a text link in a corner saying “Maintained by the Pigsty team.” That's it.
 
 **Contributions welcome.** Suggest a better term, point out a mistranslation, or flag a missing page. All are welcome.
-
----
 
 ## Finally
 

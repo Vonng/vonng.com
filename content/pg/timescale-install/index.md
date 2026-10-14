@@ -6,12 +6,9 @@ summary: >
   TimescaleDB是PostgreSQL的一个扩展插件，提供时序数据库的一些功能。
 tags: [PostgreSQL, PG管理, 扩展]
 ---
-
 * 官方网站：https://www.timescale.com
 * 官方文档：https://docs.timescale.com/v0.9/main
 * Github：https://github.com/timescale/timescaledb
-
----------------
 
 ## 为什么使用TimescaleDB
 
@@ -21,7 +18,7 @@ tags: [PostgreSQL, PG管理, 扩展]
 
 许多应用程序或数据库实际上采用的是过于狭窄的视图，并将时间序列数据与特定形式的服务器度量值等同起来：
 
-```
+```text
 Name:    CPU
 
 Tags:    Host=MyServer, Region=West
@@ -35,7 +32,7 @@ Data:
 
 但实际上，在许多监控应用中，通常会收集不同的指标（例如，CPU，内存，网络统计数据，电池寿命）。因此，单独考虑每个度量并不总是有意义的。考虑这种替代性的“更广泛”的数据模型，它保持了同时收集的指标之间的相关性。
 
-```
+```text
 Metrics: CPU, free_mem, net_rssi, battery
 
 Tags:    Host=MyServer, Region=West
@@ -75,8 +72,6 @@ Data:
 - **环境监测**：温度，湿度，压力，pH值，花粉计数，空气流量，一氧化碳（CO），二氧化氮（NO2），颗粒物质（PM10）。
 - （和更多）
 
----------------
-
 ## 时序数据模型
 
 TimescaleDB使用“宽表”数据模型，这在关系数据库中是非常普遍的。这使得Timescale与大多数其他时间序列数据库有所不同，后者通常使用“窄表”模型。
@@ -115,7 +110,7 @@ TimescaleDB使用“宽表”数据模型，这在关系数据库中是非常普
 
 使用我们上面的例子，这种方法会导致9个不同的“时间序列”，每个“时间序列”由一组独特的标签定义。
 
-```
+```text
 1. {name:  cpu_1m_avg,  device_id: abc123,  location_id: 335,  dev_type: field}
 2. {name:  cpu_1m_avg,  device_id: def456,  location_id: 335,  dev_type: roof}
 3. {name:  cpu_1m_avg,  device_id: ghi789,  location_id:  77,  dev_type: roof}
@@ -179,8 +174,6 @@ TimescaleDB的数据模型与关系数据库还有另一个相似之处：它支
 
 例如，如果我们想更新我们的“区域”为77（例如从“马萨诸塞州”到“波士顿”），我们可以进行此更改，而不必返回并覆盖历史数据。`location_id`
 
----------------
-
 ## 架构与概念
 
 TimescaleDB作为PostgreSQL的扩展实现，这意味着Timescale数据库在整个PostgreSQL实例中运行。该扩展模型允许数据库利用PostgreSQL的许多属性，如可靠性，安全性以及与各种第三方工具的连接性。同时，TimescaleDB通过在PostgreSQL的查询规划器，数据模型和执行引擎中添加钩子，充分利用扩展可用的高度自定义。
@@ -219,8 +212,6 @@ TimescaleDB作为PostgreSQL的扩展实现，这意味着Timescale数据库在�
 
 此外，通过避免过大的块，我们可以避免根据自动化保留策略删除删除的数据时进行昂贵的“抽真空”操作。运行时可以通过简单地删除块（内部表）来执行这些操作，而不是删除单独的行。
 
----------------
-
 ## 单节点与集群
 
 TimescaleDB在 **单节点** 部署和 **集群** 部署（开发中）上执行这种广泛的分区。虽然分区传统上只用于在多台机器上扩展，但它也允许我们扩展到高写入速率（并改进了并行查询），即使在单台机器上也是如此。
@@ -236,8 +227,6 @@ TimescaleDB的当前开源版本仅支持单节点部署。值得注意的是，
 但是，由于TimescaleDB创建的每个块本身都存储为单独的数据库表，因此其所有索引都只能建立在这些小得多的表中，而不是代表整个数据集的单个表。所以，如果我们正确地确定这些块的大小，我们可以将最新的表（和它们的B-树）完全放入内存中，并避免交换到磁盘的问题，同时保持对多个索引的支持。
 
 有关 TimescaleDB 自适应空间/时间组块的动机和设计的更多信息，请参阅[架构说明](https://docs.timescale.com/introduction/architecture#benefits-chunking)。
-
----------------
 
 ## TimescaleDB 与 PostgreSQL 相比
 
@@ -275,7 +264,7 @@ TimescaleDB通过大量利用时空分区来解决这个问题，即使在*单�
 
 例如，在具有索引时间，主机名和CPU使用率信息的100M行表上，对于每个数据库，以下查询将少于5毫秒：
 
-```
+```sql
 SELECT date_trunc('minute', time) AS minute, max(user_usage)
   FROM cpu
   WHERE hostname = 'host_1234'
@@ -285,7 +274,7 @@ SELECT date_trunc('minute', time) AS minute, max(user_usage)
 
 涉及对索引进行基本扫描的类似查询在两者之间也是等效的：
 
-```
+```sql
 SELECT * FROM cpu
   WHERE usage_user > 90.0
     AND time >= '2017-01-01' AND time < '2017-01-02';
@@ -295,7 +284,7 @@ SELECT * FROM cpu
 
 例如，当整个（超）表为100M行时，接触33M行的以下查询在TimescaleDB中速度提高 **5倍**，而在1B行时速度提高约 **2** 倍。
 
-```
+```sql
 SELECT date_trunc('hour', time) as hour,
     hostname, avg(usage_user)
   FROM cpu
@@ -308,7 +297,7 @@ SELECT date_trunc('hour', time) as hour,
 
 例如，TimescaleDB引入了基于时间的“合并追加”优化，以最小化必须处理以执行以下操作的组的数量（考虑到时间已经被排序）。对于我们的100M行表，这导致查询延迟比PostgreSQL快 **396** 倍（82ms vs. 32566ms）。
 
-```
+```sql
 SELECT date_trunc('minute', time) AS minute, max(usage_user)
   FROM cpu
   WHERE time < '2017-01-01'
@@ -336,7 +325,7 @@ TimescaleDB包含面向时间分析的*新*功能，其中包括以下一些功�
 
 这些类型的函数能够实现非常自然的面向时间的查询。例如，以下财务查询打印每个资产的开盘价，收盘价，最高价和最低价。
 
-```
+```sql
 SELECT time_bucket('3 hours', time) AS period
     asset_code,
     first(price, time) AS opening, last(price, time) AS closing,
@@ -351,7 +340,7 @@ SELECT time_bucket('3 hours', time) AS period
 
 以下查询返回每个资产的每日价格，按最新记录的价格排序。
 
-```
+```sql
 SELECT time_bucket('1 day', time) AS day,
     asset_code,
     last(price, time_recorded)
@@ -371,15 +360,13 @@ TimescaleDB还提供了某些在PostgreSQL中不易获取或执行的数据管�
 
 TimescaleDB允许通过其功能有效地删除 **块** 级别的旧数据，而不是行级别的旧数据。`drop_chunks`
 
-```
+```sql
 SELECT drop_chunks(interval '7 days', 'conditions');
 ```
 
 这将删除只包含比此持续时间早的数据的可超级“条件”中的所有块（文件），而不是删除块中的任何单独数据行。这避免了底层数据库文件中的碎片，这反过来又避免了在非常大的表格中可能过于昂贵的抽真空的需要。
 
 有关更多详细信息，请参阅我们的[数据保留](https://docs.timescale.com/api/data-retention)讨论，包括如何自动执行数据保留策略。
-
----------------
 
 ## TimescaleDB之于NoSQL
 
@@ -401,8 +388,6 @@ SELECT drop_chunks(interval '7 days', 'conditions');
 - **非常稀疏或非结构化的数据**：尽管TimescaleDB利用PostgreSQL对JSON / JSONB格式的支持，并且相当有效地处理稀疏性（空值的位图），但在某些情况下，无模式体系结构可能更合适。
 - **重要的压缩是一个优先事项**：基准测试显示在ZFS上运行的TimescaleDB获得约4倍的压缩率，但压缩优化的列存储可能更适合于更高的压缩率。
 - **不频繁或离线分析**：如果响应时间较慢（或响应时间限于少量预先计算的度量标准），并且您不希望许多应用程序/用户同时访问该数据，则可以避免使用数据库，而只是将数据存储在分布式文件系统中。
-
----------------
 
 ## 安装
 
@@ -433,8 +418,6 @@ wget https://timescalereleases.blob.core.windows.net/rpm/timescaledb-0.9.0-postg
 sudo yum install timescaledb
 ```
 
----------------
-
 ## 配置
 
 在 `postgresql.conf` 中添加以下配置，即可在PostgreSQL启动时加载该插件。
@@ -449,15 +432,13 @@ shared_preload_libraries = 'timescaledb'
 CREATE EXTENSION timescaledb;
 ```
 
----------------
-
 ## 调参
 
 对timescaledb比较重要的参数是锁的数量。
 
 TimescaleDB在很大程度上依赖于表分区来扩展时间序列工作负载，这对[锁管理](https://www.postgresql.org/docs/current/static/runtime-config-locks.html)有影响。在查询过程中，可修改需要在许多块（子表）上获取锁，这会耗尽所允许的锁的数量的默认限制。这可能会导致如下警告：
 
-```
+```text
 psql: FATAL:  out of shared memory
 HINT:  You might need to increase max_locks_per_transaction.
 ```
@@ -474,15 +455,13 @@ max_locks_per_transaction = 2 * num_chunks
 
 注意这个参数并不是精确的限制，它只是控制每个事物中 **平均** 的对象锁数量。
 
----------------
-
 ## 创建超表
 
 为了创建一个可改写的，你从一个普通的SQL表开始，然后通过函数（[API参考](https://docs.timescale.com/api#create_hypertable)）将它转换为一个可改写的。`create_hypertable`
 
 以下示例创建一个可随时间跨越一系列设备来跟踪温度和湿度的可调整高度。
 
-```
+```sql
 -- We start by creating a regular SQL table
 
 CREATE TABLE conditions (
@@ -495,7 +474,7 @@ CREATE TABLE conditions (
 
 接下来，把它变成一个超表：`create_hypertable`
 
-```
+```sql
 -- This creates a hypertable that is partitioned by time
 --   using the values in the `time` column.
 
@@ -508,20 +487,18 @@ SELECT create_hypertable('conditions', 'time');
 SELECT create_hypertable('conditions', 'time', 'location', 4);
 ```
 
----------------
-
 ## 插入和查询
 
 通过普通的SQL 命令将数据插入到hypertable中，例如使用毫秒时间戳：`INSERT`
 
-```
+```sql
 INSERT INTO conditions(time, location, temperature, humidity)
   VALUES (NOW(), 'office', 70.0, 50.0);
 ```
 
 同样，查询数据是通过正常的SQL 命令完成的。`SELECT`
 
-```
+```sql
 SELECT * FROM conditions ORDER BY time DESC LIMIT 100;
 ```
 

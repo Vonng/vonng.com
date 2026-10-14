@@ -6,7 +6,6 @@ summary: >
   Its maintainer, under pressure to make a living, has formally archived pgBackRest, the PostgreSQL ecosystem's most important backup tool. The entire PostgreSQL community needs to think seriously about how critical open-source dependencies can be sustained.
 tags: [PostgreSQL, PG Ecosystem, Open Source]
 ---
-
 On April 27, David Steele formally archived **pgBackRest**, the most important backup tool in the PostgreSQL ecosystem.
 
 The announcement appeared on GitHub and LinkedIn. It was brief and direct:
@@ -26,8 +25,6 @@ The announcement appeared on GitHub and LinkedIn. It was brief and direct:
 > I imagine at some point pgBackRest will be forked, but that will be a new project with new maintainers, and they will need to build trust the same way we did.
 >
 > Again, many thanks to all the pgBackRest contributors over the years. It was a pleasure working with you!
-
---------
 
 ## This Is No Small Matter for PostgreSQL Users
 
@@ -49,8 +46,6 @@ When version 2.0 first came out, I even translated its documentation by hand. Ju
 
 I have relied on this tool for nearly a decade, and I trust it deeply. Now its sole maintainer has archived the repository.
 
---------
-
 ## What Really Happened
 
 David said it plainly in his farewell: he could not raise enough money to keep doing the work.
@@ -69,8 +64,6 @@ Someone a small company could afford somehow became unaffordable to a much large
 
 The AI gold rush has completely rewritten corporate budgets. Buy memory, GPUs, or tokens, and there is a straightforward ROI story to tell.
 Pay someone to make sure your database can still be restored after disaster strikes, and there is no ROI story, only "nothing bad happened." Boards award no points for nothing bad happening.
-
---------
 
 ## What the Community Is Debating
 
@@ -96,8 +89,6 @@ Backup tools are among the highest-value targets for supply-chain attacks. If ma
 it could gain powerful access on nearly every PostgreSQL instance where the program was deployed and reach all of its historical data.
 Handing the trust accumulated through thousands of GitHub stars intact to an unknown successor would not be generosity. It would be irresponsible.
 Requiring a fork to adopt a new name forces users to perform a fresh trust assessment. That is a basic requirement of security engineering.
-
---------
 
 ## My Take
 
@@ -129,8 +120,6 @@ That means Percona's customers will not abruptly lose support for pgBackRest. Cr
 
 Let me be explicit as well: if nobody else maintains pgBackRest, I will take it on.
 If someone else maintains it well, I will be equally happy to treat that project as upstream, validate and package its releases, distribute them, and provide user feedback.
-
---------
 
 ## Don't Jump Ship in a Panic
 
@@ -164,8 +153,6 @@ More importantly, there is no true peer to migrate to: **no tool currently offer
 So the best move is to sit tight. Unnecessary churn would itself be the greatest risk.
 Keep using pgBackRest, and treat v2.58 as the stable baseline for the foreseeable future.
 At the same time, run rigorous restore drills, watch for a clear successor branch after PGConf.Dev, and decide what to do next only then.
-
---------
 
 ## The Deeper Point
 
@@ -204,8 +191,6 @@ The PostgreSQL ecosystem has many projects like pgBackRest: not part of the core
 The PostgreSQL world is not short of backup, connection-pooling, or high-availability tools. Each category may offer several choices.
 But if what we want is the **best** option, there is often only one real choice.
 **If these projects lack healthy maintenance and feedback loops, that is a genuine risk to the PostgreSQL ecosystem.**
-
---------
 
 ## Finally, Pigsty
 

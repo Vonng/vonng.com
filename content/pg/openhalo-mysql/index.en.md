@@ -5,7 +5,6 @@ date: 2025-04-03
 summary: What? PostgreSQL can now be accessed using MySQL clients? That's right, openHalo, which was open-sourced on April Fool's Day, provides exactly this capability and has now joined the Pigsty kernel family.
 tags: [PostgreSQL, MySQL]
 ---
-
 What? PostgreSQL can now be accessed using MySQL clients? That's right, openHalo, which was open-sourced on April Fool's Day, provides exactly this capability — allowing users to simultaneously access and manage the same database using both MySQL and PostgreSQL clients for read and write operations, based on PG 14.10 providing MySQL 5.7 compatibility.
 
 The day before yesterday, [**openHalo open-sourced their MySQL-compatible PG kernel**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489368&idx=1&sn=d68f943fea34d9ee9e678b9d49bc162f&scene=21#wechat_redirect). Today I've built RPM packages and integrated them into Pigsty. The deployment is quite smooth, and after modifying a few lines of code, it integrates seamlessly with high availability, monitoring, and backup components.
@@ -24,8 +23,6 @@ And now PostgreSQL can be compatible with the other four databases:
 - [**FerretDB / Microsoft DocumentDB can be used as MongoDB**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486241&idx=1&sn=f39b87095837b042e74f55f8e60bb7a9&scene=21#wechat_redirect)
 
 By the way, all of the above kernel capabilities are now available out-of-the-box in Pigsty.
-
-------
 
 ## So, I Want to Try It, How Do I Set It Up?
 
@@ -77,19 +74,17 @@ The [OpenHalo](https://github.com/pgsty/openHalo) kernel installed by Pigsty is 
 
 Please note that Pigsty does not assume any warranty responsibility for using the OpenHalo kernel. For any issues and requirements encountered when using this kernel, please contact the original manufacturer for resolution.
 
-------
-
 ## There Are Other Kernel Tricks Too
 
-Of course, Pigsty supports more than just OrioleDB as a [**PG branch kernel**](https://pigsty.cc/docs/kernel/). You can also use:
+Of course, Pigsty supports more than just OrioleDB as a [**PG branch kernel**](https://pigsty.cc/docs/pgsql/config/kernel/). You can also use:
 
-- Microsoft SQL Server compatible [**Babelfish**](https://pigsty.cc/docs/kernel/babelfish/) (by AWS)
-- Oracle compatible [**IvorySQL**](https://pigsty.cc/docs/kernel/ivorysql/) (by HighGo)
-- Ultimate OLTP performance [**OrioleDB**](https://pigsty.cc/docs/kernel/orioledb/) (by Supabase)
-- Aurora RAC flavored [**PolarDB**](https://pigsty.cc/docs/kernel/polardb/) (by Alibaba-Cloud)
-- Proper domestic innovation-qualified, Oracle-compatible [**PolarDB O 2.0**](https://pigsty.cc/docs/kernel/polardb/).
-- You can also use [**FerretDB**](https://pigsty.cc/docs/kernel/ferret) + Microsoft's [**DocumentDB**](https://pigsty.cc/ext/sim/documentdb/) to simulate PG as a MongoDB.
-- Use Pigsty's self-built template to set up local [**Supabase**](https://pigsty.cc/docs/kernel/supabase/) with one click (OrioleDB's daddy!).
+- Microsoft SQL Server compatible [**Babelfish**](https://pigsty.cc/docs/pgsql/kernel/babelfish/) (by AWS)
+- Oracle compatible [**IvorySQL**](https://pigsty.cc/docs/pgsql/kernel/ivorysql/) (by HighGo)
+- Ultimate OLTP performance [**OrioleDB**](https://pigsty.cc/docs/conf/oriole/) (by Supabase)
+- Aurora RAC flavored [**PolarDB**](https://pigsty.cc/docs/pgsql/kernel/polardb/) (by Alibaba-Cloud)
+- Proper domestic innovation-qualified, Oracle-compatible [**PolarDB O 2.0**](https://pigsty.cc/docs/pgsql/kernel/polardb/).
+- You can also use [**FerretDB**](https://pigsty.cc/docs/app/ferretdb/) + Microsoft's [**DocumentDB**](https://pgext.cloud/e/documentdb/) to simulate PG as a MongoDB.
+- Use Pigsty's self-built template to set up local [**Supabase**](https://pigsty.cc/docs/app/supabase/) with one click (OrioleDB's daddy!).
 
 Additionally, my friend Yurii, founder of Omnigres, is working on adding ETCD protocol support to PostgreSQL. In the not-too-distant future, you'll probably be able to use PG as a better-performing/more reliable etcd for Kubernetes / Patroni.
 

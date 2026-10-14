@@ -7,12 +7,9 @@ summary: >
   Supabase收购的一个PG内核分支，号称解决了PG XID回卷的问题，没有表膨胀问题，性能提升4倍，还支持云原生存储。
 tags: [PostgreSQL]
 ---
-
 OrioleDB 奥利奥数据库，这名字听着很有趣，不过 Oriole 是黄鹂的意思，所以其实中文译名应该是 “黄鹂数据库”。 叫饼干DB还是小鸟DB都不重要，重要的是这个 PG 存储引擎扩展 + 内核分支确实很有趣，而且基本上快要正式发布了。
 
 作为 zheap 的后继，我关注 OrioleDB 已经很久了，它的主要亮点有三个：性能，运维，云原生。 那么今天简单介绍一下这个 PG 内核新秀，以及最近我做的一些工作，可以让用户直接把它跑起来。
-
-------
 
 ## 极致性能，四倍吞吐
 
@@ -27,8 +24,6 @@ OrioleDB 奥利奥数据库，这名字听着很有趣，不过 Oriole 是黄鹂
 当然这里有一些相对于 PG 堆表的关键优化，比如去掉了 FS Cache，内存页面直接链接到存储页面，内存页面可以无锁访问，另外使用 UNDO 日志/回滚段来实现 MVCC 而不是 PG 的 REDO，还有易于并行化的行级 WAL。
 
 老实说我还没有自己测过性能。但听上去很有诱惑，最近要是有空我会找台服务器试一试。
-
-------
 
 ## 消除顽疾，简化运维
 
@@ -84,8 +79,6 @@ CREATE TABLE blog_post
 
 我在 EL 上做好了 `oriolepg_17` 的补丁版 PG，以及 `orioledb_17` 的扩展插件，并且提供了一个开箱即用的配置模板，可以一键拉起 OrioleDB 尝鲜。
 
-------
-
 ## 云原生存储
 
 “云原生”这个词已经被用滥了，没有人具体知道它到底在说啥。但对于数据库来说，云原生通常意味着 —— **把数据放在对象存储上**。
@@ -103,8 +96,6 @@ OrioleDB 最近把自己的 Slogan 从 “高性能 OLTP 存储引擎” 修改�
 ![storage-compute.png](storage-compute.png)
 
 > [OrioleDB Docs: Decoupled storage and compute](https://www.orioledb.com/docs/usage/decoupled-storage)
-
-------
 
 ## 所以，我想试试，咋整？
 
@@ -132,8 +123,6 @@ all:
     pg_libs: 'orioledb.so, pg_stat_statements, auto_explain'
     repo_extra_packages: [ orioledb ]
 ```
-
-------
 
 ## 还有其他内核花活
 

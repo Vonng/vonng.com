@@ -8,12 +8,9 @@ summary: >
   Freeloaders welcome — if you want to become the Debian of databases, a permissive license is table stakes.
 tags: [Pigsty, Open Source]
 ---
-
 [Pigsty](https://pigsty.io) is a batteries-included, local-first PostgreSQL distribution. With the v4.0 release, I finally did something I'd been considering for a while: switching from AGPLv3 back to Apache 2.0.
 
 Here's why I changed it, what it means, and my take on open source, ecosystems, and commercialization.
-
---------
 
 ## The Origin Story
 
@@ -31,8 +28,6 @@ In practice? That option delivered none of the protection I wanted — only adop
 
 Fast forward to today: the company has been wound down, and I'm back to being a solo developer again.
 Ironically, with steady consulting revenue, I can now afford to treat Pigsty as what it started as — a public good.
-
---------
 
 ## AGPL in Practice
 
@@ -58,8 +53,6 @@ Martin Kleppmann (author of *DDIA*) [made a similar point](https://martin.kleppm
 
 **AGPL ended up being neither open-source-friendly enough nor effective against cloud. Worst of both worlds.**
 
---------
-
 ## Why Not ELv2 / SSPL / BSL?
 
 Natural follow-up: if AGPL doesn't work, why not ELv2? It's basically Apache for normal users but explicitly restricts cloud vendors.
@@ -77,8 +70,6 @@ In the end, I didn't go with ELv2. One reason: **that's not what I want to build
 I want Pigsty to become the Debian of databases.
 
 Debian didn't win by restricting users. It won through openness, reusability, distributability — eventually becoming the default upstream, the standard, the infrastructure.
-
--------
 
 ## The Debian of Databases
 
@@ -101,8 +92,6 @@ Put bluntly: **freeloaders welcome.**
 
 One line I do draw: **ship it, sell it, build on it — all fine. Just don't claim you wrote it from scratch.**
 
--------
-
 ## On Freeloading
 
 People ask: everyone's moving toward source-available and restrictive licenses. Why go back to Apache? Aren't you worried about freeloading?
@@ -116,8 +105,6 @@ Major cloud vendors already have their own managed Postgres, deeply integrated w
 When I say "get off the cloud," I mean managed database PaaS. Self-hosting on cloud VMs is fine. IaaS works — the main issue is EBS-style network storage being mediocre for databases. NVMe instance storage exists; use it if it fits.
 
 For vendors who want to offer self-hosted Postgres deployment as a service: you're welcome here. Growing the ecosystem beats playing license cop.
-
--------
 
 ## From Distribution to Meta-Distribution
 
@@ -137,8 +124,6 @@ For meta-distribution to work, the license must be permissive. Otherwise you're 
 
 Long-term, I'd like Pigsty to develop proper governance — maybe even a committee structure like Debian. Ambitious, but that's what makes it interesting.
 
--------
-
 ## Timing: Finished Software
 
 Why switch at v4.0? Because v4.0 is a milestone — it's reached "finished software" status.
@@ -150,8 +135,6 @@ I ran comparative evaluations against major cloud database offerings. Short vers
 That's roughly where I want it to stay. Push too far past parity and you cannibalize your own consulting business — I'm selling the delta from "works great" to "bulletproof in production."
 
 ISVs and independent DBAs building commercial services on Pigsty: welcome. The market is massive. You serve your customers, I provide upstream support. Handle what you can, escalate when you can't. That's how ecosystems work.
-
---------
 
 ## Business Model
 
@@ -170,8 +153,6 @@ AI Agent has been a force multiplier. Most of my time now goes to asking the rig
 
 If you're using Pigsty and find value in what I'm building, subscriptions are welcome. You get commercial guarantees; I get to keep building.
 
---------
-
 ## On Relicensing: Doing It Right
 
 Relicensing deserves its own discussion.
@@ -185,8 +166,6 @@ So I rewrote all code from non-responding contributors. In a ~150k lines codebas
 
 Was this strictly necessary? Legally, probably not — going permissive doesn't require unanimous consent like going restrictive would.
 But I'd rather over-comply than leave gray areas. Practice what you preach.
-
---------
 
 ## Conclusion
 

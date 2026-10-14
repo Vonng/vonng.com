@@ -6,10 +6,7 @@ summary: >
   Change Data Capture is an interesting ETL alternative solution.
 tags: [PostgreSQL, PG Development]
 ---
-
 In actual production, we often need to synchronize database states to other places, such as synchronizing to data warehouses for analysis, to message queues for downstream consumption, or to caches to accelerate queries. Generally speaking, there are two major methods for moving state: ETL and CDC.
-
---------------------
 
 ## Prerequisites
 
@@ -29,7 +26,7 @@ Everyone is familiar with ETL - running daily batch ETL tasks to **extract (E)**
 
 For example, users can capture changes in databases and continuously apply the same changes to **search indexes** (e.g., elasticsearch). If change logs are applied in the same order, it can be expected that data in search indexes matches data in databases. Similarly, these changes can also be applied to refresh **caches** (redis) in the background, sent to **message queues** (Kafka), imported into **data warehouses** (EventSourcing, storing immutable fact event records rather than taking daily snapshots), **collecting statistics and monitoring** (Prometheus), and so on. In this sense, external indexes, caches, and data warehouses all become **logical replicas of PostgreSQL**, and these derived data systems all become consumers of change streams, while PostgreSQL becomes the master database of the entire **data system**. In this architecture, applications only need to worry about how to write data to the database, leaving the rest to CDC. System design can be greatly simplified: all data components can automatically maintain (eventual) consistency with the master database logically. Users no longer need to worry about how to keep data synchronized between multiple heterogeneous data systems.
 
-![](cdc-system.png)
+![CDC Change Data Capture Mechanisms — CDC and ETL (figure 1)](cdc-system.png)
 
 Actually, PostgreSQL's **logical replication** functionality provided since version 10.0 is essentially a **CDC application**: extracting change event streams from the master database: `INSERT, UPDATE, DELETE, TRUNCATE`, and replaying them on another PostgreSQL **master database** instance. If these insert/update/delete events can be parsed out, they can be used for any interested consumer, not just limited to another PostgreSQL instance.
 
@@ -64,7 +61,7 @@ Before starting further discussion, let's first look at what the expected output
 
 PostgreSQL's change events are saved in **binary internal representation** form in write-ahead logs (WAL). Some human-readable information can be parsed using its built-in `pg_waldump` tool:
 
-```
+```text
 rmgr: Btree       len (rec/tot):     64/    64, tx:       1342, lsn: 2D/AAFFC9F0, prev 2D/AAFFC810, desc: INSERT_LEAF off 126, blkref #0: rel 1663/3101882/3105398 blk 4
 rmgr: Heap        len (rec/tot):    485/   485, tx:       1342, lsn: 2D/AAFFCA30, prev 2D/AAFFC9F0, desc: INSERT off 10, blkref #0: rel 1663/3101882/3105391 blk 139
 ```
@@ -73,7 +70,7 @@ WAL logs contain complete authoritative change event records, but this record fo
 
 For example, users might expect decoded equivalent SQL statements:
 
-```
+```sql
 INSERT INTO public.test (id, data) VALUES (14, 'hoho');
 ```
 
@@ -103,8 +100,6 @@ Of course, it can also be more compact and efficient strict Protobuf format, mor
 **Logical decoding** solves the problem of **decoding** database internal binary representation change events into formats users are interested in. This process is necessary because database internal representations are very compact. To interpret raw binary WAL logs, you need not only knowledge about WAL structure but also **System Catalog**, i.e., metadata. Without metadata, you can only parse a series of oids that only the database can understand, not schema names, table names, column names that users might be interested in.
 
 Regarding stream replication protocols, replication slots, transaction snapshots and other concepts and functions, we won't expand on them here. Let's move to the hands-on section.
-
---------------------
 
 ## Quick Start
 
@@ -308,8 +303,6 @@ Finally, output plugins can format change events into various forms. Decoding ou
 
 Writing custom logical decoding output plugins is not complex. You can refer to [this](https://www.postgresql.org/docs/11/logicaldecoding-output-plugin.html) official documentation. After all, logical decoding output plugins are essentially just a collection of string-concatenating callback functions. Based on [official samples](https://github.com/postgres/postgres/blob/master/contrib/test_decoding/test_decoding.c) with slight modifications, you can easily implement your own logical decoding output plugin.
 
---------------------
-
 ## CDC Clients
 
 PostgreSQL comes with a client application called `pg_recvlogical` that can write logical change event streams to standard output. But not all consumers can or want to use Unix Pipes to complete all work. Additionally, according to the end-to-end principle, using `pg_recvlogical` to persist change data streams to disk doesn't mean consumers have received and acknowledged the message - only consumers personally confirming to the database can achieve this.
@@ -328,7 +321,7 @@ $ psql 'postgres://localhost:5432/postgres?replication=on&application_name=mocke
 
 From the system view `pg_stat_replication`, you can see the master database has identified a new "replica":
 
-```
+```text
 vonng=# table pg_stat_replication ;
 -[ RECORD 1 ]----+-----------------------------
 pid              | 7218
@@ -344,7 +337,7 @@ client_port      | 53420
 
 Whether JDBC or Go language PostgreSQL drivers, they all provide corresponding infrastructure for handling replication connections.
 
-Here let's write a simple CDC client in Go language. The example uses [`jackc/pgx`](https://github.com/jackx/pgx), a pretty good PostgreSQL driver written in Go. The code here is just for concept demonstration, so error handling is ignored - very naive. Save the following code as `main.go` and execute `go run main.go`.
+Here let's write a simple CDC client in Go language. The example uses [`jackc/pgx`](https://github.com/jackc/pgx), a pretty good PostgreSQL driver written in Go. The code here is just for concept demonstration, so error handling is ignored - very naive. Save the following code as `main.go` and execute `go run main.go`.
 
 Default three parameters are database connection string, logical decoding output plugin name, and replication slot name. Default values are:
 
@@ -354,7 +347,7 @@ plugin := "test_decoding"
 slot := "test_slot"
 ```
 
-```
+```text
 go run main.go postgres:/postgres?application_name=cdc test_decoding test_slot
 ```
 
@@ -547,8 +540,6 @@ restart_lsn         | 2D/AB269A80       -- Next client reconnection will start r
 confirmed_flush_lsn | 2D/AB269AB8       -- Message progress client has confirmed completion
 ```
 
---------------------
-
 ## Limitations
 
 To use CDC in production environments, some other issues need consideration. Regrettably, there are still two small clouds floating in PostgreSQL CDC's sky.
@@ -557,7 +548,7 @@ To use CDC in production environments, some other issues need consideration. Reg
 
 Currently, PostgreSQL's logical decoding only provides the following hooks:
 
-```
+```text
 LogicalDecodeStartupCB startup_cb;
 LogicalDecodeBeginCB begin_cb;
 LogicalDecodeChangeCB change_cb;

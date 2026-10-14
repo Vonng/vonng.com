@@ -7,7 +7,6 @@ summary: >
   1996 年 7 月 8 日，PostgreSQL 社区接过 Postgres95 的代码火种。三十年后，它已经从伯克利实验室走成了全球数据库生态的默认底座。
 tags: [PostgreSQL, PG生态, 开源]
 ---
-
 今天（2026 年 7 月 8 日）是 PostgreSQL 的 30 岁生日。
 
 三十年前的这一天，Marc Fournier 在刚刚架设好的 CVS 仓库里敲下了一笔名为「Postgres95 1.01 Distribution - Virgin Sources」的提交。这是 PostgreSQL 代码仓库中的第一笔提交（[`d31084e`](https://github.com/postgres/postgres/commit/d31084e9d1118b25fd16580d9d8c2924b5740dff)），至今仍躺在 Git 历史的最底端。

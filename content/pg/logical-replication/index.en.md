@@ -6,9 +6,6 @@ summary: >
   This article introduces the principles and best practices of logical replication in PostgreSQL 13.
 tags: [PostgreSQL, PG Admin]
 ---
-
-------
-
 ## Logical Replication
 
 **Logical Replication** is a method of replicating data objects and their changes based on their [**replica identity**](/pg/replica-identity/) (usually the primary key).
@@ -31,8 +28,6 @@ Typical uses of logical replication include:
 A logical subscriber behaves like a normal PostgreSQL instance (primary), and can also create its own publications and have its own subscribers.
 
 If the logical subscriber is read-only, there will be no **conflicts**. If there are writes to the logical subscriber's subscription set, conflicts may occur.
-
-------
 
 ## Publication
 
@@ -171,7 +166,7 @@ WHERE c.oid = gpt.relid;
 
 Additionally, `pg_publication_rel` provides similar information but from a many-to-many OID perspective, containing raw data.
 
-```
+```text
   oid  | prpubid | prrelid
 -------+---------+---------
  20414 |   20413 |   20397
@@ -183,8 +178,6 @@ Additionally, `pg_publication_rel` provides similar information but from a many-
 The difference between these two is particularly noteworthy: when publishing for `ALL TABLES`, `pg_publication_rel` won't have specific table OIDs, but `pg_publication_tables` can query the actual table list included in logical replication. So `pg_publication_tables` should usually be the reference.
 
 When creating subscriptions, the database first modifies the `pg_publication` catalog, then fills publication table information into `pg_publication_rel`.
-
-------
 
 ## Subscription
 
@@ -312,8 +305,6 @@ When a new subscription is created, the following operations are executed in seq
 * Register tables in replication set to subscriber's `pg_subscription_rel` catalog.
 * Perform initial snapshot synchronization. Note that existing data in subscriber tables won't be deleted.
 
-------
-
 ## Replication Conflicts
 
 Logical replication behaves like normal DML operations, updating data even if it has changed locally on the user node. If replicated data violates any constraints, replication will stop. This phenomenon is called **conflict**.
@@ -335,8 +326,6 @@ Conflicts cause errors and abort logical replication. The logical replication ma
 Methods to resolve conflicts can be changing data on the subscription side so it doesn't conflict with incoming changes, or skipping transactions that conflict with existing data.
 
 Use the function `pg_replication_origin_advance()` with the subscription's corresponding `node_name` and LSN position to skip transactions. Current ORIGIN positions can be seen in the `pg_replication_origin_status` system view.
-
-------
 
 ## Limitations
 
@@ -363,8 +352,6 @@ Logical replication currently has the following limitations or missing functiona
 **Replication within the same instance**: Logical replication within the same instance requires special care. You must **manually create logical replication slots** and use existing logical replication slots when creating subscriptions, otherwise deadlock will occur.
 
 **Can only be performed on primary**: Currently, logical decoding from physical replication standby servers is not supported, and replication slots cannot be created on standby servers, so standby servers cannot serve as publishers. But this issue may be resolved in the future.
-
-------
 
 ## Architecture
 
@@ -399,8 +386,6 @@ Synchronous commit for logical replication is accomplished through SIGUSR1 commu
 Temporary data from logical decoding is written to disk as local log snapshots. When walsender receives SIGUSR1 signals from walwriter, it reads WAL logs and generates corresponding logical decoding snapshots. These snapshots are deleted when transmission ends.
 
 File location: `$PGDATA/pg_logical/snapshots/{LSN Upper}-{LSN Lower}.snap`
-
-------
 
 ## Monitoring
 
@@ -499,8 +484,6 @@ Additionally, some monitoring metrics can reflect logical replication status:
 
 For example: `pg_replication_slots.confirmed_flush_lsn` lagging behind `pg_current_wal_lsn` for extended periods, or significant increases in `pg_stat_replication.flush_lag/write_lag`.
 
-------
-
 ## Security
 
 For tables participating in subscriptions, ownership and trigger permissions must be controlled by roles trusted by superusers (otherwise modifying these tables may cause logical replication interruption).
@@ -552,8 +535,6 @@ max_replication_slots: 16               # 10 -> 16
 max_logical_replication_workers: 8      # 4 -> 8, 6 sync worker + 1~2 apply worker
 max_sync_workers_per_subscription: 6    # 2 -> 6, 6 sync worker
 ```
-
-------
 
 ## Quick Configuration
 
@@ -610,8 +591,6 @@ CREATE SUBSCRIPTION pg_test_sub
 EOF
 ```
 
-------
-
 ## Replication Flow
 
 After logical replication subscription creation, if everything is normal, logical replication will automatically begin, executing replication state machine logic for **each table in the subscription**.
@@ -629,8 +608,6 @@ stateDiagram-v2
 When all tables complete replication and enter `r` (ready) state, the existing data synchronization phase of logical replication is complete, and publisher and subscriber overall enter synchronized state.
 
 Therefore, logically there are two state machines: **table-level replication small state machine** and **global replication large state machine**. Each Sync Worker handles a small state machine on one table, while one Apply Worker handles the large state machine of one logical replication.
-
-------
 
 ## Logical Replication State Machine
 
@@ -679,8 +656,6 @@ You can use the following SQL to confirm table states in subscriptions. If all t
 ```
 
 Of course, the best way is always to track replication status through monitoring systems.
-
-------
 
 ## Sandbox Example
 
@@ -772,8 +747,6 @@ $ psql ${PGSUB} -AXtwc 'SELECT * FROM pgbench_accounts WHERE aid = 99999999;'
 
 Now you have a working logical replication. Let's master the use and management of logical replication through a series of experiments and explore various potential issues.
 
-------
-
 ## Logical Replication Experiments
 
 ### Adding Tables to Existing Publications
@@ -855,8 +828,6 @@ ORDER BY 2,3;
 ```
 
 Note: tables with `nothing` replica identity can be added to publications, but executing `UPDATE|DELETE` on them on the publisher will directly cause errors.
-
-------
 
 ## Other Issues
 

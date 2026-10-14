@@ -7,7 +7,6 @@ summary: >
   Never deploy on Friday, or you'll be working all weekend! PostgreSQL minor releases were pulled on the day of release, requiring emergency rollback.
 tags: [PostgreSQL]
 ---
-
 The old saying goes: never deploy code on Friday. The PostgreSQL minor releases issued two days ago deliberately avoided Friday deployment, but still gave the community a week's worth of extra work — the PostgreSQL community will release an unusual emergency minor version next Thursday: PostgreSQL 17.2, 16.6, 15.10, 14.15, 13.20, and even the just-EOL'd PG 12 will get 12.22...
 
 This is the first time in the past decade that such a situation has occurred: on the day of PostgreSQL release, the new versions were immediately pulled due to community-discovered issues. There are two reasons for the emergency release: first is fixing the CVE-2024-10978 security vulnerability, which isn't the big problem. The real issue is: PostgreSQL's new minor versions changed the ABI, causing ABI-dependent extensions to crash — such as TimescaleDB.
@@ -19,8 +18,6 @@ In any case, the PG community strongly recommends that everyone **NOT** upgrade 
 Overall, I think the impact of this incident is positive. First, this isn't a core kernel quality issue, and second, because it was discovered early enough — found and stopped on the release day — it didn't cause substantial impact to users. It won't be like those other database/chip/OS vulnerabilities that explode everywhere once discovered.
 
 Except for a few extremely enthusiastic update lovers or unlucky new installers, there shouldn't be much impact. Just like the last xz backdoor incident, it was also discovered by PG core developer Peter during PG testing, reflecting the vitality and insight of the PG ecosystem from the side.
-
---------
 
 ## What Happened
 
@@ -38,39 +35,27 @@ Regarding PostgreSQL ABI issues, Marco Slot from CrunchyData wrote a detailed tw
 
 https://x.com/marcoslot/status/1857403646134153438
 
---------
-
 ## How to Avoid Such Problems
 
 As I mentioned before in "[PG Extensions Complete Repository](https://mp.weixin.qq.com/s/Dv3--O0K70Fevz39r3T4Ag)", I maintain a repository containing many PG extension plugins for EL and Debian/Ubuntu, accounting for nearly half of the entire PG ecosystem's extensions.
 
 The PostgreSQL ABI issue was actually mentioned by Yuri before. As long as your extension plugins are compiled for the PostgreSQL minor version you're currently using, there won't be problems. So whenever new minor versions are released, I recompile and package all these extension plugins.
 
-------------
-
 Last month, I just finished compiling all extension plugins for 17.0, and was starting updates to compile versions for 17.1 these days. It looks like I don't need to do that now — 17.2 will roll back the ABI changes, which means extensions compiled on 17.0 can continue to be used. But I'll still recompile and package for PG 17.2 and other major versions after 17.2 is released.
 
 If you're used to installing PostgreSQL and extension plugins online from the internet and don't have the habit of upgrading minor versions promptly, then there really are such security risks — namely that your newly installed extensions aren't compiled for older kernel versions, encountering ABI conflicts and failing.
-
--------------
 
 Honestly, I've seen this problem in the real world early on, which is why when developing Pigsty, this out-of-the-box PostgreSQL distribution, I chose from Day 1 to first download all needed software packages and their dependencies locally, build a local software source, then provide Yum/Apt repositories for all nodes in the environment. This approach ensures: all nodes in the entire environment install the same versions, and it's a consistent snapshot — extension versions match kernel versions.
 
 Moreover, this approach can also achieve "autonomous and controllable" requirements, meaning after your deployment goes online, you won't encounter these stupid situations — the original software sources shut down or moved, or just because upstream repositories released incompatible new versions or new dependencies, causing your new machine/instance installations to crash and get stuck. This means you have complete software copies for replication/scaling, with the ability to keep your services running until the end of time without worrying about being "truly choked".
 
-------------
-
 For example, when 17.1 was recently released, RedHat updated the default LLVM version from 17 to 18 two days earlier, and coincidentally only updated EL8 without updating EL9. If users choose to install from upstream internet at this time, it will directly fail. After I reported this issue to Devrim, he spent two hours fixing it, adding LLVM-18 to the EL9-specific patch Fix repository.
 
 PS: If you don't know about this independent repository, you'll probably continue encountering failures after the fix until RedHat fixes this issue themselves, but Pigsty will handle all these dirty details for you.
 
----------
-
 Some say I can also solve such version problems with Docker, which is indeed correct. However, [running databases with Docker has other problems](https://mp.weixin.qq.com/s/kFftay1IokBDqyMuArqOpg), and these Docker image containers essentially also use the OS package manager in the Dockerfile to download RPM/DEB packages from official software sources for installation. In the end, someone has to do this work...
 
 Of course, adapting different operating systems means a lot of maintenance workload. For example, I maintain 143 EL and 144 Debian PG extension plugins, each extension plugin needs to be compiled for 10 OS major versions (el 8/9, Ubuntu 22/24, Debian 12, five major systems, amd64 and arm64), and 6 database major versions (PG 17-12). The permutations and combinations of these factors mean nearly ten thousand software packages need to be built/tested/distributed, including twenty Rust extensions that take half an hour to compile each... But honestly, it's all semi-automated pipeline work, going from running once a year to once every 3 months isn't unacceptable.
-
---------
 
 ## Appendix: Explanation of ABI Issues
 

@@ -7,7 +7,6 @@ summary: >
   Pig v1.5 adds pig pg clone and pig pg fork, wrapping PostgreSQL 18's instant cloning capabilities in an agent-native CLI.
 tags: [PostgreSQL, Pigsty, Tools]
 ---
-
 Six months ago, on January 8, 2026, I wrote [**Git for Data: Instant PostgreSQL Database and Instance Cloning**](/en/pg/pg-clone/), introducing a new feature in PostgreSQL 18 and Pigsty v4.0: instant database cloning. With filesystem copy-on-write (CoW) and PostgreSQL 18's new `file_copy_method = clone` setting, **you can clone a huge database in seconds without consuming additional storage**.
 
 This is a particularly good fit for AI agents. As I wrote in [What Kind of Database Do AI Agents Need?](/en/db/agent-native-db/), ultra-low-cost database cloning is critical for counterfactual experiments. So when Pigsty 4.0 shipped, I added this capability to its PostgreSQL database provisioning workflow.
@@ -58,7 +57,7 @@ PITR with `pig` is now very convenient as well. The example below performs an en
 
 This release of the `pig` CLI adds many management features, including operations for PostgreSQL, Patroni, and pgBackRest. They are now all exposed as Agent-Native CLI commands like `pg clone` and `pg fork`, making them equally convenient for human DBAs and AI agents. I will write a dedicated article about them in a few days.
 
-![](featured.webp)
+![Instantly Clone PostgreSQL Databases—No Black Magic Required — Instance-Level Forks (figure 7)](featured.webp)
 
 ## Further Reading
 

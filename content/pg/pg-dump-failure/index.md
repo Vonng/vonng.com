@@ -7,12 +7,7 @@ summary: >
   有时候，组件之间的相互作用会以微妙的形式表现出来。例如使用pg_dump从连接池中导出数据，就可能产生连接池污染的问题。
 tags: [PostgreSQL, PG管理, 故障复盘]
 ---
-
-
-
 PostgreSQL很棒，但这并不意味着它是Bug-Free的。这一次在线上环境中，我又遇到了一个很有趣的Case：由 `pg_dump` 导致的线上故障。这是一个非常微妙的Bug，由Pgbouncer，`search_path`，以及特殊的 `pg_dump` 操作所触发。
-
--------------------
 
 ## 背景知识
 
@@ -32,13 +27,11 @@ Web应用会频繁建立大量的数据库连接，故在实际应用中通常�
 
 事务池化模式也存在一些问题，例如 **连接污染**。当某个客户端修改了连接的状态，并将该连接放回池中，其他的应用遍可能受到非预期的影响。如下图所示：
 
-![](pg-dump-failure.png)
+![故障档案：pg_dump导致的连接池污染：连接污染（图 1）](pg-dump-failure.png)
 
 假设有四条客户端连接（前端连接）C1、C2、C3、C4，和两条服务器连接（后端连接）S1，S2。数据库默认搜索路径被配置为：`app,$user,public`，应用知道该假设，并使用 `SELECT * FROM tbl;` 的方式，来默认访问模式 `app` 下的表 `app.tbl`。现在假设客户端C2在使用了服务器连接S2的过程中，执行了 `set search_path = ''` 清空了连接S2上的搜索路径。当S2被另一个客户端C3复用时，C3执行 `SELECT * FROM tbl` 时就会因为 `search_path` 中找不到对应的表而报错。
 
 当客户端对于连接的假设被打破时，很容易出现各种错误。
-
--------------------
 
 ## 故障排查
 
@@ -97,8 +90,6 @@ PQclear(ExecuteSqlQueryForSingleRow(AH, ALWAYS_SECURE_SEARCH_PATH_SQL));
 #define ALWAYS_SECURE_SEARCH_PATH_SQL \
    "SELECT pg_catalog.set_config('search_path', '', false)" 
 ```
-
--------------------
 
 ## Bug复现
 
@@ -162,8 +153,6 @@ $ psql postgres://vonng:123456@:6432/data -c 'show search_path;'
 
 (1 row)
 ```
-
--------------------
 
 ## 解决方案
 

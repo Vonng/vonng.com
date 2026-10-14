@@ -6,7 +6,6 @@ summary: >
   Whether production databases should be containerized remains a controversial topic. From a DBA's perspective, I believe that currently, putting production databases in Docker is still a bad idea.
 tags: [PostgreSQL, PG Ecosystem, Translation]
 ---
-
 This article was **published by Stephan Schmidt @ KingOfCoders on Hacker News and sparked heated discussion**: Using PostgreSQL to replace Kafka, RabbitMQ, ElasticSearch, MongoDB, and Redis is a viable approach that can dramatically reduce system complexity and maximize agility.
 
 ------
@@ -19,19 +18,15 @@ In helping many startups, I've observed that far more people overcomplicate thei
 
 **P.S.: Using PostgreSQL for everything doesn't mean doing everything on a single machine ;-)**
 
-------
-
-### **Simply put, everything can be solved with PostgreSQL**
+## **Simply put, everything can be solved with PostgreSQL**
 
 Complexity is easy to invite but hard to dismiss—once **complexity** creeps into your home, getting rid of it isn't so easy.
 
-![](just-use-pg-1.png)
+![Technical Minimalism: Just Use PostgreSQL for Everything — Simply put, everything can be solved with PostgreSQL (figure 1)](just-use-pg-1.png)
 
-------
+## However, we have an extremely simplified solution
 
-### However, we have an extremely simplified solution
-
-![](just-use-pg-2.png)
+![Technical Minimalism: Just Use PostgreSQL for Everything — However, we have an extremely simplified solution (figure 2)](just-use-pg-2.png)
 
 ------
 
@@ -57,15 +52,11 @@ Use **GraphQL adapters** to make PostgreSQL provide GraphQL services.
 
 I've said it clearly: **Just use PostgreSQL for everything**.
 
-------
-
-### About Author Stephan
+## About Author Stephan
 
 As a CTO, interim CTO, CTO coach, and developer, Stephan has left his mark in the technical departments of many rapidly growing startups. He learned programming around 1981 at a department store, wanting to write video games. Stephan studied computer science at the University of Ulm, specializing in distributed systems and artificial intelligence, and also studied philosophy. When the internet entered Germany in the 90s, he was the first programming employee at several startups. He founded a venture capital-funded startup, handled architecture, processes, and growth challenges at other VC-funded fast-growing startups, held management positions at ImmoScout, and was CTO of an eBay Inc. company. After his wife successfully sold her startup, they moved to the seaside, and Stephan began CTO coaching work. You can find him on LinkedIn or follow @KingOfCoders on Twitter.
 
-------
-
-### Translator's Comments
+## Translator's Comments
 
 Translator: **Feng Ruohang**, entrepreneur and PostgreSQL expert, cloud-down advocate, author of the open-source PostgreSQL RDS alternative, ready-to-use PostgreSQL distribution — [Pigsty](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485518&idx=1&sn=3d5f3c753facc829b2300a15df50d237&chksm=fe4b3d95c93cb4833b8e80433cff46a893f939154be60a2a24ee96598f96b32271301abfda1f&scene=21#wechat_redirect).
 
@@ -73,21 +64,19 @@ Using PostgreSQL for everything isn't a pipe dream but an emerging best practice
 
 Tantan, where I used to work, was a pioneer on this path — PostgreSQL for Everything. This is a Chinese internet app created by a Swedish founding team — using PostgreSQL at a scale and complexity that's second to none in China. Tantan's technical architecture was based on **Instagram** — or rather, more radical, with almost all business logic implemented using PostgreSQL stored procedures (even including 100ms recommendation algorithms!).
 
-![](just-use-pg-arch-1.jpg)
+![Technical Minimalism: Just Use PostgreSQL for Everything — Translator's Comments (figure 3)](just-use-pg-arch-1.jpg)
 
 Tantan's entire system architecture was designed and developed around PostgreSQL. With millions of daily active users, millions of global DB-TPS, and hundreds of TB of data, the data components used only PostgreSQL. It wasn't until approaching ten million daily active users that architectural adjustments began, introducing independent data warehouses, message queues, and caches. In 2017, we didn't even use Redis caching—2.5 million TPS was directly handled by PostgreSQL on over a hundred servers. Message queues were also implemented using PostgreSQL, and early-to-mid-stage data analysis was handled by a dedicated PostgreSQL cluster with dozens of TB. We had long practiced the philosophy of "PostgreSQL for Everything" and benefited greatly from it.
 
 This story has a second half — the subsequent "microservices transformation" brought massive complexity, ultimately trapping the system in a quagmire. This made me even more convinced from another angle — I deeply miss the simple, reliable, efficient, and agile state when everything used PostgreSQL.
 
-![](just-use-pg-arch-2.png)
+![Technical Minimalism: Just Use PostgreSQL for Everything — Translator's Comments (figure 4)](just-use-pg-arch-2.png)
 
 ------
 
 PostgreSQL isn't just a simple relational database but a data management abstraction framework with the potential to encompass everything and devour the entire database world. Ten years ago, this was merely potential and possibility; ten years later, it has materialized into real influence. I'm glad to witness this process and push this progress forward.
 
 > [**PostgreSQL is for Everything!**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486215&idx=1&sn=52ce37a537336a6d07448f35c7bc4cfd&chksm=fe4b3edcc93cb7ca2dc87602430c2beb09ae5e7dcb568158541a1bd026e305d69d94cea81da4&scene=21#wechat_redirect)
-
-------
 
 ## Further Reading
 
@@ -114,12 +103,12 @@ PostgreSQL isn't just a simple relational database but a data management abstrac
 - `[1]` Just use Postgres for everything: *https://news.ycombinator.com/item?id=33934139*
 - `[2]` Technical Minimalism Manifesto: *https://www.radicalsimpli.city/*
 - `[3]` UNLOGGED Table: *https://www.compose.com/articles/faster-performance-with-unlogged-tables-in-postgresql/*
-- `[4]` SKIP LOCKED: *https://www.enterprisedb.com/blog/what-skip-locked-postgresql-95*
+- `[4]` SKIP LOCKED: *https://www.postgresql.org/docs/current/sql-select.html*
 - `[5]` Timescale: *https://www.timescale.com/*
 - `[6]` JSONB: *https://scalegrid.io/blog/using-jsonb-in-postgresql-how-to-effectively-store-index-json-data-in-postgresql/*
 - `[7]` pg_cron: *https://github.com/citusdata/pg_cron*
 - `[8]` Geospatial queries: *https://postgis.net/*
 - `[9]` Full-text search: *https://supabase.com/blog/postgres-full-text-search-vs-the-rest*
-- `[10]` Generate JSON in database: *https://www.amazingcto.com/graphql-for-server-development/*
+- `[10]` Generate JSON in database: *`https://www.amazingcto.com/graphql-for-server-development/` (original link unavailable)*
 - `[11]` GraphQL adapters: *https://graphjin.com/*
 - `[12]` What advantages does PostgreSQL have over MySQL?: *https://www.zhihu.com/question/20010554/answer/94999834*

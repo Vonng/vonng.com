@@ -6,10 +6,6 @@ summary: >
   本文介绍PostgreSQL中逻辑复制的相关原理，以及最佳实践。
 tags: [PostgreSQL, PG管理]
 ---
-
-
-------
-
 ## 逻辑复制
 
 **逻辑复制（Logical Replication）**，是一种根据数据对象的 [**复制标识**](/pg/replica-identity/)（Replica Identity）（通常是主键）复制数据对象及其变化的方法。
@@ -32,8 +28,6 @@ tags: [PostgreSQL, PG管理]
 逻辑订阅者的行为就是一个普通的PostgreSQL实例（主库），逻辑订阅者也可以创建自己的发布，拥有自己的订阅者。
 
 如果逻辑订阅者只读，那么不会有 **冲突**。如果会写入逻辑订阅者的订阅集，那么就可能会出现冲突。
-
-------
 
 ## 发布
 
@@ -172,7 +166,7 @@ WHERE c.oid = gpt.relid;
 
 同时，`pg_publication_rel` 也提供类似的信息，但采用的是多对多的OID对应视角，包含的是原始数据。
 
-```
+```text
   oid  | prpubid | prrelid
 -------+---------+---------
  20414 |   20413 |   20397
@@ -184,8 +178,6 @@ WHERE c.oid = gpt.relid;
 这两者的区别特别需要注意：当针对 `ALL TABLES` 发布时，`pg_publication_rel` 中不会有具体表的OID，但是在 `pg_publication_tables` 中可以查询到实际纳入逻辑复制的表列表。所以通常应当以 `pg_publication_tables` 为准。
 
 创建订阅时，数据库会先修改 `pg_publication` 目录，然后将发布表的信息填入 `pg_publication_rel`。
-
-------
 
 ## 订阅
 
@@ -313,8 +305,6 @@ subpublications | {pg_meta_pub}
 * 将复制集中的表注册到订阅端的 `pg_subscription_rel` 目录中。
 * 执行初始快照同步，注意订阅测表中的原有数据不会被删除。
 
-------
-
 ## 复制冲突
 
 逻辑复制的行为类似于正常的DML操作，即使数据在用户节点上的本地发生了变化，数据也会被更新。如果复制来的数据违反了任何约束，复制就会停止，这种现象被称为 **冲突（Conflict）** 。
@@ -336,8 +326,6 @@ subpublications | {pg_meta_pub}
 解决冲突的方法，可以是改变订阅侧的数据，使其不与进入的变更相冲突，或者跳过与现有数据冲突的事务。
 
 使用订阅对应的 `node_name` 与LSN位置调用函数 `pg_replication_origin_advance()` 可以跳过事务，`pg_replication_origin_status` 系统视图中可以看到当前ORIGIN的位置。
-
-------
 
 ## 局限性
 
@@ -364,8 +352,6 @@ subpublications | {pg_meta_pub}
 **同一实例内的复制**：同一个实例内的逻辑复制需要特别小心，必须 **手工创建逻辑复制槽**，并在创建订阅时使用已有的逻辑复制槽，否则会卡死。
 
 **只能在主库上进行**：目前不支持从物理复制的从库上进行逻辑解码，也无法在从库上创建复制槽，所以从库无法作为发布者。但这个问题可能会在未来解决。
-
-------
 
 ## 架构
 
@@ -400,8 +386,6 @@ subpublications | {pg_meta_pub}
 逻辑解码的临时数据会落盘为本地日志快照。当walsender接收到walwriter发送的 `SIGUSR1` 信号时，就会读取WAL日志并生成相应的逻辑解码快照。当传输结束时会删除这些快照。
 
 文件地址为：`$PGDATA/pg_logical/snapshots/{LSN Upper}-{LSN Lower}.snap`
-
-------
 
 ## 监控
 
@@ -500,8 +484,6 @@ ERROR: duplicate key value violates unique constraint "pgbench_tellers_pkey","Ke
 
 例如：`pg_replication_slots.confirmed_flush_lsn` 长期落后于 `pg_cureent_wal_lsn`。或者 `pg_stat_replication.flush_ag/write_lag` 有显著增长。
 
-------
-
 ## 安全
 
 参与订阅的表，其Ownership与Trigger权限必须控制在超级用户所信任的角色手中（否则修改这些表可能导致逻辑复制中断）。
@@ -553,8 +535,6 @@ max_replication_slots: 16               # 10 -> 16
 max_logical_replication_workers: 8      # 4 -> 8, 6 sync worker + 1~2 apply worker
 max_sync_workers_per_subscription: 6    # 2 -> 6, 6 sync worker
 ```
-
-------
 
 ## 快速配置
 
@@ -611,8 +591,6 @@ CREATE SUBSCRIPTION pg_test_sub
 EOF
 ```
 
-------
-
 ## 复制流程
 
 逻辑复制的订阅创建后，如果一切正常，逻辑复制会自动开始，针对 **每张订阅中的表** 执行复制状态机逻辑。
@@ -630,8 +608,6 @@ stateDiagram-v2
 当所有的表都完成复制，进入 `r`（ready）状态时，逻辑复制的存量同步阶段便完成了，发布端与订阅端整体进入同步状态。
 
 因此从逻辑上讲，存在两种状态机：**表级复制小状态机** 与 **全局复制大状态机**。每一个Sync Worker负责一张表上的小状态机，而一个Apply Worker负责一条逻辑复制的大状态机。
-
-------
 
 ## 逻辑复制状态机
 
@@ -680,8 +656,6 @@ EOF
 ```
 
 当然，最好的方式始终是通过监控系统来跟踪复制状态。
-
-------
 
 ## 沙箱样例
 
@@ -773,8 +747,6 @@ $ psql ${PGSUB} -AXtwc 'SELECT * FROM pgbench_accounts WHERE aid = 99999999;'
 
 现在已经拥有一个正常工作的逻辑复制了。下面让我们来通过一系列实验来掌握逻辑复制的使用与管理，探索可能遇到的各种离奇问题。
 
-------
-
 ## 逻辑复制实验
 
 ### 将表加入已有发布
@@ -856,8 +828,6 @@ ORDER BY 2,3;
 ```
 
 注意，复制身份为 `nothing` 的表可以加入到发布中，但在发布者上对其执行 `UPDATE|DELETE` 会直接导致报错。
-
-------
 
 ## 其他问题
 

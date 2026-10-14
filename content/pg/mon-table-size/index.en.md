@@ -5,8 +5,7 @@ authors: [vonng]
 summary: "Tables in PostgreSQL correspond to many physical files. This article explains how to calculate the actual size of a table in PostgreSQL."
 tags: [PostgreSQL, PG Admin, Monitoring]
 ---
-
-### Table Space Layout
+## Table Space Layout
 
 In the broad sense, a **Table** includes two parts: the **main table** and **TOAST table**:
 
@@ -37,7 +36,7 @@ In summary, a table is not as simple as it appears - it consists of several rela
 
 Each relation may actually contain 1-3 forks: `main` (always exists), `fsm`, `vm`.
 
-### Getting Table's Associated Relations
+## Getting Table's Associated Relations
 
 Use the following query to list all fork oids:
 
@@ -58,14 +57,14 @@ from
 where nspname not in ('pg_catalog', 'information_schema') and rel.relkind = 'r';
 ```
 
-```
+```text
  nspname |  relname   |  nspid  |  relid  | toastid | toastindexid |      indexes
 ---------+------------+---------+---------+---------+--------------+--------------------
  public  | aoi        | 4310872 | 4320271 | 4320274 |      4320276 | {4325606,4325605}
  public  | poi        | 4310872 | 4332324 | 4332327 |      4332329 | {4368886}
 ```
 
-### Statistical Functions
+## Statistical Functions
 
 PostgreSQL provides a series of functions to determine the space occupied by various parts.
 
@@ -97,7 +96,7 @@ The table size portion can typically be calculated as:
 
 Note that TOAST tables also have their own indexes, but there is only one, so using `pg_total_relation_size(reltoastrelid)` can calculate the overall size of the TOAST table.
 
-### Example: Statistics for a Specific Table and Related Relations UDTF
+## Example: Statistics for a Specific Table and Related Relations UDTF
 
 ```sql
 SELECT
@@ -154,7 +153,7 @@ SELECT * FROM pg_table_size_detail(16418);
 
 Sample return result:
 
-```
+```text
 geo=# select * from  pg_table_size_detail(4325625);
    id    |   pid   |        relname        | nspname  | relkind |  tuples  |  pages  |    size
 ---------+---------+-----------------------+----------+---------+----------+---------+-------------
@@ -169,7 +168,7 @@ geo=# select * from  pg_table_size_detail(4325625);
  4420044 | 4325625 | poi_position_geohash6 | gaode    | i       | 62685464 |  172058 |  1409499136
 ```
 
-### Example: Relation Size Details Summary
+## Example: Relation Size Details Summary
 
 ```sql
 select

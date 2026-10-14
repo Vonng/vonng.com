@@ -7,7 +7,6 @@ summary: >
   How to instantly clone a massive PostgreSQL database without consuming extra storage? PostgreSQL 18 and XFS can spark some serious magic.
 tags: [PostgreSQL, PG Development, GIS]
 ---
-
 Every programmer has used `git clone`. Hit enter, wait a few seconds, and a complete code repository appears on your disk.
 
 But what about databases?
@@ -22,8 +21,6 @@ But here's the thing—PostgreSQL has had this capability for a while.
 
 This isn't magic—it's **Copy-on-Write (CoW)** technology finally getting native PostgreSQL support.
 Let's talk about this feature and what it means for the entire "data version control" ecosystem.
-
----
 
 ## Copy-on-Write: Why So Fast?
 
@@ -40,8 +37,6 @@ Here's the key: **the operating system doesn't actually copy the data**.
 It just creates a new set of metadata pointers pointing to the same physical disk blocks. It's like creating a "shortcut" in your file manager, except this shortcut can be modified independently.
 
 **No data movement, just metadata operations.** So whether the database is 1GB or 1TB, cloning time is constant—on modern NVMe SSDs, I've tested cloning a 120GB database in about 200 milliseconds. A 797GB database takes roughly 569 milliseconds.
-
-------
 
 ## Copy-on-Write: Why No Extra Space?
 
@@ -198,8 +193,6 @@ This opens a new door:
 **CI/CD Scenarios**: Database deployments used to be nerve-wracking. Now you can cheaply clone a bunch of test databases for integration testing, validate DDL migrations on real data before going to production—much more confidence.
 
 **Development Environments**: Every developer gets a complete database copy with data identical to production, storage cost approaching zero. Break something? Clone a new one—200 milliseconds.
-
----
 
 ## Conclusion
 

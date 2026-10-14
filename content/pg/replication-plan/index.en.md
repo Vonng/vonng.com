@@ -6,7 +6,6 @@ summary: >
   Replication is one of the core issues in system architecture.
 tags: [PostgreSQL, PG Admin, Architecture]
 ---
-
 Replication is one of the core issues in system architecture.
 
 ## Cluster Topology
@@ -20,7 +19,7 @@ Suppose we use a standard 4-unit configuration: primary, synchronous replica, de
 
 Depending on the attachment targets of R and O, replication topology relationships have the following options:
 
-![](replication-topo.png)
+![PostgreSQL Common Replication Topology Plans — Cluster Topology (figure 1)](replication-topo.png)
 
 Among these, topology 2 has significant advantages:
 
@@ -28,9 +27,9 @@ When using synchronous commit, for safety reasons, there must be more than one s
 
 On the other hand, when using synchronous commit, if M fails and failover to S occurs, S also needs a synchronous replica to avoid hanging immediately after switching due to synchronous commit. Therefore, remote replicas are suitable for attaching to S.
 
-![](replication-topo-good.png)
+![PostgreSQL Common Replication Topology Plans — Cluster Topology (figure 2)](replication-topo-good.png)
 
-![](backup-types.png)
+![PostgreSQL Common Replication Topology Plans — Cluster Topology (figure 3)](backup-types.png)
 
 ## Failure Recovery
 
@@ -40,7 +39,7 @@ When failures occur, we need to restore the production system **as quickly as po
 * P1: (S) Replica failure affects read-only queries, but primary can handle it temporarily, tolerating minutes to hours
 * P2: (O, R) Offline and remote replica failures may have no direct impact, failure tolerance can be relaxed to hours to days
 
-![](replication-topo-restore.png)
+![PostgreSQL Common Replication Topology Plans — Failure Recovery (figure 4)](replication-topo-restore.png)
 
 When M fails, it affects all components. Failover must be executed to promote S to the new M to restore the system as quickly as possible. Manual failover includes two steps: Fencing M (from heavy to light: shutdown, stop database, change HBA, close connection pool, pause connection pool) and Promote S. Both operations can be completed in a very short time through scripts. After failover, the system is basically restored. The original topology structure needs to be restored afterwards. For example, convert the original M to a new replica through `pg_rewind`, attach O to the new M, attach R to the new S; or after repairing M, return to the original topology through planned failover.
 

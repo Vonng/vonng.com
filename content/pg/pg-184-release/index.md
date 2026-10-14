@@ -6,7 +6,6 @@ summary: >
   发布者：PostgreSQL Global Development Group 分类：PostgreSQL 项目安全
 tags: [PostgreSQL, PG管理]
 ---
-
 发布者：PostgreSQL Global Development Group 分类：PostgreSQL 项目安全
 
 PostgreSQL 全球开发组发布了所有受支持 PostgreSQL 版本的更新，包括 18.4、17.10、16.14、15.18 和 14.23。本次发布修复了 11 个安全漏洞，以及过去几个月中报告的 60 多个 bug。

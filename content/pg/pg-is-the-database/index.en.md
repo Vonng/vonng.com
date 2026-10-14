@@ -10,10 +10,7 @@ resources:
   - { src: "pg-survey.png", params: {byline: "*source*: https://www.timescale.com/state-of-postgres/2022/"} }
 tags: [PostgreSQL, PG Ecosystem, Extension]
 ---
-
 PostgreSQL isn’t just a simple relational database; it’s a data management framework with the potential to engulf the entire database realm. The trend of “Using Postgres for Everything” is no longer limited to a few elite teams but is becoming a mainstream best practice.
-
-------
 
 ## OLAP's New Challenger
 
@@ -34,8 +31,6 @@ However, the arrival of [**ParadeDB**](https://www.paradedb.com/) and [**DuckDB*
 **DuckDB** focuses on pure OLAP, pushing analysis performance to the extreme (**x3.2**) — excluding the academically focused, closed-source database Umbra, DuckDB is arguably the fastest for practical OLAP performance. It’s not a PG extension, but PostgreSQL can fully leverage DuckDB’s analysis performance boost as an embedded file database through projects like [**DuckDB FDW**](https://github.com/alitrack/duckdb_fdw) and [**pg_quack**](https://github.com/hydradatabase/pg_quack).
 
 The emergence of ParadeDB and DuckDB propels PostgreSQL's analysis capabilities to the top tier of OLAP, filling the last crucial gap in its analytic performance.
-
-------
 
 ## The Pendulum of Database Realm
 
@@ -61,8 +56,6 @@ If 99% of use cases can now be handled on a single machine with standalone DuckD
 
 The shift in fundamental assumptions is steering the database world from a phase of diversification back to convergence, from a big bang to a mass extinction. In this process, a new era of unified, multi-modeled, super-converged databases will emerge, reuniting OLTP and OLAP. But who will lead this monumental task of reconsolidating the database field?
 
-------
-
 ## PostgreSQL: The Database World Eater
 
 There are a plethora of niches in the database realm: time-series, geospatial, document, search, graph, vector databases, message queues, and object databases. PostgreSQL makes its presence felt across all these domains.
@@ -81,8 +74,6 @@ What makes PostgreSQL so capable? Sure, it's advanced, but so is Oracle; it's op
 
 PostgreSQL isn’t just a relational database; it’s a data management framework capable of engulfing the entire database galaxy. Besides being open-source and advanced, its core competitiveness stems from **extensibility**, i.e., its infra’s reusability and extension's composability.
 
-------
-
 ### The Magic of Extreme Extensibility
 
 PostgreSQL allows users to develop extensions, leveraging the database's common infra to deliver features at minimal cost. For instance, the vector database extension [pgvector](https://github.com/pgvector/pgvector), with just several thousand lines of code, is negligible in complexity compared to PostgreSQL's millions of lines. Yet, this "insignificant" extension achieves complete vector data types and indexing capabilities, [outperforming](https://supabase.com/blog/pgvector-vs-pinecone) lots of specialized vector databases.
@@ -91,23 +82,17 @@ Why? Because pgvector's creators didn't need to worry about the database's gener
 
 For example, ElasticSearch was developed on the Lucene search library, while the Rust ecosystem has an improved next-gen full-text search library, [Tantivy](https://github.com/quickwit-oss/tantivy), as a Lucene alternative. ParadeDB only needs to wrap and connect it to PostgreSQL's interface to offer search services comparable to ElasticSearch. More importantly, it can stand on the shoulders of PostgreSQL, leveraging the entire PG ecosystem's united strength (e.g., mixed searches with PG Vector) to "unfairly" compete with another dedicated database.
 
-[![img](https://pigsty.io/img/pigsty/ecosystem.jpg)](https://pigsty.cc/docs/reference/extension/)
+[![img](https://pigsty.io/img/pigsty/ecosystem.jpg)](https://pigsty.cc/docs/pgsql/ext/)
 
-> Pigsty has 255 [**extensions**](https://pigsty.cc/docs/reference/extension/) available. And there are [**1000+**](https://gist.github.com/joelonsql/e5aa27f8cc9bd22b8999b7de8aee9d47) more in the ecosystem
-
-------
+> Pigsty has 255 [**extensions**](https://pigsty.cc/docs/pgsql/ext/) available. And there are [**1000+**](https://gist.github.com/joelonsql/e5aa27f8cc9bd22b8999b7de8aee9d47) more in the ecosystem
 
 The extensibility brings another huge advantage: the **composability** of extensions, allowing different extensions to work together, creating a synergistic effect where 1+1 >> 2. For instance, TimescaleDB can be combined with PostGIS for spatio-temporal data support; the BM25 extension for full-text search can be combined with the PGVector extension, providing hybrid search capabilities.
 
 Furthermore, the **distributive** extension [**Citus**](https://www.citusdata.com/) can transparently transform a standalone cluster into a horizontally partitioned distributed database cluster. This capability can be orthogonally combined with other features, making PostGIS a distributed geospatial database, PGVector a distributed vector database, ParadeDB a distributed full-text search database, and so on.
 
-------
-
 What’s more powerful is that extensions **evolve independently**, without the cumbersome need for main branch merges and coordination.  This allows for scaling — PG’s extensibility lets numerous teams explore database possibilities in parallel, with all extensions being optional, not affecting the core functionality’s reliability. Those features that are mature and robust have the chance to be stably integrated into the main branch.
 
 PostgreSQL achieves both foundational **reliability** and **agile functionality** through the magic of extreme extensibility, making it an outlier in the database world and changing the game rules of the database landscape.
-
-------
 
 ## Game Changer in the DB Arena
 
@@ -123,15 +108,13 @@ Following this logic, the PostgreSQL ecosystem is poised to snowball, accruing a
 
 > [**StackOverflow 2023 Survey: PostgreSQL, the Decathlete**](https://survey.stackoverflow.co/2023/#section-most-popular-technologies-databases)
 
-[![sf-trend.jpg](sf-trend.jpg)](https://demo.pigsty.cc/d/sf-survey)
+[![sf-trend.jpg](sf-trend.jpg)](https://demo.pigsty.cc/ui/d/sf-survey)
 
-> [**StackOverflow's Database Trends Over the Past 7 Years**](https://demo.pigsty.cc/d/sf-survey)
+> [**StackOverflow's Database Trends Over the Past 7 Years**](https://demo.pigsty.cc/ui/d/sf-survey)
 
 PostgreSQL has long been the favorite database in HackerNews & StackOverflow. Many new open-source projects default to PostgreSQL as their primary, if not only, database choice. And many new-gen companies are going All in PostgreSQL.
 
 As “[**Radical Simplicity: Just Use Postgres**](https://www.amazingcto.com/postgres-for-everything/)” says, Simplifying tech stacks, reducing components, accelerating development, lowering risks, and adding more features can be achieved by **“Just Use Postgres.”** Postgres can replace many backend technologies, including MySQL, Kafka, RabbitMQ, ElasticSearch, Mongo, and Redis, effortlessly serving millions of users. **Just Use Postgres** is no longer limited to a few elite teams but becoming a mainstream best practice.
-
-------
 
 ## What Else Can Be Done?
 
@@ -145,16 +128,14 @@ Accordingly, the main conflict is no longer the database kernel itself but two d
 
 Kernel remains lukewarm, with MariaDB, the fork of MySQL’s parent, nearing delisting, while AWS, profiting from offering services and extensions on top of the free kernel, thrives. Investment has flowed into numerous PG ecosystem extensions and service distributions: Citus, TimescaleDB, Hydra, PostgresML, ParadeDB, FerretDB, StackGres, Aiven, Neon, Supabase, Tembo, PostgresAI, and our own PG distro — — [Pigsty](https://pigsty.io/).
 
-![](https://pigsty.io/img/pigsty/players.png)
-
-------
+![Postgres is eating the database world — What Else Can Be Done? (figure 9)](https://pigsty.io/img/pigsty/players.png)
 
 A dilemma within the PostgreSQL ecosystem is the independent evolution of many extensions and tools, lacking a unifier to synergize them. For instance, Hydra releases its own package and Docker image, and so does PostgresML, each distributing PostgreSQL images with their own extensions and only their own. These images and packages are far from comprehensive database services like AWS RDS.
 
 Even service providers and ecosystem integrators like AWS fall short in front of numerous extensions, unable to include many due to various reasons (AGPLv3 license, security challenges with multi-tenancy),
 thus failing to leverage the synergistic amplification potential of PostgreSQL ecosystem extensions.
 
-> | **Extesion Category** | [**Pigsty RDS & PGDG**](https://pigsty.io/docs/reference/extension/) | [**AWS RDS PG**](https://docs.aws.amazon.com/AmazonRDS/latest/PostgreSQLReleaseNotes/postgresql-extensions.html) | [**Aliyun RDS PG**](https://help.aliyun.com/zh/rds/apsaradb-rds-for-postgresql/extensions-supported-by-apsaradb-rds-for-postgresql) |
+> | **Extesion Category** | [**Pigsty RDS & PGDG**](https://pigsty.io/docs/pgsql/ext/) | [**AWS RDS PG**](https://docs.aws.amazon.com/AmazonRDS/latest/PostgreSQLReleaseNotes/postgresql-extensions.html) | [**Aliyun RDS PG**](https://help.aliyun.com/zh/rds/apsaradb-rds-for-postgresql/extensions-supported-by-apsaradb-rds-for-postgresql) |
 > |-----------------------|----------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------:|
 > | Add Extension         | <i class="fas fa-circle-check text-success"></i> Free to Install     |                           <i class="fas fa-circle-xmark text-danger"></i> Not Allowed                            |                                     <i class="fas fa-circle-xmark text-danger"></i> Not Allowed                                     |
 > | Geo Spatial           | <i class="fas fa-circle-check text-success"></i> PostGIS 3.4.2       |                          <i class="fas fa-circle-check text-success"></i> PostGIS 3.4.1                          |                                   <i class="fas fa-circle-check text-success"></i> PostGIS 3.3.4                                    |
@@ -179,8 +160,6 @@ thus failing to leverage the synergistic amplification potential of PostgreSQL e
 Extensions are the soul of PostgreSQL. A Postgres without the freedom to use extensions is like cooking without salt, a giant constrained.
 
 Addressing this issue is one of our primary goals.
-
-------
 
 ## Our Resolution: Pigsty
 
@@ -221,10 +200,10 @@ Our aim is to integrate the strengths within the PostgreSQL ecosystem, creating 
 - [**DuckDB FDW**](https://github.com/alitrack/duckdb_fdw): Enables direct access to DuckDB’s powerful embedded analytic database files through PostgreSQL (& DuckDB CLI).
 - [**Supabase**](https://github.com/Vonng/pigsty/tree/master/app/supabase): An open-source Firebase alternative based on PostgreSQL, providing a complete app development storage solution.
 - [**FerretDB**](https://github.com/Vonng/pigsty/tree/master/app/ferretdb): An open-source MongoDB alternative based on PostgreSQL, compatible with MongoDB APIs/drivers.
-- [**PostgresML**](https://github.com/Vonng/pigsty/tree/master/app/pgml): Facilitates classic machine learning algorithms, calling, deploying, and training AI models with SQL.
+- [**PostgresML**](https://github.com/postgresml/postgresml): Facilitates classic machine learning algorithms, calling, deploying, and training AI models with SQL.
 
 [![img](https://pigsty.io/img/pigsty/desc.png)](https://pigsty.io)
 
 Developers, your choices will shape the future of the database world. I hope my work helps you better utilize the world’s most advanced open-source database kernel: **PostgreSQL**.
 
-> [Read in Pigsty’s Blog](https://pigsty.io/pg/pg-eat-db-world/) *|* [GitHub Repo: Pigsty](https://github.com/Vonng/pigsty) *|* [Official Website](https://pigsty.io/)
+> [Read in Pigsty’s Blog](/en/pg/pg-eat-db-world/) *|* [GitHub Repo: Pigsty](https://github.com/Vonng/pigsty) *|* [Official Website](https://pigsty.io/)

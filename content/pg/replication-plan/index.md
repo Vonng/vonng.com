@@ -7,9 +7,6 @@ summary: >
   复制是系统架构中的核心问题之一。
 tags: [PostgreSQL, PG管理, 架构]
 ---
-
-
-
 复制是系统架构中的核心问题之一。
 
 ## 集群拓扑
@@ -23,7 +20,7 @@ tags: [PostgreSQL, PG管理, 架构]
 
 依照R和O的挂载目标不同，复制拓扑关系有以下几种选择：
 
-![](replication-topo.png)
+![PostgreSQL 常见复制拓扑方案：集群拓扑（图 1）](replication-topo.png)
 
 其中，拓扑2具有显著的优越性：
 
@@ -31,9 +28,9 @@ tags: [PostgreSQL, PG管理, 架构]
 
 另一方面，当使用同步提交时，假设M出现故障，Failover至S，那么S也需要一个同步从库，以免在切换后立刻因为同步提交而Hang住，因此远程备库适合挂载到S上。
 
-![](replication-topo-good.png)
+![PostgreSQL 常见复制拓扑方案：集群拓扑（图 2）](replication-topo-good.png)
 
-![](backup-types.png)
+![PostgreSQL 常见复制拓扑方案：集群拓扑（图 3）](backup-types.png)
 
 ## 故障恢复
 
@@ -43,7 +40,7 @@ tags: [PostgreSQL, PG管理, 架构]
 * P1：（S）从库失效，影响只读查询，但主库可以先抗，可以容忍分钟级别到小时级别的问题。
 * P2：（O，R）离线库与远程备库故障，可能没有直接影响，故障容忍范围可以放宽至小时到天级别。
 
-![](replication-topo-restore.png)
+![PostgreSQL 常见复制拓扑方案：故障恢复（图 4）](replication-topo-restore.png)
 
 当M失效时，会对所有组件产生影响。需要执行故障转移（Failover）将S提升为新的M以便尽快使系统恢复。手工Failover包括两个步骤：Fencing M（由重到轻：关机，关数据库，改HBA，关连接池，暂停连接池）与Promote S，这两个操作都可以通过脚本在很短的时间内完成。Failover之后，系统基本恢复。还需要在事后重新恢复原来的拓扑结构。例如将原有的M通过 `pg_rewind` 变为新的从库，将O挂载到新的M上，将R挂载到新的S上；或者在修复M后，通过计划内的Failover再次回归原有拓扑。
 

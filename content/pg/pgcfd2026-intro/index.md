@@ -7,7 +7,6 @@ summary: >
   PGConf.Dev 2026 在温哥华开幕。今年恰逢 PostgreSQL 项目 30 周年，我也会在大会上分享 Extensions for Everyone。
 tags: [PostgreSQL, PG生态]
 ---
-
 温哥华时间 5 月 19 日，[PGConf.Dev 2026](https://2026.pgconf.dev/) 正式拉开序幕。今年的会场在 Simon Fraser University 市区校区，也就是 SFU Vancouver Harbour Centre，和第一届 PGConf.Dev 一样，还是在温哥华。
 
 PGConf.Dev 是 PostgreSQL 全球开发者大会，前身是 PGCon。它是核心开发者、扩展作者、社区组织者一年一度最重要的聚会之一。今年又刚好赶上 **PostgreSQL 项目 30 周年**，社区围绕这个节点专门安排了不少活动。

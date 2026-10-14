@@ -6,7 +6,6 @@ summary: >
   Indexes are useful, but they're not free. Unused indexes are a waste. Use these methods to identify unused indexes.
 tags: [PostgreSQL, PG Admin]
 ---
-
 > Author: [Vonng](https://vonng.com/en/)
 
 Indexes are useful, but they're not free. Unused indexes are a waste. Use the following SQL to identify unused indexes:
@@ -14,8 +13,6 @@ Indexes are useful, but they're not free. Unused indexes are a waste. Use the fo
 * First, exclude indexes used to implement constraints (can't be dropped)
 * Expression indexes (containing field 0 in `pg_index.indkey`)
 * Then find indexes with zero index scans (you can also use a more lenient condition, such as fewer than 1000 scans)
-
----------------
 
 ## Finding Unused Indexes
 
@@ -63,8 +60,6 @@ WHERE s.idx_scan = 0      -- has never been scanned
 ORDER BY pg_relation_size(s.indexrelid) DESC;
 ```
 
----------------
-
 ### Batch Generate Index Drop Commands
 
 ```sql
@@ -79,8 +74,6 @@ WHERE s.idx_scan = 0      -- has never been scanned
           WHERE c.conindid = s.indexrelid)
 ORDER BY pg_relation_size(s.indexrelid) DESC;
 ```
-
----------------
 
 ## Finding Duplicate Indexes
 

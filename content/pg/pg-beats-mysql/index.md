@@ -6,7 +6,6 @@ summary: >
   在全球云厂商中，PostgreSQL的规模与增速远超MySQL，这场纷争已经不再有任何悬念了 —— PostgreSQL 将成为数据库世界的 Linux，而 MySQL 会成为数据…
 tags: [PostgreSQL, MySQL, 技术评论]
 ---
-
 昨天在 X 上看到暴跳发了个帖。暴跳以前是 PolarDB InnoDB 引擎的负责人，现在是阿里云 RDS PG + MySQL 的头儿：
 
 ![图片](01.webp)
@@ -17,8 +16,6 @@ tags: [PostgreSQL, MySQL, 技术评论]
 
 [StackOverflow 2024 调研：PostgreSQL 已经超神了](/pg/pg-is-no1-again/)
 
----
-
 当然，在去年 PGCon.Dev 上我也特意问了 AWS 的人，他们没说具体的比例，但告诉我无论是按实例数量算还是按 CPU 数量算，PostgreSQL 都已经比 MySQL 更多了。特别是 PostgreSQL 实例的平均规格要比 MySQL 大，所以如果按照 CPU 核数来算的话，PostgreSQL 就比 MySQL 多更多了。
 
 其实从 AWS 的产品发布与技术投入路线来看，不难看出全球云计算一哥已经把重注都下在了 PostgreSQL 上，首先整个 RDS （MySQL + PGSQL）的产品经理就是 PostgreSQL 社区核心组成员 Jonathan Katz，近两年 PG/PGVECTOR 在向量数据库领域嘎嘎乱杀，背后的主要推手和贡献者就是 AWS。
@@ -26,8 +23,6 @@ tags: [PostgreSQL, MySQL, 技术评论]
 然后最近的 Aurora 新品分布式 DSQL 只有 PostgreSQL 兼容，没搞 MySQL 的，放在以前这种事从来都是 MySQL 先上的。
 
 ![图片](03.webp)
-
----
 
 与此同时，其他公司也继续在 PostgreSQL 发力。除了先前持续维护的分布式扩展 Citus 之外，最近微软还开源了 DocumentDB，一款将 PostgreSQL 转换为 MongoDB 的扩展 —— 而且支持与 Citus 深度融合，提供分布式文档数据库的能力。
 
@@ -54,8 +49,6 @@ tags: [PostgreSQL, MySQL, 技术评论]
 而 MySQL 因为 Oracle 的不作为与躺平摆烂，还还将继续错过 OLAP 领域的 [DuckDB 缝合大赛](/pg/pg-duckdb/)，以及全文检索领域的 Tantivy 缝合大赛，未来与 PostgreSQL 的差距还会越拉越大。
 
 按照现在的发展趋势，我认为大概会在几年内看到 PostgreSQL 正式成为数据库领域的 Linux 内核，而 MySQL 会变为 PHP 现在的状态 —— “PHP 是世界上最好的语言”，然而世界早已被 Javascript 吞噬。
-
----
 
 [**PostgreSQL 正在吞噬数据库世界**](/pg/pg-eat-db-world/)
 

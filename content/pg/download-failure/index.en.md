@@ -7,7 +7,6 @@ summary: >
   Recently there was a perplexing incident where a database had half its data volume and load migrated away, but ended up being overwhelmed due to increased load.
 tags: [PostgreSQL, PG Admin, Incident]
 ---
-
 > Author: [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 
 Recently there was a perplexing incident where a database had half its data volume and load migrated away.
@@ -30,7 +29,7 @@ What was perplexing was that tables were moved (data volume halved), load was mo
 
 Normal CPU usage water level was 25%, warning level at 45%, limit level at 80%. During the incident, all standby servers spiked to limit levels.
 
-![](download-failure-cpu.jpg)
+![Incident-Report: Uneven Load Avalanche — II. Phenomena (figure 1)](download-failure-cpu.jpg)
 
 PostgreSQL connections surged dramatically. Normally 5-10 database connections were sufficient for all traffic, with connection pool maximum of 100 connections.
 
@@ -42,11 +41,11 @@ pgbouncer connection pool average response time was normally around 500μs, spik
 
 During the incident, database TPS declined significantly. After query killing rescue it recovered but remained in violent fluctuation.
 
-![](download-failure-tps.png)
+![Incident-Report: Uneven Load Avalanche — II. Phenomena (figure 4)](download-failure-tps.png)
 
 During the incident, execution time of two functions deteriorated significantly, from hundreds of microseconds to tens of milliseconds.
 
-![](download-failure-functime.png)
+![Incident-Report: Uneven Load Avalanche — II. Phenomena (figure 5)](download-failure-functime.png)
 
 During the incident, replication lag increased significantly, starting to show GB-level replication delays, with business metrics declining significantly.
 
@@ -113,7 +112,7 @@ The direct trigger was these two functions degrading into slow queries. Through 
 #### Evidence
 
 **Chart: Function average execution time showed obvious spikes during incident**
-![](download-failure-functime.png)
+![Incident-Report: Uneven Load Avalanche — Evidence (figure 9)](download-failure-functime.png)
 
 **Chart: Maximum QPS achievable for this function under different parallel counts**
 ![degenerate-5889931](download-failure-degenerate.png)

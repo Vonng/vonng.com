@@ -7,7 +7,6 @@ summary: >
   现在PG是世界上最先进的开源数据库，已经是各种规模组织的首选开源数据库，与顶尖商业数据库旗鼓相当，甚至更胜一筹。
 tags: [PostgreSQL]
 ---
-
 一年一度的 PostgreSQL 大版本发布来了！这次的 PostgreSQL 17 ，又给我们带来了什么惊喜呢？
 
 在这次大版本发布注记中， PostgreSQL 全球社区直接摊牌了 —— **不好意思，我不装了** —— “**现在PG就是世界上最先进的开源数据库，已经是各种规模组织的首选开源数据库了**”。虽然没有指名道姓，但官方已经无限接近喊出“干翻顶级商业数据库”（Oracle）的口号了。
@@ -28,8 +27,6 @@ PostgreSQL 这头巨兽已经觉醒了 —— 它不再是过去那种佛系与�
 
 ![eco.png](eco.png)
 
-----------
-
 ## 原文：PostgreSQL 17 发布注记
 
 PostgreSQL [全球开发组](https://www.postgresql.org/) 今天正式（2024-09-26）宣布了 [PostgreSQL 17](https://www.postgresql.org/docs/17/release-17.html) 的正式发布，这是世界上最先进的开源数据库的最新版本。
@@ -44,8 +41,6 @@ PostgreSQL 核心团队成员 Jonathan Katz 表示：“PostgreSQL 17 展现了�
 
 PostgreSQL 是一款以可靠性、稳健性和可扩展性著称的创新型数据管理系统，受益于全球开发者社区超过 25 年的开源开发，**已成为各类组织的首选开源关系型数据库**。
 
---------
-
 ## 系统性能的全面提升
 
 PostgreSQL 的 [`vacuum`](https://www.postgresql.org/docs/17/routine-vacuuming.html) 进程对于系统健康运行至关重要，然而 vacuum 操作是需要消耗服务器实例资源的。PostgreSQL 17 引入了一种新的 vacuum 内部内存结构，内存消耗量降至原本的 1/20。这不仅提高了 vacuum 的速度，还减少了对共享资源的占用，为用户的工作负载释放出更多可用资源。
@@ -54,8 +49,6 @@ PostgreSQL 17 也继续在 I/O 层面上不断优化性能。由于对预写日�
 
 PostgreSQL 17 也在查询执行方面改善了性能。对于使用 [B-tree](https://www.postgresql.org/docs/17/indexes-types.html#INDEXES-TYPES-BTREE) 索引（PostgreSQL 默认的索引方法）的 `IN` 子句查询，性能有所提高。此外，[BRIN](https://www.postgresql.org/docs/17/brin.html) 索引现在支持并行构建。
 PostgreSQL 17 在查询规划方面进行了多项改进，包括对 `NOT NULL` 约束的优化，以及对 CTE（[`WITH`](https://www.postgresql.org/docs/17/queries-with.html) 查询）处理的改进。本次发布中，使用 SIMD（单指令多数据）加速计算得到了更广泛地应用，例如在 [`bit_count`](https://www.postgresql.org/docs/17/functions-bitstring.html) 函数中使用 `AVX-512` 指令。
-
---------
 
 ## 进一步丰富的开发者体验
 
@@ -71,8 +64,6 @@ PostgreSQL 17 为 [`MERGE`](https://www.postgresql.org/docs/17/sql-merge.html) �
 
 PostgreSQL 17 还包含一个内置的、平台无关的、不可变的排序规则提供者，以确保排序规则的不可变性，并提供了类似于 `C` 排序规则的排序语义，但使用 `UTF-8` 编码而非 `SQL_ASCII`。使用这个新的排序规则提供者，可以保证您的文本查询无论在哪里的 PostgreSQL 上运行，都能返回相同的排序结果。
 
---------
-
 ## 针对高可用与大版本升级的逻辑复制改进
 
 在许多用例中，[逻辑复制](https://www.postgresql.org/docs/17/logical-replication.html) 用于实时传输数据。
@@ -81,8 +72,6 @@ PostgreSQL 17 还包含一个内置的、平台无关的、不可变的排序规
 
 PostgreSQL 17 现在包含了针对逻辑复制的故障切换能力，使其在高可用环境中部署时更为可靠。
 此外，PostgreSQL 17 引入了命令行工具 [`pg_createsubscriber`](https://www.postgresql.org/docs/17/app-pgcreatesubscriber.html)，用于将物理从库转换为一个新的逻辑从库。
-
---------
 
 ## 更多面向安全与运维的管理选项
 
@@ -96,13 +85,9 @@ PostgreSQL 17 还增强了监控和分析功能。[`EXPLAIN`](https://www.postgr
 PostgreSQL 17 现在还会报告 [索引 VACUUM 的进度](https://www.postgresql.org/docs/17/progress-reporting.html#VACUUM-PROGRESS-REPORTING)，
 并添加了新的系统视图 [`pg_wait_events`](https://www.postgresql.org/docs/17/view-pg-wait-events.html)，在与 `pg_stat_activity` 视图结合使用时可以更深入地了解活动会话的等待原因。
 
---------
-
 ## 其他功能
 
 PostgreSQL 17 中还添加了许多其他新功能和改进，可能会对您的用例有所帮助。请参阅 [发行注记](https://www.postgresql.org/docs/17/release-17.html) 以查阅新功能和变更的完整列表。
-
---------
 
 ## 关于 PostgreSQL
 
@@ -111,17 +96,13 @@ PostgreSQL 以无与伦比的开发速度持续发展：**PostgreSQL 提供成�
 
 > 译注：说的就是你呀，Oracle
 
---------
-
 ## 关于 Pigsty
 
 顺带一提，紧随 PostgreSQL 17 发布的 Pigsty v3.0.3 已经正式支持使用 PostgreSQL 17 内核，欢迎试用。
 
-[**Pigsty**](https://pigsty.cc/zh) 是开源免费，本地优先，开箱即用的 PostgreSQL RDS，允许用户在本地一键拉起生产级的 PG 云数据库服务，并带有开箱即用的 390 个PG扩展插件，故障自愈的高可用，顶级监控系统，PITR备份恢复，IaC命令行工具，SOP管理预案的完整解决方案。
+[**Pigsty**](https://pigsty.cc/) 是开源免费，本地优先，开箱即用的 PostgreSQL RDS，允许用户在本地一键拉起生产级的 PG 云数据库服务，并带有开箱即用的 390 个PG扩展插件，故障自愈的高可用，顶级监控系统，PITR备份恢复，IaC命令行工具，SOP管理预案的完整解决方案。
 
 ![pigsty-home.webp](pigsty-home.webp)
-
---------
 
 ## 其他参考阅读
 

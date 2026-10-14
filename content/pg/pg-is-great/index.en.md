@@ -6,32 +6,27 @@ summary: >
   Databases are the core component of information systems, relational databases are the absolute backbone of databases, and PostgreSQL is the world's most advanced open source relational database. With such favorable timing and positioning, how can it not achieve great success?
 tags: [PostgreSQL, PG Ecosystem]
 ---
-
 Recently, everything I've been working on revolves around the PostgreSQL ecosystem, because I've always felt this is a direction with unlimited potential.
 
 Why do I say this? Because databases are the core component of information systems, relational databases are the absolute backbone of databases, and PostgreSQL is the world's most advanced open source relational database. With such favorable timing and positioning, how can it not achieve great success?
 
 The most important thing in doing anything is to understand the situation clearly. When timing is right, heaven and earth unite to help; when fortune fades, even heroes lack freedom.
 
--------------
-
 ## Global Trends
 
 Today's world is divided into three parts: Oracle | MySQL | SQL Server are weakening and declining. PostgreSQL follows closely behind, rising like the sun at noon. Among the top four databases, the first three are all on a downward trajectory, only PG maintains unabated growth momentum. This ebb and flow promises unlimited potential.
 
-![](pg-is-great-1.png)
+![Why Does PostgreSQL Have a Bright Future? — Global Trends (figure 1)](pg-is-great-1.png)
 
 > [DB-Engine Database Popularity Trends](https://db-engines.com/en/ranking_trend) (Note: this is a **logarithmic** coordinate system)
 
 Among the only two leading open source relational databases MySQL & PostgreSQL, MySQL (2nd) currently has the upper hand, but its ecological niche is gradually being captured by PostgreSQL (4th) and the non-relational document database MongoDB (5th). Following current trends, PostgreSQL's popularity will soon break into the top three in a few years, standing alongside Oracle and MySQL.
 
--------------
-
 ## Competitive Landscape
 
 Relational databases have highly overlapping ecological niches, and their relationships can be viewed as a zero-sum game. PostgreSQL's direct competitors are **Oracle** and **MySQL**.
 
-![](pg-is-great-2.jpg)
+![Why Does PostgreSQL Have a Bright Future? — Competitive Landscape (figure 2)](pg-is-great-2.jpg)
 
 Oracle ranks first in popularity, is an established commercial database with deep historical and technical foundations, rich functionality, and comprehensive support. It sits firmly on the database throne, beloved by enterprises and organizations that aren't short on money. But Oracle is expensive and has become a notorious industry toxin with its litigious behavior. SQL Server, ranking third, belongs to the relatively independent Microsoft ecosystem, similar in nature to Oracle, both being commercial databases. Commercial databases overall are under pressure from open source databases and are in a state of slow decline in popularity.
 
@@ -57,8 +52,6 @@ Oracle, as established commercial software, has unquestionable **talent** but as
 
 When virtue doesn't match position, disaster must follow. Only PostgreSQL occupies the favorable timing of open source rise, grasps the advantageous position of powerful functionality, and enjoys the harmony of permissive BSD licensing. As the saying goes: Keep your talents hidden, move when the time is right. If it doesn't sing, it won't; but when it does, it will astonish the world. With both virtue and talent, the offensive and defensive positions have reversed!
 
--------------
-
 ## Virtue and Talent Combined
 
 ### PostgreSQL's Virtue
@@ -67,7 +60,7 @@ When virtue doesn't match position, disaster must follow. Only PostgreSQL occupi
 
 PG itself is grandfather-level open source software, a pearl in the open source world, a successful example of global developer collaboration. More importantly, it uses the selfless BSD license: except for fraudulently using PG's name, it's basically taboo-free: such as rebranding and transforming into domestic databases for sale. PG can be called the bread and butter of countless database vendors. With children and grandchildren filling the halls, saving countless lives, its merit is immeasurable.
 
-![](pg-is-great-3.webp)
+![Why Does PostgreSQL Have a Bright Future? — PostgreSQL's Virtue (figure 3)](pg-is-great-3.webp)
 
 > Database genealogy chart - if all PostgreSQL derivatives were listed, this chart would probably burst
 
@@ -77,11 +70,9 @@ PG itself is grandfather-level open source software, a pearl in the open source 
 
 PostgreSQL can independently play the role of a multi-talented player within a considerable scale, using one component as multiple components. **Single data component selection can dramatically reduce additional project complexity, meaning significant cost savings. It turns a ten-person job into a one-person job.** If there really is such a technology that can meet all your needs, then using that technology is the best choice, rather than trying to reimplement it with multiple components.
 
-![](pg-is-great-4.png)
+![Why Does PostgreSQL Have a Bright Future? — PostgreSQL's Talent (figure 4)](pg-is-great-4.png)
 
 > Reference reading: [**What Are PostgreSQL's Advantages**](/pg/pg-is-good/)
-
--------------
 
 ## The Virtue of Open-Source
 
@@ -93,8 +84,6 @@ Through open source, all community developers unite their efforts, greatly reduc
 
 So, whether doing databases or software, **to do technology is to do open source technology**. Closed source things have too weak vitality and aren't interesting. The virtue of open source is also the greatest confidence PostgreSQL and MySQL have against Oracle.
 
--------------
-
 ## Ecosystem Competition
 
 The core of open source lies in **ecosystem (ECO)**. Every open source technology has its own small ecosystem. A so-called ecosystem is a system composed of various entities and their environments through intensive interactions, and the ecosystem model of open source software can roughly be described as a positive feedback loop composed of the following three steps:
@@ -105,8 +94,6 @@ The core of open source lies in **ecosystem (ECO)**. Every open source technolog
 
 The prosperity of open source ecosystems depends on this closed loop, and the scale (number of users/developers) and complexity (quality of users/developers) of the ecosystem directly determine the vitality of this software. Therefore, every open source software has a destiny to expand its scale. Software scale usually depends on the **ecological niche** the software occupies. If different software's ecological niches overlap, competition occurs. In the ecological niche of open source relational databases, PostgreSQL and MySQL are the most direct competitors.
 
--------------
-
 ## Popular vs Advanced
 
 MySQL's slogan is "**The World's Most Popular Open-Source Relational Database**," while PostgreSQL's slogan is "**The World's Most Advanced Open-Source Relational Database**" - at first glance, these are clearly old rivals. These two slogans well reflect the characteristics of both products: PostgreSQL is feature-rich, consistency-first, high-end rigorous academic-style database; MySQL is feature-crude, availability-first, rough-and-ready "engineering-style" database.
@@ -114,8 +101,6 @@ MySQL's slogan is "**The World's Most Popular Open-Source Relational Database**,
 MySQL's main user base is concentrated in Internet companies. What are the typical characteristics of Internet companies? Pursuing trendy **rough-and-ready** approaches. **Rough** means Internet company business scenarios are simple (mostly CRUD); data importance is not high, unlike traditional industries (like banks) that care about data consistency (correctness); availability priority (more tolerant of data loss/corruption than service outages, while some traditional industries would rather stop service than have account errors). **Ready** means the Internet industry has large data volumes - they need cement truck mixers, not high-speed trains and manned spacecraft. **Fast** means the Internet industry has rapidly changing requirements, short delivery cycles, requiring fast response times, with massive demand for out-of-the-box software packages (like LAMP) and CRUD developers who can work after simple training. Thus, rough-and-ready Internet companies and rough-and-ready MySQL hit it off.
 
 PostgreSQL users lean more toward traditional industries. **Traditional industries are called traditional because they've passed through the stage of wild growth**, having mature business models and deep accumulated foundations. They need correct results, stable performance, rich functionality, and the ability to **analyze, process, and refine** data. So in traditional industries, it's often the world of Oracle, SQL Server, and PostgreSQL. Particularly in geo-related scenarios, it has an irreplaceable position. At the same time, many Internet companies' businesses are also beginning to mature and settle, having one foot in "traditional industry" territory, and more and more Internet companies are escaping the rough-and-ready low-level cycle, turning their attention to PostgreSQL.
-
--------------
 
 ## Which is More Correct?
 
@@ -132,7 +117,7 @@ Although many popular things are garbage, popular doesn't necessarily mean backw
 
 In my view, MySQL's philosophy can be called: "Better to live miserably than die well," and "After me, the deluge." Its "availability" is reflected in various "fault tolerance," such as allowing stupid programmers' erroneous SQL queries to still run. The most outrageous example is MySQL actually allowing **partially successful** transaction commits, violating basic constraints of relational databases: **atomicity and data consistency**.
 
-![](pg-is-great-5.jpg)
+![Why Does PostgreSQL Have a Bright Future? — ACID (figure 5)](pg-is-great-5.jpg)
 
 > Figure: MySQL actually allows partially successful transaction commits
 
@@ -150,11 +135,9 @@ PostgreSQL's so-called "strict constraints and syntax" might seem "inhuman" to n
 
 MySQL's popularity isn't far from PostgreSQL's, but its functionality compared to PostgreSQL and Oracle has quite a gap. Oracle and PostgreSQL were born around the same time, so even when fighting, with different stances and camps, there's a bit of mutual respect between old rivals: both are solid masters who've cultivated internal skills for half a century, accumulated deep foundations. MySQL is like an impetuous young man in his twenties wielding knives and guns, relying on brute force, riding the golden twenty years of Internet wild growth to rise and claim territory.
 
-![](pg-is-great-6.webp)
+![Why Does PostgreSQL Have a Bright Future? — ACID (figure 6)](pg-is-great-6.webp)
 
 The dividends given by the times will also recede as times pass. In this era of change, without advanced functionality as foundation, "popularity" probably can't last long.
-
--------------
 
 ## Development Prospects
 
@@ -164,7 +147,7 @@ From **enterprise user** perspective, PostgreSQL can independently play multi-ta
 
 Taking Tantan as an example, at the scale of 2.5M TPS and 200TB data, **single PostgreSQL selection** could still support business stable as a rock. Within a considerable scale, it could be versatile - besides its main OLTP job, PG also served as cache, OLAP, batch processing, even message queue for quite a long time. Of course, even divine turtles have lifespans. Eventually these part-time functions need to be gradually **separated** to dedicated components, but that was only when approaching ten million daily active users.
 
-![](pg-is-great-7.jpg)
+![Why Does PostgreSQL Have a Bright Future? — Development Prospects (figure 7)](pg-is-great-7.jpg)
 
 From **business ecosystem** perspective, PostgreSQL also has huge advantages. First, PG's **technology is advanced**, can be called "open source Oracle." Native PG can basically achieve 80-90% Oracle compatibility, with EDB having professional PG distributions with 96% Oracle compatibility. Therefore, in capturing markets vacated by Oracle exit, PostgreSQL and its derivatives have overwhelming technical advantages. Second, PG's protocol is friendly, using permissive BSD license. Therefore, various database vendors' and cloud vendors' "self-developed databases" and many "cloud databases" are largely based on PostgreSQL modifications. For example, Huawei's recent choice to base openGaussDB on PostgreSQL was very wise. Don't misunderstand - PG's license indeed allows this, and doing so indeed makes PostgreSQL's ecosystem more prosperous. Selling PostgreSQL derivatives is a mature market: traditional enterprises aren't short of money and are willing to pay for this. Open source genius fire watered with commercial interest oil burns with vigorous vitality.
 
@@ -214,21 +197,17 @@ The latter type of cloud database, represented by AWS Aurora, also includes simi
 
 Overall, cloud databases pose limited threats to native PostgreSQL. Don't worry too much about cloud vendor problems - cloud vendors are generally part of the open source software ecosystem and contribute to communities and ecosystems. Making money isn't shameful - only when everyone makes money is there energy left for charity, right?
 
--------------
-
 ## Turn Over a New Leaf?
 
 Generally speaking, Oracle programmers switching to PostgreSQL won't have much baggage, because both have similar functionality and most experience is transferable. Actually, many PostgreSQL ecosystem members switched from Oracle camp. For example, the famous domestic Oracle service provider Yunhe Enmo (founded by Gai Guoqiang, China's first Oracle ACE Director) publicly announced "personally entering the game" and embracing PostgreSQL last year.
 
 There are also quite a few switching from MySQL camp to PostgreSQL, and these users actually feel the differences between the two most deeply: basically all have a look of "meeting too late, turning over a new leaf." Actually I myself started with MySQL first 😆, but when I could choose architecture, I embraced PostgreSQL. However, some old programmers have formed deep interest bindings with MySQL, shouting about how good MySQL is, not forgetting to touch and diss PostgreSQL (specifically referring to someone). This is actually understandable - touching interests is harder than touching souls. Seeing your expertise declining, PostgreSQL 🐘 being so good but asking me to abandon my beloved little dolphin 🐬 - can't do it.
 
-![](pg-is-great-8.jpg)
+![Why Does PostgreSQL Have a Bright Future? — Turn Over a New Leaf? (figure 8)](pg-is-great-8.jpg)
 
 However, young people entering the industry still have opportunities to choose a brighter path. Time is the fairest judge, and new generation choices are the most representative benchmarks. From my personal observations, in the emerging and vibrant Golang developer community, PostgreSQL's popularity is significantly higher than MySQL's. Many startup and innovative companies now choose Go+PG as their technology stack, such as Instagram, TanTan, and Apple are all Go+PG.
 
 I think the main reason for this phenomenon is the rise of new generation developers. Go to Java is like PostgreSQL to MySQL. Later waves push earlier waves - this is actually evolution's core mechanism - metabolism. Go and PostgreSQL slowly flatten Java and MySQL, but Go and PostgreSQL might also be flattened by things like Rust and some truly revolutionary NewSQL databases in the future. But in the end, doing technology should focus on those with bright prospects, not those declining. (Of course, going to sea too early and becoming martyrs isn't appropriate either). Look at what new generation developers are using, what vibrant startups, new projects, new teams are using - working with these is never wrong.
-
--------------
 
 ## PostgreSQL's Problems
 

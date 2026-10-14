@@ -6,7 +6,6 @@ summary: >
   Cars need oil changes, databases need maintenance. For PG, three important maintenance tasks: backup, repack, vacuum
 tags: [PostgreSQL, PG Admin]
 ---
-
 Cars need oil changes, databases need maintenance.
 
 ## Maintenance Tasks in PG
@@ -27,16 +26,16 @@ For PG, there are three important maintenance tasks: backup, repack, vacuum
 
 Backup can use `pg_backrest` as an all-in-one solution, but here we consider using scripts for backup.
 
-Reference: [`pg-backup`](https://github.com/Vonng/pigsty/blob/master/roles/postgres/files/pg/pg-backup)
+Reference: [`pg-backup`](https://github.com/pgsty/pigsty/blob/v1.1/roles/postgres/files/pg/pg-backup)
 
 ## Repack
 
 Repack uses `pg_repack`. PostgreSQL's official repository includes pg_repack.
 
-Reference: [`pg-repack`](https://github.com/Vonng/pigsty/blob/master/roles/postgres/files/pg/pg-repack)
+Reference: [`pg-repack`](https://github.com/pgsty/pigsty/blob/v1.1/roles/postgres/files/pg/pg-repack)
 
 ## Vacuum
 
 Although AutoVacuum exists, manual vacuum execution is still helpful. Check database age and report promptly when aging occurs.
 
-Reference: [`pg-vacuum`](https://github.com/Vonng/pigsty/blob/master/roles/postgres/files/pg/pg-vacuum)
+Reference: [`pg-vacuum`](https://github.com/pgsty/pigsty/blob/v1.1/roles/postgres/files/pg/pg-vacuum)

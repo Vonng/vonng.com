@@ -7,10 +7,7 @@ summary: |
   The 2024 StackOverflow Global Developer Survey results are fresh out, and PostgreSQL has become the most popular, most loved, and most wanted database globally for the second consecutive year. Nothing can stop PostgreSQL from devouring the entire database world anymore!
 tags: [PostgreSQL, PG Ecosystem]
 ---
-
 The [2024 StackOverflow Global Developer Survey results](https://survey.stackoverflow.co/2024/) are fresh out, with high-quality questionnaire feedback from 60,000 developers across 185 countries and regions. Of course, as a database veteran, I'm most interested in the "Database" section of the survey results:
-
-------
 
 ## Popularity
 
@@ -26,7 +23,7 @@ If we consider database usage among all developers, PostgreSQL is the second yea
 
 If we combine the past eight years of survey data and plot popularity on a scatter chart, we can clearly see PostgreSQL has maintained almost consistently high linear growth.
 
-[![trend-used-prof.png](trend-used-prof.png)](https://demo.pigsty.cc/d/sf-survey/stackoverflow-survey?orgId=1&viewPanel=45)
+[![trend-used-prof.png](trend-used-prof.png)](https://demo.pigsty.cc/ui/d/sf-survey/stackoverflow-survey?orgId=1&viewPanel=45)
 
 On this list, databases showing significant growth besides PostgreSQL include SQLite, DuckDB, Supabase, BigQuery, Snowflake, and Databricks SQL.
 Among these, BigQuery, Snowflake, and Databricks belong to the current hot big data analytics field. SQLite and DuckDB belong to unique embedded database ecosystems that don't conflict with relational databases, while Supabase is a backend development platform that wraps PostgreSQL as its core foundation.
@@ -34,8 +31,6 @@ Among these, BigQuery, Snowflake, and Databricks belong to the current hot big d
 ![used-prof-2023-2024.png](used-prof-2023-2024.png)
 
 All other databases have been impacted to varying degrees by PostgreSQL's rise.
-
-------
 
 ## Loved and Wanted
 
@@ -62,8 +57,6 @@ On this metric, PostgreSQL has been leading for three consecutive years, and wit
 ![trend-wanted.png](trend-wanted.png)
 
 Demand accurately reflects next year's increment (users explicitly answered: "I plan to use this database next year"), so this surge in demand will quickly reflect in next year's popularity.
-
--------
 
 ## Summary
 

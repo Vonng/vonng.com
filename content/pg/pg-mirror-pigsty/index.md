@@ -6,7 +6,6 @@ summary: >
   PostgreSQL官方仓库切断全球镜像站同步通道，开源制成品断供，很好的试出了各家数据库厂商和云厂商的成色。
 tags: [PostgreSQL, PG管理]
 ---
-
 这个月发生了一起沸沸扬扬的 “开源断供”事件—— [KubeSphere 删除镜像跑路](/cloud/kubesphere-rugpull)，
 但其实还有另一件略隐蔽的 “卡脖子案例”，老冯在上个月提到过 —— 《[卡脖子：PGDG切断镜像站同步通道](/pg/pg-mirror-break)》。
 这次 “PostgreSQL 断供” 某种程度上扮演了试金石的角色，倒是很好的试出了各家数据库厂商和云厂商的成色。
@@ -30,7 +29,7 @@ PostgreSQL 是数据库领域的祖师爷级开源项目，也是世界上最流
 | 腾讯云           | 中国  | 2025-03-31     | https://mirrors.cloud.tencent.com/postgresql/sync_timestamp           |
 | 火山云           | 中国  | 2025-03-10     | https://mirrors.volces.com/postgresql/sync_timestamp                  |
 | 华为云           | 中国  | 2024-01-02     | https://repo.huaweicloud.com/postgresql/sync_timestamp                |
-| 清华TUNA        | 中国  | 2025-03-31     | https://mirrors.tuna.tsinghua.edu.cn/postgresql/sync_timestamp        |
+| 清华TUNA        | 中国  | 2025-03-31     | `https://mirrors.tuna.tsinghua.edu.cn/postgresql/sync_timestamp`（原链接失效）        |
 | 浙江大学          | 中国  | 2025-03-31     | http://mirrors.zju.edu.cn/postgresql/sync_timestamp                   |
 | 中科大           | 中国  | 直接下架           | https://servers.ustclug.org/2025/05/wine-postgresql-removal/          |
 | TrueNetwork   | 俄罗斯 | 2025-01-31     | http://mirror.truenetwork.ru/postgresql/sync_timestamp                |

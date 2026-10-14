@@ -7,7 +7,6 @@ summary: >
   PostgreSQL 与 Pigsty 中长期缺失的一个包管理器 —— PIG。
 tags: [PostgreSQL, 工具]
 ---
-
 > [微信公众号](https://mp.weixin.qq.com/s/8zxeDQ7p5tPNGYED_1Bugg)
 
 最近我在忙一个非常有趣的新项目，这两天总算弄完了。各位朋友们，给大家介绍一下这个有趣的小东西，PostgreSQL 与 Pigsty 中久久缺失的一个命令行工具，我称之为 “[**pig**](https://github.com/pgsty/pig)”。
@@ -18,11 +17,9 @@ tags: [PostgreSQL, 工具]
 
 当然，安装 PG 这种事算不上有什么技术挑战，真正有难度的是 PostgreSQL 生态中的扩展插件。PostgreSQL 有着数据库世界中独一无二的繁荣扩展生态，提供各种强大而惊人的能力。而 pig 则能够在（Debian / Ubuntu / EL ）三大 Linux 主流发行版（五个大版本 x AMD/ARM 两大架构）上，提供 **340** 个 PG 插件开箱即用的能力。
 
-![](https://pigsty.io/img/pigsty/ecosystem.jpg)
+![小猪骑大象：PG内核与扩展包管理神器（图 2）](https://pigsty.io/img/pigsty/ecosystem.jpg)
 
 为什么插件对 PG 至关重要？请参阅《[PostgreSQL正在吞噬数据库世界](/pg/pg-eat-db-world)》
-
-------
 
 ## 快速上手
 
@@ -54,8 +51,6 @@ pig sty conf     # 执行 Configure，生成配置文件
 pig sty install  # 执行 install.yml 剧本完成部署
 ```
 
-------
-
 ## 为什么需要包管理器？
 
 那么在包管理器出现之前，用户想要安装 PostgreSQL 及其扩展，是怎么样的体验呢？当然你可以直接从源代码编译。PG 内核本身编译安装还是“很简单”的，几条命令就可以，不过 PG 生态的核心扩展 —— 地理空间事实标准 PostGIS 的编译安装基本上就立刻跳到地狱难度了。
@@ -65,8 +60,6 @@ pig sty install  # 执行 install.yml 剧本完成部署
 [![pgdg-web.png](pgdg-web.png)](https://www.postgresql.org/download/)
 
 > https://www.postgresql.org/download/
-
-------
 
 ## PGDG官方仓库有什么问题？
 
@@ -78,15 +71,13 @@ pig sty install  # 执行 install.yml 剧本完成部署
 
 ![timescale.png](timescale.png)
 
-------
-
 ## 为什么用操作系统包管理器？
 
 pig 被设计为原生使用 Linux 操作系统发行版现有的包管理器（yum / dnf / apt ），而非自己造一个全新的轮子。这是因为操作系统在解决依赖管理，升级降级这些问题上已经有了非常成熟且标准的实践了。并且毫无疑问最广大 PostgreSQL 用户群体早已接受并习惯于这一标准，因此我们认为打破这一标准的做法是远远弊大于利的。
 
 因此，pig 仓库使用的软件包全部使用操作系统标准的 RPM / DEB 格式进行封装，确保它可以在主流的 Linux 发行版上丝滑安装与运行。Pigsty 在不同操作系统发行版上提供了一层统一的抽象，你只需要知道扩展名就可以安装，你不需要操心 PG 版本号，OS 大小版本，芯片架构，pig 会为你处理好所有细节。
 
-```
+```text
 $ pig ext scan
 
 Installed:
@@ -119,8 +110,6 @@ psqlodbcw
 
 > 使用 pig 工具扫描已安装的 PG 扩展
 
-------
-
 ## 这个项目的价值在哪里？
 
 抽象是软件能提供的核心价值。而 Pig 提供了一个相当优雅的抽象，解决好了 PostgreSQL 内核与扩展安装的问题。其实 Pigsty 在之前已经非常好的解决了这个问题 —— 你可以一键从裸操作系统上拉起装好所有 PG 扩展的插件，自带监控系统，高可用，PITR，还不要钱！
@@ -129,15 +118,11 @@ psqlodbcw
 
 > pig 除了可以一键安装 PG 扩展，当然也可以一键安装各种版本的 PG 内核。
 
-------
-
 ## 这个项目的核心壁垒是什么？
 
 pig 只是一个小工具，真正重要的是这个工具背后的 Pigsty 扩展仓库。这个仓库里维护了 140 个 PG 扩展，以及各种针对 PGDG 仓库补漏的构件。要构建这个扩展仓库，你需要有丰富的 PostgreSQL 经验与 Linux 操作系统经验，你需要同时熟悉 RHEL 与 Debian/Ubuntu 的打包方法，而老实说这是一项相当稀缺的技能。
 
 我曾经跟 Pivotal （Greenplum）的团队聊天，老板说他们亟缺构建打包的专家。其实很容易就能看出来，他们发布的时候就一个可怜的 CentOS RPM 包。当然，说他们一句国内 PostgreSQL 综合实力第一的团队应该不为过，而这样的团队却依然没有懂这个的，这确实给我了一些启发。
-
-------
 
 ## 现在这个仓库是什么状态
 
@@ -158,15 +143,11 @@ pig 只是一个小工具，真正重要的是这个工具背后的 Pigsty 扩�
 
 目前这个仓库托管在 Cloudflare 上，国内镜像放在腾讯云 CDN 上。每个月的下载量算上镜像大概 500 GB 左右，考虑到一个扩展也就几百KB，这个下载量还是相当可观的。
 
-------
-
 ## Pig 使用什么开源协议，如何考虑？
 
 这个仓库本身的代码，以及 `pig` 工具没有使用 Pigsty 的严格 AGPLv3 协议，而是宽松的 `Apache-2.0` 开源许可证，这样做的目的也是为了让更多的用户与厂商参与进来。目前，这个仓库已经成为了两家友商 AutoBase （原 postgresql_cluster）和 Omnigres 默认使用的上游扩展仓库。
 
 目前，我也在游说 CloudNativePG，Neon 和 Supabase 使用这个扩展仓库，我觉得问题不大，因为这属于互惠共赢的事情 —— 这些 PostgreSQL 发行版马上也可以宣称自己和 Pigsty 一样，340 个扩展开箱即用，哈哈。[Omnigres 的创始人 Yurii 下下周来上海（PostgreSQL生态大会）跟我勾兑](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488803&idx=1&sn=cce2ed9bfeee9ca23b64b564ac2d2220&scene=21#wechat_redirect)，我们准备搞个大新闻，尽可能把它做成 PG 世界的一个新事实标准。
-
-------
 
 ## 为什么是你来做，而不是别人？
 
@@ -182,8 +163,6 @@ pig 只是一个小工具，真正重要的是这个工具背后的 Pigsty 扩�
 
 ![pigsty-ext.png](pigsty-ext.png)
 
-------
-
 ## 谁还用包管理器，Docker不香吗？
 
 我在 《**把 PostgreSQL 放入 Docker 是一个好主意吗**》这篇文章中深入聊过这个问题，其中特别提到过扩展的问题。总的来说，会遇到：扩展持久化的问题，安装扩展需要重新构建镜像，推送并重启的问题，难以同时组合使用扩展的问题。
@@ -194,8 +173,6 @@ pig 只是一个小工具，真正重要的是这个工具背后的 Pigsty 扩�
 
 而且最重要的是你如果去看各种 PostgreSQL Docker 镜像的 Dockerfile 就会发现，它们几乎全都是使用操作系统的软件包来安装扩展的。说到底，这些活是省不了的。用 Docker 也改变不了这一点。
 
-------
-
 ## 为什么叫 pig 这个名字？
 
 我有一个开源的 PostgreSQL 发行版叫 Pigsty （猪圈），那么 pig 是作为 Pigsty 的管理命令行工具而存在的。猪圈里的动物是什么，自然是猪（pig）。当然，即使你不使用 Pigsty 这个 PG 发行版，你也可以独立使用 pig 这个命令行工具来安装，管理 PostgreSQL 与 扩展。
@@ -203,8 +180,6 @@ pig 只是一个小工具，真正重要的是这个工具背后的 Pigsty 扩�
 ![apache-pig.jpeg](apache-pig.jpeg)
 
 有一个比较有名项目叫 Apache Pig ，在 Hadoop 上提供 SQL-Like 的查询语言支持（Pig Latin），已经占用了 Pig 这个名字，我也思考了很久要不要使用其他名字比如 pk （pigsty keeper，猪圈管理员），或者就叫 pg 。但最后还是决定叫 `pig`，反正 Apache Pig 已经过气了，使用这套工具的环境和 Apache Hadoop 的用户也尿不到一个壶里去，基本没有命名冲突的风险，所以就这么办了。
-
-------
 
 ## 下一步 pig 会如何发展？
 
@@ -215,8 +190,6 @@ pig 只是一个小工具，真正重要的是这个工具背后的 Pigsty 扩�
 > PostgreSQL 生态的各种内核分叉 —— Kernels
 
 我的计划是针对主流的 PG Fork，统一提供主流 Linux 系统上的 RPM/DEB 内核包 + 扩展包。让这些分叉也可以做到 340 个 PG 扩展开箱即用。目前我已经基本跑通了 OrieloDB 的流程，可能会在下个版本有一个草案与初步实现。
-
-------
 
 ## 最后
 

@@ -6,7 +6,6 @@ summary: >
   PostgreSQL is eating the database world through extensibility. This post introduces the Pigsty extension repository, which packaged 390 PostgreSQL extensions at launch and keeps growing through the Pigsty extension catalog.
 tags: [PostgreSQL, PG Ecosystem, Extension]
 ---
-
 [**PostgreSQL Is Eating the Database World**](/en/pg/pg-eat-db-world/) through the power of **extensibility**.
 When this post was first published, the repository packaged **390** PostgreSQL extensions as RPM / DEB packages for mainstream Linux distributions.
 The live [Pigsty Extension Catalog](https://pigsty.io/ext/list/) has kept growing since then.
@@ -26,8 +25,6 @@ available as RPM / DEB packages on mainstream Linux OS distros. The goal is to t
 > [**TL;DR: Take me to the HOW-TO part!**](#apt-repo)
 
 <a href="/en/pg/pg-eat-db-world/"><img src="/pg/pg-eat-db-world/ecosystem.jpg" alt="PostgreSQL extension ecosystem" style="max-width: 1000px; max-height: 1000px; width: 100%; height: auto;"></a>
-
---------
 
 ## The status quo
 
@@ -50,8 +47,6 @@ In fact, even most PostgreSQL Docker images rely on the PGDG repo to install ext
 
 I’m deeply grateful for Devrim's maintenance of the PGDG YUM repo and Christoph's work with the APT repo. Their efforts to make PostgreSQL installation and extension management seamless are incredibly valuable.
 But as a distribution creator myself, I’ve encountered some challenges with PostgreSQL extension distribution.
-
---------
 
 ## What's the challenge?
 
@@ -80,9 +75,7 @@ two CPU architectures (`x86_64` and `arm64`), and six PostgreSQL major versions 
 On top of alignment, there’s the problem of **completeness**. PGXN lists over **375** extensions, but the PostgreSQL ecosystem could have as many as [**1,000+**](https://gist.github.com/joelonsql/e5aa27f8cc9bd22b8999b7de8aee9d47). The PGDG repos, however, contain only about **one-tenth** of them.
 
 There are also several powerful new Rust-based extensions that PGDG doesn’t include, such as [`pg_graphql`](https://pigsty.io/ext/e/pg_graphql/), [`pg_jsonschema`](https://pigsty.io/ext/e/pg_jsonschema/), and [`wrappers`](https://pigsty.io/ext/e/wrappers/) for [self-hosting Supabase](https://pigsty.io/docs/app/supabase/);
-[`pg_search`](https://pigsty.io/ext/e/pg_search/) as an Elasticsearch alternative; and [`pg_analytics`](https://pigsty.io/ext/e/pg_analytics/), [`pg_parquet`](https://pigsty.io/ext/e/pg_parquet/), and [`pg_mooncake`](https://pigsty.io/ext/e/pg_mooncake/) for OLAP processing. The reason? They are too slow to compile...
-
---------
+[`pg_search`](https://pigsty.io/ext/e/pg_search/) as an Elasticsearch alternative; and [`pg_analytics`](https://pgext.cloud/e/pg_analytics/), [`pg_parquet`](https://pigsty.io/ext/e/pg_parquet/), and [`pg_mooncake`](https://pigsty.io/ext/e/pg_mooncake/) for OLAP processing. The reason? They are too slow to compile...
 
 ## What's the solution?
 
@@ -110,8 +103,6 @@ I’ve created a comprehensive directory listing all supported extensions, with 
 <a href="https://pigsty.io/ext/e/citus/"><img src="/pg/pg-ext-repo/citus.png" alt="Citus extension detail page" style="max-width: 800px; max-height: 1000px; width: 100%; height: auto;"></a>
 
 I hope this repository can serve as the ultimate solution to the frustration users face when extensions are difficult to find, compile, or install.
-
---------
 
 ## How to use this repo?
 
@@ -221,15 +212,11 @@ curl -fsSL https://repo.pigsty.io/yum/repo | sudo tee /etc/yum.repos.d/pigsty.re
 sudo yum makecache
 ```
 
---------------
-
 ## What's in this repo?
 
 The live catalog organizes extensions by category, platform, repository, language, license, and attributes. It started with categories such as TIME, GIS, RAG, FTS, OLAP, FEAT, LANG, TYPE, FUNC, ADMIN, STAT, SEC, FDW, SIM, and ETL, and continues to evolve as the extension ecosystem grows.
 
 Check the [Pigsty Extension Catalog](https://pigsty.io/ext/list/) for the current details.
-
---------
 
 ## Some Thoughts
 

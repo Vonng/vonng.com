@@ -8,8 +8,6 @@ tags: [PostgreSQL, Pigsty, 容器化]
 ai: true
 aliases: ["/ai/dify-setup/"]
 ---
-
-
 [**Dify**](https://dify.ai/zh) 是一个生成式 AI 应用创新引擎，开源的 LLM 应用开发平台。提供从 Agent 构建到 AI workflow 编排、RAG 检索、模型管理等能力，帮助用户轻松构建和运营生成式 AI 原生应用。
 
 当然，像这样的一个 AI 工作流编排软件，在底下也少不得用到数据库 —— Dify 便是用 PostgreSQL 存储数据的，当然还有 Redis 缓存，与一个专用的向量数据库。Docker 镜像拉起来本地玩玩可以，生产环境部署的话，数据库肯定不能这么搞，高可用，备份，监控啥都没有。
@@ -31,8 +29,6 @@ Dify “支持” 了一堆花里胡哨的向量数据库，但你既然已经�
 
 - [GitHub: langgenius/Dify](https://github.com/langgenius/dify/)
 - [Pigsty: Dify Docker Compose Template](https://github.com/Vonng/pigsty/tree/master/app/dify)
-
-------
 
 ## Pigsty的准备工作
 
@@ -80,11 +76,9 @@ redis-cli -u redis://redis.dify@10.10.10.10:6379/0 ping
 
 当你确认这两个连接串可用后，大功告成，你可以开始部署 Dify 了。
 
-这里出于演示方便的原因，使用IP直连的土办法，如果是多节点的高可用 PG 集群，请参考 [接入](https://pigsty.cc/docs/concept/svc/) 一节。
+这里出于演示方便的原因，使用IP直连的土办法，如果是多节点的高可用 PG 集群，请参考 [接入](https://pigsty.cc/docs/concept/ha/svc/) 一节。
 
 当然，上面的部分是假设你已经是 Pigsty 用户，了解如何部署 PostgreSQL 与 Redis 集群。你可以直接跳过下一节，查看 [Dify 如何配置](#dify的配置工作)。
-
-------
 
 ## 从零开始的一些说明
 
@@ -156,8 +150,6 @@ $ docker compose pull
 
 配置代理后，镜像都可以成功拉取了。当然您也可以使用其他可用的镜像站点，例如 quay.io 等。
 
-------
-
 ## Dify的配置工作
 
 Dify 的配置参数一如往常地放在 [`.env`](https://github.com/Vonng/pigsty/blob/master/app/dify/.env) 文件中，内容如下所示：
@@ -198,8 +190,6 @@ S3_REGION='us-east-1'
 ```bash
 cd pigsty/app/dify && make up
 ```
-
-------
 
 ## 使用Nginx暴露Web服务
 

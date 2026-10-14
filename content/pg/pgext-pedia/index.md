@@ -8,7 +8,6 @@ summary: >
   我把 PostgreSQL 生态里 464 个扩展做成了一本中英双语、开箱即用的扩展百科全书：元数据、下载矩阵、安装命令、使用说明与二进制仓库一站齐全。
 tags: [PostgreSQL, Pigsty, PG生态, 扩展]
 ---
-
 > 扩展目录：[中文站](https://pigsty.cc/ext/) · [英文站](https://pigsty.io/ext/)
 
 扩展是 PostgreSQL 的灵魂。没有扩展的 PostgreSQL，只是一个普通的关系型数据库；有了扩展的 PostgreSQL，[才是那个能吞噬整个数据库世界的超级平台](/pg/pg-eat-db-world/)。

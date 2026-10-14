@@ -6,10 +6,7 @@ summary: >
   One GitHub issue turned into an extension sprint. 32 new additions, 504 in total, say a lot about where PostgreSQL is headed.
 tags: [PostgreSQL, PG Ecosystem, Extension]
 ---
-
 A GitHub issue turned into an extension sprint. 32 new additions say a lot about where PostgreSQL is headed.
-
---------
 
 ## It Started with a Chemistry Extension
 
@@ -32,8 +29,6 @@ This release also fixed the missing InChI support in the PGDG package. In practi
 ![rdkit2-en.webp](rdkit2-en.webp)
 
 Honestly, feedback like that is the best part of doing open source.
-
----------
 
 ## Strike While the Iron Is Hot
 
@@ -59,8 +54,6 @@ Out of these 500-odd extensions, around 70 ship with PostgreSQL itself, roughly 
 To put that in perspective: most managed PostgreSQL cloud RDS expose a few dozen extensions at best.
 Take Supabase, for example. It looks like a long list, but after you subtract the 35 contrib extensions that come with PostgreSQL, you are left with fewer than 30 third-party extensions.
 
-------
-
 ## The New Extensions
 
 This batch is heavy. Broadly, four groups:
@@ -75,15 +68,11 @@ This batch is heavy. Broadly, four groups:
 
 Together they point to a broader trend: the extension layer is pushing PostgreSQL into the space between an application platform and a data platform. Things that used to require separate services increasingly fit inside a single SQL transaction boundary.
 
---------
-
-# A Tour of the New Additions
+## A Tour of the New Additions
 
 This release adds 32 new extensions. The summaries below were compiled with help from Claude, Codex, and Gemini to give readers a quick way to understand what each one does, how it works, and where it fits.
 
--------
-
-## 1. rdkit: Cheminformatics Inside PostgreSQL
+### 1. rdkit: Cheminformatics Inside PostgreSQL
 
 > [**`rdkit`**](https://pigsty.io/ext/e/rdkit) | [**GitHub**](https://github.com/rdkit/rdkit)
 
@@ -112,9 +101,7 @@ Use cases center on drug discovery: **lead scaffold search** across million-scal
 
 Settle your index strategy and query templates early — filters that are correct but bypass indexes will be slow. On 1.87M compounds, substructure queries range from ~88 ms to ~1.9 s; with tuning, the cartridge handles **6M+ compounds**. BSD licensed. Docker images (`mcs07/postgres-rdkit`) and conda packages available.
 
--------
-
-## 2. provsql: Semiring Provenance for Query Results
+### 2. provsql: Semiring Provenance for Query Results
 
 > [**`provsql`**](https://pigsty.io/ext/e/provsql) | [**GitHub**](https://github.com/PierreSenellart/provsql)
 
@@ -141,9 +128,7 @@ Four typical scenarios: **security-label propagation** (results inherit the high
 
 The key property is composability: provenance is not a dead log string but a live object you can keep computing on. Worth enabling on critical paths — core reports, feature pipelines, compliance calculations — not as a blanket switch for the whole database. C/C++ with Boost; provenance circuits live in shared memory. PG 10–18. MIT.
 
--------
-
-## 3. onesparse: Billion-Edge Graph Algorithms in SQL
+### 3. onesparse: Billion-Edge Graph Algorithms in SQL
 
 > [**`one_sparse`**](https://pigsty.io/ext/e/onesparse) | [**GitHub**](https://github.com/OneSparse/OneSparse)
 
@@ -169,9 +154,7 @@ On the GAP benchmark, BFS over a **4.3 billion-edge** graph reached **70 billion
 
 Requires **PG 18 Beta or newer**; still alpha. Apache 2.0.
 
--------
-
-## 4. pg_datasentinel: Deep Observability for PostgreSQL in the Container Era
+### 4. pg_datasentinel: Deep Observability for PostgreSQL in the Container Era
 
 > [**`pg_datasentinel`**](https://pigsty.io/ext/e/pg_datasentinel) | [**GitHub**](https://github.com/datasentinel/pg_datasentinel)
 
@@ -198,9 +181,7 @@ FROM pg_datasentinel_wraparound;
 
 For PostgreSQL on Kubernetes, this gives container-level visibility without a separate monitoring agent. The **XID wraparound warning** is the standout — wraparound can force-shutdown a database, and having a burn-rate ETA turns firefighting into forecasting. 3-Clause BSD. PG 15+.
 
--------
-
-## 5. datasketches: Approximate Analytics at Hundred-Million-Row Scale
+### 5. datasketches: Approximate Analytics at Hundred-Million-Row Scale
 
 > [**`datasketches`**](https://pigsty.io/ext/e/datasketches) | [**GitHub**](https://github.com/apache/datasketches-postgresql)
 
@@ -235,9 +216,7 @@ FROM (
 
 Use cases: **real-time UV counting** without storing user IDs, **latency distribution** (p50/p95/p99 over billions of events), **audience overlap** via Theta Sketch intersections ("saw ad A and visited site B"). On 100M rows, CPC distinct counting takes ~20 s vs ~2 min for exact `COUNT(DISTINCT)`, with single-digit percent relative error.
 
--------
-
-## 6. pghydro: Drainage-Network Analysis from Brazil's National Water Agency
+### 6. pghydro: Drainage-Network Analysis from Brazil's National Water Agency
 
 > [**`pghydro`**](https://pigsty.io/ext/e/pghydro) | [**GitHub**](https://github.com/pghydro/pghydro)
 
@@ -266,9 +245,7 @@ SELECT pghydro.pghfn_calculatestrahlernumber();
 
 Fits national-scale hydrology databases, basin planning, upstream/downstream pollution analysis, and drainage-network validation. Think of it less as "an extension with GIS functions" and more as a domain-specific ETL pipeline living inside the database — raw terrain and river data in PostGIS, processing automated in SQL, recomputation after source updates far more reliable than ad hoc scripts. QGIS plugin PgHydroTools available for visual interaction. Pure PL/pgSQL. GPLv2.
 
--------
-
-## 7. pg_stat_ch: PostgreSQL Query Telemetry, Exported to ClickHouse
+### 7. pg_stat_ch: PostgreSQL Query Telemetry, Exported to ClickHouse
 
 > [**`pg_stat_ch`**](https://pigsty.io/ext/e/pg_stat_ch) | [**GitHub**](https://github.com/ClickHouse/pg_stat_ch)
 
@@ -294,9 +271,7 @@ On the ClickHouse side it ships four materialized views: `events_recent_1h` for 
 
 Performance: **~5 μs p99 overhead per query**. pgbench at 36.6K TPS / 32 clients captured 7.7M events in 30 s with zero drops and **<1% TPS impact**. Lock contention minimized in three layers: atomic overflow checks → non-blocking LWLock → per-backend local buffers flushed per transaction (~5x fewer lock acquisitions). A clean division of labor: PostgreSQL for transactions, ClickHouse for telemetry. Far more robust than reconstructing the same picture from log files. PG 16–18. Apache 2.0.
 
--------
-
-## 8. pg_rrf: Rank Fusion for Hybrid Search in One Function
+### 8. pg_rrf: Rank Fusion for Hybrid Search in One Function
 
 > [**`pg_rrf`**](https://pigsty.io/ext/e/pg_rrf) | [**GitHub**](https://github.com/yuiseki/pg_rrf)
 
@@ -324,9 +299,7 @@ ORDER BY fused.score DESC LIMIT 20;
 
 Replaces 20+ lines of `FULL OUTER JOIN` / `COALESCE` / hand-rolled score math with one function call. Good fit for **RAG hybrid retrieval**, product search, and multi-signal document ranking. Keeping fusion in the database helps when the fused result still needs to join business tables. `v0.0.3`. MIT.
 
--------
-
-## 9. pg_kazsearch: Kazakh Full-Text Search, from Zero to One
+### 9. pg_kazsearch: Kazakh Full-Text Search, from Zero to One
 
 > [**`pg_kazsearch`**](https://pigsty.io/ext/e/pg_kazsearch) | [**GitHub**](https://github.com/darkhanakh/pg-kazsearch)
 
@@ -348,9 +321,7 @@ LIMIT 10;
 
 Benchmarks on 2,999 articles: **0.5 ms** query latency (2.8x faster than `pg_trgm`), +25% nDCG@10, +23% Recall@10. Useful for Kazakh news/government-document search, e-commerce, and multilingual systems that need proper search for low-resource languages instead of crude trigram fallback.
 
--------
-
-## 10. pg_liquid: Datalog-Style Graph Queries
+### 10. pg_liquid: Datalog-Style Graph Queries
 
 > [**`pg_liquid`**](https://pigsty.io/ext/e/pg_liquid) | [**GitHub**](https://github.com/michael-golfi/pg_liquid)
 
@@ -373,9 +344,7 @@ ORDER BY 1;
 
 Also supports ontology predicates (`DefPred`) and typed compounds (`OntologyClaim@(...)`), where compounds carry provenance or confidence while rules handle subclass closure. Good fit for knowledge-graph queries, hierarchy traversal (org charts, taxonomy trees), and rule-based business logic. Pure PL/pgSQL, no external dependencies. Early-stage.
 
--------
-
-## 11. logical_ddl: Logical Replication, but for DDL Too
+### 11. logical_ddl: Logical Replication, but for DDL Too
 
 > [**`logical_ddl`**](https://pigsty.io/ext/e/logical_ddl) | [**GitHub**](https://github.com/samedyildirim/logical_ddl)
 
@@ -398,9 +367,7 @@ VALUES ('my_table'::regclass, ARRAY['ADD COLUMN', 'DROP COLUMN']);
 
 Useful for automated DDL sync in logical-replication setups, zero-downtime migrations, and multi-datacenter topologies. DDL propagation becomes an auditable data flow rather than a manual side process. MIT. PGXN available. Constraints, indexes, and defaults not yet supported.
 
--------
-
-## 12. rdf_fdw: Query the Semantic Web with SQL
+### 12. rdf_fdw: Query the Semantic Web with SQL
 
 > [**`rdf_fdw`**](https://pigsty.io/ext/e/rdf_fdw) | [**GitHub**](https://github.com/jimjonesbr/rdf_fdw)
 
@@ -426,9 +393,7 @@ SELECT * FROM dbpedia_query WHERE o = 'some_value' LIMIT 10;
 
 `rdf_fdw_clone_table()` can batch-clone foreign data into local tables. Watch memory: fetched data is loaded before conversion, so large result sets need effective pushdown. Good for linked-data integration (DBpedia, Wikidata) and using SQL/BI tooling on SPARQL endpoints. MIT. PG 9.5–18.
 
--------
-
-## 13. pgbson: A More Exact Binary Document Type than JSONB
+### 13. pgbson: A More Exact Binary Document Type than JSONB
 
 > [**`pgbson`**](https://pigsty.io/ext/e/pgbson) | [**GitHub**](https://github.com/buzzm/postgresbson)
 
@@ -453,9 +418,7 @@ SELECT (data->'d'->'amt'->>'$numberDecimal')::numeric FROM data_collection;
 
 Use cases: cross-language event pipelines needing exact type preservation, financial data (`decimal128`), and digital-signature workflows relying on deterministic binary representation. MIT. PG 14–18.
 
--------
-
-## 14. pg_when: Describe Time in Natural Language
+### 14. pg_when: Describe Time in Natural Language
 
 > [**`pg_when`**](https://pigsty.io/ext/e/pg_when) | [**GitHub**](https://github.com/frectonz/pg-when)
 
@@ -470,9 +433,7 @@ SELECT when_is('December 31, 2026 at evening');
 
 Also: `seconds_at()`, `millis_at()`, `micros_at()`, `nanos_at()` for Unix epochs at varying precision. A parser, not a scheduler. Fits operator-facing tools that accept human time input, backfill scripts where natural language beats date math, and timezone normalization. MIT.
 
--------
-
-## 15. pgmqtt: Push Database Changes Straight to MQTT
+### 15. pgmqtt: Push Database Changes Straight to MQTT
 
 > [**`pgmqtt`**](https://pigsty.io/ext/e/pgmqtt) | [**GitHub**](https://github.com/RayElg/pgmqtt)
 
@@ -493,9 +454,7 @@ SELECT pgmqtt_add_inbound_mapping(
 
 Natural fit for IoT: push database state changes to edge devices without middleware, or ingest sensor readings from MQTT directly into tables. Also works for lightweight event-driven systems that want less glue code. Elastic License 2.0.
 
--------
-
-## 16. pg_query_rewrite: Transparent SQL Substitution
+### 16. pg_query_rewrite: Transparent SQL Substitution
 
 > [**`pg_query_rewrite`**](https://pigsty.io/ext/e/pg_query_rewrite) | [**GitHub**](https://github.com/pierreforstmann/pg_query_rewrite)
 
@@ -514,9 +473,7 @@ SELECT pgqr_rules();
 
 A sharp tool with sharp edges: no parameterized statements, max ~32 KB per statement, matching is whitespace/case/semicolon-sensitive, rules do not survive restarts unless reloaded via startup SQL. Still useful for redirecting fixed SQL from legacy systems during migrations, intercepting dangerous queries, and simple query A/B tests. Default max 10 rules. PG 9.5–18.
 
--------
-
-## 17. pgclone: Clone Database Objects with One Function Call
+### 17. pgclone: Clone Database Objects with One Function Call
 
 > [**`pgclone`**](https://pigsty.io/ext/e/pgclone) | [**GitHub**](https://github.com/valehdba/pgclone)
 
@@ -539,9 +496,7 @@ SELECT pgclone_database(
 
 Good for fast dev/test provisioning, sanitized prod-to-staging clones, and cross-database migration — the whole workflow stays inside the database.
 
--------
-
-## 18. pgproto: Native Protobuf Support
+### 18. pgproto: Native Protobuf Support
 
 > [**`pgproto`**](https://pigsty.io/ext/e/pgproto) | [**GitHub**](https://github.com/Apaezmx/pgproto)
 
@@ -560,9 +515,7 @@ CREATE INDEX idx_pb ON items ((data #> '{Outer, inner, id}'::text[]));
 
 100K-row benchmark: **16 MB** storage (vs 46 MB JSONB, 25 MB relational), **5.9 ms** full-document retrieval (vs 33.1 ms relational with multi-table joins). If you want to keep Protobuf for RPC/messaging while making the data indexable inside the database, this delivers. Fits IoT data, microservice event stores, gRPC data layers. PostgreSQL License.
 
--------
-
-## 19. pg_fsql: A Recursive SQL Template Engine Driven by JSONB
+### 19. pg_fsql: A Recursive SQL Template Engine Driven by JSONB
 
 > [**`pg_fsql`**](https://pigsty.io/ext/e/pg_fsql) | [**GitHub**](https://github.com/yurc/pg_fsql)
 
@@ -583,9 +536,7 @@ SELECT fsql.render('user_count', '{"status":"active"}');
 
 Not "functional SQL" — more a hierarchical template system for generating SQL from JSON request bodies. Reduces conditional branching in the application layer. Fits dynamic reports, ETL orchestration, multi-tenant query generation, and centralized SQL templates stored in tables.
 
--------
-
-## 20. pg_dispatch: Async SQL Dispatch on Top of pg_cron
+### 20. pg_dispatch: Async SQL Dispatch on Top of pg_cron
 
 > [**`pg_dispatch`**](https://pigsty.io/ext/e/pg_dispatch) | [**GitHub**](https://github.com/Snehil-Shah/pg_dispatch)
 
@@ -598,9 +549,7 @@ SELECT pgdispatch.snooze('SELECT pg_sleep(20);', '20 seconds');
 
 Pure PL/pgSQL, runs in sandboxed environments (Supabase, AWS RDS). Requires `pg_cron >= 1.5`. Good for async side effects in triggers/functions — notifications, background rollups, audit writes that should not block the main transaction.
 
--------
-
-## 21. block_copy_command: Security Hardening by Intercepting COPY
+### 21. block_copy_command: Security Hardening by Intercepting COPY
 
 > [**`block_copy_command`**](https://pigsty.io/ext/e/block_copy_command) | [**GitHub**](https://github.com/rustwizard/block_copy_command)
 
@@ -621,9 +570,7 @@ ORDER BY ts DESC;
 
 Useful in multi-tenant or hosted environments, enterprise compliance setups needing centralized audit, and ETL environments where import/export privileges must be tightly separated. The author also maintains a broader command-firewall extension, `pg_command_fw`.
 
--------
-
-## 22. pg_isok: Soft Alerts for Data Quality
+### 22. pg_isok: Soft Alerts for Data Quality
 
 > [**`pg_isok`**](https://pigsty.io/ext/e/pg_isok) | [**Repo**](https://codeberg.org/kop/pg_isok)
 
@@ -644,9 +591,7 @@ INSERT INTO isok.isok_queries (query) VALUES (
 
 Unlike hard constraints, Isok lets questionable data exist while keeping it under review. Workflow: `isok_queries` and `isok_results` tables, `run_isok_queries` to execute checks; results accepted or deferred row by row. Fits messy-data cleanup and business rules too fuzzy for hard constraints that still need human judgment.
 
--------
-
-## 23. external_file: Oracle BFILE Semantics for PostgreSQL
+### 23. external_file: Oracle BFILE Semantics for PostgreSQL
 
 > [**`external_file`**](https://pigsty.io/ext/e/external_file) | [**GitHub**](https://github.com/darold/external_file)
 
@@ -665,9 +610,7 @@ SELECT writeEfile(my_bytea_column, efilename('MY_DIR', 'output.bin')) FROM my_ta
 
 Built for Ora2Pg migrations, but also useful for legacy systems with files outside the database and metadata inside, or database-driven batch import/export of external large objects.
 
--------
-
-## 24. byteamagic: Detect File Types in `bytea`
+### 24. byteamagic: Detect File Types in `bytea`
 
 > [**`pg_byteamagic`**](https://pigsty.io/ext/e/byteamagic) | [**GitHub**](https://github.com/nmandery/pg_byteamagic)
 
@@ -683,9 +626,7 @@ FROM uploads GROUP BY 1 ORDER BY 2 DESC;
 
 If you store BLOBs in tables, this identifies what they actually are from SQL. Good for upload governance, real content-type detection, and historical BLOB cleanup.
 
--------
-
-## 25. pg_text_semver: Native Semantic Versioning
+### 25. pg_text_semver: Native Semantic Versioning
 
 > [**`pg_text_semver`**](https://pigsty.io/ext/e/pg_text_semver) | [**GitHub**](https://github.com/bigsmoke/pg_text_semver)
 
@@ -701,9 +642,7 @@ SELECT semver_parsed('1.0.0-a.1+commit-y');
 
 Pure SQL. Supports min/max aggregation and PGXN version-range validation. Useful for extension/package version management, dependency checks, and version analytics.
 
--------
-
-## 26. parray_gin: Substring Matching Indexes for `text[]`
+### 26. parray_gin: Substring Matching Indexes for `text[]`
 
 > [**`parray_gin`**](https://pigsty.io/ext/e/parray_gin) | [**GitHub**](https://github.com/theirix/parray_gin)
 
@@ -721,9 +660,7 @@ SELECT * FROM test_table WHERE val @@> array['%ar%'];
 
 Useful for tag autocomplete, fuzzy tag search, or any case where array partial matching should hit an index. PG 9.1–18.
 
--------
-
-## 27. pg_slug_gen: Cryptographically Secure Timestamp Slugs
+### 27. pg_slug_gen: Cryptographically Secure Timestamp Slugs
 
 > [**`pg_slug_gen`**](https://pigsty.io/ext/e/pg_slug_gen) | [**PGXN**](https://pgxn.org/dist/pg_slug_gen/)
 
@@ -737,9 +674,7 @@ SELECT gen_random_slug(19);    -- nanosecond precision
 
 Not a "slugify the title" URL helper — a short, hard-to-guess public identifier. Good for invite codes, short links, and public resource IDs where exposing auto-increment sequences is undesirable. Much less predictable than `base62(sequence)`.
 
--------
-
-## 28. pglock: Lightweight Distributed Locks Inside PostgreSQL
+### 28. pglock: Lightweight Distributed Locks Inside PostgreSQL
 
 > [**`pglock`**](https://pigsty.io/ext/e/pglock) | [**GitHub**](https://github.com/fraruiz/pglock)
 
@@ -758,9 +693,7 @@ SELECT pglock.ttl();
 
 No Redis or ZooKeeper needed. Fits multi-instance job competition, leader election, idempotent consumers, duplicate-work prevention — lock behavior and business writes stay in the same database. Pure SQL.
 
--------
-
-## 29. pg_regresql: Portable Planner Statistics for EXPLAIN Costing
+### 29. pg_regresql: Portable Planner Statistics for EXPLAIN Costing
 
 > [**`pg_regresql`**](https://pigsty.io/ext/e/pg_regresql) | [**GitHub**](https://github.com/boringsql/regresql)
 
@@ -781,9 +714,7 @@ EXPLAIN SELECT * FROM orders WHERE status = 'pending';
 
 Only affects planner costing, not execution or `EXPLAIN ANALYZE` actuals. For test/CI only, not production. BSD 2-Clause.
 
--------
-
-## 30. pgcalendar: Infinite Projection for Recurring Schedules
+### 30. pgcalendar: Infinite Projection for Recurring Schedules
 
 > [**`pgcalendar`**](https://pigsty.io/ext/e/pgcalendar) | [**GitHub**](https://github.com/h4kbas/pgcalendar)
 
@@ -815,9 +746,7 @@ SELECT pgcalendar.transition_event_schedule(
 
 Infinite projection, schedule transitions, and exception handling show up everywhere — rostering, meetings, billing — and become a mess when every application reimplements them. Putting this in the database centralizes permissions, audit, and consistency.
 
--------
-
-## 31. pg_variables: Session Variables Faster than Temp Tables
+### 31. pg_variables: Session Variables Faster than Temp Tables
 
 > [**`pg_variables`**](https://pigsty.io/ext/e/pg_variables) | [**GitHub**](https://github.com/postgrespro/pg_variables)
 
@@ -843,9 +772,7 @@ SELECT * FROM pgv_select('pack', 'employees');
 
 A high-performance temp-table alternative that avoids catalog bloat. Useful for intermediate state in stored procedures/batch jobs, connection-level caching, and as infrastructure for other extensions (`pgelog` uses it to cache `dblink` connections).
 
--------
-
-## 32. pgelog: Logs That Survive Rollback
+### 32. pgelog: Logs That Survive Rollback
 
 > [**`pgelog`**](https://pigsty.io/ext/e/pgelog) | [**GitHub**](https://github.com/anfiau/pgelog)
 
@@ -870,9 +797,7 @@ SELECT pgelog_set_param('pgelog_ttl_minutes', '2880');
 
 On critical paths, losing the diagnostic trail because the business transaction rolled back is exactly the wrong outcome. Also makes staged batch/migration scripts easier to introspect than `RAISE NOTICE`. Depends on `dblink` and `pg_variables`; each session may open an extra connection, so mind `max_connections`.
 
--------
-
-## Conclusion
+### Conclusion
 
 These 32 additions trace a few clear lines.
 

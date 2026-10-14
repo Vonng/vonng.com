@@ -6,15 +6,11 @@ summary: >
   慢查询是在线业务数据库的大敌，本文介绍了使用监控系统定位诊断慢查询的一般方法论。
 tags: [PostgreSQL, PG管理, 性能]
 ---
-
-
 > You can't optimize what you can't measure
 
 慢查询是在线业务数据库的大敌，如何诊断定位慢查询是DBA的必修课题。
 
 本文介绍了使用监控系统 —— Pigsty诊断慢查询的一般方法论。
-
----------------------
 
 ## 慢查询：危害
 
@@ -27,11 +23,9 @@ tags: [PostgreSQL, PG管理, 性能]
 
 因此，一个合格的DBA必须知道如何及时定位并处理慢查询。
 
-![](slow-query-8.webp)
+![PG慢查询诊断方法论：慢查询：危害（图 1）](slow-query-8.webp)
 
 > 图：一个慢查询优化前后，系统的整体饱和度从40%降到了4%
-
----------------------
 
 ## 慢查询诊断 —— 传统方法
 
@@ -61,7 +55,7 @@ tags: [PostgreSQL, PG管理, 性能]
 
 监控系统就可以更全面地回答关于慢查询的问题。监控系统中的数据是由无数 **历史快照** 组成的（如5秒一次快照采样）。因此用户可以回溯至任意时间点，考察不同时间段内查询平均响应时间的变化。
 
-![](img/concept/slow-query.jpg)
+![PG慢查询诊断方法论：慢查询诊断 —— Pigsty（图 2）](img/concept/slow-query.jpg)
 
 > 上图是Pigsty中 [PG Query Detail](https://pigsty.cc/docs/pgsql/dashboard/)提供的界面，这里展现出了单个查询的详细信息。
 >
@@ -71,15 +65,11 @@ tags: [PostgreSQL, PG管理, 性能]
 
 有时监控系统的用途不仅仅在于提供数据与反馈，它还可以作为一种安抚情绪的良药：设想一个慢查询把生产数据库打雪崩了，如果老板或客户没有一个地方可以透明地知道当前的处理状态，难免会焦急地催问，进一步影响问题解决的速度。监控系统也可以做作为精确管理的依据。您可以有理有据地用监控指标的变化和老板与客户吹牛逼。
 
----------------------
-
 ## 一个模拟的慢查询案例
 
 > Talk is cheap, show me the code
 
 假设用户已经拥有一个 [Pigsty沙箱演示环境](https://pigsty.cc/docs/deploy/sandbox/)，下面将使用Pigsty沙箱，演示模拟的慢查询定位与处理流程。
-
----------------------
 
 ### 慢查询：模拟
 
@@ -103,17 +93,15 @@ ALTER TABLE pgbench_accounts DROP CONSTRAINT pgbench_accounts_pkey ;
 
 该命令会移除 `pgbench_accounts` 表上的主键，导致 **相关查询** 从索引扫描变为顺序全表扫描，全部变为慢查询，访问 [PG Instance](https://pigsty.cc/docs/pgsql/dashboard) ➡️ Query ➡️ QPS，结果如下图所示：
 
-![](slow-query-1.jpg)
+![PG慢查询诊断方法论：慢查询：模拟（图 3）](slow-query-1.jpg)
 
 > 图1：平均查询响应时间从1ms飙升为300ms，单个从库实例的QPS从500下降至7。
 
 与此同时，实例因为慢查询堆积，系统会在瞬间 **雪崩过载**，访问[PG Cluster](https://pigsty.cc/docs/pgsql/dashboard)首页，可以看到集群负载出现飙升。
 
-![](slow-query-2.png)
+![PG慢查询诊断方法论：慢查询：模拟（图 4）](slow-query-2.png)
 
 > 图2：系统负载达到200%，触发机器负载过大，与查询响应时间过长的报警规则。
-
----------------------
 
 ### 慢查询：定位
 
@@ -121,7 +109,7 @@ ALTER TABLE pgbench_accounts DROP CONSTRAINT pgbench_accounts_pkey ;
 
 然后，使用[PG Query](https://pigsty.cc/docs/pgsql/dashboard)面板定位具体的慢查询：编号为 **-6041100154778468427**
 
-![](slow-query-3.jpg)
+![PG慢查询诊断方法论：慢查询：定位（图 5）](slow-query-3.jpg)
 
 > 图3：从查询总览中发现异常慢查询
 
@@ -135,11 +123,9 @@ ALTER TABLE pgbench_accounts DROP CONSTRAINT pgbench_accounts_pkey ;
 
 接下来，利用[PG Stat Statements](https://pigsty.cc/docs/pgsql/dashboard/)面板或[PG Query Detail](https://pigsty.cc/docs/pgsql/dashboard)，根据查询ID定位慢查询的 **具体语句**。
 
-![](slow-query-4.png)
+![PG慢查询诊断方法论：慢查询：定位（图 6）](slow-query-4.png)
 
 > 图4：定位查询语句为 `SELECT abalance FROM pgbench_accounts WHERE aid = $1`
-
----------------------
 
 ### 慢查询：猜想
 
@@ -159,12 +145,10 @@ SELECT abalance FROM pgbench_accounts WHERE aid = $1
 
 第二步，查阅 [PG Table Detail](https://pigsty.cc/docs/pgsql/dashboard) 面板，检查 `pgbench_accounts` 表上的访问，来验证我们的猜想
 
-![](slow-query-5.png)
+![PG慢查询诊断方法论：慢查询：猜想（图 7）](slow-query-5.png)
 > 图5： `pgbench_accounts` 表上的访问情况
 
 通过观察，我们发现表上的 **索引扫描** 归零，与此同时 **顺序扫描** 却有相应增长。这印证了我们的猜想！
-
----------------------
 
 ### 慢查询：方案
 
@@ -182,15 +166,13 @@ CREATE UNIQUE INDEX ON pgbench_accounts (aid);
 
 加上索引后，神奇的事情发生了。
 
-![](slow-query-6.png)
+![PG慢查询诊断方法论：慢查询：方案（图 8）](slow-query-6.png)
 
 > 图6：可以看到，查询的响应时间与QPS已经恢复正常。
 
-![](slow-query-7.png)
+![PG慢查询诊断方法论：慢查询：方案（图 9）](slow-query-7.png)
 
 > 图7：系统的负载也恢复正常
-
----------------------
 
 ### 慢查询：评估
 
@@ -200,13 +182,11 @@ CREATE UNIQUE INDEX ON pgbench_accounts (aid);
 
 这种故事，就可以通过监控系统，用很生动直观的形式表达出来，赚取KPI与Credit。
 
-![](slow-query-8.webp)
+![PG慢查询诊断方法论：慢查询：评估（图 10）](slow-query-8.webp)
 
 > 图：一个慢查询优化前后，系统的整体饱和度从40%降到了4%
 >
 > （相当于节省了X台机器，XX万元，老板看了心花怒放，下一任CTO就是你了！）
-
----------------------
 
 ### 慢查询：小结
 

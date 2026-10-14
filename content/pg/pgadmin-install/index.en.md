@@ -5,7 +5,6 @@ authors: [vonng]
 summary: "PgAdmin is a GUI program for managing PostgreSQL, written in Python, but it's quite dated and requires some additional configuration."
 tags: [PostgreSQL, PG Admin, Tools]
 ---
-
 ## PgAdmin4 Installation and Configuration
 
 PgAdmin is a GUI designed specifically for PostgreSQL. It works very well. It can run as either a local GUI program or a web service. Since PgAdmin's GUI components have display issues on Retina screens, this guide primarily covers how to configure and run PgAdmin4 as a web service (Python Flask).
@@ -14,7 +13,7 @@ PgAdmin is a GUI designed specifically for PostgreSQL. It works very well. It ca
 
 PgAdmin can be downloaded from the official FTP.
 
-[PostgreSQL website FTP directory](https://ftp.postgresql.org/pub/pgadmin3/pgadmin4)
+[PostgreSQL website FTP directory](https://www.postgresql.org/ftp/pgadmin/pgadmin4/)
 
 ```bash
 wget https://ftp.postgresql.org/pub/pgadmin3/pgadmin4/v1.1/source/pgadmin4-1.1.tar.gz

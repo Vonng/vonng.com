@@ -6,9 +6,6 @@ summary: >
   如何在线修改PostgreSQL中的字段类型？一种通用方法。
 tags: [PostgreSQL, PG管理, 迁移]
 ---
-
-
-
 ## 场景
 
 在数据库的生命周期中，有一类需求是很常见的，修改字段类型。例如：
@@ -40,7 +37,7 @@ where c.castmethod = 'b';
 
 刨除PostgreSQL内部的类型，二进制兼容的类型转换如下所示
 
-```
+```text
 text     → varchar 
 xml      → varchar 
 xml      → text    

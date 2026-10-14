@@ -9,7 +9,6 @@ tags: [PostgreSQL, Codex]
 ai: true
 aliases: ["/ai/openai-postgres/", "/db/openai-postgres/"]
 ---
-
 OpenAI 官方博客昨天发了一篇文章，专门讲他们如何把 PostgreSQL 伸缩到今天这个量级：
 一套单主 + 近 50 个只读副本的超大 PostgreSQL 集群，支撑其核心产品（ChatGPT 与 OpenAI API）的全球访问流量。
 文章的核心内容，其实在 2025 年 PGCon.Dev 上就已对外分享过 (《[OpenAI：将 PostgreSQL 伸缩至新阶段](/db/openai-pg/)》)，
@@ -26,8 +25,6 @@ OpenAI 官方博客昨天发了一篇文章，专门讲他们如何把 PostgreSQ
 但像 OpenAI 这样对全行业产生溢出效应的案例，确实少见。
 借着这次官方发布的窗口，我把文章内容再翻译一遍，并按原文顺序补上我的评论解读。
 
----
-
 ## 伸缩 PG，支撑 8 亿 ChatGPT 用户
 
 > <https://openai.com/index/scaling-postgresql/>
@@ -38,8 +35,6 @@ OpenAI 官方博客昨天发了一篇文章，专门讲他们如何把 PostgreSQ
 在推进生产基础设施以承载这股增长的过程中，我们有了一个新发现：**PostgreSQL 在读多写少的场景下，能够可靠伸缩到的规模，远远超出许多人的认知**。
 这个系统最初由加州大学伯克利分校的一群科学家打造，如今我们用 **一台主库**（[Azure PostgreSQL 灵活服务器实例](https://learn.microsoft.com/en-us/azure/postgresql/overview)）配合 **近 50 个分布在全球多个区域的只读副本**，
 就支撑起了海量的全球访问流量。本文会讲述：OpenAI 如何通过严格的优化和扎实的工程手段，把 PostgreSQL 扩展到支撑 **8 亿用户、每秒数百万次查询（QPS）**；也会总结我们一路踩坑后得到的关键经验。
-
----
 
 ## 初始设计开始出现裂缝
 
@@ -60,8 +55,6 @@ ChatGPT 上线后，流量以史无前例的速度增长。为了扛住它，我
 MVCC 还会引入一系列额外问题，比如表与索引膨胀、索引维护开销增加、以及 autovacuum（自动清理）的调参复杂度。
 （关于这些问题，可以参考我和卡内基梅隆大学 Andy Pavlo 教授共同撰写的深度文章：[*The Part of PostgreSQL We Hate the Most*](https://www.cs.cmu.edu/~pavlo/blog/2023/04/the-part-of-postgresql-we-hate-the-most.html)。
 这篇文章还被 PostgreSQL 的维基词条引用过： [cited](https://en.wikipedia.org/wiki/PostgreSQL#cite_note-37)。）
-
----
 
 ## 将 PG 扩展到百万级 QPS
 
@@ -160,8 +153,6 @@ MVCC 还会引入一系列额外问题，比如表与索引膨胀、索引维护
 解决方案：只允许不会触发全表重写的轻量变更，例如添加或删除某些列。我们对 schema 变更强制 **5 秒超时**。允许并发创建/删除索引。
 schema 变更只限于已有表；如果新功能需要新增表，就必须放到 Azure CosmosDB 等替代的分片系统中，而不是继续塞进 PostgreSQL。在做字段回填时，我们同样施加严格限速，防止写入突刺。虽然这个过程有时可能超过一周，但能换来稳定性，并避免对生产造成影响。
 
----
-
 ## 结果与下一步
 
 这次实践说明：只要设计得当、优化到位，Azure PostgreSQL 完全可以扩展到承载最大的生产级工作负载。对于读多写少的场景，PostgreSQL 能以百万级 QPS 运行，为 OpenAI 最关键的产品（ChatGPT 和 API 平台）提供支撑。
@@ -174,8 +165,6 @@ schema 变更只限于已有表；如果新功能需要新增表，就必须放�
 剩余的写密集负载更难分片——我们也在持续推进迁移，以进一步把写入从 PostgreSQL 主库上卸下来。与此同时，我们还在和 Azure 一起推动级联复制落地，确保可以安全地扩展到更多读副本。
 
 展望未来，随着基础设施需求持续增长，我们也会继续评估更多扩展路线，包括对 PostgreSQL 做分片，或采用其他分布式系统。
-
----
 
 ## 老冯评论
 

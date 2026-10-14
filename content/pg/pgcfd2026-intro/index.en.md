@@ -7,7 +7,6 @@ summary: >
   PGConf.Dev 2026 opens in Vancouver as the PostgreSQL project marks its 30th anniversary. I will also be speaking on Extensions for Everyone.
 tags: [PostgreSQL, PG Ecosystem]
 ---
-
 On May 19, Vancouver time, [PGConf.Dev 2026](https://2026.pgconf.dev/) officially gets underway. This year's venue is Simon Fraser University's downtown campus, SFU Vancouver Harbour Centre. The conference has returned to Vancouver, host city of the inaugural PGConf.Dev.
 
 PGConf.Dev is the global PostgreSQL developer conference and the successor to PGCon. It is one of the year's most important gatherings for core developers, extension authors, and community organizers. This year also marks the **30th anniversary of the PostgreSQL project**, and the community has organized a number of events around the milestone.

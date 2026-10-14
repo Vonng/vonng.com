@@ -6,7 +6,6 @@ summary: >
   Slow queries are the sworn enemy of OLTP databases. Here’s how to identify, analyze, and fix them using metrics (Pigsty dashboards), pg_stat_statements, and logs.
 tags: [PostgreSQL, PG Admin, Performance]
 ---
-
 > “You can’t optimize what you can’t measure.”
 
 Slow queries hog connections, hold locks, block replication, trigger deadlocks, and waste resources. Every DBA must know how to find and fix them quickly.

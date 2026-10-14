@@ -6,7 +6,6 @@ summary: >
   PG18.1 发布，扩展生态也基本完成18适配，Pigsty v3.7默认PG版本提升至18，是时候上生产耍耍啦！
 tags: [PostgreSQL, PG管理, 扩展]
 ---
-
 在《[尝鲜须谨慎：PG 新存储引擎故障案例](/pg/new-storage-engine-risk/)》中，老冯简单聊过一下 PostgreSQL 上新的节奏 —— 应该用什么 PostgreSQL 大版本。老冯的策略是：当每个 PostgreSQL 大版本的第二个小版本出来的时候，差不多就能上生产了。最近 PostgreSQL 18.1 也就是第二个小版本已经放出了，加上扩展生态也基本上普遍跟进完成，老冯认为 PG 18 已经可以用于生产环境了。
 
 ## 先把 BUG 修一修

@@ -6,12 +6,11 @@ summary: >
   Machine restarted due to failure, NTP service corrected PG time after PG startup, causing Patroni to fail to start.
 tags: [PostgreSQL, PG Admin, Incident]
 ---
-
 Summary: Machine restarted due to failure, NTP service corrected PG time after PG startup, causing Patroni to fail to start.
 
 The failure information in Patroni is shown as follows:
 
-```
+```text
 Process %s is not postmaster, too much difference between PID file start time %s and process start time %s
 ```
 
@@ -27,6 +26,6 @@ if start_time and abs(self.create_time() - start_time) > 3:
     logger.info('Process %s is not postmaster, too much difference between PID file start time %s and process start time %s', self.pid, self.create_time(), start_time)
 ```
 
-Also discovered a BUG in Patroni: https://github.com/zalando/patroni/issues/811 The two timestamps in the error message are reversed.
+Also discovered a BUG in Patroni: https://github.com/patroni/patroni/issues/811 The two timestamps in the error message are reversed.
 
 Lessons learned: NTP time synchronization is very important

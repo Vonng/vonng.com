@@ -6,7 +6,6 @@ summary: >
   PostgreSQL 18.2 系列小版本引入了 substring 与 WAL 回放相关回归问题，建议暂缓新建与升级，并在 2026-02-26 号外版本发布后尽快更新。
 tags: [PostgreSQL, PG管理]
 ---
-
 > 18.2 系列小版本引入两个 BUG，请暂缓新建与升级，并及时在下周 18.3 发布后更新。
 
 一周前 PostgreSQL 社区发布了二月度例行小版本更新，[Pigsty v4.1 也于当天跟进](/pigsty/v4.1)。
@@ -107,7 +106,7 @@ PostgreSQL 的 `make check` 回归测试套件历史悠久但覆盖面有限，�
 
 ## 公告原文
 
-#### PostgreSQL 计划于 2026 年 2 月 26 日进行计划外紧急更新
+### PostgreSQL 计划于 2026 年 2 月 26 日进行计划外紧急更新
 
 由 PostgreSQL 全球开发组发布于 **2026-02-16**
 

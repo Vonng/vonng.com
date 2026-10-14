@@ -7,7 +7,6 @@ summary: >
   PostgreSQL uses MVCC as its primary concurrency control technology. While it has many benefits, it also brings other effects, such as relation bloat.
 tags: [PostgreSQL, PG Admin]
 ---
-
 > Author: [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 
 PostgreSQL uses MVCC as its primary concurrency control technology. While it has many benefits, it also brings other effects, such as relation bloat. Relation bloat (table and index) negatively impacts database performance and wastes disk space. To keep PostgreSQL always at optimal performance, it's necessary to perform timely garbage collection on bloated relations and regularly rebuild excessively bloated relations.
@@ -20,8 +19,6 @@ In actual operations, garbage collection isn't that simple. Here are a series of
 * How to handle relation bloat?
 
 This article will explain these issues in detail.
-
----------------------
 
 ## Relation Bloat Overview
 
@@ -37,8 +34,6 @@ Unfortunately, there's no best practice for when to perform `VACUUM FULL` to han
 * Handle relation bloat based on bloat level, timing, and other factors
 
 Here are some key questions: first, how to define relation bloat rate?
-
----------------------
 
 ## Measuring Relation Bloat
 
@@ -86,8 +81,6 @@ For example, a 200G relation would take approximately 5 minutes to perform preci
 
 For monitoring bloat rates, the most important requirement is fast speed and low impact. Therefore, when we need to monitor many tables across many databases simultaneously, we need to perform **fast estimation** of bloat rates to avoid impacting business operations.
 
----------------------
-
 ## Estimating Bloat Rate
 
 PostgreSQL maintains many statistical information for each relation. Using statistical information, we can quickly and efficiently estimate bloat rates for all tables in the database. Estimating bloat rates requires using statistical information on tables and columns. Three directly used statistical metrics are:
@@ -120,7 +113,7 @@ To understand the estimation process, we first need to understand PostgreSQL's i
 
 First, let's look at tuple **average length**. The tuple layout in PostgreSQL is shown in the diagram below.
 
-![](page-tuple.png)
+![Relation Bloat Monitoring and Management — Calculating Average Tuple Length (figure 1)](page-tuple.png)
 
 Space occupied by a tuple can be divided into three parts:
 
@@ -391,8 +384,6 @@ COMMENT ON VIEW monitor.pg_bloat_indexes IS 'index bloat monitor';
 
 Although it looks long, querying this view to get bloat rates for all tables in the entire database (3TB) takes only 50ms of computation. And it only needs to access statistical data, not the relations themselves, consuming no instance I/O.
 
----------------------
-
 ## Handling Table Bloat
 
 If it's just a toy database, or the business allows long daily downtime for maintenance, then simply executing `VACUUM FULL` in the database would suffice. But `VACUUM FULL` requires exclusive read-write locks on tables. For databases that need to run continuously, we need to use `pg_repack` to handle table bloat.
@@ -404,8 +395,6 @@ If it's just a toy database, or the business allows long daily downtime for main
 ```bash
 yum install pg_repack10
 ```
-
----------------------
 
 ### Using `pg_repack`
 
@@ -431,8 +420,6 @@ pg_repack mydb -i myschema.myindex
 ```
 
 Detailed usage can be found in the official documentation.
-
----------------------
 
 ### `pg_repack` Strategy
 
@@ -506,8 +493,6 @@ Select these tables for automatic reorganization during early morning valleys. T
 
 But when to perform reorganization still depends on specific business patterns.
 
----------------------
-
 ### `pg_repack` Principles
 
 `pg_repack`'s principle is quite simple. It creates a copy for the table to be rebuilt. First, it takes a full snapshot, writes all live tuples to the new table, and synchronizes all changes to the original table to the new table through triggers. Finally, it replaces the old table with the new compact copy through renaming. For indexes, this is accomplished through PostgreSQL's `CREATE(DROP) INDEX CONCURRENTLY`.
@@ -528,8 +513,6 @@ But when to perform reorganization still depends on specific business patterns.
 1. Use `CREATE INDEX CONCURRENTLY` to create a new index on the original table, maintaining the same definition as the old index
 2. `Analyze` the new index, set the old index as invalid, and swap new and old indexes in the data directory
 3. Delete the old index
-
----------------------
 
 ### `pg_repack` Considerations
 

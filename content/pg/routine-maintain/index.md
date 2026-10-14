@@ -7,9 +7,6 @@ summary: >
   汽车需要上油，数据库也需要维护保养。对Pg而言，有三项比较重要的维护工作：备份、重整、清理。
 tags: [PostgreSQL, PG管理]
 ---
-
-
-
 汽车需要上油，数据库也需要维护保养。
 
 ## PG中的维护工作
@@ -30,16 +27,16 @@ tags: [PostgreSQL, PG管理]
 
 备份可以使用 `pg_backrest` 作为一条龙解决方案，但这里考虑使用脚本进行备份。
 
-参考：[`pg-backup`](https://github.com/Vonng/pigsty/blob/master/roles/postgres/files/pg/pg-backup)
+参考：[`pg-backup`](https://github.com/pgsty/pigsty/blob/v1.1/roles/postgres/files/pg/pg-backup)
 
 ## 重整
 
 重整使用 `pg_repack`，PostgreSQL自带源里包含了pg_repack
 
-参考：[`pg-repack`](https://github.com/Vonng/pigsty/blob/master/roles/postgres/files/pg/pg-repack)
+参考：[`pg-repack`](https://github.com/pgsty/pigsty/blob/v1.1/roles/postgres/files/pg/pg-repack)
 
 ## 清理
 
 虽然有AutoVacuum，但手动执行Vacuum仍然有帮助。检查数据库的年龄，当出现老化时及时上报。
 
-参考：[`pg-vacuum`](https://github.com/Vonng/pigsty/blob/master/roles/postgres/files/pg/pg-vacuum)
+参考：[`pg-vacuum`](https://github.com/pgsty/pigsty/blob/v1.1/roles/postgres/files/pg/pg-vacuum)

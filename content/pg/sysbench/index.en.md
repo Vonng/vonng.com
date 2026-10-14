@@ -6,10 +6,7 @@ summary: >
   Although PostgreSQL provides pgbench, sometimes you need sysbench to outperform MySQL.
 tags: [PostgreSQL, PG Admin, Performance]
 ---
-
 sysbench homepage: https://github.com/akopytov/sysbench
-
----------------------
 
 ## Installation
 
@@ -54,8 +51,6 @@ make -j
 make install
 ```
 
----------------------
-
 ## Preparation
 
 Create a PostgreSQL database for benchmarking: `bench`, initialize test database:
@@ -74,7 +69,7 @@ sysbench /usr/local/share/sysbench/oltp_read_write.lua \
 
 Output:
 
-```
+```text
 Creating table 'sbtest1'...
 Inserting 100000 records into 'sbtest1'
 Creating a secondary index on 'sbtest1'...
@@ -85,8 +80,6 @@ Creating table 'sbtest3'...
 Inserting 100000 records into 'sbtest3'
 Creating a secondary index on 'sbtest3'...
 ```
-
----------------------
 
 ## Benchmark
 
@@ -106,7 +99,7 @@ sysbench /usr/local/share/sysbench/oltp_read_write.lua \
 
 Output:
 
-```
+```text
 sysbench 1.1.0-e6e6a02 (using bundled LuaJIT 2.1.0-beta3)
 
 Running the test with following options:

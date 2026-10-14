@@ -6,7 +6,6 @@ summary: >
   OLAP老司机 ClickHouse 以 MySQL 兼容性起家，这次浓眉大眼的 CK 也要来搞 PostgreSQL 了？
 tags: [PostgreSQL, OLAP, 商业]
 ---
-
 ClickHouse<sup>[1]</sup> 是一家开源实时分析数据库初创公司，2021 年从 Yandex 分拆出来。周二，该公司宣布收购 PeerDB，这是一家专注于高性价比 Postgres 复制和变更数据捕获的公司。
 
 ![图片](01.webp)
@@ -47,7 +46,5 @@ PeerDB 现有的开源组件将继续保持开源，许可证不会发生任何�
 ## 数据库老司机
 
 ### 欢迎微信搜索 pigsty-cc 加入 PGSQL 交流群
-
----
 
 发布版本：[微信公众号](https://mp.weixin.qq.com/s/3RuZ7ite_exxh2XOPB3HCA)

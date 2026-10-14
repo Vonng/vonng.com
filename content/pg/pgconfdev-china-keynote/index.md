@@ -6,7 +6,6 @@ summary: >
   三年三投，中了 PGConf.Dev 2026 演讲，也许是第一次有中国 PostgreSQL 厂商（数据库个体户）站上这个演讲台，分享对 PG 社区的贡献。
 tags: [PostgreSQL, PG生态]
 ---
-
 上午收到邮件，我提交的主题演讲 **"Extensions for Everyone"** 被 PGConf.dev 2026 正式接收了。
 
 对老冯而言，这意义重大——这不仅是我在 PostgreSQL 生态的工作被核心社区认可，更重要的是：**这应该是第一次有来自中国本土的 “厂商” 在 PostgreSQL 最核心的开发者大会上做主题演讲。**
@@ -14,8 +13,6 @@ tags: [PostgreSQL, PG生态]
 —— 或者更准确地说：**数据库个体户**😊
 
 ![图片](01.webp)
-
----
 
 ## 为什么这很重要？
 
@@ -38,8 +35,6 @@ Pigsty 从零做到 4.6K GitHub Stars，[PGEXT.CLOUD](/pg/pgext-cloud/) 从一�
 2025 年第二届的情况好了一些，来自 [OpenAI 的 Bohan Zhang](/db/openai-pg/) 与 CMU 的 William Zhang，以及来自富士通的 Zhijie Hou 都有主题演讲，来自 EDB 的 Richard Guo 参与了 Commiter 闭门会议。出现了中国人的身影，但依然没有来自中国的公司与供应商。2025 年在主会场外，老冯和瀚高的 Grant Zhou 中了两个[闪电演讲](/pg/pgcondev-lightning/)，我自己还在 2025 年社区活动 —— [PGEXT.DAY 上有一个演讲](/pg/pgext-day/)。总归在这一届，实现了一些从零到一的突破。
 
 这一届，老冯投中了一个主题演讲。2026 年的完整议程还没有出炉，所以我也不知道是不是有别的中国厂商中选。不过老冯能保证的是，至少这一届出现了一个 Breakthrough。我不知道这次演讲能改变什么。但至少，当有人再问 “[中国对 PostgreSQL 社区有什么贡献](/pg/china-pg-contribution/)” 时，我们可以多一个答案。
-
----
 
 ## 我的演讲主题是什么？
 

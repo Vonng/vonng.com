@@ -7,12 +7,8 @@ summary: >
   2024年的SO全球开发者调研结果新鲜出炉，PostgreSQL连续第二年成为全球最流行、最受喜爱、需求量最高的数据库。
 tags: [PostgreSQL, PG生态]
 ---
-
-
 [2024 年 StackOverflow 全球开发者调研结果](https://survey.stackoverflow.co/2024/)已经新鲜出炉，
 来自 185 个国家与地区的 6 万名开发者给出了高质量的问卷反馈。当然，作为数据库老司机，我最关注的还是 “Database” 这一项调研结果：
-
-------
 
 ## 流行度
 
@@ -28,7 +24,7 @@ tags: [PostgreSQL, PG生态]
 
 如果我们综合过去八年的问卷数据调查结果，将流行度画在一张散点图上，不难看出 PostgreSQL 几乎一直保持着高速线性增长。
 
-[![trend-used-prof.png](trend-used-prof.png)](https://demo.pigsty.cc/d/sf-survey/stackoverflow-survey?orgId=1&viewPanel=45)
+[![trend-used-prof.png](trend-used-prof.png)](https://demo.pigsty.cc/ui/d/sf-survey/stackoverflow-survey?orgId=1&viewPanel=45)
 
 在这个榜单上，有显著增长的数据库除了 PostgreSQL 还有 SQLite，DuckDB，Supabase，BigQuery，Snowflake，Databricks SQL。
 这里面，BigQuery，Snowflake，以及 Databricks 属于大数据分析领域的当红炸子鸡。SQLite 和 DuckDB 属于独特的，不与关系型数据库冲突的嵌入式数据库生态位，Supabase 则是封装 PostgreSQL 作为底层核心的后端开发平台。
@@ -36,8 +32,6 @@ tags: [PostgreSQL, PG生态]
 ![used-prof-2023-2024.png](used-prof-2023-2024.png)
 
 而其他的的数据库，或多或少都受到了 PostgreSQL 崛起带来的冲击。
-
-------
 
 ## 喜爱度与需求度
 
@@ -64,8 +58,6 @@ tags: [PostgreSQL, PG生态]
 ![trend-wanted.png](trend-wanted.png)
 
 需求量较为精确地反应着明年的增量（用户显式回答：“下一年中我计划使用此种数据库”），因此这里突增的需求度会很快反应到明年的流行度上来。
-
--------
 
 ## 小结
 

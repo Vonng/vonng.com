@@ -6,8 +6,6 @@ summary: >
   How to implement relatively complex fuzzy search logic in PostgreSQL?
 tags: [PostgreSQL, PG Development]
 ---
-
-
 In daily development, we often encounter requirements for fuzzy search. Today, let's briefly discuss how to implement some advanced fuzzy search using PostgreSQL.
 
 Of course, the fuzzy search I'm talking about here isn't the old-fashioned `LIKE` expressions with prefix, suffix, or bilateral fuzzy matching. Let's start directly with a concrete example.
@@ -199,14 +197,14 @@ $$ LANGUAGE plpgsql STRICT PARALLEL SAFE IMMUTABLE;
 
 Using this tokenization function, we can break down an application name into a series of morphemes:
 
-```
+```sql
 SELECT tokens2('艾米莉的埃及历险记');
 -- {艾米,米莉,莉的,的埃,埃及,及历,历险,险记}
 ```
 
 Now suppose a user searches for the keyword "艾米利", which gets split into:
 
-```
+```sql
 SELECT tokens2('艾米莉');
 -- {艾米,米莉}
 ```

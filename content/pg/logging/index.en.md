@@ -6,9 +6,6 @@ summary: >
   It's recommended to configure PostgreSQL's log format as CSV for easy analysis, and it can be directly imported into PostgreSQL data tables.
 tags: [PostgreSQL, PG Admin, Monitoring]
 ---
-
-
-
 It's recommended to configure PostgreSQL's log format as CSV for easy analysis, and it can be directly imported into PostgreSQL data tables.
 
 ## Log-Related Configuration Items

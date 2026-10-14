@@ -6,7 +6,6 @@ summary: >
   Seven days after pgBackRest was archived, David Steele said a coalition of sponsors was nearly in place and the project would probably live on. This was not just a heartwarming community story. It was a remarkably clean exercise in forcing the market to price an open-source commons.
 tags: [PostgreSQL, PG Ecosystem, Open Source]
 ---
-
 A few days ago, [pgBackRest, the PostgreSQL ecosystem's leading open-source backup tool, was archived](/en/pg/pgbackrest-archive/).
 
 Pigsty uses pgBackRest too, but I was not especially worried. A component this important was never going to be allowed to die for real—not by the PostgreSQL ecosystem.
@@ -22,8 +21,6 @@ He expected to make a firmer announcement before the end of the week. From archi
 What matters here is not the breezy line that "the open-source community really cares." What matters is what happened after a maintainer pushed a piece of critical open-source infrastructure right up to the line of death: the market finally started bidding.
 
 This was an unusually clean case of forced price discovery in an open-source commons.
-
---------
 
 ## What Happened in Those Seven Days
 
@@ -65,8 +62,6 @@ When the Linux Foundation responded to Redis's license change by launching [Valk
 
 That is already very fast.
 
---------
-
 ## Who Might Pay: Public Signals and Speculation
 
 The official list has not been published, but the public signals are enough to sketch the likely picture.
@@ -92,8 +87,6 @@ The names really worth watching are the major cloud providers: AWS, Google Cloud
 If not, that would be unsurprising. Most likely, companies inside the PostgreSQL ecosystem will pool money to save their own tool. The companies making the most money will remain silent while the companies most dependent on the software put out the fire.
 
 That is one of the open-source world's most familiar absurdities.
-
---------
 
 ## What "Forced Price Discovery" Means
 
@@ -130,8 +123,6 @@ It was hardball, and it worked. I expect others will copy the tactic. But the pr
 
 When an ordinary small project tries this, it simply dies. When pgBackRest does it, the market bids.
 
---------
-
 ## Is This an Exceptional Case?
 
 The PostgreSQL community does have strong muscle memory for coordination. After more than twenty years of collaboration, people throughout the PostgreSQL world know one another, and the mailing lists, conferences, Slack channels, and Twitter/X networks all connect. When something breaks, they can get around the same table quickly. That is part of the ecosystem's institutional strength.
@@ -156,8 +147,6 @@ Lætitia's line about companies buying memory and GPUs was not rhetoric. From 20
 
 After Snowflake acquired Crunchy Data, the funding and employment path that had enabled David to maintain pgBackRest did not continue. This is not an isolated case. We will see more like it.
 
---------
-
 ## Advice for Users
 
 If you use pgBackRest, there is no need to switch and no need to tinker.
@@ -169,8 +158,6 @@ Pigsty already ships with pgBackRest configured and ready to use, so Pigsty user
 If you are using pgBackRest, keep using it. [v2.58.0](https://github.com/pgbackrest/pgbackrest/releases/tag/release/2.58.0) is solid.
 Even when the repository was archived, the concern was only that a lack of maintenance might create problems over time. Now that maintenance is expected to continue, there is even less reason to worry.
 
---------
-
 ## Finally
 
 The seven-day reversal is certainly worth celebrating. This story got its happy ending. But remember why it happened: David Steele had to push the project to the line of death before the market was willing to admit that it had a price.
@@ -181,8 +168,6 @@ Many people assume they owe nothing and can simply free-ride. When everyone make
 David proved the point in the hardest possible way. Not through evangelism, appeals, or another moralizing essay about what "the community" ought to do. He archived the project and put every dependent party in front of the same bill.
 
 It was not the most graceful solution, but it worked. I sincerely hope open-source users will support the projects they rely on, within their means. Do not wait until a maintainer reaches the breaking point before scrambling to save the project.
-
---------
 
 ## Related Links
 

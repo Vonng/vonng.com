@@ -7,7 +7,6 @@ summary: >
   Today encountered an interesting case where a customer reported database connection issues caused by extensions.
 tags: [PostgreSQL, PG Admin, Extension, Incident]
 ---
-
 > Author: [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 
 Today encountered an interesting case where a customer reported database connection issues. The error was:
@@ -51,7 +50,7 @@ DB and Role level configurations are stored in system catalog `pg_db_role_settin
 vi ${PGDATA}/global/2964
 ```
 
-![](pit-extension.png)
+![Incident: PostgreSQL Extension Installation Causes Connection Failure — So then... (figure 1)](pit-extension.png)
 
 Here, replace all `pg_hint_plan` strings with equal-length `^@` binary zero characters. Of course, if you don't care about original configurations, the simpler approach is directly truncating this file to zero length.
 

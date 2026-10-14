@@ -6,8 +6,6 @@ summary: >
   关于 PostgreSQL 的开发，管理，原理，生态，工具，架构设计，性能优化，故障排查等方面的文章导航。
 tags: [PostgreSQL]
 ---
-
-
 ## 生态
 
 - [从PG“断供”看软件供应链中的信任问题](/pg/pg-mirror-pigsty)

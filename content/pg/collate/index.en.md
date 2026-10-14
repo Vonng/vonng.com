@@ -6,9 +6,6 @@ summary: >
   What? Don't know what COLLATION is? Remember one thing: using C COLLATE is always the right choice!
 tags: [PostgreSQL, PG Admin]
 ---
-
-
-
 Why does Pigsty default to `locale=C` and `encoding=UTF8` when initializing PostgreSQL databases?
 
 The answer is simple: **Unless you explicitly know you need LOCALE-related functionality, you should never configure anything other than `C.UTF8` for character encoding and localization collation rules**.
@@ -21,9 +18,7 @@ Incorrect LOCALE configuration can cause **performance losses of several times t
 
 Unfortunately, PostgreSQL's default `locale` and `encoding` configurations depend on the operating system settings, so `C.UTF8` may not be the default configuration. This leads many people to unknowingly misuse LOCALE, wasting significant performance and causing certain database features to malfunction.
 
-![](featured.webp)
-
-------
+![Localization and Collation Rules in PostgreSQL (figure 1)](featured.webp)
 
 ## TL;DR
 
@@ -31,8 +26,6 @@ Unfortunately, PostgreSQL's default `locale` and `encoding` configurations depen
 * Using non-C localization rules can cause operations involving string comparisons to have several times to dozens of times higher overhead, **significantly impacting performance**
 * Using non-C localization rules prevents `LIKE` queries from using regular indexes, easily causing pitfalls and cascading failures.
 * Instances using non-C localization rules can support `LIKE` queries by creating indexes with `text_ops COLLATE "C"` or `text_pattern_ops`.
-
-------
 
 ## What is LOCALE
 
@@ -64,8 +57,6 @@ Countries or regions that speak Chinese (`LANG=zh`) related `LOCAL`s include:
 * `MO` Macau: `zh_MO`
 * `TW` Taiwan: `zh_TW`
 * `SG` Singapore: `zh_SG`
-
-------
 
 ## LOCALE Examples
 
@@ -136,8 +127,6 @@ For example, the `LC_COLLATE` provided by `zh_CN` uses the `iso14651_t1_pinyin` 
 
 Let's look at an example of how LOCALE's COLLATION affects Postgres behavior.
 
-------
-
 ## Collation Rule Example
 
 Create a table containing 7 Chinese characters and perform sorting operations.
@@ -186,15 +175,13 @@ You can see that sorting by the `zh_CN` collation rule produces results in pinyi
 
 Of course, this query result depends on the specific definition of the `zh_CN` collation rule. Such collation rules are not defined by the database itself—the database only provides the `C` collation rule (or its alias `POSIX`). COLLATION sources are usually either the operating system, `glibc`, or third-party localization libraries (like `icu`), so different **actual definitions** might produce different effects.
 
-#### **But what's the cost?**
+### **But what's the cost?**
 
 The biggest negative impact of using non-`C` or non-`POSIX` LOCALE in PostgreSQL is:
 
 **Specific collation rules have enormous performance impact on operations involving string size comparisons, and they also prevent the use of regular indexes in `LIKE` query clauses.**
 
 Additionally, C LOCALE is guaranteed by the database itself to be used on any operating system and platform, while other LOCALEs are not, so using non-C Locale has worse portability.
-
-------
 
 ## Performance Loss
 
@@ -234,7 +221,7 @@ The results are quite shocking—using `C` versus `zh_CN` can differ by **ten ti
 
 Below is the detailed execution plan for experiment 5. Even with sufficient memory configured, it still spills to disk for external sorting. Nevertheless, all experiments explicitly specifying `LOCALE` exhibited this behavior, so we can compare the performance difference between C and `zh_CN` horizontally.
 
-![](collation-plan.jpg)
+![Localization and Collation Rules in PostgreSQL — Performance Loss (figure 2)](collation-plan.jpg)
 
 Another more comparable example is **comparison operations**.
 
@@ -262,8 +249,6 @@ Compared to `C` Locale, using `zh_CN` or other Locales may cause **several times
 
 Besides this, incorrect Locale not only brings performance losses but also causes **functional losses**.
 
-------
-
 ## Functional Loss
 
 Besides poor performance, another unacceptable issue is that using non-`C` LOCALE prevents **LIKE queries from using regular indexes**.
@@ -276,7 +261,7 @@ SELECT * FROM app WHERE name LIKE '中国%';
 
 Find all apps whose names start with "中国" (China).
 
-#### **On a database using C**
+### **On a database using C**
 
 This query can properly use the `app_pkey` index, leveraging the B-tree's ordering to accelerate the query, completing in about 2 milliseconds.
 
@@ -293,7 +278,7 @@ postgres@meta:5432/meta=# EXPLAIN SELECT * FROM app WHERE name LIKE '中国%';
 (3 rows)
 ```
 
-#### **On a database using en_US**
+### **On a database using en_US**
 
 We find that **this query cannot use indexes** and performs a full table scan. Query performance degrades to 70 milliseconds, a 30-40x performance deterioration.
 
@@ -308,7 +293,7 @@ vonng=# EXPLAIN SELECT * FROM app WHERE name LIKE '中国%';
    Filter: (name ~~ '中国%'::text)
 ```
 
-#### **Why?**
+### **Why?**
 
 Because index (B-tree index) construction is also based on **order**, i.e., **equality** and **comparison** operations.
 
@@ -316,7 +301,7 @@ However, LOCALE has its own set of definitions for string equivalence rules. For
 
 Therefore, **only the most basic `C` LOCALE can properly perform pattern matching**. C LOCALE's comparison rules are very simple—just compare character code points one by one, without any fancy tricks. So if your database unfortunately uses non-C LOCALE, you won't be able to use default indexes when executing `LIKE` queries.
 
-#### Solution
+### Solution
 
 For non-C LOCALE instances, only by **creating special types of indexes** can such queries be supported:
 
@@ -342,8 +327,6 @@ After creating the index, we can see that the original `LIKE` query **can** use 
 The inability of `LIKE` to use regular indexes seems solvable by creating an additional `text_pattern_ops` index. But this also means that problems that could originally be directly solved using existing `PRIMARY KEY` or `UNIQUE` constraint indexes now require additional maintenance costs and storage space.
 
 For developers unfamiliar with this issue, it's very likely that due to incorrect LOCALE configuration, patterns that work locally will cause cascading failures online due to not using indexes (e.g., local using C, but production environment using non-C LOCALE).
-
-------
 
 ## Compatibility
 

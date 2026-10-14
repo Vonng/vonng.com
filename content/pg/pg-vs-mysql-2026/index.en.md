@@ -7,10 +7,7 @@ summary: >
   vendor strategy, capital markets, and community governance. MySQL still owns the installed base; Postgres owns the growth.
 tags: [PostgreSQL, MySQL, PG Ecosystem]
 ---
-
 PostgreSQL has won the market for new database deployments, and its installed base is now comparable to MySQL's. With one rising and the other declining, there is little suspense left in the contest for the database kernel of the future.
-
--------
 
 ## I. Developer Adoption
 
@@ -41,8 +38,6 @@ Three independent signals—Stack Overflow, JetBrains, and Docker Hub—use diff
 ### The China Skew
 
 China is different from the rest of the world. Chinese internet companies have a much higher concentration of MySQL, creating strong path dependence. But a new generation of Chinese developers coming in through Django, FastAPI, and Node.js is naturally gravitating toward PostgreSQL. MySQL owns the installed base; PostgreSQL owns the growth.
-
--------
 
 ## II. Vendor Strategy
 
@@ -80,8 +75,6 @@ Databricks acquired two PostgreSQL companies in a single year—Neon and Mooncak
 
 Andy Pavlo put the point bluntly in a Stormbreaker interview: **PostgreSQL companies captured nearly all the capital flowing into the ecosystem.** The database sector's largest acquisitions all targeted PostgreSQL companies. In the MySQL ecosystem, by contrast, the defining event of 2025 was not an acquisition but an open letter.
 
--------
-
 ## III. Cloud Platform Data
 
 No cloud provider publishes an engine-level breakdown of instances or vCPUs. The following combines public information with figures from industry sources.
@@ -103,8 +96,6 @@ As of its Series E in October 2025, Supabase was valued at $5.1 billion and mana
 DB-Engines is a composite popularity ranking based on multiple signals, including search, hiring, and social activity. Its value is in longitudinal comparison: the delta against its own historical trend. The chart below shows how the scores have changed from their historical starting points to today.
 
 ![Historical change in DB-Engines scores](dbengines.webp)
-
--------
 
 ## V. Hyperscale Production Deployments
 
@@ -138,8 +129,6 @@ The pattern is clear: nearly all the technology choices behind the hyperscale My
 
 MySQL can operate at scale; Meta has proved that. But if you are starting from scratch today with no legacy constraints, you are very likely to choose PostgreSQL. Not because it is better in every dimension, but because ecosystem momentum, community vitality, extensibility (`pgvector`, PostGIS), and default support across every mainstream framework have all shifted in its favor.
 
--------
-
 ## VI. Community Governance
 
 ### PostgreSQL
@@ -155,8 +144,6 @@ More than 460 extensions cover nearly every modern workload: `pgvector`, PostGIS
 Oracle owns the copyright and trademarks outright. In the fall of 2025, it cut roughly 50% of the MySQL engineering team. Founder Monty Widenius said publicly that he was "heartbroken." Commits to `mysql/mysql-server` on GitHub nearly stopped. Community manager Descamps left for MariaDB. Nearly 250 people signed an open letter calling for an independent foundation. Oracle responded by promising a "new era" and new features in MySQL 9.7 LTS, but made no substantive concession on the central demand to transfer governance.
 
 **MySQL Community Edition still has no native vector search**; `pgvector` shipped in 2021. In an era when AI shapes infrastructure choices, the strategic significance of that gap goes far beyond the feature itself.
-
--------
 
 ## VII. Overall Assessment
 
@@ -176,8 +163,6 @@ PostgreSQL has won the growth market: new projects, new developers, new platform
 But that "installed-base advantage" is historical inertia. It does not generate new technical vitality, attract new developers, or drive new platform choices. When core contributors from the MySQL community are signing an open letter saying "we are becoming legacy technology," the direction of travel is no longer debatable.
 
 **Today's growth becomes tomorrow's installed base.**
-
-------
 
 ## Appendix: Data Sources
 

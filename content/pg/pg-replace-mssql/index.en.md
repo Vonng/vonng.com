@@ -7,12 +7,9 @@ summary: >
   PostgreSQL can directly replace Oracle, SQL Server, and MongoDB at the kernel level. Of course, the most thorough replacement is SQL Server - AWS's Babelfish provides wire-protocol-level compatibility.
 tags: [PostgreSQL, MySQL, PG Ecosystem]
 ---
-
 Many people don't have an intuitive impression of how far PostgreSQL's ecosystem has developed. Beyond [devouring the database world](/pg/pg-eat-db-world) and its all-encompassing extension ecosystem, PostgreSQL can directly replace Oracle, SQL Server, and MongoDB at the kernel level. MySQL is naturally even less of a concern.
 
 Of course, when talking about which mainstream database faces the highest risk, that's undoubtedly **Microsoft's SQL Server**. MSSQL faces the most thorough replacement - directly at the wire protocol level. And the driving force behind this is AWS, Amazon Web Services.
-
---------
 
 ## Babelfish
 
@@ -24,8 +21,6 @@ In recent years, AWS has played an even more devastating move - developing and i
 
 So-called **wire protocol compatibility** means clients don't need to change anything - they can still access SQL Server's 1433 port using MSSQL drivers and command-line tools (sqlcmd) to access clusters equipped with BabelfishPG. Even more remarkably, you can still use PostgreSQL's protocol language syntax from the original 5432 port, coexisting with SQL Server clients - bringing tremendous convenience for migration.
 
---------
-
 ## WiltonDB
 
 Of course, Babelfish isn't simply a PG extension plugin - it makes minor modifications and adaptations to the PostgreSQL kernel. It provides TSQL syntax support, TDS wire protocol support, data types, and other function support through four extension plugins.
@@ -33,8 +28,6 @@ Of course, Babelfish isn't simply a PG extension plugin - it makes minor modific
 ![wiltondb.png](wiltondb.png)
 
 Compiling and packaging such kernels and extensions across different platforms isn't easy, so WiltonDB - a Babelfish distribution - does exactly that, compiling and packaging BabelfishPG as RPM/DEB/MSI packages usable on EL 7/8/9, Ubuntu systems, and even Windows.
-
---------
 
 ## Pigsty v3
 
@@ -54,8 +47,6 @@ For example, you can easily configure to redirect the Primary service originally
 
 This means capabilities originally belonging to PostgreSQL RDS - high availability, point-in-time recovery, monitoring systems, IaC management, SOP playbooks, even countless extension plugins - can all be grafted and integrated onto SQL Server kernel versions.
 
---------
-
 ## How to Migrate?
 
 Besides powerful kernels and extensions like Babelfish, PostgreSQL's ecosystem has a thriving tools ecosystem. If you want to migrate from SQL Server or MySQL to PostgreSQL, I highly recommend a killer migration tool: [**PGLOADER**](https://pgloader.readthedocs.io/en/latest/ref/mssql.html).
@@ -68,8 +59,6 @@ pgloader mssql://user@mshost/dbname pgsql://pguser@pghost/dbname
 
 With MSSQL-compatible kernel extensions and migration tools, migrating existing SQL Server becomes very easy.
 
---------
-
 ## Beyond MSSQL, There's More...
 
 Besides MSSQL, PostgreSQL's ecosystem also has Oracle replacements: PolarDB O and IvorySQL; MongoDB replacements: FerretDB and PongoDB; plus over 300 extension plugins providing various functionalities. In fact, almost the entire database world is being impacted by PostgreSQL - except those carving out different ecological niches (SQLite, DuckDB, MinIO) or simply PostgreSQL shells (Supabase, RDS, Aurora/Polar).
@@ -78,7 +67,7 @@ Our recently released open-source RDS PostgreSQL solution - Pigsty - recently su
 
 Besides MSSQL, PostgreSQL's ecosystem also has Oracle replacements: PolarDB O and IvorySQL; MongoDB replacements: FerretDB and PongoDB; [plus over 300 extension plugins providing various functionalities](https://pgext.cloud/zh/list).
 
-![](https://pigsty.io/img/pigsty/ecosystem.jpg)
+![Can PostgreSQL Replace Microsoft SQL Server? — Beyond MSSQL, There's More... (figure 6)](https://pigsty.io/img/pigsty/ecosystem.jpg)
 
 In fact, almost the entire database world is being impacted by PostgreSQL - except those carving out different ecological niches (SQLite, DuckDB, MinIO) or simply PostgreSQL shells (Supabase, RDS, Aurora/Polar).
 
@@ -86,6 +75,6 @@ In fact, almost the entire database world is being impacted by PostgreSQL - exce
 
 Our recently released open-source RDS PostgreSQL solution - Pigsty - recently supports these PG replacement kernels, allowing users to provide MSSQL, Oracle, MongoDB, Firebase compatibility replacement capabilities in one PostgreSQL deployment.
 
-![](https://pigsty.io/img/pigsty/kernels.jpg)
+![Can PostgreSQL Replace Microsoft SQL Server? — Beyond MSSQL, There's More... (figure 8)](https://pigsty.io/img/pigsty/kernels.jpg)
 
 But given space constraints, that's content for the next few articles.

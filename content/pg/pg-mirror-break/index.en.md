@@ -6,7 +6,6 @@ summary: >
   PGDG cuts off FTP rsync sync channels, global mirror sites universally disconnected - this time they really strangled global users' supply chain.
 tags: [PostgreSQL, PG Admin]
 ---
-
 Recently, while building Pigsty offline packages, I discovered that the PostgreSQL version installed during local testing wasn't quite right - 17.4 was behind the latest 17.5 by one minor version. Also, when testing on EL10,
 I found several repositories were throwing errors. Strangely, using the global default repository in Hong Kong worked fine, but once using Chinese mirror sites locally, errors occurred.
 

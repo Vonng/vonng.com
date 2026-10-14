@@ -8,7 +8,6 @@ summary: >
   I turned 464 PostgreSQL extensions into a bilingual, ready-to-use encyclopedia with metadata, package matrices, install commands, docs, and binary distribution all in one place.
 tags: [PostgreSQL, Pigsty, PG Ecosystem, Extension]
 ---
-
 > Directory: [Chinese](https://pigsty.cc/ext/) · [English](https://pigsty.io/ext/)
 
 Extensions are the soul of PostgreSQL. Without them, PostgreSQL is just a very good relational database. With them, it becomes a platform that can swallow entire categories of database workloads.

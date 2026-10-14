@@ -6,9 +6,6 @@ summary: >
   一些PostgreSQL与Bash交互的技巧。
 tags: [PostgreSQL, PG管理, 工具]
 ---
-
-
-
 一些PostgreSQL与Bash交互的技巧。
 
 ## 使用严格模式编写Bash脚本

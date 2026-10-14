@@ -6,7 +6,6 @@ authors: [vonng]
 summary: "Without rules, there can be no order. This article compiles a development specification for PostgreSQL database principles and features, which can reduce confusion encountered when using PostgreSQL."
 tags: [PostgreSQL, PG Development, Software Engineering]
 ---
-
 ## 0x00 Background
 
 > Without rules, there can be no order.

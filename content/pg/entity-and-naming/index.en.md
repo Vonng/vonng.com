@@ -7,7 +7,6 @@ summary: >
   Concepts and their naming are very important. Naming style reflects an engineer's understanding of system architecture. Poorly defined concepts lead to communication confusion, while carelessly set names create unexpected additional burden. Therefore, they need careful design.
 tags: [PostgreSQL, PG Admin, Architecture]
 ---
-
 > Author: [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 
 > "Once named, it can be spoken; once spoken, it can be acted upon."
@@ -125,7 +124,7 @@ For example, `pg-test-tt` represents the `test` cluster under `tt` business line
 
 Node naming should adopt k8s Pod-consistent naming rules:
 
-```
+```text
 <cluster_name>-<seq>
 ```
 

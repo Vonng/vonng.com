@@ -7,8 +7,6 @@ summary: >
   正如两年前开展的向量数据库扩展插件赛马一样，当下PG生态进行的扩展竞赛已经开始围绕DuckDB进行，MotherDuck官方亲自下场标志着竞争进入白热化。
 tags: [PostgreSQL, PG生态]
 ---
-
-
 在 《PostgreSQL正在吞噬世界中》 一文中，我曾经抛出过这个问题：**谁会最终统一数据库世界？**。我认为是 PostgreSQL 生态与各种各样的扩展插件 —— 而我的判断是，要想征服 OLAP 这个最大也是最显著的数据库独立王国，这个分析扩展一定与 **DuckDB** 有关。
 
 PostgreSQL 一直以来都是我最喜欢的数据库，然而我第二喜欢的数据库在这两年中从 Redis 变为了 DuckDB。DuckDB 是一个非常小巧且强大的 **嵌入式** OLAP 分析数据库，在分析性能、易用性上都做到了极致水平，并且在所有数据库中有着仅次于 PostgreSQL 的可扩展性。
@@ -16,8 +14,6 @@ PostgreSQL 一直以来都是我最喜欢的数据库，然而我第二喜欢的
 ![extensibility.webp](extensibility.webp)
 
 正如两年前开展的向量数据库扩展插件赛马一样，当下 PG 生态进行的扩展竞赛已经开始围绕 DuckDB 进行 —— “***谁更好地在PG中整合DuckDB，谁就赢得OLAP世界的未来***”。尽管已经有许多玩家在摩拳擦掌，但 DuckDB 官方亲自下场，毫无疑问宣告着这场竞争即将进入白热化。
-
---------
 
 ## DuckDB：OLAP的新兴挑战者
 
@@ -41,8 +37,6 @@ DuckDB 整个数据库软件源代码就是一个头文件一个c++文件，编�
 
 ![db-engine-duckdb.png](db-engine-duckdb.png)
 
---------
-
 ## DuckDB的短板与其中的机遇
 
 DuckDB 是一个可以独立使用的数据库，但更是一个嵌入式的分析数据库。嵌入式有好处也有坏处 —— DuckDB 尽管有着最强分析性能，但它最大的短板就在于薄弱的数据管理能力 —— 也就是数据科学家们不喜欢的那些东西 —— ACID，并发访问，访问控制，数据持久性，高可用，数据库导入导出，等等等，而这恰好是经典数据库的长处，也是企业级分析系统的核心痛点之一。
@@ -53,8 +47,6 @@ DuckDB 是一个可以独立使用的数据库，但更是一个嵌入式的分�
 ![ecosystem.jpg](ecosystem.jpg)
 
 实际上，这样的事情已经在 PostgreSQL 生态中发生了。在其他数据库产品和公司还没来得及反应之前，PG 生态已经有五个玩家下场赛马了，包括 ParadeDB 的 `pg_lakehouse`，国内个人开发者李红艳编写的 `duckdb_fdw`，CrunchyData 的 `crunchy_bridge`， Hydra 出品的 `pg_quack`；以及目前 MotherDuck 原厂也跑过来做 PG 扩展了 —— `pg_duckdb`。
-
---------
 
 ## 第二届PG扩展竞速比赛
 

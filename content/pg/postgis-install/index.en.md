@@ -5,26 +5,20 @@ authors: [vonng]
 summary: "PostGIS is PostgreSQL's killer extension, but compiling and installing it isn't easy."
 tags: [PostgreSQL, PG Admin, Extension]
 ---
-
-----------
 Strongly recommend using yum / apt commands to install PostGIS from official PostgreSQL binary repositories.
 
 > Reference: <http://www.postgresonline.com/journal/archives/362-An-almost-idiots-guide-to-install-PostgreSQL-9.5,-PostGIS-2.2-and-pgRouting-2.1.0-with-Yum.html>
 
-----------
-
-### 1. Installation Environment
+## 1. Installation Environment
 
 - CentOS 7
 - PostgreSQL10
 - PostGIS2.4
 - PGROUTING2.5.2
 
-----------
+## 2. PostgreSQL10 Installation
 
-### 2. PostgreSQL10 Installation
-
-##### 2.1 Determine System Environment
+### 2.1 Determine System Environment
 
 ```bash
 $ uname -a
@@ -32,17 +26,17 @@ $ uname -a
 Linux localhost.localdomain 3.10.0-693.el7.x86_64 #1 SMP Tue Aug 22 21:09:27 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
-##### 2.2 Install Correct RPM Package
+### 2.2 Install Correct RPM Package
 
-```
+```text
 rpm -ivh https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/pgdg-centos10-10-2.noarch.rpm
 ```
 
 Different systems use different RPM sources. You can get the appropriate platform links from http://yum.postgresql.org/repopackages.php.
 
-##### 2.3 Check if RPM Package is Correctly Installed
+### 2.3 Check if RPM Package is Correctly Installed
 
-```
+```text
 yum list | grep pgdg
 
 pgdg-centos10.noarch                        10-2                       installed
@@ -54,19 +48,19 @@ MigrationWizard.noarch                      1.1-3.rhel7                pgdg10
 ...
 ```
 
-##### 2.4 Install PostgreSQL
+### 2.4 Install PostgreSQL
 
-```
+```text
 yum install -y postgresql10 postgresql10-server postgresql10-libs postgresql10-contrib postgresql10-devel
 ```
 
 You can choose to install the appropriate RPM packages based on your needs.
 
-##### 2.5 Start Service
+### 2.5 Start Service
 
 By default, PostgreSQL installation directory is `/usr/pgsql-10/`, data directory is `/var/lib/pgsql/`, and the system creates a default user `postgres`.
 
-```
+```text
 passwd postgres # Set password for system postgres user
 su - postgres   # Switch to postgres user
 /usr/pgsql-10/bin/initdb -D /var/lib/pgsql/10/data/	# Initialize database
@@ -74,15 +68,15 @@ su - postgres   # Switch to postgres user
 /usr/pgsql-10/bin/psql postgres postgres	# Login
 ```
 
-### 3. PostGIS Installation
+## 3. PostGIS Installation
 
-```
+```text
 yum install postgis24_10-client postgis24_10
 ```
 
 > If you encounter errors like:
 >
-> ```
+> ```text
 > --> Finished Dependency Resolution
 > Error: Package: postgis24_10-client-2.4.2-1.rhel7.x86_64 (pgdg10)
 >           Requires: libproj.so.0()(64bit)
@@ -92,21 +86,21 @@ yum install postgis24_10-client postgis24_10
 >
 > You can try to resolve it with: `yum -y install epel-release`
 
-### 4. FDW Installation
+## 4. FDW Installation
 
-```
+```text
 yum install ogr_fdw10
 ```
 
-### 5. pgRouting Installation
+## 5. pgRouting Installation
 
-```
+```text
 yum install pgrouting_10
 ```
 
-### 6. Verification Testing
+## 6. Verification Testing
 
-```
+```text
 # After logging into PostgreSQL, execute the following commands. Success if no errors:
 CREATE EXTENSION postgis;
 CREATE EXTENSION postgis_topology;
@@ -114,8 +108,6 @@ CREATE EXTENSION ogr_fdw;
 
 SELECT postgis_full_version();
 ```
-
-----------
 
 ## Compilation Tools
 
@@ -127,8 +119,6 @@ These tools are generally included with the system.
 
 On CentOS, install directly with `sudo yum install gcc gcc-c++ git autoconf automake libtool m4`.
 
-----------
-
 ## Required Dependencies
 
 ### PostgreSQL
@@ -139,7 +129,7 @@ PostgreSQL is the host platform for PostGIS. Here we use 10.1 as an example.
 
 GEOS is the abbreviation for Geometry Engine, Open-Source, a C++ version of the geometry library and PostGIS's core dependency.
 
-PostGIS 2.4 uses some new features from GEOS 3.7. However, as of now, the latest version officially released by GEOS is 3.6.2. GEOS version 3.7 can be obtained through [Nightly snapshot](http://geos.osgeo.org/snapshots/). So currently, if you want to use all new features, you need to compile and install GEOS 3.7 from source.
+PostGIS 2.4 uses some new features from GEOS 3.7. However, as of now, the latest version officially released by GEOS is 3.6.2. GEOS version 3.7 can be obtained through [Nightly snapshot](https://libgeos.org/usage/download/). So currently, if you want to use all new features, you need to compile and install GEOS 3.7 from source.
 
 ```bash
 # Rolling daily updates, this URL may expire, check here http://geos.osgeo.org/snapshots/
@@ -203,7 +193,7 @@ wget -P . http://download.osgeo.org/gdal/2.2.3/gdal-2.2.3.tar.gz
 
 ### SFCGAL
 
-SFCGAL is an extended wrapper for CGAL. Although it's optional, many functions are commonly used, so installation is needed here. [Download page](http://oslandia.github.io/SFCGAL/installation.html)
+SFCGAL is an extended wrapper for CGAL. Although it's optional, many functions are commonly used, so installation is needed here. [Download page](https://sfcgal.gitlab.io/SFCGAL/installation/)
 
 SFCGAL has many dependencies, including `CMake, CGAL, Boost, MPFR, GMP`, etc. Among these, `CGAL` was manually installed above. Here we still need to manually install BOOST.
 

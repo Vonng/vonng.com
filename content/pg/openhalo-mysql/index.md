@@ -7,7 +7,6 @@ summary: >
   PostgreSQL现在可以使用MySQL客户端访问了！愚人节刚开源的openHalo提供了这样的能力，现已加入Pigsty内核全家桶。
 tags: [PostgreSQL, MySQL]
 ---
-
 什么？PostgreSQL 现在可以使用 MYSQL 客户端访问了？没有错，愚人节刚开源的 openHalo 就提供了这样的能力 —— 让用户可以同时用 MySQL 和 PGSQL 的客户端读写访问管理同一个数据库，基于 PG 14.10 提供了 MySQL 5.7 的兼容能力。
 
 前天 [**openHalo 开源了他们的 MySQL 兼容 PG 内核**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489368&idx=1&sn=d68f943fea34d9ee9e678b9d49bc162f&scene=21#wechat_redirect)， 今天我打好了 RPM 包，已经整合进 Pigsty 里了，部署相当丝滑，修改了几处代码后，跟高可用，监控，备份组件都丝滑地融合在一起。
@@ -26,8 +25,6 @@ DB-Engine 数据库热度榜上，有五个数据库遥遥领先，热度远远�
 - [**FerretDB / 微软DocumentDB 当成 MongoDB 用**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486241&idx=1&sn=f39b87095837b042e74f55f8e60bb7a9&scene=21#wechat_redirect)
 
 顺便一提，以上内核能力全部已经在 Pigsty 中开箱即用。
-
-------
 
 ## 所以，我想试试，咋整？
 
@@ -79,19 +76,17 @@ Pigsty 安装的 [OpenHalo](https://github.com/pgsty/openHalo) 内核在 [HaloTe
 
 请注意，Pigsty 不对使用 OpenHalo 内核承担任何质保责任，使用此内核遇到的任何问题与需求请联系原厂解决。
 
-------
-
 ## 还有其他内核花活
 
-当然，Pigsty 支持的 [**PG 分支内核**](https://pigsty.cc/docs/kernel/) 可不止 OrioleDB 一个，你还可以使用：
+当然，Pigsty 支持的 [**PG 分支内核**](https://pigsty.cc/docs/pgsql/config/kernel/) 可不止 OrioleDB 一个，你还可以使用：
 
-- 兼容微软 SQL Server 的 [**Babelfish**](https://pigsty.cc/docs/kernel/babelfish/)（由 AWS 出品）
-- 兼容 Oracle 的 [**IvorySQL**](https://pigsty.cc/docs/kernel/ivorysql/)（由瀚高出品）
-- 极致 OLTP 性能的 [**OrioleDB**](https://pigsty.cc/docs/kernel/orioledb/)（由 Supabase 出品）
-- Aurora RAC 风味的 [**PolarDB**](https://pigsty.cc/docs/kernel/polardb/)（由阿里云出品）
-- 正儿八经带有国产信创资质，Oracle 兼容的 [**PolarDB O 2.0**](https://pigsty.cc/docs/kernel/polardb/)。
-- 你还可以用 [**FerretDB**](https://pigsty.cc/docs/kernel/ferret) + 微软出品的 [**DocumentDB**](https://pigsty.cc/ext/sim/documentdb/) 将 PG 仿真为一个 MongoDB。
-- 使用 Pigsty 自建模板一键拉起本地的 [**Supabase**](https://pigsty.cc/docs/kernel/supabase/) （OrioleDB 的老爹！）。
+- 兼容微软 SQL Server 的 [**Babelfish**](https://pigsty.cc/docs/pgsql/kernel/babelfish/)（由 AWS 出品）
+- 兼容 Oracle 的 [**IvorySQL**](https://pigsty.cc/docs/pgsql/kernel/ivorysql/)（由瀚高出品）
+- 极致 OLTP 性能的 [**OrioleDB**](https://pigsty.cc/docs/conf/oriole/)（由 Supabase 出品）
+- Aurora RAC 风味的 [**PolarDB**](https://pigsty.cc/docs/pgsql/kernel/polardb/)（由阿里云出品）
+- 正儿八经带有国产信创资质，Oracle 兼容的 [**PolarDB O 2.0**](https://pigsty.cc/docs/pgsql/kernel/polardb/)。
+- 你还可以用 [**FerretDB**](https://pigsty.cc/docs/app/ferretdb/) + 微软出品的 [**DocumentDB**](https://pgext.cloud/e/documentdb/) 将 PG 仿真为一个 MongoDB。
+- 使用 Pigsty 自建模板一键拉起本地的 [**Supabase**](https://pigsty.cc/docs/app/supabase/) （OrioleDB 的老爹！）。
 
 另外，我的朋友 Yurii ，Omnigres 的创始人正在给 PostgreSQL 套上 ETCD 协议支持， 估计不远的将来，你还可以把 PG 当成一个性能/可靠性更好的 etcd 给 Kubernetes / Patroni 去使用。
 

@@ -7,9 +7,6 @@ summary: >
   今天遇到一个比较有趣的Case，客户报告说数据库连不上了，发现是扩展导致的。
 tags: [PostgreSQL, PG管理, 扩展, 故障复盘]
 ---
-
-
-
 今天遇到一个比较有趣的Case，客户报告说数据库连不上了。报这个错：
 
 ```bash
@@ -51,7 +48,7 @@ DB与Role级别的配置存储在系统目录 `pg_db_role_setting` 中，这个�
 vi ${PGDATA}/global/2964
 ```
 
-![](pit-extension.png)
+![故障档案：PG安装Extension导致无法连接：于是……（图 1）](pit-extension.png)
 
 这里，将所有的 `pg_hint_plan` 字符串都替换成等长的 `^@` 二进制零字符即可。当然如果不在乎原来的配置，更省事的做法是直接把这个文件截断成零长文件。
 

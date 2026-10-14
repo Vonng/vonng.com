@@ -9,10 +9,7 @@ tags: [PostgreSQL, PG开发, 扩展, 向量]
 ai: true
 aliases: ["/ai/llm-and-pgvector/"]
 ---
-
 新 AI 应用在过去一年中出现了指数爆炸的增长态势，而这些应用面临的一个共同挑战是如何大规模地 **存储** 与 **查询** 以向量表示的 AI Embedding。本文聚焦被 AI 炒火了的 **向量数据库**，介绍了AI嵌入与向量存储检索的基本原理，并用一个具体的知识库检索案例来串联介绍向量数据库插件 **PGVECTOR** 的功能、性能、获取与应用。
-
-----------------
 
 ## AI是怎么工作的
 
@@ -38,8 +35,6 @@ GPT 展现出来了强大的智能水平，它的成功有很多因素，但在�
 
 通过这种方式，一个模糊而困难的自然语言处理问题，转换成为了一个简单清晰的数学问题。而向量数据库，就可以用来高效地解决这个数学问题。
 
-----------------
-
 ## 向量数据库能干什么？
 
 数据库有事务处理（OLTP）与数据分析（OLAP）两大核心场景，向量数据库自然也不例外。典型的事务处理场景包括：知识库，问答，推荐系统，人脸识别，图片搜索，等等等等。知识问答：给出一个自然语言描述的问题，返回与这些输入最为接近的结果；以图搜图：给定一张图片，找出与这张图片在逻辑上最接近的其他相关图片。
@@ -50,8 +45,6 @@ GPT 展现出来了强大的智能水平，它的成功有很多因素，但在�
 
 ![llm-pgvector-4.jpeg](llm-pgvector-4.jpeg)
 
-----------------
-
 ## PG向量插件 PGVECTOR
 
 市面上有许多向量数据库产品，商业的有 Pinecone，Zilliz，开源的有 Milvus，Qdrant 等，基于已有流行数据库以插件形式提供的则有 `pgvector` 与 Redis Stack。
@@ -61,8 +54,6 @@ GPT 展现出来了强大的智能水平，它的成功有很多因素，但在�
 ![llm-pgvector-5.png](llm-pgvector-5.png)
 
 **一个合格的向量数据库，首先得是一个合格的数据库，而从零开始做到这一点并不容易**。**比起使用一种全新的独立数据库品类，为现有数据库加装向量搜索的能力显然是一个更为务实，简单，经济的选择**。
-
-----------------
 
 ## PGVECTOR 知识检索案例
 
@@ -117,8 +108,6 @@ def query(question, limit=64):
 
 ![llm-pgvector-6.png](llm-pgvector-6.png)
 
-----------------
-
 ## PGVECTOR 的性能
 
 当功能、正确性、安全性满足需求后，用户的目光就会转向 **性能**。PGVECTOR 有着不错的性能表现，尽管比起专用的高性能向量计算Library来说有些差距，但性能对于生产环境中使用已经是绰绰有余了。
@@ -170,15 +159,13 @@ WITH probe AS (SELECT v AS query FROM sift_query WHERE id =  (random() * 999)::B
   SELECT id FROM sift_base ORDER BY v <-> (SELECT query FROM probe) LIMIT 1;
 ```
 
-----------------
-
 ## 如何获取 PGVECTOR？
 
 最后，我们来聊一聊，如何快速获取一个可用的 PGVECTOR ？
 
 在以前，PGVECTOR 需要自行下载编译安装，所以我提了一个 Issue 把它加入到 PostgreSQL 全球开发组的官方仓库中[5]。你只需要正常使用 PGDG 源即可直接 `yum install pgvector_15` 完成安装。在安装了 `pgvector` 的数据库实例中使用 `CREATE EXTENSION vector` 即可启用此扩展。
 
-```
+```sql
 CREATE EXTENSION vector;
 CREATE TABLE items (vec vector(2));
 INSERT INTO items (vec) VALUES ('[1,1]'), ('[-2,-2]'), ('[-3,4]');
@@ -190,8 +177,6 @@ SELECT *, vec <=> '[0,1]' AS d FROM items ORDER BY 2 LIMIT 3;
 ![llm-pgvector-8.png](llm-pgvector-8.png)
 
 Supabase，Neon 也提供了带有 `pgvector` 插件的付费托管 PostgreSQL 服务，AWS RDS for PostgreSQL 也已经在五月初刚刚支持了此扩展 。提供托管服务的完整供应商列表可以参考 `pgvector` 的 Github Issue [6]。
-
-----------------
 
 ## 参考
 

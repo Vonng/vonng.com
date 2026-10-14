@@ -6,7 +6,6 @@ summary: >
   PostgreSQL official repos cut off global mirror sync channels, open-source binaries supply disrupted, revealing the true colors of various database and cloud vendors.
 tags: [PostgreSQL, PG Admin]
 ---
-
 This month saw a high-profile "open source supply cut" incident — [KubeSphere deleting images and running away](/en/cloud/kubesphere-rugpull),
 but there's another slightly more subtle "chokepoint case" I mentioned last month — ["Chokepoint: PGDG Cuts Mirror Sync Channels"](/en/pg/pg-mirror-break).
 This "PostgreSQL supply cut" played the role of litmus test, nicely revealing the true colors of various database and cloud vendors.
@@ -29,7 +28,7 @@ At that time, I observed Germany's XTOM actually attempting a manual monthly upd
 | Tencent Cloud   | China   | 2025-03-31        | https://mirrors.cloud.tencent.com/postgresql/sync_timestamp           |
 | Volcano Cloud   | China   | 2025-03-10        | https://mirrors.volces.com/postgresql/sync_timestamp                  |
 | Huawei Cloud    | China   | 2024-01-02        | https://repo.huaweicloud.com/postgresql/sync_timestamp                |
-| Tsinghua TUNA   | China   | 2025-03-31        | https://mirrors.tuna.tsinghua.edu.cn/postgresql/sync_timestamp        |
+| Tsinghua TUNA   | China   | 2025-03-31        | `https://mirrors.tuna.tsinghua.edu.cn/postgresql/sync_timestamp` (original link unavailable)        |
 | Zhejiang Univ   | China   | 2025-03-31        | http://mirrors.zju.edu.cn/postgresql/sync_timestamp                   |
 | USTC            | China   | Removed           | https://servers.ustclug.org/2025/05/wine-postgresql-removal/          |
 | TrueNetwork     | Russia  | 2025-01-31        | http://mirror.truenetwork.ru/postgresql/sync_timestamp                |

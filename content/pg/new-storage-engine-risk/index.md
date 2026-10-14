@@ -6,7 +6,6 @@ summary: >
   上新有风险，及时下掉timescaledb/hypercore，避免数据库爆炸。
 tags: [PostgreSQL, 扩展, 故障复盘]
 ---
-
 昨天接到一个咨询的活儿，有位 Pigsty 的用户反馈数据库故障，出现 XID Wraparound 了。这个 PG 中最臭名昭著的故障在近些年已经比较少见了，不过这次的故障原因确实比较有趣，是因为使用了 TimescaleDB Hypercore 导致的 —— 这是一个实验性的新存储引擎，并且已经在最近的版本中弃用与移除。
 
 如果你正在使用这个新的存储引擎，最好立刻检查并退回经典的 TimescaleDB 引擎与 PostgreSQL 原生表，以免数据库爆炸。

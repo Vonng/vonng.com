@@ -6,9 +6,6 @@ summary: >
   If you use Integer sequences on tables, you should consider potential overflow scenarios.
 tags: [PostgreSQL, PG Admin, Incident]
 ---
-
------------------
-
 ## 0x01 Overview
 
 * Incident symptoms:
@@ -24,8 +21,6 @@ tags: [PostgreSQL, PG Admin, Incident]
   * Emergency operation: Downgrade online insert function to direct return, preventing error escalation.
   * Temporary solution: Create temporary table, generate 50 million temporary IDs from wasted gaps, modify insert function to check before inserting and take IDs from temporary ID table.
   * Long-term solution: Execute schema migration, update all related table primary key and foreign key types to Bigint.
-
------------------
 
 ## Root Cause Analysis
 
@@ -113,8 +108,6 @@ vonng=# SELECT currval('sample_id_seq'::RegClass);
 (1 row)
 ```
 
------------------
-
 ## Solution
 
 All online queries and inserts use stored procedures. For non-critical business, brief write failures are acceptable. First downgrade insert function to prevent errors from affecting AppServer. Since the table has many dependencies, its type cannot be directly modified, requiring a temporary solution.
@@ -133,8 +126,6 @@ DELETE FROM sample_temp_id WHERE id = (SELECT id FROM sample_temp_id FOR UPDATE 
 ```
 
 Modify insert stored procedure to take an ID from temporary ID table each time, explicitly inserting into the table.
-
------------------
 
 ## Lessons Learned
 

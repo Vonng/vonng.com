@@ -7,8 +7,6 @@ summary: >
   PG17使用PG16一半的时间实现扩展生态适配，300个可用扩展就绪，达到生产可用状态。PG12正式脱离支持生命周期。
 tags: [PostgreSQL]
 ---
-
-
 根据 PostgreSQL 的 [**版本策略**](https://www.postgresql.org/support/versioning/)，在 2019 年发布的 PostgreSQL12 将于今日（2024-11-14）正式脱离支持生命周期。
 
 PG 12 最后一个小版本为 2024-11-14 发布的 12.21，而这将是 PG 12 的最终版本，而新发布的 PostgreSQL 17.1 则将成为当下合适的新业务选择。
@@ -21,8 +19,6 @@ PG 12 最后一个小版本为 2024-11-14 发布的 12.21，而这将是 PG 12 �
 | 14      | 14.14         | Yes       | September 30, 2021 | November 12, 2026 |
 | 13      | 13.17         | Yes       | September 24, 2020 | November 13, 2025 |
 | 12      | 12.21         | No        | October 3, 2019    | November 14, 2024 |
-
---------
 
 ## PG12下台
 
@@ -43,11 +39,9 @@ PostgreSQL 12 是五年前发布的版本，我认为是继 PG 10 之后的一�
 
 ![version-map.png](version-map.png)
 
-当然，我对 PG 12 印象比较深刻的原因是，当我做 [Pigsty](https://pigsty.cc/zh/) 这个开箱即用的 PostgreSQL 数据库发行版时。第一个公开发布支持的大版本就是 PostgreSQL 12。现在一眨眼五年过去了，当时的从 PG 11 适配 PG 12 新特性的回忆还历历在目。
+当然，我对 PG 12 印象比较深刻的原因是，当我做 [Pigsty](https://pigsty.cc/) 这个开箱即用的 PostgreSQL 数据库发行版时。第一个公开发布支持的大版本就是 PostgreSQL 12。现在一眨眼五年过去了，当时的从 PG 11 适配 PG 12 新特性的回忆还历历在目。
 
 在这五年里，Pigsty 从一个自己用的PG监控系统/测试沙箱，变成了一个被广泛使用的开源项目，在全球社区都有了知名度。回头看看，不禁有些感慨。
-
---------
 
 ## PG17上位
 
@@ -72,8 +66,6 @@ PostgreSQL 12 是五年前发布的版本，我认为是继 PG 10 之后的一�
 总的来说，我认为 17.1 的推出将会是一个合适的升级时机，我也准备在未来几天里发布 Pigsty v3.1 ，在里面将 PG 17 升级为 Pigsty 默认使用的主要大版本，取代原本的 PG16。
 
 考虑到 PostgreSQL 在 10.0 之后提供了逻辑复制的功能特性，而 Pigsty 提供了使用逻辑复制进行不停机的蓝绿部署升级的完整方案 —— PG 大版本升级的难度早已今非昔比。我也将会在近期推出一个不停机大版本升级教程，帮助用户将现有的 PostgreSQL 16 或更低版本无缝升级到 PG 17
-
---------
 
 ## PG17扩展
 
@@ -107,7 +99,7 @@ PostgreSQL 12 是五年前发布的版本，我认为是继 PG 10 之后的一�
 | v2.0.1 | 2023-03-21 | v2 错误修复，安全增强，升级 Grafana 版本                              | [v2.0.1](https://github.com/Vonng/pigsty/releases/tag/v2.0.1) |
 | v2.0.0 | 2023-02-28 | 架构大升级，兼容性、安全性、可维护性显著增强                                  | [v2.0.0](https://github.com/Vonng/pigsty/releases/tag/v2.0.0) |
 
-> [Pigsty Release Note](https://pigsty.cc/docs/releasenote)
+> [Pigsty Release Note](https://pigsty.cc/docs/about/release/)
 
 而这一次从 PG 16 - PG 17，生态适配的速度显著加快了，这才三个月不到，就完成了之前需要半年的活计。在这一点上，我很自豪地说，我还是做了不少工作的。
 比如在《[PostgreSQL神功大成！最全扩展仓库](https://mp.weixin.qq.com/s/Dv3--O0K70Fevz39r3T4Ag)》中介绍过的 https://pgext.cloud/zh ，这里维护了 PG 生态超过一半的扩展插件。
@@ -130,8 +122,6 @@ Hydra 和 DuckDB 原厂 MotherDuck 亲自下场搞的 `pg_duckdb`，全部都已
 
 考虑到分布式的 Citus 用户并不多，列存 Hydra 已经有大把全新的 DuckDB 扩展可以替代，我认为 PG17 在扩展生态上已经达到了一个令人满意的状态，可以作为生产环境的首要大版本使用了。而在 PG17 上实现这一点的用时，比 PG 16 快了近一倍
 
--------
-
 ## 关于 Pigsty v3.1
 
 Pigsty 是一个开源免费，开箱即用的 PostgreSQL 数据库发行版，可以在本地一键拉起企业级 RDS 云数据库服务，帮助用户用好世界上最先进的开源数据库 —— PostgreSQL。
@@ -147,9 +137,9 @@ PostgreSQL 已经毫无疑问地即将成为数据库领域的 Linux 内核，�
 
 顺便一提，我们在 Pigsty v3 中增加了 PG 系内核替换能力，您可以使用衍生版 PG 内核，获取一些独特的能力与特性：
 
-- 微软 SQL Server 兼容的 [Babelfish](https://pigsty.cc/docs/kernel/babelfish) 内核支持
-- Oracle 兼容的 [IvorySQL](https://pigsty.cc/docs/kernel/ivorysql) 3.4 内核支持
-- 阿里云 [PolarDB](https://pigsty.cc/docs/kernel/polardb) for PostgreSQL / Oracle 国产化信创内核支持
-- 允许用户更方便地自建 [Supabase](https://pigsty.cc/docs/kernel/supabase) —— 开源 Firebase，一站式后端平台
+- 微软 SQL Server 兼容的 [Babelfish](https://pigsty.cc/docs/pgsql/kernel/babelfish/) 内核支持
+- Oracle 兼容的 [IvorySQL](https://pigsty.cc/docs/pgsql/kernel/ivorysql/) 3.4 内核支持
+- 阿里云 [PolarDB](https://pigsty.cc/docs/pgsql/kernel/polardb/) for PostgreSQL / Oracle 国产化信创内核支持
+- 允许用户更方便地自建 [Supabase](https://pigsty.cc/docs/app/supabase/) —— 开源 Firebase，一站式后端平台
 
 如果您希望使用原汁原味的 PostgreSQL 体验，欢迎使用我们的发行版，开源免费，没有供应商锁定；同时我们也提供商业咨询支持，为您解决疑难杂症兜底的需求与烦恼。

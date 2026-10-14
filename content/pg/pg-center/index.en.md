@@ -6,7 +6,6 @@ summary: >
   pg.center is a full Chinese mirror of postgresql.org, including the homepage, docs, news, community pages, and developer resources, plus a newly translated PostgreSQL 18 manual.
 tags: [PostgreSQL, Documentation, PG Ecosystem]
 ---
-
 One thing has always bothered me after all these years using PostgreSQL:
 `postgresql.org` never had a Chinese edition.
 
@@ -24,8 +23,6 @@ That launch also includes something the ecosystem was still missing:
 Chinese documentation for PostgreSQL 18.
 
 ![PostgreSQL 18 Chinese documentation](pg18-docs.webp)
-
-------
 
 ## What Is Included
 
@@ -53,8 +50,6 @@ That gives readers a single place to navigate the wider ecosystem.
 **News, events, downloads, community, developers, support**: release announcements, community calendars, and security notices are all localized as well.
 Information that previously required VPN access, or waiting for someone else to repost it, is now available directly in Chinese.
 
-------
-
 ## Why Build This?
 
 The PostgreSQL user base in China is already large, across internet companies, traditional enterprises, cloud vendors, and independent developers.
@@ -78,8 +73,6 @@ No VPN. No English hurdle. Open pg.center and read.
 
 If this works, it can also serve as a first step toward rebuilding the Chinese PostgreSQL community around better source material.
 
-------
-
 ## A Few Details
 
 - The domain `pg.center` is easy to remember.
@@ -87,8 +80,6 @@ If this works, it can also serve as a first step toward rebuilding the Chinese P
 - News and release information will keep syncing, and I plan to add scheduled RSS synchronization as well.
 - The docs section also integrates key ecosystem components and extensions, and I plan to keep that maintained.
 - There will be no junk ads. If you build PostgreSQL-related products, projects, services, or vendors, you are welcome to list them in the directory.
-
-------
 
 ## Closing
 

@@ -6,7 +6,6 @@ summary: >
   最近PostgreSQL生态公司备受市场青睐，Databricks拟以10亿美金估值收购 Neon，Supabase融到了D轮2亿美金。
 tags: [PostgreSQL, PG生态, 商业]
 ---
-
 最近 PostgreSQL 生态的公司备受市场青睐，刚刚 Databricks 拟以 10 亿美金估值收购 Neon，与此同时，Supabase 则在短短半年时间融到了 D 轮整整 2 亿美金。
 
 与此同时，微软 CEO 纳德拉在昨天的财报会议上多次提到了 PostgreSQL 的惊人表现：《[纳德拉财报点名 Postgres，助微软夺回市值第一](https://mp.weixin.qq.com/s?__biz=MzkzMjI2MDY5OQ==&mid=2247509936&idx=1&sn=e8afb1ff7203529f0550fb4b83707775&scene=21#wechat_redirect)》，PostgreSQL 赢得了资本市场的青睐。PG 生态的公司几乎拿完了数据库领域的钱
@@ -17,8 +16,6 @@ tags: [PostgreSQL, PG生态, 商业]
 
 现在创业起步最佳实践基本上就是把前端托管在 Cloudflare 和 Vercel 上，然后数据库配一个 Neon 或者 Supabase —— 当然也有其他选择，比如 Prisma Vercel 也都在搞托管 PG，然后各家云厂商也都有 PG RDS。当然 Pigsty 也可以在各种云服务器上自建 PG RDS 与 Supabase 甚至是 Neon。
 
----
-
 而现在，Neon 已经到了收获的时刻。Upstarts 透露，Databricks 拟以 1B 的估值洽谈收购 Neon。
 
 ![图片](02.webp)
@@ -26,8 +23,6 @@ tags: [PostgreSQL, PG生态, 商业]
 ![图片](03.webp)
 
 与此同时，Supabase 的估值已经来到了 2B，并在短短半年，从 C 轮的 80 M 融资额又干了一轮 200 M 的 D 轮融资。估计上限要比 Neon 还高一圈。
-
----
 
 不仅仅是创业公司，在科技巨头中，PostgreSQL 的地位也日益凸显。例如昨天，微软上周交出了一份创纪录的财报后，股价大涨，也帮助其从苹果手里夺回了全球市值第一的宝座。
 
@@ -46,8 +41,6 @@ tags: [PostgreSQL, PG生态, 商业]
 老冯自己也是做 PostgreSQL 的，俺做的 Pigsty 已经成为中国在整个 PG 生态中最有影响力的开源项目，也开始走向全球，有了一张参加 PG 发行版大乱斗的门票。可惜国内能承担风险的美元基金全都跑光了。所以这几年也没拿投资，都是一个人单干。
 
 有时候我也挺羡慕这些在美国的同行的，毕竟一个人的速度比不上一群人烧钱。但好在这几年也总算过来有稳定营收了。虽然不是那种 Billion Dollar Fly to the Moon 的故事，但自己的事业与小生意干的也确实挺开心，那就够了。
-
----
 
 最后是老冯的广告时间，Pigsty 现在是 Supabase 自建的三大官方推荐方案之一，你可以用几分钟不到的时间，在自己的服务器上轻松拉起功能比 Supabase 功能更丰富的，属于你自己的 Supabase。请看：[创业出海神器 Supabase 自建指南](/db/supabase/)
 

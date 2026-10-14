@@ -6,8 +6,6 @@ summary: >
   The PostgreSQL Global Development Group announces PostgreSQL 17's first Beta version is now available. This time, PostgreSQL has truly burst the toothpaste tube!
 tags: [PostgreSQL]
 ---
-
-
 The PostgreSQL Global Development Group announces that PostgreSQL 17's first Beta version is now available for [download](https://www.postgresql.org/download/).
 This version includes a preview of all features that will be available when PostgreSQL 17 is officially released, though some details may be adjusted during the Beta testing period.
 
@@ -20,8 +18,6 @@ While we don't recommend running PostgreSQL 17 Beta 1 in production environments
 
 The community will continue to ensure PostgreSQL 17's stability and reliability as the world's most advanced open-source relational database, but this depends on your testing and feedback.
 For details, please refer to our [Beta testing process](https://www.postgresql.org/developer/beta/) and how you can contribute: https://www.postgresql.org/developer/beta/
-
-------
 
 ## PostgreSQL 17 Highlight Features
 
@@ -41,8 +37,6 @@ High-concurrency write workloads can significantly benefit from PostgreSQL 17's 
 
 Finally, PostgreSQL 17 adds more explicit SIMD instructions, such as enabling AVX-512 instruction support for the [`bit_count`](https://www.postgresql.org/docs/17/functions-bitstring.html) function.
 
-------
-
 ### Partitioning and Distributed Workload Enhancements
 
 PostgreSQL 17's partition management is more flexible, adding the ability to **split** and **merge** partitions, and allowing partitioned tables to use **identity columns** and **exclusion constraints**.
@@ -51,8 +45,6 @@ Additionally, [PostgreSQL foreign data wrapper](https://www.postgresql.org/docs/
 PostgreSQL 17 adds new functionality to logical replication, making it more usable in high-availability architectures and major version upgrades.
 When upgrading from PostgreSQL 17 to higher versions using [`pg_upgrade`](https://www.postgresql.org/docs/17/pgupgrade.html), you no longer need to drop [logical replication slots](https://www.postgresql.org/docs/17/logical-replication-subscription.html#LOGICAL-REPLICATION-SUBSCRIPTION-SLOT), avoiding the hassle of re-synchronizing data after upgrades.
 Additionally, you can control the failover process of logical replication, providing better controllability for managing PostgreSQL in high-availability architectures. PostgreSQL 17 also allows logical replication subscribers to use `hash` indexes for lookups and introduces the `pg_createsubscriber` command-line tool for creating logical replication on physical replication standby servers.
-
-------
 
 ### Developer Experience
 
@@ -69,8 +61,6 @@ Additionally, in PostgreSQL 17, drivers can leverage the libpq API to use [async
 
 PostgreSQL 17 introduces a built-in collation provider that provides sorting semantics similar to the `C` collation but encoded as `UTF-8` rather than `SQL_ASCII`. This new collation provider provides immutability guarantees, ensuring your sorting results won't change across different systems.
 
-------
-
 ### Security Features
 
 PostgreSQL 17 adds a new connection parameter `sslnegotiation` that allows PostgreSQL to perform direct TLS handshakes when using [ALPN](https://en.wikipedia.org/wiki/Application-Layer_Protocol_Negotiation), reducing one network round trip. PostgreSQL registers as `postgresql` in the ALPN directory.
@@ -81,14 +71,10 @@ PostgreSQL 17 adds a new [predefined role](https://www.postgresql.org/docs/17/pr
 and ensures `search_path` is safe for maintenance operations like `VACUUM`, `ANALYZE`, `CLUSTER`, `REFRESH MATERIALIZED VIEW`, and `INDEX`.
 Finally, users can now use `ALTER SYSTEM` to set undefined configuration parameters that the system doesn't recognize.
 
-------
-
 ### Backup and Export Management
 
 PostgreSQL 17 can perform incremental backups using [`pg_basebackup`](https://www.postgresql.org/docs/17/app-pgbasebackup.html) and adds a new utility [`pg_combinebackup`](https://www.postgresql.org/docs/17/app-pgcombinebackup.html) for combining backups during the recovery process.
 This version adds a `--filter` parameter to [`pg_dump`](https://www.postgresql.org/docs/17/app-pgdump.html), allowing you to specify a file to further specify which objects to include or exclude during the dump process.
-
-------
 
 ### Monitoring
 
@@ -99,15 +85,11 @@ Additionally, [`VACUUM` progress reporting](https://www.postgresql.org/docs/deve
 PostgreSQL 17 also introduces a new view, [`pg_wait_events`](https://www.postgresql.org/docs/17/view-pg-wait-events.html), providing descriptions of wait events that can be used with `pg_stat_activity` to gain deeper insights into why active sessions are waiting.
 Additionally, some information from the [`pg_stat_bgwriter`](https://www.postgresql.org/docs/17/monitoring-stats.html#MONITORING-PG-STAT-BGWRITER-VIEW) view has now been split into the new [`pg_stat_checkpointer`](https://www.postgresql.org/docs/17/monitoring-stats.html#MONITORING-PG-STAT-CHECKPOINTER-VIEW) view.
 
-------
-
 ## Other Features
 
 PostgreSQL 17 has many other new features and improvements, many of which may benefit your use cases. Please refer to the [release notes](https://www.postgresql.org/docs/17/release-17.html) for a complete list of new features and changes:
 
 https://www.postgresql.org/docs/17/release-17.html
-
-------
 
 ## Bug and Compatibility Testing
 
@@ -117,13 +99,9 @@ The PostgreSQL wiki publicly provides an [open issues](https://wiki.postgresql.o
 
 https://www.postgresql.org/account/submitbug/
 
-------
-
 ## Beta Timeline
 
 This is the first Beta version of PostgreSQL 17. The PostgreSQL project will release more Beta versions as needed for testing, followed by one or more RC versions, with the final version expected around September or October 2024. For details, please refer to the [Beta testing](https://www.postgresql.org/developer/beta/) page.
-
-------
 
 ## Links
 

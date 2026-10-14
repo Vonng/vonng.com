@@ -6,7 +6,6 @@ summary: >
   This article describes how Cloudflare scaled to support 55 million requests per second using 15 PostgreSQL clusters, and PostgreSQL's scalability performance.
 tags: [PostgreSQL, Performance, Translation]
 ---
-
 > Source: [How Cloudflare Supports 55M QPS with 15 PostgreSQL Clusters](https://newsletter.systemdesign.one/p/postgresql-scalability)
 
 In July 2009, in California, USA, a startup team created a Content Delivery Network (CDN) called Cloudflare to accelerate internet requests, making network access more stable and faster. They faced various challenges during their early development, yet their growth rate was remarkably impressive.
@@ -18,8 +17,6 @@ In July 2009, in California, USA, a startup team created a Content Delivery Netw
 Now they handle 20% of internet traffic - 55 million HTTP requests per second. And they achieved this using just 15 PostgreSQL clusters.
 
 Cloudflare uses PostgreSQL to store service metadata and handle OLTP workloads. However, supporting tenants with various different load types in the same cluster is challenging. A **cluster** is a group of database servers, and a **tenant** is an isolated data space dedicated to specific users or user groups.
-
-------
 
 ## PostgreSQL's Scalability
 
@@ -100,8 +97,6 @@ Cloudflare performs inter-component connectivity testing to proactively discover
 When failover completes and the primary instance comes back online, they use the *pg_rewind* tool to replay missed write changes, resynchronizing the old primary with the cluster.
 
 Cloudflare's Postgres primary and replica instances total over 100 machines. They use a combination of operating system resource management, queueing theory, congestion control algorithms, and even PostgreSQL statistics to achieve PostgreSQL scalability.
-
-------
 
 ## Evaluation and Discussion
 

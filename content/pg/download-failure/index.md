@@ -6,8 +6,6 @@ summary: >
   最近发生了一起匪夷所思的故障，某数据库切走了一半的数据量和负载，结果却因为负载变大被打挂了。
 tags: [PostgreSQL, PG管理, 故障复盘]
 ---
-
-
 最近发生了一起匪夷所思的故障，某数据库切走了一半的数据量和负载。
 
 其他什么都没变，本来还好；压力减小，却在高峰期陷入濒死状态，完全不符合直觉。
@@ -28,7 +26,7 @@ tags: [PostgreSQL, PG管理, 故障复盘]
 
 CPU使用率的正常水位在25%，警戒水位在45%，极限水位在80%。故障期间所有从库飙升至极限水位。
 
-![](download-failure-cpu.jpg)
+![故障档案：快慢不匀雪崩：二、现象（图 1）](download-failure-cpu.jpg)
 
 PostgreSQL连接数发生暴涨，通常5~10个左右的数据库连接就足够撑起所有流量，连接池的最大连接数为100。
 
@@ -40,11 +38,11 @@ pgbouncer连接池平均响应时间平时在500μs左右，故障期间飙升�
 
 故障期间，数据库TPS发生显著下滑。进行杀查询抢救后恢复，但处于剧烈抖动状态。
 
-![](download-failure-tps.png)
+![故障档案：快慢不匀雪崩：二、现象（图 4）](download-failure-tps.png)
 
 故障期间，两个函数的执行时间发生显著恶化，从几百微秒劣化至几十毫秒。
 
-![](download-failure-functime.png)
+![故障档案：快慢不匀雪崩：二、现象（图 5）](download-failure-functime.png)
 
 故障期间，复制延迟显著上升，开始出现GB级别的复制延迟，业务指标出现显著下滑。
 
@@ -112,7 +110,7 @@ SELECT pg_cancel_backend(pid) FROM pg_stat_activity WHERE application_name != 'p
 
 **图：故障期间函数平均执行时间出现明显飙升**
 
-![](download-failure-functime.png)
+![故障档案：快慢不匀雪崩：证据（图 9）](download-failure-functime.png)
 
 **图：在不同并行数下压测该函数能达到的最大QPS**
 

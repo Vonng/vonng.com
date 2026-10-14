@@ -6,7 +6,6 @@ authors: [vonng]
 summary: The 2025 SO global developer survey results are fresh out, and PostgreSQL has become the most popular, most loved, and most wanted database for the third consecutive year. Nothing can stop PostgreSQL from consolidating the entire database world!
 tags: [PostgreSQL, PG Ecosystem]
 ---
-
 The [2025 StackOverflow Global Developer Survey results](https://survey.stackoverflow.co/2025/technology#2-databases) are fresh out, with high-quality questionnaire feedback from 50,000 developers across 177 countries and regions. As a database veteran, I'm most interested in the "Database" section of this survey. Today, let's decode this data and examine the latest trends in the database field.
 
 Simply put, PostgreSQL has achieved a three-peat as the undisputed champion across all three database metrics for the third consecutive year, and it continues to maintain its high-speed momentum. If we said "[PostgreSQL is Eating the Database World](/pg/pg-eat-db-world)" two years ago, then from this year's data, PostgreSQL has undoubtedly dominated the database world.
@@ -45,8 +44,6 @@ Oracle and MySQL still had 0.1% ~ 0.2% usage growth this year, but against the b
 
 Unfortunately, TiDB, once the most representative domestic database leader, fell out of all three rankings this time. TiDB and Oceanbase chose the distributed + MySQL compatibility route (double wrong bet) (see: [Are Distributed Databases a False Requirement?](/db/distributive-bullshit)). This is quite inappropriate in the current context of [hardware development](/cloud/bonus/) and PG ecosystem prosperity. CockroachDB, which also bet on the distributed route but chose PostgreSQL ecosystem compatibility, achieved 10% relative growth this year and successfully stayed on the list.
 
-------
-
 ## Admiration
 
 The other two important metrics are database admiration (red) and desire (blue): [Most loved and most wanted databases among all developers in the past year](https://survey.stackoverflow.co/2025/technology#2-databases), sorted by desire.
@@ -67,8 +64,6 @@ Interestingly, Redis showed a collapse in admiration, while Valkey replaced Redi
 
 Supabase's admiration was already realized last year, dropping to **47.2%** this year and beginning to decline, which aligns with trends I've observed — some Supabase users who have grown beyond the comfort zone of cloud services now need to self-host Supabase. The official Docker Compose toy self-hosting template provided by Supabase has many pain points compared to their cloud service.
 
-------
-
 ## Desire
 
 The proportion of those who desire it relative to the total is **desire rate** (Wanted), or **aspiration** (Desired), represented by blue dots in the above chart. Its meaning is: what percentage of users will actually choose to use this technology in the next year, representing actual growth momentum for the next year.
@@ -81,15 +76,11 @@ In this category, PostgreSQL has won the championship for the fourth consecutive
 
 MySQL's desire was overtaken by SQLite last year, falling from second place in 2023 to third in 2024, and was overtaken by Redis this year, dropping to fourth place. Fellow sufferer MongoDB fell from the most wanted database by developers (first place) from 2017-2020 all the way to fifth place. Its reputation collapsed like a cliff — how tragic!
 
-------
-
 ## Migration Chart
 
 The most interesting aspect of the 2025 survey is this database migration chart — summarized in one sentence: all databases are migrating to PostgreSQL. Unlike other technology fields that have give and take (like languages, tools), the database world's ecosystem shows a clear trend toward unification.
 
 ![sf-flow.jpg](sf-flow.jpg)
-
-------
 
 ## Summary
 
@@ -102,8 +93,6 @@ PostgreSQL has become the Linux kernel of the database world and the default cho
 ![distros.png](distros.png)
 
 PostgreSQL distributions like Amazon RDS, Supabase, EDB, Pigsty, Percona, Crunchy, StackGres will compete for the RedHat, Ubuntu, Debian, SUSE ecological positions in the database world. I'm proud that Pigsty, as an open-source PostgreSQL distribution, has already secured a ticket to this distribution battle royale.
-
---------
 
 ## Advertisement Time
 

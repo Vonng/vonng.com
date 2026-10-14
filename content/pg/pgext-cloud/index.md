@@ -6,7 +6,6 @@ summary: >
   开源免费免翻墙，一键安装PG与431个扩展插件 14个Linux发行版 x 6大PG主版本原生 RPM/DEB。
 tags: [PostgreSQL, 扩展]
 ---
-
 > [微信公众号链接](https://mp.weixin.qq.com/s/oHHzhbbt5suSxnJhyxTwQQ)
 
 PostgreSQL 拥有极为强大的扩展插件体系。

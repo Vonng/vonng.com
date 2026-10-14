@@ -6,11 +6,7 @@ summary: >
   PostgreSQL实际上只有两种事务隔离等级：读已提交（Read Commited）与可序列化（Serializable）。
 tags: [PostgreSQL, PG开发]
 ---
-
-
 PostgreSQL实际上只有两种事务隔离等级：**读已提交（Read Commited）** 与 **可序列化（Serializable）**
-
----------------------
 
 ## 基础
 
@@ -142,28 +138,28 @@ select * from test; -- either. Shows 1 => 12, 2 => 22
  t       | tuple    | 6/494              | 37672 | ExclusiveLock    | t       | f
 ```
 
-# Testing PostgreSQL transaction isolation levels
+## Testing PostgreSQL transaction isolation levels
 
 These tests were run with Postgres 9.3.5.
 
 Setup (before every test case):
 
-```
+```sql
 create table test (id int primary key, value int);
 insert into test (id, value) values (1, 10), (2, 20);
 ```
 
 To see the current isolation level:
 
-```
+```sql
 select current_setting('transaction_isolation');
 ```
 
-## Read Committed basic requirements (G0, G1a, G1b, G1c)
+### Read Committed basic requirements (G0, G1a, G1b, G1c)
 
 Postgres "read committed" prevents Write Cycles (G0) by locking updated rows:
 
-```
+```text
 begin; set transaction isolation level read committed; -- T1
 begin; set transaction isolation level read committed; -- T2
 update test set value = 11 where id = 1; -- T1
@@ -178,7 +174,7 @@ select * from test; -- either. Shows 1 => 12, 2 => 22
 
 Postgres "read committed" prevents Aborted Reads (G1a):
 
-```
+```text
 begin; set transaction isolation level read committed; -- T1
 begin; set transaction isolation level read committed; -- T2
 update test set value = 101 where id = 1; -- T1
@@ -190,7 +186,7 @@ commit; -- T2
 
 Postgres "read committed" prevents Intermediate Reads (G1b):
 
-```
+```text
 begin; set transaction isolation level read committed; -- T1
 begin; set transaction isolation level read committed; -- T2
 update test set value = 101 where id = 1; -- T1
@@ -203,7 +199,7 @@ commit; -- T2
 
 Postgres "read committed" prevents Circular Information Flow (G1c):
 
-```
+```text
 begin; set transaction isolation level read committed; -- T1
 begin; set transaction isolation level read committed; -- T2
 update test set value = 11 where id = 1; -- T1
@@ -214,11 +210,11 @@ commit; -- T1
 commit; -- T2
 ```
 
-## Observed Transaction Vanishes (OTV)
+### Observed Transaction Vanishes (OTV)
 
 Postgres "read committed" prevents Observed Transaction Vanishes (OTV):
 
-```
+```text
 begin; set transaction isolation level read committed; -- T1
 begin; set transaction isolation level read committed; -- T2
 begin; set transaction isolation level read committed; -- T3
@@ -235,11 +231,11 @@ select * from test where id = 1; -- T3. Shows 1 => 12
 commit; -- T3
 ```
 
-## Predicate-Many-Preceders (PMP)
+### Predicate-Many-Preceders (PMP)
 
 Postgres "read committed" does not prevent Predicate-Many-Preceders (PMP):
 
-```
+```text
 begin; set transaction isolation level read committed; -- T1
 begin; set transaction isolation level read committed; -- T2
 select * from test where value = 30; -- T1. Returns nothing
@@ -251,7 +247,7 @@ commit; -- T1
 
 Postgres "repeatable read" prevents Predicate-Many-Preceders (PMP):
 
-```
+```text
 begin; set transaction isolation level repeatable read; -- T1
 begin; set transaction isolation level repeatable read; -- T2
 select * from test where value = 30; -- T1. Returns nothing
@@ -263,7 +259,7 @@ commit; -- T1
 
 Postgres "read committed" does not prevent Predicate-Many-Preceders (PMP) for write predicates -- example from Postgres documentation:
 
-```
+```text
 begin; set transaction isolation level read committed; -- T1
 begin; set transaction isolation level read committed; -- T2
 update test set value = value + 10; -- T1
@@ -275,7 +271,7 @@ commit; -- T2
 
 Postgres "repeatable read" prevents Predicate-Many-Preceders (PMP) for write predicates -- example from Postgres documentation:
 
-```
+```text
 begin; set transaction isolation level repeatable read; -- T1
 begin; set transaction isolation level repeatable read; -- T2
 update test set value = value + 10; -- T1
@@ -284,11 +280,11 @@ commit; -- T1. T2 now prints out "ERROR: could not serialize access due to concu
 abort;  -- T2. There's nothing else we can do, this transaction has failed
 ```
 
-## Lost Update (P4)
+### Lost Update (P4)
 
 Postgres "read committed" does not prevent Lost Update (P4):
 
-```
+```text
 begin; set transaction isolation level read committed; -- T1
 begin; set transaction isolation level read committed; -- T2
 select * from test where id = 1; -- T1
@@ -301,7 +297,7 @@ commit; -- T2
 
 Postgres "repeatable read" prevents Lost Update (P4):
 
-```
+```text
 begin; set transaction isolation level repeatable read; -- T1
 begin; set transaction isolation level repeatable read; -- T2
 select * from test where id = 1; -- T1
@@ -312,11 +308,11 @@ commit; -- T1. T2 now prints out "ERROR: could not serialize access due to concu
 abort;  -- T2. There's nothing else we can do, this transaction has failed
 ```
 
-## Read Skew (G-single)
+### Read Skew (G-single)
 
 Postgres "read committed" does not prevent Read Skew (G-single):
 
-```
+```text
 begin; set transaction isolation level read committed; -- T1
 begin; set transaction isolation level read committed; -- T2
 select * from test where id = 1; -- T1. Shows 1 => 10
@@ -331,7 +327,7 @@ commit; -- T1
 
 Postgres "repeatable read" prevents Read Skew (G-single):
 
-```
+```text
 begin; set transaction isolation level repeatable read; -- T1
 begin; set transaction isolation level repeatable read; -- T2
 select * from test where id = 1; -- T1. Shows 1 => 10
@@ -346,7 +342,7 @@ commit; -- T1
 
 Postgres "repeatable read" prevents Read Skew (G-single) -- test using predicate dependencies:
 
-```
+```text
 begin; set transaction isolation level repeatable read; -- T1
 begin; set transaction isolation level repeatable read; -- T2
 select * from test where value % 5 = 0; -- T1
@@ -358,7 +354,7 @@ commit; -- T1
 
 Postgres "repeatable read" prevents Read Skew (G-single) -- test using write predicate:
 
-```
+```text
 begin; set transaction isolation level repeatable read; -- T1
 begin; set transaction isolation level repeatable read; -- T2
 select * from test where id = 1; -- T1. Shows 1 => 10
@@ -370,11 +366,11 @@ delete from test where value = 20; -- T1. Prints "ERROR: could not serialize acc
 abort; -- T1. There's nothing else we can do, this transaction has failed
 ```
 
-## Write Skew (G2-item)
+### Write Skew (G2-item)
 
 Postgres "repeatable read" does not prevent Write Skew (G2-item):
 
-```
+```text
 begin; set transaction isolation level repeatable read; -- T1
 begin; set transaction isolation level repeatable read; -- T2
 select * from test where id in (1,2); -- T1
@@ -387,7 +383,7 @@ commit; -- T2
 
 Postgres "serializable" prevents Write Skew (G2-item):
 
-```
+```text
 begin; set transaction isolation level serializable; -- T1
 begin; set transaction isolation level serializable; -- T2
 select * from test where id in (1,2); -- T1
@@ -398,11 +394,11 @@ commit; -- T1
 commit; -- T2. Prints out "ERROR: could not serialize access due to read/write dependencies among transactions"
 ```
 
-## Anti-Dependency Cycles (G2)
+### Anti-Dependency Cycles (G2)
 
 Postgres "repeatable read" does not prevent Anti-Dependency Cycles (G2):
 
-```
+```text
 begin; set transaction isolation level repeatable read; -- T1
 begin; set transaction isolation level repeatable read; -- T2
 select * from test where value % 3 = 0; -- T1
@@ -416,7 +412,7 @@ select * from test where value % 3 = 0; -- Either. Returns 3 => 30, 4 => 42
 
 Postgres "serializable" prevents Anti-Dependency Cycles (G2):
 
-```
+```text
 begin; set transaction isolation level serializable; -- T1
 begin; set transaction isolation level serializable; -- T2
 select * from test where value % 3 = 0; -- T1
@@ -429,7 +425,7 @@ commit; -- T2. Prints out "ERROR: could not serialize access due to read/write d
 
 Postgres "serializable" prevents Anti-Dependency Cycles (G2) -- Fekete et al's example with two anti-dependency edges:
 
-```
+```text
 begin; set transaction isolation level serializable; -- T1
 select * from test; -- T1. Shows 1 => 10, 2 => 20
 begin; set transaction isolation level serializable; -- T2

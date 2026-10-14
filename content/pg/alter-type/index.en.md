@@ -7,7 +7,6 @@ summary: >
   How to change column types online, such as upgrading from INT to BIGINT?
 tags: [PostgreSQL, PG Admin]
 ---
-
 > Author: [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 
 How to change primary key column types online, such as upgrading from `INT` to `BIGINT`, without affecting business operations?
@@ -21,8 +20,6 @@ ALTER TABLE pgbench_accounts ALTER COLUMN aid SET DATA TYPE BIGINT;
 ```
 
 But this approach is not feasible for frequently accessed large production tables.
-
-------------------
 
 ## TL;DR
 
@@ -64,8 +61,6 @@ DROP FUNCTION IF EXISTS sync_pgbench_accounts_abalance();
 DROP TRIGGER tg_sync_pgbench_accounts_abalance ON pgbench_accounts;
 ```
 
-------------------
-
 ## Foreign Keys
 
 ```sql
@@ -89,8 +84,6 @@ alter table my_table rename column new_id to id;
 commit;
 ```
 
-------------------
-
 ## Using pgbench as Example
 
 ```sql
@@ -113,8 +106,6 @@ This will lock the table and can be used when table size is very small and acces
 ```sql
 ALTER TABLE pgbench_accounts ALTER COLUMN abalance SET DATA TYPE bigint;
 ```
-
-------------------
 
 ## Online Upgrade Process
 
@@ -172,8 +163,6 @@ alter table my_table drop column id;
 alter table my_table rename column new_id to id;
 commit;
 ```
-
-------------------
 
 ## Batch Update Logic
 
@@ -235,8 +224,6 @@ Handle boundary cases:
 ```bash
  UPDATE signup_users SET app_type = '' WHERE app_type != '';
 ```
-
-------------------
 
 ## Optimization and Improvement
 

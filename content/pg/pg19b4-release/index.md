@@ -6,7 +6,6 @@ summary: >
   PostgreSQL 19 Beta 4 一口气撤回了五个大功能：属性图查询、在线校验和、时态更新与删除、分区合并与拆分，以及 DDL 重建函数。功能可以晚一年，可靠性不能打折；与此同时，简体中文消息翻译随 Beta 4 进入上游，pgsql.cc 也补齐了横跨 28 年的中文手册。
 tags: [PostgreSQL, PG开发, 技术评论]
 ---
-
 > [微信公众号原文](https://mp.weixin.qq.com/s/qAt4LBJh1pWXprsK7bLSXg)
 
 今天中秋，先祝大家节日快乐。

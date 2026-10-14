@@ -6,10 +6,7 @@ summary: >
   Quick configuration for passwordless login to all machines
 tags: [PostgreSQL, PG Admin]
 ---
-
 Configuring SSH is fundamental operations work - sometimes the basics need revisiting.
-
----------------------
 
 ## Generate Public-Private Key Pairs
 
@@ -22,8 +19,6 @@ ssh-keygen -t rsa
 ```
 
 Pay attention to permissions: SSH files should have permissions set to `0600`, and `.ssh` directory permissions should be set to `0700`. Incorrect settings will prevent passwordless login from working.
-
----------------------
 
 ## Configure ssh config to traverse jumphost
 
@@ -54,8 +49,6 @@ Host *
 	StrictHostKeyChecking no
 ```
 
----------------------
-
 ## Copy Public Key to Target Machines
 
 Then copy the public key to jumphost, DBA workstation, and all database machines.
@@ -65,8 +58,6 @@ ssh-copy-id <target_ip>
 ```
 
 Each execution of this command requires password input, which is tedious and boring. It can be automated through expect scripts or using `sshpass`.
-
----------------------
 
 ## Use expect for Automation
 
@@ -92,8 +83,6 @@ foreach id {
 
 exit
 ```
-
----------------------
 
 ## More Elegant Solution: `sshpass`
 

@@ -7,8 +7,6 @@ summary: >
   Just like the vector database extension race two years ago, the current PostgreSQL ecosystem extension competition has begun revolving around DuckDB. MotherDuck's official entry into the PostgreSQL extension space undoubtedly signals that competition has entered white-hot territory.
 tags: [PostgreSQL, PG Ecosystem]
 ---
-
-
 In my article "[PostgreSQL is Eating the Database World]," I posed this question: **Who will ultimately unify the database world?** I believe it's the PostgreSQL ecosystem with various extensions — and my judgment is that to conquer OLAP, the largest and most significant independent database kingdom, this analytical extension must be related to **DuckDB**.
 
 PostgreSQL has always been my favorite database, but my second favorite database has changed from Redis to DuckDB over the past two years. DuckDB is a very compact yet powerful **embedded** OLAP analytical database that achieves extreme levels of analytical performance and usability, with extensibility second only to PostgreSQL among all databases.
@@ -16,8 +14,6 @@ PostgreSQL has always been my favorite database, but my second favorite database
 ![extensibility.webp](extensibility.webp)
 
 Just like the vector database extension race two years ago, the current PostgreSQL ecosystem extension competition has begun revolving around DuckDB — "***Whoever better integrates DuckDB in PostgreSQL wins the future of the OLAP world***." Although many players are already gearing up, DuckDB's official entry into the game undoubtedly announces that this competition is about to enter white-hot territory.
-
---------
 
 ## DuckDB: The Rising OLAP Challenger
 
@@ -41,8 +37,6 @@ Meanwhile, DuckDB has also earned excellent reputation among users, with its pop
 
 ![db-engine-duckdb.png](db-engine-duckdb.png)
 
---------
-
 ## DuckDB's Shortcomings and Opportunities Within
 
 DuckDB is a database that can be used independently, but it's more of an embedded analytical database. Being embedded has advantages and disadvantages — despite DuckDB's strongest analytical performance, its biggest shortcoming is weak data management capabilities — precisely those things data scientists dislike — ACID, concurrent access, access control, data persistence, high availability, database import/export, etc., which happen to be traditional databases' strengths and core pain points for enterprise analytical systems.
@@ -53,8 +47,6 @@ After the vector retrieval library hnswlib went open-source, countless "speciali
 ![ecosystem.jpg](ecosystem.jpg)
 
 Actually, this has already happened in the PostgreSQL ecosystem. Before other database products and companies could react, the PostgreSQL ecosystem already has five players in the race, including ParadeDB's `pg_lakehouse`, domestic individual developer Li Hongyan's `duckdb_fdw`, CrunchyData's `crunchy_bridge`, Hydra's `pg_quack`; and now MotherDuck's original factory has also come to make PostgreSQL extensions — `pg_duckdb`.
-
---------
 
 ## The Second PostgreSQL Extension Speed Race
 

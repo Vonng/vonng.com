@@ -6,7 +6,6 @@ summary: >
   没有规矩，不成方圆。本文针对PostgreSQL数据库原理与特性，整理了一份开发规范，可以减少大家在使用PostgreSQL数据库过程中遇到的困惑。
 tags: [PostgreSQL, PG开发, 软件工程]
 ---
-
 > [微信公众号原文](https://mp.weixin.qq.com/s/W1hwbl3qmjC4Dcmadc8uSg)
 
 ## 0x00背景  

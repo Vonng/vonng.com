@@ -6,7 +6,6 @@ summary: >
   Detailed understanding of trigger management and usage in PostgreSQL
 tags: [PostgreSQL, PG Development]
 ---
-
 ## Overview
 
 * Trigger behavior overview
@@ -39,7 +38,7 @@ Trigger modes: `origin|local(O)`, `replica(R)`, `disable(D)`
 
 Trigger operations are performed through SQL DDL statements, including `CREATE|ALTER|DROP TRIGGER`, and `ALTER TABLE ENABLE|DISABLE TRIGGER`. Note that PostgreSQL's internal constraints are implemented through triggers.
 
-#### Creation
+### Creation
 
 [`CREATE TRIGGER`](https://www.postgresql.org/docs/current/sql-createtrigger.html) can be used to create triggers.
 
@@ -60,7 +59,7 @@ event includes:
     TRUNCATE
 ```
 
-#### Deletion
+### Deletion
 
 [`DROP TRIGGER`](https://www.postgresql.org/docs/current/sql-droptrigger.html) is used to remove triggers.
 
@@ -68,7 +67,7 @@ event includes:
 DROP TRIGGER [ IF EXISTS ] name ON table_name [ CASCADE | RESTRICT ]
 ```
 
-#### Modification
+### Modification
 
 [`ALTER TRIGGER`](https://www.postgresql.org/docs/current/sql-altertrigger.html) is used to modify trigger definitions. Note that this can only modify trigger names and their dependent extensions.
 
@@ -97,7 +96,7 @@ ALTER TABLE tbl_name ENABLE TRIGGER USER;  -- Enable all user-defined triggers
 ALTER TABLE tbl_name ENABLE TRIGGER ALL;   -- Enable all triggers
 ```
 
-#### Queries
+### Queries
 
 **Getting table triggers**
 

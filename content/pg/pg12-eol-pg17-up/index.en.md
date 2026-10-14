@@ -7,7 +7,6 @@ summary: >
   PG17 achieved extension ecosystem adaptation in half the time of PG16, with 300 available extensions ready for production use. PG 12 officially exits support lifecycle.
 tags: [PostgreSQL]
 ---
-
 According to PostgreSQL's [**versioning policy**](https://www.postgresql.org/support/versioning/), PostgreSQL 12, released in 2019, will officially exit its support lifecycle today (2024-11-14).
 
 PG 12's final minor version is 12.21, released on 2024-11-14, and this will be PG 12's ultimate version. Meanwhile, the newly released PostgreSQL 17.1 becomes the appropriate choice for new business ventures.
@@ -20,8 +19,6 @@ PG 12's final minor version is 12.21, released on 2024-11-14, and this will be P
 | 14      | 14.14         | Yes       | September 30, 2021 | November 12, 2026 |
 | 13      | 13.17         | Yes       | September 24, 2020 | November 13, 2025 |
 | 12      | 12.21         | No        | October 3, 2019    | November 14, 2024 |
-
---------
 
 ## PG12 Steps Down
 
@@ -42,11 +39,9 @@ PostgreSQL 12, released five years ago, I consider a milestone version following
 
 ![version-map.png](version-map.png)
 
-Of course, my deeper impression of PG 12 is that when I created [Pigsty](https://pigsty.cc/zh/) - this out-of-the-box PostgreSQL database distribution - the first publicly released supported major version was PostgreSQL 12. Now, five years have passed in a blink, and memories of adapting PG 11 to PG 12 new features are still vivid.
+Of course, my deeper impression of PG 12 is that when I created [Pigsty](https://pigsty.cc/) - this out-of-the-box PostgreSQL database distribution - the first publicly released supported major version was PostgreSQL 12. Now, five years have passed in a blink, and memories of adapting PG 11 to PG 12 new features are still vivid.
 
 Over these five years, Pigsty evolved from a personal PostgreSQL monitoring system/test sandbox into a widely-used open-source project with global community recognition. Looking back, it's quite moving.
-
---------
 
 ## PG17 Rises
 
@@ -71,8 +66,6 @@ Recently I got an incredibly powerful physical machine: 128C 256G, with four 3.2
 Overall, I believe 17.1's release will be an appropriate upgrade timing. I'm also preparing to release Pigsty v3.1 in the coming days, upgrading PG 17 as Pigsty's default major version, replacing the original PG16.
 
 Considering PostgreSQL provides logical replication functionality after 10.0, and Pigsty provides complete solutions for zero-downtime blue-green deployment upgrades using logical replication - PG major version upgrades are no longer as difficult as before. I'll also launch a zero-downtime major version upgrade tutorial soon, helping users seamlessly upgrade existing PostgreSQL 16 or lower versions to PG 17.
-
---------
 
 ## PG17 Extensions
 
@@ -106,7 +99,7 @@ This time, the replacement from PG 16 to PG 17 saw significantly accelerated eco
 | v2.0.1 | 2023-03-21 | v2 bug fixes, security enhancements, Grafana version upgrade | [v2.0.1](https://github.com/Vonng/pigsty/releases/tag/v2.0.1) |
 | v2.0.0 | 2023-02-28 | Major architecture upgrade, significantly enhanced compatibility, security, maintainability | [v2.0.0](https://github.com/Vonng/pigsty/releases/tag/v2.0.0) |
 
-> [Pigsty Release Note](https://pigsty.cc/docs/releasenote)
+> [Pigsty Release Note](https://pigsty.cc/docs/about/release/)
 
 This time from PG 16 to PG 17, ecosystem adaptation speed significantly accelerated, completing in less than three months what previously took six months. In this regard, I'm proud to say I did considerable work.
 
@@ -131,8 +124,6 @@ Particularly worth emphasizing are the recent hot OLAP DuckDB extension integrat
 
 Considering distributed Citus has few users, and columnar Hydra has plenty of new DuckDB extensions as replacements, I believe PG17 has reached a satisfactory state in extension ecosystem and can be used as the primary major version for production environments. Achieving this on PG17 took nearly half the time compared to PG 16.
 
--------
-
 ## About Pigsty v3.1
 
 Pigsty is an open-source, free, out-of-the-box PostgreSQL database distribution that can locally deploy enterprise-grade RDS cloud database services with one click, helping users make good use of the world's most advanced open-source database - PostgreSQL.
@@ -148,9 +139,9 @@ PostgreSQL is undoubtedly about to become the Linux kernel of the database field
 
 Incidentally, we added PG kernel replacement capability in Pigsty v3, allowing you to use derivative PG kernels to obtain unique capabilities and features:
 
-- Microsoft SQL Server compatible [Babelfish](https://pigsty.cc/docs/kernel/babelfish) kernel support
-- Oracle compatible [IvorySQL](https://pigsty.cc/docs/kernel/ivorysql) 3.4 kernel support  
-- Alibaba-Cloud [PolarDB](https://pigsty.cc/docs/kernel/polardb) for PostgreSQL/Oracle domestic innovation kernel support
-- Allows users to more conveniently self-build [Supabase](https://pigsty.cc/docs/kernel/supabase) - open-source Firebase, one-stop backend platform
+- Microsoft SQL Server compatible [Babelfish](https://pigsty.cc/docs/pgsql/kernel/babelfish/) kernel support
+- Oracle compatible [IvorySQL](https://pigsty.cc/docs/pgsql/kernel/ivorysql/) 3.4 kernel support\
+- Alibaba-Cloud [PolarDB](https://pigsty.cc/docs/pgsql/kernel/polardb/) for PostgreSQL/Oracle domestic innovation kernel support
+- Allows users to more conveniently self-build [Supabase](https://pigsty.cc/docs/app/supabase/) - open-source Firebase, one-stop backend platform
 
 If you want to use authentic PostgreSQL experience, welcome to use our distribution - open source and free, no vendor lock-in. We also provide commercial consulting support to solve your difficult problems and worries.

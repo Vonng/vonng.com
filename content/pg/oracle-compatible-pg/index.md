@@ -6,7 +6,6 @@ summary: >
   什么数据库可以替代 Oracle ？有很多数据库产品都号称自己可以 “替代” Oracle，商业产品就不说了，但开源的目前我了解到的只有IvorySQL。
 tags: [PostgreSQL, Oracle, 迁移]
 ---
-
 今天在 PostgreSQL 技术峰会上有人问，什么数据库可以替代 Oracle？当然有很多数据库都号称自己可以 “替代” Oracle，商业产品这里就不说了，但开源的目前我了解到的只有 IvorySQL。
 
 ![图片](01.webp)
@@ -22,8 +21,6 @@ IvorySQL 是一个开源的“Oracle 兼容” PostgreSQL 内核，由**瀚高**
 ![How accurate is this meme? \| Work Memes - Blind](03.webp)
 
 目前 IvorySQL 最新版本**4.4**与 PostgreSQL 最新小版本 17.4 保持兼容，并且提供了主流 Linux 上的二进制 RPM/DEB 包。而 Pigsty 提供了在 PG RDS 中将原生 PostgreSQL 替换为 IvorySQL 内核的选项。
-
----
 
 ## 快速上手
 
@@ -41,8 +38,6 @@ IvorySQL 是一个开源的“Oracle 兼容” PostgreSQL 内核，由**瀚高**
 
 不过，默认情况下，你可以使用 PostgreSQL 客户端从另一个`1521`端口访问，这种情况下默认使用 Oracle 兼容模式。
 
----
-
 ## 配置说明
 
 在 Pigsty 中要使用 IvorySQL 内核，需要修改以下四个配置参数：
@@ -57,8 +52,6 @@ IvorySQL 是一个开源的“Oracle 兼容” PostgreSQL 内核，由**瀚高**
     pg_mode: ivory                           # IvorySQL 兼容模式，使用 IvorySQL 的二进制 pg_packages: [ ivorysql, pgsql-common ]  # 安装 ivorysql，替换 pgsql-main 主内核 pg_libs: 'liboracle_parser, pg_stat_statements, auto_explain'  # 加载 Oracle 兼容扩展 repo_extra_packages: [ ivorysql ]        # 下载 ivorysql 软件包
 
 IvorySQL 还提供了一系列新增 GUC 参数变量，可以在`pg_parameters`中指定。
-
----
 
 ## 扩展
 

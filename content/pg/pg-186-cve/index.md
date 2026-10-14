@@ -7,7 +7,6 @@ summary: >
   PostgreSQL 18.6、17.11、16.15、15.19 与 14.24 正式发布，修复了 28 个安全漏洞和 110 多个 Bug；PostgreSQL 19 Beta 3 也同步亮相。
 tags: [PostgreSQL, PG管理, 安全, 翻译]
 ---
-
 PostgreSQL 发布了最新一轮小版本更新。这次更新修复了 28 个安全漏洞和 110 多个 Bug。考虑到 7 月以来 Claude Fable 和 ChatGPT Sol 5.6 级别的模型已普遍可用，发现大量漏洞与 Bug 也是意料之中的结果。
 
 [![PostgreSQL 18.6 修复的 28 个安全漏洞](cve-list.webp)](https://www.postgresql.org/about/news/postgresql-186-1711-1615-1519-1424-and-19-beta-3-released-3365/)
@@ -15,8 +14,6 @@ PostgreSQL 发布了最新一轮小版本更新。这次更新修复了 28 个�
 老冯建议所有用户尽快安排 PostgreSQL 小版本升级。[Pigsty 将于次日发布 v4.5](/pigsty/v4.5/)，提供包含最新 PostgreSQL 18.6 的离线安装包。这将是 Pigsty v5.0 与 PostgreSQL 19 发布之前的最后一次小版本发布。
 
 以下为官方发布公告的中文翻译。
-
----
 
 ## 公告：PostgreSQL 18.6、17.11、16.15、15.19、14.24 与 19 Beta 3 正式发布！
 
@@ -38,13 +35,9 @@ PostgreSQL 全球开发组现已发布所有受支持 PostgreSQL 版本的更新
 
 完整的变更列表请参阅 [PostgreSQL 18.6 发布注记](https://www.postgresql.org/docs/release/18.6/)。
 
----
-
 ## PostgreSQL 14 EOL 提醒
 
 PostgreSQL 14 将于 2026 年 11 月 12 日停止接收修复更新。如果你仍在生产环境中运行 PostgreSQL 14，我们建议尽快规划升级到更新且仍受支持的 PostgreSQL 版本。更多信息请参阅 PostgreSQL 的[版本策略](https://www.postgresql.org/support/versioning/)。
-
----
 
 ## 安全问题
 
@@ -78,8 +71,6 @@ PostgreSQL 14 将于 2026 年 11 月 12 日停止接收修复更新。如果你�
 - [CVE-2026-18024](https://www.postgresql.org/support/security/CVE-2026-18024/)：`ascii()` 函数会读取缓冲区末尾之外的内存（CVSS v3.1：4.3）。
 - [CVE-2026-18408](https://www.postgresql.org/support/security/CVE-2026-18408/)：psql 的 `\unrestrict` 可让 `pg_dump` 源服务器上的超级用户在 psql 客户端执行任意代码（CVSS v3.1：8.8）。
 - [CVE-2026-19385](https://www.postgresql.org/support/security/CVE-2026-19385/)：`pg_dump` 堆缓冲区溢出可导致执行任意代码（CVSS v3.1：8.8）。
-
----
 
 ## Bug 修复与改进
 
@@ -118,8 +109,6 @@ PostgreSQL 14 将于 2026 年 11 月 12 日停止接收修复更新。如果你�
 
 本次发布还将时区数据文件更新至 tzdata 2026c。其中，加拿大阿尔伯塔省（`America/Edmonton`）将从 2026 年 11 月起全年采用 UTC−06，也就是事实上永久实行夏令时。本版本假定届时其时区缩写将使用 CST，但这一点仍可能发生变化。此外，本次更新还反映了摩洛哥（`Africa/Casablanca`）将在 2026 年 9 月 20 日改为永久采用 UTC+00，不再进行夏令时切换。
 
----
-
 ## 更新
 
 所有 PostgreSQL 更新版本都是累积性的。与其他小版本更新一样，应用本次更新无需 dump 并重新导入数据库，也不需要使用 `pg_upgrade`；只需停止 PostgreSQL，然后更新其二进制文件即可。
@@ -155,8 +144,6 @@ REINDEX INDEX your_index_name;
 
 更多详情请参阅 [PostgreSQL 18.6 发布注记](https://www.postgresql.org/docs/release/18.6/)。
 
----
-
 ## 关于 PostgreSQL 19 Beta 的说明
 
 本次发布是 PostgreSQL 19 的第三个 Beta 测试版本。
@@ -165,13 +152,9 @@ REINDEX INDEX your_index_name;
 
 你的测试和反馈将帮助社区确保 PostgreSQL 19 延续我们的标准，交付一个稳定、可靠的“全球最先进开源关系数据库”版本。请进一步阅读 [Beta 测试流程](https://www.postgresql.org/developer/beta/)，了解如何参与贡献。
 
----
-
 ## 升级到 PostgreSQL 19 Beta 3
 
 如果要从较早版本的 PostgreSQL 升级到 PostgreSQL 19 Beta 3，你需要采用类似 PostgreSQL 大版本升级的方式，例如使用 `pg_upgrade`，或者 `pg_dump` / `pg_restore`。更多信息请参阅文档中的[升级章节](https://www.postgresql.org/docs/19/upgrading.html)。
-
----
 
 ## Beta 2 以来的变化
 
@@ -189,15 +172,11 @@ PostgreSQL 19 Beta 3 中的修复与变更包括：
 
 完整的新功能与变更列表请参阅 [PostgreSQL 19 Beta 发布注记](https://www.postgresql.org/docs/19/release-19.html)。
 
----
-
 ## Bug 与兼容性测试
 
 每一个 PostgreSQL 版本能否保持稳定，在很大程度上取决于社区中的各位用户：在 PostgreSQL 19 正式发布之前，使用自己的实际工作负载和测试工具测试即将发布的版本，帮助我们发现 Bug 和回归问题。由于目前仍处于 Beta 阶段，数据库行为、功能细节以及 API 仍有可能发生小幅调整。你的反馈和测试结果将帮助我们决定新功能最后还需要进行哪些调整，因此请尽快参与测试。用户测试的质量，也是决定我们何时能够正式发布最终版本的重要因素。
 
 PostgreSQL Wiki 上公开维护了一份[待解决问题列表](https://wiki.postgresql.org/wiki/PostgreSQL_19_Open_Items)。你也可以通过 PostgreSQL 网站上的[表单报告 Bug](https://www.postgresql.org/account/submitbug/)。
-
----
 
 ## 链接
 

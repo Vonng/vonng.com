@@ -5,17 +5,16 @@ authors: [vonng]
 summary: "Pgbouncer is a lightweight database connection pool. This guide covers basic Pgbouncer configuration, management, and usage."
 tags: [PostgreSQL, PG Admin]
 ---
-
 Pgbouncer is a lightweight database connection pool.
 
-### Synopsis
+## Synopsis
 
 ```bash
 pgbouncer [-d][-R][-v][-u user] <pgbouncer.ini>
 pgbouncer -V|-h
 ```
 
-### Description
+## Description
 
 **pgbouncer** is a PostgreSQL connection pooler. Any target application can connect to **pgbouncer** as if it were a PostgreSQL server, and **pgbouncer** will create connections to the actual server or reuse existing connections.
 
@@ -37,7 +36,7 @@ To avoid affecting connection pool transaction semantics, **pgbouncer** supports
 
 The **pgbouncer** management interface is available through some new `SHOW` commands when connecting to the special 'virtual' database **pgbouncer**.
 
-### Getting Started
+## Getting Started
 
 Basic setup and usage:
 
@@ -97,7 +96,7 @@ Basic setup and usage:
    pgbouncer=# RELOAD;
    ```
 
-### Command Line Switches
+## Command Line Switches
 
 | -d             | Run in background. Without it, the process runs in foreground. Note: Doesn't work on Windows, **pgbouncer** needs to run as a service. |
 | -------------- | ------------------------------------------------------------ |
@@ -110,11 +109,11 @@ Basic setup and usage:
 | --regservice   | Win32: register pgbouncer to run as Windows service. **service_name** config parameter value is used as the name to register. |
 | --unregservice | Win32: unregister Windows service.                                   |
 
-### Admin Console
+## Admin Console
 
 Console is available by connecting normally to database **pgbouncer**:
 
-```
+```bash
 $ psql -p 6543 pgbouncer
 ```
 
@@ -122,9 +121,9 @@ Only users listed in config parameters **admin_users** or **stats_users** are al
 
 Additionally, when logged in via Unix socket and the client has the same Unix user UID as the running process, username **pgbouncer** is allowed to login without password.
 
-### SHOW Commands
+## SHOW Commands
 
-#### `SHOW STATS;`
+### `SHOW STATS;`
 
 Shows statistics.
 
@@ -150,7 +149,7 @@ Two variants: `SHOW STATS_TOTALS` and `SHOW STATS_AVERAGES`, showing totals and 
 
 TOTAL metrics are actually counters, while AVG are typically gauges. For monitoring, it's recommended to collect TOTAL, and use AVG for viewing.
 
-#### `SHOW SERVERS`
+### `SHOW SERVERS`
 
 | Field           | Description                                                         |
 | -------------- | ------------------------------------------------------------ |
@@ -167,7 +166,7 @@ TOTAL metrics are actually counters, while AVG are typically gauges. For monitor
 | `link`         | Address of paired client connection                                 |
 | `remote_pid`   | PID of backend server process. If connected via unix socket and OS supports getting process ID info, it's the OS pid. Otherwise extracted from cancel packet sent by server - if server is Postgres, should be PID, but if server is another PgBouncer, it's a random number. |
 
-#### `SHOW CLIENTS`
+### `SHOW CLIENTS`
 
 | Field           | Description                                                         |
 | -------------- | ------------------------------------------------------------ |
@@ -184,7 +183,7 @@ TOTAL metrics are actually counters, while AVG are typically gauges. For monitor
 | `link`         | Address of paired server connection                                     |
 | `remote_pid`   | If connected via unix socket and OS supports getting process ID info, it's the OS pid |
 
-#### SHOW POOLS;
+### SHOW POOLS;
 
 A new connection pool is created for each (database, user) pair.
 
@@ -200,7 +199,7 @@ A new connection pool is created for each (database, user) pair.
 - maxwait: How long the first (oldest) client in queue has been waiting, in seconds. If it starts increasing, the current connection pool can't handle requests fast enough. Cause could be server overload or **pool_size** setting too small
 - pool_mode: Connection pooling mode being used
 
-#### SHOW LISTS;
+### SHOW LISTS;
 
 Shows following internal information in columns (not rows):
 
@@ -213,12 +212,12 @@ Shows following internal information in columns (not rows):
 - free_servers: Free server count
 - used_servers: Used server count
 
-#### SHOW USERS;
+### SHOW USERS;
 
 - name: Username
 - pool_mode: User's overridden pool_mode, NULL if using default
 
-#### SHOW DATABASES;
+### SHOW DATABASES;
 
 - name: Name of configured database entry
 - host: Host pgbouncer connects to
@@ -228,7 +227,7 @@ Shows following internal information in columns (not rows):
 - pool_size: Maximum number of server connections
 - pool_mode: Database's overridden pool_mode, NULL if using default
 
-#### SHOW FDS;
+### SHOW FDS;
 
 Internal command - shows list of fds used with accompanying internal state.
 
@@ -245,7 +244,7 @@ This command also blocks internal event loop, so shouldn't be used while PgBounc
 - cancel: Cancel key for this connection
 - link: Corresponding server/client fd. NULL if idle
 
-#### SHOW CONFIG;
+### SHOW CONFIG;
 
 Shows current configuration settings, one per line, with following fields:
 
@@ -253,7 +252,7 @@ Shows current configuration settings, one per line, with following fields:
 - value: Configuration value
 - changeable: **yes** or **no**, shows whether runtime variable is changeable. If **no**, variable can only be changed at startup
 
-#### SHOW DNS_HOSTS;
+### SHOW DNS_HOSTS;
 
 Shows hostnames in DNS cache.
 
@@ -261,7 +260,7 @@ Shows hostnames in DNS cache.
 - ttl: Seconds until next lookup
 - addrs: Comma-separated list of addresses
 
-#### SHOW DNS_ZONES
+### SHOW DNS_ZONES
 
 Shows DNS zones in cache.
 
@@ -269,51 +268,51 @@ Shows DNS zones in cache.
 - serial: Current serial number  
 - count: Hostnames belonging to this zone
 
-### Process Control Commands
+## Process Control Commands
 
-#### `PAUSE [db];`
+### `PAUSE [db];`
 
 PgBouncer tries to disconnect all servers, first waiting for all queries to complete. Command doesn't return until all queries complete. Use during database restart. If database name provided, only that database is paused.
 
-#### `DISABLE db;`
+### `DISABLE db;`
 
 Reject all new client connections on given database.
 
-#### `ENABLE db;`
+### `ENABLE db;`
 
 Allow new client connections after previous **DISABLE** command.
 
-#### `KILL db;`
+### `KILL db;`
 
 Immediately drop all client and server connections on given database.
 
-#### `SUSPEND;`
+### `SUSPEND;`
 
 All socket buffers are flushed and PgBouncer stops listening for data on them. Command doesn't return until all buffers are empty. Use during PgBouncer online restart.
 
-#### `RESUME [db];`
+### `RESUME [db];`
 
 Resume work from previous **PAUSE** or **SUSPEND** command.
 
-#### `SHUTDOWN;`
+### `SHUTDOWN;`
 
 PgBouncer process will exit.
 
-#### `RELOAD;`
+### `RELOAD;`
 
 PgBouncer process will reload its configuration file and update changeable settings.
 
-### Signals
+## Signals
 
 - SIGHUP: Reload config. Same as issuing **RELOAD;** command on console.
 - SIGINT: Safe shutdown. Same as issuing **PAUSE;** and **SHUTDOWN;** on console.
 - SIGTERM: Immediate shutdown. Same as issuing **SHUTDOWN;** on console.
 
-### Libevent Settings
+## Libevent Settings
 
 From libevent documentation:
 
-```
+```text
 Support for epoll, kqueue, devpoll, poll or select can be disabled by setting 
 the environment variables EVENT_NOEPOLL, EVENT_NOKQUEUE, EVENT_NODEVPOLL, 
 EVENT_NOPOLL or EVENT_NOSELECT respectively.

@@ -7,14 +7,11 @@ summary: >
   With file_fdw, you can easily view operating system information, fetch network data, and feed various data sources into your database for unified viewing and management.
 tags: [PostgreSQL, PG Admin, Extension]
 ---
-
 > Author: [Vonng](https://vonng.com/en/)
 
 PostgreSQL is the most advanced open-source database, and one of its killer features is FDW: Foreign Data Wrapper. Through FDW, users can access various external data sources from Postgres in a unified manner. `file_fdw` is one of the two FDWs that come bundled with the database. With the update to PostgreSQL 10, `file_fdw` has gained an awesome new capability: reading from program output.
 
 This little powerhouse has endless possibilities. Through `file_fdw`, we can easily view operating system information, fetch network data, and feed various data sources into the database for unified viewing and management.
-
----------------
 
 ## Installation and Configuration
 
@@ -29,8 +26,6 @@ After enabling the FDW extension, you need to create an instance. This is also d
 ```plsql
 CREATE SERVER fs FOREIGN DATA WRAPPER file_fdw;
 ```
-
----------------
 
 ## Creating Foreign Tables
 
@@ -57,7 +52,7 @@ vonng    26467  0.0  0.1 272100  1588 ?        Ss   Oct26   0:01 postgres: bgwor
 
 We can use `awk` to format the `ps` command output into CSV format with `\x1F` as the delimiter:
 
-```
+```text
 ps aux | awk '{print $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,substr($0,index($0,$11))}' OFS='\037'
 ```
 
@@ -85,17 +80,13 @@ The key here is providing the appropriate parameters through `OPTIONS` in `CREAT
 
 So what's the result?
 
-![](file_fdw.png)
-
----------------
+![The Versatile file_fdw — Reading System Information from Your Database — Creating Foreign Tables (figure 1)](file_fdw.png)
 
 ## What's It Good For?
 
 In the simplest scenario, system metric monitoring that previously required writing various monitoring scripts deployed in random places, then regularly executing them to pull metrics and store them in a database — now through file_fdw, you can directly import the metrics of interest into database tables in one step. It's easier to maintain, simpler to deploy, and more reliable. By adding views on top of foreign tables and regularly pulling aggregations, you can accomplish in the database what would normally require an entire monitoring system.
 
 Since it can read output from programs, file_fdw can work with various powerful command-line tools in the Linux ecosystem, unleashing tremendous power.
-
----------------
 
 ## More Examples
 

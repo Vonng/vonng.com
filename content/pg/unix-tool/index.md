@@ -6,13 +6,10 @@ summary: >
   top, free, vmstat, iostat：四大常用 CLI 工具命令速查。
 tags: [PostgreSQL, PG管理, 工具]
 ---
-
 - [`top`](#top)
 - [`free`](#free)
 - [`vmstat`](#vmstat)
 - [`iostat`](#iostat)
-
------------------------
 
 ## `top`
 
@@ -46,7 +43,7 @@ Cpu(s):  4.1%us,  1.0%sy,  0.0%ni, 94.8%id,  0.0%wa,  0.0%hi,  0.1%si,  0.0%st
 
 `top` 的输出分为两部分，上面几行是系统摘要，下面是进程列表，两者通过一个空行分割。下面是 `top` 命令的输出样例：
 
-```
+```text
 top - 12:11:01 up 401 days, 19:17,  2 users,  load average: 1.12, 1.26, 1.40
 Tasks: 1178 total,   3 running, 1175 sleeping,   0 stopped,   0 zombie
 Cpu(s):  5.4%us,  1.7%sy,  0.0%ni, 92.5%id,  0.1%wa,  0.0%hi,  0.4%si,  0.0%st
@@ -74,7 +71,7 @@ Swap: 67108860k total,        0k used, 67108860k free, 366252364k cached
 
 **系统运行时间和平均负载**
 
-```
+```text
 top - 12:11:01 up 401 days, 19:17,  2 users,  load average: 1.12, 1.26, 1.40
 ```
 
@@ -87,7 +84,7 @@ top - 12:11:01 up 401 days, 19:17,  2 users,  load average: 1.12, 1.26, 1.40
 
 **任务**
 
-```
+```text
 Tasks: 1178 total,   3 running, 1175 sleeping,   0 stopped,   0 zombie
 ```
 
@@ -112,7 +109,7 @@ Cpu(s):  5.4%us,  1.7%sy,  0.0%ni, 92.5%id,  0.1%wa,  0.0%hi,  0.4%si,  0.0%st
 
 **内存使用**
 
-```
+```text
 Mem:  396791756k total, 389547376k used,  7244380k free,   263828k buffers
 Swap: 67108860k total,        0k used, 67108860k free, 366252364k cached
 ```
@@ -124,7 +121,7 @@ Swap: 67108860k total,        0k used, 67108860k free, 366252364k cached
 
 进程部分默认会显示一些关键信息
 
-```
+```text
    PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND
   5094 postgres  20   0 37.2g 829m 795m S 14.2  0.2   0:04.11 postmaster
   5093 postgres  20   0 37.2g 926m 891m S 13.2  0.2   0:04.96 postmaster
@@ -175,8 +172,6 @@ static const char * const task_state_array[] = {
 - `D (TASK_UNINTERRUPTIBLE)`，不可中断的睡眠态，无法响应异步信号，例如硬件操作，内核线程
 - `T (TASK_STOPPED | TASK_TRACED)`，暂停状态或跟踪状态，由SIGSTOP或断点触发
 - `Z (TASK_DEAD)`，子进程退出后，父进程还没有来收尸，留下 `task_structure` 的进程就处于这种状态。
-
------------------------
 
 ## `free`
 
@@ -259,7 +254,7 @@ DirectMap1G:    400556032 kB
 
 其中，free与 `/proc/meminfo` 中指标的对应关系为：
 
-```
+```text
 total	= (MemTotal + SwapTotal)
 used	= (total - free - buffers - cache)
 free	= (MemFree + SwapFree)
@@ -279,8 +274,6 @@ $ echo 1 > /proc/sys/vm/drop_caches	# drop page cache
 $ echo 2 > /proc/sys/vm/drop_caches	# drop dentries & inode
 $ echo 3 > /proc/sys/vm/drop_caches	# drop all
 ```
-
------------------------
 
 ## `vmstat`
 
@@ -318,7 +311,7 @@ procs -----------memory---------- ---swap-- -----io---- --system-- -----cpu-----
  1  0      0   7233    170 344255    0    0  6800 24404 39461 36984  6  1 93  0  0
 ```
 
-```
+```text
 Procs
     r: 等待运行的进程数目
     b: 处于不可中断睡眠状态的进程数(Block)
@@ -355,8 +348,6 @@ CPU
 - `/proc/stat`
 - `/proc/*/stat`
 
------------------------
-
 ## `iostat`
 
 汇报IO相关统计信息
@@ -369,7 +360,7 @@ iostat [ -c ] [ -d ] [ -N ] [ -n ] [ -h ] [ -k | -m ] [ -t ] [ -V ] [ -x ] [ -y 
 
 默认情况下iostat会打印cpu信息和磁盘io信息，使用 `-d` 参数只显示IO部分，使用 `-x` 打印更多信息。样例输出：
 
-```
+```text
 avg-cpu:  %user   %nice %system %iowait  %steal   %idle
            5.77    0.00    1.31    0.07    0.00   92.85
 
@@ -417,7 +408,7 @@ iostat -dxk /dev/dfa 1 10
 
 其实是从下面几个文件中提取信息的：
 
-```
+```text
 /proc/stat contains system statistics.
 /proc/uptime contains system uptime.
 /proc/partitions contains disk statistics (for pre 2.5 kernels that have been patched).

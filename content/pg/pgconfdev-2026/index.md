@@ -6,7 +6,6 @@ summary: >
   微信原页已失效；正文从明确署名的公开镜像恢复：https://www.163.com/dy/article/KTG7NBBQ0556CSY5.html。
 tags: [PostgreSQL, PG生态, 随笔]
 ---
-
 > 微信原页已失效；正文从明确署名的公开镜像恢复：[https://www.163.com/dy/article/KTG7NBBQ0556CSY5.html](https://www.163.com/dy/article/KTG7NBBQ0556CSY5.html)。
 
 今天是 PGConf.Dev 2026 开幕的第一天，老冯在大会上有一场 25 分钟的主题演讲，Extensions for Everyone，介绍了我最近两年在扩展 Packaging 与分发上的工作，以及这些工作如何能够帮助到所有人 —— 用户，DBA，扩展作者，PG 供应商，以及内核黑客。

@@ -6,7 +6,6 @@ summary: >
   PostgreSQL already won. The real battle is the distro layer. Will Chinese developers watch from the sideline or craft a PG “Ubuntu” for the world?
 tags: [PostgreSQL, Pigsty]
 ---
-
 Hi, I’m Feng Ruohang, author of Pigsty and an independent open-source contributor. Let’s talk about **how to build a PostgreSQL distribution that is rooted in China and useful to the whole world.**
 
 The question isn’t whether PG will win—it already has. The question is: **What role do we play in that victory?** Spectator or protagonist? Follower or leader?

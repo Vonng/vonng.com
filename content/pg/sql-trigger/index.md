@@ -7,9 +7,6 @@ summary: >
   详细了解PostgreSQL中触发器的管理与使用。
 tags: [PostgreSQL, PG开发]
 ---
-
-
-
 ## 概览
 
 * 触发器行为概述
@@ -42,7 +39,7 @@ tags: [PostgreSQL, PG开发]
 
 触发器的操作通过SQL DDL语句进行，包括 `CREATE|ALTER|DROP TRIGGER`，以及 `ALTER TABLE ENABLE|DISABLE TRIGGER` 进行。注意PostgreSQL内部的约束是通过触发器实现的。
 
-#### 创建
+### 创建
 
 [`CREATE TRIGGER`](https://www.postgresql.org/docs/current/sql-createtrigger.html) 可以用于创建触发器。
 
@@ -63,7 +60,7 @@ event包括：
     TRUNCATE
 ```
 
-#### 删除
+### 删除
 
 [`DROP TRIGGER`](https://www.postgresql.org/docs/current/sql-droptrigger.html) 用于移除触发器。
 
@@ -71,7 +68,7 @@ event包括：
 DROP TRIGGER [ IF EXISTS ] name ON table_name [ CASCADE | RESTRICT ]
 ```
 
-#### 修改
+### 修改
 
 [`ALTER TRIGGER`](https://www.postgresql.org/docs/current/sql-altertrigger.html) 用于修改触发器定义，注意这里只能修改触发器名，以及其依赖的扩展。
 
@@ -100,7 +97,7 @@ ALTER TABLE tbl_name ENABLE TRIGGER USER;  -- 启用所有用户定义的触发�
 ALTER TABLE tbl_name ENABLE TRIGGER ALL;   -- 启用所有触发器
 ```
 
-#### 查询
+### 查询
 
 **获取表上的触发器**
 

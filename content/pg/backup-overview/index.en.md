@@ -6,7 +6,6 @@ summary: >
   Backup is the foundation of a DBA's livelihood. With backups, there's no need to panic.
 tags: [PostgreSQL, PG Admin, Backup]
 ---
-
 > Author: [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 
 Backup is the foundation of a DBA's livelihood. With backups, there's no need to panic.
@@ -60,7 +59,7 @@ psql --set ON_ERROR_STOP=on dbname < infile
 * During restoration, you can use a single transaction to ensure either complete correct restoration or complete rollback. Use `-1` or `--single-transaction`
 * pg_dump and psql can do on-the-fly dumping and restoration through pipes
 
-```
+```text
 pg_dump -h host1 dbname | psql -h host2 dbname
 ```
 
@@ -68,7 +67,7 @@ pg_dump -h host1 dbname | psql -h host2 dbname
 
 Some information belongs to the database cluster rather than individual databases, such as roles and tablespaces. If you want to dump these, use `pg_dumpall`
 
-```
+```text
 pg_dumpall > outfile
 ```
 
@@ -76,7 +75,7 @@ If you only want global data (roles and tablespaces), you can use the `-g, --glo
 
 The dump results can be restored using psql. Usually, loading the dump into an empty cluster can use `postgres` as the database name:
 
-```
+```text
 psql -f infile postgres
 ```
 
@@ -568,20 +567,20 @@ Through master-slave setups, you can simultaneously improve availability and rel
 
 Usually master-slave, replica, standby belong to high availability topics. But from another perspective, standby is also a form of backup.
 
-#### Create Directories
+### Create Directories
 
 ```bash
 sudo mkdir /var/lib/pgsql && sudo chown postgres:postgres /var/lib/pgsql/
 mkdir -p /var/lib/pgsql/master /var/lib/pgsql/slave /var/lib/pgsql/wal
 ```
 
-#### Create Master
+### Create Master
 
 ```bash
 pg_ctl -D /var/lib/pgsql/master init && pg_ctl -D /var/lib/pgsql/master start
 ```
 
-#### Create User
+### Create User
 
 Creating a standby requires a user with `REPLICATION` privileges. Here we create a `replication` user in the master:
 
@@ -596,7 +595,7 @@ local   replication     all                                     trust
 host    replication     all             127.0.0.1/32            trust
 ```
 
-#### Create Standby
+### Create Standby
 
 Create a slave instance through `pg_basebackup`. Actually connects to the master instance and copies a data directory locally.
 
@@ -606,7 +605,7 @@ pg_basebackup -Fp -Pv -R -c fast -U replication -h localhost -D /var/lib/pgsql/s
 
 The key here is the `-R` option, which automatically fills master connection information into `recovery.conf` during backup creation. This way, when starting with `pg_ctl`, the database realizes it's a standby and automatically fetches WAL from the master to catch up.
 
-#### Start Standby
+### Start Standby
 
 ```bash
 pg_ctl -D /var/lib/pgsql/slave -o "-p 5433" start
@@ -627,7 +626,7 @@ If turned on, the database realizes it's a standby, so even when reaching the en
 
 There are two ways to fetch WAL: through `primary_conninfo` streaming replication (new feature after 9.0, recommended, default), or through `restore_command` to manually specify WAL acquisition method (old method, used for recovery).
 
-#### Check Status
+### Check Status
 
 All standbys of the master can be viewed through the system view `pg_stat_replication`:
 

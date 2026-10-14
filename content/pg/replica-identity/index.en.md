@@ -7,10 +7,6 @@ summary: >
   Replica identity is important - it determines the success or failure of logical replication
 tags: [PostgreSQL, PG Admin, PG Development]
 ---
-
-
-
-
 ## Introduction: DIY Logical Replication
 
 The concept of replica identity serves [**logical replication**](/pg/logical-replication/).
@@ -276,7 +272,7 @@ Using `FULL` mode replica identity has one limitation: columns contained in subs
 
 Suppose both publisher and subscriber tables use `FULL` replica identity, but the subscriber-side table has one more column than the publisher (yes, logical replication allows subscriber tables to have columns that publisher tables don't have). In this case, subscriber-side table replica identity contains more columns than publisher-side. Suppose deleting record `(f1=a, f2=a)` on publisher would cause deletion of two records meeting identity equivalence conditions on subscriber.
 
-```
+```text
      (Publication)       ------>           (Subscription)
 |--- f1 ---|--- f2 ---|          |--- f1 ---|--- f2 ---|--- f3 ---|
 |    a     |     a    |          |    a     |     a    |     b    |

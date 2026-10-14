@@ -6,7 +6,6 @@ summary: >
   飞总说中国对PG的贡献≈0，所以特意去扫了一遍 PG生态的开源项目，看一看这里中国人或者中国公司作为主要贡献者的到底有多少。
 tags: [PostgreSQL, PG生态, 开源]
 ---
-
 ## 飞总今天发了一篇《[**2023 年，中国对 PostgreSQL 的贡献≈0！！！**](https://mp.weixin.qq.com/s?__biz=MzI5OTM3MjMyNA==&mid=2247497341&idx=1&sn=7df1e74b9bba5af00577c422f8a411c5&scene=21#wechat_redirect "2023年，中国对PostgreSQL的贡献≈0！！！")》，振聋发聩。所以我特意去扫了一遍 PostgreSQL 生态的开源项目，看一看这里中国人或者中国公司作为主导者，或主要贡献者的到底有多少。\
 
 ## 内核贡献者

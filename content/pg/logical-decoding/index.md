@@ -6,10 +6,7 @@ summary: >
   数据变更捕获是一种很有趣的ETL替代方案，以流式的方式持续收集状态变化事件。
 tags: [PostgreSQL, PG开发]
 ---
-
 在实际生产中，我们经常需要把数据库的状态同步到其他地方去，例如同步到数据仓库进行分析，同步到消息队列供下游消费，同步到缓存以加速查询。总的来说，搬运状态有两大类方法：ETL与CDC。
-
---------------------
 
 ## 前驱知识
 
@@ -29,7 +26,7 @@ ETL大家都耳熟能详，每天批量跑ETL任务，从生产OLTP数据库 **�
 
 例如用户可以捕获数据库中的变更，并不断将相同的变更应用至 **搜索索引**（e.g elasticsearch）。如果变更日志以相同的顺序应用，则可以预期的是，搜索索引中的数据与数据库中的数据是匹配的。同理，这些变更也可以应用于后台刷新 **缓存**（redis），送往 **消息队列（Kafka）**，导入 **数据仓库**（EventSourcing，存储不可变的事实事件记录而不是每天取快照），**收集统计数据与监控（Prometheus）**，等等等等。在这种意义下，外部索引，缓存，数仓都成为了 **PostgreSQL在逻辑上的从库**，这些衍生数据系统都成为了变更流的消费者，而PostgreSQL成为了整个 **数据系统** 的主库。在这种架构下，应用只需要操心怎样把数据写入数据库，剩下的事情交给CDC即可。系统设计可以得到极大地简化：所有的数据组件都能够自动与主库在逻辑上保证（最终）一致。用户不用再为如何保证多个异构数据系统之间数据同步而焦头烂额了。
 
-![](cdc-system.png)
+![CDC 变更数据捕获机理：CDC与ETL（图 1）](cdc-system.png)
 
 实际上PostgreSQL自10.0版本以来提供的 **逻辑复制（logical replication）** 功能，实质上就是一个 **CDC应用**：从主库上提取变更事件流：`INSERT, UPDATE, DELETE, TRUNCATE`，并在另一个PostgreSQL **主库** 实例上重放。如果这些增删改事件能够被解析出来，它们就可以用于任何感兴趣的消费者，而不仅仅局限于另一个PostgreSQL实例。
 
@@ -64,7 +61,7 @@ ETL大家都耳熟能详，每天批量跑ETL任务，从生产OLTP数据库 **�
 
 PostgreSQL的变更事件以 **二进制内部表示** 形式保存在预写式日志（WAL）中，使用其自带的 `pg_waldump` 工具可以解析出来一些人类可读的信息：
 
-```
+```text
 rmgr: Btree       len (rec/tot):     64/    64, tx:       1342, lsn: 2D/AAFFC9F0, prev 2D/AAFFC810, desc: INSERT_LEAF off 126, blkref #0: rel 1663/3101882/3105398 blk 4
 rmgr: Heap        len (rec/tot):    485/   485, tx:       1342, lsn: 2D/AAFFCA30, prev 2D/AAFFC9F0, desc: INSERT off 10, blkref #0: rel 1663/3101882/3105391 blk 139
 ```
@@ -73,7 +70,7 @@ WAL日志里包含了完整权威的变更事件记录，但这种记录格式�
 
 例如用户可能期望的是，能够解码出等价的SQL语句
 
-```
+```sql
 INSERT INTO public.test (id, data) VALUES (14, 'hoho');
 ```
 
@@ -103,8 +100,6 @@ INSERT INTO public.test (id, data) VALUES (14, 'hoho');
 **逻辑解码** 所要解决的问题，就是将数据库内部二进制表示的变更事件，**解码（Decoding）** 成为用户感兴趣的格式。之所以需要这样一个过程，是因为数据库内部表示是非常紧凑的，想要解读原始的二进制WAL日志，不仅仅需要WAL结构相关的知识，还需要 **系统目录（System Catalog）**，即元数据。没有元数据就无从得知用户可能感兴趣的模式名，表名，列名，只能解析出来的一系列数据库自己才能看懂的oid。
 
 关于流复制协议，复制槽，事务快照等概念与功能，这里就不展开了，让我们进入动手环节。
-
---------------------
 
 ## 快速开始
 
@@ -306,8 +301,6 @@ psql <old_master_url>
 
 编写自定义的逻辑解码输出插件并不复杂，可以参阅[这篇](https://www.postgresql.org/docs/11/logicaldecoding-output-plugin.html)官方文档。毕竟逻辑解码输出插件本质上只是一个拼字符串的回调函数集合。在[官方样例](https://github.com/postgres/postgres/blob/master/contrib/test_decoding/test_decoding.c)的基础上稍作修改，即可轻松实现一个你自己的逻辑解码输出插件。
 
---------------------
-
 ## CDC客户端
 
 PostgreSQL自带了一个名为 `pg_recvlogical` 的客户端应用，可以将逻辑变更的事件流写至标准输出。但并不是所有的消费者都可以或者愿意使用Unix Pipe来完成所有工作的。此外，根据端到端原则，使用 `pg_recvlogical` 将变更数据流落盘并不意味着消费者已经拿到并确认了该消息，只有消费者自己亲自向数据库确认才可以做到这一点。
@@ -326,7 +319,7 @@ $ psql 'postgres://localhost:5432/postgres?replication=on&application_name=mocke
 
 从系统视图 `pg_stat_replication` 可以看到主库识别到了一个新的"从库"
 
-```
+```text
 vonng=# table pg_stat_replication ;
 -[ RECORD 1 ]----+-----------------------------
 pid              | 7218
@@ -342,7 +335,7 @@ client_port      | 53420
 
 无论是JDBC还是Go语言的PostgreSQL驱动，都提供了相应的基础设施，用于处理复制连接。
 
-这里让我们用Go语言编写一个简单的CDC客户端，样例使用了[`jackc/pgx`](https://github.com/jackx/pgx)，一个很不错的Go语言编写的PostgreSQL驱动。这里的代码只是作为概念演示，因此忽略掉了错误处理，非常Naive。将下面的代码保存为 `main.go`，执行 `go run main.go` 即可执行。
+这里让我们用Go语言编写一个简单的CDC客户端，样例使用了[`jackc/pgx`](https://github.com/jackc/pgx)，一个很不错的Go语言编写的PostgreSQL驱动。这里的代码只是作为概念演示，因此忽略掉了错误处理，非常Naive。将下面的代码保存为 `main.go`，执行 `go run main.go` 即可执行。
 
 默认的三个参数分别为数据库连接串，逻辑解码输出插件的名称，以及复制槽的名称。默认值为：
 
@@ -352,7 +345,7 @@ plugin := "test_decoding"
 slot := "test_slot"
 ```
 
-```
+```text
 go run main.go postgres:/postgres?application_name=cdc test_decoding test_slot
 ```
 
@@ -545,8 +538,6 @@ restart_lsn         | 2D/AB269A80       -- 下次客户端重连时将从这里�
 confirmed_flush_lsn | 2D/AB269AB8       -- 客户端确认完成的消息进度
 ```
 
---------------------
-
 ## 局限性
 
 想要在生产环境中使用CDC，还需要考虑一些其他的问题。略有遗憾的是，在PostgreSQL CDC的天空上，还飘着两朵小乌云。
@@ -555,7 +546,7 @@ confirmed_flush_lsn | 2D/AB269AB8       -- 客户端确认完成的消息进度
 
 就目前而言，PostgreSQL的逻辑解码只提供了以下几个钩子：
 
-```
+```text
 LogicalDecodeStartupCB startup_cb;
 LogicalDecodeBeginCB begin_cb;
 LogicalDecodeChangeCB change_cb;

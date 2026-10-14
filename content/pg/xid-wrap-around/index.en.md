@@ -6,7 +6,6 @@ summary: >
   XID WrapAround is perhaps a unique type of failure specific to PostgreSQL
 tags: [PostgreSQL, PG Admin, Incident]
 ---
-
 Encountered a transaction wraparound failure caused by disk bad blocks:
 
 * Primary database (PostgreSQL 9.3) disk bad blocks caused VACUUM FREEZE execution failure on several tables.
@@ -15,14 +14,10 @@ Encountered a transaction wraparound failure caused by disk bad blocks:
 * After promoting standby, emergency VACUUM FREEZE was needed to continue service, further extending failure time.
 * After primary entered protection state, commit log (clog) wasn't replicated to standby in time, standby generated dubious transactions and refused service.
 
-----------------
-
 ## Summary
 
 This was an old database about to be decommissioned, poorly managed. Bad block symptoms appeared a week ago but age wasn't monitored in time.
 Usually AutoVacuum ensures this type of failure is unlikely, but once it occurs it often means when it rains, it pours... making firefighting even more difficult...
-
-----------------
 
 ## Background
 
@@ -85,7 +80,7 @@ Query database age with the following SQL:
 SELECT *, age(datfrozenxid) FROM pg_database; 
 ```
 
-#### Cleanup
+### Cleanup
 
 Execute `VACUUM FREEZE` to freeze old transaction IDs:
 

@@ -6,13 +6,9 @@ summary: >
   用PostgreSQL 5分钟实现一个最简单ItemCF推荐系统。
 tags: [PostgreSQL, PG开发, 机器学习]
 ---
-
-
 推荐系统大家都熟悉，猜你喜欢，淘宝个性化什么的，前年双十一搞了个大新闻，还拿了CEO特别贡献奖。
 
 今天就来说说怎么用PostgreSQL 5分钟实现一个最简单ItemCF推荐系统，以推荐系统最喜闻乐见的[movielens数据集](https://grouplens.org/datasets/movielens/)为例。
-
------------------
 
 ## 原理
 
@@ -70,8 +66,6 @@ $$
 
 对这个预测评分$p$排序取TopN，就得到了用户$u$的推荐物品列表
 
------------------
-
 ## 实践
 
 说了这么多废话，赶紧燥起来。
@@ -100,7 +94,7 @@ ALTER TABLE mls_ratings
 
 得到的数据长这样：第一列用户ID列表，第二列电影ID列表，第三列是评分，最后是时间戳。一共十万条
 
-```
+```text
 movielens=# select * from mls_ratings limit 10;
  user_id | movie_id | rating |       timestamp
 ---------+----------+--------+------------------------
@@ -109,8 +103,6 @@ movielens=# select * from mls_ratings limit 10;
        1 |     1061 |      6 | 2009-12-14 10:53:02+08
        1 |     1129 |      4 | 2009-12-14 10:53:05+08
 ```
-
------------------
 
 ### 第二步：计算物品相似度
 
@@ -169,7 +161,7 @@ INSERT INTO mls_similarity
 
 物品相似度表大概长这样：
 
-```
+```text
 movielens=# SELECT * FROM mls_similarity LIMIT 10;
    i    | j |         p
 --------+---+--------------------
@@ -180,8 +172,6 @@ movielens=# SELECT * FROM mls_similarity LIMIT 10;
 ```
 
 实际上还可以修剪修剪，比如计算时非常小的相似度干脆可以直接删掉。也可以用整个表中相似度的最大值作为单位1，进行归一化。这里都不弄了。
-
------------------
 
 ### 第三步：进行推荐！
 
@@ -201,7 +191,7 @@ GROUP BY j ORDER BY score DESC LIMIT 10; -- 聚合，排序，取TOP
 
 推荐结果如下：
 
-```
+```text
  movie_id |      score
 ----------+------------------
      1270 | 121.487735902517
@@ -236,7 +226,7 @@ END $$ LANGUAGE plpgsql STABLE;
 
 这样用起来更方便啦，同时也可以在这里加入一些其他的处理逻辑：比如过滤掉禁片黄片，去除用户明确表示过不喜欢的电影，加入一些热门电影，引入一些随机惊喜，打点小广告之类的。
 
-```
+```text
 movielens=# SELECT get_recommendation(11) as res;
                                   res
 -----------------------------------------------------------------------
@@ -247,8 +237,6 @@ movielens=# SELECT get_recommendation(11) as res;
 
 关于这一步可以参考前一篇：[当PostgreSQL遇上GraphQL：Postgraphql](https://www.atatech.org/articles/70532)中的做法，直接由存储过程生成GraphQL API，啥都不用操心了。
 
------------------
-
 ### What's more
 
 几行SQL一条龙执行下来，加上下载数据的时间，总共也就五分钟吧。一个简单的推荐系统就这样搭建起来了。
@@ -257,7 +245,7 @@ movielens=# SELECT get_recommendation(11) as res;
 
 这里比如说计算相似度矩阵的时候，才100k条记录花了三四分钟，不太给力。而且这么多SQL写起来，管理起来也麻烦，有没有更好的方案？
 
-这儿有个基于PostgreSQL源码魔改的推荐数据库：[RecDB](http://www-users.cs.umn.edu/~sarwat/RecDB/)，直接用C实现了推荐系统相关的功能扩展，性能看起来杠杠地；同时还包装了SQL语法糖，一行SQL建立推荐系统！再一行SQL就开始使用啦。
+这儿有个基于PostgreSQL源码魔改的推荐数据库：[RecDB](https://github.com/DataSystemsLab/recdb-postgresql)，直接用C实现了推荐系统相关的功能扩展，性能看起来杠杠地；同时还包装了SQL语法糖，一行SQL建立推荐系统！再一行SQL就开始使用啦。
 
 ```sql
 -- 计算推荐所需的信息

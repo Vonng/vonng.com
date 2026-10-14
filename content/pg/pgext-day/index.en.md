@@ -6,7 +6,6 @@ summary: The annual PostgreSQL developer conference will be held in Montreal in 
 
 tags: [PostgreSQL, Extension]
 ---
-
 The annual PostgreSQL developer conference will be held in Montreal in May. Like the first PG Con.Dev, there's also an additional dedicated event - Postgres Extensions Day, focusing on all aspects of PG extension development, delivery, and release. The agenda has just been released with 14 sessions scheduled.
 
 ![featured.jpg](featured.jpg)
@@ -19,19 +18,15 @@ PGEXT DAY is scheduled for May 12, 2025, at the same location as the PG develope
 
 ![venue.jpg](venue.jpg)
 
-[Last year's PG developer conference in Vancouver was incredibly rewarding](https://pigsty.cc/pg/pgcondev-2024/), though there were very few participants from China. Not sure how this edition will be - if you're also going, please leave a comment and we can meet up in person!
+[Last year's PG developer conference in Vancouver was incredibly rewarding](/en/pg/pgcondev-2024/), though there were very few participants from China. Not sure how this edition will be - if you're also going, please leave a comment and we can meet up in person!
 
 If you're interested in PostgreSQL, don't forget to register at [https://pgext.day](https://pgext.day/) - friendly reminder: while PGEXT DAY is an auxiliary event to PGCON Dev, unlike the main conference's 500 CAD ticket, attending pgext.day is free! So if you're coming to the PG developer conference, don't forget about this.
 
 Below is the PG Extension Summit agenda - looking forward to seeing readers at the extension summit!
 
-------
-
 ## Extension Summit Schedule
 
 ![schedule.jpg](schedule.jpg)
-
-------
 
 ### 1. From `pl/v8` to `pl/<any>`: Towards Easier Extension Development
 
@@ -39,7 +34,7 @@ Below is the PG Extension Summit agenda - looking forward to seeing readers at t
 
 **From pl/v8 to pl/: towards easier extension development**
 
-[`pg_tle`](https://pigsty.cc/ext/lang/pg_tle/) opens new doors for developers, allowing anyone to write and deploy secure extensions without superuser privileges. It also provides hooks for trusted language functions, such as enforcing password policies. `pl/<any>` further allows using any language to write database functions, thereby implementing extensions. The main approach is writing Language Handlers in JavaScript and leveraging any language transpilable to JavaScript as PostgreSQL's embedded (or "pl/") language.
+[`pg_tle`](https://pgext.cloud/e/pg_tle/) opens new doors for developers, allowing anyone to write and deploy secure extensions without superuser privileges. It also provides hooks for trusted language functions, such as enforcing password policies. `pl/<any>` further allows using any language to write database functions, thereby implementing extensions. The main approach is writing Language Handlers in JavaScript and leveraging any language transpilable to JavaScript as PostgreSQL's embedded (or "pl/") language.
 
 Examples include:
 
@@ -54,8 +49,6 @@ Future expansions on pl/v8 could include:
 - Exposing more hooks and trace points for JavaScript handlers
 - Allowing users to directly construct plan trees, even adding new node types or monitoring probes
 
-------
-
 ### 2. Upgrade as an Extension
 
 **9:30 am → 25 min**, Andrey Borodin
@@ -64,8 +57,6 @@ Future expansions on pl/v8 could include:
 
 (No content description available, but the title alone sounds exciting!)
 
-------
-
 ### 3. Inlining Postgres Functions: Now and Then
 
 **10:00 am → 25 min**, Paul Jungwirth
@@ -73,8 +64,6 @@ Future expansions on pl/v8 could include:
 **Inlining Postgres Functions, Now and Then**
 
 When PostgreSQL calls user-defined functions (or built-in functions), it might attempt inlining, providing new possibilities for SQL developers and extension authors. This talk will introduce two inlining methods currently used by PostgreSQL (available now) and a patch in development aimed at supporting inlining for most set-returning functions. Your functions can replace themselves with a "plan tree," which the optimizer then merges with other query parts - almost like writing a macro!
-
-------
 
 ### 4. Postgres à la Carte: Dynamic Container Images with Your Choice of Extensions
 
@@ -88,8 +77,6 @@ Enter "dynamic OCI (container) images" technology, capable of real-time, on-dema
 
 This talk will explore the concepts and technology behind dynamic container images and how to apply them for loading arbitrary extension combinations into Postgres images. The presentation will feature extensive demonstrations!
 
-------
-
 ### 5. Cppgres: One Less Reason to Hate C++
 
 **11:00 am → 25 min**, Yurii Rashkovskii
@@ -102,8 +89,6 @@ If you're considering switching to Rust, consider C++ first - using the same com
 
 This talk will introduce **Cppgres**: a lightweight, header-only C++20 library that streamlines and strengthens Postgres extension safety and readability. Using concepts, automatic type deduction, and other modern C++ techniques, you can write concise, efficient, maintainable extensions. Let's rediscover C++ and make Postgres extensions both safe and enjoyable!
 
-------
-
 ### 6. Working with MemoryContexts and Debugging Memory Leaks in Postgres
 
 **11:30 am → 25 min**, Phil Eaton
@@ -111,8 +96,6 @@ This talk will introduce **Cppgres**: a lightweight, header-only C++20 library t
 **Working with MemoryContexts and debugging memory leaks in Postgres**
 
 This talk will focus on creating and switching MemoryContexts in real scenarios, using tools like Linux's eBPF to discover memory leaks. Content is based on real production cases, summarizing experiences and practical techniques from writing extensions and finding bugs.
-
-------
 
 ### 7. Postgres as a Control Plane: Challenges in Offloading Compute via Extensions
 
@@ -126,13 +109,9 @@ This talk will explore designing Postgres extensions to offload computation whil
 
 Perfect for engineers wanting to offload computation in Postgres while preserving SQL simplicity and performance.
 
-------
-
 ### 8. Lunch
 
 **12:30 pm → 60 min**
-
-------
 
 ### 9. The Missing Postgres Extension Repo and Package Manager
 
@@ -146,8 +125,6 @@ While PostgreSQL extensions are powerful and flexible, most users prefer "out-of
 
 This talk will explore building this repository, including challenges like cross-distribution compatibility, multi-architecture support, version alignment, sharing experiences, lessons, and future improvements to make PostgreSQL extension installation easier.
 
-------
-
 ### 10. How to Automatically Release Your Extensions on PGXN
 
 **2:00 pm → 25 min**, David Wheeler
@@ -159,8 +136,6 @@ There's currently no unified release center for all PostgreSQL extensions. While
 PGXN aims to become the root registry for all extension versions, hoping to sync all release information downstream to enable automated build processes. To achieve this, developers need to proactively upload extension updates to PGXN, benefiting the entire PostgreSQL community.
 
 This talk will demonstrate setting up release processes on PGXN and achieving automation through Git, JSON, GitHub workflows, keeping your extensions current with one-click publishing to PGXN.
-
-------
 
 ### 11. Extending PostgreSQL with Java: Overcoming Development Challenges in Bridging Java and C Applications
 
@@ -182,8 +157,6 @@ We'll dive deep into key challenges and solutions when using both C and Java wit
 
 Attendees will learn how to enhance PostgreSQL's logical replication capabilities and master development essentials for fusing C and Java in single extensions.
 
-------
-
 ### 12. Rethinking OLAP Architecture: The Journey to pg_mooncake v0.2
 
 **3:00 pm → 25 min**, Cheng Chen
@@ -191,8 +164,6 @@ Attendees will learn how to enhance PostgreSQL's logical replication capabilitie
 **Rethinking OLAP Architecture: The Journey to pg_mooncake v0.2**
 
 In this talk, we'll explore shortcomings of pg_mooncake v0.1 and major architectural changes made in v0.2. We'll share lessons learned using Postgres replication, background worker processes, and extension-form inter-process communication (IPC).
-
-------
 
 ### 13. Spat: Hijacking Shared Memory for a Redis-Like Experience in PostgreSQL
 
@@ -205,8 +176,6 @@ Traditional databases typically use shared memory for work areas like query exec
 This talk will introduce PostgreSQL's shared memory APIs exposed to extension developers (including the new DSM Registry) and how to build **Spat**: an in-memory data structure server storing data entirely in shared memory, providing Redis-like experience within PostgreSQL.
 
 Spat provides key-value storage patterns supporting strings, lists, sets, hashes, and other structures, becoming lightweight, high-speed temporary storage within PostgreSQL. We'll explore challenges and opportunities in this unconventional shared memory usage, providing insights for developers wanting to extend PostgreSQL to new heights.
-
-------
 
 ### 14. Scaling PostgreSQL with Citus: Distributed Data for Modern Applications
 
@@ -223,8 +192,6 @@ Content includes:
 - Considerations for performance tuning and security mechanisms in distributed Postgres cluster operations
 - Real success cases and lessons learned
 
-------
-
 ### 15. Extensibility - New Options and a Wish List
 
 **4:30 pm → 25 min**, Alastair Turner
@@ -237,15 +204,11 @@ Meanwhile, Postgres continues opening more extensible areas. Over the past year,
 
 This talk will introduce recent new extensible areas (with example code) and explore possible improvements and efforts in areas not yet breakthrough, especially storage.
 
-------
-
 ### 16. Dinner
 
 **6:00 pm – 9:00 pm**
 
 **Dinner**
-
-------
 
 ## Reviewing 2024 PGCon.Dev
 

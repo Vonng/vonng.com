@@ -6,8 +6,6 @@ summary: >
   PostgreSQL 全球开发组宣布，PostgreSQL 17 的首个 Beta 版本现已开放，这次 PG 真的是把牙膏管给挤爆啦！
 tags: [PostgreSQL]
 ---
-
-
 PostgreSQL 全球开发组宣布，PostgreSQL 17 的首个 Beta 版本现已开放[下载](https://www.postgresql.org/download/)。
 这一版本包含了 PostgreSQL 17 正式发布时所有功能的预览，但在 Beta 测试期间，某些细节可能会有所调整。
 
@@ -20,8 +18,6 @@ https://www.postgresql.org/docs/17/release-17.html
 
 社区将持续确保 PostgreSQL 17 作为世界上最先进的开源关系型数据库的稳定性和可靠性，但这离不开您的测试与反馈。
 详情请参阅我们的 [Beta 测试流程](https://www.postgresql.org/developer/beta/)，以及您可以如何作出贡献：https://www.postgresql.org/developer/beta/
-
-------
 
 ## PostgreSQL 17 亮点功能
 
@@ -41,8 +37,6 @@ PostgreSQL 17 现在可以同时利用 Planner 的统计信息与 [公共表表�
 
 最后，PostgreSQL 17 添加了更多显式的 SIMD 指令，比如为 [`bit_count`](https://www.postgresql.org/docs/17/functions-bitstring.html) 函数启用 AVX-512 指令支持。
 
-------
-
 ### 分区和分布式工作负载增强
 
 PostgreSQL 17  的分区管理更为灵活，新增了 **拆分** 与 **合并** 分区的能力，并允许分区表使用 **身份列（Identity Column）** 和 **排它约束**（Exclude Constraints）。
@@ -51,8 +45,6 @@ PostgreSQL 17  的分区管理更为灵活，新增了 **拆分** 与 **合并**
 PostgreSQL 17 为逻辑复制添加了新功能，使其在高可用架构和大版本升级中更加易用。
 从 PostgreSQL 17 使用  [`pg_upgrade`](https://www.postgresql.org/docs/17/pgupgrade.html) 升级到更高版本时，不再需要删除 [逻辑复制槽](https://www.postgresql.org/docs/17/logical-replication-subscription.html#LOGICAL-REPLICATION-SUBSCRIPTION-SLOT) 了，从而避免了升级后需要重新同步数据的麻烦。
 此外，你还可以控制逻辑复制的 Failover 过程，为高可用性架构中管理 PostgreSQL 提供了更好的可控制性。PostgreSQL 17 还允许逻辑复制的订阅者使用 `hash` 索引进行查找，并引入了 `pg_createsubscriber` 命令行工具，用于在使用物理复制的副本从库上创建逻辑复制。
-
-------
 
 ### 开发者体验
 
@@ -69,8 +61,6 @@ PostgreSQL 17 还允许使用 `MERGE` 命令更新视图，并新增了 `WHEN NO
 
 PostgreSQL 17 引入了内置的排序规则提供程序，该提供程序提供与 `C` 排序规则类似的排序语义，但编码为 `UTF-8` 而非 `SQL_ASCII`。这种新的排序规则提供了不变性保证，确保您的排序结果在不同系统上都不会改变。
 
-------
-
 ### 安全功能
 
 PostgreSQL 17 新增了一个新的连接参数 `sslnegotation`，允许 PostgreSQL 在使用 [ALPN](https://en.wikipedia.org/wiki/Application-Layer_Protocol_Negotiation) 时直接进行 TLS 握手，减少一次网络往返。PostgreSQL 会在 ALPN 目录中注册为 `postgresql`。
@@ -81,14 +71,10 @@ PostgreSQL 17 增加了一个新的 [预定义角色](https://www.postgresql.org
 并确保  `search_path` 对于 `VACUUM`、`ANALYZE`、`CLUSTER`、`REFRESH MATERIALIZED VIEW` 和 `INDEX` 等维护操作是安全的。
 最后，用户现在可以使用 `ALTER SYSTEM` 来设置系统无法识别的未定义配置参数了。
 
-------
-
 ### 备份与导出管理
 
 PostgreSQL 17 可以使用 [`pg_basebackup`](https://www.postgresql.org/docs/17/app-pgbasebackup.html) 进行增量备份，并增加了一个新的实用工具 [`pg_combinebackup`](https://www.postgresql.org/docs/17/app-pgcombinebackup.html)，用于备份恢复过程中将备份合并。
 该版本为 [`pg_dump`](https://www.postgresql.org/docs/17/app-pgdump.html) 新增了一个参数项 `--filter`，允许您指定一个文件来进一步指定在 dump 过程中要包含或排除哪些对象。
-
-------
 
 ### 监控
 
@@ -99,15 +85,11 @@ PostgreSQL 17 标准化了 [`pg_stat_statements`](https://www.postgresql.org/doc
 PostgreSQL 17 还引入了一个新视图，[`pg_wait_events`](https://www.postgresql.org/docs/17/view-pg-wait-events.html)，提供关于等待事件的描述，可以与 `pg_stat_activity` 共同使用，以便深入了解活动会话出现等待的原因。
 此外，[`pg_stat_bgwriter`](https://www.postgresql.org/docs/17/monitoring-stats.html#MONITORING-PG-STAT-BGWRITER-VIEW) 视图中的一些信息，现在被拆分到新的 [`pg_stat_checkpointer`](https://www.postgresql.org/docs/17/monitoring-stats.html#MONITORING-PG-STAT-CHECKPOINTER-VIEW) 视图中了。
 
-------
-
 ## 其他功能
 
 PostgreSQL 17 还有许多其他新功能与改进，很多改进都可能会对您的用例有所帮助。请参阅[发布说明](https://www.postgresql.org/docs/17/release-17.html)以获取完整的新功能和变更列表：
 
 https://www.postgresql.org/docs/17/release-17.html
-
-------
 
 ## 错误和兼容性测试
 
@@ -117,13 +99,9 @@ PostgreSQL wiki 中公开提供了[开放问题](https://wiki.postgresql.org/wik
 
 https://www.postgresql.org/account/submitbug/
 
-------
-
 ## Beta 时间表
 
 这是 PostgreSQL 17 的第一个 Beta 版本。PostgreSQL 项目将根据测试需要发布更多的 Beta 版本，随后是一或多个 RC 版本，最终版本大约会在 2024 年 9 月或 10 月发布。详细信息请参阅 [Beta 测试](https://www.postgresql.org/developer/beta/) 页面。
-
-------
 
 ## 链接
 

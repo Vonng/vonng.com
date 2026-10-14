@@ -6,9 +6,6 @@ summary: >
   PgSQL中的函数默认有三种易变性等级，合理使用可以显著改善性能。
 tags: [PostgreSQL, PG开发]
 ---
-
-
-
 PgSQL中的函数默认有三种易变性等级，合理使用可以显著改善性能。
 
 ## 核心种差
@@ -49,7 +46,7 @@ $$ LANGUAGE PLPGSQL STABLE;
 
 当使用 `STABLE` 标签时，它会真的调用10次，而当使用 `IMMUTABLE` 标签时，它会被优化为一次调用。
 
-```
+```text
 vonng=# select return2() from generate_series(1,10);
 NOTICE:  INVOKED
 NOTICE:  INVOKED

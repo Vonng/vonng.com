@@ -8,8 +8,6 @@ tags: [PostgreSQL, Pigsty, Containers]
 ai: true
 aliases: ["/ai/dify-setup/"]
 ---
-
-
 [**Dify**](https://dify.ai/) -- The Innovation Engine for GenAI Applications
 
 Dify is an open-source LLM app development platform. Orchestrate LLM apps from agents to complex AI workflows, with an RAG engine.
@@ -38,8 +36,6 @@ Reference:
 
 - [GitHub: langgenius/Dify](https://github.com/langgenius/dify/)
 - [Pigsty: Dify Docker Compose Template](https://github.com/Vonng/pigsty/tree/master/app/dify)
-
-------
 
 ## Pigsty Preparation
 
@@ -74,7 +70,7 @@ bin/pgsql-add  pg-meta                # create the dify database cluster
 bin/redis-add  redis-dify             # create redis cluster
 ```
 
-Alternatively, you can define a new [business user](https://pigsty.cc/docs/pgsql/user) and [business database](https://pigsty.cc/docs/pgsql/db) on an existing PostgreSQL cluster, such as `pg-meta`, and create them with the following commands:
+Alternatively, you can define a new [business user](https://pigsty.cc/docs/pgsql/config/user/) and [business database](https://pigsty.cc/docs/pgsql/config/db/) on an existing PostgreSQL cluster, such as `pg-meta`, and create them with the following commands:
 
 ```bash
 bin/pgsql-user pg-meta dbuser_dify    # create dify biz user
@@ -90,17 +86,15 @@ redis-cli -u redis://redis.dify@10.10.10.10:6379/0 ping
 
 Once you confirm these connection strings are working, you're all set to start deploying Dify.
 
-For demonstration purposes, we're using direct IP connections. For a multi-node high availability PG cluster, please refer to the [service access](https://pigsty.cc/docs/concept/svc) section.
+For demonstration purposes, we're using direct IP connections. For a multi-node high availability PG cluster, please refer to the [service access](https://pigsty.cc/docs/concept/ha/svc/) section.
 
 The above assumes you are already a Pigsty user familiar with deploying PostgreSQL and Redis clusters. You can skip the next section and proceed to see [how to configure Dify](#dify-configuration).
-
-------
 
 ## Starting from Scratch
 
 If you're already familiar with setting up Pigsty, feel free to skip this section.
 
-[Prepare](https://pigsty.io/docs/setup/prepare/) a fresh Linux x86_64 node that runs [compatible](https://pigsty.io/docs/reference/compatibility) OS, then run as a **sudo-able** user:
+[Prepare](https://pigsty.io/docs/deploy/prepare/) a fresh Linux x86_64 node that runs [compatible](https://pigsty.io/docs/ref/linux/) OS, then run as a **sudo-able** user:
 
 ```bash
 curl -fsSL https://repo.pigsty.io/get | bash
@@ -136,13 +130,11 @@ Pigsty will not deploy Docker by default, so you need to install Docker with the
 ./docker.yml
 ```
 
-------
-
 ## Dify Configuration
 
 You can configure dify in the [`.env`](https://github.com/Vonng/pigsty/blob/main/app/dify/.env) file:
 
-All parameters are self-explanatory and filled in with default values that work directly in the [Pigsty sandbox env](https://pigsty.io/docs/setup/provision/).
+All parameters are self-explanatory and filled in with default values that work directly in the [Pigsty sandbox env](https://pigsty.io/docs/deploy/vagrant/).
 Fill in the database connection information according to your actual conf, consistent with the PG/Redis cluster configuration above.
 
 Changing the `SECRET_KEY` field is recommended. You can generate a strong key with `openssl rand -base64 42`:
@@ -180,8 +172,6 @@ Now we can pull up dify with docker compose:
 ```bash
 cd pigsty/app/dify && make up
 ```
-
-------
 
 ## Expose Dify Service via Nginx
 

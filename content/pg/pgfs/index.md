@@ -7,12 +7,9 @@ summary: >
 tags: [PostgreSQL, 对象存储]
 aliases: ["/ai/pgfs/", "/db/pgfs/"]
 ---
-
 前几天，我收到了一条来自 Odoo 社区的需求， 对方苦恼于：“数据库能做PITR（Point-in-Time Recovery），那文件系统有没有办法一起回滚呢？”
 
-------
-
-### 为什么会有“PGFS”这个想法？
+## 为什么会有“PGFS”这个想法？
 
 从数据库老司机的角度来看，这是个颇具挑战性又让人兴奋的问题。 我们都知道，像 Odoo 这类 ERP 系统，最宝贵的确实是数据库中的核心业务数据，放在一套 PostgreSQL 里。
 
@@ -21,8 +18,6 @@ aliases: ["/ai/pgfs/", "/db/pgfs/"]
 这就把我带入了一个有趣的思考：**有没有一种办法，让文件系统也具有类似数据库的PITR能力？** 传统做法大多指向昂贵复杂的CDP（Continuous Data Protection）方案，需要硬件设备或底层块存储做日志级捕获。 可我又想：对于 “穷人” 来说，能不能更巧妙地用开源技术把这个难题解决了？
 
 思考良久，最终浮现出一个让我“拍案叫绝”的组合：JuiceFS + PostgreSQL。 通过将PG变身文件系统，文件的所有写入也都进入数据库里，从而实现和数据库共用同一个WAL日志，随时回溯到任何历史时间点。 这听起来有点天马行空，可是别着急——它确实“能跑”。让我们来看看JuiceFS是怎么做到的。
-
-------
 
 ## 初识JuiceFS：让数据库“化身”文件系统
 
@@ -62,8 +57,6 @@ juicefs umount /data2
 ```
 
 如此一来，任何写到/data2目录的数据，其实都会存进 PG 中的 `jfs_blob` 这张表里。换言之，这个文件系统和PG数据库已经融为一体！
-
-------
 
 ## PGFS实战：文件系统也能PITR
 
@@ -113,8 +106,6 @@ $ psql -c 'select * from monitor.heartbeat'
 
 这意味着这种玩法是可行的！我们成功通过 PGFS 实现了 FS/DB 一致的 PITR！
 
-------
-
 ## 性能表现如何？
 
 那么功能是有了，但性能怎么样呢？
@@ -147,8 +138,6 @@ Time used: 42.2 s, CPU: 687.2%, Memory: 179.4 MiB
 <details style="box-sizing: border-box; color: rgb(33, 37, 41); font-family: &quot;Open Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><summary style="box-sizing: border-box; display: list-item; cursor: pointer;">另一个样本：阿里云ESSD PL1乞丐盘测试结果</summary><div class="highlight" style="box-sizing: border-box; --bs-card-spacer-y: 1rem; --bs-card-spacer-x: 1rem; --bs-card-title-spacer-y: 0.5rem; --bs-card-border-width: 1px; --bs-card-border-color: rgba(0, 0, 0, 0.175); --bs-card-border-radius: 0.375rem; --bs-card-box-shadow: ; --bs-card-inner-border-radius: calc(0.375rem - 1px); --bs-card-cap-padding-y: 0.5rem; --bs-card-cap-padding-x: 1rem; --bs-card-cap-bg: rgba(0, 0, 0, 0.03); --bs-card-cap-color: ; --bs-card-height: ; --bs-card-color: ; --bs-card-bg: #fff; --bs-card-img-overlay-padding: 1rem; --bs-card-group-margin: 0.75rem; position: relative; display: flex; flex-direction: column; min-width: 0px; height: auto; overflow-wrap: break-word; background-color: rgb(255, 255, 255); background-clip: border-box; border-color: rgba(0, 0, 0, 0.176); border-style: solid; border-width: 0.555556px; border-image: none 100% / 1 / 0 stretch; border-radius: 6px; box-shadow: none; margin: 2rem 0px; padding: 0px;"><pre tabindex="0" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 0.875em; display: block; margin: 0px; overflow: auto; overflow-wrap: normal; background-color: rgb(248, 248, 248); padding: 1rem; border-radius: inherit; tab-size: 4;"><div class="click-to-copy" style="box-sizing: border-box; display: block; text-align: right;"></div><code class="language-fallback" data-lang="fallback" style="box-sizing: border-box; font-family: SFMono-Regular, Menlo, Monaco, Consolas, &quot;Liberation Mono&quot;, &quot;Courier New&quot;, monospace; font-size: 14px; color: inherit; overflow-wrap: break-word; word-break: normal; padding: 0px; margin: 0px; white-space: pre; border: 0px; background-color: inherit !important;"><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span><span style="box-sizing: border-box; display: flex;"><span style="box-sizing: border-box;"></span></span></code></pre></div></details>
 
 虽然与原生FS相比吞吐性能肯定逊色，但对于那些 **文件量不大、访问频次较低** 的应用场景已经足够了。 毕竟用“数据库充当文件系统”，本身就不是为了跑大型存储和高并发写入， 而是为了让数据库和文件系统能“同步回到过去”，能用就行。
-
-------
 
 ## 补完拼图：一键“企业级”交付
 

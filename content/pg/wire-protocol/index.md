@@ -6,12 +6,7 @@ summary: >
   了解PostgreSQL服务器与客户端通信使用的TCP协议，并使用Go语言打印消息。
 tags: [PostgreSQL, PG开发, PG内核]
 ---
-
-
-
 了解PostgreSQL服务器与客户端通信使用的TCP协议
-
-------------------
 
 ## 启动阶段
 
@@ -104,8 +99,6 @@ func main() {
 [QUERY] query complete
 ```
 
-------------------
-
 ## 连接代理
 
  可以在 `jackc/pgx/pgproto3` 的基础上，很轻松地编写一些中间件。例如下面的代码就是一个非常简单的“连接代理”：
@@ -195,7 +188,7 @@ $ psql postgres://127.0.0.1:5433/data?sslmode=disable -c 'SELECT * FROM pg_stat_
 
 可以观察到这一过程中的消息往来：
 
-```
+```text
 [B2F] *pgproto3.ParameterStatus &{application_name psql}
 [B2F] *pgproto3.ParameterStatus &{client_encoding UTF8}
 [B2F] *pgproto3.ParameterStatus &{DateStyle ISO, MDY}

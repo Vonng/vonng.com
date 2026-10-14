@@ -7,9 +7,6 @@ summary: >
   Ultimate optimization of KNN problems, from traditional relational design to PostGIS
 tags: [PostgreSQL, PG Development, Machine Learning, GIS]
 ---
-
-
-
 Flexibly applying database functionality can easily achieve a 30,000-fold performance improvement in GIS selection scenarios.
 
 | Level |        Method        | Performance/Time(ms) | Maintainability/Reliability |           Notes            |
@@ -19,8 +16,6 @@ Flexibly applying database functionality can easily achieve a 30,000-fold perfor
 |   3   |   Compound Index    |         10           |  Complexity/Magic Numbers |      Extra complexity      |
 |   4   |        GIST         |          4           |  Simplest expression, fully accurate | Simple form, more accurate distance, PostgreSQL specific |
 |   5   | `btree_gist` Compound Index |     1      |  Simplest expression, fully accurate | Simple form, more accurate distance, PostgreSQL specific |
-
----------------
 
 ## Scenario
 
@@ -46,8 +41,6 @@ When taking a ride-hailing service and selecting pickup locations, or when order
 Nearest neighbor search is such a commonly used function that optimization benefits are very significant.
 
 Let's start with a specific problem and describe the evolution of implementation methods for this functionality - how to achieve more than 30,000-fold performance improvement.
-
----------------
 
 ## Problem
 
@@ -158,7 +151,7 @@ How fast is fast enough? One millisecond - that's fast enough. This is also our 
 
 Alright, let's get to the meat. Before PostGIS shows its true power, let's first see how far traditional relational databases can go in solving this problem.
 
----------------
+
 
 ## 0x02 Solutions
 
@@ -192,7 +185,7 @@ To simplify the problem, let's temporarily ignore the fact that latitude/longitu
 
 Let's first examine its execution plan:
 
-![](knn-explain-l1.png)
+![KNN Ultimate Optimization: From RDS to PostGIS — LEVEL-1 Brute Force Table Scan (figure 1)](knn-explain-l1.png)
 
 > ### Aside: SQL Inlining
 >
@@ -286,7 +279,7 @@ ORDER BY 3 LIMIT 10;
 
 After warming up, actual execution averages 35 milliseconds - nearly 1000x performance improvement over brute force table scanning, a huge progress.
 
-![](knn-explain-l2.png)
+![KNN Ultimate Optimization: From RDS to PostGIS — LEVEL-2 Coordinate Indexes (figure 2)](knn-explain-l2.png)
 
 For relatively simple rough products, this method has reached 'usable' levels. But this method still has many problems.
 
@@ -344,10 +337,10 @@ Let's ignore this annoying problem for now and see if traditional relational dat
 
 |       Large Radius Poor Performance        |              Small Radius Can't Circle Enough               |
 | :-----------------------------------------: | :----------------------------------------------------------: |
-| ![](knn-badcase-1.png)  | ![mage-20180321221805](knn-badcase-2.webp) |
+| ![KNN Ultimate Optimization: From RDS to PostGIS — Bad Cases (figure 3)](knn-badcase-1.png)  | ![mage-20180321221805](knn-badcase-2.webp) |
 | Prosperous Wudaokou, 10 shops in 1km easy. |     300km away for one shop, Xinjiang people cry in toilets     |
 
----------------
+
 
 ## LEVEL-3 Compound Index and Clustering
 
@@ -403,7 +396,7 @@ For traditional relational databases, this is about the limit
 
 Is there an elegant, correct, fast solution?
 
----------------
+
 
 ## LEVEL-4 GIST
 
@@ -456,7 +449,7 @@ Usually topological queries and rough people-circling are suitable for Geometry 
 
 |            Geometry: 1.6 ms            |                 Geography: 3.4 ms                 |
 |:--------------------------------------:|:-------------------------------------------------:|
-| ![](knn-explain-l4-geom.png) | ![mage-20180321222024](knn-l4-geog.png) |
+| ![KNN Ultimate Optimization: From RDS to PostGIS — R-tree (figure 8)](knn-explain-l4-geom.png) | ![mage-20180321222024](knn-l4-geog.png) |
 
 Now let's see PostGIS's answer.
 
@@ -490,7 +483,7 @@ Generalized Search Tree - a universal search tree with balanced tree structure. 
 
 Usually topological queries and rough people-circling are suitable for Geometry type, while precise calculations and judgments must use Geography type. Here, sorting by distance requires precise distance, so Geography is used.
 
----------------
+
 
 ## LEVEL-5 btree_gist
 
@@ -531,7 +524,7 @@ FROM pois6 WHERE category = 60000 ORDER BY 3 LIMIT 10;
 
 | Geometry: 0.85ms / Geography: 1.2ms |
 |:-----------------------------------:|
-|  ![](knn-explain-l5.png)  |
+|  ![KNN Ultimate Optimization: From RDS to PostGIS — LEVEL-5 btree_gist (figure 10)](knn-explain-l5.png)  |
 
 ```plsql
 CREATE OR REPLACE FUNCTION get_random_nearby_store() RETURNS TEXT
@@ -569,7 +562,7 @@ class GetHandler(http.server.BaseHTTPRequestHandler):
 with http.server.HTTPServer(("localhost", 3001), GetHandler) as httpd: httpd.serve_forever()
 ```
 
----------------
+
 
 ## Case Summary
 

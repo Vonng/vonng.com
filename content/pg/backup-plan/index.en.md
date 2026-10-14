@@ -6,7 +6,6 @@ summary: >
   There are various backup strategies. Physical backups can usually be divided into four types.
 tags: [PostgreSQL, PG Admin, Backup]
 ---
-
 > Author: [Vonng](https://vonng.com) ([@Vonng](https://vonng.com/en/))
 
 Backup is the foundation of a DBA's livelihood and one of the most critical tasks in database management. There are various types of backups, but the backups discussed here are all physical backups. Physical backups can usually be divided into the following four types:
@@ -16,11 +15,11 @@ Backup is the foundation of a DBA's livelihood and one of the most critical task
 * Cold Backup: The cold backup database exists as static files of the data directory, essentially a binary backup of the database directory. Easy to create, simple to manage, convenient for placing in other AZs for disaster recovery. It's the ultimate insurance for databases.
 * Remote Standby: The so-called multi-site, multi-center usually refers to hot standby instances placed in other AZs.
 
-![](backup-types.png)
+![Warm Standby: Using pg_receivewal (figure 1)](backup-types.png)
 
 Usually when we talk about backups, we mean cold and warm backups. Their important difference from hot standby is: they're usually not the latest. When serving online queries, this lag is a deficiency, but for failure recovery, this is a very important feature. Synchronized standby isn't sufficient to handle all problems. Imagine this scenario: some human error or software bug deletes an entire table or database - such changes would immediately apply to synchronous standby. This situation can only be recovered by querying from delayed warm standby or replaying logs from cold backup. Therefore, cold/warm backups are necessary regardless of whether you have standby servers.
 
-Reference: [PostgreSQL Replication Solutions](https://pigsty.io/docs/administration/backup/)
+Reference: [PostgreSQL Replication Solutions](https://pigsty.io/docs/pgsql/backup/)
 
 ## Warm Standby Solutions
 
@@ -34,7 +33,7 @@ Warm standby solutions have some significant advantages:
 
 ### Process Overview
 
-![](backu-setup.png)
+![Warm Standby: Using pg_receivewal — Process Overview (figure 2)](backu-setup.png)
 
 ### Log Archiving
 
@@ -61,7 +60,7 @@ Of course, in actual production environments, for more robust archiving, we usua
 
 Here's a script for initializing PostgreSQL Offline Instance for reference:
 
-[`pg/test/bin/offline.sh`](https://github.com/Vonng/pg/blob/master/test/bin/offline.sh)
+[`pg/test/bin/offline.sh`](https://github.com/Vonng/pg/blob/master/test/bin/init-offline.sh)
 
 ## Backup Testing
 

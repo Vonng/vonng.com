@@ -7,7 +7,6 @@ summary: >
   I spent a day translating the complete documentation for PgBouncer, pgBackRest, and Patroni into Chinese — what used to require a whole volunteer team now fits into one person's token budget.
 tags: [PostgreSQL, Documentation, Translation]
 ---
-
 Pigsty v4.2 had just shipped, and I had some free time. I checked my Claude token quota — it was about to expire for the week. Use it or lose it. That got me itching for something to burn it on.
 
 So I decided to translate docs.
@@ -22,8 +21,6 @@ When I finished, I was a bit dazed myself: a few years ago, this would have take
 
 [![pgBackRest Chinese docs](backrest.webp)](https://pigsty.cc/docs/pgbackrest)
 
-------
-
 ## Do Chinese Docs Really Matter?
 
 There's a common argument: developers should be able to read English, so just use the original docs. That's partially true, but not the whole picture.
@@ -34,8 +31,6 @@ And even for those with decent English — like myself, I read English fairly sm
 
 So Chinese documentation isn't a nice-to-have — it's foundational infrastructure for the PG ecosystem's adoption in China.
 
-------
-
 ## How Bad Is the Current Situation?
 
 PostgreSQL's official docs were once translated by the Chinese community, with volunteers and university students producing several versions over the years. But this human-powered model has an inherent problem: **it can't keep up**. After each major release, translations lag by six months or more. As of now, the [community-maintained Chinese docs](https://github.com/postgres-cn/pgdoc-cn) appear stuck at version 15.7 — more than three years behind, with no one organizing follow-up. (Though I think I spotted a 18.0 version somewhere.)
@@ -45,8 +40,6 @@ As for Chinese docs for PgBouncer, Patroni, and pgBackRest? Virtually nonexisten
 ![State of the community Chinese PostgreSQL docs](pgdoc.webp)
 
 This isn't because the Chinese community isn't trying. Translating documentation is a thankless grind: massive workload, high technical bar, no direct payoff, and you have to keep up with every version update. Passion-driven volunteering simply isn't sustainable for work like this.
-
-------
 
 ## What Did AI Change?
 
@@ -64,8 +57,6 @@ Of course, I don't just blindly throw everything at AI. I do a full pass over th
 
 This proves once again that in the AI era, things that used to require an entire company or a large team can now be done by one person. Documentation translation is just one example. The barrier to community building and open-source maintenance has been fundamentally changed.
 
-------
-
 ## What's Next?
 
 Translating these three component docs is just the beginning.
@@ -79,8 +70,6 @@ What does a truly vibrant technical community need? I've thought about this: you
 Most critically, you need your own core value proposition — something like an open-source project to serve as a rallying point. Now think about it: none of this is actually that hard to pull off anymore. These were things I wanted to do before but didn't have the bandwidth for. Now with AI backing me up, I can sit here surfing and delegating by voice, tokens aplenty — many things I never dared imagine before can now be handled by one person with ease.
 
 Some might ask: in the age of AI agents, won't agents read the docs directly in the future? Do we even need Chinese translations anymore? Maybe we won't even need doc sites — just throw an `llm.txt` in the project and call it a day. Perhaps. But at least for now, I still frequently consult PG docs myself. Until agents truly replace humans, this work remains hugely valuable.
-
-------
 
 ## Take a Look?
 

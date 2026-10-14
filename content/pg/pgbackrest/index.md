@@ -6,9 +6,6 @@ summary: >
   PgBackRest是用perl写的一组PostgreSQL备份工具。
 tags: [PostgreSQL, PG管理, 备份]
 ---
-
-
-
 pgBackRest主页：http://pgbackrest.org
 
 pgBackRest Github主页：https://github.com/pgbackrest/pgbackrest
@@ -264,7 +261,7 @@ Use 'pgbackrest help [command]' for more information.
 
 ### mac version
 
-在MacOS上安装可以按照之前的手动安装教程，参考文章：https://hunleyd.github.io/posts/pgBackRest-2.07-and-macOS-Mojave/
+在MacOS上安装可以按照之前的手动安装教程，参考文章：`https://hunleyd.github.io/posts/pgBackRest-2.07-and-macOS-Mojave/`（原链接失效）
 
 ```bash
 # 注意如果需要从终端访问代理，可以使用以下命令：
@@ -445,7 +442,7 @@ P00   INFO: stanza-create command begin 1.27: --db1-path=/var/lib/postgresql/9.4
 P00   INFO: stanza-create command end: completed successfully
 ```
 
-```
+```text
 1. Install
 
   $ sudo yum install -y pgbackrest

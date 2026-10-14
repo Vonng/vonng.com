@@ -7,12 +7,7 @@ summary: >
   尽管PostgreSQL提供了pgbench，但有时候为了吊打一下MySQL，还是需要用到sysbench的。
 tags: [PostgreSQL, PG管理, 性能]
 ---
-
-
-
 sysbench首页：https://github.com/akopytov/sysbench
-
----------------------
 
 ## 安装
 
@@ -57,8 +52,6 @@ make -j
 make install
 ```
 
----------------------
-
 ## 准备
 
 创建一个压测用PostgreSQL数据库：`bench`，初始化测试用数据库：
@@ -77,7 +70,7 @@ sysbench /usr/local/share/sysbench/oltp_read_write.lua \
 
 输出：
 
-```
+```text
 Creating table 'sbtest1'...
 Inserting 100000 records into 'sbtest1'
 Creating a secondary index on 'sbtest1'...
@@ -88,8 +81,6 @@ Creating table 'sbtest3'...
 Inserting 100000 records into 'sbtest3'
 Creating a secondary index on 'sbtest3'...
 ```
-
----------------------
 
 ## 压测
 
@@ -109,7 +100,7 @@ sysbench /usr/local/share/sysbench/oltp_read_write.lua \
 
 输出
 
-```
+```text
 sysbench 1.1.0-e6e6a02 (using bundled LuaJIT 2.1.0-beta3)
 
 Running the test with following options:

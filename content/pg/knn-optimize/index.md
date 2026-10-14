@@ -7,9 +7,6 @@ summary: >
   KNN问题极致优化，从传统关系型设计到PostGIS，实现GIS圈选场景下三万倍的性能提升。
 tags: [PostgreSQL, PG开发, 机器学习, GIS]
 ---
-
-
-
 灵活应用数据库的功能，可以轻松实现 GIS 圈选场景下三万倍的性能提升。
 
 | Level |        方法        | 性能/耗时(ms) | 可维护性/可靠性  |           备注            |
@@ -19,8 +16,6 @@ tags: [PostgreSQL, PG开发, 机器学习, GIS]
 |   3   |       联合索引       |    10     | 复杂度/魔数问题  |          额外复杂度          |
 |   4   |       GIST       |     4     | 最简表达，完全精确 | 形式简单，距离更精确，PostgreSQL限定 |
 |   5   | `btree_gist` 联合索引 |     1     | 最简表达，完全精确 | 形式简单，距离更精确，PostgreSQL限定 |
-
----------------
 
 ## 场景
 
@@ -46,8 +41,6 @@ tags: [PostgreSQL, PG开发, 机器学习, GIS]
 最近邻搜索是如此常用的功能，优化的效益非常显著。
 
 下面我们从一个具体问题出发，讲述这一功能实现方式的演化——如何实现超过三万倍的性能提升。
-
----------------
 
 ## 问题
 
@@ -160,7 +153,7 @@ LANGUAGE SQL IMMUTABLE COST 100;
 
 好了，开始进入干货环节。在PostGIS展现真正的实力之前，让我们来先看一看传统的关系型数据库，对解决这一问题，能走到多远。
 
----------------
+
 
 ## 0x02 方案
 
@@ -194,7 +187,7 @@ LIMIT 10;
 
 让我们先考察其执行计划：
 
-![](knn-explain-l1.png)
+![KNN极致优化：从RDS到PostGIS：LEVEL-1 暴力扫表（图 1）](knn-explain-l1.png)
 
 > ### 题外话：SQL内联
 >
@@ -300,7 +293,7 @@ ORDER BY 3 LIMIT 10;
 
 预热后，实际执行平均耗时35毫秒，相比暴力扫表有了近千倍的性能提高，一个巨大的进步。
 
-![](knn-explain-l2.png)
+![KNN极致优化：从RDS到PostGIS：LEVEL-2 经纬索引（图 2）](knn-explain-l2.png)
 
 对于比较简单粗糙的产品，这种方法已经达到了‘可用’的级别。但这一方法仍然存在许多问题。
 
@@ -358,10 +351,10 @@ ORDER BY 3 LIMIT 10;
 
 |           半径大了性能差           |                    半径小了圈不着                    |
 | :--------------------------------: | :--------------------------------------------------: |
-| ![](knn-badcase-1.png)  | ![mage-20180321221805](knn-badcase-2.webp) |
+| ![KNN极致优化：从RDS到PostGIS：Bad Case（图 3）](knn-badcase-1.png)  | ![mage-20180321221805](knn-badcase-2.webp) |
 | 繁荣的五道口，一公里圈10家小意思。 |        300公里外才有一家，新疆人民哭晕在厕所         |
 
----------------
+
 
 ## LEVEL-3 联合索引与聚簇
 
@@ -417,7 +410,7 @@ LIMIT 10;
 
 有没有优雅、正确、快速的解决方案呢？
 
----------------
+
 
 ## LEVEL-4 GIST
 
@@ -470,7 +463,7 @@ LIMIT 10;
 
 |            Geometry: 1.6 ms            |                 Geography: 3.4 ms                 |
 |:--------------------------------------:|:-------------------------------------------------:|
-| ![](knn-explain-l4-geom.png) | ![mage-20180321222024](knn-l4-geog.png) |
+| ![KNN极致优化：从RDS到PostGIS：R树（图 8）](knn-explain-l4-geom.png) | ![mage-20180321222024](knn-l4-geog.png) |
 
 现在，我们来看看PostGIS交出的答卷。
 
@@ -504,7 +497,7 @@ Generalized Search Tree. 通用搜索树，平衡树结构。对于空间几何�
 
 通常拓扑类的查询、粗略的圈人都适合用Geometry类型，而精确的计算与判断则必须使用Geography类型。这里，按照距离排序需要精确的距离，因此使用Geography。
 
----------------
+
 
 ## LEVEL-5 btree_gist
 
@@ -545,7 +538,7 @@ FROM pois6 WHERE category = 60000 ORDER BY 3 LIMIT 10;
 
 | Geometry: 0.85ms / Geography: 1.2ms |
 |:-----------------------------------:|
-|  ![](knn-explain-l5.png)  |
+|  ![KNN极致优化：从RDS到PostGIS：LEVEL-5 btree_gist（图 10）](knn-explain-l5.png)  |
 
 ```plsql
 CREATE OR REPLACE FUNCTION get_random_nearby_store() RETURNS TEXT
@@ -583,7 +576,7 @@ class GetHandler(http.server.BaseHTTPRequestHandler):
 with http.server.HTTPServer(("localhost", 3001), GetHandler) as httpd: httpd.serve_forever()
 ```
 
----------------
+
 
 ## 案例小结
 

@@ -4,7 +4,6 @@ date: 2025-08-08
 summary: Navigation of articles about PostgreSQL development, administration, principles, ecosystem, tools, architecture design, performance optimization, troubleshooting, and more.
 tags: [PostgreSQL]
 ---
-
 ## Ecosystem
 
 - [PGEXT.DAY 2025, See You There](/pg/pgext-day/)

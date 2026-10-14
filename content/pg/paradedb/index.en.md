@@ -6,10 +6,7 @@ summary: >
   ParadeDB aims to be an Elasticsearch alternative: "Modern Elasticsearch Alternative built on Postgres" — PostgreSQL for search and analytics.
 tags: [PostgreSQL, PG Ecosystem, Extension]
 ---
-
 > [Original WeChat Article Link](https://mp.weixin.qq.com/s/bx2dRxlrtLcM6AD2qsplQQ)
-
----------------
 
 ## New PostgreSQL Ecosystem Player: ParadeDB
 
@@ -27,15 +24,13 @@ ParadeDB actually consists of three PostgreSQL extensions: `pg_bm25`, `pg_analyt
 
 I've translated ParadeDB's official website introduction and four blog articles to introduce this new star in the PostgreSQL ecosystem. Today's article is the first one — an overview.
 
-![](paradedb-rank.webp)
-
----------------
+![New PostgreSQL Ecosystem Player: ParadeDB (figure 1)](paradedb-rank.webp)
 
 ## ParadeDB
 
 We're proud to introduce ParadeDB: a PostgreSQL database optimized for search scenarios. **ParadeDB** is the first Postgres database built to be an Elasticsearch alternative, designed for lightning-fast full-text, semantic, and hybrid search on PostgreSQL tables.
 
-![](paradedb-logo.png)
+![New PostgreSQL Ecosystem Player: ParadeDB — ParadeDB (figure 2)](paradedb-logo.png)
 
 ### What Problems Does ParadeDB Solve?
 

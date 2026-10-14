@@ -9,10 +9,7 @@ tags: [PostgreSQL, PG Development, Extension, Vector]
 ai: true
 aliases: ["/ai/llm-and-pgvector/"]
 ---
-
 New AI applications have shown exponential growth over the past year, and these applications face a common challenge: how to **store** and **query** AI embeddings represented as vectors at scale. This article focuses on **vector databases** hyped by AI, introduces the basic principles of AI embeddings and vector storage/retrieval, and demonstrates the functionality, performance, acquisition, and application of the vector database extension **PGVECTOR** through a concrete knowledge base retrieval case study.
-
-----------------
 
 ## How AI Works
 
@@ -38,8 +35,6 @@ This seemingly simple functionality has remarkably powerful effects. For example
 
 Through this approach, a fuzzy and difficult natural language processing problem is transformed into a simple and clear mathematical problem. Vector databases can efficiently solve this mathematical problem.
 
-----------------
-
 ## What Can Vector Databases Do?
 
 Databases have two core scenarios: transaction processing (OLTP) and data analysis (OLAP), and vector databases are no exception. Typical transaction processing scenarios include: knowledge bases, Q&A, recommendation systems, face recognition, image search, etc. Knowledge Q&A: given a natural language question, return results most similar to these inputs; image-to-image search: given an image, find other related images that are logically closest to this image.
@@ -50,8 +45,6 @@ A typical analysis scenario is **clustering**: categorizing a series of vectors 
 
 ![llm-pgvector-4.jpeg](llm-pgvector-4.jpeg)
 
-----------------
-
 ## PG Vector Extension PGVECTOR
 
 There are many vector database products on the market: commercial ones like Pinecone and Zilliz, open-source ones like Milvus and Qdrant, and plugin-based solutions for existing popular databases like `pgvector` and Redis Stack.
@@ -61,8 +54,6 @@ Among all existing vector databases, **pgvector** is unique — it chooses to bu
 ![llm-pgvector-5.png](llm-pgvector-5.png)
 
 **A qualified vector database must first be a qualified database, and achieving this from scratch is not easy**. **Compared to using a completely new independent database category, adding vector search capabilities to existing databases is obviously a more pragmatic, simple, and economical choice**.
-
-----------------
 
 ## PGVECTOR Knowledge Retrieval Case Study
 
@@ -121,8 +112,6 @@ def query(question, limit=64):
 
 ![llm-pgvector-6.png](llm-pgvector-6.png)
 
-----------------
-
 ## PGVECTOR Performance
 
 When functionality, correctness, and security meet requirements, users' attention turns to **performance**. PGVECTOR has decent performance. Although it has some gaps compared to specialized high-performance vector computation libraries, its performance is more than adequate for production environments.
@@ -173,15 +162,13 @@ WITH probe AS (SELECT v AS query FROM sift_query WHERE id =  (random() * 999)::B
   SELECT id FROM sift_base ORDER BY v <-> (SELECT query FROM probe) LIMIT 1;
 ```
 
-----------------
-
 ## How to Get PGVECTOR?
 
 Finally, let's discuss how to quickly obtain a usable PGVECTOR.
 
 Previously, PGVECTOR required manual download, compilation, and installation, so I submitted an issue to include it in the PostgreSQL Global Development Group's official repository[5]. You only need to use the PGDG source normally to directly `yum install pgvector_15` to complete installation. In database instances with `pgvector` installed, use `CREATE EXTENSION vector` to enable this extension.
 
-```
+```sql
 CREATE EXTENSION vector;
 CREATE TABLE items (vec vector(2));
 INSERT INTO items (vec) VALUES ('[1,1]'), ('[-2,-2]'), ('[-3,4]');
@@ -193,8 +180,6 @@ A simpler choice is the local-first open-source PostgreSQL RDS alternative — P
 ![llm-pgvector-8.png](llm-pgvector-8.png)
 
 Supabase and Neon also provide paid managed PostgreSQL services with the `pgvector` extension. AWS RDS for PostgreSQL also supported this extension in early May. For a complete list of managed service providers, refer to the `pgvector` GitHub Issue [6].
-
-----------------
 
 ## References
 

@@ -6,8 +6,6 @@ summary: >
   和大家分享一下最近 PG 生态有趣的一些进展：Omnigres、PG Mooncake、Citus 13、FerretDB 2.0、ParadeDB等。
 tags: [PostgreSQL, PG生态]
 ---
-
-
 读者朋友们，今天我要开始休假了。也许会停更两周，在这里提前祝大家新年快乐。
 
 当然在开始休假之前，这篇文章和大家分享一下最近 PG 生态有趣的一些进展。昨天我也赶紧趁着还有时间，推出了 Pigsty 3.2.2 版本与 Pig v0.1.3 ：这个版本将可用的 PG 扩展从 350 一路干到 400 个，其中包含了上面大部分花活，下面简单介绍一下：
@@ -23,8 +21,6 @@ tags: [PostgreSQL, PG生态]
 **ParadeDB**：在PG提供ES全文检索能力，PG块存储实现
 
 Pigsty 3.2.2：将上面的东西装进一个盒子里，开箱即用
-
-------
 
 ## Omnigres
 
@@ -60,8 +56,6 @@ Pigsty 在 v3.2.2 中正式提供了 mooncake 0.1 版本的二进制，请注意
 
 > 博客：ClickBench 说Postgres是一个很棒的分析数据库 https://www.mooncake.dev/blog/clickbench-v0.1
 
-------
-
 ## ParadeDB
 
 ParadeDB 是 Pigsty 的老朋友，我们从非常早期的时候就支持着 ParadeDB ，并见证着它一路发展壮大，成为 PostgreSQL 生态中提供 ElasticSearch 能力替代的领导者。
@@ -77,13 +71,11 @@ pg_search 在最近两周发布了新的 0.14 版本，这个版本中它们切�
 3. 完整支持 Postgres 的 MVCC（多版本并发控制）。
 4. 与 Postgres 缓冲区缓存集成，大幅提升索引创建速度与写入吞吐量。
 
-![img](https://www.paradedb.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fblock_storage_create_index.de1454d3.png&w=3840&q=75) ![img](https://www.paradedb.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fblock_storage_tps.598e54c0.png&w=3840&q=75)
+![pg_search 索引创建时间对比](block-storage-index.png) ![pg_search 写入吞吐量对比](block-storage-tps.png)
 
 pg_search 的最新版本已经收录到了 Pigsty 中，当然，我们也提供其他提供类似全文检索/分词能力的扩展，比如 pgroonga，p g_bestmatch，hunspell，以及中文分词 zhparser，供用户按需使用。
 
 > 博客：使用 Postgres 块存储布局的全文检索 https://www.paradedb.com/blog/block_storage_part_one
-
-------
 
 ## citus
 
@@ -95,11 +87,9 @@ Citus 是 PG 生态的分布式扩展，能够丝滑地将单机 PostgreSQL 主�
 
 通常来说，分布式数据库的运维管理要比主从麻烦很多，但我们设计了一套优雅的抽象，让部署管理 Citus 变得非常简单 —— 你只需要把他们当作多套水平的 PostgreSQL 集群来处理就好了，下面这个配置就可以一件拉起一套10节点的 Citus。
 
-我最近还写了一篇如何部署 Citus 高可用集群的教程，供感兴趣的用户参考： https://pigsty.cc/docs/tasks/citus/
+我最近还写了一篇如何部署 Citus 高可用集群的教程，供感兴趣的用户参考： https://pigsty.cc/docs/pgsql/tutorial/citus/
 
 > 博客：Citus v13.0.0 发布注记：https://github.com/citusdata/citus/blob/v13.0.0/CHANGELOG.md
-
-------
 
 ## FerretDB
 
@@ -117,8 +107,6 @@ FerretDB 为 MongoDB 用户丝滑迁移到 PostgreSQL 提供了一条阻力最�
 
 > 博客：https://blog.ferretdb.io/ferretdb-releases-v2-faster-more-compatible-mongodb-alternative/
 
-------
-
 ## Pigsty 3.2.2
 
 最后，就是 Pigsty v3.2.2 了。这一次 Release 版本号更新带来 40 个全新的扩展插件（当然其中 33 个来自 Omnigres），以及现有扩展的更新版本（比如 Citus，ParadeDB，PGML）。同时，我们还推动并跟进了 PolarDB PG 支持 ARM64，以及支持 Debian 系统，并跟进了 IvorySQL 最新 PostgreSQL 17.2 兼容的 4.2 版本。
@@ -130,6 +118,3 @@ Well ，听上去都是一些版本跟进的活儿，但要不是这样，我也
 老实说我得有七八年没搞前端了，上次折腾还是 JQuery 一把梭的时代，这次 Next.js / Vercel 这些新花样让我眼花撩乱。但好在摸清楚了之后也不算复杂，特别是有了GPT o1 pro 和 Cursor 的帮助下，花了一天时间就全部搞定了，AI 带来的惊人生产力提升确实让人感叹 。
 
 好吧，以上就是最近 PostgreSQL 生态的新闻，我也准备打包行李了，下午飞机出发去泰国，希望不要遇到电诈。在这里就提前祝大家新年快乐啦！
-
--
--

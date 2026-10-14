@@ -7,12 +7,9 @@ summary: Leverage JuiceFS to turn PostgreSQL into a filesystem with PITR capabil
 tags: [PostgreSQL, Object Storage]
 aliases: ["/ai/pgfs/", "/db/pgfs/"]
 ---
-
 A few days ago, I received a request from the Odoo community asking: "Databases support PITR (Point-in-Time Recovery), but is there a way to roll back the filesystem as well?"
 
-------
-
-### Why the "PGFS" Idea?
+## Why the "PGFS" Idea?
 
 From a veteran database engineer's perspective, this is both a challenging and exciting question. We all know that for ERP systems like Odoo, the most valuable asset is indeed the core business data stored in a PostgreSQL database.
 
@@ -21,8 +18,6 @@ However, many "enterprise applications" inevitably deal with file operations - u
 This led me to an interesting thought: **Is there a way to give filesystems PITR capabilities similar to databases?** Traditional approaches mostly point to expensive and complex CDP (Continuous Data Protection) solutions that require hardware appliances or block-level logging at the storage layer. But I wondered: for "poor folks," could we solve this problem more cleverly using open-source technologies?
 
 After much consideration, a combination that made me "slap my forehead" emerged: JuiceFS + PostgreSQL. By transforming PG into a filesystem, all file writes would enter the database, sharing the same WAL logs and enabling rollback to any historical point in time. This sounds fantastical, but don't worry - it actually "works." Let's see how JuiceFS accomplishes this.
-
-------
 
 ## Meet JuiceFS: Turning Database into Filesystem
 
@@ -62,8 +57,6 @@ juicefs umount /data2
 ```
 
 This way, any data written to the /data2 directory actually gets stored in PG's `jfs_blob` table. In other words, this filesystem and the PG database have become one!
-
-------
 
 ## PGFS in Action: Filesystem PITR
 
@@ -113,8 +106,6 @@ $ psql -c 'select * from monitor.heartbeat'
 
 This proves this approach works! We successfully achieved consistent FS/DB PITR through PGFS!
 
-------
-
 ## How's the Performance?
 
 So functionality exists, but what about performance?
@@ -147,8 +138,6 @@ Time used: 42.2 s, CPU: 687.2%, Memory: 179.4 MiB
 <details><summary>Another sample: Aliyun ESSD PL1 budget disk test results</summary><pre><code></code></pre></details>
 
 While throughput performance is certainly inferior to native FS, it's sufficient for scenarios with **small file volumes and low access frequency**. After all, using "database as filesystem" isn't meant for massive storage and high-concurrency writes, but to enable database and filesystem to "travel back in time together" - it just needs to work.
-
-------
 
 ## Completing the Puzzle: One-Click "Enterprise" Delivery
 

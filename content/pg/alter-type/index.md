@@ -6,9 +6,6 @@ summary: >
   如何在线修改表中列的类型，例如从INT升级为BIGINT？
 tags: [PostgreSQL, PG管理]
 ---
-
-
-
 如何在线修改主键列类型，比如将 `INT` 至 `BIGINT`，同时又不影响业务？
 
 假设在PG中有一个表，在设计的时候拍脑袋使用了 INT 整型主键，现在业务蓬勃发展发现序列号不够用了，想升级到BIGINT类型。这时候该怎么做呢？
@@ -20,8 +17,6 @@ ALTER TABLE pgbench_accounts ALTER COLUMN aid SET DATA TYPE BIGINT;
 ```
 
 但这种方式对于访问频繁的生产大表是不可行的
-
-------------------
 
 ## 太长；不看
 
@@ -63,8 +58,6 @@ DROP FUNCTION IF EXISTS sync_pgbench_accounts_abalance();
 DROP TRIGGER tg_sync_pgbench_accounts_abalance ON pgbench_accounts;
 ```
 
-------------------
-
 ## 外键
 
 ```sql
@@ -88,8 +81,6 @@ alter table my_table rename column new_id to id;
 commit;
 ```
 
-------------------
-
 ## 以pgbench为例
 
 ```sql
@@ -112,8 +103,6 @@ Indexes:
 ```sql
 ALTER TABLE pgbench_accounts ALTER COLUMN abalance SET DATA TYPE bigint;
 ```
-
-------------------
 
 ## 在线升级流程
 
@@ -171,8 +160,6 @@ alter table my_table drop column id;
 alter table my_table rename column new_id to id;
 commit;
 ```
-
-------------------
 
 ## 批量更新逻辑
 
@@ -235,8 +222,6 @@ psql ${DATNAME} -qAXwtc "${SQL}"
 ```bash
  UPDATE signup_users SET app_type = '' WHERE app_type != '';
 ```
-
-------------------
 
 ## 优化与改进
 

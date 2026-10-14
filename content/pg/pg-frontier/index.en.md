@@ -6,7 +6,6 @@ authors: [vonng]
 summary: Sharing some interesting recent developments in the PG ecosystem.
 tags: [PostgreSQL, PG Ecosystem]
 ---
-
 Dear readers, I'm starting my vacation today. I might stop posting for two weeks, so Happy New Year in advance.
 
 Of course, before starting vacation, this article shares some interesting recent developments in the PG ecosystem. Yesterday I also hurried to release Pigsty 3.2.2 and Pig v0.1.3 while I still had time: this version brought available PG extensions from 350 all the way to 400, including most of the exciting stuff above. Here's a brief introduction:
@@ -22,8 +21,6 @@ Of course, before starting vacation, this article shares some interesting recent
 **ParadeDB**: Providing ES full-text search capabilities in PG, PG block storage implementation
 
 Pigsty 3.2.2: Putting all the above into one box, ready to use out of the box
-
-------
 
 ## Omnigres
 
@@ -59,8 +56,6 @@ Finally, from this extension's name (mooncake), it's not hard to see this is a C
 
 > Blog: ClickBench says Postgres is a great analytical database https://www.mooncake.dev/blog/clickbench-v0.1
 
-------
-
 ## ParadeDB
 
 ParadeDB is an old friend of Pigsty. We've supported ParadeDB from very early on and witnessed its growth, becoming a leader in providing ElasticSearch capability alternatives in the PostgreSQL ecosystem.
@@ -76,13 +71,11 @@ Before `v0.14.0`, `pg_search` didn't use Postgres's block storage and buffer cac
 3. Full support for Postgres MVCC (Multi-Version Concurrency Control).
 4. Integration with Postgres buffer cache, dramatically improving index creation speed and write throughput.
 
-![img](https://www.paradedb.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fblock_storage_create_index.de1454d3.png&w=3840&q=75) ![img](https://www.paradedb.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fblock_storage_tps.598e54c0.png&w=3840&q=75)
+![pg_search index creation time comparison](block-storage-index.png) ![pg_search insert throughput comparison](block-storage-tps.png)
 
 pg_search's latest version has been included in Pigsty. Of course, we also provide other extensions offering similar full-text search/tokenization capabilities, such as pgroonga, pg_bestmatch, hunspell, and Chinese tokenization zhparser, for users to choose as needed.
 
 > Blog: Full-Text-Search Using Postgres Block Storage Layout https://www.paradedb.com/blog/block_storage_part_one
-
-------
 
 ## citus
 
@@ -94,11 +87,9 @@ Generally speaking, under contemporary hardware conditions, the vast majority of
 
 Usually, distributed database operations and management are much more troublesome than master-slave setups, but we designed an elegant abstraction making Citus deployment and management very simple — you just need to treat them as multiple horizontal PostgreSQL clusters. The following configuration can spin up a 10-node Citus cluster with one command.
 
-I recently also wrote a tutorial on deploying Citus high-availability clusters for interested users: https://pigsty.cc/docs/tasks/citus/
+I recently also wrote a tutorial on deploying Citus high-availability clusters for interested users: https://pigsty.cc/docs/pgsql/tutorial/citus/
 
 > Blog: Citus v13.0.0 Release Notes: https://github.com/citusdata/citus/blob/v13.0.0/CHANGELOG.md
-
-------
 
 ## FerretDB
 
@@ -116,8 +107,6 @@ FerretDB provides MongoDB users the path of least resistance for smooth migratio
 
 > Blog: https://blog.ferretdb.io/ferretdb-releases-v2-faster-more-compatible-mongodb-alternative/
 
-------
-
 ## Pigsty 3.2.2
 
 Finally, there's Pigsty v3.2.2. This release brings 40 brand new extension plugins (though 33 come from Omnigres), plus updated versions of existing extensions (like Citus, ParadeDB, PGML). Meanwhile, we also promoted and followed up on PolarDB PG supporting ARM64 and Debian systems, and followed up on IvorySQL's latest PostgreSQL 17.2 compatible version 4.2.
@@ -129,5 +118,3 @@ By the way, some users gave feedback that Pigsty's old website was too "ugly," w
 Honestly, I haven't touched frontend for seven or eight years. Last time I fiddled was during the jQuery era. This time, Next.js/Vercel and these new tricks made me dizzy. But fortunately, after figuring it out, it wasn't too complex, especially with help from GPT o1 pro and Cursor. I finished everything in a day. The amazing productivity boost brought by AI is indeed impressive.
 
 Well, that's the recent PostgreSQL ecosystem news. I'm also ready to pack my bags — afternoon flight to Thailand, hoping not to encounter telecom fraud. Here's wishing everyone Happy New Year in advance!
-
--

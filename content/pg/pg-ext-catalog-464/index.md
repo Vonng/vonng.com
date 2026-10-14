@@ -6,7 +6,6 @@ summary: >
   今天老冯又让 Claude Code 干了一件大好事 —— 做了一个全新的 PostgreSQL 扩展目录。就放在 https://pigsty.cc/ext 这里。
 tags: [PostgreSQL, 扩展, 文档]
 ---
-
 今天老冯又让 Claude Code 干了一件大好事 —— 做了一个全新的 PostgreSQL 扩展目录。就放在 <https://pigsty.cc/ext> 这里。
 
 说起来，这已经是第五版了。兜兜转转一大圈，又回到了第一版使用的 Hugo + Docsy 框架，重新融合到 Pigsty 主站。这个过程本身就是个故事，后面再聊。先说说这一版到底做了什么。
@@ -85,7 +84,11 @@ tags: [PostgreSQL, 扩展, 文档]
 
 这个扩展目录从第一版到现在，前后经历了五个版本：
 
-1.Hugo + Docsy（初版，融合在 Pigsty 主站）2.Docsify3.Next.js4.Hugo + Hextra（独立站点 pgext.cloud）5.Hugo + Docsy（现在，回归 Pigsty 主站）
+1. Hugo + Docsy（初版，融合在 Pigsty 主站）
+2. Docsify
+3. Next.js
+4. Hugo + Hextra（独立站点 pgext.cloud）
+5. Hugo + Docsy（现在，回归 Pigsty 主站）
 
 中间那个独立站点 pgext.cloud，因为没有备案、挂在 Cloudflare 上，有国内用户反馈访问不稳定，怀疑被墙。思来想去，还是老老实实用备案过的域名来做这件事。
 

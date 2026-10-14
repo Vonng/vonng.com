@@ -6,7 +6,6 @@ summary: >
   Wireshark is a very useful tool, especially suitable for analyzing network protocols. Here's a simple introduction to using Wireshark for packet capture and PostgreSQL protocol analysis.
 tags: [PostgreSQL, PG Admin, Tools]
 ---
-
 Wireshark is a very useful tool, especially suitable for analyzing network protocols.
 
 Here's a simple introduction to using Wireshark for packet capture and PostgreSQL protocol analysis.
@@ -22,9 +21,7 @@ Assuming debugging local PostgreSQL instance: 127.0.0.1:5432
 5. Add display filter `pgsql` to filter out irrelevant TCP protocol packets.
 6. Then you can perform some operations to observe and analyze the protocol
 
-![](wireshark-capture.png)
-
------------------
+![Wireshark Packet Capture Protocol Analysis — Quick Start (figure 1)](wireshark-capture.png)
 
 ## Packet Capture Example
 
@@ -42,7 +39,7 @@ This Bash command actually corresponds to three protocol phases and 5 groups of 
 * Simple query protocol: Client sends query command, server returns query results.
 * Termination: Client terminates connection.
 
-![](wireshark-capture-sample.png)
+![Wireshark Packet Capture Protocol Analysis — Packet Capture Example (figure 2)](wireshark-capture-sample.png)
 
 Wireshark has built-in PGSQL decoding, allowing us to conveniently view PostgreSQL protocol packet contents.
 
@@ -51,8 +48,6 @@ In the startup phase, the client sent a `StartupMessage (F)` to the server, and 
 In the simple query phase, the client sent a `Query (F)` message, directly sending the SQL statement `SELECT 1 AS a, 2 AS b;` as content to the server. The server returned `RowDescription(T)`, `DataRow(D)`, `CommandComplete(C)`, `ReadyForQuery(Z)` in sequence.
 
 In the termination phase, the client sent a `Terminate(X)` message to terminate the connection.
-
------------------
 
 ## Aside: Using Mac for Wireless Network Sniffing
 

@@ -7,7 +7,6 @@ summary: >
 tags: [PostgreSQL, PG Development, Commentary]
 draft: true
 ---
-
 > [Original article on WeChat](https://mp.weixin.qq.com/s/qAt4LBJh1pWXprsK7bLSXg)
 
 Today is the Mid-Autumn Festival. Happy holidays to everyone celebrating.

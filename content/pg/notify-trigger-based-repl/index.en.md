@@ -6,12 +6,9 @@ authors: [vonng]
 summary: "Cleverly utilizing PostgreSQL's Notify feature, you can conveniently notify applications of metadata changes and implement trigger-based logical replication."
 tags: [PostgreSQL, PG Development]
 ---
-
 Parallel and Hierarchy are the two great principles of architectural design, and **caching** is the embodiment of Hierarchy in the IO domain. Implementing caching mechanisms in single-threaded scenarios can be surprisingly simple, but it's hard to imagine mature applications having only one instance. When introducing concurrency while using caches, one must consider a problem: how to ensure data consistency (and real-time nature) between each instance's cache and the underlying data replicas.
 
 PostgreSQL introduced streaming replication in version 9 and logical replication in version 10, but these are all for PostgreSQL databases. If we want partial data from a PostgreSQL table to remain consistent with the state in application memory, we still need to implement our own logical replication mechanism. For critical small amounts of metadata, using triggers and Notify-Listen is a good choice.
-
-----------------
 
 ## Traditional Methods
 
@@ -19,13 +16,9 @@ The simplest brute-force approach is to regularly re-fetch data, for example, ev
 
 Asynchronous notification is a better approach, especially when read requests far exceed write requests. The instance receiving write requests notifies other instances by broadcasting. Redis's PubSub can implement this functionality very well. If the underlying storage is already Redis, this is naturally very convenient, but if the underlying storage is a relational database, introducing a new component for such functionality seems somewhat counterproductive. Moreover, considering that backend management programs or other applications would also need to publish notifications to Redis after modifying the database, it's really too troublesome. One feasible approach is to monitor RDS changes and broadcast notifications through database middleware - many things at Taobao work this way. But if the DB itself can handle things, why need additional components? Through PostgreSQL's Notify-Listen mechanism, this functionality can be conveniently implemented.
 
-----------------
-
 ## Objective
 
 Any database record changes (insert, delete, update) generated through any channel should be perceived in real-time by all related applications, for maintaining consistency between their own cache and database content.
-
-----------------
 
 ## Principle
 
@@ -37,8 +30,6 @@ PostgreSQL row-level triggers + Notify mechanism + custom protocol + Smart Clien
 * Smart Client: Client listens for message changes and performs corresponding operations on the cache based on messages.
 
 Actually, such a system is a super-simplified WAL (Write *After* Log) implementation, allowing application internal cache states to maintain *real-time* consistency with the database (compare to poll).
-
-----------------
 
 ## DDL
 
@@ -52,8 +43,6 @@ CREATE TABLE users (
   PRIMARY KEY (id)
 );
 ```
-
-----------------
 
 ## Triggers
 
@@ -83,8 +72,6 @@ FOR EACH ROW EXECUTE PROCEDURE notify_change();
 
 Creating triggers is also simple. Table-level triggers execute once per table change, while row-level triggers execute once per record. With this, all the work in the database is complete.
 
-----------------
-
 ## Message Format
 
 Notifications need to convey two pieces of information: the type of change operation and the identifier of the changed entity.
@@ -95,8 +82,6 @@ Notifications need to convey two pieces of information: the type of change opera
 Here, for simplicity, we directly use string type as ID. So inserting a record with `id=1` corresponds to message `I1`, updating a record with `id=5` corresponds to message `U5`, and deleting a record with `id=3` corresponds to message `D3`.
 
 More powerful functionality can be implemented through more complex message protocols.
-
-----------------
 
 ## Smart Client
 
@@ -186,7 +171,7 @@ func main() {
 
 The running result is as follows:
 
-```
+```text
 [NOTIFY] Action:I ID:001 Users: 001          
 [NOTIFY] Action:I ID:002 Users: 001,002      
 [NOTIFY] Action:I ID:003 Users: 002,003,001  
@@ -195,8 +180,6 @@ The running result is as follows:
 ```
 
 You can see that the cache indeed maintained the same state as the database.
-
-----------------
 
 ## Application Scenarios
 

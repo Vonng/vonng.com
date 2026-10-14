@@ -6,7 +6,6 @@ summary: >
   PG.center now provides Chinese documentation for PostgreSQL 18, 17, 16, 15, and 14, covering every major version still in active support.
 tags: [PostgreSQL, Documentation, Translation]
 ---
-
 Yesterday I launched [PG.center](https://pg.center/), a Chinese mirror of the PostgreSQL website. The response was immediate.
 
 There was one obvious gap, though: at launch, the site only had Chinese docs for PostgreSQL 18. Versions 17, 16, 15, and 14 are all still within lifecycle support, but I had taken the lazy route and temporarily left those sections in English.

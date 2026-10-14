@@ -7,8 +7,6 @@ summary: >
   Query optimization is one of the core responsibilities of DBAs. This article introduces how to use metrics provided by pg_stat_statements for macro-level PostgreSQL query optimization.
 tags: [PostgreSQL, PG Admin, Performance]
 ---
-
-
 In production online databases, slow queries not only affect end-user experience but also waste system resources, increase resource saturation, cause deadlocks and transaction conflicts, increase database connection pressure, and lead to master-slave replication delays. Therefore, **query optimization** is one of the core responsibilities of DBAs.
 
 On the path of query optimization, there are two different approaches:
@@ -30,8 +28,6 @@ The key to achieving these goals lies in **data support**. But where does the da
 —— **pg_stat_statements**！
 
 ![pgss-1.png](pgss-1.png)
-
--------------------
 
 ## Extension: PGSS
 
@@ -99,8 +95,6 @@ PGSS view SQL definition (PG 15+ version)
 
 Finally, the stability of query identifier **queryid** needs special attention: when the database binary version and system data directory are identical, the same type of query will have the same **queryid** (i.e., on physical replication master-slave, same-type queries have the same **queryid** by default), but this doesn't apply to logical replication. However, users should not rely too heavily on this assumption.
 
--------------------
-
 ## Raw Data
 
 Columns in the **PGSS** view can be divided into three categories:
@@ -154,8 +148,6 @@ Fortunately, tools like [Pigsty](https://pigsty.cc) monitoring system periodical
 **%M**: Percentage of metric M in the overall workload.
 
 These three types of metrics correspond exactly to the three types of macro optimization goals. The time derivative **dM/dt** reveals **resource usage per second**, typically used for resource consumption reduction optimization goals. The call count derivative **dM/dc** reveals **resource usage per call**, typically used for user experience improvement optimization goals. The percentage metric **%M** shows the percentage a query group occupies in the overall workload, typically used for workload balancing optimization goals.
-
--------------------
 
 ## Time Derivatives
 
@@ -259,8 +251,6 @@ Because PostgreSQL uses the operating system's FS Cache, even if block reads/wri
 
 **Time derivative metrics** **dM/dt** can show the overall workload inside a database instance/cluster, especially useful for resource usage optimization scenarios. But if your optimization goal is improving user experience, then another group of metrics — **call count derivatives dM/dc** — might be more meaningful.
 
--------------------
-
 ## Call Count Derivatives
 
 Above we calculated six types of important metrics' derivatives with respect to **time**. Another class of derived metrics is calculated by differentiating with respect to "**call count**", i.e., the denominator changes from time difference to QPS.
@@ -275,7 +265,7 @@ Calculating these metrics is also simple, we just need to:
 
 For PromQL implementation, **call count derivative metrics dM/dc** can be calculated using "**time derivative metrics dM/dt**". For example, to calculate RT, you can use **execution time per second** **/** **queries per second**, dividing the two metrics:
 
-```
+```text
 rate(pg_query_exec_time{}[1m]) / rate(pg_query_calls{}[1m])
 ```
 
@@ -351,8 +341,6 @@ Another use is checkpoint optimization: if you observe periodic fluctuations in 
 
 **dM/dc** metrics like these provide important absolute value metrics, but to find which queries have the greatest potential optimization benefits, you need **%M percentage metrics**.
 
--------------------
-
 ## Percentage Metrics
 
 Now let's study the third type of metrics: **percentage metrics**. That is, the proportion a certain query group occupies relative to the overall workload.
@@ -387,8 +375,6 @@ We can also directly analyze current PGSS snapshots, sort by different concerns,
 
 I/O time is very helpful for analyzing query spike causes
 
--------------------
-
 ## Summary
 
 Finally, let's summarize the content above.
@@ -404,8 +390,6 @@ PGSS provides rich metrics, among which the most important cumulative metrics ca
 Usually, we select high-value candidate optimization queries based on **%M**: percentage metric Top queries, and use **dM/dt** and **dM/dc** metrics for further evaluation, confirming whether there's optimization space and feasibility, and evaluating post-optimization effects. This cycles continuously.
 
 After understanding macro optimization methodology, we can use this approach to locate and optimize slow queries. Here's a specific example of [Using Monitoring Systems to Diagnose PG Slow Queries](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484478&idx=1&sn=ea44675df79b60a12273e78b358bb557&chksm=fe4b31e5c93cb8f325ba1e4389874112bd5441280492c87e259a32aa67e00c7e0028e7dc51eb&scene=21#wechat_redirect). In the next article, we'll introduce experience and techniques for PostgreSQL query **micro optimization**.
-
--------------------
 
 ## References
 

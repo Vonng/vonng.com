@@ -6,27 +6,20 @@ summary: >
   PostGIS是PG的杀手锏插件，但编译安装可不容易。
 tags: [PostgreSQL, PG管理, 扩展]
 ---
-
-
-----------
 强烈建议使用使用 yum / apt 命令从 PostgreSQL 官方二进制仓库安装 PostGIS。
 
 > 参考<http://www.postgresonline.com/journal/archives/362-An-almost-idiots-guide-to-install-PostgreSQL-9.5,-PostGIS-2.2-and-pgRouting-2.1.0-with-Yum.html>
 
-----------
-
-### 1. 安装环境
+## 1. 安装环境
 
 - CentOS 7
 - PostgreSQL10
 - PostGIS2.4
 - PGROUTING2.5.2
 
-----------
+## 2. PostgreSQL10安装
 
-### 2. PostgreSQL10安装
-
-##### 2.1 确定系统环境
+### 2.1 确定系统环境
 
 ```bash
 $ uname -a
@@ -34,17 +27,17 @@ $ uname -a
 Linux localhost.localdomain 3.10.0-693.el7.x86_64 #1 SMP Tue Aug 22 21:09:27 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
-##### 2.2 安装正确的rpm包
+### 2.2 安装正确的rpm包
 
-```
+```text
   rpm -ivh https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/pgdg-centos10-10-2.noarch.rpm
 ```
 
 不同的系统使用不同的rpm源，你可以从 http://yum.postgresql.org/repopackages.php 获取相应的平台链接。
 
-##### 2.3 查看rpm包是否正确安装
+### 2.3 查看rpm包是否正确安装
 
-```
+```text
 yum list | grep pgdg
 
 pgdg-centos10.noarch                        10-2                       installed
@@ -56,19 +49,19 @@ MigrationWizard.noarch                      1.1-3.rhel7                pgdg10
 ...
 ```
 
-##### 2.4 安装PG
+### 2.4 安装PG
 
-```
+```text
 yum install -y postgresql10 postgresql10-server postgresql10-libs postgresql10-contrib postgresql10-devel
 ```
 
 你可以根据需要选择安装相应的rpm包。
 
-##### 2.5 启动服务
+### 2.5 启动服务
 
 默认情况下，PG安装目录为 `/usr/pgsql-10/`，data目录为 `/var/lib/pgsql/`,系统默认创建用户 `postgres`
 
-```
+```text
 passwd postgres # 为系统postgres设置密码
 su - postgres 	# 切换到用户postgres
 /usr/pgsql-10/bin/initdb -D /var/lib/pgsql/10/data/	# 初始化数据库
@@ -76,15 +69,15 @@ su - postgres 	# 切换到用户postgres
 /usr/pgsql-10/bin/psql postgres postgres	# 登录
 ```
 
-### 3. PostGIS安装
+## 3. PostGIS安装
 
-```
+```text
 yum install postgis24_10-client postgis24_10
 ```
 
 > 如果遇到错误如下：
 >
-> ```
+> ```text
 > --> 解决依赖关系完成
 > 错误：软件包：postgis24_10-client-2.4.2-1.rhel7.x86_64 (pgdg10)
 >           需要：libproj.so.0()(64bit)
@@ -94,21 +87,21 @@ yum install postgis24_10-client postgis24_10
 >
 > 你可以尝试通过以下命令解决：`yum -y install epel-release`
 
-### 4. fdw安装
+## 4. fdw安装
 
-```
+```text
 yum install ogr_fdw10
 ```
 
-### 5. pgrouting安装
+## 5. pgrouting安装
 
-```
+```text
 yum install pgrouting_10
 ```
 
-### 6. 验证测试
+## 6. 验证测试
 
-```
+```text
 # 登录pg后执行以下命令，无报错则证明成功
 CREATE EXTENSION postgis;
 CREATE EXTENSION postgis_topology;
@@ -116,8 +109,6 @@ CREATE EXTENSION ogr_fdw;
 
 SELECT postgis_full_version();
 ```
-
-----------
 
 ## 编译工具
 
@@ -129,8 +120,6 @@ SELECT postgis_full_version();
 
 CentOS下直接通过 `sudo yum install gcc gcc-c++ git autoconf automake libtool m4` 安装。
 
-----------
-
 ## 必选依赖
 
 ### PostgreSQL
@@ -141,7 +130,7 @@ PostgreSQL是PostGIS的宿主平台。这里以10.1为例。
 
 GEOS是Geometry Engine, Open Source的缩写，是一个C++版本的几何库。是PostGIS的核心依赖。
 
-PostGIS 2.4用到了GEOS 3.7的一些新特性。不过截止到现在，GEOS官方发布的最新版本是3.6.2，3.7版本的GEOS可以通过[Nightly snapshot](http://geos.osgeo.org/snapshots/) 获取。所以目前如果希望用到所有新特性，需要从源码编译安装GEOS 3.7。
+PostGIS 2.4用到了GEOS 3.7的一些新特性。不过截止到现在，GEOS官方发布的最新版本是3.6.2，3.7版本的GEOS可以通过[Nightly snapshot](https://libgeos.org/usage/download/) 获取。所以目前如果希望用到所有新特性，需要从源码编译安装GEOS 3.7。
 
 ```bash
 # 滚动的每日更新，此URL有可能过期，检查这里http://geos.osgeo.org/snapshots/
@@ -205,7 +194,7 @@ wget -P . http://download.osgeo.org/gdal/2.2.3/gdal-2.2.3.tar.gz
 
 ### SFCGAL
 
-SFCGAL是CGAL的扩展包装，虽说是可选项，但是很多函数都会经常用到，因此这里也需要安装。[下载页面](http://oslandia.github.io/SFCGAL/installation.html)
+SFCGAL是CGAL的扩展包装，虽说是可选项，但是很多函数都会经常用到，因此这里也需要安装。[下载页面](https://sfcgal.gitlab.io/SFCGAL/installation/)
 
 SFCGAL依赖的东西比较多。包括 `CMake, CGAL, Boost, MPFR, GMP` 等，其中，`CGAL` 在上面手动安装过了。这里还需要手动安装BOOST
 

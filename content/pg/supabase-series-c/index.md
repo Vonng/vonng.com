@@ -6,7 +6,6 @@ summary: >
   PostgreSQL生态的创业公司不断融资，高歌猛进，吞噬整个数据库世界指日可待。附：Supabase自建教程
 tags: [PostgreSQL, PG生态, 商业]
 ---
-
 昨天，**Supabase** 官宣了八千万美金的 C 轮融资，这是继 2022 年八千万 B 轮融资后的新一轮融资，在当下资本市场与数据库行业环境中难能可贵。
 
 老实说，我并不感到意外，在《[**PostgreSQL 正在吞噬数据库世界**](/pg/pg-eat-db-world/)》一文中，我就说过，PostgreSQL 将会成为数据库世界的 Linux，而聪明的资本已经开始涌入这个领域。
@@ -27,15 +26,11 @@ tags: [PostgreSQL, PG生态, 商业]
 
 顺便一提，这些插件都已经整合到 Pigsty 中，开箱即用了。
 
----
-
 ## Supabase  B 轮/C 轮融资 80M \$
 
 Supabase 封装了 PostgreSQL 作为底层的数据库，并深度利用了 PostgreSQL 的扩展插件机制，提供了一个开源的 Firebase 替代 —— 一条龙式地解决了数据库，对象存储，认证等问题，实现了 Backend as a Service，提供了极佳的开发者体验。
 
 ![图片](04.webp)
-
----
 
 ### Neon  B 轮/C 轮融资 25M / 46M
 
@@ -43,15 +38,11 @@ Neon 将 PostgreSQL 改造为开箱即用的 Serverless 服务，将易用性体
 
 ![图片](05.webp)
 
----
-
 #### TimescaleDB  B 轮/C 轮融资 25M / 46M
 
 TimescaleDB 基于 PostgreSQL，提供了一个时序数据库插件，强化了 PostgreSQL 的时序/分析能力。此外，它们还开发了诸如 pgai，pgvectorscale 这样的扩展。
 
 ![图片](06.webp)
-
----
 
 #### ClickHouse 收购 PeerDB
 
@@ -60,8 +51,6 @@ PeerDB  是一家专注于高性价比 Postgres 复制和变更数据捕获的�
 [ClickHouse 收购 PeerDB：这浓眉大眼的也要来搞 PG 了？](/pg/clickhouse-peerdb/)
 
 ![图片](07.webp)
-
----
 
 **如何自建 Supabase？**
 
@@ -75,15 +64,11 @@ Supabase 实际上分为两个部分，有状态的部分使用外部的 Postgre
 
 ![图片](09.webp)
 
----
-
 ## 数据库老司机
 
 ![图片](10.webp)
 
 ### （这个小助手很懒，请使劲拍打他）
-
----
 
 #### 世界上最流行的数据库 PostgreSQL
 
@@ -128,7 +113,5 @@ Supabase 实际上分为两个部分，有状态的部分使用外部的 Postgre
 [PGCon.Dev 扩展生态峰会小记 @ 温哥华](/pg/pgcondev-2024/)\
 
 #### 开箱即用的 PostgreSQL 数据库发行版 Pigsty
-
----
 
 发布版本：[微信公众号](https://mp.weixin.qq.com/s/fi_p3tTZTnwP5XDJrkVbQw)

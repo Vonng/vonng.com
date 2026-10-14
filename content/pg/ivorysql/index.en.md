@@ -6,13 +6,10 @@ summary: >
   A migration case with only a JAR and no source code shows why Oracle syntax compatibility is not always a fake requirement, and how IvorySQL + Pigsty can absorb legacy debt at low cost.
 tags: [PostgreSQL, Oracle, Domestic Database]
 ---
-
 I used to roll my eyes at "Oracle compatibility" in PostgreSQL forks.
 My take was simple: if your SQL doesn't run on vanilla Postgres, fix your app rather than database.
 
 Then a migration task slightly changed my mind.
-
---------
 
 ## The Problem: A JAR and Nothing Else
 
@@ -28,8 +25,6 @@ The real problem was the application: the source code was **lost**.
 
 All that remained was a JAR file. SQL statements were baked into it as string literals,
 and those statements used EDB's Oracle-compatible syntax — things like bare SYSDATE.
-
--------
 
 ## Why You Can't Just "Add a Function"
 
@@ -65,8 +60,6 @@ Decompiling the JAR to patch SQL string literals is theoretically possible, but 
 
 So the problem landed on the database layer.
 
--------
-
 ## IvorySQL as a Pragmatic Solution
 
 The requirement is awkward, but still real. So what are the options?
@@ -83,8 +76,6 @@ One important nuance: this is **SQL-level** compatibility, not wire-protocol com
 Clients still connect with standard PostgreSQL drivers.
 IvorySQL exposes a separate Oracle-compatible port (1521 by default) where the parser accepts Oracle idioms.
 The standard PG port (5432) remains vanilla:
-
-------
 
 ## But raw RPM is not enough
 
@@ -125,8 +116,6 @@ I haven't hit stability issues in practice, though for kernel-level bugs, HighGo
 
 So yes, this solved a very specific legacy Oracle-compatibility problem cleanly.
 It is a niche, but clearly not a fake one.
-
--------
 
 ## Pigsty as a "meta-distribution"
 

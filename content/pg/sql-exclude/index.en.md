@@ -6,18 +6,13 @@ summary: >
   Exclude constraint is a PostgreSQL extension that can implement more advanced and sophisticated database constraints.
 tags: [PostgreSQL, PG Development]
 ---
-
 Exclude constraint is a PostgreSQL extension that can implement more advanced and sophisticated database constraints.
-
------------
 
 ## Introduction
 
 Data integrity is extremely important, but data integrity guaranteed by applications isn't always reliable: humans make mistakes, programs have bugs. If data integrity can be enforced through database constraints, that would be ideal: backend programmers don't need to worry about subtle errors caused by race conditions, and data analysts can be confident in data quality without needing validation and cleaning.
 
 Relational databases typically provide `PRIMARY KEY`, `FOREIGN KEY`, `UNIQUE`, `CHECK` constraints, but not all business constraints can be expressed with these few constraint types. Some constraints are slightly more complex, such as ensuring IP network segments in an IP range table don't overlap, ensuring the same conference room doesn't have overlapping reservation times, ensuring geographical boundaries of different cities in an administrative division table don't overlap. Traditionally implementing such guarantees is quite difficult: for instance, `UNIQUE` constraints cannot express this semantic, while `CHECK` with stored procedures or triggers can implement such checks but are quite tricky. PostgreSQL's `EXCLUDE` constraint can elegantly solve this class of problems.
-
------------
 
 ## Exclude Constraint Syntax
 
@@ -30,13 +25,11 @@ exclude_element in an EXCLUDE constraint is:
 
 The `EXCLUDE` clause defines an exclusion constraint, which guarantees that if any two rows are compared on the specified columns or expressions using the specified operators, not all comparisons will return `TRUE`. If all specified operators test for equality, this is equivalent to a `UNIQUE` constraint, although a normal unique constraint would be faster. However, exclusion constraints can specify more general constraints than simple equality. For example, you can use the `&&` operator to specify a constraint requiring no two rows in the table contain overlapping circles (see [Section 8.8](http://www.postgres.cn/docs/11/datatype-geometric.html)).
 
-Exclusion constraints are implemented using an index, so each specified operator must be associated with an appropriate operator class (see [Section 11.9](http://www.postgres.cn/docs/11/indexes-opclass.html)) for the index access method *index_method*. The operators are required to be commutative. Each *exclude_element* can optionally specify an operator class or ordering options, which are fully described in [???](http://www.postgres.cn/docs/11/SQL-CREATETABLE.html).
+Exclusion constraints are implemented using an index, so each specified operator must be associated with an appropriate operator class (see [Section 11.9](http://www.postgres.cn/docs/11/indexes-opclass.html)) for the index access method *index_method*. The operators are required to be commutative. Each *exclude_element* can optionally specify an operator class or ordering options, which are fully described in [CREATE TABLE](https://www.postgresql.org/docs/11/sql-createtable.html).
 
 The access method must support `amgettuple` (see [Chapter 61](http://www.postgres.cn/docs/11/indexam.html)), which currently means GIN cannot be used. Although allowed, using B-tree or hash indexes in an exclusion constraint makes no sense, as they cannot do better than a normal unique index. Therefore in practice, the access method will always be GiST or SP-GiST.
 
 The *predicate* allows you to specify an exclusion constraint on a subset of the table. Internally this creates a partial index. Note that surrounding parentheses are required for this.
-
--------------
 
 ## Use Case: Conference Room Reservation
 
@@ -78,8 +71,6 @@ The `EXCLUDE` constraint automatically creates a corresponding GIST index:
 ```sql
 "meeting_room_room_id_range_excl" EXCLUDE USING gist (room_id WITH =, range WITH &&)
 ```
-
-------------
 
 ## Use Case: Ensuring IP Network Segments Don't Overlap
 

@@ -6,9 +6,6 @@ summary: >
   什么？不知道COLLATTION是什么，那记住一件事，用C COLLATE准没错！
 tags: [PostgreSQL, PG管理]
 ---
-
-
-
 为什么Pigsty在初始化Postgres数据库时默认指定了 `locale=C` 与 `encoding=UTF8`
 
 答案其实很简单，**除非真的明确知道自己会用到LOCALE相关功能，否则就根本不应该配置 `C.UTF8` 之外的任何字符编码与本地化排序规则选项**。
@@ -21,9 +18,7 @@ tags: [PostgreSQL, PG管理]
 
 不幸的是，在PostgreSQL`locale` 与 `encoding` 的默认配置取决于操作系统的配置，因此 `C.UTF8` 可能并不是默认的配置，这就导致了很多人误用LOCALE而不自知，白白折损了大量性能，也导致了某些数据库特性无法正常使用。
 
-![](featured.webp)
-
-------
+![PG中的本地化排序规则（图 1）](featured.webp)
 
 ## 太长；不看
 
@@ -31,8 +26,6 @@ tags: [PostgreSQL, PG管理]
 * 使用非C本地化规则，可能导致涉及字符串比较的操作开销增大几倍到几十倍，**对性能产生显著负面影响**
 * 使用非C本地化规则，会导致 `LIKE` 查询无法使用普通索引，容易踩坑雪崩。
 * 使用非C本地化规则的实例，可以通过 `text_ops COLLATE "C"` 或 `text_pattern_ops` 建立索引，支持 `LIKE` 查询。
-
-------
 
 ## LOCALE是什么
 
@@ -64,8 +57,6 @@ tags: [PostgreSQL, PG管理]
 * `MO` 澳门：`zh_MO`
 * `TW` 台湾：`zh_TW`
 * `SG` 新加坡：`zh_SG`
-
-------
 
 ## LOCALE的例子
 
@@ -136,8 +127,6 @@ int_curr_symbol    "CNY "
 
 下面通过一个例子来介绍LOCALE中的COLLATION如何影响Postgres的行为。
 
-------
-
 ## 排序规则一例
 
 创建一张包含7个汉字的表，然后执行排序操作。
@@ -186,15 +175,13 @@ vonng=# SELECT name, ascii(name) FROM some_chinese ORDER BY name COLLATE "C";
 
 当然这个查询结果取决于 `zh_CN` 排序规则的具体定义，像这样的排序规则并不是数据库本身定义的，数据库本身提供的排序规则就是 `C`（或者其别名 `POSIX`）。COLLATION的来源，通常要么是操作系统，要么是 `glibc`，要么是第三方的本地化库（例如 `icu`），所以可能因为不同的 **实质定义** 出现不同的效果。
 
-#### **但代价是什么？**
+### **但代价是什么？**
 
 PostgreSQL中使用非 `C` 或非 `POSIX` LOCALE的最大负面影响是：
 
 **特定排序规则对涉及字符串大小比较的操作有巨大的性能影响，同时它还会导致无法在 `LIKE` 查询子句中使用普通索引。**
 
 另外，C LOCALE是由数据库本身确保在任何操作系统与平台上使用的，而其他的LOCALE则不然，所以使用非C Locale的可移植性更差。
-
-------
 
 ## 性能损失
 
@@ -234,7 +221,7 @@ SELECT * FROM app order by name COLLATE "zh_CN";
 
 下面是实验5对应的详细执行计划，即使配置了足够大的内存，依然会溢出到磁盘执行外部排序。尽管如此，显式指定 `LOCALE` 的实验都出现了此情况，因此可以横向对比出C与 `zh_CN` 的性能差距来。
 
-![](collation-plan.jpg)
+![PG中的本地化排序规则：性能损失（图 2）](collation-plan.jpg)
 
 另一个更有对比性的例子是 **比大小**。
 
@@ -262,8 +249,6 @@ SELECT count(*) FROM app WHERE name > 'World' COLLATE "zh_CN";
 
 除此之外，错误的Locale不仅仅会带来性能损失，还会导致 **功能损失**。
 
-------
-
 ## 功能缺失
 
 除了性能表现糟糕外，另一个令人难以接受的问题是，使用非 `C` 的LOCALE，**LIKE查询走不了普通索引**。
@@ -276,7 +261,7 @@ SELECT * FROM app WHERE name LIKE '中国%';
 
 找出所有以“中国”两字开头的应用。
 
-#### **在使用C的库上**
+### **在使用C的库上**
 
 该查询能正常使用 `app_pkey` 索引，利用主键B树的有序性加速查询，约2毫秒内执行完毕。
 
@@ -293,7 +278,7 @@ postgres@meta:5432/meta=# EXPLAIN SELECT * FROM app WHERE name LIKE '中国%';
 (3 rows)
 ```
 
-#### **在使用en_US的库上**
+### **在使用en_US的库上**
 
 我们发现，**这个查询无法利用索引**，走了全表扫描。查询劣化至70毫秒，性能恶化了三四十倍。
 
@@ -308,7 +293,7 @@ vonng=# EXPLAIN SELECT * FROM app WHERE name LIKE '中国%';
    Filter: (name ~~ '中国%'::text)
 ```
 
-#### **为什么？**
+### **为什么？**
 
 因为索引（B树索引）的构建，也是建立在 **序** 的基础上，也就是 **等值** 和 **比大小** 这两个操作。
 
@@ -316,7 +301,7 @@ vonng=# EXPLAIN SELECT * FROM app WHERE name LIKE '中国%';
 
 因此，**只有最朴素的 `C` LOCALE，才能够正常地进行模式匹配**。C LOCALE的比较规则非常简单，就是挨个比较 **字符** 码位，不玩那一套花里胡哨虚头巴脑的东西。所以，如果您的数据库不幸使用了非C的LOCALE，那么在执行 `LIKE` 查询时就没有办法使用默认的索引了。
 
-#### 解决办法
+### 解决办法
 
 对于非C LOCALE的实例，只有 **建立特殊类型的索引**，才能支持此类查询：
 
@@ -342,8 +327,6 @@ Index Only Scan using app_name_idx on app  (cost=0.43..1.45 rows=151 width=25) (
 `LIKE` 无法使用普通索引这个问题，看上去似乎可以通过额外创建一个 `text_pattern_ops` 索引来曲线解决。但这也意味着原本可以直接利用现成的 `PRIMARY KEY` 或 `UNIQUE` 约束自带索引解决的问题，现在需要额外的维护成本与存储空间。
 
 对于不熟悉这一问题的开发者来说，很有可能因为错误的LOCALE配置，导致本地没问题的模式结果在线上因为没有走索引而雪崩。（例如本地使用C，但生产环境用了非C LOCALE）。
-
-------
 
 ## 兼容性
 

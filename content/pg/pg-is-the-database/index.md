@@ -8,7 +8,6 @@ summary: >
   PostgreSQL并不是一个简单的关系型数据库，而是一个数据管理的抽象框架，具有吞噬整个数据库世界的力量，“一切皆用Postgres”已经成为主流视野的最佳实践。
 tags: [PostgreSQL, PG生态, 扩展]
 ---
-
 现在我希望你把下面的这篇文章，转换成为一篇口播稿件，必须转换成发音文本对齐的格式，比如 440 个扩展，要转换成“四百四十个扩展”，不能出现数字字符，方便阅读理解。
 
 你必须保持原文的主体内容，只能在语法/句法表达上进行优化，我需要你深入思考，生成流畅，通顺，自然，朗朗上口，有押韵更好的口播版本稿件。
@@ -17,14 +16,12 @@ tags: [PostgreSQL, PG生态, 扩展]
 
 请你开始，下面是需要转换的文章。
 
-# PostgreSQL 吞噬数据库世界
+## PostgreSQL 吞噬数据库世界
 
 PostgreSQL 并不是一个简单的关系型数据库，而是一个数据管理的抽象框架，具有吞噬整个数据库世界的力量。
 而这也是正在发生的事情 —— “一切皆用 Postgres” 已经不再是少数精英团队的前沿探索，而是成为了一种进入主流视野的最佳实践。
 
-------
-
-## OLAP 领域迎来踢馆者
+### OLAP 领域迎来踢馆者
 
 在 2016 年的一次数据库沙龙里，我提出了一个观点： 现在 PostgreSQL 生态的一个主要遗憾是，缺少一个 **足够好** 的列式存储引擎与分析扩展来做 OLAP。
 尽管PostgreSQL 本身提供了很强大的分析功能集，应付常规的分析任务绰绰有余。但在较大数据量下全量分析的 **性能**，相比专用的实时数仓仍然有些不够看。
@@ -48,15 +45,13 @@ DuckDB 也许是 OLAP 实战性能最快的数据库了，和 Clickhouse 不相�
 虽然比原生的 ClickHouse 仍然慢了两三倍，但这已经足够好了，
 而这弥补了 PostgreSQL 在 OLAP 性能这最后一块关键短板。
 
-------
-
-## 分久必合的数据库领域
+### 分久必合的数据库领域
 
 数据库诞生伊始，并没有 OLTP 与 OLAP 的分野。OLAP 数据仓库从数据库中“独立”出来，已经是上世纪九十年代时候的事了 —— 因为传统的 OLTP 数据库难以支撑起分析场景下的查询模式，数据量与性能要求。
 
 在相当一段时间里，数据处理的最佳实践是使用 MySQL / PG 处理 OLTP 工作负载，并通过 ETL 将数据同步到专用的 OLAP 组件中去处理，比如 Greenplum, ClickHouse, Doris, Snowflake 等等。
 
-![](ddia.png)
+![PostgreSQL 吞噬数据库世界：分久必合的数据库领域（图 2）](ddia.png)
 
 > 设计数据密集型应用，Martin Kleppmann，[第三章](http://ddia.vonng.com/#/ch3)
 
@@ -75,9 +70,7 @@ DuckDB 也许是 OLAP 实战性能最快的数据库了，和 Clickhouse 不相�
 
 基本工作假设的变化，将重新推动数据库世界从百花齐放的“合久必分”阶段，走向“分久必合”的阶段，从大爆发到大灭绝，大浪淘沙中，新的大一统超融合数据库将会出现，重新统一 OLTP 与 OLAP。而承担重新整合数据库领域这一使命的会是谁？
 
-------
-
-## 吞食天地的 PostgreSQL
+### 吞食天地的 PostgreSQL
 
 数据库领域有许多“细分领域”：时序数据库，地理空间数据库，文档数据库，搜索数据库，图数据库，向量数据库，消息队列，对象数据库。而 PostgreSQL 在任何一个领域都不会缺席。
 
@@ -89,7 +82,7 @@ DuckDB 也许是 OLAP 实战性能最快的数据库了，和 Clickhouse 不相�
 
 然而 PostgreSQL 要替代的可不仅仅是 OLAP 数仓，它的野望是整个数据库世界！
 
-[![ecosystem.jpg](ecosystem.jpg)](https://pigsty.cc/docs/reference/extension/)
+[![ecosystem.jpg](ecosystem.jpg)](https://pigsty.cc/docs/pgsql/ext/)
 
 我们不禁要问， PostgreSQL 有何德何能，可当此大任？
 诚然 PostgreSQL 先进，但 Oracle 也先进；PostgreSQL 开源，但 MySQL 也开源。
@@ -102,15 +95,13 @@ PostgreSQL **先进且开源**，这是它与 Oracle / MySQL 竞争的底气，
 
 PostgreSQL 并不是一个简单的关系型数据库，而是一个数据管理的抽象框架，**具有囊括一切，吞噬整个数据库世界的力量**。而它的核心竞争力（除了开源与先进）来自 **可扩展性**，即基础设施的 **可复用性** 与扩展插件的 **可组合性**。
 
-------
-
-### 极致可扩展性的魔法
+#### 极致可扩展性的魔法
 
 PostgreSQL 允许用户开发功能模块，复用数据库公共基础设施，以最低的成本交付功能。例如，仅有两千行代码的向量数据库扩展 pgvector 与百万行代码的 PostgreSQL 在复杂度上相比可以说微不足道，但正是这“微不足道”的扩展，实现了完整的向量数据类型与索引能力，干翻了几乎所有专用向量数据库。
 
 为什么？因为 PGVECTOR 作者不需要操心数据库的通用额外复杂度：事务 ACID，故障恢复，备份PITR，高可用，访问控制，监控，部署，三方生态工具，客户端驱动这些需要成百上千万行代码才能解决好的问题，只需要关注自己所需问题的本质复杂度即可。
 
-[![](vectordbs.jpg)](/db/svdb-is-dead)
+[![PostgreSQL 吞噬数据库世界：极致可扩展性的魔法（图 6）](vectordbs.jpg)](/db/svdb-is-dead)
 
 > 向量数据库哪家强？
 
@@ -120,15 +111,11 @@ PostgreSQL 允许用户开发功能模块，复用数据库公共基础设施，
 
 > Pigsty 中提供了 [**255**](https://pgext.cloud/zh/list) 个可用扩展插件，在生态中还有 1000+ 扩展
 
-------
-
 可扩展性带来的另一点巨大优势是扩展的 **可组合性**，让不同扩展相互合作，产生出 1+1 >> 2 的协同效应。
 例如，TimescaleDB 可以与 PostGIS 组合使用，提供时空数据支持；再比如，提供全文检索能力的 BM25 扩展可以和提供语义模糊检索的 PGVector 扩展组合使用，提供混合检索能力。
 
 再比如，**分布式** 扩展 Citus 可以将单机主从数据库集群，原地升级改造为透明水平分片的分布式数据库集群。
 而这个能力是可以与其他功能正交组合的，因此，PostGIS 可以成为分布式地理数据库，PGVector 可以成为分布式向量数据库，ParadeDB 可以成为分布式全文搜索数据库，诸如此类。
-
-------
 
 更强大的地方在于，扩展插件是 **独立演进** 的，不需要繁琐的主干合并，联调协作。
 因此可以 Scale  —— PG 的可扩展性允许无数个团队并行探索数据库前研发展方向，而扩展全部都是的可选的，不会影响主干核心能力的稳定性。
@@ -137,9 +124,7 @@ PostgreSQL 允许用户开发功能模块，复用数据库公共基础设施，
 通过极致可扩展性的魔法，PostgreSQL 做到了 **守正出奇，实现了主干极致稳定性与功能敏捷性的统一。**
 扎实的基本盘配上惊人的演进速度，让它成为了数据库世界中的一个异数，改变了数据库世界的游戏规则。
 
-------
-
-## 改变游戏规则的玩家
+### 改变游戏规则的玩家
 
 **PostgreSQL 的出现，改变了数据库领域的游戏规则**：任何试图开发“新数据库内核”的团队，都需要经过这道试炼与考验
 —— 相比开源免费、功能齐备的 Postgres，价值点在哪里？
@@ -159,9 +144,9 @@ PostgreSQL 允许用户开发功能模块，复用数据库公共基础设施，
 
 > [**StackOverflow 2023 调研结果，PostgreSQL 三项全能王**](https://survey.stackoverflow.co/2023/#section-most-popular-technologies-databases)
 
-[![sf-trend.jpg](sf-trend.jpg)](https://demo.pigsty.cc/d/sf-survey)
+[![sf-trend.jpg](sf-trend.jpg)](https://demo.pigsty.cc/ui/d/sf-survey)
 
-> [**StackOverflow过去7年的数据库指标走势**](https://demo.pigsty.cc/d/sf-survey)
+> [**StackOverflow过去7年的数据库指标走势**](https://demo.pigsty.cc/ui/d/sf-survey)
 
 在引领潮流的 HackerNews StackOverflow 上，PostgreSQL 早已成为了最受欢迎的数据库。
 许多新的开源项目都默认使用 PostgreSQL 作为首要，甚至唯一的数据库，
@@ -173,9 +158,7 @@ Instagram 用 PG，Notion 用 PG，OpenAI 这样的独角兽巨无霸也 All in 
 Postgres 能够取代许多后端技术，包括 MySQL，Kafka、RabbitMQ、ElasticSearch，Mongo和 Redis，至少到数百万用户时都毫无问题。
 **一切皆用 Postgres** ，已经不再是少数精英团队的前沿探索，而是成为了一种进入主流视野的最佳实践。
 
-------
-
-## 还有什么可以做的？
+### 还有什么可以做的？
 
 我们已经不难预见到数据库领域的终局。但我们又能做什么，又应该做什么呢？
 
@@ -192,9 +175,7 @@ PostgreSQL 对于绝大多数场景都已经是一个足够完美的数据库内
 做内核的厂商不温不火，MariaDB 作为 MySQL 的亲爹 Fork 甚至都已经濒临退市，Oracle 开掉了 MySQL 的研发团队只留下一些 Heatweave 的人；而白嫖内核自己做服务与扩展卖 RDS 的 AWS 可以赚的钵满盆翻。
 投资机构已经出手了许多 PG 生态的扩展插件与服务发行版：Citus，TimescaleDB，Hydra，PostgresML，ParadeDB，FerretDB，StackGres，Aiven，Neon，Supabase，Tembo，PostgresAI，以及我们正在做的 Pigsty 。
 
-![](https://pigsty.io/img/pigsty/players.png)
-
-------
+![PostgreSQL 吞噬数据库世界：还有什么可以做的？（图 10）](https://pigsty.io/img/pigsty/players.png)
 
 PostgreSQL 生态中的一个困境就是，许多扩展插件，生态工具都是独立演进，各自为战的，没有一个整合者能将他们凝聚起来形成合力。
 例如，提供分析的 pg_duckdb 会打一个包一个 Docker 镜像， pgvector 也会打自己的包和镜像，
@@ -208,9 +189,7 @@ PostgreSQL 生态中的一个困境就是，许多扩展插件，生态工具都
 
 而这正是我们想要解决的首要问题之一。
 
-------
-
-## 知行合一的实践：Pigsty
+### 知行合一的实践：Pigsty
 
 虽然接触 MySQL 和 MSSQL 要早得多，但我在 2015 年第一次上手 PostgreSQL 时，就相信它会是数据库领域的未来了。
 快十年过去，我也从 PG 的使用者，管理者，变为了贡献者，开发者。也不断见证着 PG 走向这一目标。
@@ -224,7 +203,7 @@ PostgreSQL 生态中的一个困境就是，许多扩展插件，生态工具都
 所以我打造了 **[Pigsty](https://pigsty.cc)** —— 一个开箱即用的开源 PostgreSQL 数据库发行版，
 旨在凝聚 PostgreSQL 生态扩展的合力，并把提供优质数据库服务的能力普及到每个用户手中。
 
-![](https://pigsty.io/img/pigsty/banner.png)
+![PostgreSQL 吞噬数据库世界：知行合一的实践：Pigsty（图 11）](https://pigsty.io/img/pigsty/banner.png)
 
 > Pigsty 是 **P**ostgreSQL **i**n **G**reat **STY**le 的缩写，意为 **PostgreSQL 的全盛状态**。
 
@@ -237,7 +216,7 @@ Pigsty 六点价值主张的首字母合起来，则为 Pigsty 提供了另外�
 >
 > 属于你的图形化 Postgres 基础设施服务工具箱。
 
-![](https://pigsty.io/img/pigsty/homepage.png)
+![PostgreSQL 吞噬数据库世界：知行合一的实践：Pigsty（图 12）](https://pigsty.io/img/pigsty/homepage.png)
 
 **可扩展的 PostgreSQL** 是这个发行版中最重要的价值主张。在即将发布的 [**Pigsty 4.0**](https://pigsty.cc) 中，我们整合了上面提到的所有这些扩展，
 整整四百四十个开箱即用的扩展，为六个PG大版本与14种Linux平台而构建，开箱即用。真正做到让 PG 进入全盛状态。并确保每个用户都能轻松用得上这样的能力。

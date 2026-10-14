@@ -5,12 +5,9 @@ date: 2025-04-06
 summary: A PG kernel fork acquired by Supabase, claiming to solve PG's XID wraparound problem, eliminate table bloat issues, improve performance by 4x, and support cloud-native storage. Now part of the Pigsty family.
 tags: [PostgreSQL]
 ---
-
 OrioleDB, which sounds interesting - though "Oriole" means a type of bird (黄鹂 in Chinese), so it should actually be translated as "Oriole Database" rather than "Cookie Database" or "Bird Database". The name doesn't matter much; what's important is that this PG storage engine extension + kernel fork is genuinely interesting and is almost ready for official release.
 
 As the successor to zheap, I've been following OrioleDB for a long time. It has three main highlights: performance, operations, and cloud-native capabilities. So today I'll briefly introduce this emerging PG kernel and some recent work I've done that allows users to run it directly.
-
-------
 
 ## Ultimate Performance, 4x Throughput
 
@@ -25,8 +22,6 @@ Moreover, OrioleDB claims to significantly reduce resource consumption in OLTP s
 Of course, there are some key optimizations compared to PG heap tables, such as removing FS Cache, directly linking memory pages to storage pages, lockless access to memory pages, plus using UNDO logs/rollback segments to implement MVCC instead of PG's REDO, and easily parallelizable row-level WAL.
 
 Honestly, I haven't tested the performance myself yet. But it sounds very tempting. I'll find a server to test it if I have time recently.
-
-------
 
 ## Eliminate Pain Points, Simplify Operations
 
@@ -82,8 +77,6 @@ Currently, OrioleDB is a storage engine PG extension plugin. However, because so
 
 I've created patched PG `oriolepg_17` and extension plugin `orioledb_17` on EL, and provided a ready-to-use configuration template for one-click OrioleDB testing.
 
-------
-
 ## Cloud-Native Storage
 
 The term "cloud-native" has been overused - nobody knows exactly what it means anymore. But for databases, cloud-native usually means — **putting data on object storage**.
@@ -101,8 +94,6 @@ So when OrioleDB not only provides a new storage engine but also supports puttin
 ![storage-compute.png](storage-compute.png)
 
 > [OrioleDB Docs: Decoupled storage and compute](https://www.orioledb.com/docs/usage/decoupled-storage)
-
-------
 
 ## So, I Want to Try It, How Do I Set It Up?
 
@@ -130,8 +121,6 @@ all:
     pg_libs: 'orioledb.so, pg_stat_statements, auto_explain'
     repo_extra_packages: [ orioledb ]
 ```
-
-------
 
 ## There Are Other Kernel Tricks Too
 

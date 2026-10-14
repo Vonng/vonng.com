@@ -7,14 +7,11 @@ summary: |
   Let performance data speak: Why PostgreSQL is the world's most advanced open-source relational database, aka the world's most successful database. MySQL vs PostgreSQL performance showdown and distributed database reality check.
 tags: [PostgreSQL, PG Ecosystem, Performance]
 ---
-
 Previously, we analyzed StackOverflow survey data to explain "[Why PostgreSQL is the Most Successful Database](/pg/pg-is-no1/)".
 
 This time we'll let performance data speak for itself, discussing just how powerful the most successful PostgreSQL really is, helping you "**know the numbers**".
 
-![](pg-performence-1.jpg)
-
-------
+![How Powerful is PostgreSQL Really? (figure 1)](pg-performence-1.jpg)
 
 ## TL;DR
 
@@ -32,8 +29,6 @@ If you're interested in these questions, this article will be helpful:
   The price of c5d.metal for 1 year could buy you the server and host it for 5 years. The corresponding cloud database's 1-year cost could buy you the same EC2 for 20 years.
 
 Detailed test procedures and raw data are available at: [github.com/Vonng/pgtpc](https://github.com/Vonng/pgtpc)
-
-------
 
 ## PGBENCH
 
@@ -94,8 +89,6 @@ Annual costs range from ¥110K to ¥150K, with retail on-demand costing ¥380K a
 However, RDS for PostgreSQL is a completely different story. If you want similar-spec cloud databases, the closest specification is db.m5.24xlarge (96C, 384G) with 3.6T/80000 IOPS io1 storage (c5d.metal's 3.6T NVME SSD 8K RW IOPS is approximately 95K, while regular io1 storage maxes at 80K IOPS), costing ¥240K monthly, ¥2.867M annually - **nearly 20x the cost of equivalent self-built EC2**.
 
 > AWS Price Calculator: [https://calculator.amazonaws.cn/](https://calculator.amazonaws.cn/)
-
-------
 
 ## SYSBENCH
 
@@ -175,8 +168,6 @@ Shockingly, new-generation distributed databases (NewSQL) performed poorly acros
 
 Typically, distributed databases' core trade-off is quality for scale, but what's unexpected is the sacrifice includes not just functionality and stability, but such considerable performance. As Knuth said: "Premature optimization is the root of all evil." Sacrificing such large performance (plus functionality and stability) for unnecessary scale (trillion-level+, TP hundred-TB+) is undoubtedly a form of premature optimization. How many business scenarios actually need Google-scale data requiring distributed databases remains questionable.
 
------------------
-
 ## TPC-H Analytical Performance
 
 When TP doesn't work, try AP. Despite distributed databases being so weak in TP, data analysis (AP) is distributed databases' fundamental territory, so many distributed databases like to promote HTAP concepts. To measure AP system capabilities, we use TPC-H tests.
@@ -236,8 +227,6 @@ In conclusion, **PostgreSQL performs brilliantly in the TP domain and respectabl
 
 > StackOverflow database developer survey results over six years
 
------------------
-
 ## References
 
 [1] [Vonng: PGTPC](https://github.com/Vonng/pgtpc)
@@ -254,7 +243,7 @@ In conclusion, **PostgreSQL performs brilliantly in the TP domain and respectabl
 
 [7] [OceanBase 3.1 Sysbench Performance Test Report](https://www.oceanbase.com/docs/community/observer-cn/V3.1.4/10000000000450311)
 
-[8] [Cockroach 22.15 Benchmarking Overview](https://www.cockroachlabs.com/docs/stable/performance.html)
+[8] Cockroach 22.15 Benchmarking Overview (original link unavailable)
 
 [9] [Benchmark YSQL performance using sysbench (v2.15)](https://docs.yugabyte.com/preview/benchmark/sysbench-ysql/)
 

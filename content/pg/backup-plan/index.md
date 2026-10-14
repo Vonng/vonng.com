@@ -6,7 +6,6 @@ summary: >
   备份有各种各样的策略，物理备份通常可以分为四种。
 tags: [PostgreSQL, PG管理, 备份]
 ---
-
 备份是DBA的安身立命之本，也是数据库管理中最为关键的工作之一。有各种各样的备份，但今天这里讨论的备份都是物理备份。物理备份通常可以分为以下四种：
 
 * 热备（Hot Standby）：与主库一模一样，当主库出现故障时会接管主库的工作，同时也会用于承接线上只读流量。
@@ -14,11 +13,11 @@ tags: [PostgreSQL, PG管理, 备份]
 * 冷备（Code Backup）：冷备数据库以数据目录静态文件的形式存在，是数据库目录的二进制备份。便于制作，管理简单，便于放到其他AZ实现容灾。是数据库的最终保险。
 * 异地副本（Remote Standby）：所谓X地X中心，通常指的就是放在其他AZ的热备实例。
 
-![](backup-types.png)
+![温备：使用pg_receivewal（图 1）](backup-types.png)
 
 通常我们所说的备份，指的是冷备和温备。它们与热备的重要区别是：它们通常不是最新的。当服务线上查询时，这种滞后是一个缺陷，但对于故障恢复而言，这是一个非常重要的特性。同步的备库是不足以应对所有的问题。设想这样一种情况：一些人为故障或者软件错误把整个数据表甚至整个数据库删除了，这样的变更会立刻应用到同步从库上。这种情况只能通过从延迟温备中查询，或者从冷备重放日志来恢复。因此无论有没有从库，冷/温备都是必须的。
 
-参考：[PostgreSQL复制方案](https://pigsty.io/docs/administration/backup/)
+参考：[PostgreSQL复制方案](https://pigsty.io/docs/pgsql/backup/)
 
 ## 温备方案
 
@@ -32,7 +31,7 @@ tags: [PostgreSQL, PG管理, 备份]
 
 ### 步骤概览
 
-![](backu-setup.png)
+![温备：使用pg_receivewal：步骤概览（图 2）](backu-setup.png)
 
 ### 日志归档
 
@@ -59,7 +58,7 @@ pg_receivewal \
 
 这里提供了一个初始化PostgreSQL Offline Instance的脚本，可以作为参考：
 
-[`pg/test/bin/offline.sh`](https://github.com/Vonng/pg/blob/master/test/bin/offline.sh)
+[`pg/test/bin/offline.sh`](https://github.com/Vonng/pg/blob/master/test/bin/init-offline.sh)
 
 ## 备份测试
 

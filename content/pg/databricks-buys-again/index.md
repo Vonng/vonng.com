@@ -6,7 +6,6 @@ summary: >
   月饼实验室被数据砖收购，老冯解读又一场PG公司收购案。
 tags: [PostgreSQL, 扩展, 商业]
 ---
-
 昨天在群里看到一则喜讯，Mooncake Lab 被 Databricks 收购了。
 
 今年数据库世界几起大的收购都与 PostgreSQL 有关，Databricks 在六月份的时候 [以十亿美元的价格收购了 Neon](/db/db-for-ai/)，[它的老对手 Snowflake 则反手买下了 CrunchyData](/db/db-for-ai/)。更有传言说 [OpenAI 拟以 20 亿的价格收购 Supabase](/db/openai-supabase-rumor/)。这次，做 PG 上 OLAP 扩展的 mooncake 成为新的收购标的。

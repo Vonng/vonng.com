@@ -6,13 +6,10 @@ summary: >
   top, free, vmstat, iostat: Quick reference for four commonly used CLI tools
 tags: [PostgreSQL, PG Admin, Tools]
 ---
-
 - [`top`](#top)
 - [`free`](#free)
 - [`vmstat`](#vmstat)
 - [`iostat`](#iostat)
-
------------------------
 
 ## `top`
 
@@ -46,7 +43,7 @@ Cpu(s):  4.1%us,  1.0%sy,  0.0%ni, 94.8%id,  0.0%wa,  0.0%hi,  0.1%si,  0.0%st
 
 `top` output is divided into two parts: system summary in the top few lines, process list below, separated by a blank line. Here's sample output from `top` command:
 
-```
+```text
 top - 12:11:01 up 401 days, 19:17,  2 users,  load average: 1.12, 1.26, 1.40
 Tasks: 1178 total,   3 running, 1175 sleeping,   0 stopped,   0 zombie
 Cpu(s):  5.4%us,  1.7%sy,  0.0%ni, 92.5%id,  0.1%wa,  0.0%hi,  0.4%si,  0.0%st
@@ -74,7 +71,7 @@ Summary consists of three parts by default, totaling five lines:
 
 **System Runtime and Average Load**
 
-```
+```text
 top - 12:11:01 up 401 days, 19:17,  2 users,  load average: 1.12, 1.26, 1.40
 ```
 
@@ -87,7 +84,7 @@ top - 12:11:01 up 401 days, 19:17,  2 users,  load average: 1.12, 1.26, 1.40
 
 **Tasks**
 
-```
+```text
 Tasks: 1178 total,   3 running, 1175 sleeping,   0 stopped,   0 zombie
 ```
 
@@ -112,7 +109,7 @@ The next line shows CPU status. This displays percentage of CPU time in differen
 
 **Memory Usage**
 
-```
+```text
 Mem:  396791756k total, 389547376k used,  7244380k free,   263828k buffers
 Swap: 67108860k total,        0k used, 67108860k free, 366252364k cached
 ```
@@ -124,7 +121,7 @@ Swap: 67108860k total,        0k used, 67108860k free, 366252364k cached
 
 Process section displays some key information by default:
 
-```
+```text
    PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND
   5094 postgres  20   0 37.2g 829m 795m S 14.2  0.2   0:04.11 postmaster
   5093 postgres  20   0 37.2g 926m 891m S 13.2  0.2   0:04.96 postmaster
@@ -175,8 +172,6 @@ static const char * const task_state_array[] = {
 - `D (TASK_UNINTERRUPTIBLE)`: Uninterruptible sleep state, cannot respond to asynchronous signals, e.g., hardware operations, kernel threads
 - `T (TASK_STOPPED | TASK_TRACED)`: Stopped state or traced state, triggered by SIGSTOP or breakpoints
 - `Z (TASK_DEAD)`: After child process exits, parent process hasn't cleaned up yet, leaving `task_structure` processes in this state
-
------------------------
 
 ## `free`
 
@@ -259,7 +254,7 @@ DirectMap1G:    400556032 kB
 
 The correspondence between free and `/proc/meminfo` indicators:
 
-```
+```text
 total	= (MemTotal + SwapTotal)
 used	= (total - free - buffers - cache)
 free	= (MemFree + SwapFree)
@@ -279,8 +274,6 @@ $ echo 1 > /proc/sys/vm/drop_caches	# drop page cache
 $ echo 2 > /proc/sys/vm/drop_caches	# drop dentries & inode
 $ echo 3 > /proc/sys/vm/drop_caches	# drop all
 ```
-
------------------------
 
 ## `vmstat`
 
@@ -318,7 +311,7 @@ procs -----------memory---------- ---swap-- -----io---- --system-- -----cpu-----
  1  0      0   7233    170 344255    0    0  6800 24404 39461 36984  6  1 93  0  0
 ```
 
-```
+```text
 Procs
     r: Number of processes waiting to run
     b: Number of processes in uninterruptible sleep state (Block)
@@ -355,8 +348,6 @@ Extracts information from these three files:
 - `/proc/stat`
 - `/proc/*/stat`
 
------------------------
-
 ## `iostat`
 
 Report IO-related statistics
@@ -369,7 +360,7 @@ iostat [ -c ] [ -d ] [ -N ] [ -n ] [ -h ] [ -k | -m ] [ -t ] [ -V ] [ -x ] [ -y 
 
 By default iostat prints CPU and disk IO information. Use `-d` parameter to show only IO section, use `-x` to print more information. Sample output:
 
-```
+```text
 avg-cpu:  %user   %nice %system %iowait  %steal   %idle
            5.77    0.00    1.31    0.07    0.00   92.85
 
@@ -417,7 +408,7 @@ iostat -dxk /dev/dfa 1 10
 
 Actually extracts information from these files:
 
-```
+```text
 /proc/stat contains system statistics.
 /proc/uptime contains system uptime.
 /proc/partitions contains disk statistics (for pre 2.5 kernels that have been patched).

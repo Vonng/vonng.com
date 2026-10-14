@@ -5,7 +5,6 @@ authors: [vonng]
 summary: "PgBackRest is a set of PostgreSQL backup tools written in Perl"
 tags: [PostgreSQL, PG Admin, Backup]
 ---
-
 pgBackRest homepage: http://pgbackrest.org
 
 pgBackRest Github homepage: https://github.com/pgbackrest/pgbackrest
@@ -259,7 +258,7 @@ Use 'pgbackrest help [command]' for more information.
 
 ### macOS Version
 
-Installation on macOS can follow the previous manual installation tutorial, reference article: https://hunleyd.github.io/posts/pgBackRest-2.07-and-macOS-Mojave/
+Installation on macOS can follow the previous manual installation tutorial, reference article: `https://hunleyd.github.io/posts/pgBackRest-2.07-and-macOS-Mojave/` (original link unavailable)
 
 ```bash
 # Note: if you need to access proxy from terminal, use these commands:

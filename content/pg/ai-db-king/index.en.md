@@ -9,7 +9,6 @@ tags: [PostgreSQL, AI, Database]
 ai: true
 aliases: ["/ai/ai-db-king/", "/db/ai-db-king/"]
 ---
-
 In the Agent era, the underlying logic of software architecture has changed.
 
 Over the past decade, we've built microservices and "polyglot persistence" to accommodate the collaboration boundaries of human teams, fragmenting our systems into scattered pieces. But in the new paradigm of rising AI Agents, this fragmented architecture is becoming an expensive form of "technical debt."
@@ -20,7 +19,7 @@ The complexity and fragmentation brought by microservices are now levying a mass
 
 > — A lightning talk by Feng at the "8th China PostgreSQL Ecosystem Conference"
 
-### Polyglot Persistence: A Nightmare of Cognitive Fragmentation
+## Polyglot Persistence: A Nightmare of Cognitive Fragmentation
 
 In traditional "best practices," we're accustomed to scattering data everywhere: MySQL for transactions, Redis for caching, MongoDB for documents, Elasticsearch for search, Milvus for vectors.
 
@@ -39,8 +38,6 @@ Imagine a typical cross-domain query: "Find users who purchased product X, visit
 This "ping-pong" architecture isn't just inefficient—it causes **context overload**. Stuffing all tool definitions into a single mega-Agent rapidly exhausts the budget. When irrelevant schemas and intermediate data fill the window, the LLM's reasoning ability hits a ceiling, directly causing "hallucinations" to spike.
 
 **Context economics favors lean, focused tools and abhors sprawling heterogeneous systems.**
-
---------
 
 ## PostgreSQL: Zero-Glue Architecture
 
