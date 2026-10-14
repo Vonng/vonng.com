@@ -8,16 +8,13 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.2.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v320)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.2.0) | [**Release Note**](https://pigsty.io/docs/releasenote/#v320)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.2.0)
+[![Pigsty v3.2: The pig CLI, Full ARM Support, Supabase & Grafana Enhancements (figure 1)](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.2.0)
 
 Pigsty wraps up 2024 with its final release: v3.2. This release brings the `pig` command-line tool and complete ARM extension support. Together, they deliver silky-smooth PostgreSQL delivery across 10 major Linux distributions.
 
 This release includes routine fixes, tracks Supabase's intense release week changes, and provides RPM/DEB packages for Grafana plugins and data sources.
-
---------
 
 ## The pig CLI Tool
 
@@ -25,23 +22,21 @@ Pigsty v3.2 ships with the [**pig**](/pg/pig) command-line tool by default, furt
 
 When installing PostgreSQL extensions, dealing with various distributions and chip architectures is always painful: endless time wasted digging through outdated READMEs, obscure config scripts, and random GitHub branches; or struggling with China's network environment — missing repos, blocked mirrors, frustrating download speeds.
 
-![](pig-install.jpg)
+![Pigsty v3.2: The pig CLI, Full ARM Support, Supabase & Grafana Enhancements — The pig CLI Tool (figure 2)](pig-install.jpg)
 
 **pig** has arrived to solve all these problems. It's a brand-new Go-based package manager that handles PostgreSQL and its ever-growing extension ecosystem uniformly, without getting stuck in debugging hell.
 
-![](pig-ride-elephant.jpg)
+![Pigsty v3.2: The pig CLI, Full ARM Support, Supabase & Grafana Enhancements — The pig CLI Tool (figure 3)](pig-ride-elephant.jpg)
 
 Pig is a lightweight binary written in Go — dependency-free and easy to install with a single command. It respects each OS's package management traditions without reinventing the wheel, implementing package management on top of yum/dnf/apt.
 
 Pig focuses on cross-distro harmony — whether on Debian, Ubuntu, or Red Hat derivatives, you get a single, smooth method to install and update PostgreSQL and any extension, without compiling from source or dealing with half-baked repos.
 
-![](pig-repo.jpg)
+![Pigsty v3.2: The pig CLI, Full ARM Support, Supabase & Grafana Enhancements — The pig CLI Tool (figure 4)](pig-repo.jpg)
 
 If [**PostgreSQL's future is unstoppable extensibility**](/pg/pg-eat-db-world), Pig is the tool that helps unlock that potential. After all, nobody complains about a PostgreSQL instance having too many extensions — unused ones have zero impact, and needed ones are right at your fingertips.
 
-![](pig-ext.jpg)
-
---------
+![Pigsty v3.2: The pig CLI, Full ARM Support, Supabase & Grafana Enhancements — The pig CLI Tool (figure 5)](pig-ext.jpg)
 
 ## ARM Extension Repository
 
@@ -49,7 +44,7 @@ Behind Pig is a [**supplementary extension repository**](/pg/pg-ext-repo) packed
 
 Over the past month, Pigsty has completed full ARM64 architecture support. The five major Linux distributions (EL8, EL9, Debian12, Ubuntu 22/24) now have **complete** ARM support. By complete, we mean config files used on AMD64 work identically on ARM64 systems. Of course, there are scattered exceptions — a few extensions currently lack ARM support and will be addressed individually.
 
-![](arm-support.jpg)
+![Pigsty v3.2: The pig CLI, Full ARM Support, Supabase & Grafana Enhancements — ARM Extension Repository (figure 6)](arm-support.jpg)
 
 The Pigsty Extension Repo aggregates 340+ curated PostgreSQL extensions, compiled into convenient `.rpm` and `.deb` packages, supporting multiple versions and architectures:
 
@@ -68,9 +63,7 @@ Under the hood, this repo is part of the larger Pigsty PostgreSQL distribution, 
 
 Complete ARM64 support builds confidence for more chip architecture support. For example, IBM LinuxOne Cloud provides s390x mainframe support for open-source projects, and Pigsty is evaluating this direction.
 
-![](ibm-linuxone.jpg)
-
---------
+![Pigsty v3.2: The pig CLI, Full ARM Support, Supabase & Grafana Enhancements — ARM Extension Repository (figure 7)](ibm-linuxone.jpg)
 
 ## Supabase Tracking
 
@@ -80,7 +73,7 @@ Supabase released a series of important updates in December 2024, and Pigsty v3.
 
 A recent major Supabase move was acquiring OrioleDB — a kernel fork focused on improving PostgreSQL OLTP performance. This feature is currently marked as Beta in Supabase, available as a user option. Pigsty is preparing OrioleDB RPM/DEB packages to ensure support even if Supabase adopts it as the mainline in the future.
 
-![](orioledb.jpg)
+![Pigsty v3.2: The pig CLI, Full ARM Support, Supabase & Grafana Enhancements — Supabase Tracking (figure 8)](orioledb.jpg)
 
 With this opportunity, Pigsty is also preparing to extend extension capabilities to more PostgreSQL forks:
 
@@ -90,8 +83,6 @@ With this opportunity, Pigsty is also preparing to extend extension capabilities
 | WiltonDB | SQL Server compatible |
 | PolarDB PG | Alibaba Cloud open-source |
 | OrioleDB | OLTP optimized |
-
---------
 
 ## Grafana Extensibility
 
@@ -112,11 +103,9 @@ In v3.2, commonly used Grafana panel and data source plugins are packaged as RPM
 
 Additionally, independent RPM/DEB packages were created for architecture-dependent data source plugins (containing x86, ARM binaries). For example, Grafana's new **Infinity data source plugin**: use any REST/GraphQL API, use CSV/TSV/XML/HTML as data sources — this greatly expands Grafana's data ingestion capabilities.
 
-![](grafana-infinity.jpg)
+![Pigsty v3.2: The pig CLI, Full ARM Support, Supabase & Grafana Enhancements — Grafana Extensibility (figure 9)](grafana-infinity.jpg)
 
 Meanwhile, RPM/DEB packages were also created for VictoriaMetrics and VictoriaLogs Grafana data source plugins, making it convenient for users to use these two open-source time-series and log databases in Grafana.
-
---------
 
 ## Future Development Plans
 
@@ -125,8 +114,6 @@ Pigsty itself has reached a fairly mature state. The focus for the coming period
 Currently, there's a rare opportunity window: users and developers are realizing the importance of PostgreSQL extensions, but the PostgreSQL ecosystem doesn't yet have a de facto standard for extension distribution. Pigsty is committed to making `pig` an influential PostgreSQL extension distribution standard.
 
 Of course, Pigsty itself has always lacked a good enough CLI tool. Going forward, we'll integrate functionality scattered across various Ansible playbooks into `pig`, making it more convenient for users to manage Pigsty and PostgreSQL.
-
---------
 
 ## v3.2.0 Release Notes
 
@@ -209,13 +196,13 @@ Of course, Pigsty itself has always lacked a good enough CLI tool. Going forward
 
 ### Bug Fixes
 
-- Fixed `pgbouncer` dashboard selector issue [#474](https://github.com/Vonng/pigsty/issues/474)
+- Fixed `pgbouncer` dashboard selector issue [#474](https://github.com/pgsty/pigsty/issues/474)
 - `pg-pitr`: Added `--arg value` parameter parsing support by [@waitingsong](https://github.com/Vonng/pigsty/pulls?q=is%3Apr+author%3Awaitingsong)
 - Fixed Redis log info typo by [@waitingsong](https://github.com/Vonng/pigsty/pull/476)
 
 ### Checksums
 
-```
+```text
 8fdc6a60820909b0a2464b0e2b90a3a6  pigsty-v3.2.0.tgz
 d2b85676235c9b9f2f8a0ad96c5b15fd  pigsty-pkg-v3.2.0.el9.aarch64.tgz
 649f79e1d94ec1845931c73f663ae545  pigsty-pkg-v3.2.0.el9.x86_64.tgz

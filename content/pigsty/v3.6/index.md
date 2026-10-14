@@ -8,10 +8,9 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.6.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v360) | [微信公众号](https://mp.weixin.qq.com/s/TdJ5lOWxU_CzxsgjslPxwg)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.6.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v360) | [微信公众号](https://mp.weixin.qq.com/s/TdJ5lOWxU_CzxsgjslPxwg)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.6.0)
+[![Pigsty v3.6：全能PG发行版的关键一步（图 1）](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.6.0)
 
 Pigsty v3.6 正式发布。历经两个月的精心打磨，这将是 v4.0 之前的最后一个主要版本，进行了大量重构与改进，为打造终极全能 PostgreSQL 发行版奠定了坚实基础。
 
@@ -19,23 +18,19 @@ Pigsty v3.6 正式发布。历经两个月的精心打磨，这将是 v4.0 之�
 
 安装流程也进一步简化：从四步走变为三步走（下载、配置、安装），且默认采用在线安装模式，可跳过本地软件仓库的构建过程。
 
---------
-
 ## 全新内核支持：Percona PG TDE
 
 Percona 的 `pg_tde` 扩展经过数年长跑，终于正式发布 1.0 GA 版本。许多"企业级" PostgreSQL 发行版以"透明加解密"作为核心卖点，而 `pg_tde` 可能是第一个足够成熟的开源透明加密扩展，为开源 PostgreSQL 提供了真正意义上的企业级透明加密解决方案。
 
-![](percona-tde.jpg)
+![Pigsty v3.6：全能PG发行版的关键一步：全新内核支持：Percona PG TDE（图 2）](percona-tde.jpg)
 
 目前该扩展需要运行在打过补丁的 PostgreSQL 内核上 —— 即 Percona 的 Postgres 发行版。Pigsty 在官宣后即刻完成了支持，只需两行命令即可启用并安装，同时享受 Pigsty 提供的完整 RDS 能力：监控、高可用、PITR、IaC 等，与原生 PG 内核别无二致。
 
 至此，Pigsty 支持的 PostgreSQL 内核数量已达到 **10 个**。
 
-![](kernels.jpg)
+![Pigsty v3.6：全能PG发行版的关键一步：全新内核支持：Percona PG TDE（图 3）](kernels.jpg)
 
 Pigsty 已成为 PostgreSQL 发行版的发行版 —— 一个"**元发行版**"。各家 PostgreSQL 分支内核均可在 Pigsty 的加持下，转化为具备高可用、监控、IaC、PITR 能力的"企业级数据库服务"。
-
---------
 
 ## 扩展生态持续强化
 
@@ -43,15 +38,13 @@ Pigsty 已成为 PostgreSQL 发行版的发行版 —— 一个"**元发行版**
 
 另一个值得关注的扩展是 `pgactive` —— 由 AWS 开发并开源的 **PG 多活扩展**，声称解决了亚秒级高可用切换问题。该扩展依赖缺失的 `pgfeutils`，编译有一定门槛，Pigsty 已提供开箱即用的二进制包。
 
-![](extensions.jpg)
+![Pigsty v3.6：全能PG发行版的关键一步：扩展生态持续强化（图 4）](extensions.jpg)
 
 可用扩展数量达到 **423 个**。PG18 beta2、OrioleDB、TimescaleDB、Citus、FerretDB & DocumentDB、DuckDB、Etcd 等均完成例行版本更新。
 
 扩展目录站点也已全面翻新，采用 Next.js 重构，观感大幅提升，新地址：[https://pgext.cloud](https://pgext.cloud)
 
-![](ext-catalog.jpg)
-
---------
+![Pigsty v3.6：全能PG发行版的关键一步：扩展生态持续强化（图 5）](ext-catalog.jpg)
 
 ## Supabase 自建体验优化
 
@@ -63,19 +56,17 @@ Pigsty v3.6 提供了更流畅的 Supabase 自建体验，并修复了 Supabase 
 
 生产级 Supabase 自建只需几行命令即可完成：
 
-![](supabase.jpg)
+![Pigsty v3.6：全能PG发行版的关键一步：Supabase 自建体验优化（图 6）](supabase.jpg)
 
 此外，Pigsty 现默认使用由 1Panel 提供的 Docker 镜像站点，国内下载速度显著提升。
 
 目前 Pigsty 和 StackGres 是仅有的两个自建 Supabase 方案的开源供应商：Pigsty 基于裸 Linux 系统交付，StackGres 基于 Kubernetes 交付。
 
---------
-
 ## PITR 恢复增强
 
 此前版本中，Pigsty 提供 `pg-pitr` 脚本用于"半自动"辅助 PITR 恢复。本版本新增了全自动的 `pgsql-pitr` 剧本，实现一键时间点恢复。
 
-![](pitr.jpg)
+![Pigsty v3.6：全能PG发行版的关键一步：PITR 恢复增强（图 7）](pitr.jpg)
 
 该剧本会自动执行以下操作：
 
@@ -86,8 +77,6 @@ Pigsty v3.6 提供了更流畅的 Supabase 自建体验，并修复了 Supabase 
 - 重新启用高可用切换
 
 支持快速重试（原地增量），便于精确定位恢复位点。同时新增了一种新用例：在新启动的实例（或摘下的从库）上执行 PITR 恢复，避免影响现有业务，然后从新实例抽取数据手工导入。
-
---------
 
 ## ETCD 管理简化
 
@@ -104,8 +93,6 @@ bin/etcd-rm 10.10.10.11   # 将指定成员从集群中移除
 
 `etcd.yml` 剧本现 **不再清理现有 ETCD 集群**，清理工作由专门的 roles 与剧本实现，维护变得更加简单明了。
 
---------
-
 ## MinIO 模块改进
 
 MinIO 模块进行了重构，新增 Plain HTTP 模式，并调整了默认桶与用户配置。
@@ -114,7 +101,7 @@ MinIO 模块进行了重构，新增 Plain HTTP 模式，并调整了默认桶�
 
 本版本新增开关，允许 MinIO 运行在纯 HTTP 模式下。需注意：pgbackrest 不接受 HTTP 模式的 MinIO，若使用本地 MinIO 存储 PG 备份仍需 HTTPS 模式。HTTP 模式仅适用于纯粹给外部服务使用的场景。
 
-![](minio.jpg)
+![Pigsty v3.6：全能PG发行版的关键一步：MinIO 模块改进（图 8）](minio.jpg)
 
 默认桶配置也进行了调整：
 
@@ -123,8 +110,6 @@ MinIO 模块进行了重构，新增 Plain HTTP 模式，并调整了默认桶�
 | pgsql, infra, redis | pgsql, meta, data |
 
 同时为 `meta` 和 `data` 桶创建了专用用户 `s3user_meta` 与 `s3user_data`，并为每个桶创建同名策略。如此设计下，Supabase、Dify 等应用可直接使用这两个桶，无需手动创建。
-
---------
 
 ## 安装流程简化
 
@@ -140,15 +125,13 @@ MinIO 模块进行了重构，新增 Plain HTTP 模式，并调整了默认桶�
 curl -fsSL https://repo.pigsty.io/get | bash; cd ~/pigsty; ./configure; ./install.yml
 ```
 
-![](install-1.jpg)
-
---------
+![Pigsty v3.6：全能PG发行版的关键一步：安装流程简化（图 9）](install-1.jpg)
 
 ## 默认在线安装
 
 默认安装策略发生变化：不再先下载到本地再安装，而是直接从互联网上游安装。
 
-![](install-2.jpg)
+![Pigsty v3.6：全能PG发行版的关键一步：默认在线安装（图 10）](install-2.jpg)
 
 这一改变带来显著好处：
 
@@ -158,25 +141,19 @@ curl -fsSL https://repo.pigsty.io/get | bash; cd ~/pigsty; ./configure; ./instal
 
 大比例用户在单节点 Linux 上安装 Pigsty，"不需要"本地软件仓库提供的多节点一致性。需要本地仓库的用户可通过简单配置（`repo_enabled`、`node_repo_modules`）重新启用，或直接使用默认启用本地仓库的 `rich` / `full` 模板。
 
---------
-
 ## 全新文档站
 
 全新文档站点已上线：[https://pigsty.cc/docs/](https://pigsty.cc/docs/)
 
-![](doc-site.jpg)
+![Pigsty v3.6：全能PG发行版的关键一步：全新文档站（图 11）](doc-site.jpg)
 
 该站点采用 Next.js 与 Fumadocs 现代前端技术栈打造，感谢兰天游与 Claude Code 的强力助攻。英文版已基本完工，中文版正在翻译建设中。欢迎通过 GitHub PR 或 Issue 参与贡献。
-
---------
 
 ## 其他改进
 
 - **tuned 模块优化**：针对现代硬件与 NVMe 磁盘进行优化，移除过时配置参数，新增 NVMe / 虚拟化 SSD 的调度/预读参数优化
 - **MCP Toolbox 集成**：集成了 Google 新发布的 MCP Toolbox（数据库 MCP 工具箱），预置模板 SQL 解决部分数据库安全性问题
 - **配置模板调整**：所有配置模板调整为 **单节点** 模式，便于快速上手
-
---------
 
 ## 下一步：v4.0 与 DBA Agent
 
@@ -191,10 +168,7 @@ PostgreSQL 18 将于今年 9 月发布，Pigsty 计划在 PG 18 发布后正式�
 
 v4.x 的主旋律将是 **DBA Agent**。Pigsty 已具备 DBA Agent 所需的完整上下文，核心正是这套 PG 最强监控系统。待文档中沉淀的领域知识足够丰富，为 Pig 命令行工具套上 MCP，一个能打的全自动驾驶数据库 DBA Agent 便将诞生。
 
-![](dba-agent.jpg)
-
---------
---------
+![Pigsty v3.6：全能PG发行版的关键一步：下一步：v4.0 与 DBA Agent（图 12）](dba-agent.jpg)
 
 ## v3.6.0
 
@@ -319,8 +293,6 @@ dbe5c1e8a242a62fe6f6e1f6e6b6c281  pigsty-pkg-v3.6.0.u24.x86_64.tgz
 
 更多版本信息请参考 [GitHub 发布页面](https://github.com/pgsty/pigsty/releases/tag/v3.6.0)。
 
---------
-
 ## v3.6.1
 
 Pigsty v3.6.1 版本发布，PostgreSQL 小版本更新！
@@ -380,5 +352,3 @@ c25ccfb98840c01eb7a6e18803de55bb  pigsty-pkg-v3.6.1.u22.x86_64.tgz
 ```
 
 更多版本信息请参考 [GitHub 发布页面](https://github.com/pgsty/pigsty/releases/tag/v3.6.1)。
-
---------

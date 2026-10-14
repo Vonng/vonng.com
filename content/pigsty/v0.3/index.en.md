@@ -8,7 +8,6 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
-
 > GitHub Release: https://github.com/pgsty/pigsty/releases/tag/v0.3.0
 
 Pigsty v0.3.0 is the very first public preview. It packages a lean observability stack plus a reproducible offline bundle so you can spin up a real PostgreSQL lab without touching the public Internet.

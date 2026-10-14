@@ -8,16 +8,13 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.0.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v100)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.0.0) | [**Release Note**](https://pigsty.io/docs/releasenote/#v100)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.0.0)
+[![Pigsty v1.0: GA Release with Monitoring Overhaul (figure 1)](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.0.0)
 
 After over a year of iterations and refinement, Pigsty officially ships **v1.0.0 GA**.
 
 **Pigsty** (/ˈpɪɡˌstaɪ/) stands for **P**ostgre**S**QL **I**n **G**raphic **STY**le — PostgreSQL, visualized.
-
-----------------
 
 ## What is Pigsty?
 
@@ -39,8 +36,6 @@ Pigsty is a **batteries-included PostgreSQL distribution** that bundles producti
 
 ![who](who.jpg)
 
-----------------
-
 ## Distribution
 
 A distribution is a **complete solution** built from a database kernel plus a curated set of software packages. Linux is an OS kernel; RedHat, Debian, and SUSE are distributions built on top of it. PostgreSQL is a database kernel; Pigsty, BigSQL, Percona, and various cloud RDS offerings are distributions built on top of it.
@@ -55,8 +50,6 @@ As a database distribution, Pigsty's core strengths are:
 - **Versatile, powerful** sandbox environment
 - **Free, friendly** open-source license
 
-----------------
-
 ## Batteries Included
 
 **Batteries-included** means: start with a fresh VM, run one command, and within 10 minutes you'll have infrastructure, database, monitoring, and control plane fully operational.
@@ -66,8 +59,6 @@ Pigsty pushes **deployment** and **monitoring** to the extreme, turning the hist
 **For power users, Pigsty provides the most comprehensive monitoring system available. For everyone else, Pigsty provides the simplest deployment experience.** For data engineers, Pigsty also integrates tools like JupyterLab and ECharts, making it a complete IDE for data development and visualization.
 
 ![battery](battery.jpg)
-
-----------------
 
 ## Monitoring System
 
@@ -111,8 +102,6 @@ Pigsty's monitoring system is composed of three tightly integrated core **applic
 
 Pigsty's monitoring system is built on industry best practices, using Prometheus and Grafana as the monitoring infrastructure. Open source, easy to customize, reusable, portable, no vendor lock-in. It can integrate with existing PostgreSQL instances and can also be used to monitor and manage other databases or applications (like Redis).
 
-----------------
-
 ## Deployment Solution
 
 A database is software that manages data. A control plane is software that manages databases.
@@ -131,8 +120,6 @@ For users who prefer not to work with config files and Ansible playbooks, Pigsty
 
 For power users, Pigsty provides 160+ configurable parameters, allowing fine-grained control over every aspect of cluster and infrastructure runtime. Beginners can create reliable database clusters without changing a single config setting.
 
-----------------
-
 ## High Availability Clusters
 
 Pigsty creates distributed, highly-available database clusters. In practice, as long as any instance in the cluster survives, the cluster can provide full read-write and read-only services.
@@ -147,8 +134,6 @@ Default access topology (DNS + L2 VIP + HAProxy, 7 options total)
 
 ![failover](failover.jpg)
 
-----------------
-
 ## Sandbox Environment
 
 PostgreSQL users aren't just enterprises — countless individuals use it for software development, testing, experiments, demos, or for data cleaning, analysis, visualization, and storage. Setting up the environment is often the first hurdle.
@@ -158,8 +143,6 @@ The Pigsty sandbox solves this problem. **With one click, spin up a complete pro
 ![sandbox](sandbox.jpg)
 
 Four-node sandbox architecture diagram
-
-----------------
 
 ## Data Analysis
 
@@ -179,15 +162,11 @@ Click to view individual country details and timeline maps
 
 Click to view individual station details and historical weather data
 
-----------------
-
 ## Roadmap
 
 ![roadmap-1](roadmap-1.jpg)
 
 ![roadmap-2](roadmap-2.jpg)
-
-----------------
 
 ## Open Source
 
@@ -196,8 +175,6 @@ Pigsty is open-source under the Apache 2.0 license — free for commercial use, 
 Pigsty's mission: **Use databases well**, use **good databases**.
 
 Give SMBs a truly self-controlled choice, and let everyone enjoy the power of PostgreSQL.
-
-----------------
 
 ## v1.0.0 Release Notes
 
@@ -261,8 +238,6 @@ Give SMBs a truly self-controlled choice, and let everyone enjoy the power of Po
 - Fixed default timezone Asia/Shanghai (CST) issue
 - Fixed nofile limits for pgbouncer & patroni
 - pgbouncer user list and database list now generated when running tag `pgbouncer`
-
-----------------
 
 ## v1.0.1 Release Notes
 

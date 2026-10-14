@@ -8,18 +8,15 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.4.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v140)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.4.0) | [**Release Note**](https://pigsty.io/docs/releasenote/#v140)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.4.0)
+[![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support (figure 1)](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.4.0)
 
 Pigsty v1.4 is officially released! A brand new modular architecture: four built-in modules **INFRA**, **NODES**, **PGSQL**, **REDIS** can be used independently and freely combined; new MatrixDB time-series data warehouse deployment and monitoring support; global CDN acceleration for downloads.
 
 GitHub stars are taking off!
 
-![](github-star.jpg)
-
---------
+![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support (figure 2)](github-star.jpg)
 
 ## Modular Architecture
 
@@ -32,7 +29,7 @@ The core feature of Pigsty v1.4 is a major refactor of the underlying architectu
 | **PGSQL** | PostgreSQL database deployment and management module |
 | **REDIS** | Redis database deployment and management module |
 
-![](home-dashboard.jpg)
+![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support — Modular Architecture (figure 3)](home-dashboard.jpg)
 
 > The new Pigsty v1.4 monitoring home dashboard
 
@@ -46,25 +43,23 @@ The core feature of Pigsty v1.4 is a major refactor of the underlying architectu
 
 - **Redis clusters**: Add the REDIS module on Pigsty-managed nodes. Future database modules (like KAFKA, MINIO, MYSQL) can be added to Pigsty in similar fashion.
 
-![](modular-architecture.jpg)
+![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support — Modular Architecture (figure 4)](modular-architecture.jpg)
 
 > Modular playbooks and configuration parameters
-
---------
 
 ## New Database Support
 
 PostgreSQL is a versatile database kernel, but as organizations and data grow, specialized data components become necessary. The two most typical are: **caching** (Redis) and **data warehousing** (Greenplum).
 
-![](db-ecosystem.jpg)
+![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support — New Database Support (figure 5)](db-ecosystem.jpg)
 
 Redis further strengthens business system OLTP capabilities, offloads database pressure, and developers love its simple model. Greenplum significantly enhances OLAP capabilities, using the same language, drivers, and interfaces as PostgreSQL, scaling analytics from tens of TB to PB or even ZB scale.
 
-![](redis-greenplum.jpg)
+![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support — New Database Support (figure 6)](redis-greenplum.jpg)
 
 Redis and Greenplum extend PostgreSQL's capability boundaries in two directions — both are common PostgreSQL companions, frequently used together. Therefore, Pigsty v1.4 provides preliminary support for Redis and Greenplum.
 
-![](redis-overview.jpg)
+![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support — New Database Support (figure 7)](redis-overview.jpg)
 
 > Redis Overview Dashboard
 
@@ -72,17 +67,15 @@ Note that Pigsty supports not native Greenplum, but a fork: **MatrixDB**. The of
 
 In Pigsty v1.4, there's no dedicated **MATRIXDB** module — MatrixDB deployment completely reuses the **PGSQL** module. You can configure MatrixDB with familiar configuration parameters. From Pigsty's perspective, a MatrixDB data warehouse is logically N pairs of standard primary-replica PGSQL clusters: one standard Master cluster (Master & Standby), and multiple Segment clusters (Primary & Mirror) distributed across nodes. All PGSQL dashboards work directly with MatrixDB.
 
-![](pgsql-matrixdb.jpg)
+![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support — New Database Support (figure 8)](pgsql-matrixdb.jpg)
 
 > PGSQL MatrixDB Dashboard
 
 The dedicated PGSQL Matrix dashboard shows core monitoring metrics for a MatrixDB deployment, while other monitoring dashboards reuse existing PGSQL panels.
 
-![](matrixdb-config.jpg)
+![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support — New Database Support (figure 9)](matrixdb-config.jpg)
 
 > Defining a 4-node MatrixDB requires only this configuration
-
---------
 
 ## Monitoring System Evolution
 
@@ -92,7 +85,7 @@ The monitoring system has always played a core role in Pigsty. In v1.4, Pigsty's
 
 Pigsty v1.4 introduces brand new node monitoring capabilities — a direct result of the modular refactor. Previously, machine monitoring metrics were 1:1 bound to PostgreSQL instances. For a PostgreSQL distribution, this design was fine. But as Pigsty evolved, this design became outdated.
 
-![](nodes-overview.jpg)
+![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support — Host Monitoring (figure 10)](nodes-overview.jpg)
 
 > NODES Overview panel, providing navigation for all nodes
 
@@ -100,13 +93,13 @@ Users may have various deployment strategies, such as deploying multiple databas
 
 This brings two significant benefits: first, if users only need node monitoring and management without database monitoring, it's much simpler than before; second, a single node can deploy multiple or even different types of databases while reusing the same node monitoring data. Anytime you click an IP address, you jump to the specific NODES Instance to view node details.
 
-![](nodes-instance.jpg)
+![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support — Host Monitoring (figure 11)](nodes-instance.jpg)
 
 > The former PGSQL Node is now NODES Instance
 
 Node monitoring provides three levels: global overview, cluster, and single node. Node **clusters** can be configured to match PostgreSQL database clusters by default, or have independent identity configuration for viewing cluster resources from different perspectives.
 
-![](nodes-cluster.jpg)
+![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support — Host Monitoring (figure 12)](nodes-cluster.jpg)
 
 > New Nodes Cluster panel, focusing on aggregate metrics and horizontal comparison within a node group
 
@@ -118,7 +111,7 @@ In Pigsty v1.4, Loki and Promtail log collection components are upgraded to defa
 
 After a year of testing and refinement, Loki is now a default part of Pigsty, collecting various logs in real-time: node syslog, dmesg, cron logs, database postgres/pgbouncer/patroni logs, and Redis logs.
 
-![](logs-instance.jpg)
+![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support — Log Collection (figure 13)](logs-instance.jpg)
 
 > LOGS Instance monitoring panel in the INFRA section for real-time log browsing and searching
 
@@ -126,7 +119,7 @@ ELK is overkill for SRE logging needs — what people really want is an efficien
 
 Additionally, besides node logs, you can also view real-time infrastructure log data from the new INFRA Overview panel.
 
-![](infra-overview.jpg)
+![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support — Log Collection (figure 14)](infra-overview.jpg)
 
 > INFRA Overview panel showing infrastructure logs
 
@@ -134,7 +127,7 @@ Additionally, besides node logs, you can also view real-time infrastructure log 
 
 Pigsty v1.4 provides monitoring support for new database types, but classic PostgreSQL monitoring wasn't neglected. In v1.4, many PGSQL monitoring panels were adjusted and remade. The most representative is the PGSQL Cluster panel.
 
-![](pgsql-cluster.jpg)
+![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support — PGSQL Monitoring (figure 15)](pgsql-cluster.jpg)
 
 > New PGSQL Cluster monitoring panel first screen
 
@@ -142,19 +135,19 @@ PGSQL Cluster is one of the most core monitoring panels in Pigsty database monit
 
 Beyond cluster resource objects, PGSQL Cluster's first screen only shows the most critical monitoring metrics, alert events, and cluster/instance pressure levels. Other details are hidden in the topic sections below.
 
-![](pgsql-cluster-members.jpg)
+![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support — PGSQL Monitoring (figure 16)](pgsql-cluster-members.jpg)
 
 > Member details table in the hidden second section by default
 
 The second significant improvement is the new PGSQL Databases panel. Previously, database-internal monitoring only focused on single objects within single instances. But for business objects like tables and indexes, the focus is on their overall metrics across the entire cluster. PGSQL Databases was created for this. You can query a database's performance across the entire cluster, horizontally comparing differences between instances:
 
-![](pgsql-databases.jpg)
+![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support — PGSQL Monitoring (figure 17)](pgsql-databases.jpg)
 
 > PGSQL Databases panel: `agg(metrics{datname=*}) by (ins)`
 
 More importantly, you can see aggregate views of every table and query type across the cluster scope. For example, check a table's or query type's QPS on the cluster's primary and replica instances, or confirm an index's usage across different cluster instances — enabling targeted business and application optimization.
 
-![](tables-queries-treemap.jpg)
+![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support — PGSQL Monitoring (figure 18)](tables-queries-treemap.jpg)
 
 > Cluster-level aggregate display of database objects: Tables & Queries, click to drill down
 
@@ -164,7 +157,7 @@ The colored TreeMap quickly reflects two-dimensional attributes: for tables, siz
 
 Besides the four core modules **INFRA**, **NODES**, **PGSQL**, **REDIS**, the Pigsty Grafana home has one more section: **APP**. This is for user applications. Any monitoring dashboard tagged with `APP` and `Overview` appears in Pigsty's dashboard navigation. Pigsty ships with a ready-to-use small app PGLOG for analyzing PostgreSQL's own CSV logs, quickly locating anomalies from logs and jumping to specific connection details.
 
-![](pglog-overview.jpg)
+![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support — Application Dashboards (figure 19)](pglog-overview.jpg)
 
 > PGLOG Overview, using shortcuts to quickly load logs into application tables for analysis
 
@@ -180,17 +173,15 @@ Additionally, Pigsty established a dedicated code repository `pigsty-app` for ho
 
 More data application examples will be added continuously.
 
-![](dbeng-trend.jpg)
+![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support — Application Dashboards (figure 20)](dbeng-trend.jpg)
 
 > DBEng Trend: Using authoritative DB-Engines popularity data to predict when PostgreSQL will become the world's most popular relational database
-
---------
 
 ## Installation Experience / CDN
 
 Previously Pigsty used GitHub as the release platform, which was difficult to access from mainland China. So we enabled a global CDN domain `http://download.pigsty.cc`. For example, the latest source package and offline package download URLs are:
 
-```
+```text
 http://download.pigsty.cc/v1.4.0/pigsty.tgz  (2MB)
 http://download.pigsty.cc/v1.4.0/pkg.tgz     (940MB)
 ```
@@ -208,28 +199,23 @@ cd ~/pigsty && ./configure  # Configure
 make install                # Install
 ```
 
---------
-
 ## Case Study: Tantan
 
 Tantan is Pigsty's largest user case. In March 2022, Tantan decommissioned the last legacy PostgreSQL database `pg.meta.tt`, with all production databases migrated to Pigsty. One hundred clusters are all managed by Pigsty v1.3.1 (with v1.4 monitoring). Auto-failover is enabled for all clusters, marking the official completion of the two-year **Database Ascension Project**.
 
-![](tantan-case.jpg)
+![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support — Case Study: Tantan (figure 21)](tantan-case.jpg)
 
 > Tantan's main production Pigsty deployment: 240 instances, 13,400 cores of PostgreSQL OLTP clusters
 
 At Tantan, Pigsty underwent long-term, large-scale, rigorous production testing. Over two years of continuous refinement led to what it is today. In recent chaos engineering drills, ops randomly selected database machines for multiple crash tests. Pigsty automatically performed HA primary-replica/traffic failover with no human intervention. Replica crashes had no business impact; primary crashes affected business writes for less than 1 minute.
 
-![](replica-failover.jpg)
+![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support — Case Study: Tantan (figure 22)](replica-failover.jpg)
 
 > A typical replica crash scenario: read traffic quickly handled by primary, only a few in-flight queries interrupted, then immediate recovery
 
-![](primary-failover.jpg)
+![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support — Case Study: Tantan (figure 23)](primary-failover.jpg)
 
 > A typical primary crash scenario: 30s after primary goes down, replica is promoted to new primary, 30s of business write impact then self-healing
-
---------
---------
 
 ## v1.4.0 Release Notes
 
@@ -310,8 +296,6 @@ At Tantan, Pigsty underwent long-term, large-scale, rigorous production testing.
 - `pg_exporter_params`: Extra URL parameters for pg_exporter when generating monitoring target URL
 - `pg_provision`: Boolean variable indicating whether to execute provisioning part of `postgres` role
 - `no_cmdb`: Used for `infra.yml` and `infra-demo.yml` playbooks, won't create CMDB on meta node
-
---------
 
 ## v1.4.1 Release Notes
 

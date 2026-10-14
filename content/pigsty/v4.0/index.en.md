@@ -10,7 +10,6 @@ tags: [Pigsty]
 ai: true
 aliases: ["/ai/v4.0/"]
 ---
-
 **Pigsty v4.0 is here!** This is a milestone release.
 
 [Pigsty](https://pigsty.io) is a batteries-included, open-source, local-first PostgreSQL distribution.
@@ -22,8 +21,6 @@ v4.0 is a major architectural overhaul: 320 commits, ~400k lines changed
 I'd call this version "Finished Software" — it's reached a state I'm genuinely satisfied with.
 
 **v4.0 theme: More Open, More Efficient, More Secure, More Intelligent.** Let's dive in.
-
-------
 
 ## TL;DR
 
@@ -42,8 +39,6 @@ I'd call this version "Finished Software" — it's reached a state I'm genuinely
 - [Finished Software: Quality I'm Happy With](#finished)
 - [Entering the AI Era: Built for Agents](#ai-era)
 
-------
-
 ## License Change: Back to Apache 2.0 {#license}
 
 Pigsty v4.0 switches from AGPLv3 back to the permissive Apache 2.0 license.
@@ -52,8 +47,6 @@ Want to build your own custom PG distro? Fork Pigsty and skip the yak shaving.
 
 For the full rationale, see my separate post:
 [From AGPL to Apache: Thoughts on Pigsty's Relicensing](/pg/pigsty-relicense).
-
-------
 
 ## Observability Overhaul: Victoria Stack FTW {#observability}
 
@@ -92,8 +85,6 @@ Big picture: the current [INFRA module](https://pigsty.io/docs/infra) is basical
 Metrics + Logs + Trace + Alert + unified UI.
 Add the OOTB Grafana and you've got an enterprise-grade observability platform.
 
-------
-
 ## Container Support: Docker Gang Rejoice {#docker}
 
 Docker support was the most requested feature — running Pigsty itself in containers.
@@ -116,8 +107,6 @@ Base image is ~200 MB (vs 3 GB for the kitchen sink).
 
 Post-deploy, you're good to go: port 8080 for web, 2222 for ssh, 5432 for postgres.
 Works on Windows, macOS, Linux — quick and easy test drive.
-
-------
 
 ## PG 18 Ready: 444 Extensions Standing By {#pg18}
 
@@ -170,8 +159,6 @@ Bottom line: PG 18's major extensions are locked and loaded,
 params fully optimized, metrics fully collected.
 PG 18 in Pigsty is battle-ready for the harshest production environments.
 
-------
-
 ## Security Hardening: Passwords, Firewall, SELinux {#security}
 
 v4 went hard on security, checking boxes against compliance standards
@@ -205,8 +192,6 @@ These security policies are progressive:
 with random strong passwords generated, default config is already secure enough.
 Advanced options are there for enterprises to evaluate tradeoffs.
 
-------
-
 ## JUICE Module: Database as Filesystem {#juice}
 
 v4's new JUICE module integrates JuiceFS,
@@ -228,8 +213,6 @@ Previously only high-end commercial CDP appliances had this —
 now Pigsty provides it free. PIGLET AI sandbox has this configured by default.
 
 ![vibe.webp](vibe.webp)
-
-------
 
 ## VIBE Module: Claude Code Runtime {#vibe}
 
@@ -259,8 +242,6 @@ This module powers [PIGLET.RUN](https://piglet.run)
 and is the cloud dev environment I personally use.
 Post-install, you've got a complete cloud development environment —
 secure and fully equipped.
-
-------
 
 ## DBA Agent: Skills & CLI {#dba-agent}
 
@@ -300,8 +281,6 @@ More posts coming on this.
 
 [pig-v10]: https://www.postgresql.org/about/news/pig-v10-released-with-pgextcloud-444-pg-extensions-on-14-linux-3214/
 
-------
-
 ## HA Optimization: RTO/RPO Deep Dive {#ha}
 
 Beyond AI4PG and PG4AI, v4 also levels up on core database service fundamentals.
@@ -334,8 +313,6 @@ Theoretical analysis so users can run Patroni HA with peace of mind.
 
 > Theoretical decomposition keeps RTO upper bounds at
 > 30/45/90/150s for the four param sets
-
-------
 
 ## Instant Clone: Fork DBs & Instances in Milliseconds {#pitr}
 
@@ -371,8 +348,6 @@ run `pig pitr`, it handles everything automagically.
 Restore your database cluster in-place/incrementally/efficiently to your target point.
 Newbies and AI Agents alike can leverage this easily — that's the bar we're aiming for.
 
-------
-
 ## IaC Enhancements: More Fine-Grained Knobs {#iac}
 
 Previously Pigsty didn't support deleting users or databases —
@@ -401,8 +376,6 @@ End result: IaC your way to customizing every PostgreSQL cluster detail.
 Databases, users, inheritance, permissions, HBA, services, extensions, schemas —
 one shot, spin up production-ready database clusters.
 This IaC config-as-code approach is natural and friendly for both DBAs and DBA Agents.
-
-------
 
 ## Vibe Coding IRL: Taste & Validation Are the Moat {#vibe-coding}
 
@@ -455,8 +428,6 @@ external contributions actually slow things down.
 So Pigsty will take a similar path: **Open Source, but not Open Collaboration** —
 accepting Issues, feature requests, and feedback only, no more PRs.
 
-------
-
 ## Finished Software: Quality I'm Happy With {#finished}
 
 As mentioned in [From AGPL to Apache: Thoughts on Pigsty's Relicensing](/pg/pigsty-relicense),
@@ -476,8 +447,6 @@ With AI help, this barely takes time; one PG major version per year is fine.
 The remaining 10 points are left for ecosystem, product, and commercial services to grow.
 
 And my energy can finally shift to that seed planted three years ago.
-
-------
 
 ## Entering the AI Era: Built for Agents {#ai-era}
 
@@ -538,11 +507,9 @@ And every life needs a reliable heart.
 
 Welcome to the game.
 
-------
+## Pigsty v4.0.0 ReleaseNote
 
-# Pigsty v4.0.0 ReleaseNote
-
-## Quick Start
+### Quick Start
 
 ```bash
 curl https://pigsty.io/get | bash -s v4.0.0
@@ -555,9 +522,7 @@ curl https://pigsty.io/get | bash -s v4.0.0
 [Docs EN](https://pigsty.io) |
 [Docs CN](https://pigsty.io)
 
-------
-
-## Highlights
+### Highlights
 
 - **Observability Revolution**: Prometheus → VictoriaMetrics (10x perf),
   Loki+Promtail → VictoriaLogs+Vector
@@ -572,11 +537,9 @@ curl https://pigsty.io/get | bash -s v4.0.0
 - **Multi-Cloud Terraform**: AWS, Azure, GCP, Hetzner, DigitalOcean, Linode, Vultr, TencentCloud
 - **License Change**: AGPL-3.0 → Apache-2.0
 
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v4.0.0)
+[![Pigsty v4.0: Into the AI Era — Highlights (figure 9)](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v4.0.0)
 
-------
-
-## Infrastructure Package Updates
+### Infrastructure Package Updates
 
 MinIO now uses [**pgsty/minio**](https://github.com/pgsty/minio) fork RPM/DEB.
 
@@ -596,9 +559,7 @@ MinIO now uses [**pgsty/minio**](https://github.com/pgsty/minio) fork RPM/DEB.
 | hugo                | 0.154.5 | cloudflared         | 2026.1.1 |
 | headscale           | 0.27.1  |                     |          |
 
-------
-
-## Docker Support
+### Docker Support
 
 Pigsty now supports running in **Docker containers** with full systemd support,
 working on both macOS (Docker Desktop) and Linux.
@@ -609,9 +570,7 @@ working on both macOS (Docker Desktop) and Linux.
 cd ~/pigsty/docker; make launch    # = make up config deploy
 ```
 
-------
-
-## New Modules
+### New Modules
 
 v4.0.0 adds two **optional modules** that don't affect core Pigsty functionality:
 
@@ -655,9 +614,7 @@ v4.0.0 adds two **optional modules** that don't affect core Pigsty functionality
 - Use `conf/vibe.yml` template for quick AI coding sandbox setup
 - Common parameter: `vibe_data` (default `/fs`) for workspace directory
 
-------
-
-## PostgreSQL Extension Updates
+### PostgreSQL Extension Updates
 
 Major extensions add PG 18 support:
 age, citus, documentdb, pg_search, timescaledb, pg_bulkload, rum, etc.
@@ -680,13 +637,13 @@ age, citus, documentdb, pg_search, timescaledb, pg_bulkload, rum, etc.
 [ext-textsearch]: https://github.com/timescale/pg_textsearch
 [ext-clickhouse]: https://github.com/clickhouse/pg_clickhouse/
 [ext-ai-query]: https://github.com/benodiwal/pg_ai_query
-[ext-etcd-fdw]: https://github.com/pgsty/etcd_fdw
-[ext-ttl-index]: https://github.com/pg-ttl-index
+[ext-etcd-fdw]: https://github.com/cybertec-postgresql/etcd_fdw
+[ext-ttl-index]: https://github.com/ibrahimkarimeddin/postgres-extensions-pg_ttl
 [ext-pljs]: https://github.com/plv8/pljs
-[ext-retry]: https://github.com/pg-retry/pg_retry
-[ext-weighted]: https://github.com/pgsty/pg_weighted_statistics
-[ext-enigma]: https://github.com/pgsty/pg_enigma
-[ext-linter]: https://github.com/pgsty/pglinter
+[ext-retry]: https://github.com/Agent-Hellboy/pg_retry
+[ext-weighted]: https://github.com/schmidni/pg_weighted_statistics
+[ext-enigma]: https://github.com/SoftwareLibreMx/pg_enigma
+[ext-linter]: https://github.com/pmpetit/pglinter
 [ext-docdb-rum]: https://github.com/microsoft/documentdb
 [ext-mobility]: https://github.com/MobilityDB
 
@@ -716,9 +673,7 @@ age, citus, documentdb, pg_search, timescaledb, pg_bulkload, rum, etc.
 
 pgBackRest updated to 2.58 with HTTP support.
 
-------
-
-## Observability
+### Observability
 
 - VictoriaMetrics replaces Prometheus — several times the performance
 - VictoriaLogs + Vector replaces Promtail + Loki for log collection
@@ -742,9 +697,7 @@ pgBackRest updated to 2.58 with HTTP support.
 - PGSQL Cluster/Instance dashboards add version banner
 - All dashboards use compact JSON format, reducing file size
 
-------
-
-## Interface Improvements
+### Interface Improvements
 
 **Playbook Rename**:
 
@@ -777,9 +730,7 @@ pgBackRest updated to 2.58 with HTTP support.
 - `node_crontab` auto-restores original crontab on `node-rm`
 - New `infra_extra_services` for homepage service entries
 
-------
-
-## Parameter Optimization
+### Parameter Optimization
 
 **I/O Parameters**
 
@@ -816,9 +767,7 @@ pgBackRest updated to 2.58 with HTTP support.
 - Fixed `duckdb.allow_community_extensions` always active issue
 - pg_hba and pgbouncer_hba now support IPv6 localhost
 
-------
-
-## Architecture Improvements
+### Architecture Improvements
 
 **Directories & Portal**:
 
@@ -866,9 +815,7 @@ pgBackRest updated to 2.58 with HTTP support.
 
 - Terraform: AWS, Azure, GCP, Hetzner, DigitalOcean, Linode, Vultr, TencentCloud
 
-------
-
-## Security Improvements
+### Security Improvements
 
 **Password Management**:
 
@@ -902,9 +849,7 @@ pgBackRest updated to 2.58 with HTTP support.
 - Fixed `pg_pitr` race conditions during Patroni cluster recovery
 - Protected `files/pki/ca` directory with mode 0700
 
-------
-
-## Bug Fixes
+### Bug Fixes
 
 | Issue                                  | Resolution                            |
 |----------------------------------------|---------------------------------------|
@@ -935,9 +880,7 @@ pgBackRest updated to 2.58 with HTTP support.
 | IvorySql 18 file_copy_method           | Fixed incompatibility with clone      |
 | tuned profile activation               | Fixed by restarting tuned service     |
 
-------
-
-## Parameter Changes
+### Parameter Changes
 
 **New Parameters**
 
@@ -995,9 +938,7 @@ pgBackRest updated to 2.58 with HTTP support.
 | `node_firewall_mode`       | zone → none               | Disable firewall rules   |
 | `install.yml`              | Renamed to `deploy.yml`   | Better semantics         |
 
-------
-
-## Compatibility
+### Compatibility
 
 | OS                 | x86_64 | aarch64 |
 |--------------------|:------:|:-------:|
@@ -1007,9 +948,7 @@ pgBackRest updated to 2.58 with HTTP support.
 
 **PostgreSQL**: 13, 14, 15, 16, 17, 18
 
-------
-
-## Checksums
+### Checksums
 
 ```bash
 9f42b8c64180491b59bd03016c26e8ca  pigsty-v4.0.0.tgz

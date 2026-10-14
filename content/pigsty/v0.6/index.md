@@ -8,12 +8,9 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v0.6.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v060)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v0.6.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v060)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v0.6.0)
-
-----------------
+[![Pigsty v0.6：架构增强（图 1）](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v0.6.0)
 
 ## v0.6.0
 
@@ -29,9 +26,9 @@ v0.6 对数据库供给方案进行了修改与调整，根据用户的反馈添
 ### 功能改进
 
 * 改造Prometheus与监控供给方式
-  * 允许在无基础设施的情况下对已有PG集群进行监控部署，便于监控系统与其他供给方案集成。[#11](https://github.com/Vonng/pigsty/issues/11)
-  * 基于Inventory渲染所有监控对象的静态列表，用于静态服务发现。[#11](https://github.com/Vonng/pigsty/issues/11)
-  * Prometheus添加了静态对象模式，用于替代动态服务发现，集中进行身份管理[#11](https://github.com/Vonng/pigsty/issues/11)
+  * 允许在无基础设施的情况下对已有PG集群进行监控部署，便于监控系统与其他供给方案集成。[#11](https://github.com/pgsty/pigsty/issues/11)
+  * 基于Inventory渲染所有监控对象的静态列表，用于静态服务发现。[#11](https://github.com/pgsty/pigsty/issues/11)
+  * Prometheus添加了静态对象模式，用于替代动态服务发现，集中进行身份管理[#11](https://github.com/pgsty/pigsty/issues/11)
   * 监控Exporter现在添加了 `service_registry` 选项，Consul服务注册变为可选项 [#13](https://github.com/Vonng/pigsty/issues/13)
   * Exporter现在可以通过拷贝二进制的方式直接安装：`exporter_binary_install`，[#14](https://github.com/Vonng/pigsty/issues)
   * Exporter现在具有 `xxx_enabled` 选项，控制是否启用该组件。

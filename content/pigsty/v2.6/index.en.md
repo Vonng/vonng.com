@@ -8,18 +8,15 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.6.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v260)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.6.0) | [**Release Note**](https://pigsty.io/docs/releasenote/#v260)
-
-[![](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v2.6.0)
+[![Pigsty v2.6: PostgreSQL Crashes the OLAP Party (figure 1)](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v2.6.0)
 
 On the last day of February, Pigsty v2.6 is officially released! This version makes PostgreSQL 16 the default major version and introduces a series of new extensions, including [**ParadeDB**](https://www.paradedb.com/) and DuckDB, elevating PostgreSQL's OLAP analytical capabilities to an entirely new level. Calling it the HTAP benchmark and database all-rounder is well-deserved.
 
 Additionally, we've completely refreshed the Pigsty official website, documentation, and blog, presenting six more refined core value propositions. Globally, we're now using the Cloudflare-powered domain **pigsty.io** as the default official site and repository address. The original pigsty.cc domain, website, and repos continue to serve as mirrors within China.
 
 Finally, we're officially launching transparently-priced Pigsty Pro and service subscriptions, providing advanced features and support options for users who need them.
-
-------
 
 ## Epic-Level Analytics Enhancement
 
@@ -38,8 +35,6 @@ And **DuckDB** (**x3.2**) elevates OLAP to an entirely new level — setting asi
 ![duck.jpg](duck.jpg)
 
 Appreciation from ParadeDB's founder and DuckDB FDW's author
-
-------
 
 ## New Value Propositions
 
@@ -61,8 +56,6 @@ We've also redesigned the logo, from the sunglasses-wearing pig head to a hexago
 
 ![mascot.jpg](mascot.jpg)
 
-------
-
 ## New Website
 
 In this version, we've renovated the old website using the latest Docsy documentation framework, updating substantial content. We abandoned flashy impractical designs, putting Pigsty's value propositions and core features directly on the landing page.
@@ -83,8 +76,6 @@ Beyond docs, we've organized recent articles into the Pigsty blog, divided into 
 
 Meanwhile, Pigsty's software repositories now have global mirrors powered by Cloudflare R2, hosted on Cloudflare for smooth access worldwide (China users can continue using pigsty.cc).
 
-------
-
 ## PostgreSQL 16 Becomes Default
 
 The last notable feature: in Pigsty v2.6, PostgreSQL 16 (16.2) officially replaces PostgreSQL 15 as the default major version.
@@ -103,8 +94,6 @@ Focusing the open-source edition on one core PG major version and three mainstre
 
 Supporting niche/legacy OSes and outdated major versions isn't needed by the vast majority of users but requires substantial extra effort and cost, so it's included in our paid commercial support.
 
-------
-
 ## Open Source vs Pro Edition
 
 Some open-source users have feedback: "I don't need stuff unrelated to PostgreSQL slowing down downloads/installation and adding management complexity — Redis, MinIO, Docker, K8S, Supabase — you think they help PG, but flashy extras only slow my attack speed."
@@ -116,8 +105,6 @@ The specific feature division isn't finalized yet, so 2.6 may be the last fully-
 Going forward, the Pigsty open-source edition will focus on doing one thing well — providing reliable, highly-available, extensible local PostgreSQL RDS services. Practical features like Docker templates may still stay in the open-source edition.
 
 This doesn't mean these features disappear from open-source Pigsty — seasoned open-source veterans can still easily recreate them by modifying config files — but they won't be default components of the open-source version.
-
-------
 
 ## Commercial Subscriptions
 
@@ -135,8 +122,6 @@ But database problems are usually big problems. Misusing databases also tends to
 
 Often, turning the ordinary into extraordinary and achieving orders-of-magnitude improvements comes down to one sentence from an expert. This is especially true for PostgreSQL, whose soul is extensibility and whose extension ecosystem is incredibly rich. Our services ensure every dollar you spend is worthwhile and spent on what truly matters.
 
-------
-
 ## Looking Forward
 
 Pigsty's next major version is planned as v3, officially implementing the open-source/pro feature division. We'll complete missing extension DEBs for Ubuntu/Debian systems and provide a CLI tool to wrap management operations. We may package Pigsty itself as RPM/DEB, and plan beta MYSQL monitoring/deployment support.
@@ -147,8 +132,6 @@ For infrastructure, we're choosing to abandon "cheap" Tencent Cloud CDN, fully e
 
 Pigsty's product and interfaces will stabilize in v2.6 and v3.0 — it's already doing great on product and technology fronts! Even exceeding RDS in some areas (like extension support and monitoring!). So upcoming work will shift focus to marketing and sales. Sustainable open-source operations require user and customer support. If Pigsty has helped you, please consider sponsoring us or purchasing our service subscriptions.
 
-----------------
-
 ## v2.6.0 Release Notes
 
 **Highlights**
@@ -156,7 +139,7 @@ Pigsty's product and interfaces will stabilize in v2.6 and v3.0 — it's already
 * PostgreSQL 16 is now the default major version (16.2)
 * New [ParadeDB](https://www.paradedb.com/) extensions: `pg_analytics`, `pg_bm25`, and `pg_sparse`
 * New [DuckDB](https://duckdb.org/) and `duckdb_fdw` support
-* Global Cloudflare CDN https://repo.pigsty.io and China CDN https://repo.pigsty.cc
+* Global Cloudflare CDN https://pigsty.io/docs/repo/ and China CDN https://repo.pigsty.cc
 
 **Configuration Changes**
 
@@ -198,9 +181,9 @@ Pigsty's product and interfaces will stabilize in v2.6 and v3.0 — it's already
 - Vector extension PGVector 0.6.0: added parallel HNSW index creation
 - New extension [duckdb_fdw](https://github.com/alitrack/duckdb_fdw) v1.1 for reading/writing DuckDB data
 - New extension [pgsql-gzip](https://github.com/pramsey/pgsql-gzip) for Gzip compression/decompression v1.0.0
-- New extension [pg_sparse](https://github.com/paradedb/paradedb/tree/dev/pg_sparse) for efficient sparse vectors (ParadeDB) v0.5.6
-- New extension [pg_bm25](https://github.com/paradedb/paradedb/tree/dev/pg_bm25) for high-quality BM25 full-text search (ParadeDB) v0.5.6
-- New extension [pg_analytics](https://github.com/paradedb/paradedb/tree/dev/pg_analytics) with SIMD + columnar storage for analytics (ParadeDB) v0.5.6
+- New extension [pg_sparse](https://github.com/paradedb/paradedb/tree/v0.5.6/pg_sparse) for efficient sparse vectors (ParadeDB) v0.5.6
+- New extension [pg_bm25](https://github.com/paradedb/paradedb/tree/v0.5.6/pg_bm25) for high-quality BM25 full-text search (ParadeDB) v0.5.6
+- New extension [pg_analytics](https://github.com/paradedb/pg_analytics) with SIMD + columnar storage for analytics (ParadeDB) v0.5.6
 - Upgraded AIML extension [pgml](https://github.com/postgresml/postgresml) to v2.8.1 with PG 16 support
 - Upgraded columnar extension [hydra](https://github.com/hydradatabase/) to v1.1.1 with PG 16 support
 - Upgraded graph extension [age](https://github.com/apache/age) to v1.5.0 with PG 16 support

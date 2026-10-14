@@ -8,10 +8,9 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.3.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v230) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486053&idx=1&sn=854966c3c4e2c96298173baaa2915535&chksm=fe4b3fbec93cb6a88669c698f7299bd4d38e9a691122831e72b9204fd35f94f4d0ac304812a6&scene=21#wechat_redirect)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.3.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v230) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486053&idx=1&sn=854966c3c4e2c96298173baaa2915535&chksm=fe4b3fbec93cb6a88669c698f7299bd4d38e9a691122831e72b9204fd35f94f4d0ac304812a6&scene=21#wechat_redirect)
-
-[![](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v2.3.0)
+[![Pigsty v2.3：丰富应用生态（图 1）](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v2.3.0)
 
 Pigsty v2.3 发布了 🎉，在这个版本中进一步完善了监控系统、应用生态、并跟进 PostgreSQL 例行的小版本更新（CVE修复）。
 
@@ -35,7 +34,7 @@ MongoDB 是一个很受欢迎的 NoSQL 文档数据库。但由于开源协议�
 
 MongoDB 与 PostgreSQL 是两个非常不同的数据库系统：MongoDB 使用文档模型，使用专用的查询语言进行交互 。但是鉴于 PostgreSQL 也提供了完整的 JSON/JSONB/GIN 功能支持，所以这么做在理论上也是完全可行的：FerretDB 负责将您的 SON 查询转换为 SQL 查询：
 
-```
+```text
 use test-- CREATE SCHEMA test;
 db.dropDatabase()-- DROP DATABASE test;
 db.createCollection('posts')-- CREATE TABLE posts(_data JSONB,...)
@@ -46,7 +45,7 @@ db.posts.createIndex({ title: 1 })-- CREATE INDEX ON posts(_data->>'title');
 
 在 Pigsty 定义一个 FerretDB 集群与其他类型的数据库并无二致，您仅需要提供核心的身份参数：集群名称与实例号。需要关注的是 mongo_pgurl 参数，它指定了 FerretDB 底层使用的 PostgreSQL 地址。
 
-```
+```text
 ferret:  hosts:    10.10.10.45: { mongo_seq: 1 }    10.10.10.46: { mongo_seq: 2 }    10.10.10.47: { mongo_seq: 3 }  vars:    mongo_cluster: ferret    mongo_pgurl: 'postgres://test:test@10.10.10.3:5436/test'
 ```
 
@@ -56,7 +55,7 @@ ferret:  hosts:    10.10.10.45: { mongo_seq: 1 }    10.10.10.46: { mongo_seq: 2 
 
 配置完成后，使用 ./mongo.yml -l ferret 即可完成安装。当然，如果您更喜欢使用容器，也可以直接 cd pigsty/app/ferretdb; make 使用 docker-compose 拉起 FerretDB 使用。安装完成后，您可以使用任何 MongoDB Client 访问 FerretDB，例如 MongoSH：
 
-```
+```text
 mongosh 'mongodb://test:test@10.10.10.45:27017/test?authMechanism=PLAIN'
 ```
 
@@ -74,7 +73,7 @@ NocoDB 可以让各种关系型数据库变身成为 Excel ，运行你自己的
 
 在 Pigsty 中，拉起 NocoDB 非常容易，只需要一行命令即可。您可以修改 .env 中的 DATABASE_URL 参数来使用不同的数据库。
 
-```
+```text
 cd ~/pigsty/app/nocodb; make up
 ```
 
@@ -142,22 +141,20 @@ Pigsty v2.2 提供了官方 Yum 源，在 v2.3 中则默认启用了全站 HTTPS
 
 Pigsty v2.3 的安装命令为：
 
-**bash -c "$(curl -fsSL https://get.pigsty.cc/latest)"**
+**`bash -c "$(curl -fsSL https://get.pigsty.cc/latest)"`**
 
 一行命令，即可在全新机器上完整安装 Pigsty. 如果您想要尝鲜 beta 版本，将 latest 换为 beta 即可。对于没有互联网访问的特殊环境，您也可以使用以下链接下载 Pigsty，以及打包了所有软件的离线安装包：
 
 ![download](download.webp)
 
-https://get.pigsty.cc/v2.3.0/pigsty-v2.3.0.tgz
-https://get.pigsty.cc/v2.3.0/pigsty-pkg-v2.3.0.el7.x86_64.tgz
-https://get.pigsty.cc/v2.3.0/pigsty-pkg-v2.3.0.el8.x86_64.tgz
-https://get.pigsty.cc/v2.3.0/pigsty-pkg-v2.3.0.el9.x86_64.tgz
+https://github.com/pgsty/pigsty/releases/download/v2.3.0/pigsty-v2.3.0.tgz
+https://github.com/pgsty/pigsty/releases/download/v2.3.0/pigsty-pkg-v2.3.0.el7.x86_64.tgz
+https://github.com/pgsty/pigsty/releases/download/v2.3.0/pigsty-pkg-v2.3.0.el8.x86_64.tgz
+https://github.com/pgsty/pigsty/releases/download/v2.3.0/pigsty-pkg-v2.3.0.el9.x86_64.tgz
 
 以上，就是 Pigsty v2.3 带来的变化。
 
 更多细节，请参考 Pigsty 官方文档：https://vonng.github.io/pigsty/ 与 Github Release Note： https://github.com/Vonng/pigsty/releases/tag/v2.3.0
-
-----------------
 
 ## v2.3.0
 
@@ -172,10 +169,10 @@ https://get.pigsty.cc/v2.3.0/pigsty-pkg-v2.3.0.el9.x86_64.tgz
 * INFRA: 添加了对 NODE/PGSQL VIP 的监控支持
 * PGSQL: 通过小版本升级修复了 PostgreSQL [CVE-2023-39417](https://www.postgresql.org/about/news/postgresql-154-149-1312-1216-1121-and-postgresql-16-beta-3-released-2689/)： 15.4, 14.9, 13.12, 12.16，以及 Patroni v3.1.0
 * NODE:  允许用户使用 `keepalived` 为一个节点集群绑定 L2 VIP
-* REPO: Pigsty 专用 yum 源优化精简，全站默认使用 HTTPS： [`get.pigsty.cc`](https://get.pigsty.cc) 与 [`demo.pigsty.cc`](https://demo.pigsty.cc)
+* REPO: Pigsty 专用 yum 源优化精简，全站默认使用 HTTPS： [`get.pigsty.cc`](https://pigsty.cc/get) 与 [`demo.pigsty.cc`](https://demo.pigsty.cc)
 * APP:  升级 `app/bytebase` 版本至 v2.6.0， `app/ferretdb` 版本至 v1.8；添加新的应用模板：[nocodb](https://nocodb.com/)，开源的 Airtable。
 * REDIS: 升级版本至 v7.2，并重制了 Redis 监控面板。
-* MONGO: 添加基于 [FerretDB](https://www.ferretdb.io/) 1.8 实现的基本支持。
+* MONGO: 添加基于 [FerretDB](https://docs.ferretdb.io/) 1.8 实现的基本支持。
 * MYSQL: 添加了 Prometheus / Grafana / CA 中的代码存根，便于后续纳管。
 
 **API变化**
@@ -191,13 +188,11 @@ https://get.pigsty.cc/v2.3.0/pigsty-pkg-v2.3.0.el9.x86_64.tgz
 - `NODE`.`VIP`.`vip_dns_suffix`：节点 vip dns 名称后缀，默认为 .vip
 - `NODE`.`VIP`.`vip_exporter_port`：keepalived 导出器监听端口，默认为 9650
 
-```
+```text
 MD5 (pigsty-pkg-v2.3.0.el7.x86_64.tgz) = 81db95f1c591008725175d280ad23615
 MD5 (pigsty-pkg-v2.3.0.el8.x86_64.tgz) = 6f4d169b36f6ec4aa33bfd5901c9abbe
 MD5 (pigsty-pkg-v2.3.0.el9.x86_64.tgz) = 4bc9ae920e7de6dd8988ca7ee681459d
 ```
-
-----------------
 
 ## v2.3.1
 
@@ -236,7 +231,7 @@ MD5 (pigsty-pkg-v2.3.0.el9.x86_64.tgz) = 4bc9ae920e7de6dd8988ca7ee681459d
 - sealos 4.3.3
 - pgbadger 1.12.2
 
-```
+```text
 ce69791eb622fa87c543096cdf11f970  pigsty-pkg-v2.3.1.el7.x86_64.tgz
 495aba9d6d18ce1ebed6271e6c96b63a  pigsty-pkg-v2.3.1.el8.x86_64.tgz
 38b45582cbc337ff363144980d0d7b64  pigsty-pkg-v2.3.1.el9.x86_64.tgz

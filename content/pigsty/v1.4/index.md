@@ -8,7 +8,6 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
-
 Pigsty v1.4 正式发布啦！全新的模块化架构：四大内置模块 INFRA，NODES，PGSQL，REDIS 可以独立使用并自由组合；新增时序数据仓库 MatrixDB 部署与监控支持；新建设了全球 CDN 加速下载；此外，Pigsty 完成种子轮融资，产品定位与战略进行重大升级，我也全职出来投入到此项目中。请系好安全带，老司机要加速发车啦！
 
 ![图片](wxmp-pigsty-v1-4-01.webp)
@@ -21,7 +20,7 @@ Github Star 指数增长，开始！
 
 如果要我说 Pigsty v1.4 最给力的特性是什么，我认为是对底层架构的重大重构，尽管听上去比较枯燥，但这一点确实很重要。
 
-在 1.4 中，整个系统解耦成 4 个独立的模块，可以独立维护，自由排列组合使用。**`INFRA`**是 Pigsty 的基础设施部分，包括监控/告警/可视化/日志/DNS/NTP 等公共组件。**`NODES`**是主机节点管理模块，**`PGSQL`**是 PostgreSQL 数据库部署管控模块，**`REDIS`**是 Redis 数据库部署管控模块。
+在 1.4 中，整个系统解耦成 4 个独立的模块，可以独立维护，自由排列组合使用。**`INFRA`**是 Pigsty 的基础设施部分，包括监控/告警/可视化/日志/DNS/NTP 等公共组件。**`NODES`**是主机节点管理模块，**`PGSQL`**是 PostgreSQL 数据库部署管控模块，**`REDIS`** 是 Redis 数据库部署管控模块。
 
 ![图片](wxmp-pigsty-v1-4-03.webp)
 
@@ -147,7 +146,7 @@ PGSQL Cluster 是 Pigsty 数据库监控中最核心的监控面板之一，承�
 
 #### 应用面版
 
-除了**INFRA**，**NODES**，**PGSQL**，**REDIS**四个核心模块外，Pigsty Grafana 的首页还有一个板块：**APP**。这是留给用户自己的应用的。任何带有**`APP`**和**`Overview`**标签的监控面版会被列入 Pigsty 的面版导航中。Pigsty 自带了一个开箱即用的小应用 PGLOG，用来分析 PG 自身的 CSV 日志，您可以快速从日志中定位异常，并快速定位跳转到具体连接的详情页。
+除了**INFRA**，**NODES**，**PGSQL**，**REDIS**四个核心模块外，Pigsty Grafana 的首页还有一个板块：**APP**。这是留给用户自己的应用的。任何带有`APP`和`Overview`标签的监控面版会被列入 Pigsty 的面版导航中。Pigsty 自带了一个开箱即用的小应用 PGLOG，用来分析 PG 自身的 CSV 日志，您可以快速从日志中定位异常，并快速定位跳转到具体连接的详情页。
 
 ![图片](wxmp-pigsty-v1-4-19.webp)
 
@@ -177,7 +176,7 @@ DBEng Trend：使用权威网站 DBEngine 流行度趋势数据，预测 Postgre
 
 Pigsty 的软件包进行了一次重新梳理与瘦身，从原本的 1.3GB 压缩至 v1.4 的 940MB。需要安装 Greenplum 与 MatrixDB 的用户，单独下载另一个离线软件包 matrix.tgz （338MB）即可。
 
-一键安装是 Pigsty 的光荣传统。尽管如此，**下载**一直以来都是最最不让人省心的地方。因此在 Pigsty v1.4 中提供了专用的下载脚本**`download`**，可用于自动下载并解压可选的软件包**pkg.tgz，matrix.tgz，app.tgz**。这个脚本会自动检测您的网络环境是不是在墙内，如果在墙外使用默认的 Github Releaes，在墙内则使用腾讯云 CDN 下载。
+一键安装是 Pigsty 的光荣传统。尽管如此，**下载**一直以来都是最最不让人省心的地方。因此在 Pigsty v1.4 中提供了专用的下载脚本 **`download`**，可用于自动下载并解压可选的软件包**pkg.tgz，matrix.tgz，app.tgz**。这个脚本会自动检测您的网络环境是不是在墙内，如果在墙外使用默认的 Github Releaes，在墙内则使用腾讯云 CDN 下载。
 
 当然，**`download`**本身也是 pigsty 源码包的一部分，因此我们还提供了一条类似**homebrew** 的一键安装命令，用来一键下载最新的 pigsty 源码包。于是，现在安装 Pigsty 的流程如下所示了：
 
@@ -266,8 +265,6 @@ Pigsty 有一个活跃的用户群组，微信搜索 `pigsty-cc` 或扫二维码
 
 扫一扫上面的二维码或点击连接参与问卷调查，我们会寄送精美社区周边～。
 
----
-
 ## v1.4.0 发行注记
 
 ### 架构
@@ -347,8 +344,6 @@ Pigsty 有一个活跃的用户群组，微信搜索 `pigsty-cc` 或扫二维码
 - `pg_exporter_params`：生成监控目标 URL 时为 pg_exporter 提供的额外 URL 参数
 - `pg_provision`：布尔值变量，表示是否执行 `postgres` 角色的资源配置部分
 - `no_cmdb`：用于 `infra.yml` 和 `infra-demo.yml` 播放书，不会在元节点上创建 CMDB
-
----
 
 ## v1.4.1 发行注记
 

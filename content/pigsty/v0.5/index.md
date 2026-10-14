@@ -8,10 +8,9 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v0.5.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v050)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v0.5.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v050)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v0.5.0)
+[![Pigsty v0.5：数据库定制模板（图 1）](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v0.5.0)
 
 ## v0.5.0
 
@@ -208,8 +207,8 @@ pgbouncer_hba_rules_extra: []
 
 ### 数据库模板
 
-* [pg-init-template.sql](https://github.com/Vonng/pigsty/blob/master/roles/postgres/templates/pg-init-template.sql) 用于初始化 `template1` 数据的脚本模板
-* [pg-init-business.sql](https://github.com/Vonng/pigsty/blob/master/roles/postgres/templates/pg-init-business.sql) 用于初始化其他业务数据库的脚本模板
+* [pg-init-template.sql](https://github.com/pgsty/pigsty/blob/v0.5.0/roles/postgres/templates/pg-init-template.sql) 用于初始化 `template1` 数据的脚本模板
+* [pg-init-business.sql](https://github.com/pgsty/pigsty/blob/v0.5.0/roles/postgres/templates/pg-init-business.sql) 用于初始化其他业务数据库的脚本模板
 
 ### 权限模型
 

@@ -10,8 +10,6 @@ tags: [Pigsty]
 ai: true
 aliases: ["/ai/v4.0/"]
 ---
-
-
 **Pigsty v4.0 发布了！** 这是一个具有里程碑意义的大版本。
 
 [Pigsty](https://pigsty.cc) 是一个开箱即用、开源且本地优先的 PostgreSQL 数据库发行版。它能让你在没有数据库专家的情况下，
@@ -23,8 +21,6 @@ v4.0 是一次重大的架构升级，由 320 个 Commit 组成，有着将近 4
 **v4.0 的主题是：更开放、更高效、更安全、更智能。** 下面我们会介绍一下 v4.0 的新特性，以及未来发展的展望。
 
 ![pigsty-v4.webp](pigsty-v4.webp)
-
-------
 
 ## 太长；不看
 
@@ -43,8 +39,6 @@ v4.0 是一次重大的架构升级，由 320 个 Commit 组成，有着将近 4
 * [完工软件：质量达到满意状态](#finished)
 * [进入 AI 时代：为 Agent 而生](#ai-era)
 
-------
-
 ## 协议变更：回归 Apache 2.0 {#license}
 
 Pigsty v4.0 重新从 AGPLv3 许可证改回了 Apache 2.0 宽松许可证。
@@ -52,8 +46,6 @@ Pigsty v4.0 重新从 AGPLv3 许可证改回了 Apache 2.0 宽松许可证。
 如果你想做一个自己的定制 PG 发行版，也完全可以在 Pigsty 的基础上进行，避免重复造轮子。
 
 关于变更的细节，这里就不展开讨论了，老冯专门写了一篇文章讨论这个事。《[从AGPL到Apache：Pigsty 协议变更的思考](/pg/pigsty-relicense)》。
-
-----
 
 ## 监控焕新：Victoria 全家桶上位 {#observability}
 
@@ -79,8 +71,6 @@ VictoriaMetrics 是 Prometheus 的上位替代品，我们几年前在探探就�
 从整体上来看，当下的 [INFRA 模块](https://pigsty.cc/docs/infra)，就像是一个 Victoria 发行版，Metrics + Logs + Trace + Alert + 统一 UI 入口。
 配上开箱即用的 Grafana，就能让你轻松拥有一个企业级的可观测性平台。
 
-------
-
 ## 容器支持：Docker 党的福音 {#docker}
 
 Docker 容器支持，应该是社区呼声最高的功能 —— 让 Pigsty 本身跑在容器里。
@@ -99,8 +89,6 @@ cd ~/pigsty/docker; make launch	# 一键启动单机容器版 Pigsty
 
 部署完成后，你就可以正常使用了，默认使用本地的 8080 端口提供 web 服务；2222 端口提供 ssh 访问；5432 端口提供数据库访问。
 无论是 Windows，MacOS 还是 Linux，都可以轻松拉起，快速尝鲜。
-
-------
 
 ## PG 18 就绪：444 个扩展严阵以待 {#pg18}
 
@@ -133,8 +121,6 @@ PG 17/18 的新增参数和之前的老参数，我们都认真仔细地重新�
 总而言之，PG 18 的主要扩展都已经正式就位，参数也已经充分利用并优化完毕，监控指标也完整收集处理。
 Pigsty 中的 PG 18 已经可以以全盛状态，进入严苛的生产环境使用！
 
-------
-
 ## 安全加固：密码，防火墙，SELinux {#security}
 
 Pigsty v4 也在安全方面做了大量工作，对照等保，SOC2 等合规标准，基本实现了所有能做的安全合规点。
@@ -156,8 +142,6 @@ Pigsty v4 也在安全方面做了大量工作，对照等保，SOC2 等合规�
 最后，这些安全策略都是渐进式的：默认配置下只要随机生成了强密码，就已经足够安全了。
 而更多高级安全选项，则供企业用户根据自己的实际情况进行利弊权衡与选用。
 
---------
-
 ## JUICE 模块：把数据库当文件系统 {#juice}
 
 v4 新增的 JUICE 模块集成了 JuiceFS，可以把对象存储和 PostgreSQL 挂载成本地文件系统。
@@ -174,8 +158,6 @@ v4 新增的 JUICE 模块集成了 JuiceFS，可以把对象存储和 PostgreSQL
 在 PIGLET AI 沙箱里面，就默认配置了这个功能。
 
 ![vibe.webp](vibe.webp)
-
-----
 
 ## VIBE 模块：Claude Code 运行时 {#vibe}
 
@@ -197,8 +179,6 @@ VIBE 模块还可以和 Juice 模块配合使用，例如在 PIGLET.RUN 沙箱�
 这个模块是给 [PIGLET.RUN](https://piglet.run) 准备的，也是老冯自己在云端写代码开发时使用的环境。
 装好之后，你等于有了一个完整的云上开发环境，足够安全，而且工具齐备。
 
-------
-
 ## DBA Agent：Skills 与命令行 {#dba-agent}
 
 VIBE 这个模块，并非只是拿来搞开发用的。
@@ -219,8 +199,6 @@ Pigsty 从第一天就坚持 **IaC（基础设施即代码）** + **CLI（命令
 
 而一个简单易用的 AgentNative CLI，更是会让 DBA 和 DBA Agent 如虎添翼。
 这次跟着 Pigsty v4 一起发布的 [pig v1.0](https://www.postgresql.org/about/news/pig-v10-released-with-pgextcloud-444-pg-extensions-on-14-linux-3214/)，就提供了许多这样的能力封装，将原本复杂的命令与操作序列，组织为傻瓜 / Agent 都会用的命令，后面将专门写文章介绍。
-
-------
 
 ## 高可用优化：RTO/RPO 拆解与权衡 {#ha}
 
@@ -245,8 +223,6 @@ Pigsty 用户的场景很广泛：同机柜部署、跨机房容灾、跨大洲�
 ![rto-chart.webp](rto-chart.webp)
 
 > 用理论拆解的方式，将四组参数的 RTO 上限控制在 30/45/90/150s 内
-
-------
 
 ## 瞬间克隆：瞬间复刻数据库与实例 {#pitr}
 
@@ -276,8 +252,6 @@ pg-meta:
 将数据库集群以原地/增量/快速高效的方式，恢复到你指定的目标点。
 这样，无论是新手还是 AI Agent 都能轻松利用起来，门槛就得做到这种程度才够劲。
 
-------
-
 ## IaC 增强：更多精细的定制旋钮 {#iac}
 
 以前 Pigsty 不提供删除用户和删除数据库的能力，因为删除操作很危险，涉及清理依赖对象和权限的复杂 SOP。
@@ -297,8 +271,6 @@ PG 有了自己专门的 Crontab 列表，与系统的全局定时任务区别�
 最终的效果是，你可以用 IaC 的方式定制 PostgreSQL 集群里面的各种细节。
 从数据库，用户，继承关系，权限，HBA，服务，到扩展，模式，一步到位，拉起可以直接供业务生产就绪的数据库集群。
 而且这种 IaC 配置文件定义的方式，对于 DBA 与 DBA Agent 来说，都非常自然友好。
-
-------
 
 ## Vibe 实战：品味与验收是护城河 {#vibe-coding}
 
@@ -332,8 +304,6 @@ Claude Code 有两件事情做得还不太理想：
 在 AI 助手加持下，一个超级个体就能顶一个满编团队，引入外部贡献反而会拖慢节奏。
 所以，Pigsty 也将采用类似路线：**Open Source, but not Open Collaboration** —— 只接受 Issue、特性请求与反馈，不再接受 PR。
 
------
-
 ## 完工软件：质量达到满意状态 {#finished}
 
 正如《[从AGPL到Apache：Pigsty 协议变更的思考](/pg/pigsty-relicense)》里说过的，我能给 v4.0 这个版本打一个 90 分的水准。
@@ -346,8 +316,6 @@ SOTA AI 给出的结论也基本差不多：在 PostgreSQL 服务质量上，免
 剩下的 10 分，留给生态、产品、商业服务去生长。
 
 而我的精力，终于可以腾出手来，正式转向那个三年前就埋下的伏笔。
-
-------
 
 ## 进入 AI 时代：为 Agent 而生 {#ai-era}
 
@@ -389,11 +357,9 @@ Agent 正在成为新的生命形式。它们会思考、会行动、会犯错�
 
 欢迎入局。
 
----------
+## v4.0.0 发行注记
 
-# v4.0.0 发行注记
-
-## 快速上手
+### 快速上手
 
 ```bash
 curl https://pigsty.cc/get | bash -s v4.0.0
@@ -403,9 +369,7 @@ curl https://pigsty.cc/get | bash -s v4.0.0
 
 **发布日期: 2026-01-28** | [GitHub](https://github.com/pgsty/pigsty/releases/tag/v4.0.0) | [英文文档](https://pigsty.io) | [中文文档](https://pigsty.cc)
 
----
-
-## 亮点特性
+### 亮点特性
 
 - **可观测性革命**: Prometheus → VictoriaMetrics（10x 性能提升），Loki + Promtail → VictoriaLogs + Vector
 - **安全加固**: 自动生成强密码、etcd RBAC、防火墙/SELinux 模式、权限收紧、Nginx Basic Auth
@@ -418,11 +382,9 @@ curl https://pigsty.cc/get | bash -s v4.0.0
 - **多云 Terraform**: AWS、Azure、GCP、Hetzner、DigitalOcean、Linode、Vultr、腾讯云模板
 - **许可证变更**: AGPL-3.0 → Apache-2.0
 
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v4.0.0)
+[![Pigsty v4.0 发布：进入 AI 时代：亮点特性（图 10）](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v4.0.0)
 
----
-
-## 基础设施软件包更新
+### 基础设施软件包更新
 
 MinIO 开始使用 [**pgsty/minio**](https://github.com/pgsty/minio) fork RPM/DEB.
 
@@ -442,9 +404,7 @@ MinIO 开始使用 [**pgsty/minio**](https://github.com/pgsty/minio) fork RPM/DE
 | hugo                | 0.154.5 | cloudflared       | 2026.1.1 |
 | headscale           | 0.27.1  |                   |          |
 
----
-
-## Docker 支持
+### Docker 支持
 
 Pigsty 现在支持在 **Docker 容器** 中运行，完整支持 systemd，兼容 macOS (Docker Desktop) 与 Linux。
 
@@ -454,9 +414,7 @@ Pigsty 现在支持在 **Docker 容器** 中运行，完整支持 systemd，兼�
 cd ~/pigsty/docker; make launch    # = make up config deploy
 ```
 
----
-
-## 新增模块
+### 新增模块
 
 v4.0.0 新增两个 **可选模块**，不影响 Pigsty 核心功能，按需安装即可：
 
@@ -500,9 +458,7 @@ v4.0.0 新增两个 **可选模块**，不影响 Pigsty 核心功能，按需安
 - 配合 `conf/vibe.yml` 配置模板，可快速搭建完整的 AI 辅助编程沙箱环境
 - 公共参数：`vibe_data`（默认 `/fs`）指定 VIBE 工作空间目录
 
----
-
-## PG 扩展更新
+### PG 扩展更新
 
 主要扩展添加 PG 18 支持：age, citus, documentdb, pg_search, timescaledb, pg_bulkload, rum 等
 
@@ -511,13 +467,13 @@ v4.0.0 新增两个 **可选模块**，不影响 Pigsty 核心功能，按需安
 - [pg_textsearch](https://github.com/timescale/pg_textsearch) 0.4.0 - TimescaleDB 全文搜索
 - [pg_clickhouse](https://github.com/clickhouse/pg_clickhouse/) 0.1.3 - ClickHouse FDW
 - [pg_ai_query](https://github.com/benodiwal/pg_ai_query) 0.1.1 - AI 查询扩展
-- [etcd_fdw](https://github.com/pgsty/etcd_fdw) 0.0.0 - etcd 外部数据包装器
-- [pg_ttl_index](https://github.com/pg-ttl-index) 0.1.0 - TTL 索引
+- [etcd_fdw](https://github.com/cybertec-postgresql/etcd_fdw) 0.0.0 - etcd 外部数据包装器
+- [pg_ttl_index](https://github.com/ibrahimkarimeddin/postgres-extensions-pg_ttl) 0.1.0 - TTL 索引
 - [pljs](https://github.com/plv8/pljs) 1.0.4 - JavaScript 存储过程语言
-- [pg_retry](https://github.com/pg-retry/pg_retry) 1.0.0 - 重试扩展
-- [pg_weighted_statistics](https://github.com/pgsty/pg_weighted_statistics) 1.0.0 - 加权统计
-- [pg_enigma](https://github.com/pgsty/pg_enigma) 0.5.0 - 加密扩展
-- [pglinter](https://github.com/pgsty/pglinter) 1.0.1 - SQL Linter
+- [pg_retry](https://github.com/Agent-Hellboy/pg_retry) 1.0.0 - 重试扩展
+- [pg_weighted_statistics](https://github.com/schmidni/pg_weighted_statistics) 1.0.0 - 加权统计
+- [pg_enigma](https://github.com/SoftwareLibreMx/pg_enigma) 0.5.0 - 加密扩展
+- [pglinter](https://github.com/pmpetit/pglinter) 1.0.1 - SQL Linter
 - [documentdb_extended_rum](https://github.com/microsoft/documentdb) 0.109 - DocumentDB RUM 扩展
 - [mobilitydb_datagen](https://github.com/MobilityDB) 1.3.0 - MobilityDB 数据生成器
 
@@ -547,9 +503,7 @@ v4.0.0 新增两个 **可选模块**，不影响 Pigsty 核心功能，按需安
 
 pgBackRest 更新至 2.58，支持 HTTP。
 
----
-
-## 可观测性
+### 可观测性
 
 - 使用全新的 VictoriaMetrics 替代 Prometheus，用几分之一的资源实现数倍的性能
 - 使用全新的日志收集方案：VictoriaLogs + Vector，取代 Promtail + Loki
@@ -573,9 +527,7 @@ pgBackRest 更新至 2.58，支持 HTTP。
 - PGSQL Cluster/Instance 仪表盘新增版本横幅显示
 - 所有仪表盘使用 compact JSON 格式，大幅减少文件体积
 
----
-
-## 接口改进
+### 接口改进
 
 **剧本重命名**
 
@@ -608,9 +560,7 @@ pgBackRest 更新至 2.58，支持 HTTP。
 - `node_crontab` 在 `node-rm` 时会自动恢复原始 crontab
 - 新增 `infra_extra_services` 参数用于首页额外服务入口导航
 
----
-
-## 参数优化
+### 参数优化
 
 **I/O 参数**
 
@@ -647,9 +597,7 @@ pgBackRest 更新至 2.58，支持 HTTP。
 - 修复了 `duckdb.allow_community_extensions` 总是生效的问题
 - 现在 pg_hba 与 pgbouncer_hba 支持 IPv6 的 localhost 访问
 
----
-
-## 架构改进
+### 架构改进
 
 **目录与门户**
 
@@ -697,9 +645,7 @@ pgBackRest 更新至 2.58，支持 HTTP。
 
 - 多云 Terraform 模板：AWS、Azure、GCP、Hetzner、DigitalOcean、Linode、Vultr、腾讯云
 
----
-
-## 安全改进
+### 安全改进
 
 **密码管理**
 
@@ -733,9 +679,7 @@ pgBackRest 更新至 2.58，支持 HTTP。
 - 修复了 `pg_pitr` 中遗留的一些问题，确保 Patroni 集群恢复时没有竞态条件
 - 使用 `mode 0700` 保护 `files/pki/ca` 目录
 
----
-
-## 问题修复
+### 问题修复
 
 | 问题                                       | 说明                            |
 |------------------------------------------|-------------------------------|
@@ -766,9 +710,7 @@ pgBackRest 更新至 2.58，支持 HTTP。
 | IvorySql 18 file_copy_method             | 修复 IvorySql 18 不支持 clone 方法问题 |
 | tuned profile 激活                         | 通过重启 tuned 服务修复激活问题           |
 
----
-
-## 参数变化
+### 参数变化
 
 **新增参数**
 
@@ -826,9 +768,7 @@ pgBackRest 更新至 2.58，支持 HTTP。
 | `node_firewall_mode`       | zone → none              | 默认不启用防火墙规则 |
 | `install.yml`              | 重命名为 `deploy.yml`        | 更符合语义      |
 
----
-
-## 兼容性
+### 兼容性
 
 | 操作系统               | x86_64 | aarch64 |
 |--------------------|:------:|:-------:|
@@ -838,9 +778,7 @@ pgBackRest 更新至 2.58，支持 HTTP。
 
 **PostgreSQL**: 13, 14, 15, 16, 17, 18
 
----
-
-## 校验和
+### 校验和
 
 ```bash
 9f42b8c64180491b59bd03016c26e8ca  pigsty-v4.0.0.tgz

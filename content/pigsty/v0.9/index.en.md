@@ -8,7 +8,6 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
-
 > GitHub Release: https://github.com/pgsty/pigsty/releases/tag/v0.9.0
 
 ## New Stuff

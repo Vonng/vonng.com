@@ -8,8 +8,7 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
-
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.7.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v270)
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.7.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v270)
 
 [![Pigsty v2.7：集异璧之大成](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v2.7.0)
 
@@ -24,8 +23,6 @@ tags: [Pigsty]
 - [开箱即用的 ERP](#开箱即用的-erp)
 - [PITR 与监控面板](#pitr-与监控面板)
 - [专业版与开源版](#开源版与专业版)
-
----
 
 ## 扩展尽入吾彀中
 
@@ -60,8 +57,6 @@ tags: [Pigsty]
 
 这里面有许多使用 Rust 和 **pgrx** 开发的扩展插件，许多扩展都提供了非常强大的能力 —— 比如说：
 
----
-
 Supabase 出品的 [**wrappers**](https://github.com/supabase/wrappers) 看上去是一个扩展，但它其实提供了一个用 Rust 编写 FDW 的插件，提供了对 **十种** 外部数据源的包装访问！
 
 | FDW         | Description                                                                   | Read | Modify |
@@ -80,8 +75,6 @@ Supabase 出品的 [**wrappers**](https://github.com/supabase/wrappers) 看上�
 | AWS Cognito | A FDW for [AWS Cognito](https://aws.amazon.com/cognito/)                      | ✅    | ❌      |
 
 这意味着，你现在可以用 PostgreSQL **读写** BigQuery，ClickHouse，以及支付服务 Stripe 数据了。Firebase，Airtable，S3，Logflare，Auth0，SQL Server，Redis，Cognito 也提供了通过 PostgreSQL，使用 SQL 读取的能力。
-
----
 
 再比如 [**`plprql`**](https://prql-lang.org/) 扩展，提供了一种类似于 SQL 的全新数据库查询语言 PRQL：
 
@@ -113,8 +106,6 @@ derive db_version = s"version()"
 同时，新加入 Pigsty 的 **plv8** 扩展，允许你使用 Javascript 在 PostgreSQL 中编写存储过程，PostgreSQL 的存储过程语言支持之丰富，实在是让人惊叹！
 
 ![pl](pl.jpg)
-
----
 
 再比如说 **parquet_s3_fdw**，看上去只是让你访问 S3 上存储的 Parquet 文件，但它的意义是 —— PG 可以成为真正的湖仓了 —— 等效于新增了一个没有存储容量限制的分析引擎！
 
@@ -164,8 +155,6 @@ SELECT COUNT(*) FROM trips;
 
 此外，Tembo 也提供了四个使用 Rust 编写的实用 PG 扩展，例如，他们出品的 **pgmq** 就可以在 PG 上提供一个轻量的消息队列 API，类似于 AWS 的 SQS 与 RSMQ，作为 **pgq** 的替代与补充。
 
----
-
 在 AI 人工智能方向上，[**pgvector**](https://github.com/pgvector/pgvector) 0.7 引入了重大的升级，现在支持稀疏向量（让 **pg_sparse** 原地退役了！），支持 **half** **float** 量化，向量最大维度翻倍到了 **4000** 维，添加了 **binary** 量化模式（维度可达 64K ），添加了两种新的距离度量与相应的索引。最重要的是，现在还支持用 SIMD 指令了，性能相比一年前有了翻天覆地的改善！
 
 > - Added halfvec type
@@ -185,17 +174,11 @@ SELECT COUNT(*) FROM trips;
 
 当然，还有其他一些 AI 相关的扩展插件，例如 **pg_vectorize** 可以帮助你封装实现一个 RAG 服务，新的 **pg_tiktoken** 可以帮助你在 PG 中，计算调用 OpenAI 模型时所需的 Token 数量。此外，**pg_similarity** 可以提供 17 种额外的距离度量函数，**imgsmlr** 可以提供图片相似度处理函数， **bigm** 可以提供基于二元组的全文检索支持， **zhparser** 可以提供中文分词能力。
 
----
-
 在新的数据类型支持上，**md5hash** 允许你直接高效存储 128 位的 MD5 摘要，而不是一长串字符文本。 **pg_idkit** 允许你在数据库中直接生成十多种不同类型的 ID 方案（UUIDv6，UUIDv7，nanoid，ksuid，ulid，Timeflake，PushID，xid，cuid，cuid 等），**rrule** 扩展更是允许你在数据库中存储、解析、处理“日历重复事件”这一神奇的数据类型。
-
----
 
 此外，还有一些扩展，能在数据库管理上提供帮助。**pgdd** 允许你直接使用 SQL，管理与访问 PG 的数据库目录，**pg_later** 允许你异步执行 SQL 命令并取回结果。**pg_dirtyread** 允许你进行脏读，读取尚未被垃圾回收的数据，进行数据抢救，**pg_show_plans** 可以显示出当前正在运行查询的执行计划！
 
 在加密能力上，**pg_tde** 扩展提供了一个实验性的 PG 透明加密的存储引擎，用于确保即使你的硬盘被人拔了，数据也不会泄漏。 **pgsmcrypto** 则为 PostgreSQL 提供了 “国产数据库” 的商密算法（SM2,3,4）支持。
-
----
 
 ## PG 集异璧之大成
 
@@ -239,8 +222,6 @@ SELECT COUNT(*) FROM trips;
 
 时至当下，PostgreSQL 已是不可挡。而 Pigsty 让 PostgreSQL 如虎添翼，插上一对起飞的翅膀。
 
----
-
 ## 国产信创数据库？
 
 在中国做数据库赛道，绕不开的一个问题就是“**国产化**”与“信创”。关于这个主题，我已经写过很多文章深入探讨过了：
@@ -279,8 +260,6 @@ PolarDB 属于自主可控，安全可靠的国产信创数据库。（中国信
 最后说点实际的，如果你问我，有什么功能是“国产数据库”有，而 PostgreSQL 没有的，我还真知道一个 —— 所谓的 “商密” 算法。最主要的是三个：
 用于替代 RSA 的 SM2 算法，用于替代 MD5/SHA 的 SM3 算法，用于替代 DES/AES 的 SM4 算法。但现在，原生的 PostgreSQL 也可以通过 `smcrypto` 扩展插件也可以提供商密算法支持了！
 
----
-
 ## 开箱即用的 ERP
 
 与 “国产数据库” 类似，许多国产 ERP 软件也是处在一个很尴尬的位置上，因为已经有一个足够好的开源 ERP 系统了 —— **Odoo** （原名 OpenERP）。
@@ -301,8 +280,6 @@ Odoo 使用，且仅使用了 PostgreSQL 作为数据存储。整套 ERP 软件�
 
 最后能实现的效果是，在一台裸虚拟机上，你只需要几行命令就可以拉起生产质量的企业级 ERP 系统！关于 Odoo，后面我会专门出一期教程，介绍如何利用 Pigsty 自建 ERP 系统。
 
----
-
 ## PITR 与监控面板
 
 像 Odoo 这样的 ERP 系统，对数据库的要求与传统互联网行业非常不一样。例如：我在 Odoo 社区看到了如下对话：“*我的 Odoo 已经用了好几年了，现在 PostgreSQL 里的数据量已经到 2.5GB 了*”，下面朋友回复 —— “*那真的是非常大了！*”
@@ -314,8 +291,6 @@ Pigsty 已经提供了开箱即用的 PITR，允许用户回滚到任意时间�
 ![pitr.png](pitr.jpg)
 
 后面，我们会专门出一期教程，介绍如何利用 Pigsty 的 [**PITR**](https://pigsty.cc/docs/concept/pitr) 功能，实现企业级的数据备份与恢复。
-
----
 
 ## 开源版与专业版
 
@@ -345,8 +320,6 @@ Pigsty 专业版与开源的区别主要在于兼容性与功能模块，例如 
 
 总的来说，Pigsty v2.7 的开源/专业版区分，在不影响开源用户使用体验的前提下，又给了企业用户一个充分的付费理由；）。
 
----
-
 ## 展望未来
 
 总的来说，Pigsty 已经达到我心目中比较理想的状态了。在功能上，它已经做的足够好了！在某些方面已经远超 RDS 了（比如扩展支持与监控系统）。
@@ -354,8 +327,6 @@ Pigsty 专业版与开源的区别主要在于兼容性与功能模块，例如 
 但正所谓，酒香也怕巷子深 —— 所以接下来的工作重点会更多地转移到运营、营销、销售上去。开源项目的持续运营离不开用户与客户的支持，如果 Pigsty 帮助到了您，欢迎考虑赞助我们，或采购我们的服务订阅～。
 
 当然，说起运营 —— 就在下周，也就是五月 28 号，我将去温哥华参加 2024 PostgreSQL 开发者大会，a.k.a 第一届 PGConf.Dev （以前叫 PG Con）。共同探讨 PostgreSQL 的未来，并更进一步地把 Pigsty 推向全球！
-
----
 
 ## v2.7.0 发布注记
 

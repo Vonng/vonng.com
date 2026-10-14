@@ -8,8 +8,7 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
-
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.0.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v200)
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.0.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v200)
 
 [![Pigsty v2.0：开源 RDS PG 替代](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v2.0.0)
 
@@ -126,8 +125,6 @@ curl -fsSL http://download.pigsty.cc/get | bash
 如果互联网访问受限，您可以提前从 Github 或 CDN 下载对应操作系统的离线软件包进行离线安装。监控系统部分提供公开的 Demo：**<http://demo.pigsty.cc>。**
 
 ![demo](demo.webp)
-
----
 
 ## v2.0.0
 
@@ -350,8 +347,6 @@ MD5 (pigsty-pkg-v2.0.0-rc1.el9.x86_64.tgz) = 1362e2a5680fc1a3a014cc4f304100bd
 
 特别感谢意大利用户 @alemacci 在 SSL 加密，备份，多操作系统发行版适配与自适应参数模版上的贡献！
 
----
-
 ## v2.0.1
 
 <https://github.com/Vonng/pigsty/releases/tag/v2.0.1>
@@ -410,8 +405,6 @@ MD5 (pigsty-pkg-v2.0.1.el9.x86_64.tgz) = 055057cebd93c473a67fb63bcde22d33
 ```
 
 特别感谢 @cocoonkid 提供的反馈。
-
----
 
 ## v2.0.2
 

@@ -6,7 +6,6 @@ summary: >
   近自己做了套数据库监控系统，搞的还可以，简单给大家介绍一下。
 tags: [Pigsty, 监控, PostgreSQL]
 ---
-
 近自己做了套数据库监控系统，搞的还可以，简单给大家介绍一下。
 
 > Pigsty is an advanced PostgreSQL monitoring systemd based on open source projects like prometheus & grafana. PIGSTY /pɪɡ staɪ/ is the abbreviation of "Postgres in Grafana Style".

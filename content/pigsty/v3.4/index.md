@@ -8,10 +8,9 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.4.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v340) | [微信公众号](https://mp.weixin.qq.com/s/nhvw2BmpTufMeEyyTb9fbw)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.4.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v340) | [微信公众号](https://mp.weixin.qq.com/s/nhvw2BmpTufMeEyyTb9fbw)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.4.0)
+[![Pigsty v3.4：备份恢复增强，本地化排序，自动证书（图 1）](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.4.0)
 
 经过一个月的密集开发，Pigsty v3.4 正式发布。本版本进行了显著的架构优化，解决了用户和客户高度关注的几个核心问题：
 
@@ -22,27 +21,23 @@ tags: [Pigsty]
 - Oracle 兼容的 IvorySQL 现已全平台可用
 - 图数据库扩展 Apache AGE 现已全平台可用
 
-此外，基于 Cursor Vibe Coding 打造了全新的价值主张/特性介绍页面：https://pigsty.cc/about/values/
+此外，基于 Cursor Vibe Coding 打造了全新的价值主张/特性介绍页面：https://pigsty.cc/docs/about/feature/
 
-![](values.jpg)
-
---------
+![Pigsty v3.4：备份恢复增强，本地化排序，自动证书（图 2）](values.jpg)
 
 ## 自动申请证书
 
 不少用户因自建 Dify、Odoo、Supabase 而使用 Pigsty。用户反馈证书申请步骤有些繁琐，需要手动调用 `certbot`，希望将其自动化。
 
-![](certbot.jpg)
+![Pigsty v3.4：备份恢复增强，本地化排序，自动证书：自动申请证书（图 3）](certbot.jpg)
 
 本版本对 Nginx 配置进行了增强：当用户在某个 Nginx Server 上定义 `certbot` 字段时，可使用 `make cert` 命令一键完成证书申请与应用，无需其他配置与命令。
 
 Dify、Odoo、Supabase 等应用自建模板均已采用此功能。安装完成后，`make cert` 即可自动更新或新申请所需证书。若配置 `certbot_sign` = `true`，则在安装过程中自动申请证书。
 
-![](nginx-config.jpg)
+![Pigsty v3.4：备份恢复增强，本地化排序，自动证书：自动申请证书（图 4）](nginx-config.jpg)
 
 v3.4 中 Nginx 的可配置项更加丰富：可使用 `config` 向 nginx 注入配置，使用 `enforce` 强制重定向 HTTPS。自建网站在绝大多数场景下可做到完全不碰传统 Nginx 配置文件。
-
---------
 
 ## 本地化排序最佳实践
 
@@ -50,10 +45,10 @@ v3.4 中 Nginx 的可配置项更加丰富：可使用 `config` 向 nginx 注入
 
 推荐阅读：
 
-- [PG中的本地化排序规则](https://pigsty.cc/blog/pg/collation/)
-- PGCon.Dev 2024: [Collations from A to Z](https://www.pgcon.org/events/pgcondev2024/schedule/session/630/)
+- [PG中的本地化排序规则](/pg/collate/)
+- PGCon.Dev 2024: [Collations from A to Z](https://www.pgevents.ca/events/pgconfdev2024/schedule/session/95-collations-from-a-to-z/)
 
-![](collation.jpg)
+![Pigsty v3.4：备份恢复增强，本地化排序，自动证书：本地化排序最佳实践（图 5）](collation.jpg)
 
 **最佳实践**：始终使用 `C` 或 `C.UTF-8` 作为 Locale 排序规则。
 
@@ -68,37 +63,31 @@ Pigsty v3.4 反映了这种最佳实践：
 
 除非数据库密集工作在特定语言排序场景，否则此默认值即为最佳实践。可使用 PostgreSQL COLLATION 语法在查询/索引/列上指定其他排序规则，PG + ICU 共支持 841 种排序规则。
 
---------
-
 ## 时间点恢复增强
 
 时间点恢复是关系型数据库的核心功能。此前 Pigsty 通过 `pg-pitr` 辅助用户执行半自动 PITR。v3.4 对 PITR 支持进行了显著改进，现可方便地从集中式备份仓库中选择任意备份进行恢复。
 
 在 PG 集群上定义 `pg_pitr` 参数时，Pigsty 会自动生成 `/pg/bin/pg-restore` 命令及 `/pg/conf/pitr.conf` 配置文件。
 
-![](pitr-1.jpg)
+![Pigsty v3.4：备份恢复增强，本地化排序，自动证书：时间点恢复增强（图 6）](pitr-1.jpg)
 
 执行 `pg-restore` 命令时，Pigsty 会自动暂停 Patroni 集群、关闭 PG、开始原地增量 PITR、恢复到指定位点后拉起 PG。重要改进：使用集中式备份仓库时，可用其他集群的备份覆盖当前集群。
 
-![](pitr-2.jpg)
+![Pigsty v3.4：备份恢复增强，本地化排序，自动证书：时间点恢复增强（图 7）](pitr-2.jpg)
 
 备份监控方面，v3.4 引入了 `pgbackrest_exporter` 用于收集备份监控指标，PGSQL PITR 监控面板也会显示当前备份状态。此前用户只能通过 PGCAT Instance 查询当前状态，而无历史记录，本次改进对分析备份状态大有帮助。
-
---------
 
 ## 扩展插件更新
 
 经过持续一年的扩展生态扩张，Pigsty 已收录 PG 生态中几乎所有主流扩展，数量达到 **405 个**。扩展突飞猛进的阶段已基本结束，近期版本将重心放回架构与基础设施，扩展以巩固为主。
 
-![](extensions.jpg)
+![Pigsty v3.4：备份恢复增强，本地化排序，自动证书：扩展插件更新（图 8）](extensions.jpg)
 
 v3.4 新增扩展 `pgspider_ext`，利用各种 FDW 实现多数据源查询。同时有 28 个扩展更新至最新版本，并修复了若干扩展的版本与 Bug。
 
 **Apache AGE 图数据库扩展**：该项目的开发者似乎被裁员，基本进入无维护状态。作为发行版，Pigsty 尽力为其提供支持 —— 根据 Debian 上的 Patch 重新编译了 AGE 1.5.0 的 PG 13-17 扩展，补上了缺少 EL RPM 的遗憾。
 
-![](age.jpg)
-
---------
+![Pigsty v3.4：备份恢复增强，本地化排序，自动证书：扩展插件更新（图 9）](age.jpg)
 
 ## 多内核支持更新
 
@@ -115,13 +104,11 @@ pg_libs: 'liboracle_parser, pg_stat_statements, auto_explain'  # 加载 Oracle �
 repo_extra_packages: [ ivorysql ]                              # 下载 IvorySQL 软件包
 ```
 
-![](polardb.jpg)
+![Pigsty v3.4：备份恢复增强，本地化排序，自动证书：多内核支持更新（图 10）](polardb.jpg)
 
-![](kernels.jpg)
+![Pigsty v3.4：备份恢复增强，本地化排序，自动证书：多内核支持更新（图 11）](kernels.jpg)
 
 同时更新了 Supabase 模板至最新版本，将 Citus 更新至 13.0.2。下一步将关注专注 OLTP 性能的 OrioleDB 以及提供 MySQL 协议兼容性的 OpenHalo 内核。
-
---------
 
 ## 基础设施强化
 
@@ -133,19 +120,17 @@ v3.4 更新了许多 Infra 软件包版本，新增组件：
 | Restic | 类似 pgBackRest 但用于文件备份 |
 | TimescaleDB EventStreamer | 抽取 TimescaleDB 超表数据变更流 |
 
-![](infra.jpg)
+![Pigsty v3.4：备份恢复增强，本地化排序，自动证书：基础设施强化（图 12）](infra.jpg)
 
 这些组件现已默认下载，可直接安装使用。
 
 另一变化：以下软件包新增到默认下载列表：
 
-```
+```text
 docker-ce docker-compose-plugin ferretdb2 duckdb restic juicefs vray grafana-infinity-ds
 ```
 
 Docker 使用量确实很大，主要用于运行 pgAdmin 等软件，因此将其纳入默认下载。
-
---------
 
 ## v3.5 特性展望
 
@@ -157,9 +142,6 @@ v3.5 计划功能：
 | 配置 | Vibe Config Wizard 配置向导与 MCP Server |
 | Docker | Debian 12 x86/ARM Pigsty Docker 镜像 |
 | 内核 | OrioleDB 与 OpenHalo 支持 |
-
---------
---------
 
 ## v3.4.0
 
@@ -180,8 +162,6 @@ curl https://repo.pigsty.cc/get | bash -s v3.4.0
 - 改进了 `app.yml` playbook：无需额外配置即可启动标准 Docker 应用
 - 升级 Supabase、Dify 和 Odoo 应用模板到最新版本
 - 增加 electric 应用模板，本地优先的 PostgreSQL 同步引擎
-
---------
 
 ### 基础设施包
 
@@ -209,8 +189,6 @@ curl https://repo.pigsty.cc/get | bash -s v3.4.0
 - **grafana-victoriametrics-ds** 0.14.0
 - **grafana-infinity-ds** 3.0.0
 
---------
-
 ### PostgreSQL 相关
 
 - **Patroni** 4.0.5
@@ -219,8 +197,6 @@ curl https://repo.pigsty.cc/get | bash -s v3.4.0
 - **pgbackrest** 2.54.2
 - **pev2** 1.14
 - **WiltonDB** 13.17
-
---------
 
 ### PostgreSQL 扩展
 
@@ -247,8 +223,6 @@ curl https://repo.pigsty.cc/get | bash -s v3.4.0
 - **pg_jsonschema** 0.3.2 → 0.3.3
 - **pg_incremental** 1.1.1 → 1.2.0
 - **pg_stat_monitor** 2.1.0 → 2.1.1
-
---------
 
 ### 接口变更
 
@@ -277,8 +251,6 @@ curl https://repo.pigsty.cc/get | bash -s v3.4.0
 - 默认禁用 pgBackRest 的 `link-all` 选项
 - 默认为 MinIO 仓库启用块级增量备份
 
---------
-
 ### 错误修复
 
 - 修复 `pg-backup` 中的退出状态码（[#532](https://github.com/pgsty/pigsty/pull/532) 由 [@waitingsong](https://github.com/waitingsong) 提供）
@@ -286,8 +258,6 @@ curl https://repo.pigsty.cc/get | bash -s v3.4.0
 - 修复 `pg-role` 任务中的逻辑错误
 - 纠正大页面配置参数的类型转换
 - 修复 `slim` 模板中 `node_repo_modules` 的默认值问题
-
---------
 
 ### 校验和
 
@@ -309,8 +279,6 @@ c927238f0343cde82a4a9ab230ecd2ac  pigsty-pkg-v3.4.0.u24.aarch64.tgz
 
 更多版本信息请参考 [GitHub 发布页面](https://github.com/pgsty/pigsty/releases/tag/v3.4.0)。
 
---------
-
 ## v3.4.1
 
 Pigsty v3.4.1 版本发布，新增 openHalo 与 OrioleDB 内核支持！
@@ -319,8 +287,6 @@ Pigsty v3.4.1 版本发布，新增 openHalo 与 OrioleDB 内核支持！
 curl https://repo.pigsty.cc/get | bash -s v3.4.1
 ```
 
---------
-
 ### 亮点特性
 
 - 在 EL 系统上增加了对 MySQL 协议兼容 PostgreSQL 内核的支持：[openHalo](https://pigsty.cc/docs/pgsql/kernel/openhalo)
@@ -328,8 +294,6 @@ curl https://repo.pigsty.cc/get | bash -s v3.4.1
 - 优化了 pgAdmin 9.2 应用模板，具有自动服务器列表更新和 pgpass 密码填充功能
 - 将 PG 默认最大连接数增加到 250、500、1000
 - 从 EL8 中删除了有依赖错误的 `mysql_fdw` 扩展
-
---------
 
 ### 基础设施更新
 
@@ -347,8 +311,6 @@ curl https://repo.pigsty.cc/get | bash -s v3.4.1
 - minio 20250403145628
 - mcli 20250403170756
 
---------
-
 ### 扩展更新
 
 - 将 pg_search 升级到 0.15.13
@@ -360,8 +322,6 @@ curl https://repo.pigsty.cc/get | bash -s v3.4.1
 - 将 aggs_for_vecs RPM 升级到 1.4.0
 - 将 pg_tracing RPM 升级到 0.1.3
 - 将 pgmq RPM 升级到 1.5.1
-
---------
 
 ### 校验和
 

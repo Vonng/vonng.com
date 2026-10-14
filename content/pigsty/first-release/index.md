@@ -6,7 +6,6 @@ summary: >
   一个比较正式的上线发布通知：Pigsty —— 世界上最先进的开源关系型数据库PostgreSQL的监控系统与供给方案。
 tags: [Pigsty, 监控]
 ---
-
 今天我很荣幸的宣布，**Pigsty 正式发布了！**
 
 ![图片](01.webp)

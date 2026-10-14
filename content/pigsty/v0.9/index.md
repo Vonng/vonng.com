@@ -8,12 +8,9 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v0.9.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v090)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v0.9.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v090)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v0.9.0)
-
-----------------
+[![Pigsty v0.9：GUI/CLI与日志集成（图 1）](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v0.9.0)
 
 ## v0.9.0
 

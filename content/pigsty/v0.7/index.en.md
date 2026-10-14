@@ -8,7 +8,6 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
-
 > GitHub Release: https://github.com/pgsty/pigsty/releases/tag/v0.7.0
 
 Pigsty v0.7 focuses on plugging existing fleets into Pigsty's observability stack. The new monitor-only flow lets you drop Pigsty dashboards onto databases that were provisioned elsewhere, and the declarative APIs for databases and users got a much needed redesign.

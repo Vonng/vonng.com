@@ -6,7 +6,6 @@ summary: >
   Pigsty v2: 安全性，兼容性，易用性的大幅改进，开箱即用PITR，开源RDS PG替代，“全盛状态的PostgreSQL”
 tags: [Pigsty]
 ---
-
 最近 PostgreSQL 15 发布了，Pigsty 也开始了紧锣密鼓地跟进，筹划第二个大版本：v2。
 
 Pigsty 2.0 版本将引入一系列重大增强与改进。包括安全性，兼容性，易用性的大幅改进，并添加了开箱即用的 PITR 时间点恢复支持。此版本后，Pigsty 中 PostgreSQL 的架构状态将趋于完美，Pigsty 的缩写也相应修改为 "PostgreSQL in Great STYle"，即 “全盛状态的 PostgreSQL”。

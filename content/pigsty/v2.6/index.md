@@ -8,18 +8,15 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.6.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v260) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487025&idx=1&sn=c32f102718e3e9cf55cdefa7133f259f&chksm=fe4b3beac93cb2fc25c2c2c4f9ea74d4353e565ef90c5e2bbaf5881a3a031cbdff706971af9a&scene=21#wechat_redirect)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.6.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v260) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487025&idx=1&sn=c32f102718e3e9cf55cdefa7133f259f&chksm=fe4b3beac93cb2fc25c2c2c4f9ea74d4353e565ef90c5e2bbaf5881a3a031cbdff706971af9a&scene=21#wechat_redirect)
-
-[![](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v2.6.0)
+[![Pigsty v2.6：PG 踢馆 OLAP（图 1）](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v2.6.0)
 
 二月的最后一天里，Pigsty v2.6 正式发布了 🎉。这个版本正式使用 PostgreSQL 16  作为默认的大版本，并引入了一系列全新的扩展，包括 [**ParadeDB**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486913&idx=1&sn=3b7d8cf3f0e323932aba52c897f3c7a4&chksm=fe4b381ac93cb10cc6175c4c7978b5903946d369fe0084fbae5edf76ab08d84134260f28dffc&scene=21#wechat_redirect) 与 DuckDB ，让 PostgreSQL 的 OLAP 分析能力提高到一个全新的水准，喊一声 HTAP 标杆，数据库全能王当之无愧。
 
 此外，我们还全面翻新了 Pigsty 官方网站、文档与博客，提出了更为凝练的六条核心价值主张。在全球范围内，我们使用了由 Cloudflare 支持的全新域名 **pigsty.io** 。作为默认的官方站地址与仓库地址。原有的 pigsty.cc 域名、网站、仓库继续在国内作为镜像提供服务。
 
 最后，我们还正式推出了明码标价的 Pigsty 专业版与服务订阅，为那些需要更强支持力度的用户提供进阶功能与兜底选项。
-
-------
 
 ## 分析性能史诗级加强
 
@@ -38,8 +35,6 @@ c6a.4xlarge, 500gb gp2 / 10亿条记录
 ![duck.jpg](duck.jpg)
 
 来自 ParadeDB 创始人与 DuckdbFDW 作者的感谢致意
-
-------
 
 ## 全新的价值主张
 
@@ -61,8 +56,6 @@ Pigsty 的六条缩写正好构成 PIGSTY 首字母缩写 —— 除了 **P**ost
 
 ![mascot.jpg](mascot.jpg)
 
-------
-
 ## 全新的网站
 
 在这个版本中，我们重新翻修了老网站。使用了最新版本的 Docsy 作为文档框架，并更新调整了大量内容。我们放弃了花哨繁而不实的设计，直接把将 Pigsty 的价值主张与核心特性放在 Landing Page 上。
@@ -83,8 +76,6 @@ Pigsty 的六条缩写正好构成 PIGSTY 首字母缩写 —— 除了 **P**ost
 
 与此同时， Pigsty 提供的软件源也有了全球的镜像仓库，由 Cloudflare R2 强力驱动。并托管在 Cloudflare 上，为全球用户都带来丝滑的访问体验（当然国内可以继续使用 pigsty.cc ）。
 
-------
-
 ## PostgreSQL 16 成为默认版本
 
 最后一个值得一提的特性是，在 Pigsty v2.6 中，PostgreSQL 16 (16.2) 正式取代先前的 PostgreSQL 15，成为默认的数据库大版本。
@@ -103,8 +94,6 @@ Pigsty 的六条缩写正好构成 PIGSTY 首字母缩写 —— 除了 **P**ost
 
 对于小众冷门操作系统系统与过时大版本的支持，并不是占总体绝大多数用户所需要的，却需要耗费许多额外的精力与成本，因此纳入了我们的付费商业支持中。
 
-------
-
 ## 开源版与专业版划分
 
 有一些开源用户反馈 —— 我并不需要那些和 PostgreSQL 关系不大的东西来拖慢下载安装速度并增加管理复杂度 —— 什么 Redis, MinIO, Docker, K8S，Supabase 之类的，虽然你觉得这些东西能给 PG 打辅助，但花里胡哨的东西只会拖慢我出刀的速度。
@@ -116,8 +105,6 @@ Pigsty 的六条缩写正好构成 PIGSTY 首字母缩写 —— 除了 **P**ost
 在后面，Pigsty 开源版将专注于做好一件事 —— 提供可靠，高可用，可扩展的本地 PostgreSQL RDS 服务，当然像 Docker 模板这样的实用特性可能还是会留开源版中。
 
 并不是说这些功能在开源版 Pigsty 里就没有了，我相信开源老师傅还是可以很轻松的仅仅通过修改配置文件就把它们重新弄出来，但这些功能不会成为开源版本的默认组成部分了。
-
-------
 
 ## 商业订阅服务
 
@@ -135,8 +122,6 @@ Pigsty 的六条缩写正好构成 PIGSTY 首字母缩写 —— 除了 **P**ost
 
 许多时候，化腐朽为神奇，能带来几个数量级改善的秘密就是专家的一句话。对于以可扩展性作为灵魂，扩展生态极度繁荣的 PostgreSQL 来说更是如此。我们的服务可以确保您的每一分钱都花得物有所值，并花在真正的刀刃上。
 
-------
-
 ## 展望未来
 
 Pigsty 的下一个大版本计划升级到 v3 ，将会正式落地开源版与专业版的功能划分。我们会在 Ubuntu / Debian 系操作系统中补完缺失的扩展 Deb 包，并提供一个命令行工具来封装管理操作。也许会将 Pigsty 本身打成一个 RPM / Deb 包提供，我们还计划提供 MYSQL 监控部署的 Beta 支持。
@@ -147,8 +132,6 @@ Pigsty 的下一个大版本计划升级到 v3 ，将会正式落地开源版与
 
 Pigsty 的产品与接口在 v2.6 和 v3.0 将会固化收敛，因为在产品与技术上，它已经做的足够好了！甚至在某些方面已经远超 RDS 了（比如扩展支持与监控系统！）所以接下来的工作终点会转移到营销与销售上来。开源项目的持续运营离不开用户与客户的支持，如果 Pigsty 帮助到了您，欢迎考虑赞助我们，或采购我们的服务订阅～。
 
-----------------
-
 ## v2.6.0
 
 **亮点特性**
@@ -156,7 +139,7 @@ Pigsty 的产品与接口在 v2.6 和 v3.0 将会固化收敛，因为在产品�
 * 现已将 PostgreSQL 16 作为默认主要版本（16.2）
 * 新增 [ParadeDB](https://www.paradedb.com/) 扩展插件：`pg_analytics`, `pg_bm25`, and `pg_sparse`
 * 新增 [DuckDB](https://duckdb.org/) 与 `duckdb_fdw` 插件支持
-* 全球 Cloudflare CDN https://repo.pigsty.io 与中国大陆CDN https://repo.pigsty.cc
+* 全球 Cloudflare CDN https://pigsty.io/docs/repo/ 与中国大陆CDN https://repo.pigsty.cc
 
 **软件配置变更**
 
@@ -198,15 +181,15 @@ Pigsty 的产品与接口在 v2.6 和 v3.0 将会固化收敛，因为在产品�
 - 向量扩展 PGVector 0.6.0：新增并行创建 HNSW 索引功能
 - 新增扩展插件 [duckdb_fdw](https://github.com/alitrack/duckdb_fdw) v1.1 ，支持读写 DuckDB 数据 v1.1
 - 新增扩展插件 [pgsql-gzip](https://github.com/pramsey/pgsql-gzip) ，用于支持 Gzip 压缩解压缩 v1.0.0
-- 新增扩展插件 [pg_sparse](https://github.com/paradedb/paradedb/tree/dev/pg_sparse)，高效处理稀疏向量（ParadeDB） v0.5.6
-- 新增扩展插件 [pg_bm25](https://github.com/paradedb/paradedb/tree/dev/pg_bm25)，用于支持高质量全文检索 BM25 算法的插件（ParadeDB） v0.5.6
-- 新增扩展插件 [pg_analytics](https://github.com/paradedb/paradedb/tree/dev/pg_analytics)，支持 SIMD 与列式存储的PG分析插件（ParadeDB） v0.5.6
+- 新增扩展插件 [pg_sparse](https://github.com/paradedb/paradedb/tree/v0.5.6/pg_sparse)，高效处理稀疏向量（ParadeDB） v0.5.6
+- 新增扩展插件 [pg_bm25](https://github.com/paradedb/paradedb/tree/v0.5.6/pg_bm25)，用于支持高质量全文检索 BM25 算法的插件（ParadeDB） v0.5.6
+- 新增扩展插件 [pg_analytics](https://github.com/paradedb/pg_analytics)，支持 SIMD 与列式存储的PG分析插件（ParadeDB） v0.5.6
 - 升级AIML插件 [pgml](https://github.com/postgresml/postgresml) 至 v2.8.1，新增 PG 16 支持。
 - 升级列式存储插件 [hydra](https://github.com/hydradatabase/) 版本至 v1.1.1，新增 PG 16 支持。
 - 升级图扩展插件 [age](https://github.com/apache/age) 至 v1.5.0，新增 PG 16 支持。
 - 升级GraphQL插件 [pg_graphql](https://github.com/supabase/pg_graphql) 版本至 v1.5.0 ，支持 Supabase。
 
-```
+```text
 330e9bc16a2f65d57264965bf98174ff  pigsty-v2.6.0.tgz
 81abcd0ced798e1198740ab13317c29a  pigsty-pkg-v2.6.0.debian11.x86_64.tgz
 7304f4458c9abd3a14245eaf72f4eeb4  pigsty-pkg-v2.6.0.debian12.x86_64.tgz

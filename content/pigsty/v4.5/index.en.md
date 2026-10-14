@@ -8,7 +8,6 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
-
 > [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v4.5.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v450)
 
 Pigsty v4.5 is officially out. At the end of the previous release, I said there might be a transitional v4.5 before 5.0. Here it is—except this "transitional" release ended up more packed than many full-fledged major releases.
@@ -23,8 +22,6 @@ Here is the short version of what is new in v4.5:
 - And a long tail of smaller but useful changes: explicit cluster identities, safer removal workflows, pg_exporter 1.4, the SOW repository tool, 51 configuration templates, and more.
 
 Let's go through them in order.
-
-------
 
 ## 575 Extensions
 
@@ -44,8 +41,6 @@ Two extensions were removed: `pg_analytics`, which upstream has archived, and `s
 
 Routine upgrades continued as well: Citus 14.2, TimescaleDB 2.29.1, pgvector 0.8.6, pg_search 0.25.2, DocumentDB 0.114, pg_partman 5.5, pgmq 1.12, and more. The complete package change log runs for more than 200 lines; see the [**release note**](https://pigsty.io/docs/about/release/#v450) rather than making me reproduce it here.
 
-------
-
 ## Silo: A New Engine for Object Storage
 
 Long-time readers know the MinIO story. Upstream reduced its admin console to little more than a login page, the community edition was effectively abandoned, and I forked it to keep it alive and patch CVEs. I wrote about that in [**MinIO Is Dead**](/db/minio-is-dead) and [**Two Months into Maintaining a MinIO Fork**](/db/minio-promise-kept). That fork eventually got its own name: **Silo**. Put a grain silo beside the Pigsty, add the `pig` package manager and the `sow` repository tool, and the whole family is together.
@@ -63,8 +58,6 @@ The Silo transition comes with several related improvements:
 
 What about RustFS? We did implement a RustFS backend during this development cycle, then pulled it before release. It is not quite ready; we will revisit it once it reaches a genuinely stable GA release. The repository still contains the RustFS 1.0.0-rc.1 package if you want to experiment, but it is not a backend supported by the v4.5 MINIO module.
 
-------
-
 ## Valkey: An Alternative to Redis
 
 I have written plenty about the Redis licensing drama, including [**Redis Going Non-Open-Source Is a Disgrace to "Open Source" and Public Clouds**](/db/redis-oss). Redis 8 later returned under the AGPL, but the community fork Valkey has developed into an ecosystem of its own, backed by the Linux Foundation and packaged by every major distribution. Users kept asking whether Pigsty could run Valkey.
@@ -74,8 +67,6 @@ Now it can: set `redis_type: valkey`. That is all it takes.
 We deliberately designed this as a transparent switch. Pigsty installs `valkey-server` and `valkey-cli`, while configuration paths, data directories, service names, monitoring jobs, and module parameters all stay under the `redis` namespace. Existing inventories, dashboards, and alert rules require no changes. The engine choice applies per cluster, so do not mix engines within one cluster. Before converting an existing Redis cluster to Valkey, rehearse in a test environment and verify data and replication compatibility for yourself. For an idea of how deep the official-package rabbit hole goes, see [**A Packaging Patch Has Been Corrupting Valkey's Memory Accounting Since 2017**](/db/valkey-bug).
 
 The Redis/Valkey systemd units now use `Type=notify`, and the startup timeout has been extended to 1,800 seconds so systemd no longer kills large instances while they load data. Topology construction, password handling, and removal safeguards were hardened as well.
-
-------
 
 ## Kafka: From Package to Module
 
@@ -92,8 +83,6 @@ The module is based on Kafka 4.3, runs pure KRaft with no ZooKeeper, and provide
 To try it, use the ready-made `conf/demo/kafka.yml` template.
 
 Kafka is currently a pilot module. Keep one architectural constraint in mind: the Kafka protocol requires clients to connect directly to every broker, so its data plane cannot sit behind HAProxy, a VIP, or a Layer 4 load balancer. That is not a Pigsty limitation; it is simply how Kafka works.
-
-------
 
 ## MySQL: Bet You Didn't See That Coming
 
@@ -113,8 +102,6 @@ The new pilot [**MYSQL module**](https://pigsty.io/docs/mysql/) in v4.5 looks li
 - The `mysql-rm.yml` removal playbook is the most conservative of all the modules: if a target host has no MySQL identity, it fails immediately rather than "helpfully" cleaning anything up.
 
 The demo template is `conf/demo/mysql.yml`. If what you really want is for PostgreSQL to speak the MySQL protocol, Pigsty also offers [**OpenHalo**](/pg/openhalo-mysql). As for whether PostgreSQL or MySQL is better, I will leave that for another essay: [**PostgreSQL vs. MySQL in 2026**](/pg/pg-vs-mysql-2026).
-
-------
 
 ## The Rest of the List
 
@@ -180,8 +167,6 @@ None of these changes is a new feature. Every one of them corresponds to a real 
 
 For the complete Infra and extension package change logs, see the [**release note**](https://pigsty.io/docs/about/release/#v450).
 
-------
-
 ## Upgrade Notes
 
 Before upgrading from v4.4, work through this list. Every item can bite:
@@ -199,8 +184,6 @@ Before upgrading from v4.4, work through this list. Every item can bite:
 11. **`make purge` deletes `./data` immediately**: cleanup under the Docker directory no longer has a countdown and no longer accepts an external `DATA` variable. Check the target yourself before running it.
 12. **Kafka and MySQL are pilot modules**: Kafka clients must be able to reach every broker directly; MySQL clusters must contain exactly one or three members.
 
-------
-
 ## Get v4.5
 
 On a fresh, supported Linux node:
@@ -214,8 +197,6 @@ cd ~/pigsty
 ```
 
 Users in mainland China can replace `repo.pigsty.io` with `repo.pigsty.cc`. A production upgrade is not a matter of installing over the existing deployment: read the upgrade notes above, verify inventory identities, backups, and the actual runtime state, then roll out changes with an explicit `-l` scope.
-
-------
 
 ## Closing Thoughts
 

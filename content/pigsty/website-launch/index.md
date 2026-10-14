@@ -6,7 +6,6 @@ summary: >
   今天，俺荣幸地宣布Pigsty官方文档站上线啦！：http://pigsty.cc
 tags: [Pigsty, 文档]
 ---
-
 好久没有冒泡了！今天，俺很荣幸的宣布，Pigsty 官方文档站上线啦！
 
 地址为：**<http://pigsty.cc>**\

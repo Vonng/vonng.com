@@ -8,16 +8,13 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.2.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v220)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.2.0) | [**Release Note**](https://pigsty.io/docs/releasenote/#v220)
-
-[![](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v2.2.0)
+[![Pigsty v2.2: Monitoring System Reborn (figure 1)](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v2.2.0)
 
 Pigsty v2.2 is here! The world's most powerful PostgreSQL monitoring system receives an epic upgrade — completely rebuilt on Grafana v10, pushing PG observability to a whole new level with a dramatically improved user experience. **Live Demo**: **http://demo.pigsty.cc**
 
 This release also introduces a **42-node** production simulation sandbox template, adds support for Citus 12 and PG 16 beta2, provides KVM-based Vagrant templates, establishes dedicated Pigsty Yum repos for scattered/hard-to-reach RPM packages, and adds compatibility with UOS20 (a domestic Chinese Linux distribution).
-
----------
 
 ## Monitoring Overhaul: Visual Design
 
@@ -37,8 +34,6 @@ The v2.2 monitoring dashboards use PG Blue, Nginx Green, Redis Red, Python Yello
 
 ![color-scheme](color-scheme.jpg)
 
----------
-
 ## Monitoring Overhaul: Cluster Navigation
 
 Beyond colors, v2.2 also redesigns content organization and layout. For instance, stats tiles now replace the old table-style navigation, making problematic services immediately visible on the first screen. Click any anomalous tile to jump straight to the incident.
@@ -56,8 +51,6 @@ Table-style navigation in PGSQL Cluster
 The detailed cluster resource tables appear in the second section for reference. Combined with the metrics and logs sections that follow, it presents a complete picture of a PostgreSQL cluster's core state.
 
 ![PGSQL Cluster Metrics](05-pgsql-cluster-metrics.jpg)
-
----------
 
 ## Monitoring Overhaul: Instance View
 
@@ -81,8 +74,6 @@ When DCS fails, PostgreSQL clusters relying on ETCD for high availability enable
 
 ![PG FailSafe](10-pg-failsafe.jpg)
 
----------
-
 ## Monitoring Overhaul: Services
 
 Another completely redesigned area is Service and Proxy monitoring. The Service dashboard now includes critical service information: SLI. Through State Timeline bars, users can intuitively see service interruptions, obtain availability metrics, and understand the status of load balancers and backend database servers.
@@ -99,8 +90,6 @@ This shows the monitoring dashboard for pg-test cluster's HAProxy #1 load balanc
 
 The global overview shows the overall status timeline and SLI metrics for all database services in Pigsty.
 
----------
-
 ## Monitoring Overhaul: Database Statistics
 
 Besides monitoring database servers, Pigsty also monitors the logical objects they host — databases, tables, queries, indexes, and more.
@@ -116,8 +105,6 @@ Users can drill down into statistics within a **single** database instance via t
 ![PGSQL Database Tables](16-pgsql-database-tables.jpg)
 
 ![PGSQL Database Queries](17-pgsql-database-queries.jpg)
-
----------
 
 ## Monitoring Overhaul: System Catalog
 
@@ -141,8 +128,6 @@ Database queries are also aggregated by execution plan, making it easy to find p
 
 ![PGCAT Query](22-pgcat-query.jpg)
 
----------
-
 ## Monitoring Overhaul: Tables and Queries
 
 In Pigsty, you can examine every aspect of a table. The PGCAT Table dashboard shows table metadata, its indexes, statistics for each column, and related queries.
@@ -160,8 +145,6 @@ Similarly, you can get detailed information about SQL queries (grouped by identi
 ![PGSQL Query 2](26-pgsql-query-2.jpg)
 
 Pigsty includes many more topic-specific dashboards. Due to space constraints, this covers the monitoring system overview. The best way to experience it is to visit the public Pigsty demo: http://demo.pigsty.cc and explore it yourself. While it's just a modest 4-node environment with 1-core VMs, it's sufficient to demonstrate Pigsty's core monitoring capabilities.
-
----------
 
 ## Production Simulation Sandbox
 
@@ -181,8 +164,6 @@ On top of this, there are 3 Redis clusters and 10 PostgreSQL clusters of various
 
 This configuration serves as a reference for medium-to-large enterprises managing large-scale database clusters — and you can spin it up completely in half an hour on a single physical server.
 
----------
-
 ## Smoother Build Process
 
 When downloading Pigsty software directly from the internet, you might encounter firewall/GFW issues. For example, the default Grafana/Prometheus Yum repos can be extremely slow. Additionally, some scattered RPM packages need to be downloaded via web URLs rather than repotrack.
@@ -190,8 +171,6 @@ When downloading Pigsty software directly from the internet, you might encounter
 Pigsty v2.2 solves this problem. Pigsty now provides an official Yum repo: http://get.pigsty.cc, configured as one of the default upstream sources. All scattered RPMs and packages requiring VPN access are hosted there, significantly speeding up online installation/build processes.
 
 Additionally, v2.2 adds support for the domestic Chinese operating system UOS 1050e uel20, meeting special requirements for certain customers. Pigsty has recompiled PG-related RPM packages for these systems.
-
----------
 
 ## Installation
 
@@ -211,8 +190,6 @@ http://get.pigsty.cc/v2.2.0/pigsty-pkg-v2.2.0.el9.x86_64.tgz
 That's what Pigsty v2.2 brings to the table.
 
 For more details, check out the official Pigsty documentation: https://pigsty.io and the GitHub Release Notes: https://github.com/pgsty/pigsty/releases/tag/v2.2.0
-
-----------------
 
 ## v2.2.0 Release Notes
 
@@ -259,8 +236,8 @@ Default value changes:
     - Removed `remi`: Redis now provided by pigsty-el repo
 - `repo_packages`: Consolidated package lists (see source for details)
 - `repo_url_packages`:
-    - https://get.pigsty.cc/rpm/pev.html
-    - https://get.pigsty.cc/rpm/chart.tgz
+    - https://github.com/dalibo/pev2
+    - https://github.com/pgsty/infra-pkg/tree/main/grafana-plugins
 - `node_default_packages`: Updated package list
 - `infra_packages`: Updated package list
 - `PGSERVICE` in `.pigsty` replaced with `PGDATABASE=postgres`, allowing users to access specific instances from admin node using just IP address

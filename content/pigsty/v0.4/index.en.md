@@ -8,7 +8,6 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
-
 > GitHub Release: https://github.com/pgsty/pigsty/releases/tag/v0.4.0
 
 Pigsty v0.4 is our second public beta. The observability stack was rebuilt around Grafana 7.3, and ten curated dashboards became the default open-source payload. pg_exporter 0.3.1 drives metrics, and the alert wiring has been cleaned up for the new Grafana release.

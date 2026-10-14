@@ -6,7 +6,6 @@ summary: >
   和大家汇报一下最近的更新，免得你们以为我光谈恋爱不干活了：探探全量迁移至Pigsty；高可用在混沌工程演练中表现出色；Pigsty项目通过奇绩创坛面试；1.4新功能前瞻
 tags: [Pigsty]
 ---
-
 Pigsty v1.4 将于 3 月内发布，对监控系统进行了显著改进；探探所有 PostgreSQL 完整搬迁至 Pigsty；Pigsty 开始接洽 VC
 
 ## 探探全量迁移至 Pigsty

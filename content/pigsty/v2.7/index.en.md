@@ -8,18 +8,15 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.7.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v270)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.7.0) | [**Release Note**](https://pigsty.io/docs/releasenote/#v270)
-
-[![](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v2.7.0)
+[![Pigsty v2.7: The Extension Superpack (figure 1)](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v2.7.0)
 
 On 2024-05-20, Pigsty v2.7 is released. The number of available extensions in this version reaches an astonishing **255**, successfully elevating PostgreSQL's **versatility** to a new height!
 
 Additionally, we provide some new Docker app templates, including the open-source enterprise ERP suite — **Odoo**, **Jupyter** Notebook, and are the first to support **Supabase** GA version.
 
 We've also paved the way for upcoming container versions, provided PolarDB support to help users pass domestic compliance audits, and officially differentiated Pro and Open Source editions.
-
-------------
 
 ## Extensions Galore
 
@@ -35,10 +32,10 @@ Therefore, in Pigsty v2.7, we've re-examined the entire PostgreSQL ecosystem's e
 | [wrappers](https://github.com/supabase/wrappers)                             | 0.3.1     | Supabase's foreign data wrapper bundle                     |
 | [duckdb_fdw](https://github.com/alitrack/duckdb_fdw)                         | 1.1       | DuckDB foreign data wrapper (libduck 0.10.2)               |
 | [pg_search](https://github.com/paradedb/paradedb/tree/dev/pg_search)         | 0.7.0     | ParadeDB BM25 full-text search                             |
-| [pg_lakehouse](https://github.com/paradedb/paradedb/tree/dev/pg_lakehouse)   | 0.7.0     | ParadeDB lakehouse analytics engine                        |
+| [pg_lakehouse](https://github.com/paradedb/pg_analytics)   | 0.7.0     | ParadeDB lakehouse analytics engine                        |
 | [pg_analytics](https://github.com/paradedb/pg_analytics)                     | 0.6.1     | Accelerated analytics in PostgreSQL                        |
 | [pgmq](https://github.com/tembo-io/pgmq)                                     | 1.5.2     | Lightweight message queue like AWS SQS/RSMQ                |
-| [pg_tier](https://github.com/tembo-io/pg_tier)                               | 0.0.3     | Tier cold data to AWS S3                                   |
+| pg_tier (original link unavailable)                               | 0.0.3     | Tier cold data to AWS S3                                   |
 | [pg_vectorize](https://github.com/tembo-io/pg_vectorize)                     | 0.15.0    | RAG vector search wrapper in PG                            |
 | [pg_later](https://github.com/tembo-io/pg_later)                             | 0.1.0     | Execute SQL now, get results later                         |
 | [pg_idkit](https://github.com/VADOSWARE/pg_idkit)                            | 0.2.3     | Generate various IDs: UUIDv6, ULID, KSUID                  |
@@ -49,12 +46,10 @@ Therefore, in Pigsty v2.7, we've re-examined the entire PostgreSQL ecosystem's e
 | [parquet_s3_fdw](https://github.com/pgspider/parquet_s3_fdw)                 | 1.1.0     | Parquet FDW for S3/MinIO                                   |
 | [plv8](https://github.com/plv8/plv8)                                         | 3.2.2     | PL/JavaScript (V8) trusted language                        |
 | [md5hash](https://github.com/tvondra/md5hash)                                | 1.0.1     | Native 128-bit MD5 data type                               |
-| [pg_tde](https://github.com/Percona-Lab/pg_tde)                              | 1.0-alpha | Experimental encrypted storage engine                      |
+| [pg_tde](https://github.com/percona/pg_tde)                              | 1.0-alpha | Experimental encrypted storage engine                      |
 | [pg_dirtyread](https://github.com/df7cb/pg_dirtyread)                        | 2.6       | Read dead tuples for dirty reads                           |
 
 Many of these are extensions developed with Rust and **pgrx**, providing incredibly powerful capabilities:
-
-------
 
 Supabase's [**wrappers**](https://github.com/supabase/wrappers) looks like one extension, but it actually provides a Rust FDW framework with access to **ten** external data sources!
 
@@ -74,8 +69,6 @@ Supabase's [**wrappers**](https://github.com/supabase/wrappers) looks like one e
 | AWS Cognito | FDW for AWS Cognito                            | ✅   | ❌     |
 
 This means you can now **read and write** BigQuery, ClickHouse, and Stripe data from PostgreSQL. Firebase, Airtable, S3, Logflare, Auth0, SQL Server, Redis, and Cognito also provide SQL read access through PostgreSQL.
-
-------
 
 The [**`plprql`**](https://prql-lang.org/) extension provides a new SQL-like database query language called PRQL:
 
@@ -108,13 +101,11 @@ And the new **plv8** extension allows you to write stored procedures in JavaScri
 
 ![Procedural Languages](pl.jpg)
 
-------
-
 **parquet_s3_fdw** might seem like it just lets you access Parquet files on S3, but its significance is that PG can become a true lakehouse — essentially adding an analytics engine with unlimited storage capacity!
 
-Built on top of it, [**`pg_tier`**](https://github.com/tembo-io/pg_tier) provides convenient tiered cold storage — you can easily archive rarely accessed massive cold data from PG to S3/MinIO using SQL!
+Built on top of it, **`pg_tier`** (original link unavailable) provides convenient tiered cold storage — you can easily archive rarely accessed massive cold data from PG to S3/MinIO using SQL!
 
-If Parquet alone isn't enough, ParadeDB's [**`pg_lakehouse`**](https://github.com/paradedb/paradedb/tree/dev/pg_lakehouse) takes this to a new level — you can now use PG directly as a lakehouse, reading Parquet, CSV, JSON, Avro, DeltaLake, and upcoming ORC format files from S3/MinIO/local filesystem for lakehouse analytics!
+If Parquet alone isn't enough, ParadeDB's [**`pg_lakehouse`**](https://github.com/paradedb/pg_analytics) takes this to a new level — you can now use PG directly as a lakehouse, reading Parquet, CSV, JSON, Avro, DeltaLake, and upcoming ORC format files from S3/MinIO/local filesystem for lakehouse analytics!
 
 ```sql
 CREATE EXTENSION pg_lakehouse;
@@ -147,27 +138,19 @@ ParadeDB's **pg_analytics** and **pg_search** are also noteworthy — the former
 
 Tembo also provides four practical Rust PG extensions. Their **pgmq** provides a lightweight message queue API on PG, similar to AWS SQS and RSMQ, as an alternative to **pgq**.
 
-------
-
 In AI, [**pgvector**](https://github.com/pgvector/pgvector) 0.7 introduces major upgrades: sparse vectors (retiring **pg_sparse**!), **half float** quantization, doubled max vector dimensions to **4000**, **binary** quantization (up to 64K dims), two new distance metrics and indexes. Most importantly, SIMD instructions are now supported — performance has improved dramatically compared to a year ago!
 
 Plus other AI extensions: **pg_vectorize** helps wrap RAG services, **pg_tiktoken** counts OpenAI tokens in PG, **pg_similarity** provides 17 additional distance metrics, **imgsmlr** provides image similarity functions, **bigm** provides bigram-based full-text search, **zhparser** provides Chinese word segmentation.
 
-------
-
 For new data types: **md5hash** lets you efficiently store 128-bit MD5 digests natively. **pg_idkit** generates a dozen different ID schemes (UUIDv6, UUIDv7, nanoid, ksuid, ulid, etc.). **rrule** stores, parses, and processes calendar recurring events.
-
-------
 
 For database administration: **pgdd** accesses PG catalog via SQL, **pg_later** executes SQL asynchronously, **pg_dirtyread** reads dead tuples for data recovery, **pg_show_plans** shows running query execution plans!
 
 For encryption: **pg_tde** provides experimental transparent encryption storage, **pgsmcrypto** provides Chinese SM cryptography (SM2,3,4) support.
 
-------
-
 ## Achieving Completeness
 
-Including [previous extensions](https://pigsty.io/blog/pigsty-v2.4/), Pigsty v2.7 has **255** PG extensions available across all operating systems. We can proudly say that no distribution or provider in the PostgreSQL ecosystem matches our extension count:
+Including [previous extensions](/en/pigsty/v2.4/), Pigsty v2.7 has **255** PG extensions available across all operating systems. We can proudly say that no distribution or provider in the PostgreSQL ecosystem matches our extension count:
 
 ![Extensions](extensions.jpg)
 
@@ -191,8 +174,6 @@ Through the magic of extreme extensibility, PostgreSQL achieves completeness, ba
 
 Today, PostgreSQL is unstoppable. And Pigsty gives PostgreSQL wings to soar.
 
------------------
-
 ## Out-of-the-Box ERP
 
 Similar to "domestic databases," many domestic ERP software is awkwardly positioned because there's already a good enough open-source ERP — **Odoo** (formerly OpenERP).
@@ -213,8 +194,6 @@ As a PostgreSQL distribution, there's no reason not to support Odoo. Pigsty v2.7
 
 The result: on a bare VM, you can spin up a production-quality enterprise ERP with just a few commands!
 
------------------
-
 ## PITR and Dashboards
 
 ERP systems like Odoo have very different database requirements from traditional internet applications. I saw this in the Odoo community: "*My Odoo has been running for years, now PostgreSQL has 2.5GB of data*," with replies: "*That's really big!*"
@@ -224,8 +203,6 @@ ERP systems like Odoo have very different database requirements from traditional
 Pigsty already provides out-of-the-box PITR for rollback to any point in time. But the required information was scattered across the monitoring system, so Pigsty v2.7 provides a dedicated PGSQL PITR dashboard for PITR context.
 
 ![PITR Dashboard](pitr.jpg)
-
------------------
 
 ## Open Source vs Pro Edition
 
@@ -244,8 +221,6 @@ In the original design, open source would include only INFRA, NODE, PGSQL, ETCD 
 
 For compatibility, Pigsty Pro provides full lifecycle PG 12-16 support across seven major OS versions. We also maintain complete ARM64 Prometheus & Grafana repos for ARM servers and "domestic chips."
 
------------------
-
 ## Looking Forward
 
 Overall, Pigsty has reached my ideal state. Functionally, it's already excellent! Exceeding RDS in some areas (like extension support and monitoring!).
@@ -254,8 +229,6 @@ But as they say, even fine wine fears a deep alley — so upcoming work will shi
 
 Speaking of marketing — next week (May 28), I'll be in Vancouver for 2024 PostgreSQL Developer Conference, a.k.a. the first PGConf.Dev (formerly PG Con), discussing PostgreSQL's future and pushing Pigsty to the global stage!
 
-----------------
-
 ## v2.7.0 Release Notes
 
 **Highlights**
@@ -263,13 +236,13 @@ Speaking of marketing — next week (May 28), I'll be in Vancouver for 2024 Post
 New powerful extensions, especially Rust/pgrx-developed ones:
 
 - [pg_search](https://github.com/paradedb/paradedb/tree/dev/pg_search) v0.7.0: BM25 full-text search
-- [pg_lakehouse](https://github.com/paradedb/paradedb/tree/dev/pg_lakehouse) v0.7.0: Object storage/table format query engine
+- [pg_lakehouse](https://github.com/paradedb/pg_analytics) v0.7.0: Object storage/table format query engine
 - [pg_analytics](https://github.com/paradedb/pg_analytics) v0.6.1: Accelerated analytics
 - [pg_graphql](https://github.com/supabase/pg_graphql) v1.5.4: GraphQL support
 - [pg_jsonschema](https://github.com/supabase/pg_jsonschema) v0.3.1: JSON Schema validation
 - [wrappers](https://github.com/supabase/wrappers) v0.3.1: Supabase FDW collection
 - [pgmq](https://github.com/tembo-io/pgmq) v1.5.2: Lightweight message queue
-- [pg_tier](https://github.com/tembo-io/pg_tier) v0.0.3: S3 cold storage tiering
+- pg_tier (original link unavailable) v0.0.3: S3 cold storage tiering
 - [pg_vectorize](https://github.com/tembo-io/pg_vectorize) v0.15.0: RAG wrapper
 - [pg_later](https://github.com/tembo-io/pg_later) v0.1.0: Async SQL execution
 - [pg_idkit](https://github.com/VADOSWARE/pg_idkit) v0.2.3: UUID generation
@@ -283,7 +256,7 @@ C/C++ extensions:
 - [parquet_s3_fdw](https://github.com/pgspider/parquet_s3_fdw) 1.1.0: S3 Parquet lakehouse
 - [plv8](https://github.com/plv8/plv8) 3.2.2: JavaScript stored procedures
 - [md5hash](https://github.com/tvondra/md5hash) 1.0.1: Native MD5 hash type
-- [pg_tde](https://github.com/Percona-Lab/pg_tde) 1.0-alpha: Experimental encryption
+- [pg_tde](https://github.com/percona/pg_tde) 1.0-alpha: Experimental encryption
 - [pg_dirtyread](https://github.com/df7cb/pg_dirtyread) 2.6: Read dead tuples
 
 **New Features**
@@ -299,7 +272,7 @@ C/C++ extensions:
 
 - [Odoo](https://github.com/Vonng/pigsty/tree/master/app/odoo): Open-source ERP
 - [Jupyter](https://github.com/Vonng/pigsty/tree/master/app/jupyter): Jupyter Notebook container
-- [PolarDB](https://github.com/Vonng/pigsty/tree/master/app/polardb): "Domestic database" for compliance
+- [PolarDB](https://github.com/ApsaraDB/PolarDB-for-PostgreSQL): "Domestic database" for compliance
 - [Supabase](https://github.com/Vonng/pigsty/tree/master/app/supabase): Updated to latest GA
 - [Bytebase](https://github.com/Vonng/pigsty/tree/master/app/bytebase): Using `latest` tag
 - [pg_exporter](https://github.com/Vonng/pigsty/tree/master/app/pg_exporter): Updated Docker examples

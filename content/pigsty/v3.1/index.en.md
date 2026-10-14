@@ -8,18 +8,15 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.1.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v310)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.1.0) | [**Release Note**](https://pigsty.io/docs/releasenote/#v310)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.1.0)
+[![Pigsty v3.1: One-Click Supabase, PG17 Default, ARM & Ubuntu 24 (figure 1)](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.1.0)
 
 With PostgreSQL 17.2 released just days ago, Pigsty immediately follows up with v3.1. In this version, PostgreSQL 17 becomes the default major version, with nearly 340 extensions available out of the box.
 
 Additionally, Pigsty 3.1 delivers one-click [self-hosted Supabase](https://pigsty.cc/docs/pgsql/kernel/supabase) capability and improved [MinIO](https://pigsty.cc/docs/minio) object storage best practices.
 Meanwhile, Pigsty provides initial ARM64 architecture support and adds support for the newly released Ubuntu 24.04 major OS release.
 Finally, this version offers a series of ready-to-use scenario templates, unifying configuration files across different OS distributions and dramatically simplifying configuration management.
-
---------
 
 ## Self-Hosted Supabase
 
@@ -34,7 +31,7 @@ For small-scale workloads (4c8g), Supabase cloud [pricing is extremely competiti
 The most obvious reason is what we discussed in "[Cloud Computing Mudslide](/cloud)": cloud database services quickly explode in cost once you scale up even a little. Considering the unbeatable price-performance of local NVMe drives, the cost and performance advantages of self-hosting are obvious.
 
 Another important reason is Supabase cloud's feature limitations — [following the same logic as RDS](https://mp.weixin.qq.com/s/EH7RPB6ImfMHXhOMU7P5Qg), many powerful extensions can't be offered in multi-tenant cloud environments for security reasons. Supabase cloud has 64 available extensions, but when self-hosting Supabase with Pigsty, you get all [**340**](https://pgext.cloud/en/list).
-Additionally, Supabase officially uses PostgreSQL 15 as the underlying database, while with Pigsty, you can use any version from PG 14-17, running on EL / Debian / Ubuntu mainstream Linux [bare metal](https://pigsty.cc/docs/ref/compare) without virtualization, fully leveraging modern hardware's performance and cost advantages.
+Additionally, Supabase officially uses PostgreSQL 15 as the underlying database, while with Pigsty, you can use any version from PG 14-17, running on EL / Debian / Ubuntu mainstream Linux [bare metal](https://pigsty.cc/docs/about/compare/) without virtualization, fully leveraging modern hardware's performance and cost advantages.
 
 I've noticed many startups going overseas are using Supabase, and some have reached a scale where self-hosting makes sense — and people are willing to pay for consulting to make it happen.
 So Pigsty has supported self-hosting Supabase (the required PostgreSQL) since v2.4 released last September. But that still involved some manual steps like configuring the PG cluster and spinning up Docker.
@@ -43,8 +40,6 @@ In this version, we've optimized the experience to this state — on a fresh OS 
 ![supabase-selfhosting.png](supabase-selfhosting.jpg)
 
 I'll be preparing some tutorials on [Supabase self-hosting best practices](https://pigsty.cc/docs/pgsql/kernel/supabase) in the coming days, stay tuned.
-
---------
 
 ## PostgreSQL 17
 
@@ -59,8 +54,6 @@ Under PG 17, that number reaches 180 MB/s. Of course, turning off all safety swi
 ![perf.png](perf.jpg)
 
 Performance regression testing for Pigsty 3.1 + PostgreSQL 17. Detailed performance benchmark reports will be published in the coming days, stay tuned.
-
-----------------
 
 ## 340 Extensions
 
@@ -83,8 +76,6 @@ For more details, see "[PostgreSQL Achieves Mastery: The Most Complete Extension
 Currently, there are quite a few new projects developing extensions with Rust + pgrx, and Pigsty includes **23** Rust extensions.
 If you have good extension recommendations, let me know — I'll evaluate and test them and add them to the repository ASAP.
 If you're a PostgreSQL extension author, we welcome you to submit your extension to the Pigsty repository — we can help you package and distribute it, solving the last-mile delivery problem.
-
-----------------
 
 ## Ubuntu 24.04 Support
 
@@ -114,8 +105,6 @@ We provide the latest software packages and complete extension sets for these fi
 
 > Primary = Primary version support; Supported = Configurable support; Legacy = Legacy version commercial support
 
-----------------
-
 ## ARM Support
 
 ARM architecture has been gaining ground, especially in cloud computing where ARM server market share is steadily growing. As early as two years ago, users were requesting ARM architecture support.
@@ -131,8 +120,6 @@ Currently, the ARM version runs well on EL9, Debian 12, and Ubuntu 22.04.
 EL8 has some missing official PGDG packages, and Ubuntu 24 has some individual missing extensions, so we don't recommend using the ARM version on these two systems yet.
 
 I plan to pilot ARM for one or two minor versions, and once extensions are complete, I'll mark it as GA. Welcome to try the ARM version and provide feedback.
-
-----------------
 
 ## Configuration Simplification
 
@@ -159,8 +146,6 @@ pg_extensions: # extensions to be installed on this cluster
 For example, if you want to download and install PG 16 kernel and extensions, previously you'd need to change all packages in the download and install lists to version 16 — now you just modify one `pg_version` parameter.
 The end result is excellent: basically all OS distributions can use the same config file for installation, hiding system differences and management complexity internally.
 
-----------------
-
 ## Infrastructure Improvements
 
 Beyond functional improvements, we continue improving infrastructure. For example, installing the MSSQL-compatible Babelfish kernel, Oracle-compatible IvorySQL kernel, and PolarDB kernel introduced in v3.0 required users to use an external repo for online installation.
@@ -169,8 +154,6 @@ Now, the official Pigsty repository directly provides mirrors for Babelfish, Ivo
 
 Additionally, we maintain Prometheus and Grafana YUM/APT x AMD/ARM repositories, tracking these observability component versions in real-time. In this upgrade, Prometheus upgrades to v3, and VictoriaLogs officially releases v1.
 In summary, if you need these monitoring tools, Pigsty's repository can help.
-
-----------------
 
 ## MinIO Improvements
 
@@ -196,8 +179,6 @@ A 1.2 PB dedicated storage server costs around ¥100K RMB, with 3-way replicatio
 Add in network, power, and ops, and the entire 5-year TCO doesn't exceed one year's discounted cloud spend — that's massive cost-saving potential.
 If your business heavily uses object storage, local MinIO self-hosting + Cloudflare might be a much better solution worth considering.
 
-----------------
-
 ## Service System
 
 Pigsty v3.1 has reached a state I'm fairly satisfied with. Going forward, my focus will shift to building the service system.
@@ -213,8 +194,6 @@ My previous service pricing was too low, drawing comments from domestic and inte
 ![price.png](price.jpg)
 
 So this time I've re-adjusted the pricing system, basically anchoring to industry average pricing levels. After all, it's a mutual choice — welcome interested friends to purchase professional services and support! New customers get new pricing, existing customers keep old pricing.
-
-----------------
 
 ## v3.1.0 Release Notes
 

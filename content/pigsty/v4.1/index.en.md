@@ -9,10 +9,9 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
-
 > [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v4.1.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v410)
 
-[![](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v4.1.0)
+[![Pigsty v4.1: Speed Is the Moat (figure 1)](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v4.1.0)
 
 If there is one takeaway from this release, it is that **speed matters**.
 On February 12, 2026, the PostgreSQL community released [18.2 / 17.8 / 16.12 / 15.16 / 14.21](https://www.postgresql.org/about/news/postgresql-182-178-1612-1516-and-1421-released-3235/) on the regular minor cadence.
@@ -20,8 +19,6 @@ As far as I could tell, the teams with production-grade support ready on the sam
 
 For an independent open-source project to keep pace with the world's largest cloud vendor
 and a long-standing PostgreSQL leader -- that is the story I hope v4.1 can tell.
-
-------
 
 ## Why Speed Matters So Much
 
@@ -36,8 +33,6 @@ The experience I would love to provide is the opposite: follow-up so prompt that
 PostgreSQL ships a new release, you reach for Pigsty, and it is already there. That is the standard a distribution should aspire to.
 
 So the theme of v4.1 is not "more features." It is about turning fast, reliable delivery into a repeatable capability -- not a one-time heroic sprint, but a steady engineering discipline.
-
-------
 
 ## Not Just PostgreSQL: OS Minors Move Together
 
@@ -54,8 +49,6 @@ One important note to keep in mind:
 
 Many users deploy in intranet or fully air-gapped environments. If package versions do not match, online installation is the safe fallback.
 
-------
-
 ## Pig Agent-Native CLI: Letting The Tool Speak for Itself
 
 Here is a practical example: imagine asking Claude Code to install PostgreSQL 18 plus extensions on three machines.
@@ -70,8 +63,6 @@ Traditional CLI tools are built for a human sitting at a terminal: colored outpu
 These principles sound straightforward, but applying them properly meant revisiting every subcommand. In `pig 1.1.0`, JSON/YAML output is no longer an afterthought; it is a first-class interface so that every operation can be invoked and parsed reliably by machines.
 
 In the spirit of transparency: I proposed the concept and participated in design reviews, but the bulk of the implementation was carried out with the help of Codex and Claude Code. I handled the final review and acceptance. This is also Pigsty's first truly AI-native project.
-
-------
 
 ## AI Coding: Less About Writing Code, More About Sweeping Blind Spots
 
@@ -89,8 +80,6 @@ In this cycle, that kind of sweep surfaced and fixed roughly 10 to 20 additional
 
 A special thank you to community contributor [@l2dy](https://github.com/l2dy) for many thoughtful issues that helped us close a batch of dashboard and config edge cases. This is how open-source quality compounds -- through people who care about the details.
 
-------
-
 ## Firewall Defaults: One Extra Command Is Better Than a Silent Risk
 
 A small but important change: in v4.0, the default firewall mode was set to `none`, meaning "do not touch your firewall."
@@ -107,8 +96,6 @@ So in v4.1, the default returns to `zone`, with a straightforward policy:
 
 If you need public database access, you can add it explicitly. It may mean one extra command in some cases, but when it comes to security defaults, we believe a conservative approach is the safer choice.
 
-------
-
 ## Seven New Extensions, Now 451 in Total
 
 Every release brings updates to the extension ecosystem. This time we added 7, bringing total support to **451**. A few highlights:
@@ -119,8 +106,6 @@ Every release brings updates to the extension ecosystem. This time we added 7, b
 - **pg_strict** `1.0.2`: strict mode guardrails to avoid unqualified UPDATE/DELETE.
 
 Meanwhile, TimescaleDB moved to 2.25.0, Citus 14.0.0 landed, and Postgres Anonymizer reached 3.0 -- all meaningful updates in their respective domains.
-
-------
 
 ## Other Notable Changes
 
@@ -133,16 +118,12 @@ Here are a few more changes worth highlighting:
 - **`infra-rm` refactor**: uninstall flow now includes segmented `deregister` cleanup instead of one-shot removal, so cleanup scope and order are easier to control.
 - **New Mattermost app template**: one-click deployment with database, storage, and reverse proxy wiring.
 
-------
-
 ## Closing
 
 v4.1 is not a big-bang release. There is no architecture rewrite, no dramatic new module. But it demonstrates something we think matters: day-zero production-grade support is not a lucky sprint -- it can be a repeatable engineering capability.
 
 Earlier I mentioned that users need confidence. That kind of trust is not built in a single moment. It is earned with every minor release, every security patch, every time you show up on schedule. v4.1 is one more step in that direction.
 Below are the full commit notes and technical details.
-
---------
 
 ## v4.1.0 Commit Note
 

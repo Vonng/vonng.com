@@ -6,7 +6,6 @@ summary: >
   如何使用 Pigsty 监控云数据库服务，例如 PolarDB / RDS for PostgreSQL，或者自建的现有PG数据库？
 tags: [Pigsty, 监控, RDS]
 ---
-
 **Pigsty 是一个开箱即用的 PostgreSQL 发行版，与本地优先的 RDS 开源替代**。但它也可以单独作为一个 PostgreSQL/主机监控系统来使用。本文以阿里云为例，介绍了用一台 ECS 安装部署 Pigsty，并用于监控云上的 **PolarDB** 与 **RDS for PostgreSQL**，为现有数据库带来极致的观测能力。
 
 [嵌入媒体](https://mp.weixin.qq.com/mp/readtemplate?t=pages/video_player_tmpl&action=mpvideo&auto=0&vid=wxv_3109126349086162945)
@@ -15,7 +14,10 @@ tags: [Pigsty, 监控, RDS]
 
 使用 Pigsty 教程分为四个步骤：
 
-1.申请用于部署 Pigsty 的 ECS 服务器 2.在 ECS 服务器上完整单机安装 Pigsty3.配置 PolarDB / RDS 的监控用户、模式、视图、黑白名单 4.将 RDS / PolarDB for PG 接入 Pigsty 监控系统中
+1. 申请用于部署 Pigsty 的 ECS 服务器
+2. 在 ECS 服务器上完整单机安装 Pigsty
+3. 配置 PolarDB / RDS 的监控用户、模式、视图、黑白名单
+4. 将 RDS / PolarDB for PG 接入 Pigsty 监控系统中
 
 只要您有阿里云账号，使用按量付费模式（需要账户余额¥100 以上），费用大致为 ¥4 / 小时，一小时内收工。
 
@@ -49,8 +51,6 @@ Pigsty 提供的监控面板概览\
 
 ![图片](06.webp)
 
----
-
 ### 在 ECS 上完整安装单机版 Pigsty
 
 登陆 ECS 后，可以通过以下命令完成 Pigsty 的单机安装
@@ -71,8 +71,6 @@ Pigsty 的详细安装过程请参阅[安装文档](https://pigsty.cc/docs/setup
 
 ![图片](08.webp)
 
----
-
 ### 配置 PolarDB / RDS PG 监控
 
 PolarDB 的配置细节在此不再赘述，关键是要有一个给监控用户使用的连接串，可以从 ECS 上访问 PolarDB 主库 / 从库，并确保相关监控用户具有足够的读取权限，以及相关监控扩展已经完成安装。
@@ -91,8 +89,6 @@ PolarDB 的配置细节在此不再赘述，关键是要有一个给监控用户
 ![图片](09.webp)
 
 强烈建议安装 `pg_stat_statements` 扩展，它可以提供非常重要的关于查询的
-
----
 
 ## 将现有 PG 数据库接入监控
 

@@ -8,14 +8,11 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.3.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v130)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.3.0) | [**Release Note**](https://pigsty.io/docs/releasenote/#v130)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.3.0)
+[![Pigsty v1.3: Redis Support, PGCAT Overhaul, PGSQL Enhancements (figure 1)](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.3.0)
 
 Pigsty v1.3 is officially released, featuring Redis support, a rebuilt PGCAT application, and enhanced PGSQL monitoring.
-
-----------------
 
 ## Redis Support
 
@@ -61,8 +58,6 @@ The Redis cluster dashboard homepage — click on a specific instance to jump to
 
 ![redis-instance](redis-instance.jpg)
 
-----------------
-
 ## PGCAT Overhaul
 
 v1.3 rebuilds the PGCAT application — a tool for browsing and visualizing PostgreSQL system catalogs directly from Grafana.
@@ -91,8 +86,6 @@ PGCAT only needs a target database URL — no agent installation required. Even 
 
 In Pigsty v1.3's monitor-only deployment mode, external PostgreSQL instances are also registered in Grafana with PGCAT enabled by default.
 
-----------------
-
 ## PGSQL Enhancements
 
 The core PGSQL monitoring application also received significant improvements.
@@ -104,8 +97,6 @@ In Pigsty v1.3, the PGSQL Cluster dashboard adds quick-navigation panels for 10 
 Both PGSQL Instance and PGSQL Cluster now include quick-navigation panels for rapid problem identification. PGSQL Service was completely redesigned — simpler and more intuitive for quickly understanding cluster topology. Other dashboards also received optimizations and improvements.
 
 Additionally, v1.3 includes improvements to the semi-automated database migration playbook and profiling tool support.
-
-----------------
 
 ## v1.3.0 Release Notes
 
@@ -144,8 +135,6 @@ Additionally, v1.3 includes improvements to the semi-automated database migratio
 - Added Greenplum RPM packages and dependencies
 - Added Redis RPM and source packages
 - Added `perf` as default package
-
-----------------
 
 ## v1.3.1 Release Notes
 

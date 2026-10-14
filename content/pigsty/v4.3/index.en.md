@@ -8,7 +8,6 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
-
 Pigsty v4.3 is out. If v4.2 was about "twelve kernels", v4.3 is about extension density.
 
 This release takes the supported PostgreSQL extension count from 460 to 510, a new high-water mark for Pigsty.
@@ -16,8 +15,6 @@ Ubuntu 26.04 enters the support matrix, while Ubuntu 20.04 formally retires.
 Core components such as Supabase, pgEdge, PolarDB, Grafana, and MinIO also get a broad refresh.
 
 > [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v4.3.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v430)
-
-------
 
 ## Pigsty v4.3 Goes Mainstream
 
@@ -32,8 +29,6 @@ More than 99% of that traffic comes from AI systems and agents. That means Pigst
 For what is still, at its core, a personal project, that is a fairly rare place to be.
 
 ![cf-pigsty-io.webp](cf-pigsty-io.webp)
-
-------
 
 ## 510 Extensions
 
@@ -51,8 +46,6 @@ The Rust extension ecosystem is getting more active, which is a good thing. For 
 Users see one line of SQL: `CREATE EXTENSION`.
 The maintainer sees a matrix and one or two hundred packages. The good news is that my extension maintenance workflow is now wired into an Agent-based pipeline.
 Whether it is adding a new extension or updating an existing one, the process is automated enough that the extension count can keep going up while the maintenance burden stays within what one person can handle.
-
-------
 
 ## Ubuntu 26.04 Joins the Matrix
 
@@ -81,8 +74,6 @@ Ubuntu 24.04 has also been refreshed from 24.04.3 to 24.04.4, and Debian 13 from
 Pigsty's Vagrant and Terraform templates have been updated accordingly.
 Alibaba Cloud does not yet provide Ubuntu 26.04 images, so that part will have to wait.
 
-------
-
 ## Kernel Updates: Supabase, pgEdge, PolarDB
 
 **Supabase** self-hosting templates are updated to the latest version. Pigsty is one of the few open-source PostgreSQL distributions that provides an enterprise-grade self-hosted Supabase option. This release refreshes the Supabase template, and also adds self-hosting support for Insforge, a lighter "Supabase-like" stack.
@@ -94,8 +85,6 @@ Alibaba Cloud does not yet provide Ubuntu 26.04 images, so that part will have t
 **OrioleDB** keeps moving as well, with OriolePG 17.18 and OrioleDB beta15 / 1.7. OrioleDB is still evolving quickly. I would not rush it into production, but as a frontier project in PostgreSQL storage engines, it is worth trying.
 
 **Cloudberry** is updated to 2.1.0, and Pigsty now adds `cloudberry-backup` and `cloudberry-pxf` packages. v4.2 brought Cloudberry back into the distribution matrix; v4.3 fills in the surrounding tools.
-
-------
 
 ## Grafana 13 and Victoria Refresh
 
@@ -120,8 +109,6 @@ The Victoria stack also gets a batch update:
 
 There is also a small user-reported fix: the VictoriaTraces Grafana datasource path is now corrected to `/select/jaeger`.
 
-------
-
 ## etcd CVE Fix
 
 etcd 3.6.8 recently had a CVE. 3.6.9 fixed it, but also introduced a new problem: it added auth to the member list API, which broke Patroni, the PostgreSQL HA component, before Patroni 4.1.1. Patroni 4.1.1 fixed that compatibility issue.
@@ -129,8 +116,6 @@ etcd 3.6.8 recently had a CVE. 3.6.9 fixed it, but also introduced a new problem
 The important thing for users is version pairing: Patroni <= 4.1.0 should be used with etcd <= 3.6.8, while Patroni >= 4.1.1 should be used with etcd >= 3.6.9. Old with old, new with new. Mixing the two sides causes trouble.
 
 In v4.2.2, the EL side had already moved to etcd 3.6.10 and Patroni 4.1.1. The DEB side lagged behind because the APT repo updated more slowly, so it still used etcd 3.6.8 and Patroni 4.1.0. In v4.3, the DEB side is now updated too, so users can upgrade without worrying about that mismatch.
-
-------
 
 ## MinIO CVE Fix
 
@@ -145,8 +130,6 @@ It is probably the most widely used MinIO fork at this point. I am happy about t
 Recently I also talked to RustFS team. After talking with the team, I learned that they plan to make RustFS a drop-in replacement for MinIO. If they can really pull that off, I will seriously consider replacing MinIO with RustFS in Pigsty.
 This release packages RustFS's first Beta after it left Alpha. A GA release is planned around July.
 
-------
-
 ## Vagrant Templates Move to cloud-image
 
 For many people, Vagrant is just a local testing tool. For Pigsty, which needs to verify multiple operating systems, architectures, and topologies, it is an important development and acceptance-test entry point.
@@ -159,8 +142,6 @@ cloud-image is the more standard, distribution-maintained path. Once everything 
 
 One caveat: the default network interface name is no longer `eth1`. If you need to test VIP-related features, remember to adjust the interface name in your config.
 
-------
-
 ## Small Fixes Worth Calling Out
 
 v4.3 also includes a few smaller fixes that came from real user pain.
@@ -169,13 +150,9 @@ v4.3 also includes a few smaller fixes that came from real user pain.
 
 **IPv6 nameserver parsing fix**: The old logic only extracted IPv4 DNS servers, which missed IPv6 nameservers. That is fixed now. IPv6 support is often not the main path, but when an environment has it, it is not optional.
 
-------
-
 ## Other Additions
 
 Pigsty v4.3 also adds experimental self-hosting templates for Hindsight, a memory framework based on PostgreSQL and pgvector, and Hermes Agent. They are still pilot features, so I will not spend much time on them here.
-
---------
 
 ## Closing Notes
 
@@ -186,8 +163,6 @@ There is no single headline feature here. Instead, the release moves many things
 That is often where the value of a database distribution lives: the unsexy parts. You do not have to track the build status of 50 extensions yourself. You do not have to audit the Ubuntu 26.04 package matrix yourself. You do not have to maintain a MinIO CVE fork yourself. You do not have to sort out Grafana 13 plugins, Victoria component versions, or which Vagrant images to trust.
 
 Pigsty rolls all of that into a release. You just use it. The complete v4.3.0 release notes and package change summary follow.
-
---------
 
 ## v4.3.0
 

@@ -8,14 +8,11 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.3.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v130) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484821&idx=1&sn=56e34b33f37b2555336591ad532ac7e7&chksm=fe4b304ec93cb9589c2bca821e5aaa1034c7dd5b9c580dec4b09ebe3b1ed20bb48df9dfd29ce&scene=21#wechat_redirect)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.3.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v130) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484821&idx=1&sn=56e34b33f37b2555336591ad532ac7e7&chksm=fe4b304ec93cb9589c2bca821e5aaa1034c7dd5b9c580dec4b09ebe3b1ed20bb48df9dfd29ce&scene=21#wechat_redirect)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.3.0)
+[![Pigsty v1.3：PGCAT大修，PGSQL增强，Redis支持（图 1）](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.3.0)
 
 Pigsty v1.3 正式发布，新增 Redis 支持、PGCAT 应用重构、PGSQL 监控增强。
-
-----------------
 
 ## Redis 支持
 
@@ -61,8 +58,6 @@ Redis Overview 首页展示了三个样例集群，分别对应三种部署模�
 
 ![redis-instance](redis-instance.jpg)
 
-----------------
-
 ## PGCAT 重构
 
 v1.3 重构了 PGCAT 应用，这是一个直接从 Grafana 访问并可视化 PostgreSQL 系统目录的应用。
@@ -91,8 +86,6 @@ PGCAT 只需一个可访问的目标数据库 URL 即可使用，无需安装任
 
 在 Pigsty v1.3 的仅监控部署模式中，外部 PostgreSQL 实例也会在 Grafana 中注册并默认启用 PGCAT 功能。
 
-----------------
-
 ## PGSQL 增强
 
 核心 PGSQL 监控应用也有显著改进。
@@ -104,8 +97,6 @@ PGCAT 只需一个可访问的目标数据库 URL 即可使用，无需安装任
 PGSQL Instance、PGSQL Cluster 都新增了若干快速导览面板，用于快速定位问题。PGSQL Service 完整重置，更为简洁直观，便于快速理清集群拓扑。其他 Dashboard 也有相应优化与改进。
 
 此外，v1.3 还包含半自动数据库迁移剧本的改进、Profiling 工具支持等功能增强。
-
-----------------
 
 ## v1.3.0 更新日志
 
@@ -144,8 +135,6 @@ PGSQL Instance、PGSQL Cluster 都新增了若干快速导览面板，用于快�
 - 添加 Greenplum RPM 和依赖项
 - 添加 Redis RPM 及源码包
 - 将 perf 添加为默认包
-
-----------------
 
 ## v1.3.1 更新日志
 

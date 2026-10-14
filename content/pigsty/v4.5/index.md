@@ -8,7 +8,6 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
-
 > [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v4.5.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v450)
 
 Pigsty v4.5 正式发布。上一版发布的时候说过，5.0 之前可能会有一个 4.5 版本。现在它来了，只是做着做着发现，这个 “过渡版本” 塞得比正经大版本还满。
@@ -27,12 +26,9 @@ Pigsty v4.5 正式发布。上一版发布的时候说过，5.0 之前可能会�
 
 下面按这个顺序，一项一项说。
 
-
-------
-
 ## 扩展来到 575 个
 
-每个版本都要报一遍扩展数字，这次是 **575** —— 相比 v4.4 的 531，新增 46 个、移除 2 个，净增 44。完整目录照旧在 [**扩展列表**](https://pgext.cloudlist) 里，这里只点几个值得说道的新面孔：
+每个版本都要报一遍扩展数字，这次是 **575** —— 相比 v4.4 的 531，新增 46 个、移除 2 个，净增 44。完整目录照旧在 [**扩展列表**](https://pgext.cloud/list/) 里，这里只点几个值得说道的新面孔：
 
 - [**`pg_lake`**](https://pigsty.cc/ext/e/pg_lake) 全家桶：Snowflake 收购 Crunchy Data 之后开源的湖仓扩展，用 DuckDB 做向量化执行引擎，把 Iceberg 与 Parquet 直接接进 PostgreSQL。这是今年 PG 生态在数据湖方向上最重要的新东西，Pigsty 第一时间打好了包（PG 16–18，RPM 侧目前仅 EL9/10）。
 - **`pg_jieba`** 与 **`pg_cjk_parser`**：中文与 CJK 分词。做中文全文检索的用户应该知道这意味着什么 —— 以前要自己编译 pg_jieba 的朋友可以省事了。
@@ -51,9 +47,6 @@ Pigsty v4.5 正式发布。上一版发布的时候说过，5.0 之前可能会�
 两百多行，很壮观的一个表格，就不搬过来了。
 
 除此之外，我们还发布了 PGEXT.CLOUD 的全新版本，这是一个面向 PostgreSQL 扩展的云端索引与搜索服务，提供扩展的搜索、版本对比、依赖关系分析等功能，还提供中英文双语文档。
-
-
-------
 
 ## Silo：对象存储换芯
 
@@ -77,9 +70,6 @@ v4.5 把这件事做到了头：**MINIO 模块现在部署并且只部署 Silo**
 它还差一口气，我听作者说 9.16 正式 GA，那就等它真正 GA 稳定之后再说。
 仓库里保留了 rustfs 软件包（1.0.0-rc.1），想自己折腾可以装着玩，在 Pigsty 5.0 的时候希望能把它正式纳入 MINIO 模块的可选类型中。
 
-
-------
-
 ## Valkey：Redis 之外的选项
 
 Redis 许可证的 Drama 我写过不少，比如《[**Redis不开源是"开源"之耻，更是公有云之耻**](/db/redis-oss)》。
@@ -94,10 +84,6 @@ Redis 许可证的 Drama 我写过不少，比如《[**Redis不开源是"开源"
 
 这次 Redis/Valkey 的 systemd 单元也顺手改成了 `Type=notify`，启动超时放宽到 1800 秒，
 大实例加载数据不会再被 systemd 掐死。拓扑构建、密码处理、移除保护也都加固了一轮。
-
-
-
-------
 
 ## Kafka：从软件包到模块
 
@@ -119,11 +105,6 @@ Redis 许可证的 Drama 我写过不少，比如《[**Redis不开源是"开源"
 
 有一条架构上的硬约束请记住：Kafka 协议要求客户端能直连每一个 Broker，所以数据平面不能塞在 HAProxy、VIP 或四层负载均衡后面 —— 这不是 Pigsty 的限制，是 Kafka 的天性。
 
-
-
-
-------
-
 ## MySQL：没想到吧
 
 说好的《[**PostgreSQL 正在吞噬数据库世界**](/pg/pg-eat-db-world)》呢？怎么反手就在 Pigsty 里发了个 MySQL 模块？
@@ -144,11 +125,6 @@ v4.5 的 [**MYSQL 模块**](https://pigsty.cc/docs/mysql/)（试点）长这样�
 
 demo 模板：`conf/demo/mysql.yml`。另外，如果你要的其实是 "让 PG 说 MySQL 协议"，Pigsty 里还有 [**OpenHalo**](/pg/openhalo-mysql) 这个选项。
 
-
-
-
-------
-
 ## 零碎清单
 
 大件说完了，下面是零碎但值得知道的部分。
@@ -160,7 +136,6 @@ demo 模板：`conf/demo/mysql.yml`。另外，如果你要的其实是 "让 PG 
 
 另一个更重要的原因是 FerretDB 看上去已经不再维护了。老冯知道背后的原因是 MongoDB 把 FerretDB 给告了，
 但是它不敢告微软出品的 DocumentDB，所以 FerretDB 现在并入到 DocumentDB 的模板里面了
-
 
 ### 编排更安全了
 
@@ -218,8 +193,6 @@ demo 模板：`conf/demo/mysql.yml`。另外，如果你要的其实是 "让 PG 
 
 完整的 Infra 与扩展软件包变更记录见 [**发布注记**](https://pigsty.cc/docs/about/release/#v450)。
 
-------
-
 ## 升级注意
 
 从 v4.4 升级之前，请把这份清单过一遍，都是会咬人的变化：
@@ -237,8 +210,6 @@ demo 模板：`conf/demo/mysql.yml`。另外，如果你要的其实是 "让 PG 
 11. **`make purge` 直接删除 `./data`**：docker 目录的清理不再有倒计时，也不再接受外部 `DATA` 变量，执行前自己确认。
 12. **Kafka 与 MySQL 是试点模块**：Kafka 客户端必须能直连各 Broker；MySQL 成员数只接受 1 或 3。
 
-------
-
 ## 获取 v4.5
 
 在一台受支持的全新 Linux 节点上：
@@ -254,10 +225,6 @@ cd ~/pigsty
 中国大陆用户可以把 `repo.pigsty.io` 换成 `repo.pigsty.cc`。
 
 什么，你问我怎么升级。哈哈，要我说，你还是新弄几台部署 pg_dump 过去最简单。
-
-
-
-------
 
 ## 写在最后
 

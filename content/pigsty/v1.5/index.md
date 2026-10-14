@@ -8,16 +8,13 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.5.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v150) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485125&idx=1&sn=d06a14013aa02ecd1da307b4b3038054&chksm=fe4b331ec93cba08624adb70e626e4b45ede9ea5d8ae01fad779e82687ff0064c56bf9b42187&scene=21#wechat_redirect)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.5.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v150) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485125&idx=1&sn=d06a14013aa02ecd1da307b4b3038054&chksm=fe4b331ec93cba08624adb70e626e4b45ede9ea5d8ae01fad779e82687ff0064c56bf9b42187&scene=21#wechat_redirect)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.5.0)
+[![Pigsty v1.5：Docker应用支持，基础设施自监控（图 1）](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.5.0)
 
 Pigsty v1.5 正式发布！完整的 Docker 支持带来了丰富的应用生态，无数使用数据库的软件均可 **开箱即用**！
 
 其他改进包括：基础设施自我监控、更好的冷备份支持、兼容 Redis 与 Greenplum 的新 CMDB、ETCD 作为高可用 DCS、更好的日志收集与呈现。Github Star 突破 500！
-
---------
 
 ## 亮点特性
 
@@ -31,8 +28,6 @@ Pigsty v1.5 正式发布！完整的 Docker 支持带来了丰富的应用生态
 | ETCD 作为 DCS | PostgreSQL/Patroni 的 Consul 备选方案 |
 | Redis 改进 | 支持单实例级别的初始化与移除操作 |
 
---------
-
 ## Docker 支持
 
 Pigsty v1.5 中最重要的特性莫过于 Docker 支持。无数软件与工具都可以通过 Docker 方式开箱即用：**开箱即用的数据库 + 开箱即用的应用 = 开箱即用的软件解决方案**。
@@ -41,15 +36,13 @@ Pigsty v1.5 中最重要的特性莫过于 Docker 支持。无数软件与工具
 
 在 Pigsty v1.4.1 中，Docker 作为实验特性被加入；在 v1.5 中，Docker 将作为 Pigsty 的默认组件，在管理节点上默认启用。普通节点默认关闭，但可以通过配置项在所有节点上启用 Docker。
 
---------
-
 ## 应用生态
 
 Docker 本身只是工具，重要的是 Docker 所代表的巨大 **应用生态**！
 
 Pigsty 挑选了一些常用软件，特别是那些使用 PostgreSQL 与 Redis 的软件，制作了一键拉起的教程与快捷方式，并提供可以离线使用自动加载的镜像软件包 `docker.tgz`。
 
-![](docker-apps.jpg)
+![Pigsty v1.5：Docker应用支持，基础设施自监控：应用生态（图 2）](docker-apps.jpg)
 
 ### 代码托管平台 Gitea
 
@@ -59,7 +52,7 @@ Pigsty 挑选了一些常用软件，特别是那些使用 PostgreSQL 与 Redis 
 cd ~/pigsty/app/gitea; make up
 ```
 
-![](gitea.jpg)
+![Pigsty v1.5：Docker应用支持，基础设施自监控：代码托管平台 Gitea（图 3）](gitea.jpg)
 
 该命令将使用 Docker Compose 配置文件拉起 Gitea 镜像，并使用外部 Pigsty 默认的 CMDB `pg-meta.gitea` 作为元数据存储。访问配置文件指定的域名或端口，即可访问自己的代码托管服务。
 
@@ -71,7 +64,7 @@ PgAdmin4 是老牌的 PostgreSQL 管控工具，提供了很多实用功能。Pi
 cd ~/pigsty/app/pgadmin; make up; make conf
 ```
 
-![](pgadmin.jpg)
+![Pigsty v1.5：Docker应用支持，基础设施自监控：数据库管控平台 PgAdmin（图 4）](pgadmin.jpg)
 
 ### 模式变更工具 Bytebase
 
@@ -81,7 +74,7 @@ Bytebase 是一款为 PostgreSQL 设计的模式变更管理工具，采用 Git 
 cd ~/pigsty/app/bytebase; make up
 ```
 
-![](bytebase.jpg)
+![Pigsty v1.5：Docker应用支持，基础设施自监控：模式变更工具 Bytebase（图 5）](bytebase.jpg)
 
 ### 网页客户端 PGWEB
 
@@ -91,7 +84,7 @@ cd ~/pigsty/app/bytebase; make up
 cd ~/pigsty/app/pgweb; make up
 ```
 
-![](pgweb.jpg)
+![Pigsty v1.5：Docker应用支持，基础设施自监控：网页客户端 PGWEB（图 6）](pgweb.jpg)
 
 ### 对象存储 MinIO
 
@@ -101,17 +94,15 @@ cd ~/pigsty/app/pgweb; make up
 cd ~/pigsty/app/minio; make up
 ```
 
-![](minio.jpg)
+![Pigsty v1.5：Docker应用支持，基础设施自监控：对象存储 MinIO（图 7）](minio.jpg)
 
 在 MinIO 的基础上，可以进一步使用 JuiceFS，将对象存储提供的大规模分布式存储转换为文件系统，供其他服务使用。
-
---------
 
 ## 数据分析环境 Jupyter
 
 Pigsty 提供了趁手的数据分析工具：Jupyter Lab，可以使用 Python 与 SQL 进行组合数据处理与分析。Jupyter Lab 默认并不是通过 Docker 启动，而是由管理节点受限的操作系统用户直接运行，以便于与数据库交互。
 
-![](jupyter.jpg)
+![Pigsty v1.5：Docker应用支持，基础设施自监控：数据分析环境 Jupyter（图 8）](jupyter.jpg)
 
 ### 数据库模式报表 SchemaSPY
 
@@ -121,7 +112,7 @@ Pigsty 提供了趁手的数据分析工具：Jupyter Lab，可以使用 Python 
 bin/schemaspy 10.10.10.10 meta pigsty
 ```
 
-![](schemaspy.jpg)
+![Pigsty v1.5：Docker应用支持，基础设施自监控：数据库模式报表 SchemaSPY（图 9）](schemaspy.jpg)
 
 ### 数据库日志分析报表
 
@@ -131,7 +122,7 @@ bin/schemaspy 10.10.10.10 meta pigsty
 bin/pglog-summary 10.10.10.10
 ```
 
-![](pgbadger.jpg)
+![Pigsty v1.5：Docker应用支持，基础设施自监控：数据库日志分析报表（图 10）](pgbadger.jpg)
 
 ### 更多应用
 
@@ -148,8 +139,6 @@ bin/pglog-summary 10.10.10.10
 | Discourse | 基于 PG 与 Redis 的开源论坛 |
 | KeyCloak | 开源 SSO 单点登录解决方案 |
 
---------
-
 ## 更好的冷备份
 
 数据故障大体可以分为两类：**硬件故障/资源不足**（坏盘/宕机）和 **软件缺陷/人为错误**（删库/删表）。**基于主从复制的物理复制用于应对前者，延迟从库与冷备份通常用于应对后者**。因为误删数据的操作会立刻被复制到从库上执行，所以热备份与温备份都无法解决诸如 `DROP DATABASE`、`DROP TABLE` 这样的错误，需要使用 **冷备份** 或 **延迟从库**。
@@ -165,7 +154,7 @@ bin/pglog-summary 10.10.10.10
 
 Pigsty v1.5 支持为节点配置定时任务，包括追加与覆盖 `/etc/crontab` 两种模式。可以将制作基础物理冷备份、日志分析、模式转储、垃圾回收、分析统计任务以统一的、声明式的方式管理起来。
 
-![](crontab.jpg)
+![Pigsty v1.5：Docker应用支持，基础设施自监控：定时任务（图 11）](crontab.jpg)
 
 其中最重要的是默认在每天凌晨 1 点制作一个全量备份。加上 Pigsty 默认自带的最近一天 WAL 日志归档，可以将数据库恢复至 1 天内的任意状态，为软件缺陷、人为故障导致的删库删表提供了有力的兜底。
 
@@ -173,9 +162,7 @@ Pigsty v1.5 支持为节点配置定时任务，包括追加与覆盖 `/etc/cron
 
 在 Pigsty v1.5 中，创建延迟从库不再需要手工执行 `patronictl edit-config` 调整集群配置，只需像下面这样声明，即可为集群创建一个延迟从库（集群）。
 
-![](delay-replica.jpg)
-
---------
+![Pigsty v1.5：Docker应用支持，基础设施自监控：延迟从库（图 12）](delay-replica.jpg)
 
 ## CMDB 兼容性改进
 
@@ -183,15 +170,15 @@ Pigsty 有一个可选的 CMDB，允许用元节点上的默认 PostgreSQL 数�
 
 Pigsty CMDB 最早于 0.8 版本引入，当时只是为了支持 PostgreSQL 而设计。当 Pigsty 开始支持 Redis、Greenplum 以及更多种类的数据库时，原有设计开始显得不合时宜。因此在 Pigsty v1.5 中，对 CMDB 进行了重新设计。
 
-![](cmdb-schema.jpg)
+![Pigsty v1.5：Docker应用支持，基础设施自监控：CMDB 兼容性改进（图 13）](cmdb-schema.jpg)
 
 只要使用 `bin/inventory_load` 即可将当前使用的配置文件加载入 CMDB 中，使用 `bin/inventory_cmdb` 切换为 CMDB 模式。使用 CMDB 时，可以直接通过 Grafana 的 CMDB Overview 面板查阅可视化的配置清单：
 
-![](cmdb-overview.jpg)
+![Pigsty v1.5：Docker应用支持，基础设施自监控：CMDB 兼容性改进（图 14）](cmdb-overview.jpg)
 
 可以从 CMDB Overview 中看到 PostgreSQL、Redis 以及 Greenplum/MatrixDB 集群的成员信息。
 
-![](cmdb-members.jpg)
+![Pigsty v1.5：Docker应用支持，基础设施自监控：CMDB 兼容性改进（图 15）](cmdb-members.jpg)
 
 可以直接通过 SQL 来调整配置，也可以通过 PostgREST 暴露的 API 来调整配置，例如创建新的集群、扩容缩容等。
 
@@ -203,7 +190,7 @@ cd ~/pigsty/app/postgrest; make up
 
 它还可以通过 Swagger OpenAPI Spec 自动生成 API 的定义，并使用 Swagger Editor 暴露 API 文档，生成不同编程语言的客户端存根。
 
-![](postgrest-swagger.jpg)
+![Pigsty v1.5：Docker应用支持，基础设施自监控：CMDB 兼容性改进（图 16）](postgrest-swagger.jpg)
 
 PostgREST 不仅仅可以用来暴露 CMDB 的增删改查接口。如果已经有了一个设计得当的数据库模式，那么使用 PostgREST 可以立即构建出一个后端 REST API 服务，无需手工编写繁琐重复的增删改查逻辑，复杂的逻辑可以通过存储过程对外暴露。
 
@@ -213,35 +200,31 @@ PostgREST 不仅仅可以用来暴露 CMDB 的增删改查接口。如果已经�
 cd ~/pigsty/app/kong; make up
 ```
 
-![](kong.jpg)
-
---------
+![Pigsty v1.5：Docker应用支持，基础设施自监控：CMDB 兼容性改进（图 17）](kong.jpg)
 
 ## 基础设施监控
 
 在 Pigsty v1.5 中，基础设施本身的监控进行了重大改进：INFRA 和 NODES、PGSQL、REDIS 现在采用一样的管理模式。基础设施通过 `infra_register` 角色完成自身的服务注册，将自己添加到 Prometheus 的监控对象中。Grafana 中相应添加了监控面板。
 
-![](home-dashboard.jpg)
+![Pigsty v1.5：Docker应用支持，基础设施自监控：基础设施监控（图 18）](home-dashboard.jpg)
 
 Pigsty v1.5 的 Home 监控中，基础设施作为嫩绿色的组件，与 NODES、REDIS、PGSQL 采用同种方式列入 Instance 中。此外，Infra 服务也会注册至 Service Registry（Consul），并可通过服务发现自动管理。
 
-![](infra-overview.jpg)
+![Pigsty v1.5：Docker应用支持，基础设施自监控：基础设施监控（图 19）](infra-overview.jpg)
 
 > INFRA Overview 提供了所有基础设施组件基本状态与快速导航
 
-![](prometheus-overview.jpg)
+![Pigsty v1.5：Docker应用支持，基础设施自监控：基础设施监控（图 20）](prometheus-overview.jpg)
 
 > Prometheus Overview：时序数据库自监控
 
-![](grafana-overview.jpg)
+![Pigsty v1.5：Docker应用支持，基础设施自监控：基础设施监控（图 21）](grafana-overview.jpg)
 
 > Grafana Overview：监控面板自监控
 
-![](loki-overview.jpg)
+![Pigsty v1.5：Docker应用支持，基础设施自监控：基础设施监控（图 22）](loki-overview.jpg)
 
 > Loki Overview：日志收集组件自监控
-
---------
 
 ## ETCD 作为 DCS
 
@@ -253,22 +236,17 @@ Pigsty v1.5 的 Home 监控中，基础设施作为嫩绿色的组件，与 NODE
 
 Pigsty v1.5 针对 ETCD 与 Consul 进行了开箱即用的监控面板：DCS Overview
 
-![](dcs-overview.jpg)
+![Pigsty v1.5：Docker应用支持，基础设施自监控：ETCD 作为 DCS（图 23）](dcs-overview.jpg)
 
 目前 ETCD 作为 DCS 属于最小可用功能实现，并没有添加 CA 证书与 TLS 支持，将在后续版本安全性加固专项中补充。
-
---------
 
 ## 更好的日志收集与呈现
 
 在 Pigsty v1.5 中，默认为每一个上游服务启用单独的访问日志，所有字段均由 Loki 解析，可以直接进行分析。如果有网站挂在 Pigsty 上，可以立刻进行交互式日志流量分析与统计。
 
-![](nginx-overview.jpg)
+![Pigsty v1.5：Docker应用支持，基础设施自监控：更好的日志收集与呈现（图 24）](nginx-overview.jpg)
 
 > NGINX Overview：展示 Nginx 指标与日志
-
---------
---------
 
 ## v1.5.0 发行注记
 
@@ -382,8 +360,6 @@ Pigsty v1.5 针对 ETCD 与 Consul 进行了开箱即用的监控面板：DCS Ov
 - `haproxy_admin_auth_enabled` -> `haproxy_auth_enabled`
 - `pg_shared_libraries` -> `pg_libs`
 - `dcs_type` -> `pg_dcs_type`
-
---------
 
 ## v1.5.1 发行注记
 

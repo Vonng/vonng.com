@@ -8,10 +8,9 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.1.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v310) | [微信公众号](https://mp.weixin.qq.com/s/MNM5wlnIqa3QUAcvYGHKqg)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.1.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v310) | [微信公众号](https://mp.weixin.qq.com/s/MNM5wlnIqa3QUAcvYGHKqg)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.1.0)
+[![Pigsty v3.1：Supabase一键自建，PG17上位，ARM与Ubuntu24支持，MinIO改进（图 1）](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.1.0)
 
 随着前天 PostgreSQL 17.2 的发布，Pigsty 也立即跟进了 v3.1 版本。
 在这个版本中，PostgreSQL 17 被提升成为默认使用的大版本，近 340 个 PG 扩展插件开箱即用。
@@ -19,8 +18,6 @@ tags: [Pigsty]
 此外，Pigsty 3.1 还提供了一键 [自建 Supabase](https://pigsty.cc/docs/pgsql/kernel/supabase) 的能力，改进了 [MinIO](https://pigsty.cc/docs/minio) 对象存储的使用最佳实践。
 与此同时，Pigsty还提供了ARM64 架构的初步支持，并且支持了新发布的 Ubuntu 24.04 大操作系统发行版大版本。
 最后，这个版本提供了一系列开箱即用的场景化模板，统一了不同操作系统发行版使用配置文件，极大简化了配置管理工作。
-
---------
 
 ## 自建Supabase
 
@@ -35,7 +32,7 @@ Supabase 的口号是：“**花个周末写写，随便扩容至百万**”。�
 最直观的原因是是《[云计算泥石流](/cloud)》中说过的：云数据库服务只要稍微上一点儿规模，成本就很容易爆炸。而且考虑到当下本地 NVMe 盘的无敌性价比，自建的成本与性能优势是显而易见的。
 
 另一个重要的原因是 Supabase 云服务的功能受限 —— [与RDS逻辑相同](https://mp.weixin.qq.com/s/EH7RPB6ImfMHXhOMU7P5Qg)，很多强力扩展出于多租户的安全问题考虑是不太可能在云端提供的 —— supabase 云服务中有64个可用扩展，但使用 Pigsty 自建 supabase 时，你可以拥有全部 [**340**](https://pgext.cloud/zh/list) 个。
-此外，Supabase 官方使用 PostgreSQL 15 作为底层数据库，而在 Pigsty 中，你可以使用 PG 14 - 17 的任意版本，运行在 EL / Debian / Ubuntu 主流 Linux [操作系统裸机](https://pigsty.cc/docs/ref/compare) 上而无需虚拟化支持，充分地利用现代硬件的性能与成本优势。
+此外，Supabase 官方使用 PostgreSQL 15 作为底层数据库，而在 Pigsty 中，你可以使用 PG 14 - 17 的任意版本，运行在 EL / Debian / Ubuntu 主流 Linux [操作系统裸机](https://pigsty.cc/docs/about/compare/) 上而无需虚拟化支持，充分地利用现代硬件的性能与成本优势。
 
 我发现身边很多创业出海公司都在使用 Supabase，而其中一些的规模确实已经达到了需要自建的状态，而且有人愿意付费咨询来做这件事了。
 所以 Pigsty 早在去年9月发布的 v2.4 就支持自建 Supabase （所需的 PostgreSQL）了。但那毕竟还涉及到一些手工操作，比如配置 PG 集群，拉起 Docker。
@@ -44,8 +41,6 @@ Supabase 的口号是：“**花个周末写写，随便扩容至百万**”。�
 ![supabase-selfhosting.png](supabase-selfhosting.jpg)
 
 这两天我会准备一些关于 [自建 Supabase 最佳实践](https://pigsty.cc/docs/pgsql/kernel/supabase) 的教程，敬请期待。
-
---------
 
 ## PostgreSQL 17
 
@@ -60,8 +55,6 @@ Supabase 的口号是：“**花个周末写写，随便扩容至百万**”。�
 ![perf.png](perf.jpg)
 
 Pigsty 3.1 + PostgreSQL 17 的性能回归测试，详细的性能评测报告将会在最近几天发出，敬请期待。
-
-----------------
 
 ## 340个扩展插件
 
@@ -84,8 +77,6 @@ Pigsty 的扩展仓库基于原生的操作系统包管理器，公开共享，�
 目前使用 Rust + pgrx 开发扩展的新项目不少，Pigsty 收录了 **23** 个 Rust 扩展。
 如果你有好的扩展推荐，欢迎告诉我，我会考察测试后，尽快将其加入到仓库中。
 如果你是 PostgreSQL 扩展作者，我们也欢迎将你的扩展提交到 Pigsty 仓库中，我们可以帮助您打包分发，解决最后一公里的交付问题。
-
-----------------
 
 ## Ubuntu 24.04 支持
 
@@ -115,8 +106,6 @@ Ubuntu 24.04 noble 已经发布半年了，已经开始有一些用户在生产�
 
 > <i class="fas fa-circle-check text-primary"></i> = 首要版本支持；<i class="fas fa-circle-check text-secondary"></i> = 配置可选支持； <i class="fas fa-circle-check text-danger"></i> = 过期版本商业支持
 
-----------------
-
 ## ARM 支持
 
 ARM 架构最近不断攻城略地，尤其是在云计算领域，ARM 服务器的市场份额正在逐渐增加。早在俩年前，就有用户提出对 ARM 架构支持的需求。
@@ -132,8 +121,6 @@ ARM 架构最近不断攻城略地，尤其是在云计算领域，ARM 服务器
 EL8 有一些PGDG官方包缺失，Ubuntu24有个别扩展缺失，所以目前还不建议在这两个系统上使用 ARM 版本。
 
 我准备将 ARM 试点运行一两个小版本，当扩展齐全之后，我会将其标记为 GA。欢迎各位朋友试用 ARM 版本并向我提出反馈意见。
-
-----------------
 
 ## 配置简化
 
@@ -160,8 +147,6 @@ pg_extensions: # extensions to be installed on this cluster
 举个例子，如果你想下载安装 PG 16 的内核与扩展，以前你需要把下载列表和安装列表里的包全换成16的版本，现在你只需要简单的修改一个 `pg_version` 参数就行了。
 最后的效果非常好，基本实现了所有操作系统发行版都能使用相同的配置文件进行安装，将不同系统的差异与管理复杂度都隐藏在了内部。
 
-----------------
-
 ## 基础设施改进
 
 除了功能上的改进之外，我们还在不断改善基础设施。例如在 v3.0 引入的安装 MSSQL 兼容的 Babelfish 内核，Oracle 兼容的 IvorySQL 内核，以及国产 PolarDB 内核，都要求用户使用一个外部仓库在线安装。
@@ -170,8 +155,6 @@ pg_extensions: # extensions to be installed on this cluster
 
 此外，我们还维护着 Prometheus 与 Grafana 的 YUM/ATP x AMD/ARM 软件仓库，并实时跟进这些可观测性组件的版本。在这次升级中，Prometheus 升级到了 v3 大版本，而 VictoriaLogs 也正式发布了 v1 版本。
 总的来说，如果你需要用到这些监控软件，Pigsty 的仓库也能帮到您。
-
-----------------
 
 ## MinIO 改进
 
@@ -197,8 +180,6 @@ Pigsty 将 MinIO 用作 PostgreSQL 的备份存储，与 Supabase 的底层存�
 再加上网电运维，整个五年TCO 也超不过云上一年的折后消费，所以这里蕴含着惊人的降本增效潜力。
 如果你的的业务在大量使用对象存储，那么本地 MinIO 自建 + Cloudflare 可能是非常值得考虑的一个更优解。
 
-----------------
-
 ## 服务体系
 
 Pigsty v3.1 达到了一个我比较满意的状态，接下来我的工作重心会放在服务体系的构建上。
@@ -214,8 +195,6 @@ Pigsty 是个开源免费的软件，它已经解决了 PG 运维中会遇到的
 ![price.png](price.jpg)
 
 所以这次我也重新调整了一下定价体系，基本锚定业界平均定价水平。反正这也是你情我愿的双向选择，欢迎有兴趣的朋友们选购专业服务，打钱支持！新人新办法，老客老价格。
-
-----------------
 
 ## v3.1.0
 

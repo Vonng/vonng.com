@@ -8,10 +8,9 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.0.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v200)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.0.0) | [**Release Note**](https://pigsty.io/docs/releasenote/#v200)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v2.0.0)
+[![Pigsty v2.0: Open-Source RDS PostgreSQL Alternative (figure 1)](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v2.0.0)
 
 **2023/02/28**, **Pigsty v2.0.0 is officially released**, bringing a series of major feature updates.
 
@@ -21,13 +20,13 @@ No beating around the bush — this is an ambitious goal: **overthrow cloud data
 
 ![intro](intro.webp)
 
-# 2.0 New Features
+## 2.0 New Features
 
 Pigsty is a **better, local-first, open-source RDS for PostgreSQL alternative**.
 
 ![features](features.webp)
 
-## Powerful Distribution
+### Powerful Distribution
 
 **Unleash the full power of the world's most advanced relational database!**
 
@@ -39,7 +38,7 @@ In Pigsty, functional components are abstracted into **modules** that can be fre
 
 ![modules](modules.webp)
 
-## Stunning Observability
+### Stunning Observability
 
 **Unparalleled monitoring best practices using modern open-source observability stack!**
 
@@ -51,7 +50,7 @@ Whether for failure analysis or slow query optimization, capacity assessment or 
 
 ![observability](observability.webp)
 
-## Battle-Tested Reliability
+### Battle-Tested Reliability
 
 **Out-of-the-box high availability and point-in-time recovery ensure your database is rock solid!**
 
@@ -63,7 +62,7 @@ Pigsty includes HAProxy load balancer for automatic traffic switching, offering 
 
 ![reliability](reliability.webp)
 
-## Simple and Maintainable
+### Simple and Maintainable
 
 **Infra as Code — declarative APIs encapsulate database management complexity.**
 
@@ -75,7 +74,7 @@ Additionally, Pigsty installation itself is one-click simple, with all dependenc
 
 ![maintainability](maintainability.webp)
 
-## Solid Security
+### Solid Security
 
 **Encryption and backup all in one — as long as hardware and keys are secure, you don't need to worry about database security.**
 
@@ -87,7 +86,7 @@ All network communication can use SSL encryption. Sensitive management pages and
 
 ![security](security.webp)
 
-## Broad Application Scenarios
+### Broad Application Scenarios
 
 **One-click launch massive software using PostgreSQL with preset Docker templates!**
 
@@ -99,7 +98,7 @@ Pigsty also provides development toolkits tightly integrated with PostgreSQL: PG
 
 ![applications](applications.webp)
 
-## Open-Source Free Software
+### Open-Source Free Software
 
 **Pigsty is free software under AGPLv3, nurtured by community members who love PostgreSQL**
 
@@ -111,7 +110,7 @@ Pigsty aims to replace tedious manual database ops with database autopilot softw
 
 ![opensource](opensource.webp)
 
-# 2.0 Quick Start
+## 2.0 Quick Start
 
 Pigsty 2.0 installation is still one command:
 
@@ -125,11 +124,9 @@ For limited internet access, you can download the offline package for your OS fr
 
 ![demo](demo.webp)
 
-----------------
+### v2.0.0 Release Notes
 
-## v2.0.0 Release Notes
-
-### Highlights
+#### Highlights
 
 * Perfect integration of PostgreSQL 15, PostGIS 3.3, Citus 11.2, TimescaleDB 2.10 — distributed geospatial time-series hyper-converged database
 * Major OS compatibility improvements: supports EL7, 8, 9, plus RHEL, CentOS, Rocky, OracleLinux, AlmaLinux compatible distros
@@ -141,7 +138,7 @@ For limited internet access, you can download the offline package for your OS fr
 * Significantly simplified configuration parameters, usable without defaults; templates auto-adjust host and PG parameters based on machine specs, HBA/service definitions more concise and universal
 * License changed from Apache License 2.0 to AGPL 3.0 due to Grafana and MinIO dependencies
 
-### Compatibility
+#### Compatibility
 
 * Supports EL7, EL8, EL9 major versions with corresponding offline packages, default dev/test environment upgraded from EL7 to EL9
 * Supports more EL-compatible Linux distros: RHEL, CentOS, RockyLinux, AlmaLinux, OracleLinux, etc.
@@ -172,7 +169,7 @@ For limited internet access, you can download the offline package for your OS fr
   * HAProxy 2.7 / Etcd 3.5 / MinIO 20230131022419 / mcli 20230128202938
   * Prometheus 2.42 / Grafana 9.3 / Loki & Promtail 2.7 / Node Exporter 1.5
 
-### Security
+#### Security
 
 * Complete local self-signed CA: `pigsty-ca` for issuing internal component certificates
 * User creation/password changes no longer leave traces in log files
@@ -187,7 +184,7 @@ For limited internet access, you can download the offline package for your OS fr
 * High-security template provided: enforces global SSL and requires admin certificate login
 * All default HBA rules now explicitly defined in config files
 
-### Maintainability
+#### Maintainability
 
 * Existing config templates auto-adjust optimizations based on machine specs (CPU/memory/storage)
 * Postgres/Pgbouncer/Patroni/pgBackRest log directories now dynamically configurable: default `/pg/log/<type>/`
@@ -202,7 +199,7 @@ For limited internet access, you can download the offline package for your OS fr
 * All Ansible roles optimized for simplicity, readability, and maintainability — usable without default parameters
 * Additional Pgbouncer parameters can be defined at business database/user level
 
-### API Changes
+#### API Changes
 
 Pigsty v2.0 has extensive changes: 64 new parameters, 13 removed, 17 renamed.
 
@@ -311,9 +308,7 @@ Pigsty v2.0 has extensive changes: 64 new parameters, 13 removed, 17 renamed.
 
 Special thanks to Italian user @alemacci for contributions on SSL encryption, backup, multi-OS distro adaptation, and adaptive parameter templates!
 
-----------------
-
-## v2.0.1 Release Notes
+### v2.0.1 Release Notes
 
 Security improvements and bug fixes for v2.0.0.
 
@@ -348,9 +343,7 @@ Security improvements and bug fixes for v2.0.0.
 * Use admin user instead of root to delete DCS metadata
 * Fixed issue caused by Grafana 9.4 bug: missing Meta datasource
 
-----------------
-
-## v2.0.2 Release Notes
+### v2.0.2 Release Notes
 
 **Highlights**
 

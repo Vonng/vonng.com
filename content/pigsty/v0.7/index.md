@@ -8,12 +8,9 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v0.7.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v070)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v0.7.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v070)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v0.7.0)
-
-----------------
+[![Pigsty v0.7：仅监控部署（图 1）](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v0.7.0)
 
 ## v0.7.0
 
@@ -23,11 +20,11 @@ v0.7 针对 **接入已有数据库实例** 进行了改进，现在用户可以
 
 #### Features
 
-* [Monitor Only Deployment Support #25](https://github.com/Vonng/pigsty/issues/25)
+* [Monitor Only Deployment Support #25](https://github.com/pgsty/pigsty/issues/25)
 * [Split monolith static monitor target file into per-cluster conf #36](https://github.com/Vonng/pigsty/issues/36)
-* [Add create user playbook #29](https://github.com/Vonng/pigsty/issues/29)
+* [Add create user playbook #29](https://github.com/pgsty/pigsty/issues/29)
 * [Add create database playbook #28](https://github.com/Vonng/pigsty/issues/28)
-* [Database provisioning interface enhancement #33](https://github.com/Vonng/pigsty/issues/33)
+* [Database provisioning interface enhancement #33](https://github.com/pgsty/pigsty/issues/33)
 * [User provisioning interface enhancement #34](https://github.com/Vonng/pigsty/issues/34)
 
 #### Bug Fix
@@ -72,7 +69,7 @@ pg_default_privilegs -> pg_default_privileges # 很明显这是一个错别字
 
 有时用户不希望使用Pigsty供给方案，只希望使用Pigsty监控系统管理现有PostgreSQL实例。
 
-Pigsty提供了 [**仅监控部署（monly, monitor-only）**](https://pigsty.cc/zh/docs/deploy/integration/) 模式，剥离供给方案部分，可用于监控现有PostgreSQL集群。
+Pigsty提供了 [**仅监控部署（monly, monitor-only）**](https://pigsty.cc/docs/pgsql/monitor/) 模式，剥离供给方案部分，可用于监控现有PostgreSQL集群。
 
 仅监控模式的部署流程与标准模式大体上保持一致，但省略了很多步骤
 
@@ -83,7 +80,7 @@ Pigsty提供了 [**仅监控部署（monly, monitor-only）**](https://pigsty.cc
 
 ## 数据库管理
 
-[Database provisioning interface enhancement #33](https://github.com/Vonng/pigsty/issues/33)
+[Database provisioning interface enhancement #33](https://github.com/pgsty/pigsty/issues/33)
 
 ### 旧接口定义
 

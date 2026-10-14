@@ -8,10 +8,9 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.3.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v230)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.3.0) | [**Release Note**](https://pigsty.io/docs/releasenote/#v230)
-
-[![](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v2.3.0)
+[![Pigsty v2.3: Richer App Ecosystem (figure 1)](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v2.3.0)
 
 Pigsty v2.3 is here! This release further refines the monitoring system, enriches the application ecosystem, and keeps pace with PostgreSQL's routine minor version updates (CVE fixes).
 
@@ -33,7 +32,7 @@ MongoDB is a popular NoSQL document database. But due to licensing issues (SSPL)
 
 MongoDB and PostgreSQL are very different database systems: MongoDB uses a document model with its own query language. But since PostgreSQL offers complete JSON/JSONB/GIN functionality, this is theoretically entirely feasible: FerretDB translates your MongoDB queries into SQL queries:
 
-```
+```text
 use test                            -- CREATE SCHEMA test;
 db.dropDatabase()                   -- DROP DATABASE test;
 db.createCollection('posts')        -- CREATE TABLE posts(_data JSONB,...)
@@ -67,7 +66,7 @@ You can directly specify any PostgreSQL service address created by Pigsty. No sp
 
 After configuration, run `./mongo.yml -l ferret` to complete installation. If you prefer containers, you can also `cd pigsty/app/ferretdb; make` to spin up FerretDB via docker-compose. Once installed, use any MongoDB client to access FerretDB, such as MongoSH:
 
-```
+```text
 mongosh 'mongodb://test:test@10.10.10.45:27017/test?authMechanism=PLAIN'
 ```
 
@@ -107,7 +106,7 @@ L2 VIPs are automatically monitored. When the MASTER goes down, BACKUP takes ove
 
 ## Monitoring Improvements
 
-Pigsty v2.2 [completely overhauled the monitoring system](https://pigsty.io/blog/pigsty-v2.2/) based on Grafana 10. v2.3 adds more refinements on top of v2.2.
+Pigsty v2.2 [completely overhauled the monitoring system](/en/pigsty/v2.2/) based on Grafana 10. v2.3 adds more refinements on top of v2.2.
 
 For example, the new NODE VIP dashboard displays VIP status: owning cluster/members, network RT, keepalived state, and more.
 
@@ -151,13 +150,13 @@ Pigsty v2.2 solved this with an official Yum repo at http://get.pigsty.cc, confi
 
 The Pigsty v2.3 installation command is:
 
-**bash -c "$(curl -fsSL https://get.pigsty.cc/latest)"**
+**`bash -c "$(curl -fsSL https://get.pigsty.cc/latest)"`**
 
 One command for a complete Pigsty installation on a fresh machine. For beta versions, replace `latest` with `beta`. For air-gapped environments, download Pigsty and offline packages:
 
 ![download](download.webp)
 
-```
+```text
 https://get.pigsty.cc/v2.3.0/pigsty-v2.3.0.tgz
 https://get.pigsty.cc/v2.3.0/pigsty-pkg-v2.3.0.el7.x86_64.tgz
 https://get.pigsty.cc/v2.3.0/pigsty-pkg-v2.3.0.el8.x86_64.tgz
@@ -168,8 +167,6 @@ That's what Pigsty v2.3 brings to the table.
 
 For more details, check out the official Pigsty documentation: https://pigsty.io and GitHub Release Notes: https://github.com/pgsty/pigsty/releases/tag/v2.3.0
 
-----------------
-
 ## v2.3.0 Release Notes
 
 **Highlights**
@@ -177,10 +174,10 @@ For more details, check out the official Pigsty documentation: https://pigsty.io
 * INFRA: Added NODE/PGSQL VIP monitoring support
 * PGSQL: Fixed PostgreSQL [CVE-2023-39417](https://www.postgresql.org/about/news/postgresql-154-149-1312-1216-1121-and-postgresql-16-beta-3-released-2689/) via minor upgrades: 15.4, 14.9, 13.12, 12.16, and Patroni v3.1.0
 * NODE: Allow users to bind L2 VIP to node clusters using `keepalived`
-* REPO: Pigsty Yum repo optimized, site-wide HTTPS by default: [`get.pigsty.cc`](https://get.pigsty.cc) and [`demo.pigsty.cc`](https://demo.pigsty.cc)
+* REPO: Pigsty Yum repo optimized, site-wide HTTPS by default: [`get.pigsty.cc`](https://pigsty.cc/get) and [`demo.pigsty.cc`](https://demo.pigsty.cc)
 * APP: Upgraded `app/bytebase` to v2.6.0, `app/ferretdb` to v1.8; added new app template: [NocoDB](https://nocodb.com/), open-source Airtable
 * REDIS: Upgraded to v7.2, redesigned Redis dashboards
-* MONGO: Added basic support via [FerretDB](https://www.ferretdb.io/) 1.8
+* MONGO: Added basic support via [FerretDB](https://docs.ferretdb.io/) 1.8
 * MYSQL: Added Prometheus/Grafana/CA stubs for future integration
 
 **API Changes**
@@ -201,8 +198,6 @@ MD5 (pigsty-pkg-v2.3.0.el7.x86_64.tgz) = 81db95f1c591008725175d280ad23615
 MD5 (pigsty-pkg-v2.3.0.el8.x86_64.tgz) = 6f4d169b36f6ec4aa33bfd5901c9abbe
 MD5 (pigsty-pkg-v2.3.0.el9.x86_64.tgz) = 4bc9ae920e7de6dd8988ca7ee681459d
 ```
-
-----------------
 
 ## v2.3.1 Release Notes
 

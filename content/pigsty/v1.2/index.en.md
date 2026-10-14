@@ -8,14 +8,11 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.2.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v120)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.2.0) | [**Release Note**](https://pigsty.io/docs/releasenote/#v120)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.2.0)
+[![Pigsty v1.2: PG14 Default, Monitor Existing PG (figure 1)](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.2.0)
 
 Pigsty v1.2 is officially released, making PostgreSQL 14 the default version and adding support for monitoring existing database instances independently.
-
-----------------
 
 ## PostgreSQL 14 Becomes the Default
 
@@ -26,8 +23,6 @@ Meanwhile, the time-series extension TimescaleDB 2.5 and geospatial extension Po
 ![timescale-postgis-citus](timescale-postgis-citus.jpg)
 
 All three are mutually compatible and can be used together.
-
-----------------
 
 ## Monitor-Only Deployment Mode
 
@@ -51,8 +46,6 @@ The new minimal deployment mode no longer requires login or admin privileges on 
 
 Although you only get PostgreSQL metrics, most of Pigsty's monitoring system functionality still works. Testing shows Pigsty can also directly monitor MatrixDB, Greenplum, and other PostgreSQL-derived/compatible database products.
 
-----------------
-
 ## Streamlined Configuration Templates
 
 Configuration templates have been further streamlined: now there are only two templates — **Production** (default) and **Sandbox**.
@@ -74,15 +67,11 @@ During configuration, the setup wizard automatically selects the appropriate par
 
 Pigsty maintains its tradition of one-liner installation: `./configure && make install`.
 
-----------------
-
 ## Utility Playbooks
 
 The new `pgsql-migration` playbook auto-generates the commands, scripts, and documentation needed for database migration, making online zero-downtime migrations based on logical replication simple (already used to migrate dozens of databases in production).
 
 The `pgsql-audit` playbook generates audit reports for database instances based on audit requirements.
-
-----------------
 
 ## Sample Applications
 
@@ -98,8 +87,6 @@ v1.2 provides two new Pigsty App examples:
 
 Both apps are simple but practical, each built in under an hour. Pigsty is an excellent tool for rapidly prototyping functional applications.
 
-----------------
-
 ## Looking Ahead
 
 **PGSQL v8** — More clearly organized monitoring dashboards with role-specific views for different user groups.
@@ -113,8 +100,6 @@ Both apps are simple but practical, each built in under an hour. Pigsty is an ex
 **REDIS v1beta** — Redis is often used alongside PostgreSQL; future versions will integrate Redis deployment and monitoring as a complete solution.
 
 ![redis-v1](redis-v1.jpg)
-
-----------------
 
 ## v1.2.0 Release Notes
 
@@ -150,8 +135,6 @@ Both apps are simple but practical, each built in under an hour. Pigsty is an ex
 
 - pgbouncer_exporter resource owner changed to `{{ pg_dbsu }}` instead of postgres
 - Fixed pg_exporter duplicate metrics on pg_table/pg_index during `REINDEX TABLE CONCURRENTLY`
-
-----------------
 
 ## Upgrade Notes
 

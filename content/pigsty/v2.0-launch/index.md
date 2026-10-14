@@ -6,7 +6,6 @@ summary: >
   《开源RDS平替，炮打云数据库》@ PostgreSQL 中文技术大会主题分享演讲稿。
 tags: [Pigsty, RDS, 下云]
 ---
-
 ![图片](01.webp)
 
 大家好，Pigsty 的作者冯若航。
@@ -151,27 +150,27 @@ Scalability & Maintainability，以及 Simplicity，and Security
 
 ---
 
-**可观测性（Observability）**是天；
+**可观测性（Observability）** 是天；
 
 乾卦，天行健，君子以自强不息；Pigsty 使用现代可观测性技术栈为 PostgreSQL 打造了一款无与伦比的监控系统，让用户对系统能够做到洞若观火，进而掌控一切。
 
-**可控制性（Controllability）**是地；
+**可控制性（Controllability）** 是地；
 
 坤卦，地势坤，君子以厚德载物；Pigsty 提供 Database as Code 的能力：使用表现力丰富的声明式接口描述数据库集群的状态，让用户拥有精细定制的能力的同时又无需操心实现细节，让数据库操作与管理的门槛从专家级降低到新手级。
 
-**可伸缩性（Scalability）**是水；
+**可伸缩性（Scalability）** 是水；
 
 坎卦，水洊至习坎，君子以常德行；Pigsty 可以针对环境自动优化参数，确保 PostgreSQL 的性能可以在现代硬件条件下充分发挥：单机可达数万并发连接/百万级单点查询 QPS/几十万级点写入 TPS。
 
-**可维护性（Maintainability）**是火；离卦，明两作离，·大人以继明照于四方；Pigsty 允许在线摘除添加实例以扩缩容，Switchover/滚动升级进行升降配，提供基于逻辑复制的不停机蓝绿部署迁移方案，将系统对维护窗口的需求压缩至亚秒级。
+**可维护性（Maintainability）** 是火；离卦，明两作离，·大人以继明照于四方；Pigsty 允许在线摘除添加实例以扩缩容，Switchover/滚动升级进行升降配，提供基于逻辑复制的不停机蓝绿部署迁移方案，将系统对维护窗口的需求压缩至亚秒级。
 
-**安全性（Security）**是雷；震卦，洊雷震，君子以恐惧修省；Pigsty 提供了一套遵循最小权限原则的访问控制模型，并带有各种安全特性开关：流复制同步提交防丢失，数据目录校验和防腐败，网络流量 SSL 加密防监听，远程备份 AES-256 防泄漏。让用户不再操心数据库安全性的问题。
+**安全性（Security）** 是雷；震卦，洊雷震，君子以恐惧修省；Pigsty 提供了一套遵循最小权限原则的访问控制模型，并带有各种安全特性开关：流复制同步提交防丢失，数据目录校验和防腐败，网络流量 SSL 加密防监听，远程备份 AES-256 防泄漏。让用户不再操心数据库安全性的问题。
 
-**简单性（Simplicity）**是风；巽卦，随风巽，君子以申命行事；使用 Pigsty 的难度不会超过任何云数据库，它旨在以最小的复杂度成本交付完整的 RDS 功能，模块化设计允许用户自行组合选用所需的功能。Vagrant 与 Terraform 一键安装部署，完整复刻环境。
+**简单性（Simplicity）** 是风；巽卦，随风巽，君子以申命行事；使用 Pigsty 的难度不会超过任何云数据库，它旨在以最小的复杂度成本交付完整的 RDS 功能，模块化设计允许用户自行组合选用所需的功能。Vagrant 与 Terraform 一键安装部署，完整复刻环境。
 
-**可靠性（Reliability）**是山；艮卦，兼山艮，君子以思不出其位；Pigsty 提供了故障自愈的高可用架构应对硬件问题，也提供开箱即用的 PITR 时间点恢复为人为删库与软件缺陷兜底，并通过长时间、大规模的生产环境运行与高可用演练验证其可靠性。
+**可靠性（Reliability）** 是山；艮卦，兼山艮，君子以思不出其位；Pigsty 提供了故障自愈的高可用架构应对硬件问题，也提供开箱即用的 PITR 时间点恢复为人为删库与软件缺陷兜底，并通过长时间、大规模的生产环境运行与高可用演练验证其可靠性。
 
-**可扩展性（Extensibility）**是泽：兑卦，丽泽兑，君子以朋友讲习；Pigsty 深度整合 PostgreSQL 生态三大核心扩展 PostGIS、TimescaleDB、Citus、以及大量扩展插件；还有完整的 Prometheus / Grafana 全家桶，以及 MINIO，ETCD，Redis、Greenplum 等组件的监控与高可用部署，来与 PostgreSQL 配合使用；
+**可扩展性（Extensibility）** 是泽：兑卦，丽泽兑，君子以朋友讲习；Pigsty 深度整合 PostgreSQL 生态三大核心扩展 PostGIS、TimescaleDB、Citus、以及大量扩展插件；还有完整的 Prometheus / Grafana 全家桶，以及 MINIO，ETCD，Redis、Greenplum 等组件的监控与高可用部署，来与 PostgreSQL 配合使用；
 
 ---
 

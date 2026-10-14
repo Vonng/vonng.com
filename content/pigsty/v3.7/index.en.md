@@ -8,10 +8,9 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.7.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v370)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.7.0) | [**Release Note**](https://pigsty.io/docs/releasenote/#v370)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.7.0)
+[![Pigsty v3.7: Magneto Award and PG18 Ready (figure 1)](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.7.0)
 
 Pigsty v3.7.0 is officially released, bringing complete production-grade PostgreSQL 18 support and support for four new operating systems: Debian 13 and EL 10 across both x86_64/ARM64 architectures. Extension count has grown from 423 to 437, with numerous extensions updated to latest versions.
 
@@ -19,9 +18,7 @@ Additionally, Supabase, IvorySQL, PolarDB, Percona TDE, and other kernels have a
 
 For outstanding contributions to the PostgreSQL extension ecosystem, Pigsty received the **"PostgreSQL Magneto"** award at the 8th PostgreSQL Database Ecosystem Conference.
 
-![](magneto-award.jpg)
-
---------
+![Pigsty v3.7: Magneto Award and PG18 Ready (figure 2)](magneto-award.jpg)
 
 ## PostgreSQL 18 Becomes Default Version
 
@@ -31,15 +28,13 @@ PG 18 introduces several important features: Temporal Primary Key, built-in UUID
 
 Meanwhile, PG 13.23 released in November will be the last PG 13 version — that major version has officially entered EOL status. Pigsty v3.7 is the last version with complete PG 13 extension support — all extensions have been recompiled, but will no longer be updated going forward.
 
---------
-
 ## Epic Extension Update
 
 Supporting PG 18 goes far beyond kernel deployment. From the beta stage, Pigsty has provided PG 18 deployment capability, but to make it the production default, extension ecosystem follow-through is crucial. Currently, except for Citus, mainstream extensions all support PG 18. We've fixed dozens of extension compatibility issues and unified pgrx versions across 40+ Rust extensions.
 
 This is an epic update. Available extensions on PG 18 reach 390-405 (varies slightly by distribution). Complete extension availability information is available at [PGEXT.CLOUD](https://pgext.cloud). Extension updates over the past three months:
 
-![](changes.jpg)
+![Pigsty v3.7: Magneto Award and PG18 Ready — Epic Extension Update (figure 3)](changes.jpg)
 
 Several extensions see milestone updates:
 
@@ -54,15 +49,13 @@ To improve efficiency, we fully automated the entire extension build process. No
 
 **For this contribution, Pigsty received the "PostgreSQL Magneto" award at the 8th PostgreSQL Database Ecosystem Conference.**
 
-![](magneto-cert.jpg)
-
---------
+![Pigsty v3.7: Magneto Award and PG18 Ready — Epic Extension Update (figure 4)](magneto-cert.jpg)
 
 ## New OS Support: EL 10 and Debian 13
 
 This version adds four new OS support targets, bringing the mainstream support total to 14.
 
-![](os.jpg)
+![Pigsty v3.7: Magneto Award and PG18 Ready — New OS Support: EL 10 and Debian 13 (figure 5)](os.jpg)
 
 **Major challenges during adaptation:**
 
@@ -76,13 +69,11 @@ This is also why we don't recommend users manually wrestling with PostgreSQL dep
 
 **Maintenance Strategy Adjustment**: Pigsty will only maintain the two most recent major versions in each series. With EL 10 and Debian 13 joining, EL 8, Debian 11, and Ubuntu 20.04 will no longer receive proactive updates (support not removed) — new extension packages and test processes will no longer cover these older systems.
 
---------
-
 ## Multi-Kernel Synchronized Updates
 
 Besides the vanilla PostgreSQL kernel, this version synchronizes updates across multiple derivative kernels:
 
-![](kernels.jpg)
+![Pigsty v3.7: Magneto Award and PG18 Ready — Multi-Kernel Synchronized Updates (figure 6)](kernels.jpg)
 
 | Kernel | Update Content |
 |------|----------|
@@ -95,20 +86,16 @@ Besides the vanilla PostgreSQL kernel, this version synchronizes updates across 
 
 All these kernels work smoothly on new operating systems (except Babelfish), further solidifying Pigsty's position as a "Meta-Distribution" — a unified platform for out-of-the-box experience with various PostgreSQL flavors.
 
---------
-
 ## Parameter Template Optimization
 
 Default parameter templates optimized for PG 18 and new scenarios:
 
-![](parameters.jpg)
+![Pigsty v3.7: Magneto Award and PG18 Ready — Parameter Template Optimization (figure 7)](parameters.jpg)
 
 - Optimized CPU, process, thread, and parallel query related parameter configurations
 - Ensured adequate background worker resources for various extensions
 - Relaxed OLTP template restrictions on parallel queries
 - Added maintenance, troubleshooting, and accidental deletion recovery SOP documentation
-
---------
 
 ## Vision: The Ubuntu of the PostgreSQL Ecosystem
 
@@ -122,9 +109,6 @@ Implementation path:
 - **Build Differentiated Advantages**: Industry-leading monitoring system and most complete extension ecosystem
 - **Integrate Ecosystem Resources**: Incorporating core capabilities from distributions like Supabase and Percona
 - **Optimize Developer Experience**: Balancing professionalism with usability
-
---------
---------
 
 ## v3.7.0
 

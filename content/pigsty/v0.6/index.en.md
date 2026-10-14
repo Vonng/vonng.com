@@ -8,7 +8,6 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
-
 > GitHub Release: https://github.com/pgsty/pigsty/releases/tag/v0.6.0
 
 Pigsty v0.6 responds to user feedback with a redesigned provisioning path plus a monitoring stack that can sit beside any managed PG fleet—even a MyBase cluster built elsewhere.

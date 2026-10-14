@@ -8,12 +8,9 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v0.4.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v040)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v0.4.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v040)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v0.4.0)
-
-----------------
+[![Pigsty v0.4：PG13 与文档站（图 1）](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v0.4.0)
 
 ## v0.4.0
 

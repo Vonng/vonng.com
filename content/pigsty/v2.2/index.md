@@ -8,10 +8,9 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.2.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v220) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485827&idx=1&sn=9b13273b559fa63e96d4ac77268bd00a&chksm=fe4b3c58c93cb54e87b062c6db4b3a712037e25dbfbe69aa50ad9b79abf2c97967b625fe1a7f&scene=21#wechat_redirect)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.2.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v220) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485827&idx=1&sn=9b13273b559fa63e96d4ac77268bd00a&chksm=fe4b3c58c93cb54e87b062c6db4b3a712037e25dbfbe69aa50ad9b79abf2c97967b625fe1a7f&scene=21#wechat_redirect)
-
-[![](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v2.2.0)
+[![Pigsty v2.2：监控全面翻新（图 1）](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v2.2.0)
 
 Pigsty v2.2 发布了 🎉，欢迎大家尝鲜！ 地表最强 PostgreSQL 监控系统迎来史诗级重大升级，基于 Grafana v10 彻底重制，将 PG 可观测性拔高到一个全新阶段，带来了全新的用户体验。**Demo**: **http://demo.pigsty.cc** 。
 
@@ -20,8 +19,6 @@ Pigsty v2.2 发布了 🎉，欢迎大家尝鲜！ 地表最强 PostgreSQL 监�
 欢迎大家试用尝鲜，提出反馈意见。加 PG x Pigsty 微信讨论群请搜 pigsty-cc 小助手。
 
 另外：8月9号晚7点开源中国出品的直播 《 PostgreSQL vs MySQL》以及8月16号的DTCC 2023，我将代表 PG 一方出战与 MySQL 对喷：谁才是数据库一哥，欢迎大家收看。
-
----------
 
 ## 监控系统重制：视觉配色
 
@@ -41,8 +38,6 @@ Pigsty v2.2 中，对监控面板进行了彻底的重制，充分利用 Grafana
 
 ![color-scheme](color-scheme.jpg)
 
----------
-
 ## 监控系统重制：集群导航
 
 当然除了配色，v2.2 也在内容编排和布局上重新进行了设计。例如，使用 Stats 色块统计替代了大量表格式导航，让有问题的服务能够在首屏即可一目了然。点击异常色块即可直达故障现场。
@@ -60,8 +55,6 @@ PGSQL Cluster 的表格式导航
 具体的集群资源表，则是在第二栏中，以备查阅详情。配合后面的 指标栏与日志栏，完整的呈现了一个 PostgreSQL 数据库集群的核心状态。
 
 ![图片](05-pgsql-cluster-metrics.jpg)
-
----------
 
 ## 监控系统重制：实例
 
@@ -85,8 +78,6 @@ Etcd Overview 则使用 State Timeline 来可视化 DCS 服务的可用性状态
 
 ![图片](10-pg-failsafe.jpg)
 
----------
-
 ## 监控系统重制：服务
 
 另一个进行重新设计的部分是 Service 与 Proxy 。Service 面板现在添加了关于服务的重要信息：SLI ，通过条状的 Statetimeline，用户可以直观的看出服务中断情况，获取服务可用性指标，并理解负载均衡器与后端真实数据库服务器的状态。
@@ -102,8 +93,6 @@ Etcd Overview 则使用 State Timeline 来可视化 DCS 服务的可用性状态
 ![图片](13-haproxy-instance.jpg)
 
 在全局总览中，可以看到 Pigsty 中所有数据库服务的整体状态时间线与 SLI 指标。
-
----------
 
 ## 监控系统重制：数据库统计
 
@@ -122,8 +111,6 @@ PGSQL Databases 展示了集群层面的数据库统计指标。例如，在 pg-
 ![图片](16-pgsql-database-tables.jpg)
 
 ![图片](17-pgsql-database-queries.jpg)
-
----------
 
 ## 监控系统重制：系统目录
 
@@ -147,8 +134,6 @@ PGSQL Databases 展示了集群层面的数据库统计指标。例如，在 pg-
 
 ![图片](22-pgcat-query.jpg)
 
----------
-
 ## 监控系统重制：表与查询
 
 在 Pigsty 中，您可以查阅一张表的方方面面。PGCAT Table 面板可以让您查看表的元数据，上面的索引，每一列的统计信息，以及相关的查询。
@@ -166,8 +151,6 @@ PGSQL Databases 展示了集群层面的数据库统计指标。例如，在 pg-
 ![图片](26-pgsql-query-2.jpg)
 
 在 Pigsty 中，还有许多关于特定主题的 Dashboard。限于篇幅，关于监控系统的介绍就是这些。最直观的体验方式，就是访问 Pigsty 提供的公开 Demo：http://demo.pigsty.cc ，亲自上手把玩一番。虽然这只是一个4台1C虚拟机的简陋环境，但用来展示Pigsty最基本的监控系统能力已经是足够了。
-
----------
 
 ## 大号仿真环境
 
@@ -187,8 +170,6 @@ Pigsty v2.2 提供了基于 libvirt 的 Vagrantfile 模板，您只需要调整�
 
 这个配置是中大型企业运行管理大规模数据库集群的参考样例，而您可以在单台物理服务器上用半个小时完整一键拉起。
 
----------
-
 ## 更丝滑的构建流程
 
 当您选择直接从互联网下载 Pigsty 所需的软件时，可能会遭遇到功夫网的烦恼。例如，默认的 Grafana / Prometheus Yum 源下载速度极慢。除此之外，还有一些零散的 RPM 包需要通过 Web URL 的方式，而不是 repotrack RPM 的方式进行下载。
@@ -196,8 +177,6 @@ Pigsty v2.2 提供了基于 libvirt 的 Vagrantfile 模板，您只需要调整�
 在 Pigsty v2.2 中，解决了这个问题。Pigsty 提供了一个官方的 yum 源：http://get.pigsty.cc ，并配置为默认的上游源之一。所有零散的 RPM，需要翻墙的 RPM 都放置其中，可以有效加快在线安装/构建速度。
 
 此外， Pigsty 还在 v2.2 中提供了对信创操作系统，统信 UOS 1050e uel20 的支持，满足一些特殊客户的特殊需求。Pigsty 针对这些系统重新编译了 PG相关的 RPM 包，为有需求的客户提供支持。
-
----------
 
 ## 安装
 
@@ -217,8 +196,6 @@ http://get.pigsty.cc/v2.2.0/pigsty-pkg-v2.2.0.el9.x86_64.tgz
 以上，就是 Pigsty v2.2 带来的变化。
 
 更多细节，请参考 Pigsty 官方文档：https://vonng.github.io/pigsty/ 与 Github Release Note： https://github.com/Vonng/pigsty/releases/tag/v2.2.0
-
-----------------
 
 ## v2.2.0
 
@@ -275,16 +252,16 @@ http://get.pigsty.cc/v2.2.0/pigsty-pkg-v2.2.0.el9.x86_64.tgz
     - redis etcd minio mcli haproxy vip-manager pg_exporter nginx createrepo_c sshpass chrony dnsmasq docker-ce docker-compose-plugin flamegraph
     - lz4 unzip bzip2 zlib yum pv jq git ncdu make patch bash lsof wget uuid tuned perf nvme-cli numactl grubby sysstat iotop htop rsync tcpdump
     - netcat socat ftp lrzsz net-tools ipvsadm bind-utils telnet audit ca-certificates openssl openssh-clients readline vim-minimal
-    - postgresql13* wal2json_13* pg_repack_13* passwordcheck_cracklib_13* postgresql12* wal2json_12* pg_repack_12* passwordcheck_cracklib_12* postgresql16* timescaledb-tools
-    - postgresql15 postgresql15* citus_15* pglogical_15* wal2json_15* pg_repack_15* pgvector_15* timescaledb-2-postgresql-15* postgis33_15* passwordcheck_cracklib_15* pg_cron_15*
-    - postgresql14 postgresql14* citus_14* pglogical_14* wal2json_14* pg_repack_14* pgvector_14* timescaledb-2-postgresql-14* postgis33_14* passwordcheck_cracklib_14* pg_cron_14*
-    - patroni patroni-etcd pgbouncer pgbadger pgbackrest pgloader pg_activity pg_partman_15 pg_permissions_15 pgaudit17_15 pgexportdoc_15 pgimportdoc_15 pg_statement_rollback_15*
-    - orafce_15* mysqlcompat_15 mongo_fdw_15* tds_fdw_15* mysql_fdw_15 hdfs_fdw_15 sqlite_fdw_15 pgbouncer_fdw_15 multicorn2_15* powa_15* pg_stat_kcache_15* pg_stat_monitor_15* pg_qualstats_15 pg_track_settings_15 pg_wait_sampling_15 system_stats_15
-    - plprofiler_15* plproxy_15 plsh_15* pldebugger_15 plpgsql_check_15*  pgtt_15 pgq_15* pgsql_tweaks_15 count_distinct_15 hypopg_15 timestamp9_15* semver_15* prefix_15* rum_15 geoip_15 periods_15 ip4r_15 tdigest_15 hll_15 pgmp_15 extra_window_functions_15 topn_15
-    - pg_background_15 e-maj_15 pg_catcheck_15 pg_prioritize_15 pgcopydb_15 pg_filedump_15 pgcryptokey_15 logerrors_15 pg_top_15 pg_comparator_15 pg_ivm_15* pgsodium_15* pgfincore_15* ddlx_15 credcheck_15 safeupdate_15 pg_squeeze_15* pg_fkpart_15 pg_jobmon_15
+    - `postgresql13*` `wal2json_13*` `pg_repack_13*` `passwordcheck_cracklib_13*` `postgresql12*` `wal2json_12*` `pg_repack_12*` `passwordcheck_cracklib_12*` `postgresql16*` timescaledb-tools
+    - postgresql15 `postgresql15*` `citus_15*` `pglogical_15*` `wal2json_15*` `pg_repack_15*` `pgvector_15*` `timescaledb-2-postgresql-15*` `postgis33_15*` `passwordcheck_cracklib_15*` `pg_cron_15*`
+    - postgresql14 `postgresql14*` `citus_14*` `pglogical_14*` `wal2json_14*` `pg_repack_14*` `pgvector_14*` `timescaledb-2-postgresql-14*` `postgis33_14*` `passwordcheck_cracklib_14*` `pg_cron_14*`
+    - patroni patroni-etcd pgbouncer pgbadger pgbackrest pgloader pg_activity pg_partman_15 pg_permissions_15 pgaudit17_15 pgexportdoc_15 pgimportdoc_15 `pg_statement_rollback_15*`
+    - `orafce_15*` mysqlcompat_15 `mongo_fdw_15*` `tds_fdw_15*` mysql_fdw_15 hdfs_fdw_15 sqlite_fdw_15 pgbouncer_fdw_15 `multicorn2_15*` `powa_15*` `pg_stat_kcache_15*` `pg_stat_monitor_15*` pg_qualstats_15 pg_track_settings_15 pg_wait_sampling_15 system_stats_15
+    - `plprofiler_15*` plproxy_15 `plsh_15*` pldebugger_15 `plpgsql_check_15*`  pgtt_15 `pgq_15*` pgsql_tweaks_15 count_distinct_15 hypopg_15 `timestamp9_15*` `semver_15*` `prefix_15*` rum_15 geoip_15 periods_15 ip4r_15 tdigest_15 hll_15 pgmp_15 extra_window_functions_15 topn_15
+    - pg_background_15 e-maj_15 pg_catcheck_15 pg_prioritize_15 pgcopydb_15 pg_filedump_15 pgcryptokey_15 logerrors_15 pg_top_15 pg_comparator_15 `pg_ivm_15*` `pgsodium_15*` `pgfincore_15*` ddlx_15 credcheck_15 safeupdate_15 `pg_squeeze_15*` pg_fkpart_15 pg_jobmon_15
 - `repo_url_packages`:
-    - https://get.pigsty.cc/rpm/pev.html
-    - https://get.pigsty.cc/rpm/chart.tgz
+    - https://github.com/dalibo/pev2
+    - https://github.com/pgsty/infra-pkg/tree/main/grafana-plugins
 - `node_default_packages`:
     - lz4,unzip,bzip2,zlib,yum,pv,jq,git,ncdu,make,patch,bash,lsof,wget,uuid,tuned,nvme-cli,numactl,grubby,sysstat,iotop,htop,rsync,tcpdump
     - netcat,socat,ftp,lrzsz,net-tools,ipvsadm,bind-utils,telnet,audit,ca-certificates,openssl,readline,vim-minimal,node_exporter,etcd,haproxy,python3,python3-pip

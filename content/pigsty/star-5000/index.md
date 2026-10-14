@@ -6,7 +6,6 @@ summary: >
   今天 Pigsty 的 GitHub Star 数过了 5000。
 tags: [Pigsty, 开源]
 ---
-
 今天 Pigsty 的 GitHub Star 数过了 5000。
 
 ![图片](01.webp)

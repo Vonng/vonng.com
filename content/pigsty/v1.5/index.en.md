@@ -8,16 +8,13 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.5.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v150)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.5.0) | [**Release Note**](https://pigsty.io/docs/releasenote/#v150)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.5.0)
+[![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring (figure 1)](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.5.0)
 
 Pigsty v1.5 is officially released! Complete Docker support brings a rich application ecosystem — countless database-backed software works **out of the box**!
 
 Other improvements include: infrastructure self-monitoring, better cold backup support, new CMDB compatible with Redis and Greenplum, ETCD as high-availability DCS, and better log collection and visualization. GitHub Stars crossed 500!
-
---------
 
 ## Highlights
 
@@ -31,8 +28,6 @@ Other improvements include: infrastructure self-monitoring, better cold backup s
 | ETCD as DCS | Alternative to Consul for PostgreSQL/Patroni |
 | Redis Improvements | Supports single-instance level init and remove operations |
 
---------
-
 ## Docker Support
 
 The most important feature in Pigsty v1.5 is Docker support. Countless software and tools can work out of the box via Docker: **out-of-the-box database + out-of-the-box applications = out-of-the-box software solutions**.
@@ -41,15 +36,13 @@ Many software products need databases, but putting databases in containers remai
 
 In Pigsty v1.4.1, Docker was added as an experimental feature; in v1.5, Docker becomes a default Pigsty component, enabled by default on the meta node. Regular nodes have it disabled by default, but you can enable Docker on all nodes via configuration.
 
---------
-
 ## Application Ecosystem
 
 Docker itself is just a tool — what matters is the massive **application ecosystem** Docker represents!
 
 Pigsty curated some commonly used software, especially those using PostgreSQL and Redis, providing one-click launch tutorials and shortcuts, plus an offline-ready Docker image package `docker.tgz`.
 
-![](docker-apps.jpg)
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — Application Ecosystem (figure 2)](docker-apps.jpg)
 
 ### Code Hosting Platform: Gitea
 
@@ -59,7 +52,7 @@ To start a private code hosting service, use this command to launch Gitea:
 cd ~/pigsty/app/gitea; make up
 ```
 
-![](gitea.jpg)
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — Code Hosting Platform: Gitea (figure 3)](gitea.jpg)
 
 This command uses Docker Compose to launch the Gitea image, using Pigsty's default CMDB `pg-meta.gitea` as metadata storage. Access the domain or port specified in the config file to access your code hosting service.
 
@@ -71,7 +64,7 @@ PgAdmin4 is a classic PostgreSQL management tool with many useful features. Pigs
 cd ~/pigsty/app/pgadmin; make up; make conf
 ```
 
-![](pgadmin.jpg)
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — Database Management Platform: PgAdmin (figure 4)](pgadmin.jpg)
 
 ### Schema Change Tool: Bytebase
 
@@ -81,7 +74,7 @@ Bytebase is a schema change management tool designed for PostgreSQL, using Git w
 cd ~/pigsty/app/bytebase; make up
 ```
 
-![](bytebase.jpg)
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — Schema Change Tool: Bytebase (figure 5)](bytebase.jpg)
 
 ### Web Client: PGWEB
 
@@ -91,7 +84,7 @@ Sometimes users want to query small amounts of data from production databases us
 cd ~/pigsty/app/pgweb; make up
 ```
 
-![](pgweb.jpg)
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — Web Client: PGWEB (figure 6)](pgweb.jpg)
 
 ### Object Storage: MinIO
 
@@ -101,17 +94,15 @@ Object storage is a fundamental cloud service. For private deployments, you can 
 cd ~/pigsty/app/minio; make up
 ```
 
-![](minio.jpg)
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — Object Storage: MinIO (figure 7)](minio.jpg)
 
 Building on MinIO, you can use JuiceFS to convert massive distributed storage into a filesystem for other services.
-
---------
 
 ## Data Analysis Environment: Jupyter
 
 Pigsty provides a powerful data analysis tool: Jupyter Lab, allowing combined Python and SQL data processing and analysis. Jupyter Lab doesn't run via Docker by default — it runs directly under a restricted OS user on the management node for easier database interaction.
 
-![](jupyter.jpg)
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — Data Analysis Environment: Jupyter (figure 8)](jupyter.jpg)
 
 ### Database Schema Reports: SchemaSPY
 
@@ -121,7 +112,7 @@ To generate detailed schema reports for a database:
 bin/schemaspy 10.10.10.10 meta pigsty
 ```
 
-![](schemaspy.jpg)
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — Database Schema Reports: SchemaSPY (figure 9)](schemaspy.jpg)
 
 ### Database Log Analysis Reports
 
@@ -131,7 +122,7 @@ To view database log summary information:
 bin/pglog-summary 10.10.10.10
 ```
 
-![](pgbadger.jpg)
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — Database Log Analysis Reports (figure 10)](pgbadger.jpg)
 
 ### More Applications
 
@@ -148,8 +139,6 @@ Many well-known software applications can be launched with Pigsty + Docker:
 | Discourse | Open-source forum based on PG and Redis |
 | KeyCloak | Open-source SSO single sign-on solution |
 
---------
-
 ## Better Cold Backups
 
 Data failures broadly fall into two categories: **hardware failures/resource exhaustion** (disk failure/crash) and **software defects/human errors** (dropping databases/tables). **Physical replication addresses the former, while delayed replicas and cold backups typically address the latter**. Because erroneous deletion operations are immediately replicated to replicas, hot and warm backups cannot solve errors like `DROP DATABASE` or `DROP TABLE` — you need **cold backups** or **delayed replicas**.
@@ -165,7 +154,7 @@ In Pigsty v1.5, the cold backup mechanism was improved:
 
 Pigsty v1.5 supports configuring scheduled tasks for nodes, including both append and overwrite modes for `/etc/crontab`. Basic physical cold backups, log analysis, schema dumps, garbage collection, and statistics collection can all be managed in a unified, declarative way.
 
-![](crontab.jpg)
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — Scheduled Tasks (figure 11)](crontab.jpg)
 
 The most important is the default daily full backup at 1:00 AM. Combined with Pigsty's default last-day WAL archive, you can restore the database to any state within the past day, providing a solid safety net for software defects and human-error-induced data loss.
 
@@ -173,9 +162,7 @@ The most important is the default daily full backup at 1:00 AM. Combined with Pi
 
 In Pigsty v1.5, creating a delayed replica no longer requires manually running `patronictl edit-config` to adjust cluster configuration — just declare it like this to create a delayed replica (cluster):
 
-![](delay-replica.jpg)
-
---------
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — Delayed Replicas (figure 12)](delay-replica.jpg)
 
 ## CMDB Compatibility Improvements
 
@@ -183,15 +170,15 @@ Pigsty has an optional CMDB, allowing you to store configuration in the default 
 
 Pigsty CMDB was first introduced in v0.8, designed only for PostgreSQL. When Pigsty started supporting Redis, Greenplum, and more database types, the original design became outdated. So in Pigsty v1.5, the CMDB was redesigned.
 
-![](cmdb-schema.jpg)
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — CMDB Compatibility Improvements (figure 13)](cmdb-schema.jpg)
 
 Just use `bin/inventory_load` to load the current config file into CMDB, and `bin/inventory_cmdb` to switch to CMDB mode. When using CMDB, you can view the visual configuration inventory directly from Grafana's CMDB Overview panel:
 
-![](cmdb-overview.jpg)
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — CMDB Compatibility Improvements (figure 14)](cmdb-overview.jpg)
 
 You can see PostgreSQL, Redis, and Greenplum/MatrixDB cluster member information from CMDB Overview.
 
-![](cmdb-members.jpg)
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — CMDB Compatibility Improvements (figure 15)](cmdb-members.jpg)
 
 You can adjust configuration directly via SQL, or via the API exposed by PostgREST, for example creating new clusters or scaling.
 
@@ -203,7 +190,7 @@ cd ~/pigsty/app/postgrest; make up
 
 It can also auto-generate API definitions via Swagger OpenAPI Spec, expose API documentation with Swagger Editor, and generate client stubs in different programming languages.
 
-![](postgrest-swagger.jpg)
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — CMDB Compatibility Improvements (figure 16)](postgrest-swagger.jpg)
 
 PostgREST isn't just for exposing CMDB CRUD interfaces. If you already have a well-designed database schema, PostgREST can immediately build a backend REST API service without hand-coding tedious CRUD logic — complex logic can be exposed via stored procedures.
 
@@ -213,35 +200,31 @@ For more powerful API support, consider the Kong API gateway. It can turn any ex
 cd ~/pigsty/app/kong; make up
 ```
 
-![](kong.jpg)
-
---------
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — CMDB Compatibility Improvements (figure 17)](kong.jpg)
 
 ## Infrastructure Monitoring
 
 In Pigsty v1.5, infrastructure self-monitoring received major improvements: INFRA now uses the same management pattern as NODES, PGSQL, and REDIS. Infrastructure registers itself via the `infra_register` role, adding itself to Prometheus monitoring targets. Corresponding dashboards were added to Grafana.
 
-![](home-dashboard.jpg)
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — Infrastructure Monitoring (figure 18)](home-dashboard.jpg)
 
 In Pigsty v1.5's Home dashboard, infrastructure appears as light-green components, listed alongside NODES, REDIS, and PGSQL instances. Additionally, Infra services register to Service Registry (Consul) and can be automatically managed via service discovery.
 
-![](infra-overview.jpg)
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — Infrastructure Monitoring (figure 19)](infra-overview.jpg)
 
 > INFRA Overview provides basic status and quick navigation for all infrastructure components
 
-![](prometheus-overview.jpg)
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — Infrastructure Monitoring (figure 20)](prometheus-overview.jpg)
 
 > Prometheus Overview: time-series database self-monitoring
 
-![](grafana-overview.jpg)
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — Infrastructure Monitoring (figure 21)](grafana-overview.jpg)
 
 > Grafana Overview: monitoring dashboard self-monitoring
 
-![](loki-overview.jpg)
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — Infrastructure Monitoring (figure 22)](loki-overview.jpg)
 
 > Loki Overview: log collection component self-monitoring
-
---------
 
 ## ETCD as DCS
 
@@ -253,22 +236,17 @@ Just specify `pg_dcs_type: etcd` to use ETCD as DCS. You can also use both Consu
 
 Pigsty v1.5 provides an out-of-the-box monitoring dashboard for ETCD and Consul: DCS Overview
 
-![](dcs-overview.jpg)
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — ETCD as DCS (figure 23)](dcs-overview.jpg)
 
 Currently, ETCD as DCS is a minimum viable implementation without CA certificates and TLS support — this will be added in a future security hardening update.
-
---------
 
 ## Better Log Collection and Visualization
 
 In Pigsty v1.5, separate access logs are enabled by default for each upstream service, with all fields parsed by Loki for direct analysis. If you have a website on Pigsty, you can immediately do interactive log traffic analysis and statistics.
 
-![](nginx-overview.jpg)
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — Better Log Collection and Visualization (figure 24)](nginx-overview.jpg)
 
 > NGINX Overview: showing Nginx metrics and logs
-
---------
---------
 
 ## v1.5.0 Release Notes
 
@@ -382,8 +360,6 @@ In Pigsty v1.5, separate access logs are enabled by default for each upstream se
 - `haproxy_admin_auth_enabled` -> `haproxy_auth_enabled`
 - `pg_shared_libraries` -> `pg_libs`
 - `dcs_type` -> `pg_dcs_type`
-
---------
 
 ## v1.5.1 Release Notes
 

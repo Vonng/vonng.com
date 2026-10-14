@@ -8,16 +8,13 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.0.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v100) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484729&idx=1&sn=179c470fe4a80b22a8c2e96a3e191e6e&chksm=fe4b30e2c93cb9f4db6bb5e379b6fd5a489539e8e5db1e0080a1e7946d6f4eb83ad7647ce11d&scene=21#wechat_redirect)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.0.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v100) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484729&idx=1&sn=179c470fe4a80b22a8c2e96a3e191e6e&chksm=fe4b30e2c93cb9f4db6bb5e379b6fd5a489539e8e5db1e0080a1e7946d6f4eb83ad7647ce11d&scene=21#wechat_redirect)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.0.0)
+[![Pigsty v1.0：正式发布，监控大修（图 1）](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.0.0)
 
 经过一年多的迭代与打磨，Pigsty 正式发布 **v1.0.0 GA** 版本。
 
 **Pigsty** (/ˈpɪɡˌstaɪ/) 是 **P**ostgre**S**QL **I**n **G**raphic **STY**le 的缩写，即"图形化 Postgres"。
-
-----------------
 
 ## Pigsty 是什么？
 
@@ -39,8 +36,6 @@ Pigsty 是一个 **开箱即用的 PostgreSQL 数据库发行版**，将生产�
 
 ![who](who.jpg)
 
-----------------
-
 ## 发行版
 
 所谓发行版，是指由数据库内核及其一组软件包组成的数据库 **整体解决方案**。例如，Linux 是一个操作系统内核，而 RedHat、Debian、SUSE 则是基于此内核的操作系统发行版。PostgreSQL 是一个数据库内核，而 Pigsty、BigSQL、Percona、各种云 RDS 则是基于此内核的数据库发行版。
@@ -55,8 +50,6 @@ Pigsty 是一个 **开箱即用的 PostgreSQL 数据库发行版**，将生产�
 - **便捷全能** 的沙箱环境
 - **免费友好** 的开源协议
 
-----------------
-
 ## 开箱即用
 
 所谓 **开箱即用（Battery-Included）**：用户只需一台刚装完系统的虚拟机，一行命令，10 分钟内即可完成基础设施、数据库、监控系统、管控平台的安装，进入可用状态。
@@ -66,8 +59,6 @@ Pigsty 将 **部署** 与 **监控** 做到极致，让大规模数据库集群�
 **面向专业用户，Pigsty 提供最全面专业的监控系统；面向大众用户，Pigsty 提供最简单易用的部署方案。** 此外，针对数据研发人员，Pigsty 还集成了 JupyterLab、Echarts 等实用工具，可作为数据研发与可视化的集成开发环境。
 
 ![battery](battery.jpg)
-
-----------------
 
 ## 监控系统
 
@@ -111,8 +102,6 @@ Pigsty 监控系统由三个紧密联系的核心 **应用** 共同组成：
 
 Pigsty 监控系统基于业内最佳实践，采用 Prometheus、Grafana 作为监控基础设施。开源开放，定制便利，可复用，可移植，没有厂商锁定。可与已有 PostgreSQL 数据库实例集成，亦可用于其他数据库或应用的监控与管理（例如 Redis）。
 
-----------------
-
 ## 部署方案
 
 数据库是管理数据的软件，管控系统是管理数据库的软件。
@@ -131,8 +120,6 @@ Pigsty 采纳 **Infra as Code** 的设计哲学，使用类似 Kubernetes 的声
 
 对于专业用户，Pigsty 提供了 160+ 可配置参数，允许对数据集群、基础设施运行时的方方面面进行配置与定制。而新手亦可在完全不修改配置的前提下，创建出相当可靠的数据库集群。
 
-----------------
-
 ## 高可用集群
 
 Pigsty 创建的数据库集群是分布式、高可用的数据库集群。从效果上讲，只要集群中有任意实例存活，集群就可以对外提供完整的读写服务与只读服务。
@@ -147,8 +134,6 @@ Pigsty 的高可用架构久经生产环境考验，以极小的复杂度实现�
 
 ![failover](failover.jpg)
 
-----------------
-
 ## 沙箱环境
 
 使用 PostgreSQL 不仅仅是企业，还有许许多多个人用户：用于软件的开发、测试、实验、演示；或者是数据的清洗、分析、可视化、存储。然而如何搭建环境往往成为用户面前的第一道拦路虎。
@@ -158,8 +143,6 @@ Pigsty 沙箱旨在解决这一问题，**可以一键在笔记本或 PC 机上�
 ![sandbox](sandbox.jpg)
 
 四节点沙箱环境架构示意图
-
-----------------
 
 ## 数据分析
 
@@ -179,15 +162,11 @@ Pigsty 提供了 PostgreSQL 作为后端数据库，JupyterLab Python 集成开�
 
 点击查看单个气象站详情与历史气象要素数据
 
-----------------
-
 ## 路线图
 
 ![roadmap-1](roadmap-1.jpg)
 
 ![roadmap-2](roadmap-2.jpg)
-
-----------------
 
 ## 开源
 
@@ -196,8 +175,6 @@ Pigsty 基于 Apache 2.0 协议开源，可免费用于商业目的，但改装�
 Pigsty 的宗旨是：**用好** 数据库，用 **好数据库**。
 
 让中小企业用户真正拥有"自主可控"的选择，让所有人都能轻松享受 PostgreSQL 的乐趣。
-
-----------------
 
 ## v1.0.0 更新日志
 
@@ -261,8 +238,6 @@ Pigsty 的宗旨是：**用好** 数据库，用 **好数据库**。
 - 修复默认时区 Asia/Shanghai (CST) 问题
 - 修复 pgbouncer & patroni 的 nofile 限制
 - 当执行标签 `pgbouncer` 时，pgbouncer 的用户列表和数据库列表将被生成
-
-----------------
 
 ## v1.0.1 更新日志
 

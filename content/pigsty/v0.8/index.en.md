@@ -8,7 +8,6 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
-
 > GitHub Release: https://github.com/pgsty/pigsty/releases/tag/v0.8.0
 
 v0.8 finalizes the provisioning API. Services are completely rebuilt: instead of a hard-coded primary/replica pair you can now declare any number of services, plug in HAProxy, swap in an external load balancer, or hand off to a custom VIP controller. Everything else in the supply chain stabilizes on top of this model.

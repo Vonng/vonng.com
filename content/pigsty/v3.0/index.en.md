@@ -8,14 +8,11 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.0.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v300)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.0.0) | [**Release Note**](https://pigsty.io/docs/releasenote/#v300)
+[![Pigsty v3.0: Pluggable Kernels & 340 Extensions (figure 1)](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.0.0)
 
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.0.0)
-
---------
-
-### Highlights
+## Highlights
 
 **Extension Explosion**:
 
@@ -60,9 +57,7 @@ curl -fsSL https://repo.pigsty.cc/get | bash
 cd ~/pigsty; ./bootstrap; ./configure; ./install.yml
 ```
 
---------
-
-### Breaking Changes
+## Breaking Changes
 
 This Pigsty release bumps from 2.x to 3.0, introducing several breaking changes:
 
@@ -82,9 +77,7 @@ This Pigsty release bumps from 2.x to 3.0, introducing several breaking changes:
   * EL and Debian config templates are now unified, with OS-specific parameters managed in [`roles/node_id/vars/`](https://github.com/Vonng/pigsty/tree/master/roles/node_id/vars).
   * Config directory restructured: all templates now in `conf/`, organized into `default`, `dbms`, `demo`, `build` categories.
 
---------
-
-### Other Features
+## Other Features
 
 - Epic OLAP enhancement: DuckDB 1.0.0, DuckDB FDW, PG Lakehouse, and Hydra ported to Debian.
 - Vector search and FTS improvements: Vectorscale brings DiskANN vector indexing, Hunspell dictionary support, pg_search 0.9.1.
@@ -100,9 +93,7 @@ This Pigsty release bumps from 2.x to 3.0, introducing several breaking changes:
 - Monitoring dashboard fixes, added log dashboards for PGSQL Pgbouncer and PGSQL Patroni panels.
 - New `cache.yml` Ansible playbook replaces the old `bin/cache` and `bin/release-pkg` scripts for offline package creation.
 
---------
-
-### API Changes
+## API Changes
 
 * New parameter option: `pg_mode` now supports `pgsql`, `citus`, `gpsql`, `mssql`, `ivory`, `polar` for specifying PostgreSQL cluster mode
   * `pgsql`: Standard PostgreSQL HA cluster
@@ -118,7 +109,7 @@ This Pigsty release bumps from 2.x to 3.0, introducing several breaking changes:
 * Enhanced `proxy_env`: Proxy server config now written to Docker Daemon for network access; `configure -x` auto-writes current environment proxy settings.
 * Enhanced `repo_url_packages`: `repo.pigsty.io` auto-replaces with `repo.pigsty.cc` when region is China; can now specify downloaded filenames.
 * Enhanced `pg_databases.extensions`: The `extension` field now supports both dictionary and string modes; dictionary mode provides `version` support for installing specific extension versions.
-* Enhanced `repo_upstream`: If not explicitly overridden, defaults are extracted from `repo_upstream_default` in [`rpm.yml`](https://github.com/Vonng/pigsty/blob/master/roles/node_id/vars/rpm.yml) or [`deb.yml`](https://github.com/Vonng/pigsty/blob/master/roles/node_id/vars/deb.yml).
+* Enhanced `repo_upstream`: If not explicitly overridden, defaults are extracted from `repo_upstream_default` in [`rpm.yml`](https://github.com/pgsty/pigsty/blob/v3.0.0/roles/node_id/vars/rpm.yml) or [`deb.yml`](https://github.com/pgsty/pigsty/blob/v3.0.0/roles/node_id/vars/deb.yml).
 * Enhanced `repo_packages`: If not explicitly overridden, defaults are extracted from `repo_packages_default` in the corresponding OS vars file.
 * Enhanced `infra_packages`: If not explicitly overridden, defaults are extracted from `infra_packages_default` in the corresponding OS vars file.
 * Enhanced `node_default_packages`: If not explicitly overridden, defaults are extracted from `node_packages_default` in the corresponding OS vars file.
@@ -130,9 +121,7 @@ This Pigsty release bumps from 2.x to 3.0, introducing several breaking changes:
 * pgbouncer defaults: `max_prepared_statements = 128` enables prepared statement support in transaction pooling mode; `server_lifetime` set to 600.
 * Patroni template defaults: Increased `max_worker_processes` by +8, raised `max_wal_senders` and `max_replication_slots` to 50, increased OLAP template temp file limit to 1/5 of main disk.
 
---------
-
-### Software Upgrades
+## Software Upgrades
 
 At release time, Pigsty's major component versions are:
 
@@ -170,29 +159,23 @@ At release time, Pigsty's major component versions are:
 
 Pigsty has recompiled all PostgreSQL extensions. For the latest extension versions, see the [Extension List](https://pigsty.cc/docs/pgsql/ext/).
 
---------
-
-### New Applications
+## New Applications
 
 Pigsty now provides out-of-the-box Docker Compose templates for Dify and Odoo:
 
-- [Dify](https://pigsty.cc/docs/software/dify): AI agent workflow orchestration and LLMOps
-- [Odoo](https://pigsty.cc/docs/software/odoo): Enterprise-grade open-source ERP system
+- [Dify](https://pigsty.cc/docs/app/dify/): AI agent workflow orchestration and LLMOps
+- [Odoo](https://pigsty.cc/docs/app/odoo/): Enterprise-grade open-source ERP system
 
 Pigsty Pro now offers pilot Kubernetes deployment support and Kafka KRaft cluster deployment with monitoring:
 
 - **`KUBE`**: Deploy Pigsty-managed Kubernetes clusters using cri-dockerd or containerd
 - **`KAFKA`**: Deploy HA Kafka clusters powered by the KRaft protocol
 
---------
-
-### Bug Fixes
+## Bug Fixes
 
 - [CVE-2024-6387](https://pigsty.io/blog/db/cve-2024-6387/) is automatically patched during Pigsty installation via the `node_packages` default value `[openssh-server]`.
 - Fixed Loki memory consumption issue caused by high-cardinality Nginx log labels.
 - Fixed bootstrap failure on EL8 due to upstream Ansible dependency changes (python3.11-jmespath upgraded to python3.12-jmespath).
-
---------
 
 ## v3.0.0 Release Notes
 

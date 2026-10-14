@@ -8,7 +8,6 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
-
 > [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v4.2.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v420)
 
 Pigsty v4.2 正式发布，紧随 PostgreSQL 紧急号外小版本更新。
@@ -16,8 +15,6 @@ Pigsty v4.2 正式发布，紧随 PostgreSQL 紧急号外小版本更新。
 本次更新同时交付了三款全新 PG 内核 —— 图数据库 AgensGraph、多写分布式 pgEdge、MPP 数仓 Cloudberry —— 并重建了 Babelfish、OrioleDB、OpenHalo 三款既有内核。至此，Pigsty 支持的内核总数达到了 **12 个**。
 
 你可以用一份配置文件，把所有这些不同风味的 PostgreSQL 部署为自带监控、高可用、时间点恢复与 IaC 的企业级数据库服务。这大概就是 "Meta PG 发行版" 的含义。
-
----
 
 ## 内核大观园
 
@@ -44,8 +41,6 @@ PostgreSQL 以极致的可扩展性闻名。生态中有超过 1000 个扩展，
 
 十二内核，一份配置。下面逐个展开。
 
----
-
 ## 原生 PostgreSQL
 
 这次 PostgreSQL 的小版本更新值得单独提一下。
@@ -55,8 +50,6 @@ PostgreSQL 以极致的可扩展性闻名。生态中有超过 1000 个扩展，
 扩展总数也顺势推到了 **461** 个。
 
 如果你追求极致的可扩展性和最佳的稳定性，原生 PostgreSQL 始终是最佳默认选择。Pigsty 支持处于生命周期内的 PG 14 到 PG 18。值得一提的是，本版本是最后一个支持 PG 13 的版本，后续最低版本将升至 PG 14。
-
----
 
 ## pgEdge：原生多主复制
 
@@ -82,8 +75,6 @@ pgEdge 由三个核心扩展组成：
 
 在 Pigsty 中使用只需要：`configure -c pgedge`。
 
----
-
 ## AgensGraph：图数据库
 
 AgensGraph 的定位是基于 PostgreSQL 的多模型图数据库 —— 在一个引擎内同时原生支持关系模型和属性图模型，而不是像 Neo4j 那样另起炉灶。这是由韩国 Bitnine 团队发起主导的项目。
@@ -106,8 +97,6 @@ AgensGraph 的定位是基于 PostgreSQL 的多模型图数据库 —— 在一�
 
 在 Pigsty 中使用：`configure -c agens`。
 
----
-
 ## Cloudberry：MPP 数仓
 
 Cloudberry 是本次新增的第三款内核。它是一个 Apache 项目，由 HashData 团队主导，本质上是 Greenplum 7 的 fork —— 但做了不少改进，比如内核从 Greenplum 的 PG 12 升级到了 PG 14，补上了不少好用的新特性。
@@ -115,8 +104,6 @@ Cloudberry 是本次新增的第三款内核。它是一个 Apache 项目，由 
 Cloudberry 2.0 发布后就不再提供官方二进制包了 —— 之前 1.6 还有 RPM，现在也没了。我等了几个月没见到官方有计划解决这个问题，就决定在 Claude 的帮助下自己动手。打包过程整体顺利，只是在个别较新的操作系统上需要改些代码、打几个补丁。之前只有 RPM，现在 DEB 也有了，Pigsty 支持的 14 个 Linux 发行版上全部可用。
 
 关于 Cloudberry/Greenplum 的部署脚本和监控方案，其实早在 Pigsty v1.4 就做过，后来因为用户太少就去掉了。毕竟上 MPP 数仓的体量不是一般公司能达到的。所以我们思忖再三，先将其作为 Beta 模块按需提供 —— 包已经打好放在仓库里了，你可以直接下载使用；完整的部署剧本会在后续版本中择机提供。
-
----
 
 ## Babelfish：SQL Server 兼容
 
@@ -130,8 +117,6 @@ Babelfish 是 AWS 开源的 SQL Server 兼容层 —— 让 PostgreSQL 理解 T-
 
 在 Pigsty 中使用：`configure -c mssql`。
 
----
-
 ## OrioleDB：新存储引擎
 
 OrioleDB 是被 Supabase 收购的新一代 PostgreSQL 存储引擎项目，目标是从根本上解决 MVCC 膨胀问题 —— 用 Undo Log 替代传统的 Dead Tuple + VACUUM 机制。
@@ -139,8 +124,6 @@ OrioleDB 是被 Supabase 收购的新一代 PostgreSQL 存储引擎项目，目�
 本次重建升级到了 **OrioleDB Beta14**，基于 OriolePG 17.16 构建。新版本的一个重要进展是支持了 PITR 增量备份恢复能力。仍处于 Beta 阶段，不建议关键生产环境使用。但作为 PostgreSQL 存储引擎的未来演进方向之一，值得持续关注和实验。
 
 在 Pigsty 中使用：`configure -c oriole`。
-
----
 
 ## OpenHalo：MySQL 协议兼容
 
@@ -156,8 +139,6 @@ OpenHalo 是重建的第三个内核。它提供了 MySQL 线缆协议兼容 —
 虽然基线版本是 PG14，稍显陈旧，但在 MySQL 迁移场景下确实是一个值得考虑的选择。
 
 在 Pigsty 中使用：`configure -c mysql`。
-
----
 
 ## 其余六位常驻选手
 
@@ -175,8 +156,6 @@ OpenHalo 是重建的第三个内核。它提供了 MySQL 线缆协议兼容 —
 
 **Supabase** 自建模板也例行升级到了最新版本。
 
----
-
 ## 一份配置，十核齐飞
 
 说了这么多内核，最好玩的事情其实是这个：我们做了一个 `demo/kernels.yml` 配置文件 —— 如果你有 10 台虚拟机，可以用这个模板 **一键拉起 10 个不同的 PG 内核**。
@@ -184,8 +163,6 @@ OpenHalo 是重建的第三个内核。它提供了 MySQL 线缆协议兼容 —
 每个集群都有独立的监控面板、高可用、备份恢复，就像管理 10 个标准 PostgreSQL 一样。纯属炫技，但也是一个很好的参考模板：如果你想在一套 Pigsty 里混合部署多种内核，具体该怎么配置。
 
 这不是 PPT 上的架构图，是跑得起来的代码。
-
----
 
 ## 正名：企业级
 
@@ -198,8 +175,6 @@ OpenHalo 是重建的第三个内核。它提供了 MySQL 线缆协议兼容 —
 为什么？因为老冯一直觉得"企业级"这个词听起来比"云"还古老，甚至带有一种"传统杀猪盘二次方"的气质。所以宁可叫"Battery-Included"、叫"FLOSS RDS"，也不愿意把这个词放上去。后来我想明白了：不应该因为这个词被别人用烂了，就回避一个本来属于自己的描述。Pigsty 的高可用、备份恢复、监控告警、安全加固、合规能力，每一项都经得起和商业方案正面对比。实力到了，该戴的帽子就戴上，不亏心。
 
 另一个变化是 **去掉了"RDS 替代"** 的说法。以前叫自己"开源 RDS 替代"，是一种借力定位——用人们熟悉的品类锚点来解释"Pigsty 是什么"。但到了今天，我们有信心说：不需要用别人来定义自己。Pigsty 就是 Pigsty，一个企业级的 PostgreSQL 发行版。在 PostgreSQL 发行版的赛道上 —— Linux 原生这条路线里 —— Pigsty 就是最能打的。
-
----
 
 ## 其他改进
 
@@ -219,8 +194,6 @@ OpenHalo 是重建的第三个内核。它提供了 MySQL 线缆协议兼容 —
 
 **首页改版**：之前用 Claude Code 糊了一版，有人反映太丑了，批评得很有道理。这次让 Codex 重新优化了一轮，好看不少。后面有空会继续打磨。
 
----
-
 ## 后续展望
 
 Pigsty 作为开源项目，我觉得已经达到了相当完善的程度。后续的工作重心会逐渐转向子项目：
@@ -230,8 +203,6 @@ Pigsty 作为开源项目，我觉得已经达到了相当完善的程度。后�
 **DBA Agent** 方面，最近写了一些 Claude Skills 和提示词模板，让 Pigsty 环境可以被 AI 工具感知。这样你就可以把 Claude Code 放进 Pigsty 环境里，让它帮你干活。
 
 Pigsty 本身会继续跟着 PG 小版本的节奏走。下个版本可能会正式补上 Cloudberry 的部署剧本，加上本地 SMTP 服务器支持（maddy / stalwart）。大的新功能暂时不急 —— 当前这个架构持续稳定地跑下去，就挺好。
-
----
 
 ## v4.2.0 提交注记
 
@@ -364,8 +335,6 @@ c98972fe9226657ac1faa7b72a22498b  pigsty-pkg-v4.2.0.u22.aarch64.tgz
 00dfa86f477f3adff984906211ab3190  pigsty-pkg-v4.2.0.u24.x86_64.tgz
 ```
 
----
-
 ## v4.2.1
 
 这是一个维护版本，新增了 3 个扩展插件，
@@ -462,8 +431,6 @@ Pigsty v4.2.2 已正式发布，这是一次例行维护更新，带来了新工
 
 ![图片](v4.2.2-01.webp)
 
----
-
 ### PostgreSQL 扩展更新
 
 本次共更新 6 个扩展，新增 2 个工具包：
@@ -471,8 +438,6 @@ Pigsty v4.2.2 已正式发布，这是一次例行维护更新，带来了新工
 ![图片](v4.2.2-02.webp)
 
 其中 pgcollection 和 pg_ttl_index 都迎来了大版本跳跃，值得关注。
-
----
 
 #### 基础设施软件包更新
 

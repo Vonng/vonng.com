@@ -8,44 +8,37 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.5.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v350)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.5.0) | [**Release Note**](https://pigsty.io/docs/releasenote/#v350)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.5.0)
+[![Pigsty v3.5: 4K Stars, PG18 Beta, 421 Extensions (figure 1)](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.5.0)
 
 Pigsty v3.5 is officially released. The project has crossed the **4,000+ Star** milestone on GitHub — a remarkable achievement for a database infrastructure project.
 
-![](4k-star.jpg)
+![Pigsty v3.5: 4K Stars, PG18 Beta, 421 Extensions (figure 2)](4k-star.jpg)
 
 This version brings a brand-new documentation website, full-platform support for OrioleDB and OpenHalo kernels, Supabase self-hosting optimizations, monitoring system and architecture improvements, PostgreSQL 18 Beta support, routine PG minor version updates, and Apple ARM Vagrant support.
-
---------
 
 ## What is Pigsty?
 
 Pigsty is a batteries-included PostgreSQL distribution that works like "self-driving software" for databases. It enables users to spin up enterprise-grade PostgreSQL database services at less than one-tenth the cost of cloud RDS — without needing professional DBAs. Features include high availability, PITR, monitoring, IaC capabilities, and 421 PG ecosystem extensions, running directly on 10 major Linux distributions without containers or Kubernetes.
 
-![](arch-1.jpg)
+![Pigsty v3.5: 4K Stars, PG18 Beta, 421 Extensions — What is Pigsty? (figure 3)](arch-1.jpg)
 
-![](arch-2.jpg)
-
---------
+![Pigsty v3.5: 4K Stars, PG18 Beta, 421 Extensions — What is Pigsty? (figure 4)](arch-2.jpg)
 
 ## PostgreSQL 18 Support
 
 PostgreSQL 18 Beta1 has been released, with the stable version coming in September. PG 18 brings powerful new features like AIO, OAuth, and more — now available for preview in Pigsty (not for production use). Routine minor version updates are also available for 17.5, 16.9, 15.13, 14.18, and 13.21.
 
-![](pg18.jpg)
+![Pigsty v3.5: 4K Stars, PG18 Beta, 421 Extensions — PostgreSQL 18 Support (figure 5)](pg18.jpg)
 
 Pigsty provides a new `pg18` configuration template for spinning up highly available RDS based on the PostgreSQL 18 Beta1 kernel. [pg_exporter](https://github.com/pgsty/pg_exporter) has just released version 1.0, with complete coverage of PG 18's new monitoring metrics. Users can also use the `pig` package manager to install PG 18 and corresponding PGDG extensions with a single command.
-
---------
 
 ## Supabase Self-Hosting Improvements
 
 Pigsty's "enterprise-grade" Supabase self-hosting capability has been well-received — the Supabase self-hosting tutorial page traffic even exceeds the landing page. This version further optimizes the Supabase self-hosting workflow.
 
-![](supabase.jpg)
+![Pigsty v3.5: 4K Stars, PG18 Beta, 421 Extensions — Supabase Self-Hosting Improvements (figure 6)](supabase.jpg)
 
 **pgsodium Key Management Integration**: You can now specify a root key or provide a key retrieval script for the pgsodium extension that Supabase depends on. This provides data encryption capabilities and can derive a series of subkeys from the root key.
 
@@ -53,15 +46,11 @@ Pigsty's "enterprise-grade" Supabase self-hosting capability has been well-recei
 
 Supabase-related extension versions and Docker image versions have also been updated.
 
---------
-
 ## OpenHalo and OrioleDB Full-Platform Support
 
 The [OpenHalo](https://github.com/HaloTech-Co-Ltd/openHalo) kernel provides MySQL compatibility on top of PG 14, while the [OrioleDB](https://github.com/orioledb/orioledb) kernel provides a cloud-native, bloat-free PostgreSQL version. In v3.4, only RPM packages were provided — now they're fully available across all ten supported Linux systems.
 
 OrioleDB has been acquired by Supabase and recently released its 11th Beta version. Although it hasn't yet become Supabase's default PG kernel fork, Pigsty is prepared in advance — ensuring seamless follow-up once Supabase decides to switch from vanilla PG to OrioleDB.
-
---------
 
 ## 421 Extensions
 
@@ -73,19 +62,15 @@ Available extensions have reached **421**, with numerous extensions receiving ve
 
 The new extension encyclopedia website is now live, more beautiful and comprehensive than the previous version:
 
-![](ext-site.jpg)
-
---------
+![Pigsty v3.5: 4K Stars, PG18 Beta, 421 Extensions — 421 Extensions (figure 7)](ext-site.jpg)
 
 ## New Documentation Site
 
 The Pigsty documentation site has been rebuilt with Next.js, stepping from static page rendering into the modern frontend era. New site address: [https://pigsty.io](https://pigsty.io)
 
-![](doc-site.jpg)
+![Pigsty v3.5: 4K Stars, PG18 Beta, 421 Extensions — New Documentation Site (figure 8)](doc-site.jpg)
 
 Not only has the form been completely renovated, but the content has been thoroughly rewritten and reorganized for version 3.5, with extensive outdated information cleaned up. Currently only available in English — Simplified Chinese support coming soon.
-
---------
 
 ## Architecture Optimization
 
@@ -101,23 +86,19 @@ Pigsty v3.5 deeply optimized the PGSQL implementation:
 
 Refactored PGSQL playbook tasks:
 
-![](pgsql-tasks.jpg)
+![Pigsty v3.5: 4K Stars, PG18 Beta, 421 Extensions — Architecture Optimization (figure 9)](pgsql-tasks.jpg)
 
 Refactored pgsql-rm.yml playbook tasks:
 
-![](pgsql-rm-tasks.jpg)
-
---------
+![Pigsty v3.5: 4K Stars, PG18 Beta, 421 Extensions — Architecture Optimization (figure 10)](pgsql-rm-tasks.jpg)
 
 ## CLI Improvements
 
 The `pig` command-line tool adds a new `do` subcommand, which can replace the wrapper scripts in the original `pigsty/bin` directory, executing various tasks in a unified, standardized manner.
 
-![](pig-cli.jpg)
+![Pigsty v3.5: 4K Stars, PG18 Beta, 421 Extensions — CLI Improvements (figure 11)](pig-cli.jpg)
 
 Currently in pilot phase with API not yet finalized — documentation planned after a period of refinement.
-
---------
 
 ## Monitoring Improvements
 
@@ -125,21 +106,17 @@ Grafana 12.0 is released with numerous breaking changes, and the monitoring syst
 
 Analysis was performed on AWR requirements from Oracle DBA users: most metrics are already provided by PG and Pigsty — the only exception being **wait events**.
 
-![](wait-events.jpg)
+![Pigsty v3.5: 4K Stars, PG18 Beta, 421 Extensions — Monitoring Improvements (figure 12)](wait-events.jpg)
 
 The PG kernel itself only provides current active wait states, with no historical wait event records. This can only be achieved through extensions — both `pg_wait_sampling` and `pgsentinel` provide this functionality, and monitoring dashboards now support wait event analysis.
-
---------
 
 ## Apple Vagrant Support
 
 Pigsty provides Vagrant/Terraform sandbox templates, allowing users to easily spin up required virtual machine resources locally or in the cloud. Previously, Vagrant/VirtualBox had various issues with Apple ARM architecture support — after retesting, the Vagrant + VirtualBox combination now runs smoothly on Apple Silicon.
 
-![](vagrant.jpg)
+![Pigsty v3.5: 4K Stars, PG18 Beta, 421 Extensions — Apple Vagrant Support (figure 13)](vagrant.jpg)
 
 While not all Vagrant Boxes provide ARM64 on VirtualBox support, the main EL9 and Ubuntu 24.04 are supported. This means users can smoothly spin up virtual machines and run Pigsty on Apple MacBook (whether Intel or M-series ARM architecture).
-
---------
 
 ## Future Plans
 
@@ -154,10 +131,7 @@ The next version may be v3.6 or v4.0. Pigsty v4.0 is expected to release alongsi
 | Installation | Simplify to three steps (Install / Configure / Deploy) |
 | License | Consider releasing an Apache-licensed lightweight version |
 
-![](featured.jpg)
-
---------
---------
+![Pigsty v3.5: 4K Stars, PG18 Beta, 421 Extensions — Future Plans (figure 14)](featured.jpg)
 
 ## v3.5.0
 
@@ -166,8 +140,6 @@ Pigsty v3.5.0 released with PostgreSQL 18 Beta support!
 ```bash
 curl https://repo.pigsty.cc/get | bash -s v3.5.0
 ```
-
---------
 
 ### Highlights
 
@@ -178,16 +150,12 @@ curl https://repo.pigsty.cc/get | bash -s v3.5.0
 - Code refactoring and architecture optimization, improved Postgres and Pgbouncer default parameters
 - Updated Grafana 12, pg_exporter 1.0 and related plugins, renovated dashboards
 
---------
-
 ### PostgreSQL 18 Support
 
 - PostgreSQL 18 support
 - PG18 monitoring metrics via pg_exporter 1.0.0
 - PG18 installation aliases via pig 0.4.1
 - `pg18` configuration template provided
-
---------
 
 ### Code Refactoring
 
@@ -202,8 +170,6 @@ curl https://repo.pigsty.cc/get | bash -s v3.5.0
 - `sync_replication_slots` enabled by default for PG 17
 - Sub-task tags re-adjusted to better match configuration section divisions
 
---------
-
 ### Module Refactoring
 
 - `pg_remove` module refactored
@@ -215,8 +181,6 @@ curl https://repo.pigsty.cc/get | bash -s v3.5.0
   - Uses `pg_exporter` 1.0.0, updated PG16/17/18 related monitoring metrics
   - Uses more compact, newly designed metric collector configuration files
 
---------
-
 ### Supabase Enhancements
 
 Thanks to contributions from [@lawso017](https://github.com/lawso017)!
@@ -226,8 +190,6 @@ Thanks to contributions from [@lawso017](https://github.com/lawso017)!
 - Resolved logflare replication progress update issues via supa-kick cron job
 - Added `set search_path` clause to functions in monitor schema for security best practices
 
---------
-
 ### CLI and Monitoring Updates
 
 - CLI adds `pig do` command, allowing command-line tool to replace shell scripts in `bin/`
@@ -235,8 +197,6 @@ Thanks to contributions from [@lawso017](https://github.com/lawso017)!
 - Updated Postgres datasource uid naming convention (to adapt to new `uid` length and character restrictions)
 - Added Static Datasource
 - Updated existing dashboards, fixed various legacy issues
-
---------
 
 ### Infrastructure Package Updates
 
@@ -249,8 +209,6 @@ Thanks to contributions from [@lawso017](https://github.com/lawso017)!
 - pev 1.5.0
 - rclone 1.69.3
 - mtail 3.0.8 (new)
-
---------
 
 ### Observability Package Updates
 
@@ -269,8 +227,6 @@ Thanks to contributions from [@lawso017](https://github.com/lawso017)!
 - victoriametrics 1.117.1
 - victoria_logs 1.22.2
 
---------
-
 ### Database Package Updates
 
 - PostgreSQL 17.5, 16.9, 15.13, 14.18, 13.21
@@ -278,8 +234,6 @@ Thanks to contributions from [@lawso017](https://github.com/lawso017)!
 - pgbouncer 1.24.1
 - pgbackrest 2.55
 - pgbadger 13.1
-
---------
 
 ### PG Extension Package Updates
 
@@ -324,8 +278,6 @@ Thanks to contributions from [@lawso017](https://github.com/lawso017)!
 - tzf [0.2.2](https://github.com/ringsaturn/pg-tzf/releases/tag/v0.2.2) 0.14.1 (rename src)
 - pg_vectorize [0.22.2](https://github.com/ChuckHend/pg_vectorize/releases/tag/v0.22.2) (pgrx 0.13.1)
 - wrappers [0.5.0](https://github.com/supabase/wrappers/releases/tag/v0.5.0) (pgrx 0.12.9)
-
---------
 
 ### Checksums
 

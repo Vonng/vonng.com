@@ -6,7 +6,6 @@ summary: >
   上周，我们进行了一次题为PostgreSQL与Pigsty用户需求调研的问卷调查。主要希望对用户的数据库需求
 tags: [Pigsty, PostgreSQL, PG生态]
 ---
-
 上周，我们进行了一次题为 PostgreSQL 与 Pigsty 用户需求调研的问卷调查。主要希望对用户的数据库需求进行了解，两天时间共收集有 77 份有效问卷。
 
 本次问卷调查基于 PostgreSQL 社区 与 Pigsty 社区用户群体，通过微信公众号与群组进行发放。部分结果可能存在 Bias，但足以真实反映用户满意度与整体用户需求。

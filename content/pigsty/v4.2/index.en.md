@@ -8,7 +8,6 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
-
 > [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v4.2.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v420)
 
 Pigsty v4.2 is officially released, hot on the heels of PostgreSQL's emergency out-of-band minor updates.
@@ -16,8 +15,6 @@ Pigsty v4.2 is officially released, hot on the heels of PostgreSQL's emergency o
 This release ships three brand-new PG kernels — the graph database AgensGraph, the multi-master distributed pgEdge, and the MPP data warehouse Cloudberry — while rebuilding three existing kernels: Babelfish, OrioleDB, and OpenHalo. With these additions, Pigsty now supports a total of **12 kernels**.
 
 With a single configuration file, you can deploy all these different flavors of PostgreSQL as enterprise-grade database services — complete with monitoring, high availability, point-in-time recovery, and Infrastructure as Code. That is essentially what a "Meta PG Distribution" means.
-
-------
 
 ## A Garden of Kernels
 
@@ -44,8 +41,6 @@ Using these kernels in Pigsty is virtually identical to using vanilla PostgreSQL
 
 Twelve kernels, one config file. Let's walk through them one by one.
 
-------
-
 ## Vanilla PostgreSQL
 
 This round of PostgreSQL minor releases deserves a special mention.
@@ -55,8 +50,6 @@ The 18.2 series introduced regression bugs related to `substring` and WAL replay
 The total extension count also climbed to **461**.
 
 If you prize maximum extensibility and the best stability, vanilla PostgreSQL remains the optimal default choice. Pigsty supports PG 14 through PG 18 across their active lifecycle. Worth noting: this is the last release to support PG 13; the minimum version will be raised to PG 14 going forward.
-
-------
 
 ## pgEdge: Native Multi-Master Replication
 
@@ -82,8 +75,6 @@ For conflict resolution, pgEdge provides multiple strategies: simple "last-write
 
 To use it in Pigsty: `configure -c pgedge`.
 
-------
-
 ## AgensGraph: Graph Database
 
 AgensGraph positions itself as a multi-model graph database built on PostgreSQL — natively supporting both relational and property graph models within a single engine, rather than starting from scratch like Neo4j. The project is led by the Korean team at Bitnine.
@@ -106,8 +97,6 @@ Of course, the cost of the fork path is also obvious: keeping up with the PG mai
 
 To use it in Pigsty: `configure -c agens`.
 
-------
-
 ## Cloudberry: MPP Data Warehouse
 
 Cloudberry is the third new kernel in this release. It is an Apache project led by the HashData team, essentially a fork of Greenplum 7 — but with significant improvements, such as upgrading the kernel from Greenplum's PG 12 to PG 14, filling in many useful newer features.
@@ -115,8 +104,6 @@ Cloudberry is the third new kernel in this release. It is an Apache project led 
 After Cloudberry 2.0 was released, official binary packages were no longer provided — version 1.6 previously had RPMs, but now even those are gone. After waiting several months with no sign of the team addressing this, I decided to build them myself with Claude's help. The packaging process went smoothly overall, requiring only minor code changes and patches on some newer operating systems. Previously there were only RPMs; now DEBs are available too, across all 14 Linux distributions that Pigsty supports.
 
 As for Cloudberry/Greenplum deployment scripts and monitoring, we actually had those back in Pigsty v1.4, but removed them later due to very low usage. After all, the scale needed for an MPP data warehouse is beyond most organizations. So after careful consideration, we are offering it as a Beta module on demand — the packages are built and available in the repo for direct download; full deployment playbooks will be provided in a future release as appropriate.
-
-------
 
 ## Babelfish: SQL Server Compatibility
 
@@ -130,8 +117,6 @@ This time I bit the bullet and built it myself. With the packaging experience ga
 
 To use it in Pigsty: `configure -c mssql`.
 
-------
-
 ## OrioleDB: New Storage Engine
 
 OrioleDB is the next-generation PostgreSQL storage engine project acquired by Supabase, aiming to fundamentally solve MVCC bloat — replacing the traditional dead tuple + VACUUM mechanism with an Undo Log approach.
@@ -139,8 +124,6 @@ OrioleDB is the next-generation PostgreSQL storage engine project acquired by Su
 This rebuild upgrades to **OrioleDB Beta14**, built on OriolePG 17.16. A key advancement in this version is the addition of PITR incremental backup and recovery support. It is still in Beta and not recommended for critical production workloads. But as one of the future evolution paths for PostgreSQL storage engines, it is well worth continued attention and experimentation.
 
 To use it in Pigsty: `configure -c oriole`.
-
-------
 
 ## OpenHalo: MySQL Wire-Protocol Compatibility
 
@@ -156,8 +139,6 @@ Changes in this update:
 Although the PG 14 baseline is a bit dated, it is a worthwhile option for MySQL migration scenarios.
 
 To use it in Pigsty: `configure -c mysql`.
-
-------
 
 ## The Other Six Regulars
 
@@ -175,8 +156,6 @@ Besides the six kernels added or rebuilt in this release, Pigsty has six long-st
 
 **Supabase** self-hosted template has also been routinely updated to the latest version.
 
-------
-
 ## One Config, Ten Kernels in Flight
 
 After all this talk about kernels, the most fun part is actually this: we created a `demo/kernels.yml` config file — if you have 10 VMs, you can use this template to **spin up 10 different PG kernels with a single command**.
@@ -184,8 +163,6 @@ After all this talk about kernels, the most fun part is actually this: we create
 Each cluster gets its own monitoring dashboards, high availability, and backup recovery, managed just like 10 standard PostgreSQL instances. Pure showing off, but also a great reference template: if you want to mix-deploy multiple kernels within a single Pigsty installation, this shows exactly how to configure it.
 
 This is not an architecture diagram on a slide deck. It is running code.
-
-------
 
 ## Other Improvements
 
@@ -205,8 +182,6 @@ Beyond the kernel showcase, v4.2 includes several notable engineering improvemen
 
 **Homepage redesign**: Previously hacked together with Claude Code, and people rightfully complained it was ugly. This time Codex gave it an optimization pass, and it looks much better. Will continue polishing when time permits.
 
-------
-
 ## Looking Ahead
 
 As an open-source project, I think Pigsty has reached a fairly mature state. The focus going forward will gradually shift to sub-projects:
@@ -216,8 +191,6 @@ As an open-source project, I think Pigsty has reached a fairly mature state. The
 **DBA Agent** work has also progressed — I have recently written some Claude Skills and prompt templates that make the Pigsty environment perceptible to AI tools. This way you can drop Claude Code into a Pigsty environment and let it work for you.
 
 Pigsty itself will continue to follow the PG minor release cadence. The next version may officially include the Cloudberry deployment playbook, plus local SMTP server support (maddy / stalwart). No rush for big new features — the current architecture running stably is just fine.
-
---------
 
 ## v4.2.0 Release Note
 

@@ -8,16 +8,13 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.3.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v330)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.3.0) | [**Release Note**](https://pigsty.io/docs/releasenote/#v330)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.3.0)
+[![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website (figure 1)](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.3.0)
 
 After two months of careful refinement, Pigsty v3.3 is officially released. As an open-source "batteries-included" PostgreSQL distribution, Pigsty aims to harness the collective power of the PG ecosystem, delivering a maintenance-free experience for self-hosting that rivals cloud RDS.
 
 This version focuses on three key areas: **extensions**, **website deployment**, and **application templates**, significantly enhancing development, operations, and deployment capabilities.
-
---------
 
 ## 400+ Extensions Available
 
@@ -25,11 +22,11 @@ PostgreSQL is renowned for its rich extension mechanism, fostering a vast databa
 
 A year ago when "[PostgreSQL is Eating the Database World](/pg/pg-eat-db-world)" was published, Pigsty had about 150 available extensions, primarily from PG built-ins (70) and the official PGDG repository.
 
-![](ext-growth.jpg)
+![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website — 400+ Extensions Available (figure 2)](ext-growth.jpg)
 
 Today, Pigsty v3.3 pushes the available extension count to **404**! Users can plug-and-play virtually any PostgreSQL extension they want — more importantly, they can [combine these extensions like building blocks](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489151&idx=1&sn=8098166e6231965283d8d65315ccbab9&scene=21#wechat_redirect).
 
-![](ext-ecosystem.jpg)
+![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website — 400+ Extensions Available (figure 3)](ext-ecosystem.jpg)
 
 **Notable new extensions**:
 
@@ -42,31 +39,25 @@ Today, Pigsty v3.3 pushes the available extension count to **404**! Users can pl
 | pgpdf | Directly read/store PDFs, SQL full-text search on PDF content |
 | Omni series | 30+ extensions from Omnigres for web app development inside PG |
 
-![](omnigres.jpg)
+![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website — 400+ Extensions Available (figure 4)](omnigres.jpg)
 
 Pigsty has formed a deep partnership with Omnigres: Pigsty integrates and distributes Omnigres extensions, while Omnigres as a downstream delivers extensions from Pigsty's repository to its users — a mutually beneficial arrangement.
-
---------
 
 ## FerretDB 2.0: PostgreSQL Becomes MongoDB
 
 In collaboration with the FerretDB team, delivering a MongoDB solution based on PostgreSQL. FerretDB 2.0 uses Microsoft's open-source DocumentDB as the backend implementation, providing better performance and more complete functionality.
 
-![](ferretdb.jpg)
+![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website — FerretDB 2.0: PostgreSQL Becomes MongoDB (figure 5)](ferretdb.jpg)
 
 Transform PG into a core-feature-complete MongoDB 5.0, accessing PostgreSQL data via MongoDB clients and wire protocol.
-
---------
 
 ## DuckDB Integration Race Continues
 
 Pigsty v3.3 immediately tracks pg_duckdb 0.3.1, pg_mooncake 0.1.2, pg_analytics 0.5.4 — the latest versions adding ClickHouse-level analytics capabilities to PostgreSQL from different angles.
 
-![](clickbench.jpg)
+![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website — DuckDB Integration Race Continues (figure 6)](clickbench.jpg)
 
 On ClickHouse's own ClickBench leaderboard, the PG extension mooncake has successfully broken into the Top 10 T1 tier. Under intense competition, the PostgreSQL ecosystem will soon produce an OLAP player comparable to `pgvector` in the vector database ecosystem.
-
---------
 
 ## pig and Extension Repository
 
@@ -76,23 +67,19 @@ While this unique extension library could serve as Pigsty's core competitive adv
 
 Several PostgreSQL vendors now install extensions from Pigsty's extension repository, becoming Pigsty downstream users. This is a solid way to participate in the global software supply chain.
 
---------
-
 ## Website Experience: Nginx IaC and Free HTTPS Certificates
 
 Pigsty isn't just a PostgreSQL distribution — it's also a complete monitoring infrastructure, Etcd, MinIO, Redis, and Docker deployment management solution, and can even serve as a web hosting tool.
 
 Pigsty provides full-featured Nginx configuration and certificate issuance SOPs. The Pigsty website and software repository are built using Pigsty itself.
 
-![](nginx.jpg)
+![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website — Website Experience: Nginx IaC and Free HTTPS Certificates (figure 7)](nginx.jpg)
 
 Simply define Nginx Servers in your config file, and Pigsty automatically creates the required configuration and applies for HTTPS certificates.
 
-![](certbot.jpg)
+![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website — Website Experience: Nginx IaC and Free HTTPS Certificates (figure 8)](certbot.jpg)
 
 Pigsty v3.2 already integrated certbot with default installation. One command handles HTTPS certificate issuance and renewal. You can proxy various services with Nginx, differentiate by domain, and unify access through ports 80/443 — just open inbound 80/443 TCP ports.
-
---------
 
 ## Application Templates: One-Click Docker Software Delivery
 
@@ -102,19 +89,17 @@ Pigsty v3.3 provides a new `app.yml` playbook, compressing PostgreSQL-based Dock
 
 **Odoo ERP System**:
 
-![](odoo.jpg)
+![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website — Application Templates: One-Click Docker Software Delivery (figure 9)](odoo.jpg)
 
 **Dify AI Workflow Orchestration**:
 
-![](dify.jpg)
+![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website — Application Templates: One-Click Docker Software Delivery (figure 10)](dify.jpg)
 
 **Self-hosted Supabase**:
 
-![](supabase.jpg)
+![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website — Application Templates: One-Click Docker Software Delivery (figure 11)](supabase.jpg)
 
 From bare metal to complete production application services — just a few commands and a few minutes of waiting.
-
---------
 
 ## pig CLI Enhancements
 
@@ -132,39 +117,33 @@ pig build ext citus   # Build an extension
 
 The 200+ extensions Pigsty maintains are all built this way. Even if your OS isn't among Pigsty's supported ten distros, you can easily DIY extension RPM/DEB packages.
 
---------
-
 ## New Website Design
 
 Starting with v3.3, Pigsty's international site (pigsty.io) and Chinese site (pigsty.cc) are officially separated, using independent domains, documentation, demos, and repositories.
 
-![](homepage-1.jpg)
+![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website — New Website Design (figure 12)](homepage-1.jpg)
 
 A brand-new homepage built on a Next.js template. With help from GPT o1-pro and Cursor, modern landing page development was completed quickly.
 
-![](homepage-2.jpg)
+![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website — New Website Design (figure 13)](homepage-2.jpg)
 
 For hosting, we tried various solutions: Vercel, Cloudflare Pages, Alibaba Cloud, Tencent Cloud EdgeOne, etc. Final conclusion: put overseas on Cloudflare, domestic on cloud servers.
 
 The website deployment process is highly automated — within ten minutes, you can spin up Pigsty documentation + repository infrastructure sites in any region.
 
-![](infra.jpg)
+![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website — New Website Design (figure 14)](infra.jpg)
 
 The PG extension catalog is now integrated into the documentation site at pigsty.cc/ext, with Chinese version available. A small tool automatically scans Pigsty and PGDG repository extension package versions and generates database records and info pages — users can browse and download extension RPM/DEB packages directly from the web.
-
---------
 
 ## Multi-Kernel Support Updates
 
 v3.3 tracks IvorySQL 4.2 (PG 17 compatible version), resolving the issue where pgbackrest backups couldn't work with IvorySQL. IvorySQL experience is now consistent with standard PG kernel.
 
-![](ivorysql.jpg)
+![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website — Multi-Kernel Support Updates (figure 15)](ivorysql.jpg)
 
 We also pushed the PolarDB team to provide DEB packages for Debian and ARM64 platforms. PolarDB can now run smoothly on all 10 Linux distributions supported by Pigsty.
 
 Use case for PolarDB kernel: If you have "localization" requirements, PolarDB is the simplest, most cost-effective solution — Pigsty can wrap the PolarDB kernel RPM/DEB into a powerful RDS service.
-
---------
 
 ## v3.3.0 Release Notes
 

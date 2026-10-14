@@ -8,7 +8,6 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
-
 Pigsty v4.3 正式发布。如果说 v4.2 的主题是 “十二内核”，那么 v4.3 的主题就是 “扩展密度”。
 
 在这个版本中，支持的 PG 扩展数量从 460 个暴涨至 510 个，达到新高度。
@@ -16,8 +15,6 @@ Pigsty v4.3 正式发布。如果说 v4.2 的主题是 “十二内核”，那�
 Supabase、pgEdge、PolarDB、Grafana、MinIO 这些核心组件也完成了一轮集中刷新。
 
 > [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v4.3.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v430)
-
-------
 
 ## Pigsty v4.3：成为主流
 
@@ -30,8 +27,6 @@ Pigsty 最近 [**刚迈过了这个门槛**](/pg/extension-504/)：当前的 Sta
 最让我惊讶的是 Pigsty.IO 网站的流量，在三月份的时候，Pigsty.io 的月 UV 还不到两千万，在四月底的时候，就已经突破一亿了。
 其中 99%+ 的流量来自 AI/Agent。这意味着 Pigsty 网站已经成为主流 AI 的关键语料，以及 AI Agent 使用的基础设施。
 对于一个 “个人项目” 来说，这确实是难能可贵的成就了。
-
-------
 
 ## 扩展总数突破 510
 
@@ -48,8 +43,6 @@ Rust 扩展生态越来越活跃，这很好，但对发行版维护者来说，
 
 用户看到的是一行 `CREATE EXTENSION`，维护者看到的是一张矩阵，一两百个包。不过现在老冯的扩展维护流程已经接入了 Agent 工作流。
 无论是新增扩展，还是版本更新，都有一套完整的自动化流程，所以尽管扩展数量越来越多，维护成本不增反降，依然在一个人的维护能力范围内。
-
-------
 
 ## Ubuntu 26.04 进入支持矩阵
 
@@ -78,8 +71,6 @@ Ubuntu 24.04（noble）仍然是当下使用最多的系统版本。Ubuntu 26.04
 Pigsty 使用的 vagrant 和 terraform 模板也都相应更新到最新的版本。
 不过阿里云目前还没有提供 Ubuntu 26.04 的镜像。
 
-------
-
 ## 内核更新：Supabase、pgEdge、PolarDB
 
 **Supabase** 自建模板更新到最新版本。Pigsty 是极少数几个提供企业级 Supabase 自建方案的开源 PG 发行版之一。这次我们把 Supabase 模板更新到了最新版本，另外，我们还提供了一个 “Supabase” 青春版 —— Insforge 的自建支持。
@@ -91,8 +82,6 @@ Pigsty 使用的 vagrant 和 terraform 模板也都相应更新到最新的版�
 **OrioleDB** 继续更新到 OriolePG 17.18 与 OrioleDB beta15 / 1.7。OrioleDB 仍然处在快速演进阶段，不建议在生产库里激进采用，但作为 PostgreSQL 存储引擎方向的前沿项目，可以尝尝鲜。
 
 **Cloudberry** 更新到 2.1.0，并新增 `cloudberry-backup` 与 `cloudberry-pxf` 包。上一版 Pigsty 把 Cloudberry 带回发行矩阵，这一版补齐了周边工具。
-
-------
 
 ## Grafana 13 与 Victoria 组件刷新
 
@@ -117,8 +106,6 @@ Victoria 系列也进行了集中更新：
 
 同时也修了个用户反馈的小问题，VictoriaTraces 的 Grafana 数据源路径修正为 `/select/jaeger`。
 
-------
-
 ## etcd CVE 修复
 
 之前，etcd 3.6.8 爆出来一个 CVE，3.6.9 修复了但引入了新的问题，给 member list API 加上了 Auth，导致 PG 高可用组件 Patroni 失效（4.1.0 以前版本），Patroni 4.1.1 修复了这个问题。
@@ -126,8 +113,6 @@ Victoria 系列也进行了集中更新：
 这里要提醒一下用户，Patroni <= 4.1.0 与 etcd <= 3.6.8 配合使用；而 Patroni >= 4.1.1 与 etcd >= 3.6.9 配合使用，也就是这两个软件的版本必须配套。老配老，新配新，否则就会有问题。
 
 之前在 v4.2.2 中，EL 侧已经更新了 etcd 3.6.10 与 patroni 4.1.1，但是因为 APT 仓库更新慢，所以 DEB 侧还停留在 etcd 3.6.8 与 patroni 4.1.0 的老版本上。现在 v4.3 中，DEB 侧也完成了更新，用户可以放心升级了。
-
-------
 
 ## MinIO CVE 修复
 
@@ -142,8 +127,6 @@ Pigsty v4.3 实装了修复后的新版本：`20260417000000`。
 然后最近发现 RustFS 竟然也成了奇绩校友，跟他们聊天得知后面准备把 RustFS 做成 MinIO 的 Drop-In 替代。老冯觉得如果这个目标真能实现，我会认真考虑直接用 RustFS 替换 MinIO。
 这次欣慰地看到 RustFS 告别 Alpha 阶段，发布了第一个 Beta 版本，我也打好了包。大概计划在七月左右会有 GA 版本。
 
-------
-
 ## Vagrant 模板统一切到 cloud-image
 
 Vagrant 对很多人来说只是本地测试工具，但对 Pigsty 这种需要验证多操作系统、多架构、多拓扑的项目来说，它是很重要的开发与验收入口。
@@ -156,8 +139,6 @@ cloud-image 是发行版官方更标准、更持续维护的路径，统一到�
 
 不过这个镜像的默认网卡名不再是 eth1 了，如果你需要测试 VIP 相关的功能，请记得调整配置中的网卡名称。
 
-------
-
 ## 几个值得单独提的修复
 
 v4.3 还有一些看似不起眼，但属于是用户真实撞上的问题的修复。
@@ -166,13 +147,9 @@ v4.3 还有一些看似不起眼，但属于是用户真实撞上的问题的修
 
 **IPv6 nameserver 解析修复**：旧逻辑只提取 IPv4 DNS Server，遇到 IPv6 nameserver 时会漏掉配置。现在修复后，可以正确处理 IPv6 DNS 场景。IPv6 支持常常不是主线需求，但一旦环境里有，它就是硬需求。
 
-------
-
 ## 其他的一些特性
 
 此外，在 Pigsty v4.3 中，我们还试点加入了 Hindsight 记忆框架（基于 PG 与 pgvector）和 Hermes Agent 自建模板支持。它们都还属于试点功能，这里就不展开了。
-
---------
 
 ## 小结
 
@@ -183,8 +160,6 @@ Pigsty v4.3 说大不大，没有框架，接口上的改动。但说小也不�
 数据库发行版的价值，很多时候就体现在这些不性感的地方。你不需要自己去追 50 个扩展的构建状态，不需要自己检查 Ubuntu 26.04 的包矩阵，不需要自己处理 MinIO CVE 分支，不需要自己整理 Grafana 13 插件和 Victoria 组件版本，不需要自己猜 Vagrant 镜像该用哪个。
 
 Pigsty 把这些东西收敛成一个版本。你拿来用就行。下面附完整的 v4.3.0 提交注记与包变更摘要，方便按需查阅。
-
---------
 
 ## v4.3.0 提交注记
 

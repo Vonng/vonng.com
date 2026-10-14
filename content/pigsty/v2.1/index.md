@@ -8,16 +8,15 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.1.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v210) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485612&idx=1&sn=ce76d9439ed4f2ed10ee28c7aceb19cd&chksm=fe4b3d77c93cb46196eb97f7e04cbab1b2f2dee51324050ffc17583c22415f41a3656834fdcb&scene=21#wechat_redirect)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.1.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v210) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485612&idx=1&sn=ce76d9439ed4f2ed10ee28c7aceb19cd&chksm=fe4b3d77c93cb46196eb97f7e04cbab1b2f2dee51324050ffc17583c22415f41a3656834fdcb&scene=21#wechat_redirect)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v2.1.0)
+[![Pigsty v2.1：向量+PG全系支持！（图 1）](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v2.1.0)
 
 随着 PostgreSQL 夏季小版本例行更新，与 16 Beta 的发布，Pigsty 也紧随PG社区发布了 **v2.1** 版本，这次更新支持了 16 Beta1 的高可用与新监控指标，也提供了 PG 12 - 15 版本的支持。同时，AI 向量扩展插件 PGVector 也于 2.0.2 正式进入 Pigsty 中并默认启用。
 
 https://github.com/Vonng/pigsty/releases/tag/v2.1.0
 
-### 向量数据库扩展 PGVector
+## 向量数据库扩展 PGVector
 
 最近向量数据库非常火爆，市面上有许多专用向量数据库产品，商业的有 Pinecone，Zilliz，开源的有 Milvus，Qdrant 等。在所有现有向量数据库中，**pgvector** 是一个独特的存在 —— 它选择了在现有的世界上最强大的开源关系型数据库 PostgreSQL 上以插件的形式添砖加瓦，而不是另起炉灶做成另一个专用的“数据库”。毕竟从零开始做好一个TP数据库还是非常难的。
 
@@ -29,7 +28,7 @@ https://github.com/Vonng/pigsty/releases/tag/v2.1.0
 
 ![pgvector](pgvector.webp)
 
-### PG16支持与可观测性
+## PG16支持与可观测性
 
 Pigsty 也许是最快提供 PostgreSQL 16 支持的发行版 —— 尽管目前仍然处于 Beta 状态，一些功能扩展仍然没有跟进，但你已经可以拉起 PostgreSQL 16 的高可用集群体验测试起来。PostgreSQL 16 有一些比较实用的新功能：从库逻辑解码与逻辑复制，针对I/O的新统计视图，全连接的并行执行，更好的冻结性能，符合 SQL/JSON 标准的新函数集，以及在HBA认证中使用正则表达式。
 
@@ -39,7 +38,7 @@ Pigsty 特别关注 PostgreSQL 16 中的可观测性改进，新的 `pg_stat_io`
 
 另外一个非常有价值的可观测性改进点是，`pg_stat_all_tables` 与 `pg_stat_all_indexes` 会记录最后一次顺序扫描 / 索引扫描的时间。尽管这个功能在 Pigsty 的监控系统中可以通过扫描统计图表实现，但官方提供直接的支持肯定更好：用户可以直观地得出一些结论：比如某一个索引是不是没用上可以考虑移除。此外，`n_tup_newpage_upd` 指标可以告诉我们表上有多少行在更新时不是在页内原地更新，而是移动到了一个新的页面上，这个指标对于优化 UPDATE 性能，调整表填充因子具有重要的参考价值。
 
-### PGSQL 12 - 15 支持
+## PGSQL 12 - 15 支持
 
 Pigsty 从 PostgreSQL 10 开始提供支持，但一直紧跟社区主干的最新版本。但用户确实会有使用旧版本的需求 —— 有的是外部组件最高就支持某个版本，有的是对最新的大版本有所顾虑希望谨慎升级，有的是因为想要从现有的低版本集群创建一个由 Pigsty 托管的 Standby Cluster 完成迁移。不管怎么样，对于较低版本的 PostgreSQL 支持是一个来自用户侧的真实需求。因此我们在 2.1 中，加入了 PG 12 -14 三个大版本的支持，并默认纳入离线软件包中。
 
@@ -49,7 +48,7 @@ Pigsty 从 PostgreSQL 10 开始提供支持，但一直紧跟社区主干的最�
 
 PostgreSQL 11 其实也可以支持，但因为有一些扩展缺失，加之即将进入 EOL，所以就排除在本次更新中。对于新尝试 PostgreSQL 的用户，我们始终建议从最新的稳定大版本（目前为15）开始使用。如果您真的希望使用 10 或 11，也可以参照教程调整仓库中的软件包版本自行构建。
 
-### Grafana监控系统改进
+## Grafana监控系统改进
 
 随着 Grafana 版本升级至 v9.5.3 ， 全新的导航栏，面板布局让 Pigsty 的监控系统 UI 也随之焕然一新。所有监控面板都根据新 UI 的特性进行了微调与适配，一些不和谐的样式问题也得到了修正。
 
@@ -63,7 +62,7 @@ PostgreSQL 11 其实也可以支持，但因为有一些扩展缺失，加之即
 
 此外，Pigsty 还专门添加了 `echarts-gl` 的扩展资源，放置于 Grafana `public/chart` 目录下，允许用户使用 Pigsty 自带的 Grafana，无需互联网访问即可实现出 Apache Echarts 官方文档库中炫酷的三维地球等面板。
 
-### 其他便利工具的改进
+## 其他便利工具的改进
 
 在 Pigsty 2.1 中，添加了 3 个便利命令，`profile`，`validate`，`repo-add`。
 
@@ -72,8 +71,6 @@ PostgreSQL 11 其实也可以支持，但因为有一些扩展缺失，加之即
 `bin/repo-add` 命令用于手工调整节点上的 YUM 仓库。当用户想要往本地软件仓库添加一些新的软件包时，经常需要使用 Ansible 剧本的子任务来进行管理，较为不便，现在您可以使用包装的命令行工具来完成这一点：比如，`bin/repo-add infra node,pgsql` 就会向 `infra` 分组的节点上添加分类为 `node` 与 `pgsql` 的软件源。
 
 `bin/profile` 命令可以便捷地针对某个 IP 地址上特定 PID 的进程进行 `perf` 采样1分钟，并在 Pigsty Web服务器目录生成火焰图，用户可以直接从网页界面打开浏览，这个功能对于分析数据库内部的故障与性能瓶颈尤为有用。
-
-----------------
 
 ## v2.1.0
 

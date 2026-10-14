@@ -8,7 +8,6 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
-
 好消息，好消息，时隔一月，开箱即用的开源 PostgreSQL 发行版 —— Pigsty  正式发布 v1.1 版本！v1.1 带来了一些非常不错的特性，主要是关于基础设施的（毕竟部署好的数据库没人想去动它）。以下是更新摘要。
 
 ![图片](wxmp-pigsty-v1-1-01.webp)
@@ -149,8 +148,6 @@ Enjoy！
 
 ![图片](wxmp-pigsty-v1-1-17.webp)
 
----
-
 ## v1.1.0 更新日志
 
 ### 功能增强
@@ -189,8 +186,6 @@ Enjoy！
 - 将内部标记 `repo_exist` 重命名为 `repo_exists`
 - `repo_address` 默认值改为 `pigsty` 而非 `yum.pigsty`
 - HAProxy 访问点改为 `http://pigsty` 而非 `http://h.pigsty`
-
----
 
 ## v1.1.1 更新日志
 

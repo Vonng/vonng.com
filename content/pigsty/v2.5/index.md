@@ -8,8 +8,7 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
-
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.5.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v250)
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.5.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v250)
 
 [![Pigsty v2.5：Ubuntu & PG16](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v2.5.0)
 
@@ -19,15 +18,11 @@ tags: [Pigsty]
 
 在监控上，Pigsty 优化了 PostgreSQL 监控面板体验，新增了 Patroni & Exporter 监控面板，根据查询宏观优化方法论重新设计了 PGSQL Query 监控面板。
 
----
-
 ## 关于 Pigsty
 
 [**Pigsty**](/pigsty/v2.0/) 是一个开箱即用的 [**PostgreSQL**](/pg/pg-is-no1/) 发行版，提供本地优先的 RDS PG 开源替代。它让用户用云数据库 RDS 几分之一的纯硬件成本，自助运行更好的企业级 PostgreSQL 数据库服务。更多介绍请访问 [pigsty.cc](https://pigsty.cc/)。
 
 ![intro](intro.webp)
-
----
 
 ## Ubuntu/Debian 支持
 
@@ -55,8 +50,6 @@ Pigsty 在自动配置过程中添加了 Debian / Ubuntu 系统的识别，单�
 
 这些参数通常都不需要用户来调整，所以在 Pigsty 使用流程上，Deb 系可以说几乎没有任何区别了：实际上 Pigsty 的离线软件包构建模版就是这么工作的：一次性在七种不同的操作系统上完成完整的 Pigsty 安装，无需任何特殊处理。
 
----
-
 ## 新的扩展插件
 
 Pigsty v2.5 收纳了几款用户呼声比较高的扩展插件。首当其冲的便是 **PostgresML**。尽管在上一个版本中，Pigsty 已经提供了在 EL8 / EL9 上使用 PostgresML 的能力，但搞 AI 的操作系统基本上都是清一色的 Ubuntu，最起码 CUDA 驱动装起来方便啊。
@@ -82,8 +75,6 @@ Pigsty v2.5 收纳了几款用户呼声比较高的扩展插件。首当其冲�
 除此之外，我们还将 Supabase 的支持更新到最新版本：`20231013070755`。您可以在 EL8/EL9 系统上使用 Pigsty 提供的 PostgreSQL 数据库来自托管 Supabase。
 
 算上 PostgreSQL 自带的扩展，Pigsty 2.5 支持的扩展插件已经达到了 150+。尽管有这么多的插件，但请注意，它们全都是 **选装项**。Pigsty 为所有 PostgreSQL 大版本都提供了 `pg_repack`，`wal2json`，`passwordcheck_cracklib` （EL）这几个重要的扩展，默认安装的三方扩展只有在线治理膨胀的 `pg_repack`。其他的扩展如果不安装，对现有系统不会产生任何额外的影响和负担。
-
----
 
 ## 监控系统调整
 
@@ -134,8 +125,6 @@ PGSQL 首屏是最核心的查询性能指标：QPS 与 RT —— 以及它们�
 
 除了上面三个 Dashboard 之外，Pigsty 也对许多其他面板进行了优化改进与问题修复。许多面板的信息栏现在会提供更详细的信息：这个面板展现了什么指标，用于解决什么问题，等等等。我们也引入了三个新的 Grafana 插件用于支持 CSV/JSON 数据源，以及变量面板。
 
----
-
 ## 下个版本做点啥？
 
 Pigsty 的下一个版本是 v2.6.0，除了进一步巩固 Ubuntu/Debian 的支持成熟度，这个版本的关注焦点将会关注两件事：MySQL 支持与命令行工具。
@@ -143,8 +132,6 @@ Pigsty 的下一个版本是 v2.6.0，除了进一步巩固 Ubuntu/Debian 的支
 Pigsty 将提供基本的（主从，但没有 HA） MySQL 安装部署支持，并提供基于 Grafana / Prometheus / MysqldExporter 的监控。因为 MySQL 5.7 将于本月 EOL，相信这样的能力会让更多的 MySQL 用户接触 PostgreSQL 并方便地迁移上来。
 
 此外，我们还会进一步探索 Infra 组件容器化，调研使用 VictoriaMetrics 默认替换 Prometheus，或者使用 Vector 与 VictoriaLogs 替代 Loki 与 Promtail 的可行性。并设计一个更加好用的管控命令行工具 pigsty-cli，对 Greenplum 7.0 的部署提供正式支持，当这些任务都完成后，Pigsty 就将迎来第三个大版本 v3 了。
-
----
 
 ## 发布注记
 
@@ -202,8 +189,6 @@ Pigsty 将提供基本的（主从，但没有 HA） MySQL 安装部署支持，
 - `[4]` Ubuntu: <https://github.com/pgsty/pigsty/blob/v2.5.0/files/pigsty/ubuntu.yml>
 - `[5]` Debian: <https://github.com/pgsty/pigsty/blob/v2.5.0/files/pigsty/debian.yml>
 - `[6]` `ubuntu.yml`: <https://github.com/pgsty/pigsty/blob/v2.5.0/files/pigsty/ubuntu.yml>
-
----
 
 ## v2.5.0
 
@@ -288,8 +273,6 @@ e3f548a6c7961af6107ffeee3eabc9a7  pigsty-pkg-v2.5.0.debian11.x86_64.tgz
 cc3af3b7c12f98969d3c6962f7c4bd8f  pigsty-pkg-v2.5.0.ubuntu20.x86_64.tgz
 c5b2b1a4867eee624e57aed58ac65a80  pigsty-pkg-v2.5.0.ubuntu22.x86_64.tgz
 ```
-
----
 
 ## v2.5.1
 

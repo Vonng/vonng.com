@@ -8,14 +8,11 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.0.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v300) | [微信公众号](https://mp.weixin.qq.com/s/sxcPSFyPrFH4BDkg2bMB3Q)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.0.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v300) | [微信公众号](https://mp.weixin.qq.com/s/sxcPSFyPrFH4BDkg2bMB3Q)
+[![Pigsty v3.0：海量扩展，插拔内核，RDS服务（图 1）](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.0.0)
 
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.0.0)
-
---------
-
-### 亮点特性
+## 亮点特性
 
 **扩展大爆炸**：
 
@@ -60,19 +57,17 @@ curl -fsSL https://repo.pigsty.cc/get | bash
 cd ~/pigsty; ./bootstrap; ./configure; ./install.yml
 ```
 
---------
-
-### 重大变更
+## 重大变更
 
 本次 Pigsty 发布调整大版本号，从 2.x 升级到 3.0，带有一些重大变更：
 
 * 首要支持操作系统调整为：EL 8 / EL 9 / Debian 12 / Ubuntu 22.04
   * EL7 / Debian 11 / Ubuntu 20.04 等系统进入弃用阶段，不再提供支持
-  * 有在这些系统上运行需求的用户请考虑我们的 [订阅服务](https://pigsty.io/zh/docs/about/service)
+  * 有在这些系统上运行需求的用户请考虑我们的 [订阅服务](https://pigsty.cc/docs/about/service/)
 
 * 默认使用在线安装，不再提供离线软件包，从而解决操作系统小版本兼容性问题。
   * `bootstrap` 过程现在不再询问是否下载离线安装包，但如果 `/tmp/pkg.tgz` 存在，仍然会自动使用离线安装包。
-  * 有离线安装需求请自行制作离线软件包或考虑我们的 [订阅服务](https://pigsty.io/zh/docs/about/service)
+  * 有离线安装需求请自行制作离线软件包或考虑我们的 [订阅服务](https://pigsty.cc/docs/about/service/)
 
 * Pigsty 使用的上游软件仓库进行统一调整，地址变更，并对所有软件包进行 GPG 签名与校验
   * 标准仓库： `https://repo.pigsty.io/{apt/yum}`
@@ -82,9 +77,7 @@ cd ~/pigsty; ./bootstrap; ./configure; ./install.yml
   * EL 系与 Debian 系配置模板现在收拢统一，有差异的参数统一放置于 [`roles/node_id/vars/`](https://github.com/Vonng/pigsty/tree/master/roles/node_id/vars) 目录进行管理。
   * 配置目录变更，所有配置文件模板统一放置在 `conf` 目录下，并分为 `default`, `dbms`, `demo`, `build` 四大类。
 
---------
-
-### 其他新特性
+## 其他新特性
 
 - PG OLAP 分析能力史诗级加强：DuckDB 1.0.0，DuckDB FDW，以及 PG Lakehouse，Hydra 移植至 Deb 系统中。
 - PG 向量检索与全文检索能力加强：Vectorscale 提供 DiskANN 向量索引，Hunspell 分词字典支持，pg_search 0.9.1。
@@ -100,9 +93,7 @@ cd ~/pigsty; ./bootstrap; ./configure; ./install.yml
 - 监控面板修缮，修复了各种问题，为 PGSQL Pgbouncer 与 PGSQL Patroni 监控面板添加了日志仪表盘。
 - 使用全新的 `cache.yml` Ansible 剧本，替换了原有制作离线软件包的 `bin/cache` 与 `bin/release-pkg` 脚本。
 
---------
-
-### API变更
+## API变更
 
 * 新参数选项： `pg_mode` 现在支持的模式有 `pgsql`, `citus`, `gpsql`, `mssql`, `ivory`, `polar`，用于指定 PostgreSQL 集群的模式
   * `pgsql`： 标准 PostgreSQL 高可用集群
@@ -118,21 +109,19 @@ cd ~/pigsty; ./bootstrap; ./configure; ./install.yml
 * 参数强化：`proxy_env` 中的代理服务器配置会写入 Docker Daemon，解决科学上网问题，`configure -x` 选项会自动在配置中写入当前环境中的代理服务器配置。
 * 参数强化：`repo_url_packages` 中的 `repo.pigsty.io` 会在区域为中国时自动替换为 `repo.pigsty.cc`，解决科学上网问题，此外，现在可以指定下载后的文件名称。
 * 参数强化：`pg_databases.extensions` 中的 `extension` 字段现在可以支持字典与扩展名字符串两种模式，字典模式提供 `version` 支持，允许安装特定版本的扩展。
-* 参数强化：`repo_upstream` 参数如果没有显式覆盖定义，将从 [`rpm.yml`](https://github.com/Vonng/pigsty/blob/master/roles/node_id/vars/rpm.yml) 或 [`deb.yml`](https://github.com/Vonng/pigsty/blob/master/roles/node_id/vars/rpm.yml) 中定义的 `repo_upstream_default` 提取对应系统的默认值。
-* 参数强化：`repo_packages` 参数如果没有显式覆盖定义，将从 [`rpm.yml`](https://github.com/Vonng/pigsty/blob/master/roles/node_id/vars/rpm.yml) 或 [`deb.yml`](https://github.com/Vonng/pigsty/blob/master/roles/node_id/vars/rpm.yml) 中定义的 `repo_packages_default` 提取对应系统的默认值。
-* 参数强化：`infra_packages` 参数如果没有显式覆盖定义，将从 [`rpm.yml`](https://github.com/Vonng/pigsty/blob/master/roles/node_id/vars/rpm.yml) 或 [`deb.yml`](https://github.com/Vonng/pigsty/blob/master/roles/node_id/vars/rpm.yml) 中定义的 `infra_packages_default` 提取对应系统的默认值。
-* 参数强化：`node_default_packages` 参数如果没有显式覆盖定义，将从 [`rpm.yml`](https://github.com/Vonng/pigsty/blob/master/roles/node_id/vars/rpm.yml) 或 [`deb.yml`](https://github.com/Vonng/pigsty/blob/master/roles/node_id/vars/rpm.yml) 中定义的 `node_packages_default` 提取对应系统的默认值。
-* 参数强化：`pg_packages` 与 `pg_extensions` 中的扩展现在都会从  [`rpm.yml`](https://github.com/Vonng/pigsty/blob/master/roles/node_id/vars/rpm.yml) 或 [`deb.yml`](https://github.com/Vonng/pigsty/blob/master/roles/node_id/vars/rpm.yml) 中定义的 `pg_package_map` 执行一次查找与翻译。
-* 参数强化：`node_packages` 与 `pg_extensions` 参数中指定的软件包在安装时会升级至最新版本， `node_packages` 中现在默认值变为 `[openssh-server`]，帮助修复 [OpenSSH CVE](https://pigsty.io/zh/blog/db/cve-2024-6387/)
+* 参数强化：`repo_upstream` 参数如果没有显式覆盖定义，将从 [`rpm.yml`](https://github.com/pgsty/pigsty/blob/v3.0.0/roles/node_id/vars/rpm.yml) 或 [`deb.yml`](https://github.com/pgsty/pigsty/blob/v3.0.0/roles/node_id/vars/rpm.yml) 中定义的 `repo_upstream_default` 提取对应系统的默认值。
+* 参数强化：`repo_packages` 参数如果没有显式覆盖定义，将从 [`rpm.yml`](https://github.com/pgsty/pigsty/blob/v3.0.0/roles/node_id/vars/rpm.yml) 或 [`deb.yml`](https://github.com/pgsty/pigsty/blob/v3.0.0/roles/node_id/vars/rpm.yml) 中定义的 `repo_packages_default` 提取对应系统的默认值。
+* 参数强化：`infra_packages` 参数如果没有显式覆盖定义，将从 [`rpm.yml`](https://github.com/pgsty/pigsty/blob/v3.0.0/roles/node_id/vars/rpm.yml) 或 [`deb.yml`](https://github.com/pgsty/pigsty/blob/v3.0.0/roles/node_id/vars/rpm.yml) 中定义的 `infra_packages_default` 提取对应系统的默认值。
+* 参数强化：`node_default_packages` 参数如果没有显式覆盖定义，将从 [`rpm.yml`](https://github.com/pgsty/pigsty/blob/v3.0.0/roles/node_id/vars/rpm.yml) 或 [`deb.yml`](https://github.com/pgsty/pigsty/blob/v3.0.0/roles/node_id/vars/rpm.yml) 中定义的 `node_packages_default` 提取对应系统的默认值。
+* 参数强化：`pg_packages` 与 `pg_extensions` 中的扩展现在都会从  [`rpm.yml`](https://github.com/pgsty/pigsty/blob/v3.0.0/roles/node_id/vars/rpm.yml) 或 [`deb.yml`](https://github.com/pgsty/pigsty/blob/v3.0.0/roles/node_id/vars/rpm.yml) 中定义的 `pg_package_map` 执行一次查找与翻译。
+* 参数强化：`node_packages` 与 `pg_extensions` 参数中指定的软件包在安装时会升级至最新版本， `node_packages` 中现在默认值变为 `[openssh-server`]，帮助修复 [OpenSSH CVE](/db/cve-2024-6387/)
 * 参数强化：`pg_dbsu_uid` 会自动根据操作系统类型调整为 `26` （EL）或 `543` （Debian），避免了手工调整。
 * Boostrap 逻辑变化，不再下载离线软件包，添加 `-k|--keep` 参数，用于指定在本地安装 ansible 时是否保留现有的软件源。
 * Configure 移除了 `-m|--mode` 参数，使用 `-m|--conf` 参数指定配置文件，使用 `-x|--proxy` 参数指定代理服务器配置，不再尝试修复 ssh 本机问题。
 * 设置了 pgbouncer 默认参数，`max_prepared_statements = 128` 启用了事物池化模式下的准备语句支持，并设置 `server_lifetime` 为 600，
 * 修改了 patroni 模板默认参数，统一增大 `max_worker_processes` +8 可用后端进程，提高 `max_wal_senders` 与 `max_replication_slots` 至 50，并增大 OLAP 模板临时文件的大小限制为主磁盘的 1/5
 
---------
-
-### 版本升级
+## 版本升级
 
 截止至发布时刻，Pigsty 主要组件的版本升级如下：
 
@@ -170,24 +159,20 @@ cd ~/pigsty; ./bootstrap; ./configure; ./install.yml
 
 Pigsty 重新编译了所有 PostgreSQL 扩展插件，PostgreSQL 扩展插件的最新版本，请参考 [扩展列表](https://pigsty.cc/docs/pgsql/ext/)
 
---------
-
-### 新应用
+## 新应用
 
 Pigsty 现在提供开箱即用的 Dify 与 Odoo Docker Compose 模板：
 
-- [Dify](https://pigsty.cc/docs/software/dify)： AI智能体工作流编排与 LLMOps
-- [Odoo](https://pigsty.cc/docs/software/odoo)： 企业级开源 ERP 系统
+- [Dify](https://pigsty.cc/docs/app/dify/)： AI智能体工作流编排与 LLMOps
+- [Odoo](https://pigsty.cc/docs/app/odoo/)： 企业级开源 ERP 系统
 
 Pigsty 专业版现在提供试点的 Kubernetes 部署支持与 Kafka KRaft 集群部署与监控支持
 
 - **`KUBE`**： 使用 cri-dockerd 或 containerd 部署由 Pigsty 托管的 Kubernetes 集群
 - **`KAFKA`**：部署由 Kraft 协议支持的高可用 Kafka 集群
 
---------
+## 问题修复
 
-### 问题修复
-
-- 通过 `node_packages` 中的默认值 `[openssh-server`]，[CVE-2024-6387](https://pigsty.io/zh/blog/db/cve-2024-6387/) 可以在 Pigsty 安装过程中被自动修复。
+- 通过 `node_packages` 中的默认值 `[openssh-server`]，[CVE-2024-6387](/db/cve-2024-6387/) 可以在 Pigsty 安装过程中被自动修复。
 - 修复了 Loki 解析 Nginx 日志标签基数过大导致的内存消耗问题。
 - 修复了 EL8 系统中上游 Ansible 依赖变化导致的 bootstrap 失效问题（python3.11-jmespath 升级至 python3.12-jmespath）

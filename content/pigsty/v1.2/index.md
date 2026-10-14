@@ -8,14 +8,11 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.2.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v120) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484799&idx=1&sn=bb4a87eba481c6851582899ae9955f10&chksm=fe4b30a4c93cb9b2ad9d68d837763bb1dd547c81d6ec04684ef98072ead8271695b9abba78d1&scene=21#wechat_redirect)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v1.2.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v120) | [微信公众号](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484799&idx=1&sn=bb4a87eba481c6851582899ae9955f10&chksm=fe4b30a4c93cb9b2ad9d68d837763bb1dd547c81d6ec04684ef98072ead8271695b9abba78d1&scene=21#wechat_redirect)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.2.0)
+[![Pigsty v1.2：PG14默认，监控现有PG（图 1）](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v1.2.0)
 
 Pigsty v1.2 正式发布，将 PostgreSQL 14 作为默认版本，并支持独立监控现有数据库实例。
-
-----------------
 
 ## PostgreSQL 14 成为默认版本
 
@@ -26,8 +23,6 @@ PostgreSQL 14 于上月发布，在各方面特别是可观测性上有显著改
 ![timescale-postgis-citus](timescale-postgis-citus.jpg)
 
 三者相互兼容，可组合使用。
-
-----------------
 
 ## 仅监控部署模式
 
@@ -51,8 +46,6 @@ PostgreSQL 14 于上月发布，在各方面特别是可观测性上有显著改
 
 尽管只有 PostgreSQL 本身的指标，但 Pigsty 监控系统的大部分功能仍可正常工作。经测试，Pigsty 也可直接用于监控 MatrixDB、GreenPlum 等 PostgreSQL 衍生/兼容数据库产品。
 
-----------------
-
 ## 配置模板精简
 
 配置模板被进一步精简：现在只有两种模板：**生产环境**（默认）与 **沙箱环境**。
@@ -74,15 +67,11 @@ PostgreSQL 14 于上月发布，在各方面特别是可观测性上有显著改
 
 Pigsty 始终保持 `./configure && make install` 一行命令完成安装的优良传统。
 
-----------------
-
 ## 实用工具剧本
 
 新增 `pgsql-migration` 剧本可自动生成数据库迁移所需的命令、脚本与手册，使基于逻辑复制的在线不停机数据库迁移变得简单（已在生产环境迁移数十套数据库）。
 
 `pgsql-audit` 剧本可根据审计需求生成对应数据库实例的审计报告。
-
-----------------
 
 ## 示例应用
 
@@ -98,8 +87,6 @@ v1.2 提供两个新的 Pigsty App 示例：
 
 两个应用功能简单但实用，开发只用了不到一小时。Pigsty 在产出具有基本功能的应用原型时是一个非常趁手的工具。
 
-----------------
-
 ## 后续规划
 
 **PGSQL v8** - 提供更加层次分明的监控面板组织，面向不同用户群体提供不同的主题视图。
@@ -113,8 +100,6 @@ v1.2 提供两个新的 Pigsty App 示例：
 **REDIS v1beta** - Redis 经常与 PostgreSQL 搭配使用，后续版本会将 Redis 部署与监控整合为完整的解决方案。
 
 ![redis-v1](redis-v1.jpg)
-
-----------------
 
 ## v1.2.0 更新日志
 
@@ -150,8 +135,6 @@ v1.2 提供两个新的 Pigsty App 示例：
 
 - pgbouncer_exporter 资源所有者改为 `{{ pg_dbsu }}` 而不是 postgres
 - 修复执行 `REINDEX TABLE CONCURRENTLY` 时 pg_exporter 在 pg_table/pg_index 上的重复指标问题
-
-----------------
 
 ## 升级说明
 

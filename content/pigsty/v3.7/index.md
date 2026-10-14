@@ -8,10 +8,9 @@ summary: >
 series: [Pigsty]
 tags: [Pigsty]
 ---
+> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.7.0) | [**发布注记**](https://pigsty.cc/docs/about/release/#v370) | [微信公众号](https://mp.weixin.qq.com/s/Sui0kzOD9M_XYlNR-BZ1Ng)
 
-> [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.7.0) | [**发布注记**](https://pigsty.cc/docs/releasenote/#v370) | [微信公众号](https://mp.weixin.qq.com/s/Sui0kzOD9M_XYlNR-BZ1Ng)
-
-[![](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.7.0)
+[![Pigsty v3.7：PG万磁王，PG18深度支持（图 1）](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.7.0)
 
 Pigsty v3.7.0 正式发布，带来完整的 PostgreSQL 18 生产级支持，以及四个新操作系统的支持：Debian 13 与 EL 10 在 x86_64/ARM64 架构上的全部组合。扩展插件数量从 423 个增至 437 个，大量扩展同步更新至最新版本。
 
@@ -19,9 +18,7 @@ Pigsty v3.7.0 正式发布，带来完整的 PostgreSQL 18 生产级支持，以
 
 凭借在 PostgreSQL 扩展生态的突出贡献，Pigsty 在第八届 PostgreSQL 数据库生态大会上荣获 **"PostgreSQL 万磁王"** 奖。
 
-![](magneto-award.jpg)
-
---------
+![Pigsty v3.7：PG万磁王，PG18深度支持（图 2）](magneto-award.jpg)
 
 ## PostgreSQL 18 成为默认版本
 
@@ -31,15 +28,13 @@ PG 18 引入了多项重要特性：时态主键（Temporal Primary Key）、内
 
 与此同时，11 月发布的 PG 13.23 将是 PG 13 的最后一个版本，该大版本正式进入 EOL 状态。Pigsty v3.7 是最后一个包含 PG 13 完整扩展支持的版本 —— 所有扩展均已重新编译，但后续将不再更新。
 
---------
-
 ## 史诗级扩展更新
 
 支持 PG 18 远不止内核部署那么简单。从 beta 阶段开始，Pigsty 就提供了 PG 18 的部署能力，但要将其作为生产默认版本，扩展生态的跟进至关重要。目前除 Citus 外，主流扩展均已支持 PG 18。为此，我们修复了数十个扩展的兼容性问题，并统一了 40 余个 Rust 扩展的 pgrx 版本。
 
 这是一次史诗级的更新。PG 18 上的可用扩展数量达到 390-405 个（因发行版略有差异）。完整的扩展可用性信息可在 [PGEXT.CLOUD](https://pgext.cloud) 查阅。近三个月的扩展更新情况如下：
 
-![](changes.jpg)
+![Pigsty v3.7：PG万磁王，PG18深度支持：史诗级扩展更新（图 3）](changes.jpg)
 
 多个扩展迎来里程碑式更新：
 
@@ -54,15 +49,13 @@ PG 18 引入了多项重要特性：时态主键（Temporal Primary Key）、内
 
 **凭借这一贡献，Pigsty 在第八届 PostgreSQL 数据库生态大会上荣获"PostgreSQL 万磁王"奖。**
 
-![](magneto-cert.jpg)
-
---------
+![Pigsty v3.7：PG万磁王，PG18深度支持：史诗级扩展更新（图 4）](magneto-cert.jpg)
 
 ## 新增操作系统支持：EL 10 与 Debian 13
 
 本版本新增四个操作系统支持，主线支持总数达到 14 个。
 
-![](os.jpg)
+![Pigsty v3.7：PG万磁王，PG18深度支持：新增操作系统支持：EL 10 与 Debian 13（图 5）](os.jpg)
 
 **适配过程中的主要挑战：**
 
@@ -76,13 +69,11 @@ PG 18 引入了多项重要特性：时态主键（Temporal Primary Key）、内
 
 **维护策略调整**：Pigsty 将仅维护各系列最近两个大版本。随着 EL 10 与 Debian 13 的加入，EL 8、Debian 11、Ubuntu 20.04 将不再主动更新（支持不移除），新扩展包与测试流程不再覆盖这些老系统。
 
---------
-
 ## 多内核同步更新
 
 除原生 PostgreSQL 内核外，本版本同步更新了多个衍生内核：
 
-![](kernels.jpg)
+![Pigsty v3.7：PG万磁王，PG18深度支持：多内核同步更新（图 6）](kernels.jpg)
 
 | 内核 | 更新内容 |
 |------|----------|
@@ -95,20 +86,16 @@ PG 18 引入了多项重要特性：时态主键（Temporal Primary Key）、内
 
 这些内核均可在新操作系统上平滑使用（Babelfish 除外），进一步巩固了 Pigsty 作为"元发行版"（Meta-Distribution）的定位 —— 一个可以开箱即用体验各种 PostgreSQL 风味的统一平台。
 
---------
-
 ## 参数模板优化
 
 针对 PG 18 与新场景优化了默认参数模板：
 
-![](parameters.jpg)
+![Pigsty v3.7：PG万磁王，PG18深度支持：参数模板优化（图 7）](parameters.jpg)
 
 - 优化 CPU、进程、线程与并行查询相关参数配置
 - 确保各类扩展拥有充足的 background worker 资源
 - 放宽 OLTP 模板对并行查询的限制
 - 新增维护保养、故障排查、误删恢复等 SOP 文档
-
---------
 
 ## 愿景：PostgreSQL 生态的 Ubuntu
 
@@ -122,9 +109,6 @@ Pigsty 已成为 PostgreSQL 生态中国开源项目中 Star 数最高的项目�
 - **构建差异化优势**：业界领先的监控系统与最完整的扩展生态
 - **整合生态资源**：融合 Supabase、Percona 等发行版的核心能力
 - **优化开发者体验**：在保证专业性的同时兼顾易用性
-
---------
---------
 
 ## v3.7.0
 
