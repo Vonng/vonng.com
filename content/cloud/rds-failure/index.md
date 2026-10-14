@@ -47,7 +47,7 @@ tags: [下云, RDS, 阿里云]
 - WAL 堆积是因为卡 BUG 了，还是客户侧发现，推断并推动解决的
 - 卡 BUG “据称” 是因为云盘吞吐打满了
 
-我的朋友瑞典马工一贯主张，“[用云数据库可以替代 DBA](/cloud/no-more-dba/)”。
+我的朋友瑞典马工一贯主张，“[用云数据库可以替代 DBA](https://mp.weixin.qq.com/s/PqCD80H927s0yJrBr4QQqw)”。
 我认为在理论上有一定可行性 —— 由云厂商组建一个专家池，提供[DBA 时分共享服务](/cloud/dba-vs-rds)。
 
 但现状很可能是：**云厂商没有合格的 DBA，不专业的工程师甚至会给你出馊主意，把跑得好好的数据库搞坏，最后赖到资源不足上，再建议你扩容升配好多赚一笔。**
@@ -228,7 +228,7 @@ RDS 工程师给出的诊断是，磁盘 IO 打满导致 WAL 堆积，建议升�
 
 [阿里云又挂了，这次是光缆被挖断了？](/cloud/aliyun-fiber-cut/)
 
-[互联网故障背后的草台班子们](/cloud/amateur-internet-outages/)
+[互联网故障背后的草台班子们](https://mp.weixin.qq.com/s/OxhhJ4U1P43di_eaE1uGPw)
 
 [阿里云周爆：云数据库管控又挂了](/cloud/aliyun-weekly-crash/)
 

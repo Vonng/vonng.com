@@ -65,15 +65,15 @@ tags: [云计算, AWS, 故障复盘]
 
 [阿里云又挂了，这次是光缆被挖断了？](/cloud/aliyun-fiber-cut/)
 
-[云计算：菜就是一种原罪](/cloud/cloud-incompetence/)
+[云计算：菜就是一种原罪](https://mp.weixin.qq.com/s/jYIqj94B07oTu9KC85bjtQ)
 
 [taobao.com 证书过期](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487367&idx=1&sn=d6e4abd2b2249d27bd8b8146b591b026&scene=21#wechat_redirect "taobao.com 证书过期")
 
-[牙膏云？您可别吹捧云厂商了](/cloud/toothpaste-cloud/)
+[牙膏云？您可别吹捧云厂商了](https://mp.weixin.qq.com/s/XZqe4tbJ9lgf8a6PWj7vjw)
 
 [罗永浩救不了牙膏云](/cloud/luo-live/)
 
-[迷失在阿里云的年轻人](/cloud/lost-youth-at-aliyun/)
+[迷失在阿里云的年轻人](https://mp.weixin.qq.com/s/w7YzdxSrAsIqk2gXBks9CA)
 
 [剖析云算力成本，阿里云真的降价了吗？](/cloud/ecs/)
 
@@ -87,11 +87,11 @@ tags: [云计算, AWS, 故障复盘]
 
 [阿里云的羊毛抓紧薅，五千的云服务器三百拿](/cloud/cheap-ecs/)
 
-[云厂商眼中的客户：又穷又闲又缺爱](/cloud/cloud-customers-poor-bored-lonely/)
+[云厂商眼中的客户：又穷又闲又缺爱](https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ)
 
 ### 腾讯云
 
-[腾讯真的走通云原生之路了吗？](/cloud/tencent-cloud-native/)
+[腾讯真的走通云原生之路了吗？](https://mp.weixin.qq.com/s/v0vbsy_OXIDNrbBvUUMV9Q)
 
 [我们能从腾讯云故障复盘中学到什么？](/cloud/qcloud/)
 
@@ -107,7 +107,7 @@ tags: [云计算, AWS, 故障复盘]
 
 [删库：Google 云爆破了大基金的整个云账户](/cloud/gcp-unisuper/)
 
-[云计算不能做成云算计之一：云行贿必须清理](/cloud/cloud-bribery/)
+[云计算不能做成云算计之一：云行贿必须清理](https://mp.weixin.qq.com/s/GetqBeJqO3mHWmyItej9Cw)
 
 ---
 

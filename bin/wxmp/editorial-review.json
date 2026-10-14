@@ -6,16 +6,16 @@
     "already_imported": 154,
     "keep_user_source": 2,
     "exclude_covered": 19,
-    "keep_high_value_reprint": 71,
+    "exclude_reprint": 64,
     "exclude": 6,
     "exclude_promo": 23,
     "exclude_superseded": 3,
+    "keep_related_reprint": 8,
     "exclude_directory": 1,
     "exclude_water": 6,
     "exclude_external_profile": 1,
     "keep_independent": 3,
     "keep_high_value_original": 2,
-    "imported_high_value_external": 1,
     "merge_into_local": 1
   },
   "rows": [
@@ -999,10 +999,11 @@
       "suggested_local_candidate": "pg/pg-performence/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "奇绩创坛整理的 Paul Graham 中文译稿转载，正文保留其活动推广；并非冯若航本人译稿。",
       "author": "Paul Graham",
-      "slug": "paul-graham-wealth-creation"
+      "slug": "paul-graham-wealth-creation",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/1vO46dvlfK-I0LKSKNcMMQ",
@@ -1059,10 +1060,11 @@
       "suggested_local_candidate": "pigsty/v2.3/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "陆奇",
-      "slug": "luqi-enterprise-software"
+      "slug": "luqi-enterprise-software",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/3KcwPfxPs5UTgNY0tNx5ng",
@@ -1140,10 +1142,11 @@
       "suggested_local_candidate": "cloud/no-dba-bullshit/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "瑞典马工",
-      "slug": "no-more-dba"
+      "slug": "no-more-dba",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/phYTWRhHE6WtXJwzLyql6A",
@@ -1200,10 +1203,11 @@
       "suggested_local_candidate": "cloud/ebs/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "老头头",
-      "slug": "open-source-vs-free"
+      "slug": "open-source-vs-free",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/-E_-HZ7LvOze5lmzy3QbQA",
@@ -1300,10 +1304,11 @@
       "suggested_local_candidate": "pg/pg-is-no1/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "用户于 2026-10-14 明确要求移除，不再作为相关转载例外保留。",
       "author": "姜承尧",
-      "slug": "mysql-most-successful-db"
+      "slug": "mysql-most-successful-db",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/7UvQulQGt9SIhUQasxuEZw",
@@ -1482,10 +1487,11 @@
       "suggested_local_candidate": "cloud/gcp-unisuper/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "瑞典马工",
-      "slug": "cloud-customers-poor-bored-lonely"
+      "slug": "cloud-customers-poor-bored-lonely",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/zy1H19NpKYiNJdgghK4HjQ",
@@ -1604,10 +1610,11 @@
       "suggested_local_candidate": "cloud/bsod-friday/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "瑞典马工",
-      "slug": "amateur-internet-outages"
+      "slug": "amateur-internet-outages",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/rpyNczx0AD_iseMMLioVjw",
@@ -1624,10 +1631,11 @@
       "suggested_local_candidate": "db/db-in-k8s/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "keep_related_reprint",
+      "new_reason": "直接回应冯若航《数据库应该放入 K8S 里吗》，保留本人参与争鸣的另一方原文。",
       "author": "fanux",
-      "slug": "database-in-k8s-counterpoint"
+      "slug": "database-in-k8s-counterpoint",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/p4Ys10ZdEDAuqNAiRmcnIQ",
@@ -1724,10 +1732,11 @@
       "suggested_local_candidate": "cloud/aliyun-ha/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "瑞典马工",
-      "slug": "aliyun-enterprise-market"
+      "slug": "aliyun-enterprise-market",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/8FJfdxiqiWBOgpjCbk6i6A",
@@ -1764,10 +1773,11 @@
       "suggested_local_candidate": "cloud/aliyun-ha/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "Leo（思维南人）",
-      "slug": "state-owned-enterprise-cloud-view"
+      "slug": "state-owned-enterprise-cloud-view",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/79_PnX-a5iSfDMgz_VUx5A",
@@ -1804,10 +1814,11 @@
       "suggested_local_candidate": "db/mysql-baijiu/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "瑞典马工",
-      "slug": "internet-tech-masterclass"
+      "slug": "internet-tech-masterclass",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/qnSTd5SUmSYGN6b-K117wA",
@@ -2005,10 +2016,11 @@
       "suggested_local_candidate": "cloud/aliyun-ha/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "会说话的波吉",
-      "slug": "aliyun-price-cut-despair"
+      "slug": "aliyun-price-cut-despair",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/AMQ8eMR8ivpbhAelaJgXEQ",
@@ -2066,10 +2078,11 @@
       "suggested_local_candidate": "cloud/ecs/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "瑞典马工",
-      "slug": "lost-youth-at-aliyun"
+      "slug": "lost-youth-at-aliyun",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/_ijL2OXAQJQrmWiE-KKzdw",
@@ -2086,10 +2099,11 @@
       "suggested_local_candidate": "db/redis-oss/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "瑞典马工",
-      "slug": "what-public-cloud-sells"
+      "slug": "what-public-cloud-sells",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/mdZfBaryMalO2NStkbC_eA",
@@ -2166,10 +2180,11 @@
       "suggested_local_candidate": "cloud/luo-live/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "瑞典马工",
-      "slug": "toothpaste-cloud"
+      "slug": "toothpaste-cloud",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/56ih9GFBAWPE0IJ3ni2u3g",
@@ -2266,10 +2281,11 @@
       "suggested_local_candidate": "cloud/debris/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "冷技术热思考",
-      "slug": "public-cloud-untested"
+      "slug": "public-cloud-untested",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/_2luIza-Yr09EVlqZ8MJfw",
@@ -2286,10 +2302,11 @@
       "suggested_local_candidate": "cloud/qcloud/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "周新宇",
-      "slug": "cloud-outage-underinvestment"
+      "slug": "cloud-outage-underinvestment",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/ZEH_yjs0zrJIOG-iNRMf1A",
@@ -2306,10 +2323,11 @@
       "suggested_local_candidate": "pg/pg-is-best/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "VAGE",
-      "slug": "why-cloud-keeps-failing"
+      "slug": "why-cloud-keeps-failing",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/bgXb7cDwVGOxmm8LT305UA",
@@ -2346,10 +2364,11 @@
       "suggested_local_candidate": "cloud/tencent-openclaw/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "瑞典马工",
-      "slug": "tencent-cloud-native"
+      "slug": "tencent-cloud-native",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/FKNavZROB4inrtBnAUxjJg",
@@ -2366,10 +2385,11 @@
       "suggested_local_candidate": "ai/fep/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "王小瑞",
-      "slug": "prepaid-cloud-native"
+      "slug": "prepaid-cloud-native",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/oLVTENYU_H01Z4F5DDNqtQ",
@@ -2386,10 +2406,11 @@
       "suggested_local_candidate": "db/bad-mysql/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "熊灿灿",
-      "slug": "harvest-sql-tuning"
+      "slug": "harvest-sql-tuning",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/-ntsNfdEq3b4qs5tKP7tfQ",
@@ -2426,10 +2447,11 @@
       "suggested_local_candidate": "pg/pg-is-best/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "titi",
-      "slug": "cloud-pr-war"
+      "slug": "cloud-pr-war",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/jYIqj94B07oTu9KC85bjtQ",
@@ -2446,10 +2468,11 @@
       "suggested_local_candidate": "cloud/exit/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "瑞典马工",
-      "slug": "cloud-incompetence"
+      "slug": "cloud-incompetence",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/lJLDroHxSUr-ev7yHnXW7g",
@@ -2486,10 +2509,11 @@
       "suggested_local_candidate": "ai/saas-burn-pg-rise/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "会说话的波吉",
-      "slug": "venture-capital-software"
+      "slug": "venture-capital-software",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/bQH2yXUPq-1vkUKHVgwy7g",
@@ -2526,10 +2550,11 @@
       "suggested_local_candidate": "db/ai-dba-job/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "詹姆斯邦德007",
-      "slug": "database-migration-toolbox"
+      "slug": "database-migration-toolbox",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/C0YyE52KbLLbnG1C2FqGRg",
@@ -2587,10 +2612,11 @@
       "suggested_local_candidate": "pg/dify-setup/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "瑞典马工",
-      "slug": "nonsense-writers"
+      "slug": "nonsense-writers",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/73EVmMRVGBJmGCuoMaUu4Q",
@@ -2747,10 +2773,11 @@
       "suggested_local_candidate": "pg/pg-is-no1-again/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "keep_related_reprint",
+      "new_reason": "作者明确记录 duckdb_fdw 被收录进 Pigsty、由冯若航推广的生态合作。",
       "author": "alitrack",
-      "slug": "duckdb-fdw-1-0"
+      "slug": "duckdb-fdw-1-0",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/p4KE2xjRx6UPT1z9cig--A",
@@ -2767,10 +2794,11 @@
       "suggested_local_candidate": "ai/ai-agent-era/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "keep_related_reprint",
+      "new_reason": "开篇直接回应冯若航对 DBA 与开发者角色的判断，并讨论 Pigsty 和双方争论。",
       "author": "瑞典马工",
-      "slug": "developers-are-db-users"
+      "slug": "developers-are-db-users",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/vceZUVrVTIEljVDNkuY47w",
@@ -2787,10 +2815,11 @@
       "suggested_local_candidate": "db/ai-dba-job/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "李令辉",
-      "slug": "dba-get-off"
+      "slug": "dba-get-off",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/Khw0T1H3efFLV9jqOrBMTw",
@@ -2827,10 +2856,11 @@
       "suggested_local_candidate": "db/db-is-the-arch/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "李令辉",
-      "slug": "infra-department-fading"
+      "slug": "infra-department-fading",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/LicoWCEui78_xeQ5FKS54g",
@@ -2847,10 +2877,11 @@
       "suggested_local_candidate": "db/db-is-the-arch/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "瑞典马工",
-      "slug": "need-infra-team"
+      "slug": "need-infra-team",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/3RuZ7ite_exxh2XOPB3HCA",
@@ -2907,10 +2938,11 @@
       "suggested_local_candidate": "db/can-oracle-save-mysql/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "李令辉",
-      "slug": "oracle-java-software-business"
+      "slug": "oracle-java-software-business",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/9AEJZ4GumaHtK_Yeh0n-Yw",
@@ -2927,10 +2959,11 @@
       "suggested_local_candidate": "db/sovereign-dbos/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "思维男人",
-      "slug": "infra-needs-advanced-tech"
+      "slug": "infra-needs-advanced-tech",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/8mkKqyhrmMKES7U_VtBw2w",
@@ -2947,10 +2980,11 @@
       "suggested_local_candidate": "db/db-is-the-arch/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "titi",
-      "slug": "infra-road-ahead"
+      "slug": "infra-road-ahead",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/HFKWZqE9jwMhf5X_yjb13A",
@@ -2967,10 +3001,11 @@
       "suggested_local_candidate": "db/sovereign-dbos/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "程序员 Aike",
-      "slug": "infra-team-needed"
+      "slug": "infra-team-needed",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/bwiVnU9UUkMP5ai1NUyM4g",
@@ -3373,10 +3408,11 @@
       "suggested_local_candidate": "cloud/rds-scam/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "诗语",
-      "slug": "aliyun-dcdn-bill"
+      "slug": "aliyun-dcdn-bill",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/yxa9GnS0xTMGBVnzcM1_Fg",
@@ -3496,10 +3532,11 @@
       "suggested_local_candidate": "db/db-choke/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "熊灿灿",
-      "slug": "who-chokes-us"
+      "slug": "who-chokes-us",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/eawgZ3hE63b3fRfrJ1sqfw",
@@ -3637,10 +3674,11 @@
       "suggested_local_candidate": "db/linus-ban-ru/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "魏永明",
-      "slug": "china-open-source-crossroads"
+      "slug": "china-open-source-crossroads",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/3uD9sxCg-lI1MlOg3NacvQ",
@@ -3717,10 +3755,11 @@
       "suggested_local_candidate": "pg/pg-center/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "熊灿灿发布其本人译著的公告，正文明确说明译者与个人项目；不是冯若航的译稿。",
       "author": "熊灿灿",
-      "slug": "pg14-internals-cn"
+      "slug": "pg14-internals-cn",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/WxnApDbw8Mi-rD5mkBnYwQ",
@@ -3937,10 +3976,11 @@
       "suggested_local_candidate": "cloud/netease/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "瑞典马工",
-      "slug": "cloud-sales-discount"
+      "slug": "cloud-sales-discount",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/p5DTvpaubWXYnw1wx30K9g",
@@ -3957,10 +3997,11 @@
       "suggested_local_candidate": "misc/isd/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "刘俊夏的中文译介转载；虽附英文原文，但本次转载和导入记录均署刘俊夏，不属于本人翻译。",
       "author": "刘俊夏",
-      "slug": "leave-aws-save-80-percent"
+      "slug": "leave-aws-save-80-percent",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/GEDjjdUWD1TlrjyTkR5FJw",
@@ -3977,10 +4018,11 @@
       "suggested_local_candidate": "cloud/aliyun-supabase/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "瑞典马工",
-      "slug": "api-soul-of-cloud"
+      "slug": "api-soul-of-cloud",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/pyub-KOpUlqB706k7f11Lw",
@@ -3997,10 +4039,11 @@
       "suggested_local_candidate": "cloud/aliyun-supabase/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "瑞典马工",
-      "slug": "sre-outdated"
+      "slug": "sre-outdated",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/3hS_dP5Db6dyOKRT3fBwAQ",
@@ -4017,10 +4060,11 @@
       "suggested_local_candidate": "db/future-hardware/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "巫师小猪",
-      "slug": "district-datacenters"
+      "slug": "district-datacenters",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/zODEfRQrMreFeEGjWXhK4g",
@@ -4157,10 +4201,11 @@
       "suggested_local_candidate": "ai/new-stuff/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "瑞典马工",
-      "slug": "code-plagiarism-is-theft"
+      "slug": "code-plagiarism-is-theft",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/zlDgo8efTuiSzFHOqmQchQ",
@@ -4177,10 +4222,11 @@
       "suggested_local_candidate": "ai/deepseek-interview/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "会说话的波吉",
-      "slug": "deepseek-performance-art"
+      "slug": "deepseek-performance-art",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/jh2BvBmNawfTVYgU6fz6Fg",
@@ -4298,10 +4344,11 @@
       "suggested_local_candidate": "ai/ai-agent-era/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "keep_related_reprint",
+      "new_reason": "附有完整的“老冯评论”，记录本人在阿里与苹果相关的 HTAP 实践和论证，不能按纯转载整篇丢弃。",
       "author": "瑞典马工",
-      "slug": "htap-no-applause"
+      "slug": "htap-no-applause",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/1jjBMe525CtDaq1XrDztHQ",
@@ -4401,10 +4448,11 @@
       "suggested_local_candidate": "db/oracle-kill-mysql/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "digoal",
-      "slug": "oracle-competitor-open-source"
+      "slug": "oracle-competitor-open-source",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/zuADA_qImguH7pVlnOnOIg",
@@ -4521,10 +4569,11 @@
       "suggested_local_candidate": "cloud/aliyun-supabase/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "瑞典马工",
-      "slug": "cloud-bribery"
+      "slug": "cloud-bribery",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/4no4Raj26u6GbUiHECBAjA",
@@ -4701,10 +4750,11 @@
       "suggested_local_candidate": "ai/ai-agent-era/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "keep_related_reprint",
+      "new_reason": "用户点名保留；影视飓风使用 Pigsty 的生产案例，并附冯若航评论。",
       "author": "龚锐",
-      "slug": "davinci-database"
+      "slug": "davinci-database",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/skxFplC0ow0Hh9gqs_N4hQ",
@@ -4904,10 +4954,11 @@
       "suggested_local_candidate": "pg/openai-postgres/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "熊灿灿",
-      "slug": "postgres-multicast"
+      "slug": "postgres-multicast",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/ZxLskYGmHCOWfG80uOoopQ",
@@ -4964,10 +5015,11 @@
       "suggested_local_candidate": "cloud/cloud-exit-2026/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "瑞典马工",
-      "slug": "aliyun-hardcoded-password"
+      "slug": "aliyun-hardcoded-password",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/0pT7wb0Y6ohgvEltED93hA",
@@ -5044,10 +5096,11 @@
       "suggested_local_candidate": "db/mysql-vs-pgsql/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "digoal",
-      "slug": "goodbye-mysql-hello-pg"
+      "slug": "goodbye-mysql-hello-pg",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/l1b-eq06NyuN61cqZoYJjA",
@@ -5244,10 +5297,11 @@
       "suggested_local_candidate": "db/ai-dba-job/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "会说话的波吉",
-      "slug": "china-ai-enterprise"
+      "slug": "china-ai-enterprise",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/9kpLDrF-bGskmmUMucfWoA",
@@ -5324,10 +5378,11 @@
       "suggested_local_candidate": "ai/ai-emotion/index.md",
       "decision": "exclude_media_only",
       "reason": "纯图片、视频、直播卡片、二维码或社交动态，缺少可迁移正文",
-      "new_decision": "imported_high_value_external",
-      "new_reason": "已从 GitHub 权威原文仓库恢复完整正文",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "HW-whistleblower",
-      "slug": "pangu-model-story"
+      "slug": "pangu-model-story",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/chiedyhDX2vleOLFFI2ACw",
@@ -5404,10 +5459,11 @@
       "suggested_local_candidate": "db/bad-etcd/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "快刀青衣",
-      "slug": "get-notes-tencent-report"
+      "slug": "get-notes-tencent-report",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/GEeNKfd4z-k4jBV8h7gfFg",
@@ -5464,10 +5520,11 @@
       "suggested_local_candidate": "ai/cc-leak/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "马驰",
-      "slug": "qwen-code-rushed"
+      "slug": "qwen-code-rushed",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/909t5Ah3ql2Ydy87cv6sxg",
@@ -5524,10 +5581,11 @@
       "suggested_local_candidate": "pg/pg-mirror-pigsty/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "瑞典马工",
-      "slug": "gojek-leaves-tencent-cloud"
+      "slug": "gojek-leaves-tencent-cloud",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/qC4OWyErtuwBw31HZLW3yg",
@@ -5664,10 +5722,11 @@
       "suggested_local_candidate": "pg/pg-convention-2018/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "IvorySQL",
-      "slug": "pg18-six-features"
+      "slug": "pg18-six-features",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/wLHHzRmu9sfgufukA8oexA",
@@ -5684,10 +5743,11 @@
       "suggested_local_candidate": "ai/ai-writing/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "陈明",
-      "slug": "ai-kills-ops"
+      "slug": "ai-kills-ops",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/fTygs1w9zrbQkvjsxjGOcg",
@@ -5825,10 +5885,11 @@
       "suggested_local_candidate": "cloud/cf-ck-down/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "瑞典马工",
-      "slug": "regulate-cloudflare"
+      "slug": "regulate-cloudflare",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/immOsWr2lkqWADx_6yOGCQ",
@@ -5885,10 +5946,11 @@
       "suggested_local_candidate": "db/ontology-again/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "瑞典马工",
-      "slug": "fde-silicon-valley"
+      "slug": "fde-silicon-valley",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/0PfWK6GLVT2XJeRaf8viYg",
@@ -5925,10 +5987,11 @@
       "suggested_local_candidate": "pg/ai-db-king/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "keep_related_reprint",
+      "new_reason": "末节明确回应冯若航《MySQL：互联网行业的服从测试》，本文亦被本人后续文章引用讨论，保留这组直接争鸣。",
       "author": "瑞典马工",
-      "slug": "db-choice-ai-era"
+      "slug": "db-choice-ai-era",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/UXwNjcTgS1yESWbxXuxQUg",
@@ -5945,10 +6008,11 @@
       "suggested_local_candidate": "cloud/aliyun-ha/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "keep_related_reprint",
+      "new_reason": "围绕冯若航的小红书下云文章被投诉及后续回应展开，是与本人直接相关的事件记录。",
       "author": "瑞典马工",
-      "slug": "aliyun-solutions-team"
+      "slug": "aliyun-solutions-team",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/KpR2PYkiwsxkG2N1dPTkEg",
@@ -5985,10 +6049,11 @@
       "suggested_local_candidate": "db/db-in-2025/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "VAGE",
-      "slug": "gaussdb-bank-of-china-outage"
+      "slug": "gaussdb-bank-of-china-outage",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/RFb8qcS22EM85hO5-tUNcQ",
@@ -6125,10 +6190,11 @@
       "suggested_local_candidate": "ai/agent-os/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "瑞典马工",
-      "slug": "pingcap-ai-team"
+      "slug": "pingcap-ai-team",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/UwIqHI3PA9aeTfMMEzkyIA",
@@ -6145,10 +6211,11 @@
       "suggested_local_candidate": "pg/pigsty-relicense/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "keep_related_reprint",
+      "new_reason": "全文讨论 Pigsty 4.0 的许可证变更，属于项目直接相关的外部评价。",
       "author": "digoal",
-      "slug": "pigsty-apache-license"
+      "slug": "pigsty-apache-license",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/CZX1AFIqH9f3rM1NXx0jTA",
@@ -6165,10 +6232,11 @@
       "suggested_local_candidate": "pigsty/v4.0/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "会说话的波吉",
-      "slug": "ai-ui-civilization"
+      "slug": "ai-ui-civilization",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/rThnqXp2JXVV9UQncNV3kg",
@@ -6386,10 +6454,11 @@
       "suggested_local_candidate": "ai/openclaw-hype/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "瑞典马工",
-      "slug": "opc-ai-transformation"
+      "slug": "opc-ai-transformation",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/0S9f5aP2U_1P7TaBgdKonQ",
@@ -6488,10 +6557,11 @@
       "suggested_local_candidate": "pg/pigsty-relicense/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "xieydd",
-      "slug": "kv-cache-memory-system"
+      "slug": "kv-cache-memory-system",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/3_b7Pw6AazIuTA3NQsk8wA",
@@ -6550,10 +6620,11 @@
       "suggested_local_candidate": "ai/fep/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
       "author": "视觉即世界",
-      "slug": "skeleton-of-intelligence"
+      "slug": "skeleton-of-intelligence",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/MfF9W0ZASDuE8JI-jG7MeQ",
@@ -6810,10 +6881,11 @@
       "suggested_local_candidate": "db/minio-is-dead/index.md",
       "decision": "exclude_reprint",
       "reason": "明确转载；避免把第三方全文复制进个人博客",
-      "new_decision": "keep_high_value_reprint",
-      "new_reason": "正文完整且具有长期技术或行业价值",
+      "new_decision": "exclude_reprint",
+      "new_reason": "用户于 2026-10-14 明确要求移除，不再作为相关转载例外保留。",
       "author": "白小安",
-      "slug": "minio-critical-vulnerability"
+      "slug": "minio-critical-vulnerability",
+      "policy_reviewed_at": "2026-10-14"
     },
     {
       "wx_url": "https://mp.weixin.qq.com/s/NIyIvS9shAFBrU5m1NlWSA",
@@ -7137,5 +7209,6 @@
       "author": "",
       "slug": "shi-oracle-de-shi-wu-rang-postgresql-ying-le-ma"
     }
-  ]
+  ],
+  "policy_reviewed_at": "2026-10-14"
 }

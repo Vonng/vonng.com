@@ -45,18 +45,18 @@ tags: [云计算, 阿里云, 故障复盘]
 - [阿里云周爆：云数据库管控又挂了](/cloud/aliyun-weekly-crash/)
 - [【阿里】云计算史诗级大翻车来了](/cloud/aliyun/)
 
-### [牙膏云？您可别吹捧云厂商了‍](/cloud/toothpaste-cloud/)
+### [牙膏云？您可别吹捧云厂商了‍](https://mp.weixin.qq.com/s/XZqe4tbJ9lgf8a6PWj7vjw)
 
 [从降本增笑到真的降本增效](/cloud/smile/)
 
 [罗永浩救不了牙膏云](/cloud/luo-live/)
 
-[互联网故障背后的草台班子们](/cloud/amateur-internet-outages/) [迷失在阿里云的年轻人](/cloud/lost-youth-at-aliyun/)\
-[腾讯云/阿里云故障背后：投入不足](/cloud/cloud-outage-underinvestment/) · [腾讯云：颜面尽失的草台班子](/cloud/tencent-disgrace/)\
+[互联网故障背后的草台班子们](https://mp.weixin.qq.com/s/OxhhJ4U1P43di_eaE1uGPw) [迷失在阿里云的年轻人](https://mp.weixin.qq.com/s/w7YzdxSrAsIqk2gXBks9CA)\
+[腾讯云/阿里云故障背后：投入不足](https://mp.weixin.qq.com/s/_2luIza-Yr09EVlqZ8MJfw) · [腾讯云：颜面尽失的草台班子](/cloud/tencent-disgrace/)\
 [云上黑暗森林：打爆云账单，只需要 S3 桶名](/cloud/s3-scam/)\
 [删库：Google 云爆破了大基金的整个云账户](/cloud/gcp-unisuper/)\
-[为什么我们的云老是故障](/cloud/why-cloud-keeps-failing/)\
-[你用的公有云都没做过测试](/cloud/public-cloud-untested/)
+[为什么我们的云老是故障](https://mp.weixin.qq.com/s/ZEH_yjs0zrJIOG-iNRMf1A)\
+[你用的公有云都没做过测试](https://mp.weixin.qq.com/s/YtuJGDP1FgTVJnMlOCgsmQ)
 
 [云计算泥石流](/cloud/debris/)曾几何时，“上云“近乎成为技术圈的政治正确，整整一代应用开发者的视野被云遮蔽。就让我们用实打实的数据分析与亲身经历，讲清楚公有云租赁模式的价值与陷阱 —— 在这个降本增效的时代中，供您借鉴与参考。点一个关注 ⭐️，精彩不迷路[Ahrefs 不上云，省下四亿美元](/cloud/ahrefs-saving/)\
 

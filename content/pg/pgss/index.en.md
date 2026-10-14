@@ -2,7 +2,7 @@
 title: "PostgreSQL Macro Query Optimization with pg_stat_statements"
 linkTitle: "PG Query Optimization: The Macro Way"
 date: 2023-10-26
-authors: [nikolay-samokhvalov]
+authors: [vonng]
 summary: >
   Query optimization is one of the core responsibilities of DBAs. This article introduces how to use metrics provided by pg_stat_statements for macro-level PostgreSQL query optimization.
 tags: [PostgreSQL, PG Admin, Performance]

@@ -132,13 +132,13 @@ Apache 2.0 是最宽松的开源许可证之一，其核心条款明确允许商
 
 [阿里云：从上到下烂到根了 去除原文版](https://mp.weixin.qq.com/s/0pT7wb0Y6ohgvEltED93hA)
 
-[硬编码密码泄漏，阿里云的软件工程也太差了](/cloud/aliyun-hardcoded-password/) 马工
+[硬编码密码泄漏，阿里云的软件工程也太差了](https://mp.weixin.qq.com/s/43pIBxYvsszeBZGk7LU7_w) 马工
 
 [花钱买罪受的大冤种：逃离云计算妙瓦底](/cloud/patsy/)
 
 [支付宝崩了？双十一整活王又来了](https://mp.weixin.qq.com/s/D2XmL2YYN2kqHtwFN4FVGQ)
 
-[记一次阿里云 DCDN 加速仅 32 秒就欠了 1600 的问题处理（扯皮）](/cloud/aliyun-dcdn-bill/) 转
+[记一次阿里云 DCDN 加速仅 32 秒就欠了 1600 的问题处理（扯皮）](https://mp.weixin.qq.com/s/0Wnv1B80Tk4J03X3uAm4Ww) 转
 
 [阿里云：高可用容灾神话的破灭](/cloud/aliyun-ha/)
 
@@ -150,15 +150,15 @@ Apache 2.0 是最宽松的开源许可证之一，其核心条款明确允许商
 
 [阿里云又挂了，这次是光缆被挖断了？](/cloud/aliyun-fiber-cut/)
 
-[云计算：菜就是一种原罪](/cloud/cloud-incompetence/)
+[云计算：菜就是一种原罪](https://mp.weixin.qq.com/s/jYIqj94B07oTu9KC85bjtQ)
 
 [taobao.com 证书过期](https://mp.weixin.qq.com/s/-ntsNfdEq3b4qs5tKP7tfQ)
 
-[牙膏云？您可别吹捧云厂商了](/cloud/toothpaste-cloud/)
+[牙膏云？您可别吹捧云厂商了](https://mp.weixin.qq.com/s/XZqe4tbJ9lgf8a6PWj7vjw)
 
 [罗永浩救不了牙膏云](/cloud/luo-live/)
 
-[迷失在阿里云的年轻人](/cloud/lost-youth-at-aliyun/)
+[迷失在阿里云的年轻人](https://mp.weixin.qq.com/s/w7YzdxSrAsIqk2gXBks9CA)
 
 [剖析云算力成本，阿里云真的降价了吗？](/cloud/ecs/)
 
@@ -172,7 +172,7 @@ Apache 2.0 是最宽松的开源许可证之一，其核心条款明确允许商
 
 [阿里云的羊毛抓紧薅，五千的云服务器三百拿](/cloud/cheap-ecs/)
 
-[云厂商眼中的客户：又穷又闲又缺爱](/cloud/cloud-customers-poor-bored-lonely/) 马工
+[云厂商眼中的客户：又穷又闲又缺爱](https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ) 马工
 
 #### 云与开源
 

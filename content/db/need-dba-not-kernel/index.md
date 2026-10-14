@@ -52,7 +52,7 @@ tags: [数据库, 职业, 技术评论]
 - [驳《再论为什么你不应该招 DBA》](/cloud/no-dba-bullshit/)
 - [云数据库是不是智商税](/cloud/rds/)
 - [DBA 不是数据库的用户，开发者才是！](/cloud/developers-are-db-users/)
-- [数据库的“萝卜快跑”时刻已到，DBA 请下车](/cloud/dba-get-off/)
+- [数据库的“萝卜快跑”时刻已到，DBA 请下车](https://mp.weixin.qq.com/s/vceZUVrVTIEljVDNkuY47w)
 
 ---
 

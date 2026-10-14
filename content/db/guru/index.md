@@ -56,7 +56,7 @@ tags: [数据库, 技术评论]
 - 2022-05-16 [云 RDS：从删库到跑路](/cloud/drop-rds/)
 - 2024-02-02 [DBA 会被云淘汰吗？](/cloud/dba-vs-rds/)
 - 2023-03-01 [驳《再论为什么你不应该招 DBA》](/cloud/no-dba-bullshit/)
-- 2023-01-31 [你怎么还在招聘 DBA?](/cloud/no-more-dba/) 马工
+- 2023-01-31 [你怎么还在招聘 DBA?](https://mp.weixin.qq.com/s/PqCD80H927s0yJrBr4QQqw) 马工
 - 2022-05-10 [DBA 还是一份好工作吗？](/cloud/is-dba-good-job/)
 
 ### PG 生态篇
@@ -300,7 +300,7 @@ tags: [数据库, 技术评论]
 - 2023-03-29 [数据库需求层次金字塔](/db/demand-pyramid/)
 - 2023-03-01 [驳《再论为什么你不应该招 DBA》](/cloud/no-dba-bullshit/)
 - 2023-01-31 [云数据库是不是杀猪盘](/cloud/rds/)
-- 2023-01-31 [你怎么还在招聘 DBA?](/cloud/no-more-dba/) 马工
+- 2023-01-31 [你怎么还在招聘 DBA?](https://mp.weixin.qq.com/s/PqCD80H927s0yJrBr4QQqw) 马工
 - 2023-01-30 [云数据库是不是智商税](/cloud/rds/)
 - 2022-08-22 [PostgreSQL 到底有多强？](/pg/pg-performence/)
 - 2022-07-12 [为什么 PostgreSQL 是最成功的数据库？](/pg/pg-is-best/)

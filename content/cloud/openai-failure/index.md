@@ -47,7 +47,7 @@ OpenAI 在去年在 [PostgreSQL 数据库与 pgBouncer 连接池](https://commun
 
 [草台班子唱大戏，阿里云 RDS 翻车记](/cloud/rds-failure/)
 
-[互联网故障背后的草台班子们](/cloud/amateur-internet-outages/)
+[互联网故障背后的草台班子们](https://mp.weixin.qq.com/s/OxhhJ4U1P43di_eaE1uGPw)
 
 [数据库应该放入 K8S 里吗？](/db/db-in-k8s/)
 

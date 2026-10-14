@@ -1,7 +1,7 @@
 ---
 title: "2028 全球智能危机"
 date: 2026-02-24
-author: Citrini Research
+authors: [citrini-research, alap-shah]
 summary: >
   这是一篇从 2028 年回望当下的思想实验，试图建模 AI 导致人类智能溢价坍塌后，劳动力、信用与金融系统可能出现的连锁冲击。
 tags: [AI, 成本, 翻译]

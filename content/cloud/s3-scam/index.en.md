@@ -2,7 +2,7 @@
 title: "Cloud Dark Forest: Exploding Cloud Bills with Just S3 Bucket Names"
 linkTitle: Exploding Cloud Bills with Just S3 Bucket Names
 date: 2024-04-30
-authors: [vonng]
+authors: [maciej-pocwierz]
 summary: >
   The dark forest law has emerged on public cloud: Anyone who knows your S3 object storage bucket name can explode your cloud bill.
 tags: [Cloud-Exit, AWS, Object Storage]

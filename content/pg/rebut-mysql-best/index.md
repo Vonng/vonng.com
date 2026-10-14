@@ -7,7 +7,7 @@ summary: >
 tags: [PostgreSQL, MySQL, 技术评论]
 ---
 
-这篇《[MySQL：这个星球最成功的数据库](/pg/mysql-most-successful-db/)》是对我《[PostgreSQL：世界上最成功的数据库](/pg/pg-is-no1/)》一文的回应。可惜文中充斥着大量事实性错误，谎言与诡辩，扣大帽子和人身攻讦。既然有人不要体面，那今天我就用数据与事实来帮他体面。[扫码预约今晚的直播](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485873&idx=1&sn=731322e649c212eefc3e382efb31ae99&chksm=fe4b3c6ac93cb57c712471ed8cd54c3603937d0793bfd2518221749861a40140b64edb17550d&scene=21#wechat_redirect)，观看几分钟后开始的 MySQL 与 PostgreSQL 对决开源中国直播。
+这篇《[MySQL：这个星球最成功的数据库](https://mp.weixin.qq.com/s/rqziG1oP87REwhe33OAmlw)》是对我《[PostgreSQL：世界上最成功的数据库](/pg/pg-is-no1/)》一文的回应。可惜文中充斥着大量事实性错误，谎言与诡辩，扣大帽子和人身攻讦。既然有人不要体面，那今天我就用数据与事实来帮他体面。[扫码预约今晚的直播](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485873&idx=1&sn=731322e649c212eefc3e382efb31ae99&chksm=fe4b3c6ac93cb57c712471ed8cd54c3603937d0793bfd2518221749861a40140b64edb17550d&scene=21#wechat_redirect)，观看几分钟后开始的 MySQL 与 PostgreSQL 对决开源中国直播。
 
 ![图片](01.webp)
 

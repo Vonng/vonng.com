@@ -288,7 +288,7 @@ US‑EAST‑1 区域新建 EC2 实例启动问题的恢复取得进展，现已�
 - [云 SLA 是安慰剂还是厕纸合同？](/cloud/sla/)
 - [腾讯云：颜面尽失的草台班子](/cloud/tencent-disgrace/)
 - [【腾讯】云计算史诗级二翻车来了](/cloud/tencent-epic-fail-2/)
-- [互联网故障背后的草台班子们](/cloud/amateur-internet-outages/) 马工
+- [互联网故障背后的草台班子们](https://mp.weixin.qq.com/s/OxhhJ4U1P43di_eaE1uGPw) 马工
 - [从降本增笑到真的降本增效](/cloud/smile/)
 - [阿里云周爆：云数据库管控又挂了](/cloud/aliyun-weekly-crash/)
 - [我们能从阿里云史诗级故障中学到什么](/cloud/aliyun/)
@@ -302,7 +302,7 @@ US‑EAST‑1 区域新建 EC2 实例启动问题的恢复取得进展，现已�
 - [剖析云上算力真实成本](/cloud/ecs/)
 - [扒皮对象存储：从降本到杀猪](/cloud/s3/)
 - [垃圾腾讯云 CDN：从入门到放弃](/cloud/cdn/)
-- [记一次阿里云 DCDN 加速仅 32 秒就欠了 1600 的问题处理](/cloud/aliyun-dcdn-bill/) 转
+- [记一次阿里云 DCDN 加速仅 32 秒就欠了 1600 的问题处理](https://mp.weixin.qq.com/s/0Wnv1B80Tk4J03X3uAm4Ww) 转
 - [云 SLA 是安慰剂还是厕纸合同？](/cloud/sla/)
 - [FinOps 终点是下云](/cloud/finops/)
 - [本土云计算为啥还没挖沙子赚钱？](/cloud/profit/)

@@ -61,7 +61,7 @@ tags: [下云, 阿里云, 故障复盘]
 
 关于根因的小道消息也漫天飞舞，比如，有人说 ”权限系统推了个黑名单规则，黑名单规则维护在 OSS 上，访问 OSS 叉需要访问权限系统，然后权限系统又要访问 OSS，就尬住了“。”。还有人说 “这次双 11 期间，技术人员连续一周加班加点，双 11 一过，大家都松懈了。有个新手写了一段代码，更新了组件，导致了本次的断网“，还有人说：”阿里云所有服务用的都是同一个通配符证书，证书换错了“。
 
-如果是因为这些原因导致 **Auth** 挂掉，那可真是[草台班子](/cloud/cloud-customers-poor-bored-lonely/)到家了。尽管听上去很离谱，但这样的先例并不少。再次强调，这些路边社消息仅供参考，具体事故原因请以阿里云官方给出的复盘分析报告为准。
+如果是因为这些原因导致 **Auth** 挂掉，那可真是[草台班子](https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ)到家了。尽管听上去很离谱，但这样的先例并不少。再次强调，这些路边社消息仅供参考，具体事故原因请以阿里云官方给出的复盘分析报告为准。
 
 ---
 
@@ -181,7 +181,7 @@ tags: [下云, 阿里云, 故障复盘]
 
 [阿里云的羊毛抓紧薅，五千的云服务器三百拿](/cloud/cheap-ecs/)
 
-[云厂商眼中的客户：又穷又闲又缺爱](/cloud/cloud-customers-poor-bored-lonely/)
+[云厂商眼中的客户：又穷又闲又缺爱](https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ)
 
 [阿里云的故障在其他云也可能发生，并且可能丢数据](http://mp.weixin.qq.com/s?__biz=MzkwODMyMDE2NQ==&mid=2247483770&idx=1&sn=723c865ff27fd0ceace1d8fb2c76ddca&chksm=c0ca8db0f7bd04a63f79aba185e093bbb0ab5763b1f91f58cfc86551daf7e47bd6627dd8c73b#rd)
 

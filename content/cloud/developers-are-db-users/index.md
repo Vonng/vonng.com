@@ -75,7 +75,7 @@ DBA 是 DB 解决方案的一部分个。这个说法可能让一些朋友觉得
 
 ## 马工你屁放完了没？
 
-去年一月份，我依据个人经验写了[**《你怎么还在招聘 DBA》**](/cloud/no-more-dba/)，广大 DBA 们就很不开心了。后来我又写了[**《再论为什么你不应该招 DBA》**](https://mp.weixin.qq.com/s?__biz=MzkwODMyMDE2NQ==&mid=2247483919&idx=1&sn=fa5b4dba96b60bafeb862e05de8c7ff5&scene=21#wechat_redirect)，试图用一个简单的模型证明其合理性，广大 DBA 朋友们更生气了。有些特别激动的朋友甚至跑去我微信骂人，还对着我的头像吐口水，说我长得不好看（我本人不同意该观点）。我的朋友向宇写了一篇[**《为什么 DBA 不是一个好的职业选择》**](https://mp.weixin.qq.com/s?__biz=MzkwODMyMDE2NQ==&mid=2247483924&idx=1&sn=e631f11b8348c31c424b7c562ba4b52d&scene=21#wechat_redirect)也被骂了。
+去年一月份，我依据个人经验写了[**《你怎么还在招聘 DBA》**](https://mp.weixin.qq.com/s/PqCD80H927s0yJrBr4QQqw)，广大 DBA 们就很不开心了。后来我又写了[**《再论为什么你不应该招 DBA》**](https://mp.weixin.qq.com/s?__biz=MzkwODMyMDE2NQ==&mid=2247483919&idx=1&sn=fa5b4dba96b60bafeb862e05de8c7ff5&scene=21#wechat_redirect)，试图用一个简单的模型证明其合理性，广大 DBA 朋友们更生气了。有些特别激动的朋友甚至跑去我微信骂人，还对着我的头像吐口水，说我长得不好看（我本人不同意该观点）。我的朋友向宇写了一篇[**《为什么 DBA 不是一个好的职业选择》**](https://mp.weixin.qq.com/s?__biz=MzkwODMyMDE2NQ==&mid=2247483924&idx=1&sn=e631f11b8348c31c424b7c562ba4b52d&scene=21#wechat_redirect)也被骂了。
 
 但是杀死一个信使并不能让坏消息变成好消息。随着云计算的成熟，应用系统已经抛弃了传统的 LAMP 架构，数据库本身也在向着云原生方向进化。在这双重冲击下，没有道理相信 DBA 这个组件不会变化。
 

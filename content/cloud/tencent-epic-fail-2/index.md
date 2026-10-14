@@ -29,10 +29,10 @@ tags: [云计算, 故障复盘]
 
 ## [云数据库是不是智商税](/cloud/rds/)
 
-## [牙膏云？您可别吹捧云厂商了](/cloud/toothpaste-cloud/)\
+## [牙膏云？您可别吹捧云厂商了](https://mp.weixin.qq.com/s/XZqe4tbJ9lgf8a6PWj7vjw)\
 
 [罗永浩救不了牙膏云](/cloud/luo-live/) · [吊打公有云的赛博佛祖 Cloudflare](/cloud/cloudflare/)\
-[云计算为啥还没挖沙子赚钱？](/cloud/profit/) · [FinOps 终点是下云](/cloud/finops/) · [卡在政企客户门口的阿里云](/cloud/aliyun-enterprise-market/) · [云厂商眼中的客户：又穷又闲又缺爱](/cloud/cloud-customers-poor-bored-lonely/) [阿里云降价背后折射出的绝望](/cloud/aliyun-price-cut-despair/)迷失在阿里云的年轻人[互联网故障背后的草台班子们](/cloud/amateur-internet-outages/) [门内的国企如何看门外的云厂商](/cloud/state-owned-enterprise-cloud-view/) · [剖析云算力成本，阿里云真的降价了吗？](/cloud/ecs/)\
+[云计算为啥还没挖沙子赚钱？](/cloud/profit/) · [FinOps 终点是下云](/cloud/finops/) · [卡在政企客户门口的阿里云](https://mp.weixin.qq.com/s/1dse1KSCq2xG-QaL1JzZ8Q) · [云厂商眼中的客户：又穷又闲又缺爱](https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ) [阿里云降价背后折射出的绝望](https://mp.weixin.qq.com/s/BYu8nZjqAQbWc2yT8K_pFQ)迷失在阿里云的年轻人[互联网故障背后的草台班子们](https://mp.weixin.qq.com/s/OxhhJ4U1P43di_eaE1uGPw) [门内的国企如何看门外的云厂商](https://mp.weixin.qq.com/s/qSTEf9txjHNTHeEFv3NkWg) · [剖析云算力成本，阿里云真的降价了吗？](/cloud/ecs/)\
 
 ---
 

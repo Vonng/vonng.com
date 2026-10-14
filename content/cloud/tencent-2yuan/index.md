@@ -119,7 +119,7 @@ tags: [云计算, 故障复盘, 成本]
 
 [腾讯云 CDN：从入门到放弃](/cloud/cdn/)
 
-[腾讯真的走通云原生之路了吗？](/cloud/tencent-cloud-native/)\
+[腾讯真的走通云原生之路了吗？](https://mp.weixin.qq.com/s/v0vbsy_OXIDNrbBvUUMV9Q)\
 
 [我们能从腾讯云故障复盘中学到什么？](/cloud/qcloud/)
 

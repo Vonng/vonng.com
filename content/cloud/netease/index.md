@@ -81,15 +81,15 @@ Curve 团队负责人还发表过一篇《curve：遗憾告别 未竟之旅》�
 
 [云上黑暗森林：打爆 AWS 云账单，只需要 S3 桶名](/cloud/s3-scam/)
 
-[互联网技术大师速成班](/misc/internet-tech-masterclass/)
+[互联网技术大师速成班](https://mp.weixin.qq.com/s/8ZffsCgchv8LH5ujv0lRGQ)
 
-[门内的国企如何看门外的云厂商](/cloud/state-owned-enterprise-cloud-view/)
+[门内的国企如何看门外的云厂商](https://mp.weixin.qq.com/s/qSTEf9txjHNTHeEFv3NkWg)
 
-[卡在政企客户门口的阿里云](/cloud/aliyun-enterprise-market/)
+[卡在政企客户门口的阿里云](https://mp.weixin.qq.com/s/1dse1KSCq2xG-QaL1JzZ8Q)
 
-[互联网故障背后的草台班子们](/cloud/amateur-internet-outages/)
+[互联网故障背后的草台班子们](https://mp.weixin.qq.com/s/OxhhJ4U1P43di_eaE1uGPw)
 
-[云厂商眼中的客户：又穷又闲又缺爱](/cloud/cloud-customers-poor-bored-lonely/)
+[云厂商眼中的客户：又穷又闲又缺爱](https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ)
 
 [taobao.com 证书过期](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487367&idx=1&sn=d6e4abd2b2249d27bd8b8146b591b026&chksm=fe4b3a5cc93cb34a8e90e4b7f06803fa11ee8234014cd4f1aedff59e3bf3c846b3cb133090f2&scene=21#wechat_redirect)
 

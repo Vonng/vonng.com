@@ -1,7 +1,7 @@
 ---
 title: "瑞士强制政府软件开源"
 date: 2024-07-24
-author: Steven Vaughan-Nichols
+authors: [steven-vaughan-nichols]
 origin: "https://www.zdnet.com/article/switzerland-now-requires-all-government-software-to-be-open-source/"
 summary: >
   瑞士政府通过开源立法走在时代前沿，强制要求公共部门使用开源软件。真正的自主可控根源在于"开源社区"，而不是某些民族主义式的国产软件。公共资金，公共代码。

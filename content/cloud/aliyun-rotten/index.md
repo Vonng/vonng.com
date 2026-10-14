@@ -29,7 +29,7 @@ tags: [云计算, 阿里云, 技术评论]
 当然，最好玩的当属今日份的乐子，spring-ai-alibaba 提交代码把 key 提交了，V 友发现还真能用，用了半天后刚刚终于失效了。\
 
 ![图片](05.webp)
-AI 服务 密钥就这么大喇喇的提交上来了，然后还提了个 Commit 清理……。瑞典马工对此还有专文评论《[硬编码密码泄漏，阿里云的软件工程也太差了](/cloud/aliyun-hardcoded-password/)》
+AI 服务 密钥就这么大喇喇的提交上来了，然后还提了个 Commit 清理……。瑞典马工对此还有专文评论《[硬编码密码泄漏，阿里云的软件工程也太差了](https://mp.weixin.qq.com/s/43pIBxYvsszeBZGk7LU7_w)》
 
 ![图片](06.webp)
 

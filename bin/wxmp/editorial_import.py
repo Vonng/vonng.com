@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reclassify WXMP exclusions by editorial value and prepare imports."""
+"""Prepare WXMP imports, allowing only individually reviewed reprint exceptions."""
 
 from __future__ import annotations
 
@@ -223,6 +223,15 @@ def main() -> int:
     manifest = json.loads(Path(a.markdown_manifest).read_text())
     ledger = json.loads(Path(a.ledger).read_text())
     content = Path(a.content)
+    # Reprints require a recorded, article-specific relationship to the owner or
+    # his projects. General technical value is not a reason to import them.
+    policy_path = content.parent / "data/editorial/non-author-audit.json"
+    policy = json.loads(policy_path.read_text())
+    related_reprints = {
+        Path(row["path"]).parent.name: row["reason"]
+        for row in policy["articles"]
+        if row["decision"] == "keep_related_reprint"
+    }
     md_map = {str(x.get("url") or ""): x for x in manifest.get("entries", [])}
     ledger_urls = {str(x.get("wx_url") or "") for x in ledger}
     ledger_slugs = {str(x.get("slug") or "") for x in ledger}
@@ -240,8 +249,11 @@ def main() -> int:
             review.append({**row, "new_decision": "exclude", "new_reason": EXCLUDE_REPRINT[title], "author": "", "slug": ""})
             continue
         slug = SLUGS.get(title)
-        if not slug:
-            raise SystemExit(f"missing semantic slug: {title}")
+        if slug not in related_reprints:
+            review.append({**row, "new_decision": "exclude_reprint",
+                           "new_reason": "普通转载不纳入个人博客；须有逐篇确认的本人或项目关联例外。",
+                           "author": "", "slug": slug or ""})
+            continue
         source = md_map.get(str(row.get("wx_url") or "")) or {}
         author_name = og_author(str(source.get("source_html") or ""))
         author_slug = TITLE_AUTHOR.get(title) or AUTHOR_SLUGS.get(author_name)
@@ -256,13 +268,13 @@ def main() -> int:
             "authors": [author_slug],
             "source_markdown": str(source.get("markdown_file") or row.get("source_markdown") or ""),
             "conversion_status": str(row.get("conversion_status") or source.get("status") or "ok"),
-            "decision": "keep_high_value_reprint",
+            "decision": "keep_related_reprint",
             "author_display": display,
             "attribution": f"原作者：{display}",
             "translation_derived": title.startswith("Paul Graham："),
         }
         final.append(item)
-        review.append({**row, "section": section, "new_decision": "keep_high_value_reprint", "new_reason": "正文完整且具有长期技术或行业价值", "author": display, "slug": slug})
+        review.append({**row, "section": section, "new_decision": "keep_related_reprint", "new_reason": related_reprints[slug], "author": display, "slug": slug})
 
     for title, (section, slug, authors, tags) in INDEPENDENT.items():
         row = all_rows.get(title)
@@ -292,12 +304,9 @@ def main() -> int:
         if row.get("decision") != "exclude_media_only":
             continue
         if row.get("wx_title") == "盘古之殇：大模型研发历程的心酸与黑暗":
-            if (content / "ai" / "pangu-model-story" / "index.md").exists():
-                review.append({**row, "section": "ai", "new_decision": "imported_high_value_external",
-                               "new_reason": "已从 GitHub 权威原文仓库恢复完整正文",
-                               "author": "HW-whistleblower", "slug": "pangu-model-story"})
-            else:
-                review.append({**row, "new_decision": "needs_source_high_priority", "new_reason": "高价值外部分享；原知乎正文已删除且本地仅有摘要封面", "author": "待确认", "slug": "pangu-model-story"})
+            review.append({**row, "section": "ai", "new_decision": "exclude_reprint",
+                           "new_reason": "外部中文文章转载，不属于本人翻译或项目关联例外。",
+                           "author": "HW-whistleblower", "slug": "pangu-model-story"})
         else:
             review.append({**row, "new_decision": "exclude_media_or_promo", "new_reason": "纯视频、分享卡片、二维码、活动广告或仅图片内容", "author": "", "slug": ""})
 

@@ -1,0 +1,3439 @@
+{
+  "reviewed_at": "2026-10-14",
+  "scope": "670 Chinese leaf bundles; 103 non-self authors taxonomy entries and 5 legacy author entries",
+  "policy": "保留本人翻译、译评及明确关联项目或本人参与的例外；删除普通转载。仅提及本人、泛泛相关的数据库话题或文章质量高，不自动构成例外。",
+  "counts": {
+    "keep_translation_legacy_author": 5,
+    "remove_reprint": 64,
+    "keep_related_reprint": 8,
+    "keep_translation": 30,
+    "restore_self_authorship": 1
+  },
+  "removed_author_profiles": [
+    "aike",
+    "bai-xiaoan",
+    "boji",
+    "chen-ming",
+    "cold-tech",
+    "hw-whistleblower",
+    "ivorysql",
+    "james-bond-007",
+    "jiang-chengyao",
+    "kuaidao-qingyi",
+    "laotoutou",
+    "leo",
+    "li-linghui",
+    "liu-junxia",
+    "lu-qi",
+    "ma-chi",
+    "nikolay-samokhvalov",
+    "paul-graham",
+    "shiyu",
+    "siwei-nanren",
+    "titi",
+    "vage",
+    "visual-is-world",
+    "wang-xiaorui",
+    "wei-yongming",
+    "wizard-pig",
+    "xieydd",
+    "xiongcc",
+    "zhou-xinyu"
+  ],
+  "metadata_changes": [
+    {
+      "path": "content/cloud/ahrefs-saving/index.en.md",
+      "authors": [
+        "efim-mirochnik"
+      ]
+    },
+    {
+      "path": "content/cloud/odyssey-done/index.en.md",
+      "authors": [
+        "dhh"
+      ]
+    },
+    {
+      "path": "content/pg/just-use-pg/index.en.md",
+      "authors": [
+        "stephan-schmidt"
+      ]
+    },
+    {
+      "path": "content/pg/pg-scalability/index.en.md",
+      "authors": [
+        "neo-kim"
+      ]
+    },
+    {
+      "path": "content/pg/pgss/index.md",
+      "authors": [
+        "vonng"
+      ]
+    },
+    {
+      "path": "content/pg/pgss/index.en.md",
+      "authors": [
+        "vonng"
+      ]
+    },
+    {
+      "path": "content/ai/2028-ai-crisis/index.md",
+      "authors": [
+        "citrini-research",
+        "alap-shah"
+      ]
+    },
+    {
+      "path": "content/cloud/s3-scam/index.md",
+      "authors": [
+        "maciej-pocwierz"
+      ]
+    },
+    {
+      "path": "content/cloud/s3-scam/index.en.md",
+      "authors": [
+        "maciej-pocwierz"
+      ]
+    },
+    {
+      "path": "content/db/oss-gov/index.md",
+      "authors": [
+        "steven-vaughan-nichols"
+      ]
+    },
+    {
+      "path": "content/db/smalldata-decade/index.md",
+      "authors": [
+        "hannes-muhleisen"
+      ]
+    },
+    {
+      "path": "content/db/mongo-powered-by-pg/index.md",
+      "authors": [
+        "john-de-goes"
+      ]
+    },
+    {
+      "path": "content/db/mongo-powered-by-pg/index.en.md",
+      "authors": [
+        "john-de-goes"
+      ]
+    }
+  ],
+  "link_changes": [
+    {
+      "path": "content/db/domestic-db-acceptance/index.md",
+      "from": "/db/gaussdb-bank-of-china-outage/",
+      "to": "https://mp.weixin.qq.com/s/6TyRKtsg81cTLz5A3q0Njw",
+      "count": 1
+    },
+    {
+      "path": "content/db/guru/index.md",
+      "from": "/cloud/no-more-dba/",
+      "to": "https://mp.weixin.qq.com/s/PqCD80H927s0yJrBr4QQqw",
+      "count": 2
+    },
+    {
+      "path": "content/db/need-dba-not-kernel/index.md",
+      "from": "/cloud/dba-get-off/",
+      "to": "https://mp.weixin.qq.com/s/vceZUVrVTIEljVDNkuY47w",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aws-dns-failure/index.md",
+      "from": "/cloud/aliyun-dcdn-bill/",
+      "to": "https://mp.weixin.qq.com/s/0Wnv1B80Tk4J03X3uAm4Ww",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aws-dns-failure/index.md",
+      "from": "/cloud/amateur-internet-outages/",
+      "to": "https://mp.weixin.qq.com/s/OxhhJ4U1P43di_eaE1uGPw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/tencent-2yuan/index.md",
+      "from": "/cloud/tencent-cloud-native/",
+      "to": "https://mp.weixin.qq.com/s/v0vbsy_OXIDNrbBvUUMV9Q",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/openai-failure/index.md",
+      "from": "/cloud/amateur-internet-outages/",
+      "to": "https://mp.weixin.qq.com/s/OxhhJ4U1P43di_eaE1uGPw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun/index.md",
+      "from": "/cloud/cloud-customers-poor-bored-lonely/",
+      "to": "https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ",
+      "count": 2
+    },
+    {
+      "path": "content/cloud/dhh-s3-migration/index.md",
+      "from": "/cloud/cloud-customers-poor-bored-lonely/",
+      "to": "https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/dhh-s3-migration/index.md",
+      "from": "/cloud/cloud-incompetence/",
+      "to": "https://mp.weixin.qq.com/s/jYIqj94B07oTu9KC85bjtQ",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/dhh-s3-migration/index.md",
+      "from": "/cloud/lost-youth-at-aliyun/",
+      "to": "https://mp.weixin.qq.com/s/w7YzdxSrAsIqk2gXBks9CA",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/dhh-s3-migration/index.md",
+      "from": "/cloud/tencent-cloud-native/",
+      "to": "https://mp.weixin.qq.com/s/v0vbsy_OXIDNrbBvUUMV9Q",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/dhh-s3-migration/index.md",
+      "from": "/cloud/toothpaste-cloud/",
+      "to": "https://mp.weixin.qq.com/s/XZqe4tbJ9lgf8a6PWj7vjw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/tencent-epic-fail-2/index.md",
+      "from": "/cloud/aliyun-enterprise-market/",
+      "to": "https://mp.weixin.qq.com/s/1dse1KSCq2xG-QaL1JzZ8Q",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/tencent-epic-fail-2/index.md",
+      "from": "/cloud/aliyun-price-cut-despair/",
+      "to": "https://mp.weixin.qq.com/s/BYu8nZjqAQbWc2yT8K_pFQ",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/tencent-epic-fail-2/index.md",
+      "from": "/cloud/amateur-internet-outages/",
+      "to": "https://mp.weixin.qq.com/s/OxhhJ4U1P43di_eaE1uGPw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/tencent-epic-fail-2/index.md",
+      "from": "/cloud/cloud-customers-poor-bored-lonely/",
+      "to": "https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/tencent-epic-fail-2/index.md",
+      "from": "/cloud/state-owned-enterprise-cloud-view/",
+      "to": "https://mp.weixin.qq.com/s/qSTEf9txjHNTHeEFv3NkWg",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/tencent-epic-fail-2/index.md",
+      "from": "/cloud/toothpaste-cloud/",
+      "to": "https://mp.weixin.qq.com/s/XZqe4tbJ9lgf8a6PWj7vjw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-supabase/index.md",
+      "from": "/cloud/aliyun-dcdn-bill/",
+      "to": "https://mp.weixin.qq.com/s/0Wnv1B80Tk4J03X3uAm4Ww",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-supabase/index.md",
+      "from": "/cloud/aliyun-hardcoded-password/",
+      "to": "https://mp.weixin.qq.com/s/43pIBxYvsszeBZGk7LU7_w",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-supabase/index.md",
+      "from": "/cloud/cloud-customers-poor-bored-lonely/",
+      "to": "https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-supabase/index.md",
+      "from": "/cloud/cloud-incompetence/",
+      "to": "https://mp.weixin.qq.com/s/jYIqj94B07oTu9KC85bjtQ",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-supabase/index.md",
+      "from": "/cloud/lost-youth-at-aliyun/",
+      "to": "https://mp.weixin.qq.com/s/w7YzdxSrAsIqk2gXBks9CA",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-supabase/index.md",
+      "from": "/cloud/toothpaste-cloud/",
+      "to": "https://mp.weixin.qq.com/s/XZqe4tbJ9lgf8a6PWj7vjw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aws-tokyo-outage/index.md",
+      "from": "/cloud/cloud-bribery/",
+      "to": "https://mp.weixin.qq.com/s/GetqBeJqO3mHWmyItej9Cw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aws-tokyo-outage/index.md",
+      "from": "/cloud/cloud-customers-poor-bored-lonely/",
+      "to": "https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aws-tokyo-outage/index.md",
+      "from": "/cloud/cloud-incompetence/",
+      "to": "https://mp.weixin.qq.com/s/jYIqj94B07oTu9KC85bjtQ",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aws-tokyo-outage/index.md",
+      "from": "/cloud/lost-youth-at-aliyun/",
+      "to": "https://mp.weixin.qq.com/s/w7YzdxSrAsIqk2gXBks9CA",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aws-tokyo-outage/index.md",
+      "from": "/cloud/tencent-cloud-native/",
+      "to": "https://mp.weixin.qq.com/s/v0vbsy_OXIDNrbBvUUMV9Q",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aws-tokyo-outage/index.md",
+      "from": "/cloud/toothpaste-cloud/",
+      "to": "https://mp.weixin.qq.com/s/XZqe4tbJ9lgf8a6PWj7vjw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-domain-seized/index.md",
+      "from": "/cloud/aliyun-dcdn-bill/",
+      "to": "https://mp.weixin.qq.com/s/0Wnv1B80Tk4J03X3uAm4Ww",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-domain-seized/index.md",
+      "from": "/cloud/aliyun-enterprise-market/",
+      "to": "https://mp.weixin.qq.com/s/1dse1KSCq2xG-QaL1JzZ8Q",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-domain-seized/index.md",
+      "from": "/cloud/aliyun-hardcoded-password/",
+      "to": "https://mp.weixin.qq.com/s/43pIBxYvsszeBZGk7LU7_w",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-domain-seized/index.md",
+      "from": "/cloud/amateur-internet-outages/",
+      "to": "https://mp.weixin.qq.com/s/OxhhJ4U1P43di_eaE1uGPw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-domain-seized/index.md",
+      "from": "/cloud/cloud-bribery/",
+      "to": "https://mp.weixin.qq.com/s/GetqBeJqO3mHWmyItej9Cw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-domain-seized/index.md",
+      "from": "/cloud/cloud-customers-poor-bored-lonely/",
+      "to": "https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-domain-seized/index.md",
+      "from": "/cloud/cloud-incompetence/",
+      "to": "https://mp.weixin.qq.com/s/jYIqj94B07oTu9KC85bjtQ",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-domain-seized/index.md",
+      "from": "/cloud/lost-youth-at-aliyun/",
+      "to": "https://mp.weixin.qq.com/s/w7YzdxSrAsIqk2gXBks9CA",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-domain-seized/index.md",
+      "from": "/cloud/no-more-dba/",
+      "to": "https://mp.weixin.qq.com/s/PqCD80H927s0yJrBr4QQqw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-domain-seized/index.md",
+      "from": "/cloud/state-owned-enterprise-cloud-view/",
+      "to": "https://mp.weixin.qq.com/s/qSTEf9txjHNTHeEFv3NkWg",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-domain-seized/index.md",
+      "from": "/cloud/tencent-cloud-native/",
+      "to": "https://mp.weixin.qq.com/s/v0vbsy_OXIDNrbBvUUMV9Q",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-domain-seized/index.md",
+      "from": "/cloud/toothpaste-cloud/",
+      "to": "https://mp.weixin.qq.com/s/XZqe4tbJ9lgf8a6PWj7vjw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-domain-seized/index.md",
+      "from": "/cloud/what-public-cloud-sells/",
+      "to": "https://mp.weixin.qq.com/s/_ijL2OXAQJQrmWiE-KKzdw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-domain-seized/index.md",
+      "from": "/misc/internet-tech-masterclass/",
+      "to": "https://mp.weixin.qq.com/s/8ZffsCgchv8LH5ujv0lRGQ",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-domain-seized/index.md",
+      "from": "/misc/nonsense-writers/",
+      "to": "https://mp.weixin.qq.com/s/qAnEmtLz3EpSophz1TbFGA",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/china-4b-data-leak/index.md",
+      "from": "/cloud/aliyun-dcdn-bill/",
+      "to": "https://mp.weixin.qq.com/s/0Wnv1B80Tk4J03X3uAm4Ww",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/china-4b-data-leak/index.md",
+      "from": "/cloud/aliyun-enterprise-market/",
+      "to": "https://mp.weixin.qq.com/s/1dse1KSCq2xG-QaL1JzZ8Q",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/china-4b-data-leak/index.md",
+      "from": "/cloud/aliyun-hardcoded-password/",
+      "to": "https://mp.weixin.qq.com/s/43pIBxYvsszeBZGk7LU7_w",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/china-4b-data-leak/index.md",
+      "from": "/cloud/amateur-internet-outages/",
+      "to": "https://mp.weixin.qq.com/s/OxhhJ4U1P43di_eaE1uGPw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/china-4b-data-leak/index.md",
+      "from": "/cloud/cloud-bribery/",
+      "to": "https://mp.weixin.qq.com/s/GetqBeJqO3mHWmyItej9Cw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/china-4b-data-leak/index.md",
+      "from": "/cloud/cloud-customers-poor-bored-lonely/",
+      "to": "https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/china-4b-data-leak/index.md",
+      "from": "/cloud/cloud-incompetence/",
+      "to": "https://mp.weixin.qq.com/s/jYIqj94B07oTu9KC85bjtQ",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/china-4b-data-leak/index.md",
+      "from": "/cloud/lost-youth-at-aliyun/",
+      "to": "https://mp.weixin.qq.com/s/w7YzdxSrAsIqk2gXBks9CA",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/china-4b-data-leak/index.md",
+      "from": "/cloud/no-more-dba/",
+      "to": "https://mp.weixin.qq.com/s/PqCD80H927s0yJrBr4QQqw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/china-4b-data-leak/index.md",
+      "from": "/cloud/state-owned-enterprise-cloud-view/",
+      "to": "https://mp.weixin.qq.com/s/qSTEf9txjHNTHeEFv3NkWg",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/china-4b-data-leak/index.md",
+      "from": "/cloud/tencent-cloud-native/",
+      "to": "https://mp.weixin.qq.com/s/v0vbsy_OXIDNrbBvUUMV9Q",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/china-4b-data-leak/index.md",
+      "from": "/cloud/toothpaste-cloud/",
+      "to": "https://mp.weixin.qq.com/s/XZqe4tbJ9lgf8a6PWj7vjw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/china-4b-data-leak/index.md",
+      "from": "/cloud/what-public-cloud-sells/",
+      "to": "https://mp.weixin.qq.com/s/_ijL2OXAQJQrmWiE-KKzdw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/china-4b-data-leak/index.md",
+      "from": "/misc/internet-tech-masterclass/",
+      "to": "https://mp.weixin.qq.com/s/8ZffsCgchv8LH5ujv0lRGQ",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/china-4b-data-leak/index.md",
+      "from": "/misc/nonsense-writers/",
+      "to": "https://mp.weixin.qq.com/s/qAnEmtLz3EpSophz1TbFGA",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-ha/index.md",
+      "from": "/cloud/cloud-customers-poor-bored-lonely/",
+      "to": "https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-solutions-team/index.md",
+      "from": "/cloud/aliyun-enterprise-market/",
+      "to": "https://mp.weixin.qq.com/s/1dse1KSCq2xG-QaL1JzZ8Q",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/rds-duckdb/index.md",
+      "from": "/cloud/aliyun-dcdn-bill/",
+      "to": "https://mp.weixin.qq.com/s/0Wnv1B80Tk4J03X3uAm4Ww",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/rds-duckdb/index.md",
+      "from": "/cloud/cloud-customers-poor-bored-lonely/",
+      "to": "https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/rds-duckdb/index.md",
+      "from": "/cloud/cloud-incompetence/",
+      "to": "https://mp.weixin.qq.com/s/jYIqj94B07oTu9KC85bjtQ",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/rds-duckdb/index.md",
+      "from": "/cloud/lost-youth-at-aliyun/",
+      "to": "https://mp.weixin.qq.com/s/w7YzdxSrAsIqk2gXBks9CA",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/rds-duckdb/index.md",
+      "from": "/cloud/toothpaste-cloud/",
+      "to": "https://mp.weixin.qq.com/s/XZqe4tbJ9lgf8a6PWj7vjw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/rds-duckdb/index.md",
+      "from": "/misc/code-plagiarism-is-theft/",
+      "to": "https://mp.weixin.qq.com/s/72Yp7d6yjIezS9iQZgNw9w",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-fiber-cut/index.md",
+      "from": "/cloud/amateur-internet-outages/",
+      "to": "https://mp.weixin.qq.com/s/OxhhJ4U1P43di_eaE1uGPw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-fiber-cut/index.md",
+      "from": "/cloud/cloud-outage-underinvestment/",
+      "to": "https://mp.weixin.qq.com/s/_2luIza-Yr09EVlqZ8MJfw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-fiber-cut/index.md",
+      "from": "/cloud/lost-youth-at-aliyun/",
+      "to": "https://mp.weixin.qq.com/s/w7YzdxSrAsIqk2gXBks9CA",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-fiber-cut/index.md",
+      "from": "/cloud/public-cloud-untested/",
+      "to": "https://mp.weixin.qq.com/s/YtuJGDP1FgTVJnMlOCgsmQ",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-fiber-cut/index.md",
+      "from": "/cloud/toothpaste-cloud/",
+      "to": "https://mp.weixin.qq.com/s/XZqe4tbJ9lgf8a6PWj7vjw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-fiber-cut/index.md",
+      "from": "/cloud/why-cloud-keeps-failing/",
+      "to": "https://mp.weixin.qq.com/s/ZEH_yjs0zrJIOG-iNRMf1A",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/exit/index.md",
+      "from": "/cloud/aliyun-dcdn-bill/",
+      "to": "https://mp.weixin.qq.com/s/0Wnv1B80Tk4J03X3uAm4Ww",
+      "count": 3
+    },
+    {
+      "path": "content/cloud/exit/index.md",
+      "from": "/cloud/aliyun-enterprise-market/",
+      "to": "https://mp.weixin.qq.com/s/1dse1KSCq2xG-QaL1JzZ8Q",
+      "count": 2
+    },
+    {
+      "path": "content/cloud/exit/index.md",
+      "from": "/cloud/aliyun-hardcoded-password/",
+      "to": "https://mp.weixin.qq.com/s/43pIBxYvsszeBZGk7LU7_w",
+      "count": 2
+    },
+    {
+      "path": "content/cloud/exit/index.md",
+      "from": "/cloud/aliyun-price-cut-despair/",
+      "to": "https://mp.weixin.qq.com/s/BYu8nZjqAQbWc2yT8K_pFQ",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/exit/index.md",
+      "from": "/cloud/amateur-internet-outages/",
+      "to": "https://mp.weixin.qq.com/s/OxhhJ4U1P43di_eaE1uGPw",
+      "count": 2
+    },
+    {
+      "path": "content/cloud/exit/index.md",
+      "from": "/cloud/cloud-bribery/",
+      "to": "https://mp.weixin.qq.com/s/GetqBeJqO3mHWmyItej9Cw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/exit/index.md",
+      "from": "/cloud/cloud-customers-poor-bored-lonely/",
+      "to": "https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ",
+      "count": 3
+    },
+    {
+      "path": "content/cloud/exit/index.md",
+      "from": "/cloud/cloud-incompetence/",
+      "to": "https://mp.weixin.qq.com/s/jYIqj94B07oTu9KC85bjtQ",
+      "count": 2
+    },
+    {
+      "path": "content/cloud/exit/index.md",
+      "from": "/cloud/lost-youth-at-aliyun/",
+      "to": "https://mp.weixin.qq.com/s/w7YzdxSrAsIqk2gXBks9CA",
+      "count": 2
+    },
+    {
+      "path": "content/cloud/exit/index.md",
+      "from": "/cloud/no-more-dba/",
+      "to": "https://mp.weixin.qq.com/s/PqCD80H927s0yJrBr4QQqw",
+      "count": 2
+    },
+    {
+      "path": "content/cloud/exit/index.md",
+      "from": "/cloud/state-owned-enterprise-cloud-view/",
+      "to": "https://mp.weixin.qq.com/s/qSTEf9txjHNTHeEFv3NkWg",
+      "count": 2
+    },
+    {
+      "path": "content/cloud/exit/index.md",
+      "from": "/cloud/tencent-cloud-native/",
+      "to": "https://mp.weixin.qq.com/s/v0vbsy_OXIDNrbBvUUMV9Q",
+      "count": 2
+    },
+    {
+      "path": "content/cloud/exit/index.md",
+      "from": "/cloud/toothpaste-cloud/",
+      "to": "https://mp.weixin.qq.com/s/XZqe4tbJ9lgf8a6PWj7vjw",
+      "count": 3
+    },
+    {
+      "path": "content/cloud/exit/index.md",
+      "from": "/cloud/what-public-cloud-sells/",
+      "to": "https://mp.weixin.qq.com/s/_ijL2OXAQJQrmWiE-KKzdw",
+      "count": 2
+    },
+    {
+      "path": "content/cloud/exit/index.md",
+      "from": "/misc/internet-tech-masterclass/",
+      "to": "https://mp.weixin.qq.com/s/8ZffsCgchv8LH5ujv0lRGQ",
+      "count": 2
+    },
+    {
+      "path": "content/cloud/exit/index.md",
+      "from": "/misc/nonsense-writers/",
+      "to": "https://mp.weixin.qq.com/s/qAnEmtLz3EpSophz1TbFGA",
+      "count": 2
+    },
+    {
+      "path": "content/cloud/rds-scam/index.md",
+      "from": "/cloud/toothpaste-cloud/",
+      "to": "https://mp.weixin.qq.com/s/XZqe4tbJ9lgf8a6PWj7vjw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/developers-are-db-users/index.md",
+      "from": "/cloud/no-more-dba/",
+      "to": "https://mp.weixin.qq.com/s/PqCD80H927s0yJrBr4QQqw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/rds-failure/index.md",
+      "from": "/cloud/amateur-internet-outages/",
+      "to": "https://mp.weixin.qq.com/s/OxhhJ4U1P43di_eaE1uGPw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/rds-failure/index.md",
+      "from": "/cloud/no-more-dba/",
+      "to": "https://mp.weixin.qq.com/s/PqCD80H927s0yJrBr4QQqw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/aliyun-rotten/index.md",
+      "from": "/cloud/aliyun-hardcoded-password/",
+      "to": "https://mp.weixin.qq.com/s/43pIBxYvsszeBZGk7LU7_w",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/netease/index.md",
+      "from": "/cloud/aliyun-enterprise-market/",
+      "to": "https://mp.weixin.qq.com/s/1dse1KSCq2xG-QaL1JzZ8Q",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/netease/index.md",
+      "from": "/cloud/amateur-internet-outages/",
+      "to": "https://mp.weixin.qq.com/s/OxhhJ4U1P43di_eaE1uGPw",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/netease/index.md",
+      "from": "/cloud/cloud-customers-poor-bored-lonely/",
+      "to": "https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/netease/index.md",
+      "from": "/cloud/state-owned-enterprise-cloud-view/",
+      "to": "https://mp.weixin.qq.com/s/qSTEf9txjHNTHeEFv3NkWg",
+      "count": 1
+    },
+    {
+      "path": "content/cloud/netease/index.md",
+      "from": "/misc/internet-tech-masterclass/",
+      "to": "https://mp.weixin.qq.com/s/8ZffsCgchv8LH5ujv0lRGQ",
+      "count": 1
+    },
+    {
+      "path": "content/pg/pg-scalability/index.md",
+      "from": "/cloud/cloud-customers-poor-bored-lonely/",
+      "to": "https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ",
+      "count": 1
+    },
+    {
+      "path": "content/misc/wechat-year-2024/index.md",
+      "from": "/cloud/aliyun-dcdn-bill/",
+      "to": "https://mp.weixin.qq.com/s/0Wnv1B80Tk4J03X3uAm4Ww",
+      "count": 1
+    },
+    {
+      "path": "content/misc/wechat-year-2024/index.md",
+      "from": "/cloud/aliyun-enterprise-market/",
+      "to": "https://mp.weixin.qq.com/s/1dse1KSCq2xG-QaL1JzZ8Q",
+      "count": 1
+    },
+    {
+      "path": "content/misc/wechat-year-2024/index.md",
+      "from": "/cloud/cloud-incompetence/",
+      "to": "https://mp.weixin.qq.com/s/jYIqj94B07oTu9KC85bjtQ",
+      "count": 1
+    },
+    {
+      "path": "content/misc/wechat-year-2024/index.md",
+      "from": "/cloud/lost-youth-at-aliyun/",
+      "to": "https://mp.weixin.qq.com/s/w7YzdxSrAsIqk2gXBks9CA",
+      "count": 1
+    },
+    {
+      "path": "content/misc/wechat-year-2024/index.md",
+      "from": "/cloud/state-owned-enterprise-cloud-view/",
+      "to": "https://mp.weixin.qq.com/s/qSTEf9txjHNTHeEFv3NkWg",
+      "count": 1
+    },
+    {
+      "path": "content/misc/wechat-year-2024/index.md",
+      "from": "/cloud/tencent-cloud-native/",
+      "to": "https://mp.weixin.qq.com/s/v0vbsy_OXIDNrbBvUUMV9Q",
+      "count": 1
+    },
+    {
+      "path": "content/misc/wechat-year-2024/index.md",
+      "from": "/cloud/toothpaste-cloud/",
+      "to": "https://mp.weixin.qq.com/s/XZqe4tbJ9lgf8a6PWj7vjw",
+      "count": 1
+    },
+    {
+      "path": "content/misc/wechat-year-2024/index.md",
+      "from": "/cloud/what-public-cloud-sells/",
+      "to": "https://mp.weixin.qq.com/s/_ijL2OXAQJQrmWiE-KKzdw",
+      "count": 1
+    },
+    {
+      "path": "content/misc/wechat-year-2024/index.md",
+      "from": "/misc/internet-tech-masterclass/",
+      "to": "https://mp.weixin.qq.com/s/8ZffsCgchv8LH5ujv0lRGQ",
+      "count": 1
+    },
+    {
+      "path": "content/misc/wechat-year-2024/index.md",
+      "from": "/misc/nonsense-writers/",
+      "to": "https://mp.weixin.qq.com/s/qAnEmtLz3EpSophz1TbFGA",
+      "count": 1
+    },
+    {
+      "path": "content/pg/rebut-mysql-best/index.md",
+      "from": "/pg/mysql-most-successful-db/",
+      "to": "https://mp.weixin.qq.com/s/rqziG1oP87REwhe33OAmlw",
+      "count": 1
+    },
+    {
+      "path": "content/pg/mysql-pg-live-drama/index.md",
+      "from": "/pg/mysql-most-successful-db/",
+      "to": "https://mp.weixin.qq.com/s/rqziG1oP87REwhe33OAmlw",
+      "count": 1
+    }
+  ],
+  "articles": [
+    {
+      "path": "content/ai/2028-ai-crisis/index.md",
+      "title": "2028 全球智能危机",
+      "date": "2026-02-24",
+      "authors": [
+        "citrini-research",
+        "alap-shah"
+      ],
+      "author_names": [
+        "Citrini Research",
+        "Alap Shah"
+      ],
+      "decision": "keep_translation_legacy_author",
+      "reason": "正文明确署名 Citrini 与 Alap Shah，译者为冯若航。",
+      "source_url": "",
+      "source_sha256": "3c2475e9003b71f69ca160e3b3f8c935be88a47f2dc1b186b029178cfff176bc",
+      "evidence": [
+        {
+          "line": 13,
+          "text": "> 译者：冯若航"
+        }
+      ]
+    },
+    {
+      "path": "content/ai/ai-kills-ops/index.md",
+      "title": "把运维干掉不是开玩笑，用AI试了试4小时搞定3天活",
+      "date": "2025-09-27",
+      "authors": [
+        "chen-ming"
+      ],
+      "author_names": [
+        "陈明"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/wLHHzRmu9sfgufukA8oexA",
+      "source_sha256": "959dd584153d3f7f97c43016cfb298f4d4b5b4cf4b593c74d2bf70aa6ba96734",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：陈明"
+        },
+        {
+          "line": 171,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/wLHHzRmu9sfgufukA8oexA)"
+        }
+      ]
+    },
+    {
+      "path": "content/ai/ai-ui-civilization/index.md",
+      "title": "你用AI生成的每一行UI代码，可能都是在给人类文明拖后腿",
+      "date": "2026-01-31",
+      "authors": [
+        "boji"
+      ],
+      "author_names": [
+        "会说话的波吉"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/CZX1AFIqH9f3rM1NXx0jTA",
+      "source_sha256": "3114e54e589757d9237afe9760b2fcc725c1be1a0c92f67d3bd5f8b749363930",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：会说话的波吉"
+        },
+        {
+          "line": 140,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/CZX1AFIqH9f3rM1NXx0jTA)"
+        }
+      ]
+    },
+    {
+      "path": "content/ai/china-ai-enterprise/index.md",
+      "title": "中国，AI 技术的企业级应用创业前景茫然",
+      "date": "2025-06-29",
+      "authors": [
+        "boji"
+      ],
+      "author_names": [
+        "会说话的波吉"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/JVmlVlD64Nt9rtDxbaBnIw",
+      "source_sha256": "a4729f158b42a4b7f0e5c41d1e38a7202b65cd9a6f3b319ff75d2f39a45732ab",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：会说话的波吉"
+        },
+        {
+          "line": 82,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/JVmlVlD64Nt9rtDxbaBnIw)"
+        }
+      ]
+    },
+    {
+      "path": "content/ai/db-choice-ai-era/index.md",
+      "title": "MySQL赢了2000s，PostgreSQL赢得2020s，谁将赢得AI时代？——数据库选型的三要素分析法",
+      "date": "2025-12-21",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "keep_related_reprint",
+      "reason": "末节明确回应冯若航《MySQL：互联网行业的服从测试》，本文亦被本人后续文章引用讨论，保留这组直接争鸣。",
+      "source_url": "https://mp.weixin.qq.com/s/KGERTSOLvczm1dGmoBe4lA",
+      "source_sha256": "49cf61c20299f2da15e4866f074b111e98255e800271c41dd5ec3b33f2f04119",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 230,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/KGERTSOLvczm1dGmoBe4lA)"
+        }
+      ]
+    },
+    {
+      "path": "content/ai/deepseek-performance-art/index.md",
+      "title": "全民DeepSeek行为艺术观察",
+      "date": "2025-02-18",
+      "authors": [
+        "boji"
+      ],
+      "author_names": [
+        "会说话的波吉"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/zlDgo8efTuiSzFHOqmQchQ",
+      "source_sha256": "880519cae91a2f1e58e5522282a777000dd221b483591196af156d6f6602ced5",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：会说话的波吉"
+        },
+        {
+          "line": 118,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/zlDgo8efTuiSzFHOqmQchQ)"
+        }
+      ]
+    },
+    {
+      "path": "content/ai/kv-cache-memory-system/index.md",
+      "title": "从 KV Cache 到 AI 内存系统：大模型推理架构的演进",
+      "date": "2026-03-23",
+      "authors": [
+        "xieydd"
+      ],
+      "author_names": [
+        "xieydd"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/cagTlPJF13JZybqPXyacSw",
+      "source_sha256": "411c97acff2840d489b2fd9f8f39b1b0ae6baf9f51bc692f69061f4f6b6bf2ae",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：xieydd"
+        },
+        {
+          "line": 682,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/cagTlPJF13JZybqPXyacSw)"
+        }
+      ]
+    },
+    {
+      "path": "content/ai/opc-ai-transformation/index.md",
+      "title": "扯淡的一人公司OPC：团队AI转型才是正道",
+      "date": "2026-03-07",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/8heMP8qZ7HdlCKWam73M4g",
+      "source_sha256": "117e7772749660849eefc967a2f52423722fac56ae9e22ddf4eeef8136a3d93b",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 60,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/8heMP8qZ7HdlCKWam73M4g)"
+        }
+      ]
+    },
+    {
+      "path": "content/ai/pangu-model-story/index.md",
+      "title": "盘古之殇：华为诺亚盘古大模型研发历程的心酸与黑暗",
+      "date": "2025-07-06",
+      "authors": [
+        "hw-whistleblower"
+      ],
+      "author_names": [
+        "HW-whistleblower"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/Vr1tTMVIbNmxsHX80pOTew",
+      "source_sha256": "fa7d74bf82dff9463bf5146d02079670e41a1ad8b564e520f796f4ab8a100c58",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：HW-whistleblower · [GitHub 原文](https://github.com/rosun82/true-story-of-pangu)"
+        },
+        {
+          "line": 94,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/Vr1tTMVIbNmxsHX80pOTew)"
+        }
+      ]
+    },
+    {
+      "path": "content/ai/pingcap-ai-team/index.md",
+      "title": "学习PingCAP，打造你公司的AI原生软件开发团队",
+      "date": "2026-01-26",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/RhLi1yCk8dQGvbPI9E2kKA",
+      "source_sha256": "9661e03702683a85a24774b06da98fc828a96dffb291de40131daba5cc29c41a",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 193,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/RhLi1yCk8dQGvbPI9E2kKA)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/ahrefs-saving/index.md",
+      "title": "Ahrefs不上云，省下四亿美元",
+      "date": "2024-05-22",
+      "authors": [
+        "efim-mirochnik"
+      ],
+      "author_names": [
+        "Efim Mirochnik"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://tech.ahrefs.com/how-ahrefs-saved-us-400m-in-3-years-by-not-going-to-the-cloud-8939dd930af8",
+      "source_sha256": "bb4402741948b1518f22e29ecf89570aaa4c0ed54e6e91890ac1edb52be2d7a8",
+      "evidence": [
+        {
+          "git_commit": "acaa40dc",
+          "text": "title: Ahrefs不上云，省下四亿美元\nlinkTitle: Ahrefs不上云，省下四亿美元\ndate: 2024-05-22\nauthor: |\n  [Efim Mirochnik](https://medium.com/@mirochnik) 译者：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/csQmMrSGg5ukDgS06h8xXw)\nsummary: >\n  阿里云双十一后的史诗级全球故障创下行业记录，我们该如何评价看待这场故障，又可以从中学到什么经验与教训呢？\ntags: [下云,AWS,EBS]"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/aliyun-dcdn-bill/index.md",
+      "title": "记一次阿里云 DCDN 加速仅 32 秒就欠了 1600 的问题处理（扯皮）。",
+      "date": "2024-10-07",
+      "authors": [
+        "shiyu"
+      ],
+      "author_names": [
+        "诗语"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/0Wnv1B80Tk4J03X3uAm4Ww",
+      "source_sha256": "cb06cae8bb746c5aabf1482ce8e545deb02dbb2367dad8aeba0d0580302fd107",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：诗语"
+        },
+        {
+          "line": 158,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/0Wnv1B80Tk4J03X3uAm4Ww)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/aliyun-enterprise-market/index.md",
+      "title": "卡在政企客户门口的阿里云",
+      "date": "2023-12-29",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/1dse1KSCq2xG-QaL1JzZ8Q",
+      "source_sha256": "62d54fb4d20db8c55433fdb55e802242016a2ae457b40d55233220b2576c007e",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 404,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/1dse1KSCq2xG-QaL1JzZ8Q)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/aliyun-hardcoded-password/index.md",
+      "title": "硬编码密码泄漏，阿里云的软件工程也太差了",
+      "date": "2025-05-30",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/43pIBxYvsszeBZGk7LU7_w",
+      "source_sha256": "1c61c92316b5e97b3b5f0213f015f5306a1253c4b2378b22863c14233a4967a0",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 128,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/43pIBxYvsszeBZGk7LU7_w)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/aliyun-price-cut-despair/index.md",
+      "title": "阿里云降价背后折射出的绝望",
+      "date": "2024-03-15",
+      "authors": [
+        "boji"
+      ],
+      "author_names": [
+        "会说话的波吉"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/BYu8nZjqAQbWc2yT8K_pFQ",
+      "source_sha256": "28532907c4d71f3e81562fdf774bcdd1157e3fe69e1bd7f24b94f0ec02cc5e67",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：会说话的波吉"
+        },
+        {
+          "line": 36,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/BYu8nZjqAQbWc2yT8K_pFQ)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/aliyun-solutions-team/index.md",
+      "title": "阿里云解决方案团队，雄起来!",
+      "date": "2025-12-28",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "keep_related_reprint",
+      "reason": "围绕冯若航的小红书下云文章被投诉及后续回应展开，是与本人直接相关的事件记录。",
+      "source_url": "https://mp.weixin.qq.com/s/UXwNjcTgS1yESWbxXuxQUg",
+      "source_sha256": "1a6c35bf6d8127ffcd3749e1cc9d9689f81c119cd514dcd46cf3b403459d236d",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 66,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/UXwNjcTgS1yESWbxXuxQUg)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/amateur-internet-outages/index.md",
+      "title": "互联网故障背后的草台班子们",
+      "date": "2023-12-06",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/OxhhJ4U1P43di_eaE1uGPw",
+      "source_sha256": "253f8b0da78361ffacc01cdbe28264248508be013660a07ecb97c2e144eca67f",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 220,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/OxhhJ4U1P43di_eaE1uGPw)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/api-soul-of-cloud/index.md",
+      "title": "API 是云服务的灵魂",
+      "date": "2025-01-27",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/GEDjjdUWD1TlrjyTkR5FJw",
+      "source_sha256": "8c731c047e8788413d6f66a542ea1e77d64d4ab5f3710de0dd33dcf7ebbfd246",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 54,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/GEDjjdUWD1TlrjyTkR5FJw)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/cloud-bribery/index.md",
+      "title": "云计算不能做成云算计之一：云行贿必须清理",
+      "date": "2025-04-15",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/GetqBeJqO3mHWmyItej9Cw",
+      "source_sha256": "794967a1c181d255eafc3ff476595e672b30086b18d47decd4a0f4e32341b57c",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 130,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/GetqBeJqO3mHWmyItej9Cw)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/cloud-customers-poor-bored-lonely/index.md",
+      "title": "云厂商眼中的客户：又穷又闲又缺爱",
+      "date": "2023-11-06",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ",
+      "source_sha256": "2eb3fa4911d618795117577107d993f205ed865cec0398425e1f36a3aebde8e2",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 360,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/cloud-exit-faq/index.md",
+      "title": "半年下云省千万，DHH下云FAQ",
+      "date": "2023-12-21",
+      "authors": [
+        "dhh"
+      ],
+      "author_names": [
+        "DHH"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://world.hey.com/dhh/cloud-exit-faq-5c3b15e8",
+      "source_sha256": "d14105b36234e1e593ea794bce964d9e9e091a9904c1dc4ade7147bf0afead1a",
+      "evidence": [
+        {
+          "line": 163,
+          "text": "> 本文翻译自DHH原文：[The Big Cloud Exit FAQ](https://world.hey.com/dhh/the-big-cloud-exit-faq-20274010)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/cloud-incompetence/index.md",
+      "title": "云计算：菜就是一种原罪",
+      "date": "2024-04-22",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/jYIqj94B07oTu9KC85bjtQ",
+      "source_sha256": "69d093f4e421b259b67dad1f7f8cad2329eca1c11e0a5815246e9ff019de9745",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 177,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/jYIqj94B07oTu9KC85bjtQ)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/cloud-outage-underinvestment/index.md",
+      "title": "腾讯云/阿里云故障背后：投入不足",
+      "date": "2024-04-11",
+      "authors": [
+        "zhou-xinyu"
+      ],
+      "author_names": [
+        "周新宇"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/_2luIza-Yr09EVlqZ8MJfw",
+      "source_sha256": "205f1407b21cbc8bc4495860e8cedaad5cd30bb729ed1d3524b0c0ad32b8064f",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：周新宇"
+        },
+        {
+          "line": 138,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/_2luIza-Yr09EVlqZ8MJfw)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/cloud-pr-war/index.md",
+      "title": "为什么这两年的舆论战，云厂商总是节节败退",
+      "date": "2024-04-22",
+      "authors": [
+        "titi"
+      ],
+      "author_names": [
+        "titi"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/NIAv9ul3bCCcuqwyPwHO-g",
+      "source_sha256": "0797fc0c630c41d3b02fbb9954c8395fe7b83a2bc1558c9172320373cb293c34",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：titi"
+        },
+        {
+          "line": 70,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/NIAv9ul3bCCcuqwyPwHO-g)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/cloud-sales-discount/index.md",
+      "title": "为什么云厂商销售只会打折？",
+      "date": "2025-01-20",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/Eo47Ssttcd0-GFEMEG8Ptg",
+      "source_sha256": "392af603f36422a53ba5d2361498e42eec77cfb288c7b43d9bac5b11a80c9697",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 224,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/Eo47Ssttcd0-GFEMEG8Ptg)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/dba-get-off/index.md",
+      "title": "数据库的“萝卜快跑”时刻已到，DBA 请下车",
+      "date": "2024-07-26",
+      "authors": [
+        "li-linghui"
+      ],
+      "author_names": [
+        "李令辉"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/vceZUVrVTIEljVDNkuY47w",
+      "source_sha256": "ba9e5e91008613120c76fb4c561856316217d559e6765d70344a698776ec4bd5",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：李令辉"
+        },
+        {
+          "line": 104,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/vceZUVrVTIEljVDNkuY47w)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/developers-are-db-users/index.md",
+      "title": "DBA不是数据库的用户，开发者才是！",
+      "date": "2024-07-26",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "keep_related_reprint",
+      "reason": "开篇直接回应冯若航对 DBA 与开发者角色的判断，并讨论 Pigsty 和双方争论。",
+      "source_url": "https://mp.weixin.qq.com/s/p4KE2xjRx6UPT1z9cig--A",
+      "source_sha256": "aa04db56a6a4c47bade709af9d7494647c104f50cdf1a36d7b6c4eba7011b458",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 108,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/p4KE2xjRx6UPT1z9cig--A)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/dhh-s3-migration/index.md",
+      "title": "DHH下云：S3晚搬一天，就多花四万",
+      "date": "2025-03-30",
+      "authors": [
+        "dhh"
+      ],
+      "author_names": [
+        "DHH"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "",
+      "source_sha256": "ac6b0306e1dd19c138cbc2d753dadc8483c5abd40c64c0d7c18603fed50544a9",
+      "evidence": [
+        {
+          "line": 36,
+          "text": "> 作者：DHH，原文：It's five grand a day to miss our S3 exit<sup>[2]</sup> 译者：冯若航，Pigsty 作者，云计算泥石流，数据库老司机"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/gojek-leaves-tencent-cloud/index.md",
+      "title": "Gojek 搬家记：腾讯云产品团队的缺位",
+      "date": "2025-08-14",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/AScsDJ8FWi9YXiRERPpspg",
+      "source_sha256": "20b6219f23ab98769ce7227d810ce599858cdafbb695c0b471fb79317ea9cecd",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 96,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/AScsDJ8FWi9YXiRERPpspg)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/leave-aws-save-80-percent/index.md",
+      "title": "如何通过远离 AWS 将年服务器费用从 100 万降至 20 万",
+      "date": "2025-01-20",
+      "authors": [
+        "liu-junxia"
+      ],
+      "author_names": [
+        "刘俊夏"
+      ],
+      "decision": "remove_reprint",
+      "reason": "刘俊夏的中文译介转载；虽附英文原文，但本次转载和导入记录均署刘俊夏，不属于本人翻译。",
+      "source_url": "https://mp.weixin.qq.com/s/p5DTvpaubWXYnw1wx30K9g",
+      "source_sha256": "82beaa4bcc0ee770d431364c2b0e618d2d9c7eaddd1e6d26e636779c0664e069",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：刘俊夏"
+        },
+        {
+          "line": 187,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/p5DTvpaubWXYnw1wx30K9g)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/lost-youth-at-aliyun/index.md",
+      "title": "迷失在阿里云的年轻人",
+      "date": "2024-03-21",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/w7YzdxSrAsIqk2gXBks9CA",
+      "source_sha256": "2c774da4c730e2dffe01c558a473f014febe5736f58c5e222de02b4a5bf03607",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 94,
+          "text": "代码评审是我们工程师通行的质量管理手段。它基于这么一个事实：不管一个人有多聪明多细心，他总是考虑得不完善，需要同事提供 peer review。因此它也暗含了这么一个规则：一个人的代码被驳回或者被要求重写，并不代表此人水平不行。代码评审过程中的意见不应该被视作对原作者的批评。这条规则被广泛采纳，大名鼎鼎的 Linus 就因为喜欢在代码评审的时候攻击原作者，被社区停职了一段时间。"
+        },
+        {
+          "line": 144,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/w7YzdxSrAsIqk2gXBks9CA)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/no-more-dba/index.md",
+      "title": "你怎么还在招聘DBA?",
+      "date": "2023-01-31",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/PqCD80H927s0yJrBr4QQqw",
+      "source_sha256": "751b859c6efd0f969cfd20badd81251885f1610448f8ce97e3699f52e014bad3",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 124,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/PqCD80H927s0yJrBr4QQqw)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/odyssey/index.md",
+      "title": "下云奥德赛：该放弃云计算了吗？",
+      "date": "2023-07-07",
+      "authors": [
+        "dhh"
+      ],
+      "author_names": [
+        "DHH"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://world.hey.com/dhh",
+      "source_sha256": "08a05f0f9956e1a7d03b6bc96af9280f4e1eeef61d82e875dd020296630cc5f7",
+      "evidence": [
+        {
+          "line": 7,
+          "text": "  本文翻译了下云先锋DHH主导37Signal从云上搬下来的完整旅程，无论是对于准备上云，还是已经在云上的企业，都非常有借鉴与参考价值。"
+        },
+        {
+          "line": 11,
+          "text": "DHH一直以来都是下云先锋，本文摘取了DHH博客关于下云相关的十篇文章，记录了 37Signal 从云上搬下来的完整旅程，按照时间倒序排列组织，译为中文，以飨读者。本文翻译了DHH从云上下来的完整旅程，对于准备上云，云上的企业都非常有借鉴与参考价值。"
+        },
+        {
+          "line": 31,
+          "text": "译者：**Vonng**，磐吉云数创始人与CEO。Pigsty 作者，PostgreSQL 专家与布道师。云计算泥石流，数据库老司机，下云倡导者，数据库下云实践者。[Vonng博客](/)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/odyssey-done/index.md",
+      "title": "DHH：下云省下千万美元，比预想的还要多！",
+      "date": "2023-07-07",
+      "authors": [
+        "dhh"
+      ],
+      "author_names": [
+        "DHH"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://world.hey.com/dhh/our-cloud-exit-savings-will-now-top-ten-million-over-five-years-c7d9b5bd",
+      "source_sha256": "243b65a4167978f81c7c226a13fa21277ce1e0787b277a17999c659d722d0f8d",
+      "evidence": [
+        {
+          "git_commit": "acaa40dc",
+          "text": "title: DHH：下云省下千万美元，比预想的还要多！\ndate: 2023-07-07\nhero: /hero/odyssey.jpg\nauthor: |\n  [DHH](https://world.hey.com/dhh) | 译：[冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/mknFXO5DSfxw7st8hhxjBQ)\nsummary: >\n  现有\ntags: [下云,DHH]"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/prepaid-cloud-native/index.md",
+      "title": "包年包月的云还能叫云原生吗？",
+      "date": "2024-04-18",
+      "authors": [
+        "wang-xiaorui"
+      ],
+      "author_names": [
+        "王小瑞"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/FKNavZROB4inrtBnAUxjJg",
+      "source_sha256": "1eab7334e509aab4c943288fe80be3faaf8b34aabd8c2e4db7d288865f66d27d",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：王小瑞"
+        },
+        {
+          "line": 164,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/FKNavZROB4inrtBnAUxjJg)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/public-cloud-untested/index.md",
+      "title": "你用的公有云都没做过测试",
+      "date": "2024-04-11",
+      "authors": [
+        "cold-tech"
+      ],
+      "author_names": [
+        "冷技术热思考"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/YtuJGDP1FgTVJnMlOCgsmQ",
+      "source_sha256": "11c7e4b8e7cf4bcd313521ddc004bc281415930864d4b14d76b9ed792c835d08",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：冷技术热思考"
+        },
+        {
+          "line": 42,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/YtuJGDP1FgTVJnMlOCgsmQ)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/regulate-cloudflare/index.md",
+      "title": "云厂商需要有人管起来，CloudFlare又宕机了",
+      "date": "2025-11-18",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/vDCaWQbda-_Fhcwt3BIi_A",
+      "source_sha256": "bc235ebfbab18bc6f59bbe3e8ced3f14ba2065455e7daa22bf9217d0ef4d3b1e",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 54,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/vDCaWQbda-_Fhcwt3BIi_A)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/s3-scam/index.md",
+      "title": "云上黑暗森林：打爆云账单，只需要S3桶名",
+      "date": "2024-04-30",
+      "authors": [
+        "maciej-pocwierz"
+      ],
+      "author_names": [
+        "Maciej Pocwierz"
+      ],
+      "decision": "keep_translation_legacy_author",
+      "reason": "旧 author 字段和英文原文链接明确标注 Maciej Pocwierz；属于既有英文译介，保留并规范原作者署名。",
+      "source_url": "https://medium.com/@maciej.pocwierz/how-an-empty-s3-bucket-can-make-your-aws-bill-explode-934a383cb8b1",
+      "source_sha256": "58647abf210b7af601320e8f4a521ebdac851ceb4bf1315983a3fd01bc16412a",
+      "evidence": []
+    },
+    {
+      "path": "content/cloud/single-tenant-saas/index.md",
+      "title": "单租户时代：SaaS范式转移",
+      "date": "2024-01-16",
+      "authors": [
+        "dhh"
+      ],
+      "author_names": [
+        "DHH"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "",
+      "source_sha256": "a0cd988aa4fcf7e554fc6aac3531dec67fd9175e2a643ec70c20fa05afc518a3",
+      "evidence": [
+        {
+          "line": 12,
+          "text": "**译者：冯若航**，网名 Vonng。磐吉云数创始人与 CEO。[**Pigsty**](/pigsty/better-rds-alternative/) 作者，PostgreSQL 专家/布道师。公众号《[**非法加冯**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486611&idx=1&sn=658ded908f5e8a24d01a7ccc87df5bbc&scene=21#wechat_redirect \"非法加冯\")》主理人，[**云计算泥石流**](/cloud/debris/)，数据库老司机。"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/state-owned-enterprise-cloud-view/index.md",
+      "title": "门内的国企如何看门外的云厂商",
+      "date": "2024-01-04",
+      "authors": [
+        "leo"
+      ],
+      "author_names": [
+        "Leo（思维南人）"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/qSTEf9txjHNTHeEFv3NkWg",
+      "source_sha256": "1cd87ca7291e5e0b9dafc1d6ff3b672bc554867f62683b2f8398dc743408aee0",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：Leo（思维南人）"
+        },
+        {
+          "line": 136,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/qSTEf9txjHNTHeEFv3NkWg)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/tencent-cloud-native/index.md",
+      "title": "腾讯真的走通云原生之路了吗？",
+      "date": "2024-04-17",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/v0vbsy_OXIDNrbBvUUMV9Q",
+      "source_sha256": "4495cf5c99535ea53da236e6a1ef9e290f9658a212fc5366c8463eeef412a390",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 192,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/v0vbsy_OXIDNrbBvUUMV9Q)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/toothpaste-cloud/index.md",
+      "title": "牙膏云？您可别吹捧云厂商了",
+      "date": "2024-04-02",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/XZqe4tbJ9lgf8a6PWj7vjw",
+      "source_sha256": "bcad094b9463465a032537013e07f5a61edab770748684dd4e7341328255c381",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 220,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/XZqe4tbJ9lgf8a6PWj7vjw)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/uptime/index.md",
+      "title": "云下高可用秘诀：拒绝复杂度自慰",
+      "date": "2024-01-10",
+      "authors": [
+        "dhh"
+      ],
+      "author_names": [
+        "DHH"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://world.hey.com/dhh/keeping-the-lights-on-while-leaving-the-cloud-be7c2d67",
+      "source_sha256": "441b8dbf98d017b5c5b11b713a6f1b7498cfc75f9e74ae9265a5c6abddc19b03",
+      "evidence": [
+        {
+          "line": 16,
+          "text": "> 译者：**Vonng**，PIGSTY 创始人与CEO。[Pigsty](https://mp.weixin.qq.com/s/-E_-HZ7LvOze5lmzy3QbQA) 作者，PostgreSQL 专家/布道师。公众号《[非法加冯](https://mp.weixin.qq.com/s/p4Ys10ZdEDAuqNAiRmcnIQ)》主理人，云计算泥石流，数据库老司机。"
+        },
+        {
+          "line": 18,
+          "text": "> 本文翻译自 DHH [博客](https://world.hey.com/dhh/keeping-the-lights-on-while-leaving-the-cloud-be7c2d67)，"
+        },
+        {
+          "line": 44,
+          "text": "> 注：DHH 省下近千万美元的高昂云开销，本文翻译了DHH下云的最新进展。下云前情提要与完整过程请参考：《[下云奥德赛](https://mp.weixin.qq.com/s/H2S3TV-AsqS43A5Hh-XMhQ)》，《[是时候放弃云计算了吗](https://mp.weixin.qq.com/s/CicctyvV1xk5B-AsKfzPjw)》，以及《[DHH下云FAQ](https://mp.weixin.qq.com/s/xaa079P4DRCz0hzNovGoOA)》。"
+        },
+        {
+          "line": 48,
+          "text": "## 译者评论"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/what-public-cloud-sells/index.md",
+      "title": "公有云厂商卖的云计算到底是什么玩意？",
+      "date": "2024-03-25",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/_ijL2OXAQJQrmWiE-KKzdw",
+      "source_sha256": "334f31a0f13749980ce6f5c6fb72fd265a748a7c2cfcf93d1a57fabdc490183b",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 192,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/_ijL2OXAQJQrmWiE-KKzdw)"
+        }
+      ]
+    },
+    {
+      "path": "content/cloud/why-cloud-keeps-failing/index.md",
+      "title": "为什么我们的云老是故障",
+      "date": "2024-04-12",
+      "authors": [
+        "vage"
+      ],
+      "author_names": [
+        "VAGE"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/ZEH_yjs0zrJIOG-iNRMf1A",
+      "source_sha256": "cf0cd60595606b1e41322a23fe2a246f961cbaead34dabebcffdc60d85cd0457",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：VAGE"
+        },
+        {
+          "line": 76,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/ZEH_yjs0zrJIOG-iNRMf1A)"
+        }
+      ]
+    },
+    {
+      "path": "content/db/7-week-7-db/index.md",
+      "title": "七周七数据库（2025年）",
+      "date": "2024-12-03",
+      "authors": [
+        "matt-blewitt"
+      ],
+      "author_names": [
+        "Matt Blewitt"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://matt.blwt.io/post/7-databases-in-7-weeks-for-2025/",
+      "source_sha256": "7bc5535bed564e2281059e5ed996d016ff6339194a3d33815fe4008553c83e50",
+      "evidence": [
+        {
+          "line": 13,
+          "text": "> 译者：Vonng，数据库老司机，云计算泥石流"
+        }
+      ]
+    },
+    {
+      "path": "content/db/bio-core-cpu-core/index.md",
+      "title": "先优化碳基BIO核，再优化硅基CPU核",
+      "date": "2024-09-07",
+      "authors": [
+        "dhh"
+      ],
+      "author_names": [
+        "DHH"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://world.hey.com/dhh/optimize-for-bio-cores-first-silicon-cores-second-112a6c3f",
+      "source_sha256": "20daa588c95f26e95c3680b513fef4f379c76aa5dda832f6ea8f4704936f3e10",
+      "evidence": [
+        {
+          "line": 37,
+          "text": "> 译者：Vonng，PostgreSQL Hacker，开源 RDS PG —— Pigsty 作者，数据库老司机，云计算泥石流。"
+        }
+      ]
+    },
+    {
+      "path": "content/db/can-mysql-catchup/index.md",
+      "title": "MySQL还有机会赶上PostgreSQL吗？",
+      "date": "2024-11-05",
+      "authors": [
+        "peter-zaitsev"
+      ],
+      "author_names": [
+        "Peter Zaitsev"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://www.percona.com/blog/can-mysql-catch-up-with-postgresql/",
+      "source_sha256": "ae492641bd98758a675b118c4cfbf4b799d830f00c960c5f4f9fc3256f303124",
+      "evidence": [
+        {
+          "line": 21,
+          "text": "> 译者：[Vonng](https://vonng.com/en)，[Pigsty](https://pigsty.io) 作者，PostgreSQL 大法师，数据库老司机，云计算泥石流。"
+        }
+      ]
+    },
+    {
+      "path": "content/db/can-oracle-save-mysql/index.md",
+      "title": "Oracle还能挽救MySQL吗？",
+      "date": "2024-06-21",
+      "authors": [
+        "peter-zaitsev"
+      ],
+      "author_names": [
+        "Peter Zaitsev"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://www.percona.com/blog/can-oracle-save-mysql/",
+      "source_sha256": "6099c249eaad53c8fd8d7dfd4a0dc71742283bb71bdd00e4edf8e3c92a8c61cc",
+      "evidence": [
+        {
+          "line": 22,
+          "text": "> 译者：Vonng，Pigsty 作者，PostgreSQL 专家与布道师。下云倡导者，数据库下云实践者。"
+        }
+      ]
+    },
+    {
+      "path": "content/db/china-open-source-crossroads/index.md",
+      "title": "中国的开源运动再次到了十字路口",
+      "date": "2024-11-27",
+      "authors": [
+        "wei-yongming"
+      ],
+      "author_names": [
+        "魏永明"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/dieWF1KJpqIk5kBnDo_jrQ",
+      "source_sha256": "d63de3d824eaff17e24797b70c59c12f92910c353f4a306b88d9c634d48dce0f",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：魏永明"
+        },
+        {
+          "line": 79,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/dieWF1KJpqIk5kBnDo_jrQ)"
+        }
+      ]
+    },
+    {
+      "path": "content/db/database-in-k8s-counterpoint/index.md",
+      "title": "没错，数据库确实应该放入 K8s 里！",
+      "date": "2023-12-07",
+      "authors": [
+        "fanux"
+      ],
+      "author_names": [
+        "fanux"
+      ],
+      "decision": "keep_related_reprint",
+      "reason": "直接回应冯若航《数据库应该放入 K8S 里吗》，保留本人参与争鸣的另一方原文。",
+      "source_url": "https://mp.weixin.qq.com/s/rpyNczx0AD_iseMMLioVjw",
+      "source_sha256": "4c32da16ec6c6eb3a050ad3f4a83aa02239fb9f47adb4731c19c254262a83709",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：fanux"
+        },
+        {
+          "line": 188,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/rpyNczx0AD_iseMMLioVjw)"
+        }
+      ]
+    },
+    {
+      "path": "content/db/database-migration-toolbox/index.md",
+      "title": "数据库迁移工具箱，DBA老鸟的五金店",
+      "date": "2024-05-21",
+      "authors": [
+        "james-bond-007"
+      ],
+      "author_names": [
+        "詹姆斯邦德007"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/VbSAZ7wj_hzhi9KUFSBhoQ",
+      "source_sha256": "48ab50745c509f47404386b25e94c1743eb914c8ae633fbca489dece8ceb0091",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：詹姆斯邦德 007"
+        },
+        {
+          "line": 105,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/VbSAZ7wj_hzhi9KUFSBhoQ)"
+        }
+      ]
+    },
+    {
+      "path": "content/db/davinci-database/index.md",
+      "title": "影视飓风达芬奇千万级数据库演化及实践",
+      "date": "2025-05-03",
+      "authors": [
+        "gong-rui"
+      ],
+      "author_names": [
+        "龚锐"
+      ],
+      "decision": "keep_related_reprint",
+      "reason": "用户点名保留；影视飓风使用 Pigsty 的生产案例，并附冯若航评论。",
+      "source_url": "https://mp.weixin.qq.com/s/7zJe6_HJU7Q2_Uf9-lS2vQ",
+      "source_sha256": "7093c0356f90525c53335da6c09f1769fae13f2279ed181d02903401480167ac",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：龚锐"
+        },
+        {
+          "line": 135,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/7zJe6_HJU7Q2_Uf9-lS2vQ)"
+        }
+      ]
+    },
+    {
+      "path": "content/db/db-in-2025/index.md",
+      "title": "Andy Pavlo：2025 数据库世界年度总结",
+      "date": "2026-01-05",
+      "authors": [
+        "andy-pavlo",
+        "vonng"
+      ],
+      "author_names": [
+        "Andy Pavlo",
+        "冯若航"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://www.cs.cmu.edu/~pavlo/blog/2026/01/2025-databases-retrospective.html",
+      "source_sha256": "793f7d7455f36584e478e46650b45d48ef0987829d0183958f83148d60f4dd73",
+      "evidence": [
+        {
+          "line": 14,
+          "text": "> 作者：Andy Pavlo，翻译与评论：冯若航"
+        },
+        {
+          "line": 20,
+          "text": "**译者注**: 本文翻译自 [CMU Andy Pavlo 教授的博客](https://www.cs.cmu.edu/~pavlo/blog/2026/01/2025-databases-retrospective.html)"
+        },
+        {
+          "line": 30,
+          "text": "还有 Coldplay 能把你的婚姻搞砸（译者注：此处指某CEO外遇被曝）。不过话说回来，Astronomer 倒是把这事儿做成了一个不错的[宣传梗](https://www.youtube.com/watch?v=vich2C-Tl7Q)。"
+        }
+      ]
+    },
+    {
+      "path": "content/db/db-year-review-2025/index.md",
+      "title": "2025 年度数据库世界总结：石破天 vs Andy Pavlo 对谈录",
+      "date": "2025-12-24",
+      "authors": [
+        "andy-pavlo",
+        "mike-stonebraker",
+        "vonng"
+      ],
+      "author_names": [
+        "Andy Pavlo",
+        "Mike Stonebraker",
+        "冯若航"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "",
+      "source_sha256": "fcff09283d447cf3f6e08376c3d9ee5c12e828c019e41cd4b54c52f3f98b5efc",
+      "evidence": [
+        {
+          "line": 26,
+          "text": "> 中文译评：冯若航"
+        }
+      ]
+    },
+    {
+      "path": "content/db/future-hardware/index.md",
+      "title": "面向未来数据库的现代硬件",
+      "date": "2024-11-20",
+      "authors": [
+        "alex-miller"
+      ],
+      "author_names": [
+        "Alex Miller"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://transactional.blog/blog/2024-modern-database-hardware",
+      "source_sha256": "79ca9fd0ebf35a0c894512e786ad4918a590e7e5c1c5d8a2c8c065d804485433",
+      "evidence": [
+        {
+          "line": 14,
+          "text": "> 译者：Vonng & GPT o1，PG 大法师，数据库老司机，云计算泥石流"
+        },
+        {
+          "line": 16,
+          "text": "译者推荐：本文是一篇关于硬件发展如何影响数据库设计的综述，分别介绍了在网络，存储，计算三个领域的关键硬件进展。我一直都认为，充分利用好新硬件（而非折腾所谓分布式）才是数据库内核发展的正路。"
+        }
+      ]
+    },
+    {
+      "path": "content/db/gaussdb-bank-of-china-outage/index.md",
+      "title": "深入解析：元旦当天华为高斯数据库BUG，搞摊中国银行APP",
+      "date": "2026-01-05",
+      "authors": [
+        "vage"
+      ],
+      "author_names": [
+        "VAGE"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/6TyRKtsg81cTLz5A3q0Njw",
+      "source_sha256": "89c741b7ecbc5ad2f39b1d8d7e7f398322c2238d8b863ffc8cc81e4d62795bb5",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：VAGE"
+        },
+        {
+          "line": 195,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/6TyRKtsg81cTLz5A3q0Njw)"
+        }
+      ]
+    },
+    {
+      "path": "content/db/goodbye-gpl/index.md",
+      "title": "是时候和GPL说再见了",
+      "date": "2021-09-16",
+      "authors": [
+        "martin-kleppmann"
+      ],
+      "author_names": [
+        "Martin Kleppmann"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://martin.kleppmann.com/2021/04/14/goodbye-gpl.html",
+      "source_sha256": "dfa670308affe18da7b1b01274c71a2faf42de011bea0647a68a208fa581a53f",
+      "evidence": [
+        {
+          "line": 12,
+          "text": "原文由 Martin Kleppmann 于2021年4月14日发表，译者：Vonng。[原文地址](https://martin.kleppmann.com/2021/04/14/goodbye-gpl.html)"
+        },
+        {
+          "line": 14,
+          "text": "> Martin Kleppmann是《设计数据密集型应用》（a.k.a DDIA）的作者，译者 Vonng 为该书中文译者。"
+        }
+      ]
+    },
+    {
+      "path": "content/db/htap-no-applause/index.md",
+      "title": "HTAP数据库，一场无人鼓掌的演出",
+      "date": "2025-03-10",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "keep_related_reprint",
+      "reason": "附有完整的“老冯评论”，记录本人在阿里与苹果相关的 HTAP 实践和论证，不能按纯转载整篇丢弃。",
+      "source_url": "https://mp.weixin.qq.com/s/wxOSAjObi0oiiRPRahWjJQ",
+      "source_sha256": "c39160aeca4e70e2faa959a2ff49a11e150cf2f012123a886c74bea0023de15f",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 186,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/wxOSAjObi0oiiRPRahWjJQ)"
+        }
+      ]
+    },
+    {
+      "path": "content/db/microservice-bad-idea/index.md",
+      "title": "微服务是不是个蠢主意？",
+      "date": "2023-05-07",
+      "authors": [
+        "dhh"
+      ],
+      "author_names": [
+        "DHH"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://world.hey.com/dhh/microservices-are-a-bad-idea-7a8dbddc",
+      "source_sha256": "5c99307ea19b60ec761389679c70b0664b116000efbb46d02658e97e5a89a1b1",
+      "evidence": [
+        {
+          "line": 46,
+          "text": "本文作者 DHH， Ruby on Rails 作者，37signals CTO，译者 Vonng。"
+        }
+      ]
+    },
+    {
+      "path": "content/db/minio-critical-vulnerability/index.md",
+      "title": "MinIO 发布10分安全漏洞",
+      "date": "2026-05-15",
+      "authors": [
+        "bai-xiaoan"
+      ],
+      "author_names": [
+        "白小安"
+      ],
+      "decision": "remove_reprint",
+      "reason": "用户于 2026-10-14 明确要求移除，不再作为相关转载例外保留。",
+      "source_url": "https://mp.weixin.qq.com/s/Q5tE-eUk2BJqxfSPHYC74A",
+      "source_sha256": "6d22bfb375c09d051bd2a9a66549628dc647673f972a869169263f9d722c6814",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：白小安"
+        },
+        {
+          "line": 143,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/Q5tE-eUk2BJqxfSPHYC74A)"
+        }
+      ],
+      "previous_decision": "keep_related_reprint",
+      "previous_reason": "冯若航导语直接介绍自己维护的 pgsty/minio 分支及 CVE 修复，与维护中的项目有关。"
+    },
+    {
+      "path": "content/db/mongo-powered-by-pg/index.md",
+      "title": "MongoDB：现在由PostgreSQL强力驱动？",
+      "date": "2024-09-03",
+      "authors": [
+        "john-de-goes"
+      ],
+      "author_names": [
+        "John De Goes"
+      ],
+      "decision": "keep_translation_legacy_author",
+      "reason": "旧 author 字段、正文署名及 LinkedIn 英文原文链接一致；保留带本人前言的英文译介并规范原作者署名。",
+      "source_url": "https://www.linkedin.com/pulse/mongodb-32-now-powered-postgresql-john-de-goes",
+      "source_sha256": "d33a63e222663d139e4f746fcccaac2ce068f01714ad14a381df2f528816add7",
+      "evidence": []
+    },
+    {
+      "path": "content/db/open-data-standard/index.md",
+      "title": "开放数据标准：Postgres，OTel，与Iceberg",
+      "date": "2025-05-27",
+      "authors": [
+        "paul-copplestone"
+      ],
+      "author_names": [
+        "Paul Copplestone"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://supabase.com/blog/open-data-standards-postgres-otel-iceberg",
+      "source_sha256": "fe8dc301bae487f1c49ddb0896b930ab243a1ac8fd39c5b8a46c44e2fba63b55",
+      "evidence": [
+        {
+          "line": 11,
+          "text": "> 作者：Paul Copplestone，Supabase CEO 译者：Vonng，Pigsty Founder，数据库老司机"
+        }
+      ]
+    },
+    {
+      "path": "content/db/open-source-vs-free/index.md",
+      "title": "开源不是大杀器，免费才是",
+      "date": "2023-04-04",
+      "authors": [
+        "laotoutou"
+      ],
+      "author_names": [
+        "老头头"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/qqlQp4VRQxKgWq3StL5J6Q",
+      "source_sha256": "5727e9b2deb6b9c7d0a419eda6d8124e0b9cd8741594f759d9ce7f2449a71d4f",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：老头头"
+        },
+        {
+          "line": 65,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/qqlQp4VRQxKgWq3StL5J6Q)"
+        }
+      ]
+    },
+    {
+      "path": "content/db/openai-pg/index.md",
+      "title": "OpenAI：将PostgreSQL伸缩至新阶段",
+      "date": "2025-05-19",
+      "authors": [
+        "bohan-zhang"
+      ],
+      "author_names": [
+        "Bohan Zhang"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://www.pgevents.ca/events/pgconfdev2025/schedule/session/433-scaling-postgres-to-the-next-level-at-openai/",
+      "source_sha256": "6e710e4c204e221f265b52e4e6c9c78ce30d3d4cc0067dc25177922fc8315d8f",
+      "evidence": [
+        {
+          "line": 22,
+          "text": "Bohan Zhang 是 OpenAI Infra 组成员，师从 CMU 网红教授 Andy Pavlo ，并与其共同创办了 OtterTune 。本文为 Bohan 在大会上的演讲。 中文翻译/点评 by [冯若航](https://vonng.com/)：[Pigsty](https://pigsty.cc/) 作者，PostgreSQL 老司机"
+        }
+      ]
+    },
+    {
+      "path": "content/db/oracle-competitor-open-source/index.md",
+      "title": "特大新闻, Oracle强劲对手宣布开源！",
+      "date": "2025-03-31",
+      "authors": [
+        "digoal"
+      ],
+      "author_names": [
+        "digoal"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/UHfaGt-_NbAdm9D4jsqsug",
+      "source_sha256": "1536d78a4d4cb5dc62c46c00c11c07486b97b3afd5d8bc90373d3967d6e18a87",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：digoal"
+        },
+        {
+          "line": 50,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/UHfaGt-_NbAdm9D4jsqsug)"
+        }
+      ]
+    },
+    {
+      "path": "content/db/oracle-java-software-business/index.md",
+      "title": "如果 Oracle 都不能在 JAVA 上赚钱，基础软件不如不做",
+      "date": "2024-08-01",
+      "authors": [
+        "li-linghui"
+      ],
+      "author_names": [
+        "李令辉"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/omtUVm3RZEVKp8C-3v6hCg",
+      "source_sha256": "d57356bb198c2e5d8aea34f407dbeac44ab08c0e8d1b5ed4491bbfe40b8c852a",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：李令辉"
+        },
+        {
+          "line": 199,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/omtUVm3RZEVKp8C-3v6hCg)"
+        }
+      ]
+    },
+    {
+      "path": "content/db/oracle-kill-mysql/index.md",
+      "title": "Oracle最终还是杀死了MySQL",
+      "date": "2024-06-20",
+      "authors": [
+        "peter-zaitsev"
+      ],
+      "author_names": [
+        "Peter Zaitsev"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://www.percona.com/blog/is-oracle-finally-killing-mysql/",
+      "source_sha256": "1430c91b32665318359712d46e08c6426375296ba734233401f6a6634bcdf07d",
+      "evidence": [
+        {
+          "line": 18,
+          "text": "> 译者：Vonng，Pigsty 作者，PostgreSQL 专家与布道师。下云倡导者，数据库下云实践者。"
+        }
+      ]
+    },
+    {
+      "path": "content/db/oracle-pg-xact/index.md",
+      "title": "对比Oracle与PostgreSQL事务系统",
+      "date": "2025-02-27",
+      "authors": [
+        "laurenz-albe"
+      ],
+      "author_names": [
+        "Laurenz Albe"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://www.cybertec-postgresql.com/en/comparison-of-the-transaction-systems-of-oracle-and-postgresql/",
+      "source_sha256": "68daed26a9cf8ef90e04a8dd5f28bfc6ea6980a60f9603e68093a6dd74e847ab",
+      "evidence": [
+        {
+          "path": "content/db/oracle-pg-xact/index.en.md",
+          "text": "Translation and commentary by Feng Ruohang."
+        }
+      ]
+    },
+    {
+      "path": "content/db/oss-gov/index.md",
+      "title": "瑞士强制政府软件开源",
+      "date": "2024-07-24",
+      "authors": [
+        "steven-vaughan-nichols"
+      ],
+      "author_names": [
+        "Steven Vaughan-Nichols"
+      ],
+      "decision": "keep_translation_legacy_author",
+      "reason": "旧 author 字段、正文署名及 ZDNet 原文链接一致；保留既有英文译介并规范原作者署名。",
+      "source_url": "https://www.zdnet.com/article/switzerland-now-requires-all-government-software-to-be-open-source/",
+      "source_sha256": "fe54f3252b1ac4ff40b5d1fa4b6d57528ef8d7741548a03070a89d50e8fa9992",
+      "evidence": []
+    },
+    {
+      "path": "content/db/pavlo-2024-review/index.md",
+      "title": "Andy Pavlo: 2024年度数据库回顾",
+      "date": "2025-01-01",
+      "authors": [
+        "andy-pavlo",
+        "vonng"
+      ],
+      "author_names": [
+        "Andy Pavlo",
+        "冯若航"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "",
+      "source_sha256": "dcbd3b5dae5309e01ddf132789e2f640329f2063a86ebc7f0eac7feea1f6df56",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "## Andy Pavlo 发表于 2025 年 1 月 1 日，译评：冯若航"
+        }
+      ]
+    },
+    {
+      "path": "content/db/redesign-data-intensive-app/index.md",
+      "title": "重新设计数据密集型应用",
+      "date": "2026-02-20",
+      "authors": [
+        "martin-kleppmann"
+      ],
+      "author_names": [
+        "Martin Kleppmann"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://www.youtube.com/watch?v=UHdPnubbzBI",
+      "source_sha256": "b0b4ca2e6323edffa2b8926dd6afd811536d79b2cb60b510f9e7b87d12ebcff3",
+      "evidence": [
+        {
+          "line": 7,
+          "text": "  《设计数据密集型应用》（DDIA）第二版终于出了。原作者 Martin Kleppmann 的播客访谈聊到了这本书，翻译了一下。"
+        }
+      ]
+    },
+    {
+      "path": "content/db/sakila-where-are-you-going/index.md",
+      "title": "MySQL性能越来越差，Sakila将何去何从？",
+      "date": "2024-06-19",
+      "authors": [
+        "marco-tusa"
+      ],
+      "author_names": [
+        "Marco Tusa"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://www.percona.com/blog/sakila-where-are-you-going/",
+      "source_sha256": "5fa5f4632f928995de80a88d89a40ce75d7caa34c3b1ed4219f9a8b24068c8c6",
+      "evidence": [
+        {
+          "line": 25,
+          "text": "> 译者注：Sakila 是 MySQL 的吉祥物海豚"
+        },
+        {
+          "line": 29,
+          "text": "> 译者：Vonng，Pigsty 作者，PostgreSQL 专家与布道师。下云倡导者，数据库下云实践者。"
+        }
+      ]
+    },
+    {
+      "path": "content/db/smalldata-decade/index.md",
+      "title": "小数据的失落十年：分布式分析的错付",
+      "date": "2025-05-23",
+      "authors": [
+        "hannes-muhleisen"
+      ],
+      "author_names": [
+        "Hannes Mühleisen"
+      ],
+      "decision": "keep_translation_legacy_author",
+      "reason": "正文明确署名 Hannes Mühleisen，译评为冯若航。",
+      "source_url": "https://duckdb.org/2025/05/19/the-lost-decade-of-small-data.html",
+      "source_sha256": "0c52af7144f45a3b0b3c7dade9505f0788e5d31cd1bb30700732f30baf58fd2f",
+      "evidence": [
+        {
+          "line": 17,
+          "text": "> 译评：冯若航，数据库老司机，云数据库泥石流"
+        }
+      ]
+    },
+    {
+      "path": "content/misc/code-plagiarism-is-theft/index.md",
+      "title": "抄袭代码就是偷东西，抖音别狡辩了",
+      "date": "2025-02-17",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/72Yp7d6yjIezS9iQZgNw9w",
+      "source_sha256": "5c2fedd7c446e4e3d0a2652eedd6ed6e1a9db4826c3c2b9bd9fc4a0ab0567e7d",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 74,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/72Yp7d6yjIezS9iQZgNw9w)"
+        }
+      ]
+    },
+    {
+      "path": "content/misc/district-datacenters/index.md",
+      "title": "互联网转向区级数据中心：一场静默的技术迁徙",
+      "date": "2025-01-29",
+      "authors": [
+        "wizard-pig"
+      ],
+      "author_names": [
+        "巫师小猪"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/3hS_dP5Db6dyOKRT3fBwAQ",
+      "source_sha256": "425dcbe608a15cdecb800b3564f31560666b74186dd865fa41e46b5609af365d",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：巫师小猪"
+        },
+        {
+          "line": 86,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/3hS_dP5Db6dyOKRT3fBwAQ)"
+        }
+      ]
+    },
+    {
+      "path": "content/misc/fde-silicon-valley/index.md",
+      "title": "Forward Deployed Engineer —— 硅谷版\"交付工程师\"",
+      "date": "2025-12-15",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/Lk3rqDJVY-J6UouXXdxkHA",
+      "source_sha256": "440c24960f98e56bc1547ee9e84b03f433305a797b92c376b1350f5873bbabd0",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 264,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/Lk3rqDJVY-J6UouXXdxkHA)"
+        }
+      ]
+    },
+    {
+      "path": "content/misc/get-notes-tencent-report/index.md",
+      "title": "荣幸！小小的Get 笔记居然被腾讯举报了",
+      "date": "2025-07-23",
+      "authors": [
+        "kuaidao-qingyi"
+      ],
+      "author_names": [
+        "快刀青衣"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/DZLTieg5JowZP5WZVWRhjA",
+      "source_sha256": "0a16c689ffd5c022192db0d0f967d3fd405bca670a26c91969bdc4ef9c80ddc4",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：快刀青衣"
+        },
+        {
+          "line": 162,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/DZLTieg5JowZP5WZVWRhjA)"
+        }
+      ]
+    },
+    {
+      "path": "content/misc/infra-department-fading/index.md",
+      "title": "基础架构部不死，只是慢慢消逝",
+      "date": "2024-07-30",
+      "authors": [
+        "li-linghui"
+      ],
+      "author_names": [
+        "李令辉"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/E1T4jnvcTIINFel6baYeJg",
+      "source_sha256": "4883b13fe2033cb4385d772f6acfb980560dcd613deb1f7dcbeb4f9811fed814",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：李令辉"
+        },
+        {
+          "line": 124,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/E1T4jnvcTIINFel6baYeJg)"
+        }
+      ]
+    },
+    {
+      "path": "content/misc/infra-needs-advanced-tech/index.md",
+      "title": "基础架构部需要先进技术吗？",
+      "date": "2024-08-02",
+      "authors": [
+        "siwei-nanren"
+      ],
+      "author_names": [
+        "思维男人"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/9AEJZ4GumaHtK_Yeh0n-Yw",
+      "source_sha256": "640612d4500200dd6ecd7bc3bfa4be3f7fbb905c32cc25d4f7c628cdea6af71e",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：思维男人"
+        },
+        {
+          "line": 174,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/9AEJZ4GumaHtK_Yeh0n-Yw)"
+        }
+      ]
+    },
+    {
+      "path": "content/misc/infra-road-ahead/index.md",
+      "title": "基础架构，路在何方？",
+      "date": "2024-08-02",
+      "authors": [
+        "titi"
+      ],
+      "author_names": [
+        "titi"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/8mkKqyhrmMKES7U_VtBw2w",
+      "source_sha256": "76413b030a80baf16eca5f47355b5a79f55e9a55cd826e8e07612e8b124ad115",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：titi"
+        },
+        {
+          "line": 38,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/8mkKqyhrmMKES7U_VtBw2w)"
+        }
+      ]
+    },
+    {
+      "path": "content/misc/infra-team-needed/index.md",
+      "title": "基础架构部，真的没有必要了么？",
+      "date": "2024-08-03",
+      "authors": [
+        "aike"
+      ],
+      "author_names": [
+        "程序员 Aike"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/HFKWZqE9jwMhf5X_yjb13A",
+      "source_sha256": "9ff209df55c8161ffa5772e78dcf4ea3d5db1edc2739966c66f2d045f7c910aa",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：程序员 Aike"
+        },
+        {
+          "line": 106,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/HFKWZqE9jwMhf5X_yjb13A)"
+        }
+      ]
+    },
+    {
+      "path": "content/misc/internet-tech-masterclass/index.md",
+      "title": "互联网技术大师速成班",
+      "date": "2024-01-09",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/8ZffsCgchv8LH5ujv0lRGQ",
+      "source_sha256": "faa67c94c4d5e581544b926f2d7ab814ecfa633537247a30a5ebc9177f874d19",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 206,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/8ZffsCgchv8LH5ujv0lRGQ)"
+        }
+      ]
+    },
+    {
+      "path": "content/misc/luqi-enterprise-software/index.md",
+      "title": "陆奇：怎么理解企业服务市场的数字化应用生态？",
+      "date": "2022-06-16",
+      "authors": [
+        "lu-qi"
+      ],
+      "author_names": [
+        "陆奇"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/lmqKgFUMu__l2jigoEPCnQ",
+      "source_sha256": "160910cedc7d0c4b50ae1d71fe96f634d9a86016f7fee922f1928ed0fd43436d",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：陆奇"
+        },
+        {
+          "line": 126,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/lmqKgFUMu__l2jigoEPCnQ)"
+        }
+      ]
+    },
+    {
+      "path": "content/misc/need-infra-team/index.md",
+      "title": "基础架构部，还有必要吗？",
+      "date": "2024-07-30",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/LicoWCEui78_xeQ5FKS54g",
+      "source_sha256": "8f00afb65c8054c996ef4fe060283a2b74e065a929d4c3b769ad73f5b03963b0",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 204,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/LicoWCEui78_xeQ5FKS54g)"
+        }
+      ]
+    },
+    {
+      "path": "content/misc/nonsense-writers/index.md",
+      "title": "性学家，化学家，软件行业里的废话文学家",
+      "date": "2024-06-22",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/qAnEmtLz3EpSophz1TbFGA",
+      "source_sha256": "f46286b4524e1a2734a03f81d23b159f1c25932a7ba2a2dc249e94c877b095ce",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 94,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/qAnEmtLz3EpSophz1TbFGA)"
+        }
+      ]
+    },
+    {
+      "path": "content/misc/paul-graham-wealth-creation/index.md",
+      "title": "Paul Graham：这个时代更有效的财富创造路径 | 奇绩分享",
+      "date": "2022-06-16",
+      "authors": [
+        "paul-graham"
+      ],
+      "author_names": [
+        "Paul Graham"
+      ],
+      "decision": "remove_reprint",
+      "reason": "奇绩创坛整理的 Paul Graham 中文译稿转载，正文保留其活动推广；并非冯若航本人译稿。",
+      "source_url": "https://mp.weixin.qq.com/s/pUOaOe-sBzF3bVhn65YdUQ",
+      "source_sha256": "d6be2a5a79b132aec2bd6e01440baee4584a8852bcfb719731d903d3e2e49792",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：Paul Graham"
+        },
+        {
+          "line": 92,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/pUOaOe-sBzF3bVhn65YdUQ)"
+        }
+      ]
+    },
+    {
+      "path": "content/misc/qwen-code-rushed/index.md",
+      "title": "阿里的qwen code太草率了",
+      "date": "2025-08-09",
+      "authors": [
+        "ma-chi"
+      ],
+      "author_names": [
+        "马驰"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/Dih-96p3_9y4hFwRTxrn6A",
+      "source_sha256": "8cb472f1025c504d1f8fa5330322350d0c18953216d6d467b771b3a14029b66a",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：马驰"
+        },
+        {
+          "line": 53,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/Dih-96p3_9y4hFwRTxrn6A)"
+        }
+      ]
+    },
+    {
+      "path": "content/misc/skeleton-of-intelligence/index.md",
+      "title": "智能的骨架：关注、表征、学习、预测与协同",
+      "date": "2026-03-28",
+      "authors": [
+        "visual-is-world"
+      ],
+      "author_names": [
+        "视觉即世界"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/PPWSh1M_wuoUNoKxZ7A8wQ",
+      "source_sha256": "178759d79ec738eb17fe2cfeb09868392e577044e1df9a37803af234a37d1c97",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：视觉即世界"
+        },
+        {
+          "line": 812,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/PPWSh1M_wuoUNoKxZ7A8wQ)"
+        }
+      ]
+    },
+    {
+      "path": "content/misc/sre-outdated/index.md",
+      "title": "SRE过气了吗",
+      "date": "2025-01-27",
+      "authors": [
+        "ma-gong"
+      ],
+      "author_names": [
+        "瑞典马工"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/pyub-KOpUlqB706k7f11Lw",
+      "source_sha256": "ca35f93a1afb9308e7c81363954d91c00a459ef728e81d9c2def996a19d5356f",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：瑞典马工"
+        },
+        {
+          "line": 44,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/pyub-KOpUlqB706k7f11Lw)"
+        }
+      ]
+    },
+    {
+      "path": "content/misc/venture-capital-software/index.md",
+      "title": "资本拔苗助长的软件服务",
+      "date": "2024-05-06",
+      "authors": [
+        "boji"
+      ],
+      "author_names": [
+        "会说话的波吉"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/-OiyWHMZCq572-vBHky22A",
+      "source_sha256": "6fdb8cde0f797dd5ff1df161e349a4646a59c0974e893b651d97d6404ae1dd0b",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：会说话的波吉"
+        },
+        {
+          "line": 50,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/-OiyWHMZCq572-vBHky22A)"
+        }
+      ]
+    },
+    {
+      "path": "content/misc/who-chokes-us/index.md",
+      "title": "究竟是谁在卡脖子？",
+      "date": "2024-11-07",
+      "authors": [
+        "xiongcc"
+      ],
+      "author_names": [
+        "熊灿灿"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/YPPocoSXhcz1DvtknCKdXA",
+      "source_sha256": "bea8c299770b699ae5c6d7221e747fd570e05eaaec5379004385580e80b28030",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：熊灿灿"
+        },
+        {
+          "line": 87,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/YPPocoSXhcz1DvtknCKdXA)"
+        }
+      ]
+    },
+    {
+      "path": "content/pg/duckdb-fdw-1-0/index.md",
+      "title": "duckdb_fdw v1.0.0来了，第13届 PostgreSQL 中国技术大会见",
+      "date": "2024-07-16",
+      "authors": [
+        "alitrack"
+      ],
+      "author_names": [
+        "alitrack"
+      ],
+      "decision": "keep_related_reprint",
+      "reason": "作者明确记录 duckdb_fdw 被收录进 Pigsty、由冯若航推广的生态合作。",
+      "source_url": "https://mp.weixin.qq.com/s/oVh5QPrZWkTTe5HvrLcvIQ",
+      "source_sha256": "d88d3ffa89ca3aa908c8c2440ee7203e1d6171921b9fa1fa149e0c28b4bcd072",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：alitrack"
+        },
+        {
+          "line": 82,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/oVh5QPrZWkTTe5HvrLcvIQ)"
+        }
+      ]
+    },
+    {
+      "path": "content/pg/goodbye-mysql-hello-pg/index.md",
+      "title": "再见MySQL，你好PG",
+      "date": "2025-06-04",
+      "authors": [
+        "digoal"
+      ],
+      "author_names": [
+        "digoal"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/J_7tA1IZgfHpYCEz9-5KZw",
+      "source_sha256": "ed18a171b143eaebc6c6bf372c35537f2bc8694d3141d4c9a433dd6c8e62889e",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：digoal"
+        },
+        {
+          "line": 90,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/J_7tA1IZgfHpYCEz9-5KZw)"
+        }
+      ]
+    },
+    {
+      "path": "content/pg/harvest-sql-tuning/index.md",
+      "title": "灿灿荐书：《收获，不止 SQL 优化》",
+      "date": "2024-04-19",
+      "authors": [
+        "xiongcc"
+      ],
+      "author_names": [
+        "熊灿灿"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/oLVTENYU_H01Z4F5DDNqtQ",
+      "source_sha256": "c2349ccbdd11954369d22606922cdea04fb28748ed4079a314b404aa0af49985",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：熊灿灿"
+        },
+        {
+          "line": 164,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/oLVTENYU_H01Z4F5DDNqtQ)"
+        }
+      ]
+    },
+    {
+      "path": "content/pg/just-use-pg/index.md",
+      "title": "技术极简主义：一切皆用Postgres",
+      "date": "2024-02-19",
+      "authors": [
+        "stephan-schmidt"
+      ],
+      "author_names": [
+        "Stephan Schmidt"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://www.amazingcto.com/postgres-for-everything/",
+      "source_sha256": "f405a1ae208756f18d793549dfdf21bdcbb40d88715f145ab28b86f64aaff9da",
+      "evidence": [
+        {
+          "line": 69,
+          "text": "### 译者评论"
+        },
+        {
+          "line": 71,
+          "text": "译者：**Vonng**，创业者与 PostgreSQL 专家，下云倡导者，开源 PG RDS 替代，开箱即用的 PostgreSQL 发行版 —— [Pigsty](/pigsty/better-rds-alternative/) 作者。"
+        }
+      ]
+    },
+    {
+      "path": "content/pg/mysql-most-successful-db/index.md",
+      "title": "MySQL：这个星球最成功的数据库",
+      "date": "2023-08-09",
+      "authors": [
+        "jiang-chengyao"
+      ],
+      "author_names": [
+        "姜承尧"
+      ],
+      "decision": "remove_reprint",
+      "reason": "用户于 2026-10-14 明确要求移除，不再作为相关转载例外保留。",
+      "source_url": "https://mp.weixin.qq.com/s/rqziG1oP87REwhe33OAmlw",
+      "source_sha256": "671b5421173fa89c99725ccefa66ef355ac58099c0b50bd7d16a31bacd787006",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：姜承尧"
+        },
+        {
+          "line": 122,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/rqziG1oP87REwhe33OAmlw)"
+        }
+      ],
+      "previous_decision": "keep_related_reprint",
+      "previous_reason": "直接回应冯若航《PostgreSQL：世界上最成功的数据库》，也是本人反驳文章和后续辩论的原始对象。"
+    },
+    {
+      "path": "content/pg/openai-postgres/index.md",
+      "title": "OpenAI：一套 PG 支持8亿 ChatGPT 用户",
+      "date": "2026-01-24",
+      "authors": [
+        "bohan-zhang"
+      ],
+      "author_names": [
+        "Bohan Zhang"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://www.pgevents.ca/events/pgconfdev2025/schedule/session/433-scaling-postgres-to-the-next-level-at-openai/",
+      "source_sha256": "e279850663ea06fb8e2de38ad93b1887c3f2e272516913eb974af8fffbf8f9de",
+      "evidence": [
+        {
+          "line": 27,
+          "text": "借着这次官方发布的窗口，我把文章内容再翻译一遍，并按原文顺序补上我的评论解读。"
+        }
+      ]
+    },
+    {
+      "path": "content/pg/pg-for-everything/index.md",
+      "title": "为什么PostgreSQL是未来数据库的事实标准？",
+      "date": "2024-05-16",
+      "authors": [
+        "ajay-kulkarni"
+      ],
+      "author_names": [
+        "Ajay Kulkarni"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://www.timescale.com/blog/postgres-for-everything/",
+      "source_sha256": "b9ce201fbc83a5baec0eedb14af57873539f64510910aa6054f9c9f497b7f49d",
+      "evidence": [
+        {
+          "line": 16,
+          "text": "> 译者 Vonng，PostgreSQL 专家，开源 RDS PG —— Pigsty 作者。"
+        }
+      ]
+    },
+    {
+      "path": "content/pg/pg-in-2024/index.md",
+      "title": "展望 PostgreSQL 的2024",
+      "date": "2024-01-05",
+      "authors": [
+        "jonathan-katz"
+      ],
+      "author_names": [
+        "Jonathan Katz"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://jkatz05.com/post/postgres/postgresql-2024/",
+      "source_sha256": "a126407e3821c049559d7f7e7eba396e72b4bb810657f8803a83978ea02ea41f",
+      "evidence": [
+        {
+          "line": 15,
+          "text": "> **译者**：Vonng，磐吉云数创始人 / CEO，[**PostgreSQL**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485685&idx=1&sn=688f6d6d0f4128d7f77d710f04ff9024&chksm=fe4b3d2ec93cb438665b7e0d554511674091b2e486a70b8a3eb7e2c7a53681fb9834a08cb3c3&scene=21#wechat_redirect) 专家与布道师，开源 RDS PG —— [**Pigsty**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485518&idx=1&sn=3d5f3c753facc829b2300a15df50d237&"
+        }
+      ]
+    },
+    {
+      "path": "content/pg/pg-license/index.md",
+      "title": "PostgreSQL会修改开源许可证吗？",
+      "date": "2024-03-20",
+      "authors": [
+        "jonathan-katz"
+      ],
+      "author_names": [
+        "Jonathan Katz"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://jkatz05.com/post/postgres/postgres-license-2024/",
+      "source_sha256": "535c3cbdf0dbf656cd1e7d1dc23bb6e82409686b67bc8159db480cdbb5b5d783",
+      "evidence": [
+        {
+          "line": 13,
+          "text": "> 译者：[Vonng](https://vonng.com)，PostgreSQL 专家，Free RDS PG Alternative —— Pigsty 作者"
+        },
+        {
+          "line": 49,
+          "text": "## 译者评论"
+        }
+      ]
+    },
+    {
+      "path": "content/pg/pg-scalability/index.md",
+      "title": "令人惊叹的PostgreSQL可伸缩性",
+      "date": "2024-01-13",
+      "authors": [
+        "neo-kim"
+      ],
+      "author_names": [
+        "Neo Kim"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://newsletter.systemdesign.one/p/postgresql-scalability",
+      "source_sha256": "3e4fc4f421eca3ce1577a34774e751448fe44f144563c526edd1a75ad6811185",
+      "evidence": [
+        {
+          "git_commit": "acaa40dc",
+          "text": "title: 令人惊叹的PostgreSQL可伸缩性\ndate: 2024-01-13\nhero: /hero/pg-scalability.jpg\nauthor: |\n  [冯若航](https://vonng.com)（[@Vonng](https://vonng.com/en/)） | [微信公众号](https://mp.weixin.qq.com/s/iH34payWSE_GROsq-9MN8g)\nsummary: >\n  本文讲述了 Cloudflare 是如何利用 15 个 PostgreSQL 集群，伸缩到支持每秒 5500 万个请求。以及 PostgreSQL 的可伸缩性表现。\ntags: [PostgreSQL,性能]"
+        }
+      ]
+    },
+    {
+      "path": "content/pg/pg14-internals-cn/index.md",
+      "title": "中译版《PostgreSQL 14 Internals》上线",
+      "date": "2024-12-24",
+      "authors": [
+        "xiongcc"
+      ],
+      "author_names": [
+        "熊灿灿"
+      ],
+      "decision": "remove_reprint",
+      "reason": "熊灿灿发布其本人译著的公告，正文明确说明译者与个人项目；不是冯若航的译稿。",
+      "source_url": "https://mp.weixin.qq.com/s/6cySHDZCWumZOl7c8Kq_pg",
+      "source_sha256": "84157f4f865901e031b03efcec73431111e457ec4f816c539d5cbb829ddd6de5",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：熊灿灿"
+        },
+        {
+          "line": 14,
+          "text": "各位 PGer 大家好，在此很高兴地告诉各位 ——《PostgreSQL 内参：深入解析运行原理》正式发布了。从最开始萌生翻译成册的想法，再到现今电子版书籍的正式发布，期间磕绊无数，但好在结果是喜人的，三年磨一剑，《PostgreSQL 14 Internals》中文版终于如期而至，各位可以通过 [postgres-internals.cn](https://postgres-internals.cn/)<sup>[1]</sup> 进行访问。原计划在元旦发布，思考良久，最终还是决定提前与各位见面。对于中文版的发布，原作者 Egor Rogov 对此也表示十分支持。"
+        },
+        {
+          "line": 33,
+          "text": "为了最大化还原原书，笔者花费了不少气力，比如旁注，这也是原作者所建议的，最开始的版本并没有旁注。现在，当🖱悬停至带有淡棕色背景色的字体上面，会自动\"弹出\"旁注，包含相应的注解信息，比如："
+        },
+        {
+          "line": 60,
+          "text": "直译过来的话就会丢失其准确性，不够严谨，其实其准确含义是：\"walsender 进程直接从文件中读取 WAL 条目，如果备库没有接收到需要的 WAL 条目，那么 walsender 进程将从文件中读取，只是读取过程是顺序的，而不是随机的 (也有可能在主库的操作系统缓存中找到相应的 WAL 条目)\"，这些种种，为了确保质量，我都和原作者 Egor Rogov 进行了请教与沟通。"
+        },
+        {
+          "line": 83,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/6cySHDZCWumZOl7c8Kq_pg)"
+        }
+      ]
+    },
+    {
+      "path": "content/pg/pg18-six-features/index.md",
+      "title": "聚焦六大功能：PostgreSQL 18 新特性深度解析",
+      "date": "2025-09-26",
+      "authors": [
+        "ivorysql"
+      ],
+      "author_names": [
+        "IvorySQL"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/zmBqNSw4r8MntHjQpj02ng",
+      "source_sha256": "a08c9d4423f447f2d165e3e19e3325136770c8bc5c7d1de976fdcd5bc357a465",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：IvorySQL"
+        },
+        {
+          "line": 820,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/zmBqNSw4r8MntHjQpj02ng)"
+        }
+      ]
+    },
+    {
+      "path": "content/pg/pgss/index.md",
+      "title": "PostgreSQL 宏观查询优化之 pg_stat_statements",
+      "date": "2023-10-26",
+      "authors": [
+        "nikolay-samokhvalov"
+      ],
+      "author_names": [
+        "Nikolay Samokhvalov"
+      ],
+      "decision": "restore_self_authorship",
+      "reason": "初始版本 acaa40dc 署冯若航；81e2e8af 批量翻译提交仅改署名为 Nikolay，并写入晚于本文日期的另一篇译文信息。正文是 Pigsty 实践，Nikolay 出现在参考资料。恢复本人署名，保留参考资料。",
+      "source_url": "",
+      "source_sha256": "d7a4c0959b5621ac8d90408120c21b445d75ae0f9bf18219e41e551f15bf11db",
+      "evidence": [
+        {
+          "git_commit": "81e2e8aff39430c9c5a7e3661e40ef86a600ffab",
+          "text": "仅将 author: 冯若航 改为 authors: [nikolay-samokhvalov]，正文未改。"
+        }
+      ]
+    },
+    {
+      "path": "content/pg/postgres-multicast/index.md",
+      "title": "PostgreSQL + 组播，有希望成为下一个被收购的 neon 吗？",
+      "date": "2025-05-21",
+      "authors": [
+        "xiongcc"
+      ],
+      "author_names": [
+        "熊灿灿"
+      ],
+      "decision": "remove_reprint",
+      "reason": "正文明确标注外部原作者及微信公众号转载来源，属于普通转载；没有足以适用本次例外的直接项目或本人参与关系。",
+      "source_url": "https://mp.weixin.qq.com/s/wNpqGlHIzTaKqhH-Ag5Fbg",
+      "source_sha256": "3caae37fc381540b657992325d5cee91e44a187fbe0fac176edb13310761406f",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：熊灿灿"
+        },
+        {
+          "line": 92,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/wNpqGlHIzTaKqhH-Ag5Fbg)"
+        }
+      ]
+    },
+    {
+      "path": "content/pg/vector-json-pg/index.md",
+      "title": "向量是新的 JSON",
+      "date": "2023-08-06",
+      "authors": [
+        "jonathan-katz"
+      ],
+      "author_names": [
+        "Jonathan Katz"
+      ],
+      "decision": "keep_translation",
+      "reason": "保留本人翻译、译评或整理的英文文章与演讲，原作者继续署名。",
+      "source_url": "https://jkatz05.com/post/postgres/vectors-json-postgresql/",
+      "source_sha256": "5cc1bec93132d1d9174cdd51e8144625322004d4515bef0a0efbafdfee4e7b4b",
+      "evidence": [
+        {
+          "line": 127,
+          "text": "> 本文译自《VECTORS ARE THE NEW JSON IN POSTGRESQL[2]》一文。"
+        },
+        {
+          "line": 129,
+          "text": "> 作者 JONATHAN KATZ ，译者 Vonng"
+        },
+        {
+          "line": 133,
+          "text": "## 译者评论"
+        }
+      ]
+    },
+    {
+      "path": "content/pigsty/pigsty-apache-license/index.md",
+      "title": "震惊！它改成阿帕奇开源协议了，不怕被云厂商“白嫖”吗？",
+      "date": "2026-01-29",
+      "authors": [
+        "digoal"
+      ],
+      "author_names": [
+        "digoal"
+      ],
+      "decision": "keep_related_reprint",
+      "reason": "全文讨论 Pigsty 4.0 的许可证变更，属于项目直接相关的外部评价。",
+      "source_url": "https://mp.weixin.qq.com/s/UwIqHI3PA9aeTfMMEzkyIA",
+      "source_sha256": "274e824a0fd144d455c96a1bedd57ab62a5969b7f736139ee06bfe8f59cc2aa8",
+      "evidence": [
+        {
+          "line": 10,
+          "text": "> 原作者：digoal"
+        },
+        {
+          "line": 78,
+          "text": "发布版本：[微信公众号转载页](https://mp.weixin.qq.com/s/UwIqHI3PA9aeTfMMEzkyIA)"
+        }
+      ]
+    }
+  ]
+}

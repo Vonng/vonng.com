@@ -63,7 +63,7 @@ PG 社区中涌现出好几个将 DuckDB 整合进 PG 的扩展玩家，而这�
 尽管法律层面最主要的合规点仍是保留版权和许可证文本，但云厂商提供的是在线服务，“交付物”是一个 URL 和文档，而非 RPM / DEB 软件包，所以用户能接触到的材料就是官方文档。
 **如果在说明文档等对外宣传中，有意无意地淡化或隐去所使用的第三方开源项目，使得公众认为“这是完全自研或完全原创”，那么在舆论与道德层面会被质疑为“抄袭”或“剽窃”**
 
-类似的例子比比皆是，先前“何同学”开源抄袭风波、[抖音美摄案](/misc/code-plagiarism-is-theft/)、
+类似的例子比比皆是，先前“何同学”开源抄袭风波、[抖音美摄案](https://mp.weixin.qq.com/s/72Yp7d6yjIezS9iQZgNw9w)、
 “[高春辉诉阿里云抄袭 IPIP 案](https://mp.weixin.qq.com/s/Qqgkofmy5_jFFEhVZx-6bQ)，” 以及大家耳熟能详的鹅厂。
 更别提有大把“国产数据库公司”将开源的 PG 换皮套壳魔改称为“100% 纯自研”数据库。都是因为不尊重开源版权、把别人的东西当成“自研”，最终声名狼藉、备受质疑。
 
@@ -111,7 +111,7 @@ Deepseek 的成功也好，PostgreSQL 越做越大也好，都是脚踏实地站
 
 [支付宝崩了？双十一整活王又来了](https://mp.weixin.qq.com/s/D2XmL2YYN2kqHtwFN4FVGQ)
 
-[记一次阿里云 DCDN 加速仅 32 秒就欠了 1600 的问题处理（扯皮）](/cloud/aliyun-dcdn-bill/) 转
+[记一次阿里云 DCDN 加速仅 32 秒就欠了 1600 的问题处理（扯皮）](https://mp.weixin.qq.com/s/0Wnv1B80Tk4J03X3uAm4Ww) 转
 
 [阿里云故障预报：本次事故将持续至 20 年后？](/cloud/aliyun-ha/)
 
@@ -119,15 +119,15 @@ Deepseek 的成功也好，PostgreSQL 越做越大也好，都是脚踏实地站
 
 [阿里云又挂了，这次是光缆被挖断了？](/cloud/aliyun-fiber-cut/)
 
-[云计算：菜就是一种原罪](/cloud/cloud-incompetence/)
+[云计算：菜就是一种原罪](https://mp.weixin.qq.com/s/jYIqj94B07oTu9KC85bjtQ)
 
 [taobao.com 证书过期](https://mp.weixin.qq.com/s/-ntsNfdEq3b4qs5tKP7tfQ)
 
-[牙膏云？您可别吹捧云厂商了](/cloud/toothpaste-cloud/)
+[牙膏云？您可别吹捧云厂商了](https://mp.weixin.qq.com/s/XZqe4tbJ9lgf8a6PWj7vjw)
 
 [罗永浩救不了牙膏云](/cloud/luo-live/)
 
-[迷失在阿里云的年轻人](/cloud/lost-youth-at-aliyun/)
+[迷失在阿里云的年轻人](https://mp.weixin.qq.com/s/w7YzdxSrAsIqk2gXBks9CA)
 
 [剖析云算力成本，阿里云真的降价了吗？](/cloud/ecs/)
 
@@ -135,7 +135,7 @@ Deepseek 的成功也好，PostgreSQL 越做越大也好，都是脚踏实地站
 
 [【阿里】云计算史诗级大翻车来了](/cloud/aliyun/)
 
-[云厂商眼中的客户：又穷又闲又缺爱](/cloud/cloud-customers-poor-bored-lonely/) 马工
+[云厂商眼中的客户：又穷又闲又缺爱](https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ) 马工
 
 ---
 

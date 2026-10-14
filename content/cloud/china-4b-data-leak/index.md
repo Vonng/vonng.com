@@ -92,7 +92,7 @@ Cybernews 团队的最新发现显示，这次超大规模泄露主要影响中�
 
 [阿里云：从上到下烂到根了【去除原文版】](/cloud/aliyun-supabase/)
 
-[硬编码密码泄漏，阿里云的软件工程也太差了](/cloud/aliyun-hardcoded-password/)
+[硬编码密码泄漏，阿里云的软件工程也太差了](https://mp.weixin.qq.com/s/43pIBxYvsszeBZGk7LU7_w)
 
 [Azure 和 OpenAI 来查水表了](/cloud/azure-openai-audit/)
 
@@ -102,7 +102,7 @@ Cybernews 团队的最新发现显示，这次超大规模泄露主要影响中�
 
 [AWS 东京可用区故障：影响 13 项服务](/cloud/aws-tokyo-outage/)
 
-[云计算不能做成云算计之一：云行贿必须清理](/cloud/cloud-bribery/) 马工
+[云计算不能做成云算计之一：云行贿必须清理](https://mp.weixin.qq.com/s/GetqBeJqO3mHWmyItej9Cw) 马工
 
 [CVE 惨遭断奶，美帝自毁安全长城](/misc/cve-funding-cut/)
 
@@ -124,7 +124,7 @@ Cybernews 团队的最新发现显示，这次超大规模泄露主要影响中�
 
 [WordPress 社区内战：论共同体划界问题](/cloud/wordpress-drama/)
 
-[记一次阿里云 DCDN 加速仅 32 秒就欠了 1600 的问题处理（扯皮）](/cloud/aliyun-dcdn-bill/) 转
+[记一次阿里云 DCDN 加速仅 32 秒就欠了 1600 的问题处理（扯皮）](https://mp.weixin.qq.com/s/0Wnv1B80Tk4J03X3uAm4Ww) 转
 
 [阿里云：高可用容灾神话的破灭](/cloud/aliyun-ha/)
 
@@ -146,7 +146,7 @@ Cybernews 团队的最新发现显示，这次超大规模泄露主要影响中�
 
 [阿里云又挂了，这次是光缆被挖断了？](/cloud/aliyun-fiber-cut/)
 
-[性学家，化学家，软件行业里的废话文学家](/misc/nonsense-writers/) 马工
+[性学家，化学家，软件行业里的废话文学家](https://mp.weixin.qq.com/s/qAnEmtLz3EpSophz1TbFGA) 马工
 
 [Ahrefs 不上云，省下四亿美元](/cloud/ahrefs-saving/)
 
@@ -156,11 +156,11 @@ Cybernews 团队的最新发现显示，这次超大规模泄露主要影响中�
 
 [赛博菩萨 Cloudflare 圆桌访谈与问答录](/cloud/cf-interview/)
 
-[云计算：菜就是一种原罪](/cloud/cloud-incompetence/)
+[云计算：菜就是一种原罪](https://mp.weixin.qq.com/s/jYIqj94B07oTu9KC85bjtQ)
 
 [taobao.com 证书过期](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487367&idx=1&sn=d6e4abd2b2249d27bd8b8146b591b026&scene=21#wechat_redirect)
 
-[腾讯真的走通云原生之路了吗？](/cloud/tencent-cloud-native/) 马工
+[腾讯真的走通云原生之路了吗？](https://mp.weixin.qq.com/s/v0vbsy_OXIDNrbBvUUMV9Q) 马工
 
 [我们能从腾讯云故障复盘中学到什么？](/cloud/qcloud/)
 
@@ -172,15 +172,15 @@ Cybernews 团队的最新发现显示，这次超大规模泄露主要影响中�
 
 [吊打公有云的赛博佛祖 Cloudflare](/cloud/cloudflare/)
 
-[牙膏云？您可别吹捧云厂商了](/cloud/toothpaste-cloud/)
+[牙膏云？您可别吹捧云厂商了](https://mp.weixin.qq.com/s/XZqe4tbJ9lgf8a6PWj7vjw)
 
 [罗永浩救不了牙膏云](/cloud/luo-live/)
 
 [Redis 不开源是“开源”之耻，更是公有云之耻](/db/redis-oss/)
 
-[公有云厂商卖的云计算到底是什么玩意？](/cloud/what-public-cloud-sells/) 马工
+[公有云厂商卖的云计算到底是什么玩意？](https://mp.weixin.qq.com/s/_ijL2OXAQJQrmWiE-KKzdw) 马工
 
-[迷失在阿里云的年轻人](/cloud/lost-youth-at-aliyun/)
+[迷失在阿里云的年轻人](https://mp.weixin.qq.com/s/w7YzdxSrAsIqk2gXBks9CA)
 
 [RDS 阉掉了 PostgreSQL 的灵魂](/cloud/rds-castrates-pg/)
 
@@ -192,11 +192,11 @@ Cybernews 团队的最新发现显示，这次超大规模泄露主要影响中�
 
 [单租户时代：SaaS 范式转移](/cloud/single-tenant-saas/)
 
-[互联网技术大师速成班](/misc/internet-tech-masterclass/) 马工
+[互联网技术大师速成班](https://mp.weixin.qq.com/s/8ZffsCgchv8LH5ujv0lRGQ) 马工
 
-[门内的国企如何看门外的云厂商](/cloud/state-owned-enterprise-cloud-view/) Leo
+[门内的国企如何看门外的云厂商](https://mp.weixin.qq.com/s/qSTEf9txjHNTHeEFv3NkWg) Leo
 
-[卡在政企客户门口的阿里云](/cloud/aliyun-enterprise-market/) 马工
+[卡在政企客户门口的阿里云](https://mp.weixin.qq.com/s/1dse1KSCq2xG-QaL1JzZ8Q) 马工
 
 [云计算泥石流](/cloud/debris/)
 
@@ -206,7 +206,7 @@ Cybernews 团队的最新发现显示，这次超大规模泄露主要影响中�
 
 [半年下云省千万：DHH 下云 FAQ 答疑](/cloud/cloud-exit-faq/)
 
-[互联网故障背后的草台班子们](/cloud/amateur-internet-outages/) 马工
+[互联网故障背后的草台班子们](https://mp.weixin.qq.com/s/OxhhJ4U1P43di_eaE1uGPw) 马工
 
 [从降本增笑到真的降本增效](/cloud/smile/)
 
@@ -220,7 +220,7 @@ Cybernews 团队的最新发现显示，这次超大规模泄露主要影响中�
 
 [阿里云的羊毛抓紧薅，五千的云服务器三百拿](/cloud/cheap-ecs/)
 
-[云厂商眼中的客户：又穷又闲又缺爱](/cloud/cloud-customers-poor-bored-lonely/) 马工
+[云厂商眼中的客户：又穷又闲又缺爱](https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ) 马工
 
 [是时候放弃云计算了吗？](/cloud/odyssey/)
 
@@ -246,7 +246,7 @@ Cybernews 团队的最新发现显示，这次超大规模泄露主要影响中�
 
 [云数据库是不是杀猪盘](/cloud/rds/)
 
-[你怎么还在招聘 DBA?](/cloud/no-more-dba/) 马工
+[你怎么还在招聘 DBA?](https://mp.weixin.qq.com/s/PqCD80H927s0yJrBr4QQqw) 马工
 
 [云数据库是不是智商税](/cloud/rds/)
 
