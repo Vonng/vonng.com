@@ -7,26 +7,21 @@ summary: >
   The dark forest law has emerged on public cloud: Anyone who knows your S3 object storage bucket name can explode your cloud bill.
 tags: [Cloud-Exit, AWS, Object Storage]
 ---
-
 The dark forest law has emerged on public cloud: **Anyone who knows your S3 object storage bucket name can explode your cloud bill.**
 
-![](featured.webp)
-
-------
+![Cloud Dark Forest: Exploding Cloud Bills with Just S3 Bucket Names (figure 1)](featured.webp)
 
 Imagine this: you create an empty, **private** AWS S3 storage bucket in your favorite region. What would your AWS bill look like the next morning?
 
 A few weeks ago, I started developing a proof-of-concept (PoC) for a document indexing system for a client. I created an S3 bucket in the `eu-west-1` region and uploaded some test files. Two days later, I checked the AWS billing page mainly to confirm my operations were within the free tier. The results were obviously disappointing — the bill exceeded **$1,300**, with the billing dashboard showing nearly **100 million** S3 PUT requests executed in just one day!
 
-![](bill.jpg)
+![Cloud Dark Forest: Exploding Cloud Bills with Just S3 Bucket Names (figure 2)](bill.jpg)
 
 > My S3 bill, charged per day/per region
 
-------
-
 ## Where Did These Requests Come From?
 
-By default, AWS doesn't log requests to your S3 buckets. But you can enable such logging through [**AWS CloudTrail**](https://docs.aws.amazon.com/AmazonS3/latest/userguide/cloud/trail-logging.html) or [**S3 Server Access Logs**](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html). After enabling CloudTrail logs, I immediately discovered thousands of write requests from different accounts.
+By default, AWS doesn't log requests to your S3 buckets. But you can enable such logging through [**AWS CloudTrail**](https://docs.aws.amazon.com/AmazonS3/latest/userguide/cloudtrail-logging.html) or [**S3 Server Access Logs**](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html). After enabling CloudTrail logs, I immediately discovered thousands of write requests from different accounts.
 
 **Why would third-party accounts make unauthorized requests to my S3 bucket?**
 
@@ -56,8 +51,6 @@ Another issue puzzled me: why did over half my bill costs come from the **us-eas
 
 Now I understood why my S3 bucket received millions of requests and why I ended up with a huge S3 bill. At the time, I also had an idea. If all these misconfigured systems were trying to backup data to my S3 bucket, what if I set it to "**public write**"? I made the bucket public for less than 30 seconds and collected over 10GB of data in that short time. Of course, I can't reveal who owns this data. But this seemingly harmless configuration error could lead to serious data leaks — shocking!
 
-------
-
 ## What Did I Learn?
 
 **Lesson One: Anyone who knows your S3 bucket name can freely explode your AWS bill**
@@ -72,8 +65,6 @@ This approach reduces threats from misconfigurations or intentional attacks. At 
 
 This way you can avoid additional costs from API redirects.
 
-------
-
 ## Epilogue
 
 1. I reported my findings to the maintainers of this vulnerable open source tool. They quickly fixed the default configuration, though already deployed instances can't be fixed.
@@ -85,8 +76,6 @@ This way you can avoid additional costs from API redirects.
 4. AWS eventually agreed to cancel my S3 bill, but emphasized this was an exceptional case.
 
 Thanks for taking time to read my article. Hope it helps you avoid unexpected AWS costs!
-
-------
 
 ## Cloud-Exit Lao Feng's Commentary
 
@@ -100,15 +89,11 @@ But from common sense, this is completely unreasonable — requests initiated by
 
 But in AWS's view, this feature is considered a Feature, not a security vulnerability or bug, usable to drain users' gold coins. The same design logic runs through AWS's product design logic. For example, Route53 charges for querying domains that don't resolve, so knowing a domain uses AWS resolution can also enable DDoS.
 
----------------
-
 I'm not sure if domestic cloud vendors use the same handling logic. But they basically directly or indirectly learn from AWS. So there's a fairly high probability they would handle it the same way.
 
-![](ddos.jpg)
+![Cloud Dark Forest: Exploding Cloud Bills with Just S3 Bucket Names — Cloud-Exit Lao Feng's Commentary (figure 3)](ddos.jpg)
 
 > As someone from cybersecurity background, I know some industry practices, like DDoS attacks to sell high-defense services — screenshot from a group member
-
----------------
 
 In "[**Cloudflare Roundtable Interview**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487400&idx=1&sn=cf5b94165d2791030e0e874dca8383c7&scene=21#wechat_redirect)", I also mentioned security issues, like insider traffic farming problems.
 
@@ -118,4 +103,4 @@ In "[**Cloudflare Roundtable Interview**](https://mp.weixin.qq.com/s?__biz=MzU5O
 
 Well, overall, exploded bills are also a unique security risk on public cloud — hope cloud users stay cautious and careful. Small mistakes might immediately cause irreparable losses on bills.
 
-![](aws-joke.jpg)
+![Cloud Dark Forest: Exploding Cloud Bills with Just S3 Bucket Names — Cloud-Exit Lao Feng's Commentary (figure 4)](aws-joke.jpg)

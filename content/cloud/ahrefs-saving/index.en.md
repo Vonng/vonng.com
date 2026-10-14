@@ -7,7 +7,6 @@ summary: >
   After Alibaba-Cloud's epic global outage on Double 11, setting industry records, how should we evaluate this incident and what lessons can we learn from it?
 tags: [Cloud-Exit, AWS, Cost, Translation]
 ---
-
 > Original: [How Ahrefs Saved US$400M in 3 Years by NOT Going to the Cloud](https://tech.ahrefs.com/how-ahrefs-saved-us-400m-in-3-years-by-not-going-to-the-cloud-8939dd930af8)
 
 Cloud computing has been very popular in the IT infrastructure space recently, with going to the cloud becoming a trend. Infrastructure as a Service (IaaS) clouds do have many advantages: flexibility, agile deployment, easy scaling, instant availability in multiple regions worldwide, and so on.
@@ -16,13 +15,11 @@ Cloud service providers have become professional IT service outsourcing supplier
 
 However, the cost of these outsourced cloud computing services can sometimes be ridiculously high — so high that we worry whether our business could still exist if our infrastructure were 100% dependent on cloud computing. This prompted us to make an actual comparison based on facts. Here are the results:
 
-------
-
 ## Ahrefs' Own Hardware Overview
 
 Ahrefs rents a colocation data center in Singapore — highly homogeneous standard infrastructure. We calculated all costs for this data center and allocated them to each server, then compared the costs with similar specifications in Amazon Web Services (AWS) cloud (we used AWS as the benchmark since it's the IaaS leader).
 
-![](server1.webp)
+![How Ahrefs Saved US$400M by NOT Going to the Cloud — Ahrefs' Own Hardware Overview (figure 1)](server1.webp)
 
 > Ahrefs servers
 
@@ -45,8 +42,6 @@ The table below shows our monthly expenses per server. Server hardware accounts 
 | **On-Premise Total**   | **$ 1,550**      | **¥ 11,160**     | 100%       |
 
 > Our on-premise hardware cost structure
-
-------
 
 ## AWS Cost Structure
 
@@ -81,8 +76,6 @@ Combining all three cost items, we get the cost distribution on AWS, as shown in
 
 > AWS cost structure
 
-------
-
 ## On-Premise vs AWS Comparison
 
 Combining the above two tables, it's easy to see that spending on AWS is much higher than imagined.
@@ -98,7 +91,7 @@ Combining the above two tables, it's easy to see that spending on AWS is much hi
 
 The cost of a replacement EC2 instance with similar available SSD space on AWS is roughly equivalent to the cost of **11.3** servers in our colocation data center. Correspondingly, if we went to the cloud, our rack of 20 servers would only have about 2 servers left!
 
-![](server2.webp)
+![How Ahrefs Saved US$400M by NOT Going to the Cloud — On-Premise vs AWS Comparison (figure 2)](server2.webp)
 
 > The cost of 20 Ahrefs servers equals 2 AWS servers
 
@@ -119,7 +112,7 @@ If we had chosen to use AWS in Singapore region in 2020 instead of building our 
 
 Some might wonder, "Maybe Ahrefs can afford it?"
 
-Indeed, Ahrefs is a profitable and self-sustaining company, so let's look at its revenue and do the math. Although we're a private company and don't have to disclose our financial data, some information about Ahrefs' revenue can be found in The Straits Times articles about Singapore's fastest-growing companies in [2022](https://www.straitstimes.com/fastest-growing-companies-2022) and [2023](https://www.straitstimes.com/fastest-growing-companies-2023). These articles provide Ahrefs' revenue data for 2020 and 2021.
+Indeed, Ahrefs is a profitable and self-sustaining company, so let's look at its revenue and do the math. Although we're a private company and don't have to disclose our financial data, some information about Ahrefs' revenue can be found in The Straits Times articles about Singapore's fastest-growing companies in 2022 (original link unavailable) and [2023](https://www.straitstimes.com/fastest-growing-companies-2023). These articles provide Ahrefs' revenue data for 2020 and 2021.
 
 We can also linearly extrapolate revenue for 2022. This is a rough estimate, but sufficient for us to draw some conclusions.
 
@@ -148,8 +141,6 @@ Therefore, if our main infrastructure were on the cloud, Ahrefs could barely sur
 
 This article doesn't consider other aspects that would make the comparison more complex. These aspects include personnel skills, financial control, cash flow, capacity planning based on load types, etc.
 
-------
-
 ## Conclusion
 
 Ahrefs saved approximately $400 million because our infrastructure wasn't 100% cloud-based over the past two and a half years. This figure is still growing because we've now set up another large colocation data center with new hardware in a new location.
@@ -169,8 +160,6 @@ For companies at more mature stages, [migrating from cloud to own infrastructure
 Large companies, especially FAANG, have absorbed a lot of talent over the years. They've been hiring engineers to operate their massive data centers and infrastructure, leaving few opportunities for smaller companies. But the recent months of mass layoffs at big tech companies have brought opportunities to re-evaluate cloud computing — it's definitely worth considering hiring senior professionals in the data center field and migrating from the cloud.
 
 If you're starting a new company, consider this approach: buy a rack and servers, put them in your basement. Maybe this can improve your company's sustainability from day one.
-
-------
 
 ## Cloud-Exit Commentary by Feng
 

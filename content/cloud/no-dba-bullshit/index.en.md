@@ -6,16 +6,13 @@ summary: >
   Guo Degang has a comedy routine: "Say I tell a rocket scientist, your rocket is no good, the fuel is wrong. I think it should burn wood, better yet coal, and it has to be premium coal, not washed coal. If that scientist takes me seriously, he loses."
 tags: [Cloud-Exit, RDS, PG Admin]
 ---
-
 > *Guo Degang has a comedy routine: "Say I tell a rocket scientist, your rocket is no good, the fuel is wrong. I think it should burn wood, better yet coal, and it has to be premium coal, not washed coal. If that scientist takes me seriously, he loses."*
 
 But regardless, Ma is still a respectable Swedish R&D engineer. Having never worked as a DBA yet daring to make sweeping generalizations and inflammatory statements takes considerable courage. We've crossed swords before in "[Why Are You Still Hiring DBAs](https://mp.weixin.qq.com/s/PqCD80H927s0yJrBr4QQqw)" and my response "[Are Cloud Databases an IQ Tax](/cloud/rds)".
 
 When someone throws mud at everyone in this profession, someone needs to stand up and speak out. Therefore, I'm writing today to refute Ma's fallacious arguments in "[Why You Still Shouldn't Hire a DBA](https://mp.weixin.qq.com/s/CMRrqI2yBWlNbACHpNgL1g)".
 
-[![](featured.jpg)](https://mp.weixin.qq.com/s/CMRrqI2yBWlNbACHpNgL1g)
-
--------
+[![Refuting "Why You Still Shouldn't Hire a DBA" (figure 1)](featured.jpg)](https://mp.weixin.qq.com/s/CMRrqI2yBWlNbACHpNgL1g)
 
 **Ma's three arguments:**
 
@@ -35,7 +32,7 @@ When someone throws mud at everyone in this profession, someone needs to stand u
 
 Let me elaborate:
 
-### DBAs Are Responsible for Stability
+## DBAs Are Responsible for Stability
 
 A fundamental principle of information systems is that **safety and liveness are in conflict** - overemphasizing safety and stability hurts liveness; overemphasizing liveness makes stability difficult. Any organization must find a **balance** between the two. Development and operations are the functional embodiments of these forces.
 
@@ -45,7 +42,7 @@ Development is responsible for new features, while SRE/DBAs are responsible for 
 
 I was once a DBA but also did plenty of Dev work. I have firsthand experience with both development and DBA mindsets. When I first started as a developer, I ran neural networks, recommendation systems, web servers, and crawlers "in the PostgreSQL database," used FDW to connect MongoDB, HBase, and a bunch of external systems. Stability? It ran fine! Until no operations or DBA was willing to maintain it, and I had to become a DBA myself to eat my own dog food and take responsibility. Only then did I develop empathy for DBAs/operations and learn to choose carefully what to do and what not to do.
 
-### Who Cares About Delivery Speed?
+## Who Cares About Delivery Speed?
 
 **Evaluating a database requires considering many dimensions: stability, reliability, security, simplicity, scalability, extensibility, observability, maintainability, cost-effectiveness**, etc. **Delivery speed** barely qualifies as a minor subsidiary dimension within "scalability" and doesn't rank high among database system attributes that need attention.
 
@@ -55,7 +52,7 @@ More importantly, **cost-effectiveness is the primary product strength**. **Comp
 
 Take AWS's 64-core 256GB `db.m5.16xlarge` RDS as an example, costing $25,817/month (about 180,000 RMB). One month's rent could buy two servers with much better performance outright. Any rational enterprise user can see the logic: **if purchasing such services isn't for short-term, temporary needs, it's absolutely a major financial misconduct**.
 
-### Not Afraid of Delivery Speed Competition Either
+## Not Afraid of Delivery Speed Competition Either
 
 But even if we step back ten thousand paces and say delivery speed really matters, Ma's proof case is full of holes.
 
@@ -67,7 +64,7 @@ Actually, with machines ready, networks connected, and planning complete: using 
 
 > The cloud database product manager who came up with this pricing must have had their head slammed in a door
 
-### The Strawman of Sharding
+## The Strawman of Sharding
 
 Ma argues that database sharding is a tool DBAs use to inflate their value.
 
@@ -117,7 +114,7 @@ Whether it's public cloud vendors or Kubernetes-represented cloud-native/private
 
 **You also need knowledgeable people to coordinate and handle things, so you won't be harvested like leeks by cloud vendors treating you like idiots.**
 
-Sidebar: Some developers always want to use cloud - this operations outsourcing - cloud databases, cloud XX to eliminate DBA jobs. We made an out-of-the-box cloud database RDS PostgreSQL local open-source alternative **Pigsty**, recently released version 2.0 with monitoring/database out-of-the-box HA/PITR/IaC complete. It allows you to run enterprise-grade database services at near-hardware costs without database experts, saving 50%-90% of the "expertise tax" paid to RDS, making RDS look like a big joke in every aspect except its vaunted elasticity. For DBAs, this is a weapon to fight back. Let's be frank - we're here to destroy cloud database jobs and end developers' pipe dreams. https://pigsty.cc/zh/docs/feature
+Sidebar: Some developers always want to use cloud - this operations outsourcing - cloud databases, cloud XX to eliminate DBA jobs. We made an out-of-the-box cloud database RDS PostgreSQL local open-source alternative **Pigsty**, recently released version 2.0 with monitoring/database out-of-the-box HA/PITR/IaC complete. It allows you to run enterprise-grade database services at near-hardware costs without database experts, saving 50%-90% of the "expertise tax" paid to RDS, making RDS look like a big joke in every aspect except its vaunted elasticity. For DBAs, this is a weapon to fight back. Let's be frank - we're here to destroy cloud database jobs and end developers' pipe dreams. https://pigsty.cc/docs/about/feature/
 
 Finally, let's end today's topic with a copyright-free joke generated by some Notion AI.
 

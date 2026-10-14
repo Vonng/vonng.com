@@ -6,7 +6,6 @@ summary: >
   老冯之前在《便宜云服务器哪家强？》还有 PG 上手教程里面都推荐过 ClawCloud 家的 VPS。
 tags: [云计算, 成本]
 ---
-
 老冯之前在《[便宜云服务器哪家强？](/cloud/cheap-vps/)》还有 PG 上手教程里面都推荐过 ClawCloud 家的 VPS。不幸的是，看上去这次 ClawCloud 真的要跑路了，官网已经发了公告 《ClawCloud VPS 及相关服务下线及退款安置公告》，2026 年，6 月 30 日起正式关停 VPS、VDS 相关业务。
 
 ![图片](01.webp)

@@ -7,7 +7,6 @@ summary: >
 categories: [Cloud]
 tags: [Cloud-Exit, Cloud]
 ---
-
 We already answer the question: [Is RDS an Idiot Tax?](/cloud/rds/).
 But when compared to the **hundredfold markup of public cloud block storage**, cloud databases seem almost reasonable. This article uses real data to reveal the true business model of public cloud: **"Cheap" EC2/S3 to attract customers, and fleece with "Expensive" EBS/RDS**. Such practices have led public clouds to diverge from their original mission and vision.
 
@@ -19,9 +18,7 @@ But when compared to the **hundredfold markup of public cloud block storage**, c
 - [Where to Go](#where-to-go)
 - [References](#references)
 
-[![](featured.jpg)](https://mp.weixin.qq.com/s/UxjiUBTpb1pRUfGtR9V3ag)
-
--------------
+[![EBS: Pig Slaughter Scam (figure 1)](featured.jpg)](https://mp.weixin.qq.com/s/UxjiUBTpb1pRUfGtR9V3ag)
 
 ## TL; DR
 
@@ -31,23 +28,21 @@ Why is there such a staggering markup for plug-and-play disk hardware? Cloud pro
 
 With EC2 and EBS serving as the pricing anchors for cloud databases, their markups are several and several dozen times higher, respectively, thus supporting the exorbitant profit margins of cloud databases. However, such monopolistic profits are unsustainable: the impact of IDC 2.0/telecom/national cloud on IaaS; private cloud/cloud/-native/open source as alternatives to PaaS; and the tech industry's massive layoffs, AI disruption, and the impact of China's low labor costs on cloud services (through IT outsourcing/shared expertise). **If public clouds continue to adhere to their current fleecing model, diverging from their original mission of providing fundamental compute and storage infrastructure, they will inevitably face increasingly severe competition and challenges from the aforementioned forces.**
 
--------------
-
 ## WHAT a Scam!
 
 When you use a microwave at home to heat up a ready-to-eat braised chicken rice meal costing 10 yuan, you wouldn't mind if a restaurant charges you 30 yuan for microwaving the same meal and serving it to you, considering the costs of rent, utilities, labor, and service. But what if the restaurant charges you 1000 yuan for the same dish, claiming: **"What we offer is not just braised chicken rice, but a reliable and flexible dining service"**, with the chef controlling the quality and cooking time, pay-per-portion so you get exactly as much as you want, pay-per-need so you get as much as you eat, with options to switch to hot and spicy soup or skewers if you don't feel like chicken, claiming it's all worth the price. Wouldn't you feel the urge to give the owner a piece of your mind? This is exactly what's happening with block storage!
 
 With hardware technology evolving rapidly, **PCI-E NVMe SSDs** have reached a new level of performance across various metrics. A common 3.2 TB enterprise-grade MLC SSD offers incredible performance, reliability, and value for money, costing less than ¥3000, significantly outperforming older storage solutions.
 
-![](ebs-1.png)
+![EBS: Pig Slaughter Scam — WHAT a Scam! (figure 2)](ebs-1.png)
 
 Aliyun ESSD PL3 and our own IDC's procured PCI-E NVMe SSDs come from the same supplier. Hence, their maximum capacity and IOPS limitations are identical. AWS's top-tier block storage solution, io2 Block Express, also shares similar specifications and metrics. Cloud providers' highest-end storage solutions utilize these 32TB single cards, leading to a maximum capacity limit of 32TB (64TB for AWS), which suggests a high degree of hardware consistency underneath.
 
-![](ebs-2.png)
+![EBS: Pig Slaughter Scam — WHAT a Scam! (figure 3)](ebs-2.png)
 
 However, compared to direct hardware procurement, **the cost of AWS EBS io2 is up to 120 times higher, while Aliyun's ESSD PL3 is up to 200 times higher**. Taking a 3.2TB enterprise-grade PCI-E SSD card as a reference, the ratio of on-demand rental to purchase price is 15 days on AWS and less than 5 days on Aliyun, meaning you could own the entire disk after renting it for this duration. If you opt for a three-year prepaid purchase on Aliyun, taking advantage of the maximum 50% discount, the rental fees over three years could buy over 120 disks of the same model.
 
-![](ebs-3.gif)
+![EBS: Pig Slaughter Scam — WHAT a Scam! (figure 4)](ebs-3.gif)
 
 > Is that SSD made of gold ?
 
@@ -59,7 +54,7 @@ Some "experts" claim that cloud block storage is stable and reliable, offering m
 
 **"Experts" also liken purchasing "cloud services" to buying insurance**: "An annual failure rate of 0.02% may seem negligible to most, but a single incident can be devastating, with the cloud provider offering a safety net." This sounds appealing, but a closer look at cloud providers' EBS SLAs reveals no guarantees for reliability. ESSD cloud disk promotions mention 9 nines of data reliability, but such claims are conspicuously absent from the SLAs. **Cloud providers only guarantee availability, and even then, the guarantees are modest**, as illustrated by the AWS EBS SLA:
 
-![](ebs-4.png)
+![EBS: Pig Slaughter Scam — WHAT a Scam! (figure 5)](ebs-4.png)
 
 > 《[Is the Cloud SLA Just a Placebo?](/cloud/sla/)》
 
@@ -71,15 +66,13 @@ The premium charged for cloud database services might be justified by "expert ma
 
 "We're just following AWS; that's how they designed it."
 
--------------
-
 ## WHY so Pricing?
 
 Even engineers within public cloud services may not fully grasp the rationale behind their pricing strategies, and those who do are unlikely to share. However, this does not prevent us from deducing the reasoning behind such decisions from the **design of the product** itself.
 
 Storage follows a de facto standard: **POSIX file system + block storage**. Whether it's database files, images, audio, or video, they all use the same file system interface to store data on disks. But AWS's "divine intervention" splits this into two distinct services: **S3** (Simple Storage Service) and **EBS** (Elastic Block Store). Many "followers" have imitated AWS's product design and pricing model, yet the logic and principles behind such actions remain elusive.
 
-![](ebs-5.png)
+![EBS: Pig Slaughter Scam — WHY so Pricing? (figure 6)](ebs-5.png)
 
 > Aliyun EBS OSS Compare
 
@@ -95,9 +88,9 @@ Firstly, **instance storage**, which is best suited for self-hosted databases, m
 
 Of course, to make customers bite, some cloud computing KOLs promote the accompanying "public cloud-native" philosophy: "EC2 is not suitable for stateful applications. Please store state in S3 or RDS and other managed services, as these are the 'best practices' for using our cloud."
 
-![](ebs-7.png)
+![EBS: Pig Slaughter Scam — WHY so Pricing? (figure 7)](ebs-7.png)
 
-These four points are well summarized, but what public clouds will not disclose is the cost of these "best practices." To put [these four points](https://github.com/lipingtababa/cloud/-native-best-practices/blob/main/云原生王四条.md) in layman's terms, they form a carefully designed trap for customers:
+These four points are well summarized, but what public clouds will not disclose is the cost of these "best practices." To put [these four points](https://github.com/lipingtababa/cloud-native-best-practices/blob/main/云原生王四条.md) in layman's terms, they form a carefully designed trap for customers:
 
 **Dump ordinary files in S3!** (With such cost-effective S3, who needs EBS?)
 
@@ -107,8 +100,6 @@ These four points are well summarized, but what public clouds will not disclose 
 
 **Faithfully contribute to the cloud database!** (Once users are locked in, the time to "slaughter" arrives)
 
--------------
-
 ## HOW to Do that
 
 The business model of public clouds can be summarized as: **Attract customers with cheap EC2/S3, make a killing with EBS/RDS**.
@@ -117,7 +108,7 @@ To slaughter the pig, you first need to raise it. No pains, no gains. Thus, for 
 
 Taking AWS RDS [pricing](https://instances.vantage.sh/) as an example, the unit price for mini models with 1 to 2 cores is only **a few dollars per core per month**, which translates to three to four hundred yuan per year (excluding storage): If you need a low-usage database for minor storage, this might be the most straightforward and affordable choice.
 
-[![](ebs-8.png)](https://instances.vantage.sh/)
+[![EBS: Pig Slaughter Scam — HOW to Do that (figure 8)](ebs-8.png)](https://instances.vantage.sh/)
 
 However, **as soon as you slightly increase the configuration, even by just a little, the price per core per month jumps by orders of magnitude**, reaching twenty to a hundred dollars, with the potential to skyrocket by dozens of times — **and that's before the doubling effect of the astonishing EBS prices**. Users only realize what has happened when they are faced with a suddenly astronomical bill.
 
@@ -160,8 +151,6 @@ This is not just the case with Relational Database Services / RDS, but with all 
 
 However, charging several hundred or even thousands of percent as a premium falls into the category of **destructive element distribution**: cloud providers bank on the fact that once users are onboard, they have no alternatives, and migration would incur significant costs, so they can confidently proceed with the slaughter! In this sense, the money users pay is not for the service, but rather a compulsory levy of a "no-expert tax" and "protection money".
 
--------------
-
 ## The Forgotten Vision
 
 Facing accusations of "slaughtering the pig," cloud vendors often defend themselves by saying: "Oh, what you're seeing is the list price. Sure, it's said to be a minimum of 50% off, but for major customers, there are no limits to the discounts." As a rule of thumb: **the cost of self-hosting fluctuates around 5% to 10% of the current cloud service list prices**. If such discounts can be maintained long-term, cloud services become more competitive than self-hosting.
@@ -178,15 +167,13 @@ Unfortunately, for the sake of obfuscation, both cloud software and cloud hardwa
 
 **Public cloud providers that abandon platform neutrality and their original intent of being infrastructure providers, indulging in PaaS / SaaS / and even application layer profiteering, will sink in a bottomless competition.**
 
--------------
-
 ## Where to Go
 
 **Monopolistic profits vanish as competition emerges, plunging public cloud providers into a grueling battle.**
 
 At the infrastructure level, telecom operators, state-owned clouds, and IDC 1.5/2.0 have entered the fray, offering highly competitive IaaS services. These services include turnkey network and electricity hosting and maintenance, with high-end servers available for either purchase and hosting or direct rental at actual prices, showing no fear in terms of flexibility.
 
-![](ebs-11.png)
+![EBS: Pig Slaughter Scam — Where to Go (figure 9)](ebs-11.png)
 
 > IDC 2.0's new server rental model: Actual price rental, ownership transfers to the user after a full term
 
@@ -194,7 +181,7 @@ On the software front, what once were the technical barriers of public clouds, v
 
 The whole "cloud-native" movement, in essence, is the open-source ecosystem's response to the challenge of public cloud "freeloading": **users and developers have created a complete set of local-priority public cloud open-source alternatives to avoid being exploited by public cloud providers**.
 
-![](ebs-12.png)
+![EBS: Pig Slaughter Scam — Where to Go (figure 10)](ebs-12.png)
 
 > The term "CloudNative" is aptly named, reflecting different perspectives: public clouds see it as being "born on the public cloud," while private clouds think of it as "running cloud-like services locally." Ironically, the biggest proponents of Kubernetes are the public clouds themselves, akin to a salesman crafting his own noose.
 
@@ -204,7 +191,7 @@ Considering these trends, the combination of IDC2.0 and open-source self-buildin
 
 Staying true to the original mission is essential. Public clouds do an admirable job at the cloud hardware / IaaS level, except for being outrageously expensive, there aren’t many issues, and the offerings are indeed solid. If they could return to their original vision and truly excel as providers of basic infrastructure, akin to utilities, selling resources might not offer high margins, but it would allow them to earn money standing up. Continuing down the path of exploitation, however, will ultimately lead customers to vote with their feet.
 
-![](ebs-13.png)
+![EBS: Pig Slaughter Scam — Where to Go (figure 11)](ebs-13.png)
 
 ## References
 

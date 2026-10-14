@@ -6,10 +6,9 @@ summary: >
   I recently witnessed a live cloud database drop-and-run incident. This article discusses how to handle accidentally deleted data when using PostgreSQL in production environments.
 tags: [Cloud-Exit, PG Admin, RDS]
 ---
-
 In my previous article "[Is DBA Still a Good Job](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485064&idx=1&sn=6225a044d8f145cdb07a21a1e0c54ad8&chksm=fe4b3353c93cba4582576b4de151ac48247052a1494adcc820dc64a32dafb0b99e33085c7bbb&scene=21#wechat_redirect)", I mentioned: Although DBA as a profession is declining, who knows if DBAs might become trendy again after several terrifying large-scale cloud database failures.
 
-[![](featured.jpg)](https://mp.weixin.qq.com/s/AGEW1iHQkQy4NQyYC2GonQ)
+[![Cloud RDS: From Database Drop to Exit (figure 1)](featured.jpg)](https://mp.weixin.qq.com/s/AGEW1iHQkQy4NQyYC2GonQ)
 
 Well, I recently witnessed a live cloud database drop-and-run incident. This article discusses how to handle accidentally deleted data when using PostgreSQL in production environments.
 
@@ -19,15 +18,11 @@ Well, I recently witnessed a live cloud database drop-and-run incident. This art
 
 ![wm-dropdb.png](drop-rds-wm-dropdb.png)
 
--------------
-
 ## Incident Scene
 
 ![case-1.png](drop-rds-case-1.webp)
 
 ![case-2.png](drop-rds-case-2.webp)
-
--------------
 
 ## Solutions
 
@@ -38,8 +33,6 @@ Ultimately, cloud databases are still databases. Cloud databases aren't some mai
 Of course, this is also due to cloud providers' stingy scheming. WAL log archiving PITR - these basic PG high availability features - are castrated by cloud providers and put into so-called "high availability" versions. WAL archiving for locally deployed instances is just adding a disk and configuring a command. Object storage costs a few cents per GB per month - cheapest possible - but beggar-version cloud databases still save wherever possible, otherwise how would they sell "high availability" database versions?
 
 In Pigsty, all PG database clusters enable WAL archiving by default with daily full backups: retaining recent daily base **cold backups** and WAL, allowing users to rollback to any moment within the day. It even provides ready-to-use **delayed replica** setup tools - preventing accidental deletion faster than anyone!
-
--------------
 
 ## How to Handle Database Drops?
 
@@ -59,7 +52,7 @@ In Pigsty, database instances in clusters can be assigned roles (`pg_role`) to c
 
 In all Pigsty configuration file templates, the following archiving command is configured:
 
-```
+```text
 wal_dir=/pg/arcwal;
 /bin/mkdir -p ${wal_dir}/$(date +%Y%m%d) && /usr/bin/lz4 -q -z %p > ${wal_dir}/$(date +%Y%m%d)/%f.lz4
 ```

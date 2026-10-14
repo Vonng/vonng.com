@@ -5,7 +5,6 @@ authors: [vonng]
 summary: "Seven days after Singapore Zone C failure, availability not even reaching 8, let alone multiple 9s. But compared to data loss, availability is just a minor issue"
 tags: [Cloud-Exit, Alibaba Cloud, Incident]
 ---
-
 On September 10, 2024, Alibaba-Cloud's Singapore Availability Zone C data center experienced a fire caused by lithium battery explosion. It's been a week now and services have not been fully restored yet.
 According to the monthly SLA availability calculation (7 days+/30 days≈75%), **service availability isn't even reaching one 8, let alone multiple 9s**, and it's still declining.
 Of course, availability at 88% or 99% is now a minor issue — the real question is: can the data stored in a single availability zone be recovered?
@@ -25,8 +24,6 @@ Although we cannot definitively state the facts before any official announcement
 So the impact of this Singapore fire incident is estimated to be on the same scale or even larger than the [Hong Kong PCCW data center major failure](https://help.aliyun.com/noticelist/articleid/1061819219.html) at the end of 2022 and the [Double 11 global unavailability](/cloud/aliyun/) failure in 2023.
 
 Natural disasters and human misfortunes are unpredictable. The probability of failures won't drop to zero. What's important is what experience and lessons we can learn from these failures?
-
---------
 
 ## Disaster Recovery Performance
 
@@ -52,8 +49,6 @@ But what about actual performance? In this Singapore fire, how long did the enti
 This metric shows improvement compared to the **133** minutes for RDS switching in the 2022 Hong Kong Zone C failure. But compared to Alibaba-Cloud's own stated metrics (**RTO < 30 seconds**), it's still off by two orders of magnitude.
 
 As for single availability zone basic RDS services, official documentation says **RTO < 15 minutes**, but the actual situation is: single availability zone RDS are approaching their seventh day memorial. **RTO > 7 days**, and whether RTO and RPO will become **infinity ∞** (completely lost and unrecoverable), we'll have to wait for official news.
-
---------
 
 ## Accurately Labeling Disaster Recovery Metrics
 
@@ -116,8 +111,6 @@ Availability zone disaster recovery is a reasonable requirement, especially cons
 
 I suggest cloud products including RDS should be truthful and accurately label the RTO and RPO performance in historical failure cases, as well as actual performance under real availability zone disasters. Don't vaguely claim "***30 seconds/15 minutes recovery, no data loss, multi-availability zone disaster recovery***", promising things you can't deliver.
 
---------
-
 ## What Exactly is Alibaba-Cloud's Availability Zone?
 
 In this Singapore Zone C failure, as well as the previous Hong Kong Zone C failure, one problem Alibaba-Cloud demonstrated is that single data center failures spread to the entire availability zone, and single availability zone failures affect the entire region.
@@ -137,8 +130,6 @@ They've elevated the original AZ to Region, and elevated the original DC (or par
 
 We can't say what motivated Alibaba-Cloud's design. One possible speculation is: originally Alibaba-Cloud might have just set up North China, East China, South China, and Western regions domestically, but to make reports more impressive (look, AWS only has 4 Regions in the US, we have 14 domestically!), it became what it is now.
 
---------
-
 ## Cloud Vendors Have a Responsibility to Promote Best Practices
 
 TBD
@@ -154,8 +145,6 @@ It depends on whether there's disclosure. Without disclosure, that's malicious. 
 You're already doing three-replica storage, why not put one replica in another DC or another AZ?
 You're already charging hundreds of times markup on storage, why not spend a little more to do same-city redundancy? Is it to save on the data cross-AZ replication traffic fees?
 
---------
-
 ## Please Be Serious About Health Status Pages
 
 TBD
@@ -168,8 +157,6 @@ The future "failure forecast" data appears to be populated with current status. 
 
 **Perhaps** Alibaba-Cloud wants to use this subtle way to tell users: ***Data in Singapore region single availability zone is gone, Gone Forever, don't count on recovering it***. Of course, a more reasonable inference is: this isn't some failure forecast, this health dashboard was made by an intern. Completely without design review, without QA testing, without considering edge conditions, just slapped together and launched.
 
---------
-
 ## Cloud is the New Single Point of Failure, What to Do?
 
 TBD
@@ -179,8 +166,6 @@ The three elements of information security CIA: Confidentiality, Integrity, Avai
 First there was [Alibaba-Cloud Drive's catastrophic BUG](https://mp.weixin.qq.com/s/C7XGgGmzvMjKJGbBGVmrzw) leaking private photos and breaking confidentiality;
 
 Now this availability zone failure, shattering the multi-availability zone/single availability zone availability myth, even threatening the lifeline — data integrity.
-
---------
 
 ## Further Reading
 

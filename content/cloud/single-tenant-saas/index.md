@@ -6,12 +6,9 @@ summary: >
   DHH 不仅在下云上引领潮流，更是在 SaaS 领域两面开火 —— 不搞多租户，让用户在本地拥有并运行产品 —— 时代的钟摆又一次开始动了起来。
 tags: [云计算, 架构, 翻译]
 ---
-
 **作者：David Heinemeier Hansson**，网名 DHH，37 Signal 联创与 CTO，Ruby on Rails 作者，下云倡导者、实践者、领跑者。反击科技巨头垄断的先锋。
 
 **译者：冯若航**，网名 Vonng。磐吉云数创始人与 CEO。[**Pigsty**](/pigsty/better-rds-alternative/) 作者，PostgreSQL 专家/布道师。公众号《[**非法加冯**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486611&idx=1&sn=658ded908f5e8a24d01a7ccc87df5bbc&scene=21#wechat_redirect "非法加冯")》主理人，[**云计算泥石流**](/cloud/debris/)，数据库老司机。
-
----
 
 ## 多租户是 Web 服务的复杂之源
 

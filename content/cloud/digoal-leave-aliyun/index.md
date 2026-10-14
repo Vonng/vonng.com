@@ -6,8 +6,6 @@ summary: >
   阿里云 PostgreSQL 灵魂人物离场，与中国云数据库的路线之争。
 tags: [PostgreSQL, 云计算, 阿里云]
 ---
-
-
 昨天是愚人节，德哥在公众号发了一篇文章，标题叫《[在阿里当牛马的最后一天](https://mp.weixin.qq.com/s/IAeSAMfdwnhWpmRXxJMR8A)》。
 
 圈里立刻炸了锅。很多人说这是愚人节玩笑，但老冯知道，这根本不是玩笑。

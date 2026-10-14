@@ -6,12 +6,9 @@ summary: >
   I originally believed that at least in IaaS fundamentals — storage, compute, and networking — public cloud vendors could still make significant contributions. However, my personal experience with Tencent Cloud CDN shook that belief: domestic cloud vendors' products and services are truly unbearable.
 tags: [Cloud, Cloudflare]
 ---
-
 While Swedish Ma and I disagree sharply on [cloud databases](/cloud/rds) VS [**DBA**](https://mp.weixin.qq.com/s/Gk9bG_EOIv0IAkim41XRHg) issues, we can reach consensus on one point: **domestic public cloud vendors really make garbage**. In Ma's words: "**Alibaba-Cloud is a legitimate cloud with poor engineering quality, but Tencent Cloud is a bunch of amateur salespeople plus business coders playing games**."
 
-[![](featured.jpg)](https://mp.weixin.qq.com/s/UxjiUBTpb1pRUfGtR9V3ag)
-
--------------
+[![Garbage QCloud CDN: From Getting Started to Giving Up? (figure 1)](featured.jpg)](https://mp.weixin.qq.com/s/UxjiUBTpb1pRUfGtR9V3ag)
 
 ## Background
 
@@ -19,37 +16,37 @@ I have software hosted on **GitHub**, providing **1MB** source code packages and
 
 My **CDN** intentions were simple: 1. Acceleration, 2. Cost savings. Internet traffic fees are usually 0.8 yuan per GB, using **CDN** traffic packages can save substantial traffic costs by half. Since CDN is exclusively for domestic users, I only bought domestic traffic packages. It worked reasonably well until late February, when I suddenly discovered some anomalous charges.
 
-![](cdn-1.png)
+![Garbage QCloud CDN: From Getting Started to Giving Up? — Background (figure 2)](cdn-1.png)
 
 Clicking in, I saw CDN charged **several hundred yuan**. I thought maybe some channel made downloads popular? So I entered the data statistics analysis interface and saw that during this period, total software package downloads were less than **100GB**, at most tens of yuan — how could I be charged hundreds?
 
-![](cdn-2.png)
+![Garbage QCloud CDN: From Getting Started to Giving Up? — Background (figure 3)](cdn-2.png)
 
 Clicking for analysis — good grief, 1TB access traffic, all from "**overseas other**" — what the hell?
 
-![](cdn-3.png)
+![Garbage QCloud CDN: From Getting Started to Giving Up? — Background (figure 4)](cdn-3.png)
 
-![](cdn-1.jpeg)
+![Garbage QCloud CDN: From Getting Started to Giving Up? — Background (figure 5)](cdn-1.jpeg)
 
 **So I called Tencent Cloud customer service:**
 
-![](cdn-4.png)
+![Garbage QCloud CDN: From Getting Started to Giving Up? — Background (figure 6)](cdn-4.png)
 
 **Deflection x1: Our TOP isn't accurate, you need to check logs.**
 
-![](cdn-5.png)
+![Garbage QCloud CDN: From Getting Started to Giving Up? — Background (figure 7)](cdn-5.png)
 
 So I downloaded a log copy to see who was bored enough to brute-force attack. Result: a bunch of requests without even client IP addresses.
 
 **Deflection x2: Customer service said this is probably an "attack"! So scary!**
 
-![](cdn-6.png)
+![Garbage QCloud CDN: From Getting Started to Giving Up? — Background (figure 8)](cdn-6.png)
 
 This rhetoric trying to fool me? **Uninformed users hearing "attack" might get scared into buying public cloud vendors' "high-defense services."**
 
 After going in circles for another half hour, they finally told me the real reason: **traffic fees were deducted for "warming up"**. So these requests without "source IPs" finally revealed the truth: **turns out it's "guarding and stealing, thief crying thief" — your own system came to brute-force my traffic!**
 
-![](cdn-7.png)
+![Garbage QCloud CDN: From Getting Started to Giving Up? — Background (figure 9)](cdn-7.png)
 
 Engineer phone communication explained: Our CDN warming works like this — all CDN nodes come to origin for requests, so we got these 20,000 requests and **1TB** traffic.
 
@@ -61,7 +58,7 @@ Tencent Cloud CDN is different — warming a 1MB/1GB software package, each term
 
 **So a simple 1MB/1GB software package going through CDN distribution, which might normally cost a few yuan daily, became hundreds of yuan with one button click**. **Hiding internal traffic well on monitoring charts; stuffing internal traffic that should be free onto users in billing logic.**
 
-![](cdn-8.png)
+![Garbage QCloud CDN: From Getting Started to Giving Up? — Background (figure 10)](cdn-8.png)
 
 > **CDN warming internal traffic — how dare they charge users?**
 
@@ -72,8 +69,6 @@ A few hundred yuan cost doesn't hurt me, but as a user, I feel my intelligence w
 **China has no cloud computing, only IDC 2.0**
 
 Coming out to sell like this — better wash up and sleep early.
-
--------------
 
 ## Extended Reading
 

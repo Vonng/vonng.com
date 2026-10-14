@@ -6,7 +6,6 @@ summary: >
   整整一代应用开发者的视野被云遮蔽，让我们用实打实的数据分析与经历，讲清公有云租赁模式的价值与陷阱。
 tags: [下云]
 ---
-
 > 世人常道云上好，托管服务烦恼少。我言云乃杀猪盘，溢价百倍实厚颜。
 >
 > 赛博地主搞垄断，坐地起价剥血汗。运维外包嫖开源，租赁电脑炒概念。
@@ -16,8 +15,6 @@ tags: [下云]
 > 下云先锋把路趟，引领潮流一肩扛。不畏浮云遮望眼，只缘身在最前线。
 
 曾几何时，“**上云**“近乎成为技术圈的政治正确，整整一代应用开发者的视野被云遮蔽。就让我们用实打实的数据分析与亲身经历，讲清楚公有云租赁模式的价值与陷阱 —— 在这个降本增效的时代中，供您借鉴与参考。
-
----
 
 ## **下云案例篇**
 
@@ -37,8 +34,6 @@ tags: [下云]
 
 [花钱买罪受的大冤种：逃离云计算妙瓦底](/cloud/patsy/)
 
----
-
 ## **人仰马翻篇**
 
 [我们能从阿里云史诗级故障中学到什么](/cloud/aliyun/)
@@ -50,8 +45,6 @@ tags: [下云]
 [无双删库：Google 云爆破了大基金的整个云账户](/cloud/gcp-unisuper/)
 
 [全球 Windows 蓝屏：甲乙双方都是草台班子](/cloud/bsod-friday/)
-
----
 
 ## **基础资源篇**
 
@@ -67,8 +60,6 @@ tags: [下云]
 
 [记一次阿里云 DCDN 加速仅 32 秒就欠了 1600 的问题处理（扯皮）](https://mp.weixin.qq.com/s/0Wnv1B80Tk4J03X3uAm4Ww)
 
----
-
 ## **商业模式篇**
 
 [DBA 会被云淘汰吗？](/pg/pg-convention-2018/)
@@ -80,8 +71,6 @@ tags: [下云]
 [云 SLA 是不是安慰剂？](/cloud/sla/)
 
 [范式转移：从云到本地优先](/cloud/paradigm/)
-
----
 
 ## **RDS 批判篇**
 
@@ -95,8 +84,6 @@ tags: [下云]
 
 [驳《再论为什么你不应该招 DBA》](/cloud/no-dba-bullshit/)
 
----
-
 ## **滑稽肖像篇**
 
 [性学家，化学家，软件行业里的废话文学家](https://mp.weixin.qq.com/s/qAnEmtLz3EpSophz1TbFGA) 【转载】
@@ -109,8 +96,6 @@ tags: [下云]
 
 [云厂商眼中的客户：又穷又闲又缺爱](https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ)【转载】
 
----
-
 ## **商业评论篇**
 
 [阿里云降价背后折射出的绝望](https://mp.weixin.qq.com/s/BYu8nZjqAQbWc2yT8K_pFQ)【转载】
@@ -122,8 +107,6 @@ tags: [下云]
 [公有云厂商卖的云计算到底是什么玩意？](https://mp.weixin.qq.com/s/_ijL2OXAQJQrmWiE-KKzdw)【转载】
 
 [腾讯云阿里云做的真的是云计算吗?](https://mp.weixin.qq.com/s/mMvDiTiMOt6eiTTYbHvbbQ)【转载】
-
----
 
 ## 主题分类
 
@@ -241,8 +224,6 @@ tags: [下云]
 - 2024-03-26 [Redis 不开源是“开源”之耻，更是公有云之耻](/db/redis-oss/)
 - 2023-02-03 [范式转移：从云到本地优先](/cloud/paradigm/)
 
----
-
 ## 云计算泥石流专栏原文
 
 - 2025-12-25 [小红书究竟有没有下云？](/cloud/rednote-cloud-exit/)
@@ -341,8 +322,6 @@ tags: [下云]
 - 2023-01-31 [你怎么还在招聘 DBA?](https://mp.weixin.qq.com/s/PqCD80H927s0yJrBr4QQqw) 马工
 - 2023-01-30 [云数据库是不是智商税](/cloud/rds/)
 - 2022-05-16 [云 RDS：从删库到跑路](/cloud/drop-rds/)
-
----
 
 ## 下云之歌
 

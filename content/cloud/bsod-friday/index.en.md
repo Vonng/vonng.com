@@ -6,7 +6,6 @@ summary: |
   Both client and vendor failed to control blast radius, leading to this epic global security incident that will greatly benefit local-first software philosophy.
 tags: [Cloud-Exit, Incident, Cloudflare]
 ---
-
 Recently, due to a configuration update released by cybersecurity company CrowdStrike, countless Windows computers worldwide fell into blue screen death, causing endless chaos — airlines grounded flights, hospitals canceled surgeries, supermarkets, theme parks, and industries across the board shut down.
 
 Table: Affected industries, countries/regions, and related institutions ([Technical Analysis of CrowdStrike Mass System Crash Incident](https://www.secrss.com/articles/68310))
@@ -25,15 +24,11 @@ In this incident, many programmers enjoyed discussing which sys file or configur
 
 In my view, this accident is the joint responsibility of both vendor and client sides — the vendor's problem: why was a change with such high crash rates rapidly deployed globally without gradual rollout? Was gradual testing and validation performed? The client's problem: why allow such changes to be pushed online in real-time to their computers without control, placing all endpoint security entirely on supply chain reliability?
 
------------
-
 **Controlling blast radius** is a fundamental principle in software releases, and gradual deployment is basic practice in software delivery. Many internet applications use sophisticated gradual release strategies, starting with 1% traffic and gradually scaling up, allowing immediate rollback when issues are discovered, avoiding catastrophic all-at-once failures.
 
 Database and operating system changes follow the same principle. As a DBA who has managed large-scale production database clusters, we're extremely careful to use gradual strategies when making database or underlying OS changes: first testing changes in Devbox development environments, then applying to pre-production/UAT/Staging environments. After running for days without issues, we begin production releases: starting with one or two edge business systems, then following business criticality classifications A, B, C, and replica/primary sequence and batches for gradual changes.
 
 A head securities firm operations director also shared financial industry best practices in our group — direct network isolation, prohibiting internet updates, buying Microsoft ELA, setting up patch servers on internal networks, then tens of thousands of terminals/servers uniformly updating patches and virus definitions from patch servers. Gradual approach: each branch office and business department selects one or two machines as gradual environment, running for a day or two without issues, entering large gradual environment for a full week, then final production environment split into three waves updating once daily, completing the entire release. For emergency security events — the same gradual process applies, just compressing the time cycle from one-two weeks to several hours.
-
--------------
 
 Of course, some vendor security companies and security-background engineers might offer different perspectives: "Security industry is different, we need to race against viruses," "when virus researchers discover new viruses, then determine how to defend the entire network fastest," "when viruses come, my security experts judge activation needed, no time to notify you," "blue screens are better than losing digital assets or being randomly controlled." But for clients, security is an entire system — delaying configuration gradual releases isn't a big deal, but concentrated batch crashes are unacceptable shocks.
 
@@ -44,8 +39,6 @@ At least for enterprise customers, whether to update, when to update — this ri
 > (US TV series "Space Force" famous meme: Emergency mission encounters Microsoft forced update)
 
 If your system is truly important, before accepting any changes and updates, remember — **Trust, But Verify**. If vendors don't provide the Verify option, you should decisively say no within your authority.
-
---------
 
 I believe this incident will greatly benefit "**local-first software**" philosophy — local-first doesn't mean no updates, no changes, using one version until the end of time, but being able to continuously run on your own computers and servers without internet connectivity. Users and vendors can still upgrade functionality and update configurations through patch servers and periodic pushes, but the timing, method, scale, and strategy of updates should be user-specified, not vendors overstepping to make decisions for you. I believe this is the true essence of "**autonomous and controllable**" concepts.
 

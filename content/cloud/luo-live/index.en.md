@@ -6,14 +6,11 @@ summary: >
   Luo Yonghao's livestream first spent half an hour selling robot vacuums, then Luo himself belatedly appeared to read scripts selling "cloud computing" for forty minutes — before seamlessly transitioning to selling Colgate enzyme-free toothpaste — leaving viewers bewildered between toothpaste and cloud computing.
 tags: [Cloud-Exit, Alibaba Cloud]
 ---
-
 Luo Yonghao was once a brilliant digital product manager with decent IT industry credentials. But as they say, there's a world of difference between industries. Luo selling cloud is like a street vendor simultaneously hawking meat, vegetables, eggs, milk, and Office CDs. And that's exactly what happened — Luo's livestream first spent half an hour selling robot vacuums, then Luo himself belatedly appeared to read scripts selling "cloud computing" for forty minutes — before transitioning to selling Colgate enzyme-free toothpaste — leaving viewers bewildered between cloud computing and toothpaste.
 
-![](luo-live-1.jpg)
+![Can Luo Yonghao Save Toothpaste Cloud? (figure 1)](luo-live-1.jpg)
 
 > This toothpaste is actually pretty good, but these cloud servers...
-
----------------
 
 ## Can Cloud Computing Go B2C?
 
@@ -21,15 +18,13 @@ Cloud computing is a B2B business. Industry leader AWS clearly targets and marke
 
 The ridiculous idea of selling cloud servers to individual users might stem from the recent popularity of *Palworld* self-hosted server demands. My friend Fangtao, founder of SealOS, wrote a tutorial on "[Setting Up a Private Palworld Server](https://mp.weixin.qq.com/s/Org8pee_cxGkzOYsMFu6sA)" and tasted the delicious profits of SaaS. Then various public cloud vendors quickly followed suit and started competing — going from 3-minute server deployment to 30 seconds to 3 seconds. As described in the article "Domestic Cloud: Big Companies, No Big Brother," they shamelessly rolled up their sleeves and got into the business that should belong to gaming platforms like Haofang.
 
-![](luo-live-2.jpg)
+![Can Luo Yonghao Save Toothpaste Cloud? — Can Cloud Computing Go B2C? (figure 2)](luo-live-2.jpg)
 
 Another typical B2C scenario involves students and individual webmasters. In the past, individual webmasters running websites on small 2C 2G VMs with 3M bandwidth was quite decent — but since the arrival of Cloudflare, the cyber Buddha, forget about 99 yuan cloud servers, even 9.9 yuan isn't attractive anymore — **how can anything be cheaper than free?** — not to mention that using CF for website building provides a much better experience than cloud servers — even without considering various free plans, just the free traffic alone makes those "few megabytes of gifted bandwidth" look like garbage...
 
-![](luo-live-3.jpg)
+![Can Luo Yonghao Save Toothpaste Cloud? — Can Cloud Computing Go B2C? (figure 3)](luo-live-3.jpg)
 
 On one side of the IT scale spectrum — individual webmasters and small businesses — new-generation cloud services/SaaS (CF, Neon, Vercel, Supabase), these cyber bodhisattvas' free tiers, are clearly displacing and impacting public clouds. On the other side — medium and large enterprises — the emerging IDC 2.0 and open-source management software alternatives work together to bypass public cloud middlemen, leveraging [hardware Moore's law](https://mp.weixin.qq.com/s/1OSRcBfd58s0tgZTUZHB9g) accumulated advantages, becoming the [ultimate FinOps practice](https://mp.weixin.qq.com/s/Yp_PU8nmyK-NVq0clD98RQ), achieving [astonishing cost reduction capabilities](https://mp.weixin.qq.com/s/CicctyvV1xk5B-AsKfzPjw).
-
----------------
 
 ## Public Cloud Death Star Lights Up
 

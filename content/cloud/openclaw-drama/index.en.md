@@ -8,13 +8,10 @@ tags: [AI, Agent, Open Source]
 ai: true
 aliases: ["/ai/openclaw-drama/"]
 ---
-
 Last night OpenClaw released `v2026.3.22`.
 The npm package shipped without the console frontend, so users around the world upgraded, opened the browser, and went straight to `503`.
 
 ![503 after upgrading OpenClaw](openclaw-503.webp)
-
-------
 
 ## 1. What Actually Happened
 
@@ -38,8 +35,6 @@ The code had been split into a separate package, `@openclaw/whatsapp`, but that 
 
 So two packaging failures stacked on top of each other.
 Docker users were fine. Git users were fine. npm users were wiped out.
-
-------
 
 ## 2. This Was Not the First Time
 
@@ -71,8 +66,6 @@ curl -s http://127.0.0.1:18789 | grep -q '<!DOCTYPE html>'
 ```
 
 Apparently nobody wrote it.
-
-------
 
 ## 3. AI Can Write Code. It Does Not Build Release Discipline
 
@@ -121,7 +114,5 @@ But people run your software in production.
 You owe them that level of care.
 
 If anyone had actually installed OpenClaw once, started it once, and opened the console once before publishing, this entire failure would have been caught immediately.
-
-------
 
 **If you build infrastructure software, is it really too much to ask that you install it and test it once before shipping it?**

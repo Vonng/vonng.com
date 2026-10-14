@@ -6,7 +6,6 @@ summary: >
   Alibaba-Cloud and Didi had major outages one after another. This article discusses how to move from cost-reduction jokes to real cost reduction and efficiency — what costs should we really reduce, what efficiency should we improve?
 tags: [Cloud-Exit, Alibaba Cloud, Incident]
 ---
-
 Year-end is performance rush time, but internet giants are having major incidents one after another. They've turned "cost reduction and efficiency improvement" into literal "**cost reduction jokes**" — this is no longer just a meme, but official self-mockery.
 
 ![smile.png](featured.png)
@@ -25,8 +24,6 @@ Failures are unavoidable, whether hardware defects, software bugs, or human oper
 
 Unfortunately, these internet giants performed far below standards — at least their actual performance was far from their claimed "***1-minute detection, 5-minute handling, 10-minute recovery***."
 
--------------
-
 ## Cost-Reduction Jokes
 
 According to **Heinrich's Law**, behind one major incident are 29 accidents, 300 near-misses, and thousands of incident risks. In aviation, if similar things happened — not even needing actual consequential accidents, just two consecutive incident precursors — not even accidents yet — severe industry safety overhauls would immediately begin comprehensively.
@@ -38,8 +35,6 @@ Reliability is important, not just for critical services like air traffic contro
 The internet has penetrated every aspect of our lives, yet effective regulation of internet platforms hasn't been established. Industry leaders choose to play dead when facing crises — not even anyone coming out for frank crisis PR and incident postmortems. No one answers: why do these failures occur? Will they continue occurring? Have other internet platforms conducted self-examinations? Have they confirmed their backup plans still work?
 
 We don't know the answers to these questions. But we can be sure that unrestricted complexity accumulation plus massive layoffs are showing consequences. Service failures will become increasingly frequent until they become the new normal — anyone could be the next unlucky "butt of jokes." To escape this grim fate, we need real "cost reduction and efficiency improvement."
-
--------------
 
 ## Cost Reduction and Efficiency Improvement
 
@@ -54,8 +49,6 @@ Failure handling optimization aims to shorten failure recovery time `t` as much 
 ![time-limit.png](smile-time-limit.png)
 
 With time limits fixed, you either reduce costs or improve efficiency. However, **cost reduction should target system complexity costs, not personnel costs; efficiency improvement shouldn't be about presentation talking points and jokes, but available online intellectual power and management effectiveness**. Unfortunately, many companies did neither well, turning cost reduction and efficiency improvement into cost reduction jokes.
-
--------------
 
 ## Reducing Complexity Costs
 
@@ -76,8 +69,6 @@ However, when you put databases into Kubernetes, separate database experts and K
 When system complexity costs exceed team intellectual power, disaster-level failures easily occur. This is hard to see normally because debugging, analyzing, and resolving a problematic service's complexity far exceeds the complexity of getting services up and running. Normally it seems fine to lay off two here, three there — systems still run.
 
 However, organizational tacit knowledge is lost as veterans leave. When lost to a certain degree, the system becomes walking dead — just waiting for some trigger to knock it down and explode. In the ruins, new generations of young novices gradually become veterans, then lose cost-effectiveness and get fired, cycling endlessly in the loop above.
-
--------------
 
 ## Increasing Management Effectiveness
 

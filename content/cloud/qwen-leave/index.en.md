@@ -8,7 +8,6 @@ tags: [AI, LLM, Alibaba Cloud]
 ai: true
 aliases: ["/ai/qwen-leave/"]
 ---
-
 I had become more optimistic about Alibaba over the last year, largely because the Qwen team seemed to be doing real work: shipping strong models, contributing to open source, and earning genuine international attention.
 
 That is why this personnel shock felt so significant.

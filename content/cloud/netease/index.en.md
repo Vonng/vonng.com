@@ -6,11 +6,7 @@ summary: >
   NetEase Cloud Music experienced a two-and-a-half-hour outage this afternoon. Based on circulating online clues, we can deduce that the real cause behind this incident was...
 tags: [Incident]
 ---
-
-
 This afternoon around 14:44, NetEase Cloud Music experienced an [outage](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488162&idx=1&sn=5913eb51b437e365c685ed11917a3302&chksm=fe4b2779c93cae6ff254f4568f3e7895e005ce249ab4e0e3111bf3665a54fed35b381ff55aa9&scene=21#wechat_redirect), recovering at 17:11. The rumored cause was **infrastructure/cloud/ disk storage** related issues.
-
-------
 
 ## Incident Timeline
 
@@ -29,8 +25,6 @@ The outage lasted until 17:11 when NetEase Cloud Music recovered, and the 163 ma
 At 17:16, NetEase Cloud Music's Zhihu account posted an apology notice, stating that searching for "enjoy music" tomorrow would provide a 7-day Black Vinyl VIP **friend fee**.
 
 ![heijiao.png](heijiao.png)
-
-------
 
 ## Root Cause Analysis
 
@@ -52,8 +46,6 @@ The last release remains at RC without an official version, and the project has 
 
 The Curve team leader also published an article "Curve: Regretful Farewell, Unfinished Journey" on their official account, which was subsequently deleted. I had some impression of this because Curve was one of two open-source shared storage solutions recommended by PolarDB, so I specifically researched this project. Now it seems...
 
-------
-
 ## Lessons Learned
 
 We've discussed layoffs and cost reduction many times before. What additional lessons can we learn from this incident? Here are my thoughts:
@@ -65,8 +57,6 @@ The second lesson — **Self-developed solutions are fine, but keep people aroun
 The third lesson: **Beware of big company open source**. As an underlying storage project, once deployed, it's not something you can simply replace. When NetEase killed the Curve project, all infrastructure using Curve became unmaintained ruins. Stonebraker mentioned this in his famous paper "What Goes Around Comes Around":
 
 ![stonebraker.png](stonebraker.png)
-
---------
 
 ## Reference Reading
 
@@ -98,7 +88,7 @@ The third lesson: **Beware of big company open source**. As an underlying storag
 
 [Luo Yonghao Can't Save Toothpaste Cloud](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487223&idx=1&sn=da885170d5d65a3c646d8b3d9da3aed3&chksm=fe4b3b2cc93cb23a5625e8c183860a9e1528eca0a1311439f1ec308a74d53f10cf5dbbb9a1d0&scene=21#wechat_redirect)
 
-[Outages Aren't Why Tencent Cloud Is Amateur Hour, Arrogance Is](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487319&idx=1&sn=7e38023ce115046b5318ee670c90fd58&chksm=fe4b3a8cc93cb39a961e396d1491b7bb77089c2d79b8f5e942c6a945cf0aa6dedbf5a8a42828&scene=21#wechat_redirect)
+Outages Aren't Why Tencent Cloud Is Amateur Hour, Arrogance Is (original link unavailable)
 
 [Tencent Cloud Computing Epic Second Rollover](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487267&idx=1&sn=7d31d44e89560356b5c5a2e7a40bb1e1&chksm=fe4b3af8c93cb3ee9b8000cd90a12a798395f67205d4ba5b0c77b8c5b6ce9ea448d9fc014921&scene=21#wechat_redirect)
 

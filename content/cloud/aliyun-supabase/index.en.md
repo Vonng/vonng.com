@@ -5,7 +5,6 @@ authors: [vonng]
 summary: "Founders here get asked the same question over and over: what if Alibaba builds the same thing? Alicloud RDS just launched Supabase as a managed service. Exhibit A."
 tags: [Alibaba Cloud, PG Ecosystem, Open Source]
 ---
-
 Chinese founders hear the nightmare scenario constantly: “What happens when Alibaba shows up?” Well, Alicloud RDS just shipped Supabase as a first-party feature. This is what it looks like when a hyperscaler parachutes into your niche.
 
 ## Supabase in a nutshell
@@ -72,7 +71,7 @@ To be fair, Alicloud used to have a decent reputation in open source. Qwen model
 
 ## Further reading
 
-#### Supabase
+### Supabase
 
 [Stop Arguing. The AI Database Play Is Already Decided.](https://mp.weixin.qq.com/s/bChEvpXgXKi5njr6Kj5YGg)
 
@@ -88,7 +87,7 @@ To be fair, Alicloud used to have a decent reputation in open source. Qwen model
 
 [OrioleDB Is Coming](https://mp.weixin.qq.com/s/QG7_UyT08fNFiBj6qujSEA)
 
-#### Alicloud
+### Alicloud
 
 [Slap Fight Worth 30M? Alibaba vs. Xiaowangshen](https://mp.weixin.qq.com/s/O4LvUspOgrVBWHzmBvfmUA)
 
@@ -140,7 +139,7 @@ To be fair, Alicloud used to have a decent reputation in open source. Qwen model
 
 [How Cloud Vendors See Customers: Broke, Bored, and Needy](https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ)
 
-#### Cloud & open source
+### Cloud & open source
 
 [Elasticsearch Is “Open” Again?](https://mp.weixin.qq.com/s/NdeeYn10qQ0xBPL-67IXdQ)
 

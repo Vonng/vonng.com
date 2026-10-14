@@ -8,26 +8,21 @@ summary: >
   公有云上的黑暗森林法则出现了：只要你的S3对象存储桶名暴露，任何人都有能力刷爆你的云账单。
 tags: [下云, AWS, 对象存储]
 ---
-
 公有云上的黑暗森林法则出现了：**只要你的 S3 对象存储桶名暴露，任何人都有能力刷爆你的云账单。**
 
-![](featured.webp)
-
-------
+![云上黑暗森林：打爆云账单，只需要S3桶名（图 1）](featured.webp)
 
 试想一下，你在自己喜欢的区域创建了一个空的、**私有的** AWS S3 存储桶。第二天早上，你的 AWS 账单会是什么样子？
 
 几周前，我开始为客户开发一个文档索引系统的概念验证原型 (PoC)。我在 `eu-west-1` 区域创建了一个 S3 存储桶，并上传了一些测试文件。两天后我去查阅 AWS 账单页面，主要是为了确认我的操作是否在免费额度内。结果显然事与愿违 —— 账单超过了 **1300美元**，账单面板显示，执行了将近 **1亿次** S3 PUT 请求，仅仅发生在一天之内！
 
-![](bill.jpg)
+![云上黑暗森林：打爆云账单，只需要S3桶名（图 2）](bill.jpg)
 
 > 我的 S3 账单，按每天/每个区域计费
 
-------
-
 ## 这些请求从哪儿来？
 
-默认情况下，AWS 并不会记录对你的 S3 存储桶的请求操作。但你可以通过 [**AWS CloudTrail**](https://docs.aws.amazon.com/AmazonS3/latest/userguide/cloud/trail-logging.html) 或 [**S3 服务器访问日志**](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html) 启用此类日志记录。开启 CloudTrail 日志后，我立刻发现了成千上万的来自不同账户的写请求。
+默认情况下，AWS 并不会记录对你的 S3 存储桶的请求操作。但你可以通过 [**AWS CloudTrail**](https://docs.aws.amazon.com/AmazonS3/latest/userguide/cloudtrail-logging.html) 或 [**S3 服务器访问日志**](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html) 启用此类日志记录。开启 CloudTrail 日志后，我立刻发现了成千上万的来自不同账户的写请求。
 
 **为何会有第三方账户对我的 S3 存储桶发起未授权请求？**
 
@@ -57,8 +52,6 @@ aws s3 cp ./file.txt s3://your-bucket-name/random_key
 
 现在我明白了，为什么我的 S3 存储桶会收到数以百万计的请求，以及为什么我最终面临一笔巨额的 S3 账单。当时，我还想到了一个点子。如果所有这些配置错误的系统，都试图将数据备份到我的 S3 存储桶，如果我将其设置为 “**公共写入**” 会怎样？我将存储桶公开不到 30 秒，就在这短短时间内收集了超过 10GB 的数据。当然，我不能透露这些数据的主人是谁。但这种看似无害的配置失误，竟可能导致严重的数据泄漏，令人震惊！
 
-------
-
 ## 我从中学到了什么？
 
 **第一课：任何知道你S3存储桶名的人，都可以随意打爆你的AWS账单**
@@ -73,8 +66,6 @@ aws s3 cp ./file.txt s3://your-bucket-name/random_key
 
 这样你可以避免因 API 重定向而产生额外的费用。
 
-------
-
 ## 尾声
 
 1. 我向这个脆弱开源工具的维护者报告了我的发现。他们迅速修正了默认配置，不过已部署的实例无法修复了。
@@ -86,8 +77,6 @@ aws s3 cp ./file.txt s3://your-bucket-name/random_key
 4. AWS 最终同意取消了我的 S3 账单，但强调了这是一个例外情况。
 
 感谢你花时间阅读我的文章。希望它能帮你避免意外的 AWS 费用！
-
-------
 
 ## 下云老冯评论
 
@@ -101,15 +90,11 @@ aws s3 cp ./file.txt s3://your-bucket-name/random_key
 
 但是在 AWS 看来，该特性被视为 Feature，而不是安全漏洞或者 Bug，可以用来咔咔爆用户的金币。同样的设计逻辑贯穿在 AWS 的产品设计逻辑中，例如，Route53 查询没有解析的域名也会收费，所以知道域名是 AWS 解析的话，也可以进行 DDoS。
 
----------------
-
 我并不确定本土云厂商是否使用了同样的处理逻辑。但他们基本都是直接或间接借鉴 AWS 的。所以有比较大的概率，也会是一样的情况。
 
-![](ddos.jpg)
+![云上黑暗森林：打爆云账单，只需要S3桶名：下云老冯评论（图 3）](ddos.jpg)
 
 > 作为信安专业出身，我很清楚业界的一些玩法，比如打DDoS 卖高防 —— 来自某群友的截图
-
----------------
 
 在 《[**Cloudflare圆桌访谈**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487400&idx=1&sn=cf5b94165d2791030e0e874dca8383c7&scene=21#wechat_redirect)》中，我也提到过安全问题，比如监守自盗刷流量的问题。
 
@@ -119,4 +104,4 @@ aws s3 cp ./file.txt s3://your-bucket-name/random_key
 
 Well，总的来说，账单被刷爆，也算一种公有云上独有的安全风险了 —— 希望云用户保持谨慎小心，一点小失误，也许就会在账单上立即产生难以挽回的损失。
 
-![](aws-joke.jpg)
+![云上黑暗森林：打爆云账单，只需要S3桶名：下云老冯评论（图 4）](aws-joke.jpg)

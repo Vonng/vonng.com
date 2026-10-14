@@ -6,7 +6,6 @@ summary: >
   A customer experienced an outrageous cascade of failures on cloud database last week: a high-availability PG RDS cluster went down completely - both primary and replica servers - after attempting a simple memory expansion, troubleshooting until dawn. Poor recommendations abounded during the incident, and the postmortem was equally perfunctory. I share this case study here for reference and review.
 tags: [Cloud-Exit, RDS, Alibaba Cloud]
 ---
-
 In "[Are Cloud Databases an IQ Tax](/cloud/rds)", I evaluated cloud database RDS as: "**selling sky-high pre-made meals at five-star hotel prices**" — but legitimate pre-made meals from industrial kitchens are at least edible and generally won't kill you. However, a recent incident on Alibaba-Cloud has changed my perspective.
 
 I have a client L who recently vented to me about an outrageous cascade of failures encountered on their cloud database: a high-availability PG RDS cluster completely failed - both primary and replica servers - after attempting a simple memory expansion, causing them to troubleshoot until dawn. Poor recommendations abounded during the incident, and the postmortem provided was quite perfunctory. With client L's consent, I share this case study here for everyone's reference and review.
@@ -20,8 +19,6 @@ I have a client L who recently vented to me about an outrageous cascade of failu
 - [Compensation Agreement: Hush Money Pills](#compensation-agreement-hush-money-pills)
 - [Solution: Cloud-Exit and Self-Building](#solution-cloud-exit-and-self-building)
 - [Advertisement Time: Expert Consulting](#advertisement-time-expert-consulting)
-
----------------
 
 ## The Incident: Beyond Belief
 
@@ -56,8 +53,6 @@ After hearing about this case, Ma could only helplessly argue: "**Garbage RDS is
 
 ![wechat-magong.png](wechat-magong.png)
 
---------
-
 ## Memory Expansion: Creating Problems Out of Nothing
 
 **Resource shortage is a common cause of failures, but precisely because of this, it's sometimes abused as an excuse to shift blame, deflect responsibility, or demand resources - a universal excuse for selling hardware.**
@@ -74,8 +69,6 @@ Logically, cloud databases advertise their ultimate elasticity and flexible scal
 
 For memory shortage, upgrading two 32G servers to 64G, according to the pricing model we calculated in "[Analyzing Alibaba-Cloud Server Computing Cost](/en/cloud/ecs/#instance-family-impact-on-pricing)", this memory expansion operation alone could bring in tens of thousands in additional annual revenue. If it could solve the problem, that would be one thing, but in fact this memory expansion not only failed to solve the problem but also triggered bigger problems.
 
---------
-
 ## Replica Failure: Questionable Competence
 
 The first cascading failure caused by memory expansion was this: the standby server crashed. Why did it crash? Because PG parameters weren't configured correctly: `max_prepared_transaction`. Why would this parameter cause crashes? Because in a PG cluster, this parameter must be consistent between primary and replica servers, otherwise the replica will refuse to start.
@@ -90,8 +83,6 @@ If you manually create replicas with `pg_basebackup`, you won't encounter this p
 
 You would encounter this problem in one situation: poorly designed homegrown high-availability service components or insufficiently tested automation scripts that **presumptuously "optimize" this parameter for you**.
 
---------
-
 ## Primary Failure: Suffocating Operation
 
 If the replica failing affected only some read-only traffic, that might be acceptable. But the primary failing is a matter of life and death for client L's real-time data reporting business. Regarding the primary failure, the engineer's explanation was: during expansion, due to busy transactions, primary-replica replication lag couldn't catch up, so "**special handling was done to avoid data corruption**".
@@ -103,8 +94,6 @@ Honestly, I find this operation suffocating. Primary fencing is indeed a core is
 "**Special handling was done to avoid data corruption**" is indeed quite artistic — yes, directly shutting down the primary can achieve fencing and indeed won't lose data during high-availability failover due to replication lag, **but client data can't be written anymore**! This lost data is far more than that little lag. This operation inevitably reminds one of the famous "[Treating Hunchbacks](https://www.gushiwen.cn/shiwenv_ddbe67aad03d.aspx)" joke:
 
 ![tuobei.png](tuobei.png)
-
---------
 
 ## WAL Accumulation: Missing Expertise
 
@@ -128,8 +117,6 @@ Alibaba-Cloud's database team isn't without PostgreSQL DBA experts - Digoal work
 
 I often see RDS users encounter problems that aren't resolved through official tickets, having to bypass tickets and directly seek help from Digoal in the PG community to [solve problems](/cloud/drop-rds/) — which is indeed quite dependent on luck and connections.
 
---------
-
 ## Disk Expansion: Revenue Generation Tactics
 
 After resolving the cascade of issues including "memory alerts," "replica failure," "primary failure," and "WAL accumulation," it was nearly dawn. But the root cause of WAL accumulation remained unclear, with the engineer's response being "**related to disk throughput being maxed out**", again recommending ESSD cloud disk upgrade.
@@ -152,8 +139,6 @@ Even the ESSD PL1 beggar disk comes with 50K IOPS, while client L's scenario of 
 
 I can't judge whether the practice of recommending memory expansion / disk expansion whenever problems arise is due to professional incompetence leading to misdiagnosis, or the evil desire to exploit information asymmetry for revenue generation, or both — but this practice of price gouging during illness inevitably reminds me of the once notorious Putian hospitals.
 
---------
-
 ## Compensation Agreement: Hush Money Pills
 
 In "[Are Cloud SLAs Placebos](/cloud/sla/)" I already warned users: cloud service SLAs aren't commitments to service quality at all. **In the best case they're placebos providing emotional value, and in the worst case they're bitter pills you have to swallow without recourse.**
@@ -171,8 +156,6 @@ Of course this is because client L's technical team has competence and ability t
 There are also problems "SLA" doesn't cover at all — for example, another case from client L earlier (direct quote): "*To get discounts, we needed to migrate to another new Alibaba-Cloud account. The new account started a same-configuration RDS with logical replication. After nearly a month of replication, data still wasn't synchronized, forcing us to abandon the new account migration, resulting in wasting tens of thousands of yuan.*" — This was truly paying money to buy suffering, with nowhere to seek justice.
 
 After several incidents bringing terrible experiences, client L finally couldn't tolerate it after this accident and decided to exit the cloud.
-
---------
 
 ## Solution: Cloud-Exit and Self-Building
 
@@ -194,11 +177,9 @@ For client L, the benefits of cloud exit are immediate: just a **one-time invest
 
 **The biggest challenge in cloud exit and self-building RDS services is actually people and skills**. Client L already has a technically solid team but indeed lacks professional knowledge and experience with PostgreSQL. This is also a core reason why client L was willing to pay high premiums for RDS. But the professional competence RDS demonstrated in several incidents was even inferior to the client's own technical team, making continued cloud presence meaningless.
 
---------
-
 ## Advertisement Time: Expert Consulting
 
-In cloud exit matters, I'm happy to provide help and support for client L. [Pigsty](https://pigsty.cc/zh/) distills my domain knowledge and experience as a top PG DBA into an open-source RDS [self-building tool](/en/cloud/dba-vs-rds/#dba-work-and-automated-management), having helped countless users worldwide build their own enterprise-grade PostgreSQL database services. Although it has solved operational issues like out-of-box usability, scaling integration, monitoring systems, backup recovery, security compliance, and IaC quite well, to fully unleash the complete power of PostgreSQL and Pigsty still requires expert help for implementation.
+In cloud exit matters, I'm happy to provide help and support for client L. [Pigsty](https://pigsty.cc/) distills my domain knowledge and experience as a top PG DBA into an open-source RDS [self-building tool](/en/cloud/dba-vs-rds/#dba-work-and-automated-management), having helped countless users worldwide build their own enterprise-grade PostgreSQL database services. Although it has solved operational issues like out-of-box usability, scaling integration, monitoring systems, backup recovery, security compliance, and IaC quite well, to fully unleash the complete power of PostgreSQL and Pigsty still requires expert help for implementation.
 
 So I provide clearly priced [**expert consulting services**](https://pigsty.cc/docs/about/service) — for clients like L with mature technical teams who just lack domain knowledge, I only charge a fixed **5K ¥/month** consulting fee, equivalent to half a junior operations engineer's salary. But sufficient to let clients confidently use hardware resource costs an order of magnitude lower than cloud, self-building better local PG RDS services — and even when continuing to run RDS on cloud, avoid being fooled and harvested by "experts".
 
@@ -209,8 +190,6 @@ I believe **consulting** is a dignified mode of earning money while standing upr
 But I must also emphasize that I advocate cloud exit concepts always targeting customers with **certain data scale and technical strength**, like client L here. If your scenario falls within cloud computing's comfort spectrum (like using 1C2G discount MySQL for OA), and you lack technically solid or trustworthy engineers, I would honestly advise against tinkering — 99 yuan/year RDS is still much better than your own yum install, what more could you want? Of course for such use cases, I do suggest considering free tiers from [cyber bodhisattvas](/cloud/cloudflare) like Neon, Supabase, Cloudflare - **might not even cost a yuan**.
 
 For those customers with certain scale who are tied to cloud databases being continuously bled dry, you can indeed consider another option: self-building database services is by no means rocket science — **you just need to find the right tools and the right people**.
-
---------
 
 ## Extended Reading
 

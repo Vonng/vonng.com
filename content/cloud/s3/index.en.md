@@ -6,14 +6,11 @@ summary: |
   S3 is no longer "cheap" with the evolution of hardware, and other challengers such as cloudflare R2.
 tags: [Cloud-Exit, Cloud, Object Storage, AWS]
 ---
-
 > [WeChat](https://mp.weixin.qq.com/s/HathxpQ_KUuqxyrtyCDzWw)
 
 Object storage (S3) has been a defining service of cloud computing, once hailed as a paragon of cost reduction in the cloud era. Unfortunately, with the evolution of hardware and the emergence of resources cloud (Cloudflare R2) and open-source alternatives (MinIO), the once "cost-effective" object storage services have lost their value for money, becoming as much a "cash cow" as EBS. In our "Mudslide of Cloud Computing" series, we've already delved into the cost structure of cloud-based EC2 compute power, EBS disks, and RDS databases. Today, let's examine the anchor of cloud services—object storage.
 
-[![](featured.webp)](https://mp.weixin.qq.com/s/HathxpQ_KUuqxyrtyCDzWw)
-
-------------
+[![S3: Elite to Mediocre (figure 1)](featured.webp)](https://mp.weixin.qq.com/s/HathxpQ_KUuqxyrtyCDzWw)
 
 ## From Cost Reduction to Cash Cow
 
@@ -45,8 +42,6 @@ In 2023, when we re-calculate the costs, it's clear that the value for money of 
 
 The core issue here is: **The price of hardware resources drops exponentially according to Moore's Law, but the savings are not passed through the cloud providers' intermediary layer to the end-user service prices.** **To not advance is to go back; failing to reduce prices at the pace of Moore's Law is effectively a price increase**. Taking S3 as an example, over the past decade, cloud providers' S3 has nominally reduced prices by 6-fold, but hardware resources have become 26 times cheaper, so how should we view this pricing now?
 
----------------
-
 ## Cost, Performance, Throughput
 
 Despite the high premiums of cloud services, if it represents an irreplaceable **best choice**, the use by high-value, price-insensitive top-tier customers is not affected even with a high premium and low cost-effectiveness. However, it's not just about cost; the performance of storage hardware also follows Moore's Law. Over time, building one's own S3 has started to show a significant advantage in performance.
@@ -76,8 +71,6 @@ It's worth noting that the comparison above focuses solely on the cost of storag
 
 Of course, cloud providers might argue that their S3 service is not just about storage hardware resources but an out-of-the-box **service**. This includes software intellectual property and maintenance labor costs. They may claim that self-hosting has a higher failure rate, is riskier, and incurs significant operational labor costs. Unfortunately, these arguments might have been valid in 2006 or 2013, but they seem rather ludicrous today.
 
------------
-
 ## Self-Hosted OSS S3
 
 A decade and a half ago, the vast majority of users lacked the IT capabilities to self-host, and there were no mature open-source alternatives to S3. Users could tolerate the premium for this high technology. However, as various cloud providers and IDCs began offering object storage, and even open-source free object storage solutions like MinIO emerged, the market shifted from a seller's to a buyer's market. The logic of value pricing turned into cost pricing, and the unyielding premium on resources naturally faced scrutiny — what extra value does it actually provide to justify such significant costs?
@@ -95,8 +88,6 @@ At Tantan, several MinIO clusters were built and maintained this way: holding 25
 For object storage services, the cloud's three core value propositions: "cheaper, simpler, faster", the "simpler" part may not hold up, "cheaper" has turned the other way, probably only leaving "faster" — indeed, no one can beat the cloud on this point. You can apply for PB-level storage services across all regions of the world in less than a minute on the cloud, which is amazing! However, you also have to pay a high premium, several times to dozens of times over for this privilege.
 
 Therefore, for object storage services, among the cloud's three core value propositions: "cheaper, simpler, faster", the "simpler" part may not hold, and "cheaper" has gone in the opposite direction, probably only leaving "faster" — indeed, no one can beat the cloud on this point. You can indeed apply for PB-level storage services across all regions of the world in less than a minute on the cloud, which is amazing! However, you also have to pay a high premium for this privilege, several to dozens of times over. For enterprises of a certain scale, compared to the cost of operations increasing several times, waiting a couple of weeks or making a one-time capital investment is not a big deal.
-
------------
 
 ## Summary
 

@@ -6,7 +6,6 @@ summary: >
   Tencent Cloud's epic global outage after Double 11 set industry records. How should we evaluate and view this failure, and what lessons can we learn from it?
 tags: [Cloud-Exit, Cloud, Incident]
 ---
-
 Eight days after the outage, Tencent Cloud published a [**postmortem report**](https://mp.weixin.qq.com/s/2e2ovuwDrmwlu-vW0cKqcA) for the April 8th major outage. I think this is a good thing, because Alibaba-Cloud's [Double 11 major outage](https://mp.weixin.qq.com/s/cTge3xOlIQCALQc8Mi-P8w) official postmortem is still overdue. If public cloud vendors want to truly become **providers of water and electricity-like public infrastructure**, they need to take responsibility and accept public oversight—cloud vendors have an obligation to disclose their outage causes and propose concrete reliability improvement plans and measures.
 
 So let's examine this postmortem report, see what information it contains, and what lessons we can learn from it.
@@ -16,8 +15,6 @@ So let's examine this postmortem report, see what information it contains, and w
 - [What is the impact?](#what-is-the-impact)
 - [Comments and opinions?](#comments-and-opinions)
 - [What can we learn?](#what-can-we-learn)
-
--------------------
 
 ## What are the facts?
 
@@ -63,8 +60,6 @@ The first problem was management API not maintaining good bidirectional compatib
 
 The second problem was circular dependency (container platform and management API) preventing automatic system startup, requiring manual operational intervention for Bootstrap. This reflects architectural design problems, and—**Tencent Cloud didn't learn the core lesson from Alibaba-Cloud's major outage last year**.
 
--------------------
-
 ## What is the impact?
 
 In the postmortem report, Tencent Cloud used lengthy descriptions of outage impact, explaining differences between control plane and data plane outages. Used some hotel front desk analogies. Similar outages already appeared in Alibaba-Cloud's Double 11 major outage last year—control plane down, data plane normal. In "[What We Can Learn from Alibaba-Cloud's Epic Outage](https://mp.weixin.qq.com/s/OIlR0rolEQff9YfCpj3wIQ)," we also analyzed that control plane outages indeed won't affect continued use of existing pure IaaS resources. But will affect cloud vendors' core services—for example, object storage is called COS on Tencent Cloud.
@@ -72,8 +67,6 @@ In the postmortem report, Tencent Cloud used lengthy descriptions of outage impa
 **Object storage COS is really too important**, arguably cloud computing's "defining service," perhaps the only service achieving basic consensus standards across all clouds. Cloud vendors' various "upper layer" services more or less directly/indirectly depend on COS. For example, CVM/RDS can run, but CVM snapshots and RDS backups obviously deeply depend on COS, CDN origin pulling depends on COS, various service logs often also write to COS **. So any outages involving basic services shouldn't be glossed over casually**.
 
 Of course, most infuriating is actually Tencent Cloud's arrogant attitude—as a Tencent Cloud user myself, I submitted a ticket to test whether cloud SLA really works—facts proved: **no compensation without claims, claimed but denied can also avoid compensation—this SLA is indeed like toilet paper.** "[Are Cloud SLAs Placebo or Toilet Paper Contracts](https://mp.weixin.qq.com/s/mgkOybNeEH3LO0gRa1rQBQ)"
-
--------------------
 
 ## Comments and Opinions
 
@@ -89,17 +82,11 @@ Through outage postmortems, proposing improvement measures, letting users see im
 
 If public cloud vendors want to truly become **providers of water and electricity-like public infrastructure**, they need to take responsibility and dare accept public and user oversight. In "[Tencent Cloud: Face-losing Amateur Hour](https://mp.weixin.qq.com/s/PgduTGIvWSUgHZhVfnb7Bg)" and "[Are Cloud SLAs Placebo or Toilet Paper Contracts](https://mp.weixin.qq.com/s/mgkOybNeEH3LO0gRa1rQBQ)," I pointed out Tencent Cloud's problems facing outages—untimely, inaccurate, non-transparent outage information release. On this point, I'm gratified to see in postmortem improvement measures that Tencent Cloud can acknowledge these problems and commit to improvements. But I cannot forgive—Tencent Cloud choosing to censor and silence articles on WeChat public accounts.
 
--------------------
-
 ## What can we learn?
 
 Past cannot be retained, gone cannot be pursued. More important than mourning irretrievable losses is learning lessons from losses—even better if we can learn from others' losses. So, what can we learn from Tencent Cloud's epic outage?
 
--------------------
-
 **Don't put all eggs in one basket**, prepare Plan B. For example, business domain resolution must add a CNAME layer, with CNAME domains using different service providers' resolution services. This intermediate layer is very important for global cloud vendor outages like Alibaba-Cloud and Tencent Cloud—using another DNS provider at least gives you a choice to cut traffic elsewhere, rather than sitting helplessly in front of screens waiting for death with no self-rescue capability.
-
--------------------
 
 **Carefully depend on things requiring cloud infrastructure**:
 
@@ -109,15 +96,9 @@ My friend/opponent, public cloud advocate Swedish Ma and his friend AK Boss, alw
 
 > "I've always advocated everyone use IAM for access control, but both cloud providers had major outages, slapping my face. Whether PR or SRE, cloud vendors are using actual actions to prove to customers: '*Don't listen to Ma, if you use his approach, I'll make your systems die*'."
 
----------------
-
 **Use cloud services carefully, prioritize pure resources**. In this outage, **cloud services** were affected, but **cloud resources** remained available. Pure **resources** like CVM/cloud/ disks, and RDS simply using these two, can continue running unaffected by control plane outages. Basic cloud resources (CVM/cloud/ disks) are the **greatest common denominator** of all cloud vendors' services. Using only resources helps users choose optimally between different public clouds and local self-building. However, it's hard to imagine not using object storage on public clouds—self-building object storage services with MinIO on CVM and astronomical cloud disks isn't a truly viable option. This involves public cloud business model core secrets: [cheap S3 for customer acquisition](/cloud/s3), [astronomical EBS pig-butchering](/cloud/ebs/).
 
--------------------
-
 **Self-building is the ultimate path to mastering your own destiny**: If users want to truly control their destinies, they'll probably eventually walk the self-building path. Internet pioneers built these services from scratch, and doing it now would only be easier: IDC 2.0 solves hardware resource problems, open source alternatives solve software problems, mass layoffs released experts solving manpower problems. Short-circuiting public cloud middlemen, directly cooperating with IDCs is obviously more economical. For users with some scale, [money saved from cloud exit](/cloud/finops/) can hire several senior SREs from big companies with surplus. More importantly, when your own people have problems, you can reward/punish/motivate improvements, but when cloud has problems, can they compensate you with a few cents worth of coupons?
-
--------------------
 
 **Clarify that cloud vendor SLAs are marketing tools, not performance commitments**
 

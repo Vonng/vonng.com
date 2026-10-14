@@ -6,7 +6,6 @@ summary: >
   AWS US-EAST-1 区域DNS解析故障带崩半个互联网，老冯带您复盘 AWS 史诗故障。
 tags: [下云, AWS, 故障复盘]
 ---
-
 2025 年 10 月 20 日，AWS 最关键的 us-east-1 区域发生了一场持续 15 小时的重大故障，导致全球超过 1000 家企业服务中断。
 而这场故障背后的根因，竟然仅仅是一条 AWS 内部 DNS 解析失效。
 
@@ -169,8 +168,6 @@ us-east-1 还会再次故障 —— 不是是否，而是何时。所以真正�
 
 [Converge: DNS Failure Triggers Multi-Service AWS Disruption in US-EAST-1](https://convergedigest.com/aws-reports-major-outage-in-us-east-1-region/)
 
----
-
 ## 故障公告
 
 12:11 AM PDT
@@ -250,8 +247,6 @@ US‑EAST‑1 区域新建 EC2 实例启动问题的恢复取得进展，现已�
 
 3:53 PM PDT
 在 10 月 19 日 11:49 PM 至 10 月 20 日 2:24 AM（均为 PDT）期间，US‑EAST‑1 区域的 AWS 服务出现错误率和时延升高。此期间，依赖 US‑EAST‑1 端点的服务或功能（如 IAM、DynamoDB 全局表）也受到影响。我们于 10 月 20 日 12:26 AM 将事件触发因素定位为区域内 DynamoDB 服务端点的 DNS 解析问题。2:24 AM 解决该 DNS 问题后，各服务开始恢复，但由于 EC2 的相关内部子系统依赖 DynamoDB，我们随后在负责启动 EC2 实例的内部子系统上出现新的受损。随着我们继续处理 EC2 启动受损问题，网络负载均衡器（NLB）健康检查也出现受损，导致多项服务（如 Lambda、DynamoDB、CloudWatch）出现网络连通性问题。我们于 9:38 AM 恢复了 NLB 健康检查。作为恢复的一部分，我们临时对部分操作实施限流（如 EC2 实例启动、通过 Lambda 事件源映射处理 SQS 队列、以及异步 Lambda 调用）。随后我们逐步降低限流，并并行解决网络连通性问题，直至服务完全恢复。到 3:01 PM，所有 AWS 服务已恢复至正常运行状态。AWS Config、Redshift、Connect 等少数服务仍有消息积压，将在接下来的数小时内处理完毕。我们将分享更为详尽的事件后总结。
-
----
 
 ## 相关专栏
 

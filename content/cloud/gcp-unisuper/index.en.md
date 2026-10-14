@@ -7,12 +7,11 @@ summary: >
   Due to an "unprecedented configuration error," Google Cloud mistakenly deleted trillion-RMB fund giant UniSuper's entire cloud account, cloud environment and all off-site backups, setting a new record in cloud computing history!
 tags: [Cloud-Exit, Cloud, Incident]
 ---
-
 Due to an "***unprecedented configuration error***", Google Cloud mistakenly deleted **UniSuper**'s cloud account.
 
 The Australian pension fund executive and Google Cloud's global CEO issued a joint statement apologizing for this "extremely frustrating and disappointing" outage.
 
-![](gcp-unisuper.png)
+![Database Deletion Supreme - Google Cloud Nuked a Major Fund's Entire Cloud Account (figure 1)](gcp-unisuper.png)
 
 > https://x.com/0xdabbad00/status/1789011008549450025
 
@@ -24,7 +23,7 @@ UniSuper CEO Peter Chun explained to 620,000 members on Wednesday evening that t
 
 In a joint statement from Peter Chun and Google Cloud global CEO Thomas Kurian, both apologized to members for the outage, calling the event "extremely frustrating and disappointing." They pointed out that due to a configuration error, UniSuper's cloud account was deleted, **an unprecedented event on Google Cloud**.
 
-[![](announcement.png)](https://www.unisuper.com.au/about-us/media-centre/2024/a-joint-statement-from-unisuper-and-google-cloud)
+[![Database Deletion Supreme - Google Cloud Nuked a Major Fund's Entire Cloud Account (figure 2)](announcement.png)](https://www.unisuper.com.au/about-us/media-centre/2024/a-joint-statement-from-unisuper-and-google-cloud)
 
 > [Joint Statement from UniSuper CEO and Google Cloud CEO](https://www.unisuper.com.au/about-us/media-centre/2024/a-joint-statement-from-unisuper-and-google-cloud)
 
@@ -40,9 +39,7 @@ Fortunately, UniSuper had another backup with a different vendor, so they ultima
 
 UniSuper currently manages approximately **$125 billion** in funds.
 
-------
-
-### Cloud-Exit Feng's Commentary
+## Cloud-Exit Feng's Commentary
 
 If [**Alibaba-Cloud's global service unavailability**](/cloud/aliyun/) major outage could be called "**epic**," then this Google Cloud outage deserves to be called "**peerless**." The former mainly involved service **availability**, while this outage struck at the core of many enterprises - **data integrity**.
 

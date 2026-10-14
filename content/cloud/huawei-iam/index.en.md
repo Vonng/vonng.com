@@ -6,7 +6,6 @@ summary: >
   Huawei Cloud confirmed abnormalities affecting some International Site accounts during a scheduled IAM upgrade window. The timing is suggestive, but the causal link remains unconfirmed.
 tags: [Cloud, Incident]
 ---
-
 At 02:49 GMT+8 on July 26, 2026, [Huawei Cloud said](https://www.huaweicloud.com/intl/en-us/notice/20260726033454857.html) that it had detected abnormalities affecting some accounts on its International Site, disrupting access to related services. Huawei Cloud later marked the notice as resolved, saying that the affected accounts had been restored, services were operating normally, and data integrity had been maintained. The notice gives neither a precise recovery time nor a root cause.
 
 ![notice.webp](notice.webp)

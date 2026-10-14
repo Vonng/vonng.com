@@ -6,14 +6,11 @@ summary: >
   Cloud databases' exorbitant markups—sometimes 10x or more—are undoubtedly a scam for users outside the applicable spectrum. But we can dig deeper: why are public clouds, especially cloud databases, like this? And based on their underlying logic, make predictions about the industry's future.
 tags: [Cloud-Exit, Open Source]
 ---
-
 In the previous article, we used data to answer "[Are Cloud Databases an Intelligence Tax?](/cloud/rds/)"—**the exorbitant markups of several to over ten times are undoubtedly a scam for users outside the applicable spectrum**. But we can dig deeper: why are public clouds, especially cloud databases, like this? And based on their underlying logic, make predictions and judgments about the industry's future.
 
-[![](featured.png)](https://mp.weixin.qq.com/s/Yp6L0hh4b4HuJQRPD3aJYw)
+[![Paradigm Shift: From Cloud to Local-First (figure 1)](featured.png)](https://mp.weixin.qq.com/s/Yp6L0hh4b4HuJQRPD3aJYw)
 
 The software industry has undergone several paradigm shifts, and databases are no exception.
-
-----------------
 
 ## Past Lives and Present Incarnations
 
@@ -36,8 +33,6 @@ Open source software brought massive industry transformation—**the history of 
 **Next, cloud ate open source**. Public cloud software is the productized external output of internet giants' ability to use open source software. Public cloud vendors wrap open source database kernels in shells, run them on managed hardware with shared DBA expert support, creating **cloud database services** (RDS). **This is indeed valuable service, providing new monetization paths for much software. But cloud vendors' free-riding behavior undoubtedly exploits and extracts from open source software communities**, and open source organizations and developers defending computational freedom naturally fight back.
 
 The rise of cloud software triggers new balancing counterforces: **local-first software** corresponding to cloud software begins emerging like mushrooms after rain. **And we are witnessing this paradigm shift firsthand.**
-
-----------------
 
 ## Dialectical Contradictions
 
@@ -86,8 +81,6 @@ When cloud first appeared, their core was hardware/**IaaS** layer: storage, band
 
 Unfortunately, for obfuscation purposes, both cloud software and cloud hardware use the name "cloud." Thus, the cloud story simultaneously mixes the idealistic brilliance of popularizing computing power to thousands of households with the greed of achieving monopolistic ill-gotten profits.
 
-----------------
-
 ## Contradiction Evolution
 
 > **In 2022, the enemy of software freedom is cloud computing software.[3]**
@@ -105,8 +98,6 @@ Today, **cloud software, not closed-source or commercial software, has become th
 
 **"Open source" vs "closed source" is no longer the core contradiction in the software industry—the focus of struggle has shifted to "cloud" vs "local."**
 
-----------------
-
 ## Local-First
 
 The opposition of "**local**" vs "**cloud**" manifests in various forms: sometimes "**Native Cloud**" vs "**Cloud Native**," sometimes "private cloud" vs "public cloud," mostly overlapping with "open source" vs "closed source," and in some sense involving "autonomous control" vs "dependence on others."
@@ -120,8 +111,6 @@ Before open source/local-first alternatives to cloud software appear, public clo
 ![paradigm-3.jpeg](paradigm-3.jpeg)
 
 > CNCF Landscape
-
-----------------
 
 ## Historical Experience
 
@@ -138,8 +127,6 @@ Therefore, in the long term, public cloud vendors will probably have such a day:
 Correspondingly, functions for manufacturing light bulbs, air conditioners, and washing machines will be stripped from power companies, flourishing diversely. Cloud vendors' PaaS/SaaS will gradually shrink under impact from better, higher-quality, cheaper alternatives, or return to sufficiently low price levels.
 
 Just as Microsoft, once the arch-enemy of the open source movement, now chooses to embrace open source, public cloud vendors will surely have this day—reaching reconciliation with the free software world, peacefully accepting the role of infrastructure suppliers, providing water and electricity-like storage and computing resources for society. **Cloud software will eventually** return to normal profit margins. **I hope when that day comes, people will remember this wasn't because cloud vendors showed mercy, but because someone brought open source alternatives.**
-
-----------------
 
 ## Further Reading
 

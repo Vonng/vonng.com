@@ -7,7 +7,6 @@ summary: >
   云计算成本有时高到离谱。Ahrefs通过自建数据中心，三年省下4亿美元。基于真实成本对比AWS，揭示云服务的成本陷阱与自建的优势。
 tags: [下云, AWS, 成本, 翻译]
 ---
-
 > 原文：[How Ahrefs Saved US$400M in 3 Years by NOT Going to the Cloud](https://tech.ahrefs.com/how-ahrefs-saved-us-400m-in-3-years-by-not-going-to-the-cloud-8939dd930af8)
 
 最近云计算在 IT 基础设施领域非常流行，上云成为一种趋势。基础设施即服务云（IaaS）确实有很多优点：灵活、部署敏捷、伸缩简便、在全球多地区都能即时上线，等等等等。
@@ -16,13 +15,11 @@ tags: [下云, AWS, 成本, 翻译]
 
 但是，这些外包云计算服务的成本，有时高到离谱，高到我们担心如果基础设施 100% 依赖云计算，我们的业务是否还能存在。这促使我们基于事实，进行实际的比较。以下是比较结果：
 
-------
-
 ## Ahrefs 自有硬件概览
 
 Ahrefs 在新加坡租用了一个托管数据中心 —— 高度同质化的标准基础设施。我们核算了这个数据中心的所有成本，并分摊到每台服务器上，然后与 Amazon Web Services (AWS) 云中进行类似的规格进行了成本对比（因为 AWS 是 IaaS 领导者，所以我们将其用作对比的标杆）
 
-![](server1.webp)
+![Ahrefs不上云，省下四亿美元：Ahrefs 自有硬件概览（图 1）](server1.webp)
 
 > Ahrefs 服务器
 
@@ -45,8 +42,6 @@ Ahrefs 在新加坡租用了一个托管数据中心 —— 高度同质化的�
 | **自建总成本**        | **$ 1,550** | **¥ 11,160** | 100% |
 
 > 我们的自有本地硬件成本结构
-
-------
 
 ## AWS 成本结构
 
@@ -84,8 +79,6 @@ We keep two copies of a data chunk on our servers. But we only order usable spac
 
 > AWS成本结构
 
-------
-
 ## 自建与AWS对比
 
 综合以上两个表格不难看出，AWS 上的支出比想象中要高得多。
@@ -101,7 +94,7 @@ We keep two copies of a data chunk on our servers. But we only order usable spac
 
 在 AWS 上一台具有相似可用 SSD 空间的替代 EC2 实例的成本，大致相当于托管数据中心中 **11.3** 台服务器的成本。相应来说，如果上了云，我们这 20 台服务器的机架就只能剩下大约 2 台服务器了！
 
-![](server2.webp)
+![Ahrefs不上云，省下四亿美元：自建与AWS对比（图 2）](server2.webp)
 
 > 20 台 Ahrefs 服务器的成本与 2 台 AWS 服务器相当
 
@@ -122,7 +115,7 @@ We keep two copies of a data chunk on our servers. But we only order usable spac
 
 有人可能会想，“或许 Ahrefs 能付得起？”
 
-确实，Ahrefs 是一家盈利且自给自足可持续的公司，所以让我们来看一下它的营收，并算一算。尽管我们是一家私有公司，不必公布我们的财务数据。但在《海峡时报》关于 [2022](https://www.straitstimes.com/fastest-growing-companies-2022) 年和 [2023](https://www.straitstimes.com/fastest-growing-companies-2023) 年新加坡增长最快的公司的文章中可以找到一些 Ahrefs 的收入信息。这些文章提供了 Ahrefs 在 2020 年和 2021 年的收入数据。
+确实，Ahrefs 是一家盈利且自给自足可持续的公司，所以让我们来看一下它的营收，并算一算。尽管我们是一家私有公司，不必公布我们的财务数据。但在《海峡时报》关于 2022（原链接失效） 年和 [2023](https://www.straitstimes.com/fastest-growing-companies-2023) 年新加坡增长最快的公司的文章中可以找到一些 Ahrefs 的收入信息。这些文章提供了 Ahrefs 在 2020 年和 2021 年的收入数据。
 
 我们还可以线性外推出 2022 年的收入。这是一个粗略估计，但足以让我们得出一些结论了。
 
@@ -151,8 +144,6 @@ We keep two copies of a data chunk on our servers. But we only order usable spac
 
 这篇文章没有考虑其他使比较更加复杂的方面。这些方面包括人员技能、财务控制、现金流、根据负载类型进行的容量规划等。
 
-------
-
 ## 结论
 
 Ahrefs 省下了约 4 亿美元，因为在过去的两年半中，基础设施没有 100% 上云。这个数字还在增加，因为目前我们又在一个新地方，用新硬件搞了另一个大型托管数据中心。
@@ -172,8 +163,6 @@ Ahrefs 利用 AWS 的优势，在世界各地托管我们的前端，但 Ahrefs 
 大公司，尤其是 FAANG 多年来吸走了大量人才。他们一直在招聘工程师来运营他们庞大的数据中心和基础设施，给小公司留下的机会很少。但最近几个月大科技公司的大规模裁员，带来了重新评估云计算的机会 —— 确实可以考虑一下招聘数据中心领域资深专业人士，并从云上搬迁下来。
 
 如果你要创办一家新公司，考虑一下这种方案：买个机架和服务器，把它们放在你家的地下室。也许这样能从第一天起就提高你们公司的可持续性。
-
-------
 
 ## 下云老冯评论
 

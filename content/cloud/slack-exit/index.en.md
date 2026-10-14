@@ -6,7 +6,6 @@ summary: >
   Slack's Greater China shutdown is a reminder: the biggest SaaS risk is not price, but having your business continuity depend on someone else's business decisions.
 tags: [Cloud-Exit, Cloud, Tools, Data Sovereignty]
 ---
-
 **What Slack's withdrawal from Greater China reveals about the digital age's most overlooked risk**
 
 ---
@@ -18,8 +17,6 @@ But for the thousands of Slack-using teams across Hong Kong, Macau, and mainland
 They opened Slack that morning and, instead of messages from colleagues, found a terse notice: your workspace has been deactivated. Every message, file, channel, and workflow—the organizational memory accumulated over years—was inaccessible.
 
 No discussion. No transition. The countdown to data deletion had begun.
-
----
 
 ## 1. What Happened
 
@@ -37,8 +34,6 @@ Then, on April 1, 2026, the workspaces were deactivated. Multiple users reported
 
 Slack's support template confirmed the policy: "A notice was sent to workspace Owners and Admins." But when the consequence is the permanent loss of a team's data, "we notified the administrators" is an answer that may be technically true and still be disastrous in practice.
 
----
-
 ## 2. Alibaba Cloud: A Way Out for Whom?
 
 The supposed escape hatch—"moving to Alibaba Cloud"—was far less straightforward than it sounded.
@@ -48,8 +43,6 @@ A Slack support template that surfaced on April 1 showed that renewing through a
 In other words, if you were in mainland China or Macau, the "Alibaba Cloud migration" was never meant for you. If you were a small team, you were not offered it regardless of location.
 
 And even if the Alibaba Cloud route worked, you would merely be moving from one platform you do not control to another. The platform dynamic would remain unchanged: you would still be a tenant, not an owner.
-
----
 
 ## 3. Your Data—Can You Take It With You?
 
@@ -65,8 +58,6 @@ More importantly, even while a workspace is active, the Free and Pro plans can e
 
 The reality is this: data you thought you owned may be neither visible nor portable at the very moment you need it most. Not because it is legally someone else's, but because the technical control is not yours.
 
----
-
 ## 4. This Is Not the First Time
 
 This is not the first time a SaaS platform has abruptly cut users off from their data. But the triggers differ, and the distinctions matter.
@@ -79,8 +70,6 @@ This is not the first time a SaaS platform has abruptly cut users off from their
 
 Three kinds of incident, with three different triggers: U.S. sanctions, commercial withdrawal, and government blocking. **But all share the same failure mode: the availability of your critical infrastructure depends on a decision by an outside party you cannot control.**
 
----
-
 ## 5. This Is a Structural Problem, Not a Moral One
 
 Slack did not leave Greater China because it hates Chinese users. Nobody singled you out; nobody set out to hurt you. Business logic simply reached a point where your region was no longer worth serving, so you were optimized away. That is precisely the frightening part: **it can destroy you without anyone acting maliciously.**
@@ -90,8 +79,6 @@ When you use SaaS, the Terms of Service you accept usually contain a clause allo
 Then there is the U.S. CLOUD Act. A service provider subject to U.S. jurisdiction may be compelled through valid legal process, such as a subpoena or search warrant, to disclose data in its possession, custody, or control, regardless of which country's servers hold it. This does not mean the government can simply "take it whenever it wants." It does mean that your data is caught in a legal contest in which you have no seat at the table.
 
 So the question is not "Who owns the data?" Under the contract and the law, it belongs to you. **The question is how much control you actually have over its availability and portability, the jurisdiction governing it, and the underlying technology.** The Slack episode provides the answer: the moment the provider decides to leave, your control over all four vanishes.
-
----
 
 ## 6. If You Still Use SaaS
 
@@ -115,8 +102,6 @@ For a team with even modest technical capability, the numbers work: in return, y
 Of course, some will say that if Slack is unavailable, they can use Lark, DingTalk, or WeCom. These products from China's tech giants offer remarkably cost-effective alternatives.
 That is true. But they are still SaaS. You have merely exchanged one platform operator you cannot control for another, and they may expose you to a different class of compliance risk. If the platform dynamic does not change, neither does your position.
 
----
-
 ## 7. Data Sovereignty Is an Engineering Problem
 
 People have talked about "data sovereignty" for years. It is not a political slogan; it is a question that must be answered with engineering.
@@ -127,8 +112,6 @@ The most practical way to achieve all three is open-source software plus self-ho
 It is not the only path. Contractual guarantees, multi-cloud redundancy, and data-escrow agreements can each provide protection at some layers. But it is the only path that does not depend on any third party's goodwill.
 
 By 2026, the entire self-hosted alternative stack has matured. For messaging there are Mattermost, Rocket.Chat, and Matrix/Element. For source-code hosting there are Gitea and GitLab. You can run PostgreSQL yourself, while projects such as Supabase have mature open-source, one-click self-hosting options. For object storage there is MinIO; for identity and access management, Keycloak. They all share three properties: they are open source, they can run on your own infrastructure, and they put the data in your hands.
-
----
 
 ## 8. Conclusion
 

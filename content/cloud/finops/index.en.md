@@ -7,10 +7,7 @@ summary: |
 categories: [Cloud]
 tags: [Cloud-Exit, Cloud, Cost]
 ---
-
 At the SACC 2023 FinOps session, I fiercely criticized cloud vendors. This is a transcript of my speech, introducing the ultimate FinOps concept — **Cloud-Exit** and its best practice.
-
------------------
 
 ## TL; DR
 
@@ -24,9 +21,7 @@ At the SACC 2023 FinOps session, I fiercely criticized cloud vendors. This is a 
 
 **Databases are Key to In-House Transition**: Migrating stateless applications on K8S and data warehouses is relatively easy. The real challenge is building databases in-house without compromising **quality and security**.
 
-[![](finops.jpg)](https://mp.weixin.qq.com/s/Yp_PU8nmyK-NVq0clD98RQ)
-
------------------
+[![FinOps: Endgame Cloud-Exit — TL; DR (figure 1)](finops.jpg)](https://mp.weixin.qq.com/s/Yp_PU8nmyK-NVq0clD98RQ)
 
 ## Misaligned FinOps Focus
 
@@ -40,8 +35,6 @@ In the first stop of my career, I experienced a FinOps movement firsthand. Our B
 
 As cost reduction and efficiency become the main theme, cloud repatriation is becoming a trend. Alibaba, the inventor of the middle platform concept, has already started dismantling its own middle platform. Yet, many companies are still falling into the trap of the slaughterhouse, repeating the old path of cloud migration - cloud repatriation.
 
------------------
-
 ## Public Clouds: A Slaughterhouse in Disguise
 
 > Attract customers with cheap EC2/S3, then slaughter them with EBS/RDS pricing.
@@ -50,7 +43,7 @@ The elasticity touted by public clouds is designed for their business model: **l
 
 **To slaughter pigs, one must first raise them**. You can't catch a wolf without putting your child at risk. Hence, for new users, startups, and small businesses, public clouds offer sweet deals, even at a loss, to make noise and attract business. New users get first-time discounts, startups receive free or half-price credits, and there's a sophisticated pricing strategy. Taking AWS RDS pricing as an example, the mini models with 1 or 2 cores are priced at just **a few dollars per core per month**, translating to a few hundred yuan per year (excluding storage). This is an affordable option for those needing a low-usage database for small data storage.
 
-![](finops-1.png)
+![FinOps: Endgame Cloud-Exit — Public Clouds: A Slaughterhouse in Disguise (figure 2)](finops-1.png)
 
 However, even a slight increase in configuration leads to a **magnitude** increase in the price per core month, skyrocketing to twenty or thirty to a hundred dollars, sometimes even more — not to mention the shocking EBS prices. Users may only realize what has happened when they see the exorbitant bill suddenly appearing.
 
@@ -58,13 +51,13 @@ Compared to in-house solutions, **the price of cloud resources is generally seve
 
 In contrast, the price per core month for Alibaba-Cloud's ECS is a couple of hundred yuan, and for AWS EC2, it's two to three hundred yuan. If you "don't care about elasticity" and prepay for three years, you can usually get a discount of about 50-60%. But no matter how you calculate it, the price difference between cloud computing power and local in-house computing power is there and significant.
 
-![](finops-2.png)
+![FinOps: Endgame Cloud-Exit — Public Clouds: A Slaughterhouse in Disguise (figure 3)](finops-2.png)
 
 The pricing of **cloud storage** resources is even more outrageous. A common 3.2 TB enterprise-grade NVMe SSD, with its formidable performance, reliability, and cost-effectiveness, has a wholesale price of just over **¥3000**, significantly outperforming older storage solutions. However, for the same storage on the cloud, providers dare to charge 100 times the price. Compared to direct hardware procurement, **the cost of AWS EBS io2 is 120 times higher, while Alibaba-Cloud's ESSD PL3 is 200 times higher**.
 
 Using a 3.2TB enterprise-grade PCI-E SSD card as a benchmark, **the rent-to-buy ratio on AWS is 15 days, while on Alibaba-Cloud it's less than 5 days**, meaning renting for this period allows you to purchase the entire disk outright. If you opt for a three-year prepaid purchase on Alibaba-Cloud with the maximum discount of 50%, **the three-year rental fee could buy over 120 similar disks**.
 
-![](finops-3.png)
+![FinOps: Endgame Cloud-Exit — Public Clouds: A Slaughterhouse in Disguise (figure 4)](finops-3.png)
 
 > 《[EBS: a real Scam](/cloud/ebs/)》
 
@@ -99,8 +92,6 @@ Comparing the costs of self-hosting versus using a cloud database:
 
 Any meaningful cost reduction and efficiency increase initiative cannot ignore this issue: if there's potential to slash resource prices by 50% to 200%, then focusing on a 30% reduction in waste is not a priority. As long as your main business is on the cloud, traditional FinOps is like scratching an itch through a boot — **migrating off the cloud is the focal point of FinOps**.
 
------------------
-
 ## The Endgame of FinOps is Exiting from the Cloud
 
 > The well-fed do not understand the pangs of hunger, human joys and sorrows are not universally shared.
@@ -115,15 +106,13 @@ Enterprises should evaluate their scale and stage, assess their business, and we
 
 **Descending from the cloud is the ultimate goal of traditional FinOps and the starting point of true FinOps.**
 
------------------
-
 ## Self-Hosting Matters
 
 > "To seek peace through struggle is to preserve peace; to seek peace through compromise is to lose peace."
 
 When the times are favorable, the world joins forces; when fortune fades, even heroes lose their freedom: During the bubble phase, it was easy to disregard spending heavily in the cloud. However, in an economic downturn, cost reduction and efficiency become central themes. An increasing number of companies are realizing that using cloud services is essentially paying a "no-expert tax" and "protection money". Consequently, a trend of "cloud repatriation" has emerged, with 37Signals' DHH being one of the most notable proponents. Correspondingly, the revenue growth rate of major cloud providers worldwide has been experiencing a continuous decline, with Alibaba-Cloud's revenue even starting to shrink in the first quarter of 2023.
 
-![](finops-5.png)
+![FinOps: Endgame Cloud-Exit — Self-Hosting Matters (figure 5)](finops-5.png)
 
 > 《["Why Cloud Computing Hasn't Yet Hit Its Stride in Earning Profits"](/cloud/profit/)》
 
@@ -142,8 +131,6 @@ However, for users with the capability to self-host, capable of flexibly moving 
 **In terms of resources, IDC and resource clouds have solved the problem adequately**. The aforementioned IDC self-hosting doesn't mean buying land and building data centers from scratch but directly using the hosting services of resource clouds/IDCs — you might only need a network engineer to plan the network, with other maintenance tasks managed by the provider.
 
 If you prefer not to hassle, IDCs can directly sell you virtual machines at 20% of the list price, or you can rent a physical server with 64C/256G for a couple thousand a month; whether renting an entire data center or just a single colocation space, it's all feasible. A retail colocation space with comprehensive services can be settled for about five thousand a year, running a K8S or virtualization on a couple of hundred-core physical servers, why bother with flexible ECS?
-
------------------
 
 ## FinOps Leads to CLoud-Exit
 
@@ -165,8 +152,6 @@ Such a CloudNative tech stack theoretically enables operation and flexible migra
 
 However, self-hosting isn't without risks, with RDS representing a major potential vulnerability.
 
------------------
-
 ### Database: The Biggest Risk Factor
 
 > **Cloud databases** may not be the most expensive line item, but they are definitely the most deeply locked-in and challenging to migrate.
@@ -183,13 +168,11 @@ Pigsty is a non-profit, open-source software powered by community love. It offer
 
 Although Pigsty is a database distribution, it enables users to practice ultimate FinOps—running production-level PostgreSQL RDS services anywhere (ECS, resource clouds, data center servers, or even local laptop VMs) at almost pure resource cost. **It turns the cost of cloud database capabilities from being proportional to marginal resource costs to nearly zero in fixed learning costs**.
 
-![](finops-7.png)
+![FinOps: Endgame Cloud-Exit — Database: The Biggest Risk Factor (figure 6)](finops-7.png)
 
 Perhaps it's the socialist ethos of Nordic companies that nurtures such pure free software. Our goal isn’t profit but to promote a philosophy: to democratize the expertise of using the advanced open-source database PostgreSQL for everyone, not just cloud monopolies. Cloud providers monopolize open-source expertise and roles, exploiting free open-source software, and we aim to break this monopoly—**Freedom is not free. You shouldn't concede the world to those you despise but rather overturn their table**.
 
 **This is the essence of FinOps—empowering users with viable alternatives and the ability to self-host, thus negotiating with cloud providers from a position of strength**.
-
------------------
 
 ## References
 

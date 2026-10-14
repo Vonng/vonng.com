@@ -7,8 +7,6 @@ summary: >
   程序员极易被复杂度所吸引，就像飞蛾扑火一样。系统架构图越复杂，智力自慰的快感就越大。坚决抵制这种行为，是下云可用性上成功的重要原因。
 tags: [下云]
 ---
-
-
 我们不需要Kubernetes大师或花哨的新数据库 —— 程序员极易被复杂度所吸引，就像飞蛾扑火一样。系统架构图越复杂，智力自慰的快感就越大。我们坚决抵制这种行为，是在云下可用性上成功的重要原因。
 
 > 作者：**David Heinemeier Hansson**，网名DHH，37 Signal 联创与CTO，Ruby on Rails 作者，下云倡导者、实践者、领跑者。反击科技巨头垄断的先锋。[Hey博客](https://world.hey.com/dhh)
@@ -16,8 +14,6 @@ tags: [下云]
 > 译者：**Vonng**，PIGSTY 创始人与CEO。[Pigsty](https://mp.weixin.qq.com/s/-E_-HZ7LvOze5lmzy3QbQA) 作者，PostgreSQL 专家/布道师。公众号《[非法加冯](https://mp.weixin.qq.com/s/p4Ys10ZdEDAuqNAiRmcnIQ)》主理人，云计算泥石流，数据库老司机。
 >
 > 本文翻译自 DHH [博客](https://world.hey.com/dhh/keeping-the-lights-on-while-leaving-the-cloud-be7c2d67)，
-
------------
 
 ## 下云的同时确保系统稳定运行
 
@@ -43,15 +39,13 @@ Basecamp 2 连续两年实现100%可用性的魔法，以及其他所有应用�
 
 > 注：DHH 省下近千万美元的高昂云开销，本文翻译了DHH下云的最新进展。下云前情提要与完整过程请参考：《[下云奥德赛](https://mp.weixin.qq.com/s/H2S3TV-AsqS43A5Hh-XMhQ)》，《[是时候放弃云计算了吗](https://mp.weixin.qq.com/s/CicctyvV1xk5B-AsKfzPjw)》，以及《[DHH下云FAQ](https://mp.weixin.qq.com/s/xaa079P4DRCz0hzNovGoOA)》。
 
---------------
-
 ## 译者评论
 
 DHH指出了维护良好可用性的最佳实践 —— **在冗余硬件上运行朴实无华、成熟基础的技术**。软件的大部分成本开销并不在最初的研发阶段，而是在持续的维护阶段。而 **简单性** 对于系统的可维护性至关重要。
 
 有一些程序员出于 **智力自慰（Intellectual Masturbation）** 或 **工作安全（Job Security）** 的原因，会在架构设计中堆砌无谓的额外复杂度 —— 例如不管规模负载合适与否就[一股脑全上 Kubernetes](https://mp.weixin.qq.com/s/4a8Qy4O80xqsnytC4l9lRg)，或者使用胶水代码飞线串联起一堆花里胡哨的数据库。寻找“足够酷的“的东西来满足个人价值的需求，而不是考虑要解决问题是否真的需要这些屠龙术。
 
-![](featured.jpg)
+![云下高可用秘诀：拒绝复杂度自慰：译者评论（图 1）](featured.jpg)
 
 > 鲁布·戈德堡机械：“以极为繁复而迂回的方法去完成实际上或看起来可以容易做到事情” —— 一种通过复杂度进行智力自慰的行为。
 

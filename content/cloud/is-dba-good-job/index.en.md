@@ -6,14 +6,11 @@ summary: >
   Ant Financial had a self-deprecating joke: besides regulation, only DBAs could bring down Alipay. Although DBA sounds like a profession with glorious history and dim prospects, who knows if it might become trendy again after a few terrifying major cloud database incidents?
 tags: [Cloud-Exit, RDS, PG Admin]
 ---
-
 Ant Financial had a self-deprecating joke: besides regulation, only **DBAs** could bring down Alipay.
 
 In the digital age, data is the core asset of many enterprises, especially for internet/software service companies. The people responsible for safeguarding these data assets are **DBAs (Database Administrators)**.
 
 Imagine a scenario where all account balances and contacts are completely lost. Although the probability is minimal, even Alipay and WeChat would probably be in deep trouble if they experienced an unrecoverable core database deletion incident.
-
-------------------
 
 ## Where Did It All Begin?
 
@@ -29,8 +26,6 @@ Then came the cloud. Cloud is essentially outsourced operations, automating the 
 
 So, what comes after cloud? Will DBA still be a good job?
 
-------------------
-
 ## Core Value
 
 Many places need DBAs: terrible schema design, awful query performance, backups of unknown utility; and so on. Unfortunately, among people working in software, few understand what a DBA is. Becoming a DBA means engaging in endless battle against the entropy created by developers.
@@ -44,8 +39,6 @@ The second value of DBAs lies in **performance optimization**. Many companies do
 Excellent DBAs also handle **data model design and optimization**. Data modeling and SQL have almost become lost arts; this foundational knowledge is gradually forgotten by new generations of engineers who design outrageous schemas, don't know how to create indexes properly, then hastily conclude: relational databases and SQL are garbage, we must use rough-and-ready NoSQL to save time. However, people always need reliable systems to handle critical business data: in many enterprises, core data is still a regular relational database as the **Source of Truth**, with NoSQL databases used only for non-critical data.
 
 For startups that haven't reached PMF, hiring a full-time DBA is luxurious behavior. However, in large organizations, a good DBA is crucial. But good DBAs are quite rare, so this role can only be outsourced in most organizations: outsourced to professional database service companies, outsourced to cloud database RDS service teams, or **insourced** to their own development/operations personnel.
-
-------------------
 
 ## The Future of DBAs
 
@@ -74,8 +67,6 @@ On the other hand, cloud RDS provides performance and reliability that belongs t
 > Public cloud RDS's two core problems: cost/autonomy and control
 
 Although DBA sounds like a profession with glorious history and dim prospects, the future remains unknown. Who knows if DBAs might become trendy again after a few terrifying major cloud database incidents?
-
-------
 
 ## What to Do?
 

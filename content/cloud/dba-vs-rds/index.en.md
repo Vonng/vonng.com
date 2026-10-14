@@ -6,12 +6,9 @@ summary: >
   Two days ago, the ninth episode of Open-Source Talks had the theme "Will DBAs Be Eliminated by Cloud?" As the host, I restrained myself from jumping into the debate throughout, so I'm writing this article to discuss this question: Will DBAs be eliminated by cloud?  
 tags: [Cloud-Exit, PG Admin, RDS]
 ---
-
 Two days ago, the ninth episode of Open-Source Talks had the theme "[Will DBAs Be Eliminated by Cloud?](https://mp.weixin.qq.com/s/T4waTPvcSRdCv8pCl4MdOw)" As the host, I restrained myself from jumping into the debate throughout, so I'm writing this article to discuss this question: Will DBAs be eliminated by cloud?
 
-[![](featured.jpg)](https://mp.weixin.qq.com/s/W1hwbl3qmjC4Dcmadc8uSg)
-
-------
+[![Will DBAs Be Eliminated by Cloud? (figure 1)](featured.jpg)](https://mp.weixin.qq.com/s/W1hwbl3qmjC4Dcmadc8uSg)
 
 ## DBAs Help Users Use Databases Well
 
@@ -22,8 +19,6 @@ DBA - Database Administrator - also formerly called database coordinator or data
 Many companies hire DBAs. Traditional DBAs are similar to Cobol programmers - beyond tech companies/startups: those less fancy-sounding manufacturing industries, banks, insurance, securities, and numerous government and military departments running local software also heavily use these relational databases. The cost spent on commercial database software licenses alone might reach six or seven figures, plus similar hardware costs and service subscription costs. If a company has already invested tens of millions on database software and hardware, spending more money to hire dedicated experts to care for these expensive and complex databases becomes natural - these experts are traditional DBAs.
 
 Then with the rise of open source databases like PostgreSQL/MySQL, these companies had a new choice: using database software without software licensing fees, and they began (irrationally) to stop paying for database experts: database maintenance work became an implicit subsidiary responsibility of development and operations, and these two types of people usually: neither excel at, nor like, nor care about database maintenance. Only when the company grows large enough or suffers enough pain do some Dev/Ops develop corresponding capabilities and become DBAs - though this is quite rare, and these are today's protagonists - open source database DBAs.
-
-------
 
 ## The Ability to Use Databases Well is Scarce
 
@@ -45,8 +40,6 @@ At this stage, advanced experience is "monopolized" by a few top experts. In fac
 So, recruiting experts who can use open source databases well as much as possible, creating a shared expert pool allowing scarce senior DBAs to be time-shared, and packaging this with DBA experience-precipitated management software as rental services, becomes a very profitable business model - and cloud database RDS does exactly this, making tons of money.
 
 Cloud databases use open source free kernels, so the core capability cloud databases provide is the same as DBAs - **the ability to help users use databases well!** Their real competitors aren't other commercial database kernels or open source database kernels, but DBAs - especially mid-to-lower tier DBAs. This is like taxi companies wanting to replace not car manufacturers, but full-time drivers.
-
-------
 
 ## DBA Work and Automated Management
 
@@ -78,8 +71,6 @@ So DBA used to be a very good position - after the entrepreneurial construction 
 
 However, DBAs' comfortable life was disrupted by cloud database models. First, cloud providers take ready-built management software and replicate it in batches, eliminating repetitive construction work in database building phases. Second, if there's no construction phase, only maintenance phase, and maintenance work only needs 10% of DBA time, rather than spending **90%** of time slacking off, there will always be workaholics choosing to be time management masters and work 10 jobs simultaneously. Cloud providers' database experts through management and shared DBAs made this rare leisurely IT position competitive too.
 
-------
-
 ## Cloud Database Models and New Challenges
 
 Why do cloud databases threaten DBAs? To explain this, we need to discuss cloud database RDS user value.
@@ -108,8 +99,6 @@ First: Cloud databases are ready-to-eat meals, directly consumable without const
 
 Cloud database services' impact on DBAs is structural. Extremely scarce top DBAs aren't affected and will always be sought after by cloud providers. But mid-tier and below DBAs, or DBAs whose self-building doesn't reach 70 points, will directly face ecological niche competition from cloud database services. For the DBA industry, this isn't good - because senior DBAs all grow from junior and mid-level DBAs. If the soil for nurturing these junior-mid level DBAs - small and medium companies' database application scenarios - are monopolized and intercepted by cloud providers, then this industry pyramid will be cut in half, top DBA increments will be cut off, and existing stock will be eroded, eventually becoming rootless trees.
 
-------
-
 ## Breaking Cloud Database Core Barriers
 
 Will cloud databases be the future? Will cloud databases "replace horse carriages with cars" and eliminate DBAs? I don't think so, because where there's force, there's reaction. Progressive DBAs will arm themselves with tools, return to center stage and compete with RDS.
@@ -130,27 +119,19 @@ Pigsty will reset cloud database service baseline levels. All PG management soft
 
 Of course, as open source management software, Pigsty indeed replaces a large portion of DBA work content like cloud database management, especially operational parts. But unlike cloud databases, it's controlled by DBAs themselves, owned, controlled, and used by DBAs, rather than only being able to rent from cloud computing lords and "replace" DBAs. Stronger productivity bringing leisure time dividends and DBA multiplier leverage will directly spread to every practitioner's hands. This is my response as a top DBA to RDS challenges.
 
-------
-
 ## How to Face Cloud Database Impact
 
 For the vast majority of junior-mid level DBAs, I think the best way to respond to cloud database challenges is to immediately abandon long-cycle, mixed-result crude self-building attempts and directly embrace mature open source management software, quickly amplifying your competitiveness relative to cloud databases - this part is completely open source free, production materials and capabilities in your own hands. If you need difficult problem backup, I'm very happy to provide support, consulting, and Q&A at extremely competitive prices compared to cloud databases.
 
 Please don't ask me anymore: How to do PostgreSQL high availability? How to handle PITR backup recovery? How to build observability and monitoring systems? How to use configuration IaC to manage hundreds of database clusters? How to configure and manage connection pools? How to do load balancing and service access? How to compile, distribute, and package hundreds of extension plugins? How to tune host parameters? How to do online/offline/scaling/shrinking/rolling upgrades/data migration? These problems you'll actually encounter, which I've encountered before, I've already provided tooled best practices and version answers in Pigsty, with DBA SOP manuals, letting newbies quickly get started with DBA cosplay.
 
-------
-
 For top DBAs and peers, I advocate jointly building open source shared management software and providing professional database services based on this. Rather than you building one cloud management system, me building another, investing massive development manpower in low-level, repetitive construction, better to unite and build public open source management, creating truly world-influential open source project brands in Chinese communities. Pigsty is a very good candidate open source project - currently, it's already [the top-ranked project among Chinese-led PostgreSQL ecosystem open source projects](https://mp.weixin.qq.com/s/79_PnX-a5iSfDMgz_VUx5A). It might have a chance to become the Debian and Ubuntu of the PostgreSQL world, but this depends on every contributor and every user.
 
 I don't make money from Pigsty either. Like many database service companies, I rely on providing professional consulting and services. This might not be the "Scale to the Moon" story capital markets like to hear, but it indeed solves users' pain points. Can I, no matter how awesome, work 200 PG DBA jobs? No! But Pigsty tool can let every PG DBA veteran add such leverage, provide truly valuable consulting and services to society, thus defeating cloud databases!
 
-------
-
 For example, Percona, which provides MySQL expert services, their PostgreSQL department head Umair Shahid keenly saw this trend. He left Percona and started his own company Stormatics to provide professional PostgreSQL services. He didn't "develop" another PG cloud database management platform but directly uses Pigsty for system delivery. Similarly, some Italian, American, and domestic database companies use Pigsty to deliver PostgreSQL services. I warmly welcome this and am willing to provide support and help.
 
 Database product models are dying, while database consulting and expert service models are flourishing. Using databases well is a high-threshold field. Even strong as [cloud exit pioneer DHH](https://mp.weixin.qq.com/s/CicctyvV1xk5B-AsKfzPjw), the penny-pinching king still has an expense for purchasing Percona MySQL expert services to let professionals solve professional problems. Rather than selling dignity to package, reskin, shell, and brag about creating "new database kernel products" with minimal utility (Minor PG forks), better to honestly provide truly valuable database expert consulting and services for users.
-
-------
 
 Currently, server hardware resources are very cheap, database kernel software is open source free and awesome enough. Now, if management software is no longer monopolized by cloud providers, then the core element for providing complete database services is only the **expert capability** for backup! AI and GPT's emergence further amplifies individual database experts' leverage multipliers to an astonishing degree.
 

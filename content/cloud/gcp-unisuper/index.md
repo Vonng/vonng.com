@@ -7,13 +7,11 @@ summary: >
   由于"前所未有的配置错误"，Google云误删了万亿人民币基金大户UniSuper的整个云账户、云环境和所有异地备份，创下云计算历史上的全新记录！
 tags: [下云, 云计算, 故障复盘]
 ---
-
-
 由于“***前所未有的配置错误***”，Google Cloud 误删了 **UniSuper** 的云账户。
 
 澳洲养老金基金负责人与 Google Cloud 全球首席执行官联合发布声明，为这一“极其令人沮丧和失望”的故障表示道歉。
 
-![](gcp-unisuper.png)
+![删库：Google云爆破了大基金的整个云账户（图 1）](gcp-unisuper.png)
 
 > https://x.com/0xdabbad00/status/1789011008549450025
 
@@ -25,7 +23,7 @@ UniSuper首席执行官 Peter Chun 在周三晚上向62万名成员解释，此�
 
 在 Peter Chun 和 Google Cloud 全球CEO Thomas Kurian 的联合声明中，两人为此次故障向成员们致歉，称此事件“极其令人沮丧和失望”。他们指出，由于配置错误，导致 UniSuper 的云账户被删除，**这是 Google Cloud 上前所未有的事件**。
 
-[![](announcement.png)](https://www.unisuper.com.au/about-us/media-centre/2024/a-joint-statement-from-unisuper-and-google-cloud)
+[![删库：Google云爆破了大基金的整个云账户（图 2）](announcement.png)](https://www.unisuper.com.au/about-us/media-centre/2024/a-joint-statement-from-unisuper-and-google-cloud)
 
 > [UniSuper CEO 与 Google云 CEO 联合声明](https://www.unisuper.com.au/about-us/media-centre/2024/a-joint-statement-from-unisuper-and-google-cloud)
 
@@ -41,9 +39,7 @@ Google Cloud CEO Thomas Kurian 确认了这次故障的原因是，在设定 Uni
 
 UniSuper 目前管理着大约 **1250 亿美元** 的基金。
 
-------
-
-### 下云老冯评论
+## 下云老冯评论
 
 如果说 [**阿里云全球服务不可用**](/cloud/aliyun/) 大故障称得上是 “**史诗级**”，那么 Google 云上的这一次故障堪称 “**无双级**” 了。前者主要涉及服务的 **可用性**，而这次故障直击许多企业的命根 —— **数据完整性**。
 

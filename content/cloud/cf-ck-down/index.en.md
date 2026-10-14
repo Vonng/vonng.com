@@ -6,14 +6,11 @@ summary: >
   A ClickHouse permission tweak doubled a feature file, tripped a Rust hard limit, and froze Cloudflare’s core traffic for six hours—their worst outage since 2019. Here’s the full translation plus commentary.
 tags: [Cloudflare, Incident]
 ---
-
 Yesterday the “cyber Bodhisattva” Cloudflare suffered its worst incident since 2019. For six hours, core network traffic couldn’t be delivered. ChatGPT, X, Spotify, Uber—everyone felt it.
 
 Root cause: a permission change on ClickHouse made the bot-detection feature file twice as large (200 rows), exceeding a hard-coded limit inside a Rust bot-management daemon, which then flagged huge swaths of traffic as bots and blocked them.
 
 Cloudflare published a [detailed postmortem](https://blog.cloudflare.com/18-november-2025-outage/) this morning. I translated it below with added notes.
-
---------
 
 ## Cloudflare outage – 18 Nov 2025
 
@@ -83,7 +80,7 @@ No database filter. After the permission change, the result set included both th
 
 The core proxy pre-allocates memory for bot features and caps the number at 200. That’s supposed to keep latency predictable; at the moment they only use ~60 features. When the inflated file hit, the loader exceeded the cap, tripped an `unwrap()` on an `Err`, and panicked:
 
-```
+```text
 thread fl2_worker_thread panicked: called Result::unwrap() on an Err value
 ```
 

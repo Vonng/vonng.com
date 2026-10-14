@@ -6,8 +6,6 @@ summary: >
   Alibaba Cloud's leading PostgreSQL advocate has walked away, exposing a deeper struggle over the direction of China's cloud database market.
 tags: [PostgreSQL, Cloud, Alibaba Cloud]
 ---
-
-
 Yesterday was April Fools' Day, and Digoal published a post on his WeChat account titled "[My Last Day as a Corporate Workhorse at Alibaba](https://mp.weixin.qq.com/s/IAeSAMfdwnhWpmRXxJMR8A)."
 
 The database community immediately erupted. Many assumed it was an April Fools' joke, but I knew it was not.

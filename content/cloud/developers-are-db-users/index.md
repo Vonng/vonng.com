@@ -6,7 +6,6 @@ summary: >
   瑞典马工是个什么玩意？他凭什么来说 DBA ？我的朋友冯若航是个专业 DBA，非常关注数据库行业的发展，经常
 tags: [Oracle, 云计算, 数据库]
 ---
-
 > 原作者：瑞典马工
 
 ## 瑞典马工是个什么玩意？他凭什么来说 DBA？
@@ -57,7 +56,7 @@ DBA 是 DB 解决方案的一部分个。这个说法可能让一些朋友觉得
 
 我去年写过一篇文章，[**《为什么云数据库有更高的可用性》**](https://mp.weixin.qq.com/s?__biz=MzkwODMyMDE2NQ==&mid=2247484002&idx=1&sn=819dc668407de88215efaee028c168f7&scene=21#wechat_redirect)，和令辉的观点基本一致。不过我主要从数据库的用户角度出发，指出云上数据库配备专职的 DBA，已经没有必要了。这个结论主要来自于我的实际经验。我上一个单位，开发团队有四千多人，没有一个专职 DBA。只有两个 DBRE 负责编写合格的 terraform modules，以及写脚本审计数据库。我现在任职单位，也没有专职 DBA，但是我们的 DBA 配置得可能比绝大多数 DBA 看管的 DB 更安全更可靠。举个例子，我们所有的 DB 都开启了 TLS，即使有人入侵了内网，也无法嗅探我们的数据库数据。各位可以问下自己的 DBA，他们有没有开启 TLS。
 
-就连发明 DBA 这个岗位的甲骨文公司，也在抛弃 DBA。虽然他们宣称的**Autonomous DB<sup>[3]</sup>**没有取得预期的进展，但是看他们的 Automatic Indexing 特性和托管服务，就是奔着 DBA-free DB Admin 去的。
+就连发明 DBA 这个岗位的甲骨文公司，也在抛弃 DBA。虽然他们宣称的**Autonomous DB<sup>[3]</sup>** 没有取得预期的进展，但是看他们的 Automatic Indexing 特性和托管服务，就是奔着 DBA-free DB Admin 去的。
 
 ## 围绕 DBA 开发的数据库死路一条
 
@@ -96,8 +95,6 @@ ClapDB: *<https://web.archive.org/web/2/https://clapdb.cn/>*
 [3]
 
 Autonomous DB: *<https://www.oracle.com/autonomous-database/>*
-
----
 
 ### 参考阅读
 

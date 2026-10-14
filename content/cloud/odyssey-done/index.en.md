@@ -6,11 +6,7 @@ summary: >
   DHH migrated their seven cloud applications from AWS to their own hardware. 2024 is the first year of full savings realization. They're delighted to find the savings exceed initial estimates.
 tags: [Cloud-Exit, Translation]
 ---
-
-
 > Author: DHH, "[Our Cloud-Exit savings will now top ten million over five years](https://world.hey.com/dhh/our-Cloud-Exit-savings-will-now-top-ten-million-over-five-years-c7d9b5bd)"
-
---------
 
 ## Feng's Commentary
 
@@ -55,8 +51,6 @@ Users can enjoy cloud conveniences while purchasing resources at dozens of times
 Traditional cloud providers are also getting FOMO. They can't directly cut prices and abandon existing profits, but they're anxious about new-generation budget cloud competition and want to participate. For example, the recently emerged budget "ClawCloud" is a subsidiary of a major cloud provider competing with BandwagonHost and Linode.
 
 I believe under such competitive pressure, the cloud computing market landscape will see exciting changes soon. More users will see through cloud hype and wisely, prudently spend their IT budgets.
-
---------
 
 ## Reference Reading
 

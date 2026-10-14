@@ -6,7 +6,6 @@ summary: >
   FastJSON has failed again. When is “ship rough, scale hard, move fast” a defensible shortcut, and when does it become an engineering habit whose bill falls to whoever comes next?
 tags: [Cloud, Alibaba Cloud]
 ---
-
 On July 21, [Alibaba published a FastJSON security advisory](https://github.com/alibaba/fastjson2/wiki/Security-Advisory%3A-Remote-Code-Execution-in-fastjson-1.2.68%E2%80%931.2.83) for `CVE-2026-16723`, rated 9.0 by its CNA and affecting versions 1.2.68 through 1.2.83.
 
 The advisory explained the flaw, its trigger conditions, and why a specified target type was not necessarily safe. It also said `fastjson2` was unaffected: no equivalent resource-probing path, an allowlist-first design, and the now-deprecated `AutoType` disabled. Its users needed to take no action for this CVE.
@@ -21,8 +20,6 @@ The advisory was not false: the bugs had different causes, and `fastjson2` remai
 
 Since 2019, the pattern spans seven years, three vulnerabilities, and two implementations. How can a JSON parser still produce RCEs after a decade? The answer is neither JSON nor simply “Alibaba writes bad software.” It is a style I will call **ship rough, scale hard, move fast**: release the incomplete design, entrench it through scale, and book today's gains while deferring the risk. The Chinese phrase 糙猛快 compresses those instincts into three characters.
 
----
-
 ## Too Long; Didn't Read
 
 - Letting external data choose a class was a mistake shared by Java's native serialization, Jackson, FastJSON, and .NET's `BinaryFormatter`.
@@ -34,8 +31,6 @@ Since 2019, the pattern spans seven years, three vulnerabilities, and two implem
 - “Ship rough, scale hard, move fast” is an accounting system: record benefits now and defer risk. A successful shortcut becomes doctrine.
 
 - AI adds leverage and removes the old speed limit: humans writing code.
-
----
 
 ## 1. This Is Not JSON. It Is Control.
 
@@ -52,8 +47,6 @@ The program loads `com.foo.Bar`, creates an instance, and fills it from the inpu
 Alibaba did not invent this mistake. Java's `ObjectInputStream` already let a stream choose object types; JDK 9 added filters in [`JEP 290`](https://openjdk.org/jeps/290), and Java 17 added context-specific policies in [`JEP 415`](https://openjdk.org/jeps/415). Jackson's polymorphic deserialization and .NET's `BinaryFormatter` had the same problem.
 
 What distinguished FastJSON was how far it pushed convenience and speed. In a [2019 interview](https://gitee.com/gitee-stars/18), author Shaojin Wen named high performance and ease of use as its first two advantages. “Ship rough, scale hard, move fast” enters through such respectable choices: make the API effortless, win benchmarks, preserve compatibility, add another check, postpone the exit. Each can be reasonable alone. The combined ten-year bill is not.
-
----
 
 ## 2. One Mistake, Four Responses
 
@@ -77,8 +70,6 @@ FastJSON had a real solution too. [Version 1.2.68 introduced `SafeMode`](https:/
 
 Defaulting to `SafeMode` would break legacy applications, and a third-party library cannot force migration like a platform vendor can. Yet compatibility needs an exit: deprecation, migration tooling, and an end date. It may refinance debt, not abolish maturity. A decade-old “temporary” exception is a constitution.
 
----
-
 ## 3. Forensics Is Not Pathology
 
 The three vulnerabilities were different bugs with the same posture. The [2019 bypass](https://paper.vulsee.com/KCon/2022/Hacking%20JSON%E3%80%90KCon2022%E3%80%91.pdf) first used paths such as `java.lang.Class` to put a dangerous class into `TypeUtils`'s global map. A second request retrieved it from cache without reopening `checkAutoType`. Versions 1.2.25–1.2.32 were exploitable only with `AutoType` off; 1.2.33–1.2.47 could be affected either way. The cache proved that a name had been seen, not that it was safe, yet the fast path treated those as equivalent.
@@ -97,8 +88,6 @@ Here, **ship rough** means releasing before the threat model, edge cases, safe d
 
 Technical debt has achieved a clever financial innovation: the principal never needs repayment as long as successors can keep covering the interest.
 
----
-
 ## 4. It Really Did Win
 
 The model is dangerous because it can work. Around 2010, hardware was expensive, market windows were narrow, and growth outran engineering discipline. A library tens of percent faster and half as hard to deploy could win the market; trading some rigor for speed could be rational.
@@ -113,8 +102,6 @@ MySQL presents a larger bill. [Jepsen's analysis of MySQL 8.0.34](https://jepsen
 
 When one server was insufficient, Cobar, TDDL, DRDS, and MyCat built an ecosystem around sharding. Discarded transactions then prompted GTS and Seata; skew, cross-shard joins, global IDs, and resharding produced specialist roles; finally came OceanBase and PolarDB. One shortcut's assumptions propagated until sunk cost pointed only further in.
 
----
-
 ## 5. Who Signs, Who Gets Promoted, Who Pays
 
 No company says correctness is unimportant. Incentives say it more effectively. Releases must happen this quarter; the backlog reaches next year. Features have dates and enter weekly reports; security debt does neither. Three quiet years maintaining a library make a weak promotion story. A new system built in three months writes its own headline.
@@ -126,8 +113,6 @@ In a [2019 interview](https://gitee.com/gitee-stars/18), FastJSON author Shaojin
 This is not an indictment of the maintainer. It is an unreasonable burden: production security should not depend on whether one person has energy tonight. Open source does not oblige a company to fund every project forever, but dependency scale, blast radius, and maintenance resources should bear some relationship.
 
 “Ship rough, scale hard, move fast” privatizes gains and socializes maintenance. Launches and savings accrue to one group; the bill goes to security, operations, downstream users, and the engineer paged at 3 a.m. The borrower and payer are different people. Banks at least ask who you are. Code does not.
-
----
 
 ## 6. This Is a Choice, Not Fate
 
@@ -149,8 +134,6 @@ Institutions can retreat. In January 2026, U.S. OMB memorandum [M-26-05](https:/
 
 China also has the 2021 [Regulations on the Management of Security Vulnerabilities in Network Products](https://www.cac.gov.cn/2021-07/13/c_1627761607640342.htm), plus [GB/T 43698—2024 on software supply-chain security](https://std.samr.gov.cn/gb/search/gbDetailed?id=173829859D2E1AA5E06397BE0A0AA311) and [GB/T 43848—2024 on evaluating open-source code security](https://std.samr.gov.cn/gb/search/gbDetailed?id=173829859DA71AA5E06397BE0A0AA311). The gap is not documents versus no documents. It is turning dependency risk into durable budgets, accountable roles, and executable exits. A patch, a postmortem, and “more security awareness” are not enough: awareness has no headcount, and values have no budget.
 
----
-
 ## 7. This Time, Ammunition Is Free
 
 The boundary is reappearing in AI agents. `AutoType` lets external type data influence class loading; prompt injection lets external text masquerade as instructions and influence tools, data, and behavior. They differ, but both blur data and control planes.
@@ -168,8 +151,6 @@ The result resembles gorillas with machine guns. Investors demand a two-week MVP
 AI also accelerates propagation. Bad code once needed someone to copy an old project, blog, or 2013 Stack Overflow answer. Now yesterday's shortcuts and today's best practices enter training and retrieval, then emerge in the same calm voice: “Here is a concise and efficient implementation.” “Ship rough, scale hard, move fast” gains a uniform voice, infinite patience, and near-zero copying cost.
 
 AI can also make fuzzing, property testing, dependency audits, regression tests for historical CVEs, and boundary-case generation cheaper. But savings can fund verification or three more systems; incentives decide. AI has not removed this operating model, only its biggest bottleneck: human coding speed.
-
----
 
 ## Epilogue
 

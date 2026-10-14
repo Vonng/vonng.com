@@ -6,7 +6,6 @@ summary: >
   Alibaba-Cloud's Double 11 offered a great deal: 2C2G3M ECS servers for ¥99/year, low price for three years. This article shows how to use this decent ECS to build your own digital homestead.
 tags: [Cloud-Exit, Alibaba Cloud]
 ---
-
 Alibaba-Cloud's Double 11 offered a great deal: 2C/2G/3M ECS servers with a list price of **¥1500/year** for just **¥99/year** for three years (¥99 annual renewal available until 2026), plus they're reportedly giving every Chinese university student a free one.
 
 ![ecs-price-1.jpg](aliyun-ecs-price-1.jpg)
@@ -19,11 +18,9 @@ Students can use it to learn Linux, build software compilation environments, lea
 
 Pigsty provides a one-click installation, out-of-the-box foundation for these needs, giving you a production-grade DevBox on ECS immediately.
 
-[![](featured.jpg)](https://mp.weixin.qq.com/s/Nh28VahZkQMdR8fDoi0_rQ)
+[![Harvesting Alibaba-Cloud Wool, Building Your Digital Homestead (figure 2)](featured.jpg)](https://mp.weixin.qq.com/s/Nh28VahZkQMdR8fDoi0_rQ)
 
-------------
-
-### What's Next?
+## What's Next?
 
 Pigsty provides out-of-the-box host/database monitoring systems, ready-to-use Nginx web servers for external services, and a fully-featured PostgreSQL database with complete plugins supporting various upper-layer software. Based on Pigsty, you can easily build static/dynamic websites. After installing Pigsty, you can explore the monitoring system (Demo: https://demo.pigsty.cc), which shows your complete host details and database monitoring.
 
@@ -43,13 +40,9 @@ We'll also introduce a series of interesting topics:
 * Wiki site: How to use Wiki.js + PostgreSQL to build your own Wiki knowledge base?
 * Social networking: How to quickly build Mastodon and Discourse?
 
-------------
-
 ## Purchasing and Configuring ECS
 
-As a seasoned IaC user, I'm accustomed to [one-click provisioning](https://pigsty.io/zh/doc/provision) of required cloud resources, setting up everything. Console mouse-clicking is quite foreign to me now. However, I believe many readers aren't familiar with cloud operations, so we'll show these operations as comprehensively as possible. If you're already an expert, please skip this section and go directly to the Pigsty configuration section.
-
-------------
+As a seasoned IaC user, I'm accustomed to [one-click provisioning](https://pigsty.cc/docs/deploy/terraform/) of required cloud resources, setting up everything. Console mouse-clicking is quite foreign to me now. However, I believe many readers aren't familiar with cloud operations, so we'll show these operations as comprehensively as possible. If you're already an expert, please skip this section and go directly to the Pigsty configuration section.
 
 ### Buying Campaign Virtual Machines
 
@@ -58,8 +51,6 @@ If you don't have an Alibaba-Cloud account, register with your phone number, the
 If you're not short on money, I recommend directly topping up ¥300, locking in ¥99 annual renewal first. The remainder can buy a domain for tens of yuan, supplement some OSS/ESSD/traffic fees. After all, if you want to use pay-as-you-go services, you still need ¥100 deposit.
 
 Directly click "Renew" on the instance page — current price for 1-year renewal is **¥99**, you can directly renew to lock in next year's discount. Of course, Alibaba-Cloud only promises that in the third year you can continue using **¥99** pricing to renew until 2026 — can't operate that now.
-
-------------
 
 ### System Reinstallation and Keys
 
@@ -80,8 +71,6 @@ ssh-keygen              # If you don't have SSH key pairs, generate one
 ssh-copy-id root@<ip>   # Add your ssh key to the server (enter password)
 ```
 
-------------
-
 ### Configuring Domain and DNS
 
 Domains are very cheap now, just teens of yuan annually. I highly recommend getting one for great convenience. Mainly you can use different subdomains to distinguish different services, letting Nginx forward traffic to different upstreams, multi-service on one machine. Of course, if you prefer using IP addresses + port numbers to directly access different services, that's fine. Mainly it's a bit crude, and more open ports create more security risks.
@@ -91,8 +80,6 @@ For example, I bought a `pdata.cc` domain for tens of yuan on Alibaba-Cloud, the
 ![dns-resolv.jpg](aliyun-dns-resolv.jpg)
 
 With a domain, you can login using `ssh root@pdata.cc` without remembering IP addresses. You can also configure more subdomains here pointing to different addresses. If the domain is for websites, in mainland China you also need ICP filing — Alibaba-Cloud also provides one-stop service.
-
-------------
 
 ### Configuring Security Group Rules
 
@@ -110,8 +97,6 @@ The above operations are Linux 101 basics, old hat for veterans — using Terraf
 
 In summary, after the above steps, you have a ready cloud server! You can login/access this server using domain names from anywhere with network. Next, we can start building the digital homestead: installing Pigsty.
 
-------------
-
 ## Installing and Configuring Pigsty
 
 Now you can login to this server as root user via SSH. Next, download, install, configure Pigsty.
@@ -126,15 +111,13 @@ cd ~/pigsty      # Enter Pigsty source directory, complete subsequent preparatio
 ./install.yml    # Begin installation on current node according to generated config file, offline packages take ~10 minutes
 ```
 
-Pigsty official documentation provides detailed installation configuration tutorials: https://pigsty.cc/doc/#/zh/INSTALL
+Pigsty official documentation provides detailed installation configuration tutorials: https://pigsty.cc/docs/setup/install/
 
 After installation, you can access the web interface via domain or `80/443` ports through Nginx, access default PostgreSQL database service via `5432` port, login to Grafana via `3000` port.
 
 Enter `http://<public-IP>:3000` in browser to access Pigsty's Grafana monitoring system. ECS's 3M bandwidth small pipe will take some effort initially loading Grafana. You can access anonymously or use default username/password `admin` / `pigsty` to login. Please change this default password to prevent others from randomly entering and causing damage.
 
 The above tutorial looks really simple, right? Yes. As a machine that can be destroyed and rebuilt anytime for development, this approach is fine. But if you want to use it as an environment bearing your personal digital homestead, please refer to the **Configuration Details** and **Security Hardening** sections below before proceeding.
-
-------------
 
 ### Configuration Details
 
@@ -203,7 +186,7 @@ After modifying config file `pigsty.yml`, run `./install.yml` to begin installat
 
 ### Security Hardening
 
-Most people probably don't care about security, but I must mention it. As long as you change default passwords, ECS and Pigsty default configurations are secure enough for most scenarios. Here are some security hardening suggestions: https://pigsty.cc/doc/#/zh/SECURITY
+Most people probably don't care about security, but I must mention it. As long as you change default passwords, ECS and Pigsty default configurations are secure enough for most scenarios. Here are some security hardening suggestions: https://pigsty.cc/docs/setup/security/
 
 First point: for security reasons, unless you really want to lazily access remote databases directly from local, generally don't recommend opening port 5432 to public — many database tools provide SSH Tunnel functionality — first SSH to server then locally connect to database. (Incidentally, IntelliJ's built-in Database Tool is the best database client I've used)
 

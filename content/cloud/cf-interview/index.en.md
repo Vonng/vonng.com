@@ -6,20 +6,17 @@ summary: |
   As a roundtable guest, I was invited to participate in Cloudflare's Immerse conference in Shenzhen. During the dinner, I had in-depth discussions with Cloudflare's APAC CMO, Greater China Technical Director, and front-line engineers about many questions of interest to netizens.
 tags: [Cloud-Exit, Cloudflare]
 ---
-
 Last week, I was invited as a roundtable guest to participate in Cloudflare's Immerse conference in Shenzhen. During the Cloudflare Immerse cocktail party and dinner, I had in-depth discussions with Cloudflare's APAC CMO, Greater China Technical Director, and front-line engineers about many Cloudflare-related questions.
 
 This article is an excerpt from the roundtable meeting minutes and Q&A interviews. For a user perspective review of Cloudflare, please refer to the previous article in this series: [**The Cyber Buddha Cloudflare That Outclasses Public Cloud**](/cloud/cloudflare).
 
-[![](featured.webp)](https://mp.weixin.qq.com/s/jU418HAlObe1nWgzEsLrJQ)
-
-------
+[![Cloudflare Roundtable Interview and Q&A Record (figure 1)](featured.webp)](https://mp.weixin.qq.com/s/jU418HAlObe1nWgzEsLrJQ)
 
 ## Part One: Roundtable Interview
 
 **How did you come to know Cloudflare?**
 
-I'm Vonng, currently working on **PostgreSQL** database distribution [**Pigsty**](https://pigsty.io/zh/), operating an open-source community, and as a KOL in the database & cloud computing field, promoting Cloud-Exit philosophy in China. Talking about Cloud-Exit at a Cloudflare event is quite interesting, but I'm not here to cause trouble.
+I'm Vonng, currently working on **PostgreSQL** database distribution [**Pigsty**](https://pigsty.cc/), operating an open-source community, and as a KOL in the database & cloud computing field, promoting Cloud-Exit philosophy in China. Talking about Cloud-Exit at a Cloudflare event is quite interesting, but I'm not here to cause trouble.
 
 Actually, I have several connections to Cloudflare, so I'm happy to share my **triple perspective** today: as an independent developer end-user, as an open-source community member and operator, and as a public cloud rebel, how I view Cloudflare.
 
@@ -29,9 +26,7 @@ As a **member of the PostgreSQL community**, we know Cloudflare deeply uses Post
 
 As an **advocate of Cloud-Exit philosophy**, I've always believed traditional public cloud uses a very unhealthy business model. So I'm leading a [**Cloud-Exit movement**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486813&idx=1&sn=ffb126fdd061c1e27626dd558f6fa26a&chksm=fe4b3886c93cb190e2acf7af6cfd25f298199f6ee73da566bed050c066b96753b913e3453d4f&scene=21#wechat_redirect) against public cloud in China. I believe Cloudflare might be an important ally in this movement — traditional IDC open-source self-building struggles with "online" connectivity issues, while Cloudflare's access capabilities and edge computing abilities fill this gap. So I'm very optimistic about this model.
 
-![](cf-interview-1.jpg)
-
-------
+![Cloudflare Roundtable Interview and Q&A Record — Part One: Roundtable Interview (figure 2)](cf-interview-1.jpg)
 
 **Which Cloudflare services have you used, and what attracted you?**
 
@@ -61,8 +56,6 @@ Finally, I want to mention **security** — I believe security is Cloudflare's c
 
 Therefore, when using domestic cloud CDN, many users have natural concerns and distrust. But Cloudflare solves this problem — first, traffic is free, billing by request volume, so traffic theft is meaningless; second, it provides anti-DDoS even on Free Plan, CF can't damage its own reputation — this solves a user pain point of exploding bills — I've seen cases where public cloud accounts with tens of thousands of yuan got drained overnight. Using Cloudflare completely eliminates this problem — I can ensure highly predictable bills — if not definitely zero.
 
-------
-
 **What do you mean by professional service attitude?**
 
 Domestic cloud vendors show quite amateur professional competency and service attitudes when facing major outages — I've written several articles criticizing this. Coincidentally, last Double 11, Alibaba-Cloud had an epic [**global outage**](/cloud/aliyun/). Cloudflare also had a data center power outage. A week ago on 4/8, Tencent Cloud had a copycat [**global outage**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487267&idx=1&sn=7d31d44e89560356b5c5a2e7a40bb1e1&chksm=fe4b3af8c93cb3ee9b8000cd90a12a798395f67205d4ba5b0c77b8c5b6ce9ea448d9fc014921&scene=21#wechat_redirect), and Cloudflare coincidentally had another Code Orange data center power outage the same day. As an engineer, I understand outages are unavoidable — **but the professional competency and service attitude shown after outages are vastly different**.
@@ -70,8 +63,6 @@ Domestic cloud vendors show quite amateur professional competency and service at
 First, both Alibaba-Cloud and Tencent Cloud outages resulted from human operational errors/poor software engineering/architectural design, while Cloudflare's issue was data center power failure — somewhat force majeure natural disaster. Second, in handling attitude, Alibaba-Cloud still hasn't published a proper post-mortem — I did an [**unofficial post-mortem**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486468&idx=1&sn=7fead2b49f12bc2a2a94aae942403c22&chksm=fe4b39dfc93cb0c92e5d4c67241de0519ae6a23ce6f07fe5411b95041accb69e5efb86a38150&scene=21#wechat_redirect) for them; as for Tencent Cloud, I even issued an outage announcement for them — 10 minutes faster than their official website. Tencent Cloud did publish a [**post-mortem**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487348&idx=1&sn=412cf2afcd93c3f0a83d65219c4a28e8&chksm=fe4b3aafc93cb3b900cef33bd0510c7c86367d71877b0ee65d4847da0ae1298e2b1fd88d0b3f&scene=21#wechat_redirect) the day before yesterday, but it was rather perfunctory, lacking professional competency — such post-mortem reports would be considered substandard at Apple and Google...
 
 Cloudflare is exactly the opposite — on the outage day, the CEO personally wrote a post-mortem with detailed information and sincere attitude. Have you seen domestic cloud vendors do this? No!
-
-------
 
 **What are your expectations for Cloudflare's future?**
 
@@ -81,23 +72,17 @@ I believe Cloudflare is a solid ally of the Cloud-Exit movement. Cloudflare does
 
 I'm very optimistic about Cloudflare's model — actually, this smooth experience deserves to be called cloud, worthy of the temple, can comfortably enjoy high-tech industry high margins. Actually, **I think Cloudflare should proactively compete with traditional public cloud for cloud computing definition rights** — I hope when people mention cloud in the future, they refer to Cloudflare's generous and dignified connectivity cloud, not traditional public pig-butchering cloud.
 
-------
-
 ## Part Two: Interactive Q&A
 
 During the Cloudflare Immerse cocktail party and dinner, I had in-depth discussions with Cloudflare's APAC CMO, Greater China Technical Director, and front-line engineers about many Cloudflare questions, gaining much insight. Here are some publicly appropriate questions and answers. Since I don't record, this text represents my post-event recollection and interpretation, **for reference only, not representing CF official views**.
 
-![](cf-interview-2.jpg)
-
-------
+![Cloudflare Roundtable Interview and Q&A Record — Part Two: Interactive Q&A (figure 3)](cf-interview-2.jpg)
 
 **How does Cloudflare position itself, and what's its relationship with AWS-type traditional public clouds?**
 
 Actually, Cloudflare isn't traditional public cloud but a kind of **SaaS**. We now call ourselves "Connectivity Cloud" (translated as: **Global Connectivity Cloud**), aiming to establish connections between all things, integrate with all networks; built-in intelligence prevents security risks, providing unified, simplified interfaces to restore **visibility** and **control**. From traditional perspective, we're like an integration of security, CDN, and edge computing. AWS CloudFront competes with us.
 
-![](cf-interview-3.png)
-
-------
+![Cloudflare Roundtable Interview and Q&A Record — Part Two: Interactive Q&A (figure 4)](cf-interview-3.png)
 
 **Why does Cloudflare provide such generous free plans? How do you actually make money?**
 
@@ -115,7 +100,7 @@ Cloudflare's core business model is **security**. Compared to serving only payin
 
 Actually, Cloudflare's CEO personally [answered this question on StackOverflow](https://webmasters.stackexchange.com/questions/88659/how-can-cloudflare-offer-a-free-cdn-with-unlimited-bandwidth):
 
-![](cf-interview-4.webp)
+![Cloudflare Roundtable Interview and Q&A Record — Part Two: Interactive Q&A (figure 5)](cf-interview-4.webp)
 
 > Five reasons we offer a free version of the service and always will:
 >
@@ -131,55 +116,41 @@ Actually, Cloudflare's CEO personally [answered this question on StackOverflow](
 
 Founder vision and sentiment are quite important... Cloudflare's early services were mostly free, the first paid service was actually SSL certificates, now also free. Generally, enterprise customers pay for security.
 
-------
-
 **What are Cloudflare's paying users like? How do free users become paying users?**
 
 Our free customers' main transition to enterprise paying customers is through security issues. Cloudflare console has an "**under attack**" button — when users click this "Under Attack" button, even free customers get immediate human response helping solve problems. For example, during the pandemic, a major video conferencing vendor suffered security attacks. We immediately allocated personnel to help customers solve problems — they were satisfied, so we signed deals.
 
-![](cf-interview-5.webp)
-
-------
+![Cloudflare Roundtable Interview and Q&A Record — Part Two: Interactive Q&A (figure 6)](cf-interview-5.webp)
 
 **Could Cloudflare's free tier be cancelled in the future?**
 
 Costco has a $1.50 hot dog soda combo, the founder promised never to raise hot dog and soda combo prices. I know SaaS vendors like Vercel, PlanetScale started cutting free tiers, but I think this basically won't happen to Cloudflare. Because as mentioned above, we have sufficient reasons to continue providing free plans. Actually, most of our customers don't pay, using Free Plan.
 
-![](cf-interview-6.webp)
-
-------
+![Cloudflare Roundtable Interview and Q&A Record — Part Two: Interactive Q&A (figure 7)](cf-interview-6.webp)
 
 **Why does Cloudflare have the CEO personally write post-mortems after outages?**
 
 Our CEO has technical background, engineering experience. When outages occur with lots of people arguing in IM, CEO jumps out saying: enough, I'll write the post-mortem report — then publishes it the same day as the outage. This is quite rare among public cloud vendors... We're actually quite shocked...
 
-![](cf-interview-7.webp)
-
-------
+![Cloudflare Roundtable Interview and Q&A Record — Part Two: Interactive Q&A (figure 8)](cf-interview-7.webp)
 
 **Why is Cloudflare access so slow in China regions?**
 
 China region bandwidth/traffic costs are too expensive, so ordinary users actually mainly access North American data centers and nodes. We have excellent latency performance in 95% of the world, but the remaining 5% mainly refers to... here.
 
-![](cf-interview-8.webp)
+![Cloudflare Roundtable Interview and Q&A Record — Part Two: Interactive Q&A (figure 9)](cf-interview-8.webp)
 
 If your main user base is domestic and you care about speed, consider Cloudflare Enterprise, or domestic CDN vendors. We cooperate with JD Cloud, enterprise customers can also use nodes they provide domestically.
-
-------
 
 **What are China region users' main motivations for using Cloudflare?**
 
 Mainly **security**: even Cloudflare's free plan provides anti-DDoS services. Chinese users mainly use Cloudflare for going overseas. Those purely domestic Chinese customers willing to be slower to use CF are mainly motivated by security (anti-DDoS).
-
-------
 
 **Could Cloudflare be blocked in China? Any operational risks?**
 
 I think this is unlikely — do you know how many websites are hosted on Cloudflare...? One shot would make half the internet inaccessible. Cloudflare itself doesn't operate in China... in China mainly serves C2G (China to Global) business.
 
 You just asked why Cloudflare domains can be accessed without ICP filing — that's why — we're not operating in China at all.
-
-------
 
 **In cooperation with domestic cloud vendors, what form does resource exchange mainly take?**
 
@@ -193,7 +164,7 @@ Business harmony generates wealth, we can't publicly comment on other clouds. Bu
 
 Traffic priority. For example, your overseas traffic probably goes through certain cross-sea fiber from Shanghai. Normally this line utilization is `<Redacted>`%, but during peak periods, we prioritize enterprise user service quality.
 
-![](cf-interview-9.webp)
+![Cloudflare Roundtable Interview and Q&A Record — Part Two: Interactive Q&A (figure 10)](cf-interview-9.webp)
 
 **Does Cloudflare consider launching managed RDS, Postgres database services?**
 

@@ -6,14 +6,11 @@ summary: >
   As data becomes the most important means of production in the AI age, platform lock-in and cloud dependence are rebuilding digital feudalism. This manifesto calls on us to reclaim control through open source and the ability to run our own infrastructure, so data can truly belong to its owners.
 tags: [Cloud-Exit, AI, Data Sovereignty, Open Source]
 ---
-
 A specter is haunting the digital world—the specter of feudalism.
 
 A thousand years ago, a farmer was born on his lord's estate, tilled his lord's land, paid his lord's rents and taxes, and lived his entire life in his lord's shadow. He was never bound in chains. He was never driven by the lash. He simply had no choice. The land beneath his feet belonged to someone else, and land was everything.
 
 We are rebuilding that world.
-
----
 
 ## I
 
@@ -126,8 +123,6 @@ This is not a manifesto against the future. It is a manifesto for a different fu
 The tools already exist. Open-source databases, deployment systems, monitoring stacks, and management platforms are battle-tested, mature, dependable, and completely free. The knowledge already exists. Running your own infrastructure is nowhere near as arcane as we have been led to believe. The community already exists. Millions of developers, engineers, and system administrators around the world are already practicing Data Autonomy. They simply lacked a name for what they were doing.
 
 Now they have one.
-
----
 
 **We are the yeoman farmers of the digital age.**
 

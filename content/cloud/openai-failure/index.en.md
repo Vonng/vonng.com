@@ -8,7 +8,6 @@ tags: [Codex, Incident]
 ai: true
 aliases: ["/ai/openai-failure/"]
 ---
-
 On December 11th, OpenAI experienced a global service outage affecting ChatGPT, API, Sora, Playground, and Labs. The outage lasted from 3:16 PM to 7:38 PM PT, spanning over four hours with significant impact.
 
 According to OpenAI's [incident report](https://status.openai.com/incidents/ctrsv3lwd797) published afterward, the root cause was a newly deployed monitoring service that overwhelmed the Kubernetes control plane. The control plane failure then prevented direct rollback, amplifying the impact and causing extended unavailability.
@@ -27,9 +26,7 @@ OpenAI is the AI industry's darling, with undeniable product strength and popula
 
 OpenAI also had a major outage last year with [PostgreSQL database and pgBouncer connection pooling](https://community.openai.com/t/postmortem-feb-20-2023-openai-suffered-a-major-db-outage/73068). Their infrastructure reliability track record over these two years hasn't been impressive. This incident again proves that even trillion-dollar unicorns can be a house of cards when operating outside their core expertise.
 
---------
-
-#### **Further Reading**
+## **Further Reading**
 
 [What We Can Learn from Alibaba-Cloud's Epic Failure](https://mp.weixin.qq.com/s/OIlR0rolEQff9YfCpj3wIQ)
 
@@ -49,8 +46,6 @@ OpenAI also had a major outage last year with [PostgreSQL database and pgBouncer
 
 [Should Databases Run in Kubernetes?](https://mp.weixin.qq.com/s/4a8Qy4O80xqsnytC4l9lRg)
 
---------
-
 ## Original Incident-Report
 
 ### Issues with API, ChatGPT, and Sora
@@ -61,8 +56,6 @@ https://status.openai.com/incidents/ctrsv3lwd797
 
 This document provides a detailed account of an incident that occurred on December 11, 2024, during which all OpenAI services experienced significant outages. The root cause was the deployment of a new telemetry service that unexpectedly overwhelmed the Kubernetes control plane, triggering cascading failures across critical systems. We'll dive into the fundamental causes, outline our response steps, and share the improvements we're implementing to prevent similar incidents.
 
-------
-
 ### Impact
 
 Between 3:16 PM and 7:38 PM PST on December 11, 2024, all OpenAI services experienced significant degradation or complete unavailability. This incident originated from a new telemetry service configuration rollout across all clusters and was **not** caused by security vulnerabilities or recent product releases. Starting at 3:16 PM, all products experienced significant performance degradation.
@@ -70,8 +63,6 @@ Between 3:16 PM and 7:38 PM PST on December 11, 2024, all OpenAI services experi
 - **ChatGPT:** Began substantial recovery around 5:45 PM and fully recovered at 7:01 PM.
 - **API:** Began substantial recovery around 5:36 PM, with all models fully recovered by 7:38 PM.
 - **Sora:** Fully recovered at 7:01 PM.
-
-------
 
 ### Root Cause
 
@@ -85,8 +76,6 @@ Although Kubernetes data planes can largely operate independently of control pla
 
 In summary, the new telemetry service configuration unexpectedly generated massive Kubernetes API load in large clusters, crashing control planes and disrupting DNS service discovery.
 
-------
-
 ### Testing and Deployment
 
 We tested the change in a staging cluster without detecting any issues. The failure primarily affected clusters above a certain size; combined with per-node DNS caching delaying failure visibility, the change didn't reveal obvious anomalies before widespread deployment in production.
@@ -96,8 +85,6 @@ Before deployment, our primary concern was the new telemetry service's resource 
 Kubernetes data planes (handling user requests) are designed to continue operating when control planes are offline. However, Kubernetes API servers are crucial for DNS resolution, which is a core dependency for many services.
 
 DNS caching provided temporary buffering during early failure stages, allowing stale but usable DNS records to continue providing address resolution for services. Over the next 20 minutes, these caches gradually expired, causing services dependent on real-time DNS to fail. This time lag exposed problems gradually as deployment continued, making the eventual failure scope more concentrated and obvious. Once DNS caches expired, all cluster services made new DNS requests, further burdening the control plane and making recovery difficult in the short term.
-
-------
 
 ### Resolution
 
@@ -119,8 +106,6 @@ This incident resulted from multiple systems and processes interacting and faili
 - DNS caching created delayed service failures, allowing widespread change deployment before full failure exposure.
 - Inability to access control planes during failure made recovery extremely slow.
 
-------
-
 ### Timeline
 
 - **December 10, 2024:** New telemetry service deployed to staging cluster, tested without issues.
@@ -134,41 +119,35 @@ This incident resulted from multiple systems and processes interacting and faili
 - **4:36 PM:** First cluster recovered.
 - **7:38 PM:** All clusters recovered.
 
-------
-
 ### Prevention Measures
 
 To prevent similar incidents, we're implementing the following measures:
 
-##### 1. More Robust Staged Deployment
+#### 1. More Robust Staged Deployment
 
 We will continue strengthening staged deployment and monitoring mechanisms for infrastructure changes, ensuring any failures are quickly detected and contained to smaller scopes. All future infrastructure-related configuration changes will use more comprehensive staged deployment processes with continuous monitoring of service workloads and Kubernetes control plane health during deployment.
 
-##### 2. Fault Injection Testing
+#### 2. Fault Injection Testing
 
 Kubernetes data planes need further enhancement for survival without control planes. We will introduce testing for this scenario, including intentionally injecting "misconfigurations" in test environments to verify system detection and rollback capabilities.
 
-##### 3. Emergency Kubernetes Control Plane Access
+#### 3. Emergency Kubernetes Control Plane Access
 
 We currently lack emergency mechanisms for accessing API servers when data planes put excessive pressure on control planes. We plan to establish "break-glass" mechanisms ensuring engineering teams can access Kubernetes API servers under any circumstances.
 
-##### 4. Further Decouple Kubernetes Data and Control Planes
+#### 4. Further Decouple Kubernetes Data and Control Planes
 
 Our current dependency on Kubernetes DNS services creates coupling between data and control planes. We will invest more effort in making control planes non-critical for essential services and product workloads, reducing single-point dependency on DNS.
 
-##### 5. Faster Recovery Speed
+#### 5. Faster Recovery Speed
 
 We will introduce more comprehensive caching and dynamic rate limiting for critical resources required for cluster startup, regularly conducting "rapid entire cluster replacement" drills to ensure correct, complete startup and recovery in minimum time.
-
-------
 
 ### Conclusion
 
 We sincerely apologize to all customers affected by this incident—whether ChatGPT users, API developers, or enterprises relying on OpenAI products. This incident fell short of our own expectations for system reliability. We recognize the critical importance of providing highly reliable services to all users and will prioritize implementing the above prevention measures while continuously improving service reliability. Thank you for your patience during this outage.
 
 Published 23 hours ago. December 12, 2024 - 17:19 PST
-
-------
 
 **Resolved**
 
@@ -178,15 +157,11 @@ OpenAI will conduct a complete root cause analysis of this incident and share fo
 
 December 11, 2024 - 22:23 PST
 
-------
-
 **Monitoring**
 
 API, ChatGPT, and Sora traffic has largely recovered. We will continue monitoring to ensure the issue is completely resolved.
 
 December 11, 2024 - 19:53 PST
-
-------
 
 **Update**
 
@@ -194,15 +169,11 @@ We are continuing recovery efforts. API traffic is recovering, and we're restori
 
 December 11, 2024 - 18:54 PST
 
-------
-
 **Update**
 
 We are working to fix the issue. API and ChatGPT have partially recovered; Sora remains offline.
 
 December 11, 2024 - 17:50 PST
-
-------
 
 **Update**
 
@@ -210,15 +181,11 @@ We are continuing to develop recovery solutions.
 
 December 11, 2024 - 17:03 PST
 
-------
-
 **Update**
 
 We are continuing to develop recovery solutions.
 
 December 11, 2024 - 16:59 PST
-
-------
 
 **Update**
 
@@ -226,15 +193,11 @@ We have found a viable recovery solution and are beginning to see some traffic s
 
 December 11, 2024 - 16:55 PST
 
-------
-
 **Update**
 
 ChatGPT, Sora, and API remain unavailable. We have identified the issue and are deploying a fix. We are working to restore services as quickly as possible and sincerely apologize for the outage impact.
 
 December 11, 2024 - 16:24 PST
-
-------
 
 **Identified Issue**
 
@@ -242,23 +205,17 @@ We've received reports of API call errors and login issues with platform.openai.
 
 December 11, 2024 - 15:53 PST
 
-------
-
 **Update**
 
 We are continuing to investigate this issue.
 
 December 11, 2024 - 15:45 PST
 
-------
-
 **Update**
 
 We are continuing to investigate this issue.
 
 December 11, 2024 - 15:42 PST
-
-------
 
 **Investigating**
 

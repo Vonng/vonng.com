@@ -6,7 +6,6 @@ summary: >
   Alibaba Cloud's free DNS tier allows 100,000 queries per day—just 1.15 QPS averaged out. One throttling notice was all it took for me to move my domains to Cloudflare.
 tags: [Alibaba Cloud, Cloudflare]
 ---
-
 I had used Alibaba Cloud for domain registration and DNS for more than a decade. Then one morning, I received an email unlike any it had sent me before.
 
 Alibaba Cloud informed me that one of my domains had exceeded its daily quota of 100,000 DNS queries and was being throttled.
@@ -31,8 +30,6 @@ I did not care about the RMB 48. But before paying to make the problem go away, 
 
 ![Group chat discussing the DNS migration](finops-chat.webp)
 
---------
-
 ## The Lock-In Was an Illusion
 
 Before using Cloudflare, I thought Alibaba Cloud's DNS was good enough.
@@ -53,8 +50,6 @@ I went all in. In less than half an hour, I moved DNS for all five of my Alibaba
 
 ![Cloudflare domain activation email](cf-activated.webp)
 
---------
-
 ## Migrating DNS Is Easy
 
 The migration was so simple that there is little to explain. If you can click a few buttons, you can do it. You also need a Cloudflare account, which takes about two minutes to create.
@@ -70,8 +65,6 @@ Cloudflare confirmed the change and took over DNS in about a minute.
 **There was zero downtime and, in theory, no production impact.** As long as both providers have identical records before the migration, changing nameservers is seamless. I left the registrations at Alibaba Cloud for now—I had already paid for them and can move them when they approach expiration—but all day-to-day DNS and management now live in Cloudflare. Much cleaner.
 
 One caveat: if you depend on the China-specific feature of returning different DNS answers by network carrier, Wang says Huawei Cloud offers a similar service for free.
-
---------
 
 ## The Monetization Is Shameless
 
@@ -100,8 +93,6 @@ That failure is hard to trace back to the DNS provider. DNS is an invisible laye
 Free by default, capped after the fact, dynamically throttled beyond the cap, with basic availability used to force an upgrade: this is not an industry norm. It is a bad path Alibaba Cloud came up with on its own.
 
 That is what disgusts me. Charging for DNS is fine. Charging this way is not.
-
---------
 
 ## The Comparison Is Brutal
 
@@ -135,8 +126,6 @@ Then I realized I could make it go away permanently. I would rather spend half a
 
 Paying is not the problem. The bigger problem is that paying still buys you an inferior service.
 
---------
-
 ## Alibaba Cloud's Execution Is Sloppy
 
 I have run into plenty of Alibaba Cloud bugs. Even in something as infrequently used as domain registration, I have hit several.
@@ -152,8 +141,6 @@ Then there is the paid monitoring. Request count is the only metric it provides.
 ![Alibaba Cloud DNS query statistics](aliyun-monitor.webp)
 
 Alibaba Cloud calls itself China's leading cloud provider. Seeing it deliver one of the internet's most fundamental services this poorly is genuinely disappointing.
-
---------
 
 ## Epilogue
 

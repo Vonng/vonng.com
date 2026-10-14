@@ -6,10 +6,9 @@ summary: >
   最近就目睹了一场云数据库删库跑路现场情景剧。本文就来聊一聊在生产环境使用PostgreSQL，如何应对误删数据的问题。
 tags: [下云, PG管理, RDS]
 ---
-
 上一篇文章《[DBA还是份好工作吗](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485064&idx=1&sn=6225a044d8f145cdb07a21a1e0c54ad8&chksm=fe4b3353c93cba4582576b4de151ac48247052a1494adcc820dc64a32dafb0b99e33085c7bbb&scene=21#wechat_redirect)》中提到：尽管DBA作为一份职业在没落，但谁也保不准DBA会不会在几次恐怖的大规模云数据库故障后，重新成为潮流。
 
-[![](featured.jpg)](https://mp.weixin.qq.com/s/AGEW1iHQkQy4NQyYC2GonQ)
+[![云RDS：从删库到跑路（图 1）](featured.jpg)](https://mp.weixin.qq.com/s/AGEW1iHQkQy4NQyYC2GonQ)
 
 这不，最近就目睹了一场云数据库删库跑路现场情景剧。本文就来聊一聊在生产环境使用PostgreSQL，如何应对误删数据的问题。
 
@@ -19,15 +18,11 @@ tags: [下云, PG管理, RDS]
 
 ![wm-dropdb.png](drop-rds-wm-dropdb.png)
 
--------------
-
 ## 故障现场
 
 ![case-1.png](drop-rds-case-1.webp)
 
 ![case-2.png](drop-rds-case-2.webp)
-
--------------
 
 ## 解决方案
 
@@ -38,8 +33,6 @@ tags: [下云, PG管理, RDS]
 当然，这也得怪云厂商抠门心机，WAL日志归档PITR这些PG的基础高可用功能被云阉割掉了，放进所谓的“高可用”版本。WAL归档对于本地部署的实例来说，无非是加块磁盘配置条命令的事情。对象存储1GB一个月几分钱，最是廉价不过，但乞丐版云数据库还是要应省尽省，不然怎么卖“高可用”版的数据库呢？
 
 在Pigsty中，所有PG数据库集群都默认启用了WAL归档并每日进行全量备份：保留最近一日的基础 **冷备份** 与WAL，允许用户回溯至当日任意时刻的状态。更是提供了开箱即用的 **延迟从库** 搭建工具，防误删快人一步！
-
--------------
 
 ## 如何应对删库？
 
@@ -59,7 +52,7 @@ tags: [下云, PG管理, RDS]
 
 在 Pigsty 所有的配置文件模板中，都配置有以下归档命令
 
-```
+```text
 wal_dir=/pg/arcwal;
 /bin/mkdir -p ${wal_dir}/$(date +%Y%m%d) && /usr/bin/lz4 -q -z %p > ${wal_dir}/$(date +%Y%m%d)/%f.lz4
 ```

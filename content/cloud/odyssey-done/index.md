@@ -7,7 +7,6 @@ summary: >
   DHH将他们的七个云上应用从AWS迁移到自己的硬件上，2024年是第一个完全实现节省的年份。他们欣喜地发现，节省的费用比最初估计的还要多。
 tags: [下云, 翻译]
 ---
-
 > 作者：DHH，《[Our cloud-exit savings will now top ten million over five years](https://world.hey.com/dhh/our-cloud-exit-savings-will-now-top-ten-million-over-five-years-c7d9b5bd)》
 
 去年夏天，我们[完成了下云工作](https://world.hey.com/dhh/we-have-left-the-cloud-251760fb)，将包括 [HEY](https://hey.com/) 在内的七个云上应用从 AWS 迁移到我们自己的硬件上来。但直到年底，我们的所有长期合同才结束，所以 2024 年是第一个完全实现节省的年份。我们欣喜地发现，节省的费用比最初估计的还要多。
@@ -38,8 +37,6 @@ tags: [下云, 翻译]
 
 在 [37signals](https://37signals.com/)，我们期待在明年夏天彻底删除我们的 AWS 账户，我们仍然感谢在使用该云平台期间得到的服务和经验。显而易见，亚马逊为何能在云领域保持领先。我也很高兴现在从 S3 中迁出数据是完全免费的，如果您决定永久离开该平台。这会让成本计算更加有利。再见，感谢你们的一切！
 
----
-
 ## 参考阅读
 
 以下是 DHH 下云过程的完整记录与答疑。
@@ -50,8 +47,6 @@ tags: [下云, 翻译]
 - [先优化碳基 BIO 核，再优化硅基 CPU 核](/db/bio-core-cpu-core/)
 - [单租户时代：SaaS 范式转移](/cloud/single-tenant-saas/)
 - [拒绝用复杂度自慰，下云也保稳定运行](/cloud/uptime/)
-
----
 
 ## 老冯评论
 
@@ -97,8 +92,6 @@ tags: [下云, 翻译]
 经典云厂商也开始 FOMO，他们没法直接降价放弃手上的既得利益，但也对新一代云厂商的平价竞争感到焦虑，想参与其中。例如，最近新冒出来的廉价 “阿爪云” ClawCloud，就是某个头部云厂商的小号，跑出来和搬瓦工，Linode 抢生意。
 
 我相信在这样的竞争刺激下，云计算市场的格局不久便会出现令人激动的变化。会有越来越多的用户识破云上炒作，并明智而审慎地花出自己的 IT 预算。
-
----
 
 ## Our cloud-exit savings will now top ten million over five years
 

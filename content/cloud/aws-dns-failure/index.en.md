@@ -7,7 +7,6 @@ summary: >
   us-east-1’s DNS control plane faceplanted for 15 hours and dragged 142 AWS services—and a good chunk of the public internet—down with it. Here’s the forensic tour.
 tags: [Cloud-Exit, AWS, Incident]
 ---
-
 On Oct 20, 2025, AWS’s crown jewel region us-east-1 spent fifteen hours flailing. More than a thousand companies went dark worldwide. The root cause? An internal DNS entry that stopped resolving.
 
 From the moment DNS broke, DynamoDB, EC2, Lambda, and 139 other services quickly degraded. Snapchat, Roblox, Coinbase, Signal, Reddit, Robinhood—gone. Billions evaporated in half a day. This was a cyber earthquake.
@@ -123,8 +122,6 @@ For teams with resources, **hybrid deployment** makes sense: keep the crown jewe
 
 [Converge: DNS failure triggers multi-service AWS disruption](https://convergedigest.com/aws-reports-major-outage-in-us-east-1-region/)
 
---------
-
 ## Incident log
 
 **12:11 AM PDT** – Investigating elevated error rates and latency across multiple services in us-east-1 (N. Virginia). Next update in 30–45 minutes.
@@ -176,8 +173,6 @@ For teams with resources, **hybrid deployment** makes sense: keep the crown jewe
 **1:52 PM PDT** – EC2 throttles continue to ease across all AZs; ECS/Glue etc. recover as launches succeed. Lambda is healthy; queued events should clear within ~two hours. Next update by 2:30.
 
 **2:48 PM PDT** – EC2 launch throttling back to normal; residual services wrapping up recovery. Incident closed by 3:53 PM.
-
---------
 
 ## Extra reading
 

@@ -6,12 +6,9 @@ summary: |
     Dec 4, 2025, Taobao, Alipay, and Xianyu all cratered. Users got charged while orders still showed “unpaid,” a carbon copy of the 2024 Double-11 fiasco.
 tags: [Cloud-Exit, Alibaba Cloud, Incident]
 ---
-
 Taobao, Alipay, and Xianyu simultaneously faceplanted on Dec 4. Cards were debited, yet orders sat frozen at “pending.” The story rhymes perfectly with the 2024 Double-11 outage, so the leading suspect is once again the message queue or whatever coordinates distributed transactions.
 
 Alibaba still hasn’t published a root-cause doc as this piece goes out. Everything below comes from public chatter plus boring old systems thinking.
-
---------
 
 ## What happened
 
@@ -30,8 +27,6 @@ Timeline:
 
 ![mihoyo.jpg](mihoyo.jpg)
 
---------
-
 ## Déjà vu symptoms
 
 The signature failure: **money moved, state didn’t**.
@@ -41,8 +36,6 @@ This isn’t a simple “service unavailable.” It’s a distributed transactio
 Sound familiar? On **Nov 11, 2024**, Alipay imploded during Double-11 with the exact same behavior: cards charged, orders “unpaid,” repeat deductions, even Yu’e Bao withdrawals stalling. Back then Alipay publicly admitted the culprit: a “system message store.” Translation: RocketMQ-based middleware that coordinates inter-service transaction messages.
 
 ![2024.jpg](2024.jpg)
-
---------
 
 ## Likely culprit
 
@@ -63,8 +56,6 @@ Tie that with the 2024 postmortem and today’s identical footprint, and the eas
 Rumor mill bonus: some engineers noted a scheduled RocketMQ rolling upgrade on Alicloud the same day. Unconfirmed, but not impossible.
 
 ![rocketmq.png](rocketmq.png)
-
---------
 
 ## Commentary
 
@@ -90,8 +81,6 @@ Stability has been shaky across Alibaba properties these past years. Every peak 
 
 AWS, GCP, Cloudflare—whenever they screw up, they publish detailed postmortems: timeline, root cause, follow-up fixes. This Alipay outage messed with real money. We deserve the same transparency.
 
--------
-
 ## Easter egg
 
 While poking at Google Gemini 3 Pro, it hallucinated a hilarious alt-timeline: apparently Doubao AI and Nubia phones sabotaged Alibaba. Even after multiple nudges, Gemini clung to its conspiracy and wrote a novella about it. Reality might be mundane, but sometimes sci-fi is closer than you’d like.
@@ -99,8 +88,6 @@ While poking at Google Gemini 3 Pro, it hallucinated a hilarious alt-timeline: a
 ![gemini.jpg](gemini.jpg)
 
 > https://gemini.google.com/share/ff8074e1a444
-
---------
 
 ## References
 

@@ -6,20 +6,17 @@ summary: >
   作为圆桌嘉宾受邀参加了Cloudflare在深圳举办的Immerse大会，与Cloudflare亚太区CMO等深入交流探讨了许多网友关心的问题。
 tags: [下云, Cloudflare]
 ---
-
 上周我作为圆桌嘉宾受邀参加了 Cloudflare 在深圳举办的 Immerse 大会，在 Cloudflare Immerse 鸡尾酒会和晚宴上，我与 Cloudflare 亚太区CMO，大中华区技术总监，以及一线工程师深入交流探讨了许多关于 Cloudflare 的问题。
 
 本文是圆桌会谈纪要与问答采访的摘录，从用户视角点评 Cloudflare 请参考本号前一篇文章：《[**吊打公有云的赛博佛祖 Cloudflare**](/cloud/cloudflare)》
 
-[![](featured.webp)](https://mp.weixin.qq.com/s/jU418HAlObe1nWgzEsLrJQ)
-
-------
+[![Cloudflare圆桌访谈与问答录（图 1）](featured.webp)](https://mp.weixin.qq.com/s/jU418HAlObe1nWgzEsLrJQ)
 
 ## 第一部分：圆桌访谈
 
 **您与 Cloudflare 如何结缘？**
 
-我是冯若航，现在做 **PostgreSQL** 数据库发行版 [**Pigsty**](https://pigsty.io/zh/)，运营着一个开源社区，同时作为一个数据库 & 云计算领域的 KOL，在国内宣扬下云理念。在 Cloudflare 的场子里讲下云挺有意思，但我并不是来踢馆的。
+我是冯若航，现在做 **PostgreSQL** 数据库发行版 [**Pigsty**](https://pigsty.cc/)，运营着一个开源社区，同时作为一个数据库 & 云计算领域的 KOL，在国内宣扬下云理念。在 Cloudflare 的场子里讲下云挺有意思，但我并不是来踢馆的。
 
 事实上我与 Cloudflare 还有好几层缘分，所以今天很高兴在这里和大家分享一下我的 **三重视角** ：作为一个独立开发者终端用户，作为一个开源社区的成员与运营者，作为一个公有云计算反叛军，我是如何看待 Cloudflare 的。
 
@@ -29,9 +26,7 @@ tags: [下云, Cloudflare]
 
 作为 **下云理念的倡导者**，我一直认为传统公有云使用了一种非常不健康的商业模式。所以在中国引领着一场针对公有云的[**下云运动**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486813&idx=1&sn=ffb126fdd061c1e27626dd558f6fa26a&chksm=fe4b3886c93cb190e2acf7af6cfd25f298199f6ee73da566bed050c066b96753b913e3453d4f&scene=21#wechat_redirect)。我认为 Cloudflare 也许是这场运动中的重要盟友 —— 传统 IDC 开源自建，难以解决 “在线” 的问题，而 Cloudflare 的接入能力，边缘计算能力，都弥补了这一块短板。所以我非常看好这种模式。
 
-![](cf-interview-1.jpg)
-
-------
+![Cloudflare圆桌访谈与问答录：第一部分：圆桌访谈（图 2）](cf-interview-1.jpg)
 
 **您用到了哪些 Cloudflare的服务，打动你的是什么？**
 
@@ -61,8 +56,6 @@ tags: [下云, Cloudflare]
 
 因此，在使用本土云 CDN 的时候，很多用户会有一些天然的顾虑与不信任。但 Cloudflare 就解决了这个问题 —— 第一，流量不要钱，按请求量计费，所以刷流量没意义；第二，它替你抗 DDoS，即使是 Free Plan 也有这个服务，CF不能砸自己的招牌 —— 这解决了一个用户痛点，就是把账单刷爆的问题 —— 我确实有见过这样的案例，公有云账号里有几万块钱，一下子给盗刷干净了。用 Cloudflare 就彻底没有这个问题，我可以确保账单有高度的确定性 —— 如果不是确定为零的话。
 
-------
-
 **专业的服务态度指的是？**
 
 本土云厂商在面对大故障时，体现出相当业余的专业素养与服务态度，这一点我专门写了好几篇文章进行批判。说起来特别赶巧，去年双十一，阿里云出了一个史诗级[**全球大故障**](/cloud/aliyun/)。Cloudflare 也出了个机房断电故障。一周前 4.8 号，腾讯云也出了个翻版[**全球故障**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487267&idx=1&sn=7d31d44e89560356b5c5a2e7a40bb1e1&chksm=fe4b3af8c93cb3ee9b8000cd90a12a798395f67205d4ba5b0c77b8c5b6ce9ea448d9fc014921&scene=21#wechat_redirect)，Cloudflare 也恰好在同一天又出了 Code Orange 机房断电故障。作为一个工程师，我理解故障是难以避免的 —— **但出现故障后，体现出来的专业素养和服务态度是天差地别的**。
@@ -70,8 +63,6 @@ tags: [下云, Cloudflare]
 首先，阿里云和腾讯云的故障都是人为操作失误/糟糕的软件工程/架构设计导致的，而 Cloudflare 的问题是机房断电，某种程度上算不可抗力的天灾。其次，在处理态度上，阿里云到现在都没发布一个像样的故障复盘，我替它做了一个[**非官方故障复盘**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486468&idx=1&sn=7fead2b49f12bc2a2a94aae942403c22&chksm=fe4b39dfc93cb0c92e5d4c67241de0519ae6a23ce6f07fe5411b95041accb69e5efb86a38150&scene=21#wechat_redirect)；至于腾讯云，我干脆连故障通告都替他们发了 —— 比官网还快10分钟。腾讯云倒是在前天发布了一个[**故障复盘**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487348&idx=1&sn=412cf2afcd93c3f0a83d65219c4a28e8&chksm=fe4b3aafc93cb3b900cef33bd0510c7c86367d71877b0ee65d4847da0ae1298e2b1fd88d0b3f&scene=21#wechat_redirect)，但是也比较敷衍，专业素养不足，这种复盘报告拿到 Apple 和 Google 都属于不合格的 Post-Mortem ……
 
 Cloudflare 则恰恰相反，在故障的当天 CEO 亲自出来撰写故障复盘，细节翔实，态度诚恳，你见过本土云厂商这么做吗？没有!
-
-------
 
 **您对 Cloudflare 未来有什么期待？**
 
@@ -81,23 +72,17 @@ Cloudflare 则恰恰相反，在故障的当天 CEO 亲自出来撰写故障复�
 
 我非常看好 Cloudflare 这种模式，实际上，这种丝滑的体验才配称的上是云，配享太庙，可以心安理得吃高科技行业的高毛利。实际上，**我认为 Cloudflare 应该主动出击，去与传统公有云抢夺云计算的定义权** —— 我希望未来人们说起云的时候，指的应该是 Cloudflare 这种慷慨体面的连接云，而不是传统公有杀猪云。
 
-------
-
 ## 第二部分：互动问答
 
 在 Cloudflare Immerse 鸡尾酒会和晚宴上，我与 Cloudflare 亚太区CMO，大中华区技术总监，以及一线工程师深入交流探讨了许多关于 Cloudflare 的问题，收获颇丰，这里给出了一些适合公开的问题与答案。因为我也不会录音，因此这里的文字属于我的事后回忆与阅读理解，**仅供参考，不代表 CF 官方观点**。
 
-![](cf-interview-2.jpg)
-
-------
+![Cloudflare圆桌访谈与问答录：第二部分：互动问答（图 3）](cf-interview-2.jpg)
 
 **Cloudflare 如何定位自己，和 AWS 这种传统公有云是什么关系？**
 
 其实 Cloudflare 不是传统公有云，而是一种 **SaaS**。我们现在管自己叫做 “Connectivity Cloud”（翻译为：**全球联通云**），旨在为所有事物之间建立连接，与所有网络相集成；内置情报防范安全风险，并提供统一、简化的界面以恢复 **可见性** 与 **控制**。从传统的视角来看，我们做的像是安全、CDN与边缘计算的一个整合。AWS 的 CloudFront 算是我们的竞品。
 
-![](cf-interview-3.png)
-
-------
+![Cloudflare圆桌访谈与问答录：第二部分：互动问答（图 4）](cf-interview-3.png)
 
 **Cloudflare 为什么提供了如此慷慨的免费计划，到底靠什么赚钱？**
 
@@ -115,7 +100,7 @@ Cloudflare 的核心商业模式是 **安全**。相比于只服务付费客户�
 
 实际上 Cloudflare 的 CEO 在 StackOverflow [亲自对这个问题作出过回答](https://webmasters.stackexchange.com/questions/88659/how-can-cloudflare-offer-a-free-cdn-with-unlimited-bandwidth)：
 
-![](cf-interview-4.webp)
+![Cloudflare圆桌访谈与问答录：第二部分：互动问答（图 5）](cf-interview-4.webp)
 
 > Five reasons we offer a free version of the service and always will:
 >
@@ -131,54 +116,40 @@ Cloudflare 的核心商业模式是 **安全**。相比于只服务付费客户�
 
 创始人的情怀与愿景其实挺重要的 …… ，Cloudflare 早期的许多服务一直都是免费提供的，第一个付费服务其实是 SSL 证书，现在也不要钱了。总的来说，就是靠企业级客户为安全付费。
 
-------
-
 **Cloudflare付费用户都是什么样的？怎么从免费用户成为付费用户的。**
 
 我们的免费客户转变为企业级付费客户的主要契机是安全问题。Cloudflare 控制台上有个 “**遭受攻击**” 的按钮 —— 是这样的，只要用户在控制台上点这个 “Under Attack” 按钮，即使是免费客户，我们也会第一时间有人响应，帮助客户解决问题。例如在疫情期间，某头部视频会议厂商遭受到了安全攻击。我们立即抽调人手替客户解决问题 —— 他们很满意，我们就签了单子。
 
-![](cf-interview-5.webp)
-
-------
+![Cloudflare圆桌访谈与问答录：第二部分：互动问答（图 6）](cf-interview-5.webp)
 
 **Cloudflare 的免费套餐有可能会在未来取消吗？**
 
 Costco 有个 1.5 美元的热狗汽水套餐，创始人承诺永远不会提高热狗和苏打水套餐的价格。我知道像 Vercel，Planetscale 之类的 SaaS 厂商开始削减免费套餐，但我认为这事基本不太可能发生在 Cloudflare 上。因为如上所述，我们有充分的理由继续提供免费计划。实际上我们的大多数客户都没付钱，在使用 Free Plan。
 
-![](cf-interview-6.webp)
-
-------
+![Cloudflare圆桌访谈与问答录：第二部分：互动问答（图 7）](cf-interview-6.webp)
 
 **为什么Cloudflare 会在故障后由 CEO 亲自出马复盘？**
 
 我们的 CEO 是技术出身，工程师背景。出现故障的时候 IM 里一堆人在掰扯，CEO 跳出来说：够了，我来写故障复盘报告 —— 然后故障当天就发出来了，这种事放在公有云厂商里绝对是相当罕见的了… 我们其实也很震惊…。
 
-![](cf-interview-7.webp)
-
-------
+![Cloudflare圆桌访谈与问答录：第二部分：互动问答（图 8）](cf-interview-7.webp)
 
 **Cloudflare 在中国区域访问为什么这么慢？**
 
 中国区域带宽/流量费用太贵了，所以普通用户访问其实访问的其实主要是北美地区的机房与节点。我们在 全世界 95% 的地区都有非常优秀的延迟表现（比），但剩下 5% 嘛主要指的就是 …… ，在这里
 
-![](cf-interview-8.webp)
+![Cloudflare圆桌访谈与问答录：第二部分：互动问答（图 9）](cf-interview-8.webp)
 
 如果你的主要用户群体都是国内，又比较在乎速度，可以考虑一下 Cloudflare 企业版，或者是本土 CDN 厂商。我们和京东云有合作，企业级客户在国内也可以使用他们提供的这些节点。
-
-------
 
 **中国区域用户使用 Cloudflare 的主要动机是什么？**
 
 主要是因为 **安全**：Cloudflare 即使是免费计划中，也提供了抗 DDoS 服务。中国的用户使用 Cloudflare 主要是为了出海。而那些纯粹面向本土的中国客户，宁可慢一点也要用 CF 的主要动机就是安全（抗DDoS）。
 
-------
-
 **Cloudflare 会在中国被封禁吗？有什么运营风险吗？**
 
 我觉得这件事不太可能会发生，你知道现在有多少网站托管在 Cloudflare 上面吗 … 这一炮打下去，大半个互联网都访问不了了。Cloudflare 本身并没有在中国地区运营…… ，在中国也主要服务于 C2G （China to Global）业务。
 你刚才问为什么 Cloudflare 域名不备案为什么就能访问，就是这个原因 —— 我们压根没在中国运营。
-
-------
 
 **在与本土云厂商合作中，资源互换主要是一种什么形式？**
 
@@ -192,7 +163,7 @@ Costco 有个 1.5 美元的热狗汽水套餐，创始人承诺永远不会提�
 
 流量优先级。举个例子你出海的流量大概率是从上海的某一根跨海光纤出去的，平时这条线路的使用率是 `<Redacted>` % ，但是在高峰期，我们就会优先保证企业级用户的服务质量。
 
-![](cf-interview-9.webp)
+![Cloudflare圆桌访谈与问答录：第二部分：互动问答（图 10）](cf-interview-9.webp)
 
 **Cloudflare 考虑推出托管的 RDS，Postgres数据库服务吗？**
 

@@ -6,7 +6,6 @@ summary: |
   Programmers are drawn to complexity like moths to flame. The more complex the system architecture diagram, the greater the intellectual masturbation high. Steadfast resistance to this behavior is a key reason for DHH's success in cloud-free availability.
 tags: [Cloud-Exit]
 ---
-
 We don't need Kubernetes masters or fancy new databases — programmers are drawn to complexity like moths to flame. The more complex the system architecture diagram, the greater the intellectual masturbation high. Our steadfast resistance to this behavior is a key reason for our success in cloud-free availability.
 
 > Author: **David Heinemeier Hansson**, known as DHH, Co-founder & CTO of 37signals, Creator of Ruby on Rails, cloud exit advocate, practitioner, and pioneer. Frontrunner in fighting tech giant monopolies. [Hey Blog](https://world.hey.com/dhh)
@@ -14,8 +13,6 @@ We don't need Kubernetes masters or fancy new databases — programmers are draw
 > Translator: **Vonng (Feng Ruohang)**, Founder & CEO of PIGSTY. Author of [Pigsty](https://pigsty.io), PostgreSQL expert/evangelist. Host of WeChat public account "Illegal Plus Feng", cloud computing mudslide, database veteran.
 >
 > This article is translated from DHH's [blog post](https://world.hey.com/dhh/keeping-the-lights-on-while-leaving-the-cloud-be7c2d67)
-
------------
 
 ## Keeping the Lights On While Leaving the Cloud
 
@@ -41,15 +38,13 @@ To have good availability, you need not the cloud, but mature technology running
 
 > Note: DHH saved nearly $10 million in high cloud costs. This article translates DHH's latest cloud exit progress. For the cloud exit backstory and complete process, refer to: "[Cloud-Exit Odyssey](/cloud/odyssey/)", "[Is It Time to Give Up on Cloud Computing?](/cloud/odyssey/)", and "[DHH Cloud-Exit FAQ](/cloud/cloud-exit-faq/)".
 
---------------
-
 ## Translator's Commentary
 
 DHH points out the best practice for maintaining good availability — **running humble, mature, foundational technology on redundant hardware**. Most of software's cost overhead isn't in the initial development phase, but in the ongoing maintenance phase. And **simplicity** is crucial for system maintainability.
 
 Some programmers, out of **intellectual masturbation** or **job security** reasons, pile unnecessary additional complexity into architectural designs — such as throwing Kubernetes at everything regardless of scale and load appropriateness, or using glue code to wire together a bunch of flashy databases. Seeking "cool enough" things to satisfy personal value needs, rather than considering whether the problems to be solved actually need these dragon-slaying techniques.
 
-![](featured.jpg)
+![Cloud-Exit High Availability Secret: Rejecting Complexity Masturbation — Translator's Commentary (figure 1)](featured.jpg)
 
 > Rube Goldberg machine: "Accomplishing through extremely complex and circuitous methods what could actually or seemingly be done easily" — a form of intellectual masturbation through complexity.
 

@@ -6,7 +6,6 @@ summary: >
   可能是中国有史以来最大的数据泄露事件，数十亿份包含财务数据、微信和支付宝信息以及其他敏感个人数据的文件被曝光。
 tags: [云计算, 安全, 社会观察]
 ---
-
 > 微信原页已失效；正文从明确署名的公开镜像恢复：[https://cn-sec.com/archives/4145266.html](https://cn-sec.com/archives/4145266.html)。
 
 ## 2025 年 6 月 6 日 Vilius Petkauskas

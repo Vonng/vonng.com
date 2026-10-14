@@ -8,7 +8,6 @@ tags: [AI, Claude, Incident]
 ai: true
 aliases: ["/ai/claude-outage/"]
 ---
-
 Claude went down globally on March 2, 2026.
 
 The dramatic narrative that immediately formed was irresistible: AWS facilities in the Middle East had just been hit by drones, and now Claude was collapsing too. The story spread fast.

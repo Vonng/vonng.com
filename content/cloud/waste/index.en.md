@@ -6,7 +6,6 @@ summary: >
   People who leave Big Tech are not stupid. They have simply spent too long using a rented mental map. Only after leaving the platform do they discover that the map has to be returned.
 tags: [Cloud, Software Engineering, Architecture, Career]
 ---
-
 A cutting remark supposedly from Sam Altman has been making the rounds online: by the time people leave a big company, their ambition, aspiration, and capacity to think have withered to almost nothing. Tell one of them about something that could change an industry, and their first question is who has to approve it.
 
 That rings painfully true to me, because I have seen it far too often. There are exceptions, but not many.
@@ -16,8 +15,6 @@ The comments predictably split into two camps. One says, “Of course—they wer
 Neither side has much to offer. Reducing the whole thing to “the people just aren’t good enough” is the easiest explanation of all—and the least informative.
 The question worth asking is different: what, exactly, turns a smart, hardworking person who made it through round after round of screening into this?
 
----
-
 ## TL;DR
 
 Here is the conclusion up front: people who leave Big Tech are not useless. They have simply spent too long using a rented **mental map**, believing it was their own.
@@ -26,8 +23,6 @@ The defining technique of a modern organization is decomposition: breaking a who
 As a result, “understanding the whole” no longer grows out of your own lived experience. It has to be issued to you by the organization: OKRs, technology radars, promotion reviews, internal briefings, and vendor white papers. Everything it issues to you has to be returned when the contract expires.
 
 ![An engineer holding an incomplete map in a digital jungle](featured.webp)
-
----
 
 ## A Pig and a Cannon
 
@@ -65,8 +60,6 @@ Not one of those statements is false. Each is precise. Taken together, they acco
 
 The failure lives in no one’s job description. It lives in the seams between job descriptions. And the great talent of the modern organization is to divide systems into responsibilities: the finer the divisions, the smoother the management—and the more seams it creates.
 
----
-
 ## The Map Is Issued to You
 
 People today find it difficult to assemble a complete map from lived experience alone.
@@ -97,8 +90,6 @@ As the old saying goes, a plucked phoenix is no better than a chicken. People al
 
 That is why the person using the map is often the last to realize it was rented.
 
----
-
 ## Software Is Not Krupp
 
 The logic above does not hold in software.
@@ -116,8 +107,6 @@ Fred Brooks explained the distinction forty years ago in *[No Silver Bullet](htt
 Forty years later, nobody is listening.
 
 The layer I can hold in my own head is infrastructure. Above that—business, organization, compliance—I am just as blind as anyone else. There is no point pretending otherwise. Every map has a boundary. What matters is that you draw the boundary yourself, rather than letting someone else draw it for you.
-
----
 
 ## Complexity Has a Budget
 
@@ -144,8 +133,6 @@ Someone will ask: hasn’t AI slashed the cost of learning something new? Why wo
 AI reduces the cost of the learning phase. It cannot reduce operational complexity, much less the coupling between components when something fails. At 3 a.m., a model can read the documentation for you. It cannot make sense of those layers of coupling for you. That requires a map that has already taken root in your head.
 
 The real cost of architectural stunt work is not the server bill. It is willingly turning yourself back into a worker who knows only one step, just to show off.
-
----
 
 ## Someone Turned This Map into a Business
 
@@ -181,8 +168,6 @@ A company employs tens of thousands of people, each working diligently inside th
 
 What they buy is still someone else’s map. It is far better than having none, far more useful, and far more respectable. But it is rented.
 
----
-
 ## AI Is the Mass-Market Version
 
 Give two people the same problem and the same output. One glances at it and knows the sentence in the third paragraph is a hallucination, because it does not match the map in their head. The other cannot tell, because they have no map against which to check it.
@@ -192,8 +177,6 @@ The first uses AI to amplify judgment tenfold. The second uses it to eliminate t
 For someone with a map, AI is leverage. For someone without one, it is a substitute.
 
 It will not close the gap. It will widen it beyond anything we have seen before.
-
----
 
 ## Rented or Owned
 

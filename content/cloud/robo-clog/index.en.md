@@ -6,7 +6,6 @@ summary: >
   On the night of March 31, a large number of Apollo Go robotaxis in Wuhan failed at the same time. The real concern is not merely that autonomous driving failed, but that a centrally controlled, cloud-based architecture may amplify a single-vehicle failure into a city-scale systemic risk.
 tags: [AI, Incident, Society]
 ---
-
 > On the night of March 31, a large number of Apollo Go robotaxis in Wuhan failed at the same time. The real concern is not merely that autonomous driving failed, but that a centrally controlled, cloud-based architecture may amplify a single-vehicle failure into a city-scale systemic risk.
 
 ## What Happened in Wuhan Last Night
@@ -26,8 +25,6 @@ A Wuhan traffic-police officer told the media:
 
 Last night's incident came nowhere close to paralyzing the entire city. But it exposed a clear path to that outcome.
 
---------
-
 ## What Does a Large-Scale Simultaneous Failure Tell Us?
 
 The key technical inference is this: **from the public information available so far, this looks less like failures in individual vehicles' perception or control systems and more like a systemic coupling problem between the fleet and the cloud.**
@@ -46,8 +43,6 @@ There are, of course, other possible explanations for simultaneous failure: a bu
 
 That is the problem.
 
---------
-
 ## A Fleet in the Cloud, Roadblocks on the Ground
 
 In a purely digital system, the cost of a single-point dependency can be tolerable. Your SaaS goes down, and users cannot reload a page. Your cloud database fails, and transactions are delayed for a few seconds. Once service returns, everything carries on, perhaps with an SLA credit. But when the system controls not pixels but **several tons of moving steel**, failure takes on an entirely different character.
@@ -59,8 +54,6 @@ A bad configuration push no longer produces an HTTP 500; it stops a fleet of veh
 Conventional taxis do not fail as a batch. A thousand drivers are a thousand independent nodes; one breakdown does not affect the rest. A tightly coupled driverless fleet is different. Its vehicles share the same core dependencies. When one of those dependencies fails, **every vehicle can become a roadblock at once**. This is not an ordinary traffic accident. It is a new kind of urban-infrastructure risk caused by flaws in software architecture.
 
 It brings to mind an incident from 2022.
-
---------
 
 ## Didi's Cautionary Tale
 
@@ -76,8 +69,6 @@ Apollo Go removes that buffer. It does not "suggest" how a car should drive; it 
 
 **Didi's issue was "data is power." Apollo Go's is "control is power": direct, physical, non-negotiable control.**
 
---------
-
 ## The Path to Gridlock
 
 In 2019, a team led by Georgia Tech physicist Peter Yunker published a [study](https://www.sciencedaily.com/releases/2019/07/190729111337.htm) in *Physical Review E*, using percolation theory to simulate what would happen if connected cars were disabled simultaneously:
@@ -91,8 +82,6 @@ This incident did not show us a citywide gridlock. It showed us a path to one. T
 Coincidentally, the researchers opened their paper with an imagined scene: *"In 2026, during rush hour, your autonomous car suddenly stops and blocks traffic. You climb out and see every street within view brought to a standstill..."* They chose 2026. It is now April 2026, and Wuhan has seen an unsettling echo of that scenario.
 
 There is one difference: the paper assumed a cyberattack. There is currently no evidence that the real-world incident involved any external attack. But even an internal system failure can produce a similar outcome if the architecture contains a single-point dependency.
-
---------
 
 ## This Is Not a Technical Glitch; It Is an Architectural Choice
 
@@ -109,8 +98,6 @@ Consider an analogy: connecting every traffic light in a city to one central sys
 Anyone who has built distributed systems knows why that architecture is hard to trust in critical infrastructure. Power grids are segmented, banking systems are layered, and DNS has local caches. **Any system that can affect safety in the physical world must be able to operate independently or fail safely when its central node goes down.**
 
 At least from the public information and what was observed at the scene, Apollo Go did not adequately demonstrate that capability last night.
-
---------
 
 ## Has Regulation Caught Up?
 

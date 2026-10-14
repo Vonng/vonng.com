@@ -6,14 +6,11 @@ summary: |
   While I've always advocated for cloud exit, if it's about adopting a cyber bodhisattva cloud like Cloudflare, I'm all in with both hands raised.
 tags: [Cloud-Exit, Cloudflare]
 ---
-
 At today's 2024 Developer Week, Cloudflare released a series of exciting new features, such as Python Workers and Workers AI, elevating the convenience of application development and delivery to an entirely new level. Compared to Cloudflare's Serverless development experience, traditional cloud providers' so-called Serverless products look ridiculous.
 
 Cloudflare is better known for its generous free tier, allowing small and medium websites to run here at virtually zero cost. Against Cloudflare's stark contrast, public cloud providers that rent out [CPU](/cloud/ecs), [disk](/cloud/ebs), and [bandwidth](/cloud/cdn/) at sky-high prices look repulsive. Clouds like Cloudflare deliver a development experience that truly deserves the name "cloud." In my view, Cloudflare should proactively compete with traditional public cloud providers for the right to define cloud computing.
 
 Disclosure: Cloudflare didn't pay me - I actually paid Cloudflare. Purely because Cloudflare's products are excellent and solve my needs extremely well, making me very happy to pay a bit to support them and tell more friends about this benefit. In contrast, after paying traditional public cloud providers, my feeling is "what the hell is this stuff" - I must write articles to ruthlessly criticize them to ease my mental damage.
-
----------------
 
 ## What is Cloudflare
 
@@ -28,11 +25,9 @@ Cloudflare is an American company providing content delivery network (CDN), inte
 
 Of course, Cloudflare also has some very nice services, such as Pages for hosting websites, R2 object storage, D1 distributed database, etc., with excellent developer experience.
 
-![](cloudflare-1.jpg)
+![Cloudflare - The Cyber Buddha That Destroys Public Cloud — What is Cloudflare (figure 1)](cloudflare-1.jpg)
 
 > [Cloudflare Official Introduction](https://www.cloudflare.com/zh-cn/what-is-cloudflare/)
-
-------------
 
 ## Pages: Simple and Easy Website Hosting
 
@@ -43,8 +38,6 @@ If you use specific [**web frameworks**](https://developers.cloudflare.com/pages
 From having never touched Cloudflare to moving Pigsty's website to CF and completing deployment took me only about an hour. I don't need to worry about servers, CI/CD, HTTPS certificates, security, high defense against DDoS - Cloudflare has already done everything for me. More importantly, traffic is completely free. The only thing I did was bind a credit card and spend over ten yuan to buy a domain, but actually no additional fees are needed - everything is already included in the free plan.
 
 What's even more shocking is that although access speed is a bit slower, websites on CF can be directly accessed from mainland China without even needing ICP filing! It's quite ironic that while domestic cloud providers can quickly provision website resources for you, the most time-consuming step is often getting stuck on ICP filing. This is indeed one of Cloudflare's beneficial features.
-
-------------
 
 ## Worker: Ultimate Serverless Experience
 
@@ -95,8 +88,6 @@ Compared to the clunky development and deployment experience on traditional clou
 
 In contrast, the various so-called Serverless services provided by traditional public cloud providers, like RDS Serverless, are like a bad joke - just a difference in billing model - they can't Scale to Zero and don't improve usability much. You still have to create an RDS suite in the console by clicking around, instead of being like true Serverless like Neon where you can quickly spin up a new instance just by connecting with a connection string. More importantly, with even a few dozen to a hundred QPS, the bill explodes compared to annual/monthly packages - this mediocre "Serverless" indeed pollutes the original meaning of the term.
 
-------------
-
 ## R2: Object Storage That Destroys S3
 
 Cloudflare R2 provides object storage services. Compared to AWS S3, it's perhaps an order of magnitude cheaper - I mean, while just looking at storage prices \$ / GB·month, Cloudflare (0.015 \$) isn't much different from S3 (0.023 \$), but Cloudflare R2 has **free traffic**!
@@ -117,23 +108,19 @@ Cloudflare R2 provides object storage services. Compared to AWS S3, it's perhaps
 
 For example, my website consumed 300 GB of traffic in the past month with R2. At domestic cloud prices of about 80 cents per GB, I would need to pay 240 yuan, but I didn't pay a cent. Moreover, I know even more extreme examples - like consuming 3TB of traffic in a month and still being within the free tier...
 
-![](cloudflare-3.jpg)
+![Cloudflare - The Cyber Buddha That Destroys Public Cloud — R2: Object Storage That Destroys S3 (figure 2)](cloudflare-3.jpg)
 
 Cloudflare R2 is integrated with CDN. With traditional cloud service providers, you still need to worry about additional CDN configuration, origin traffic, CDN traffic packages, anti-DDoS, etc. But Cloudflare doesn't need this - just check the configuration to enable it, and your R2 Bucket can be directly read worldwide. Most importantly, you don't have to worry about bill explosions - I know several cases on traditional cloud providers where attacks blew up CDN traffic, draining tens of thousands of yuan overnight into debt (including a case I personally experienced where the cloud provider's own stupid CDN origin design [exploded CDN traffic](/cloud/cdn/)). But on Cloudflare, you don't need to watch [**bills**](/cloud/finops) and traffic like a bulldog and owl. First, Cloudflare traffic is free... More powerfully, Cloudflare already has intelligent anti-DDoS service, even the free plan provides this service by default, effectively avoiding malicious attacks (on traditional cloud providers, this stuff is sold separately as expensive "high defense IP services" costing thousands to tens of thousands). Plus the generous monthly free 10 million read requests (which is already very large for images and software packages!), ensures costs here are highly predictable - if not zero.
-
-------------
 
 ## Cloudflare: The Value of Being Online
 
 Dr. Wang Jian's book "Online" about cloud computing makes it very clear that the real value of cloud computing is **being online** (not elasticity, agility, cheapness, etc.). For example: I have some cloud exit customers and users who, although they've moved their main business from public cloud to IDC or office servers, still keep some ECS and RDS tails in the cloud - because their data collection APIs are there, feeling that public cloud's network access is more stable and reliable than their own computer rooms/offices - note it's network access, not storage and computing.
 
-![](cloudflare-4.jpg)
+![Cloudflare - The Cyber Buddha That Destroys Public Cloud — Cloudflare: The Value of Being Online (figure 3)](cloudflare-4.jpg)
 
 Many cloud customers pay [several times to dozens of times premium on computing power](/cloud/ebs), [dozens to hundreds of times premium on storage](/cloud/ebs), all for this network "online" capability. But Cloudflare, with its globally distributed CDN with edge computing capabilities, has elevated "online" capability to an entirely new level, solving this problem better than traditional public clouds. For example, AI's current darling OpenAI's website and API do exactly this - providing access through CF.
 
 In this model, users can completely provide website and API access through Cloudflare while placing heavy storage and computing in IDCs, rather than renting at several times the price on traditional public clouds. Cloudflare's Workers can be used at the edge to send and receive data and forward requests to your own data centers for processing. If you want more reliable disaster recovery, you can also use R2 and D1 on Cloudflare as temporary local cache, preprocessing and aggregating data before pulling it to IDCs for processing.
-
-------------
 
 ## CF and IDC Squeeze Public Cloud from Both Ends
 

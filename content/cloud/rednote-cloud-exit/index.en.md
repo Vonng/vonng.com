@@ -7,7 +7,6 @@ summary: >
   When a company that was "born on the cloud" goes "self-host first," does that count as cloud exit? A repost of a deleted piece on the infrastructure coming-of-age for China's internet giants.
 tags: [Cloud-Exit, Alibaba Cloud, Business]
 ---
-
 > [Original WeChat post](https://mp.weixin.qq.com/s/Dr6zsb8aBJ9CMuei2Bd0VA)
 
 Yesterday, I spotted a new article from RedNote's official tech blog: "[Design and Practice of Self-Built Data Centers under Hybrid Cloud Architecture](https://mp.weixin.qq.com/s/pCDobFG3uSWRO_7ZXSCBgQ)."
@@ -29,8 +28,6 @@ My guess is that stringing these facts together was just too sensitive. Once "cl
 With over 300 million MAU, RedNote isn't just "China's Instagram"—it's essentially the lifestyle bible for young Chinese consumers. Their infrastructure choices are a bellwether for China's internet industry. If even a "cloud-native" poster child like RedNote is fleeing public cloud, the entire "cloud is the future" narrative that vendors have been spinning for years starts to crumble.
 
 So the question stands: **"Did RedNote actually exit the cloud?"**
-
---------
 
 ## What Did RedNote Actually Say?
 
@@ -56,8 +53,6 @@ The reality is that RedNote's current strategy is crystal clear: **"self-built d
 
 So here's the question: when a company elevates self-built infrastructure to the top of the stack, is that "cloud exit" or not?
 
---------
-
 ## Is "Hybrid Cloud" Just a Fig Leaf for Cloud Exit?
 
 Cloud vendors love this line of reasoning: "RedNote is using hybrid cloud. They haven't completely left public cloud, so calling it 'cloud exit' is spreading rumors." In vendor-logic, apparently only zeroing out your cloud resources and terminating your contract counts as leaving.
@@ -82,8 +77,6 @@ When a company demotes public cloud from "infrastructure" to "utility-like tempo
 If we're going to wait for 100% account termination before calling it cloud exit, then virtually no major company in the world has ever "left the cloud." Using the neutral term "hybrid cloud" to obscure the fact that core assets are flowing out is just wordplay.
 
 Bottom line: RedNote went from self-identifying as "born on the cloud" to implementing a **"self-built first"** hybrid architecture. If that's not cloud exit, what is?
-
---------
 
 ## The Economics: How Does the Math Actually Work?
 
@@ -112,8 +105,6 @@ Beyond the explicit bill, there's the more insidious **"lock-in tax."** When you
 
 For a company seeking an IPO or higher valuation, shaving billions in annual costs through architectural optimization flows straight to the bottom line. With typical PE multiples, that translates to tens of billions in market cap. Staying married to public cloud is arguably a dereliction of fiduciary duty to shareholders.
 
---------
-
 ## Reliability: Don't Put All Your Eggs in One Basket
 
 If cloud costs are a chronic condition, reliability is a heart attack waiting to happen.
@@ -141,8 +132,6 @@ It gave them a firsthand taste of what "all eggs in one basket" really means—*
 
 When you're paying massive "protection money" every year but still worry about getting wiped out in one stroke, building your own data center and owning your infrastructure becomes the only source of real security.
 
---------
-
 ## The Lesson: An Infra Coming-of-Age
 
 RedNote was able to challenge Alibaba Cloud's dominance because their engineering team made several key architectural decisions over the years, cleverly avoiding deep vendor lock-in:
@@ -159,15 +148,13 @@ Of course, the cloud exit journey isn't all smooth sailing. RedNote undoubtedly 
 
 The path isn't easy. But RedNote's choice proves one thing: **Once you're big enough, you've earned the right to become your own cloud.**
 
---------
-
 ## Conclusion
 
 RedNote's cloud exit shouldn't be demonized as a rejection of cloud computing. On the contrary, it's a sign of China's internet companies maturing—a necessary coming-of-age ritual.
 
 Rather than saying RedNote is "leaving the cloud," it's more accurate to say they're **coming ashore**—stepping out of the greenhouse that cloud vendors built, onto solid ground, laying their own foundation brick by brick for their digital fortress. This is the path every unicorn must walk to grow from fledgling to dragon: **When you're big enough, you become the cloud.** Maybe it won't be long before we see a "RedNote Cloud" emerge.
 
-![](featured.jpg)
+![Did RedNote Exit the Cloud? — Conclusion (figure 5)](featured.jpg)
 
 Finally, a word to all the public cloud giants: labeling technical discussions about cloud exit as "rumors"—**this knee-jerk rush to shut down debate reveals exactly the collective anxiety of an old order facing collapse.**
 

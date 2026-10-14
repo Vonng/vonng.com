@@ -7,7 +7,6 @@ summary: >
   Alibaba-Cloud's epic global outage after Double 11 set an industry record. How should we evaluate this incident, and what lessons can we learn from it?
 tags: [Cloud-Exit, Alibaba Cloud, Incident]
 ---
-
 A year after the last major incident, Alibaba-Cloud suffered another massive outage, creating an unprecedented record in the cloud computing industry — **simultaneous failures across all global regions and all services**. Since Alibaba-Cloud refuses to publish a post-mortem report, I'll do it for them — how should we view this epic failure case, and what lessons can we learn from it?
 
 - [What happened?](#what-happened)
@@ -16,9 +15,7 @@ A year after the last major incident, Alibaba-Cloud suffered another massive out
 - [Comments and opinions?](#comments-and-opinions)
 - [What can we learn?](#what-can-we-learn)
 
-[![](featured.jpg)](https://mp.weixin.qq.com/s/OIlR0rolEQff9YfCpj3wIQ)
-
-------
+[![What Can We Learn from Alibaba-Cloud's Global Outage? (figure 1)](featured.jpg)](https://mp.weixin.qq.com/s/OIlR0rolEQff9YfCpj3wIQ)
 
 ## What happened?
 
@@ -34,7 +31,7 @@ According to Alibaba-Cloud's official [status page](https://status.aliyun.com/#/
 
 > "Cloud product consoles, management APIs and other functions were affected, OSS, OTS, SLS, MNS and other products' services were affected, while most products like ECS, RDS, networking etc. were not affected in their actual operations".
 
-![](announce.png)
+![What Can We Learn from Alibaba-Cloud's Global Outage? — What happened? (figure 3)](announce.png)
 
 Numerous applications relying on Alibaba-Cloud services, including Alibaba's own suite of apps: Taobao, DingTalk, Xianyu, ... all experienced issues. This created significant external impact, with "app crashes" trending on social media.
 
@@ -44,15 +41,13 @@ Taobao couldn't load chat images, courier services couldn't upload proof of deli
 
 Even financial and government cloud regions weren't spared. Alibaba-Cloud should feel fortunate: the outage didn't occur on Double 11 itself, nor during government or financial sector working hours, otherwise we might have seen a post-mortem analysis on national television.
 
--------------------
-
 ## What was the cause?
 
 Although Alibaba-Cloud has yet to provide a post-incident analysis report, experienced engineers can determine the problem location based on the blast radius — **Auth** (authentication/authorization/RAM).
 
 Hardware failures in storage/compute or data center power outages would at most affect a single availability zone (AZ), network failures would at most affect one region, but something that can cause simultaneous issues across all global regions must be a cross-regional shared cloud infrastructure component — most likely **Auth**, with a low probability of other global services like billing.
 
-![](notice.jpg)
+![What Can We Learn from Alibaba-Cloud's Global Outage? — What was the cause? (figure 5)](notice.jpg)
 
 > Alibaba-Cloud's incident progress announcement: the issue was with a certain underlying service component, not network or data center hardware problems.
 
@@ -64,15 +59,13 @@ Various rumors about the root cause are flying around, such as "the permission s
 
 If these causes led to **Auth** failure, it would truly be [amateur hour](https://mp.weixin.qq.com/s/y9IradwxTxOsUGcOHia1XQ). While it sounds absurd, such precedents aren't rare. Again, these street-side rumors are for reference only; please refer to Alibaba-Cloud's official post-mortem analysis report for specific incident causes.
 
--------------------
-
 ## What was the impact?
 
 **Authentication/authorization** is the foundation of services. When such basic components fail, the impact is **global** and **catastrophic**. This renders the entire **cloud control plane** unavailable, directly impacting consoles, APIs, and services deeply dependent on **Auth** infrastructure — like another foundational public cloud service, Object Storage **OSS**.
 
 From Alibaba-Cloud's announcement, it seems only "*several services (**OSS, OTS, SLS, MNS**) were affected, while most products like ECS, RDS, networking etc. were not affected in actual operations*". But when a foundational service like Object Storage **OSS** fails, the blast radius is unimaginable — it can't be dismissed as "individual services affected" — it's like a car's fuel tank catching fire while claiming the engine and wheels are still turning.
 
-![](auth.png)
+![What Can We Learn from Alibaba-Cloud's Global Outage? — What was the impact? (figure 6)](auth.png)
 
 Object Storage **OSS** provides services through cloud vendor-wrapped HTTP APIs, so it necessarily depends heavily on authentication components: you need AK/SK/IAM signatures to use these HTTP APIs, and Auth failures render such services unavailable.
 
@@ -86,15 +79,13 @@ Not just OSS, other services deeply integrated with Auth dependencies also faced
 
 Technical impact is one aspect, but business impact is more critical. According to Alibaba-Cloud's **Service Level Agreement (SLA)**, the 3.5-hour outage brought monthly service availability down to 99.5%, falling into the middle tier of most services' compensation standards — compensating users with 25% ~ 30% of monthly service fees in **vouchers**. Notably, this outage's regional and service scope was **complete**!
 
-![](oss-sla.png)
+![What Can We Learn from Alibaba-Cloud's Global Outage? — What was the impact? (figure 7)](oss-sla.png)
 
 > Alibaba-Cloud OSS SLA
 
 Of course, Alibaba-Cloud could argue that while **OSS/OTS** services failed, their **ECS**/**RDS** only had **control plane** failures without affecting running services, so SLAs weren't impacted. But even if such compensation fully materialized, it's minimal money, more like a gesture of appeasement: compared to users' business losses, compensating 25% of monthly consumption in vouchers is almost **insulting**.
 
 Compared to lost user trust, technical reputation, and commercial credibility, those voucher compensations are truly negligible. If handled poorly, this incident could become a **pivotal landmark event for public cloud**.
-
--------------------
 
 ## Comments and opinions?
 
@@ -112,39 +103,23 @@ According to Heinrich's Law, behind one serious accident lie dozens of minor inc
 
 After all, failures of this scale can't be solved by "finding a scapegoat, sacrificing a programmer" — the CEO must personally apologize and resolve it. After Cloudflare's control plane outage earlier this month, the CEO immediately wrote a detailed [post-mortem analysis](https://blog.cloudflare.com/post-mortem-on-cloudflare-control-plane-and-analytics-outage/), recovering some reputation. Unfortunately, after several rounds of layoffs and three CEO changes in a year, Alibaba-Cloud probably struggles to find someone capable of taking responsibility.
 
--------------------
-
 ## What can we learn?
 
 The past cannot be retained, the gone cannot be pursued. Rather than mourning irretrievable losses, it's more important to learn from them — and even better to learn from others' losses. So, what can we learn from Alibaba-Cloud's epic failure?
 
--------------------
-
 **Don't put all eggs in one basket** — prepare Plan B. For example, business domain resolution must use a CNAME layer, with CNAME domains using different service providers' DNS services. This intermediate layer is crucial for Alibaba-Cloud-type failures, providing at least the option to redirect traffic elsewhere rather than sitting helplessly waiting for death with no self-rescue capability.
-
--------------------
 
 **Prioritize using Hangzhou and Beijing regions** — Alibaba-Cloud failure recovery clearly has priorities. Hangzhou (East China 1), where Alibaba-Cloud headquarters is located, and Beijing (North China 2) recovered significantly faster than other regions. While other availability zones took three hours to recover, these two recovered in one hour. These regions could be prioritized, and while you'll still eat the failure, you can enjoy the same Brahmin treatment as Alibaba's own businesses.
 
--------------------
-
 **Use cloud authentication services cautiously**: Auth is the foundation of cloud services, everyone expects it to work normally — yet the more something seems impossible to fail, the more devastating the damage when it actually does. If unnecessary, don't add entities; more dependencies mean more failure points and lower reliability: as in this outage, ECS/RDS using their own authentication mechanisms weren't directly impacted. Heavy use of cloud vendor AK/SK/IAM not only creates vendor lock-in but also exposes you to shared infrastructure single-point risks.
-
--------------------
 
 **Use cloud services cautiously, prioritize pure resources**. In this outage, **cloud services** were affected while **cloud resources** remained available. Pure resources like ECS/ESSD, and RDS using only these two, can continue running unaffected by control plane failures. Basic cloud resources (ECS/EBS) are the **greatest common denominator** of all cloud vendors' services; using only resources helps users choose optimally between different public clouds and on-premises builds. However, it's hard to imagine not using object storage on public cloud — building object storage services with MinIO on ECS and expensive ESSD isn't truly viable, involving core secrets of public cloud business models: [cheap S3 customer acquisition](/cloud/s3), [expensive EBS cash grab](/cloud/ebs/).
 
--------------------
-
 **Self-hosting is the ultimate path to controlling your destiny**: If users want to truly control their fate, they'll eventually walk the self-hosting path. Internet pioneers built these services from scratch, and doing so now is only easier: IDC 2.0 solves hardware resource issues, open-source alternatives solve software issues, mass layoffs release experts solving human resource issues. Bypassing public cloud middlemen and cooperating directly with IDCs is obviously more economical. For users with any scale, [money saved from cloud exit](/cloud/finops/) can hire several senior SREs from big tech companies with surplus. More importantly, when your own people cause problems, you can use rewards and punishments to motivate improvement, but when cloud fails, what do you get — a few cents in vouchers? — *"Who are you to deserve high-P attention?"*
-
--------------------
 
 **Understand that cloud vendor SLAs are marketing tools, not performance promises**
 
 In the cloud computing world, [**Service Level Agreements**](/cloud/sla/) (SLAs) were once viewed as cloud vendors' commitments to service quality. However, when examining these agreements composed of multiple 9s, we find they can't "backstop" as expected. Rather than compensating users, SLAs are more like "penalties" for cloud vendors when service quality falls short. Compared to experts who might lose bonuses and jobs due to failures, SLA penalties don't hurt cloud vendors — more like token self-punishment. If penalties are meaningless, cloud vendors lack motivation to provide better service quality. So SLAs aren't insurance policies backstopping users' losses. In worst cases, they block substantial recourse attempts; in best cases, they're emotional comfort placebos.
-
--------------------
 
 **Finally, respect technology and treat engineers well**
 
@@ -175,8 +150,6 @@ As the domestic public cloud leader, Alibaba-Cloud should be a banner — so it 
 [Paradigm Shift: From Cloud to Local-First](/cloud/paradigm/)
 
 [Tencent Cloud CDN: From Getting Started to Giving Up](/cloud/cdn/)
-
-------
 
 [【Alibaba】Epic Cloud Computing Disaster Strikes](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486452&idx=1&sn=29cff4ee30b90483bd0a4f0963876f28&chksm=fe4b3e2fc93cb739af6ce49cffa4fa3d010781190d99d3052b4dbfa87d28c0386f44667e4908#rd)
 

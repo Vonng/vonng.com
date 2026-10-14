@@ -6,10 +6,7 @@ summary: >
   I spent years urging people to leave the cloud. Those who listened two years ago made a killing. Leaving has never been just about savings; it is about buying back your freedom. Cost curves move. Sovereignty does not.
 tags: [Cloud-Exit, Cloud, Data Sovereignty]
 ---
-
 Leaving the cloud has never been just about saving money. It is about buying back your freedom. Cost curves move; sovereignty does not. I have spent years urging people to get out. Friends who listened two years ago made a killing.
-
----
 
 ## 1. The Best Trade of a Lifetime
 
@@ -24,8 +21,6 @@ But this was never meant as an investment. DHH simply thought the S3 bill was to
 The people trying to save money got rich; the fence-sitters are kicking themselves. That is the surreal reality of the 2026 storage market. Anyone still paying rent in the cloud should study the numbers behind that post.
 
 ![My follow-up post on DHH’s cloud-exit trade](cloud-exit-tweet.webp)
-
----
 
 ## 2. Three Years of Receipts
 
@@ -47,8 +42,6 @@ That is only the cost ledger. Performance is a separate matter. On-premises all-
 
 Nor is this an isolated case. A friend in one of my group chats shared his numbers today: **more than RMB 100 million saved in two years after leaving the cloud.** Then he added a caveat: “That road is closed now. Hardware has become too expensive.”
 
----
-
 ## 3. The Window Is Narrowing
 
 Since the second half of 2025, AI infrastructure has sucked the storage market dry. In [September 2025](https://www.trendforce.com/presscenter/news/20250925-12736.html), TrendForce expected NAND flash contract prices to rise 5–10% quarter over quarter in Q4. By [February 2026](https://www.trendforce.com/presscenter/news/20260202-12911.html), it had raised its Q1 forecast from 33–38% to 55–60%. In [March](https://www.trendforce.com/presscenter/news/20260331-12995.html), it projected that Q2 prices would rise another 70–75%.
@@ -65,8 +58,6 @@ The people who listened, bought servers, and left the cloud made a killing. Thos
 
 Still, better late than never. A narrower window does not invalidate the case for leaving the cloud.
 
----
-
 ## 4. Renting Leaves You Exposed; Buying Is a Hedge
 
 DHH’s accidental 12-bagger exposes an often-missed fact:
@@ -81,8 +72,6 @@ Moore’s law spoiled us for two decades. Everyone assumed hardware would only g
 
 So “hardware is too expensive; forget about leaving the cloud” gets it exactly backward. Higher prices prove that the people who exited early made the right bet. They also show how much inflation is still buried in your cloud bill.
 
----
-
 ## 5. Discounts Follow Leverage
 
 I have never believed leaving the cloud was only about cost. Savings are the surface; sovereignty is the substance.
@@ -94,8 +83,6 @@ Why was DHH’s S3 price so low? The four-year commitment helped. More important
 Now take a company whose database, object store, and message queue are welded to one vendor’s proprietary PaaS, with no credible migration plan. That company is a captive customer, ready to be fleeced. Why offer a deep discount to someone who cannot escape?
 
 This is why I keep repeating: **without the ability to self-host, you have no exit; without an exit, you have no negotiating leverage.** Hybrid cloud and multicloud sound grand, but they only mean something if you can run the systems yourself. If you bring no Plan B to the table, it is not a negotiation. It is begging.
-
----
 
 ## 6. Servers Don’t Lock You In—Data Does
 
@@ -115,8 +102,6 @@ Both are de facto cloud standards with complete open-source implementations. Use
 Every proprietary PaaS interface with no portable equivalent is another signature on the indenture.
 
 DHH noted one revealing detail. Pure Storage exposes an S3-compatible API, so 37signals needed neither Ceph nor MinIO. But he immediately added that an open-source object store is exactly what you want for the same job on commodity hardware. Big spenders can take the $1.5 million appliance route; everyone else can pair commodity servers with open-source software. Either route ends at the same place: an S3 interface under your control.
-
----
 
 ## 7. Three Tired Cloud Talking Points, Taken Apart
 
@@ -142,8 +127,6 @@ The cloud locks customers in at three layers. The **resource layer** is replacea
 
 Why do companies that clearly should leave the cloud keep waiting? For the employee in charge, the move saves the company money while putting the employee’s neck on the line. If the cloud fails, “everyone does it this way,” and the vendor takes the blame. Nobody gets fired for buying IBM or Oracle. Do nothing, make no visible mistake. Infrastructure departments are full of career survivors whose safest move is to outlast every risky decision. Cloud exit is therefore not a technical call. It is an executive one. Nothing moves until the boss makes the call.
 
----
-
 ## 8. The Cyber-Feudal Hierarchy
 
 My cyber-feudal model has five ranks, ordered by infrastructure sovereignty:
@@ -163,8 +146,6 @@ My cyber-feudal model has five ranks, ordered by infrastructure sovereignty:
 A full exit onto your own colocated hardware has a real threshold. It starts to make economic sense only when annual infrastructure spending reaches several million RMB. But **“hardware is too expensive” can stop you from becoming a landlord; it cannot stop you from becoming a knight or free agent.** Moving from serf to knight requires no hardware purchase. Keep renting cloud servers, disks, and bandwidth; bring only the PaaS layer under your own control. You may not be able to buy the land, but you can still tear up the contract. Buying back your freedom takes no capex—only understanding and resolve.
 
 It is never too late to build the ability to self-host, even if you never buy a physical server. It may not save money immediately, but it preserves your exit option every day. And the exit option is what creates negotiating leverage.
-
----
 
 ## 9. Freedom Is Expensive, but It Has Never Been This Cheap
 

@@ -6,7 +6,6 @@ summary: >
   Winter is coming, tech giants are laying off workers entering cost-reduction mode. Can cloud databases, the number one public cloud cash cow, still tell their story? The money you spend on cloud databases for one year is enough to buy several or even dozens of higher-performing servers. Are you paying an IQ tax by using cloud databases?
 tags: [Cloud-Exit, RDS, AWS, Alibaba Cloud]
 ---
-
 Winter is coming, tech giants are laying off workers entering cost-reduction mode. Can cloud databases, the number one public cloud cash cow, still tell their story?
 
 Recently, an article by DHH, co-founder of Basecamp & HEY, caused a stir【1,2】. The main content can be summarized in one sentence:
@@ -17,9 +16,7 @@ Recently, an article by DHH, co-founder of Basecamp & HEY, caused a stir【1,2�
 
 **So, how many awesome servers can $500,000 buy?**
 
-[![](featured.webp)](https://mp.weixin.qq.com/s/YKqH324Qtg0mj6WfSMb66w)
-
----------
+[![Are Cloud Databases an IQ Tax? (figure 1)](featured.webp)](https://mp.weixin.qq.com/s/YKqH324Qtg0mj6WfSMb66w)
 
 ## Absurd Pricing
 
@@ -33,7 +30,7 @@ DBA costs aren't included here: two or three people managing tens of thousands o
 
 If you directly purchase cloud database of this specification, what are the costs? Let's look at domestic Alibaba-Cloud pricing【3】. Since the basic version (beggar version) is really unusable for production (refer to: "[Cloud Database: From Database Drop to Exit](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485093&idx=1&sn=5815f71f1d832101d35a75f5aa4acd3c&chksm=fe4b337ec93cba68fbf30eb0ed50d052c6e8972d42cf506051b5016668f4555edaa0756688dc&scene=21#wechat_redirect)"), we choose high-availability version, typically with two to three instances underneath. Annual/monthly payment, PostgreSQL 15 on x86 engine, East China 1 default AZ, dedicated 64-core 256GB instance: pg.x4m.8xlarge.2c, with a 3.2TB ESSD PL3 cloud disk. Annual costs range from 250,000 (3 years) to 750,000 (on-demand), with storage costs accounting for about 1/3.
 
-![](rds-1.png)
+![Are Cloud Databases an IQ Tax? — Absurd Pricing (figure 2)](rds-1.png)
 
 Let's also look at AWS, the public cloud leader【4】【5】. The closest on AWS is db.m5.16xlarge, also 64-core 256GB multi-AZ deployment. Similarly, we add a 3.2TB io1 SSD disk with maximum 80k IOPS. Checking AWS global and China region pricing, total costs range from 1.6-2.17 million yuan annually, with storage costs accounting for about half. Overall costs shown in the table below:
 
@@ -64,8 +61,6 @@ So the question is: **if one year of cloud database costs can buy you several or
 
 **Are you paying an IQ tax by using cloud databases?**
 
----------
-
 ## Applicable Scenarios
 
 > No silver bullet
@@ -91,23 +86,21 @@ So cloud vendors' money comes from VC-funded tech startups seeking explosive gro
 
 **If your business fits public cloud's applicable spectrum, that's great; but paying several to dozens of times premium for unnecessary flexibility and elasticity is pure IQ tax.**
 
----------
-
 ## Cost Assassin
 
 > Any information asymmetry can constitute profit space, but you can't fool everyone forever.
 
 Public cloud elasticity is designed for its business model: **extremely low startup costs, extremely high maintenance costs**. Low startup costs attract users to cloud, good elasticity adapts to business growth anytime, but after business stabilizes, vendor lock-in occurs with extremely high maintenance costs causing user suffering. This model has a colloquial name - **pig-slaughtering scam**.
 
-![](rds-2.gif)
+![Are Cloud Databases an IQ Tax? — Cost Assassin (figure 3)](rds-2.gif)
 
 In my first career stop, I have vivid memories of such a pig-slaughtering experience. As one of the first internal BUs forced onto A-cloud, A-cloud directly sent engineers to provide hands-on cloud migration services. Used ODPS full stack to replace self-built big data/database stack. The service was indeed good, except annual storage and compute costs shot from around 10 million to nearly 100 million, with profits almost entirely transferred to A-cloud - the ultimate cost assassin.
 
-![](rds-3.jpeg)
+![Are Cloud Databases an IQ Tax? — Cost Assassin (figure 4)](rds-3.jpeg)
 
 Later at my next stop, the situation was completely different. We managed 25,000-core scale, 4.5M QPS PostgreSQL and Redis database clusters. For this scale database, if charged by AWS RCU/WCU, several hundred million would go out annually; even buying long-term annual packages with big commercial discounts, at least 50-60 million is unavoidable. But our total of two or three DBAs, several hundred servers, amortized human and asset costs were under 10 million annually.
 
-![](rds-31.png)
+![Are Cloud Databases an IQ Tax? — Cost Assassin (figure 5)](rds-31.png)
 
 Here we can use a simple method to calculate unit costs: one core computing power (including mem/disk) used for one month's comprehensive cost, abbreviated as **core·month**. We calculated self-built costs for various machine models and cloud vendor quotes, roughly as follows:
 
@@ -140,7 +133,7 @@ Common response is: ***Databases are the crown jewel of infrastructure software,
 
 But cloud databases (RDS for PostgreSQL/MySQL/...) on public cloud are essentially open source database kernels with cosmetic modifications, plus proprietary management software and shared DBA services. This markup rate is absurd: database kernels are free! **Are your management software made of gold, or are DBAs made of gold?**
 
-![](gold-rds.gif)
+![Are Cloud Databases an IQ Tax? — Cost Assassin (figure 6)](gold-rds.gif)
 
 **Public cloud's secret is here: use cheap storage and compute resources for customer acquisition, use cloud databases for pig slaughtering.**
 
@@ -151,8 +144,6 @@ Normally, if not treating public cloud purely as IDC 2.0 or CDN supplier, the mo
 But cloud databases are extremely outrageous - same one-core computing power for one month, cloud database prices can multiply several to dozens of times compared to corresponding hardware specifications. Cheaper Alibaba-Cloud has core·month unit prices of 200-400, more expensive AWS has core·month unit prices of 700-800 or even over 1000.
 
 If you only have one or two cores of RDS, don't bother - pay some tax. But if your business has scaled up and still doesn't exit cloud quickly, you're really paying IQ tax.
-
-------------------
 
 ## Good Enough?
 
@@ -166,25 +157,25 @@ Should say, for toy applications, small websites, personal hosting, and wildcatt
 
 Ultimately, public cloud stems from big tech internal operations capability overflow - big tech people know their own company's tech level, no need for mysterious worship. (Google might be an exception).
 
-![](rds-4.png)
+![Are Cloud Databases an IQ Tax? — Good Enough? (figure 7)](rds-4.png)
 
 Taking **performance** as example, performance's core indicator is **latency/response time**, especially tail latency, directly affecting user experience: nobody wants to wait seconds for screen scrolling. In this regard, **disks** play a decisive role.
 
 Our production database environment uses local NVMe SSDs with typical 4K write latency of 15µs, read latency 94µs. Therefore, PostgreSQL simple query response times are typically 100-300µs, application-side query response times typically 200-600µs; for simple queries, our SLO is hit within 1ms, miss within 10ms, over 10ms counts as slow query requiring optimization.
 
-![](rds-41.png)
+![Are Cloud Databases an IQ Tax? — Good Enough? (figure 8)](rds-41.png)
 
 AWS EBS service performance tested with fio is extremely poor【6】, default gp3 read/write latency is 40ms, io1 read/write latency is 10ms, nearly three orders of magnitude difference, and maximum IOPS is only 80k. RDS uses EBS storage - if single disk access takes 10ms, it's unusable. io2 does use self-built equivalent NVMe SSDs, but remote block storage latency directly doubles compared to local disks.
 
-![](rds-5.png)
+![Are Cloud Databases an IQ Tax? — Good Enough? (figure 9)](rds-5.png)
 
 Indeed, sometimes cloud vendors provide good-performance local NVMe SSDs, but they sneakily set various restrictions to prevent users from using EC2 for self-built databases. AWS's restriction is only providing NVMe SSD Ephemeral Storage - these disks automatically wipe clean on EC2 restart, completely unusable. Alibaba-Cloud's restriction is sky-high pricing - compared to direct hardware procurement, **Alibaba-Cloud's ESSD PL3 costs 200 times more**. Using 3.2TB enterprise PCI-E SSD cards as reference, AWS rent-to-buy ratio is 1 month, Alibaba-Cloud is 9 days - renting this duration can buy the entire disk. With Alibaba-Cloud's maximum 3-year 50% discount, three years' rental can buy 123 equivalent disks, nearly 400TB permanent ownership.
 
 **Taking observability as another example, no RDS monitoring can be called "good"**. Just looking at monitoring indicator count - while knowing if a service is dead or alive needs only a few indicators, for failure root cause analysis, you need as many monitoring indicators as possible to build good context. Most RDS only provide basic monitoring indicators and pitifully simple monitoring dashboards. Taking Alibaba-Cloud RDS PG as example【7】, so-called "enhanced monitoring" has only these pitiful indicators. AWS has similar PG-related indicators, under 100, while our own monitoring system has over 800 host indicator types, 610 PostgreSQL database indicator types, 257 Redis indicator types, about 3000 total indicator types, completely crushing these RDS systems.
 
-![](rds-6.png)
+![Are Cloud Databases an IQ Tax? — Good Enough? (figure 10)](rds-6.png)
 
-![](https://pigsty.io/img/pigsty/dashboard.jpg)
+![Are Cloud Databases an IQ Tax? — Good Enough? (figure 11)](https://pigsty.io/img/pigsty/dashboard.jpg)
 
 > Public [Demo](https://demo.pigsty.cc): https://demo.pigsty.cc
 
@@ -195,8 +186,6 @@ Of course, this doesn't mean self-building won't have these problems - just that
 **Another widely criticized aspect of cloud databases is extensibility**. RDS doesn't give users dbsu privileges, meaning users can't install extension plugins in databases, while PostgreSQL plugins are exactly its essence - PostgreSQL without extensions is like Coke without ice, yogurt without sugar. More seriously, **when some failures occur, users even lose self-rescue capabilities**, see "[Cloud Database: From Database Drop to Exit](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485093&idx=1&sn=5815f71f1d832101d35a75f5aa4acd3c&chksm=fe4b337ec93cba68fbf30eb0ed50d052c6e8972d42cf506051b5016668f4555edaa0756688dc&scene=21#wechat_redirect)" real case: WAL archiving and PITR, such basic functionality, is a paid upgrade feature in RDS. Regarding maintainability, some say cloud databases are convenient with mouse clicks for creation/destruction - people saying this definitely haven't experienced the hillbilly scenario of needing SMS verification codes for restarting each database. **With Database as Code management tools, real engineers would never use this "ClickOps"**.
 
 However, everything exists for a reason. Cloud databases aren't worthless - in **scalability**, cloud databases indeed rolled out new heights, like various Serverless tricks, but this mainly saves cloud vendors money through overselling, not much meaning for users.
-
-------------------
 
 ## Eliminate DBAs?
 
@@ -221,8 +210,6 @@ Whether public cloud vendors, Kubernetes-represented cloud-native/private cloud,
 **In large organizations, a good DBA is crucial**. However, excellent DBAs are quite rare, supply can't meet demand, so this role can only be outsourced in most organizations: to professional database service companies, to cloud database RDS service teams. Organizations unable to find DBA supply can only **insource** this responsibility to their own dev/ops personnel until company scale is large enough or they've suffered enough, then some Dev/Ops develop corresponding capabilities.
 
 **DBAs won't be eliminated, only concentrated in cloud vendors providing monopolized services.**
-
-------------------
 
 ## Monopoly Shadow
 
@@ -251,8 +238,6 @@ Open source projects represented by K8S bring resource scheduling/intelligent op
 
 The era calls for open source RDS alternatives.
 
-------------------
-
 ## Solutions
 
 > Pigsty — Open source free, out-of-box, better RDS PG alternative
@@ -261,7 +246,7 @@ I hope future worlds where everyone has factual rights to use excellent services
 
 Pigsty is complete PostgreSQL enhancement, **more spicy satire of cloud databases**. It originally means "pig pen," but more accurately abbreviates "Postgres In Great STYle" — "**PostgreSQL in full glory**". It's a completely open source software-based solution running anywhere, condensing PostgreSQL usage and management best practices as a Me-Better RDS open source alternative. A solution tempered by real-world large-scale, high-standard PostgreSQL clusters meeting Tantan's own database management needs, doing valuable work across eight dimensions:
 
-![](rds-7.png)
+![Are Cloud Databases an IQ Tax? — Solutions (figure 12)](rds-7.png)
 
 **Observability is heaven; Heaven's movement is vigorous, gentlemen strive constantly**; Pigsty uses modern observability tech stack to create an unparalleled monitoring system for PostgreSQL, from global dashboard overviews to individual table/index/function object second-level historical detail indicators, letting users achieve fire-clear insight and total control. Additionally, Pigsty's monitoring system can be used independently to monitor third-party database instances.
 
@@ -279,7 +264,7 @@ Pigsty is complete PostgreSQL enhancement, **more spicy satire of cloud database
 
 **Extensibility is marsh: Beautiful marsh, gentlemen discuss with friends**; Pigsty deeply integrates PostgreSQL ecosystem core extensions PostGIS, TimescaleDB, Citus, PGVector, and numerous extension plugins; Pigsty provides modularly designed Prometheus/Grafana observability tech stack, and monitoring and high-availability deployment for MINIO, ETCD, Redis, Greenplum components combined with PostgreSQL;
 
-![](rds-8.png)
+![Are Cloud Databases an IQ Tax? — Solutions (figure 13)](rds-8.png)
 
 **Most importantly, Pigsty is completely open source free software**, using AGPL v3.0 license. We're powered by love, while you can run fully functional or even better RDS services with dozens of yuan core·month pure hardware costs. Whether you're a beginner or veteran DBA, whether you manage ten-thousand-core large clusters or 1c2g small pipes, whether you already use RDS or built databases locally, as long as you're a PostgreSQL user, Pigsty will help you, completely free. **You can focus on the most interesting or valuable parts of your business, leaving chores to software**.
 
@@ -287,15 +272,13 @@ Although Pigsty aims to replace manual database operations with database autopil
 
 Pigsty is simple and easy to use, human costs and complexity match RDS, but resource cost differences are earth-shaking. Not comparing self-built data centers' 20 yuan with hundreds of yuan cloud databases, considering RDS has several times markup compared to equivalent EC2, you can completely compromise: use cloud servers to deploy Pigsty RDS, retaining cloud elasticity while saving 50-60% costs immediately. For IDC self-building or maintenance, cutting 90% costs might not be enough.
 
-![](rds-9.png)
+![Are Cloud Databases an IQ Tax? — Solutions (figure 14)](rds-9.png)
 
 > RDS cost vs scale cost curve
 
 Pigsty lets you practice ultimate FinOps philosophy — using prices almost approaching pure resources, run production-grade PostgreSQL RDS database services anywhere (ECS, resource cloud, data center servers, even local laptop VMs). **Making cloud database capability costs change from proportional to resource marginal costs to approximately zero fixed learning costs**.
 
 **If you can use better RDS services at a fraction of the cost, then using cloud databases would be pure IQ tax.**
-
-------------------
 
 ## Reference
 

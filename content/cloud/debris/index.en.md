@@ -6,7 +6,6 @@ summary: |
   Once upon a time, "going to cloud" was almost politically correct in tech circles, but few people use hard data to analyze the trade-offs involved. I'm willing to be this skeptic: let me use hard data and personal stories to explain the traps and value of public cloud rental models.
 tags: [Cloud-Exit]
 ---
-
 Once upon a time, "going to cloud" was almost politically correct in tech circles, but few people use hard data to analyze the trade-offs involved. I'm willing to be this skeptic: let me use hard data and personal stories to explain the traps and value of public cloud rental models - for your reference in this era of cost reduction and efficiency improvement.
 
 [Cloud-Exit Odyssey](/cloud/odyssey/)
@@ -25,9 +24,7 @@ Once upon a time, "going to cloud" was almost politically correct in tech circle
 
 [Tencent Cloud CDN: From Getting Started to Giving Up](/cloud/cdn/)
 
-[![](featured.webp)](https://mp.weixin.qq.com/s/eag0CqfUTeNPbIB6TZqFVg)
-
--------------
+[![Cloud Computing Mudslide: Deconstructing Public Cloud with Data (figure 1)](featured.webp)](https://mp.weixin.qq.com/s/eag0CqfUTeNPbIB6TZqFVg)
 
 ## Preface
 
@@ -45,8 +42,6 @@ We advocate cloud exit concepts and provide practical paths and viable self-buil
 
 For no other reason than hoping all users can own their digital homes, rather than renting farms from tech giant cloud lords. - This is also a movement against internet centralization and cyber landlord monopoly rent-seeking, allowing the internet - this beautiful free haven and utopia - to go further.
 
---------------
-
 ## [Cloud-Exit Odyssey](/cloud/odyssey/)
 
 The contemporary cloud exit epic, cloud repatriation odyssey. The legendary cloud exit story from 37 Signal: how to exit cloud and save 50 million yuan in 6 months. I selected 10 articles from @dhh's blog, presenting this magnificent journey in reverse chronological timeline, translated into Chinese for your reference.
@@ -54,8 +49,6 @@ The contemporary cloud exit epic, cloud repatriation odyssey. The legendary clou
 Author: **David Heinemeier Hansson**, aka DHH, 37 Signal co-founder & CTO, Ruby on Rails creator, cloud exit advocate, practitioner, and leader. Pioneer fighting tech giant monopolies. Blog: https://world.hey.com/dhh
 
 Translator: **Feng Ruohang**, aka Vonng. Founder & CEO of PieCloudDB. Pigsty author, PostgreSQL expert and evangelist. Cloud computing mudslide, database veteran, cloud exit advocate and practitioner.
-
---------------
 
 ## [The End of FinOps is Cloud-Exit](/cloud/finops/)
 
@@ -71,8 +64,6 @@ At the SACC 2023 FinOps session, I heavily criticized cloud providers. This is t
 
 **Database is Self-Building Key**: Stateless applications and data warehouses on K8S are relatively easy to migrate. The real difficulty is completing database self-building without affecting **quality and security**.
 
---------------
-
 ## [Why Isn't Cloud Computing More Profitable Than Mining Sand?](/cloud/profit/)
 
 Public cloud gross margins are lower than mining sand. Why have pig-killing scams become money-losing operations?
@@ -87,8 +78,6 @@ Industry benchmarks AWS and Azure can easily reach 60% and 70% gross margins. Lo
 
 Speaking of net profits, domestic public cloud providers are even more miserable. AWS/Azure net profit margins can reach 30%-40%. Benchmark Alibaba-Cloud barely struggles around the break-even line. This makes one curious: **how did these domestic cloud providers manage to turn a 30-40% pure profit business into this state?**
 
---------------
-
 ## [Are Cloud SLAs Just Placebos?](/cloud/sla/)
 
 In the cloud computing world, Service Level Agreements (SLAs) are viewed as cloud providers' commitments to service quality. However, when we deeply study these SLAs, we find they can't "back you up" as expected: you think you've insured your database and can sleep peacefully, but actually your hard-earned money bought emotion-value-providing placebos.
@@ -96,8 +85,6 @@ In the cloud computing world, Service Level Agreements (SLAs) are viewed as clou
 For cloud providers, **SLA isn't a real reliability commitment or historical track record, but a marketing tool aimed at making buyers believe cloud providers can host critical business applications**. For users, SLA isn't an insurance policy covering losses. In worst cases, it's a dumb loss you have to swallow. In best cases, it's a placebo providing emotional value.
 
 **Rather than saying SLA compensates users, it's better to say SLA "punishes" cloud providers when service quality doesn't meet standards**. Cloud providers don't need to excel in reliability - missing targets just means a self-imposed penalty drink. However, customers must bear the bitter consequences themselves.
-
---------------
 
 ## [Are Cloud Disks Pig-Killing Scams?](/cloud/ebs/)
 
@@ -108,8 +95,6 @@ EC2/S3/EBS are the pricing anchors for all cloud services. If EC2/S3 pricing can
 Plug-and-play disk hardware with hundred-fold premiums - why? Cloud providers can't explain where such sky-high prices come from. Combined with other cloud storage services' design philosophy and pricing models, there's only one reasonable explanation: **EBS's high premium ratio is deliberately set as a threshold to facilitate cloud database pig-killing**.
 
 As cloud database pricing anchors, EC2 and EBS have premiums of several times and dozens of times respectively, supporting cloud database pig-killing high gross margins. But such monopoly profits can't last: IDC 2.0/telecom operators/state-owned clouds impact IaaS; private cloud/cloud/-native/open source alternatives impact PaaS; tech industry layoffs, AI impact, and China's low labor costs impact cloud services (operations outsourcing/shared experts). **If public clouds persist with current pig-killing models, departing from "compute-storage infrastructure" original intentions, they'll inevitably face increasingly severe competition and challenges from the combined force of these three**.
-
---------------
 
 ## [Are Cloud Databases Intelligence Tax?](/cloud/rds/)
 
@@ -122,8 +107,6 @@ A 64C 384G + 3.2TB NVMe SSD high-spec database server, our local self-building, 
 So the question is: if using cloud database for 1 year costs enough to buy several or even dozens of better-performing servers, what's the point of using cloud databases? If you feel you lack self-building capability - we provide a ready-to-use, free RDS management alternative to solve this problem! - Pigsty!
 
 **If your business fits the public cloud applicability spectrum, that's great; but paying several to dozens of times premium for unnecessary flexibility and elasticity is pure intelligence tax.**
-
---------------
 
 ## [Paradigm Shift: From Cloud to Local-First](/cloud/paradigm/)
 

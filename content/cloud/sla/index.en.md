@@ -6,12 +6,9 @@ summary: >
   SLA is a marketing tool rather than insurance. In the worst-case scenario, it's an unavoidable loss; at best, it provides emotional comfort.
 tags: [Cloud-Exit, Cloud]
 ---
-
 In the world of cloud computing, Service Level Agreements (SLAs) are seen as a cloud provider's commitment to the quality of its services. However, a closer examination of these SLAs reveals that they might not offer the safety net one might expect: you might think you've insured your database for peace of mind, but in reality, you've bought a placebo that provides emotional comfort rather than actual coverage.
 
-[![](sla.jpg)](https://mp.weixin.qq.com/s/LC5jAhuVObRcrTLxI1FUQA)
-
-----------------
+[![SLA: Placebo or Insurance? (figure 1)](sla.jpg)](https://mp.weixin.qq.com/s/LC5jAhuVObRcrTLxI1FUQA)
 
 ## Insurance Policy or Placebo?
 
@@ -20,8 +17,6 @@ One of the reasons many users opt for cloud services is for the "safety net" the
 Data is the lifeline of many businesses, and cloud storage serves as the foundation for nearly all data storage on the public cloud. Let's take cloud storage services as an example. Many cloud service providers boast of their cloud storage services having nine nines of **data reliability** [1]. However, upon examining their SLAs, we find that these crucial promises are conspicuously absent from the SLAs [2].
 
 What is typically included in the SLAs is the service's **availability**. Even this promised availability is superficial, paling in comparison to the core business reliability metrics in the real world, with compensation schemes that are practically negligible in the face of common downtime losses. **Compared to an insurance policy, SLAs more closely resemble placebos that offer emotional value.**
-
-----------------
 
 ## Subpar Availability
 
@@ -47,8 +42,6 @@ For some internet companies, a 15-minute service outage is enough to jeopardize 
 
 What's more outrageous is that these compensations are not automatically provided to you after a failure occurs. Users are required to measure downtime themselves, submit evidence for claims within a specific timeframe (**usually two months**), and request compensation to receive any. This requires users to collect monitoring metrics and log evidence to negotiate with cloud providers, and the compensation returned is not in cash but in vouchers/duration compensations — **meaning virtually no real loss for the cloud providers and no actual value for the users, with almost no chance of compensating for the actual losses incurred during service interruptions.**
 
-----------------
-
 ## Is the "Safety Net" Meaningful?
 
 For businesses, a "safety net" means minimizing losses as much as possible when failures occur. Unfortunately, SLAs are of little help in this regard.
@@ -57,7 +50,7 @@ The impact of service unavailability on business varies by industry, time, and d
 
 In the Uptime Institute's 2021 data center survey [5], several of the most severe outages cost respondents an average of nearly $1 million, not including the worst 2% of cases, which suffered losses exceeding $40 million.
 
-![](sla-2.png)
+![SLA: Placebo or Insurance? — Is the "Safety Net" Meaningful? (figure 2)](sla-2.png)
 
 However, SLA compensations are a drop in the ocean compared to these business losses. Taking the `t4g.nano` virtual machine instance in the `us-east-1` region as an example, priced at about $3 per month. If the unavailability is less than 7 hours and 18 minutes (99% monthly availability), AWS will pay 10% of the monthly cost of that virtual machine, a total compensation of 30 cents. If the virtual machine is unavailable for less than 36 hours (95% availability within a month), the compensation is only 30% — less than $1. **Only if the unavailability exceeds a day and a half, can users receive a full refund for the month — $3**. Even if compensating for thousands of instances, this is virtually negligible compared to the losses.
 
@@ -65,21 +58,17 @@ In contrast, the traditional insurance industry genuinely provides coverage for 
 
 Cloud service providers charge far more than the BOM for their expensive services (see: "Are Public Clouds a Pig Butchering Scam?" [7]), but when service issues arise, their so-called "safety net" compensation is merely vouchers, which is clearly unfair.
 
-----------------
-
 ## Vanished Reliability
 
 Some people use cloud services to "pass the buck," absolving themselves of responsibility. However, some critical responsibilities cannot be shifted to external IT suppliers, such as **data security**. Users might tolerate temporary service unavailability, but the damage caused by lost or corrupted data is often unacceptable. **Blindly trusting exaggerated promises can have severe consequences, potentially a matter of life and death for a startup.**
 
 In storage products offered by various cloud providers, it's common to see promises of nine nines of reliability [1], implying a one in a billion chance of data loss when using cloud disks. Examining actual reports on cloud provider disk failure rates [6] casts doubt on these figures. However, as long as providers are bold enough to make, stand by, and honor such claims, there shouldn't be an issue.
 
-![](sla-3.png)
+![SLA: Placebo or Insurance? — Vanished Reliability (figure 3)](sla-3.png)
 
 Yet, upon examining the SLAs of various cloud providers, this promise disappears! [2]
 
 In the 2018 sensational case "The Disaster Tencent Cloud Brought to a Startup Company!" [8], the startup believed the cloud provider's promises and stored data on server hard drives, only to encounter what was termed "silent disk errors": "Years of accumulated data were lost, causing nearly ten million yuan in losses." Tencent Cloud expressed apologies to the company, willing to compensate the actual expenses incurred on Tencent Cloud totaling 3,569 yuan and, with the aim of helping the business quickly recover, promised an additional compensation of 132,900 yuan
-
-----------------
 
 ## What Exactly is an SLA
 
@@ -108,8 +97,6 @@ More subtly, cloud providers have absolute power over the SLA agreement: they re
 
 Thus, SLAs are not an insurance policy against losses for users. In the worst-case scenario, it's an unavoidable loss; at best, it provides emotional comfort. Therefore, when choosing cloud services, we need to be vigilant and fully understand the contents of their SLAs to make informed decisions.
 
-----------------
-
 ## Reference
 
 【1】[阿里云 ESSD云盘](https://help.aliyun.com/document_detail/122389.html)
@@ -120,7 +107,7 @@ Thus, SLAs are not an insurance policy against losses for users. In the worst-ca
 
 【4】[AWS EC2 SLA 样例](https://d1.awsstatic.com/legal/AmazonComputeServiceLevelAgreement/Amazon_Compute_Service_Level_Agreement_Chinese_Simplfied_(CN)2022-05-25.pdf)
 
-【5】[云SLA更像是惩罚用户而不是补偿用户](https://journal.uptimeinstitute.com/cloud/-slas-punish-not-compensate/)
+【5】[云SLA更像是惩罚用户而不是补偿用户](https://journal.uptimeinstitute.com/cloud-slas-punish-not-compensate/)
 
 【6】[NVMe SSD失效率统计](https://www.usenix.org/system/files/atc22-lu.pdf)
 

@@ -7,7 +7,6 @@ summary: >
   AWS finally published the Oct 20 us-east-1 postmortem. I translated the key parts and added commentary on how one DNS bug toppled half the internet.
 tags: [Cloud-Exit, AWS, Incident]
 ---
-
 AWS just released the official postmortem for the [Oct 20 us-east-1 meltdown](https://mp.weixin.qq.com/s/sCAOwNva__0L_iMP1QHngQ). It’s one of the rare times we get first-hand detail, so I translated it to Chinese and sprinkled in commentary. Here’s the English recap with my notes.
 
 > Incident page: https://aws.amazon.com/cn/message/101925/

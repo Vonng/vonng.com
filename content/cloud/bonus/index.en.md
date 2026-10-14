@@ -7,15 +7,11 @@ summary: >
   Hardware is interesting again, developments in CPUs and SSDs remain largely unnoticed by the majority of devs. A whole generation of developers is obscured by cloud hype and marketing noise. 
 tags: [Cloud-Exit, Cloud, Hardware]
 ---
-
-
 Hardware is interesting again, with the AI wave fueling a GPU frenzy. However, the intrigue isn’t limited to GPUs —— developments in CPUs and SSDs remain largely unnoticed by the majority of devs. A whole generation of developers is obscured by cloud hype and marketing noise.
 
 Hardware performance is skyrocketing, and costs are plummeting, turning the public cloud from a decent service into a cash cow. These shifts necessitate a reevaluation of technology and software. It's time to get back to basics and reclaim the hardware dividend that belongs to users.
 
-[![](featured.jpg)](https://mp.weixin.qq.com/s/1OSRcBfd58s0tgZTUZHB9g)
-
------------
+[![Reclaim Hardware Bonus from the Cloud (figure 1)](featured.jpg)](https://mp.weixin.qq.com/s/1OSRcBfd58s0tgZTUZHB9g)
 
 ## Revolutionary New Hardware
 
@@ -49,8 +45,6 @@ Besides computing and storage, network hardware has also improved significantly.
 
 As computing, storage, and networking hardware evolve exponentially following Moore's Law, hardware becomes fascinating again. But the real intrigue lies in how these technological leaps will impact the world.
 
------------
-
 ## Distributed Losing Favor
 
 The landscape of hardware has undergone monumental changes over the past decade, rendering many assumptions in the software realm obsolete, such as those concerning [distributed databases](/db/distributive-bullshit/).
@@ -66,8 +60,6 @@ The foundational assumption of distributed databases — that a single machine's
 In the realm of big data analytics (OLAP), distributed systems might have been essential, but now even this is questionable — for the majority of companies, their entire database volume could potentially be processed on a single server. Scenarios that previously demanded "distributed data warehouses" might now be addressed by running PostgreSQL or DuckDB on a modern server. True, large internet companies may have PB/ZB-level data scenarios, but even for core internet services, it's rare for a single service's data volume to exceed a single machine's processing limits. For instance, BreachForums' recent leak of 5 years of Taobao shopping records (2015-2020, 8.2 billion records) compressed to 600GB, and similarly, the data sizes for JD.com's billions and Pinduoduo's 14.5 billion records are on par. Moreover, companies like Dell or Inspur offer **PB-level** NVMe all-flash storage cabinets, capable of housing the entire U.S. insurance industry's historical data and analysis tasks in a single box for less than $200,000.
 
 The core trade-off of distributed databases is "quality for quantity," sacrificing functionality, performance, complexity, and reliability in exchange for greater data capacity and throughput. However, "premature optimization is the root of all evil," and designing for unnecessary scale is futile. If scale is no longer an issue, then sacrificing other attributes for unneeded capacity, incurring extra complexity and costs, becomes utterly pointless.
-
------------
 
 ## Cost of Owning Servers
 
@@ -97,8 +89,6 @@ I believe DHH's figures are accurate, as at Tantan, from day one, we chose to bu
 |     AWS C5N.METAL 96C (1y Reserve, All Upfront)      |      20.6       |
 |     AWS C5N.METAL 96C (3y Reserve, All Upfront)      |      12.8       |
 
------------
-
 ## Cloud Rental Price
 
 For reference, we can compare the cost to leasing compute power from AWS EC2. A monthly expense of \$666 can get you the best specification without storage, the [c6in.4xlarge](https://instances.vantage.sh/aws/ec2/c6in.4xlarge) on-demand instance (16 cores, 32G x 3.5GHz); while the on-demand cost for a [c7a.metal](https://instances.vantage.sh/aws/ec2/c6a.metal) instance, which has similar compute and memory specification (192C/384G) but excludes EBS storage, is \$7,200 per month, which is 10.8 times the comprehensive local build cost; the lowest monthly cost for a 3-year reserved instance can go down to \$2,756, which is still 4.1 times the cost of building your own server. If we calculate the cost per core-month, the price for the majority of AWS EC2 instances ranges between \$10 ~ \$30, which is roughly a hundred to a few hundred dollars, leading us to a rough conclusion: **the unit price of cloud compute is 5 to 10 times that of self-built solutions**.
@@ -110,8 +100,6 @@ EC2 and EBS prices can be considered the anchor of cloud service pricing, for ex
 Of course, we can't deny the cost advantages of public clouds for micro instances and startups — for example, the nano instances on public clouds used to patch together 1–2C, 0.5–2G configurations really can be offered to users at a core-month cost of a few dollars. In "[Exploiting Alibaba-Cloud ECS for a Digital Homestead](/cloud/ecs/)," I recommended exploiting Alibaba-Cloud's Double 11 virtual machine deals for this reason. For instance, a 2C 2G server's compute cost, calculated with a 500% overselling, is 84 CNY per year, and the cost for 40G cloud disk storage, calculated with triple replication, is about 20 CNY per year, making the annual cost for these two parts over a hundred CNY. This doesn't include the cost of a public IP or the more valuable 3M bandwidth (for example, if you could fully utilize 3M bandwidth 24 hours a day, that would mean 32G of data per day, costing about 25 CNY). The list price for such cloud servers is ¥1500 per year, so the 99¥ price allowing for a low-cost renewal for four years indeed can be considered a loss-leading benefit.
 
 However, when your business can no longer be covered by a bunch of micro instances, you really should do the math again carefully: in several key examples, the cost of cloud services is extremely high — whether for large physical machine databases, large NVMe storage, or just the latest and fastest compute. The rental price for such production-grade resources is so high — that a few months' rent could equal the cost of buying it outright. In such cases, you really should just buy the donkey!
-
------------
 
 ## Reclaim Hardware Bonus from Cloud
 

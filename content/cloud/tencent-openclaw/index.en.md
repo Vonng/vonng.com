@@ -7,7 +7,6 @@ summary: >
 tags: [Cloud, AI, Agent, Open Source]
 aliases: ["/ai/tencent-openclaw/"]
 ---
-
 > Dedicated to the open-source projects that Tencent kindly "helps."
 
 ## 1. Good news: the goose strikes again

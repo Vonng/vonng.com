@@ -6,14 +6,11 @@ summary: >
   A reader's RDS MySQL instance failed over twice in five days: the cloud provider's own back-end monitoring query brought it down, and the instance failed again with the same symptoms after the provider promised to disable that collector.
 tags: [Cloud-Exit, MySQL, Alibaba Cloud, RDS]
 ---
-
 A reader sent me this story: his RDS MySQL instance underwent two primary/standby failovers in five days.
 The cloud provider's explanation was remarkable: **its own back-end monitoring had queried the instance to death.**
 
 The provider then promised to disable that monitoring that same evening.
 Four days later, the same instance went down again with the same symptoms.
-
----
 
 ## TL;DR
 
@@ -24,8 +21,6 @@ Four days later, the same instance went down again with the same symptoms.
 - The provider promised to disable this monitoring feature on the evening of July 24. **On July 28, the same instance failed over again with the same symptoms.**
 - The provider's own explanation says the feature can fail “when the number of concurrent transactions on an instance is very high,” yet its only proposed remedy was simply to disable it **on this customer's instance**.
 - Yet that “shutdown” never actually took effect. Four days later, the instance died the same way again.
-
----
 
 ## The Monitoring Query That Made the Database Sick
 
@@ -50,8 +45,6 @@ the failover alert arrived at roughly the same time.
 
 The customer asked what had happened and received the written response below.
 The original contains some grammatical rough edges; I have adjusted only spacing and line breaks:
-
----
 
 ## The Bottom Line: Monitoring Must Not Change the System It Monitors
 
@@ -85,8 +78,6 @@ only to fall into the same hole twice in five days.
 
 The remaining lessons are at the end.
 First, the story.
-
----
 
 ## 1. July 23, 09:52
 
@@ -130,8 +121,6 @@ and it pays that cost while holding a global latch.**
 The first version makes it sound as if the customer's workload blocked the monitoring system.
 The second identifies a defect in the monitoring implementation itself.
 That distinction matters.
-
----
 
 ## 2. Why “Just Taking a Look” Costs So Much
 
@@ -257,8 +246,6 @@ I can confirm only this: through the 8.4 community baseline, this code remains u
 The community spent years repairing the new path while leaving the old one untouched.
 This newly deployed collector chose the old path.
 
----
-
 ## 3. July 28, 17:19
 
 Four days later, the same instance generated the same text message.
@@ -307,8 +294,6 @@ The evidence supporting this line of inquiry was one number on the IOPS chart:
 
 At a 60,000-IOPS allowance, the database used fewer than 10,000 IOPS even at the peak.
 The disk had more than 80% of its capacity sitting idle while the database failed to flush and locked up.
-
----
 
 ## 4. “Expected to Be Completed Tonight”
 
@@ -438,8 +423,6 @@ Unless you complain, it will keep taking that global latch inside your database.
 
 The owners of those instances do not even know it exists.
 
----
-
 ## 5. A Switch That Was Bypassed
 
 As noted earlier, this instance's minor-version upgrade policy was set to **manual**.
@@ -468,8 +451,6 @@ The customer thought he had disabled “changes made without my consent.”
 The other had no switch, and no page in the console even disclosed that it existed.
 
 **You can refuse only what you can see.**
-
----
 
 ## 6. Who Actually Pulled the Plug?
 
@@ -511,8 +492,6 @@ and took nearly 20 minutes to recover to half its previous level.
 High availability did not preserve availability here.
 It was the day's single largest availability expense.
 
----
-
 ## 7. If There Was No Impact, Please Ignore This
 
 Finally, read the text message again:
@@ -546,8 +525,6 @@ But precisely because it is a template, it reveals the deeper assumption:
 The contributor's verdict was simple: amateur hour.
 
 I cannot think of a more accurate description.
-
----
 
 ## Epilogue: You Outsourced the Complexity, Not the Risk
 
@@ -585,8 +562,6 @@ The most underrated value of open-source, self-hosted infrastructure has never b
 It is the **right to know**—
 when something breaks, you can at least open the hood yourself
 and see what is actually happening inside.
-
----
 
 ## Appendix: Three General Rules
 

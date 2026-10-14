@@ -6,7 +6,6 @@ summary: >
   Many Android users reported that Meituan deleted files from their photo libraries. The bigger issue is not just this bug, but the still-common pattern of overbroad storage permissions in the Chinese Android ecosystem.
 tags: [Hardware, PG Admin, Security]
 ---
-
 Starting on March 18, 2026, a large number of Android users discovered that Meituan had wiped files from their galleries.
 Photos, videos, audio recordings, PDFs, Word documents: sometimes hundreds of files, sometimes thousands.
 Android's own notification center said it plainly:
@@ -35,8 +34,6 @@ Its customer service response pointed to this article:
 
 The real problem with that statement is that it tries to frame an obvious permissions incident as a harmless UI glitch.
 
-------
-
 ## 1. "A Third-Party Plugin Did It"?
 
 Blaming a "third-party plugin conflict" is slippery nonsense.
@@ -54,8 +51,6 @@ Either way, this is a code-level incident, not something you wave away with the 
 
 If the bug came from an SDK, then integration testing and permission isolation were not done properly.
 If it came from Meituan's own code, the explanation gets even thinner.
-
-------
 
 ## 2. Why Could Meituan Delete Your Photos at All?
 
@@ -96,8 +91,6 @@ Since iOS 14, users have been able to grant apps access to selected photos inste
 Yes, it is a little less convenient.
 I would still take that inconvenience over handing full life-and-death control of my photo library to a food delivery app.
 
-------
-
 ## 3. Worse Than "Privacy Leakage"
 
 If your data leaks, at least the data still exists.
@@ -119,14 +112,12 @@ Google shipped Photo Picker, major apps ignored it, app stores failed to enforce
 
 **That ecosystem needs fixing.**
 
-------
-
 ## References
 
 - [Meituan customer service response: fixed immediately, no reading, storage, or leakage of personal information involved](https://mp.weixin.qq.com/s?__biz=MjM5MTI3MTY3Mg==&mid=2651588304&idx=4&sn=faed212e5a7802cd40c0460eb268104a&scene=21#wechat_redirect)
 - [IT Home](https://www.ithome.com/0/931/988.htm)
 - [Zhihu technical analysis](https://www.zhihu.com/question/2019359659350254663)
-- [Phoenix Tech](https://tech.ifeng.com/c/8rihLy87wex)
+- Phoenix Tech (original link unavailable)
 - [Sohu](https://www.sohu.com/a/999496774_120506293)
 - [Android Photo Picker official docs](https://developer.android.com/training/data-storage/shared/media)
 - [Google Play permissions policy](https://support.google.com/googleplay/android-developer/answer/14115180)

@@ -6,12 +6,9 @@ date: 2025-03-06
 tags: [PostgreSQL, Alibaba Cloud, PG Ecosystem, Open Source]
 categories: [Blog]
 ---
-
 A viral post titled “[Heavenly ‘PostgreSQL’ Calls Earthly Postgres ‘Little Trash’](https://mp.weixin.qq.com/s/fFTTRioeTvCmjKip0lx3Cg)” hyped up Alicloud RDS’s new `rds_duckdb` plugin for OLAP and declared that managed RDS PG is noble while open-source Postgres is garbage. That take is ridiculous.
 
 I know DuckDB and the derivative `pg_duckdb` extension inside out. I’m happy when cloud vendors integrate open source legally and respectfully. But if you disparage the upstream while riding on its work, someone has to push back.
-
--------
 
 ## PG + DuckDB, the background
 
@@ -20,8 +17,6 @@ DuckDB is a fast embedded OLAP database I’ve followed for years. In “[Postgr
 Among those experiments, `pg_duckdb`—co-developed by MotherDuck and Hydras’ OLAP startup—is the most promising. I packaged it for EL8/9, Debian 12, Ubuntu 22/24, both x86 and ARM, and spent countless hours testing it.
 
 Out of the 200+ PG extensions I maintain, the four DuckDB-related ones (including `pg_mooncake`, built atop `pg_duckdb`) are both the most painful and the most exciting: huge dependencies, gnarly build chains, multiple `libduckdb` versions, cross-platform PG support. But OLTP + OLAP fusion is worth the pain.
-
--------
 
 ## Tribute or plagiarism?
 
@@ -33,15 +28,11 @@ Given the timing (two months gap) and the identical UX, it’s reasonable to ass
 
 And if it’s a “tribute,” where’s the attribution? No credits to `pg_duckdb` or even DuckDB anywhere.
 
--------
-
 ## Obligations under MIT
 
 Both DuckDB and `pg_duckdb` are MIT licensed. The requirements are simple: **keep the copyright notice and include the MIT license text**. It’s literally “use the code for free, just don’t erase our names.”
 
 I scoured Alicloud’s RDS docs and couldn’t find DuckDB’s copyright notice or license anywhere. If `rds_duckdb` doesn’t reuse code, fine. But if it does, omitting attribution violates MIT before we even talk about morals.
-
--------
 
 ## Attacking open source
 
@@ -52,8 +43,6 @@ This bias is absurd. Open source is why foundational software exists at all. Dee
 Yet hyperscalers rake in profits and rarely give back, igniting debates about “[clouds freeloading on open source](https://mp.weixin.qq.com/s/W5kOLxeJCIHjnWbIHc1Pzw)” and [the tensions keep rising](https://mp.weixin.qq.com/s/jgYDHdCqWDRDfoFkfs7W8Q). Some vendors do contribute—AWS helped make `pgvector` the de facto standard and released log_fdw, pgcollection, pgtle, etc.
 
 Alicloud, however, seems stuck in “eat from the OSS/Startup bowl” mode. The manners are rough, the product quality is [embarrassing](https://mp.weixin.qq.com/s/kOIw8uPjZUZ0-QisC1TBOA), and customers end up thinking the whole thing is a clown show. Users aren’t mad that clouds *use* open source; they’re mad when a giant ships a half-baked clone, sneers at the upstream, and calls it innovation.
-
--------
 
 ## Further reading
 

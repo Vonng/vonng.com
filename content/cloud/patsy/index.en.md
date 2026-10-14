@@ -6,14 +6,11 @@ summary: >
   A user consulted about distributed databases, but he wasn't dealing with data bursting through server cabinet doors—rather, he'd fallen into another cloud computing pig-butchering scam.
 tags: [Cloud-Exit]
 ---
-
 > This article comes from a real consultation case. Any resemblance to your situation is purely due to cloud vendors' deep affinity with your wallet.
 
 Yesterday a user came to consult, asking if PostgreSQL distributed database extension Citus has any pitfalls, whether Pigsty supports it. I thought, "Great, going distributed—your data volume must be pretty huge?"
 
 The result was both laughable and crying-worthy. He wasn't dealing with data bursting through server cabinet doors, but had fallen into the [AWS EBS cloud disk](https://mp.weixin.qq.com/s/UxjiUBTpb1pRUfGtR9V3ag) "pig-butchering" scam.
-
--------
 
 ## Clutching Wallet, Frantically Going Distributed
 
@@ -25,7 +22,7 @@ I thought: Going distributed already, must have massive data, crazy QPS—defini
 
 Open source distributed extension Citus does have quite a reputation in the PostgreSQL ecosystem, especially after Microsoft's acquisition, even packaged as CosmosDB/Hyperscale PG on Azure. Making PG upgrade to distributed database in place sounds pretty cool.
 
-![](intro.png)
+![Escaping Cloud Computing Scam Mills: The Big Fool Paying for Pain — Clutching Wallet, Frantically Going Distributed (figure 2)](intro.png)
 
 But old friends know I'm not fond of distributed databases. ([Are Distributed Databases Fake Requirements?](/db/distributive-bullshit/))
 
@@ -56,8 +53,6 @@ This guy mentioned: "Yes, we're currently self-building on AWS."
 
 Hey, case closed—another pig-butchering scam victim paying for pain.
 
--------
-
 ## Astronomical Pig-Butchering Making Moves Look Deformed
 
 After deep conversation, I found the user's cloud spending was shocking—database alone roughly 2 million RMB annually, yet getting a beggar's disk that takes days to drag a 14TB replica
@@ -68,7 +63,7 @@ Plus EC2 host costs (usually cloud database storage/compute cost ratio estimated
 
 More outrageous: spending this much money gets incredibly poor performance storage. "Paying protection money and still getting beaten"—that's exactly what this is.
 
-![](ebs-2.png)
+![Escaping Cloud Computing Scam Mills: The Big Fool Paying for Pain — Astronomical Pig-Butchering Making Moves Look Deformed (figure 3)](ebs-2.png)
 
 To save this cloud disk cost, they'd rather tear apart business architecture, or have ops spend days adding replicas, throwing bottomless labor and time costs in. Finally even wanting distributed databases for "self-rescue," thinking this could save storage costs.
 
@@ -79,8 +74,6 @@ So tracing the source, where did distributed database requirements come from?—
 This problem can't be cured just by switching to "distributed database" or using S3 databases. To truly cure it, first ask: why is cloud block storage so outrageous?
 
 Actually, in [Are Public Clouds Pig-Butchering Schemes?](/cloud/ebs/), I already told you the answer long ago.
-
--------
 
 ## Paying for Pain, Don't Be the Big Cloud Fool
 
@@ -105,8 +98,6 @@ More critically, do you think cloud vendors will be responsible for your busines
 Users spend huge money buying hardware marked up 100x, basically getting the after-sales support from [Amateur Hour Show: Alibaba-Cloud RDS Failure Chronicle](https://mp.weixin.qq.com/s/kOIw8uPjZUZ0-QisC1TBOA)
 —thinking you can throw responsibility to cloud vendors for peace of mind? When real problems hit, boomerangs still hit your own head.
 
--------
-
 ## Don't Let This Paid Sequel Keep Playing
 
 With self-building PG capability, moving databases back to self-built data centers or switching to non-PaaS-binding affordable clouds could reduce costs by several tiers, even choosing AWS instances with built-in Host Storage directly.
@@ -126,8 +117,6 @@ These affordable cloud prices are enough to make users accustomed to 10x-100x ma
 
 > Hey, I mean, how much do you think AWS would charge monthly for this spec?
 
--------
-
 ## Open-Source RDS Solves Key Cloud-Exit Challenges
 
 Databases are the key bottleneck for cloud exit. Microsoft CEO Nadella said: These apps and applications you see are just pretty wrappers around databases——
@@ -141,7 +130,7 @@ I've always advocated cloud database capabilities should be democratized to all 
 Therefore I made open source RDS for PostgreSQL: Pigsty, letting you spin up PostgreSQL stronger than RDS with one click on physical/virtual machines without depending on DBA experts,
 fully utilizing new hardware's high performance and low costs. Solving the key cloud exit bottleneck.
 
-![](https://pigsty.io/img/pigsty/ecosystem.png)
+![Escaping Cloud Computing Scam Mills: The Big Fool Paying for Pain — Open-Source RDS Solves Key Cloud-Exit Challenges (figure 6)](https://pigsty.io/img/pigsty/ecosystem.png)
 
 Pigsty contains PostgreSQL ecosystem's unique [351 extension plugins](https://pgext.cloud/zh), [far superior to cloud's pitiful dozens of castrated plugins](https://mp.weixin.qq.com/s/EH7RPB6ImfMHXhOMU7P5Qg), plus provides zero-configuration out-of-box [high availability architecture](https://pgext.cloud/zh/pgsql/arch) and industry-leading monitoring systems.
 

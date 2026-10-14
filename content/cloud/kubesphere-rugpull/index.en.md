@@ -6,7 +6,6 @@ authors: [vonng]
 summary: "Deleting images and running away - this isn't about commercial closed-source issues, but supply cut problems that directly destroy years of accumulated community trust."
 tags: [Containers, Open Source]
 ---
-
 > KubeSphere Sudden Supply Cut: When Open-Source Trust Gets "Unplugged"
 
 ## A "Run" That Shocked the Cloud Native Circle

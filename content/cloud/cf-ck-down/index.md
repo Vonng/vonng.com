@@ -6,15 +6,12 @@ summary: >
   ClickHouse权限配置失当，导致了Cloudflare最近六年以来的最严重故障——核心流量分发停摆六个小时。
 tags: [Cloudflare, 故障复盘]
 ---
-
 就在昨天，有 “赛博佛祖” 之称的 Cloudflare 遭遇自 2019 年以来的最严重故障 —— 正常的核心网络流量无法传输，长达六个小时。
 ChatGPT、X（前 Twitter）、Spotify、Uber 等知名服务悉数中招。
 
 故障的根因是修改了 ClickHouse 的权限，导致生成的反爬特征太大（200条），撑爆了 Rust 写的 Bot管理软件的硬编码限制，导致大量流量被标记为爬虫而被阻断。
 
 Cloudflare 团队今天早上在其博客发布了[故障复盘文章](https://blog.cloudflare.com/18-november-2025-outage/)，老冯将其翻译为中文，并附上点评。
-
---------
 
 ## Cloudflare 2025年11月18日服务中断
 
@@ -171,7 +168,7 @@ WHERE table = 'http_requests_features' ORDER BY name;
 
 由此产生了如下所示的 panic 日志，进而导致了 5xx 错误：
 
-```
+```text
 thread fl2_worker_thread panicked: called Result::unwrap() on an Err value
 ```
 
@@ -223,8 +220,6 @@ Cloudflare 仪表盘（Dashboard）也受到了影响，因为仪表盘内部使
 | 14:24       | 测试完成   | 使用旧版本配置文件进行的恢复测试取得成功，我们随即开始加速在全球范围内部署修复。                                                                                                                               |
 | 14:30       | 主要故障解除 | 部署了正确的 Bot 管理配置文件，大多数服务开始恢复正常。                                                                                                                                         |
 | 17:06       | 全部恢复   | 所有下游服务均已重启，全部业务功能已完全恢复。                                                                                                                                                |
-
--------------
 
 ## 老冯评论
 
