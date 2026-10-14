@@ -5,20 +5,17 @@ authors: [vonng]
 summary: "ISD stands for Integrated Surface Dataset, a dataset published by NOAA (National Oceanic and Atmospheric Administration). I recently reorganized this dataset and provided related analysis tools."
 tags: [Essay]
 ---
-
 > [Original WeChat Article](https://mp.weixin.qq.com/s/TH-exGEpt4ZZrlz8fLGLLA)
 
 ISD stands for Integrated Surface Dataset, a dataset published by NOAA (National Oceanic and Atmospheric Administration). It contains observational records from nearly 30,000 global surface meteorological stations from 1900 to present. Friends in the meteorological field should be very familiar with this.
 
 I recently reorganized this dataset: wrote download scripts, parsing Parser, PostgreSQL DDL for modeling, query SQL statements, Grafana Dashboard for visualization, and cleaned CSV raw data. It's used for exploratory analysis, teaching demonstrations, and database performance testing comparisons.
 
-Public Demo: http://demo.pigsty.cc/d/isd-overview
+Public Demo: https://demo.pigsty.cc/ui/d/isd-overview
 
 ![isd-overview.png](isd-overview.png)
 
 Project repository: https://github.com/Vonng/isd
-
----------------
 
 ## Motivation
 
@@ -33,8 +30,6 @@ Use **Grafana** to read, present, and visualize data.
 Small but complete, these three work together to implement a small application that can query historical meteorological elements for all weather stations. Users can explore interactively and automatically update with the latest data. More importantly, it's simple enough to conveniently demonstrate how a data application actually works.
 
 ![isd-country.png](isd-country.png)
-
----------------
 
 ## Data Storage and Modeling
 
@@ -93,8 +88,6 @@ Of course, there's also some metadata about weather stations in auxiliary tables
 
 ![isd-table.png](isd-table.png)
 
----------------
-
 ## Data Acquisition and Parsing
 
 Besides auxiliary tables and dictionary tables, other data needs to be downloaded from NOAA. Here, I provide a series of wrapper scripts that allow you to complete configuration with simple commands. Especially if you're using Pigsty—an out-of-the-box PostgreSQL database distribution—PostgreSQL and Grafana are already configured during standalone installation. You only need `make all` to complete all configuration work.
@@ -106,8 +99,6 @@ In the original Daily dataset, there's a tiny amount of duplicate and dirty data
 The data parser is written in Go. You can compile it directly or download pre-compiled binaries. The parser works in pipeline mode—feed it annual data tarballs, and it automatically outputs parsed CSV data that can be directly consumed by PostgreSQL COPY commands.
 
 ![parser.png](parser.png)
-
----------------
 
 ## Data Analysis and Visualization
 
@@ -126,8 +117,6 @@ The summary section provides monthly observation counts, historical extreme reco
 If you're interested in finer granularity data, clicking month navigation automatically jumps to the ISD Detail panel, which provides daily summary-level data and sub-hourly raw observational records. Additionally, the meteorological elements section displays additional indicators, including minute-level temperature, dew point, pressure, wind speed, wind direction, cloud cover, visibility, precipitation, snowfall, and other weather condition codes.
 
 ![isd-detail.webp](isd-detail.webp)
-
----------------
 
 ## Other Uses
 

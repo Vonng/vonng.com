@@ -5,7 +5,6 @@ authors: [vonng]
 summary: "The world trends flow mightily. Those who follow prosper; those who resist perish. This article discusses the essence of the internet, the world under internet rule, the transfer of power, and future impacts."
 tags: [Essay]
 ---
-
 I used to think that the essence of the internet, the development of the internet industry, and the strategies of internet companies—these "lofty" matters should be pondered by government officials and corporate executives. As an internet practitioner, a software engineer, being able to thoroughly master the technology in one's field would be good enough. But now I've changed my mind: a person's destiny naturally depends on individual effort, but we must also consider the course of history.
 
 World trends flow mightily. Those who follow prosper; those who resist perish. Standing at the crossroads of historical turning points, only by recognizing the general trend can we avoid confusion. Over these past months of free time, I've invested almost entirely in the process of understanding the world. I've roughly grasped the outline of the current situation and formed vague intuitions about future trends. Although the pace of technological progress has slowed, I believe this is very worthwhile. Below are some thoughts and insights.
@@ -48,7 +47,7 @@ From another angle, internet companies' "power" manifests more directly. Take Al
 
 I have no doubt that when AI and drone/robot technology develop to the point where tech companies can monopolize violence, this world will be completely dominated by tech companies.
 
-![](internet-ai-kill-drone.png)
+![Understanding the Internet — The World Ruled by the Internet (figure 1)](internet-ai-kill-drone.png)
 
 ## Transfer of Power
 
@@ -58,7 +57,7 @@ I have no doubt that when AI and drone/robot technology develop to the point whe
 
 The internet industry is very wealthy—wealthy enough to make practitioners in many traditional industries question life. Take 2019 campus recruitment as an example; domestic internet companies offered new graduates the following prices:
 
-![](internet-2019-salary.JPG)
+![Understanding the Internet — Transfer of Power (figure 2)](internet-2019-salary.JPG)
 
 The internet's backbone force also commands impressive prices. According to hearsay, Alibaba P7 (technical experts, 3-5 years) total compensation is about 1M yuan pre-tax, while P8 (senior technical experts) total compensation is about 1M yuan post-tax. Traditional enterprise executives or leadership might not have such salaries.
 
@@ -94,4 +93,4 @@ The internet's future is bright, but the path is extremely tortuous—possibly f
 
 To wear the crown, one must bear its weight. With direction comes hope.
 
-![](internet-fin.jpeg)
+![Understanding the Internet — Future Impact (figure 3)](internet-fin.jpeg)

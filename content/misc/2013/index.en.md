@@ -5,7 +5,6 @@ authors: [vonng]
 summary: In the final half hour of 2013, reflecting on my experiences this year fills me with deep emotion.
 tags: [Essay]
 ---
-
 In the final half hour of 2013, reflecting on my experiences this year fills me with deep emotion.
 
 In 2013, I proved many things.

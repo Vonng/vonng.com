@@ -6,8 +6,6 @@ summary: |
   Recently, I needed to design a tag management system for a business. During the process of organizing existing tags, I developed this theoretical framework.
 tags: [Essay]
 ---
-
-
 Recently, I needed to design a tag management system for a business. During the process of organizing existing tags, I developed this theoretical framework.
 
 ## 0. Tag Definition: Tag Taxonomy
@@ -23,7 +21,7 @@ First, let's classify "how to classify" itself: examining tag classification fro
 Tag form is the primary basis for tag classification.
 We can list some common or uncommon "tag" examples:
 
-```
+```text
 Gender tag: Female
 Age tag: 23
 Weight tag: 90.6
@@ -76,7 +74,7 @@ In section 2.1.2, we classified tag atomic types. But we must consider another m
 
 For example:
 
-```
+```text
 # Gender tag dictionary
 gender_dict = {0:'Male', 1:'Female', 2: 'Other'....}
 # Gender tag value
@@ -87,7 +85,7 @@ gender_dict = {0:'Male', 1:'Female', 2: 'Other'....}
 
 Another example:
 
-```
+```text
 # Province mapping dictionary
 province_dict = {11:'Beijing',12:'Tianjin',13:'Hebei',......}
 # Province value tag

@@ -6,7 +6,6 @@ summary: |
   One inevitably traces back to questions about the world's origins, and answering these questions is the process of establishing one's cornerstone principles.
 tags: [Essay]
 ---
-
 > One inevitably traces back to questions about the world's origins, and answering these questions is the process of establishing one's cornerstone principles.
 
 <!--more-->

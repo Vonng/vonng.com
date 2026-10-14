@@ -5,7 +5,6 @@ summary: |
   2025 felt unusually long. AI gave me a twentyfold productivity boost and gave Pigsty a real shot at competing with world-class distributions. From an independent open-source project growing against the odds to the practical reality of a one-person company, this is my review of the year.
 tags: [Essay]
 ---
-
 2025 felt unusually long.
 
 Not because it was hard, but because it stood in sharp contrast to the blank, blink-and-you-missed-it feeling of the three pandemic years.

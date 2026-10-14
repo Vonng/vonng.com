@@ -5,12 +5,11 @@ authors: [vonng]
 summary: Information about administrative division levels, numbers, the meaning of administrative division codes, urban-rural classification, etc.
 tags: [Essay]
 ---
-
 China's administrative divisions are divided into several levels. The constitution stipulates three levels, but there are actually five levels: the four-tier system of "province—region—county (district)—township," which becomes five tiers when including the central level.
 
 <!--more-->
 
-### Levels of Administrative Divisions
+## Levels of Administrative Divisions
 
 China's administrative divisions are divided into several government levels:
 
@@ -73,7 +72,7 @@ Additionally, there are special cases including sub-provincial cities, sub-prefe
 
 ## Reference: Rules for Statistical Division Codes and Urban-Rural Classification Codes
 
-- Link: [Rules for Statistical Division Codes and Urban-Rural Classification Codes](http://www.stats.gov.cn/tjsj/tjbz/200911/t20091125_8667.html)
+- Link: [Rules for Statistical Division Codes and Urban-Rural Classification Codes](https://www.stats.gov.cn/sj/tjbz/gjtjbz/202302/t20230213_1902741.html)
 - Source: Department of Administration, National Bureau of Statistics
 - Published: 2009-11-25 10:55
 
@@ -83,7 +82,7 @@ To standardize statistical division codes and urban-rural classification codes, 
 
 Statistical division codes and urban-rural classification codes are divided into two segments of 17 digits, with the code structure as follows:
 
-```
+```text
 □  □  □  □  □  □  □  □  □  □  □  □  —  □  □  □  □  □
 1  2  3  4  5  6  7  8  9  10 11 12   13 14 15 16 17
 ```
@@ -248,7 +247,7 @@ To meet the needs of various localities for summarizing and classifying parks an
 
 Park and government-enterprise integration unit codes are 4-digit codes, compiled corresponding to statistical division codes. Structure:
 
-```
+```text
                            1 2 3 4
 □ □ □ □ □ □ □ □ □ □ □ □ …… □ □ □ □
  Statistical division code    Park and government-enterprise integration unit code

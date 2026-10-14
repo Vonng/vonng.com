@@ -5,7 +5,6 @@ authors: [vonng]
 summary: A paper for "History of Secrecy and Secrecy Systems" course, discussing computational thinking and its significance in undergraduate education, as well as methods for cultivating computational thinking among undergraduates.
 tags: [Essay]
 ---
-
 A paper for "History of Secrecy and Secrecy Systems" course, discussing computational thinking and its significance in undergraduate education. I guess this was the teacher's own assignment.
 
 ## 1. Abstract

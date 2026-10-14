@@ -5,7 +5,6 @@ authors: [vonng]
 summary: Eastern people emphasize macro-to-micro thinking, while Western people emphasize micro-to-macro thinking. In my view, this is the philosophical root of East-West thinking differences and many macro distinctions.
 tags: [Essay]
 ---
-
 > Eastern people emphasize macro-to-micro thinking, while Western people emphasize micro-to-macro thinking. In my view, this is the root of East-West thinking differences.
 
 First, we need to clarify the definition of East and West. Here, "East" refers to East Asia and Southeast Asia centered on China, mainly the Confucian cultural sphere formed by China, Japan, Korea and other countries. "West" mainly refers to the European cultural sphere directly inheriting from Greek-Roman culture.

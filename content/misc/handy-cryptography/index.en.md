@@ -5,7 +5,6 @@ authors: [vonng]
 summary: "A classic problem in cryptography is how to transmit data securely and reliably through insecure channels. Protecting your chats and communications from surveillance and monitoring - easily achievable with just a computer."
 tags: [Essay]
 ---
-
 > [Original WeChat Article](https://mp.weixin.qq.com/s/zUu5PlN_Kzd2-RS10R7wMw)
 
 A classic problem in cryptography is how to transmit data securely and reliably through insecure channels. Protecting your chats and communications from eavesdropping, surveillance, and censorship. With just a computer at hand, you can easily achieve this.
@@ -88,7 +87,7 @@ echo -n 'There is a mole, abort transaction' | openssl rsautl -encrypt -oaep -pu
 
 This produces an encrypted ciphertext string, which Bob then sends back to Alice.
 
-```
+```text
 ZrmUyA8zGWgEr/dPLX7QbfoZ1mUwvim0yau7LrnMFRUGh0KtxvinBBQuUpvzGr+1MAccd6hFDQPJ/CwHnlM3Kk2Da8g1SCR+CU8EReQ+CBLdbfvFXw4pjScMKsuubgY77jTKpkZQXcLnIM7DOZueEevASTX/+/J++W5IPgUhVIEiqX1tn63bVD6Jv3b7knWovv+mT97liqx8dV+JLgNvpm8/F05SGCInKZ9m7bXga3bxg/SfcI38VNKVpJnBph2gTgv0ZlFHKDxR2tFMfCfQgD2lrWaxlTdAx1QDtn1ter2whDXmazm/rUR07YvpQjBbboB2+fq5Kp44/buvj16Ksw==
 ```
 

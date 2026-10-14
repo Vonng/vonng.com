@@ -6,7 +6,6 @@ summary: |
   Through observation and contemplation, we can divide the process of deepening understanding in the mind from accepting knowledge to the highest level of "intuition" into four stages: knowledge, understanding, consciousness, and intuition.
 tags: [Essay]
 ---
-
 > [Original WeChat Article](https://mp.weixin.qq.com/s/47b9NCLOKoqgx9cfP2EDhA)
 
 ## Levels of Knowledge
@@ -51,7 +50,7 @@ Of course, understanding of knowledge also has degrees. In fact, there is no abs
 
 Taking Chinese characters as an example, when we read the character "知" (know), we immediately form understanding. This character immediately becomes an abstract symbol in our minds while activating a series of related concepts: knowledge, knowing, cognition, fame, intellectual property, intellectuals... and so on. An isolated concept has no meaning for thinking; only when it connects with other concepts does **understanding** emerge.
 
-##### Figure: Concepts activated in the author's mind upon seeing the Chinese character "知" - guaranteed by Party loyalty that no search engines were used
+### Figure: Concepts activated in the author's mind upon seeing the Chinese character "知" - guaranteed by Party loyalty that no search engines were used
 
 ![Image](featured.jpg)
 

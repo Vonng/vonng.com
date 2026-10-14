@@ -6,7 +6,6 @@ summary: |
   Recently gave an interview to OSC Open-Source China, discussing the motivation behind quitting my full-time job to start a business with Pigsty: making PostgreSQL easy to use for everyone, and crushing cloud databases!
 tags: [Essay]
 ---
-
 > [Original WeChat Article](https://mp.weixin.qq.com/s/I7OA0thv9Dwvj4zoxIOhJQ) | [Open-Source China Article](https://my.oschina.net/oscpyaqxylk/blog/5548404)
 
 **Published by**: OSCHINA Open-Source China
@@ -36,8 +35,6 @@ When it comes to open source, Feng Ruohang describes himself as a "moderate," wh
 <iframe src="//player.bilibili.com/player.html?aid=512957015&bvid=BV1o3411w7hP&cid=760975146&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 > Pigsty's pitch video from this year, packed with highlights—a must-watch series
-
--------------
 
 ## 01 "Coasting" Led to Entrepreneurial Opportunity
 
@@ -78,8 +75,6 @@ What constitutes truly meaningful work? Feng Ruohang's answer is one word: **Imp
 > Software as DBA Copilot—**this is genuine [liberation of productivity](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485064&idx=1&sn=6225a044d8f145cdb07a21a1e0c54ad8&chksm=fe4b3353c93cba4582576b4de151ac48247052a1494adcc820dc64a32dafb0b99e33085c7bbb&scene=21#wechat_redirect).**
 
 Clearly, what Feng Ruohang wants to achieve is impact, industry advancement, change, and innovation. Therefore, his discourse often contains "inspiring" language, and he shows no mercy toward vested interests. Cloud databases, MySQL, Oracle—all are targets of his criticism. He's somewhat audacious.
-
--------------
 
 ## **02 "Dimensional Reduction Attack" on Cloud Databases**
 
@@ -171,8 +166,6 @@ Feng Ruohang states that cloud vendors have raised cloud service pricing far bey
 
 ![7.png](7.png)
 
--------------
-
 ## **03 Open-Source is the Highest Program**
 
 In February 2022, Miracle Plus startup camp found him. Counting from then, Feng Ruohang has only been doing full-time entrepreneurship for two to three months. If this pitch goes smoothly, he will complete Pre-A round financing while also building his team—a lean team of fewer than ten people.
@@ -181,7 +174,7 @@ For this pitch, he personally took the stage, introducing Pigsty to 2,500 invest
 
 But Feng Ruohang is not alone. Before this, Pigsty was a purely charitable open-source project aimed at promoting PostgreSQL, so it has considerable connections with the PostgreSQL Chinese community. With community support, Pigsty has grown rapidly. Many seed users are members of the PostgreSQL Chinese community. Many users provide feedback on requirements, and some users roll up their sleeves to contribute, then submit patches back to them.
 
-Now, Pigsty's features and functions continue to expand, already supporting more open-source databases and various software tools. Details: https://pigsty.cc/zh/docs/feature/
+Now, Pigsty's features and functions continue to expand, already supporting more open-source databases and various software tools. Details: https://pigsty.cc/docs/about/feature/
 
 ![8.png](8.png)
 
@@ -223,13 +216,11 @@ Feng Ruohang believes that in a few years, **cloud and open source will reach a 
 
 ![10.png](10.png)
 
--------------
-
 ## References
 
 Chinese site: https://pigsty.cc
 
-English site: https://pigsty.cc/en/
+English site: https://pigsty.io/
 
 Official demo: https://demo.pigsty.cc
 

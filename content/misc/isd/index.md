@@ -6,20 +6,17 @@ summary: >
   ISD 是 Intergrated Surface Dataset 的缩写，是 NOAA 美国国家海洋和大气管理局公开的一份数据集。 我最近重新整理了一下这份数据集，提供了相关的分析工具。
 tags: [随笔]
 ---
-
 > [微信公众号原文](https://mp.weixin.qq.com/s/TH-exGEpt4ZZrlz8fLGLLA)
 
 ISD 是 Integrated Surface Dataset 的缩写，是 NOAA 美国国家海洋和大气管理局公开的一份数据集。包括了全球接近3万个地表气象站从 1900 年迄今的观测记录，气象领域的朋友对此应该非常熟悉。
 
 我最近重新整理了一下这份数据集：编写了下载的脚本，解析的Parser，建模的PostgreSQL DDL，查询的SQL语句，可视化的Grafana Dashboard，以及清理好的 CSV 原始数据。用于探索分析，教学演示与数据库性能测试对比。
 
-公开 Demo：http://demo.pigsty.cc/d/isd-overview
+公开 Demo：https://demo.pigsty.cc/ui/d/isd-overview
 
 ![isd-overview.png](isd-overview.png)
 
 项目的地址是：https://github.com/Vonng/isd
-
----------------
 
 ## 动机
 
@@ -34,8 +31,6 @@ ISD 可以用来探索分析，或者测试衡量数据库性能。但更重要�
 麻雀虽小，但是五脏俱全，三者配合实现了一个可以查询所有气象站历史气象要素的小应用。用户可以交互式地探索，也可以自动更新最新数据。更重要的是，它足够简单，可以方便地演示一个数据应用到底是如何运作起来的。
 
 ![isd-country.png](isd-country.png)
-
----------------
 
 ## 数据存储与建模
 
@@ -95,8 +90,6 @@ CREATE TABLE IF NOT EXISTS isd.daily
 
 ![isd-table.png](isd-table.png)
 
----------------
-
 ## 数据获取与解析
 
 除了辅助表，字典表这些，其他的数据需要从 NOAA 上下载。这里，我提供了一系列的包装脚本，您可以直接使用简单的命令完成配置，特别是：如果您在使用 Pigsty —— 开箱即用的 PostgreSQL 数据库发行版，单机安装时已经为您配置好了 PostgreSQL 与 Grafana ，只需要 make all ，就可以完成所有的配置工作。
@@ -108,8 +101,6 @@ CREATE TABLE IF NOT EXISTS isd.daily
 数据解析器使用 Go 语言编写，您可以直接编译，或者直接下载编译好的二进制文件。解析器以管道模式工作，将年度数据 tarball 喂给它，它就会自动输出解析好的 CSV 数据。可以直接被 PostgreSQL COPY 命令消化。
 
 ![parser.png](parser.png)
-
----------------
 
 ## 数据分析与可视化
 
@@ -130,8 +121,6 @@ CREATE TABLE IF NOT EXISTS isd.daily
 如果您对更精细粒度数据感兴趣，点击月份导航，会自动跳转到 ISD Detail 面板中，这里会提供日汇总级别的摘要数据，以及亚小时级别的原始观测记录。此外，在气象要素部分，也会展示一些额外的指标，包括分钟级别的温度，露点，气压，风速，风向，云量，可见度，降水，降雪，以及其他天气情况代码。
 
 ![isd-detail.webp](isd-detail.webp)
-
----------------
 
 ## 其他用途
 

@@ -6,7 +6,6 @@ summary: >
   Apple opened preorders for the M5 Max and I immediately maxed one out at RMB 58,200. This is less a consumer electronics post than a look at what an AI-era personal workstation is becoming.
 tags: [AI, Hardware]
 ---
-
 Apple unveiled the M5 Max MacBook Pro, and I ordered a fully loaded configuration almost immediately: **RMB 58,200**.
 
 ![M5 Max order confirmation](order.webp)

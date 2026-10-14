@@ -6,7 +6,6 @@ summary: |
   I saw news about WeChat accessing user photo albums in the background. While such shady behavior from Chinese apps doesn't surprise me, in the spirit of seeking truth, I got up this morning to investigate whether WeChat is actually doing something malicious.
 tags: [Essay]
 ---
-
 > [Original WeChat Official Account Article](https://mp.weixin.qq.com/s/x0zHL7e2nTpf_UTUHxqLJg)
 
 Last night, I saw news about WeChat accessing user photo albums in the background, and WeChat responded:
@@ -15,7 +14,7 @@ Last night, I saw news about WeChat accessing user photo albums in the backgroun
 
 While such shady behavior from Chinese apps doesn't surprise me, in the spirit of seeking truth, I got up this morning to investigate whether WeChat is actually doing something malicious. I discovered that WeChat's hands are indeed dirty, and their response explanation is complete nonsense. For example, this morning at 6:40 AM, while I was sound asleep, WeChat secretly accessed my photo album. Could this also be triggered by "tap + quick image sending"? As someone who regularly gets up at eight or nine o'clock, it's impossible for me to touch my phone at six AM. **So this is WeChat's autonomous behavior, and such behavior clearly occurred without my consent.**
 
-```
+```text
 {"accessor":{"identifier":"com.tencent.xin","identifierType":"bundleID"},"category":"photos","identifier":"B0848F17-B581-42C4-AF98-EC5CB2181A61","kind":"intervalBegin","timeStamp":"2021-10-09T06:41:51.896+08:00","type":"access"}
 {"accessor":{"identifier":"com.tencent.xin","identifierType":"bundleID"},"category":"photos","identifier":"B0848F17-B581-42C4-AF98-EC5CB2181A61","kind":"intervalEnd","timeStamp":"2021-10-09T06:45:03.813+08:00","type":"access"}
 ```
@@ -30,7 +29,7 @@ This morning I also quickly created a privacy log analysis application that can 
 
 Code repository: https://github.com/Vonng/pigsty/tree/v1.1/app/applog
 
-Demo program: http://demo.pigsty.cc/d/applog-summary
+Demo program: https://demo.pigsty.cc/ui/d/applog-summary
 
 Data security and privacy are the best tools for regulating internet companies. Shooting them all might wrongly punish some, but shooting every other one would definitely let some escape. With this new feature, dishonest apps on iOS are probably in for some tough times.
 

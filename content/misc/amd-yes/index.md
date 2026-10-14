@@ -6,7 +6,6 @@ summary: >
   从装机到退烧，从AI MAX笔记本到装机再到放弃。
 tags: [硬件, 随笔]
 ---
-
 老冯最近在公众号消失了一周，有些朋友问我是不是[说了什么不该说的被禁言了？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247490102&idx=1&sn=2c4cfbd0b53834fcadb75dcee7347610&scene=21#wechat_redirect)非也，只是俺在折腾一些事情，比如配一台新的 AMD 电脑。
 
 老冯从入行开始就一直在用苹果 Macbook，分别是 15，18，22 年入手了顶配的 15/16 寸 Macbook，基本保持着三～四年的迭代频率。按照正常的节奏，应该在今年换 macbook M5。不过有意思的是准备换新之前，[这台老 M1 在高铁上被老太太泼了酱油](/misc/laptop-soy-sauce/)，走保险换新了，估计再打个四年也不成问题。

@@ -5,7 +5,6 @@ authors: [vonng]
 summary: "The future may not necessarily be bright, but the path will certainly be tortuous."
 tags: [Essay]
 ---
-
 In [Understanding the Internet](/en/misc/internet-understand/), I discussed my views on the internet. Today, let's talk about the part I deliberately omitted: the setbacks the internet will face.
 
 <!--more-->
@@ -85,7 +84,7 @@ So why is the internet doomed? There are four main reasons:
 
 The first point: ideology is actually modern religion, a more advanced and widespread form of spiritual organization. Currently, there are only three mainstream ideologies: liberalism, socialism, and nationalism. These can be distinguished along two dimensions: conservative-open and equality-freedom, as shown below.
 
-![](reverie-ideology-triangle.png)
+![The Sorrow of the Internet — Reasons (figure 1)](reverie-ideology-triangle.png)
 
 Since reform and opening up, our principle has been "no debate"—as long as we move toward openness, we won't debate left or right leanings. Ideological conflicts can be compared to religious conflicts. Internet companies' ideology inevitably lies in the open-freedom first quadrant, while nation-state governments usually need to stand with nationalism. Under the CW backdrop, our dynasty will unsurprisingly move toward the third quadrant, which can be said to be diametrically opposed to the internet's position.
 

@@ -6,7 +6,6 @@ summary: >
   Code is literally “encoding,” and everything collapses if you mishandle text. Here’s a practical tour of characters, glyphs, Unicode, and UTF encodings.
 tags: [Essay]
 ---
-
 > [WeChat original](https://mp.weixin.qq.com/s/Yzd64oCjjlk4brERhKBuKA)
 
 Programmers spend their lives with **code**—both source code and encodings. Representing text with bits is harder than it looks: character sets, comparators, normalization, locale rules, variable-length encodings, BOMs, surrogate pairs, regex compatibility, even security bugs lurk beneath. Here’s the field guide.

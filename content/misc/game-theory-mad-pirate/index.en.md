@@ -5,7 +5,6 @@ summary: >
   The pirate game, the people who flip the table, and the trap the decent ones are stuck in. A game theory of flipping the table: why the people who refuse to let things go are the load-bearing beam under every fair split.
 tags: [Game Theory]
 ---
-
 I took a game theory course in college, and one of the classic problems the professor set was the pirate game. Five pirates — call them A through E, oldest to youngest — divide a hundred gold coins. The most senior one proposes a split, everyone votes, and a majority passes it. If it fails, the proposer goes over the side and the next one proposes. All five are brilliant, perfectly rational, greedy, and fond of their own lives. Question: what should A propose?
 
 The standard answer is 97, 0, 1, 2, 0 (or 97, 0, 1, 0, 2). The man at the top walks off with ninety-seven, the rest split three, and two of them get nothing at all. The method is called **backward induction**: work out what happens with two pirates left, then back up to three, four, five. Every step fits flush. Logically it is airtight.
@@ -21,8 +20,6 @@ But one question stayed with me. Why do real people flip the table? Why would th
 I thought about it for years. When it finally clicked, I found it far more interesting than the puzzle itself, and it explains a lot: why a line written three thousand years ago — *when will this sun expire? We will perish together with you* — is still quoted today, why every organization needs a few people nobody wants to cross, and why the decent ones are always the ones who can't get out of the trap.
 
 > Note: AI content in this article: 70%. And a disclaimer — what follows is about irrationality in the game-theoretic sense. It is not encouragement to hurt anybody. Quite the opposite: hurting the innocent is the worst option on the board.
-
---------
 
 ## I. Retaliation That Doesn't Pay Is the Load-Bearing Beam Under Every Fair Split
 
@@ -74,8 +71,6 @@ The [*Book of Documents*][tang] preserves one line: *when will this sun expire? 
 
 **The willingness to do something that doesn't pay is the load-bearing beam under every fair split.** While it is there, nobody gets 97. Once it is genuinely gone, 97, 0, 1, 2, 0 stops being a puzzle and becomes the equilibrium.
 
---------
-
 ## II. The Stickler Is a Public Good
 
 Push the logic one step further and you land somewhere slightly counterintuitive.
@@ -111,8 +106,6 @@ The madmen a society needs are almost never the ones who pull a gun. They're the
 And the stickler has a second, less obvious function. He is the smoke alarm.
 
 The sociologist [Granovetter][threshold] has a threshold model: everyone carries a private number for how many other people have to move before he moves, and the distribution of those numbers decides whether something avalanches. The low-threshold people go first. Their existence is what lets the people upstairs read where the red line is before the avalanche arrives. A system that gets everyone at the bottom of that distribution to shut up or leave looks much quieter in the short run, and has also ripped out its own alarm.
-
---------
 
 ## III. A System With No Degradation Path
 
@@ -154,8 +147,6 @@ The economist [Kuran][kuran] calls this preference falsification: everyone is si
 
 Anyone who has run a company has seen the miniature version. Everybody privately knows a project is doomed. Nobody says it in the meeting. The boss asks whether there are any problems and is told there are none — right up to the month when the three people who mattered hand in their notice one after another, and he finds out something is wrong. Nobody lied to him. Everyone simply didn't say.
 
---------
-
 ## IV. Exit
 
 There's a phrase going around the Chinese internet lately: *liangjiazi tuichang*, the yeomanry leaving the field. It has touched a nerve.
@@ -187,8 +178,6 @@ Really skilled suppression never works by forbidding people to speak. For any ma
 Same principle as the pirate game. Resistance is a coordination game: my being angry accomplishes nothing. I have to know that you're angry too, and I have to know that you know that I know. The load-bearing assumption in the pirate game was common knowledge from beginning to end, and the madman's deterrent works the same way — he is only frightening when other people know he's a madman and he knows they know.
 
 **Taking away the capability is expensive. Taking away the common knowledge is cheap.** The second one requires touching nobody at all. It only requires that each person believes he is the only one.
-
---------
 
 ## Coda
 

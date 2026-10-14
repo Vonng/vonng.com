@@ -6,9 +6,7 @@ summary: |
   The future is not necessarily bright, but the path is definitely winding. During this rare leisure time alone in the New Year, I write these random thoughts, writing wherever my mind wanders.
 tags: [Essay]
 ---
-
-
-![](reverie-title.png)
+![New Year Reflections (figure 1)](reverie-title.png)
 
 > This article may cause discomfort. Please read with caution.
 
@@ -34,7 +32,7 @@ Therefore, what our court faces is an unprecedented transformation in 40 years, 
 
 Forty years of reform and opening up - from post-80s to post-2000s generations, enough to span two generations with over a dozen generation gaps. People within forty-fifty years old were born in a golden age, riding reform spring winds and globalization waves in the main theme of peace and development, all the way successful and spirited. In over a decade of economic miracles, these people took **tomorrow will be better** for granted, full of beautiful expectations for the future. These people received depoliticized brainwashing education (deliberately designed rigid political courses), busy being strivers climbing up, with no time or concern for social reality. However, at the end of the cycle, many will become sacrifices of the era. For most people, knowing the script won't help them escape the harvest sickle, only losing the happiness of ignorance. So closing this article and exiting now is still possible.
 
-![](reverie-matrix.jpg)
+![New Year Reflections — Preface (figure 2)](reverie-matrix.jpg)
 
 ## The Script
 
@@ -42,25 +40,25 @@ So what is the upcoming script?
 
 I speculate the direction for the next 10-20 years as follows, which is also my understanding of so-called "systemic risks."
 
-![](reverie-main.png)
+![New Year Reflections — The Script (figure 3)](reverie-main.png)
 
 ### Background
 
 First, the background: China is an export-oriented economy, foreign trade exports have always been China's economic growth engine, with over half of imports serving exports - a typical processing trade model. Foreign trade brought China massive foreign exchange reserves, absorbed huge domestic capacity, solved employment problems. Current account surplus (trade surplus, earned foreign exchange) is the soul of our court's economy. Our main surplus comes from Europe and America, while we have complete deficits with Japan, South Korea, and Taiwan. **92% of 2018 goods trade surplus came from America**, so reform and opening up essentially means **opening up to America**. America is the world's most important ultimate market for export goods. Under full-scale trade war with +25% tariffs, losing the American market demand could halve China's total foreign trade, directly collapsing China's balance of payments. In plain terms: goods can't be sold, money can't be earned.
 
-![](reverie-GDP.png)
+![New Year Reflections — Background (figure 4)](reverie-GDP.png)
 
 **Chart: China's GDP trend, showing real takeoff after China joined WTO in 2001**
 
 Here's a digression: what is **money**? In the credit currency era, currency is **national credit backed by state violence**. In the world, the US dollar is hard money, while RMB internationalization collapsed midway, still far from hard currency. So our court adopted the method of pegging to the dollar to gain credit for RMB. RMB is essentially a debt certificate to China's central bank, with collateral listed on the central bank's balance sheet assets - mainly foreign exchange reserves (dollars). RMB being anchored to the dollar means whenever we earn 1 dollar, the central bank issues equivalent RMB worth about 7 yuan at the exchange rate to exchange for it. When we use RMB to buy foreign exchange from the central bank to realize debt claims, for every 1 dollar taken out, the central bank cancels equivalent 7 yuan RMB at the exchange rate. Therefore, holding RMB can be exchanged for dollars - this became the source of RMB's credibility.
 
-![](reverie-asset.png)
+![New Year Reflections — Background (figure 5)](reverie-asset.png)
 
 **Chart: Monetary authority balance sheet, showing foreign exchange holdings are the major component of RMB's corresponding assets**
 
 Back to the main topic: after joining WTO, China accumulated massive foreign exchange reserves (hard money), peaking at about 4 trillion dollars. The central bank used this money as collateral to print over 20 trillion yuan in foreign exchange holdings (base money). This base money was then multiplied through bank lending into about 182 trillion M2 (quasi-money, bank deposits). In twenty years, M2 supply increased tenfold to 182 trillion. Printing ten times more money but food prices and various daily necessities didn't increase tenfold because this money was absorbed by real estate and IT/finance enterprises. Houses and enterprises became storage tools for excess currency, so home buyers and high-salary IT/finance workers should clearly realize their earnings are dividends of the era.
 
-![](reverie-m2.jpg)
+![New Year Reflections — Background (figure 6)](reverie-m2.jpg)
 
 **Chart: 20-year change in quasi-money supply M2**
 

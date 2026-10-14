@@ -5,7 +5,6 @@ authors: [vonng]
 summary: What happens when you divide by 0 in a computer? The answer isn't fixed - it can differ across different operating systems, programming languages, and even different compilers.
 tags: [Essay]
 ---
-
 > What happens when you divide by 0 in a computer? Errors are errors, exceptions are exceptions. The distinction here is quite subtle.
 
 Yes, no typo - the title uses `/0` not `0`.
@@ -159,7 +158,7 @@ For exceptions programmers cannot handle, Java treats them as `unchecked Excepti
 
 This raises another question - `Error` is also an unchecked exception. `Error` is just a special `RuntimeException`, merely a subdivided subclass of runtime exceptions. Actually from a programmer's perspective, there are only two types of exceptions: ones I can handle, ones I cannot handle. Whether JVM crashes or there are programmer design flaws, these exceptions are not what programmers can or should handle. Further subdivision is unnecessary, complicating things needlessly. On this point, I think Java's design is quite disgusting. Also, Java's RuntimeException is really a garbage bin, throwing all kinds of garbage exceptions in. A more reasonable design should refer to [C# Runtime Exception](https://msdn.microsoft.com/zh-cn/library/ms173164.aspx). Runtime only throws a few types of exceptions, all corresponding to hardware exceptions; other exceptions are ordinary exceptions.
 
-#### Summary
+### Summary
 
 From the programmer's perspective, exceptions are divided into two types: handleable **application exceptions** and unhandleable **runtime exceptions**
 

@@ -6,7 +6,6 @@ summary: |
   The concept of natural numbers should have been learned in elementary school. The foundation of all elementary mathematics begins with such a definition. However, when I entered university, I encountered this question again in discrete mathematics.
 tags: [Essay]
 ---
-
 The concept of natural numbers should have been learned in elementary school. The foundation of all elementary mathematics begins with such a definition. However, when I entered university, I encountered this question again in discrete mathematics.
 
 **What is the definition of natural numbers?**

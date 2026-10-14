@@ -5,8 +5,6 @@ summary: |
   排序算法是最基础、应用最广泛、也是面试最常考的算法。这里总结了经典的排序算法：选择排序，插入排序，冒泡排序，希尔排序，计数排序，快速排序，归并排序，堆排序的原理与实现。
 tags: [随笔]
 ---
-
-
 > 排序算法是最基础、应用最广泛、也是面试最常考的算法。
 
 一个 **排序算法**（Sorting algorithm）是一种能将一串数据依照特定排序方式进行排列的一种算法。其中：
@@ -21,12 +19,12 @@ tags: [随笔]
 | 大类   | 细分                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 交换排序 | [冒泡排序](https://zh.wikipedia.org/wiki/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F) [鸡尾酒排序](https://zh.wikipedia.org/wiki/%E9%B8%A1%E5%B0%BE%E9%85%92%E6%8E%92%E5%BA%8F) [奇偶排序](https://zh.wikipedia.org/wiki/%E5%A5%87%E5%81%B6%E6%8E%92%E5%BA%8F) [梳排序](https://zh.wikipedia.org/wiki/%E6%A2%B3%E6%8E%92%E5%BA%8F) [侏儒排序](https://zh.wikipedia.org/w/index.php?title=%E4%BE%8F%E5%84%92%E6%8E%92%E5%BA%8F&action=edit&redlink=1) [快速排序](https://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F) [臭皮匠排序](https://zh.wikipedia.org/wiki/%E8%87%AD%E7%9A%AE%E5%8C%A0%E6%8E%92%E5%BA%8F) [Bogo排序](https://zh.wikipedia.org/wiki/Bogo%E6%8E%92%E5%BA%8F) |
-| 选择排序 | [选择排序](https://zh.wikipedia.org/wiki/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F) [堆排序](https://zh.wikipedia.org/wiki/%E5%A0%86%E6%8E%92%E5%BA%8F) [平滑排序](https://zh.wikipedia.org/w/index.php?title=%E5%B9%B3%E6%BB%91%E6%8E%92%E5%BA%8F&action=edit&redlink=1) [笛卡尔树排序](https://zh.wikipedia.org/w/index.php?title=%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91%E6%8E%92%E5%BA%8F&action=edit&redlink=1) [锦标赛排序](https://zh.wikipedia.org/w/index.php?title=%E9%94%A6%E6%A0%87%E8%B5%9B%E6%8E%92%E5%BA%8F&action=edit&redlink=1) [圈排序](https://zh.wikipedia.org/w/index.php?title=%E5%9C%88%E6%8E%92%E5%BA%8F&action=edit&redlink=1)                                  |
+| 选择排序 | [选择排序](https://zh.wikipedia.org/wiki/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F) [堆排序](https://zh.wikipedia.org/wiki/%E5%A0%86%E6%8E%92%E5%BA%8F) [平滑排序](https://en.wikipedia.org/wiki/Smoothsort) [笛卡尔树排序](https://en.wikipedia.org/wiki/Cartesian_tree) [锦标赛排序](https://zh.wikipedia.org/w/index.php?title=%E9%94%A6%E6%A0%87%E8%B5%9B%E6%8E%92%E5%BA%8F&action=edit&redlink=1) [圈排序](https://zh.wikipedia.org/w/index.php?title=%E5%9C%88%E6%8E%92%E5%BA%8F&action=edit&redlink=1)                                  |
 | 插入排序 | [插入排序](https://zh.wikipedia.org/wiki/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F) [希尔排序](https://zh.wikipedia.org/wiki/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F) [伸展排序](https://zh.wikipedia.org/wiki/%E4%BC%B8%E5%B1%95%E6%A8%B9) [二叉查找树排序](https://zh.wikipedia.org/wiki/%E4%BA%8C%E5%85%83%E6%90%9C%E5%B0%8B%E6%A8%B9) [图书馆排序](https://zh.wikipedia.org/wiki/%E5%9B%BE%E4%B9%A6%E9%A6%86%E6%8E%92%E5%BA%8F) [耐心排序](https://zh.wikipedia.org/wiki/%E8%80%90%E5%BF%83%E6%8E%92%E5%BA%8F)                                                                                                                                                                           |
-| 归并排序 | [归并排序](https://zh.wikipedia.org/wiki/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F) [梯级归并排序](https://zh.wikipedia.org/w/index.php?title=%E6%A2%AF%E7%BA%A7%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F&action=edit&redlink=1) [振荡归并排序](https://zh.wikipedia.org/w/index.php?title=%E6%8C%AF%E8%8D%A1%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F&action=edit&redlink=1) [多相归并排序](https://zh.wikipedia.org/w/index.php?title=%E5%A4%9A%E7%9B%B8%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F&action=edit&redlink=1) [列表排序](https://zh.wikipedia.org/w/index.php?title=%E4%B8%B2%E5%88%97%E6%8E%92%E5%BA%8F&action=edit&redlink=1)                                                           |
+| 归并排序 | [归并排序](https://zh.wikipedia.org/wiki/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F) [梯级归并排序](https://en.wikipedia.org/wiki/Cascade_merge_sort) [振荡归并排序](https://zh.wikipedia.org/w/index.php?title=%E6%8C%AF%E8%8D%A1%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F&action=edit&redlink=1) [多相归并排序](https://en.wikipedia.org/wiki/Polyphase_merge_sort) [列表排序](https://zh.wikipedia.org/w/index.php?title=%E4%B8%B2%E5%88%97%E6%8E%92%E5%BA%8F&action=edit&redlink=1)                                                           |
 | 并发排序 | [双调排序器](https://zh.wikipedia.org/w/index.php?title=%E5%8F%8C%E8%B0%83%E6%8E%92%E5%BA%8F%E5%99%A8&action=edit&redlink=1) [Batcher归并网络](https://zh.wikipedia.org/wiki/Batcher%E5%BD%92%E5%B9%B6%E7%BD%91%E7%BB%9C) [两两排序网络](https://zh.wikipedia.org/w/index.php?title=%E4%B8%A4%E4%B8%A4%E6%8E%92%E5%BA%8F%E7%BD%91%E7%BB%9C&action=edit&redlink=1)                                                                                                                                                                                                                                                                                                       |
-| 混合排序 | [块排序](https://zh.wikipedia.org/w/index.php?title=%E5%A1%8A%E6%8E%92%E5%BA%8F&action=edit&redlink=1) [Tim排序](https://zh.wikipedia.org/w/index.php?title=Tim%E6%8E%92%E5%BA%8F&action=edit&redlink=1) [内省排序](https://zh.wikipedia.org/wiki/Introsort) [Spread排序](https://zh.wikipedia.org/w/index.php?title=Spread%E6%8E%92%E5%BA%8F&action=edit&redlink=1) [J排序](https://zh.wikipedia.org/w/index.php?title=J%E6%8E%92%E5%BA%8F&action=edit&redlink=1)                                                                                                                                                                                                    |
-| 其他   | [拓扑排序](https://zh.wikipedia.org/wiki/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F) [煎饼排序](https://zh.wikipedia.org/w/index.php?title=%E7%85%8E%E9%A4%85%E6%8E%92%E5%BA%8F&action=edit&redlink=1) [意粉排序](https://zh.wikipedia.org/w/index.php?title=%E6%84%8F%E7%B2%89%E6%8E%92%E5%BA%8F&action=edit&redlink=1)                                                                                                                                                                                                                                                                                                                                                   |
+| 混合排序 | [块排序](https://en.wikipedia.org/wiki/Block_sort) [Tim排序](https://en.wikipedia.org/wiki/Timsort) [内省排序](https://zh.wikipedia.org/wiki/Introsort) [Spread排序](https://en.wikipedia.org/wiki/Spreadsort) J排序（原链接失效）                                                                                                                                                                                                    |
+| 其他   | [拓扑排序](https://zh.wikipedia.org/wiki/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F) [煎饼排序](https://zh.wikipedia.org/w/index.php?title=%E7%85%8E%E9%A4%85%E6%8E%92%E5%BA%8F&action=edit&redlink=1) [意粉排序](https://en.wikipedia.org/wiki/Spaghetti_sort)                                                                                                                                                                                                                                                                                                                                                   |
 
 * 稳定/不稳定：**稳定排序算法** 会让原本有相等键值的纪录维持 **相对次序**。也就是如果一个排序算法是 **稳定** 的，当有两个相等键值的纪录*R*和*S*，且在原本的列表中*R*出现在*S*之前，在排序过的列表中*R*也将会是在*S*之前。
 * 适应性/非适应性：**非适应性** 的算法执行的操作序列独立于数据的顺序。**自适应** 的排序执行不同的操作序列。
@@ -99,7 +97,7 @@ def test_sort(func=sorted):print(is_sorted(func(random_data())))
 
 ### 分析
 
-```
+```text
 i ∈ [0, N)
     swap(A[i], A[min_index(A[i:N])] )
 ```
@@ -150,7 +148,7 @@ def selection_sort(A):
 
 ### 分析
 
-```
+```text
 i ∈ [1, N)
     A[0:i+1] = put_properly( A[0,i) , A[i] )
 ```
@@ -224,7 +222,7 @@ def insertion_sort2(A):
 
 ### 分析
 
-```
+```text
 i ∈ [0, N-1)
     j ∈ [0, N-i-1）
         if less( A[j+1], A[j] ):

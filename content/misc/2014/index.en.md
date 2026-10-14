@@ -5,7 +5,6 @@ authors: [vonng]
 summary: Unable to sleep in the dead of night, spending the last hour of 2014 reviewing this year and looking ahead to next year seems quite appropriate.
 tags: [Essay]
 ---
-
 Unable to sleep in the dead of night, spending the last hour of 2014 reviewing this year and looking ahead to next year seems quite appropriate.
 
 Casually flipping through my 2013 year-end summary and 2014 diary entries, I'm filled with many emotions. My first New Year diary entry specially recorded Obokata Haruko's induced stem cells and the discovery of magnetic monopoles, while now the Obokata incident has come to an end. Although my internship at Alibaba was back in July, I can still vividly remember every detail of those days. Thanks to my diary, a whole year's worth of memories remain as fresh as yesterday.

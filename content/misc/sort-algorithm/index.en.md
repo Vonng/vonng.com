@@ -6,8 +6,6 @@ summary: |
   Sorting algorithms are the most fundamental, widely applicable, and frequently tested algorithms in interviews. This article summarizes classic sorting algorithms: selection sort, insertion sort, bubble sort, shell sort, counting sort, quicksort, merge sort, and heap sort - their principles and implementations.
 tags: [Essay]
 ---
-
-
 > Sorting algorithms are the most fundamental, widely applicable, and frequently tested algorithms in interviews.
 
 A **sorting algorithm** is an algorithm that can arrange a string of data in a specific order. Where:
@@ -26,7 +24,7 @@ Two basic operations required for sortable objects are: Compare and Swap
 | Insertion Sort | [Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort) [Shellsort](https://en.wikipedia.org/wiki/Shellsort) [Splay Sort](https://en.wikipedia.org/wiki/Splay_tree) [Binary Search Tree Sort](https://en.wikipedia.org/wiki/Binary_search_tree) [Library Sort](https://en.wikipedia.org/wiki/Library_sort) [Patience Sort](https://en.wikipedia.org/wiki/Patience_sorting)                                                                                                                                                                           |
 | Merge Sort | [Merge Sort](https://en.wikipedia.org/wiki/Merge_sort) [Cascade Merge Sort](https://en.wikipedia.org/wiki/Merge_sort) [Oscillating Merge Sort](https://en.wikipedia.org/wiki/Merge_sort) [Polyphase Merge Sort](https://en.wikipedia.org/wiki/Merge_sort) [Strand Sort](https://en.wikipedia.org/wiki/Strand_sort)                                                           |
 | Concurrent Sort | [Bitonic Sorter](https://en.wikipedia.org/wiki/Bitonic_sorter) [Batcher Odd-even Mergesort](https://en.wikipedia.org/wiki/Batcher_odd%E2%80%93even_mergesort) [Pairwise Sorting Network](https://en.wikipedia.org/wiki/Sorting_network)                                                                                                                                                                                                                                                                                                                       |
-| Hybrid Sort | [Block Sort](https://en.wikipedia.org/wiki/Block_sort) [Timsort](https://en.wikipedia.org/wiki/Timsort) [Introsort](https://en.wikipedia.org/wiki/Introsort) [Spreadsort](https://en.wikipedia.org/wiki/Spreadsort) [UnShuffle Sort](https://en.wikipedia.org/wiki/UnShuffle_sort)                                                                                                                                                                                    |
+| Hybrid Sort | [Block Sort](https://en.wikipedia.org/wiki/Block_sort) [Timsort](https://en.wikipedia.org/wiki/Timsort) [Introsort](https://en.wikipedia.org/wiki/Introsort) [Spreadsort](https://en.wikipedia.org/wiki/Spreadsort) UnShuffle Sort (original link unavailable)                                                                                                                                                                                    |
 | Other   | [Topological Sort](https://en.wikipedia.org/wiki/Topological_sorting) [Pancake Sort](https://en.wikipedia.org/wiki/Pancake_sorting) [Spaghetti Sort](https://en.wikipedia.org/wiki/Spaghetti_sort)                                                                                                                                                                                                                                                                                                                                                   |
 
 * Stable/Unstable: **Stable sorting algorithms** maintain the **relative order** of records with equal keys. That is, if a sorting algorithm is **stable**, when there are two records *R* and *S* with equal keys, and *R* appears before *S* in the original list, *R* will also appear before *S* in the sorted list.
@@ -100,7 +98,7 @@ Its advanced version is Heap Sort.
 
 ### Analysis
 
-```
+```text
 i ∈ [0, N)
     swap(A[i], A[min_index(A[i:N])] )
 ```
@@ -151,7 +149,7 @@ Unlike selection sort, insertion sort is an adaptive algorithm whose runtime is 
 
 ### Analysis
 
-```
+```text
 i ∈ [1, N)
     A[0:i+1] = put_properly( A[0,i) , A[i] )
 ```
@@ -225,7 +223,7 @@ The core idea of bubble sort is: divide data into (unordered region, ordered reg
 
 ### Analysis
 
-```
+```text
 i ∈ [0, N-1)
     j ∈ [0, N-i-1）
         if less( A[j+1], A[j] ):

@@ -6,7 +6,6 @@ summary: >
   看到一个新闻说微信在后台读用户相册，国产软件干这种龌龊事情并不让我惊奇，但本着求真务实的精神，早上起来我也准备看看，微信是不是真干坏事了
 tags: [随笔]
 ---
-
 > [微信公众号原文](https://mp.weixin.qq.com/s/x0zHL7e2nTpf_UTUHxqLJg)
 
 昨天晚上，看到一个新闻说微信在后台读用户相册，然后微信还回复了
@@ -15,7 +14,7 @@ tags: [随笔]
 
 虽然国产软件干这种龌龊事情并不让我惊奇，但本着求真务实的精神，早上起来我也准备看看，微信是不是真干坏事了。结果发现，微信果然屁股不干净，而且这个回复解释也是在放屁。比如，今天早上6点40分，我还在呼呼大睡的时候，微信就偷偷读取了我的相册，难道说这也是“按+快速发图”触发的吗？作为经常性八九点起床的人，六点是根本不可能去碰手机的，**所以这是微信App的自主行为，而这种行为显然没有经过我的同意。**
 
-```
+```text
 {"accessor":{"identifier":"com.tencent.xin","identifierType":"bundleID"},"category":"photos","identifier":"B0848F17-B581-42C4-AF98-EC5CB2181A61","kind":"intervalBegin","timeStamp":"2021-10-09T06:41:51.896+08:00","type":"access"}
 {"accessor":{"identifier":"com.tencent.xin","identifierType":"bundleID"},"category":"photos","identifier":"B0848F17-B581-42C4-AF98-EC5CB2181A61","kind":"intervalEnd","timeStamp":"2021-10-09T06:45:03.813+08:00","type":"access"}
 ```
@@ -30,7 +29,7 @@ tags: [随笔]
 
 代码地址：https://github.com/Vonng/pigsty/tree/v1.1/app/applog
 
-演示程序：http://demo.pigsty.cc/d/applog-summary
+演示程序：https://demo.pigsty.cc/ui/d/applog-summary
 
 数据安全与隐私是收拾互联网公司的最佳抓手，全拉出去枪毙可能有冤枉的，但是隔一个枪毙一个肯定有漏网的。这个新功能一出，估计iOS上不老实的应用要有一波难过的日子了。
 

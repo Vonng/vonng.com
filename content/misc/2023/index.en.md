@@ -5,12 +5,11 @@ authors: [vonng]
 summary: In 2023, I turned thirty. As Confucius said, "At thirty, one establishes oneself." I've managed to accomplish something - started a family, built a career, gained some technical reputation. A year-end review to commemorate 2023.
 tags: [Essay]
 ---
-
-# Thirty and Established
+## Thirty and Established
 
 In 2023, I turned thirty. As Confucius said, "At thirty, one establishes oneself." I've managed to accomplish something - started a family, built a career, gained some technical reputation. On the last day of 2023, let me take stock and leave a commemoration.
 
-## Open-Source
+### Open-Source
 
 GitHub is the spiritual home for 100 million developers worldwide, the world's largest gay dating site. On GitHub, I'm quite an active open source contributor, ranking [81st in China](https://committers.top/china) by activity at the end of 2023, [410th in China](https://wangchujiang.com/github-rank/users.china.html) by followers, and [483rd globally](https://gitstar-ranking.com/Vonng) by star count.
 
@@ -26,7 +25,7 @@ In 2023, Pigsty released its second major version with 11 total releases. Previo
 
 Having your own open source project has many benefits - you receive thanks from users, providing tremendous sense of accomplishment and emotional value. Many IDEs, software subscriptions/services, and Copilot services are also free for open source contributors. Another benefit is when others play boring tricks in discussions/debates/comments like "if you think this database/cloud service is bad, who are you to judge? If you're so capable, do it yourself" - I can actually whip it out and slap them in the face, leaving them speechless, haha.
 
-## AI
+### AI
 
 2023 saw explosive growth in AI large language models, which I followed closely - GPT's emergence made 10x programmers like me square our efficiency, becoming literal One-Man Armies. I'm genuinely interested in AI but didn't want to abandon my core expertise in databases just to chase trends, so I chose to focus on the intersection of databases and AI in **DB4AI** / **AI4DB** areas for research and development.
 
@@ -38,7 +37,7 @@ Having your own open source project has many benefits - you receive thanks from 
 
 ![ai4db.png](ai4db.png)
 
-## Entrepreneurship
+### Entrepreneurship
 
 In April 2022, Miracle Plus invested in the Pigsty project, giving me the opportunity to work full-time on entrepreneurship. In 2023, the Pigsty project developed quite well, with stable growth, entering mainstream view with some global recognition. It occupies a quite decent ecological niche, earning a ticket to the PostgreSQL distribution arena.
 
@@ -56,7 +55,7 @@ In PostgreSQL distribution ecological competition, we chose the most reliable/pe
 
 Another overlapping competitor is **cloud databases/RDS** - many Pigsty subscription customers self-built because cloud RDS was too expensive. Although public cloud RDS teams might have dozens of people, I'm not intimidated at all. I'm always the one poaching RDS corners, ideologically dominating and writing articles about it. This became recreational entertainment during entrepreneurship - accumulating over twenty high-quality related articles this year, compiled into a "Cloud Computing Mudslide" Cloud-Exit handbook.
 
-## Influence
+### Influence
 
 I started a WeChat public account "[Illegal Addition Feng](https://mp.weixin.qq.com/s/p4Ys10ZdEDAuqNAiRmcnIQ)" in 2018 for fun, mainly sharing PostgreSQL technology, Pigsty news, plus some essays and travel logs, with around 1300 followers at the beginning of this year. I started getting serious this year, writing dozens of articles, and followers multiplied 13x to **18,300**. Twitter followers also multiplied several times to **eight thousand**; plus **twelve thousand** on Zhihu; total followers approaching **forty thousand**, basically covering the entire database circle - quite good for a technical blogger.
 
@@ -76,7 +75,7 @@ Besides writing articles, I occasionally speak at technical conferences, partici
 
 ![conf.png](conf.png)
 
-## Life Journey
+### Life Journey
 
 On 2023.12.12, at the tail end of thirty, after two years of courtship, my wife and I entered the halls of matrimony. But we've only gotten certificates now - the wedding and reception banquet will wait until next year. Life before and after marriage has been happy - I won't show off here.
 

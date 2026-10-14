@@ -6,7 +6,6 @@ summary: >
   Turning 33, I look back on what may have been my most enjoyable year yet: one person, a team of agents, Pigsty, PostgreSQL's Chinese ecosystem, Silo—and, somehow, work-life balance.
 tags: [AI, Pigsty, Essay]
 ---
-
 It's my 33rd birthday today. Another year gone in a blink.
 
 People say your sense of time gets hazier after 30: blink, and a year is gone. I do feel that, though perhaps for a different reason.

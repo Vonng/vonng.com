@@ -7,9 +7,6 @@ summary: >
 tags: [Society, Agenda Setting]
 images: [featured.webp]
 ---
-
----
-
 ## I
 
 On September 12, a celebrity who made his name campaigning for consumer rights ate some ice cream at an airport. He didn't like it and posted on Weibo.
@@ -21,8 +18,6 @@ In parentheses, he added seven Chinese characters: **Please, don't mess with me.
 An ordinary consumer who eats something awful and vents on Weibo doesn't need to warn the company in advance not to hit back. He doesn't even matter enough to warrant a response: he rants, the company keeps selling, and it probably never even sees his post.
 
 Someone who opens with “don't mess with me” knows exactly what power he holds.
-
----
 
 ## II
 
@@ -42,8 +37,6 @@ There is an old saying in communication studies: the media may not be able to te
 
 So “I'm just a consumer” translates as: **I borrow the immunity of the weak to exercise the power of the strong.**
 
----
-
 ## III
 
 Agenda setting has three layers.
@@ -55,8 +48,6 @@ Agenda setting has three layers.
 **Third, deciding what doesn't get discussed.** Attention is zero-sum, and the trending lists have only so many slots. This week's public attention went to a serving of ice cream. What got left out? No one knows, because those issues never made the list.
 
 The true shape of agenda-setting power lies not in what it says, but in **the issues it passed over—the ones no one talks about this week as a result.** And the selection criterion is never importance; it's shareability. A serving of ice cream makes the cut because it's tangible, vivid, and everyone can imagine taking that bite.
-
----
 
 ## IV
 
@@ -78,15 +69,11 @@ A consumer's motives don't need auditing, because no one cares why he says somet
 
 That is the real payoff from this sleight of hand. It shields him not from responsibility, but from **being questioned**.
 
----
-
 ## V
 
 My day job is building a database distribution. Writing online doesn't even qualify as a side job, though I do have some influence in the database and cloud computing world. So I know how agenda setting works. I set agendas too: Are cloud databases an idiot tax? Is cloud computing a pig-butchering scam? Are Big Tech companies just amateur outfits? I wrote those headlines, and I know what they do.
 
 But I freely acknowledge this. I won't criticize cloud vendors while claiming to be just a user. The very function of “I'm just a consumer” is to make that sort of challenge impossible—you can't very well demand that a consumer produce evidence for his taste.
-
----
 
 ## VI
 
@@ -99,8 +86,6 @@ Agenda setting is a form of power. Setting the agenda is not the problem. This p
 Power may go unchecked, but it at least has to admit it is power.
 
 This week's ice cream agenda has already been set: one tastes awful, one is remembered fondly, and one appears at an expo today. As for the things we should have discussed this week but didn't—sorry, all the slots are taken.
-
----
 
 ## VII
 

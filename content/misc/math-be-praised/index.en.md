@@ -6,7 +6,6 @@ summary: |
   What a wonderful subject mathematics is
 tags: [Essay]
 ---
-
 In the very center of humanity's rational world
 
 An eternal ivory tower stands tall upon it

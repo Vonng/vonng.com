@@ -5,8 +5,6 @@ authors: [vonng]
 summary: What ultimately determines romance and marriage?
 tags: [Essay]
 ---
-
-
 Recently, my roommate broke up with his girlfriend. What was once a lovey-dovey, inseparable couple suddenly separated just like that. This inevitably made me start thinking about some questions I hadn't carefully considered before: What ultimately determines romance and marriage?
 
 <!--more-->

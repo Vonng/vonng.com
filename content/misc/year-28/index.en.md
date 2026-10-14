@@ -6,10 +6,7 @@ summary: |
   My solar birthday falling on Mid-Autumn Festival is something that will only happen three times in my lifetime. Theoretically, this should be a memorable day, but the events of this year have left me numb.
 tags: [Essay]
 ---
-
-
-
-# Life at 28
+## Life at 28
 
 Another Mid-Autumn Festival, another year older.
 
@@ -19,7 +16,7 @@ Age 28 began with a journey: after the pandemic had briefly subsided during Nati
 
 Unfortunately, happiness and joy in life are always fleeting. Just one month later, I received devastating news. My closest relative, grandfather, passed away, plunging my life into darkness. Everything seemed to lose meaning, and endless despair enveloped me. [Farewell to Grandfather](/misc/yaoguoxun/)
 
-## Life in Decline
+### Life in Decline
 
 A meaningless life is terrifying—food becomes tasteless, sleep elusive, all goals and willpower lost. I struggled to escape this quagmire but only sank deeper. For the next two months, I filled every weekend with activities: skiing, ice climbing, attending PG conferences, self-driving in Yunnan, [Meili Snow Mountain New Year's trek](/trip/20201228-yubeng/), hosting Tantan's annual meeting. It looked colorful and rich, but was actually just pursuing novelty and thrills to fill inner emptiness.
 
@@ -41,7 +38,7 @@ Actually, I'd experienced this twice before. On my 18th birthday ten years ago, 
 
 My 28th birthday is also the first decade anniversary of adulthood. Indeed, a good day to start anew: reclaim life, face living again.
 
-## Review and Planning
+### Review and Planning
 
 Though this year was decadent, work went well. The most representative work is [Pigsty](https://pigsty.cc), a batteries-included open-source database distribution achieving extreme database observability—unashamed even on a global scale.
 
@@ -57,7 +54,7 @@ The Chinese translation of the classic book "[DDIA](https://ddia.vonng.com)" als
 
 Other projects also have steady star growth. GitHub ⭐️ totals exceed 11k; followers are seven or eight hundred, ranking in the hundreds domestically and thousands globally—quite good.
 
-![](github-bio.png)
+![Life at 28 — Review and Planning (figure 1)](github-bio.png)
 
 In learning, I slacked off this past year—didn't even properly prepare for IELTS. Next year I must at least get 7666. Pigsty's extensive English documentation also requires improving English writing skills.
 

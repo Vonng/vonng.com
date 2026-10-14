@@ -6,7 +6,6 @@ summary: >
   密码学里有一个经典的问题，就是如何在不安全的信道中安全可靠地传输数据。避免自己的聊天与通信遭到偷窥，监控与河蟹。只要你手头有电脑，就可以轻易做到这一点。
 tags: [随笔]
 ---
-
 > [微信公众号原文](https://mp.weixin.qq.com/s/zUu5PlN_Kzd2-RS10R7wMw)
 
 密码学里有一个经典的问题，就是如何在不安全的信道中安全可靠地传输数据。避免自己的聊天与通信遭到偷窥，监控与河蟹。只要你手头有电脑，就可以轻易做到这一点。
@@ -89,7 +88,7 @@ echo -n '有内鬼，中止交易' | openssl rsautl -encrypt -oaep -pubin -inkey
 
 得到了一串加密后的密文，然后老王将这串乱码发送回给翠花。
 
-```
+```text
 ZrmUyA8zGWgEr/dPLX7QbfoZ1mUwvim0yau7LrnMFRUGh0KtxvinBBQuUpvzGr+1MAccd6hFDQPJ/CwHnlM3Kk2Da8g1SCR+CU8EReQ+CBLdbfvFXw4pjScMKsuubgY77jTKpkZQXcLnIM7DOZueEevASTX/+/J++W5IPgUhVIEiqX1tn63bVD6Jv3b7knWovv+mT97liqx8dV+JLgNvpm8/F05SGCInKZ9m7bXga3bxg/SfcI38VNKVpJnBph2gTgv0ZlFHKDxR2tFMfCfQgD2lrWaxlTdAx1QDtn1ter2whDXmazm/rUR07YvpQjBbboB2+fq5Kp44/buvj16Ksw==
 ```
 

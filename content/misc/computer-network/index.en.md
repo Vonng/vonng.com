@@ -5,7 +5,6 @@ authors: [vonng]
 summary: Computer networks are like a logistics system, with the only difference being that logistics systems transmit material entities like mail and packages, while computer networks transmit intangible information.
 tags: [Essay]
 ---
-
 Computer networks are like a logistics system, with the difference being that logistics systems transmit material entities like mail and packages, while computer networks transmit intangible information.
 
 Computer networks are divided into five layers from bottom to top: physical layer, data link layer, network layer, transport layer, and application layer:

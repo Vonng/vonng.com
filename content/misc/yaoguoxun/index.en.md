@@ -6,8 +6,6 @@ summary: |
   Grandfather has passed away. I am beyond grief, but I should still write something in his memory.
 tags: [Essay]
 ---
-
-
 Although 2020 was a year of many disasters, until grandfather's death, I always thought we could somehow get by.
 
 The death of a close relative—this is the second time for me. First my father, then my grandfather. Humans appear so powerless before death. All I can do is record this moment. Perhaps the deceased can live on in another form in the living's memory, offering some comfort.
@@ -16,13 +14,13 @@ My hometown is located in the desolate northwestern desert Gobi, situated by the
 
 From the moment my grandfather graduated from a Shanghai machinery factory and was assigned to this base, my family took root here. My mother and aunt were both born in this small city, attending school from elementary through high school. I also spent the first twelve years of my life here. For over forty years, grandfather worked at the base transport maintenance station. The apprentices and soldiers he trained came and went in batches, but he remained a squad leader for decades. Level-8 fitter, assistant engineer, level-6 sergeant major, with five third-class merits and several scientific and technological progress awards. As a child, I didn't understand much, only that it seemed very impressive. Regardless, at least we never needed to buy furniture—whether appliances or furniture, large trucks or blast-proof doors, or special equipment for missile launch platforms, there was nothing grandfather couldn't repair.
 
-![](yaoguoxun2.webp)
+![Farewell to Grandfather (figure 1)](yaoguoxun2.webp)
 
 Among all the people I've met, grandfather had an excellent reputation. It's said he never quarreled with anyone in his entire life. Highly respected, helpful, noble in character, never did anything against his conscience. Every time grandfather cleaned, he would sweep from home to the hallway, then clean the courtyard and streets—every day, seeking no reward, continuing even after retirement back to his hometown. When the unit evaluated model workers, he declined; when evaluating merits, he also declined. But the more he declined honors, the more they accumulated. When third-class merits that others fought over were given to grandfather, no one disagreed. He always faced everything with a serious, optimistic, positive attitude—broad-minded and tolerant. From him, I saw that truth, goodness, and beauty exist in this world, that faith has power. This power can make a person burst forth with such resilient and enduring life's flame.
 
 Among all relatives, grandfather spent the most time with me. He cooked three meals daily, so I'd eat breakfast at grandfather's house before school, return for lunch during break, and go to grandfather's for dinner after school. Grandfather would bike me to school mornings and noons, and we'd walk together after dinner. Therefore, I often didn't want to return to my own home, simply staying at grandfather's. When father wanted to discipline me, I'd hide behind grandfather; when grandfather wanted to spank me, I could only obediently take the punishment. Looking back, childhood's happy moments always included grandfather's shadow.
 
-![](yaoguoxun3.jpeg)
+![Farewell to Grandfather (figure 2)](yaoguoxun3.jpeg)
 
 When I was in fourth grade, grandfather finally retired. With his qualifications, he could go anywhere in the country. Especially since grandfather had grown up, lived, and studied in Shanghai in his youth—returning there would have been natural. But he still chose to return to his roots, going back to his hometown Hengxi Town to be a happy "country dweller." Thus my parents' generation also returned to Ningbo with grandfather. My six middle school years and four university years' winter and summer breaks were spent in the countryside with grandfather.
 

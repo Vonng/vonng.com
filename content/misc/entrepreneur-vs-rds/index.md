@@ -5,8 +5,6 @@ summary: |
   最近接受了 OSC 开源中国的专访，聊一聊全职出来做Pigsty创业的初心：让天下没有难用的 PostgreSQL，以及：卷死云数据库!
 tags: [随笔]
 ---
-
-
 > [微信公众号原文](https://mp.weixin.qq.com/s/I7OA0thv9Dwvj4zoxIOhJQ) | [开源中国文章](https://my.oschina.net/oscpyaqxylk/blog/5548404)
 
 出品：OSCHINA 开源中国
@@ -36,8 +34,6 @@ tags: [随笔]
 <iframe src="//player.bilibili.com/player.html?aid=512957015&bvid=BV1o3411w7hP&cid=760975146&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 > Pigsty 今年的路演宣传视频，重点超多，不看吃亏系列
-
--------------
 
 ## 01 “摸鱼” 摸出创业机会
 
@@ -78,8 +74,6 @@ tags: [随笔]
 > Software as DBA Copilot，**这是实打实的[解放生产力](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485064&idx=1&sn=6225a044d8f145cdb07a21a1e0c54ad8&chksm=fe4b3353c93cba4582576b4de151ac48247052a1494adcc820dc64a32dafb0b99e33085c7bbb&scene=21#wechat_redirect)。**
 
 显然，冯若航想要实现的是影响力，是行业推动，是变化，是革新。因此，在他的话语体系中常常会出现 “令人振奋” 的话语，对既得利益者，他也毫不留情。云数据库、MySQL、Oracle 等等都是他臧否的对象，有点子狂。
-
--------------
 
 ## **02 “降维打击” 云数据库**
 
@@ -171,8 +165,6 @@ tags: [随笔]
 
 ![7.png](7.png)
 
--------------
-
 ## **03 开源是最高纲领**
 
 2022 年 2 月，奇绩创坛创业营找到他，算起来冯若航出来全职创业也不过是两三个月的事。如果这次路演顺利，他将完成 Pre A 轮融资，同时他也拉起了队伍 —— 一个不到十人的精干团队。
@@ -181,7 +173,7 @@ tags: [随笔]
 
 但冯若航并不孤单。在此之前，Pigsty 是一个以推广 PostgreSQL 为目的纯公益开源项目，因此它与 PostgreSQL 中文社区的颇有渊源。在社区的加持下，Pigsty 成长得很快。很多种子用户都是 PostgreSQL 中文社区的成员，有大量的用户会反馈需求，也有一些用户会撸起袖子自己上，然后把 Patch 提回给他们。
 
-如今，Pigsty 的特性和功能不断在丰富，已经开始支持更多开源数据库以及各类软件工具，详情可戳：https://pigsty.cc/zh/docs/feature/
+如今，Pigsty 的特性和功能不断在丰富，已经开始支持更多开源数据库以及各类软件工具，详情可戳：https://pigsty.cc/docs/about/feature/
 
 ![8.png](8.png)
 
@@ -223,13 +215,11 @@ tags: [随笔]
 
 ![10.png](10.png)
 
--------------
-
 ## 参考
 
 中文站点：https://pigsty.cc
 
-英文站点：https://pigsty.cc/en/
+英文站点：https://pigsty.io/
 
 官方演示：https://demo.pigsty.cc
 

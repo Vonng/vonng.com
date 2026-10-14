@@ -6,7 +6,6 @@ summary: >
   数据库领域一项不为人知，却卡脖子卡到飞起的硬技能。
 tags: [软件仓库, 软件工程]
 ---
-
 最近我的朋友，Omnigres 的创始人尤里跟我聊天，他说想要招一个 PostgreSQL 打包专家 —— 当然具体的岗位名字，他起了个 EEE —— Extension Ecoystem Engineer，也就是 “扩展生态工程师”，倒是挺有意思。他发的这个 JD 吧，是公开的（<https://github.com/omnigres/rfc/pull/2/files），我就直接贴在下面了>。
 
 ## 稀缺的技能：Linux 打包
