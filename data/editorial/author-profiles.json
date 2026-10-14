@@ -1,0 +1,492 @@
+{
+  "reviewed_at": "2026-10-14",
+  "authors": [
+    {
+      "slug": "ajay-kulkarni",
+      "name": "Ajay Kulkarni",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://www.tigerdata.com/about",
+        "https://www.linkedin.com/in/ajaykulkarni/",
+        "https://twitter.com/akulkarni"
+      ],
+      "avatar": {
+        "path": "assets/img/ajay-kulkarni.jpg",
+        "sha256": "88735f3ae024d5a0eb65bd7bf7084ac4b2b253db04c1cbc4d3fbf39dc2763937",
+        "bytes": 24314,
+        "kind": "existing_repository_portrait",
+        "source": "沿用仓库已有头像；本次未替换。"
+      }
+    },
+    {
+      "slug": "alap-shah",
+      "name": "Alap Shah",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://substack.com/@alapshah1",
+        "https://alapshah1.substack.com/",
+        "https://www.citriniresearch.com/p/2028gic"
+      ],
+      "avatar": {
+        "path": "assets/img/alap-shah.jpg",
+        "sha256": "a41fb80077e8f1d5b0c75826886f150179ee5c3cacb300b40be76f273bbc4c7b",
+        "bytes": 21902,
+        "source_url": "https://substackcdn.com/image/fetch/$s_!bNoG!,w_400,h_400,c_fill,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F530f4c21-4191-443b-b367-ae1598b1ccc1_890x890.png",
+        "source_page": "https://substack.com/@alapshah1",
+        "kind": "public_profile_avatar"
+      }
+    },
+    {
+      "slug": "alex-miller",
+      "name": "Alex Miller",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://transactional.blog/",
+        "https://transactional.blog/about",
+        "https://bsky.app/profile/alexmillerdb.bsky.social",
+        "https://www.foundationdb.org/files/fdb-paper.pdf"
+      ],
+      "avatar": {
+        "path": "assets/img/alex-miller.webp",
+        "sha256": "3417fafda4b7c3b35ad262daf0a087de5960351a077d4103da709cb35bdb072f",
+        "bytes": 9404,
+        "source_url": "https://cdn.bsky.app/img/avatar/plain/did:plc:piv74a45qe6lrfsywboc3l5y/bafkreig7nxyg6egqsihqx2b72hgd77srcxwk4r5qdxyxgdyjjtauevtyru",
+        "source_page": "https://bsky.app/profile/alexmillerdb.bsky.social",
+        "kind": "public_profile_avatar"
+      }
+    },
+    {
+      "slug": "alitrack",
+      "name": "alitrack",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://github.com/alitrack",
+        "https://github.com/alitrack/duckdb_fdw",
+        "https://alitrack.com/"
+      ],
+      "avatar": {
+        "path": "assets/img/alitrack.png",
+        "sha256": "c133191343b892a81daaa55de51f46714dfc7b4ab5bc314a148d4d0e83241b8f",
+        "bytes": 1513,
+        "source_url": "https://avatars.githubusercontent.com/u/20972179?v=4&s=400",
+        "source_page": "https://github.com/alitrack",
+        "kind": "public_profile_avatar"
+      }
+    },
+    {
+      "slug": "andy-pavlo",
+      "name": "Andy Pavlo",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://www.cs.cmu.edu/~pavlo/",
+        "https://db.cs.cmu.edu/",
+        "https://github.com/apavlo"
+      ],
+      "avatar": {
+        "path": "assets/img/andy-pavlo.jpg",
+        "sha256": "591314190f100419de0dfa545603cc652d1452c51f2dfa2241658ab06f2632ef",
+        "bytes": 7291,
+        "kind": "existing_repository_portrait",
+        "source": "沿用仓库已有头像；本次未替换。"
+      }
+    },
+    {
+      "slug": "bohan-zhang",
+      "name": "Bohan Zhang",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://bohanzhang.me/",
+        "https://www.linkedin.com/in/bohan-zhang-52b17714b/",
+        "https://twitter.com/BohanZhangOT"
+      ],
+      "avatar": {
+        "path": "assets/img/bohan-zhang.jpg",
+        "sha256": "f0c05224cf992455071b6fc474635284485b8945796b69502e14a6e65a78b0aa",
+        "bytes": 30311,
+        "kind": "existing_repository_portrait",
+        "source": "沿用仓库已有头像；本次未替换。"
+      }
+    },
+    {
+      "slug": "citrini-research",
+      "name": "Citrini Research",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://www.citriniresearch.com/about",
+        "https://www.citriniresearch.com/p/2028gic"
+      ],
+      "avatar": {
+        "path": "assets/img/citrini-research.png",
+        "sha256": "545d916ebc8d661199831d3bb6a6610153efa5ad850a0672e184a5917cdba67d",
+        "bytes": 12432,
+        "source_url": "https://substackcdn.com/image/fetch/$s_!fNVi!,w_400,h_400,c_fill,f_auto,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe98eec22-b2ef-40af-a4f4-ace1f627fad5_1280x1280.png",
+        "source_page": "https://www.citriniresearch.com/about",
+        "kind": "publication_logo"
+      }
+    },
+    {
+      "slug": "dhh",
+      "name": "DHH",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://dhh.dk/",
+        "https://world.hey.com/dhh",
+        "https://twitter.com/dhh"
+      ],
+      "avatar": {
+        "path": "assets/img/dhh.jpg",
+        "sha256": "dbd363bf768d669f6fecb9a3547d7d6f7edd7bd1bffff8c69155d07b7857c7e2",
+        "bytes": 7378,
+        "kind": "existing_repository_portrait",
+        "source": "沿用仓库已有头像；本次未替换。"
+      }
+    },
+    {
+      "slug": "digoal",
+      "name": "digoal",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://github.com/digoal/blog",
+        "https://github.com/digoal"
+      ],
+      "avatar": {
+        "path": "assets/img/digoal.png",
+        "sha256": "81b49591de0fc72060db8479d3caed3fee0d447019b351cc87c3b68f31d9ee5f",
+        "bytes": 185102,
+        "source_url": "https://avatars.githubusercontent.com/u/1920239?v=4&s=400",
+        "source_page": "https://github.com/digoal",
+        "kind": "public_profile_avatar"
+      }
+    },
+    {
+      "slug": "efim-mirochnik",
+      "name": "Efim Mirochnik",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://medium.com/@mirochnik",
+        "https://tech.ahrefs.com/how-ahrefs-saved-us-400m-in-3-years-by-not-going-to-the-cloud-8939dd930af8",
+        "https://www.linkedin.com/in/efim/",
+        "https://ahrefs.com/legal/Annex-A-US.pdf"
+      ],
+      "avatar": {
+        "path": "assets/img/efim-mirochnik.jpg",
+        "sha256": "268cd2a39b9911a72b1d83bd02428a03c597ae27fe2242bc5eb0804d7b93a729",
+        "bytes": 19098,
+        "source_url": "https://miro.medium.com/v2/resize:fill:400:400/1*C0_feDVw6kW9I2VwYD35nA.jpeg",
+        "source_page": "https://medium.com/@mirochnik/about",
+        "kind": "public_profile_avatar"
+      }
+    },
+    {
+      "slug": "fanux",
+      "name": "fanux",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://github.com/fanux",
+        "https://github.com/labring/sealos",
+        "https://github.com/labring/laf"
+      ],
+      "avatar": {
+        "path": "assets/img/fanux.jpg",
+        "sha256": "d4ec4edfb5b21cc62aff339e6af5d8abbbda355a8722f4546a3ea8a1c079ab01",
+        "bytes": 17961,
+        "source_url": "https://avatars.githubusercontent.com/u/8912557?v=4&s=400",
+        "source_page": "https://github.com/fanux",
+        "kind": "public_profile_avatar"
+      }
+    },
+    {
+      "slug": "gong-rui",
+      "name": "龚锐",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "/db/davinci-database/",
+        "https://newsroom.hidglobal.com/zh-hans/yingshijufengyu-hid-xieshouhezuoyi-apple-qianbaoyuangonggongpaizhongsugongzuochangsuotiyan"
+      ],
+      "avatar": {
+        "path": "assets/img/gong-rui.jpg",
+        "sha256": "330fdac84d37c319c2433169a4adc913d8454b2fa771700e53fb40f5d133be52",
+        "bytes": 23889,
+        "kind": "user_supplied_avatar",
+        "source": "用户于 2026-10-14 在本次会话提供的头像附件；未提供公开链接。"
+      }
+    },
+    {
+      "slug": "hannes-muhleisen",
+      "name": "Hannes Mühleisen",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://hannes.muehleisen.org/",
+        "https://duckdb.org/",
+        "https://github.com/hannes"
+      ],
+      "avatar": {
+        "path": "assets/img/hannes-muhleisen.jpg",
+        "sha256": "704b227da991a76e5d119204fa52edfeb826cc7978cc6ad65ab0b8ebe7ef9710",
+        "bytes": 12939,
+        "source_url": "https://avatars.githubusercontent.com/u/227792?v=4&s=400",
+        "source_page": "https://github.com/hannes",
+        "kind": "public_profile_avatar"
+      }
+    },
+    {
+      "slug": "john-de-goes",
+      "name": "John De Goes",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://degoes.net/about/",
+        "https://github.com/jdegoes",
+        "https://zio.dev/"
+      ],
+      "avatar": {
+        "path": "assets/img/john-de-goes.jpg",
+        "sha256": "e9863ba25dee2a682e9624667abc4cf53ee3075458b7e01742c729e335e74a78",
+        "bytes": 33536,
+        "source_url": "https://avatars.githubusercontent.com/u/156745?v=4&s=400",
+        "source_page": "https://github.com/jdegoes",
+        "kind": "public_profile_avatar"
+      }
+    },
+    {
+      "slug": "jonathan-katz",
+      "name": "Jonathan Katz",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://jkatz05.com/",
+        "https://www.postgresql.org/community/contributors/",
+        "https://github.com/jkatz"
+      ],
+      "avatar": {
+        "path": "assets/img/jonathan-katz.png",
+        "sha256": "65137870a8865dd22fb480acf6c49de1192cfc1073ea9556418aa8d9d56bc4c6",
+        "bytes": 58424,
+        "kind": "existing_repository_portrait",
+        "source": "沿用仓库已有头像；本次未替换。"
+      }
+    },
+    {
+      "slug": "laurenz-albe",
+      "name": "Laurenz Albe",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://www.cybertec-postgresql.com/en/author/laurenz_albe/",
+        "https://github.com/laurenz",
+        "https://github.com/laurenz/oracle_fdw"
+      ],
+      "avatar": {
+        "path": "assets/img/laurenz-albe.jpg",
+        "sha256": "2d75d5a06dda7048588d9b467cc63102b0e9bdd178af5681b4af0ad57001c440",
+        "bytes": 13099,
+        "source_url": "https://avatars.githubusercontent.com/u/220612?v=4&s=400",
+        "source_page": "https://github.com/laurenz",
+        "kind": "public_profile_avatar"
+      }
+    },
+    {
+      "slug": "ma-gong",
+      "name": "瑞典马工",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://qcon.infoq.cn/2026/beijing/speaker/10313",
+        "/cloud/developers-are-db-users/"
+      ],
+      "avatar": {
+        "path": "assets/img/ma-gong.png",
+        "sha256": "5910ffbae4484f897ca699ad1d6c2d0623c7cfc9120d476396c3bee6cd2c3e58",
+        "bytes": 66952,
+        "source_url": "https://constatic.geekbang.org/ck/69cc89a7d849e.png?x-oss-process=image%2Fresize%2Ch_300%2Cm_lfit",
+        "source_page": "https://qcon.infoq.cn/2026/beijing/speaker/10313",
+        "kind": "speaker_portrait"
+      }
+    },
+    {
+      "slug": "maciej-pocwierz",
+      "name": "Maciej Pocwierz",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://medium.com/@maciej.pocwierz",
+        "https://pl.linkedin.com/in/mpocwierz",
+        "https://medium.com/@maciej.pocwierz/how-an-empty-s3-bucket-can-make-your-aws-bill-explode-934a383cb8b1"
+      ],
+      "avatar": {
+        "path": "assets/img/maciej-pocwierz.jpg",
+        "sha256": "827be27315165494ce593cbcf34321c90e44b398ec2e92a3ed4571febbce3469",
+        "bytes": 19675,
+        "source_url": "https://miro.medium.com/v2/resize:fill:400:400/1*rxc9iAV1V1h8OBSmiddCog.jpeg",
+        "source_page": "https://medium.com/@maciej.pocwierz/followers",
+        "kind": "public_profile_avatar"
+      }
+    },
+    {
+      "slug": "marco-tusa",
+      "name": "Marco Tusa",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://www.percona.com/blog/author/tusa/",
+        "https://www.linkedin.com/in/marcotusa/"
+      ],
+      "avatar": {
+        "path": "assets/img/marco-tusa.jpg",
+        "sha256": "67d9fd00f7d1f0faaec487072906acda68fd01fd1ab10dd035c4781f79fdd0b8",
+        "bytes": 11731,
+        "kind": "existing_repository_portrait",
+        "source": "沿用仓库已有头像；本次未替换。"
+      }
+    },
+    {
+      "slug": "martin-kleppmann",
+      "name": "Martin Kleppmann",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://martin.kleppmann.com/",
+        "https://dataintensive.net/",
+        "https://github.com/ept",
+        "https://ddia.vonng.com/"
+      ],
+      "avatar": {
+        "path": "assets/img/martin-kleppmann.jpg",
+        "sha256": "5885e160b6fd7b6925ab561ade0ee77a92c4a9ebe86d49365b8ddb955a25182f",
+        "bytes": 40749,
+        "kind": "existing_repository_portrait",
+        "source": "沿用仓库已有头像；本次未替换。"
+      }
+    },
+    {
+      "slug": "matt-blewitt",
+      "name": "Matt Blewitt",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://matt.blwt.io/about/",
+        "https://matt.blwt.io/",
+        "https://github.com/mble"
+      ],
+      "avatar": {
+        "path": "assets/img/matt-blewitt.jpg",
+        "sha256": "6442c98aeabef5ce69f2eb062cb56f3ca11a65d9b99ee44d8ab60a203572907b",
+        "bytes": 20118,
+        "kind": "existing_repository_portrait",
+        "source": "沿用仓库已有头像；本次未替换。"
+      }
+    },
+    {
+      "slug": "mike-stonebraker",
+      "name": "Mike Stonebraker",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://www.csail.mit.edu/person/michael-stonebraker",
+        "https://amturing.acm.org/stonebraker_1172121.pdf"
+      ],
+      "avatar": {
+        "path": "assets/img/mike-stonebraker.jpg",
+        "sha256": "abc52e4dc80e5c2f805574bbde560151d5f7fecdb5cdaf02d92869d88164f6a5",
+        "bytes": 7036,
+        "kind": "existing_repository_portrait",
+        "source": "沿用仓库已有头像；本次未替换。"
+      }
+    },
+    {
+      "slug": "neo-kim",
+      "name": "Neo Kim",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://newsletter.systemdesign.one/about",
+        "https://systemdesign.one/",
+        "https://twitter.com/systemikimu"
+      ],
+      "avatar": {
+        "path": "assets/img/neo-kim.jpg",
+        "sha256": "e0e1f4b42b108173a10e883af6dcd691e05b04b888c0901ca9dd47b72bf6bdd1",
+        "bytes": 15541,
+        "kind": "existing_repository_portrait",
+        "source": "沿用仓库已有头像；本次未替换。"
+      }
+    },
+    {
+      "slug": "paul-copplestone",
+      "name": "Paul Copplestone",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://paul.copplest.one/",
+        "https://supabase.com/company",
+        "https://github.com/kiwicopple"
+      ],
+      "avatar": {
+        "path": "assets/img/paul-copplestone.png",
+        "sha256": "79e4a3349e4c9cff17e7afb620922430984d77620d870f2f3631e11e4c9d560a",
+        "bytes": 138178,
+        "source_url": "https://avatars.githubusercontent.com/u/10214025?v=4&s=400",
+        "source_page": "https://github.com/kiwicopple",
+        "kind": "public_profile_avatar"
+      }
+    },
+    {
+      "slug": "peter-zaitsev",
+      "name": "Peter Zaitsev",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://www.percona.com/blog/author/pz/",
+        "https://www.linkedin.com/in/peterzaitsev/",
+        "https://twitter.com/PeterZaitsev"
+      ],
+      "avatar": {
+        "path": "assets/img/peter-zaitsev.jpg",
+        "sha256": "6b564601a119c61e4b775dd0ba0be841b8cb9052e817759956dccb3f73126a79",
+        "bytes": 2867,
+        "kind": "existing_repository_portrait",
+        "source": "沿用仓库已有头像；本次未替换。"
+      }
+    },
+    {
+      "slug": "stephan-schmidt",
+      "name": "Stephan Schmidt",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://www.amazingcto.com/",
+        "https://github.com/StephanSchmidt",
+        "https://www.linkedin.com/in/stephanjschmidt/"
+      ],
+      "avatar": {
+        "path": "assets/img/stephan-schmidt.jpg",
+        "sha256": "c6f0c745c22b51f4cab4edeeebdb0bcf4613ee07431f31841fe257cb28c17070",
+        "bytes": 303638,
+        "kind": "existing_repository_portrait",
+        "source": "沿用仓库已有头像；本次未替换。"
+      }
+    },
+    {
+      "slug": "steven-vaughan-nichols",
+      "name": "Steven Vaughan-Nichols",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "https://practical-tech.com/about/",
+        "https://practical-tech.com/",
+        "https://practical-tech.com/about/steven-j-vaughan-nichols-resume/"
+      ],
+      "avatar": {
+        "path": "assets/img/steven-vaughan-nichols.jpg",
+        "sha256": "91359cc053028484cf02bce8d66b87a749d84f5ea3a1a2383107b783389b4798",
+        "bytes": 21088,
+        "source_url": "https://practical-tech.com/wp-content/uploads/2020/06/sjvn-2019-300x300.jpg",
+        "source_page": "https://practical-tech.com/about/",
+        "kind": "portrait"
+      }
+    },
+    {
+      "slug": "vonng",
+      "name": "冯若航",
+      "reviewed_at": "2026-10-14",
+      "biography_sources": [
+        "content/authors/vonng/_index.md",
+        "content/authors/vonng/_index.en.md"
+      ],
+      "notes": "本人中英文介绍和头像已完整，保留原有内容。",
+      "avatar": {
+        "path": "assets/img/vonng.jpg",
+        "sha256": "a49b28c2282b2c76001ef3868019bc1c59b343531da86d308e6fcac2939ef186",
+        "bytes": 137133,
+        "kind": "existing_repository_portrait",
+        "source": "沿用仓库已有本人头像。"
+      }
+    }
+  ]
+}

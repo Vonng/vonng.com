@@ -1,12 +1,15 @@
 ---
 title: "Jonathan Katz"
-description: "PostgreSQL Core Team Member"
+description: "PostgreSQL Core Team member and database writer"
 images: [img/jonathan-katz.png]
 ---
 
+**Jonathan Katz** is a member of the PostgreSQL Core Team, which coordinates releases and helps govern the project. He writes about PostgreSQL performance, new releases, and the open source ecosystem.
+
+His personal blog also covers pgvector, including vector search, index construction, quantization, and hybrid search, explaining how PostgreSQL can support AI applications.
+
 ## Elsewhere
 
-- [Website](https://jkatz05.com/)
+- [Blog](https://jkatz05.com/)
+- [PostgreSQL contributor profiles](https://www.postgresql.org/community/contributors/)
 - [GitHub](https://github.com/jkatz)
-- [LinkedIn](https://www.linkedin.com/in/jkatz05/)
-- [X / Twitter](https://twitter.com/jkatz05)
