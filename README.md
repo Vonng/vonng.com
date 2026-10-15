@@ -21,6 +21,10 @@ make check   # the strict build every change has to pass
 ```
 
 The theme is the [OINK](https://oink.pgsty.com/) Hugo Module, pinned in `go.mod`.
+`make dev` uses the current checkout at `~/pgsty/oink` with Hugo Extended 0.166.0.
+Override it with `make dev OINK_LOCAL=/path/to/oink PORT=1314`. Development
+bypasses OINK vendor files and both workspaces; `make build` and `make check`
+clear local module replacements and use the pinned release.
 Upgrade it with `hugo mod get github.com/pgsty/oink@vX.Y.Z && hugo mod tidy`.
 
 ## Publishing
