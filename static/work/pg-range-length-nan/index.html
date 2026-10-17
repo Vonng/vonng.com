@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NaN range lengths and 1e100-row estimates</title>
+<meta name="description" content="ANALYZE can store NaN range lengths; PostgreSQL then estimates 1e100 rows for range <@ and @>. Reproducer, cause, a small fix in get_len_position(), and test results.">
+<meta name="author" content="Ruohang Feng">
+<link rel="canonical" href="https://vonng.com/work/pg-range-length-nan.html">
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #fcfcfd; --fg: #1b2530; --muted: #5a6876; --rule: #d9e0e7;
+  --panel: #f2f5f8; --accent: #2f6690; --bad: #a8322d; --good: #22704a;
+  --add: #e6f4ea; --del: #fbe9e8;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12171d; --fg: #dfe6ed; --muted: #9aa8b6; --rule: #2c3743;
+    --panel: #19212a; --accent: #8cb8de; --bad: #ef8a85; --good: #74c79b;
+    --add: #17301f; --del: #3a1e1d;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16.5px/1.65 var(--sans);
+       padding: 40px 18px 64px; }
+main { max-width: 760px; margin: 0 auto; }
+h1 { font-size: 1.85rem; line-height: 1.25; margin: 0 0 .4em; letter-spacing: -.01em; }
+h2 { font-size: 1.3rem; margin: 2.2em 0 .5em; padding-top: .6em; border-top: 1px solid var(--rule); }
+h3 { font-size: 1.02rem; margin: 1.6em 0 .3em; }
+p, ul, ol, dl, table, pre { margin: .75em 0; }
+ul, ol { padding-left: 1.4em; }
+li { margin: .25em 0; }
+a { color: var(--accent); text-underline-offset: 2px; }
+code, pre { font-family: var(--mono); font-size: .86em; }
+code { background: var(--panel); padding: .05em .3em; border-radius: 3px; overflow-wrap: anywhere; }
+pre { background: var(--panel); padding: 12px 14px; border-radius: 6px; overflow-x: auto; line-height: 1.5; font-size: .8em; }
+pre code { background: none; padding: 0; font-size: inherit; overflow-wrap: normal; }
+.meta { color: var(--muted); font-size: .9rem; margin: 0 0 1.4em; }
+.lede { font-size: 1.05rem; }
+.facts { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 16px;
+         background: var(--panel); border-radius: 6px; padding: 12px 16px; }
+.facts dt { font-weight: 600; color: var(--muted); }
+.facts dd { margin: 0; }
+.tbl { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+th, td { padding: 6px 10px; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; }
+th { font-weight: 600; color: var(--muted); white-space: nowrap; }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bad { color: var(--bad); font-weight: 600; }
+.good { color: var(--good); font-weight: 600; }
+.note { color: var(--muted); font-size: .88rem; }
+pre .a { display: block; background: var(--add); margin: 0 -14px; padding: 0 14px; }
+pre .d { display: block; background: var(--del); margin: 0 -14px; padding: 0 14px; }
+details { border: 1px solid var(--rule); border-radius: 6px; margin: .8em 0; }
+details > summary { cursor: pointer; padding: 8px 12px; font-weight: 600; }
+details > pre { margin: 0; border-radius: 0 0 6px 6px; }
+footer { margin-top: 3em; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--rule); padding-top: 1em; }
+@media (max-width: 560px) {
+  body { font-size: 15.5px; padding-top: 24px; }
+  .facts { grid-template-columns: minmax(0, 1fr); }
+  .facts dd { margin-bottom: 6px; }
+}
+</style>
+</head>
+<body>
+<main>
+
+<h1>NaN range lengths and 1e100-row estimates</h1>
+<p class="meta">Ruohang Feng (Vonng@PGSTY) &middot; rh@vonng.com &middot; 17 October 2026 &middot; Patch proposed on pgsql-bugs, not committed</p>
+
+<p class="lede">ANALYZE stores the result of the range subtype's subdiff function as the length of each range. For numeric that is NaN for some valid ranges, such as <code>[1,NaN)</code> and <code>[Infinity,Infinity]</code>. Once a NaN is in the length histogram, <code>&lt;@</code> and <code>@&gt;</code> can get a NaN selectivity, and <code>clamp_row_est()</code> turns it into an estimate of 1e100 rows. Query results are correct, but plans built on these estimates can be very slow. No statistics import is involved: ordinary data and ANALYZE (or autovacuum) are enough.</p>
+
+<dl class="facts">
+  <dt>Affected</dt><dd><code>&lt;@</code> and <code>@&gt;</code> on numrange; on nummultirange with a multirange, and <code>@&gt;</code> with a range; float8-based range types. The code is from 9.3 (59d0bf9dca).</dd>
+  <dt>Effect</dt><dd>1e100-row estimates; in the join below, 2,000,000 index probes instead of 151, about 4 s instead of 65 ms.</dd>
+  <dt>Fix</dt><dd><code>get_len_position()</code> returns 0.5 when either bin boundary is NaN, in the range and multirange code. One check with a comment in each file; histograms without NaN entries are not affected.</dd>
+  <dt>Tested</dt><dd>14, 18, 19rc1 and master on Linux x86_64; 18, 19 and master on macOS aarch64. Assertions enabled.</dd>
+</dl>
+
+<h2 id="repro">Reproducer</h2>
+<p>In a fresh database:</p>
+<pre><code>CREATE TABLE nan_len (id int PRIMARY KEY, r numrange);
+INSERT INTO nan_len SELECT g, numrange(g, g + (g % 97) + 1)
+  FROM generate_series(1, 1000) g;
+INSERT INTO nan_len SELECT 1000 + g, numrange(g, 'NaN')
+  FROM generate_series(1, 20) g;
+ANALYZE nan_len;
+
+EXPLAIN ANALYZE SELECT * FROM nan_len WHERE r &lt;@ numrange(0, 200);
+EXPLAIN ANALYZE SELECT * FROM nan_len WHERE r @&gt; numrange(500, 510);</code></pre>
+<p>First plan line of each query on unpatched 19rc1; 14, 18 and master print the same estimates. EXPLAIN prints the row count in full, shortened here:</p>
+<pre><code>Seq Scan on nan_len  (cost=0.00..19.75 <span class="bad">rows=1e100</span> width=19) (actual time=0.570..1.037 rows=151.00 loops=1)
+Seq Scan on nan_len  (cost=0.00..19.75 <span class="bad">rows=1e100</span> width=19) (actual time=0.216..0.396 rows=60.00 loops=1)</code></pre>
+<p>The table has 1,020 rows. The length histogram ANALYZE built ends in <code>…, 95, 96, 97, NaN, NaN}</code>.</p>
+
+<h3>Other inputs</h3>
+<p>Estimates before and after the patch, with the same data. The numbers are the same on 18, 19rc1 and master. The fixtures are in the appendix.</p>
+<div class="tbl"><table>
+  <thead><tr><th>Data and query</th><th class="n">Unpatched</th><th class="n">Patched</th><th class="n">Actual</th></tr></thead>
+  <tbody>
+    <tr><td>numrange with NaN upper bounds, <code>&lt;@ numrange(0, 200)</code></td><td class="n bad">1e100</td><td class="n">168</td><td class="n">151</td></tr>
+    <tr><td>same, <code>@&gt; numrange(500, 510)</code></td><td class="n bad">1e100</td><td class="n">47</td><td class="n">60</td></tr>
+    <tr><td>nummultirange of the same values, <code>&lt;@ nummultirange(numrange(0, 200))</code></td><td class="n bad">1e100</td><td class="n">168</td><td class="n">151</td></tr>
+    <tr><td>same, <code>@&gt; nummultirange(numrange(500, 510))</code></td><td class="n bad">1e100</td><td class="n">47</td><td class="n">60</td></tr>
+    <tr><td>same, <code>@&gt; numrange(500, 510)</code></td><td class="n bad">1e100</td><td class="n">47</td><td class="n">60</td></tr>
+    <tr><td>numrange with <code>[Infinity,Infinity]</code> rows, no NaN, <code>&lt;@ numrange(0, 200)</code></td><td class="n bad">1e100</td><td class="n">148</td><td class="n">151</td></tr>
+    <tr><td>same, <code>@&gt; numrange(500, 510)</code></td><td class="n bad">1e100</td><td class="n">46</td><td class="n">40</td></tr>
+    <tr><td>float8 range (<code>subtype_diff = float8mi</code>) with <code>[Infinity,Infinity]</code> rows, <code>&lt;@ floatrange(0, 100)</code></td><td class="n bad">1e100</td><td class="n">89</td><td class="n">93</td></tr>
+    <tr><td>same, <code>@&gt; floatrange(200, 201)</code></td><td class="n bad">1e100</td><td class="n">13</td><td class="n">7</td></tr>
+    <tr><td>control: nummultirange, <code>&lt;@ numrange(0, 200)</code></td><td class="n">220</td><td class="n">220</td><td class="n">151</td></tr>
+    <tr><td>control: numrange with unbounded upper bounds, <code>&lt;@ numrange(0, 200)</code></td><td class="n">168</td><td class="n">168</td><td class="n">151</td></tr>
+    <tr><td>control: numrange with bounds around 1e306, <code>&lt;@ numrange(0, 2e306)</code></td><td class="n">151</td><td class="n">151</td><td class="n">151</td></tr>
+    <tr><td>control: same, <code>@&gt; numrange(5e306, 5.1e306)</code></td><td class="n">39</td><td class="n">39</td><td class="n">40</td></tr>
+  </tbody>
+</table></div>
+<p class="note"><code>[Infinity,Infinity]</code> is a nonempty range whose bounds are the value Infinity, not unbounded, so ANALYZE calls subdiff and gets Infinity &minus; Infinity = NaN. An unbounded range such as <code>numrange(g, NULL)</code> gets the length Infinity without calling subdiff, and does not trigger the problem. The multirange <code>&lt;@</code> range estimate is too high without NaN being involved, and the patch does not change it.</p>
+
+<h2 id="impact">Plan impact</h2>
+<p>Join the table from the reproducer to a 2M-row table with an index on the join key:</p>
+<pre><code>-- Run after the reproducer.  Creates two million rows.
+CREATE TABLE fact (dim_id int, payload text);
+INSERT INTO fact SELECT (g % 1020) + 1, repeat('x', 50)
+  FROM generate_series(1, 2000000) g;
+CREATE INDEX ON fact (dim_id);
+VACUUM ANALYZE fact;
+
+SET max_parallel_workers_per_gather = 0;
+EXPLAIN ANALYZE
+SELECT count(*) FROM nan_len d JOIN fact f ON f.dim_id = d.id
+WHERE d.r &lt;@ numrange(0, 200);</code></pre>
+<p>Unpatched (abridged, 19rc1):</p>
+<pre><code>Aggregate  (actual rows=1.00 loops=1)
+  -&gt;  Nested Loop  (<span class="bad">rows=1e100</span>) (actual rows=296110.00 loops=1)
+        -&gt;  Index Only Scan using fact_dim_id_idx on fact f  (rows=2000000) (actual rows=2000000.00 loops=1)
+        -&gt;  Index Scan using nan_len_pkey on nan_len d  (<span class="bad">rows=1e100</span>) (actual rows=0.15 <span class="bad">loops=2000000</span>)
+Execution Time: 3980.020 ms</code></pre>
+<p>Patched, same data and statistics:</p>
+<pre><code>Aggregate  (actual rows=1.00 loops=1)
+  -&gt;  Nested Loop  (rows=329412) (actual rows=296110.00 loops=1)
+        -&gt;  Seq Scan on nan_len d  (rows=168) (actual rows=151.00 loops=1)
+        -&gt;  Index Only Scan using fact_dim_id_idx on fact f  (rows=1961) (actual rows=1960.99 loops=151)
+Execution Time: 61.025 ms</code></pre>
+<div class="tbl"><table>
+  <thead><tr><th>Build</th><th class="n">Unpatched</th><th class="n">Patched</th></tr></thead>
+  <tbody>
+    <tr><td>18 (REL_18_STABLE), Linux x86_64</td><td class="n">4083.787 ms</td><td class="n">70.007 ms</td></tr>
+    <tr><td>19rc1, Linux x86_64</td><td class="n">3980.020 ms</td><td class="n">61.025 ms</td></tr>
+    <tr><td>master, Linux x86_64</td><td class="n">3672.127 ms</td><td class="n">66.968 ms</td></tr>
+    <tr><td>18.6, macOS aarch64</td><td class="n">1035.676 ms</td><td class="n">24.748 ms</td></tr>
+    <tr><td>REL_19_STABLE, macOS aarch64</td><td class="n">939.361 ms</td><td class="n">23.719 ms</td></tr>
+    <tr><td>master, macOS aarch64</td><td class="n">2214.270 ms</td><td class="n">38.047 ms</td></tr>
+  </tbody>
+</table></div>
+<p class="note">Single runs, assert-enabled builds, <code>max_parallel_workers_per_gather = 0</code>. Both plans return the same count, 296110. The timings show the size of the effect on one machine; they are not a comparison between versions or platforms.</p>
+
+<h2 id="cause">Cause</h2>
+<ol>
+  <li><code>compute_range_stats()</code> (<code>rangetypes_typanalyze.c</code>) stores <code>subdiff(upper, lower)</code> as the length of each bounded range, without checking it. <code>numrange_subdiff()</code> returns NaN for a NaN bound and for Infinity &minus; Infinity. The built-in integer, date and timestamp range types cannot produce NaN.</li>
+  <li>The lengths are sorted with <code>float8_qsort_cmp()</code>, which uses plain C comparisons and so reports “greater” whenever either argument is NaN. That is not a consistent order, and NaN entries can end up anywhere in the array. Most land at the end, and the last element is always kept in the histogram.</li>
+  <li><code>length_hist_bsearch()</code> returns the last entry less than the searched length. <code>NaN &lt; x</code> is false, so it can stop on a bin whose upper boundary is NaN.</li>
+  <li><code>get_len_position()</code> interpolates in that bin:
+<pre><code>if (!isinf(hist1) &amp;&amp; !isinf(hist2))
+{
+    if (isinf(value))
+        return 0.5;
+
+    return 1.0 - (hist2 - value) / (hist2 - hist1);    /* NaN */
+}</code></pre>
+  <code>calc_length_hist_frac()</code> then returns NaN, and so does the selectivity of <code>&lt;@</code> and <code>@&gt;</code>.</li>
+  <li><code>CLAMP_PROBABILITY()</code> tests <code>p &lt; 0.0</code> and <code>p &gt; 1.0</code>, both false for NaN, so NaN passes. So does the range check in <code>restriction_selectivity()</code>.</li>
+  <li><code>clamp_row_est()</code> maps a NaN row count to <code>MAXIMUM_ROWCOUNT</code>, 1e100.</li>
+</ol>
+<p>Commit 652686a334 (2020, bug #16122, back-patched to all branches then supported) made <code>get_position()</code> and <code>get_distance()</code> punt on NaN from subdiff for the bounds histogram. The length histogram side never got the same treatment.</p>
+
+<h2 id="fix">Fix</h2>
+<p>The production code change, identical in <code>rangetypes_selfuncs.c</code> and <code>multirangetypes_selfuncs.c</code>:</p>
+<pre><code> static double
+ get_len_position(double value, double hist1, double hist2)
+ {
+<span class="a">+	/*</span><span class="a">+	 * ANALYZE stores whatever the subtype's subdiff function returns as the</span><span class="a">+	 * range length, and that can be NaN for valid ranges, such as numeric</span><span class="a">+	 * ranges with a NaN bound or [Infinity,Infinity].  We can't interpolate</span><span class="a">+	 * in a bin with a NaN boundary, so just assume the middle.</span><span class="a">+	 */</span><span class="a">+	if (isnan(hist1) || isnan(hist2))</span><span class="a">+		return 0.5;</span><span class="a">+</span> 	if (!isinf(hist1) &amp;&amp; !isinf(hist2))
+ 	{
+ 		/*</code></pre>
+<p>The patch also adds a regression test to <code>rangetypes.sql</code>. It builds a numrange table with NaN-bound and <code>[Infinity,Infinity]</code> rows and a nummultirange copy, checks that the length histogram contains NaN, and checks that four <code>&lt;@</code>/<code>@&gt;</code> estimates do not exceed the row count. All four estimate checks fail without the C change.</p>
+
+<h3>Why this is enough</h3>
+<ul>
+  <li><strong>It is the only place that can see a NaN.</strong> <code>get_len_position()</code> is where <code>calc_length_hist_frac()</code> does arithmetic on histogram entries. Its other use of them is the loop over the bins, which compares <code>bin_upper &lt; length2</code>; that comparison is false for NaN, so the loop stops at a NaN entry. The lower boundary of the first bin is never NaN, because the binary search only stops on an entry that compared less than the searched length. It can be NaN in the last bin, when the search falls before the first entry and the histogram starts with NaN. Hence both boundaries are checked.</li>
+  <li><strong>Nothing else can become NaN.</strong> Without the NaN entries, an ANALYZE-built histogram is still sorted. <code>sort_template.h</code> compares elements only with the pivot during partitioning, and with a neighbour during insertion sort. A non-NaN pivot places the non-NaN values on the correct side; a NaN pivot sends everything else to one side; insertion sort never moves a value past a smaller non-NaN one. A sorted histogram cannot produce Infinity &minus; Infinity or a zero-width bin in this code.</li>
+  <li><strong>Measured.</strong> On 60 ANALYZE-built tables (numrange, nummultirange and a float8 range; NaN rows, <code>[Infinity,Infinity]</code> rows and unbounded rows; statistics targets 10 to 300; NaN entries at the start, in the middle and at the end of the histogram), 229 of 720 <code>&lt;@</code> and <code>@&gt;</code> estimates were 1e100 without the patch and none with it. On 19rc1, a more defensive variant that also clamps the interpolated position and the final fraction gave the same estimate for all 720 queries.</li>
+</ul>
+
+<h3>What does not change</h3>
+<ul>
+  <li><strong>Histograms without NaN entries.</strong> The new branch is never taken. 400 random <code>&lt;@</code>, <code>@&gt;</code> and <code>&amp;&amp;</code> queries over int4range, numrange, daterange, tstzrange, int4multirange and int4range with unbounded values gave identical estimates with and without the patch.</li>
+  <li><strong>Existing statistics.</strong> Nothing in the catalog changes, and no new ANALYZE is needed. The before/after numbers in this report come from the same data directory, started first with the unpatched and then with the patched binary; a hash of the fixtures' <code>pg_stats</code> rows was identical.</li>
+  <li><strong>ANALYZE, sorting and statistics import.</strong> These are untouched. The patch handles histograms as ANALYZE builds them; it does not try to validate length histograms supplied by hand through <code>pg_restore_attribute_stats()</code>.</li>
+</ul>
+<p>0.5 is a fallback, not an estimate of the true position. Apart from the 229 cases that went from 1e100 to a finite value, 62 estimates changed that had been finite but were still computed from NaN intermediate values. 52 of these moved closer to the actual row count and 10 moved further away.</p>
+
+<h2 id="testing">Testing</h2>
+<div class="tbl"><table>
+  <thead><tr><th>Build</th><th>Source</th><th class="n">Regression tests</th><th>New checks</th></tr></thead>
+  <tbody>
+    <tr><td>14.24, Linux x86_64</td><td><code>REL_14_STABLE</code> 14904052e6</td><td class="n">216/216</td><td>fail &rarr; pass<sup>1</sup></td></tr>
+    <tr><td>18.6, Linux x86_64</td><td><code>REL_18_STABLE</code> 4732a5c53b</td><td class="n">231/231</td><td>fail &rarr; pass</td></tr>
+    <tr><td>19rc1, Linux x86_64</td><td><code>REL_19_RC1</code> 0b8bff042a</td><td class="n">239/239</td><td>fail &rarr; pass</td></tr>
+    <tr><td>20devel, Linux x86_64</td><td>master 45fc51fcbf</td><td class="n">239/239</td><td>fail &rarr; pass</td></tr>
+    <tr><td>18.6, macOS aarch64</td><td><code>REL_18_6</code> 724edf9bde</td><td class="n">231/231</td><td>fail &rarr; pass<sup>2</sup></td></tr>
+    <tr><td>19rc1, macOS aarch64</td><td><code>REL_19_STABLE</code> 221423812d</td><td class="n">239/239</td><td>fail &rarr; pass<sup>2</sup></td></tr>
+    <tr><td>20devel, macOS aarch64</td><td>master 7787aec8ab</td><td class="n">239/239</td><td>fail &rarr; pass<sup>2</sup></td></tr>
+  </tbody>
+</table></div>
+<p class="note">Linux: gcc 13.3, <code>--enable-cassert --enable-debug</code>, core suite via <code>installcheck-parallel</code>. macOS: Apple clang 21.0.0, assertions enabled, <code>make check</code>, run with an earlier revision of this patch that has the same code change and different comments and tests. No assertion failures anywhere.<br>
+<sup>1</sup> C change only; the test's context differs in 14&ndash;16, and it reads <code>pg_stats.range_length_histogram</code>, which exists from 17, so on 14 the same checks were run against <code>pg_statistic</code>.<br>
+<sup>2</sup> Six estimate checks of the earlier test revision. The macOS builds gave the same estimates as Linux for the reproducer and for the fixtures they covered.</p>
+<p>The C part of the patch applies without changes to <code>REL_14_STABLE</code> through master.</p>
+
+<h2 id="patch">Patch</h2>
+<p>v1, against master 45fc51fcbf. Attached to the pgsql-bugs report.</p>
+<details>
+  <summary>v1-0001-Avoid-NaN-estimates-from-NaN-entries-in-range-len.patch</summary>
+<pre><code>From 1e0c07b24591c96f80c0a8e9f99bdd83d628402f Mon Sep 17 00:00:00 2001
+From: Ruohang Feng &lt;rh@vonng.com&gt;
+Date: Sat, 17 Oct 2026 23:41:40 +0800
+Subject: [PATCH v1] Avoid NaN estimates from NaN entries in range length
+ histograms
+ 
+ANALYZE stores the result of the range subtype's subdiff function as
+the length of each range, and that can be NaN for valid ranges: numeric
+returns NaN for a NaN bound and for Infinity minus Infinity, so for
+example [1,NaN) and [Infinity,Infinity] get a NaN length.  If such an
+entry becomes a boundary of the length histogram bin that
+calc_length_hist_frac() interpolates in, get_len_position() returns
+NaN, and so does the selectivity of &lt;@ and @&gt;.  CLAMP_PROBABILITY()
+lets NaN through, and clamp_row_est() turns it into a 1e100 row
+estimate, which can lead to very poor plans.
+ 
+Make get_len_position() return 0.5 when either bin boundary is NaN,
+much like get_position() punts on an indeterminate position in the
+bounds histogram since 652686a334.  Nothing changes for histograms
+without NaN entries.  The multirange code has a copy of the same
+function and gets the same fix.
+---
+ .../utils/adt/multirangetypes_selfuncs.c      |  9 +++
+ src/backend/utils/adt/rangetypes_selfuncs.c   |  9 +++
+ src/test/regress/expected/rangetypes.out      | 63 +++++++++++++++++++
+ src/test/regress/sql/rangetypes.sql           | 39 ++++++++++++
+ 4 files changed, 120 insertions(+)
+ 
+diff --git a/src/backend/utils/adt/multirangetypes_selfuncs.c b/src/backend/utils/adt/multirangetypes_selfuncs.c
+index 533111445e..136e6a3bc3 100644
+--- a/src/backend/utils/adt/multirangetypes_selfuncs.c
++++ b/src/backend/utils/adt/multirangetypes_selfuncs.c
+@@ -872,6 +872,15 @@ get_position(TypeCacheEntry *typcache, const RangeBound *value, const RangeBound
+ static double
+ get_len_position(double value, double hist1, double hist2)
+ {
+<span class="a">+	/*</span><span class="a">+	 * ANALYZE stores whatever the subtype's subdiff function returns as the</span><span class="a">+	 * range length, and that can be NaN for valid ranges, such as numeric</span><span class="a">+	 * ranges with a NaN bound or [Infinity,Infinity].  We can't interpolate</span><span class="a">+	 * in a bin with a NaN boundary, so just assume the middle.</span><span class="a">+	 */</span><span class="a">+	if (isnan(hist1) || isnan(hist2))</span><span class="a">+		return 0.5;</span><span class="a">+</span> 	if (!isinf(hist1) &amp;&amp; !isinf(hist2))
+ 	{
+ 		/*
+diff --git a/src/backend/utils/adt/rangetypes_selfuncs.c b/src/backend/utils/adt/rangetypes_selfuncs.c
+index 75f1e7567d..11e5e09cc2 100644
+--- a/src/backend/utils/adt/rangetypes_selfuncs.c
++++ b/src/backend/utils/adt/rangetypes_selfuncs.c
+@@ -761,6 +761,15 @@ get_position(TypeCacheEntry *typcache, const RangeBound *value, const RangeBound
+ static double
+ get_len_position(double value, double hist1, double hist2)
+ {
+<span class="a">+	/*</span><span class="a">+	 * ANALYZE stores whatever the subtype's subdiff function returns as the</span><span class="a">+	 * range length, and that can be NaN for valid ranges, such as numeric</span><span class="a">+	 * ranges with a NaN bound or [Infinity,Infinity].  We can't interpolate</span><span class="a">+	 * in a bin with a NaN boundary, so just assume the middle.</span><span class="a">+	 */</span><span class="a">+	if (isnan(hist1) || isnan(hist2))</span><span class="a">+		return 0.5;</span><span class="a">+</span> 	if (!isinf(hist1) &amp;&amp; !isinf(hist2))
+ 	{
+ 		/*
+diff --git a/src/test/regress/expected/rangetypes.out b/src/test/regress/expected/rangetypes.out
+index fb1bb30b7e..dd360e0f9f 100644
+--- a/src/test/regress/expected/rangetypes.out
++++ b/src/test/regress/expected/rangetypes.out
+@@ -2048,3 +2048,66 @@ select * from text_support_test where t &lt;@ textrange_supp('a', 'd');
+ 
+ drop table text_support_test;
+ drop type textrange_supp;
+<span class="a">+--</span><span class="a">+-- ANALYZE stores NaN as the length of ranges whose subdiff is NaN, such as</span><span class="a">+-- numeric ranges with a NaN bound or [Infinity,Infinity].  Check that NaN</span><span class="a">+-- entries in the length histogram don't produce bogus row estimates.</span><span class="a">+--</span><span class="a">+create function range_explain_rows(query text) returns float8</span><span class="a">+language plpgsql as</span><span class="a">+$$</span><span class="a">+declare</span><span class="a">+  plan json;</span><span class="a">+begin</span><span class="a">+  execute 'explain (format json) ' || query into plan;</span><span class="a">+  return (plan-&gt;0-&gt;'Plan'-&gt;&gt;'Plan Rows')::float8;</span><span class="a">+end;</span><span class="a">+$$;</span><span class="a">+create table numrange_nan_len (nr numrange);</span><span class="a">+alter table numrange_nan_len alter column nr set statistics 100;</span><span class="a">+insert into numrange_nan_len</span><span class="a">+  select numrange(g, g + (g % 97) + 1) from generate_series(1, 1000) g;</span><span class="a">+insert into numrange_nan_len</span><span class="a">+  select numrange(g, 'NaN') from generate_series(1, 10) g;</span><span class="a">+insert into numrange_nan_len</span><span class="a">+  select '[Infinity,Infinity]' from generate_series(1, 10);</span><span class="a">+analyze numrange_nan_len;</span><span class="a">+select count(*) &gt; 0 as has_nan</span><span class="a">+  from pg_stats, unnest(range_length_histogram::text::float8[]) v</span><span class="a">+  where schemaname = current_schema() and tablename = 'numrange_nan_len'</span><span class="a">+    and v = 'NaN'::float8;</span><span class="a">+ has_nan </span><span class="a">+---------</span><span class="a">+ t</span><span class="a">+(1 row)</span><span class="a">+</span><span class="a">+select range_explain_rows('select * from numrange_nan_len where nr &lt;@ numrange(0, 200)') &lt;= 1020 as sane;</span><span class="a">+ sane </span><span class="a">+------</span><span class="a">+ t</span><span class="a">+(1 row)</span><span class="a">+</span><span class="a">+select range_explain_rows('select * from numrange_nan_len where nr @&gt; numrange(500, 510)') &lt;= 1020 as sane;</span><span class="a">+ sane </span><span class="a">+------</span><span class="a">+ t</span><span class="a">+(1 row)</span><span class="a">+</span><span class="a">+create table nummultirange_nan_len (nmr nummultirange);</span><span class="a">+alter table nummultirange_nan_len alter column nmr set statistics 100;</span><span class="a">+insert into nummultirange_nan_len select nummultirange(nr) from numrange_nan_len;</span><span class="a">+analyze nummultirange_nan_len;</span><span class="a">+select range_explain_rows('select * from nummultirange_nan_len where nmr &lt;@ nummultirange(numrange(0, 200))') &lt;= 1020 as sane;</span><span class="a">+ sane </span><span class="a">+------</span><span class="a">+ t</span><span class="a">+(1 row)</span><span class="a">+</span><span class="a">+select range_explain_rows('select * from nummultirange_nan_len where nmr @&gt; nummultirange(numrange(500, 510))') &lt;= 1020 as sane;</span><span class="a">+ sane </span><span class="a">+------</span><span class="a">+ t</span><span class="a">+(1 row)</span><span class="a">+</span><span class="a">+drop table numrange_nan_len, nummultirange_nan_len;</span><span class="a">+drop function range_explain_rows(text);</span>diff --git a/src/test/regress/sql/rangetypes.sql b/src/test/regress/sql/rangetypes.sql
+index e4062c3e6a..c5e0d8b21a 100644
+--- a/src/test/regress/sql/rangetypes.sql
++++ b/src/test/regress/sql/rangetypes.sql
+@@ -722,3 +722,42 @@ select * from text_support_test where t &lt;@ textrange_supp('a', 'd');
+ drop table text_support_test;
+ 
+ drop type textrange_supp;
+<span class="a">+</span><span class="a">+--</span><span class="a">+-- ANALYZE stores NaN as the length of ranges whose subdiff is NaN, such as</span><span class="a">+-- numeric ranges with a NaN bound or [Infinity,Infinity].  Check that NaN</span><span class="a">+-- entries in the length histogram don't produce bogus row estimates.</span><span class="a">+--</span><span class="a">+create function range_explain_rows(query text) returns float8</span><span class="a">+language plpgsql as</span><span class="a">+$$</span><span class="a">+declare</span><span class="a">+  plan json;</span><span class="a">+begin</span><span class="a">+  execute 'explain (format json) ' || query into plan;</span><span class="a">+  return (plan-&gt;0-&gt;'Plan'-&gt;&gt;'Plan Rows')::float8;</span><span class="a">+end;</span><span class="a">+$$;</span><span class="a">+create table numrange_nan_len (nr numrange);</span><span class="a">+alter table numrange_nan_len alter column nr set statistics 100;</span><span class="a">+insert into numrange_nan_len</span><span class="a">+  select numrange(g, g + (g % 97) + 1) from generate_series(1, 1000) g;</span><span class="a">+insert into numrange_nan_len</span><span class="a">+  select numrange(g, 'NaN') from generate_series(1, 10) g;</span><span class="a">+insert into numrange_nan_len</span><span class="a">+  select '[Infinity,Infinity]' from generate_series(1, 10);</span><span class="a">+analyze numrange_nan_len;</span><span class="a">+select count(*) &gt; 0 as has_nan</span><span class="a">+  from pg_stats, unnest(range_length_histogram::text::float8[]) v</span><span class="a">+  where schemaname = current_schema() and tablename = 'numrange_nan_len'</span><span class="a">+    and v = 'NaN'::float8;</span><span class="a">+select range_explain_rows('select * from numrange_nan_len where nr &lt;@ numrange(0, 200)') &lt;= 1020 as sane;</span><span class="a">+select range_explain_rows('select * from numrange_nan_len where nr @&gt; numrange(500, 510)') &lt;= 1020 as sane;</span><span class="a">+create table nummultirange_nan_len (nmr nummultirange);</span><span class="a">+alter table nummultirange_nan_len alter column nmr set statistics 100;</span><span class="a">+insert into nummultirange_nan_len select nummultirange(nr) from numrange_nan_len;</span><span class="a">+analyze nummultirange_nan_len;</span><span class="a">+select range_explain_rows('select * from nummultirange_nan_len where nmr &lt;@ nummultirange(numrange(0, 200))') &lt;= 1020 as sane;</span><span class="a">+select range_explain_rows('select * from nummultirange_nan_len where nmr @&gt; nummultirange(numrange(500, 510))') &lt;= 1020 as sane;</span><span class="a">+drop table numrange_nan_len, nummultirange_nan_len;</span><span class="a">+drop function range_explain_rows(text);</span> 
+base-commit: 45fc51fcbf4534ea2f6f85e36f8155dbd5ba9851
+-- 
+2.43.0</code></pre>
+</details>
+<details>
+  <summary>Fixtures for the “Other inputs” table</summary>
+<pre><code>-- Run after the reproducer, in the same database.
+CREATE TABLE nm AS SELECT nummultirange(r) AS r FROM nan_len;
+ANALYZE nm;
+
+CREATE TABLE numeric_inf AS
+  SELECT numrange(g, g + (g % 97) + 1) AS r FROM generate_series(1, 1000) g;
+INSERT INTO numeric_inf
+  SELECT '[Infinity,Infinity]'::numrange FROM generate_series(1, 20);
+ANALYZE numeric_inf;
+
+CREATE TYPE floatrange AS RANGE (subtype = float8, subtype_diff = float8mi);
+CREATE TABLE float_inf AS
+  SELECT floatrange(g, g + (g % 13) + 1) AS r FROM generate_series(1, 500) g;
+INSERT INTO float_inf
+  SELECT '[Infinity,Infinity]'::floatrange FROM generate_series(1, 20);
+ANALYZE float_inf;
+
+CREATE TABLE numeric_unbounded AS
+  SELECT numrange(g, g + (g % 97) + 1) AS r FROM generate_series(1, 1000) g;
+INSERT INTO numeric_unbounded
+  SELECT numrange(g, NULL) FROM generate_series(1, 20) g;
+ANALYZE numeric_unbounded;
+
+CREATE TABLE numeric_large AS
+  SELECT numrange(g::numeric * 1e304, (g + (g % 97) + 1)::numeric * 1e304) AS r
+  FROM generate_series(1, 1000) g;
+ANALYZE numeric_large;
+
+EXPLAIN ANALYZE SELECT * FROM nm WHERE r &lt;@ nummultirange(numrange(0, 200));
+EXPLAIN ANALYZE SELECT * FROM nm WHERE r @&gt; nummultirange(numrange(500, 510));
+EXPLAIN ANALYZE SELECT * FROM nm WHERE r @&gt; numrange(500, 510);
+EXPLAIN ANALYZE SELECT * FROM numeric_inf WHERE r &lt;@ numrange(0, 200);
+EXPLAIN ANALYZE SELECT * FROM numeric_inf WHERE r @&gt; numrange(500, 510);
+EXPLAIN ANALYZE SELECT * FROM float_inf WHERE r &lt;@ floatrange(0, 100);
+EXPLAIN ANALYZE SELECT * FROM float_inf WHERE r @&gt; floatrange(200, 201);
+EXPLAIN ANALYZE SELECT * FROM nm WHERE r &lt;@ numrange(0, 200);
+EXPLAIN ANALYZE SELECT * FROM numeric_unbounded WHERE r &lt;@ numrange(0, 200);
+EXPLAIN ANALYZE SELECT * FROM numeric_large WHERE r &lt;@ numrange(0, 2e306);
+EXPLAIN ANALYZE SELECT * FROM numeric_large WHERE r @&gt; numrange(5e306, 5.1e306);</code></pre>
+</details>
+
+<h2 id="refs">References</h2>
+<ul>
+  <li><a href="https://github.com/postgres/postgres/commit/59d0bf9dca">59d0bf9dca</a>, Add cost estimation of range @&gt; and &lt;@ operators (9.3)</li>
+  <li><a href="https://github.com/postgres/postgres/commit/652686a334">652686a334</a>, Fix edge-case crashes and misestimation in range containment selectivity (2020)</li>
+  <li><a href="https://www.postgresql.org/message-id/16122-eb35bc248c806c15@postgresql.org">BUG #16122</a> on pgsql-bugs</li>
+  <li><a href="https://www.postgresql.org/docs/current/datatype-numeric.html">Numeric types</a>: NaN and Infinity in <code>numeric</code></li>
+  <li><a href="https://www.postgresql.org/docs/current/rangetypes.html">Range types</a>: infinite (unbounded) ranges and defining new range types</li>
+</ul>
+
+<footer>Ruohang Feng &middot; Vonng@PGSTY &middot; rh@vonng.com. Source revisions and results as of 17 October 2026.</footer>
+</main>
+</body>
+</html>

@@ -12,6 +12,7 @@ node_modules/
 
 # Local working notes, not part of the site
 review/
+forum/
 bin/prompt.md
 __pycache__/
 
