@@ -1,6 +1,6 @@
 # Vonng.com — Hugo site configuration
 #
-# Theme: OINK v1.3.0 (github.com/pgsty/oink)
+# Theme: OINK v1.3.2 (github.com/pgsty/oink)
 # Structure: top-level sections are blog columns; `/` is a landing page.
 
 baseURL: https://vonng.com
@@ -104,7 +104,7 @@ module:
     - path: github.com/pgsty/oink
   hugoVersion:
     extended: true
-    min: 0.166.0
+    min: 0.168.0
 
 # The About page reads its GitHub numbers from the live sources at build time
 # (layouts/_partials/metrics.html); this keeps a day's builds off the network

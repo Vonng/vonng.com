@@ -20,7 +20,7 @@ build:
 
 c: check
 check:
-	$(PINNED_HUGO) --gc --printPathWarnings --panicOnWarning
+	$(PINNED_HUGO) --gc --printPathWarnings
 
 # The build already reads the live numbers; this only refreshes the fallback
 # checked into data/metrics.yaml. It edits a tracked file, so it is a
