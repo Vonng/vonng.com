@@ -1,133 +1,132 @@
 ---
 title: "Reviving the Chinese-Speaking PostgreSQL Community"
 date: 2026-10-12
-draft: true
 authors: [vonng]
 summary: >
-  A PostgreSQL community starts with its users. With a distribution, documentation, package mirrors, localized messages, and a Chinese-language portal in place, the next step is to build a community that serves users across the Chinese-speaking world.
+  A PostgreSQL community starts with its users. With a distribution, documentation, package mirrors, localized messages, and a Chinese-language portal now in place, the next step is connecting them into a community that serves users across the Chinese-speaking world.
 tags: [PostgreSQL, PG Ecosystem, Open Source]
 images: [featured.webp]
 ---
-PostgreSQL is the world's most advanced open-source database. It is also one of the few open-source projects truly run by its community, with no single company holding the reins. I have always believed that the soul of an open-source project lies in its community, not its code.
+PostgreSQL is the world's most advanced open-source database, and one of the very few major open-source projects genuinely run by its community rather than controlled by a single company. I have always believed that the soul of an open-source project lives in its community, not its code.
 
-So today I want to talk about something I have kept to myself for years: **reviving the Chinese-speaking PostgreSQL community.** I had the idea several years ago but felt awkward saying it out loud. Slogans are cheap; you need something to show for them. I finally have a few things to show, so let me start with something you will be able to see next week.
+So today I want to talk about something I have kept to myself for years: **reviving the Chinese-speaking PostgreSQL community.** The idea has been on my mind for several years, but I held back from saying it out loud. Slogans are cheap; you need concrete work to back them up. Now that I finally have something to show, let me start with a piece that goes live next week.
 
-## Revival implies decline
+## Revival Implies Decline
 
-To talk about a revival is to acknowledge a decline. That saddens me. The Chinese-speaking PG community was reasonably active a few years ago. Lately it has grown quieter and quieter, with barely a few signs of life each year. The contrast with PostgreSQL's growth around the world is hard to miss.
+Talking about a revival implies there was a decline. That part is regrettable. China's PG community was reasonably active a few years ago, but in recent years its voice has faded and activity has slowed to a trickle, with barely a few signs of life all year. Against PostgreSQL's surging adoption worldwide, the contrast is stark.
 
-The community's former chair was my business partner and colleague, and I know most of the people in that circle. As early as 2018, I repeatedly suggested that the community do a few practical things for users:
+The community's former chair was my business partner and colleague, and I know most of the people in that circle. As early as 2018, I repeatedly suggested that the community build a few practical things for users:
 
-1. Set up a PG download mirror in China. Many mirror sites did not carry the PGDG repositories back then.
-2. Keep the Chinese documentation up to date. People were translating it, but the translations often lagged by several major versions, or a year or two.
-3. Build a community PostgreSQL distribution and use it to bring together a small group of developers.
+1. Run a domestic download mirror for PostgreSQL, since most mirror sites in China did not carry the PGDG repositories at the time.
+2. Keep the Chinese documentation current. Volunteers were translating the manuals, but they routinely lagged behind by several major versions—often a year or two out of date.
+3. Build a community PostgreSQL distribution to rally a small group of developers around shared code.
 
-You know what happened next. None of this got off the ground. The community stayed busy organizing conferences and meetups, but its voice faded and the community itself sank further into inertia. There are many reasons. Here are the two I can see most clearly.
+You know how the story went. None of those materialized. The community stayed busy running conferences and meetups while its voice faded and momentum stalled. Plenty of factors contributed, but two stand out to me.
 
-**First, China's domestic database push pulled people away.** A slew of databases heavily modified PG, reskinned it, or wrapped it in a new product; many simply refused to acknowledge their PG roots. People cared more about their own patch of turf than shared infrastructure. Take openGauss: early on, it acknowledged being part of the PG community. Later it started claiming to be “100% independently developed,” struck out on its own, and took a group of people with it. Several rounds of fragmentation left the community badly depleted.
+**First, China's domestic database push pulled people away.** A wave of vendors forked, reskinned, or wrapped PostgreSQL into proprietary products, and many refused to acknowledge their PG lineage at all. People cared more about tending their own patch of turf than building shared public infrastructure. Take openGauss: early on, it still identified as part of the PG community; later, it marketed itself as "100% independently developed," spun up its own camp, and took a sizable group of contributors with it. Several rounds of fragmentation left the community badly depleted.
 
-**Second, users stopped being the priority.** Conferences increasingly resembled trade shows. We used to have several events a year; eventually, even the annual conference became hard to organize. When it did happen, it looked more and more like a string of product commercials. Vendors took turns pitching and bullshitting on stage, while users left with nothing they could actually use. It was closer to an annual vendor reunion and dinner than a conference for users.
+**Second, users stopped being the priority.** Conferences increasingly resembled trade shows. The community used to hold several events a year; eventually, it struggled to pull together even a single annual conference. When it did happen, the program read like a string of vendor infomercials: speakers took turns pitching products and peddling hype on stage, while users in the audience walked away with nothing practical they could use at work. It functioned more like an annual vendor reunion and dinner than a conference for users.
 
-The result was a **hollowed-out community**. What, exactly, did it provide for users?
+The end result was a **hollowed-out community**. What, in practice, was it giving users?
 
-Documentation? As far as I recall, the community's Chinese translations stopped at PG 15. A package repository? No. Alibaba Cloud, Tencent Cloud, and Tsinghua University eventually set up PGDG mirrors, but when upstream stopped updating their feeds, those mirrors went stale for months too. In the end, I had to build a mirror myself. After I criticized the situation publicly, a few others caught up. But those were efforts by companies and universities, with little to do with the community.
+Documentation? As far as I recall, the community's Chinese translation stalled at PG 15. Package repositories? None. Alibaba Cloud, Tencent Cloud, and Tsinghua University eventually mirrored the PGDG repositories, but when upstream changed its sync mechanism, those mirrors sat broken for months. I ended up building and running a mirror myself. Only after I criticized the outage publicly did a few providers fix theirs—and even then, those were corporate and university mirrors, not community infrastructure.
 
-[PGDG Cuts Off Mirror Synchronization](/en/pg/pg-mirror-break/)
+[Chokepoint: PostgreSQL Cuts Off Mirror Sync Channels](/en/pg/pg-mirror-break/)
 
-[The PostgreSQL “Supply Cut” and Trust in the Software Supply Chain](/en/pg/pg-mirror-pigsty/)
+[What the PostgreSQL Mirror Cutoff Reveals About Software Supply Chain Trust](/en/pg/pg-mirror-pigsty/)
 
 Conferences? Even those were gradually falling apart.
 
-## A community starts with its users
+## A Community's Roots Are in Its Users
 
-What should a community look like? Percona's Peter Zaitsev once made a point along these lines: an open-source community has three layers—**developers, vendors, and users**. Many people focus on the vendor community, but the user community is the foundation.
+What should an open-source community actually look like? Percona's Peter Zaitsev once framed it well: an open-source community has three layers—**developers, vendors, and users**. Many people spend their energy organizing vendors, but the user community is the root.
 
-Apply that lens to the Chinese-speaking PG community, and the problem becomes clear. A Chinese-speaking **developer community** never really got off the ground. PG is built by developers around the world, and relatively few projects from China have made a mark in its ecosystem.
+Viewed through that lens, the problem with the Chinese PG community is obvious. A local **developer community** never really took shape; PostgreSQL is built by contributors worldwide, and relatively few open-source projects from China have made a dent in the global PG ecosystem.
 
-**There was a vendor community. It fell apart.** The Chinese-speaking community effectively became a vendor alliance, a loose association resembling a trade guild. Even that role became marginal as China's push for domestically controlled IT took hold and each vendor went its own way.
+**A vendor community existed for a while, then splintered.** The Chinese community effectively operated as a loose vendor alliance, closer to a trade guild. Even that function lost relevance as China's domestic IT localization drive (*Xinchuang*) took hold and each vendor went its own way.
 
-**A user community was never taken seriously.** Yet that is the broadest and most fundamental layer.
+**A user community was never seriously built.** Yet that is the broadest and most foundational layer of all.
 
-The PG world already has many overlapping communities: core developers, vendors, and users. User communities can be organized around countries, cities, or languages. A Chinese-speaking PostgreSQL community should be a natural example: a user group spanning the entire Chinese-speaking world.
+The PostgreSQL world naturally divides into core developers, vendors, and user groups—and user groups organize by country, city, or language. The Chinese PostgreSQL community should have been the textbook example: a user group serving the entire Chinese-speaking world.
 
-What should a user group do? There is nothing mysterious about it: **build what users need.** For a Chinese-speaking user, the list is straightforward:
+What is a user group supposed to do? Nothing complicated: **build what users actually need.** For a Chinese-speaking PostgreSQL user, the checklist is straightforward:
 
 - A distribution that works out of the box
-- Chinese documentation that keeps pace with releases
-- Reliable package mirrors in China
-- Complete Chinese localization of software messages
+- Chinese documentation that keeps pace with upstream releases
+- Fast, reliable package mirrors in China
+- Complete Chinese localization of server and client messages
 - A Chinese-language portal
-- A local community where people can talk and ask for help
+- A local forum where people can ask questions and compare notes
 
-That list has barely changed from the suggestions I made seven or eight years ago.
+That list has barely changed from what I proposed seven or eight years ago.
 
-## Time to do it myself
+## Stepping Up Myself
 
-I used to stay away from this because I thought there was too much work for one person. Then I discovered that might not be true.
+For years I stayed away from this because it looked like far too much work for one person. It turns out that assumption is no longer true.
 
-**No flagship project for the Chinese-speaking community?** My project, Pigsty, is now probably the strongest open-source project to come out of China's PG ecosystem. It has earned a place among PG distributions worldwide and has more GitHub stars than any other Linux-native PG distribution. It addresses users' biggest obstacle: putting PG to work. From bare metal to a production-grade PostgreSQL service, it sets up high availability, backup and recovery, monitoring, and extensions in one go—effectively an open-source, enterprise-grade RDS. A small community of nearly 3,000 people has formed around it.
+**No flagship project from the Chinese community?** Pigsty, the PostgreSQL distribution I maintain, is now one of the most widely adopted open-source PG projects to come out of China, and currently the most-starred Linux-native PG distribution on GitHub. It solves the most common practical obstacle users face: getting PostgreSQL into production. From bare metal to a production-grade cluster, it provisions high availability, point-in-time backup and recovery, monitoring, and extensions in one go—effectively an open-source, self-hosted RDS. A community of nearly 3,000 users has formed around it.
 
 **[Building a PostgreSQL Distribution Rooted in China, for the World](/en/pg/forge-a-pg-distro/)**
 
-**No Chinese documentation?** Working with AI agents, I translated the official PostgreSQL manuals for more than 30 major versions, from 6.3 through 20, and added better full-text search. I also maintain Chinese documentation for surrounding tools such as Patroni, pgBackRest, PgBouncer, and pgBadger.
+**No up-to-date Chinese documentation?** Working with AI agents, I translated the official PostgreSQL manuals across more than 30 major versions—from 6.3 through 20—and paired them with better full-text search. I also maintain Chinese documentation for essential ecosystem tools including Patroni, pgBackRest, PgBouncer, and pgBadger.
 
 [Chinese PostgreSQL Docs Are Live: All 11 Major Versions](/en/pg/pgsql-cc-online/)
 
 [Chinese Documentation for PostgreSQL 18, 17, 16, 15, and 14](/en/pg/pgdoc-cn/)
 
-**Half-finished message localization?** Simplified Chinese made it into PG 19 Beta 4; Traditional Chinese ships with RC1. The workflow for automated translation and tracking upstream changes is in place too. From PG 19 onward, Chinese coverage should no longer be a problem.
+**Half-finished message localization?** Simplified Chinese translations landed in PG 19 Beta 4, and Traditional Chinese ships with RC1. An automated translation and upstream-tracking workflow is now in place too, so from PG 19 onward, Chinese message coverage will stay current.
 
 [PostgreSQL Now Speaks Chinese](/en/pg/pg-nls/)
 
-[Why Localize PostgreSQL into Chinese?](/pg/pg-zh-tw/)
+[Why Localize PostgreSQL into Chinese?](/en/pg/pg-zh-tw/)
 
-**No package repository in China?** I maintain a Chinese PGDG repository and mirror, distributed through a CDN and free for everyone to use. I package and distribute nearly 600 extensions and software packages from the PG ecosystem across 16 Linux platforms, with more than a million downloads a month.
+**No domestic package repositories?** I maintain a China mirror for PGDG along with an extension repository, served free of charge via CDN. Across 16 Linux distributions, it packages and distributes nearly 600 extensions and tools from the PG ecosystem, handling over a million downloads a month.
 
-[A Comprehensive Repository for PostgreSQL Extensions](/en/pg/pg-ext-repo/)
+[The Most Complete PostgreSQL Extension Repository](/en/pg/pg-ext-repo/)
 
-[A Package Manager for PostgreSQL Engines and Extensions](/en/pg/pig/)
+[pig: A Package Manager for PostgreSQL and Its Extensions](/en/pg/pig/)
 
-**No Chinese-language portal?** The community site and PG knowledge base are ready too: [pgsql.cc](https://pgsql.cc/). It tracks authoritative updates from postgresql.org every day, with better Chinese full-text search, a distinctive PG knowledge graph, and a daily news column that has been running for more than six months.
+**No Chinese-language portal?** The community portal and PG knowledge base are live at [pgsql.cc](https://pgsql.cc/). It tracks authoritative updates from `postgresql.org` daily, provides Chinese full-text search and a structured PG knowledge graph, and runs a daily news column that has been publishing for over six months.
 
 [pg.center: The PostgreSQL Website in Chinese](/en/pg/pg-center/)
 
 [A Daily News Column for the Chinese PostgreSQL Site](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247493166&idx=1&sn=67e34928473b23e7cbf6169f9e0260cb&scene=21#wechat_redirect)
 
-**Chinese developers have no voice in the PG world?** Then we need to attend conferences and meet people face to face. That is how you get heard, build trust, and get things moving. Over the past few years, we have made some progress:
+**No voice for Chinese developers in the global PG community?** Earning a voice means showing up at conferences in person, talking to people face to face, building trust, and doing the upstream work. Over the past few years, that effort has moved several things forward:
 
-- The PG extension catalog I built is now used by many PG vendors and service providers around the world, as well as Pigsty. See: [Extensions for Everyone: My PGConf.Dev 2026 Talk](/en/pg/extensions-for-everyone/).
-- [I helped get the LoongArch architecture into PostgreSQL's official APT repository.](/pg/pg-apt-loong64/)
-- [I identified flaws in PG's GB18030 support and helped get them fixed upstream.](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487665&idx=1&sn=7792bc69e14bdcd606ec7780ed087101&scene=21#wechat_redirect)
-- Rust extensions are starting to enter PGDG repositories too. Devrim went from flatly refusing any Rust extension to including the Rust-based anonymizer in the Yum repository.
+- The PG extension catalog I built is now used not only by Pigsty, but also by PG vendors and service providers around the world. See: [Extensions for Everyone: PGConf.Dev 2026 Talk](/en/pg/extensions-for-everyone/)
+- [Helped bring LoongArch (`loong64`) into PostgreSQL's official APT repository](/pg/pg-apt-loong64/)
+- [Identified flaws in PostgreSQL's GB18030 encoding support and helped get them fixed upstream](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487665&idx=1&sn=7792bc69e14bdcd606ec7780ed087101&scene=21#wechat_redirect)
+- Rust extensions are starting to enter the PGDG repositories: Devrim went from flatly rejecting any Rust extension to accepting the Rust-based `postgresql_anonymizer` into the Yum repository.
 
-My point is simple: this is possible. The Chinese-speaking PG world now has a cohesive developer community, projects of its own, and a voice and representation in the global community.
+My point is simple: this is doable. The Chinese-speaking PG world now has a cohesive developer group, projects of its own, and active representation in the global community.
 
-## Capability is no longer the bottleneck. Commitment is.
+## Capability Is No Longer the Bottleneck—Commitment Is
 
-A few years ago, many of these tasks would each have kept a small team busy for months: translating complete manuals for 31 historical major versions, localizing more than 60,000 messages, packaging and distributing software across 16 platforms. Doing all that with one pair of hands would have been like moving a mountain one shovelful at a time.
+A few years ago, any one of the items above would have kept a small team busy for months: translating full manuals across 31 historical major versions, localizing more than 60,000 messages, building and distributing packages across 16 OS platforms. Tackling that alone with two hands would have been like moving a mountain one shovelful at a time.
 
-But now we have AI. Agents can do work, and a lot of it. One person directing a group of agents can do what once required a whole team. When capability is no longer the obstacle, two other things matter: **your vision for what you want to build, and your commitment to doing it.**
+Now we have AI. Agents can do real work in volume. One person directing a fleet of agents can ship what used to require a dedicated team. Once execution capacity is no longer the bottleneck, everything comes down to two things: **your vision for what ought to exist, and your commitment to seeing it through.**
 
-If the goal is merely commercial—“I'll organize a conference and collect some sponsorship money”—it probably will not work. Even if it does, there is little point. But if you love PG and want more people to use it and use it well, this is work you can take on and carry through. That passion and commitment are unique to you. In an age when AI can do just about anything, they are precisely what it cannot replace.
+If the motivation is purely commercial—"let's put on a conference and collect sponsorship checks"—it probably won't work, and even if it does, it won't matter much. But if you care about the craft and want more people to run PostgreSQL well, the work is both doable and worth doing. Genuine care and follow-through cannot be automated. In an era when AI can generate almost anything, they are the one thing it cannot replace.
 
-## The community I want to revive is for users
+## Reviving a Community for Users
 
-Let me be clear: **I have no interest in building a vendor community.** The model of going cap in hand to companies, rounding up sponsorships, and organizing trade shows has been around for years. People are still doing it, so I will leave that to them. What I want is this: if you use PostgreSQL, the resources here should help you. When you have a problem or an idea, you should have a place to share it and discuss it with others.
+To be clear upfront: **I have no interest in running a vendor community.** The playbook of going cap in hand to vendors, selling sponsorship tiers, and staging trade shows has been around forever, and plenty of people still run it. I will leave that to them. What I want to build is straightforward: if you use PostgreSQL, the resources here should make your job easier; when you hit a problem or have an idea worth sharing, you should have a place to talk with peers.
 
-A user community needs a concrete reason to exist. It cannot vaguely promise to “serve PG users” without saying what it provides. That is why the distribution is the core, with Chinese documentation, localization, and the user community built around it. One more thing: **a Chinese-speaking community reaches beyond mainland China.** Taiwan, Singapore, and Malaysia all have many Chinese-speaking users. That is part of why I included Traditional Chinese in this localization effort. I know plenty of friends in the PG community from Taiwan and Southeast Asia. This community should belong to the entire Chinese-speaking world.
+A user community needs a concrete value proposition. It cannot vaguely claim to "serve PG users" without delivering anything tangible. That is why the distribution sits at the center, with Chinese documentation, message localization, package mirrors, and user forums built around it. One more point: **a Chinese-language community is not just a mainland China community.** Taiwan, Singapore, and Malaysia all have large Chinese-speaking user bases. That is why Traditional Chinese was included in the localization work from the start. I know many friends in the PG community across Taiwan and Southeast Asia, and this community belongs to the entire Chinese-speaking world.
 
-Here is what I want to add next:
+Next, I plan to fill in the remaining pieces step by step:
 
-- A complete getting-started guide in Chinese
-- Real, interesting stories from users
-- Occasional podcasts and talks
+- A complete getting-started tutorial series in Chinese
+- Practical, interesting user case studies
+- Occasional podcasts and technical talks
 
-## Many hands make a community
+## Many Hands Make a Community
 
-One last practical point: AI lets one person do a great deal, but there are still many things one person cannot solve.
+One last practical note: AI lets one person build a lot of infrastructure, but plenty of things still cannot be done solo.
 
-Software and extensions need testing. Translations need people to spot mistakes. User stories need real users to tell them. A community needs people willing to answer other people's questions. It is a community because it belongs to more than one person. I will get things started; the rest depends on all of us pitching in.
+Software and extensions need real-world testing. Translations need readers who spot awkward phrasing and bugs. Case studies need practitioners willing to share what they learned in production. Forums need experienced users willing to answer questions. A community is only a community when it belongs to more than one person. I am happy to lay the groundwork; the rest takes all of us pitching in.
 
-![An elephant wizard and a child ride a donkey cart toward a distant village](featured.webp)
+![An elephant-headed wizard and a child riding a donkey cart toward a distant village](featured.webp)
 
-Whether you have a new story to share about using PostgreSQL, have found a problem with the software, translations, documentation, or knowledge graph, or simply want somewhere to talk about PostgreSQL, you are welcome to join us.
+Whether you have a story from running PostgreSQL in production, spotted a bug in the packages, translations, documentation, or knowledge graph, or just want a place to talk shop about PostgreSQL, you are welcome to join us.
