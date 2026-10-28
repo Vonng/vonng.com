@@ -1,121 +1,121 @@
 ---
-title: "Is This Our Last Programmers’ Day?"
+title: "Is This Our Last Programmers' Day?"
 date: 2026-10-24
 authors: [vonng]
 summary: >
-  Human computers became the first programmers. Today, programmers face the same turning point. As AI takes over coding, engineers’ value will increasingly lie in design, taste, delivery, accountability, and the ability to coordinate teams of agents.
+  Human computers became the first programmers; today's programmers stand at the same crossroads. As AI takes over coding, an engineer's value shifts to design, taste, delivery, accountability, and orchestrating fleets of agents.
 tags: [AI, Software Engineering, Career]
 images: [computers.webp]
 ---
 
-Today is October 24. In China, it is commonly celebrated as Programmers’ Day: after all, 1024 = 2¹⁰, a pleasingly round and lucky number in the binary world. It seems a good day to share a few thoughts on programming as a profession.
+Today is October 24—celebrated in China as Programmers' Day, since 1024 = 2¹⁰ is a neat, auspicious round number in binary. Given the occasion, I want to share a few thoughts on programming as a profession.
 
-I have a strong hunch: **this may be the last Programmers’ Day we celebrate.**
+I have a strong hunch: **this may be the last Programmers' Day we ever celebrate.**
 
-Of course, October 24 will come around again next year. By “last,” I mean the end of programming as a distinct occupation. Before long, “programmer” may be a historical footnote, just as the old job of “computer” is today.
+October 24 will still roll around next year, of course. By "last," I mean the end of the "programmer" as a standalone trade—one that may soon become a historical footnote, much like the original job called "computer."
 
 ## 1. From Human Computers to a Historical Footnote
 
-Why do I say that? Today, “computer” means the electronic machine on your desk. But decades ago, it was an actual human occupation: **someone who computed for a living**.
+Today, "computer" means the machine on your desk. Decades ago, it was a job title: **a human who computed for a living**.
 
-These computers used paper, pencils, and slide rules to work out powers, logarithms, square roots, and calculus problems by hand. The film **Hidden Figures** tells the story of such people: during the space race of the early 1960s, Black women working as computers at NASA’s Langley Research Center verified the trajectory for America’s first crewed orbital flight by hand. Being a human computer was a respected white-collar job that demanded real skill.
+Human computers worked with paper, pencils, and slide rules, calculating exponents, logarithms, square roots, and calculus by hand. The film ***Hidden Figures*** tells their story: during the early-1960s space race, a team of Black women working as human computers at NASA's Langley Research Center hand-verified the orbital trajectories for America's first crewed spaceflight. At the time, computing was a respectable white-collar profession with a real barrier to entry.
 
-We know what happened next. As electronic computers spread, calculation went from a human craft to a routine operation performed by machines. Beyond elementary school exercises, nobody earns a living taking square roots by hand anymore.
+We all know how that story ended. Electronic computers turned calculation from a human craft into a mechanical primitive. Outside of grade-school math drills, nobody makes a living extracting square roots by hand anymore.
 
-The most telling story in the film, though, is Dorothy Vaughan’s. When she saw that an IBM computer was coming, she did not wait to become obsolete. She taught herself FORTRAN, then taught the human computers she supervised, bringing her whole team into the new profession. **The occupation of human computer disappeared, but those who embraced the new machines early became the first generation of programmers.**
+The most telling arc in that film, though, belongs to Dorothy Vaughan. When she saw IBM mainframes being installed, she didn't sit around waiting to be replaced. She taught herself FORTRAN, trained the women in her group, and led her entire team through the transition. **The job of "human computer" vanished, but the computers who embraced the new machines first became the first generation of programmers.**
 
-![A woman calculating on paper alongside a modern programmer at a computer](computers.webp)
+![From human computers with pen and paper to programmers at terminals](computers.webp)
 
-**Today’s programmers stand where human computers once stood.**
+**Today's programmers stand where those human computers once stood.**
 
-I made this complaint recently in [DeepSeek Interviews Bojie](/en/ai/deepseek-interview/): if you are hiring a new generation of AI-native engineers, judging them by how well they hand-code solutions to online-judge algorithm problems is absurd. It is like hiring programmers back then by testing their pencil-and-paper arithmetic and square-root calculations.
+As I argued recently in [DeepSeek's Interview with Bojie](/en/ai/deepseek-interview/), hiring a new generation of AI-native engineers by making them grind out LeetCode-style algorithm puzzles from scratch is absurd. It makes about as much sense as testing early computer programmers on how fast they could do long division or extract square roots by hand.
 
-The era of programming as a distinct occupation is coming to an end. It is leaving the stage in much the same way that human computers did when digital computers took over.
+Programming as a distinct occupation is coming to an end, and it is exiting the stage the exact same way human computers did when digital computers arrived.
 
-## 2. The Priesthood’s Twilight and the Rise of the Superpowered Individual
+## 2. Twilight of the Priesthood, Dawn of the Super-Individual
 
-I understand the psychological shock this upheaval has brought to many of my peers. Just two or three years ago, programmers were treated as something of a priesthood. We knew arcane incantations ordinary people could not read; with a few keystrokes, we could summon power from cyberspace and command enviable salaries.
+I understand why this upheaval has rattled so many peers. Just two or three years ago, programmers occupied a kind of priesthood. We commanded arcane incantations illegible to laypeople; with a few keystrokes, we could summon real power from cyberspace and collect enviable paychecks.
 
-Within a year or two, that sacred monopoly was broken. A technological Reformation arrived: more and more people who cannot code are picking up Claude Code and Codex as their “Bible in the vernacular,” bypassing the priests to speak directly to “God” and build software themselves.
+In barely two years, that monopoly has shattered. A technological Reformation has arrived: growing numbers of people who have never written code are picking up Claude Code and Codex like a vernacular Bible, bypassing the clergy to speak directly to the machine and build their own software.
 
-That is a heavy blow to traditional programmers’ pride and livelihoods. If your sense of superiority still rests on being good at test problems and writing code by hand, consider these harsh but clear-eyed words from AI pioneer Ilya Sutskever:
+For traditional programmers, that is a blunt blow to both ego and livelihood. If your sense of superiority still rests on a test-prep mindset and hand-coding fluency, consider this sobering warning from AI pioneer Ilya Sutskever:
 
-> “if you value intelligence above all other human qualities, you’re gonna have a bad time”
+> "if you value intelligence above all other human qualities, you're gonna have a bad time"
 >
 > — Ilya Sutskever
 
-![Screenshot of Ilya Sutskever’s post about valuing intelligence above other human qualities](ilya.webp)
+![Ilya Sutskever's post on valuing intelligence above all other human qualities](ilya.webp)
 
-**But there is another side to this: if you can set aside your pride and embrace this power, this is no apocalypse. It is a golden age in which compute lets one person accomplish more than ever.**
+**The flip side is that if you drop the ego and lean into this shift, you are not looking at doomsday—you are looking at an unprecedented era of compute leverage.**
 
-Cheap compute lets you take on engineering projects on a scale once unimaginable for one person. A project that previously required a team of a dozen or so people and hundreds of thousands or over a million RMB in startup capital might now be within your reach alone, with a few subscriptions to leading models at US$200 a month each.
+Cheap compute is a fulcrum that lets one person move engineering weight on a scale that used to be unthinkable. Projects that once demanded a dozen people and hundreds of thousands of dollars in seed capital can now be shipped solo on the back of a few $200-a-month frontier model subscriptions.
 
-Meanwhile, when software becomes cheaper to build, demand often rises rather than falls: Jevons paradox. The coming wave of automation across industries will create software demand far beyond anything we have seen. The old moats are being filled in, but the new territory is enormous.
+Meanwhile, as the cost of producing software plummets, demand doesn't shrink—it expands. That is Jevons paradox at work. As every industry retools around automation, the appetite for software will dwarf anything we have seen before. The old moats have been filled in, but the frontier ahead is vast.
 
-## 3. Programmers Will Disappear, but Engineers Will Endure
+## 3. Programmers Will Disappear, Engineers Will Endure
 
-If “programmer” becomes a historical footnote, what takes its place? The answer lies in an older, more fundamental title: **programmers will disappear, but engineers will not.**
+If "programmer" becomes a historical footnote, what takes its place? The answer sits in an older, more fundamental title: **programmers will disappear, but engineers will not.**
 
-In real software engineering, typing code has never accounted for all that much of the work. The software engineering classic *The Mythical Man-Month* offered a familiar breakdown long ago: 1/3 of the time for design, 1/6 for coding, and 1/2 for testing.
+In real software engineering, typing code was never the bulk of the job anyway. Fred Brooks' classic *The Mythical Man-Month* laid out the time budget decades ago: 1/3 for design, 1/6 for coding, and 1/2 for testing.
 
-I think that ratio still holds up. Outside a few specialized low-level fields, the **1/6 spent on coding** is no longer the bottleneck. Once calculators became widespread, nobody competed on how fast they could calculate by hand. What mattered was knowing what to calculate and whether the answer was right.
+That split still holds up. Outside a few specialized low-level domains, that middle **1/6 spent on coding** is no longer the bottleneck. Once pocket calculators became ubiquitous, nobody competed on manual arithmetic speed anymore—what mattered was knowing which problem to set up and whether the result made sense.
 
-The real challenges therefore shift to either end: **design** and **testing**. To be honest, AI agents already do impressive work in both. But humans still have two indispensable roles to play at the beginning and end:
+That pushes the real bottleneck to the two ends: **design** and **testing**. Truth be told, today's AI agents are already remarkably capable at both. Even so, humans must hold the line at the very beginning and the very end:
 
-1. **In design: provide intent and taste.** At least today, AI does not come up with a purpose of its own. It has no desires, feels no pain, and does not know why it exists. It needs humans to give it goals and meaning, supply ideas and tokens, and pay the bills. Human **intent** is what sets it in motion. Coming up with an idea that is actually worthwhile, deciding what to build and what to leave alone, takes **taste**.
+1. **On the design end: supplying will and taste.** At least today, AI does not generate its own purpose. It has no desires, feels no pain, and has no reason of its own to exist. It needs a human to define the goal, supply the spark, feed it tokens, pay the bill, and drive it forward through human **will**. And coming up with something genuinely worth building—deciding what to do and what *not* to do—comes down to **taste**.
 
-2. **In testing and delivery: provide distribution and accountability.** Software generated entirely by agents has no one vouching for it. To put it into production and deliver it commercially, an actual person or organization must ultimately **take responsibility**, putting real money and business reputation on the line.
+2. **On the testing and delivery end: supplying distribution and accountability.** Purely agent-generated software carries zero credit on its own. For software to reach production and close a commercial loop, a real person or organization has to put skin in the game—backing the work with capital, reputation, and **accountability**.
 
-The grunt work between those two ends can already be handed to agents, which do it quickly and cheaply.
+Everything in between—the heavy lifting and plumbing—can now be handed off to agents, which do it faster and for a fraction of the cost.
 
-Looking further ahead, as the cost of software engineering falls sharply, **the work outside engineering** becomes more important: distribution, marketing, and, underneath it all, **building trust**.
+Take this one step further: as the cost of building software drops, **everything outside of pure engineering** gains weight—distribution, marketing, and above all, **building trust**.
 
-In the AI era, anyone can knock out a pile of flashy projects over a weekend. Most will quietly rot in a neglected corner of GitHub. The real test for engineers now is getting other humans or agents to use what you build, establishing a positive feedback loop, and turning the project into a software operation that keeps running and pays its own way.
+Anyone can knock out a flashy side project over a weekend now, and most of those repos are destined to rot untouched in a quiet corner of GitHub. The real test for modern engineers is getting other humans—or other agents—to actually use what you built, kicking off a feedback flywheel, and turning a codebase into a self-sustaining software business.
 
-There is a half-joking line going around: every startup now needs a **CIO**, not a Chief Information Officer but a **Chief Influencer Officer**. Only by building real influence and relationships based on trust can you get that software machine running.
+There is a half-joking line making the rounds lately: every startup today needs a **CIO**—not a Chief Information Officer, but a **Chief Influencer Officer**. Without real reach and earned trust, you cannot even turn the key on the machine.
 
-## 4. Facing the Wave: It Is Not Too Late to Start
+## 4. Facing the Wave: It Is Not Too Late to Jump In
 
-Is resisting or rejecting AI a viable option? Honestly, no. Both China and the United States have made their bets clear: full speed ahead on AI and robotics as the next engines of productivity. Structural unemployment during the transition tends to get a passing mention in these sweeping visions of progress, dismissed as inevitable growing pains. Think of textile workers during the Industrial Revolution, carriage drivers as automobiles spread, or human computers after electronic ones arrived.
+Is boycotting or refusing to use AI a viable option? Honestly, that road is a dead end. Both the US and China have laid their cards on the table: it is green lights and full throttle on frontier productivity—AI and robotics. The structural unemployment that comes with the transition gets reduced to a passing mention in the grand narrative, brushed off as inevitable growing pains, just as it was for handloom weavers in the Industrial Revolution, carriage drivers when the automobile arrived, and human computers when mainframes took over.
 
-If your core skills happen to be in AI’s path, that is brutal, and it is not your fault. Anxiety and anger are understandable. But neither solves the problem, and clinging to the past will not improve your position.
+If your core skillset happens to sit squarely in AI's blast radius, that is brutal—and it is through no fault of your own. Anger and anxiety are completely natural reactions, but they won't change the math, and digging in your heels won't improve your odds.
 
-When a big wave comes, the most dangerous place is the shallows, where it rises highest and breaks hardest. Either head for deeper water, specializing in low-level fields that AI cannot yet crack, or learn to surf and ride the wave. **The crest may not be safe, but it offers the best view. Only from there can you clearly see the course ahead and its risks.**
+When a massive wave rolls in, the most dangerous place to stand is the shallows, where the surf crests highest and breaks hardest. You have two choices: retreat into deep water by mastering low-level domains AI still cannot touch, or paddle out and learn to surf the crest. **Riding the crest isn't safe either, but it gives you the clearest line of sight—and that is the only vantage point from which you can read the currents and spot the hazards ahead.**
 
-More importantly, I believe **there is still plenty of time to get started.**
+More importantly, **it is nowhere near too late to get in the game.**
 
-Do not let the tech industry’s echo chamber distort your view. AI’s adoption in real production work is nowhere near as widespread as you might think. My rough estimate is that the world has on the order of a million programmers experienced in working with AI and a hundred thousand “commanders of agent armies.” Against 30–50 million developers worldwide, let alone a population of 8 billion, those numbers are still tiny.
+Do not let the tech bubble fool you: real-world AI adoption in production is far shallower than social media makes it look. By my rough estimate, there are perhaps a million developers worldwide who are deeply fluent with AI, and maybe a hundred thousand operating as true "agent fleet commanders." Set against 30 to 50 million developers globally—let alone 8 billion people—that is still a tiny fraction.
 
-[AI Adoption May Not Be as Widespread as You Think](/en/ai/funnel/)
+[AI Adoption Isn't as Deep as You Think](/en/ai/funnel/)
 
-![Chinese infographic showing five levels of AI adoption in a funnel](funnel.webp)
+![A five-tier funnel showing levels of AI adoption depth](funnel.webp)
 
-Everyone on this new battlefield started from zero. Even the world’s most seasoned Claude Code users have less than two years of experience. The practical feel they have developed in that time has already put their productivity an order of magnitude ahead of traditional programmers. But if you are willing to get involved now, you can still catch up.
+On this playing field, everyone started from scratch. Even the most battle-tested Claude Code power users on earth have less than two years under their belts. Those two years of hands-on intuition have already opened an order-of-magnitude productivity gap over traditional developers—but if you get your hands dirty now, that lead is still completely catchable.
 
-Besides, seeing a technology of historic importance go from zero to one, helping it take shape, growing alongside it, and learning how each new generation of models changes the possibilities is a rare experience in its own right.
+Beyond that, getting a front-row seat to a historic technology going from zero to one—growing alongside it and feeling out each generational leap in the models firsthand—is a rare experience in its own right.
 
-## 5. From Foot Soldier to Commander of a Thousand: Leading an Army of Agents
+## 5. From Foot Soldier to Force Commander: Leading a Fleet of Agents
 
-So how do you get started? My answer is simple: **put your compute to full use, and develop your instincts as a commander through real projects.**
+So how do you actually get started? The answer is simple: **max out your compute and build your command instincts on real projects.**
 
-If you spend US$20 a month on a chatbot to pass the time, at best you have a decent digital adviser. But if you get everything you can out of a leading AI service’s top-tier US$200 monthly plan, you may accomplish things you once would not have thought possible.
+Spend twenty dollars a month on a chatbot to kill time, and at best you have a decent digital sounding board. Max out a $200-a-month frontier plan, however, and what you can ship solo will blow past what you used to think possible.
 
-I know that several premium subscriptions add up to a substantial expense for many people. You do not need to buy them all at once. Start with one top-tier plan that suits you, use it until you hit the limit, and then decide whether to add another. Compare the cost with hiring one person, and the arithmetic is straightforward.
+Several top-tier subscriptions add up to real money, of course, and you don't need to buy them all on day one. Pick one flagship plan that fits your workflow, push it until you hit the rate limits, and only then decide whether to add another. Stack that bill up against the cost of hiring even a single engineer, and the math is obvious.
 
-The most important thing to learn along the way is each AI’s temperament.
+The core skill to develop along the way is a feel for each model's temperament.
 
-Do not treat Codex, Claude, Gemini, Grok, GLM, and DeepSeek as mere tools. Think of them as digital colleagues with distinct personalities and strengths. Each has its specialties, quirks of reasoning, habits of cutting corners, and blind spots. I assign work across a dozen or so top-tier subscriptions every day, so I know this well. Learning to work alongside these new colleagues, understand their temperaments, and **match the right colleague to the right job** will be essential for every engineer.
+Do not treat Codex, Claude, Gemini, Grok, GLM, and DeepSeek as interchangeable tools. Treat them as digital colleagues with distinct personalities and strengths. Each has its own sweet spots, reasoning quirks, ways of cutting corners, and blind spots. Running workloads across a dozen top-tier subscriptions every day has made this very clear to me. Learning how to work with this roster—reading their tendencies and **matching the right agent to the right job**—is becoming a core discipline for every engineer.
 
-![Different AI models illustrated as humanlike characters](agents.webp)
+![Different AI models illustrated as distinct personas](agents.webp)
 
-You cannot develop that feel for directing AI by reading 10 tutorials or listening to 100 talks. The only way is to roll up your sleeves and work through demanding, real engineering projects, making mistakes and learning from them. That is how you learn to direct agents fluently: knowing which job belongs with which agent, how to break down goals, delegate authority, set boundaries, and review and accept the results.
+You cannot pick up that intuition by reading 10 tutorials or sitting through 100 talks. The only way is to roll up your sleeves and run hard, real-world engineering workloads—hitting walls and learning where the edges are. That is how orchestration becomes second nature: knowing which job goes to which agent, how to decompose goals, how to delegate authority, where to draw boundaries, and how to review and sign off on the output.
 
-Every programmer needs to make this shift in identity: **from a foot soldier with their head down writing code to a commander directing the operation.**
+Ultimately, every programmer has to make a shift in identity: **from a foot soldier heads-down writing code to a commander running the operation.**
 
-In traditional engineering management, leading 8 people made you a team lead; a few dozen, a middle manager; one or two hundred, a senior manager. In the coming era, serious engineers will start by commanding 10 agents, then move up to 100 or 1,000. Your standing will no longer depend on how many lines of code you type. The size of the agent army you can effectively direct will define your new rank and scope.
+In traditional engineering management, leading 8 people made you a team lead, a few dozen made you a middle manager, and a hundred or two made you a director. In the era ahead, a serious engineer starts out commanding a squad of 10 agents and scales up to a company of 100 or a battalion of 1,000. You will no longer prove yourself by how many lines of code you type by hand; the scale of the agent fleet you can effectively direct will define your new rank and reach.
 
-Looking back, electronic computers did eliminate the human computers with their pencils and paper. But they also ushered in the extraordinary age of software engineering. Among the first programmers were people like Dorothy Vaughan, human computers who embraced the new machines early.
+Looking back, electronic computers did wipe out the profession of pencil-and-paper human computers, yet they also kicked off the golden age of software engineering—and among the very first programmers were former human computers like Dorothy Vaughan who turned to meet the new machines early.
 
-Today, the rise of AI agents is bringing the era of programmers who type code by hand to an end, while opening one in which a single person can be an entire team. Yesterday’s human computers became the first programmers. Today’s programmers can become the first fleet commanders.
+Today, the rise of AI agents is ending the era of the hand-coding programmer while opening one where a single engineer can operate as an entire army. Yesterday's human computers became the first programmers; today's programmers can become the first fleet commanders.
 
-Happy 1024 Programmers’ Day, everyone—perhaps our last. And when you wake up tomorrow, welcome to the new world of engineers and commanders.
+Happy 1024 Programmers' Day—perhaps our last. When you wake up tomorrow, welcome to the new world of engineers and commanders.
