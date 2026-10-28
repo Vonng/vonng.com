@@ -3,87 +3,87 @@ title: "My First EV Road Trip"
 date: 2026-10-24
 authors: [vonng]
 summary: >
-  After 12 years of driving, I rented a range-extended EV for my first electric road trip to Huangshan. The attention freed up by driver assistance mattered more to me than fuel savings. Comfort and convenience won me over, but data privacy and ownership still deserve scrutiny.
+  After 12 years of driving gas cars, I rented a range-extended EV for a road trip to Huangshan. What won me over wasn't fuel savings, but the attention freed up by assisted driving—though beyond the cabin comfort and easy charging, data privacy and vehicle ownership still bear thinking about.
 tags: [Hardware, Travel, Essay]
 images: [li-l8.webp]
 ---
 
-I'm an old hand with databases and have been driving for 12 years. Yet until this trip, I'd never driven an EV.
+I've been driving for 12 years—databases by trade, cars on the road—yet until this trip, I had never once been behind the wheel of an EV.
 
-It wasn't some diehard devotion to internal combustion. I simply had no need for a car to commute. When I worked in an office, I usually lived within 300 meters of it, so I had no use for a car. Now I run a one-person business from home and can go a week without leaving the house. A car would just collect dust in the garage.
+It's not that I'm some diehard internal-combustion fundamentalist; I just don't have a daily commute. Back when I worked in an office, I usually lived within 300 meters of work, so a car had no use. Now I run a one-person company from home and barely step out of the house once a week. Owning a car would just mean letting it gather dust in an underground garage.
 
-The only time I drive is on long road trips. On one trip through [Xinjiang](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484145&idx=1&sn=7e5a47adbe03444458e436cf3f2c2487&scene=21#wechat_redirect) and other parts of western China, I stayed on the road for over three months. I've also taken one- or two-week road trips in the western U.S. and Canada. When you're covering thousands or even tens of thousands of kilometers, you want something dependable and hassle-free. I always chose a gasoline car without a second thought, to avoid complications along the way.
+The only time I drive is on long road trips. I once spent over three months [driving across Xinjiang](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484145&idx=1&sn=7e5a47adbe03444458e436cf3f2c2487&scene=21#wechat_redirect) and western China, and I've done one- to two-week road trips through the American West and Canada. When you're covering thousands or tens of thousands of kilometers on an overland trip, reliability and zero drama come first. Every time, I picked a gasoline car without a second thought to avoid headaches along the way.
 
-That changed recently. A friend bought an EV, and I tried its driver-assistance system. I was seriously impressed. When my wife and I went to Huangshan a few days ago, I figured: why not rent an EV this time and see for myself?
+That changed recently. A friend bought a new EV, and I took its assisted-driving system for a spin. It was genuinely impressive. So when my wife and I planned a trip to Huangshan a few days ago, I figured: why not rent an EV this time and try it properly?
 
 ## Choosing by Elimination: The Li Auto L8?
 
-A quick look at the CAR Inc. rental app showed that the EVs available nearby came down to BYD, Tesla, Li Auto, and AITO, whose Chinese name is Wenjie. My elimination process was blunt:
+A quick scan of the CAR Inc. rental app showed that the EVs available at nearby branches came down to four brands: BYD, Tesla, Li Auto, and AITO (*Wenjie* in Chinese). My elimination process was blunt:
 
-- **BYD**: Sitting in one always makes me feel like I'm driving a ride-hailing car. That takes some of the fun out of a road trip. Pass.
-- **The “Jie” brands**: Anything with *jie* (界) in its Chinese name was off the list without a second look. I don't need that kind of baggage.
-- **Tesla**: Good cars, but it seemed I still couldn't use all of FSD's features in China. I mainly wanted to try driver assistance, so I set Tesla aside this time.
+- **BYD**: Sitting in one always feels like driving a ride-hailing car, which takes some of the fun out of a road trip. Skipped.
+- **The “-jie” brands**: Anything with *jie* (界) in its Chinese name—Huawei's automotive alliance lineup—was off the list without a second look. I have no desire to invite that kind of baggage.
+- **Tesla**: Good cars, but Full Self-Driving (FSD) still isn't fully enabled in China, and the main point of this rental was to experience smart driving. Set aside for now.
 
 That left the **Li Auto L8**.
 
-It wasn't cheap. The rental company offered a BMW 3 Series for just 100 yuan a day. The L8's base rate alone was 450 yuan, and service fees and insurance brought the daily total to nearly 600 yuan.
+Renting it wasn't cheap. A BMW 3 Series at the same agency went for 100 yuan a day; the Li Auto L8 cost 450 yuan a day for the base rate alone, and nearly 600 yuan a day out the door once service fees and insurance were added.
 
-Strictly speaking, the L8 isn't a battery-only EV. It's a **range-extended EV**: the wheels are driven electrically, but it carries both a battery and a fuel tank. When the battery runs out, it can generate electricity from gasoline to keep moving. Its advertised combined range is over 1,100 km. For someone used to gasoline cars, trying an EV for the first time with a bit of range anxiety, that felt like a reassuring way to ease into it.
+Strictly speaking, the Li Auto L8 isn't a pure battery EV, but an **extended-range electric vehicle (EREV)**. Electric motors drive the wheels, while the chassis packs both a battery and a fuel tank—when the battery runs low, an onboard engine burns gasoline to generate electricity, with a claimed combined range of over 1,100 km. For a longtime gas-car driver trying an EV for the first time with some lingering range anxiety, it felt like a safe way to ease in.
 
 ![The Li Auto L8 I rented for the Huangshan road trip](li-l8.webp)
 
-![The Li Auto L8 model and specifications page in the CAR Inc. rental app](rental.webp)
+![The Li Auto L8 listing and specifications page in the CAR Inc. rental app](rental.webp)
 
-After three days behind the wheel, my verdict was simple: **pretty good, actually.**
+After three days behind the wheel, my verdict comes down to two words: **genuinely solid.**
 
-## Attention Is the Expensive Part: Driver Assistance Won Me Over
+## Attention Is the Scarce Resource: Assisted Driving Wins
 
-We drove from Shanghai to Hangzhou, then on to Huangshan: over 400 km one way, through city congestion, elevated roads, and long highway stretches. I used driver assistance for almost the entire drive, across all those conditions.
+We drove from Shanghai to Hangzhou and then straight on to Huangshan—over 400 km one way across congested city streets, elevated expressways, and long stretches of highway. Across all of those road conditions, I kept assisted driving engaged for nearly the entire trip.
 
-People like to point out that EVs save a few tenths of a yuan per kilometer over gasoline cars. Honestly, I don't care what powers the car or about saving a few yuan on fuel. **What made it worth the money was how much attention driver assistance freed up.**
+People love to calculate how an EV saves a few tenths of a yuan per kilometer over a gas car. Honestly, I couldn't care less what the car burns or whether it saves a few yuan on fuel. **What actually made the rental worth the price was the attention that assisted driving freed up.**
 
-For humans and AI agents alike, attention is the most valuable resource, now and in the future. On long drives in a gasoline car, I used to concentrate on staying in my lane, working the accelerator and brakes, and constantly processing a flood of tiny driving decisions. A few hundred kilometers would leave me exhausted. With driver assistance on, I could focus on the overall traffic situation and supervise, ready to take over. The mental effort felt an order of magnitude lower.
+Whether for humans or for AI agents, attention is the most valuable resource today and in the future. On a long highway haul in a gas car, you have to stay locked in: holding the lane, working the throttle and brakes, and processing a continuous stream of micro-decisions at high frequency. After a few hundred kilometers, you're exhausted. With assisted driving switched on, you step back to monitoring the broader traffic picture as a fallback supervisor. The cognitive load drops by an order of magnitude.
 
-Here's an admission that won't win me any points: on the highway with driver assistance engaged, my wife was watching a TV series on the passenger screen, and I could even sneak glances out of the corner of my eye and follow along. Of course, that isn't safe. Don't copy me. But in a conventional gasoline car, that experience would have been out of the question.
+To make a slightly politically incorrect admission: while cruising on the highway with assisted driving on and my wife watching a TV series on the front passenger screen, I even had enough spare attention to sneak glances at her screen out of the corner of my eye. Obviously, that's not safe practice—don't copy me—but in a traditional gas car, it would be flatly out of the question.
 
-The cabin's voice controls also made getting started much easier for a first-time EV driver. When I got in, I couldn't figure out where to find many of the controls. But I could just ask: “How do I turn on driver assistance?” “Where are the buttons?” Even turning on the wipers or locking the car took only a voice command, with no digging through menus. At the destination, a simple one-touch automatic parking feature found a space and parked the car for me. One less thing to deal with.
+For a first-time EV driver, the cabin's voice assistant also lowered the barrier to entry. When I first got in, I had no idea where half the controls were buried. The upside was that I didn't need to know—I could just ask out loud: “How do I turn on assisted driving?” or “Where are the buttons?” Even everyday actions like turning on the wipers or locking the car took a single voice command instead of digging through menus. And when we reached our destination, its foolproof one-tap auto-park found a spot and backed the car right in.
 
-## Charging and Comfort: A Fridge, Screens, and Sofa Seats
+## Charging and the Cabin: The “Fridge, TV, and Plush Sofa” Formula
 
-The highway trip changed my view of charging and energy consumption quite a bit. I'd expected substantial losses from the extra conversion involved in burning gasoline to generate electricity and then using that electricity to drive a motor. In practice, a vehicle this big averaged only about 6 liters of gasoline per 100 km. Pretty economical.
+This highway run also changed my view of EV charging and energy efficiency. I had assumed an EREV—burning gas to generate electricity and then using that electricity to drive a motor—would suffer noticeable conversion losses. In practice, a vehicle this large averaged only about 6 liters of fuel per 100 km combined, which is remarkably economical.
 
-Charging was an even bigger surprise. The battery alone offers roughly 200–300 km of range. Almost every highway service area on the way to Huangshan had chargers, and near the scenic area, charging spaces were everywhere we stopped to eat or park.
+Charging was an even bigger surprise. The battery alone provides roughly 200 to 300 km of range. Along the highway to Huangshan, nearly every service area had charging stalls, and once we reached the scenic area, charging spots were everywhere we stopped to eat or park.
 
-This was also the first time I'd ever handled a charging connector. It was much simpler than I'd imagined: scan a QR code with WeChat, take the connector off its holder, plug it in, and charging begins. We went for a meal at a service area and wandered back half an hour later. The battery had gone from somewhere in the teens to 85%. At 0.8–0.9 yuan per kWh, twenty-something yuan could cover about 200 km. Compared with gasoline, the cost was almost negligible. I finally understood why seemingly every ride-hailing car on the street is electric.
+This was my first time ever handling a charging gun, and it was far simpler than I expected: scan a QR code in WeChat, pull the connector from the stall, and plug it in. We went for a meal at a highway service area and wandered back half an hour later to find the battery up from the low teens to 85%. At 0.8 to 0.9 yuan per kWh, twenty-odd yuan covers roughly 200 km. Compared with gasoline, that cost is practically a rounding error—I now completely understand why almost every ride-hailing car on the street is electric.
 
-![The Li Auto L8's steering wheel, instrument display, and center screen](cockpit.webp)
+![The Li Auto L8's steering wheel, instrument display, and center screens](cockpit.webp)
 
-My biggest worry about EVs had always been getting somewhere in a hurry. With a gasoline car, you fill up in five minutes and leave. Waiting half an hour to charge sounded painful. But with enough charging infrastructure, you can plug in while eating or using the restroom at a service area. It doesn't really cost you any extra time.
+My biggest reservation about EVs used to be time pressure on a trip: a gas car takes five minutes to fill up and leave, whereas waiting half an hour to charge sounded painful. Once the infrastructure is in place, though, plugging in while you eat or use the restroom at a service area doesn't cost you any extra time at all.
 
-As for the cabin, I have to admit that the “fridge, TV, and big sofa” formula favored by China's newer automakers works. With ventilated, heated, massaging seats, the car really is comfortable. It was tempting enough to make me wonder whether my mother should replace the old Audi she's driven for more than a decade with an EV. It could make her everyday driving much more comfortable and less of a chore.
+As for the cabin, I have to admit that the “fridge, TV, and plush sofa” formula favored by China's newer EV makers—complete with ventilated, heated, massaging seats—is genuinely comfortable. It even got me thinking about the old Audi my mother has driven for more than a decade, and whether trading it in for an EV would make her everyday driving much more comfortable and effortless.
 
-My one lingering concern is whether these newer automakers might follow the example of certain brands: make the fridge, screens, and seats look impressive while quietly cutting corners on the chassis and passive safety features.
+My one lingering reservation is whether some of these newer EV brands might follow the playbook of certain other companies: make the visible creature comforts—the fridge, screens, and plush seats—look impressive on the surface while quietly cutting corners on the chassis and passive safety.
 
-When it comes to engineering fundamentals, I still feel Tesla is the most solid. But if my wife buys a car in the future, I'd probably look at Tesla, Xiaomi, Li Auto, XPeng, and NIO, and I'm open to others. The only automatic rejects are those “Jie” brands. They turn my stomach. Enough said.
+On core engineering fundamentals, I still think Tesla is the most solid. Still, if my wife buys a car down the road, I'd probably cross-shop Tesla, Xiaomi, Li Auto, XPeng, and NIO, and I'm open to others. The only brands that turn my stomach enough to be an instant pass are the “-jie” lineup—if you know, you know.
 
-## An Occupational Hazard: Data Privacy and Ownership
+## Occupational Hazard: Data Privacy and Vehicle Ownership
 
-That's the fun part covered. Now for an occupational hazard of working with data: I can't help thinking about **data privacy and vehicle ownership**.
+Having covered the highlights, I'll end with an occupational hazard of working in the data industry: **data privacy and vehicle ownership**.
 
-To me, a modern smart EV is essentially a smartphone on four wheels, vacuuming up telemetry in the background. Location history is the obvious part. Footage from cameras inside and outside the car, microphone recordings, driving habits—all sorts of information, including things you might never think of, could be heading to the cloud.
+A modern smart EV is essentially a smartphone on four wheels, relentlessly collecting telemetry in the background. Location history is the obvious part, but footage from interior and exterior cameras, cabin microphones, driving habits—everything you can think of, and plenty you wouldn't—may be streaming to the cloud.
 
-The deeper issue is **ownership**. When the manufacturer can remotely monitor or even control a vehicle, that already diminishes, in a sense, your ownership of the physical asset. If it can arbitrarily restrict or even disable your car through the cloud, periodically force an over-the-air update on you, or put ads on the startup screen, is the car still 100% yours?
+The deeper issue is **ownership**. When an automaker holds remote monitoring and even remote control privileges over a vehicle, that already weakens your ownership of the physical asset. If the manufacturer can arbitrarily restrict or disable your car from the cloud, force over-the-air updates on you, or serve splash-screen ads on the console, is the car still 100% yours?
 
-In practice, especially when I'm just renting a car for a few days away, these concerns don't matter much to me. But if I'm paying for a car to keep and drive for years, they're something I have to weigh.
+In practice—especially when renting a car for a few days away—these concerns don't matter much. But if I'm paying out of pocket for a car to keep for years, they become a trade-off I have to weigh.
 
-We all trade privacy for convenience in modern life, and I'm fine with that bargain in principle. My line is clear: don't get too greedy. Don't behave like the rogue Android apps of years past, or cross the line as zcode did by secretly uploading users' code repositories. I can accept some routine collection of driving data with sensitive details removed in exchange for the convenience of driver assistance and a smart cabin.
+We all trade privacy for convenience in modern life, and that bargain itself is acceptable. My line is clear: as long as automakers don't get too greedy—acting like the rogue Android apps of years past, or crossing the line the way `zcode` did by quietly uploading users' private code repositories—I can live with routine collection of anonymized driving data in exchange for assisted driving and a smart cabin.
 
-## Where That Leaves Me
+## Closing Thoughts
 
-Three days and more than 400 km on this Huangshan road trip were enough to reset my assumptions about EVs.
+Three days and more than 400 km on this road trip to Huangshan were enough to reset my assumptions about EVs.
 
-Of course, the lack of charging anxiety had a lot to do with the destination. Huangshan is in the Jiangnan region of eastern China, where charging infrastructure is exceptionally well developed. If I were doing another 40-plus-day road trip through Xinjiang and Qinghai, or heading to northeastern China, I'd probably still stick with a gasoline-only car. But for most everyday driving and ordinary vacations, I'm now open to an EV.
+Granted, the lack of range anxiety had a lot to do with the destination: Huangshan sits in eastern China's Jiangnan region, where charging infrastructure is exceptionally dense. If I were heading back to Xinjiang and Qinghai for a 40-plus-day overland trip, or driving through northeastern China, I'd still pick a pure gasoline car without hesitation. For most everyday driving and ordinary trips, though, I'm now wide open to EVs.
 
-If you've been driving one for years, try not to laugh. I'd honestly never tried one and couldn't be bothered to figure it all out. This time I made the effort, learned something new, and enjoyed it. Next time I rent a car, I'll probably try another EV brand and see what it does differently.
+Veteran EV drivers reading this can go ahead and laugh—I really hadn't driven one before, and never bothered to try. Giving it a spin this time taught me a few new things and made for a very pleasant trip. Next time I rent a car, I'll probably try another EV brand and see what else they bring to the table.
 
-![Huangshan's rock formations and pine trees, with clouds in the distance](huangshan.webp)
+![Granite peaks, pine trees, and distant clouds at Huangshan](huangshan.webp)
