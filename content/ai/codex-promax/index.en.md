@@ -1,105 +1,106 @@
 ---
-title: "A $500 ChatGPT Plan? The $200 Pro Subscription May Become Irreplaceable"
+title: "A $500 ChatGPT Plan? Why the $200 Pro Tier May Become a Grandfathered Bargain"
 date: 2026-09-26
 authors: [vonng]
 summary: >
-  ChatGPT Pro Max is priced at $500 a month, but the usage multiplier is what matters: 50× would preserve the bulk discount; 25× or even 20× would mean shrinking subsidies. The $200 Pro plan could become a grandfathered bargain.
+  ChatGPT Pro Max is priced at $500 a month, but the real question is the usage multiplier: 50× keeps the wholesale discount alive, while 25× or 20× signals shrinking subsidies—and turns the existing $200 Pro plan into a grandfathered relic.
 tags: [AI, Codex, Cost, Commentary]
 ---
-On September 24, a new tier surfaced in OpenAI's frontend: **ChatGPT Pro Max, $500 a month.** Some screenshots showed $600, a price that included local VAT.
+
+On September 24, a new subscription tier surfaced in OpenAI's frontend: **ChatGPT Pro Max, at $500 a month.** Some screenshots showed $600, which included local VAT.
 
 ![ChatGPT plan selector showing Pro Max at $500 per month](plans.webp)
 
-The next day, OpenAI itself merged a PR into the open-source Codex repository, renaming the Pro lineup: the $100 tier is now “Pro,” the $200 tier is “Pro (More),” and the new `promax` tier is “Pro (Max).” Authentication, accounts, and usage limits are all wired up.
+The next day, OpenAI merged a PR into the open-source Codex repository that renamed the entire Pro lineup: the $100 tier is now "Pro," the $200 tier is "Pro (More)," and the new `promax` tier is "Pro (Max)." Authentication, account handling, and rate-limit plumbing are already wired up.
 
-Dig into the backend pricing configuration on chatgpt.com and you find $500 in the US before tax; ¥84,000 in Japan, roughly $534 including tax; NT$16,500 in Taiwan; £445 in the UK; and €510 in Germany. Country-specific pricing is already in place.
+Digging into the backend pricing config on `chatgpt.com` turns up the full regional table: $500 in the US (pre-tax), ¥84,000 in Japan (roughly $534, tax-inclusive), NT$16,500 in Taiwan, £445 in the UK, and €510 in Germany. Country-by-country localization is already done.
 
 ![Backend pricing configuration for promax: $500 before tax and $600 including tax](config.webp)
 
-This is more than a rumor. It's on the way. The likeliest place for an announcement is DevDay in San Francisco next Tuesday, early on September 30 in Beijing.
+So this isn't a rumor; it's in the release pipeline. The most likely launch venue is DevDay in San Francisco next Tuesday—early September 30 Beijing time.
 
-But I don't want to debate whether $500 is expensive. For someone using it to get real work done, $500 a month isn't much. I want to talk about a number nobody knows yet: **how much usage that buys.**
+I'm not interested in debating whether $500 is expensive. For anyone using these models to get real work done, $500 a month isn't much. What I want to talk about is a number nobody knows yet: **the usage multiplier.**
 
-That number matters far more than the price.
+That number matters far more than the sticker price.
 
-## Start with the Math
+## Start with the Unit Math
 
-Here's ChatGPT's current paid lineup, taking the Plus allowance as 1×:
+Here is ChatGPT's current paid ladder, normalized to the Plus quota as 1×:
 
 ![ChatGPT plan comparison: Plus costs $20 a month for 1× usage; Pro Lite costs $100 for 5×; Pro More costs $200 for 20×](pricing.webp)
 
-The $200 tier is the best deal in the lineup. Each unit of usage costs $10, half the retail rate. That's a bulk discount. It's why heavy users gravitate to the $200 plan.
+The $200 tier is the best deal on the board. Each 1× unit of quota costs $10—half the retail rate of Plus and Lite. That wholesale discount is the exact reason heavy users crowd into the $200 plan.
 
-So how much usage will $500 Pro Max buy? It comes down to one question: **does each $100 buy 5× usage or 10×?**
+So what multiplier will $500 Pro Max offer? It comes down to one question: **does each $100 buy 5× quota or 10×?**
 
-- At 10× per $100, you get **50×**, preserving the bulk discount.
-- At 5× per $100, you get **25×**, back at Lite's retail rate.
-- If you get only **20×**, with faster execution, each unit costs $25—more than Plus.
+- **10× per $100** gives you **50×**, preserving the $10/unit wholesale rate.
+- **5× per $100** gives you **25×**, reverting to Lite's $20/unit retail rate.
+- **20× total**—the same quota, just faster—works out to $25 per unit, pricier than Plus.
 
-Of course, I'd love Pro Max to offer 100×, but that seems plainly unrealistic.
+I'd love to see Pro Max offer 100×, of course, but that's wishful thinking.
 
-Two claims are circulating online. Some Chinese outlets state outright that it offers “50× usage.” Others say it has “the same allowance as the $200 plan, only faster.” I checked: neither claim has a primary source. OpenAI's code contains plan names, but no multipliers. The pricing configuration contains prices, but no multipliers either.
+Right now, both theories are making the rounds online. Several Chinese outlets have reported "50× quota" as fact, while others claim it carries "the same quota as the $200 plan, only faster." I checked the primary sources, and neither claim has any backing. OpenAI's code contains the plan identifiers, but no multipliers; the pricing configuration contains prices, but no multipliers either.
 
-Compare the Pro Max and Pro descriptions on the upgrade page, and the main addition is a single line: “**Fastest Work and Codex**.” The 50× figure was probably calculated by dividing $500 by the $10 bulk rate. “Only faster” is a guess based on that line of copy.
+Compare the Pro Max and Pro descriptions on the upgrade page, and the only substantive addition is a single line: "**Fastest Work and Codex**." The 50× figure was almost certainly calculated by dividing $500 by the $10 wholesale rate; "only faster" is a guess extrapolated from that line of copy.
 
-One detail is interesting, though. Someone collected prices from 14 countries and found that Pro Max costs **exactly five times as much as the $100 tier in every country**. In the UK, that tier costs £89; Pro Max costs £445, exactly. In other words, Pro Max's pricing follows Lite, not the $200 plan. **If its usage allowance follows Lite's unit price too, that means 25×.**
+One detail in the pricing data is telling, though. Someone scraped prices across 14 countries and noticed that in every single market, **Pro Max costs exactly five times as much as the $100 tier**. In the UK, the $100 tier is £89; Pro Max is £445 to the penny. In other words, Pro Max's pricing is anchored to the $100 Lite tier, not the $200 plan. **If its usage allowance is anchored to Lite's unit price too, the multiplier will be 25×.**
 
-## The Multiplier Sends a Message
+## The Multiplier Is the Message
 
 Why does the multiplier matter so much? Because it answers a direct question: **is OpenAI still willing to subsidize heavy users?**
 
-At 50×, the message is: the bulk discount stays, the subsidies continue, help yourselves. At 25× or even 20×, it's: the bulk discount ends here. Want more? Pay retail, perhaps with a rush fee on top. One invites more heavy users in; the other cuts the amount of subsidized usage on offer.
+At 50×, the message is simple: the wholesale rate stays, the subsidies continue, help yourselves. At 25× or 20×, the message is the opposite: the wholesale discount ends here. If you want more capacity, you pay retail—or a priority fee on top. One expands the subsidy; the other reins it in.
 
-My guess is the latter. Just look at what OpenAI has done this month. GPT-6 Astra launched on September 3, with Brockman calling it “the beginning of the AGI era.” A week later, on September 10, OpenAI suspended new subscriptions and upgrades to the $200 tier. Tibo, who oversees Codex and ChatGPT, said demand for Astra was “unprecedented” and that the $200 tier put the most strain on the system. Existing users could renew as usual; newcomers couldn't buy it. More than two weeks later, it still hasn't reopened.
+My bet is on the latter. Just look at what OpenAI has done this month. On September 3, GPT-6 Astra launched, with Greg Brockman calling it "the beginning of the AGI era." A week later, on September 10, OpenAI halted new sign-ups and upgrades for the $200 tier. Tibo, who leads Codex and ChatGPT, explained that demand for Astra was "unprecedented" and that the $200 tier put the heaviest load on their infrastructure. Existing subscribers could renew as usual, but new buyers were locked out. More than two weeks later, sign-ups still haven't reopened.
 
-Put those events together. Two weeks ago, OpenAI was so short on compute that it stopped taking new $200 subscriptions. Two weeks later, a $500 tier appears. If that tier offers 50× usage, selling you more compute at the same bulk rate, what exactly was the September 10 suspension supposed to accomplish?
+Put that timeline together: two weeks ago, OpenAI was so short on compute that it stopped taking new $200 subscriptions; two weeks later, it rolls out a $500 tier. If that tier offered 50× usage—selling even more compute at the same $10 wholesale rate—what exactly was the September 10 freeze supposed to accomplish?
 
-**When compute is scarce, a better-value plan isn't going to appear out of nowhere.**
+**When compute is scarce, a better-value bulk plan doesn't appear out of nowhere.**
 
-Unless Pro Max runs on a completely separate pool of compute. Some people do suspect Cerebras. Earlier this year, OpenAI signed a deal worth more than $10 billion with Cerebras for up to 750 megawatts of inference capacity. In August, it also previewed Sol Ultrafast running on Cerebras, at up to 14 times the speed. “Fastest” would fit that quite well.
+The only exception would be if Pro Max runs on an entirely separate compute pool. Some people suspect Cerebras: earlier this year, OpenAI signed a deal worth more than $10 billion with Cerebras for up to 750 megawatts of inference capacity, and in August it previewed Sol Ultrafast running on Cerebras at up to 14× speed. The word "Fastest" in the upgrade copy fits that neatly.
 
-Now consider the buildup over the past two months. Throughout July and August, Codex communities were full of complaints about shrinking allowances. OpenAI denied cutting them while repeatedly resetting users' quotas to calm things down. In late August, the five-hour limit returned to Plus. People also spotted OpenAI testing a button that would let you pay $80 to reset your allowance immediately after running out.
+Now look at the groundwork laid over the past two months. All through July and August, Codex forums were full of complaints about shrinking quotas. OpenAI insisted nothing had been cut while quietly resetting users' quotas every few days to calm things down. In late August, the five-hour rolling cap returned to Plus. Users also spotted OpenAI testing a button to pay $80 for an immediate quota reset after hitting the cap.
 
-Taken together, the direction is clear: **subscriptions are converging on usage-based pricing.** First, withdraw the cheapest bulk tier. Then put a more expensive tier above it. No price hike needs to be announced. Just keep the cheaper plan “temporarily” unavailable. It's the most graceful way to raise prices.
+Put the pieces together and the trajectory is clear: **flat-rate subscriptions are converging toward usage-based pricing.** First, freeze new sign-ups on the cheapest wholesale tier. Then slot a much pricier tier above it. You never have to announce a price hike—just leave the cheaper plan "temporarily" unavailable. It's the cleanest way to raise prices without calling it a price increase.
 
-I've said for a long time that subsidized subscriptions are, at heart, a trade of compute for data—a game of musical chairs. Once there's enough data and an IPO to pursue, the music stops. It hasn't stopped yet, but the rhythm has changed. **Subsidies at the top of the pyramid are the first to go.**
+I've argued for a long time that subsidized AI subscriptions are, at bottom, a trade of compute for training data—a game of musical chairs. Once a lab has enough data and starts preparing for an IPO, the music stops. It hasn't stopped yet, but the tempo has changed. **And the subsidies at the very top of the pyramid are the first to go.**
 
-## “Only Faster” Is Actually Worse
+## Why "Only Faster" Is Actually Worse
 
-Let's consider the possibility of “the same 20× allowance, only faster.” Plenty of people think that sounds fine: same amount of usage, more speed. Not so fast. Codex meters usage in tokens. If you already run agents around the clock, faster execution simply means exhausting your weekly allowance sooner. More speed without more usage just makes you hit the wall sooner.
+It's worth unpacking the "same 20× quota, only faster" scenario. Plenty of people think that sounds fine: same allowance, higher speed. That gets the math backwards. Codex meters usage in tokens. If you already run coding agents around the clock, faster execution simply burns through your weekly token budget earlier in the week. More speed without more quota just makes you hit the wall sooner.
 
-For people whose bottleneck is speed—say, those who want Astra to operate a computer faster while playing games or editing video—that would be welcome. But if your bottleneck is the allowance, speed alone does nothing for you.
+If your bottleneck is latency—say, you want Astra driving computer-use tasks faster for gaming or video editing—extra speed is genuinely useful. But if your bottleneck is weekly quota, speed alone does nothing for you.
 
-So if DevDay reveals a 20× multiplier, this plan simply isn't meant for people like us: individuals paying out of pocket for several accounts each. The message would be clear: the good times for individual heavy users are over.
+So if DevDay reveals a 20× multiplier, Pro Max simply isn't meant for people like us: individuals paying out of pocket for multiple personal accounts to keep agents running. The signal would be unmistakable: the good times for individual power users are over.
 
-## The $200 Plan May Become Irreplaceable
+## The $200 Account as a Grandfathered Relic
 
-If the allowance really does shrink relative to the price, something interesting will follow: **existing $200 accounts will become something to hold on to for dear life.**
+If OpenAI really is shrinking the subsidy per dollar, an interesting consequence follows: **existing $200 accounts are about to become prized grandfathered plans.**
 
-Think about it. At $10 per unit of usage, it's the cheapest tier in the lineup. Newcomers can't buy it, and sales remain suspended. Tibo has also said that Pro won't get a five-hour limit over the next few months. Put those three things together, and you have a deal that may never be available again.
+Consider the setup. At $10 per unit of usage, it's the cheapest tier in the lineup. Newcomers can't buy it while the sales freeze drags on. And Tibo has said that Pro won't get a five-hour limit over the next several months. Put those three facts together, and an active $200 account is a discontinued collector's item.
 
-OpenAI's rules are explicit: cancel, downgrade, or miss a renewal payment, and you lose the $200 tier. There is a one-time opportunity to return, but only for existing users who were on the plan around September 10. It's a one-way ticket: get off, and you can't simply get back on.
+OpenAI's billing rules are explicit: cancel, downgrade, or miss a renewal payment, and you lose the $200 tier. There is a one-time return offer, but only for existing subscribers who held the plan around September 10. It's a one-way ticket—step off, and you can't get back on.
 
-I've experienced this firsthand. When Zhipu launched its Coding Plan this January, I bought an annual Max subscription for RMB 1,700. That works out to a little over RMB 140 a month. The plan had only a quota for each five-hour window, with no weekly cap, so I could keep going indefinitely. The plans were later revised, and the console now labels mine “Legacy Version V1.” Max V2 costs RMB 375 a month even for existing users; new users pay RMB 9,000 a year.
+I've lived through this exact cycle once already this year. When Zhipu AI launched its Coding Plan in January, I bought an annual Max subscription for 1,700 RMB (about $240), which works out to just over 140 RMB ($20) a month. That early plan had only a five-hour rolling cap and no weekly limit at all, so you could run it almost continuously. When Zhipu later overhauled its tiers, my plan was relabeled "Legacy Version V1" in the console. Under the new V2 pricing, Max costs 375 RMB a month even for existing users, and 9,000 RMB ($1,280) a year for new sign-ups.
 
-None of this is new. Mobile carriers keep calling to persuade customers to switch away from old plans; people who know what they have refuse to budge. Cloud storage providers once gave away terabytes, then throttled access or shut down. **Whenever a business buys market share with subsidies, its earliest plans eventually become prized possessions.** Subsidized pricing is set for growth, not cost. When the growth story runs its course, prices have to return to cost.
+None of this is new. Telecom carriers spend years calling holdouts to talk them off legacy unlimited plans, and anyone who knows what they have refuses to budge. Cloud storage providers once handed out free terabytes to grab users, then throttled speeds or shut down. **Whenever a business buys market share with subsidies, its earliest plans eventually become family heirlooms.** Subsidy-era pricing is set for growth, not unit cost. Once the growth story runs its course, prices have to come back in line with cost.
 
-## What to Do
+## What to Do Now
 
-A few blunt suggestions.
+A few blunt takeaways.
 
-**If you have a $200 account, don't cancel.** If your credit card is about to expire, update it before a renewal payment fails. This plan may already be a discontinued deal. Lose it, and it could be gone for good.
+**If you have a $200 account, don't cancel.** If your credit card is close to expiring, update it before an auto-renewal fails. This plan may already be discontinued for good; lose it, and you probably won't get it back.
 
-**If you don't have one, stay away from resold shared accounts.** OpenAI's terms explicitly prohibit sharing and resale. If the account gets banned, you have no recourse. Someone else also has access to your chat history and uploaded files.
+**If you don't have one, stay away from resold shared accounts.** OpenAI's terms explicitly prohibit account sharing and resale. If the account gets banned, you have no recourse—and whoever controls the account has full access to your chat history and uploaded files.
 
-**Watch that number at DevDay.** The $500 price alone tells us little. The multiplier tells the story. At 25× or below, subsidized usage is shrinking and the window for heavy users is closing. Near 50×, OpenAI is still buying market share, and the deal has some life left in it.
+**Watch that multiplier at DevDay.** The $500 price tag tells us very little on its own; the multiplier tells the whole story. At 25× or below, subsidized usage is shrinking and the window for heavy users is closing. Near 50×, OpenAI is still buying market share, and the deal has some life left in it.
 
-**Either way, make the most of it while it lasts.** Last month, I said to use the subsidy window as hard as you can and get things done while it's open. My view hasn't changed. The urgency has.
+**Either way, run the tap while it's still open.** Last month I wrote that while the subsidy window lasts, you should use it as hard as you can and ship whatever you need to build. That judgment hasn't changed—only the urgency has.
 
-One last thought. The alarming part isn't the $500 price. It's the possibility that we're at a turning point: AI subscriptions are shifting from selling usage allowances to selling speed and priority. Mass-market tiers will keep getting cheaper; even free users already have unlimited chat. But the best, fastest compute at the very top of the pyramid will get more expensive.
+One final thought. A $500 price tag isn't the alarming part. What's alarming is that we may be standing at an inflection point: AI subscriptions are shifting from selling *usage volume* to selling *speed and priority*. Mass-market tiers will keep getting cheaper—free users already have unlimited chat—while the best, fastest compute at the very top of the pyramid gets progressively more expensive.
 
-The multiplier on Pro Max is a letter from OpenAI to its heavy users. It will say either “keep going” or “the party's over.”
+The multiplier on Pro Max is a letter from OpenAI to its heavy users. It will say either "keep going" or "the party's over."
 
-We may find out next Tuesday.
+We should find out next Tuesday.
 
-Here's hoping this week's Opus 5.5 gives OpenAI a reason to feel some competitive pressure—and keep the allowances generous.
+Here's hoping this week's Opus 5.5 gives OpenAI enough competitive urgency to keep the allowances generous a little longer.
