@@ -1,103 +1,88 @@
 ---
-title: "PostgreSQL 19 Beta 4 Cuts Five Major Features"
+title: "PostgreSQL 19 Beta 4: Five Major Features Reverted"
 date: 2026-09-25
 authors: [vonng]
 summary: >
-  PostgreSQL 19 Beta 4 drops five major features: property graph queries, online checksum toggling, temporal updates and deletes, partition merging and splitting, and DDL reconstruction functions. Features can wait a year; reliability cannot be compromised. Meanwhile, my Simplified Chinese message translations have landed upstream, and pgsql.cc now offers Chinese manuals covering 28 years of PostgreSQL.
+  PostgreSQL 19 Beta 4 reverted five major features at once: SQL/PGQ property graph queries, online data checksums, temporal UPDATE and DELETE, partition merge and split, and DDL reconstruction functions. Features can wait another year; reliability cannot. Meanwhile, Simplified Chinese message translations landed upstream in Beta 4, and pgsql.cc completed a 28-year archive of Chinese PostgreSQL manuals.
 tags: [PostgreSQL, PG Development, Commentary]
-draft: true
 ---
-> [Original article on WeChat](https://mp.weixin.qq.com/s/qAt4LBJh1pWXprsK7bLSXg)
+> [Original WeChat post (in Chinese)](https://mp.weixin.qq.com/s/qAt4LBJh1pWXprsK7bLSXg)
 
-Today is the Mid-Autumn Festival. Happy holidays to everyone celebrating.
+Today is the Mid-Autumn Festival, a holiday traditionally about reunion. Happy holidays to everyone celebrating.
 
-It is a holiday for reunions, but today's news is about parting ways: [PostgreSQL 19 Beta 4](https://www.postgresql.org/about/news/postgresql-19-beta-4-released-3386/) came out yesterday.
+The news for the occasion, though, is less about things coming together than getting pulled apart: [PostgreSQL 19 Beta 4](https://www.postgresql.org/about/news/postgresql-19-beta-4-released-3386/) came out yesterday.
 
-That should be good news. This time, it is a little bittersweet.
+Normally a new beta is good news, but this one stings a little.
 
-I maintain the [Chinese documentation](/en/pg/pgsql-cc-online/) for PostgreSQL releases on [pgsql.cc](https://pgsql.cc/). For every beta, I diff the upstream documentation and update the translations. This time, the diff showed 618 lines added and 5,021 deleted. One beta removed more than eight times as much as it added.
+I maintain the [Chinese PostgreSQL documentation](/en/pg/pgsql-cc-online/) across all versions on [pgsql.cc](https://pgsql.cc/). Every time a new beta drops, I run a diff against upstream and sync the changes into the translation. This time, the diff came back with 618 lines added and 5,021 lines deleted—more than eight times as much removed as added in a single beta update.
 
-The reason is simple: **PostgreSQL 19 cut five major features in its final beta.**
+The reason is simple: **in its final beta cycle, PG 19 reverted five major features at once.**
 
 ## What Got Cut
 
-![Five features removed from PostgreSQL 19 and their removal dates: partition merging and splitting, SQL/PGQ, object DDL reconstruction functions, temporal updates and deletes, and online enabling and disabling of data checksums](cuts.webp)
+![Five features reverted from PG 19 and their revert dates: partition merge and split (Aug 27), SQL/PGQ property graph queries (Sep 7), object DDL reconstruction functions (Sep 13), temporal UPDATE and DELETE (Sep 15), and online data checksum toggle (Sep 16)](cuts.webp)
 
-Three other changes were reverted too: two extensions to `CREATE SCHEMA`, and a change that forced `LC_COLLATE` to `C` in the `postmaster` process.
+Three smaller changes were also rolled back: two extensions to `CREATE SCHEMA`, and a change that forced `LC_COLLATE` to `C` in the `postmaster` process.
 
-These were substantial features. SQL/PGQ, the property graph query feature in SQL:2023, lets you run graph queries directly over relational tables. It was set to be one of PostgreSQL 19's headline features. DBAs have wanted to enable and disable checksums online for years. Partition merging and splitting are among the first maintenance operations Oracle users ask about when migrating. And this is the second time they have been pulled: they were merged for PostgreSQL 17, then reverted before that release too.
+None of the five pulled features were minor trimmings. SQL/PGQ brings SQL:2023 property graph queries to PostgreSQL, letting you run graph queries directly over relational tables; it was supposed to be PG 19's headline feature. Toggling data checksums online is something DBAs have waited years for. Merging and splitting partitions is one of the first operational tasks teams ask about when migrating from Oracle—and this is the second time it has been pulled, having met the same fate right before the PG 17 release.
 
-## Why They Were Cut
+## Why They Were Reverted
 
-Read the diffs, commit history, and mailing lists together, and a common problem emerges: **a new feature has to do more than work on its own. It has to obey the database's existing rules.** Those rules must still hold when objects change, transactions run concurrently, and data needs to be recovered.
+Reading the diffs, commit logs, and mailing list threads together, all five features ran into the same underlying problem: **it is not enough for a new feature to work in isolation; it has to fit cleanly into the database's existing invariants.** Those invariants still have to hold when objects are altered, transactions run concurrently, and data undergoes recovery.
 
-- **SQL/PGQ:** Creating a property graph requires primary keys on the underlying tables. But after creating the graph, you can drop a primary key and leave the graph intact. Robert Haas's example does not even need concurrency: the requirement is checked when the graph is created, then forgotten. For some behaviors, there was not even agreement on what the correct behavior should be. The Release Management Team (RMT) chose to revert the feature before backward compatibility made those decisions harder to change.
+- **SQL/PGQ**: Creating a property graph requires a primary key on the underlying table. Yet once the graph existed, you could drop that primary key and the graph would remain behind. Robert Haas pointed out this case, which doesn't even need concurrency to trigger: a constraint checked at creation time was simply never enforced afterward. With several behaviors still lacking consensus on what the right semantics should even be, the Release Management Team (RMT) decided to revert the feature rather than take on permanent backward-compatibility baggage.
 
-- **Temporal updates and deletes:** `FOR PORTION OF` lets you change just part of a validity period, such as adjusting the third-quarter price in a yearlong contract. But if two sessions concurrently change different periods of the same contract, the second can return `UPDATE 0`, leaving its intended change unapplied, even though the periods do not overlap. By mid-September, the debate over the semantics was still unresolved, and Peter Eisentraut decided to revert the feature. Only this DML syntax was removed; range types and temporal constraints remain.
+- **Temporal `UPDATE` and `DELETE`**: `FOR PORTION OF` lets you modify a slice of a validity period—for instance, repricing only Q3 of an annual contract. But when two concurrent sessions modified non-overlapping periods of the same contract, the second session returned `UPDATE 0` and silently failed to apply its change, even though the two updates did not logically conflict. By mid-September there was still no agreement on the right concurrency semantics, and Peter Eisentraut made the call to revert. Note that only this DML syntax was pulled; range types and temporal constraints remain intact.
 
-- **Partition merging and splitting:** When the parent table and its partitions have different expressions for generated columns, a merge can change the generated values in existing rows. Logical decoding also sees inserts but no deletes. What you thought was a change to data layout ends up changing the data itself. That is unacceptable.
+- **Partition merge and split**: When a parent table and its partitions had different generated-column expressions, merging partitions altered the generated-column values of existing rows, and logical decoding emitted only inserts without the corresponding deletes. You thought you were only reorganizing how rows were stored, and the database silently changed the data itself—a complete non-starter.
 
-- **DDL reconstruction functions:** Generating a `CREATE ROLE` statement is easy; fully recreating a role is harder. The dependencies between roles, databases, and database-level settings were all left for callers to handle. In effect, this was another implementation of `pg_dump`, this time on the server. Every new object attribute would need support in both implementations.
+- **DDL reconstruction functions**: Emitting a bare `CREATE ROLE` statement is easy; reconstructing a role completely is hard, because dependencies across roles, databases, and database-level settings all get pushed back onto the caller. In practice, this meant writing a second `pg_dump` inside the server, where every new object attribute added in the future would have to be maintained in two places.
 
-- **Online checksums:** Several rounds of fixes during the beta did not give the community enough confidence. Checksums exist to tell you whether your data is corrupt. If you cannot even trust the state of the checksum mechanism itself, it defeats the purpose. The offline `pg_checksums` tool remains available.
+- **Online data checksums**: After several rounds of fixes during the beta cycle, the community still wasn't confident in the implementation. The whole point of checksums is to tell you whether your data is corrupt; if the state of the checksum mechanism itself is in doubt, it defeats its own purpose. The offline `pg_checksums` tool remains available.
 
-I support these reversions. **PostgreSQL's greatest asset has always been its reliability, not its feature list.** A feature arriving one release later is no great loss. Ship a feature with flawed semantics, though, and users will shape their applications, data, and operational procedures around it. Changing it then costs far more than waiting another year.
+I support this round of reverts. **PostgreSQL's greatest asset has never been a long feature checklist; it is dependability.** Waiting one more major release for a feature is not a big deal. Shipping a feature with flawed semantics into a GA release means users will build applications, schemas, and operational workflows around it—and fixing it afterward costs far more than a one-year delay.
 
-A reversion is not a death sentence. Temporal primary keys (`WITHOUT OVERLAPS`) were pulled from PostgreSQL 17 and returned in PostgreSQL 18: a reunion delayed by a year. That does not mean these reverted features are guaranteed a place in PostgreSQL 20. Do not put them on your PostgreSQL 20 roadmap yet.
+A revert is not a death sentence, either. Temporal primary keys (`WITHOUT OVERLAPS`) were reverted in PG 17 and came back in PG 18—just a year late to the reunion. Of course, the reverse is also true: being reverted from PG 19 does not guarantee a spot in PG 20, so don't put these features on your roadmap yet.
 
-## What Is Still in PostgreSQL 19
+## What Remains in PG 19
 
-Five features are gone, but several things DBAs have been waiting for remain:
+Even with five major cuts, several features DBAs have been waiting for are still in:
 
-- **`REPACK` and `REPACK CONCURRENTLY`** are both still in. The concurrent form still needs strong locks at certain stages, though, so do not advertise it as "entirely lock-free."
-- **`WAIT FOR LSN`** remains. It can help applications implement "read your writes" on standbys, provided they follow the documented requirements for transactions and snapshots.
-- **Importing remote statistics with `postgres_fdw`** remains. The option has been renamed from `restore_stats` to `import_stats`.
-- Also still in: sequence value synchronization through logical replication, logical decoding on demand with `wal_level = replica`, query plan advice (`pg_plan_advice`), autovacuum scoring, and SIMD optimizations for `COPY FROM`.
+- **`REPACK` and `REPACK CONCURRENTLY`** are both still there. Note that concurrent execution still acquires strong locks during certain phases—don't market it as "completely lock-free."
+- **`WAIT FOR LSN`** is in, allowing applications to implement read-your-writes consistency on standby servers, provided they follow the documented rules around transactions and snapshots.
+- **Importing remote statistics in `postgres_fdw`** is in, with the option renamed from `restore_stats` to `import_stats`.
+- Also still in: sequence synchronization in logical replication, on-demand activation of logical decoding when `wal_level = replica`, query plan advice (`pg_plan_advice`), the autovacuum scoring mechanism, and SIMD optimizations for `COPY FROM`.
 
-Beta 4 also fixes plenty of bugs, including:
+Beta 4 also ships a long list of fixes, including:
 
 - Crashes in `REPACK`.
-- A deadlock in `WAIT FOR`.
-- Problems with initial table synchronization when logically replicating from older versions to v19.
-- Bugs in logical replication conflict detection.
-- Crashes when accessing partitions whose concurrent detach did not complete.
+- Deadlocks in `WAIT FOR`.
+- Initial table synchronization during logical replication from older versions to v19.
+- Logical replication conflict detection.
+- Crashes when accessing partitions whose concurrent detach operation has not finished.
 
-The plan is for a release candidate in early October, followed by the final release in October if all goes well. If you are making plans around PostgreSQL 19, remember: **a feature appearing in a beta does not guarantee it will ship. The final [release notes](https://www.postgresql.org/docs/19/release-19.html) are what count.**
+According to the schedule, the Release Candidate (RC) is due in early October, with general availability targeted for October if all goes smoothly. One rule to keep in mind if you are planning around PG 19: **a feature appearing in a beta does not mean it will ship in GA—always go by the final [Release Notes](https://www.postgresql.org/docs/19/release-19.html).**
 
-## Five Features Out, One Contribution In
+## Five Reverted, One Merged
 
-Beta 4 was not all deletions. On September 23, my [Simplified Chinese translations of PostgreSQL messages](/en/pg/pg-nls/) were merged upstream and included in Beta 4.
+Beta 4 wasn't all deletions. On September 23, the [Simplified Chinese (`zh_CN`) native language message translations](/en/pg/pg-nls/) I submitted were merged upstream and shipped with Beta 4.
 
-<!-- 原文第 2 张配图待恢复：粘贴内容仅包含透明占位图。 -->
+If you install PostgreSQL 19 now with your system locale set to `zh_CN`, the error messages and notices you see come from that translation. Give it a try, and if any phrasing looks off or awkward, feel free to send feedback.
 
-Install PostgreSQL 19 with your system language set to `zh_CN`, and the errors and other messages you see will be my translations. Give them a try, and let me know if anything is inaccurate or awkward.
+Only the PG 19 Simplified Chinese strings made it into Beta 4. Traditional Chinese (`zh_TW`) and backports for PG 14 through 18 are already prepared and should land in the official releases.
 
-<!-- 原文第 3 张配图待恢复：粘贴内容仅包含透明占位图。 -->
+## Also: 28 Years of PostgreSQL Manuals on pgsql.cc
 
-So far, only the Simplified Chinese translations for PostgreSQL 19 have landed. The Traditional Chinese (`zh_TW`) translations and backports for PostgreSQL 14 through 18 are also ready and should be included in the official releases.
+[pgsql.cc](https://pgsql.cc/) is a full Chinese translation of the official postgresql.org documentation. Previously, it hosted the complete Chinese manuals for PG 10 through 19 (plus `devel`). Alongside syncing the Beta 4 documentation changes, I also built an archive of translated manuals for the 24 end-of-life releases from PG 6.3 through 13, available both online and as PDFs.
 
-## pgsql.cc Now Covers 28 Years of Manuals
+PostgreSQL 6.3 came out in 1998. Across 30 major releases spanning 28 years—from 6.3 to 19—every PostgreSQL manual can now be read in Chinese on pgsql.cc.
 
-[pgsql.cc](https://pgsql.cc/) is a Chinese translation of the entire postgresql.org website. It previously included complete Chinese manuals for PostgreSQL 10 through 19, plus the development version. Along with the Beta 4 documentation updates, I have now archived manuals for the 24 unsupported releases from 6.3 through 13, available both online and as PDFs.
+Why translate unmaintained legacy releases? Because I have been building a PostgreSQL knowledge-graph project that maps the complete historical evolution of every configuration parameter, server message, system catalog, and built-in function, and that requires an accurate Chinese documentation baseline across every release. The project still needs one more verification pass before launch—stay tuned.
 
-<!-- 原文第 4 张配图待恢复：粘贴内容仅包含透明占位图。 -->
+## Aside: What Became of My GLM Subscription
 
-Version 6.3 came out in 1998. From 6.3 through 19, the manuals for 30 major PostgreSQL releases, spanning 28 years, are now available in Chinese on pgsql.cc.
+There was also a more practical reason for taking on all that translation: I needed a way to burn through my remaining GLM subscription. After the [ZCode repository upload incident](/en/ai/zcode-upload/), I stopped using it for any actual development work. Still, GLM 5.3 is a reasonably capable model, and letting paid quota go to waste felt like a shame—using it to translate, cross-check, and proofread public documentation was a natural fit.
 
-Why translate old, unsupported releases? I am working on a PostgreSQL knowledge graph that traces the full history of every parameter, message, system catalog, and function. For that, I need accurate Chinese documentation to build on. The project has not launched yet; it needs one more proofreading pass. Stay tuned.
+I have seen reports that newer releases of ZCode are still uploading user data, which is shady. Still, as long as Zhipu doesn't mind the indigestion, there is plenty of PostgreSQL documentation for its servers to chew on.
 
-## An Aside: GLM's New Job
-
-There is also a more practical reason for all this translation: I needed a use for my GLM subscription quota. After [the ZCode repository upload incident](/en/ai/zcode-upload/), I stopped using ZCode for any development work. But GLM 5.3 is quite capable, and wasting the quota seemed a shame. Translating, checking, and proofreading documentation was a good fit.
-
-<!-- 原文第 5 张配图待恢复：粘贴内容仅包含透明占位图。 -->
-
-I have seen reports that newer versions of ZCode are still uploading data. Hardly reassuring. Well, if Zhipu can stomach it, I have more than enough PostgreSQL documentation to keep it fed.
-
-<!-- 原文第 6 张配图待恢复：粘贴内容仅包含透明占位图。 -->
-
-<!-- 原文第 7 张配图待恢复：粘贴内容仅包含透明占位图。 -->
-
-So ZCode / GLM did most of the work, with Codex handling the final review. I put Codex in charge of keeping ZCode working around the clock on one machine, continuously reviewing and proofreading the Chinese PostgreSQL documentation for a week. The v1 plan has a quota for each five-hour window, but no weekly cap. Each document went through roughly seven or eight passes, until none of the agents could find anything left to pick apart.
-
-<!-- 原文第 8 张配图待恢复：粘贴内容仅包含透明占位图。 -->
+In practice, ZCode and GLM did the heavy lifting while Codex acted as the final reviewer. I set up Codex as a supervisor on a dedicated machine driving ZCode around the clock—continuously reviewing and proofreading the Chinese PG manuals for a full week straight (my legacy v1 plan only had a 5-hour rolling cap, with no weekly limit). Every manual went through seven or eight passes until none of the agents could find anything left to nitpick.
