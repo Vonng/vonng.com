@@ -3,144 +3,151 @@ title: "AI Adoption May Not Run That Deep"
 date: 2026-10-16
 authors: [vonng]
 summary: >
-  From 2 billion chatbot users to 5,000 lab insiders: a five-level funnel estimates how deeply AI has taken hold. Many have tried it; intensive use is still rare.
+  From 2 billion chatbot users to 5,000 frontier lab insiders: a five-tier Fermi estimate of AI adoption shows broad reach, but surprisingly shallow depth.
 tags: [AI, Agent, Commentary]
 ---
 
-At DevDay in late September, OpenAI announced an eye-popping number: [1.2 billion people use ChatGPT every week](https://openai.com/index/devday-2026-recap/). Two weeks later, Karpathy offered another: only about 5,000 people worldwide have seen frontier AI running flat out. A gap of 240,000 to one.
+At DevDay in late September, OpenAI reported a staggering figure: [1.2 billion people use ChatGPT every week](https://openai.com/index/devday-2026-recap/). Two weeks later, Andrej Karpathy threw out a very different number: only about 5,000 people worldwide have seen frontier AI running at full tilt—a 240,000x gap.
 
-Both numbers ring true to me. I keep a dozen or more top-tier subscriptions active and just as many agents running around the clock. Most of my friends still use AI to polish copy, look things up, or chat when they're bored. We all call it “using AI,” but we're barely using the same thing.
+Both numbers match what I see firsthand. I keep a dozen top-tier subscriptions active and orchestrate just as many agents around the clock. Meanwhile, most of my friends still use AI to polish copy, look things up, or chat to pass the time. We all call it "using AI," but we aren't using the same thing at all.
 
-How many people push AI as hard as I do? In “[AGI Machine Guns Are Now Standard Issue](/en/ai/ai-machinegun-for-everyone/),” I estimated tens of thousands to the low hundreds of thousands. Here I'll dig through the public data again and do some back-of-the-envelope arithmetic. My conclusion: **plenty of people have tried AI, but remarkably few use it deeply.**
+How many people actually push AI this hard? In "[AGI Machine Guns Are Now Standard Issue](/en/ai/ai-machinegun-for-everyone/)," I guessed fewer than 100,000. Today I want to pull together the public data and run a proper Fermi estimate. The short version: **plenty of people have tried AI, but remarkably few use it deeply.**
 
-## The gap in Karpathy's funnel
 
-On October 11, Karpathy recast something he'd written in April as a four-level funnel ([an explanation of the post](https://cellcog.ai/blog/karpathy-llm-understanding-funnel/)). The OpenAI cofounder [joined Anthropic this May](https://fortune.com/2026/05/19/who-is-andrej-karpathy-vibe-coding-anthropic-openai-rubiks-cube/), so he knows his way around frontier labs. He divided the world's population by depth of understanding and use:
+## The Gap in Karpathy's Funnel
 
-- **About 6 billion people (75%)** have barely used an LLM.
-- **1–2 billion people (about 20%)** use free chatbots as search engines and writing assistants.
-- **About 20 million people (0.2%)** use frontier models for mathematics and programming. They've watched an agent finish projects that would take weeks or months, all from a single prompt.
-- **About 5,000 people** inside leading labs watch thousands of agents collaborate for weeks on enormous software projects, discover zero-day vulnerabilities, and push the frontiers of mathematics.
+On October 11, Karpathy reworked a note he had written in April into a four-tier funnel ([post breakdown](https://cellcog.ai/blog/karpathy-llm-understanding-funnel/)). As an OpenAI co-founder who [joined Anthropic this May](https://fortune.com/2026/05/19/who-is-andrej-karpathy-vibe-coding-anthropic-openai-rubiks-cube/), he has a clear view of what happens inside frontier labs. Grouping the world's population by depth of understanding and usage, he split it into four tiers:
 
-Karpathy admits these are gut estimates. The shape of the funnel matches my experience, but jumping from 20 million to 5,000 means a 4,000-fold drop in one step. There's a level missing.
+- **~6 billion people (75%)**: Have barely touched an LLM.
+- **1–2 billion people (~20%)**: Use free chatbots as search engines and writing assistants.
+- **~20 million people (0.2%)**: Use frontier models for math and coding, and have watched an agent knock out weeks or months of work from a single prompt.
+- **~5,000 people**: Sit inside top labs watching thousands of agents collaborate over weeks on massive software engineering projects, zero-day discovery, and frontier math.
 
-In between are independent power users. They lack the labs' unlimited compute but can direct a dozen or several dozen agents at once, well beyond “writing some code with Claude Code.” That's the gap I want to fill.
+Karpathy admits these numbers are gut estimates. As a directional map, the shape matches my own experience—except for the jump from 20 million straight down to 5,000. A 4,000x drop in a single step leaves a glaring gap.
 
-## The result: a five-level funnel
+Caught in the middle are independent power users outside the labs. They don't have uncapped internal compute, yet they routinely orchestrate a dozen or even several dozen agents in parallel—well past the stage of "using Claude Code to write some code." That is the missing middle I want to fill in.
 
-Here are my estimates by depth of use, as of October 2026:
 
-- **L1 — Chatbot users: about 2 billion.** Used an AI chat assistant in the past month.
-- **L2 — Desktop agent users: about 45 million.** Have tools such as Claude Code, Codex, or ChatGPT Work do work for them at least once a week.
-- **L3 — Power users: about 2 million.** Consistently exhaust a \$200 top-tier subscription's allowance.
-- **L4 — Fleet commanders: about 80,000.** Routinely run ten or more agents simultaneously and maintain a stack of top-tier subscriptions.
-- **L5 — Lab insiders: about 5,000.** Core staff at frontier labs with effectively unlimited compute.
+## The Five-Tier Funnel
 
-![Figure 1: The five-level AI adoption funnel in October 2026](fig1-funnel-2026-10-en.webp)
+Estimated as of October 2026, the adoption funnel breaks down into five tiers by depth of use:
 
-This chart needs a logarithmic scale; otherwise, the lower four levels collapse into a line. One in four people on Earth has tried AI, but only one in 100,000 commands an agent fleet.
+- **L1 — Chat users: ~2 billion.** Used an AI chat assistant within the past month.
+- **L2 — Desktop agent users: ~45 million.** Have an agent tool like Claude Code, Codex, or ChatGPT Work execute real tasks at least once a week.
+- **L3 — Power users: ~2 million.** Consistently max out a $200/month top-tier subscription.
+- **L4 — Fleet commanders: ~80,000.** Routinely run ten or more agents in parallel, backed by a stack of top-tier subscriptions.
+- **L5 — Inside frontier labs: ~5,000.** Core staff at frontier labs with effectively uncapped compute.
 
-## The easier estimates: L1, L2, and L5
+![Figure 1: The five-tier AI adoption funnel as of October 2026](fig1-funnel-2026-10-en.webp)
 
-For a Fermi estimate, start with the parts anchored in public data, then infer the opaque middle.
+The chart has to use a logarithmic scale; drawn to true proportion, the bottom four tiers would collapse into a single thin line. One in four people on Earth has tried AI, but only one in 100,000 has ever commanded an agent fleet.
 
-### L1 — Chatbot users: about 2 billion
 
-I count unique individuals who have used any AI chat assistant in the past month, estimated in three parts:
+## Anchoring the Ends: L1, L2, and L5
 
-- **ChatGPT:** OpenAI officially reported [1.2 billion weekly active users](https://openai.com/index/devday-2026-recap/) at DevDay.
-- **Gemini:** it [passed 1 billion monthly active users](https://siliconangle.com/?p=812556) in August. Assuming a quarter don't use ChatGPT adds about 260 million.
-- **China:** [more than 700 million people used generative AI](https://www.news.cn/20260929/40258c3794684c20ae7867909cdec2ce/c.html) in the first half of 2026. That counts use over six months; a 20% discount gives roughly 600 million monthly users.
+In a Fermi estimate, you start with the tiers anchored by public data, then work inward to infer the opaque middle.
 
-Together, that's about 2 billion people, or 24% of the world's population. Microsoft's device telemetry gives a lower figure: in June, [18.8% of people worldwide aged 15–64 had used generative AI](https://blogs.microsoft.com/on-the-issues/2026/09/21/the-continued-state-of-global-ai-diffusion-in-2026/). But Microsoft also says broader measurement in its next report will substantially raise the figure for China, so I treat this as a lower bound.
+### L1 — Chat Users: ~2 Billion
 
-### L2 — Desktop agent users: about 45 million
+The metric here is unique individuals who used any AI chat assistant in the past month, broken into three buckets:
 
-OpenAI gives us a concrete number: [Codex and ChatGPT Work together have more than 35 million weekly active users](https://vgtimes.com/tech-and-hardware/169376-openai-sums-up-devday-2026-new-agents-work-tools-and-cloud-codex.html).
+- **ChatGPT**: OpenAI disclosed [1.2 billion weekly active users](https://openai.com/index/devday-2026-recap/) at DevDay.
+- **Gemini**: [Passed 1 billion monthly active users](https://siliconangle.com/?p=812556) in August. Assuming a quarter of them don't use ChatGPT adds roughly 260 million net users.
+- **China**: As of the first half of 2026, China had [over 700 million generative AI users](https://www.news.cn/20260929/40258c3794684c20ae7867909cdec2ce/c.html). That figure measures usage over a six-month window; applying a 20% haircut to convert to monthly actives yields roughly 600 million.
 
-Anthropic has never disclosed an absolute user count for Claude Code. In February, it said only that [Claude Code's annualized revenue had passed \$2.5 billion and weekly active users had doubled in six weeks](https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation). We can work backward from two angles:
+Together, that comes to roughly 2 billion people, or 24% of the world's population. Microsoft's device-telemetry estimate is lower: as of June, [18.8% of the global population aged 15–64 had used generative AI](https://blogs.microsoft.com/on-the-issues/2026/09/21/the-continued-state-of-global-ai-diffusion-in-2026/). However, Microsoft noted that expanding its tracking coverage in the next edition will significantly revise China's numbers upward, so I treat 18.8% as a lower bound.
 
-- **Revenue:** Anthropic's [total annualized revenue reached \$65 billion at the end of July](https://www.webull.ca/news-detail/15422614464930816). Assuming Claude Code accounts for 15–20%, with each weekly active user contributing \$100–150 a month on average, that implies 6–11 million users.
-- **Surveys:** in JetBrains' survey, [39% of professional developers said they used Claude Code at work](https://aiunderstanding.org/news/36kr-reports-claude-code-led-github-copilot-in-jetbrains-2026-developer-survey). There are roughly 40 million professional developers worldwide. Halve the result to account for a sample skewed toward active developers, and we get about 8 million.
+### L2 — Desktop Agent Users: ~45 Million
 
-The two estimates agree, so I'll use 8 million. Cursor, Copilot Agent, Gemini CLI, and others add about 7 million; China's Trae, Qoder, and the major vendors' Coding Plans add about 5 million. Public data is thinnest for China, so that estimate mostly reflects what I see in the community.
+OpenAI gave us a hard number: [Codex and ChatGPT Work together exceed 35 million weekly active users](https://vgtimes.com/tech-and-hardware/169376-openai-sums-up-devday-2026-new-agents-work-tools-and-cloud-codex.html).
 
-The total is about 55 million. Deduplicate people using two or three tools, and I get **45 million**, or 0.55% of the global population. About 20 million actually use them to write code, which also lines up with Karpathy's third level.
+Anthropic hasn't released an absolute user count for Claude Code, disclosing only in February that [annualized revenue had passed $2.5 billion and weekly active users had doubled in six weeks](https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation). Still, we can triangulate from two directions:
 
-### L5 — Core lab staff: about 5,000
+- **From revenue**: Anthropic's [total annualized revenue reached $65 billion at the end of July](https://www.webull.ca/news-detail/15422614464930816). Assuming Claude Code accounts for 15%–20% of that and each weekly active user generates $100–$150 per month on average, that implies 6 million to 11 million users.
+- **From developer surveys**: In the JetBrains developer survey, [39% of professional developers reported using Claude Code at work](https://aiunderstanding.org/news/36kr-reports-claude-code-led-github-copilot-in-jetbrains-2026-developer-survey). Out of roughly 40 million professional developers worldwide, halving that share to correct for active-user bias in survey respondents yields around 8 million.
 
-I use Karpathy's estimate and cross-check it against headcounts. OpenAI had about 4,500 employees in March and [planned to reach 8,000 by year-end](https://engadget.com/ai/openai-reportedly-plans-to-double-its-workforce-to-8000-employees-161028377.html); Anthropic had [around 4,000 at the start of the year](https://www.longtermwiki.com/factbase/property/headcount). Add the other leading labs and the total is on the order of 20,000–30,000.
+Both methods converge, so I'll take 8 million for Claude Code. Cursor, Copilot Agent, Gemini CLI, and similar tools add roughly 7 million, while Chinese tools—Trae, Qoder, and domestic vendors' Coding Plans—add another 5 million (public data for the Chinese segment is thin, so this relies mostly on industry observation).
 
-Exclude administration, sales, and peripheral teams, and 5,000 seems reasonable for core researchers and engineers with direct access to internal frontier systems and almost no compute ceiling. Even a broader definition would put it at no more than 15,000.
+That totals roughly 55 million before deduplication. Subtracting overlap from people who use two or three tools at once leaves **45 million**, or 0.55% of the global population. Roughly 20 million of them use these tools to write code, lining up neatly with Karpathy's third tier.
 
-## The opaque middle: follow the money
+### L5 — Frontier Lab Insiders: ~5,000
 
-L3 and L4 have no public user counts, but spending offers some clues.
+Here I take Karpathy's figure directly and cross-check it against lab headcounts. OpenAI had around 4,500 employees in March and [planned to double to 8,000 by year-end](https://engadget.com/ai/openai-reportedly-plans-to-double-its-workforce-to-8000-employees-161028377.html); Anthropic had [roughly 4,000 at the start of the year](https://www.longtermwiki.com/factbase/property/headcount). Including the other frontier labs puts total headcount in the 20,000–30,000 range.
 
-On October 5, the seventh edition of a16z's Top 100 Gen AI Consumer Apps report introduced [rankings based on actual spending](https://a16z.com/100-gen-ai-apps-7/) from YipitData's US credit-card panel. The bills follow an extremely steep power law:
+Strip out operations, sales, and peripheral teams, and 5,000 is a reasonable estimate for core researchers and engineers who can point near-unlimited internal compute at frontier systems. Even under a looser definition, that number tops out around 15,000.
 
-- Median monthly spending among paying users is just **\$25**, roughly one basic subscription, and has barely risen in years.
-- The top **10%** account for roughly half of all spending.
-- The top **1%** contribute 19.5%, more than the bottom half combined (16.6%). They spend an average of **\$903 a month**, up 80% from 18 months earlier, mainly on automation, product development, and content creation.
+
+## The Opaque Middle: Following the Money
+
+L3 and L4 have no public user counts, but the flow of money leaves a clear trail.
+
+On October 5, the seventh edition of a16z's *Top 100 Gen AI Consumer Apps* report introduced [rankings based on actual card spend](https://a16z.com/100-gen-ai-apps-7/) from YipitData's US credit-card panel. Consumer billing follows a steep power law:
+
+- Median monthly spend among paying users is just **$25**—basically a single standard subscription—and has barely budged in years.
+- The top **10%** of users generate roughly half of all revenue.
+- The top **1%** generate 19.5%, more than the bottom half combined (16.6%). They spend an average of **$903 a month**, up 80% from 18 months ago, primarily on automation, product development, and content creation.
 - Only **13%** of paying users pay for a second AI product.
 
-The enterprise picture is even more extreme. Ramp's data shows that [the top 1% of customers account for 80% of OpenAI's and Anthropic's enterprise revenue](https://www.pymnts.com/news/artificial-intelligence/2026/openai-and-anthropic-get-80percent-of-revenue-from-1percent-of-customers/).
+Enterprise spending is even more skewed: Ramp data shows that [the top 1% of customers account for 80% of OpenAI's and Anthropic's enterprise revenue](https://www.pymnts.com/news/artificial-intelligence/2026/openai-and-anthropic-get-80percent-of-revenue-from-1percent-of-customers/).
 
-The other side of the ledger is the subsidy. SemiAnalysis estimates that a fully exhausted \$200-a-month ChatGPT Pro plan consumes compute worth up to \$14,000 at API prices; Claude Max 20x comes to about \$8,000. An OpenAI top-tier user needs to consume just [5.7% of the theoretical allowance before the platform starts losing money](https://techspot.com/news/112759-openai-anthropic-cant-afford-have-everyone-use-ai.html). Vast numbers of light users are subsidizing a handful of compute guzzlers at the top.
+On the other side of the ledger sits a massive subsidy. SemiAnalysis estimates that a maxed-out $200/month ChatGPT Pro subscription consumes up to $14,000 worth of compute at API rates, while Claude Max 20x comes to roughly $8,000. An OpenAI top-tier subscriber only has to use [5.7% of the theoretical ceiling before the platform starts losing money](https://techspot.com/news/112759-openai-anthropic-cant-afford-have-everyone-use-ai.html). A vast base of light users is subsidizing a tiny cohort of compute whales at the tip of the pyramid.
 
-Fit a Pareto tail to the spending shares of the top 10% and top 1%, and the exponent is roughly 1.7. Extrapolate, and we get a profile of the top one in a thousand:
+Fitting a Pareto tail to the spending shares of the top 10% and top 1% yields an exponent of roughly 1.7, which lets us extrapolate the profile of the top 0.1%:
 
-| Percentile | Monthly spending threshold | Average monthly spending | Rough equivalent |
-| --- | --- | --- | --- |
-| Top 1% | About \$370 | \$903 (measured by a16z) | One or two \$200 top-tier subscriptions, plus assorted other tools |
-| Top 0.1% | About \$1,400 | About \$3,500 (extrapolated) | Seven to eighteen \$200 top-tier subscriptions running at once |
+| Percentile | Monthly Spend Threshold | Average Monthly Spend | Rough Equivalent |
+|---|---|---|---|
+| Top 1% | ~$370 | $903 (measured by a16z) | One or two $200 top-tier plans, plus a stack of add-on tools |
+| Top 0.1% | ~$1,400 | ~$3,500 (extrapolated) | Seven to eighteen $200 top-tier plans burning concurrently |
 
-That's roughly the financial profile of an agent fleet. So I use **the top 1% of paying users as a proxy for L3, and the top 0.1% for L4**.
+That matches the financial footprint of an agent fleet. Accordingly, I map **the top 1% of paying users to L3, and the top 0.1% to L4**.
 
-What about the denominator? ChatGPT already had [more than 50 million paying users](https://aibusinessweekly.net/p/chatgpt-statistics) in February. In [a16z's panel](https://a16z.com/100-gen-ai-apps-7/), its paying user base is roughly three times the size of Claude's or Gemini's. Deduplicating across the big three, coding tools, and other specialized products, I estimate **120 million** paying users worldwide, with a range of 80–150 million.
+What is the denominator? ChatGPT already had [over 50 million paying subscribers](https://aibusinessweekly.net/p/chatgpt-statistics) in February, and in [a16z's panel](https://a16z.com/100-gen-ai-apps-7/) its paid footprint is roughly three times that of Claude or Gemini. Deduplicating across the Big Three (ChatGPT, Claude, and Gemini), coding tools, and vertical products, I estimate **120 million** paying AI users worldwide, within a range of 80 million to 150 million.
 
-### L3 — Power users: about 2 million
+### L3 — Power Users: ~2 Million
 
-One percent of 120 million is 1.2 million. That covers people paying with their own cards. Then there are power users whose employers pay: among engineers tracked by Jellyfish, [the top 2% consume 500 million tokens a week](https://workos.com/blog/nicholas-arcolano-jellyfish-token-maxing-diminishing-returns), running highly autonomous multi-agent pipelines. I estimate this group at 600,000–800,000, bringing the total to about **2 million**.
+One percent of 120 million gives 1.2 million people paying with their own cards. Then there are heavy users on corporate accounts: among engineers tracked by Jellyfish, [the top 2% burn through 500 million tokens a week](https://workos.com/blog/nicholas-arcolano-jellyfish-token-maxing-diminishing-returns), running highly autonomous multi-agent pipelines. I estimate that enterprise cohort at 600,000–800,000, bringing the total to roughly **2 million**.
 
-Usage behavior provides a cross-check. OpenAI's Codex paper reports that [more than 10% of users manage three or more agents simultaneously at some point during the week](https://ideas.repec.org/p/arx/papers/2606.26959.html). Restrict that to people who routinely work this way, and I'd estimate about 4% of L2, or 1.8 million, close to the first result.
+Usage behavior offers an independent cross-check. OpenAI's Codex paper reports that [over 10% of users manage three or more agents concurrently at some point during a given week](https://ideas.repec.org/p/arx/papers/2606.26959.html). Narrowing that down to people who work this way routinely gives roughly 4% of L2—or 1.8 million users, close to our spending-based estimate.
 
-### L4 — Fleet commanders: about 80,000
+### L4 — Fleet Commanders: ~80,000
 
-One-tenth of one percent of 120 million is 120,000. But a16z notes that much of the spending at the top goes toward video generation and visual design. I assume half of these users aren't running agent fleets, leaving 60,000. Add about 20,000 engineers running clusters on company API budgets, and we get **80,000**. Another yardstick gives a similar range: 0.1–0.2% of L2 is 45,000–90,000.
+One-tenth of a percent of 120 million is 120,000. However, a16z notes that a substantial share of top-end consumer spend goes toward video generation and visual design. Assuming half of that group isn't running agent fleets leaves 60,000; adding roughly 20,000 engineers who run agent clusters on corporate API budgets brings the total to **80,000**. Measured another way, taking 0.1%–0.2% of L2 yields 45,000 to 90,000, landing in the same range.
 
-For a sense of intensity, consider OpenAI's internal data: its P99 users (the top 1%) [run more than 60 agent-hours a day](https://openai.com/index/how-agents-are-transforming-work/), roughly three agents working around the clock. L4 fleet commanders outside the labs typically run at three to ten times that daily intensity.
+For a sense of intensity, OpenAI's internal telemetry shows that its P99 (top 1%) power users [log more than 60 agent-hours per day](https://openai.com/index/how-agents-are-transforming-work/)—roughly three agents running nonstop around the clock. An L4 fleet commander outside the labs typically operates at three to ten times that daily volume.
 
-## Nineteen months: how the funnel grew
 
-Apply the same estimation method back to March 2025 and draw the funnel at quarterly intervals:
+## Nineteen Months: How the Funnel Grew
 
-![Figure 2: Seven funnels along a timeline from March 2025 to October 2026](fig2-funnel-timeline-en.webp)
+Applying the same methodology backward to March 2025 lets us plot the funnel quarter by quarter:
 
-Claude Code had just launched its preview. L2 had only 1.5 million users, L3 about 30,000, and L4 at most 1,000, fewer than the researchers inside the labs. People weren't reluctant to spend; they lacked tools that could turn money into productivity. Three turning points followed:
+![Figure 2: Seven snapshots of the AI adoption funnel from March 2025 to October 2026](fig2-funnel-timeline-en.webp)
 
-1. **Mid-2025:** Claude Code became available through the flat-rate monthly Max subscription. Enthusiasts started running it in the background around the clock, pushing Anthropic's compute to the limit and forcing it to [introduce weekly usage limits in late July](https://techcrunch.com/2025/07/28/anthropic-unveils-new-rate-limits-to-curb-claude-code-power-users).
-2. **February 2026:** the [Codex desktop app launched](https://en.wikipedia.org/wiki/OpenAI_Codex_%28AI_agent%29). Running multiple agents in parallel went from an enthusiast's custom setup to the default way of working.
-3. **July 2026:** [ChatGPT Work](https://openai.com/index/chatgpt-for-your-most-ambitious-work/) put agents in the hands of office workers who don't code. L2 more than doubled in a single quarter.
+Back then, Claude Code had just launched in preview. L2 stood at just 1.5 million users, L3 at roughly 30,000, and L4 at no more than 1,000—fewer people than the researchers inside the labs. Users weren't reluctant to spend money; there simply weren't good tools yet for turning money into output. Three inflection points changed that:
 
-![Figure 3: Key turning points and growth across all five levels over nineteen months](fig3-funnel-growth-en.webp)
+1. **Mid-2025**: Claude Code was folded into the flat-rate monthly Max subscription. Power users began running it 24/7 in the background, burning through Anthropic's capacity until the company had to [introduce weekly rate limits in late July](https://techcrunch.com/2025/07/28/anthropic-unveils-new-rate-limits-to-curb-claude-code-power-users).
+2. **February 2026**: The [Codex desktop app launched](https://en.wikipedia.org/wiki/OpenAI_Codex_%28AI_agent%29), turning parallel multi-agent execution from a niche power-user hack into the default workflow.
+3. **July 2026**: [ChatGPT Work](https://openai.com/index/chatgpt-for-your-most-ambitious-work/) brought agents to non-coding knowledge workers, more than doubling L2 in a single quarter.
 
-## Why adoption still isn't that deep
+![Figure 3: Key inflection points and user growth across all five tiers over nineteen months](fig3-funnel-growth-en.webp)
 
-**First, trying AI isn't the same as using it deeply.** Some 24% of the world's population has chatted with AI, but only **0.55%** actually delegates work to agents. a16z sees the same gap in the US: nearly half of people say they've tried AI, but [only 25% use it daily](https://a16z.com/100-gen-ai-apps-7/), and just 4.5% pay out of pocket for a personal subscription.
 
-**Second, the middle is exploding from a tiny base.** In nineteen months, the middle three levels grew 30–80-fold, while the two ends grew a little more than twofold. Conversion from L1 to L2 climbed from 0.17% to 2.2%. The growth is startling, but most people still haven't made the jump.
+## Why Adoption Still Doesn't Run That Deep
 
-**Third, more people doesn't mean equal firepower.** L4 users outside the labs already outnumber L5 insiders sixteen to one. Yet as of June, models at the level of Claude Mythos were [available to only about 150 organizations](https://en.wikipedia.org/wiki/Claude_Mythos). However many subscriptions we buy, we're still watching what Karpathy calls the “trailer.”
+**First, trying AI is not the same as using it deeply.** Roughly 24% of the world has chatted with an AI, but only **0.55%** actually delegates work to agents. a16z sees the same gap in the US: nearly half of respondents say they have used AI, yet [only 25% use it daily](https://a16z.com/100-gen-ai-apps-7/), and just 4.5% pay out of pocket for a personal subscription.
 
-**Fourth, quotas increasingly constrain the jump from L3 to L4.** Tighten the subsidies, and the heaviest users immediately feel the squeeze. In September, OpenAI briefly stopped selling \$200 Pro plans to new users. At DevDay, it [introduced the \$500-a-month Pro 500 and brought back the \$200 tier with its allowance cut in half](https://vgtimes.com/tech-and-hardware/169376-openai-sums-up-devday-2026-new-agents-work-tools-and-cloud-codex.html). Uber also [capped spending per engineer on any single coding agent at \$1,500 a month](https://workos.com/blog/nicholas-arcolano-jellyfish-token-maxing-diminishing-returns). The size of an agent fleet increasingly depends on who will pay for the compute.
+**Second, the middle tiers are exploding, but from a tiny base.** Over nineteen months, the middle three tiers grew 30x–80x while the two ends grew just over 2x. Conversion from L1 to L2 climbed from 0.17% to 2.2%—rapid growth, but the vast majority of users still haven't crossed that threshold.
 
-## Where the opportunities are
+**Third, headcount doesn't equal firepower.** L4 users outside the labs now outnumber L5 insiders 16 to 1, yet models in the class of Claude Mythos were [available to only about 150 organizations as of June](https://en.wikipedia.org/wiki/Claude_Mythos). Even if we max out every commercial subscription on the market, we are still only watching what Karpathy calls the "movie trailer."
 
-The daily online arguments over whether AI is a bubble or an industrial revolution often amount to people at different levels of the funnel talking past each other, drawing on entirely different experiences. Understand that gap, and the opportunities become clearer.
+**Fourth, rate limits are increasingly the bottleneck between L3 and L4.** As soon as subsidies tighten, heavy users feel the squeeze. In September, OpenAI temporarily paused new sign-ups for its $200 Pro plan; at DevDay, it [rolled out a $500/month Pro 500 tier and brought back the $200 plan with half its previous allowance](https://vgtimes.com/tech-and-hardware/169376-openai-sums-up-devday-2026-new-agents-work-tools-and-cloud-codex.html). Uber likewise [capped per-engineer spend on any single coding agent at $1,500 a month](https://workos.com/blog/nicholas-arcolano-jellyfish-token-maxing-diminishing-returns). How large a fleet you can run increasingly comes down to who is willing to pay for the compute.
 
-**For application and product builders, the biggest opportunity is between L1 and L2.** Whoever removes the barriers and makes delegating everyday tasks to agents a habit for people who don't code can capture the next tenfold expansion. a16z already sees personal agents spreading beyond developers.
 
-**For infrastructure builders, prepare for a different kind of user.** When L2 grows from 45 million to 450 million, software will be operated mainly by tireless agents. The databases and systems being spun up, read, and written concurrently by thousands of agents in the background will far outnumber the apps people tap in the foreground.
+## Where the Opportunities Lie
 
-AI adoption still doesn't run very deep, which means the story is just beginning. But if the chasm from early adopters to the early majority remains unbridged, this frenzy may move from its “installation period” into a crash and shakeout.
+The daily online debates over whether AI is a bubble or an industrial revolution mostly come down to people at different tiers of the funnel talking past each other from completely different lived experiences. Once you see that gap clearly, the opportunities are straightforward.
+
+**If you build applications and products, the biggest prize sits between L1 and L2.** Whoever flattens the barrier to entry so non-programmers routinely hand off everyday tasks to agents will capture the next tenfold wave. a16z is already seeing personal agents spread beyond developers.
+
+**If you build infrastructure, prepare for a shift in who operates software.** As L2 grows from 45 million to 450 million, the primary user of software will no longer be a human clicking around a UI, but tireless agents running in the background. Databases and backend systems spun up, read, and written concurrently by thousands of agents will far outnumber the frontend apps opened by humans.
+
+Deep AI adoption is still low, which means the story is just getting started. But if the chasm between early adopters and the early majority remains uncrossed for too long, this wave of euphoria may well tip from its "installation period" into a crash and reckoning.
