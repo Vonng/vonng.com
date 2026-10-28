@@ -1,186 +1,186 @@
 ---
-title: "A Tiny Aluminum Cube: Hands-on with the Beelink ME Pro NAS"
+title: "A Tiny Aluminum Cube: Hands-On with the Beelink ME Pro NAS"
 date: 2026-10-09
 authors: [vonng]
 summary: >
-  Four spare hard drives and four NVMe SSDs found a home in a Beelink ME Pro. Why I chose it over the Minisforum N5, how I set it up with Ubuntu, and what a PC NAS can do beyond storing files.
+  Four spare hard drives and four NVMe SSDs fit neatly into a Beelink ME Pro. A look at choosing it over the Minisforum N5, hardware assembly, running Ubuntu on it, and what a PC NAS with real compute can actually do.
 tags: [Hardware, Local First, Commentary]
 images: [featured.webp]
 ---
-Last night, before bed, I threw together a post about [the three gadgets middle-aged men obsess over](/en/db/homelab-10g/): NAS boxes, routers, and chargers. It picked up more than 30,000 reads in a day. Apparently, the stereotype has some truth to it.
+Last night before bed, I threw together a quick post on [the three gadgets middle-aged men obsess over](/en/db/homelab-10g/): NAS boxes, routers, and chargers. It picked up more than 30,000 reads in a single day. Apparently the stereotype holds up.
 
-![WeChat statistics for the previous NAS article, with more than 30,000 reads](reads.webp)
+![WeChat readership statistics for the previous NAS article, showing over 30,000 reads](reads.webp)
 
-I mentioned that I would write separately about my new Beelink ME Pro NAS today. So here I am, before bed again, talking about this little aluminum cube. First, the disclosure: I was not paid for this, and it is not an ad. I bought all this hardware myself, for my own use.
+In that post, I mentioned I would write a separate piece today on my new Beelink ME Pro NAS. So here I am before bed again, writing about this little aluminum cube. Standard disclaimer first: nobody paid me for this, and it is not a sponsored post. I bought everything here with my own money for my own homelab.
 
-## How I Found Beelink
+## How I Ended Up Looking at Beelink
 
-I first noticed Beelink's mini PCs through DHH's posts about Omarchy. He was trying Linux mini PCs, found that Beelink's little boxes suited Omarchy well, and posted enough about them to tempt me. Last September, I went through Beelink's lineup. After plenty of deliberation, I bought a GTR9 Pro with an AMD Ryzen AI Max+ 395 and 128 GB of RAM. I wrote about it in [“WinStudio: Running a 200B Model Locally for ¥10,000?”](/ai/local-200b/).
+I first noticed Beelink's mini PCs when DHH was promoting Omarchy. He was experimenting with Linux mini PCs, found that Beelink's compact boxes worked well for Omarchy, and posted a string of tweets about them that got my attention. Last September, I went through Beelink's entire lineup and eventually bought a GTR9 Pro: an AMD Ryzen AI Max+ 395 with 128 GB of RAM, which I wrote about in [“WinStudio: Running a 200B Model Locally for ¥10,000?”](/ai/local-200b/).
 
-That machine may have been my best “investment” of the past year, measured by its unrealized percentage gain: the official price climbed from a little over ¥10,000 to ¥27,000. I have been very happy with it. It compiles fast, runs a pile of test VMs, and makes an excellent build farm for PostgreSQL extensions. It is also quiet—a much more pleasant companion than my old Dell R730 server.
+On paper, that machine might be my highest-returning “investment” of the past year: the official retail price climbed from just over ¥10,000 to ¥27,000. In daily use, it has been great—fast compile times, plenty of headroom for test VMs and a PostgreSQL extension build farm, and near-silent operation. It is far easier to live with than my old Dell PowerEdge R730 server.
 
-My main regret was buying only one. Then the memory price surge pushed the price to ¥27,000, and buying more stopped being appealing. But there were still other things to look at.
+My only regret is not buying a few more at the time. Once the RAM price surge pushed the sticker price to ¥27,000, buying another was out of the question, though the rest of the catalog was still worth a look.
 
 ## Why Another NAS?
 
-Machines with lots of RAM had become worse value, but one category still looked worth exploring: NAS.
+High-memory mini PCs aren't the bargain they were a few months ago, which left another category worth tinkering with: NAS hardware.
 
-The usual names are Synology, QNAP, and TerraMaster. In the last couple of years, newcomers have crowded in: Beelink, Minisforum, fnOS, Ugreen, even Xiaomi.
+Say “NAS” and most people think of Synology, QNAP, or TerraMaster. Over the past couple of years, though, a wave of newcomers has entered the market: Beelink, Minisforum, fnOS, UGREEN, and even Xiaomi.
 
-I had always used Synology. Its price premium is substantial, which is another way of saying the hardware is poor value. Most of that premium buys the software: DSM. It works out of the box, manages storage pools and the other details for you, and rarely demands much tinkering. If you have the money and want to avoid the work, I still think Synology is the best choice.
+I have used Synology for years. Synology charges a steep premium—meaning poor hardware specs for the money—and most of what you are paying for is DSM, the software stack. It works out of the box, manages storage pools cleanly, and requires almost no babysitting. If you have the budget and don't want to tinker, Synology is still the easiest recommendation.
 
-As I mentioned in the previous post, I started with a DS918+ and later added a two-bay DS720+. I sold both yesterday and replaced them with a DS923+ fitted with 10GbE. The data I cannot afford to lose or corrupt still lives there as the authoritative copy. Beyond that, though, I am happy to have another NAS to play with.
+As I mentioned in yesterday's post, I previously ran a Synology DS918+ alongside a two-bay DS720+. I sold both yesterday and consolidated onto a DS923+ with a 10GbE upgrade. My primary data—the files I cannot afford to lose or corrupt—still lives on that Synology as the authoritative copy. Outside of that, though, I don't mind having a second NAS to experiment with.
 
-The real trigger was less noble: China Merchants Bank gives me ten times the credit card points on my birthday, and I wanted an excuse to buy something. I happened to see this machine, did some research, and realized it matched what I already had: four spare hard drives and four NVMe SSDs pulled from desktop PCs. It has exactly four HDD bays and four M.2 slots. A home for the whole pile of spare parts—why wouldn't I?
+The immediate trigger was simpler: my China Merchants Bank credit card offers 10x points on my birthday, so I was looking for an excuse to buy something. I came across the ME Pro, checked the specs, and realized it matched my spare-parts pile to the letter: four spinning hard drives and four NVMe SSDs pulled from old desktops. The ME Pro has four 3.5-inch drive bays and four M.2 slots, enough to put every last one of those drives back to work. Why not?
 
-## Minisforum N5 or Beelink ME Pro?
+## Minisforum N5 vs. Beelink ME Pro
 
-Initially, I preferred the Minisforum N5 series. Another cute box, with five drive bays. The N5 Max uses the same AMD Ryzen AI Max+ 395 as my GTR9 Pro. But I already owned one machine with that chip. Buying another seemed redundant; I might as well focus on storage.
+At first, I was actually leaning toward the Minisforum N5 series. It is another tidy-looking box, with five drive bays. The top-tier N5 Max runs the same AMD Ryzen AI Max+ 395 as my GTR9 Pro. On second thought, though, I already had a machine with that chip; buying a second one made little sense when what I needed here was storage.
 
 ![JD product listing for the five-bay Minisforum N5 Air NAS](n5.webp)
 
-The N5 Air and N5 Pro also looked good, and the Pro supports ECC memory. All three use the same enclosure, though, and it is simply too big. I also did not have a fifth hard drive. If I bought another one to three drives, the prices were discouraging: the 16 TB Seagate IronWolf I bought for ¥3,300 in 2022 was now listed on JD at ¥5,900, nearly twice as much. Five bays were unnecessary.
+The N5 Air and N5 Pro also looked solid, and the N5 Pro supports ECC memory. All three share the same five-bay enclosure, though, and the dealbreaker for me was its bulk. I also didn't have a fifth hard drive on hand. When I checked drive prices to see what filling another one to three bays would cost, I backed right off: a 16 TB Seagate IronWolf cost me ¥3,300 in 2022, and JD now lists the same drive at ¥5,900—nearly double. At those prices, five bays were unnecessary.
 
-![My 2022 order for two 16 TB Seagate IronWolf drives](ironwolf-2022.webp)
+![2022 order screenshot for two 16 TB Seagate IronWolf hard drives](ironwolf-2022.webp)
 
-![A current JD listing pricing a 16 TB IronWolf drive near ¥5,900](ironwolf-price.webp)
+![Current JD listing showing a 16 TB Seagate IronWolf priced near ¥5,900](ironwolf-price.webp)
 
-The ME Pro has exactly four bays, uses its space well, and is compact. It is the same height as my Synology, so both fit on the same shelf in the rack and look good together. There are two-bay and four-bay versions, but for a NAS I would take even somewhat seriously, I would choose four bays.
+The ME Pro has four bays in a tight, space-efficient chassis. Better yet, it matches the exact height of my Synology, so both sit neatly side by side on the same rack shelf. Beelink makes two-bay and four-bay versions, but for any reasonably serious NAS setup, four bays is the baseline.
 
-![Order for the four-bay Beelink ME Pro H255, costing about ¥4,819](order.webp)
+![Order confirmation for the four-bay Beelink ME Pro H255, paid ¥4,819](order.webp)
 
-To be fair, the N5 is a good option too. My final shortlist came down to the N5 series and the four-bay ME Pro. With the Chinese government subsidy and a promotion, I paid ¥4,819 for the Beelink.
+To be fair, the Minisforum N5 is a strong contender. My final shortlist came down to the N5 series and the four-bay Beelink ME Pro. With the national trade-in subsidy and a store promotion, the ME Pro came out to ¥4,819.
 
 ![JD product listing for the four-bay Beelink ME Pro H255](me-pro-shop.webp)
 
-## What Tipped the Decision
+## Why Beelink Won Out
 
-So why Beelink in the end?
+What tipped the decision to Beelink?
 
-Size was probably the deciding factor. The four-bay CNC-machined aluminum enclosure measures roughly [165 × 145 × 165 mm, excluding the feet](https://www.bee-link.com.cn/computer-73493777). It is very compact, and about as tall as an iPhone Pro Max. I meant to take more photos, but both NAS boxes were busy copying data and I could not be bothered to move them. These should give you a sense of scale.
+Size was the main factor. The CNC-machined unibody aluminum chassis on the four-bay model measures roughly [165 × 145 × 165 mm without the feet](https://www.bee-link.com.cn/computer-73493777)—remarkably compact, and about as tall as an iPhone Pro Max. I meant to take more photos, but both NAS boxes were busy copying data and I didn't feel like moving them. These shots should give a rough sense of scale.
 
-![Beelink ME Pro beside a Synology NAS and an ASUS ROG tablet on my desk](featured.webp)
+![Beelink ME Pro sitting beside a Synology NAS and an ASUS ROG tablet on the desk](featured.webp)
 
-![A 12U rack holding laptops, mini PCs, and both NAS boxes](rack.webp)
+![A 12U rack holding laptops, mini PCs, and both NAS units](rack.webp)
 
-![The computers and NAS boxes on my desk before moving into the rack](desk.webp)
+![Desk layout with the computers and NAS units before moving them into the rack](desk.webp)
 
-![An overhead view of the computers, NAS boxes, and cables on my desk](overhead.webp)
+![Overhead view of the computers, NAS units, and cabling on the desk](overhead.webp)
 
-Another feature I like is the range of processors it supports. The motherboard assembly is a drawer: you can pull the whole thing out, much like a hard drive, and replace it with another assembly. Standalone boards do not seem to be on sale yet, but the design at least leaves room for upgrades. Being able to pull the board out also makes cleaning and maintenance easier.
+Another design detail I like is the modular compute sled. The motherboard sits on a slide-out drawer that pulls out just like a drive tray, allowing the entire board assembly to be swapped across different processor platforms. Beelink doesn't appear to sell standalone replacement boards yet, but the mechanical design leaves the door open for upgrades and makes routine dust cleaning much easier.
 
-![Comparison of ME Pro processor options and motherboard architectures](boards.webp)
+![Comparison table of ME Pro processor options and motherboard specifications](boards.webp)
 
-I bought the relatively inexpensive Ryzen 7 H 255 version. There are also HX 370 and HX 470 options, and, rather remarkably, a Loongson board. Plenty to experiment with. I previously helped get [Loongson support into the official PostgreSQL repository](/pg/pg-apt-loong64/). If I ever need to port software to Loongson myself, I could just slide a Loongson ME Pro board into this enclosure instead of buying another collection of obscure hardware.
+I bought the lower-cost Ryzen 7 H 255 model. Beelink also lists HX 370 and HX 470 versions, plus—wildly enough—a Loongson motherboard option. I previously helped get [Loongson (`loong64`) support into the official PostgreSQL APT repository](/pg/pg-apt-loong64/). If I ever need to test Loongson builds locally, I won't need to buy another oddball machine; I can just slide a Loongson ME Pro board into this chassis.
 
-## Getting Started: Bring a Screwdriver
+## Hands-On: Bring a Screwdriver
 
-Once you have it in your hands, it is a very likable little machine.
+In person, the hardware is easy to like.
 
-Coming from Synology, though, I found myself dealing with quite a few screws. The rear drive-bay cover attaches magnetically and lifts straight off. Inside, all four drive trays are held by screws, and an Allen key is tucked into the bottom of the machine. Every time you remove or install a drive, you have to undo and tighten them again. It is considerably less convenient than Synology's tool-free trays.
+Coming from Synology, though, you will be turning a lot of screws. The rear cover over the drive bays is magnetic and pops right off, but all four internal drive trays are secured with hex screws (an Allen key is tucked into the underside of the chassis). Pulling or installing a drive means backing those screws out and threading them back in every time—far more fiddly than Synology's tool-free snap-in trays.
 
-![Two NAS boxes with their rear covers removed, alongside a Bosch Go electric screwdriver](screwdriver.webp)
+![Both NAS units with rear covers removed alongside a Bosch Go electric screwdriver](screwdriver.webp)
 
-*With a Bosch Go screwdriver in hand, I can take on anything.*
+*With a Bosch Go electric screwdriver in hand, I'm ready for anything.*
 
-The SSDs are much the same story. One important reason I chose the lower-end H255 CPU was that the cheaper processor comes with the more generous M.2 layout: four slots in all.
+The NVMe slots require some disassembly too. One major reason I picked the “lower-tier” Ryzen 7 H 255 model is that while the CPU is modest, its M.2 allocation is generous—four slots in total:
 
-- Two ×4 slots on the underside of the motherboard.
-- One ×4 slot on top for the system drive.
-- One ×1 slot beside the system drive, left empty at the factory.
+- Two PCIe ×4 slots on the underside of the motherboard;
+- One PCIe ×4 slot on top for the boot drive;
+- One PCIe ×1 slot right next to the boot drive, left empty from the factory.
 
-If you only add two NVMe SSDs, you just open the bottom cover and remove two screws. To use the ×1 slot as well, you have to pull out the motherboard drawer, remove three screws from the cooling fan, then two more from the system-drive cover before inserting the SSD. A little more work, but a few screws are hardly going to defeat a middle-aged man.
+If you only want to add two NVMe drives, you just pop the bottom cover and undo two screws. To populate that fourth ×1 slot as well, you have to slide out the motherboard drawer, remove three screws holding the cooling fan, undo two more screws on the top SSD heatsink cover, and then seat the drive. It takes a bit of work, though turning a few screws is hardly an obstacle.
 
-## The OS: Wipe Windows, Install Ubuntu
+## OS Setup: Wipe Windows, Install Ubuntu
 
-There were several configurations at checkout. The cheapest was a barebones model with no RAM or drive, at a little over ¥2,000. I chose the version with 32 GB of RAM and a 500 GB system drive. Buying the memory separately would have cost more, so the complete machine made better sense. It came to about ¥4,800.
+Beelink sells a few configurations at checkout. The cheapest is a barebones unit without RAM or storage for a little over ¥2,000. I bought the bundle with 32 GB of RAM and a 500 GB system SSD for about ¥4,800, since buying 32 GB of RAM separately right now would have cost more than the bundled difference.
 
-It ships with Windows 11 Pro. I had no intention of using that, so I wiped it and installed Ubuntu.
+The machine ships with Windows 11 Pro preinstalled. I had no use for that, so I wiped the drive immediately and installed Ubuntu.
 
-You can also install fnOS, a NAS operating system from China. Friends tell me its user experience is good, among the better third-party NAS systems. I did not want to spend time on that, and I do not need elaborate media features. I just need somewhere to put files: set up RAID, enable an SMB share, mount it locally. Ubuntu is enough.
+You can also install fnOS. Friends who use it say the user experience is polished and ranks among the better third-party NAS operating systems available today. I didn't feel like learning another appliance UI, and I don't need media-center bells and whistles. I just need storage: build the RAID arrays, export an SMB share, and mount it locally. Stock Ubuntu handles that without fuss.
 
-If you want a full NAS appliance experience, with something like Synology DSM, fnOS may be a better fit. I have not tested it myself. My understanding is that Beelink also manufactures fnOS's own hardware, making it something close to a first-party platform.
+If you want a turnkey NAS experience closer to Synology DSM, fnOS is probably the better route. I haven't tested it myself, but from what I gather, fnOS's own branded NAS hardware is manufactured by Beelink anyway, making the ME Pro quasi-first-party hardware for it.
 
-## PC NAS: A Different Category
+## PC NAS: A Hybrid Category
 
-Strictly speaking, I do not think these machines are traditional NAS boxes anymore. They combine a PC and a NAS. We might as well give the category a name: PC NAS.
+Strictly speaking, machines like this aren't traditional NAS appliances anymore. They are closer to a PC and a NAS in one box—call it a “PC NAS.”
 
-A traditional NAS mostly handles storage, with so little processing power that you can almost ignore it. The CPUs in my three Synology models were either dual-core Ryzen chips or quad-core Celerons, with 2–4 GB of RAM. What can you really do with that sort of bargain-basement configuration today? Essentially one thing: store files.
+Traditional NAS units only care about storage; their compute is negligible. Across my three Synology boxes, the CPUs are either dual-core embedded Ryzens or quad-core Celerons paired with 2 to 4 GB of RAM. By today's standards, what can you actually run on such anemic hardware? Pretty much one thing: file storage.
 
-![CPU specifications for the Synology DS918+, DS720+, and DS923+](synology-specs.webp)
+![CPU specification comparison across the Synology DS918+, DS720+, and DS923+](synology-specs.webp)
 
-![Single-core and multi-core performance comparisons for the three Synology models](synology-scores.webp)
+![Single-core and multi-core benchmark comparison across the three Synology models](synology-scores.webp)
 
-The newer machines from Synology, Beelink, and Minisforum have processing power you can actually use. The H255 is an eight-core, sixteen-thread Zen 4 processor. That is enough to get some work done.
+The newer crop of NAS boxes—whether from Synology, Beelink, or Minisforum—finally ships with usable CPU performance. The Ryzen 7 H 255 is an 8-core, 16-thread Zen 4 chip, which is plenty capable of running real workloads alongside storage.
 
-![ME Pro topology showing the H255, NVMe SSDs, hard drives, 10GbE adapter, and storage pools](topology.webp)
+![Hardware topology of the ME Pro showing the Ryzen 7 H 255, NVMe drives, HDDs, 10GbE NIC, and storage pools](topology.webp)
 
-![Ryzen 7 H 255 specifications and performance compared with other processors](h255.webp)
+![Ryzen 7 H 255 specifications and benchmark comparison against other processors](h255.webp)
 
-Honestly, if I did not already have the GTR9 Pro, I would probably have bought an N5 Max with an AMD AI Max 395/495, handling storage and compute in one machine.
+Honestly, if I didn't already own the GTR9 Pro, I probably would have bought the Minisforum N5 Max with an AMD Ryzen AI Max 395/495 and let a single box handle both storage and heavy compute.
 
-Photo storage and browsing are a good use for a NAS with some processing power. Synology Photos is fairly limited. If you want a self-hosted photo library approaching the Apple Photos experience, the machine needs some compute behind it. I run Immich for that. One complication is its PostgreSQL dependency: it needs vector extensions, not just a plain PostgreSQL installation. pgvector remains the foundation; [the current Immich setup also uses VectorChord, which depends on it](https://docs.immich.app/administration/postgres-standalone/).
+One natural workload for a NAS with real CPU headroom is self-hosted photo management. Synology Photos is fairly bare-bones; if you want a self-hosted photo library that feels close to Apple Photos, the server needs some compute for indexing and ML tasks. I run Immich for this. The catch with Immich is that it requires PostgreSQL—and not just vanilla PostgreSQL, but one equipped with vector search extensions. `pgvector` is still the foundation, and [current Immich deployments also use VectorChord on top of it](https://docs.immich.app/administration/postgres-standalone/).
 
-Most people would put together a Docker Compose deployment. As someone who does this for a living, I naturally use my own tools: Pigsty, which I developed, deploys PostgreSQL in one step, with Immich running on top. That is where I keep my photo library. Here are the [deployment instructions](https://pigsty.cc/docs/app/immich/).
+Most people spin it up with Docker Compose. Since I maintain Pigsty, I naturally used my own stack: a one-command PostgreSQL deployment via Pigsty with Immich running on top, which now hosts my entire photo library. Here are the [deployment docs](https://pigsty.cc/docs/app/immich/).
 
-[Pigsty v4.4](/en/pigsty/v4.4/): Immich support.
+[Pigsty v4.4 Release](/en/pigsty/v4.4/): Native Immich support
 
-![Pigsty's Immich deployment documentation and PostgreSQL configuration](immich-docs.webp)
+![Pigsty documentation page showing Immich deployment and PostgreSQL configuration](immich-docs.webp)
 
-![Travel photos and landscape thumbnails in my self-hosted Immich library](immich-library.webp)
+![Travel photos and landscape thumbnails in the self-hosted Immich library](immich-library.webp)
 
-## What Do I Actually Use a NAS For?
+## What Do I Actually Keep on a NAS?
 
-That leaves a basic question: what is a NAS for?
+Which brings us back to a basic question: what do you actually use a NAS for?
 
-Most people use one as their own file storage service: movies, photos, source material. People working in film and video have plenty of use for one too; footage has to live somewhere. The same applies to me.
+Most people treat a NAS as a private cloud drive for movies, photos, and raw footage. Video creators use them heavily because camera footage has to live somewhere, and my use case isn't much different.
 
-My DS923+ has about 26 TB of usable space, almost exactly enough for all my data—roughly 25 TB after deduplication. With a complete, authoritative copy on the Synology, I chose no redundancy on the ME Pro and used RAID 0 instead:
+My Synology DS923+ provides about 26 TB of usable capacity, which is just enough to hold all my primary data (roughly 25 TB after deduplication). Because the Synology holds a complete, authoritative copy, I skipped parity on the ME Pro and striped the drives in RAID 0:
 
-- A 30 TB pool from two 16 TB drives, holding the files from the Synology and things that previously did not fit.
-- An 8 TB pool from two 4 TB drives, holding private-tracker data, video-editing footage, and project files.
+- **30 TB pool (two 16 TB HDDs):** mirrors the files from the Synology, plus overflow data that previously didn't fit;
+- **8 TB pool (two 4 TB HDDs):** holds private-tracker datasets alongside video-editing footage and project files.
 
-Its biggest contribution, though, is freeing the 8 TB of flash storage in each of my two main computers, the M1 Max and M5 Max, for coding. Apple's SSDs might as well be made of gold. Hard drives are much cheaper, so cold data belongs on the NAS.
+Its biggest payoff, though, is freeing up the 8 TB internal SSDs on both of my daily-driver Macs (an M1 Max and an M5 Max) so that flash storage can stay dedicated to coding work. Apple prices internal flash storage like solid gold; spinning rust in a NAS is a much better place for cold data.
 
-![File index statistics: about 51.7 million entries and 45.9 million regular files, totaling 68.43 TB of logical data](files.webp)
+![File index statistics showing roughly 51.7 million entries, 45.91 million regular files, and 68.43 TB of logical data](files.webp)
 
-## What Will My Next Computer Be?
+## What's Next on the Hardware List?
 
-There are now six computers on my home network. I am glad I did not sell the older ones: in the age of agents, they have all found a second life.
+I now have six computers running on my home LAN. I'm glad I never sold off the older ones for scrap value—in the AI agent era, every one of those older machines has found a second life.
 
-I still have some old equipment and have been thinking about how to reuse it:
+I still have a couple of older systems sitting around that I've been thinking about repurposing:
 
-1. An X99 gaming desktop with what was a top-end CPU in 2019, 32 GB of RAM, and an RTX 2080 Ti.
-2. A Dell R730 server with sixteen 16 GB ECC DIMMs, two CPUs totaling 36 cores and 72 threads, and a 3.2 TB PCIe NVMe SSD.
+1. An old X99 gaming rig with a 2019-era flagship CPU, 32 GB of RAM, and an RTX 2080 Ti.
+2. A Dell PowerEdge R730 server with sixteen 16 GB ECC DIMMs (256 GB total), dual CPUs totaling 36 cores and 72 threads, and a 3.2 TB PCIe NVMe SSD.
 
-Throwing those parts away would be a shame. Together, they could make a perfectly decent machine. The main problems are noise and power consumption. My entire rack plus monitor normally draws about 400 W, or 700–800 W under full load. A big server alone can draw that much at full load.
+Throwing those parts out would be a waste, and combining them would yield a capable machine. The catch is noise and power draw. Right now, my entire rack plus monitor idles around 400 W and peaks around 700–800 W under full load. A 2U rack server can burn that much power all by itself under load.
 
-More to the point, my current setup is almost silent. There is some noise when the hard drives are busy, but I can live with that. It sits beside me and, in this weather, doubles as a heater. Server fan noise would be intolerable.
+More importantly, my current rack is nearly silent—aside from some faint drive chatter during heavy seeks, which doesn't bother me at all. It sits right next to my desk and doubles as a space heater in cold weather. Living next to screaming server fans is a non-starter.
 
-I considered making the old hardware quieter. Looking at workstations from a decade ago, the Dell T7910 and HP Z840 towers seemed promising. I could buy one, move over the R730's two CPUs and sixteen DIMMs, and add the GPU and PCIe storage card. I might even experiment with some old Optane or Micron X100 hardware—interesting used enterprise gear that has become cheap enough to play with.
+I looked into transplanting those parts into a quieter chassis. Decade-old dual-socket workstation towers like the Dell Precision T7910 or HP Z840 fit the bill: I could pick up a bare chassis, move over the R730's dual CPUs and 16 DIMMs, drop in the GPU and PCIe NVMe card, and maybe tinker with some Intel Optane drives or a Micron X100—prime retired enterprise surplus hardware.
 
-But after thinking it through, I could not identify much I actually needed that machine for.
+When I thought it through, though, I couldn't come up with a workload that actually needed that box.
 
-What I really want now comes down to two machines.
+If I'm being honest, there are only two machines I really want right now.
 
-The first is a Mac Studio with an M5 Ultra and 512 GB of unified memory. That much memory would let me run models in the GLM-5, GLM-5.3, and GLM-5.3 Flash class locally at a reasonable speed, perhaps even uncensored models.
+The first is a Mac Studio with an M5 Ultra and 512 GB of unified memory. Half a terabyte of unified memory is enough to run GLM-5, GLM-5.3, and GLM-5.3 Flash-class models locally at usable token speeds, including uncensored weights.
 
-Some context: I already have Zhipu's v1 Max GLM Coding Plan, which costs me next to nothing. There is ¥16,000 sitting in my Zhipu account, enough to pay for years of subscriptions. I have more than enough capacity, and the models are capable. Yet for personal-assistant work, even free credits would not make me comfortable handing it to a cloud service. [What ZCode did to my repository was warning enough](/en/ai/zcode-upload/).
+Some context here: I already have Zhipu's v1 Max GLM Coding Plan, which costs next to nothing for the volume it provides, plus ¥16,000 sitting in my Zhipu account balance—enough to cover years of subscriptions. Cloud quota and model capability aren't the issue. Even with free cloud credits, though, I am not comfortable handing a personal assistant with deep local access over to a cloud API; [what ZCode did was warning enough](/en/ai/zcode-upload/).
 
-I want one box running an always-on, unlimited, entirely local dispatcher: an assistant that assigns all the work and handles some everyday tasks itself. I think that should be my next computer.
+What I want is a single box running an always-on, uncapped, strictly local dispatcher—an assistant that routes tasks across my fleet and handles routine jobs itself. That will probably be my next computer.
 
-The second might be another top-end AMD desktop with a good GPU. If RTX 5090 or RTX Pro 6000 prices ever become reasonable, I would like one. I could kick myself for not buying a card a few months ago when prices were still sensible.
+The second machine would be a top-end AMD desktop paired with a serious GPU. If street prices on the RTX 5090 or RTX Pro 6000 ever come back down to earth, I'd love to pick one up. I'm still kicking myself for not buying a card a few months ago when pricing was reasonable.
 
-The remastered version of *The Witcher 3* has just arrived, with a new expansion, *The Witcher 4*, and other GPU-hungry games in the queue. Running them on my old 2080 Ti is painful. What I would most like is a breakthrough in NVIDIA drivers for Apple hardware—or someone finding a way to make it work—so I could attach an NVIDIA eGPU to a Mac or the GTR9 Pro and play.
+The remastered *Witcher 3* just came out, and with a new expansion, *The Witcher 4*, and other GPU-heavy titles lined up, nursing my old RTX 2080 Ti along is getting painful. What I'd really love to see is a breakthrough in NVIDIA driver support on Apple Silicon—or a community workaround—so I could hang an NVIDIA eGPU off a Mac or the GTR9 Pro and game on that.
 
-Those are projects for another day. With the setup where it is now, the DS923+ and ME Pro should cover me for another five years. I expect to leave NAS purchases alone for that long. Any further storage experiments will probably involve old Optane or Micron X100 hardware.
+Anyway, that is all for another day. Between the Synology DS923+ and the Beelink ME Pro, my storage setup is set for the next five years. I doubt I'll buy another NAS during that stretch; any storage tinkering from here on out will probably just be playing with old Intel Optane or Micron X100 drives.
 
-## Advice for Anyone Considering a NAS
+## Closing Advice for NAS Buyers
 
-That is about it. A few thoughts for anyone shopping for a NAS.
+That about covers it. To wrap up, a few practical takeaways if you are shopping for a NAS:
 
-If you really do not want to get your hands dirty, Synology is still my first choice. The software is mature, the ecosystem is excellent, and drive installation is wonderfully easy: not a single screw to turn. But the premium is excessive. For the same money, you get a bargain-basement CPU and gigabit Ethernet, which feels frankly insulting. Still, it is reliable and convenient.
+If you don't want to tinker and just want an appliance that works, Synology is still the best option on the market. DSM is mature, the package ecosystem is well-integrated, and the tool-free drive bays don't require turning a single screw. The hardware markup, however, is brutal: for the same money, you get an anemic CPU and 1GbE networking, which feels borderline insulting. You are paying strictly for peace of mind.
 
-If you are willing to tinker a little, a machine like the ME Pro is well worth considering. Calling it just a NAS undersells it; PC NAS is a better description. For a conventional NAS experience, install fnOS. If all you want is a storage server, have Codex help work through the configuration, then mount the shares on your devices. It is not particularly hard.
+If you are willing to get your hands dirty, hardware like the Beelink ME Pro is much more interesting. Calling it a NAS undersells it; it is really a PC NAS. If you want an appliance UI, install fnOS. If you just need a fast storage server, let Codex walk you through the Linux storage and SMB configuration and mount the shares on your workstations—it takes very little effort.
 
-I want both: a dependable, near-enterprise appliance and an environment where I can experiment freely with open-source software. So I bought one of each.
+As for me, I wanted both: a hands-off, near-enterprise appliance for my primary data, and an open box where I can tinker and run whatever open-source stack I like. Buying one of each solved the problem cleanly.
