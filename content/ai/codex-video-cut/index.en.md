@@ -40,9 +40,9 @@ I've already posted the finished video on WeChat Channels. Honestly, it exceeded
 
 What surprised me most was how it went about the work. It didn't have a speech recognition tool available, so it downloaded a Qwen ASR model, ran it locally, and transcribed everything I said. It drove the whole process itself: sampling video frames to inspect the footage, extracting audio, transcribing speech, checking and correcting the text, creating subtitles, aligning them with the timeline, then cutting, assembling, and exporting the video.
 
-![Codex operating Final Cut Pro to edit, subtitle, and export the video](02-en.webp)
+![Codex operating Final Cut Pro to edit, subtitle, and export the video](02.webp)
 
-![Video, subtitles, transcripts, and project files produced by the editing task](03-en.webp)
+![Video, subtitles, transcripts, and project files produced by the editing task](03.webp)
 
 I kept working on the same computer while it operated Final Cut Pro in the background, smoothly handling the job on its own. All I did was copy the videos over and give Codex that prompt.
 
