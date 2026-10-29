@@ -12,7 +12,9 @@ On August 26, Amazon made it official: AWS has signed a definitive agreement to 
 
 One sentence in the announcement was particularly well crafted: “We are not acquiring the DuckDB open-source project.” That is true. It is also the entire trick behind the deal: **the project stays with the foundation; the people become ours.**
 
-![Official announcement that DuckLabs is joining AWS](acquisition.webp)
+[![Official announcement that DuckLabs is joining AWS](acquisition-en.webp)](https://x.com/duckdb/status/2092598676439044577)
+
+*Official DuckLabs announcement ([X post](https://x.com/duckdb/status/2092598676439044577); [full announcement](https://ducklabs.com/news/2026/08/26/ducklabs-to-join-aws)).*
 
 First, some background. DuckLabs is an academic spin-off from CWI, the Dutch national research institute for mathematics and computer science in Amsterdam. Hannes Mühleisen and Mark Raasveldt began building DuckDB at CWI in 2018, then founded the company around it.
 
@@ -20,11 +22,17 @@ DuckLabs has roughly 30 people, no VC funding, and no shareholders beyond its fo
 
 ## The Timing
 
-The most revealing part of this acquisition is its timeline. On August 17, DuckDB published a preview of version 2.0, introducing the new Quack client protocol and concurrent reads and writes across multiple processes. Nine days later, on August 26, AWS announced the acquisition.
+The most revealing part of this acquisition is its timeline. On August 17, DuckDB published [a preview of version 2.0](https://duckdb.org/2026/08/17/duckdb-20-highlights), introducing the new Quack client protocol and concurrent reads and writes across multiple processes. Nine days later, on August 26, AWS [announced the acquisition](https://ducklabs.com/news/2026/08/26/ducklabs-to-join-aws).
 
 Those nine days say more than the announcement itself. Until now, DuckDB has been an in-process embedded library: wonderfully useful, but not something you could directly package and sell. Add a client protocol and it is no longer just a library. It becomes a server that can be hosted, metered, and dropped into a cloud console.
 
-![DuckDB 2.0 preview](v2-preview.webp)
+[![DuckDB 2.0 preview](v2-preview-en.webp)](https://x.com/duckdb/status/2089411219157561779)
+
+*Official DuckDB X preview ([post](https://x.com/duckdb/status/2089411219157561779); [full DuckDB 2.0 highlights](https://duckdb.org/2026/08/17/duckdb-20-highlights)).*
+
+*My August 18, 2026 comment (translated from Chinese; [original screenshot](v2-preview.webp)):*
+
+> DuckDB 2.0 is coming. I’ve followed it closely and been optimistic about it for years. PostgreSQL is still my first choice, but DuckDB is a clear second. I see it as the only potential challenger to PostgreSQL, because it too has a thriving extension ecosystem.
 
 Embedded DuckDB is a developer tool. DuckDB with a protocol is a money printer for cloud vendors. AWS chose to move just as the duck grew wings. You may call that a coincidence; I do not.
 
@@ -50,7 +58,9 @@ MySQL's people and project were sold together to Sun for $1 billion, then Oracle
 
 AWS has chosen the most polished version of this maneuver. Remember when Elastic changed its license and accused AWS of “strip mining”? AWS was forced to fork OpenSearch and later donated it to the Linux Foundation. It took the criticism and learned its lesson. This time, the script is airtight: the project is untouched; it stays with the foundation; the charter guarantees the MIT license forever; AWS merely hires every core developer. That closes off accusations of swallowing an open-source project while still putting the roadmap firmly in AWS's hands. Last decade, cloud vendors strip-mined open source. This decade, they buy upstream and put it on the payroll.
 
-![DuckDB's pledge that its open-source projects will remain unchanged](foundation.webp)
+[![DuckDB's pledge that its open-source projects will remain unchanged](foundation-en.webp)](https://ducklabs.com/news/2026/08/26/ducklabs-to-join-aws#what-will-remain-the-same)
+
+*DuckLabs on [what will remain the same](https://ducklabs.com/news/2026/08/26/ducklabs-to-join-aws#what-will-remain-the-same).*
 
 To be fair, this is a respectable outcome for DuckLabs. As early as 2022, the company acknowledged that a business based on consulting and support contracts could not scale. The promises accompanying this announcement are meaningful improvements: a larger role for the foundation, an advisory council for commercial users, opening extension signing so third-party organizations can publish extensions, and—in DuckLabs' own words—the removal of commercial pressure to convert free users into paying support customers.
 
@@ -96,9 +106,13 @@ The second is the era itself. DuckDB gets more than three million downloads a da
 
 When I integrated DuckDB into Pigsty a few years ago, it was still a niche toy for database geeks. I argued early on that DuckDB was the most promising database after PostgreSQL. Before the words had left my mouth, AWS cast the same vote with its checkbook.
 
-![The author's assessment of PostgreSQL and DuckDB](db-ranking.webp)
+[![The author's assessment of PostgreSQL and DuckDB](db-ranking-en.webp)](db-ranking.webp)
 
-![Database extensibility assessment from PGCon.Dev 2024](extensibility.webp)
+*My August 13, 2024 post (English translation of the Chinese original; [original screenshot](db-ranking.webp)): [“Whoever Integrates DuckDB Best Wins the OLAP Database World”](/en/pg/pg-duckdb/).*
+
+[![Database extensibility assessment from PGConf.dev 2024](extensibility-en.webp)](extensibility.webp)
+
+*My May 30, 2024 post (English translation of the Chinese original; [original screenshot](extensibility.webp)), referring to Abigale Kim’s [PGConf.dev session](https://www.pgevents.ca/events/pgconfdev2024/schedule/session/49-anarchy-in-the-database-a-survey-and-evaluation-of-database-management-system-extensibility/) and [slides](https://abigalekim.github.io/assets/pdf/Anarchy_in_the_Database_PGConfDev2024.pdf).*
 
 The next act is easy to predict. AWS will put a managed Duck Stack on the market. Hannes has already written the pitch: let users depend on the Duck Stack without having to operate a database themselves.
 

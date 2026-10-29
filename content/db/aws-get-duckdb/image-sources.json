@@ -1,0 +1,75 @@
+{
+  "generated_at": "2026-10-29",
+  "purpose": "English image copies used by index.en.md for content/db/aws-get-duckdb.",
+  "images": [
+    {
+      "file": "acquisition-en.webp",
+      "original_file": "acquisition.webp",
+      "method": "Browser screenshot of the official English X post, rendered from its unmodified public HTML with English locale and UTC timezone.",
+      "source_urls": [
+        "https://x.com/duckdb/status/2092598676439044577",
+        "https://ducklabs.com/news/2026/08/26/ducklabs-to-join-aws",
+        "https://ducklabs.com/press/ducklabs-to-join-amazon-web-services/"
+      ],
+      "source_verified": true,
+      "original_post_url": "https://x.com/duckdb/status/2092598676439044577",
+      "sha256": "70732737266206a1fdae89451c4b5564f24525f6587d66bfb845292dd8843f72",
+      "original_sha256": "679ca3ececcf754e13c231b1fa79fb4b058216814ed90f1a3e6afcc4a278d974"
+    },
+    {
+      "file": "v2-preview-en.webp",
+      "original_file": "v2-preview.webp",
+      "method": "Browser screenshot of the official English X post, rendered from its unmodified public HTML with English locale and UTC timezone.",
+      "source_urls": [
+        "https://x.com/duckdb/status/2089411219157561779",
+        "https://duckdb.org/2026/08/17/duckdb-20-highlights"
+      ],
+      "source_verified": true,
+      "author_commentary": "The Chinese author commentary is translated in index.en.md because it was not part of the official English X screenshot.",
+      "original_post_url": "https://x.com/duckdb/status/2089411219157561779",
+      "sha256": "e751fd544ebad9bea2e3027d2c3885e49ca4d36b2c8cc1225fcd972e7f9e06a3",
+      "original_sha256": "9e4dc5a74ce53d459e8c3365c3a0e17b508f4c14f48ea70a3fd47d98df616ac7"
+    },
+    {
+      "file": "foundation-en.webp",
+      "original_file": "foundation.webp",
+      "method": "Screenshot of the public English DuckLabs page section “What will remain the same”.",
+      "source_urls": [
+        "https://ducklabs.com/news/2026/08/26/ducklabs-to-join-aws#what-will-remain-the-same"
+      ],
+      "source_verified": true,
+      "sha256": "6c5392bb47704f3113ebaf7060842121318d4b7a3d32a08b893c4b454536fa62",
+      "original_sha256": "3791b6127b65dc6486b0c661e5f2c7ae47c0273fb8df7e2f8054d9dfc1c64965"
+    },
+    {
+      "file": "db-ranking-en.webp",
+      "original_file": "db-ranking.webp",
+      "method": "English translation reconstruction generated from the Chinese original screenshot; the image is labeled as a translation.",
+      "source_urls": [
+        "/en/pg/pg-duckdb/"
+      ],
+      "source_verified": true,
+      "original_post_url": null,
+      "note": "The exact X permalink for the author’s August 13, 2024 post could not be verified. The linked article is the associated English source/context page, and the Chinese screenshot remains linked in index.en.md.",
+      "translated_text": "After PostgreSQL, DuckDB is the DBMS I’m most optimistic about—the rising star of analytics. Just as it did with last year’s race to build vector extensions, the PostgreSQL ecosystem has taken an early lead in the race to integrate DuckDB. Even the DuckDB team has joined in. See: “Whoever Integrates DuckDB Best Wins the OLAP Database World.”",
+      "sha256": "c4d53d1d3e72e3d8f34f2cae7f864f87253af0d7c99df298e8a68a106da6a027",
+      "original_sha256": "4f6270d1a1aaa7c1881ee771abd3193c84898567830694ba02b53090cedb370a"
+    },
+    {
+      "file": "extensibility-en.webp",
+      "original_file": "extensibility.webp",
+      "method": "English translation reconstruction generated from the Chinese original screenshot; the image is labeled as a translation.",
+      "source_urls": [
+        "https://www.pgevents.ca/events/pgconfdev2024/schedule/session/49-anarchy-in-the-database-a-survey-and-evaluation-of-database-management-system-extensibility/",
+        "https://abigalekim.github.io/assets/pdf/Anarchy_in_the_Database_PGConfDev2024.pdf",
+        "https://youtu.be/U7v0fubktoY"
+      ],
+      "source_verified": true,
+      "original_post_url": null,
+      "note": "The exact X permalink for the author’s May 30, 2024 post could not be verified. The Chinese screenshot remains linked in index.en.md; the listed URLs are the referenced PGConf.dev talk, slides, and recording.",
+      "translated_text": "PGConf.dev 2024 had a fascinating talk by CMU’s @abigale_kim, surveying database extensibility and compatibility between PostgreSQL extensions. Unsurprisingly, PostgreSQL leads the field in extensibility, followed by DuckDB. These are also the two DBMSs I’m most optimistic about.",
+      "sha256": "aef4a1f9536a05fec9fbec948c2f62c865f7716a7d31e631bb66398b68716f2b",
+      "original_sha256": "6b36af0f9186333208106f04bd410244722f6f93eb3b4b6b599612850207902a"
+    }
+  ]
+}
