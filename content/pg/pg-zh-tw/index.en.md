@@ -45,7 +45,16 @@ Starting with PG 19, an automated translation and tracking workflow is also in p
 
 The shortcut for Traditional Chinese is to run the Simplified Chinese files through a converter like OpenCC. That falls short because mainland China and Taiwan use different technical vocabularies. Dictionary-based conversion catches some common words, but what it misses or mangles reads awkwardly to engineers in Taiwan. A few everyday examples:
 
-![Technical terminology differences between mainland China and Taiwan for database, server, memory, file, default, field, transaction, and thread](terms.webp)
+| English | Mainland China | Taiwan |
+| --- | --- | --- |
+| Database | 数据库 | 資料庫 |
+| Server | 服务器 | 伺服器 |
+| Memory | 内存 | 記憶體 |
+| File | 文件 | 檔案 |
+| Default | 默认 | 預設 |
+| Field | 字段 | 欄位 |
+| Transaction | 事务 | 交易 |
+| Thread | 线程 | 執行緒 |
 
 Instead of mechanical conversion, this Traditional Chinese edition was generated from the revised Simplified Chinese base, with regional terminology reviewed and adjusted across the catalog. I settled the term mappings one by one with help from Claude and Codex, and the overall result is solid. Because both editions come from the same base, they share the same structure, tone, and phrasing conventions, and will be updated together going forward.
 
