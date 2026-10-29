@@ -32,7 +32,7 @@ Strictly speaking, the Li Auto L8 isn't a pure battery EV, but an **extended-ran
 
 ![The Li Auto L8 I rented for the Huangshan road trip](li-l8.webp)
 
-![The Li Auto L8 listing and specifications page in the CAR Inc. rental app](rental.webp)
+![The Li Auto L8 listing and specifications page in the CAR Inc. rental app](rental-en.webp)
 
 After three days behind the wheel, my verdict comes down to two words: **genuinely solid.**
 
