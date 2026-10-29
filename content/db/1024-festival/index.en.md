@@ -88,7 +88,7 @@ Do not let the tech bubble fool you: real-world AI adoption in production is far
 
 [AI Adoption Isn't as Deep as You Think](/en/ai/funnel/)
 
-![A five-tier funnel showing levels of AI adoption depth](funnel.webp)
+![A five-tier funnel showing levels of AI adoption depth](funnel-en.webp)
 
 On this playing field, everyone started from scratch. Even the most battle-tested Claude Code power users on earth have less than two years under their belts. Those two years of hands-on intuition have already opened an order-of-magnitude productivity gap over traditional developers—but if you get your hands dirty now, that lead is still completely catchable.
 
