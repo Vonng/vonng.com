@@ -44,7 +44,8 @@ Another saved its users' conversations and coding sessions with its own model, t
 
 Then come the relay services. The report describes a secondary market: proxy networks that sell Claude access to users in unsupported regions while saving their conversations with Claude and selling them to labs. One lab's distillation pipeline included user conversations purchased from “third-party data providers.” Another set up its own relay service through a shell company with no apparent connection to the parent. It sold only Anthropic and OpenAI models, no Chinese models—not even its own. I hardly need to explain what that relay service was for.
 
-![Screenshot of a post describing purchased LLM relay data and exposed credentials](buy.webp)
+<blockquote class="twitter-tweet" data-lang="en" data-dnt="true"><p lang="en" dir="ltr">I bought a Fable dataset from one of the top Chinese LLM routers yesterday. <br><br>With just 6TB data, I can take over 7 Chinese/CIS gov entities &amp; 19 top Chinese firms like Xiaomi, Huawei, NIO, Minimax using SSH keys, VPN configs, Aliyun keys, GitLab tokens sent to the router. <a href="https://t.co/SpX9zDJ9zJ">https://t.co/SpX9zDJ9zJ</a> <a href="https://t.co/n6Xln0ROei">pic.twitter.com/n6Xln0ROei</a></p>&mdash; Chaofan Shou (@shoucccc) <a href="https://x.com/shoucccc/status/2098169782541631871">September 10, 2026</a></blockquote>
+<script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
 
 Who were the victims? These forwarded, replayed, and resold interactions contained sensitive information belonging to individuals and large multinational corporations: names, email addresses, and company data from hundreds of end users, in at least twelve languages.
 
