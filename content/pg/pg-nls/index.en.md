@@ -99,7 +99,7 @@ The following exhibits come from the `REL_19_STABLE` Simplified Chinese catalogs
 | Bug-report footer: 14 catalogs | `Report bugs to` | `臭虫报告至 <%s>.` | Report bedbugs to the address; mistranslates a software bug as an insect. |
 | Bug-report footer: 3 catalogs | `Report bugs to` | `报告缺陷: <%s>.` | Report defects to the address; uses the correct sense of bug. |
 | `pg_ctl`: missing operating-system error | `invalid binary "%s": %m` | `无效的二进制码 "%s"` | Invalid binary code "%s"; drops `%m` and therefore the operating-system error text. |
-| `ecpg`: nonexistent second argument | `descriptor %s bound to the default ...` | `绑定到默认连接%2$s的描述符%1$s不存在` | Descriptor %1$s bound to default connection %2$s does not exist; requests a second argument that the source never supplies. |
+| `ecpg`: nonexistent second argument | `descriptor %s bound to the default ...` | `绑定到默认连接%2$s的描述符%1$s不存在` | Descriptor `%1$s` bound to default connection `%2$s` does not exist; requests a second argument that the source never supplies. |
 {.expand .wide caption="Exhibits 2–4: bedbugs, a missing error message, and an invented argument"}
 
 `Report bugs to` comes out as `臭虫报告至`: the word `臭虫` means the insect, not a software defect.
@@ -218,25 +218,25 @@ Surely one of them had already done the Chinese localization? Was there work I c
 I went and looked. Again and again, their `zh_CN.po` catalogs carried the same old mistranslations as upstream.
 Search for `臭虫` (bedbugs) or `内存溢出` (memory overflow) and there they were.
 
-The table below transcribes the ChatGPT research snapshot used for this article, covering Chinese projects and other PostgreSQL derivatives. It records what that report found at the time, not a fresh audit of these repositories. The recurring literal `臭虫报告至<%s>.` means "Report bedbugs to <%s>."
+The following table reproduces the article's historical ChatGPT research snapshot of Chinese projects and other PostgreSQL derivatives. The recurring literal `臭虫报告至<%s>.` means "Report bedbugs to <%s>."
 
 Except for YugabyteDB, paths are relative to `src/bin/` at the repository root. For example, `psql/po/zh_CN.po:2550` means line 2550 of `src/bin/psql/po/zh_CN.po`. YugabyteDB's row gives its full repository-relative path. The report says none of the listed entries had an obsolete (`#~`) or `fuzzy` flag.
 
-| Project | Public repository and inspected branch | Match location | Version retained |
+| Project | Public repository / branch | Match location | Retained wording |
 | --- | --- | --- | --- |
-| IvorySQL | `IvorySQL/IvorySQL`, `master` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
-| PolarDB for PostgreSQL | `polardb/PolarDB-for-PostgreSQL`, `POLARDB_17_STABLE` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
-| Tencent TBase | `Tencent/TBase`, `master` | `psql/po/zh_CN.po:2432` | Version with a fixed PostgreSQL bug-report email address; the address is truncated in the screenshot. |
-| Kunlun (public compute-node repository) | `zettadb/kunlun`, `main` | `psql/po/zh_CN.po:2656` | Version with a fixed PostgreSQL bug-report email address. |
-| openHalo | `HaloTech-Co-Ltd/openHalo`, `master` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
-| Apache Cloudberry | `apache/cloudberry`, `main` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
-| YugabyteDB | `yugabyte/yugabyte-db`, `master` | `src/postgres/src/bin/psql/po/zh_CN.po:2550` (full path) | `臭虫报告至<%s>.` |
-| Neon's PostgreSQL fork | `neondatabase/postgres`, `REL_17_STABLE_neon` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
-| OrioleDB's PostgreSQL fork | `orioledb/postgres`, `master` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
-| Postgres-XC | `postgres-x2/postgres-x2`, `master` | `psql/po/zh_CN.po:2044` | Version with a fixed PostgreSQL bug-report email address. |
+| IvorySQL | `IvorySQL/IvorySQL`<br>`master` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
+| PolarDB for PostgreSQL | `polardb/PolarDB-for-PostgreSQL`<br>`POLARDB_17_STABLE` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
+| Tencent TBase | `Tencent/TBase`<br>`master` | `psql/po/zh_CN.po:2432` | Fixed bug-report address: `pgsql-bugs@postgresql.`… (clipped in the screenshot). |
+| Kunlun<br>(public compute-node repository) | `zettadb/kunlun`<br>`main` | `psql/po/zh_CN.po:2656` | Fixed PostgreSQL bug-report address. |
+| openHalo | `HaloTech-Co-Ltd/openHalo`<br>`master` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
+| Apache Cloudberry | `apache/cloudberry`<br>`main` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
+| YugabyteDB | `yugabyte/yugabyte-db`<br>`master` | `src/postgres/src/bin/psql/po/zh_CN.po:2550` (full path) | `臭虫报告至<%s>.` |
+| Neon<br>(PostgreSQL fork) | `neondatabase/postgres`<br>`REL_17_STABLE_neon` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
+| OrioleDB<br>(PostgreSQL fork) | `orioledb/postgres`<br>`master` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
+| Postgres-XC | `postgres-x2/postgres-x2`<br>`master` | `psql/po/zh_CN.po:2044` | Fixed PostgreSQL bug-report address. |
 {.expand .wide caption="Historical ChatGPT research snapshot: which downstream databases retained the bug-report wording?"}
 
-Source: [original ChatGPT research screenshot](downstream.webp). Its embedded citation buttons do not expose their target URLs, and the fixed-address variants are not shown in full; neither has been reconstructed here.
+Source: [original ChatGPT research screenshot](downstream.webp); branch names and line numbers reflect the original snapshot.
 
 That is hard to let pass. What are the two most basic things a Chinese database is expected to ship?
 Chinese documentation and Chinese localization. Turning PostgreSQL's English errors into decent Chinese,

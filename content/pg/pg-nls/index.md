@@ -161,19 +161,19 @@ src/bin/psql/po/zh_CN.po
 
 | 项目 | 公开仓库与检查分支 | 命中位置 | 保留的版本 |
 | --- | --- | --- | --- |
-| IvorySQL | `IvorySQL/IvorySQL`，`master` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
-| PolarDB PostgreSQL | `polardb/PolarDB-for-PostgreSQL`，`POLARDB_17_STABLE` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
-| Tencent TBase | `Tencent/TBase`，`master` | `psql/po/zh_CN.po:2432` | 固定的 PostgreSQL 报错邮箱版本（截图中的地址仅显示到 `pgsql-bugs@postgresql.`）。 |
-| 昆仑数据库公开计算节点仓库 | `zettadb/kunlun`，`main` | `psql/po/zh_CN.po:2656` | 固定的 PG 报错邮箱版本。 |
-| openHalo | `HaloTech-Co-Ltd/openHalo`，`master` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
-| Apache Cloudberry | `apache/cloudberry`，`main` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
-| YugabyteDB | `yugabyte/yugabyte-db`，`master` | `src/postgres/src/bin/psql/po/zh_CN.po:2550`，此处为完整路径 | `臭虫报告至<%s>.` |
-| Neon 的 PostgreSQL 分支 | `neondatabase/postgres`，`REL_17_STABLE_neon` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
-| OrioleDB 的 PostgreSQL 分支 | `orioledb/postgres`，`master` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
-| Postgres-XC | `postgres-x2/postgres-x2`，`master` | `psql/po/zh_CN.po:2044` | 固定的 PG 报错邮箱版本。 |
+| IvorySQL | `IvorySQL/IvorySQL`<br>`master` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
+| PolarDB PostgreSQL | `polardb/PolarDB-for-PostgreSQL`<br>`POLARDB_17_STABLE` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
+| Tencent TBase | `Tencent/TBase`<br>`master` | `psql/po/zh_CN.po:2432` | 固定的 PostgreSQL 报错邮箱版本：`pgsql-bugs@postgresql.`…（截图截断）。 |
+| 昆仑数据库公开计算节点仓库 | `zettadb/kunlun`<br>`main` | `psql/po/zh_CN.po:2656` | 固定的 PG 报错邮箱版本。 |
+| openHalo | `HaloTech-Co-Ltd/openHalo`<br>`master` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
+| Apache Cloudberry | `apache/cloudberry`<br>`main` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
+| YugabyteDB | `yugabyte/yugabyte-db`<br>`master` | `src/postgres/src/bin/psql/po/zh_CN.po:2550`，此处为完整路径 | `臭虫报告至<%s>.` |
+| Neon 的 PostgreSQL 分支 | `neondatabase/postgres`<br>`REL_17_STABLE_neon` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
+| OrioleDB 的 PostgreSQL 分支 | `orioledb/postgres`<br>`master` | `psql/po/zh_CN.po:2550` | `臭虫报告至<%s>.` |
+| Postgres-XC | `postgres-x2/postgres-x2`<br>`master` | `psql/po/zh_CN.po:2044` | 固定的 PG 报错邮箱版本。 |
 {.expand .wide caption="当时的 ChatGPT 调研快照：哪些下游数据库还保留着旧译法？"}
 
-来源：[原始 ChatGPT 调研报告截图](downstream.webp)。这是历史调研记录，未作新的核验；截图中的引用按钮没有显示目标 URL，固定邮箱版本也未完整展示，这里不补写。
+来源：[原始 ChatGPT 调研报告截图](downstream.webp)；仓库分支与行号均按原始快照保留。
 
 这就有点绷不住了。做一个中国的国产数据库，最基本的两样东西是什么？一个是中文文档，一个是中文本地化。把 PG 的英文报错翻成像样的中文，让中国用户看得懂自己的数据库在说什么 —— 这是最低的那一档，总得做一下吧？
 

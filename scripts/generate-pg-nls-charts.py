@@ -101,7 +101,7 @@ def save(fig, filename, title):
 
 
 def main():
-    plt.rcParams.update({"font.family": "DejaVu Sans", "svg.fonttype": "none", "svg.hashsalt": "pg-nls-20260915"})
+    plt.rcParams.update({"font.family": ["DejaVu Sans", "sans-serif"], "svg.fonttype": "none", "svg.hashsalt": "pg-nls-20260915"})
     title = "PostgreSQL 19: translation coverage by language"
     fig, ax = canvas(10.4, len(LANGUAGES), title, "Languages represented across nearly all 28 catalogs · September 15, 2026")
     for row, (_, code, value) in enumerate(LANGUAGES):
