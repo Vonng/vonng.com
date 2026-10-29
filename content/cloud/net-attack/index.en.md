@@ -19,7 +19,7 @@ It requires no authentication and no prior privileges. A single crafted request 
 
 How bad did it get? Japanese Prime Minister Sanae Takaichi posted a warning on X herself[^2] urging site operators to patch. As one commenter put it: “Never thought I'd live to see a head of state tell me to install a patch.” Many assumed it was a parody. It wasn't—her own official PHP site had just been compromised.
 
-![Japanese Prime Minister Sanae Takaichi warning website operators about a critical PHP vulnerability](php.webp)
+[![Japanese Prime Minister Sanae Takaichi warning website operators about a critical PHP vulnerability](php-en.webp)](https://x.com/takaichi_sanae/status/2112890642590564386)
 
 PHP2Shell was just one piece of a brutal week. Put the past few days' security advisories side by side, and the entire foundation of modern software is taking fire at once:
 
@@ -92,7 +92,7 @@ Against automated discovery at this scale, any static defense that stops evolvin
 ## References
 
 [^1]: [PHP2Shell](https://watchtowr.com/intelligence/php-cve-2026-109618-faq/)
-[^2]: [Japanese Prime Minister Sanae Takaichi Warns of Critical PHP Vulnerability](https://abmedia.io/php-critical-rce-takaichi-warning)
+[^2]: [Sanae Takaichi's original post on X](https://x.com/takaichi_sanae/status/2112890642590564386); see [ABMedia's report](https://abmedia.io/php-critical-rce-takaichi-warning) for context.
 [^3]: [Node.js October 2026 Security Releases](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases)
 [^4]: [GitLab CVSS 10.0 Vulnerability (CVE-2026-110264)](https://thehackernews.com/2026/10/critical-gitlab-flaw-cvss-100-could.html)
 [^5]: [OpenCode Console Breach May Have Exposed Users' API Keys](https://thehackernews.com/2026/10/opencode-console-breach-may-have.html)
