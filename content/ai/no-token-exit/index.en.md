@@ -15,7 +15,7 @@ It took me until now to write this, because I spent the week pedaling all ten of
 
 The screenshot comes from the slides for a new course at Nanjing University. The red line reads: "**CS students without tokens should drop out immediately**." It spread across Bilibili, Weibo, Zhihu, and Tieba, and [the Zhihu thread about it](https://www.zhihu.com/question/2075868388124004913) collected hundreds of answers and climbed the trending list. Support and pushback both. The question nobody could get around: is telling students to buy their own tokens a "let them eat cake" move?
 
-![No Tokens? Drop Out. And That's Putting It Politely — What the Screenshot Left Out (figure 1)](screen.webp)
+![English translation of the course policy slide: buy your own tokens, with “drop out immediately” highlighted in red.](screen-en.webp)
 
 The course at the center of this is called Generative Software Engineering, offered for the first time in fall 2026, ungraded, pass/fail only. I fast-forwarded through the two lectures he has posted publicly, a bit over three hours of video. The class has exactly three rules:
 
