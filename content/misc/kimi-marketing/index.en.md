@@ -12,17 +12,25 @@ Moonshot AI released its latest model, Kimi K3.1 Pro, a couple of days ago.
 
 On paper, it was a strong release: its Artificial Analysis (AA) Intelligence Index jumped from 44 in the previous generation to 55, right on the heels of first-place Claude Opus 5.5. Yet within hours of launch, the rollout blew up on X (Twitter).
 
-It started when creator [@elshayib_](https://x.com/elshayib_) blew the whistle. In [a series of posts](https://www.techmeme.com/261025/p2), he shared screenshots of what he said was a promotional brief Kimi sent to creators (this is a one-sided account that remains unverified, and Kimi has not responded). According to the screenshots, creators had to submit drafts for approval before publishing, and [the brief supplied ready-made talking points](https://x.com/0xLogicrw/status/2113801452783284724) such as "Kimi is an open-source Opus 5.5 at one-fifth the price" and "China just gave everyone Opus 5.5 for free."
+It started when creator [@elshayib_](https://x.com/elshayib_) blew the whistle. In [a series of posts](https://x.com/elshayib_/status/2113710752741892476), he shared screenshots of what he said was a promotional brief Kimi sent to creators (this is a one-sided account that remains unverified, and Kimi has not responded). According to the screenshots, creators had to submit drafts for approval before publishing, and [the brief supplied ready-made talking points](https://x.com/elshayib_/status/2113734602032312731) such as "Kimi is an open-source Opus 5.5 at one-fifth the price" and "China just gave everyone Opus 5.5 for free."
 
-[![Screenshot posted by Elshayib of the promotional brief requiring draft approval before posting and instructing creators not to use a paid partnership label](brief.webp)](https://x.com/elshayib_/status/2113710752741892476)
+[![Elshayib's post showing a promotional brief requiring draft approval and instructing creators to omit the paid partnership label](brief-en.webp)](https://x.com/elshayib_/status/2113710752741892476)
 
-[![Screenshot posted by Elshayib of suggested talking points framing Kimi as a cheaper open-source alternative to Opus 5.5](narratives.webp)](https://x.com/elshayib_/status/2113734602032312731)
+Source: [Original post by @elshayib_](https://x.com/elshayib_/status/2113710752741892476).
 
-[![Screenshot posted by Elshayib of a direct message asking him to delete a comment criticizing the promotional brief](takedown.webp)](https://x.com/elshayib_/status/2113751173476049138)
+[![Elshayib's post showing suggested talking points framing Kimi as a cheaper open-source alternative to Opus 5.5](narratives-en.webp)](https://x.com/elshayib_/status/2113734602032312731)
 
-[![Screenshot posted by Elshayib of comparison talking points instructing creators to compare Kimi with Opus 5.5 and Astra on performance and cost](comparison.webp)](https://x.com/elshayib_/status/2113903850641842589)
+Source: [Original post by @elshayib_](https://x.com/elshayib_/status/2113734602032312731).
 
-The most damning instruction was [to skip the Paid Partnership label](https://www.implicator.ai/kimi-k3-1-pro-launch-hit-by-unverified-brief-telling-creators-to-skip-ad-labels/), omit links to the official website, and avoid tagging the official account. That way, a paid promotional post would look indistinguishable from an organic recommendation by an ordinary user.
+[![Elshayib's post showing a direct message asking him to delete a comment criticizing the promotional brief](takedown-en.webp)](https://x.com/elshayib_/status/2113751173476049138)
+
+Source: [Original post by @elshayib_](https://x.com/elshayib_/status/2113751173476049138).
+
+[![Elshayib's post showing instructions to compare Kimi with Opus 5.5 and Astra on performance and cost](comparison-en.webp)](https://x.com/elshayib_/status/2113903850641842589)
+
+Source: [Original post by @elshayib_](https://x.com/elshayib_/status/2113903850641842589).
+
+The most damning instruction was [to skip the Paid Partnership label](https://x.com/elshayib_/status/2113710752741892476), omit links to the official website, and avoid tagging the official account. That way, a paid promotional post would look indistinguishable from an organic recommendation by an ordinary user.
 
 What made the situation darkly funny was that around the time the brief leaked, a wave of blue-check accounts on X had already published [nearly identical "independent hands-on reviews"](https://www.google.com/search?q=https://x.com/search%3Fq%3D%22Chinese%20Opus%22%20Kimi). Some creators didn't even bother rewording the PR copy—they pasted it verbatim, only for users in the replies to call them out one by one with screenshots of the leaked brief: "Did you seriously post the PR prompt without changing a word?"
 
@@ -74,7 +82,7 @@ I know how this machinery works because a close friend used to run an MCN (multi
 
 Domestic users have been battered by these tactics for so many cycles that they take sifting through disguised ads for granted. Western developer communities operate on very different norms. When you post a technical take on X, the default assumption is that you are sharing your own firsthand experience and honest engineering judgment. When people discover that creators took money, hid the sponsorship, and copy-pasted identical talking points, it doesn't just torch their reputation—it also runs directly afoul of the [FTC's Endorsement Guides](https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking)—triggering an immediate backlash across the developer community.
 
-[![Screenshot of the Chinese translation of the FTC Endorsement Guides page stating that paid endorsements must disclose commercial relationships](ftc-guide.webp)](https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking)
+[Official FTC FAQ: The FTC's Endorsement Guides—What People Are Asking](https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking)
 
 In a Gresham's-law dynamic, as more people take money to pose as organic fans, bad actors drive out honest voices. Once readers have to wonder whether every technical post is a covert ad, the entire ecosystem rots.
 
