@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1008pt" height="748.8pt" viewBox="0 0 1008 748.8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <title>PostgreSQL 19: translation coverage by language</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>PostgreSQL 19: translation coverage by language</dc:title>
+    <dc:description>Historical snapshot: September 15, 2026. Source: babel.postgresql.org; data transcribed from the original Chinese chart in this article bundle.</dc:description>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>scripts/generate-pg-nls-charts.py (matplotlib)</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 748.8 
+L 1008 748.8 
+L 1008 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 322.56 662.688 
+L 947.52 662.688 
+L 947.52 119.808 
+L 322.56 119.808 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 322.56 129.849711 
+L 900.794019 129.849711 
+L 900.794019 150.56074 
+L 322.56 150.56074 
+z
+" clip-path="url(#p44de949036)" style="fill: #dce1e7"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 322.56 161.230058 
+L 900.794019 161.230058 
+L 900.794019 181.941087 
+L 322.56 181.941087 
+z
+" clip-path="url(#p44de949036)" style="fill: #dce1e7"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 322.56 192.610405 
+L 900.794019 192.610405 
+L 900.794019 213.321434 
+L 322.56 213.321434 
+z
+" clip-path="url(#p44de949036)" style="fill: #dce1e7"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 322.56 223.990751 
+L 900.794019 223.990751 
+L 900.794019 244.70178 
+L 322.56 244.70178 
+z
+" clip-path="url(#p44de949036)" style="fill: #dce1e7"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 322.56 255.371098 
+L 894.953271 255.371098 
+L 894.953271 276.082127 
+L 322.56 276.082127 
+z
+" clip-path="url(#p44de949036)" style="fill: #dce1e7"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 322.56 286.751445 
+L 871.59028 286.751445 
+L 871.59028 307.462474 
+L 322.56 307.462474 
+z
+" clip-path="url(#p44de949036)" style="fill: #dce1e7"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 322.56 318.131792 
+L 854.068037 318.131792 
+L 854.068037 338.842821 
+L 322.56 338.842821 
+z
+" clip-path="url(#p44de949036)" style="fill: #dce1e7"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 322.56 349.512139 
+L 842.386542 349.512139 
+L 842.386542 370.223168 
+L 322.56 370.223168 
+z
+" clip-path="url(#p44de949036)" style="fill: #dce1e7"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 322.56 380.892486 
+L 842.386542 380.892486 
+L 842.386542 401.603514 
+L 322.56 401.603514 
+z
+" clip-path="url(#p44de949036)" style="fill: #dce1e7"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 322.56 412.272832 
+L 819.023551 412.272832 
+L 819.023551 432.983861 
+L 322.56 432.983861 
+z
+" clip-path="url(#p44de949036)" style="fill: #dce1e7"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 322.56 443.653179 
+L 760.616075 443.653179 
+L 760.616075 464.364208 
+L 322.56 464.364208 
+z
+" clip-path="url(#p44de949036)" style="fill: #dce1e7"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 322.56 475.033526 
+L 731.412336 475.033526 
+L 731.412336 495.744555 
+L 322.56 495.744555 
+z
+" clip-path="url(#p44de949036)" style="fill: #a7b1bd"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 322.56 506.413873 
+L 731.412336 506.413873 
+L 731.412336 527.124902 
+L 322.56 527.124902 
+z
+" clip-path="url(#p44de949036)" style="fill: #dce1e7"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 322.56 537.79422 
+L 708.049346 537.79422 
+L 708.049346 558.505249 
+L 322.56 558.505249 
+z
+" clip-path="url(#p44de949036)" style="fill: #c93631"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 322.56 569.174566 
+L 684.686355 569.174566 
+L 684.686355 589.885595 
+L 322.56 589.885595 
+z
+" clip-path="url(#p44de949036)" style="fill: #dce1e7"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 322.56 600.554913 
+L 661.323364 600.554913 
+L 661.323364 621.265942 
+L 322.56 621.265942 
+z
+" clip-path="url(#p44de949036)" style="fill: #dce1e7"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 322.56 631.93526 
+L 591.234393 631.93526 
+L 591.234393 652.646289 
+L 322.56 652.646289 
+z
+" clip-path="url(#p44de949036)" style="fill: #dce1e7"/>
+   </g>
+   <g id="matplotlib.axis_1"/>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #59636f" x="310.56" y="144.764288" transform="rotate(-0 310.56 144.764288)">Ukrainian  uk</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #59636f" x="310.56" y="176.144635" transform="rotate(-0 310.56 176.144635)">Swedish  sv</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #59636f" x="310.56" y="207.524982" transform="rotate(-0 310.56 207.524982)">Georgian  ka</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #59636f" x="310.56" y="238.905328" transform="rotate(-0 310.56 238.905328)">German  de</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #59636f" x="310.56" y="270.285675" transform="rotate(-0 310.56 270.285675)">Japanese  ja</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_6"/>
+     <g id="text_6">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #59636f" x="310.56" y="301.666022" transform="rotate(-0 310.56 301.666022)">French  fr</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_7"/>
+     <g id="text_7">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #59636f" x="310.56" y="333.046369" transform="rotate(-0 310.56 333.046369)">Russian  ru</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_8"/>
+     <g id="text_8">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #59636f" x="310.56" y="364.426716" transform="rotate(-0 310.56 364.426716)">Korean  ko</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_9"/>
+     <g id="text_9">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #59636f" x="310.56" y="395.807063" transform="rotate(-0 310.56 395.807063)">Spanish  es</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_10"/>
+     <g id="text_10">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #59636f" x="310.56" y="427.187409" transform="rotate(-0 310.56 427.187409)">Portuguese (Brazil)  pt_BR</text>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_11"/>
+     <g id="text_11">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #59636f" x="310.56" y="458.567756" transform="rotate(-0 310.56 458.567756)">Greek  el</text>
+     </g>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_12"/>
+     <g id="text_12">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #59636f" x="310.56" y="489.948103" transform="rotate(-0 310.56 489.948103)">Chinese (Traditional)  zh_TW</text>
+     </g>
+    </g>
+    <g id="ytick_13">
+     <g id="line2d_13"/>
+     <g id="text_13">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #59636f" x="310.56" y="521.32845" transform="rotate(-0 310.56 521.32845)">Italian  it</text>
+     </g>
+    </g>
+    <g id="ytick_14">
+     <g id="line2d_14"/>
+     <g id="text_14">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #c93631" x="310.56" y="552.708797" transform="rotate(-0 310.56 552.708797)">Chinese (Simplified)  zh_CN</text>
+     </g>
+    </g>
+    <g id="ytick_15">
+     <g id="line2d_15"/>
+     <g id="text_15">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #59636f" x="310.56" y="584.089143" transform="rotate(-0 310.56 584.089143)">Czech  cs</text>
+     </g>
+    </g>
+    <g id="ytick_16">
+     <g id="line2d_16"/>
+     <g id="text_16">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #59636f" x="310.56" y="615.46949" transform="rotate(-0 310.56 615.46949)">Turkish  tr</text>
+     </g>
+    </g>
+    <g id="ytick_17">
+     <g id="line2d_17"/>
+     <g id="text_17">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #59636f" x="310.56" y="646.849837" transform="rotate(-0 310.56 646.849837)">Polish  pl</text>
+     </g>
+    </g>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="907.802916" y="143.452296" transform="rotate(-0 907.802916 143.452296)">99%</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="907.802916" y="174.832643" transform="rotate(-0 907.802916 174.832643)">99%</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="907.802916" y="206.212989" transform="rotate(-0 907.802916 206.212989)">99%</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="907.802916" y="237.593336" transform="rotate(-0 907.802916 237.593336)">99%</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="901.962168" y="268.973683" transform="rotate(-0 901.962168 268.973683)">98%</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="878.599178" y="300.35403" transform="rotate(-0 878.599178 300.35403)">94%</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="861.076935" y="331.734377" transform="rotate(-0 861.076935 331.734377)">91%</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="849.395439" y="363.114723" transform="rotate(-0 849.395439 363.114723)">89%</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="849.395439" y="394.49507" transform="rotate(-0 849.395439 394.49507)">89%</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="826.032449" y="425.875417" transform="rotate(-0 826.032449 425.875417)">85%</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="767.624972" y="457.255764" transform="rotate(-0 767.624972 457.255764)">75%</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="738.421234" y="488.636111" transform="rotate(-0 738.421234 488.636111)">70%</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="738.421234" y="520.016458" transform="rotate(-0 738.421234 520.016458)">70%</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #c93631" x="715.058243" y="551.396804" transform="rotate(-0 715.058243 551.396804)">66%</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="691.695252" y="582.777151" transform="rotate(-0 691.695252 582.777151)">62%</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="668.332262" y="614.157498" transform="rotate(-0 668.332262 614.157498)">58%</text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="598.24329" y="645.537845" transform="rotate(-0 598.24329 645.537845)">46%</text>
+   </g>
+  </g>
+  <g id="text_35">
+   <text style="font-weight: 700; font-size: 23px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #24282e" x="45.36" y="42.6816" transform="rotate(-0 45.36 42.6816)">PostgreSQL 19: translation coverage by language</text>
+  </g>
+  <g id="text_36">
+   <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="45.36" y="73.3824" transform="rotate(-0 45.36 73.3824)">Languages represented across nearly all 28 catalogs · September 15, 2026</text>
+  </g>
+  <g id="text_37">
+   <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #24282e" x="45.36" y="703.872" transform="rotate(-0 45.36 703.872)">Georgia: 3.7 million people; all 28 catalogs at 99%.</text>
+  </g>
+  <g id="text_38">
+   <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="45.36" y="727.0848" transform="rotate(-0 45.36 727.0848)">Source: babel.postgresql.org · Historical snapshot reproduced from the original article</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p44de949036">
+   <rect x="322.56" y="119.808" width="624.96" height="542.88"/>
+  </clipPath>
+ </defs>
+</svg>
