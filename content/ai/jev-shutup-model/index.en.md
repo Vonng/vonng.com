@@ -46,7 +46,7 @@ The root of the problem is that "one token at a time."
 
 Everybody's first neural network lesson is MNIST: given a handwritten digit, decide which of 0 through 9 it is. The last layer is ten neurons through a softmax, and out come ten numbers that sum to one—the probability it is a 0, the probability it is a 1, and so on. Take the largest and you have your answer. Every tutorial from LeNet in 1998 to today does it this way. It cannot talk, and nobody ever thought it needed to. Nobody proposed having it generate "The digit appears to be a seven" and then regexing the 7 back out.
 
-![The same final layer: MNIST's ten slots, an LLM's hundred-odd thousand slots, the mouthless model's option slots—all of them end in a softmax](same-final-layer.webp)
+![The same final layer: MNIST's ten slots, an LLM's hundred-odd thousand slots, the mouthless model's option slots—all of them end in a softmax](same-final-layer-en.webp)
 
 A large language model ends in the same structure: the last layer is also a softmax, also a set of probabilities summing to one. The only difference is that there are a hundred-odd thousand slots instead of ten—one per token in the vocabulary. Each forward pass gives you a distribution over "what is the next token." Normal generation picks one token from that distribution, appends it to the sentence, feeds the whole thing back in, and runs again to pick the next one. Squeezed out one token at a time. This is autoregressive decoding: a two-thousand-word answer is two thousand forward passes, each waiting on the one before it.
 
@@ -92,7 +92,7 @@ A bit of computer architecture in this section. I will keep it in plain language
 
 Picture the GPU as a bricklayer and the model weights as a warehouse full of bricks. Every time he does any work, he has to haul the entire warehouse over to his station.
 
-![Hauling bricks: during decode each trip lays a single brick; during prefill one trip lays an entire course](decode-bricklaying.webp)
+![Hauling bricks: during decode each trip lays a single brick; during prefill one trip lays an entire course](decode-bricklaying-en.webp)
 
 During decode, each haul lays exactly one brick—one token—and then he hauls again and lays another. All the time goes into hauling; the bricklaying skill sits idle. This is why an H100 generating tokens for a single request spends most of its FLOPs staring at the wall, waiting on memory to feed the weights through. The jargon is memory-bound, and it is why inference cards must ship with HBM—HBM is just a very fast conveyor belt for bricks, and one of the most expensive materials on the board. Decode carries a nastier bill too: laying each brick means running your hand back over the wall you already built—the KV cache. At 32K context, producing one token means reading several gigabytes. That is the real killer in long-context decode.
 
@@ -110,7 +110,7 @@ Unpacking the official "400x cheaper": the model is small, 10 to 20x—working b
 
 After a decade and a half in databases, everything looks like a database to me. This time, though, I do not think the analogy is just occupational damage.
 
-![Two paths: OLAP does a sequential scan and lays out the argument; OLTP takes the index straight to one row](two-paths.webp)
+![Two paths: OLAP does a sequential scan and lays out the argument; OLTP takes the index straight to one row](two-paths-en.webp)
 
 A database has two access patterns, different down to the roots. Point lookup: fetch one row by primary key, through an index, in milliseconds, hundreds of thousands of times a second. Scan: read the whole table and compute an aggregate, seconds to hours, a few dozen a day. The first is OLTP, the second OLAP. The two want completely different machinery—index structures, cache policy, execution paths, hardware ratios—and you can put them in two systems, or in one engine with two paths the way PostgreSQL does. But nobody answers every user login with a sequential scan. (Strictly, the heart of OLTP is transactions and not just speed; what I am borrowing here is the access pattern: short, frequent, fast, highly concurrent.)
 
@@ -130,7 +130,7 @@ The other implication of OLTP is that it runs on your own machine.
 
 I had a few models estimate how local hardware behaves under a judgment-only workload. Same assumptions throughout: 512 tokens of input, dense model, 4-bit quantization, single request, weights resident. The Spark column has published llama.cpp numbers as an anchor—Qwen3 8B reads 512 tokens in about 162 ms, 32B in about 672 ms—and the rest are extrapolations from the same model, not end-to-end measurements.
 
-![Judgment latency on local hardware: one set of scenario estimates](device-latency.webp)
+![Judgment latency on local hardware: one set of scenario estimates](device-latency-en.webp)
 
 | Hardware                              | 3B     | 8B     | 32B    | 70B      |
 | ------------------------------------- | ------ | ------ | ------ | -------- |
@@ -157,7 +157,7 @@ Apple has in fact already built this architecture: an on-device model, escalatin
 
 ### 7. A New Rung in the Hierarchy
 
-![The latency ladder: two orders of magnitude per rung](ladder.webp)
+![The latency ladder: two orders of magnitude per rung](ladder-en.webp)
 
 Jeff Dean's "latency numbers every programmer should know": L1 cache 0.5 ns, main memory 100 ns, SSD random read 150 µs, disk seek 10 ms, California to the Netherlands and back 150 ms. Two orders of magnitude per step, and the whole of computer architecture is moving things between those steps.
 
@@ -177,7 +177,7 @@ And one more thing that I think is where this layer's real philosophical weight 
 
 ### 8. The Return of `if`, and the Cost Matrix
 
-![Four shapes of if: from a hand-written literal threshold to a branch derived from cost](if.webp)
+![Four shapes of if: from a hand-written literal threshold to a branch derived from cost](if-en.webp)
 
 Once the probability reaches the application layer, what does software grow into?
 
@@ -189,7 +189,7 @@ Then comes the most counterintuitive step. What should the program do with 0.18?
 
 First, correct the most common mistake. Do not ask the model "should we page" and then treat the 0.18 it returns as an objective probability—"should we" already has cost baked into it, and running it through a cost matrix afterwards means you have counted the value judgment twice. The cleaner split: the model estimates a fact, namely whether this meets our definition of a real incident; the program weighs false alarms, misses, time of day, and permissions to choose an action. Also, do not treat the `confidence` field in the API, the probability of a given option, and "the probability this action is correct" as the same number. The first two are statistics derived from an output distribution; whether they can carry the weight of your action is something you verify against your own business data.
 
-![The threshold is the shadow of the cost: not 0.9, but 0.09](threshold.webp)
+![The threshold is the shadow of the cost: not 0.9, but 0.09](threshold-en.webp)
 
 C.K. Chow proved the right approach back in 1970; it is called the reject option. The threshold is not a literal, it is the shadow of a cost. Missing a real incident costs 50, waking someone for nothing costs 5, and the Bayes decision rule says you page when p exceeds 5/(5+50), about 0.09. **Not 0.9. 0.09.** Nine percent confidence is enough to page, because a miss is ten times more expensive. But writing the ledger out, whatever the numbers, beats hiding the value judgment inside a 0.9. And when the maximum probability falls below some threshold, the optimal policy is to refuse to judge and hand it to a human—that threshold likewise derives from the cost of refusing. Your "confidence gate" is Chow's rule.
 
@@ -205,7 +205,7 @@ The escalation chain should not be hard-coded either. In the classic hierarchy, 
 
 If the judgment layer is a component that makes probabilistic estimates from a compressed summary of the world, turns those estimates into an execution path with a cost model, and decides how to do the work before doing it—then database people should find it very familiar. That is a query optimizer. It has been running in production for forty years, and every failure mode and antidote is on the record. That is the largest asset the database field has to transfer here.
 
-![The optimizer isomorphism: statistics, cost, calibration, and lossy indexes each have a counterpart in the judgment layer](optimizer.webp)
+![The optimizer isomorphism: statistics, cost, calibration, and lossy indexes each have a counterpart in the judgment layer](optimizer-en.webp)
 
 | Query optimizer                                                     | Judgment layer                                                      |
 |---------------------------------------------------------------------|---------------------------------------------------------------------|
@@ -257,7 +257,7 @@ TypeSafe's loudest claim is "cannot hallucinate." Translated: they mean type saf
 
 And as I said earlier, reading a single token's logit off an ordinary LLM already captures most of the speedup. So what Jev actually has to prove is not that it can shut up, but that after shutting up it still has all of: cross-task understanding, efficient multi-question parallelism, meaningful probability calibration, and low cost and stability as a complete service. The comparison set should not be only "make the most expensive reasoning model write a JSON blob with probabilities in it." It also has to include single-token judgment, purpose-built classifiers, rerankers, and small models distilled for your own business. Only if a purpose-trained judgment model keeps a clear advantage over reading a single logit can the gains be credited to "a dedicated model and interface," rather than merely to not generating an essay.
 
-![The calibration curve: do the predictions that claim 90% actually come true 90% of the time](calibration-curve.webp)
+![The calibration curve: do the predictions that claim 90% actually come true 90% of the time](calibration-curve-en.webp)
 
 There is exactly one thing here that might genuinely be new: calibration.
 
