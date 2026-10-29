@@ -29,7 +29,7 @@ Set up email on your own domain. Microsoft's, Alibaba Cloud's, and Google's busi
 
 Numbers from mainland China and Hong Kong generally don't work. Fortunately, **not every subscription requires a phone number**. OpenAI usually only prompts for a one-time verification when an account triggers its risk checks. If that happens, a service that receives SMS verification codes can get you through it. It's a one-time check; a 5-yuan top-up can last a long time.
 
-![Virtual phone numbers and success rates on an SMS verification service](sms-verify.webp)
+![Virtual phone numbers and success rates on an SMS verification service](sms-verify-en.webp)
 
 A 28% success rate. Give it a few tries.
 
@@ -39,13 +39,13 @@ For a single subscription, Apple's U.S. store may be the easiest route: link a U
 
 But that setup won't stretch to 10 subscriptions. At that point, you need a proper credit card issued abroad. I use an Airwallex card through my company, with payments and invoicing handled in one place.
 
-![Airwallex card management page for paying for AI subscriptions](payment-cards.webp)
+![Airwallex card management page for paying for AI subscriptions](payment-cards-en.webp)
 
 ### Browser: Chrome Is Enough
 
 Chrome profiles are almost tailor-made for this: each profile has its own login sessions, and you can switch with a click. I keep two ChatGPT accounts and one Claude account in each profile. When I exhaust a quota and need another account, I just switch.
 
-![Switching between separate login identities with Chrome profiles](chrome-profiles.webp)
+![Switching between separate login identities with Chrome profiles](chrome-profiles-en.webp)
 
 ### Machines: The Limit on Parallelism
 
@@ -71,7 +71,7 @@ I consume roughly **four weekly quotas per day**. I'm talking about the $200 sub
 
 Here's the usage on my main computer. I haven't bothered tallying the other machines. I'd estimate I've burned through 300–400 billion tokens over three months.
 
-![Token usage and equivalent API costs on the main computer over the past three months](token-usage.webp)
+![Token usage and equivalent API costs on the main computer over the past three months](token-usage-en.webp)
 
 Fortunately, Tibo, our patron saint of quota resets, keeps hitting the reset button for us. For a while, that was just enough to keep up. Recently, I added a few Plus subscriptions specifically to collect reset credits. I've stockpiled more than 20 of them. When I need the capacity, I can upgrade an account to the $200 tier and immediately have four full weekly quotas available.
 
