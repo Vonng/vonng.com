@@ -35,7 +35,7 @@ If RustFS genuinely pulls this off, I'd happily switch over and have one less th
 
 By the company's own numbers: first line of code in February 2024, open-sourced in July 2025, Beta in April 2026, RC in August, GA in September. Fourteen months of open source, 6,600-plus commits, 135 releases, 180-plus contributors, 32k stars. They claim 2.7 million installations worldwide, more than seventy percent of them in Europe and North America, over ten million Docker Hub pulls, and paying customers in AI, energy, finance, and cloud.
 
-![RustFS's growth timeline, from the first line of code in February 2024 to the 1.0 GA release in September 2026](rustfs-timeline.webp)
+![RustFS development timeline from February 2024 to September 2026, with GitHub star milestones and Beta, RC, and GA releases](rustfs-timeline-en.webp)
 
 Nice numbers, but the pull counts have to be read side by side: the MinIO repo that just vanished was over two billion; RustFS has just crossed ten million. Two orders of magnitude apart. Pull counts don't prove reliability, but the hours in production and the variety of workloads behind them can't be skipped. "MinIO replacement" is a heavy phrase. RustFS has only just gotten a hand on it, and 1.0 is where the testing starts.
 
@@ -55,7 +55,7 @@ For a team willing to dig in, though, petabyte scale is only a matter of time. W
 
 **The feature list is already pretty complete.** IAM, OIDC, KMS, SSE, STS, mTLS, audit; distributed mode, pool expansion, rebalance, self-healing, site replication, bucket replication; lifecycle, tiering, event notification. Most of the usual capabilities are there. Their claim to have "essentially caught up with the MinIO open-source release on features" isn't outrageous if you're just reading the list. How far each "supported" actually goes is something you verify item by item.
 
-![RustFS core features at a glance: data management, multi-protocol access, security and audit, reliability and maintainability](rustfs-features.webp)
+![RustFS feature overview covering data management, protocol support, security and compliance, high availability and scalability, and operations and observability](rustfs-features-en.webp)
 
 **And the last one, the thing I most want to praise: the compatibility with MinIO's on-disk format is real work, and it delivers.** They say MinIO users can migrate by swapping the binary outright. I put that claim through a round of testing, and it isn't hot air.
 
@@ -87,13 +87,13 @@ The same round turned up three limits, and they should be stated plainly.
 
 So the official line — "MinIO users can migrate simply by replacing the binary" — needs at least three conditions written beside it: **unencrypted, full stop-and-swap, adjusted startup configuration.** Spelled out, the claim holds, and it's genuinely impressive. Left unspelled, it's a 3 a.m. surprise.
 
-![After swapping the binary and restarting into RustFS, logging in to verify that buckets and object data migrated intact](drop-in-migration.webp)
+![MinIO/Silo-to-RustFS compatibility matrix showing full-stop migration and rollback results, encryption and rolling-replacement failures, startup requirements, and test limitations](drop-in-migration-en.webp)
 
 #### Lose Two Nodes — Can You Still Read?
 
 This round also turned up a behavioral difference that deserves its own section. A MinIO read only asks whether there's enough data; a RustFS read also asks whether there's a quorum. In a four-node, one-disk-each (4N1D) deployment, take down two nodes and MinIO degrades to read-only, while RustFS bricks outright. That's probably the biggest surprise waiting on the other side of a migration: you see no difference day to day, and you find out when nodes go down. For a backup store, that is the difference between getting your backups out on the worst day and not. It may not be a bug — it may well be deliberate design — but at a minimum it belongs in the migration docs.
 
-![Read behavior with two of four nodes down: MinIO degrades to read-only, RustFS becomes unreadable outright](quorum-test.webp)
+![Four-node EC:2 availability matrix: with two nodes online, MinIO reads succeed but writes hang; RustFS reads and writes return 503](quorum-test-en.webp)
 
 Let me be equally clear about the scope of what I tested: a single erasure set, four processes on one machine, a static sample. Real multi-machine multi-pool setups, network partitions, heal and rebuild, sustained load, external KES, replication and tiering, S3 Tables — none of that was tested. The conclusions answer for this version, this sample, and this topology only.
 
