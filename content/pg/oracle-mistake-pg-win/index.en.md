@@ -16,20 +16,28 @@ We have to thank Oracle, he said. After Oracle acquired MySQL, everyone began to
 
 In the same passage, he said that no vendor controls PostgreSQL. It is run by twenty or thirty first-rate programmers, and he expects it to remain outside the control of any single company indefinitely. That, he said, is open source at its best.
 
-Today, Oleg Bartunov published a blunt rebuttal on LinkedIn: "PostgreSQL Had Already Solved the Oracle Problem in 2000."
+On August 20, 2026, Oleg Bartunov published a blunt rebuttal on LinkedIn: ["PostgreSQL Had Already Solved the Oracle Problem in 2000"](https://www.linkedin.com/posts/olegbartunov_postgresql-activity-7496104102142263296-mJ6m).
 
-![Oleg Bartunov's LinkedIn post](02.webp)
+> But Oracle did not create that value.
+
+— Oleg Bartunov, in the LinkedIn post linked above.
+
+**Summary of his argument:** Stonebraker gave Postgres its original extensible design, including new data types and access methods. After he moved on, the developers built PostgreSQL's system, community, and working culture largely without him. Oracle's acquisition of MySQL may have drawn attention to their work, but it could not account for the value they had already created.
+
+Bartunov traces that value to decades of development in public, freedom to pursue technical ideas, demanding peer review, care for compatibility, shared expertise and responsibility, and the absence of a single owner. The community learned to accept corporate funding and contributions while keeping companies from taking control. Some sponsors disappeared; the project endured. Its resilience came from the way people worked together as well as from the software.
+
+He ends with a parallel: while the Core Team was discussing independence in San Francisco in 2000, he and Teodor Sigaev were working on GiST in Moscow. They were pursuing the same principle through both community organization and extensible code.
 
 Oleg runs Postgres Pro. He has spent more than thirty years in the community and is one of the key people behind PostgreSQL's JSON and full-text search systems.
 
-Bartunov's evidence is an old photograph. Jan Wieck recently sent it to him. It shows the first in-person meeting of the PostgreSQL Core Team, held in San Francisco in March 2000. After restoring the image, Bartunov made out six principles written on sheets of paper taped to the wall:
+Bartunov's evidence is an old photograph. Jan Wieck recently sent it to him. It shows the first in-person meeting of the PostgreSQL Core Team, held in San Francisco in March 2000. After enhancing the image and using AI to help read it, Bartunov identified six principles on sheets of paper taped to the wall. In paraphrase:
 
-- Distributed responsibility
-- Distributed technical knowledge
-- Non-exclusive partnerships
-- Control over the project's direction
-- Protect the name
-- Protect the reputation
+- Share responsibility across the community
+- Spread technical expertise
+- Keep partnerships open to multiple companies
+- Retain community control of the project's direction
+- Safeguard the project's name
+- Safeguard its reputation
 
 ![The PostgreSQL Core Team's first in-person meeting in 2000](03.webp)
 
@@ -66,7 +74,7 @@ These accounts do not contradict one another. In the same interview, Stonebraker
 
 There is another piece of context. In 2021, PostgreSQL committer Peter Geoghegan was asked on a mailing list how much weight Stonebraker carried in the community. His answer was direct: apart from appearing at a few EDB-sponsored events, Stonebraker had almost no involvement with the project after the university-era POSTGRES and had never spoken publicly on any of its mailing lists. Geoghegan himself had already been working on Postgres full time for ten years.
 
-In other words, the person telling this history was absent from the history he was describing. That is the subtext of Bartunov's line: "I am looking at this story from inside the community, not as an outside observer."
+In other words, the person telling this history was absent from the history he was describing. That is the subtext of Bartunov's emphasis on having experienced those decades firsthand as a contributor.
 
 ## 2. The Photograph Is Not the Only Evidence
 
@@ -78,11 +86,11 @@ On the Talking Postgres podcast, Tom Lane recalled what happened around 1999 and
 
 ![Tom Lane's interview on the Talking Postgres podcast](06.webp)
 
-At the time, the Core Team had only four members. Their first response was not to negotiate terms. It was to expand the team. The thinking was roughly: "We had better bring in more people so that when we talk to them, we represent a broader community." Tom Lane and Jan Wieck joined, bringing the Core Team to six, and only then did the talks begin.
+At the time, the Core Team had only four members. Their first response was not to negotiate terms. It was to expand the team. The thinking was roughly that they should bring in more people before negotiating, so they could speak for a broader community. Tom Lane and Jan Wieck joined, bringing the Core Team to six, and only then did the talks begin.
 
 Notice the order: **before the company's money arrived, the project changed its organization.**
 
-That is what two of the principles on the wall—"non-exclusive partnerships" and "control over project direction"—looked like in practice. They were not aspirations. They were a concrete organizational response to a specific company.
+That is what two of the principles on the wall—keeping partnerships open and retaining community control of the project's direction—looked like in practice. They were not aspirations. They were a concrete organizational response to a specific company.
 
 What happened next makes the point even clearer. Great Bridge was founded in July 2000 and hired Tom Lane, Bruce Momjian, and Jan Wieck. Community records from the time say it was Great Bridge that first allowed Lane to work on PostgreSQL full time rather than as a hobby. It also gave Momjian the freedom to travel and evangelize. Then the dot-com bubble burst, and the company collapsed.
 
@@ -102,9 +110,9 @@ The contrast is MySQL AB. It centralized copyright: contributors assigned their 
 
 So Stonebraker is right to expect PostgreSQL to remain outside any single vendor's control indefinitely. But the reason is not that those twenty or thirty programmers are exceptionally wise. **The reason is that the transaction is structurally impossible.**
 
-This is where the claim that PostgreSQL had "solved the Oracle problem" by 2000 really holds up. The solution was not written on the wall. It was written at the top of every source file.
+This is where the claim that PostgreSQL had made itself resistant to a corporate takeover by 2000 really holds up. The solution was not written on the wall. It was written at the top of every source file.
 
-The only exception is the name. A trademark has to be held by a legal entity or someone else can register it. PostgreSQL therefore placed the trademark with the nonprofit PostgreSQL Community Association in Canada, which completed the registration in 2003. That is the real-world counterpart to "protect the name" on the wall.
+The only exception is the name. A trademark has to be held by a legal entity or someone else can register it. PostgreSQL therefore placed the trademark with the nonprofit PostgreSQL Community Association in Canada, which completed the registration in 2003. That is the real-world counterpart to the principle of safeguarding the name on the wall.
 
 ## 4. The Governance Model Has Been Put to the Test
 
@@ -112,15 +120,17 @@ In 2020, a Spanish nonprofit called Fundación PostgreSQL applied in the Europea
 
 Three years, over a name.
 
-![The settlement of the PostgreSQL community trademark dispute](07.webp)
+> Fundación PostgreSQL has surrendered all trademarks and entered into a trademark license with the PostgreSQL Community Association.
+
+— PostgreSQL Community Association, [settlement announcement](https://www.postgresql.org/about/news/updates-on-trademark-actions-against-the-postgresql-community-2762/), December 6, 2023, reporting the November 17 settlement.
 
 Incidentally, someone has registered the mark in China too.
 
-To anyone unfamiliar with open-source governance, this may look like an overreaction. But if "protect the name" had been nothing more than a nice phrase on a wall in 2000, nobody would have fought that case in 2020. **The force of an institution lies not in having it written down, but in having it enforced.**
+To anyone unfamiliar with open-source governance, this may look like an overreaction. But if safeguarding the name had been nothing more than a nice phrase on a wall in 2000, nobody would have fought that case in 2020. **The force of an institution lies not in having it written down, but in having it enforced.**
 
 The Core Team's steady habit of giving away its own power matters too. In his 2024 history of the Core Team at pgconf.dev, Tom Lane described how responsibility for security response was delegated in 2007 and infrastructure in 2011; the 2015 developer meeting decided to delegate committer selection as well. Asked why the early core members were those particular people, he gave the plainest answer possible: "Because they were the ones doing the work."
 
-An organization built on the principle that the people doing the work should have a voice will naturally keep distributing power, because the number of people doing the work keeps growing. This is what Bartunov means by "distributed responsibility" and "distributed knowledge." Its opposite is easy to imagine: a project in which every decision converges on a handful of people, or on one company, can collapse all at once when that company is acquired.
+An organization built on the principle that the people doing the work should have a voice will naturally keep distributing power, because the number of people doing the work keeps growing. This is what Bartunov means by sharing responsibility and technical expertise. Its opposite is easy to imagine: a project in which every decision converges on a handful of people, or on one company, can collapse all at once when that company is acquired.
 
 ## 5. But Stonebraker Is Not Wrong—He Planted the Seed
 
@@ -140,9 +150,33 @@ What was the engine? I think the answer is clear: **extensibility. And Stonebrak
 
 ### [PostgreSQL Is Eating the Database World](/en/pg/pg-eat-db-world/)
 
-**Oracle is advanced. MySQL is open source. PostgreSQL is both advanced and open source. Its openness lives in its community governance; its technical edge comes from extreme extensibility. [PostgreSQL: The World's Most Successful Database](/en/pg/pg-is-no1/)**
+**Oracle is advanced. MySQL is open source. PostgreSQL is both advanced and open source. Its openness lives in its community governance; its technical edge comes from extreme extensibility.**
 
-![An excerpt on PostgreSQL's position among relational databases](08.webp)
+The following is a translated excerpt from my [PostgreSQL: The World's Most Successful Database](/en/pg/pg-is-no1/#but-why), published on June 28, 2023:
+
+> PostgreSQL leads in demand, usage, and developer affection. It has the timing, market position, and community behind it, with momentum to match its potential. It deserves to be called the most successful database, with no challenger in sight for the next few years. But **why is PostgreSQL so successful?** The secret is in its slogan: **"The World's Most Advanced Open-Source Relational Database."**
+>
+> Relational databases are so widespread and important that other categories, including key-value stores, document databases, search engines, time-series databases, graph databases, and vector databases, may add up to only a fraction of their reach. Unless someone specifies otherwise, "database" usually means a relational database. No other category comes close to that mainstream position.
+>
+> In last year's [Why PostgreSQL Will Become the Most Successful Database](/en/pg/pg-is-best/), I examined this three-way competition. Relational databases occupy much the same niche, making their rivalry effectively a zero-sum game. Set aside the commercial SQL Server, relatively isolated within Microsoft's closed ecosystem: as the rest of the market consolidates, only three databases serve as the roots of major wire-protocol families: Oracle, MySQL, and PostgreSQL. It is a database version of *Romance of the Three Kingdoms*.
+>
+> ![Oracle, MySQL, PostgreSQL, and SQL Server in the relational database landscape](relational-databases-en.webp)
+>
+> The realm is divided three ways, but Oracle and MySQL are fading while PostgreSQL advances at full strength. As their fortunes decline and its own rise, PostgreSQL's prospects look brighter than ever.
+>
+> > **Oracle** has talent without virtue. **MySQL** has little of either. **PostgreSQL** has both.
+>
+> **Oracle** is an established commercial database with decades of technical development behind it, extensive features, and comprehensive support. It appeals to well-funded enterprises, particularly in finance, that want a vendor to take the blame when things go wrong. But it is expensive, and its litigious behavior has earned it a toxic reputation. Microsoft SQL Server is much the same kind of commercial product. Commercial databases as a whole are slowly losing ground to open source.
+>
+> **MySQL** calls itself the most popular database, but that prominence makes it a target, and it is under pressure from every direction. PostgreSQL, its open-source rival, is far ahead in rigorous transaction processing and data analysis. For quick-and-dirty agile development, newer NoSQL systems are easier to use. Its adoptive parent Oracle constrains it, its sibling MariaDB has broken away, and compatible NewSQL systems such as TiDB and OceanBase are taking a share of its market. MySQL, too, is in decline.
+>
+> **Oracle's** technical ability as an established commercial database is beyond question. Its reputation for toxic behavior says enough about its virtue: **talent without virtue**.
+>
+> **MySQL** deserves credit for being open source, but it ended up under an adversary's control. Its technical capabilities are modest, its features limited, and its role largely confined to CRUD: **little talent and little virtue**.
+>
+> Only **PostgreSQL** combines **talent and virtue**. It benefits from the rise of **open source**, holds the strongest position in **popularity**, and combines **technical sophistication with stability**.
+>
+> As the saying goes: build your capabilities quietly and wait for the right moment. When that moment comes, make the world take notice.
 
 The most counterintuitive choice in the 1986 POSTGRES design paper was not any particular feature. It was this: instead of putting every feature into the kernel, make adding features to the kernel a first-class capability. Users could define their own data types, operators, functions, and even index access methods, then plug them into the system like modules.
 
@@ -161,7 +195,7 @@ Extensibility produced a second consequence, and it may be even more important: 
 
 How does Stonebraker judge the result? At PGDay Boston, he said abstract data types had taken root and nearly every relational database now supports that kind of extensibility. "We basically got it right." He considers it the main reason he received the Turing Award. The rule engine and crash-recovery ideas planned at the same time, by contrast, did not work out.
 
-If Stonebraker deserves credit for one thing, then, it is not that Oracle helped. It is the architectural decision he made forty years ago—the very point Bartunov acknowledges when he says that Stonebraker planted Postgres.
+If Stonebraker deserves credit for one thing, then, it is not that Oracle helped. It is the architectural decision he made forty years ago—the very point Bartunov acknowledges by crediting him with the original design.
 
 What grew from that seed also leads into the second half of the story. When an ecosystem's value is spread across thousands of extensions, dozens of companies, and countless independent authors, acquiring one company cannot give you control. **PostgreSQL is hard to strangle at a single choke point because of both its governance and its architecture.**
 
@@ -211,7 +245,7 @@ That layer can be open source.
 
 This is what I am building with Pigsty: an open-source distribution that reproduces the RDS layer—high availability, backups, monitoring, an extension repository, and object storage—and lets anyone run it on their own machines. This is not an attempt to steal the cloud vendors' business; one person could not do that anyway. The point is to make opting out of a managed cloud database a viable **option** again.
 
-![The Pigsty open-source PostgreSQL distribution](11.webp)
+[![Pigsty's English website: an open-source PostgreSQL distribution](pigsty-home-en.webp)](https://pigsty.io/)
 
 You have bargaining power only when you retain the right to exit. Without the ability to self-host, "multi-cloud" and "hybrid cloud" are illusions. Your only choice is which vendor will lock you in. The governance problem cannot be solved outright, but it can be hedged: as long as the self-hosted road stays open, a cloud vendor's proprietary layer remains one option rather than the only possible destination.
 
