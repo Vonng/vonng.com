@@ -110,7 +110,7 @@ Since PGConf.Dev was reorganized under its new name, it has held three conferenc
 
 [Five Minutes on the Clock: My PGConf.Dev Lightning Talk](/pg/pgcondev-lightning/)
 
-[A Chinese Vendor Takes the Keynote Stage at PGConf.Dev for the First Time](/pg/pgconfdev-china-keynote/)
+[A Chinese Vendor Takes the Keynote Stage at PGConf.Dev for the First Time](/en/pg/pgconfdev-china-keynote/)
 
 [Extensions for Everyone: PGConf.Dev 2026 Talk](/en/pg/extensions-for-everyone/)
 
