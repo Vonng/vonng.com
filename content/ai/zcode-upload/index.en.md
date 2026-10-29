@@ -9,9 +9,11 @@ I had only been using Zhipu's ZCode for a few days. Honestly, the experience was
 
 GLM 5.3 is a capable model, the Coding Plan is cheap, and Zhipu's own ZCode agent works well. It was a rare Chinese AI product I actually wanted to pay for. I had written about it a couple of days earlier and was planning a fuller, favorable review.
 
-![blog.webp](blog.webp)
+*Screenshots have been recreated in English from the Chinese originals.*
 
-Then, early this morning, September 18, ferstar published “[Investigating ZCode's Silent Uploads of Complete Git History](https://blog.ferstar.org/posts/zcode-silent-workspace-snapshot-upload/).” While cleaning up disk space, he noticed that `~/.zcode` occupied more than 700 MB. Following the trail, he found a workspace snapshot process that packaged the complete `.git` history, encrypted the archive, and uploaded it to Alibaba Cloud OSS. There was no decryption key on the local machine.
+![Ferstar's investigation of ZCode's background uploads and a pending 313 MB encrypted workspace archive](blog-en.webp)
+
+Then, early this morning, September 18, ferstar published “[Inside ZCode: Silently Uploading Your Entire Git History to the Cloud](https://blog.ferstar.org/en/posts/zcode-silent-workspace-snapshot-upload/).” While cleaning up disk space, he noticed that `~/.zcode` occupied more than 700 MB. Following the trail, he found a workspace snapshot process that packaged the complete `.git` history, encrypted the archive, and uploaded it to Alibaba Cloud OSS. There was no decryption key on the local machine.
 
 My first reaction was disbelief. It sounded too stupid to be true: Grok had taken a beating from developers for the same thing just two months earlier. But ferstar's account was detailed enough that I could not dismiss it.
 
@@ -19,7 +21,7 @@ So I immediately had Claude repeat his investigation on my Mac. The conclusion: 
 
 I found snapshot-related records for four workspaces on my machine. One had a state record indicating that its upload had been accepted. In two others, `.git` accounted for 93.9% and 98.5% of the bytes listed in their snapshot manifests, and the client had already obtained upload credentials.
 
-![claude-zcode.webp](claude-zcode.webp)
+![Claude checks local ZCode snapshot records and client code against ferstar's investigation](claude-zcode-en.webp)
 
 > I had been wondering why my network usage was so high over the past few days. I was about to install a traffic monitor to find out which application was responsible.
 
@@ -40,7 +42,7 @@ While using ZCode, I saw no clear notice explaining what these snapshots include
 | pgnls     | 405 MB         | 7.4 MB         | Accepted by the server; left the machine     |
 | pgdoc     | 1.53 GB        | 1.07 GB        | Exceeded the size limit; failure count: 102  |
 
-![claude-analyze.webp](claude-analyze.webp)
+![Claude's analysis of four workspace snapshots, Git file inclusion rules, encryption, and upload controls](claude-analyze-en.webp)
 
 The state file for pgnls contained `lastAcceptedManifestHash`. In the code path I inspected, this field is written in the branch reached after an upload is acknowledged. That supports the inference that this workspace snapshot was uploaded and the client recorded it as accepted.
 
@@ -52,7 +54,7 @@ This shows failures and retries related to the size limit. Without an execution 
 
 I will go only as far as the evidence does.
 
-![traffic.png](traffic.png)
+![Daily and hourly network traffic alongside ZCode token usage statistics](traffic-en.webp)
 
 ## You're Packaging Keys, Too?
 
@@ -60,7 +62,7 @@ When I first read Claude's report, I thought my PGSTY RPM signing private key ha
 
 My projects are open source, developed in public. I could live with someone taking a copy of my repositories, provided they left my keys alone.
 
-![key-upload.webp](key-upload.webp)
+![Claude checks signing-key exposure and distinguishes the PGSTY public key from an upstream test private key](key-upload-en.webp)
 
 A complete scan of all 78,141 blob objects in silo, including dangling objects and with no size cap, ruled that out. The repository's `buildscripts/pgsty-rpm-signing-key.asc` is a PGP **public key**. The private key had never been committed. The 20,356 blobs in mc were clean as well.
 
@@ -137,9 +139,9 @@ There is no free lunch. Offering 50% more quota for using ZCode clearly encourag
 
 ## Grok Already Made the Same Mistake
 
-There is a precedent. This July, security researcher cereblab captured network traffic from xAI's Grok Build CLI. Even with a prompt explicitly saying “reply OK, do not read any files,” it packaged the entire repository as a Git bundle and uploaded it to Google Cloud Storage. Cloning the bundle restored both a file the agent had never read and the complete commit history. Turning off “Improve the model” had no effect. [Investigation on GitHub](https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547)
+There is a precedent. This July, security researcher cereblab captured network traffic from xAI's Grok Build CLI. Even with a prompt explicitly saying “reply OK, do not read any files,” it packaged the entire repository as a Git bundle and uploaded it to Google Cloud Storage. Cloning the bundle restored both a file the agent had never read and the complete commit history. Turning off “Improve the model” had no effect. [Original English investigation](https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547)
 
-According to that account, xAI then disabled uploads on the server, added an opt-out, and Musk publicly promised to delete previously uploaded data. [Investigation on GitHub](https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547)
+According to that account, xAI then disabled uploads on the server, added an opt-out, and Musk publicly promised to delete previously uploaded data. [July 14 update to the investigation](https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547)
 
 That was mid-July. ZCode went from 3.0 through 3.12.3, adding checkpoint rollback, project knowledge bases, and repository wikis along the way. I have not checked how earlier versions behaved, but this path was still active in the 3.12.3 version I examined.
 
@@ -173,7 +175,7 @@ GLM is a model I am willing to keep evaluating and using. Coding Plan is a produ
 
 I am a paying GLM Coding Plan user. I have also shared referral links and received promotional credits as a result.
 
-![glm53.webp](glm53.webp)
+![My earlier favorable review of GLM 5.3 and the Coding Plan, alongside the usage dashboard](glm53-en.webp)
 
 The findings about my machine come from an examination of ZCode 3.12.3 on macOS on September 18, 2026. It covered plaintext manifests and state files under `~/.zcode/v2/checkpoints/`, along with static analysis of the client code, assisted by Claude. External sources are linked where relevant.
 
@@ -183,12 +185,7 @@ I did not decrypt the snapshots or inspect server-side storage directly. I have 
 
 I criticize the behavior I observed. I draw no conclusions about purposes or motives I have not established.
 
-## Appendix
+## Appendix: Sources
 
-> Original post: “[Investigating ZCode's Silent Uploads of Complete Git History](https://blog.ferstar.org/posts/zcode-silent-workspace-snapshot-upload/)”
-
-![blog-full.webp](blog-full.webp)
-
-> Report
-
-![report.webp](report.webp)
+- ferstar: [ZCode snapshot investigation, author's English version](https://blog.ferstar.org/en/posts/zcode-silent-workspace-snapshot-upload/), including later updates.
+- cereblab: [Original Grok Build CLI investigation and follow-up update (English)](https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547).
