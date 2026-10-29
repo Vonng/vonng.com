@@ -49,7 +49,7 @@ tags: [开源, 随笔, 旅行]
 
 早上住在宏村，塔川书院，非常好的一家民宿，有一片好看的稻田。
 
-![塔川书院露台外的稻田](tachuan-terrace.jpg)
+![featured.jpg](featured.jpg)
 
 ![溪水旁的塔川书院民宿](tachuan-inn.jpg)
 

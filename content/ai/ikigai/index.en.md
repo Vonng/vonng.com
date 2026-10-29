@@ -39,7 +39,7 @@ Discussions about career choices and motivation often bring up the *ikigai* (生
 3. What you can get paid for (business)
 4. What the world needs (value)
 
-> Further reading: "What Is Ikigai, and How Can You Use It to Find Meaning in Life?" — Yixinli (壹心理)
+![ikigai.webp](ikigai.webp)
 
 In the past, "what you are good at" was a steep barrier. If a systems engineer wanted to build a polished frontend framework or desktop app, the friction of learning an unfamiliar toolchain and language ecosystem was enough to stop most attempts before they started. You might have had plenty of good ideas, but without the specialized implementation skills, you simply could not ship them.
 
