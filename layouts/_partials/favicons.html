@@ -1,0 +1,17 @@
+{{- /* Export these from the navbar logo with static/favicons/gen.sh.
+      Content hashes make browsers refresh previously cached favicon URLs. */ -}}
+{{- $icons := slice
+  (dict "file" "favicon.ico" "rel" "icon" "type" "image/x-icon" "sizes" "16x16 32x32 48x48")
+  (dict "file" "favicon-16x16.png" "rel" "icon" "type" "image/png" "sizes" "16x16")
+  (dict "file" "favicon-32x32.png" "rel" "icon" "type" "image/png" "sizes" "32x32")
+  (dict "file" "favicon-256x256.png" "rel" "icon" "type" "image/png" "sizes" "256x256")
+  (dict "file" "favicon-512x512.png" "rel" "icon" "type" "image/png" "sizes" "512x512")
+  (dict "file" "favicon.svg" "rel" "icon" "type" "image/svg+xml" "sizes" "any")
+  (dict "file" "apple-touch-icon.png" "rel" "apple-touch-icon" "type" "image/png" "sizes" "180x180")
+-}}
+{{- range $icons -}}
+  {{- $version := substr (sha256 (readFile (printf "static/%s" .file))) 0 12 -}}
+  {{- $url := printf "%s?v=%s" (.file | relURL) $version -}}
+  <link rel="{{ .rel }}" href="{{ $url }}" type="{{ .type }}" sizes="{{ .sizes }}">
+  {{- "\n" -}}
+{{- end -}}
