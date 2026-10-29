@@ -51,7 +51,7 @@ It was still holding up fine. Even with only dual 1GbE ports onboard, a USB 5GbE
 
 So I picked up a used **DS923+** on Xianyu, China's secondhand marketplace, for around 2,600 yuan. I skipped the newer DS925+ because the DS923+ still accepts Synology's official 10GbE add-in card. That proprietary module cost another 700-plus yuan—classic Synology pricing when a USB 10GbE adapter costs 200 to 300 yuan. Together, the NAS and card came to 3,319 yuan.
 
-![Xianyu orders for the used DS923+ and official Synology 10GbE add-in card](buy.webp)
+![Xianyu orders for the used DS923+ and official Synology 10GbE add-in card, translated into English](buy-en.webp)
 
 Then I sold off the old units to recoup the cost:
 
@@ -60,13 +60,17 @@ Then I sold off the old units to recoup the cost:
 
 Both sold within half an hour of listing, bringing back 2,500 yuan. **For a net outlay of just over 800 yuan**, my Synology storage was on 10GbE.
 
-![Xianyu sales of the DS918+ and DS720+, recouping 2,500 yuan in total](sell.webp)
+![Xianyu sales of the DS918+ and DS720+, recouping 2,500 yuan in total, translated into English](sell-en.webp)
 
 ## Storage Pools: Three Pools, Three Jobs
 
 With all the drives in place, I split the storage into three pools:
 
-![Three storage pools: DS923+ with 4 × 10 TB HGST drives in SHR-1 (~26 TB usable) as the primary pool; ME Pro with 2 × 16 TB Seagate IronWolf drives in RAID 0 (~30 TB usable) as the bulk capacity pool; ME Pro with 2 × 4 TB NVMe SSDs in RAID 0 (~8 TB usable) for large databases](pools.webp)
+| Device | Drives | Array | Usable capacity | Purpose |
+| --- | --- | --- | --- | --- |
+| DS923+ | 4 × 10 TB HGST | SHR-1 | ~26 TB | Primary storage pool |
+| ME Pro | 2 × 16 TB Seagate IronWolf | RAID 0 | ~30 TB | Bulk storage pool |
+| ME Pro | 2 × 4 TB NVMe | RAID 0 | ~8 TB | Large databases |
 
 ## 10GbE Networking: A 1,300-Yuan Switch
 
@@ -76,7 +80,7 @@ So I picked up a 10GbE switch from the domestic brand XikeStor for around 1,300 
 
 That gave both NAS boxes and the GTR9 Pro 10GbE ports, leaving my three MacBooks—the two main laptops plus an old 2018 Intel model. Conveniently, XikeStor also sells USB 10GbE adapters for 300 yuan apiece, each bundled with a Thunderbolt 4 cable. Plugging one into each MacBook brought the entire LAN onto 10GbE.
 
-![Purchase records for the 10GbE switch, USB 10GbE adapters, and PDU](network.webp)
+![Purchase records for the 10GbE switch, USB 10GbE adapters, and PDU, translated into English](network-en.webp)
 
 ## Power and Rack: Three Cables Under the Desk
 
