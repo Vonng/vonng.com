@@ -1,0 +1,179 @@
+{
+  "created_at": "2026-10-29",
+  "purpose": "English image counterparts for the August 11, 2026 SOW 0.3.0 article.",
+  "method": "Browser screenshots of the original English upstream sources rendered locally. Historical content was retained so screenshots match the article, rather than the newer documentation on the live site.",
+  "upstream": {
+    "repository": "https://github.com/pgsty/sow.pgsty.com",
+    "content_revision": "62a2b93e8dcf35d431ecbc70f9ea2353280982ec",
+    "site_scaffold_revision": "d648146382b18863daa2b73d9710b30aeb1f9f4c"
+  },
+  "render": {
+    "hugo": "0.168.0+extended",
+    "theme": "github.com/pgsty/oink v1.4.0",
+    "browser": "Google Chrome via Playwright",
+    "locale": "en-US",
+    "color_scheme": "light",
+    "device_scale_factor": 1.5,
+    "doc_viewport_css_px": [
+      1600,
+      1100
+    ],
+    "home_viewport_css_px": [
+      1440,
+      1100
+    ],
+    "screenshot_encoding": "lossless WebP",
+    "presentation_adjustments": [
+      "Hidden document breadcrumbs and page-action toolbar outside the captured article content.",
+      "Prevented wrapping within the command-table Mode column."
+    ],
+    "local_config_adjustments": [
+      "Disabled Git metadata and comments.",
+      "Set the homepage version to 0.3.0."
+    ]
+  },
+  "images": [
+    {
+      "file": "sow-home.en.webp",
+      "original_file": "sow-home.webp",
+      "source_url": "https://github.com/pgsty/sow.pgsty.com/blob/62a2b93e8dcf35d431ecbc70f9ea2353280982ec/data/home/en.yaml",
+      "live_url": "https://sow.pgsty.com/",
+      "coverage": "Hero, Plain-mode module, and Managed-mode module.",
+      "capture_clip_css_px": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 1872
+      },
+      "original_sha256": "156dbe494828c7c73281c5a42f3037b4d0c5a4290d35f0987293ceff3dedf524",
+      "width": 2160,
+      "height": 2808,
+      "bytes": 201914,
+      "sha256": "b637fed3641832a17a451e90da7e564836234954bccc5e5d9bba9c93459e5f65"
+    },
+    {
+      "file": "sow-features.en.webp",
+      "original_file": "sow-features.webp",
+      "source_url": "https://github.com/pgsty/sow.pgsty.com/blob/62a2b93e8dcf35d431ecbc70f9ea2353280982ec/data/home/en.yaml",
+      "live_url": "https://sow.pgsty.com/",
+      "coverage": "Complete Ready to Run and Incremental modules.",
+      "capture_clip_css_px": {
+        "x": 84,
+        "y": 1847,
+        "width": 1272,
+        "height": 897
+      },
+      "original_sha256": "81ff97f47b8e424a4abc4a32ac2c7c80939c1819430eec264f4b2bd368ebced1",
+      "width": 1908,
+      "height": 1346,
+      "bytes": 113836,
+      "sha256": "6d810e63df2a7bca7331ca0a189aa9a934b42954b95bc9598b7f135863e007ed"
+    },
+    {
+      "file": "plain-repo-docs.en.webp",
+      "original_file": "plain-repo-docs.webp",
+      "source_url": "https://github.com/pgsty/sow.pgsty.com/blob/62a2b93e8dcf35d431ecbc70f9ea2353280982ec/content/docs/feature/plain.md",
+      "live_url": "https://sow.pgsty.com/docs/feature/plain/",
+      "coverage": "Introduction, four-rule contract, complete one-pass pipeline, and both concluding paragraphs.",
+      "capture_clip_css_px": {
+        "x": 310,
+        "y": 107,
+        "width": 946,
+        "height": 1349
+      },
+      "original_sha256": "9178c9de1eaf34797ec45ad8b6ce8b0f185699f1894d76f3bb0cd85ec10035b0",
+      "width": 1419,
+      "height": 2024,
+      "bytes": 111238,
+      "sha256": "1080df1d8404ea9cbfff85d411a4f6e760b55e1d8ca91e3e274d3695ea3f3d08"
+    },
+    {
+      "file": "managed-hierarchy.en.webp",
+      "original_file": "managed-hierarchy.webp",
+      "source_url": "https://github.com/pgsty/sow.pgsty.com/blob/62a2b93e8dcf35d431ecbc70f9ea2353280982ec/content/docs/feature/managed.md",
+      "live_url": "https://sow.pgsty.com/docs/feature/managed/",
+      "coverage": "All four hierarchy levels and their definitions.",
+      "capture_clip_css_px": {
+        "x": 322,
+        "y": 441,
+        "width": 922,
+        "height": 154
+      },
+      "original_sha256": "1ea1c7aa9deac9c5253dade35961c4ac2fbb4603c04a00edf0c5b00789f7c92f",
+      "width": 1383,
+      "height": 231,
+      "bytes": 10716,
+      "sha256": "4f415feaf8c4352746397b5975458765ac56312201a5a3e13bd5449ab3fb9fc1"
+    },
+    {
+      "file": "package-pool.en.webp",
+      "original_file": "package-pool.webp",
+      "source_url": "https://github.com/pgsty/sow.pgsty.com/blob/62a2b93e8dcf35d431ecbc70f9ea2353280982ec/content/docs/feature/views.md",
+      "live_url": "https://sow.pgsty.com/docs/feature/views/",
+      "coverage": "Pool invariant, RPM/APT paths, full repository tree, and active-metadata note.",
+      "capture_clip_css_px": {
+        "x": 310,
+        "y": 107,
+        "width": 946,
+        "height": 1134
+      },
+      "original_sha256": "e4aa12f2f947addd05282a1ef567747492aeb116dc2ccf03793e3d5d9e5a6b60",
+      "width": 1419,
+      "height": 1701,
+      "bytes": 67438,
+      "sha256": "a769d2137acb0deffda85d53b90a678a96b0bde07b241ef0abc16e017c5d82f8"
+    },
+    {
+      "file": "sow-capabilities.en.webp",
+      "original_file": "sow-capabilities.webp",
+      "source_url": "https://github.com/pgsty/sow.pgsty.com/blob/62a2b93e8dcf35d431ecbc70f9ea2353280982ec/content/docs/feature/_index.md",
+      "live_url": "https://sow.pgsty.com/docs/feature/",
+      "coverage": "Complete capability matrix (10 rows), repository-format comparison (6 rows), and accompanying notes.",
+      "capture_clip_css_px": {
+        "x": 310,
+        "y": 107,
+        "width": 946,
+        "height": 1582
+      },
+      "original_sha256": "31933eb2ef1451e067983c3397d79a0a898631fd4343d83cc31f8da5c9488c0c",
+      "width": 1419,
+      "height": 2373,
+      "bytes": 94870,
+      "sha256": "6f2a3ab453ccb6065c06f3daed9d0933b3b9b7ae50365ed991feba94647635f7"
+    },
+    {
+      "file": "sow-commands.en.webp",
+      "original_file": "sow-commands.webp",
+      "source_url": "https://github.com/pgsty/sow.pgsty.com/blob/62a2b93e8dcf35d431ecbc70f9ea2353280982ec/content/docs/command/_index.md",
+      "live_url": "https://sow.pgsty.com/docs/command/",
+      "coverage": "Introduction and complete command index (19 commands).",
+      "capture_clip_css_px": {
+        "x": 310,
+        "y": 107,
+        "width": 946,
+        "height": 1569
+      },
+      "original_sha256": "a40bb6a2a8a630b3e6c0f65a81160ee4f3ab17516f6dc45fcfb21100e6e86dc1",
+      "width": 1419,
+      "height": 2354,
+      "bytes": 94312,
+      "sha256": "1ab9633999a7fb7df2a25c6843f76fe74c14b4492d4c22ac37624ad10109446a"
+    }
+  ],
+  "cover": {
+    "file": "featured.en.webp",
+    "original_file": "featured.webp",
+    "method": "Image generation edit of the original illustration, translating the book title.",
+    "translated_text": [
+      "POSTPARTUM CARE",
+      "FOR A SOW"
+    ],
+    "instruction": "Replace the Chinese book title with the exact English title in two lines. Preserve the composition, style, person, pigs, book, and winter background. Add no other text.",
+    "encoding": "WebP quality 88",
+    "original_sha256": "b6bd088c08930b860942c24355c476818d7192055261f370fffda54a18c3df36",
+    "width": 1922,
+    "height": 818,
+    "bytes": 175628,
+    "sha256": "032dcc57ad5f4574453ac9de634ddcd2cc89381acf4c54d72658915d946763ed"
+  }
+}

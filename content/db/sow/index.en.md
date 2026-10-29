@@ -17,7 +17,9 @@ Users see `apt install` or `dnf install`. Maintainers see something else entirel
 
 That is why I built [SOW](https://sow.pgsty.com/), a self-contained APT/YUM repository manager written in Go.
 
-![SOW project homepage](sow-home.webp)
+![SOW project homepage](sow-home.en.webp)
+
+*Rendered from: [SOW homepage, August 11, 2026](https://github.com/pgsty/sow.pgsty.com/blob/62a2b93e8dcf35d431ecbc70f9ea2353280982ec/data/home/en.yaml) · [Live English site](https://sow.pgsty.com/).*
 
 If all you need is to turn a directory of RPMs and DEBs into a usable repository, one command is enough:
 
@@ -49,7 +51,7 @@ That is cumbersome enough on Linux and even uglier on macOS. You have to start d
 
 ![Pigsty replacing the RPM and DEB repository toolchains with SOW](pigsty-offline-diff.webp)
 
-In [Pigsty 4.5](/pigsty/v4.5/), I removed that clutter. SOW is a self-contained binary only a few megabytes in size. It runs directly on Linux and macOS, understands both RPM and DEB package formats, and implements the APT and DNF repository specifications. It has no daemon and requires no separate language runtime.
+In [Pigsty 4.5](/en/pigsty/v4.5/), I removed that clutter. SOW is a self-contained binary only a few megabytes in size. It runs directly on Linux and macOS, understands both RPM and DEB package formats, and implements the APT and DNF repository specifications. It has no daemon and requires no separate language runtime.
 
 But installing fewer tools was only the surface problem. Four deeper problems convinced me to keep building SOW as the repository grew.
 
@@ -69,7 +71,9 @@ An RPM repository is more than a directory of `.rpm` files. Clients read `repomd
 
 If you publish them in the wrong order, a client may see a new pointer before the object it references exists. To the maintainer, that is only a few seconds during an upload. To a user who happens to arrive during that window, it is an irreproducible 404, checksum failure, or aborted installation.
 
-![SOW's self-contained binary and incremental publishing model](sow-features.webp)
+![SOW's self-contained binary and incremental publishing model](sow-features.en.webp)
+
+*Rendered from: [SOW homepage, August 11, 2026](https://github.com/pgsty/sow.pgsty.com/blob/62a2b93e8dcf35d431ecbc70f9ea2353280982ec/data/home/en.yaml) · [Live English site](https://sow.pgsty.com/).*
 
 ### Fourth, Directories Have No Versions, but Distributions Need Them
 
@@ -98,7 +102,9 @@ The RPMs and DEBs in the directory are the sole source of truth. `repodata/`, `P
 
 The output first goes into a private staging area on the same filesystem. SOW validates it with its own parsers before replacing the public files. Finally, it compares the file set and `stat` snapshots again to confirm that no package was added, removed, or replaced during the build. It does not rehash every large package merely for extra reassurance.
 
-![Documentation for a SOW Plain repository](plain-repo-docs.webp)
+![Documentation for a SOW Plain repository](plain-repo-docs.en.webp)
+
+*Rendered from: [Plain Flat Repositories, August 11, 2026](https://github.com/pgsty/sow.pgsty.com/blob/62a2b93e8dcf35d431ecbc70f9ea2353280982ec/content/docs/feature/plain.md) · [Live English docs](https://sow.pgsty.com/docs/feature/plain/).*
 
 Plain mode does not maintain an operation log or attempt heavyweight transaction recovery. If the process is interrupted, run the same `sow create` command again. The package directory is intact, the indexes are derived state, and rebuilding is cheaper than recovery.
 
@@ -112,7 +118,9 @@ A long-lived repository cannot look only at “what is in the directory now.” 
 
 SOW's Managed model has four layers:
 
-![The four layers of SOW's Managed mode](managed-hierarchy.webp)
+![The four layers of SOW's Managed mode](managed-hierarchy.en.webp)
+
+*Rendered from: [Managed Workspaces, August 11, 2026](https://github.com/pgsty/sow.pgsty.com/blob/62a2b93e8dcf35d431ecbc70f9ea2353280982ec/content/docs/feature/managed.md) · [Live English docs](https://sow.pgsty.com/docs/feature/managed/).*
 
 A Workspace is the configuration and discovery boundary. A Repository is the ownership boundary. A Dist is a named set of RPM or DEB members. An Architecture View is only a rendered result and does not own package payloads. The most important invariant is this: **within one Repository, every package has exactly one canonical payload and no duplicates.**
 
@@ -124,7 +132,9 @@ repo/dists/trixie/main/binary-amd64/...    APT metadata view
 
 A `noarch` RPM or `all` DEB can appear in several architecture indexes without copying its payload. Beta and stable can reference the same package object without creating a second cloud `object key`. APT and DNF repositories can also live under the same directory hierarchy.
 
-![SOW's package pool with RPM and APT metadata views](package-pool.webp)
+![SOW's package pool with RPM and APT metadata views](package-pool.en.webp)
+
+*Rendered from: [Pool & Metadata Views, August 11, 2026](https://github.com/pgsty/sow.pgsty.com/blob/62a2b93e8dcf35d431ecbc70f9ea2353280982ec/content/docs/feature/views.md) · [Live English docs](https://sow.pgsty.com/docs/feature/views/).*
 
 The boundary of “store only one copy” must be stated precisely: it is one Repository or one publication prefix, not an entire Workspace, `bucket`, or the whole world. SOW does not deduplicate implicitly across Repositories, because deduplication must not destroy ownership boundaries. Deleting one repository must never remove a shared object that another repository still needs.
 
@@ -152,7 +162,9 @@ sow log     -r pigsty
 
 Incremental synchronization therefore no longer begins with “scan 100,000 files again.” It begins with “compare two known Generations.”
 
-![SOW's capability matrix for Plain and Managed modes](sow-capabilities.webp)
+![SOW's capability matrix for Plain and Managed modes](sow-capabilities.en.webp)
+
+*Rendered from: [SOW Features, August 11, 2026](https://github.com/pgsty/sow.pgsty.com/blob/62a2b93e8dcf35d431ecbc70f9ea2353280982ec/content/docs/feature/_index.md) · [Live English docs](https://sow.pgsty.com/docs/feature/).*
 
 ## The Secret to Atomic Cutovers: Move the Pointer Last
 
@@ -209,7 +221,9 @@ I did not abandon the goal, only the route to it. The worst fate for an infrastr
 
 This path looks slower than building everything for one grand reveal, but it is faster. Every layer has an independent contract, explicit failure semantics, and acceptance tests against real clients. The next layer rests on solid ground, not on an increasingly unreadable wish list.
 
-![SOW command index](sow-commands.webp)
+![SOW command index](sow-commands.en.webp)
+
+*Rendered from: [SOW Commands, August 11, 2026](https://github.com/pgsty/sow.pgsty.com/blob/62a2b93e8dcf35d431ecbc70f9ea2353280982ec/content/docs/command/_index.md) · [Live English docs](https://sow.pgsty.com/docs/command/).*
 
 ## Where SOW Goes Next
 
