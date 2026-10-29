@@ -20,7 +20,13 @@ The reason is simple: **in its final beta cycle, PG 19 reverted five major featu
 
 ## What Got Cut
 
-![Five features reverted from PG 19 and their revert dates: partition merge and split (Aug 27), SQL/PGQ property graph queries (Sep 7), object DDL reconstruction functions (Sep 13), temporal UPDATE and DELETE (Sep 15), and online data checksum toggle (Sep 16)](cuts.webp)
+| Reverted feature | Date reverted |
+| --- | --- |
+| Partition merge and split | August 27 |
+| SQL/PGQ property graph queries | September 7 |
+| Object DDL reconstruction functions | September 13 |
+| Temporal `UPDATE` and `DELETE` | September 15 |
+| Enabling and disabling data checksums online | September 16 |
 
 Three smaller changes were also rolled back: two extensions to `CREATE SCHEMA`, and a change that forced `LC_COLLATE` to `C` in the `postmaster` process.
 
