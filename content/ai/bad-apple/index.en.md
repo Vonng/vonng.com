@@ -13,7 +13,11 @@ It capped a three-day rollout: an [OLED iPad mini](https://www.macrumors.com/202
 
 When the M5 Ultra launched in late August, the 512 GB tier was left as a teaser promised for ["late October"](https://www.apple.com.cn/newsroom/2026/08/apple-introduces-mac-studio-with-m5-max-and-m5-ultra/). To Apple's credit, it went live right on schedule on October 28. Then I clicked through to the price, and my mood soured immediately.
 
-![studio-512.webp](studio-512.webp)
+[Vonng (@RonVonng), on X](https://x.com/RonVonng/status/2115664708355436681) (translated from Chinese):
+
+> Apple's pricing is staggering. I thought upgrading a Mac Studio from 256 GB to 512 GB of RAM would cost about RMB 60,000. Instead, they want RMB 120,000 in one jump. That alone would buy another 256 GB machine.
+>
+> I've heard this may be because there aren't enough memory channels, so they use custom 8 GB chips. But for users, buying two 256 GB machines clearly makes more sense: twice the bandwidth and twice the compute…
 
 ## Gold-Plated RAM: Priced Above a Whole Mac, Treating Buyers Like Suckers
 
@@ -68,11 +72,27 @@ While the product segmentation stays ruthless, quality control is slipping. Take
 
 Whether this snowballs into another Antennagate or Bendgate will depend on broader failure rates. Still, Samsung is already on its eighth generation of foldables. For Apple to show up seven full years late, trip over basic hinge mechanics, and quote $999 for an out-of-warranty inner screen replacement—$200 more than a brand-new iPhone 17—is genuinely embarrassing.
 
-![apple-cut.webp](apple-cut.webp)
+[lifcc (@mylifcc), on X](https://x.com/mylifcc/status/2115096683662942702) (translated from Chinese):
 
-> https://x.com/mylifcc/status/2115096683662942702
+> Folks, Apple's product segmentation has become downright hostile to users. If you bought an M4 iPad Pro with 256 GB or 512 GB of storage, here's a fact that may make your blood boil:
 >
-> https://www.tomshardware.com/tablets/ipads/m4-ipad-pros-with-8gb-of-ram-may-actually-have-12gb-teardowns-reveal-possible-apple-hijinks
+> **Your tablet actually has a full 12 GB of RAM soldered to the logic board, but Apple has locked away 4 GB and lets you use only 8 GB!**
+>
+> This isn't a conspiracy theory: Tom's Hardware and teardown enthusiasts have the hardware evidence to back it up. Someone checked the part numbers of the Micron RAM chips on the M4 iPad Pro's logic board and found two 6 GB chips inside the 8 GB model. Two times six is twelve—grade-school math, right? Yet the system will only ever show you 8 GB!
+>
+> A lot of people don't understand: Apple paid for those memory chips. If they're already soldered on, why not do users a favor and let them have all 12 GB?
+>
+> That's naive. This is Tim Cook's most ruthless calculation:
+>
+> First, no off-the-shelf 4 GB chip can deliver the M4's full memory bandwidth; commissioning a custom one would cost more than buying two 6 GB chips.
+>
+> Second, and this is the part that really stings: **if the entry-level model gave you 12 GB, who would pay another RMB 4,000–5,000 for the top-end model with 1 TB of storage and 16 GB of RAM?**
+>
+> Apple would rather pay for 12 GB of hardware and disable a third of it than let ordinary users get even a small bargain. This goes beyond carefully calibrated product segmentation. Now it's "I'd rather destroy it than let you have it," enforced in hardware to keep you in your tier.
+>
+> We used to joke that Apple sold 8 GB of RAM at the price of gold. Now we find out the gold was in your device all along. Apple just locked it away and threw the key into the Pacific.
+
+Source cited in the post: [Tom's Hardware on teardown findings suggesting that 8 GB M4 iPad Pros may contain 12 GB of RAM](https://www.tomshardware.com/tablets/ipads/m4-ipad-pros-with-8gb-of-ram-may-actually-have-12gb-teardowns-reveal-possible-apple-hijinks).
 
 ## Local AI's Best Hardware Ally, and Its Worst Storage Gouger
 
