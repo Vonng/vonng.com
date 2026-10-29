@@ -5,6 +5,7 @@ authors: [vonng]
 summary: >
   AI 的技术能力、应用扩散与金融资本并不同步。需求窄而深，溢价、信用与时间却出现三重错配：泡沫会如何出清，留下的技术红利又将归谁所有？
 tags: [AI, 技术评论, 商业]
+aliases: [/ai/buble-break/]
 ---
 
 > 本文 AI 含量 70%，源于老冯与 Claude、Gemini、ChatGPT 的四方探讨，汇总成文，数据截至 2026 年 10 月 17 日，不构成任何投资建议。
@@ -41,7 +42,619 @@ tags: [AI, 技术评论, 商业]
 
 Gartner 的技术成熟度曲线描述的是**大众心理预期**；而演化经济学家卡萝塔·佩蕾丝（Carlota Perez）在《技术革命与金融资本》里划分的“安装期（Installation）”与“展开期（Deployment）”，描述的是**金融资本与生产资本的权力交接**。如果把今天 AI 的局势拆解开，你会看到三条完全不同步的曲线：
 
-![技术能力、应用扩散与金融资本的三条曲线](curves.webp)
+```echarts {height="710px" full=true class="ai-bubble-curves"}
+baseOption:
+  animation: false
+  backgroundColor: transparent
+  aria:
+    enabled: true
+    description: 三条独立尺度的概念曲线。2026 年 10 月，技术能力仍在陡峭上行，应用扩散窄而深，金融资本已到高位平台。圆点标出当前判断；虚线表示后续可能路径，不代表实测数据或定量预测。金融资本的延续与调整路径可通过图例切换。
+  tooltip:
+    trigger: item
+    confine: true
+    extraCssText: 'max-width: 260px; white-space: normal; line-height: 1.6;'
+    textStyle:
+      fontSize: 14
+  title:
+  - text: 技术能力 · 仍在陡峭上行
+    subtext: 模型上限持续抬升
+    left: 12
+    top: 8
+    textStyle:
+      fontSize: 16
+    subtextStyle:
+      fontSize: 12
+  - text: 应用扩散 · 窄而深，仍待铺开
+    subtext: 少数场景深入，全社会覆盖仍在早期
+    left: 12
+    top: 244
+    textStyle:
+      fontSize: 16
+    subtextStyle:
+      fontSize: 12
+  - text: 金融资本 · 高位平台，错配累积
+    subtext: 定价领先于真实扩散
+    left: 12
+    top: 480
+    textStyle:
+      fontSize: 16
+    subtextStyle:
+      fontSize: 12
+  legend:
+    data:
+    - 延续
+    - 调整
+    right: 12
+    top: 525
+    itemWidth: 24
+    itemHeight: 12
+    textStyle:
+      fontSize: 12
+  grid:
+  - left: 44
+    right: 24
+    top: 84
+    height: 116
+    width: auto
+  - left: 44
+    right: 24
+    top: 320
+    height: 116
+    width: auto
+  - left: 44
+    right: 24
+    top: 556
+    height: 116
+    width: auto
+  xAxis:
+  - type: value
+    gridIndex: 0
+    min: 0
+    max: 100
+    name: 演进阶段 →
+    nameLocation: middle
+    nameGap: 14
+    nameTextStyle:
+      fontSize: 11
+      padding: 0
+      align: center
+    axisLabel:
+      show: false
+    axisTick:
+      show: false
+    splitLine:
+      show: false
+    axisLine:
+      show: true
+      lineStyle:
+        opacity: 0.4
+  - type: value
+    gridIndex: 1
+    min: 0
+    max: 100
+    name: 演进阶段 →
+    nameLocation: middle
+    nameGap: 14
+    nameTextStyle:
+      fontSize: 11
+      padding: 0
+      align: center
+    axisLabel:
+      show: false
+    axisTick:
+      show: false
+    splitLine:
+      show: false
+    axisLine:
+      show: true
+      lineStyle:
+        opacity: 0.4
+  - type: value
+    gridIndex: 2
+    min: 0
+    max: 100
+    name: 演进阶段 →
+    nameLocation: middle
+    nameGap: 14
+    nameTextStyle:
+      fontSize: 11
+      align: center
+      padding: 0
+    axisLabel:
+      show: false
+    axisTick:
+      show: false
+    splitLine:
+      show: false
+    axisLine:
+      show: true
+      lineStyle:
+        opacity: 0.4
+  yAxis:
+  - type: value
+    gridIndex: 0
+    min: 0
+    max: 110
+    name: 能力水平
+    nameGap: 12
+    nameTextStyle:
+      fontSize: 11
+    axisLabel:
+      show: false
+    axisTick:
+      show: false
+    splitLine:
+      show: false
+    axisLine:
+      show: true
+      lineStyle:
+        opacity: 0.4
+  - type: value
+    gridIndex: 1
+    min: 0
+    max: 110
+    name: 覆盖广度
+    nameGap: 12
+    nameTextStyle:
+      fontSize: 11
+    axisLabel:
+      show: false
+    axisTick:
+      show: false
+    splitLine:
+      show: false
+    axisLine:
+      show: true
+      lineStyle:
+        opacity: 0.4
+  - type: value
+    gridIndex: 2
+    min: 0
+    max: 110
+    name: 定价水平
+    nameGap: 12
+    nameTextStyle:
+      fontSize: 11
+    axisLabel:
+      show: false
+    axisTick:
+      show: false
+    splitLine:
+      show: false
+    axisLine:
+      show: true
+      lineStyle:
+        opacity: 0.4
+  series:
+  - name: 技术能力
+    type: line
+    xAxisIndex: 0
+    yAxisIndex: 0
+    smooth: 0.35
+    showSymbol: false
+    symbol: circle
+    lineStyle:
+      width: 3
+      type: solid
+      opacity: 1
+    itemStyle:
+      color: '#507f9b'
+    tooltip:
+      formatter: 技术能力｜2026 年 10 月<br/>仍在陡峭上行，模型上限持续抬升。<br/>技术进步可跨越资本周期。
+    emphasis:
+      focus: series
+    data:
+    - - 0
+      - 1
+    - - 14
+      - 2
+    - - 28
+      - 5
+    - - 42
+      - 11
+    - - 54
+      - 21
+    - - 64
+      - 36
+    - - 72
+      - 52
+    markPoint:
+      symbol: circle
+      symbolSize: 16
+      label:
+        show: true
+        formatter: 现在
+        position: top
+        distance: 10
+        fontSize: 13
+      data:
+      - name: 2026 年 10 月
+        coord:
+        - 72
+        - 52
+      tooltip:
+        formatter: 技术能力｜2026 年 10 月<br/>仍在陡峭上行，模型上限持续抬升。<br/>技术进步可跨越资本周期。
+  - name: 技术能力：可能路径
+    type: line
+    xAxisIndex: 0
+    yAxisIndex: 0
+    smooth: 0.35
+    showSymbol: false
+    symbol: circle
+    lineStyle:
+      width: 3
+      type: dashed
+      opacity: 0.7
+    itemStyle:
+      color: '#507f9b'
+    tooltip:
+      formatter: 技术能力｜可能路径<br/>能力上限继续抬升。<br/>虚线为概念推演，不是定量预测。
+    emphasis:
+      focus: series
+    data:
+    - - 72
+      - 52
+    - - 82
+      - 78
+    - - 90
+      - 100
+  - name: 应用扩散
+    type: line
+    xAxisIndex: 1
+    yAxisIndex: 1
+    smooth: 0.35
+    showSymbol: false
+    symbol: diamond
+    lineStyle:
+      width: 3
+      type: solid
+      opacity: 1
+    itemStyle:
+      color: '#4f897a'
+    tooltip:
+      formatter: 应用扩散｜2026 年 10 月<br/>少数场景使用很深，全社会覆盖仍在早期。<br/>当前特征是“窄而深”。
+    emphasis:
+      focus: series
+    data:
+    - - 0
+      - 1
+    - - 12
+      - 2
+    - - 24
+      - 7
+    - - 34
+      - 20
+    markPoint:
+      symbol: diamond
+      symbolSize: 16
+      label:
+        show: true
+        formatter: 现在
+        position: top
+        distance: 10
+        fontSize: 13
+      data:
+      - name: 2026 年 10 月
+        coord:
+        - 34
+        - 20
+      tooltip:
+        formatter: 应用扩散｜2026 年 10 月<br/>少数场景使用很深，全社会覆盖仍在早期。<br/>当前特征是“窄而深”。
+  - name: 应用扩散：可能路径
+    type: line
+    xAxisIndex: 1
+    yAxisIndex: 1
+    smooth: 0.35
+    showSymbol: false
+    symbol: diamond
+    lineStyle:
+      width: 3
+      type: dashed
+      opacity: 0.7
+    itemStyle:
+      color: '#4f897a'
+    tooltip:
+      formatter: 应用扩散｜可能路径<br/>从少数场景向更多行业铺开。<br/>扩散需要补齐工程沙箱与制度配套。
+    emphasis:
+      focus: series
+    data:
+    - - 34
+      - 20
+    - - 50
+      - 46
+    - - 65
+      - 73
+    - - 80
+      - 91
+    - - 100
+      - 96
+  - name: 金融资本
+    type: line
+    xAxisIndex: 2
+    yAxisIndex: 2
+    smooth: 0.35
+    showSymbol: false
+    symbol: roundRect
+    lineStyle:
+      width: 3
+      type: solid
+      opacity: 1
+    itemStyle:
+      color: '#aa8746'
+    tooltip:
+      formatter: 金融资本｜2026 年 10 月<br/>处在高位平台，定价领先于真实扩散。<br/>错配不断累积，调整节奏仍有分歧。
+    emphasis:
+      focus: series
+    data:
+    - - 0
+      - 1
+    - - 12
+      - 10
+    - - 22
+      - 38
+    - - 30
+      - 70
+    - - 38
+      - 87
+    - - 45
+      - 94
+    - - 48
+      - 93
+    markPoint:
+      symbol: roundRect
+      symbolSize: 16
+      label:
+        show: true
+        formatter: 现在
+        position: top
+        distance: 10
+        fontSize: 13
+      data:
+      - name: 2026 年 10 月
+        coord:
+        - 48
+        - 93
+      tooltip:
+        formatter: 金融资本｜2026 年 10 月<br/>处在高位平台，定价领先于真实扩散。<br/>错配不断累积，调整节奏仍有分歧。
+  - name: 延续
+    type: line
+    xAxisIndex: 2
+    yAxisIndex: 2
+    smooth: 0.35
+    showSymbol: false
+    symbol: circle
+    lineStyle:
+      width: 3
+      type: dotted
+      opacity: 0.7
+    itemStyle:
+      color: '#aa8746'
+    tooltip:
+      formatter: 金融资本｜延续路径<br/>高位定价继续维持，大顶推迟。<br/>这是一种可能路径，不是确定结局。
+    emphasis:
+      focus: series
+    data:
+    - - 48
+      - 93
+    - - 70
+      - 96
+    - - 100
+      - 100
+  - name: 调整
+    type: line
+    xAxisIndex: 2
+    yAxisIndex: 2
+    smooth: 0.35
+    showSymbol: false
+    symbol: circle
+    lineStyle:
+      width: 3
+      type: dashed
+      opacity: 0.7
+    itemStyle:
+      color: '#aa8746'
+    tooltip:
+      formatter: 金融资本｜调整路径<br/>资本定价回落，出清后逐步修复。<br/>技术进步不等于资本回报。
+    emphasis:
+      focus: series
+    data:
+    - - 48
+      - 93
+    - - 56
+      - 76
+    - - 64
+      - 38
+    - - 74
+      - 24
+    - - 86
+      - 30
+    - - 100
+      - 47
+media:
+- query:
+    maxWidth: 640
+  option:
+    title:
+    - text: 技术能力 · 仍在陡峭上行
+      subtext: 模型上限持续抬升
+      left: 12
+      top: 8
+      textStyle:
+        fontSize: 16
+      subtextStyle:
+        fontSize: 12
+    - text: 应用扩散 · 窄而深，仍待铺开
+      subtext: 少数场景深入，全社会覆盖仍在早期
+      left: 12
+      top: 244
+      textStyle:
+        fontSize: 16
+      subtextStyle:
+        fontSize: 12
+    - text: 金融资本 · 高位平台，错配累积
+      subtext: 定价领先于真实扩散
+      left: 12
+      top: 480
+      textStyle:
+        fontSize: 16
+      subtextStyle:
+        fontSize: 12
+    grid:
+    - left: 44
+      right: 24
+      top: 84
+      height: 116
+      width: auto
+    - left: 44
+      right: 24
+      top: 320
+      height: 116
+      width: auto
+    - left: 44
+      right: 24
+      top: 556
+      height: 116
+      width: auto
+    legend:
+      data:
+      - 延续
+      - 调整
+      right: 12
+      top: 525
+      itemWidth: 24
+      itemHeight: 12
+      textStyle:
+        fontSize: 12
+    xAxis:
+    - type: value
+      gridIndex: 0
+      min: 0
+      max: 100
+      name: 演进阶段 →
+      nameLocation: middle
+      nameGap: 14
+      nameTextStyle:
+        fontSize: 11
+        padding: 0
+        align: center
+      axisLabel:
+        show: false
+      axisTick:
+        show: false
+      splitLine:
+        show: false
+      axisLine:
+        show: true
+        lineStyle:
+          opacity: 0.4
+    - type: value
+      gridIndex: 1
+      min: 0
+      max: 100
+      name: 演进阶段 →
+      nameLocation: middle
+      nameGap: 14
+      nameTextStyle:
+        fontSize: 11
+        padding: 0
+        align: center
+      axisLabel:
+        show: false
+      axisTick:
+        show: false
+      splitLine:
+        show: false
+      axisLine:
+        show: true
+        lineStyle:
+          opacity: 0.4
+    - type: value
+      gridIndex: 2
+      min: 0
+      max: 100
+      name: 演进阶段 →
+      nameLocation: middle
+      nameGap: 14
+      nameTextStyle:
+        fontSize: 11
+        align: center
+        padding: 0
+      axisLabel:
+        show: false
+      axisTick:
+        show: false
+      splitLine:
+        show: false
+      axisLine:
+        show: true
+        lineStyle:
+          opacity: 0.4
+- query:
+    minWidth: 641
+  option:
+    title:
+    - text: 技术能力曲线
+      subtext: 仍在陡峭上行
+      left: 3%
+      top: 8
+      textStyle:
+        fontSize: 16
+      subtextStyle:
+        fontSize: 13
+    - text: 应用扩散曲线
+      subtext: 窄而深，仍待铺开
+      left: 36%
+      top: 8
+      textStyle:
+        fontSize: 16
+      subtextStyle:
+        fontSize: 13
+    - text: 金融资本曲线
+      subtext: 高位平台，错配累积
+      left: 69%
+      top: 8
+      textStyle:
+        fontSize: 16
+      subtextStyle:
+        fontSize: 13
+    grid:
+    - left: 5%
+      right: auto
+      width: 26%
+      top: 100
+      height: 220
+    - left: 38%
+      right: auto
+      width: 26%
+      top: 100
+      height: 220
+    - left: 71%
+      right: auto
+      width: 26%
+      top: 100
+      height: 220
+    legend:
+      top: 352
+      right: 3%
+    xAxis:
+    - nameLocation: middle
+      nameGap: 14
+      nameTextStyle:
+        padding: 0
+        align: center
+    - nameLocation: middle
+      nameGap: 14
+      nameTextStyle:
+        padding: 0
+        align: center
+    - nameLocation: middle
+      nameGap: 14
+      nameTextStyle:
+        padding: 0
+        align: center
+```
+
+*概念示意，不按比例；各图演进尺度独立。圆点为 2026 年 10 月的阶段判断，虚线为可能路径。技术进步 ≠ 资本回报。悬停查看说明，点击“延续 / 调整”图例可切换路径。*
 
 1. **技术能力曲线：仍在陡峭攀升。** 从长链条推理到复杂工具调用，模型的智力上限依然在按季度迭代，远没到技术停滞的时候。
 
@@ -151,7 +764,100 @@ GPU 的经济折旧寿命只有四五年，模型厂背上的却是跨越十年�
 
 尊重这些反方事实，我们对未来两年（2026 Q4 – 2028 Q4）的判断就不应该是一条宿命论的单行道，而是一棵包含四个分支的**概率树**：
 
-![AI 泡沫未来两年的四种情景与概率](scenarios.webp)
+以下为作者对 2026 年第四季度至 2028 年第四季度的**主观概率判断**，悬停可查看各条路径的核心特征。
+
+```echarts {height="320px" full=true class="ai-bubble-probabilities"}
+animation: false
+backgroundColor: transparent
+aria:
+  enabled: true
+  description: 作者对 2026 年第四季度至 2028 年第四季度的主观情景判断：B 两段式出清 45%，C 硬着陆 25%，A 泡沫延续 15%，D 外生断裂 15%。概率合计 100%。
+tooltip:
+  trigger: item
+  confine: true
+  extraCssText: 'max-width: 260px; white-space: normal; line-height: 1.6;'
+  textStyle:
+    fontSize: 14
+grid:
+  left: 120
+  right: 48
+  top: 20
+  bottom: 36
+xAxis:
+  type: value
+  min: 0
+  max: 50
+  interval: 25
+  axisLabel:
+    formatter: '{value}%'
+    fontSize: 11
+  splitLine:
+    lineStyle:
+      type: dashed
+      opacity: 0.25
+yAxis:
+  type: category
+  inverse: true
+  axisTick:
+    show: false
+  axisLine:
+    show: false
+  axisLabel:
+    fontSize: 13
+    margin: 12
+  data:
+  - B · 两段式出清
+  - C · 硬着陆
+  - A · 泡沫延续
+  - D · 外生断裂
+series:
+- name: 主观概率
+  type: bar
+  barMaxWidth: 28
+  showBackground: true
+  backgroundStyle:
+    color: rgba(148, 163, 184, 0.12)
+    borderRadius: 4
+  itemStyle:
+    borderRadius:
+    - 0
+    - 4
+    - 4
+    - 0
+  label:
+    show: true
+    position: right
+    formatter: '{c}%'
+    fontSize: 16
+    fontWeight: bold
+  emphasis:
+    focus: self
+  data:
+  - value: 45
+    name: B · 两段式出清
+    itemStyle:
+      color: '#507f9b'
+    tooltip:
+      formatter: B · 两段式出清（温和版 2001）<br/>主观概率：45%<br/>先估值压缩，后产能与信用出清；巨头与头部实验室存活。
+  - value: 25
+    name: C · 硬着陆
+    itemStyle:
+      color: '#b06e59'
+    tooltip:
+      formatter: C · 硬着陆（2000 + 滞胀）<br/>主观概率：25%<br/>溢价塌缩、继续加息、交叉违约同时发生，拖累宏观衰退。
+  - value: 15
+    name: A · 泡沫延续
+    itemStyle:
+      color: '#4f897a'
+    tooltip:
+      formatter: A · 泡沫延续（1998 重演）<br/>主观概率：15%<br/>一次两三成的回调后再创新高，大顶推迟，最终清算更大。
+  - value: 15
+    name: D · 外生断裂
+    itemStyle:
+      color: '#aa8746'
+    tooltip:
+      formatter: D · 外生断裂（黑天鹅）<br/>主观概率：15%<br/>台海、中东或重大 AI 安全事故，打断常规周期推演。
+```
 
 把这四根树枝展开来看：
 
@@ -167,7 +873,14 @@ GPU 的经济折旧寿命只有四五年，模型厂背上的却是跨越十年�
 
 至于怎么判断我们正走在哪根树枝上，不需要听信任何分析师的嘴，盯紧下面这张仪表盘就够了：
 
-![判断 AI 泡沫演化路径的关键观察指标](signals.webp)
+| 观测信号 | 核心检验点 | 路径指向 |
+| --- | --- | --- |
+| Anthropic 上市后前两份季报 | 环比增速高于 **25%**，还是低于 **10%** | 前者偏向 **A（泡沫延续）**，后者偏向 **B（两段式出清）** |
+| Anthropic 年底年化收入 | 能否从约 **670 亿美元**冲上预期的 **1100 亿美元** | 大幅落空，确认编程楔子换挡 |
+| GPU 长约与按需租金 | 何时**停止上涨并拐头向下** | 拐头即新产能追上需求，**B 下半场**启动 |
+| AI 表外债务次级档收益率 | 从 **8.5%** 升至 **10% 以上**后是否继续走阔 | 继续走阔，外围信用断裂风险上升 |
+| OpenAI 2027 年上市 | 能否以 **1 万亿美元**估值顺利完成 | 再推迟或打折上市，是强烈见顶信号 |
+| 2028 年初资本开支指引 | **Meta** 或**甲骨文**是否率先下调 | 区分 **B（温和出清）** 与 **C（硬着陆）** |
 
 ## 六、终局：科斯边界坍缩，我们是“新自由民”还是“新佃农”？
 

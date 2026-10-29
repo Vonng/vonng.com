@@ -556,3 +556,20 @@ body.td-section .td-figure img {
 .td-landing-landing .td-landing-section__head {
   margin-bottom: clamp(24px, 3vw, 40px);
 }
+
+// Match the AI bubble chart's native ECharts media breakpoint to its container.
+.ai-bubble-curves,
+.ai-bubble-probabilities {
+  // ECharts retains hidden tooltip positions after a viewport resize.
+  overflow: hidden;
+}
+
+.ai-bubble-curves {
+  container-type: inline-size;
+}
+
+@container (min-width: 641px) {
+  .ai-bubble-curves > [data-td-echarts-canvas] {
+    height: 380px !important;
+  }
+}
