@@ -15,7 +15,7 @@ My original goal was modest. In Pigsty, we use MinIO as an optional backup repos
 
 It quickly became clear that plenty of others in the community still needed open-source MinIO binaries too. Since I was already building them for myself, I figured I might as well publish them for everyone. In February, I wrote [MinIO Is Dead, Long Live MinIO](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247491187&idx=1&sn=005af2d12f6f4d258040efbe4faf08bb&scene=21#wechat_redirect), which unexpectedly landed on the front page of Hacker News.
 
-![Silo homepage showing download counts, GitHub stars, and security advisories](silo-home.webp)
+![silo-home.webp](silo-home.webp)
 
 A year later, here is where things stand: **4,300+ GitHub stars**, **5 million** Docker image pulls, **20 security vulnerabilities** patched, and dozens of bugs fixed. We have shipped on a steady monthly cadence, stayed on top of security advisories, cleaned up defects inherited from upstream, restored the full Web Console that upstream had gutted from the open-source edition, and built a modernized frontend rewrite alongside it.
 
@@ -48,7 +48,7 @@ My day job is PostgreSQL, so I instinctively judge infrastructure software by Po
 
 And that doesn't even count the seven formal CVEs. The worst of them, **CVE-2026-33322** (CVSS 9.8), was an OIDC JWT algorithm-confusion flaw: anyone who knew the `ClientSecret` could forge tokens for any identity, including `consoleAdmin`. That vulnerability sat wide open from November 2022 until March 2026—three and a half years.
 
-![Silo security timeline and vulnerability fixes](security.webp)
+![silo-security-en.webp](silo-security-en.webp)
 
 Linus's Law claims that "given enough eyeballs, all bugs are shallow." With 60,000 GitHub stars and billions of Docker pulls, MinIO had no shortage of eyeballs. Yet in practice, the vast majority of users never leave the happy path: if `PUT`, `GET`, and `LIST` work, they move on. The landmines above live in the intersections—versioned buckets plus remote tiering, multi-pool clusters plus replication, canceled requests plus slow disks. When ordinary users hit those bugs, they usually assumed they had misconfigured something. Meanwhile, upstream spent its final two years focused almost entirely on its closed-source commercial edition. The result was software that looked feature-complete on paper, but stalled out halfway on correctness.
 
@@ -89,7 +89,7 @@ Along the way, I have settled on four AI software-engineering practices that act
 3. **Strict complexity budgets:** Every change must prove itself both necessary and minimal. Penalizing complexity is the only way to keep AI-generated patches from degenerating into an unmaintainable ball of mud.
 4. **Scheduled debt-paydown passes:** AI ships fixes fast, which means patch-on-patch complexity accumulates fast too. After every intense bug-hunting sprint, we dedicate token budget specifically to refactoring and structural cleanup.
 
-![Silo architecture design notes and engineering decision records](design-notes.webp)
+![silo-design-en.webp](silo-design-en.webp)
 
 Roughly 80% of the tokens we burn on Silo go toward adversarial testing and verification. Object storage sits at the bottom of the stack; if it loses data, the blast radius is massive, and my own reputation is on the line.
 
@@ -110,8 +110,6 @@ Since I brought up RustFS, let's address the comparison head-on. Every time I po
 So why didn't I just switch to RustFS instead of maintaining Silo? Partly because RustFS wasn't ready back then—but more importantly, because the two projects serve completely different niches.
 
 RustFS aims to push the frontier of S3-compatible object storage, whereas Silo exists to keep an established software supply chain running without disruption. Their performance profiles differ as well: RustFS is faster on small objects, while MinIO and Silo hold an edge on larger payloads.
-
-![Single-drive benchmark comparing MinIO, Silo, and RustFS](benchmark.webp)
 
 Although RustFS is pitched as a drop-in replacement for MinIO, the operational reality on the ground is more nuanced. Its on-disk format and S3 API are compatible, yes—but its scrubbing and recovery semantics, Prometheus and OpenTelemetry metric names, and even TLS certificate directory layouts are different. **API and data-format compatibility are not the same thing as operational drop-in compatibility.**
 
@@ -135,7 +133,15 @@ Now that RustFS hit 1.0 GA in September, choosing between the two is straightfor
 
 Looking back at the goals we set in February, we have kept every promise on the list.
 
-![Silo's initial commitments compared with delivery one year later](promises.webp)
+| What we said in February | One year later |
+| --- | --- |
+| Provide ready-to-use binaries, RPM/DEB packages, and Docker images | Done. We now also provide APK packages, Windows ZIP archives, and distroless images, with GPG signatures, SBOMs, and build provenance. |
+| Restore the gutted management console | Done, and then some. Console went from 2.0 to 2.5, supports Chinese and English, and shrank its frontend bundle from 10 MB to under 3 MB, with zero telemetry. |
+| Track CVEs and fix bugs, without offering a commercial SLA | Done. All 7 CVEs disclosed after upstream stopped releasing updates have been fixed, and every security issue has a public record. |
+| Use it in our own production environment first | Done. Pigsty v4.5's object storage module deploys only Silo. |
+| Trademark: wait for them to come knocking before renaming | We didn't wait. We proactively renamed the project Silo in August, changing all branding while leaving every interface untouched. |
+| No new features; just keep the software supply chain alive | We ended up adding a few small compatibility and convenience features. |
+{.wide .expand}
 
 On our "no new features" rule, we have allowed ourselves two pragmatic exceptions:
 
