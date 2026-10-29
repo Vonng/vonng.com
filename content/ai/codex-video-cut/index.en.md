@@ -32,7 +32,7 @@ As you can see, this is a pretty casual prompt. I simply handed over an everyday
 
 Forty-eight minutes later, the result was ready, and I was very happy with it. It had picked out exactly the exchanges between the moderator and me.
 
-![Codex's delivery report after editing the panel video](01.webp)
+![Codex's delivery report after editing the panel video](01-en.webp)
 
 ## The Result
 
@@ -40,9 +40,9 @@ I've already posted the finished video on WeChat Channels. Honestly, it exceeded
 
 What surprised me most was how it went about the work. It didn't have a speech recognition tool available, so it downloaded a Qwen ASR model, ran it locally, and transcribed everything I said. It drove the whole process itself: sampling video frames to inspect the footage, extracting audio, transcribing speech, checking and correcting the text, creating subtitles, aligning them with the timeline, then cutting, assembling, and exporting the video.
 
-![Codex operating Final Cut Pro to edit, subtitle, and export the video](02.webp)
+![Codex operating Final Cut Pro to edit, subtitle, and export the video](02-en.webp)
 
-![Video, subtitles, transcripts, and project files produced by the editing task](03.webp)
+![Video, subtitles, transcripts, and project files produced by the editing task](03-en.webp)
 
 I kept working on the same computer while it operated Final Cut Pro in the background, smoothly handling the job on its own. All I did was copy the videos over and give Codex that prompt.
 
@@ -54,11 +54,11 @@ Having seen what it can do, I'm now asking it to go through my video archive—s
 
 I used Codex's most powerful configuration: GPT-6 Astra in Fast mode, with reasoning effort set to Max. This task consumed about 29.1 million tokens, with a cache hit rate of 98.6% for input tokens. At API rates, the estimated cost would have been under 500 yuan. Of course, you'd be a fool to pay metered API rates for this. Everyone uses subscriptions.
 
-![Token usage statistics for the Codex video editing task](04.webp)
+![Token usage statistics for the Codex video editing task](04-en.webp)
 
 The Codex 20x Pro subscription costs $200 a month. With an average of 4.33 weeks per month, plus the 10 complimentary resets handed out over the past month, that adds up to the equivalent of 14.33 weekly allowances if fully used. During this task, my account's remaining weekly quota fell by about 8 percentage points. Using that change as a rough basis for allocating the subscription cost, and assuming all the quota replenished by resets was fully used, the task consumed about 0.56% of the monthly budget. At an assumed exchange rate of 6.7 yuan to the dollar, that comes to 7.5 yuan.
 
-![Estimated amortized subscription cost with and without complimentary resets](05.webp)
+![Estimated amortized subscription cost with and without complimentary resets](05-en.webp)
 
 Without the resets, it would be roughly 1.9% of the monthly allowance, or 25 yuan. Elapsed time: 48 minutes. Since I didn't have to watch it, the cost in my own time was close to zero.
 
