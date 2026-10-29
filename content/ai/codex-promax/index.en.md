@@ -27,7 +27,11 @@ That number matters far more than the sticker price.
 
 Here is ChatGPT's current paid ladder, normalized to the Plus quota as 1×:
 
-![ChatGPT plan comparison: Plus costs $20 a month for 1× usage; Pro Lite costs $100 for 5×; Pro More costs $200 for 20×](pricing.webp)
+| Plan | Monthly price | Usage quota | Cost per 1× |
+| --- | --- | --- | --- |
+| Plus | $20 | 1× | $20 |
+| Pro Lite ($100) | $100 | 5× | $20 |
+| Pro More ($200) | $200 | 20× | $10 |
 
 The $200 tier is the best deal on the board. Each 1× unit of quota costs $10—half the retail rate of Plus and Lite. That wholesale discount is the exact reason heavy users crowd into the $200 plan.
 
