@@ -13,7 +13,8 @@ There was no event today. No teaser campaign. Not even a credible rumor.
 
 Apple simply updated its website and launched the new Mac mini and Mac Studio. The Mac mini now comes with the M6 or M5 Pro; the Mac Studio gets the M5 Max or M5 Ultra.
 
-![Apple's website announcing the new Mac Studio with M5 Max or M5 Ultra](lineup.webp)
+![Apple's website announcing the new Mac Studio with M5 Max or M5 Ultra](lineup-en.webp)
+{caption="Apple's English Mac Studio page, captured October 29, 2026." link="https://www.apple.com/mac-studio/"}
 
 I have long been obsessed with self-hosted AI, especially machines like the Mac Studio with large pools of unified memory. I had spent almost a year searching every week for some sign of when the M5 Ultra would arrive.
 
@@ -21,19 +22,22 @@ Nothing appeared. Then today, without warning, it did.
 
 Most important of all, **the 512 GB unified-memory option is back. The maxed-out [M5 Max MacBook Pro](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247491450&idx=1&sn=a2fd37dc58543aa1c333a7bd04066daf&scene=21#wechat_redirect) I bought for RMB 60,000 at the start of the year suddenly feels a lot less exciting.**
 
-![The M5 Ultra Mac Studio offers up to 512 GB of unified memory](memory.webp)
+![The M5 Ultra Mac Studio offers up to 512 GB of unified memory](memory-en.webp)
+{caption="Apple's English technical specifications, captured October 29, 2026." link="https://www.apple.com/mac-studio/specs/"}
 
 That does not make the MacBook Pro a bad purchase. It is still a portable 128 GB workstation, which is a very different proposition from an aluminum box on a desk. But if your real goal is to run large models locally, the 512 GB Mac Studio is virtually the only machine in this generation worth serious consideration.
 
 So far, we can see that the 256 GB / 16 TB configuration costs RMB 143,000. Based on Apple's pricing pattern, 512 GB / 16 TB will probably add another RMB 50,000–60,000, putting a fully loaded system close to RMB 200,000. Even a 512 GB / 2 TB configuration will likely cost around RMB 140,000–150,000. It is not cheap.
 
-![Price of the Mac Studio configured with 256 GB of unified memory and 16 TB of storage](pricing.webp)
+![Price of the Mac Studio configured with 256 GB of unified memory and 16 TB of storage](pricing-en.webp)
+{caption="English translation of the original Chinese screenshot. Prices are in RMB."}
 
 ## 1. Why 512 GB Matters
 
 After Apple discontinued the previous 512 GB M3 Ultra model, the market went berserk. A machine that originally cost less than RMB 100,000 was quoted by resellers at RMB 150,000, then RMB 180,000; some reportedly asked RMB 200,000.
 
-![Reseller pricing for the discontinued 512 GB M3 Ultra Mac Studio](resale.webp)
+![The author's March 6 post about Apple removing the 512 GB memory option, with an embedded Mac Studio configurator](resale-en.webp)
+{caption="English translation of the author's original Chinese post and embedded screenshot."}
 
 People did not chase it because it was a Mac or because they liked the Apple logo. The machine filled a highly unusual gap in the market: **it may have been the cheapest high-memory, all-in-one local AI system that an ordinary buyer could purchase through official channels with a proper invoice.**
 
@@ -51,7 +55,12 @@ The Mac Studio's 512 GB of unified memory is accessible to both its CPU and GPU.
 
 ### The Real Footprint of Several Models
 
-![Weight sizes of Qwen3.8-27B, DeepSeek-V4-Flash, and GLM-5.3 compared with device memory capacity](models.webp)
+| Model | Weight footprint (4-bit / official mixed precision) | 512 GB Mac Studio | 128 GB system | 32 GB GPU |
+| --- | --- | --- | --- | --- |
+| Qwen3.8-27B | ~15–20 GB | Fits easily | Fits easily | Fits |
+| DeepSeek-V4-Flash-0731 | ~167 GB (official FP4+FP8 mix) | Fits | Won't fit | Won't fit |
+| GLM-5.3 | ~400–450 GB in 4-bit (estimate) | Fits with little headroom | Won't fit | Won't fit |
+{.wide}
 
 The last figure is the one that matters.
 
@@ -71,7 +80,16 @@ The new M5 Ultra delivers **1.2 TB/s** of unified-memory bandwidth, 50% more tha
 
 ### What the Contenders Bring to the Table
 
-![Memory capacity and bandwidth of the Mac Studio, Mac mini, DGX Spark, and NVIDIA GPUs](hardware.webp)
+| Device | Memory / VRAM | Bandwidth |
+| --- | ---: | ---: |
+| Mac Studio M5 Ultra | 512 GB | 1.2 TB/s |
+| Mac Studio M5 Max | 128 GB | 614 GB/s |
+| Mac mini M5 Pro | 64 GB | 307 GB/s |
+| Mac mini M6 | 32 GB | 170 GB/s |
+| DGX Spark | 128 GB | 273 GB/s |
+| RTX 5090 | 32 GB | 1.79 TB/s |
+| RTX PRO 6000 Blackwell | 96 GB | 1.79 TB/s |
+{.wide}
 
 The table makes the tradeoff obvious. The RTX 5090 has 50% more bandwidth than the M5 Ultra, but only 32 GB of memory. **Bandwidth determines how quickly each token arrives; capacity determines whether the model runs at all.**
 
@@ -79,7 +97,12 @@ The table makes the tradeoff obvious. The RTX 5090 has 50% more bandwidth than t
 
 Based on model architecture, weight footprint, memory bandwidth, and measurements from the previous generation, here is a conservative projection:
 
-![Estimated generation speed and aggregate concurrent throughput for three large models on the M5 Ultra](estimates.webp)
+| Model (4-bit) | Single-stream generation | Aggregate concurrent throughput |
+| --- | ---: | ---: |
+| Qwen 27B class | 45–65 tokens/s | 100+ tokens/s |
+| DeepSeek-V4-Flash | 20–35 tokens/s | 45–100 tokens/s |
+| GLM-5.3 class | 22–32 tokens/s | 40–75 tokens/s |
+{.wide}
 
 **These are not benchmark results. The new machine has not shipped, and frameworks such as MLX and llama.cpp will need time to support the new GPU and Neural Accelerator. Quantization, context length, prompt caching, concurrency, and the inference engine can each change the result dramatically.**
 
@@ -175,7 +198,8 @@ It remains a compact, low-power host for local agents running 7B, 14B, and some 
 
 The version local AI users should really watch is the **M5 Pro model**. It supports up to 64 GB of unified memory, 307 GB/s of bandwidth, and Thunderbolt 5.
 
-![Mac mini with M5 Pro and 64 GB of unified memory](mini.webp)
+![Mac mini with M5 Pro and 64 GB of unified memory](mini-en.webp)
+{caption="English translation of the original Chinese screenshot. Prices are in RMB."}
 
 It cannot run a full DeepSeek-V4, let alone a GLM model with hundreds of billions of parameters. But it is already quite practical for a quantized model in the Qwen 27B class. For a home AI service, coding agent, knowledge base, speech processing, or an always-on automation node, it may be the best-value small machine of this generation.
 

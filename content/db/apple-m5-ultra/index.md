@@ -33,7 +33,7 @@ tags: [Apple, Mac Studio, 本地 AI]
 
 上一代 M3 Ultra 的 512 GB 机型停售之后，市场上出现过一段非常离谱的行情。原本不到十万元的机器，渠道报价一路被抬到十五万、十八万，据说还有喊到二十万的。
 
-![停产后 512 GB M3 Ultra Mac Studio 的渠道报价](resale.webp)
+![作者 3 月 6 日关于苹果下架 512 GB 内存选项的帖子，内嵌 Mac Studio 配置页面](resale.webp)
 
 有人愿意追，不是因为它叫 Mac，也不是因为苹果标好看，而是因为它卡住了一个非常特殊的空位：**它可能是普通人能够正常购买、正常开票的、最便宜的大容量本地 AI 一体机**。
 
@@ -51,7 +51,12 @@ Mac Studio 的 512 GB 统一内存，CPU 和 GPU 可以同时访问。它当然�
 
 ### 几个模型的实际体量
 
-![Qwen3.8-27B、DeepSeek-V4-Flash 和 GLM-5.3 的权重体量与设备容量对比](models.webp)
+| 模型 | 权重体量（4-bit / 官方混合精度） | 512 GB Mac Studio | 128 GB 设备 | 32 GB 显卡 |
+| --- | --- | --- | --- | --- |
+| Qwen3.8-27B | 约 15–20 GB | 轻松 | 轻松 | 可以 |
+| DeepSeek-V4-Flash-0731 | 约 167 GB（官方 FP4+FP8 混合） | 可以 | 装不下 | 装不下 |
+| GLM-5.3 | 4-bit 约 400–450 GB（估算） | 勉强可以 | 装不下 | 装不下 |
+{.wide}
 
 最后这个数字是关键。
 
@@ -71,7 +76,16 @@ Mac Studio 的 512 GB 统一内存，CPU 和 GPU 可以同时访问。它当然�
 
 ### 几台候选设备的底牌
 
-![Mac Studio、Mac mini、DGX Spark 与 NVIDIA 显卡的内存容量和带宽对比](hardware.webp)
+| 设备 | 内存 / 显存 | 带宽 |
+| --- | ---: | ---: |
+| Mac Studio M5 Ultra | 512 GB | 1.2 TB/s |
+| Mac Studio M5 Max | 128 GB | 614 GB/s |
+| Mac mini M5 Pro | 64 GB | 307 GB/s |
+| Mac mini M6 | 32 GB | 170 GB/s |
+| DGX Spark | 128 GB | 273 GB/s |
+| RTX 5090 | 32 GB | 1.79 TB/s |
+| RTX PRO 6000 Blackwell | 96 GB | 1.79 TB/s |
+{.wide}
 
 看这张表你就明白了：RTX 5090 的带宽比 M5 Ultra 还高一半，但它只有 32 GB。**带宽决定单 token 多快，容量决定能不能跑。**
 
@@ -79,7 +93,12 @@ Mac Studio 的 512 GB 统一内存，CPU 和 GPU 可以同时访问。它当然�
 
 根据模型结构、权重大小、内存带宽，以及上一代设备的实测数据，做一个保守推算：
 
-![M5 Ultra 运行三个大模型的生成速度与并发吞吐量估算](estimates.webp)
+| 模型（4-bit） | 单路生成 | 多路并发聚合 |
+| --- | ---: | ---: |
+| Qwen 27B 级别 | 45–65 token/s | 100+ token/s |
+| DeepSeek-V4-Flash | 20–35 token/s | 45–100 token/s |
+| GLM-5.3 级别 | 22–32 token/s | 40–75 token/s |
+{.wide}
 
 **这些数字不是实测。新机器还没交付，MLX、llama.cpp 这些框架也需要时间适配新的 GPU 和 Neural Accelerator。量化方法、上下文长度、提示词缓存、并发数、推理引擎，每一项都会让最终结果产生巨大差异。**
 
