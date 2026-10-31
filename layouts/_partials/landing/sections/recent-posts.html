@@ -17,11 +17,14 @@
 {{- /* Every top-level column of this site is a blog section, so "recent" is
      simply the newest dated post in any of them. */ -}}
 {{- $posts := where $page.Site.RegularPages "Type" "blog" -}}
+{{- with $data.section -}}
+  {{- $posts = where $posts "Section" . -}}
+{{- end -}}
 {{- $posts = where $posts "Date" "ne" nil -}}
 {{- $posts = first $limit ($posts.ByDate.Reverse) -}}
-<section id="{{ $id }}" class="td-landing-section td-landing-cards-section td-landing-recent{{ with $data.class }} {{ . }}{{ end }}"{{ with $data.title }} aria-labelledby="{{ $id }}-title"{{ end }}>
+<section id="{{ $id }}" class="td-landing-section td-landing-cards-section td-landing-recent{{ with $data.class }} {{ . }}{{ end }}"{{ if or $data.title $data.eyebrow }} aria-labelledby="{{ $id }}-title"{{ end }}>
   <div class="td-site-container">
-    {{- partial "landing/heading.html" (dict "page" $page "data" $data "id" $id) }}
+    {{- partial "landing/heading.html" (dict "page" $page "data" $data "id" $id "compact" true) }}
     {{- with $posts }}
     <div class="td-content-cards td-blog-cards" style="--td-card-columns: {{ $columns }}">
       {{- range . }}

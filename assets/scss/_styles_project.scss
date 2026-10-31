@@ -1,7 +1,23 @@
 // Site styles, compiled after the OINK component and brand layers.
 //
-// Keep the site's legacy blue links and cyan accent in Slate. The other
-// presets use their own palettes, with light and dark resolved by OINK.
+// Give both the default `paper` preset and `slate` the site's signature
+// PostgreSQL slate-blue link palette, while keeping `paper`'s warm ivory
+// ground and `slate`'s cool cyan rules distinct.
+
+:root[data-td-preset='paper'],
+[data-td-preset='paper'][data-bs-theme='light'] {
+  --bs-link-color: #336791; // PostgreSQL slate blue
+  --bs-link-color-rgb: 51, 103, 145;
+  --bs-link-hover-color: #1f8fd6; // bright azure
+  --bs-link-hover-color-rgb: 31, 143, 214;
+}
+
+[data-td-preset='paper'][data-bs-theme='dark'] {
+  --bs-link-color: #8fb4d4;
+  --bs-link-color-rgb: 143, 180, 212;
+  --bs-link-hover-color: #5cc2f5;
+  --bs-link-hover-color-rgb: 92, 194, 245;
+}
 
 :root[data-td-preset='slate'],
 [data-td-preset='slate'][data-bs-theme='light'] {
@@ -32,6 +48,101 @@
   --td-brand-copper-dim: rgba(34, 211, 238, 0.55);
 }
 
+// -- Rich desktop navbar dropdowns ----------------------------------------
+//
+// Top-level menu items (`专栏`, `项目`, `译著`, `著作`, `站点`) open a rich
+// two-line dropdown panel rendered by layouts/_partials/navbar-entry-link.html.
+// Match `.td-site-header` specificity so OINK's default 300px cap is overridden,
+// and keep every item strictly to 1 line of title + 1 line of subtitle.
+.td-site-header .td-nav-menu__panel {
+  width: max-content;
+  min-width: 380px;
+  max-width: unquote("min(540px, calc(100vw - 32px))");
+  padding: 0.45rem;
+}
+
+.td-site-header .td-nav-menu__panel .td-nav-menu__item-link.td-nav-menu__item-link--rich {
+  display: grid;
+  grid-template-columns: 2.1rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.5rem 0.65rem;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+
+  > .td-navbar-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    margin: 0;
+    border-radius: 0.45rem;
+    background: color-mix(in srgb, var(--bs-link-color) 10%, transparent);
+    color: var(--bs-link-color);
+    font-size: 0.85rem;
+    transition:
+      background-color 160ms ease,
+      color 160ms ease,
+      transform 160ms ease;
+  }
+
+  .td-navbar-entry__body {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 0.14rem;
+  }
+
+  .td-navbar-entry__head {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--bs-emphasis-color);
+    font-size: 0.88rem;
+    font-weight: 650;
+    line-height: 1.25;
+    white-space: nowrap;
+
+    .td-navbar-entry__label {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .td-navbar-entry__external {
+      flex: none;
+    }
+  }
+
+  .td-navbar-entry__desc {
+    display: block;
+    min-width: 0;
+    color: var(--bs-secondary-color);
+    font-size: 0.76rem;
+    font-weight: 400;
+    line-height: 1.35;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &:hover,
+  &:focus-visible {
+    > .td-navbar-icon {
+      background: color-mix(in srgb, var(--bs-link-color) 18%, transparent);
+      color: var(--bs-link-hover-color);
+      transform: scale(1.04);
+    }
+
+    .td-navbar-entry__head {
+      color: var(--bs-link-color);
+    }
+  }
+}
+
 // The about page's portrait reads as a photograph rather than a diagram: give
 // it the same rounded plate the content cards use.
 .td-blog .td-figure img,
@@ -45,9 +156,6 @@ body.td-section .td-figure img {
 // process in layouts/_partials/shell/blog-card.html; this imposes the same
 // frame on SVG, static and remote images, which it cannot.
 .td-blog-card__image {
-  // The `height` attribute is a presentational hint, and a definite height
-  // makes the browser ignore `aspect-ratio` altogether. Release the height
-  // first, then the ratio decides the frame.
   height: auto;
   aspect-ratio: 2 / 1;
 }
@@ -101,30 +209,14 @@ body.td-section .td-figure img {
   }
 }
 
-// The theme reserves 5rem on the heading's end edge so a left-aligned title
-// clears the page-actions cluster floating in the corner. This heading is
-// centred, and a reserve on one side only moves the whole column 2.5rem off
-// the axis -- which is why the portrait and the column name did not line up
-// with the centre of the card grid below, whose container carries no such
-// reserve. The reserve is not needed here: the first thing in the column is a
-// 9rem portrait, and the actions row is 29px tall and parked at the end edge,
-// so nothing centred can reach it. Dropping it puts both on one axis.
-// Matches the shape of the theme's own rule so it wins on class count rather
-// than on source order.
 .td-shell-topline--actions-only + .td-content > .td-page-heading.td-column-profile {
   padding-inline-end: 0;
 }
 
-// The opening sits inside the hero image, and the theme's default reserve puts
-// it low enough that the portrait reads as floating in the middle of the
-// picture rather than opening the page. Lift it: the copy still clears the
-// navbar and still sits *in* the image rather than against its edge.
 .td-shell-layout--hero {
   --td-featured-hero-space: clamp(120px, 25vh, 288px);
 }
 
-// The Hero pushes the opening down; the profile is that opening, so the card
-// grid needs the breathing room the plain title row did not.
 .td-blog-posts {
   margin-block-start: 2rem;
 }
@@ -140,9 +232,6 @@ body.td-section .td-figure img {
   grid-template-columns: repeat(var(--td-columns, 2), minmax(0, 1fr));
   gap: 16px;
 
-  // A logo-beside-text card needs roughly 440px to hold three lines without
-  // breaking words, so the grid collapses to one column well before the
-  // generic card grids do.
   @media (max-width: 991.98px) {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -150,8 +239,6 @@ body.td-section .td-figure img {
 
 .td-column-card {
   display: grid;
-  // Two columns, not three: the post count rides on the title's own line, so
-  // the description gets the whole body width and breaks late.
   grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
   gap: clamp(0.85rem, 1.7vw, 1.2rem);
@@ -294,42 +381,30 @@ body.td-section .td-figure img {
   }
 }
 
-// Ways out of the recent-posts feed sit apart from the grid rather than
-// tucked under it, and read as a pair of equal choices.
+// Ways out of a section grid sit apart from the cards and read as equal choices.
 .td-landing-recent__more {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-block-start: clamp(2rem, 4vw, 3rem);
+  margin-block-start: clamp(1.6rem, 3vw, 2.25rem);
+  margin-block-end: 0;
 }
 
 // -- Home: the featured hero ----------------------------------------------
-//
-// The same treatment `featured_image: hero` gives a blog article: the image
-// full-bleed behind the opening, masked away before the text. `.td-featured-hero`
-// is the theme's own element and styling; all this adds is the containing
-// block it needs on a landing page, and room for the copy to clear the image.
-// Docsy's `.td-default main section { padding: 5rem 0 }` is (0,1,2) and uses
-// the padding shorthand, so it outranks a lone `.td-hero-featured--with-image`
-// and silently flattened this opening. Nesting under `.td-landing-landing`
-// puts these rules at (0,2,0)/(0,3,0), which wins on class count.
 .td-landing-landing {
   .td-hero-featured {
     position: relative;
     isolation: isolate;
     padding-block: clamp(40px, 6vw, 72px) clamp(56px, 7vw, 104px);
 
-    // The navbar overlays the picture, so the copy has to clear both the bar
-    // and enough of the image to sit in it rather than against it.
     &--with-image {
-      padding-block-start: clamp(180px, 30vh, 320px);
+      padding-block-start: clamp(170px, 28vh, 300px);
 
       @media (max-width: 767.98px) {
         padding-block-start: clamp(120px, 24vh, 220px);
       }
     }
 
-    // Copy on the left, portrait in the space the picture leaves on the right.
     &__grid {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
@@ -339,19 +414,36 @@ body.td-section .td-figure img {
 
     &__portrait {
       justify-self: end;
-      // Inset from the container edge so the portrait sits inside the
-      // composition rather than against its right margin.
       margin-inline-end: clamp(0rem, 4vw, 4rem);
+
+      &-link {
+        display: block;
+        border-radius: 50%;
+        text-decoration: none;
+
+        &:hover,
+        &:focus-visible {
+          img {
+            transform: scale(1.03);
+            border-color: var(--bs-link-color);
+            box-shadow: var(--td-brand-shadow-lg, 0 18px 40px rgba(0, 0, 0, 0.22));
+          }
+        }
+      }
 
       img {
         display: block;
-        width: clamp(10rem, 19vw, 17rem);
-        height: clamp(10rem, 19vw, 17rem);
+        width: clamp(10rem, 19vw, 16.5rem);
+        height: clamp(10rem, 19vw, 16.5rem);
         border-radius: 50%;
         border: 4px solid var(--td-brand-elev);
         box-shadow: var(--td-brand-shadow-md);
         object-fit: cover;
         background: var(--bs-secondary-bg);
+        transition:
+          transform 220ms ease,
+          border-color 220ms ease,
+          box-shadow 220ms ease;
       }
 
       @media (max-width: 991.98px) {
@@ -382,39 +474,52 @@ body.td-section .td-figure img {
 
     &__lead {
       max-width: 54rem;
-      margin-block-start: clamp(1rem, 2vw, 1.6rem);
+      margin-block-start: clamp(1rem, 2vw, 1.5rem);
       color: var(--bs-body-color);
-      font-size: clamp(1.02rem, calc(0.95rem + 0.3vw), 1.2rem);
+      font-size: clamp(1.02rem, calc(0.95rem + 0.3vw), 1.18rem);
       line-height: 1.75;
 
       p {
         margin: 0;
       }
 
-      // The landing layer bolds its links; in a paragraph of running prose
-      // that reads as emphasis rather than as a link, so colour does the work.
       a {
         font-weight: 500;
       }
     }
+
+    &__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-block-start: clamp(1.25rem, 2.2vw, 1.75rem);
+    }
   }
 }
 
-// -- Works: image-led link cards -------------------------------------------
-//
-// A 2:1 image fills the top of the card and the whole card is the link, so
-// there is no separate call to action to click.
+// -- Works: image-led link cards (`project` & `translation`) ---------------
 .td-link-card-grid {
   display: grid;
   grid-template-columns: repeat(var(--td-columns, 3), minmax(0, 1fr));
   gap: 18px;
 
-  @media (max-width: 991.98px) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  &:not(.td-link-card-grid--1col) {
+    @media (max-width: 991.98px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   @media (max-width: 575.98px) {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  &--detailed {
+    gap: 22px;
+  }
+
+  &--1col {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
   }
 }
 
@@ -438,15 +543,15 @@ body.td-section .td-figure img {
     overflow: hidden;
     background: var(--bs-secondary-bg);
     border-block-end: 1px solid var(--bs-border-color);
+    text-decoration: none;
 
     img {
       display: block;
       width: 100%;
       height: auto;
-      // 5:3 — close enough to what the source social cards and cover art are
-      // actually drawn at that the crop takes almost nothing off them.
       aspect-ratio: 5 / 3;
       object-fit: cover;
+      object-position: top center;
       transition: transform 320ms ease;
     }
   }
@@ -455,16 +560,57 @@ body.td-section .td-figure img {
     display: flex;
     flex: 1;
     flex-direction: column;
-    gap: 0.15rem;
+    gap: 0.2rem;
     padding: clamp(0.95rem, 2vw, 1.3rem);
+  }
+
+  &__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  &__title-link {
+    display: flex;
+    width: 100%;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+    color: inherit;
+    text-decoration: none;
   }
 
   &__title {
     color: var(--bs-emphasis-color);
-    font-size: 1.1rem;
+    font-size: 1.08rem;
     font-weight: 700;
     line-height: 1.3;
     transition: color 180ms var(--td-shell-ease-color, ease);
+  }
+
+  #works &,
+  #papers & {
+    @media (min-width: 1200px) {
+      .td-link-card__title {
+        font-size: 0.98rem;
+        letter-spacing: -0.012em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  &__arrow {
+    flex: none;
+    color: var(--bs-tertiary-color);
+    font-size: 0.78rem;
+    opacity: 0.55;
+    transition:
+      color 180ms ease,
+      opacity 180ms ease,
+      transform 180ms ease;
   }
 
   &__meta {
@@ -472,29 +618,271 @@ body.td-section .td-figure img {
     font-family: var(--td-meta-font-family);
     font-size: 0.74rem;
     font-weight: 600;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
   }
 
   &__desc {
-    margin-block-start: 0.4rem;
+    margin: 0.35rem 0 0;
     color: var(--bs-secondary-color);
     font-size: 0.9rem;
     line-height: 1.55;
   }
 
+  &__foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.65rem 1rem;
+    margin-block-start: auto;
+    padding-block-start: 0.85rem;
+    border-block-start: 1px dashed color-mix(in srgb, var(--bs-border-color) 75%, transparent);
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  &__tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.16rem 0.52rem;
+    border-radius: 0.35rem;
+    border: 1px solid color-mix(in srgb, var(--bs-border-color) 85%, transparent);
+    background: color-mix(in srgb, var(--bs-secondary-bg) 55%, var(--td-brand-elev));
+    color: var(--bs-secondary-color);
+    font-family: var(--td-meta-font-family);
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: 0.02em;
+  }
+
+  &__links {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-inline-start: auto;
+  }
+
+  &__action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.32rem;
+    color: var(--bs-link-color);
+    font-family: var(--td-meta-font-family);
+    font-size: 0.78rem;
+    font-weight: 650;
+    text-decoration: none;
+    transition:
+      color 150ms ease,
+      transform 150ms ease;
+
+    i {
+      font-size: 0.82em;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: var(--bs-link-hover-color);
+      transform: translateY(-1px);
+    }
+  }
+
+  &--detailed {
+    .td-link-card__body {
+      gap: 0.3rem;
+      padding: clamp(1.1rem, 2.2vw, 1.5rem);
+    }
+
+    .td-link-card__title {
+      font-size: 1.16rem;
+    }
+
+    .td-link-card__desc {
+      margin-block-end: 0.65rem;
+      font-size: 0.93rem;
+      line-height: 1.65;
+    }
+  }
+
+  &--horizontal {
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: minmax(280px, 38%) minmax(0, 1fr);
+      align-items: stretch;
+
+      .td-link-card__media {
+        border-block-end: 0;
+        border-inline-end: 1px solid var(--bs-border-color);
+
+        img {
+          height: 100%;
+          object-fit: cover;
+          object-position: top center;
+        }
+      }
+
+      .td-link-card__body {
+        padding: clamp(1.25rem, 2.4vw, 1.75rem);
+      }
+
+      .td-link-card__title {
+        font-size: 1.24rem;
+      }
+    }
+  }
+
   &:hover,
-  &:focus-visible {
+  &:focus-visible,
+  &:focus-within {
     border-color: var(--td-brand-copper-dim);
     box-shadow: var(--td-brand-shadow-md);
     transform: translateY(-3px);
 
     .td-link-card__media img {
-      transform: scale(1.04);
+      transform: scale(1.035);
     }
 
     .td-link-card__title {
       color: var(--bs-link-color);
+    }
+
+    .td-link-card__arrow {
+      color: var(--bs-link-color);
+      opacity: 1;
+      transform: translate(2px, -1px);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--bs-link-color);
+    outline-offset: 3px;
+  }
+}
+
+// -- Works: editorial / scholarly publication cards (`works`) --------------
+//
+// Used for monographs, academic papers, conference slide decks, and dossiers
+// where an icon badge + venue pill is cleaner and more authoritative than a
+// cropped PDF screenshot.
+.td-work-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.95rem;
+  padding: clamp(1.15rem, 2.3vw, 1.5rem);
+  border: 1px solid var(--bs-border-color);
+  border-top: 3px solid color-mix(in srgb, var(--bs-link-color) 65%, var(--bs-border-color));
+  border-radius: var(--bs-border-radius-lg, 0.75rem);
+  background: var(--td-brand-elev);
+  color: inherit;
+  text-decoration: none;
+  box-shadow: var(--td-brand-shadow-sm);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 0.55rem;
+    background: color-mix(in srgb, var(--bs-link-color) 11%, transparent);
+    color: var(--bs-link-color);
+    font-size: 1.05rem;
+    transition:
+      background-color 180ms ease,
+      color 180ms ease,
+      transform 180ms ease;
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.22rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--td-brand-copper) 32%, var(--bs-border-color));
+    background: color-mix(in srgb, var(--td-brand-copper) 8%, transparent);
+    color: var(--td-brand-copper);
+    font-family: var(--td-meta-font-family);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  &__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  &__title {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.6rem;
+    color: var(--bs-emphasis-color);
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.32;
+    transition: color 180ms var(--td-shell-ease-color, ease);
+  }
+
+  &__arrow {
+    flex: none;
+    color: var(--bs-tertiary-color);
+    font-size: 0.8rem;
+    opacity: 0.55;
+    transition:
+      color 180ms ease,
+      opacity 180ms ease,
+      transform 180ms ease;
+  }
+
+  &__desc {
+    color: var(--bs-secondary-color);
+    font-size: 0.9rem;
+    line-height: 1.58;
+  }
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--td-brand-copper-dim);
+    border-top-color: var(--bs-link-hover-color);
+    box-shadow: var(--td-brand-shadow-md);
+    transform: translateY(-3px);
+
+    .td-work-card__icon {
+      background: color-mix(in srgb, var(--bs-link-color) 18%, transparent);
+      color: var(--bs-link-hover-color);
+      transform: scale(1.05);
+    }
+
+    .td-work-card__title {
+      color: var(--bs-link-color);
+    }
+
+    .td-work-card__arrow {
+      color: var(--bs-link-color);
+      opacity: 1;
+      transform: translate(2px, -1px);
     }
   }
 
@@ -506,20 +894,421 @@ body.td-section .td-figure img {
 
 @media (prefers-reduced-motion: reduce) {
   .td-link-card,
-  .td-link-card__media img {
+  .td-link-card__media img,
+  .td-work-card,
+  .td-work-card__icon {
     transition: none;
   }
 
   .td-link-card:hover,
-  .td-link-card:focus-visible {
+  .td-link-card:focus-visible,
+  .td-work-card:hover,
+  .td-work-card:focus-visible {
     transform: none;
   }
 }
 
 @media (forced-colors: active) {
   .td-link-card:hover,
-  .td-link-card:focus-visible {
+  .td-link-card:focus-visible,
+  .td-work-card:hover,
+  .td-work-card:focus-visible,
+  .td-series-card:hover,
+  .td-series-book:hover,
+  .td-series-book:focus-visible {
     outline: 2px solid Highlight;
+  }
+}
+
+// -- Section heading right-aligned borderless links (`head_links`) --------
+//
+// Sits on the same row as the section subtitle (`<p class="td-landing-section__description">`),
+// aligned to the right edge with no background box or border.
+.td-landing-section__head {
+  h1 {
+    margin: 0;
+    color: var(--bs-emphasis-color);
+    font-size: clamp(1.9rem, 3.6vw, 2.7rem);
+    font-weight: 900;
+    letter-spacing: 0;
+    line-height: 1.16;
+  }
+
+  .td-landing-section__eyebrow {
+    margin-block-end: 12px;
+
+    span {
+      color: var(--bs-emphasis-color);
+      font-size: 0.88rem;
+      font-weight: 750;
+      letter-spacing: 0.1em;
+    }
+
+    &:not(:has(+ h1, + h2)) + .td-landing-section__subrow,
+    &:not(:has(+ h1, + h2)) + .td-landing-section__description {
+      margin-block-start: 0;
+    }
+  }
+
+  .td-landing-section__subrow {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.75rem;
+    margin-block-start: 14px;
+
+    .td-landing-section__description {
+      margin: 0;
+      color: var(--td-soft, var(--bs-secondary-color));
+      font-size: clamp(1rem, 1.25vw, 1.12rem);
+    }
+  }
+
+  .td-landing-section__head-links {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.35rem;
+    margin-inline-start: auto;
+  }
+
+  .td-landing-head-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.42rem;
+    padding: 0.15rem 0;
+    border: 0;
+    background: transparent;
+    color: var(--bs-secondary-color);
+    font-family: var(--td-meta-font-family);
+    font-size: 0.88rem;
+    font-weight: 650;
+    letter-spacing: 0.03em;
+    text-decoration: none !important;
+    transition:
+      color 160ms ease,
+      transform 160ms ease;
+
+    i {
+      color: var(--bs-link-color);
+      font-size: 0.92em;
+      transition: color 160ms ease;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: var(--bs-link-hover-color);
+      text-decoration: none !important;
+      transform: translateY(-1px);
+
+      i {
+        color: var(--bs-link-hover-color);
+      }
+    }
+  }
+}
+
+// -- Column Hub page (`/column/`) -----------------------------------------
+//
+// Replaces the single-column avatar profile at the top of `/column/` with the
+// 6-column navigation card grid + RSS/Tags/Authors links, followed by a
+// toolbar with a 4-way layout switcher above the combined article stream.
+.td-column-hub {
+  margin-block-start: 0.25rem;
+
+  .td-landing-section__head {
+    margin-block-end: 1.65rem;
+
+    h1 {
+      padding-inline-end: 7.5rem;
+    }
+  }
+
+  &__toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    margin-block-start: 2.4rem;
+    padding-block-start: 1.6rem;
+    border-block-start: 1px solid var(--bs-border-color);
+  }
+
+  &__toolbar-title {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.65rem;
+
+    h2 {
+      margin: 0;
+      color: var(--bs-emphasis-color);
+      font-size: 1.32rem;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+  }
+
+  &__toolbar-count {
+    color: var(--bs-secondary-color);
+    font-family: var(--td-meta-font-family);
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+
+    small {
+      margin-inline-start: 0.15em;
+      font-size: 0.8em;
+      font-weight: 500;
+    }
+  }
+
+  &__views {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 3px;
+    border: 1px solid var(--bs-border-color);
+    border-radius: 0.55rem;
+    background: color-mix(in srgb, var(--bs-secondary-bg) 55%, var(--td-brand-elev));
+  }
+
+  &__view-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.38rem;
+    padding: 0.32rem 0.7rem;
+    border: 0;
+    border-radius: 0.4rem;
+    background: transparent;
+    color: var(--bs-secondary-color);
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.2;
+    cursor: pointer;
+    transition:
+      background-color 150ms ease,
+      color 150ms ease,
+      box-shadow 150ms ease;
+
+    i {
+      font-size: 0.82rem;
+    }
+
+    &:hover {
+      color: var(--bs-emphasis-color);
+    }
+  }
+}
+
+html:not([data-td-blog-index]) .td-column-hub__view-btn[data-td-blog-view='cards'],
+html[data-td-blog-index='cards'] .td-column-hub__view-btn[data-td-blog-view='cards'],
+html[data-td-blog-index='list'] .td-column-hub__view-btn[data-td-blog-view='list'],
+html[data-td-blog-index='table'] .td-column-hub__view-btn[data-td-blog-view='table'],
+html[data-td-blog-index='gallery'] .td-column-hub__view-btn[data-td-blog-view='gallery'] {
+  background: var(--td-brand-elev);
+  color: var(--bs-link-color);
+  box-shadow: var(--td-brand-shadow-sm);
+}
+
+// -- Translation: side-by-side training series navigation cards ------------
+//
+// Two side-by-side cards below the 9-book translation grid for Dalibo and
+// Postgres Pro training curricula, each containing direct links to individual
+// course books.
+.td-series-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-block-start: 22px;
+
+  @media (max-width: 991.98px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.td-series-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: clamp(1.15rem, 2.2vw, 1.5rem);
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius-lg, 0.75rem);
+  background: var(--td-brand-elev);
+  box-shadow: var(--td-brand-shadow-sm);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+
+  &:hover {
+    border-color: var(--td-brand-copper-dim);
+    box-shadow: var(--td-brand-shadow-md);
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  &__title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  &__title-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: var(--bs-emphasis-color);
+    text-decoration: none;
+    transition: color 160ms ease;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--bs-link-color);
+
+      .td-series-card__ext {
+        color: var(--bs-link-color);
+        opacity: 1;
+        transform: translate(1px, -1px);
+      }
+    }
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.45rem;
+    background: color-mix(in srgb, var(--bs-link-color) 11%, transparent);
+    color: var(--bs-link-color);
+    font-size: 0.92rem;
+  }
+
+  &__title {
+    font-size: 1.12rem;
+    font-weight: 750;
+    line-height: 1.3;
+  }
+
+  &__ext {
+    color: var(--bs-tertiary-color);
+    font-size: 0.75rem;
+    opacity: 0.6;
+    transition:
+      color 160ms ease,
+      opacity 160ms ease,
+      transform 160ms ease;
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.18rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--td-brand-copper) 30%, var(--bs-border-color));
+    background: color-mix(in srgb, var(--td-brand-copper) 8%, transparent);
+    color: var(--td-brand-copper);
+    font-family: var(--td-meta-font-family);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+
+  &__desc {
+    margin: 0;
+    color: var(--bs-secondary-color);
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  &__books {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media (max-width: 575.98px) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+}
+
+.td-series-book {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.45rem;
+  background: color-mix(in srgb, var(--bs-secondary-bg) 45%, var(--td-brand-elev));
+  color: var(--bs-body-color);
+  text-decoration: none;
+  transition:
+    border-color 150ms ease,
+    background-color 150ms ease,
+    transform 150ms ease;
+
+  &__code {
+    flex: none;
+    padding: 0.1rem 0.38rem;
+    border-radius: 0.3rem;
+    background: color-mix(in srgb, var(--bs-link-color) 12%, transparent);
+    color: var(--bs-link-color);
+    font-family: var(--td-meta-font-family);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+  }
+
+  &__name {
+    min-width: 0;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--bs-emphasis-color);
+    transition: color 150ms ease;
+  }
+
+  &__arrow {
+    flex: none;
+    color: var(--bs-tertiary-color);
+    font-size: 0.7rem;
+    opacity: 0.45;
+    transition:
+      color 150ms ease,
+      opacity 150ms ease,
+      transform 150ms ease;
+  }
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--bs-link-color);
+    background: color-mix(in srgb, var(--bs-link-color) 6%, var(--td-brand-elev));
+    transform: translateY(-1px);
+
+    .td-series-book__name {
+      color: var(--bs-link-color);
+    }
+
+    .td-series-book__arrow {
+      color: var(--bs-link-color);
+      opacity: 1;
+      transform: translateX(2px);
+    }
   }
 }
 
@@ -537,14 +1326,6 @@ body.td-section .td-figure img {
   --td-grid: transparent;
 }
 
-// Each landing section opens with a hairline rule. The eyebrow above every
-// section already marks where one begins, and the space between them does the
-// rest, so the rules only add ledger lines to a page that has none elsewhere.
-//
-// With the rules gone, the theme's clamp(64px, 7vw, 104px) of padding reads as
-// a gap rather than as separation, so the sections close up. The hero is
-// excluded by name: it sets its own, much larger opening, and this selector
-// outranks it.
 .td-landing-landing .td-landing-section {
   border-top: 0;
 }
@@ -560,7 +1341,6 @@ body.td-section .td-figure img {
 // Match the AI bubble chart's native ECharts media breakpoint to its container.
 .ai-bubble-curves,
 .ai-bubble-probabilities {
-  // ECharts retains hidden tooltip positions after a viewport resize.
   overflow: hidden;
 }
 

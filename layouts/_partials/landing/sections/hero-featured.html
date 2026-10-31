@@ -1,13 +1,14 @@
 {{- /* The home page's opening: the page's own featured image painted
      full-bleed behind the copy, the way `featured_image: hero` opens a blog
-     article, with one eyebrow, one title and one paragraph over it.
+     article, with one eyebrow, one title, one lead paragraph, and optional
+     action buttons over it.
 
        - type: hero
          partial: landing/sections/hero-featured.html
 
      The image comes from `images` in content/_index.md through the theme's
      own resolver, so the backdrop and the share card are always the same
-     file. Data keys: eyebrow / title / lead / portrait / portrait_alt. */ -}}
+     file. Data keys: eyebrow / title / lead / actions / portrait / portrait_alt / portrait_url. */ -}}
 {{- $page := .page -}}
 {{- $data := .data -}}
 {{- $id := .id -}}
@@ -28,13 +29,30 @@
       {{- with $data.lead }}
       <div class="td-hero-featured__lead">{{ partial "landing/markdown-block.html" (dict "page" $page "value" .) }}</div>
       {{- end }}
+      {{- with $data.actions }}
+      <div class="td-hero-featured__actions">
+        {{- range . }}
+        {{- $item := . -}}
+        {{- with (.url | default .href) }}
+        {{- $href := cond (or $item.raw_url (hasPrefix . "/work/") (hasPrefix . "/me/") (hasPrefix . "/en/me/") (hasPrefix . "/wechat/") (hasPrefix . "/en/wechat/") (hasPrefix . "/img/")) (. | relURL) (. | relLangURL) -}}
+        <a class="td-landing-button td-landing-button--{{ $item.style | default "ghost" }}" href="{{ $href }}"{{ if $item.external }} target="_blank" rel="noopener noreferrer"{{ end }}>
+          {{- with $item.icon }}<i class="{{ . }}" aria-hidden="true"></i>{{ end }}
+          <span>{{ $item.label }}</span>
+        </a>
+        {{- end }}
+        {{- end }}
+      </div>
+      {{- end }}
     </div>
     {{- with $data.portrait }}
     {{- $src := partial "content/url.html" (dict
       "name" "hero-featured" "parameter" "portrait" "position" $page.Path
       "value" (printf "%v" .) "kind" "image") }}
+    {{- $portraitHref := ($data.portrait_url | default "about/") | relLangURL -}}
     <div class="td-hero-featured__portrait">
-      <img src="{{ $src.href }}" alt="{{ $data.portrait_alt | default "" }}" width="320" height="320" decoding="async">
+      <a class="td-hero-featured__portrait-link" href="{{ $portraitHref }}" aria-label="{{ $data.portrait_alt | default "About" }}">
+        <img src="{{ $src.href }}" alt="{{ $data.portrait_alt | default "" }}" width="320" height="320" decoding="async">
+      </a>
     </div>
     {{- end }}
   </div>

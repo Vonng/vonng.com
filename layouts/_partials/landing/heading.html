@@ -1,0 +1,53 @@
+{{- $scope := .scope | default (printf "landing-%s-heading" .id) -}}
+{{- $page := .page -}}
+{{- $data := .data -}}
+{{- $id := .id -}}
+{{- $level := .level | default (index $data "level") | default 2 -}}
+{{- $hideEyebrow := .hide_eyebrow | default (index $data "hide_eyebrow") | default false -}}
+{{- $description := "" -}}
+{{- with index $data "desc" -}}
+  {{- $description = printf "%v" . -}}
+{{- else -}}
+  {{- with index $data "text" }}{{ $description = printf "%v" . }}{{ end -}}
+{{- end -}}
+{{- $headLinks := index $data "head_links" -}}
+{{- $compact := cond (index . "compact") " td-landing-section__head--compact" "" -}}
+{{- if or (and (not $hideEyebrow) (index $data "eyebrow")) (index $data "title") $description $headLinks -}}
+<header class="td-landing-section__head{{ $compact }}">
+  {{- if not $hideEyebrow }}
+  {{- with index $data "eyebrow" }}
+  <p class="td-landing-section__eyebrow"><span{{ if not (index $data "title") }} id="{{ $id }}-title"{{ end }}>{{ partial "landing/markdown.html" (dict "page" $page "scope" (printf "%s-heading-field-1" $scope) "value" .) }}</span><i aria-hidden="true"></i></p>
+  {{- end }}
+  {{- end }}
+  {{- with index $data "title" }}
+  {{- if eq (int $level) 1 }}
+  <h1 id="{{ $id }}-title">{{ partial "landing/markdown.html" (dict "page" $page "scope" (printf "%s-heading-field-2" $scope) "value" .) }}</h1>
+  {{- else }}
+  <h2 id="{{ $id }}-title">{{ partial "landing/markdown.html" (dict "page" $page "scope" (printf "%s-heading-field-2" $scope) "value" .) }}</h2>
+  {{- end }}
+  {{- end }}
+  {{- if $headLinks }}
+  <div class="td-landing-section__subrow">
+    {{- with $description }}
+    <p class="td-landing-section__description">{{ partial "landing/markdown.html" (dict "page" $page "scope" (printf "%s-heading-field-3" $scope) "value" .) }}</p>
+    {{- end }}
+    <nav class="td-landing-section__head-links" aria-label="{{ index $data "title" | default (index $data "eyebrow") | default $id }}">
+      {{- range $headLinks }}
+      {{- $item := . -}}
+      {{- with (.url | default .href) }}
+      {{- $href := cond (or $item.raw_url $item.external (hasPrefix . "http://") (hasPrefix . "https://") (hasPrefix . "/work/") (hasPrefix . "/me/") (hasPrefix . "/en/me/") (hasPrefix . "/wechat/") (hasPrefix . "/en/wechat/")) (. | relURL) (. | relLangURL) -}}
+      <a class="td-landing-head-link" href="{{ $href }}"{{ if $item.external }} target="_blank" rel="noopener noreferrer"{{ end }}>
+        {{- with $item.icon }}<i class="{{ . }}" aria-hidden="true"></i>{{ end }}
+        <span>{{ $item.label }}</span>
+      </a>
+      {{- end }}
+      {{- end }}
+    </nav>
+  </div>
+  {{- else }}
+    {{- with $description }}
+    <p class="td-landing-section__description">{{ partial "landing/markdown.html" (dict "page" $page "scope" (printf "%s-heading-field-3" $scope) "value" .) }}</p>
+    {{- end }}
+  {{- end }}
+</header>
+{{- end -}}
