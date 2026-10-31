@@ -1,0 +1,29 @@
+{{- /* Head and body must establish the same paginator before using its URL.
+     When `.Params.column_hub` is set (the `/column/` hub page), aggregate
+     all blog posts across every column. */ -}}
+{{ $blogPages := .Pages -}}
+{{ if .Params.column_hub -}}
+  {{ $blogPages = where .Site.RegularPages "Type" "blog" -}}
+  {{ $blogPages = where $blogPages "Date" "ne" nil -}}
+{{ else if (and .Parent .Parent.IsHome) -}}
+  {{ $blogPages = .RegularPagesRecursive -}}
+{{ end -}}
+{{ $mode := partial "validate.html" (dict
+    "value" (partial "ui-param.html" (dict "page" . "key" "blog_index")) "kind" "enum"
+    "allowed" (slice "list" "cards" "table" "gallery") "fallback" "list"
+    "key" "params.ui.blog_index" "where" (cond (isset .Params "blog_index") .Path "")) -}}
+{{ $columns := partial "validate.html" (dict
+    "value" (partial "ui-param.html" (dict "page" . "key" "blog_index_columns")) "kind" "int"
+    "min" 1 "fallback" 3 "key" "params.ui.blog_index_columns"
+    "where" (cond (isset .Params "blog_index_columns") .Path "")) -}}
+{{ $size := partial "validate.html" (dict
+    "value" (partial "ui-param.html" (dict "page" . "key" "blog_index_size")) "kind" "int"
+    "min" 1 "fallback" 12 "key" "params.ui.blog_index_size"
+    "where" (cond (isset .Params "blog_index_size") .Path "")) -}}
+{{ $toggle := partial "shell/blog-index-toggle.html" . -}}
+{{ $pager := false -}}
+{{ if or (ne $mode "table") $toggle -}}
+  {{ $pager = .Paginate ($blogPages.ByDate.Reverse) $size -}}
+  {{ .Store.Set "tdBlogPaginated" true -}}
+{{ end -}}
+{{- return (dict "pages" $blogPages "mode" $mode "columns" $columns "toggle" $toggle "pager" $pager) -}}

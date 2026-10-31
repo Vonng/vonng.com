@@ -1,37 +1,105 @@
 {{ define "main" -}}
+{{ $index := partial "shell/blog-index-state.html" . -}}
+{{ $blogPages := $index.pages -}}
+{{ $mode := $index.mode -}}
+{{ $columns := $index.columns -}}
+{{ $toggle := $index.toggle -}}
+{{ $pager := $index.pager -}}
+{{ $tablePages := slice -}}
+{{ if or (eq $mode "table") $toggle }}{{ $tablePages = $blogPages.ByDate.Reverse }}{{ end -}}
 
+{{ if .Params.column_hub -}}
+  {{ $homeData := partial "landing/home-data.html" . -}}
+  {{ $colSection := index $homeData "columns" | default dict -}}
+  {{ $colHead := merge $colSection (dict "title" .Title) -}}
+  {{ $isZH := eq site.Language.Lang "zh-cn" -}}
+  <div class="td-column-hub">
+    {{- partial "landing/heading.html" (dict "page" . "data" $colHead "id" "columns" "compact" true "level" 1 "hide_eyebrow" true) }}
+    {{- with $colSection.items }}
+    <div class="td-column-card-grid" style="--td-columns: {{ $colSection.columns | default 3 }}">
+      {{- range . }}
+      {{- $target := $.Site.GetPage (printf "%v" .page) -}}
+      {{- if not $target }}{{ warnf "column-hub: no page at %q; skipping the card" .page }}{{ else }}
+      {{- $avatar := "" -}}
+      {{- with $target.Params.profile -}}
+        {{- with .avatar }}{{ $avatar = or ($target.Resources.GetMatch .) (resources.Get .) }}{{ end -}}
+      {{- end -}}
+      {{- if not $avatar }}{{ $avatar = (partialCached "featured-image-resolve.html" $target $target.RelPermalink).resource }}{{ end -}}
+      <a class="td-column-card" href="{{ $target.RelPermalink }}">
+        {{- with $avatar }}
+        {{- $logo := cond (reflect.IsImageResourceProcessable .) (.Fill "224x224 Center") . }}
+        <span class="td-column-card__logo"><img src="{{ $logo.RelPermalink }}" alt="" width="112" height="112" loading="lazy" decoding="async"></span>
+        {{- end }}
+        <span class="td-column-card__body">
+          <span class="td-column-card__head">
+            <span class="td-column-card__title">{{ .title | default $target.LinkTitle }}</span>
+            {{- with $colSection.unit }}
+            <span class="td-column-card__count">{{ len $target.RegularPagesRecursive }}<small>{{ . }}</small></span>
+            {{- end }}
+          </span>
+          <span class="td-column-card__desc">{{ (.desc | default $target.Description) | plainify }}</span>
+        </span>
+        <i class="td-column-card__arrow fa-solid fa-arrow-right" aria-hidden="true"></i>
+      </a>
+      {{- end }}
+      {{- end }}
+    </div>
+    {{- end }}
+
+    <div class="td-column-hub__toolbar">
+      <div class="td-column-hub__toolbar-title">
+        <h2>{{ cond $isZH "全部文章" "All Articles" }}</h2>
+        <span class="td-column-hub__toolbar-count">{{ len $blogPages }}<small>{{ $colSection.unit | default "" }}</small></span>
+      </div>
+      {{- if $toggle }}
+      <div class="td-column-hub__views" role="group" aria-label="{{ T "ui_blog_index_toggle" }}">
+        <button type="button" class="td-column-hub__view-btn" data-td-blog-view="cards">
+          <i class="fa-solid fa-table-cells-large" aria-hidden="true"></i>
+          <span>{{ cond $isZH "卡片" "Cards" }}</span>
+        </button>
+        <button type="button" class="td-column-hub__view-btn" data-td-blog-view="list">
+          <i class="fa-solid fa-list" aria-hidden="true"></i>
+          <span>{{ cond $isZH "列表" "List" }}</span>
+        </button>
+        <button type="button" class="td-column-hub__view-btn" data-td-blog-view="table">
+          <i class="fa-solid fa-table-list" aria-hidden="true"></i>
+          <span>{{ cond $isZH "归档" "Archive" }}</span>
+        </button>
+        <button type="button" class="td-column-hub__view-btn" data-td-blog-view="gallery">
+          <i class="fa-solid fa-images" aria-hidden="true"></i>
+          <span>{{ cond $isZH "画廊" "Gallery" }}</span>
+        </button>
+      </div>
+      {{- end }}
+    </div>
+  </div>
+  <script>
+    (function () {
+      var btns = document.querySelectorAll('[data-td-blog-view]');
+      if (!btns.length) return;
+      btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var form = btn.getAttribute('data-td-blog-view');
+          document.documentElement.setAttribute('data-td-blog-index', form);
+          try { localStorage.setItem('td-blog-index', form); } catch (_) {}
+        });
+      });
+    })();
+  </script>
+{{ else -}}
 <div class="td-content">
 {{ partial "page-title.html" . }}
 {{ with partial "content/render.html" . }}{{ . }}{{ end -}}
 </div>
-{{ $blogPages := .Pages -}}
-{{ if (and .Parent .Parent.IsHome) -}}
-  {{ $blogPages = .RegularPagesRecursive -}}
 {{ end -}}
-{{ $mode := partial "validate.html" (dict
-    "value" (partial "ui-param.html" (dict "page" . "key" "blog_index")) "kind" "enum"
-    "allowed" (slice "list" "cards" "table") "fallback" "list"
-    "key" "params.ui.blog_index" "where" (cond (isset .Params "blog_index") .Path "")) -}}
-{{ $columns := partial "validate.html" (dict
-    "value" (partial "ui-param.html" (dict "page" . "key" "blog_index_columns")) "kind" "number"
-    "fallback" 3 "key" "params.ui.blog_index_columns"
-    "where" (cond (isset .Params "blog_index_columns") .Path "")) -}}
-{{ $size := (partial "ui-param.html" (dict "page" . "key" "blog_index_size")) | default 12 -}}
-{{ $toggle := partial "shell/blog-index-toggle.html" . -}}
-{{ $pager := false -}}
-{{ if or (ne $mode "table") $toggle -}}
-  {{ $pager = .Paginate ($blogPages.ByDate.Reverse) $size -}}
-{{ end -}}
-{{ $tablePages := slice -}}
-{{ if or (eq $mode "table") $toggle }}{{ $tablePages = $blogPages.ByDate.Reverse }}{{ end -}}
+
 {{/* Site override of the theme template: with the toggle on, the theme
-     narrows the table to the current page so all three forms show the same
+     narrows the table to the current page so all four forms show the same
      posts. Here the table stays what it is on its own -- the complete
-     archive of the column, every year in one scroll -- while the list and
-     card forms keep paginating. Nothing else differs from the theme. */ -}}
-{{ if .Pages -}}
+     archive of the column, every year in one scroll -- while the list, card,
+     and gallery forms keep paginating. */ -}}
+{{ if $blogPages -}}
 <div class="td-blog-posts" data-td-blog-default="{{ $mode }}"{{ if $toggle }} data-td-blog-forms="all"{{ end }}>
-  {{/* Standalone tables are complete archives; toggle views share one page. */ -}}
   {{ if or (eq $mode "table") $toggle -}}
   <table class="td-blog-table" data-td-blog-form="table">
     <caption class="visually-hidden">{{ .Title }}</caption>
@@ -52,6 +120,9 @@
   {{ end -}}
   {{ if or (ne $mode "table") $toggle -}}
   <div class="td-blog-posts__paged">
+    {{ if or (eq $mode "gallery") $toggle -}}
+    {{ partial "shell/blog-gallery.html" (dict "page" . "pages" $pager.Pages) -}}
+    {{ end -}}
     {{ if or (eq $mode "cards") $toggle -}}
     <div class="td-content-cards td-blog-cards" data-td-blog-form="cards" style="--td-card-columns: {{ $columns }}">
       {{ range $pager.Pages -}}
@@ -75,3 +146,8 @@
 {{- end -}}
 {{ partial "page-end.html" . }}
 {{ end -}}
+
+{{ define "head" -}}
+{{- $index := partial "shell/blog-index-state.html" . -}}
+{{- partial "head.html" . -}}
+{{- end }}

@@ -11,6 +11,7 @@ type: blog
 page_width: wide
 comments: false
 profile:
+  avatar: img/hero-trip.jpg
   headline: 冯若航 @Vonng / 读万卷书，行万里路
 cascade:
   type: blog

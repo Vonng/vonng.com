@@ -11,7 +11,8 @@ type: blog
 page_width: wide
 comments: false
 profile:
-  headline: Ruohang Feng @Vonng
+  avatar: img/hero-trip.jpg
+  headline: Ruohang Feng @Vonng / Read Ten Thousand Books, Walk Ten Thousand Miles
 cascade:
   type: blog
   page_width: normal

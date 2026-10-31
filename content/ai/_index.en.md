@@ -11,6 +11,7 @@ type: blog
 page_width: wide
 comments: false
 profile:
+  avatar: img/hero-ai.jpg
   headline: Ruohang Feng @Vonng / Agent, LLM, Database
 cascade:
   type: blog

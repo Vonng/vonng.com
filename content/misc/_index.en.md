@@ -11,7 +11,8 @@ type: blog
 page_width: wide
 comments: false
 profile:
-  headline: Ruohang Feng @Vonng
+  avatar: img/hero-misc.jpg
+  headline: Ruohang Feng @Vonng / Life & Essays
 cascade:
   type: blog
   page_width: normal
