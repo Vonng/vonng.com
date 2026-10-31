@@ -102,7 +102,7 @@ tags: []
 
       <div class="dossier-entry">
         <h3>PIG - extension package manager &amp; CLI</h3>
-        <p><a href="https://pigsty.io/docs/pig">PIG</a> is a standalone Go CLI serving as both a PostgreSQL extension package manager and a general-purpose Postgres package-management tool. It resolves extension dependencies, detects the running kernel, and pulls binaries from PGEXT.CLOUD or the upstream PGDG repositories. PIG v1.0 was announced on <a href="https://www.postgresql.org/about/news/">postgresql.org News</a>.</p>
+        <p><a href="https://pigsty.io/docs/pig">PIG</a> is a standalone Go CLI serving as both a PostgreSQL extension package manager and a general-purpose Postgres package-management tool. It resolves extension dependencies, detects the running kernel, and pulls binaries from PGEXT.CLOUD or the upstream PGDG repositories. PIG v1.0 was announced on <a href="https://www.postgresql.org/about/news/pig-v10-released-with-pgextcloud-444-pg-extensions-on-14-linux-3214/">postgresql.org News</a>.</p>
       </div>
     </section>
 
@@ -225,7 +225,7 @@ tags: []
       <h2 id="verification"><span>Verification</span></h2>
       <ul>
         <li><strong>Code &amp; packaging:</strong> <a href="https://github.com/pgsty/pigsty">github.com/pgsty/pigsty</a> · <a href="https://github.com/pgsty/pg_exporter">github.com/pgsty/pg_exporter</a> · <a href="https://pgext.cloud/">pgext.cloud</a> · <a href="https://pigsty.io/docs/pig">pigsty.io/docs/pig</a></li>
-        <li><strong>Translation &amp; writing:</strong> <a href="https://pg.center/docs/">pg.center/docs/</a> · <a href="https://vonng.com/en">vonng.com/en</a> (English) · &ldquo;老冯云数&rdquo; on WeChat (Chinese) · <a href="https://www.postgresql.org/about/news/">postgresql.org News archive</a></li>
+        <li><strong>Translation &amp; writing:</strong> <a href="https://pg.center/docs/">pg.center/docs/</a> · <a href="https://vonng.com/en">vonng.com/en</a> (English) · &ldquo;老冯云数&rdquo; on WeChat (Chinese) · <a href="https://www.postgresql.org/about/newsarchive/">postgresql.org News archive</a></li>
       </ul>
     </section>
 

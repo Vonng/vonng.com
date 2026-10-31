@@ -1,0 +1,79 @@
+# Standalone Works page (/works/ & /en/works/)
+
+zh-cn:
+  sections:
+    - type: cards
+      key: monographs
+      partial: landing/sections/link-cards.html
+    - type: cards
+      key: papers
+      partial: landing/sections/link-cards.html
+    - type: cards
+      key: reports
+      partial: landing/sections/link-cards.html
+
+  monographs:
+    level: 1
+    hide_eyebrow: true
+    title: 原创作品
+    text: 围绕 PostgreSQL 数据库工程实战与跨文明思想传统撰写的原创开源专著、学术论文、大会演讲与深度可视化报告。
+    head_links:
+      - { label: PG 贡献者档案, url: dossier/, icon: fa-solid fa-id-card }
+      - { label: 名片, url: '/me/0/', icon: fa-solid fa-id-card }
+      - { label: GitHub, url: 'https://github.com/Vonng', icon: fa-brands fa-github, external: true }
+    columns: 1
+    detailed: true
+    items_from: works_monographs
+
+  papers:
+    eyebrow: 学术论文
+    text: 围绕大语言模型数据库智能根因诊断与 PostgreSQL 异构外部数据包装器发表的同行评审学术论文。
+    columns: 2
+    detailed: true
+    items_from: works_papers
+
+  reports:
+    eyebrow: 演讲、报告与社区档案
+    text: 国际学术与工业界会议主题演讲、全球开发者调查交互式可视化报告、内核补丁研究与 PostgreSQL 社区贡献提名档案。
+    columns: 2
+    detailed: true
+    items_from: works_reports
+
+en:
+  sections:
+    - type: cards
+      key: monographs
+      partial: landing/sections/link-cards.html
+    - type: cards
+      key: papers
+      partial: landing/sections/link-cards.html
+    - type: cards
+      key: reports
+      partial: landing/sections/link-cards.html
+
+  monographs:
+    level: 1
+    hide_eyebrow: true
+    title: Original Works & Publications
+    text: Original engineering monographs on production PostgreSQL, bilingual digital canons, peer-reviewed research papers, and interactive data reports.
+    head_links:
+      - { label: PG Contributor Dossier, url: dossier/, icon: fa-solid fa-id-card }
+      - { label: Name Card, url: '/en/me/0/', icon: fa-solid fa-id-card }
+      - { label: GitHub, url: 'https://github.com/Vonng', icon: fa-brands fa-github, external: true }
+    columns: 1
+    detailed: true
+    items_from: works_monographs
+
+  papers:
+    eyebrow: Research Papers
+    text: Peer-reviewed research papers on LLM-powered database root-cause diagnosis and heterogeneous data federation via PostgreSQL FDW.
+    columns: 2
+    detailed: true
+    items_from: works_papers
+
+  reports:
+    eyebrow: Talks, Reports & Dossier
+    text: International conference slide decks, interactive developer survey visualizations, kernel patch reports, and PostgreSQL community nomination dossiers.
+    columns: 2
+    detailed: true
+    items_from: works_reports

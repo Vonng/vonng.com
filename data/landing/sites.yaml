@@ -1,0 +1,123 @@
+# Standalone Sites page (/sites/ & /en/sites/)
+
+zh-cn:
+  sections:
+    - type: cards
+      key: portals
+      partial: landing/sections/link-cards.html
+    - type: cards
+      key: distro
+      partial: landing/sections/link-cards.html
+    - type: cards
+      key: infra
+      partial: landing/sections/link-cards.html
+    - type: cards
+      key: originals
+      partial: landing/sections/link-cards.html
+    - type: cards
+      key: books
+      partial: landing/sections/link-cards.html
+
+  portals:
+    level: 1
+    hide_eyebrow: true
+    title: 生态站点
+    text: 围绕 PostgreSQL 知识图谱、扩展目录、多语种组件手册、技术专栏与开源商业支持构建的 6 个核心门户主站。
+    head_links:
+      - { label: pg.center, url: 'https://pg.center/zh', icon: fa-solid fa-sitemap, external: true }
+      - { label: pgsql.cc, url: 'https://pgsql.cc', icon: fa-solid fa-file-lines, external: true }
+      - { label: pgext.cloud, url: 'https://pgext.cloud/zh', icon: fa-solid fa-puzzle-piece, external: true }
+      - { label: OINK 案例库, url: 'https://oink.pgsty.com/zh/case/', icon: fa-solid fa-palette, external: true }
+    columns: 2
+    detailed: true
+    items_from: sites_portals
+
+  distro:
+    eyebrow: Pigsty 发行版与实时演示
+    text: 开源企业级 PostgreSQL RDS 发行版的中英文独立文档主站、专业版门户，以及 7×24 小时在线运行的 Grafana 可观测性实时演示集群。
+    columns: 2
+    detailed: true
+    items_from: sites_distro
+
+  infra:
+    eyebrow: 开源基础设施项目与 OINK 样板站
+    text: 围绕 S3 对象存储、Hugo 文档主题、PG 扩展包管理器、APT/YUM 仓库管理、Prometheus 指标采集与本地虚拟机打造的开源项目官网（均为 OINK 生产级样板案例）。
+    columns: 2
+    detailed: true
+    items_from: sites_infra
+
+  originals:
+    eyebrow: 原创专著、数字典籍与交互工具站
+    text: 基于 OINK Book 外壳与自定义交互外壳构建的原创 PostgreSQL 实战专著、跨文明数字藏经阁、在线键位配置生成器与深度纪实读书站。
+    columns: 2
+    detailed: true
+    items_from: sites_originals
+
+  books:
+    eyebrow: 经典译著与 PostgreSQL 教程书站矩阵
+    text: 独立部署的分布式系统经典、软件工程译著、PostgreSQL 内核与调优专著子站，以及法国 Dalibo 与 Postgres Pro 两大培训课程站点。
+    columns: 2
+    detailed: true
+    items_from: sites_books
+    series_from: training_series
+
+en:
+  sections:
+    - type: cards
+      key: portals
+      partial: landing/sections/link-cards.html
+    - type: cards
+      key: distro
+      partial: landing/sections/link-cards.html
+    - type: cards
+      key: infra
+      partial: landing/sections/link-cards.html
+    - type: cards
+      key: originals
+      partial: landing/sections/link-cards.html
+    - type: cards
+      key: books
+      partial: landing/sections/link-cards.html
+
+  portals:
+    level: 1
+    hide_eyebrow: true
+    title: Portals & Showcase Sites
+    text: Six flagship portals spanning the PostgreSQL knowledge graph, extension catalog, multilingual component manuals, technical essays, and enterprise support.
+    head_links:
+      - { label: pg.center, url: 'https://pg.center', icon: fa-solid fa-sitemap, external: true }
+      - { label: pgsql.cc, url: 'https://pgsql.cc', icon: fa-solid fa-file-lines, external: true }
+      - { label: pgext.cloud, url: 'https://pgext.cloud', icon: fa-solid fa-puzzle-piece, external: true }
+      - { label: OINK Showcase, url: 'https://oink.pgsty.com/case/', icon: fa-solid fa-palette, external: true }
+    columns: 2
+    detailed: true
+    items_from: sites_portals
+
+  distro:
+    eyebrow: Pigsty Distribution & Live Demo
+    text: Standalone English and Chinese documentation portals, the commercial Pro edition archive, and the live Grafana observability playground for Pigsty.
+    columns: 2
+    detailed: true
+    items_from: sites_distro
+
+  infra:
+    eyebrow: Open-Source Infrastructure & OINK Showcases
+    text: Official documentation portals for SILO S3 storage, the OINK Hugo theme, PIG extension manager, SOW repo builder, pg_exporter, and Barn VM manager.
+    columns: 2
+    detailed: true
+    items_from: sites_infra
+
+  originals:
+    eyebrow: Original Monographs, Digital Canons & Interactive Tools
+    text: Standalone book and tool sites built with OINK’s Book shell and custom interactive shells — spanning PostgreSQL engineering, philosophy, and keyboard ergonomics.
+    columns: 2
+    detailed: true
+    items_from: sites_originals
+
+  books:
+    eyebrow: Translated Classics & PostgreSQL Tutorial Book Sites
+    text: Dedicated book portals for DDIA, TPME, PostgreSQL Internals, Monitoring, Query Optimization, and hands-on tutorials, plus Dalibo and Postgres Pro training sites.
+    columns: 2
+    detailed: true
+    items_from: sites_books
+    series_from: training_series

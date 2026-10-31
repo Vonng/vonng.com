@@ -1,0 +1,115 @@
+# Standalone Open-Source Projects page (/project/ & /en/project/)
+
+zh-cn:
+  sections:
+    - type: cards
+      key: project
+      partial: landing/sections/link-cards.html
+    - type: metrics
+      key: metrics
+      partial: landing/sections/live-metrics.html
+    - type: cards
+      key: releases
+      partial: landing/sections/recent-posts.html
+
+  project:
+    level: 1
+    hide_eyebrow: true
+    title: 开源项目
+    text: 围绕 PostgreSQL 数据库发行版、S3 对象存储、软件源分发、本地虚拟化与工程效率构建并长期维护的 9 个核心开源项目。
+    head_links:
+      - { label: VONNG, url: 'https://github.com/Vonng', icon: fa-brands fa-github, external: true }
+      - { label: PGSTY, url: 'https://github.com/pgsty', icon: fa-brands fa-github, external: true }
+      - { label: 扩展目录, url: 'https://pgext.cloud/zh', icon: fa-solid fa-puzzle-piece, external: true }
+    columns: 1
+    detailed: true
+    items_from: project
+
+  metrics:
+    eyebrow: 开源影响力
+    columns: 4
+    items:
+      - metric: stars
+        format: compact
+        label: GitHub Star
+        desc: 个人与组织公开仓库累计获得的星标
+        source: { label: github.com/Vonng, url: 'https://github.com/Vonng' }
+      - metric: followers
+        label: GitHub Follower
+        desc: 在 GitHub 上关注我的全球开发者
+        source: { label: 'github.com/Vonng?tab=followers', url: 'https://github.com/Vonng?tab=followers' }
+      - value: No.585
+        label: GitHub Star Rank
+        desc: 全球开发者个人仓库星标总榜排名
+        source: { label: gitstar-ranking.com/Vonng, url: 'https://gitstar-ranking.com/Vonng' }
+      - metric: rank
+        format: '#%d'
+        label: 新加坡活跃开发者
+        desc: 按公开提交数量统计的新加坡地区排名
+        source: { label: committers.top/singapore, url: 'https://committers.top/singapore' }
+
+  releases:
+    eyebrow: 版本发布
+    text: 开源 PostgreSQL RDS 发行版 Pigsty 的最新版本发布说明与架构演进记录。
+    head_links:
+      - { label: 全部版本归档, url: pigsty/, icon: fa-solid fa-rocket }
+    section: pigsty
+    limit: 6
+    columns: 3
+
+en:
+  sections:
+    - type: cards
+      key: project
+      partial: landing/sections/link-cards.html
+    - type: metrics
+      key: metrics
+      partial: landing/sections/live-metrics.html
+    - type: cards
+      key: releases
+      partial: landing/sections/recent-posts.html
+
+  project:
+    level: 1
+    hide_eyebrow: true
+    title: Open-Source Projects
+    text: Nine open-source projects across PostgreSQL RDS, S3 object storage, package management, local VMs, and developer ergonomics.
+    head_links:
+      - { label: VONNG, url: 'https://github.com/Vonng', icon: fa-brands fa-github, external: true }
+      - { label: PGSTY, url: 'https://github.com/pgsty', icon: fa-brands fa-github, external: true }
+      - { label: Extension Catalog, url: 'https://pgext.cloud', icon: fa-solid fa-puzzle-piece, external: true }
+    columns: 1
+    detailed: true
+    items_from: project
+
+  metrics:
+    eyebrow: Open-Source Footprint
+    columns: 4
+    items:
+      - metric: stars
+        format: compact
+        label: GitHub Stars
+        desc: Stars across my public repositories
+        source: { label: github.com/Vonng, url: 'https://github.com/Vonng' }
+      - metric: followers
+        label: GitHub Followers
+        desc: Developers following my work on GitHub
+        source: { label: 'github.com/Vonng?tab=followers', url: 'https://github.com/Vonng?tab=followers' }
+      - value: No.585
+        label: GitHub Star Rank
+        desc: Worldwide rank by stars across personal repositories
+        source: { label: gitstar-ranking.com/Vonng, url: 'https://gitstar-ranking.com/Vonng' }
+      - metric: rank
+        format: '#%d'
+        label: Active Developer in Singapore
+        desc: Ranked by public commits among developers in Singapore
+        source: { label: committers.top/singapore, url: 'https://committers.top/singapore' }
+
+  releases:
+    eyebrow: Releases
+    text: Latest release notes and architectural updates for the Pigsty open-source PostgreSQL RDS distribution.
+    head_links:
+      - { label: All Release Notes, url: pigsty/, icon: fa-solid fa-rocket }
+    section: pigsty
+    limit: 6
+    columns: 3

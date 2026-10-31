@@ -1,246 +1,1830 @@
-# The project and publication card grids, both languages in one file.
-#
-# The same two grids appear on the home page and on the About page, so the
-# items live here and both landing pages point at them:
-#
-#   - type: cards
-#     key: project
-#     partial: landing/sections/link-cards.html
-#
-#   project:
-#     eyebrow: ...
-#     items_from: project     # <- reads data/works.yaml, current language
-#
-# Item keys are the link-card keys: title, meta, desc, image, url, external.
+# Portfolio data shared between the home page (data/home.yaml), the About
+# page (data/landing/about/*.yaml), and the four standalone detail pages
+# (`/project/`, `/works/`, `/translation/`, `/sites/`) via `items_from` and
+# `series_from`.
 
 zh-cn:
 
-  # Open source projects
+  # ==========================================================================
+  # 1. 开源项目 (9 open-source projects: 3×3 on Home, 1-column detail on /project/)
+  # ==========================================================================
   project:
     - title: Pigsty
-      meta: 开源 PG RDS 发行版
+      meta: 开源 PG RDS 发行版 · Apache-2.0
       image: img/works/pigsty.cc.webp
-      desc: 开箱即用的 PostgreSQL 数据库发行版，本地优先的 FLOSS RDS。
+      desc: 开箱即用的 PostgreSQL 数据库发行版，本地优先的开源 RDS 替代方案。
+      detail: '开箱即用的本地优先开源 PostgreSQL RDS 发行版（PostgreSQL In Great STYle）。将 Patroni 金融级高可用、pgBackRest 时间点恢复（PITR）、PgBouncer 连接池、HAProxy 服务发现、VictoriaMetrics + Grafana 可观测性栈，以及 570+ 预编译扩展整合成一套声明式数据基础设施，帮助团队在自有裸金属或云主机上跑出超越云数据库的体验。'
+      tags: [Ansible, PostgreSQL 14–19, 570+ 预编译扩展, HA + PITR + 监控]
       url: 'https://pigsty.cc'
       external: true
+      links:
+        - { label: 中文官网, url: 'https://pigsty.cc', icon: fa-solid fa-globe, external: true }
+        - { label: 英文官网, url: 'https://pigsty.io', icon: fa-solid fa-earth-americas, external: true }
+        - { label: 在线演示, url: 'https://demo.pigsty.io', icon: fa-solid fa-chart-line, external: true }
+        - { label: GitHub, url: 'https://github.com/pgsty/pigsty', icon: fa-brands fa-github, external: true }
     - title: SILO
-      meta: S3 兼容对象存储
+      meta: S3 兼容对象存储 · AGPL-3.0
       image: img/works/silo.pgsty.com.webp
-      desc: 社区维护的 MinIO 分支，延续 S3 兼容对象存储的开源版本。
+      desc: 社区维护的 MinIO 分支，延续高性能 S3 兼容对象存储的纯正开源版本。
+      detail: '社区持续维护的高性能开源 S3 兼容对象存储（MinIO 开源分支）。在上游移除开源管理控制台与二进制分发后，SILO 完整保留并持续维护服务端（silo）、命令行客户端（mcli）、图形化管理控制台（silo-console）及多平台 RPM/DEB/Docker 软件包，为 pgBackRest 备份归档、AI 数据湖与自建基础设施提供自主可控的对象存储底座。'
+      tags: [Go, S3 兼容对象存储, 内置 Web 控制台, RPM / DEB / Docker]
       url: 'https://silo.pgsty.com'
       external: true
+      links:
+        - { label: 官方文档, url: 'https://silo.pgsty.com/zh/', icon: fa-solid fa-book, external: true }
+        - { label: OINK 案例, url: 'https://oink.pgsty.com/zh/case/silo/', icon: fa-solid fa-palette, external: true }
+        - { label: GitHub, url: 'https://github.com/pgsty/silo', icon: fa-brands fa-github, external: true }
     - title: OINK
-      meta: Hugo 文档主题
+      meta: Hugo 工程文档主题 · Apache-2.0
       image: img/works/oink.pgsty.com.webp
-      desc: 本地优先的 Hugo 工程文档主题，也就是这个站点用的框架。
+      desc: 本地优先、零运行时外部依赖的 Hugo 工程文档与博客主题，也是本站与十余个文档站的底座。
+      detail: '基于 Hugo Extended 构建的本地优先、零外部运行时依赖工程文档与技术出版主题。同一套主题外壳原生覆盖文档（Docs）、博客（Blog）、长篇书籍（Book）、落地页（Landing）、画廊（Expo）与 OpenAPI 参考六种内容形态，内置 Paper/Slate/Ink/Terminal 四套视觉预设、21 个按需加载组件与中英混合全文检索，无需 Node.js 工具链即可一条命令完成构建。'
+      tags: [Hugo 0.168+, 6 种内容外壳, 21 个原生组件, 零 npm 依赖]
       url: 'https://oink.pgsty.com'
       external: true
+      links:
+        - { label: 主题官网, url: 'https://oink.pgsty.com/zh/', icon: fa-solid fa-globe, external: true }
+        - { label: 15 个样板案例, url: 'https://oink.pgsty.com/zh/case/', icon: fa-solid fa-layer-group, external: true }
+        - { label: GitHub, url: 'https://github.com/pgsty/oink', icon: fa-brands fa-github, external: true }
     - title: PIG
-      meta: PG 包管理器
+      meta: PG 扩展与包管理器 · Apache-2.0
       image: img/works/pig.pgsty.com.webp
-      desc: 一条命令装上任意 PostgreSQL 扩展，覆盖 EL / Debian / Ubuntu。
+      desc: 一条命令安装任意 PostgreSQL 扩展，全面覆盖 EL、Debian 与 Ubuntu 发行版。
+      detail: '用 Go 编写的 PostgreSQL 命令行软件包与扩展管理器。对接系统原生 DNF/YUM 与 APT 包管理器以及 pgext.cloud 扩展目录，一条命令即可在 EL 8/9/10、Debian 12/13、Ubuntu 22.04/24.04（x86_64 与 ARM64）上完成软件源配置、PostgreSQL 内核安装与 570+ 预编译扩展的检索、安装、升级与源码构建。'
+      tags: [Go CLI, 570+ 扩展包, EL / Debian / Ubuntu, x86_64 & ARM64]
       url: 'https://pig.pgsty.com'
       external: true
+      links:
+        - { label: 官方文档, url: 'https://pig.pgsty.com/zh/', icon: fa-solid fa-book, external: true }
+        - { label: 扩展目录, url: 'https://pgext.cloud/zh', icon: fa-solid fa-puzzle-piece, external: true }
+        - { label: GitHub, url: 'https://github.com/pgsty/pig', icon: fa-brands fa-github, external: true }
     - title: SOW
-      meta: 软件仓库管理器
+      meta: 软件仓库管理器 · Apache-2.0
       image: img/works/sow.pgsty.com.webp
-      desc: 一次入库，处处分发 —— APT 与 YUM 软件仓库的构建与镜像。
+      desc: 一次入库，处处分发 —— 单二进制构建、快照与增量发布 APT/YUM 软件仓库。
+      detail: '面向大规模 Linux 软件源分发的单二进制仓库管理器（Store Once, Serve Everywhere）。通过内容寻址包池（Content-Addressed Pool）统一管理 RPM 与 DEB 软件包，原生支持 GPG 签名、增量元数据索引生成、不可变版本快照以及本地目录/S3/R2 增量同步，驱动着 Pigsty 全球数万个软件包的构建与发布流水线。'
+      tags: [Go, APT & YUM 仓库, 内容寻址包池, 快照与 GPG 签名]
       url: 'https://sow.pgsty.com'
       external: true
-    - title: PG Exporter
-      meta: 监控指标采集
+      links:
+        - { label: 官方文档, url: 'https://sow.pgsty.com/zh/', icon: fa-solid fa-book, external: true }
+        - { label: 架构解析, url: '/db/sow/', icon: fa-solid fa-newspaper }
+        - { label: GitHub, url: 'https://github.com/pgsty/sow', icon: fa-brands fa-github, external: true }
+    - title: pg_exporter
+      meta: 可观测性与指标采集 · Apache-2.0
       image: img/works/exp.pgsty.com.webp
-      desc: 用 SQL 表达的 PostgreSQL 可观测性，600+ 指标，声明式采集器。
+      desc: 用 SQL 表达的 PostgreSQL 可观测性，内置 600+ 指标的声明式 Prometheus 采集器。
+      detail: '面向 PostgreSQL 与 PgBouncer 的声明式 Prometheus 指标导出器。所有采集逻辑均通过结构化 YAML 与 SQL 定义，无需重新编译即可按服务器版本（PG 10–19）与已安装扩展自动启用或裁剪采集分支，内置 600+ 生产级可观测性指标、超时熔断、缓存控制与健康探针，是 Pigsty 监控体系的核心采集引擎。'
+      tags: [Go, Prometheus Exporter, 600+ 声明式指标, PostgreSQL & PgBouncer]
       url: 'https://exp.pgsty.com'
       external: true
-    - title: CapsLock 补完计划
-      meta: 键盘改造
+      links:
+        - { label: 官方文档, url: 'https://exp.pgsty.com/zh/', icon: fa-solid fa-book, external: true }
+        - { label: OINK 案例, url: 'https://oink.pgsty.com/zh/case/pg-exporter/', icon: fa-solid fa-palette, external: true }
+        - { label: GitHub, url: 'https://github.com/pgsty/pg_exporter', icon: fa-brands fa-github, external: true }
+    - title: Barn
+      meta: 本地虚拟机管理器 · Apache-2.0
+      image: img/works/barn.pgsty.com.webp
+      desc: 从单份 YAML 清单拉起多节点 Linux 实验集群，或在 Apple Silicon 上运行原生隔离 macOS 虚拟机。
+      detail: '专为基础设施工程与数据库高可用实验打造的本地轻量虚拟机集群管理器。通过单份声明式 YAML 清单，即可在数秒内拉起多节点 Linux 沙箱集群（对接 KVM/libvirt 或 Apple Virtualization），或管理 Apple Silicon 原生隔离 macOS 虚拟机，彻底替代沉重缓慢的传统 Vagrant + VirtualBox 工作流。'
+      tags: [Go, Linux & macOS VM, 单 YAML 集群编排, Apple Silicon 原生]
+      url: 'https://barn.pgsty.com/'
+      external: true
+      links:
+        - { label: 官方文档, url: 'https://barn.pgsty.com/zh/', icon: fa-solid fa-book, external: true }
+        - { label: GitHub, url: 'https://github.com/pgsty/barn', icon: fa-brands fa-github, external: true }
+    - title: Capslock
+      meta: 键盘效率改造 · MIT
       image: img/works/caps.vonng.com.webp
-      desc: 把没什么用的大写锁定键，变成第五个修饰键。
-      url: 'https://caps.vonng.com/zh'
+      desc: 把闲置的大写锁定键改造为第五个修饰键（Hyper），构建无需离开主键盘区的十六层控制平面。
+      detail: '历经八年打磨的 macOS 与 Windows 键盘效率增强方案。通过 Karabiner-Elements 与 AutoHotkey 将左手小指旁闲置的 CapsLock 改造为第五修饰键（Hyper），在不离开主键盘区（Home Row）的前提下，叠加方向导航、窗口分屏、应用秒切、媒体控制与符号输入等 16 层正交控制平面，配套提供在线可视化键位配置生成器。'
+      tags: [Karabiner & AHK, 16 层控制平面, 在线交互配置器, macOS & Windows]
+      url: 'https://caps.vonng.com/'
       external: true
-    - title: PGEXT.CLOUD
-      meta: PostgreSQL 扩展目录
+      links:
+        - { label: 在线配置器, url: 'https://caps.vonng.com/zh/', icon: fa-solid fa-sliders, external: true }
+        - { label: OINK 案例, url: 'https://oink.pgsty.com/zh/case/capslock/', icon: fa-solid fa-palette, external: true }
+        - { label: GitHub, url: 'https://github.com/Vonng/Capslock', icon: fa-brands fa-github, external: true }
+    - title: ACDAT
+      meta: PG 高速多模式匹配扩展 · Apache-2.0
+      image: img/works/acdat.webp
+      desc: 基于双数组 Aho-Corasick 自动机的零依赖 C11 PostgreSQL 扩展，支持大规模字面量单遍扫描与替换。
+      detail: '用纯正 C11 编写的零外部依赖 PostgreSQL 高性能多模式字符串匹配扩展。将成千上万个字面量模式词编译为紧凑的只读双数组 Aho-Corasick 自动机（Double-Array Trie）并直接存储在 PostgreSQL 变长元组（varlena）中，以 O(n) 线性时间复杂度单遍完成大规模敏感词检索、位置提取、计数与最长左优先批量替换。'
+      tags: [C11, PostgreSQL 14–19, 双数组 AC 自动机, O(n) 单遍多模式扫描]
+      url: 'https://github.com/pgsty/acdat'
+      external: true
+      links:
+        - { label: GitHub 仓库, url: 'https://github.com/pgsty/acdat', icon: fa-brands fa-github, external: true }
+        - { label: 扩展目录页, url: 'https://pgext.cloud/zh/e/acdat/', icon: fa-solid fa-puzzle-piece, external: true }
+
+  # ==========================================================================
+  # 2. 作品 (2×2 on Home & About: Top 2 = Monographs, Bottom 2 = Research Papers)
+  # ==========================================================================
+  works:
+    - title: PG 三十六计
+      meta: 原创工程专著 · 36 章 242 节
+      image: img/works/pg36g.vonng.com.webp
+      desc: '从 SQL 到生产：以 PostgreSQL 18.6 与 Pigsty 4.5 为复现基线，将应用开发、高可用架构、日常运维与故障复盘串联成可验证的工程专著。'
+      url: 'https://pg36g.vonng.com/'
+      external: true
+    - title: 赛博经藏 · Cyber Dharma
+      meta: 原创思想著述 · 跨文明数字藏经阁
+      image: img/works/dharma.vonng.com.webp
+      desc: '七种古老传统绕着一台现代机器旋转 —— 汇集佛、道、儒、基、伊、印、哲七脉经典与 AI Agent 架构哲思的双语数字典籍。'
+      url: 'https://dharma.vonng.com'
+      external: true
+    - title: 'D-Bot: Database Diagnosis System using Large Language Models'
+      meta: PVLDB Vol. 17 · VLDB 2024
+      image: img/works/dbot.jpg
+      desc: '与清华大学数据库团队合著发表于 VLDB 2024：基于大语言模型、知识库检索与工具调用的多 Agent 数据库自动根因诊断系统。'
+      url: 'https://www.vldb.org/pvldb/vol17/p2514-li.pdf'
+      external: true
+    - title: 'Unified Access Layer with PostgreSQL FDW for Heterogeneous Databases'
+      meta: Springer LNCS · NPC 2017
+      image: img/works/hbase_fdw.webp
+      desc: '发表于 IFIP NPC 2017（Springer LNCS Vol. 10578）：通过 PostgreSQL 外部数据包装器（FDW）为 HBase、Redis、MongoDB 与 MySQL 构建统一 SQL 访问层。'
+      url: 'https://dl.acm.org/doi/10.1007/978-3-319-68210-5_14'
+      external: true
+
+  # 2a. 原创专著与数字典籍 (1-column horizontal showcase on /works/)
+  works_monographs:
+    - title: PG 三十六计
+      meta: 原创工程专著 · 六卷 36 章 242 节
+      image: img/works/pg36g.vonng.com.webp
+      desc: '从 SQL 到生产：以 PostgreSQL 18.6 与 Pigsty 4.5 为复现基线的原创工程专著。'
+      detail: '从 SQL 到生产环境的系统化 PostgreSQL 工程实战专著。全书仿《三十六计》分为六卷三十六章共 242 节，以 PostgreSQL 18.6 与 Pigsty 4.5 为统一可复现实验基线，从基础建模、SQL 进阶、并发事务、索引优化一路讲到高可用集群架构、备份恢复、可观测性监控、下云成本核算与真实线上故障复盘。'
+      tags: [PostgreSQL 18.6, Pigsty 4.5, 6 卷 36 章 242 节, 可复现沙箱实验]
+      url: 'https://pg36g.vonng.com/'
+      external: true
+      links:
+        - { label: 在线阅读, url: 'https://pg36g.vonng.com/', icon: fa-solid fa-book-open, external: true }
+    - title: 赛博经藏 · Cyber Dharma
+      meta: 原创思想著述 · 跨文明双语数字典籍
+      image: img/works/dharma.vonng.com.webp
+      desc: '七种古老传统绕着一台现代机器旋转 —— 汇集七脉古典传统与 AI Agent 架构哲思的双语数字典籍。'
+      detail: '一部关于技术、心性与智能体的跨文明双语数字典籍。收录佛、道、儒、基、伊、印、哲七大思想传统的传世经典与现代重述，并围绕大语言模型与自主智能体（AI Agent）的对齐、感知、记忆、因果与治理，探讨当古老的沉思传统遇上现代计算机器时的哲学映射与精神坐标。'
+      tags: [中英双语典籍, 七大古典传统, AI Agent 哲学, OINK Book 模式]
+      url: 'https://dharma.vonng.com'
+      external: true
+      links:
+        - { label: 进入藏经阁, url: 'https://dharma.vonng.com', icon: fa-solid fa-yin-yang, external: true }
+        - { label: 英文版, url: 'https://dharma.vonng.com/en/', icon: fa-solid fa-language, external: true }
+
+  # 2b. 学术论文 (2-column detailed cards on /works/)
+  works_papers:
+    - title: 'D-Bot: Database Diagnosis System using Large Language Models'
+      meta: PVLDB Vol. 17, No. 10 · VLDB 2024
+      image: img/works/dbot.jpg
+      desc: '与清华大学数据库团队合著发表于 VLDB 2024：基于大语言模型的多 Agent 数据库自动根因诊断系统。'
+      detail: '与清华大学李国良教授数据库团队（Database Group @ Tsinghua）及面壁智能合著，发表于数据库顶会 VLDB 2024（PVLDB Vol. 17, pp. 2514–2527）。针对复杂生产环境中的并发异常与慢查询雪崩，提出基于离线文档知识抽取、树搜索推理与多专家 Agent 协同（慢查询分析、资源争用、锁等待、配置核查）的自动根因诊断框架，在真实PostgreSQL 与云数据库故障基准上显著超越单模型基线。'
+      tags: [VLDB 2024, LLM Multi-Agent, 数据库根因诊断, 清华大学 & Pigsty]
+      url: 'https://www.vldb.org/pvldb/vol17/p2514-li.pdf'
+      external: true
+      links:
+        - { label: VLDB PDF 论文, url: 'https://www.vldb.org/pvldb/vol17/p2514-li.pdf', icon: fa-solid fa-file-pdf, external: true }
+        - { label: arXiv 预印本, url: 'https://arxiv.org/abs/2312.01454', icon: fa-solid fa-graduation-cap, external: true }
+    - title: 'Unified Access Layer with PostgreSQL FDW for Heterogeneous Databases'
+      meta: Springer LNCS Vol. 10578 · IFIP NPC 2017
+      image: img/works/hbase_fdw.webp
+      desc: '发表于 IFIP NPC 2017：通过 PostgreSQL 外部数据包装器（FDW）为异构数据库构建统一 SQL 访问层。'
+      detail: '发表于第 14 届 IFIP 网络与并行计算国际会议（NPC 2017，Springer LNCS Vol. 10578, pp. 173–185）。源于阿里巴巴生产环境实践，提出一套基于 PostgreSQL 外部数据包装器（Foreign Data Wrapper）的异构数据联邦架构，支持通过标准 SQL 与谓词下推（Predicate Pushdown）跨 HBase、Redis、MongoDB 与 MySQL 执行关联查询、联邦聚合与跨源数据流转。'
+      tags: [IFIP NPC 2017, PostgreSQL FDW, 异构数据联邦, 谓词下推]
+      url: 'https://dl.acm.org/doi/10.1007/978-3-319-68210-5_14'
+      external: true
+      links:
+        - { label: ACM / Springer 论文, url: 'https://dl.acm.org/doi/10.1007/978-3-319-68210-5_14', icon: fa-solid fa-scroll, external: true }
+        - { label: hbase_fdw 源码, url: 'https://github.com/Vonng/hbase_fdw', icon: fa-brands fa-github, external: true }
+
+  # 2c. 大会演讲、交互式报告与社区档案 (2-column detailed cards on /works/)
+  works_reports:
+    - title: Extensions for Everyone
+      meta: PGConf.Dev 2026 · 温哥华大会演讲
+      image: img/works/extensions-for-everyone.webp
+      desc: '温哥华 PGConf.Dev 2026 大会演讲交互式幻灯片：如何构建 PostgreSQL 扩展生态的元数据目录、打包矩阵与分发网络。'
+      detail: '2026 年 5 月于加拿大温哥华 PostgreSQL 全球开发者峰会（PGConf.Dev 2026）发表的专题演讲交互式幻灯片。系统剖析 PostgreSQL 扩展生态面临的“最后一公里”交付难题，展示如何通过 pgext.cloud 元数据注册表、PIG 客户端包管理器与 SOW 自动化仓库构建矩阵，将 2,200+ 扩展的检索与 570+ 二进制包跨 16 个 Linux 发行版的安装缩短为一条命令。'
+      tags: [PGConf.Dev 2026, 温哥华演讲, 交互式幻灯片, 扩展供应链]
+      url: '/work/extensions-for-everyone/'
+      external: false
+      links:
+        - { label: 浏览交互式幻灯片, url: '/work/extensions-for-everyone/', icon: fa-solid fa-chalkboard-user }
+        - { label: 温哥华纪行, url: '/pg/pgconfdev-2026/', icon: fa-solid fa-newspaper }
+    - title: StackOverflow 2026 全球开发者调查报告
+      meta: 数据新闻 · 交互式可视化解读
+      image: img/works/so2026.webp
+      desc: '基于 2026 年 StackOverflow 全球开发者调查数据的交互式可视化深度报告，剖析 PostgreSQL 全面登顶与 AI 工具链变迁。'
+      detail: '基于 StackOverflow 年度全球开发者调查原始数据集制作的单页交互式数据新闻报告。通过多维动态图表剖析 PostgreSQL 如何连续四年扩大领先优势并全面统治数据库赛道，同时横向对比云厂商份额演变、编程语言生态、AI 编码助手普及率与开发者信任度危机。'
+      tags: [StackOverflow 调查, 交互式图表, 数据库行业趋势, AI 工具链]
+      url: '/work/so2026/'
+      external: false
+      links:
+        - { label: 打开交互式报告, url: '/work/so2026/', icon: fa-solid fa-chart-pie }
+    - title: PostgreSQL 贡献者提名档案
+      meta: 社区贡献档案 · 2015–2026
+      image: img/works/dossier.webp
+      desc: '系统记录十余年独立深耕 PostgreSQL 生态的社区贡献档案：涵盖扩展打包、内核补丁、开源发行版、经典译著与技术布道。'
+      detail: '面向 PostgreSQL 全球社区整理的十年独立贡献提名档案（Dossier）。完整汇编自 2015 年以来在 PostgreSQL 生态中的六大维度工作：维护 570+ 预编译扩展包与 pgext.cloud 目录、开源 Pigsty RDS 发行版、同步翻译 PostgreSQL 14–19 官方中文手册与 10 余部专著、提交内核补丁，以及 25+ 场国内外大会演讲记录与可核验链接。'
+      tags: [PostgreSQL 社区, 2015–2026 档案, 中英双语卷宗, 可核验证据链]
+      url: '/dossier/'
+      external: false
+      links:
+        - { label: 中文档案, url: '/dossier/', icon: fa-solid fa-id-card }
+        - { label: English Dossier, url: '/en/dossier/', icon: fa-solid fa-language }
+    - title: Anthropic 经济指数与 AI 编程报告
+      meta: 行业洞察 · 交互式数据可视化
+      image: img/works/anthropic-report.webp
+      desc: '基于数百万次 Claude 真实对话数据的交互式可视化报告，拆解软件工程、数据科学与各行业脑力劳动的 AI 渗透格局。'
+      detail: '基于 Anthropic Economic Index 公开数据集构建的交互式可视化分析报告。深入拆解数百万次真实 Claude 生产任务在 O*NET 职业分类体系中的分布，量化对比“自主委派（Automation）”与“人机协作（Augmentation）”在软件工程、数据库运维、数据分析与知识工作中的真实渗透率。'
+      tags: [Anthropic 经济指数, 交互式可视化, AI 渗透率分析, 软件工程变迁]
+      url: '/work/anthropic-report.html'
+      external: false
+      links:
+        - { label: 打开可视化报告, url: '/work/anthropic-report.html', icon: fa-solid fa-chart-line }
+    - title: PostgreSQL range_length(NaN) 补丁报告
+      meta: 内核研究 · 边界语义分析
+      image: img/works/pg-range-length-nan.webp
+      desc: '针对 PostgreSQL 范围类型（Range Types）遇到 NaN 边界时的长度计算与统计信息语义缺陷的技术分析与内核补丁报告。'
+      detail: '针对 PostgreSQL 内核范围类型（Range Types）与多段范围（Multirange）在包含 IEEE 754 NaN（Not-a-Number）浮点边界时的距离度量、ANALYZE 统计信息直方图构建及 GiST 索引惩罚函数异常的技术报告，包含完整复现用例、各版本行为矩阵与提交至 pgsql-hackers 的补丁分析。'
+      tags: [PostgreSQL 内核, Range Types & GiST, IEEE 754 NaN, 内核补丁分析]
+      url: '/work/pg-range-length-nan/'
+      external: false
+      links:
+        - { label: 阅读技术报告, url: '/work/pg-range-length-nan/', icon: fa-solid fa-bug-slash }
+    - title: Pigsty 生态全景看板
+      meta: 架构演进 · 交互式全景海报
+      image: img/works/pigsty-board.webp
+      desc: '一页式呈现 Pigsty 开源 PostgreSQL RDS 发行版的架构演进、470+ 扩展生态矩阵、高可用拓扑与监控指标体系。'
+      detail: '一页式高密度交互架构看板，全景展示 Pigsty 开源 PostgreSQL RDS 发行版自 2018 年以来的版本演进时间线、四大核心模块（PGSQL、INFRA、NODE、ETCD）拓扑架构、Linux 发行版兼容矩阵以及全栈可观测性指标体系。'
+      tags: [架构全景看板, 高可用拓扑, 扩展兼容矩阵, 交互式单页]
+      url: '/work/pigsty-board.html'
+      external: false
+      links:
+        - { label: 打开全景看板, url: '/work/pigsty-board.html', icon: fa-solid fa-table-columns }
+
+  # ==========================================================================
+  # 3. 翻译 (9 translated books in 3×3 on Home; expanded 2-col on /translation/)
+  # ==========================================================================
+  translation:
+    - title: DDIA
+      meta: 设计数据密集型应用 · 第二版
+      image: img/works/ddia.vonng.com.webp
+      desc: 'Martin Kleppmann《Designing Data-Intensive Applications》第二版中文翻译，分布式与数据系统必读经典。'
+      url: 'https://ddia.vonng.com'
+      external: true
+    - title: PostgreSQL 技术内幕
+      meta: 存储、查询处理与并发控制
+      image: img/works/pgint.vonng.com.webp
+      desc: '铃木启修《The Internals of PostgreSQL》中文版，系统拆解存储布局、查询执行、MVCC 与 WAL 机制。'
+      url: 'https://pgint.vonng.com'
+      external: true
+    - title: PostgreSQL 18 内参
+      meta: MVCC、缓冲区与访问方法
+      image: img/works/int18.pgsql.cc.webp
+      desc: 'Egor Rogov《PostgreSQL 18 Internals》中文版，从多版本并发控制、锁、缓冲区到索引机制的完整内核剖析。'
+      url: 'https://int18.pgsql.cc/zh18/'
+      external: true
+    - title: PostgreSQL 监控
+      meta: 统计视图与性能可观测性
+      image: img/works/pgmon.pgsql.cc.webp
+      desc: 'Alexey Lesovsky《PostgreSQL Monitoring》中文版，覆盖活动统计、查询与 I/O、WAL 复制及系统级故障剖析。'
+      url: 'https://pgmon.pgsql.cc/'
+      external: true
+    - title: PostgreSQL 18 查询优化
+      meta: 执行计划解读与 SQL 调优
+      image: img/works/pgqpt.pgsql.cc.webp
+      desc: 'Pavel Tolmachev 等著查询优化专著中文版，结合演示数据库详解访问方法、连接策略、统计信息与查询调优。'
+      url: 'https://pgqpt.pgsql.cc/'
+      external: true
+    - title: PostgreSQL 新特性介绍
+      meta: PG 9.5–19 · 跨版本演进
+      image: img/works/feat.pgsql.cc.webp
+      desc: '篠田典良著，跨越 PostgreSQL 9.5 至 19 十二个大版本的新特性解读、兼容性变化与可运行 SQL 示例。'
+      url: 'https://feat.pgsql.cc/'
+      external: true
+    - title: PostgreSQL 入门
+      meta: 第 11 版 · 零基础起步
+      image: img/works/intro.pgsql.cc.webp
+      desc: 'Pavel Luzanov 等著《Postgres: The First Experience》中文版，从安装数据库、编写 SQL 到连接应用的循序渐进指南。'
+      url: 'https://intro.pgsql.cc/'
+      external: true
+    - title: PostgreSQL 实例教程
+      meta: 57 节动手实践短课
+      image: img/works/pgexp.pgsql.cc.webp
+      desc: 'Dariush Abbasi《Postgres by Example》中文版，通过 57 节简短、可运行的 SQL 示例动手掌握 PostgreSQL。'
+      url: 'https://pgexp.pgsql.cc/'
+      external: true
+    - title: PostgreSQL 基础
+      meta: Eight Kilobytes · 从 8KB 页讲起
+      image: img/works/basic.pgsql.cc.webp
+      desc: 'Chase Pierce《Eight Kilobytes》中文版，从磁盘上的 8 KB 数据页、元组与索引一直讲到事务隔离与生产运维。'
+      url: 'https://basic.pgsql.cc/'
+      external: true
+
+  # 3a. 翻译页面第一组：数据系统经典与科技工程译著 (2×2 detailed grid on /translation/)
+  translation_classics:
+    - title: DDIA · 设计数据密集型应用（第二版 & 第一版）
+      meta: Martin Kleppmann & Chris Riccomini 著 · 冯若航译
+      image: img/works/ddia.vonng.com.webp
+      desc: '分布式系统与数据工程领域的殿堂级圣经，完整收录第一版与全新第二版中英繁多语种译本。'
+      detail: 'Martin Kleppmann 与 Chris Riccomini 合著的分布式与数据系统必读经典《Designing Data-Intensive Applications》。本站完整收录第一版（12 章）与大幅重构的第二版（14 章及配套研读笔记），提供简体中文、繁体中文与英文对照阅读，涵盖数据模型、存储引擎（LSM-Tree / B-Tree）、列存压缩、复制、分区、分布式事务、共识算法、批流处理与数据工程伦理。'
+      tags: [第一版 & 第二版全集, 简 / 繁 / 英三语, 130+ 编号图表与交叉引用, GitHub 20k+ Stars]
+      url: 'https://ddia.vonng.com'
+      external: true
+      links:
+        - { label: 在线阅读, url: 'https://ddia.vonng.com', icon: fa-solid fa-book-open, external: true }
+        - { label: OINK 案例, url: 'https://oink.pgsty.com/zh/case/ddia/', icon: fa-solid fa-palette, external: true }
+        - { label: GitHub, url: 'https://github.com/Vonng/ddia', icon: fa-brands fa-github, external: true }
+    - title: PostgreSQL 技术内幕（The Internals of PostgreSQL）
+      meta: 铃木启修（Hironobu Suzuki）著 · 冯若航等译
+      image: img/works/pgint.vonng.com.webp
+      desc: '日本 PostgreSQL 专家铃木启修撰写的内核经典，图文并茂拆解存储布局、查询处理、MVCC 与 WAL 机制。'
+      detail: '日本数据库专家铃木启修（Hironobu Suzuki）撰写的 PostgreSQL 内核导读经典。全书共 11 章，凭借数百幅手绘级结构图，由浅入深地拆解数据库集簇与堆表物理布局、进程与内存架构、查询解析与代价优化、并行查询、MVCC 并发控制与快照隔离、VACUUM 清理机制、缓冲池管理、WAL 预写日志、基础备份与流复制。'
+      tags: [11 章完整译本, 存储与 MVCC 图解, WAL 与流复制, OINK Book 模式]
+      url: 'https://pgint.vonng.com'
+      external: true
+      links:
+        - { label: 在线阅读, url: 'https://pgint.vonng.com', icon: fa-solid fa-book-open, external: true }
+        - { label: OINK 案例, url: 'https://oink.pgsty.com/zh/case/pg-internal/', icon: fa-solid fa-palette, external: true }
+    - title: 人工智能帝国（Empire of AI）
+      meta: Karen Hao（郝珂灵）著 · 深度科技纪实
+      image: img/works/aiempire.vonng.com.webp
+      desc: '历时数年深入调查山姆·奥特曼治下 OpenAI 的权力博弈、技术宗教、资本狂飙与全球代价。'
+      detail: '资深科技调查记者 Karen Hao（郝珂灵）历时数年撰写的 OpenAI 深度纪实巨著《Empire of AI: Dreams and Nightmares in Sam Altman’s OpenAI》。基于数百次内部访谈与一手档案，全景还原 OpenAI 从非营利安全实验室演变为超级算力帝国的权力政变、AGI 信仰分裂，以及背后隐藏的数据标注劳工、能源水资源消耗与全球地缘博弈。'
+      tags: [OpenAI 深度调查, 科技行业纪实, 完整中译本, 沉浸式长篇阅读]
+      url: 'https://aiempire.vonng.com'
+      external: true
+      links:
+        - { label: 在线阅读, url: 'https://aiempire.vonng.com', icon: fa-solid fa-book-open, external: true }
+    - title: 产品思维工程师（The Product-Minded Engineer）
+      meta: Drew Hoskins 著 · 软件工程方法论
+      image: img/works/tpme.vonng.com.webp
+      desc: '探讨软件工程师如何超越单纯的“需求实现者”，培养产品直觉、理解业务全局并放大工程杠杆。'
+      detail: 'Stripe、Meta 与微软资深主任工程师 Drew Hoskins 撰写的《The Product-Minded Engineer》中英双语版（全书 18 章）。系统阐述优秀工程师如何跳出“按工单写代码”的局限，深入理解用户痛点、商业模式与产品权衡，在架构设计、最小可行验证、跨团队沟通与AI 时代角色转型中发挥十倍工程影响力。'
+      tags: [全书 18 章, 中英双语对照, 工程杠杆与产品力, OINK Book 范例]
+      url: 'https://tpme.vonng.com'
+      external: true
+      links:
+        - { label: 中文版, url: 'https://tpme.vonng.com/', icon: fa-solid fa-book-open, external: true }
+        - { label: OINK 案例, url: 'https://oink.pgsty.com/zh/case/tpme/', icon: fa-solid fa-palette, external: true }
+
+  # 3b. 翻译页面第二组：PostgreSQL 内核、调优与实战译著 (4×2 detailed grid on /translation/)
+  translation_pg:
+    - title: PostgreSQL 18 内参（PostgreSQL 18 Internals）
+      meta: Egor Rogov 著 · 冯若航译 · 2026 年版
+      image: img/works/int18.pgsql.cc.webp
+      desc: '系统剖析 PostgreSQL 18 多版本并发控制、事务隔离、缓冲池、WAL、锁机制、查询执行与全部索引访问方法的皇皇巨著。'
+      detail: 'Postgres Professional 教育总监 Egor Rogov 撰写的 700 余页内核百科全书《PostgreSQL 18 Internals》中文版。全书分为五大卷：第一卷深挖元组版本、快照、页剪枝、VACUUM 与冻结；第二卷剖析缓冲池、WAL 与崩溃恢复；第三卷拆解重量级锁、轻量级锁与死锁检测；第四卷追踪查询编译、执行计划与三类连接算法；第五卷遍历 B-Tree、GiST、SP-GiST、GIN、BRIN 与 Hash 索引内部实现。'
+      tags: [PostgreSQL 18, 五卷本内核巨著, MVCC / 锁 / 缓冲池 / 索引, 中英俄三语同步]
+      url: 'https://int18.pgsql.cc/zh18/'
+      external: true
+      links:
+        - { label: 中文版 (PG 18), url: 'https://int18.pgsql.cc/zh18/', icon: fa-solid fa-book-open, external: true }
+        - { label: 英文原版, url: 'https://int18.pgsql.cc/en/', icon: fa-solid fa-language, external: true }
+    - title: PostgreSQL 18 查询优化（Query Optimization）
+      meta: Pavel Tolmachev 等著 · 冯若航译 · 2026 年版
+      image: img/works/pgqpt.pgsql.cc.webp
+      desc: '结合大型航空演示数据库，详解顺序/索引扫描、连接算法、统计信息估算与真实慢查询调优方法论。'
+      detail: '围绕 PostgreSQL 18 查询优化器与执行引擎编写的实战调优专著。以真实的俄罗斯航空客运演示数据库（Bookings）为实验贯穿全书，详细剖析优化器代价模型、顺序扫描与各类索引扫描的临界点、Nested Loop / Hash Join / Merge Join 执行特征、多列扩展统计信息（Extended Statistics）、系统级与 SQL 级性能剖析工具，以及复杂慢查询改写模式。'
+      tags: [PostgreSQL 18, 执行计划与代价模型, Bookings 演示库, SQL 调优实战]
+      url: 'https://pgqpt.pgsql.cc/'
+      external: true
+      links:
+        - { label: 在线阅读, url: 'https://pgqpt.pgsql.cc/', icon: fa-solid fa-book-open, external: true }
+    - title: PostgreSQL 监控（PostgreSQL Monitoring）
+      meta: Alexey Lesovsky 著 · 冯若航译
+      image: img/works/pgmon.pgsql.cc.webp
+      desc: '从统计收集器、活动会话、查询与 I/O 遥测，到 WAL、流复制与操作系统级观测的性能诊断指南。'
+      detail: '资深 DBA Alexey Lesovsky 撰写的 PostgreSQL 可观测性与故障诊断专著。系统梳理 PostgreSQL 内置统计子系统（ Cumulative Statistics & Dynamic Views），逐章讲解如何监控数据库集簇全局状态、连接与等待事件、pg_stat_statements 慢查询与 I/O 瓶颈、检查点与 WAL 生成速率、物理/逻辑复制延迟、VACUUM 膨胀，以及 Linux CPU/内存/磁盘与网络层面的协同排查。'
+      tags: [统计视图体系, 等待事件与锁分析, I/O 与 WAL 观测, 生产故障排查]
+      url: 'https://pgmon.pgsql.cc/'
+      external: true
+      links:
+        - { label: 在线阅读, url: 'https://pgmon.pgsql.cc/', icon: fa-solid fa-book-open, external: true }
+    - title: PostgreSQL 新特性介绍（PG 9.5–19）
+      meta: 篠田典良（Noriyoshi Shinoda）著 · 冯若航译
+      image: img/works/feat.pgsql.cc.webp
+      desc: '跨越 PostgreSQL 9.5 至 19 共十二个大版本的新特性演进、可运行 SQL 示例与版本升级兼容性指南。'
+      detail: '日本慧与（HPE）首席技术顾问篠田典良十余年持续更新的 PostgreSQL 大版本新特性手册合集。完整覆盖从 PostgreSQL 9.5 直至最新 PostgreSQL 18 / 19 共 12 个大版本的数千项核心演进，每一项新特性均配有背景说明、参数变化与直接在终端运行的验证 SQL，是 DBA 制定跨版本升级方案与评估新特性的案头利器。'
+      tags: [PostgreSQL 9.5–19, 12 个大版本演进, 可运行验证示例, 跨版本升级参考]
+      url: 'https://feat.pgsql.cc/'
+      external: true
+      links:
+        - { label: 在线阅读, url: 'https://feat.pgsql.cc/', icon: fa-solid fa-book-open, external: true }
+    - title: PostgreSQL 基础（Eight Kilobytes）
+      meta: Chase Pierce 著 · 冯若航译 · PostgreSQL 18
+      image: img/works/basic.pgsql.cc.webp
+      desc: '从磁盘上的 8 KB 数据页、元组与指针讲起，一路贯通索引结构、查询计划、锁、备份迁移与生产环境运维。'
+      detail: 'Chase Pierce 撰写的《Eight Kilobytes: From the Page Up》中文译本。全书以 PostgreSQL 最核心的物理存储单元——“8 KB 数据页（Page）”为第一性原理起点，带领读者亲手观察元组（Tuple）如何写入磁盘、B-Tree 索引如何指向页面、MVCC 如何产生死元组、VACUUM 如何回收空间，并自然延伸至架构设计、连接池、备份恢复与生产运维。'
+      tags: [Eight Kilobytes, 从 8KB 数据页讲起, 原理与运维贯通, PostgreSQL 18]
+      url: 'https://basic.pgsql.cc/'
+      external: true
+      links:
+        - { label: 在线阅读, url: 'https://basic.pgsql.cc/', icon: fa-solid fa-book-open, external: true }
+    - title: 'PostgreSQL 入门（Postgres: The First Experience）'
+      meta: Pavel Luzanov、Egor Rogov、Igor Levshin 著 · 第 11 版
+      image: img/works/intro.pgsql.cc.webp
+      desc: '面向零基础学习者的官方入门教材，从安装服务器、理解关系模型、编写 SQL 到事务与应用程序开发。'
+      detail: 'Postgres Professional 团队编写并持续修订至第 11 版的零基础入门教材。摒弃枯燥的语法罗列，带领初学者从零安装 PostgreSQL 集群、使用 psql 客户端、设计表结构与完整性约束、编写多表连接与窗口函数，并初步建立事务隔离、索引加速、权限安全与备份恢复的完整数据库世界观。'
+      tags: [第 11 版, 零基础友好, SQL 与关系建模, 配套练习题]
+      url: 'https://intro.pgsql.cc/'
+      external: true
+      links:
+        - { label: 在线阅读, url: 'https://intro.pgsql.cc/', icon: fa-solid fa-book-open, external: true }
+    - title: PostgreSQL 实例教程（Postgres by Example）
+      meta: Dariush Abbasi 著 · 57 节动手实践短课
+      image: img/works/pgexp.pgsql.cc.webp
+      desc: '类似 Go by Example 的渐进式实战手册，通过 57 节简短精悍、可直接运行的 SQL 示例打通核心能力。'
+      detail: '受《Go by Example》启发编写的动手实践型教程。全书提炼出 57 个高频工程场景，从基础 CRUD、CTE 递归查询、JSONB 半结构化处理、数组与范围类型、全文检索，到触发器、存储过程、分区表、复制槽与日常管理命令，每一节均以可直接复制运行的 SQL 片段为核心，适合开发者在数小时内快速上手。'
+      tags: [57 节实战短课, 代码与示例驱动, JSONB / CTE / 分区, 快速上手]
+      url: 'https://pgexp.pgsql.cc/'
+      external: true
+      links:
+        - { label: 在线阅读, url: 'https://pgexp.pgsql.cc/', icon: fa-solid fa-book-open, external: true }
+    - title: doc.pg.center · 生态组件八语种手册中心
+      meta: Patroni · pgBackRest · PgBouncer · pgBadger · etcd · HAProxy
+      image: img/works/doc.pg.center.webp
+      desc: '围绕 PostgreSQL 生产环境高可用、物理备份、连接池、日志分析与负载均衡构建的六大核心组件八语种参考手册。'
+      detail: '生产级 PostgreSQL 绝不只有数据库内核本身，还依赖一整套经过严苛考验的外围基础设施组件。doc.pg.center 将 Patroni（高可用编排）、pgBackRest（PITR 物理备份）、PgBouncer（连接池）、pgBadger（日志诊断）、etcd（分布式共识）与 HAProxy（流量接入）六大上游权威文档统一迁移至 OINK 外壳，并提供英、中、日、韩、法、德、西、俄八语种同步检索与阅读体验。'
+      tags: [6 大核心生态组件, 8 语种对照手册, 高可用与 PITR 必备, 全站统一检索]
+      url: 'https://doc.pg.center/zh/'
+      external: true
+      links:
+        - { label: 中文手册中心, url: 'https://doc.pg.center/zh/', icon: fa-solid fa-language, external: true }
+        - { label: 英文原版中心, url: 'https://doc.pg.center/', icon: fa-solid fa-globe, external: true }
+
+  # 3c. 培训教程系列导航卡 (Shown on Home, About, and /sites/ — balanced 2×8)
+  training_series:
+    - title: Dalibo PostgreSQL 培训教程
+      meta: 法国 Dalibo · 14 门课程
+      icon: fa-solid fa-chalkboard-user
+      url: 'https://dalibo.pgsql.cc/'
+      desc: '法国 PostgreSQL 旗舰咨询公司 Dalibo 开源的官方培训课程体系，涵盖从日常管理、高可用架构、性能调优到云原生运维的完整进阶路径：'
+      books:
+        - { code: DBA1, title: PostgreSQL 管理基础, url: 'https://dalibo.pgsql.cc/dba1/' }
+        - { code: DBA2, title: 高级 PostgreSQL 管理, url: 'https://dalibo.pgsql.cc/dba2/' }
+        - { code: DBA3, title: 备份与复制, url: 'https://dalibo.pgsql.cc/dba3/' }
+        - { code: HAPAT, title: Patroni 高可用集群, url: 'https://dalibo.pgsql.cc/hapat/' }
+        - { code: PERF1, title: PostgreSQL 性能优化, url: 'https://dalibo.pgsql.cc/perf1/' }
+        - { code: PERF2, title: 高级索引与 SQL, url: 'https://dalibo.pgsql.cc/perf2/' }
+        - { code: DEVPG, title: 使用 SQL 开发应用, url: 'https://dalibo.pgsql.cc/devpg/' }
+        - { code: CNPG1, title: K8s 与 CloudNativePG, url: 'https://dalibo.pgsql.cc/cnpg1/' }
+    - title: PostgreSQL Pro 培训教程
+      meta: Postgres Pro · 8 门课程
+      icon: fa-solid fa-graduation-cap
+      url: 'https://pgpro.pgsql.cc/'
+      desc: 'Postgres Professional 官方认证的八套系统化教材（共 134 个专题、5300+ 页幻灯片与实验手册），覆盖 DBA 管理与服务端内核开发：'
+      books:
+        - { code: DBA1, title: 管理基础课程, url: 'https://pgpro.pgsql.cc/dba1/' }
+        - { code: DBA2, title: 配置与监控, url: 'https://pgpro.pgsql.cc/dba2/' }
+        - { code: DBA3, title: 备份与复制, url: 'https://pgpro.pgsql.cc/dba3/' }
+        - { code: DBS, title: 访问控制与安全, url: 'https://pgpro.pgsql.cc/dbs/' }
+        - { code: DEV1, title: 后端开发基础, url: 'https://pgpro.pgsql.cc/dev1/' }
+        - { code: DEV2, title: 高级后端开发, url: 'https://pgpro.pgsql.cc/dev2/' }
+        - { code: QPT, title: 查询性能优化, url: 'https://pgpro.pgsql.cc/qpt/' }
+        - { code: PGPRO, title: 企业版扩展特性, url: 'https://pgpro.pgsql.cc/pgpro/' }
+
+  # 3d. 翻译详情页完整课程与手册矩阵 (Shown on /translation/ — all 14 Dalibo courses + 8 PGPro + 6 doc.pg.center + community docs)
+  training_series_full:
+    - title: Dalibo PostgreSQL 官方培训全集
+      meta: 法国 Dalibo · 全部 14 门课程
+      icon: fa-solid fa-chalkboard-user
+      url: 'https://dalibo.pgsql.cc/'
+      desc: '法国 PostgreSQL 旗舰咨询公司 Dalibo 以 CC BY-SA 协议开源的全部 14 门官方培训教材与实验手册，覆盖 DBA、性能、开发、K8s 与 PostGIS：'
+      books:
+        - { code: DBA1, title: PostgreSQL 管理基础, url: 'https://dalibo.pgsql.cc/dba1/' }
+        - { code: DBA2, title: PostgreSQL 高级管理, url: 'https://dalibo.pgsql.cc/dba2/' }
+        - { code: DBA3, title: 备份与复制实战, url: 'https://dalibo.pgsql.cc/dba3/' }
+        - { code: DBAADM, title: 资深 DBA 管理进阶, url: 'https://dalibo.pgsql.cc/dbaadm/' }
+        - { code: DBA42, title: FDW、扩展与连接池, url: 'https://dalibo.pgsql.cc/dba42/' }
+        - { code: HAPAT, title: Patroni 高可用集群, url: 'https://dalibo.pgsql.cc/hapat/' }
+        - { code: CNPG1, title: K8s 与 CloudNativePG, url: 'https://dalibo.pgsql.cc/cnpg1/' }
+        - { code: PERF1, title: PostgreSQL 性能优化, url: 'https://dalibo.pgsql.cc/perf1/' }
+        - { code: PERF2, title: 高级索引与 SQL 调优, url: 'https://dalibo.pgsql.cc/perf2/' }
+        - { code: DEV1, title: SQL 语言与查询入门, url: 'https://dalibo.pgsql.cc/dev1/' }
+        - { code: DEVPG, title: PostgreSQL 应用开发, url: 'https://dalibo.pgsql.cc/devpg/' }
+        - { code: DEV42, title: PL/pgSQL 与高级开发, url: 'https://dalibo.pgsql.cc/dev42/' }
+        - { code: SIG1, title: PostGIS 空间数据基础, url: 'https://dalibo.pgsql.cc/sig1/' }
+        - { code: SIG2, title: PostGIS 高级空间分析, url: 'https://dalibo.pgsql.cc/sig2/' }
+    - title: Postgres Pro 培训课程与社区经典译本
+      meta: Postgres Pro 8 课 · 社区手册
+      icon: fa-solid fa-graduation-cap
+      url: 'https://pgpro.pgsql.cc/'
+      desc: 'Postgres Professional 官方认证的 8 套系统化教材（134 个专题、5300+ 页幻灯片与实验手册），以及 pgsql.cc 收录的中文参考手册与社区经典：'
+      books:
+        - { code: DBA1, title: PGPro 管理基础课程, url: 'https://pgpro.pgsql.cc/dba1/' }
+        - { code: DBA2, title: PGPro 配置与监控, url: 'https://pgpro.pgsql.cc/dba2/' }
+        - { code: DBA3, title: PGPro 备份与复制, url: 'https://pgpro.pgsql.cc/dba3/' }
+        - { code: DBS, title: PGPro 访问控制与安全, url: 'https://pgpro.pgsql.cc/dbs/' }
+        - { code: DEV1, title: PGPro 后端开发基础, url: 'https://pgpro.pgsql.cc/dev1/' }
+        - { code: DEV2, title: PGPro 高级后端开发, url: 'https://pgpro.pgsql.cc/dev2/' }
+        - { code: QPT, title: PGPro 查询性能优化, url: 'https://pgpro.pgsql.cc/qpt/' }
+        - { code: PGPRO, title: PGPro 企业版扩展特性, url: 'https://pgpro.pgsql.cc/pgpro/' }
+        - { code: DOCS, title: PostgreSQL 14–19 中文手册, url: 'https://pgsql.cc/docs/' }
+        - { code: HOWTO, title: PostgreSQL How To 锦囊, url: 'https://postgres-howto.cn/' }
+        - { code: INT14, title: PostgreSQL 14 内参 (社区), url: 'https://postgres-internals.cn/docs/' }
+        - { code: GIS, title: PostGIS 官方中文手册, url: 'https://postgis.net/docs/manual-dev/zh_Hans/' }
+        - { code: HA, title: Patroni 高可用手册 (中), url: 'https://doc.pg.center/zh/patroni/' }
+        - { code: PITR, title: pgBackRest 备份手册 (中), url: 'https://doc.pg.center/zh/pgbackrest/' }
+
+  # ==========================================================================
+  # 4. 站点 (6 flagship websites in 2×3 on Home; 5 grouped 2-col sections on /sites/)
+  # ==========================================================================
+  sites:
+    - title: pg.center
+      meta: 知识图谱 · PostgreSQL 14–19
+      image: img/works/pg.center.webp
+      desc: 串联 PostgreSQL 各大版本双语手册、GUC 参数、系统目录与扩展引用的国际化知识门户。
+      url: 'https://pg.center/zh'
+      external: true
+    - title: pgsql.cc
+      meta: 中文社区门户 · 技术资料库
+      image: img/works/pgsql.cc.webp
+      desc: Pigsty 团队整理维护的 PostgreSQL 中文社区门户，汇集官方手册、每日新闻、版本对比、书籍教程与百科。
+      url: 'https://pgsql.cc'
+      external: true
+    - title: pgext.cloud
+      meta: PostgreSQL 扩展云与目录
       image: img/works/ext.pgsty.com.webp
-      desc: 2200+ PostgreSQL 扩展的索引、目录与元数据，以及 570+ 扩展的下载、安装与构建矩阵。
-      url: 'https://ext.pgsty.com'
+      desc: 收录 2200+ PostgreSQL 扩展的索引、分类目录与元数据，以及 570+ 预编译包在 16 个系统上的构建矩阵。
+      url: 'https://pgext.cloud/zh'
       external: true
-    - title: PGSTY
-      meta: 公司主页
+    - title: vonng.com
+      meta: 老冯云数 · 个人技术博客
+      image: img/works/vonng.com.webp
+      desc: 冯若航（@Vonng）的个人网站与长青技术专栏，记录数据库、下云自建、PostgreSQL 内核与 AI Agent 实践。
+      url: 'https://vonng.com'
+      external: true
+    - title: pigsty
+      meta: 开源 PostgreSQL RDS 发行版
+      image: img/works/pigsty.cc.webp
+      desc: 开箱即用、本地优先的开源 PostgreSQL 数据库发行版中文官网，集成高可用、PITR、监控与 470+ 扩展生态。
+      url: 'https://pigsty.cc'
+      external: true
+    - title: pgsty.com
+      meta: 开源工作室 · 商业支持与服务
       image: img/works/pgsty.com.webp
-      desc: Pigsty 背后的团队，以及围绕它的开源与服务。
+      desc: Pigsty 背后的开源团队官网，提供围绕 PostgreSQL 开源生态构建的企业级订阅、专家护航与咨询服务。
       url: 'https://pgsty.com/zh'
       external: true
 
-  # Books, translations and papers
-  publication:
-    - title: DDIA
-      meta: 中文翻译本
-      image: img/works/ddia.vonng.com.webp
-      desc: 《设计数据密集型应用》中文版，分布式系统的必读经典。
-      url: 'https://ddia.vonng.com'
-      external: true
-    - title: PostgreSQL 内幕探索
-      meta: 中文翻译本
-      image: img/works/pgint.vonng.com.webp
-      desc: 《PostgreSQL Internals》中文版，讲述 PostgreSQL 内核原理。
-      url: 'https://pgint.vonng.com'
-      external: true
+  # 4a. 站点详情页第一组：核心知识门户与社区主站 (3×2 detailed grid on /sites/)
+  sites_portals:
     - title: pg.center
-      meta: PostgreSQL 英文知识库
+      meta: PostgreSQL 国际化知识图谱与参考门户
       image: img/works/pg.center.webp
-      desc: 串联 PostgreSQL 各版本手册、参数、SQL 与扩展生态的知识库。
-      url: 'https://pg.center'
+      desc: 串联 PostgreSQL 各大版本双语手册、GUC 参数、系统目录与扩展引用的国际化知识门户。
+      detail: '面向全球 PostgreSQL 开发者与 DBA 构建的结构化知识图谱门户。将 PostgreSQL 14–19 历代官方手册、390+ GUC 配置参数、系统目录视图、内置函数、错误码、等待事件、CVE 安全公告以及 500+ 扩展组件打通为可跨版本对比、相互交叉引用的双语百科网络。'
+      tags: [PostgreSQL 14–19, 知识图谱 Wiki, GUC 参数与系统目录, 中英双语]
+      url: 'https://pg.center/zh'
       external: true
+      links:
+        - { label: 中文门户, url: 'https://pg.center/zh', icon: fa-solid fa-globe, external: true }
+        - { label: 英文主站, url: 'https://pg.center', icon: fa-solid fa-earth-americas, external: true }
+        - { label: 知识图谱, url: 'https://pg.center/zh/wiki/', icon: fa-solid fa-diagram-project, external: true }
     - title: pgsql.cc
-      meta: PostgreSQL 中文文档
+      meta: PostgreSQL 中文社区门户与技术资料库
       image: img/works/pgsql.cc.webp
-      desc: Pigsty 团队维护的 PostgreSQL 中文文档与技术资料。
+      desc: Pigsty 团队整理维护的 PostgreSQL 中文社区门户，汇集官方手册、每日新闻、版本对比、书籍教程与百科。
+      detail: '由 Pigsty 团队持续维护的 PostgreSQL 中文一站式门户。不仅托管着持续同步校对的 PostgreSQL 14–19 官方中文手册（支持毫秒级全文检索与章节对比），还汇聚了全球社区新闻、版本发布矩阵、安全漏洞追踪、内核贡献者名人堂（Hackers）以及 12 部开源书籍与培训教程入口。'
+      tags: [PG 14–19 中文手册, 教程与书库导航, 社区新闻与 CVE, 内核黑客档案]
       url: 'https://pgsql.cc'
       external: true
-    - title: D-Bot
-      meta: VLDB 论文
-      image: img/works/dbot.jpg
-      desc: Database Diagnosis System using Large Language Models，VLDB 2024。
-      url: 'https://www.vldb.org/pvldb/vol17/p2514-li.pdf'
+      links:
+        - { label: 访问主站, url: 'https://pgsql.cc', icon: fa-solid fa-globe, external: true }
+        - { label: 中文手册, url: 'https://pgsql.cc/docs/', icon: fa-solid fa-book, external: true }
+        - { label: 教程中心, url: 'https://pgsql.cc/docs/tutorials/', icon: fa-solid fa-graduation-cap, external: true }
+    - title: pgext.cloud
+      meta: PostgreSQL 扩展云与二进制包目录
+      image: img/works/ext.pgsty.com.webp
+      desc: 收录 2200+ PostgreSQL 扩展的索引、分类目录与元数据，以及 570+ 预编译包在 16 个系统上的构建矩阵。
+      detail: '全球最完整的 PostgreSQL 扩展生态注册表与二进制构建矩阵站点（同时绑定 ext.pgsty.com）。按 16 大功能领域（时序、向量、地理空间、全文检索、列存 OLAP、外部数据包装器等）索引了 2,240+ 个扩展的源码、许可证与依赖关系，并实时呈现其中 570+ 个扩展在 PG 14–19 × 16 个 Linux 发行版平台上的 RPM/DEB 打包可用性。'
+      tags: [2240+ 扩展目录, 570+ 预编译包, 16 个 Linux 平台, OINK 数据集案例]
+      url: 'https://pgext.cloud/zh'
       external: true
-    - title: hbase_fdw
-      meta: NPC 2017 论文
-      image: img/works/hbase_fdw.webp
-      desc: 用 PostgreSQL FDW 为异构数据库构建统一访问层。
-      url: 'https://dl.acm.org/doi/10.1007/978-3-319-68210-5_14'
+      links:
+        - { label: 中文目录, url: 'https://pgext.cloud/zh', icon: fa-solid fa-puzzle-piece, external: true }
+        - { label: 英文目录, url: 'https://pgext.cloud', icon: fa-solid fa-earth-americas, external: true }
+        - { label: OINK 案例, url: 'https://oink.pgsty.com/zh/case/pgext-cloud/', icon: fa-solid fa-palette, external: true }
+    - title: doc.pg.center
+      meta: PostgreSQL 生态组件八语种手册中心
+      image: img/works/doc.pg.center.webp
+      desc: Patroni、pgBackRest、PgBouncer、pgBadger、etcd 与 HAProxy 生产运维工具的八语种参考手册中心。
+      detail: '围绕生产环境 PostgreSQL 高可用集群不可或缺的六大核心开源组件——Patroni（高可用自愈）、pgBackRest（物理备份与 PITR）、PgBouncer（轻量连接池）、pgBadger（日志分析）、etcd（分布式键值存储）与 HAProxy（负载均衡）——打造的聚合型运维文库，提供英、中、日、韩、法、德、西、俄八种语言的统一阅读与全文检索。'
+      tags: [6 大高可用组件, 8 语种参考手册, 统一搜索与导航, OINK 聚合站案例]
+      url: 'https://doc.pg.center/zh/'
       external: true
-    - title: 赛博经藏
-      meta: Cyber Dharma
+      links:
+        - { label: 中文文档站, url: 'https://doc.pg.center/zh/', icon: fa-solid fa-language, external: true }
+        - { label: 英文主站, url: 'https://doc.pg.center/', icon: fa-solid fa-globe, external: true }
+        - { label: OINK 案例, url: 'https://oink.pgsty.com/zh/case/pgsql-cc/', icon: fa-solid fa-palette, external: true }
+    - title: vonng.com
+      meta: 老冯云数 · 冯若航个人网站与技术专栏
+      image: img/works/vonng.com.webp
+      desc: 冯若航（@Vonng）的个人网站与长青技术专栏，记录数据库、下云自建、PostgreSQL 内核与 AI Agent 实践。
+      detail: '你当前正在浏览的站点（同步镜像于 blog.vonng.com）。始建于 2018 年，采用 OINK 主题构建中英双语技术专栏，下设《数据库老司机》、《云计算泥石流》、《PostgreSQL 大法师》、《AI 探路者》、《Pigsty 发行版》、《行万里路》与《人生旅途》等长青栏目，收录 340+ 篇原创长文与深度译介。'
+      tags: [中英双语博客, 340+ 篇深度长文, 6 大主题专栏, 全站独立 RSS]
+      url: 'https://vonng.com'
+      external: true
+      links:
+        - { label: 全部专栏, url: '/column/', icon: fa-solid fa-layer-group }
+        - { label: 英文站 (/en/), url: '/en/', icon: fa-solid fa-language }
+        - { label: GitHub 源码, url: 'https://github.com/Vonng/vonng.com', icon: fa-brands fa-github, external: true }
+    - title: pgsty.com
+      meta: PGSTY 开源工作室 · 企业级订阅与支持服务
+      image: img/works/pgsty.com.webp
+      desc: Pigsty 背后的开源团队官网，提供围绕 PostgreSQL 开源生态构建的企业级订阅、专家护航与咨询服务。
+      detail: 'Pigsty 开源项目背后的商业公司与开源工程工作室主站。清晰呈现 PGSTY 的开源产品矩阵、企业级订阅支持服务（标准订阅、专业版授权、首席架构师直通护航）、下云架构迁移咨询，并提供交互式公有云 RDS vs 自建硬件三年总拥有成本（TCO）在线测算器。'
+      tags: [开源工作室主站, 企业级 PG 支持, 云成本 TCO 测算器, OINK 落地页案例]
+      url: 'https://pgsty.com/zh'
+      external: true
+      links:
+        - { label: 中文官网, url: 'https://pgsty.com/zh', icon: fa-solid fa-building, external: true }
+        - { label: 英文官网, url: 'https://pgsty.com', icon: fa-solid fa-earth-americas, external: true }
+        - { label: OINK 案例, url: 'https://oink.pgsty.com/zh/case/pgsty-com/', icon: fa-solid fa-palette, external: true }
+
+  # 4b. 站点详情页第二组：Pigsty 发行版与实时演示 (2×2 detailed grid on /sites/)
+  sites_distro:
+    - title: pigsty.cc
+      meta: Pigsty 开源 PostgreSQL RDS 发行版中文官网
+      image: img/works/pigsty.cc.webp
+      desc: 开箱即用、本地优先的开源 PostgreSQL 数据库发行版中文官网，集成高可用、PITR、监控与 470+ 扩展生态。
+      detail: '面向中文用户的独立部署大型产品文档与社区主站。包含 1,400+ 页结构化中文运维文档、架构设计指南、参数参考、扩展目录、监控仪表盘图鉴与历次版本发布归档，是 OINK 主题处理超大规模单语工程文档树的代表性生产站点。'
+      tags: [1400+ 页中文文档, 架构与运维手册, 监控大盘图鉴, OINK 大型站案例]
+      url: 'https://pigsty.cc'
+      external: true
+      links:
+        - { label: 访问 pigsty.cc, url: 'https://pigsty.cc', icon: fa-solid fa-globe, external: true }
+        - { label: 快速上手文档, url: 'https://pigsty.cc/docs/', icon: fa-solid fa-book, external: true }
+        - { label: OINK 案例, url: 'https://oink.pgsty.com/zh/case/pigsty-cc/', icon: fa-solid fa-palette, external: true }
+    - title: pigsty.io
+      meta: Pigsty Open-Source PostgreSQL RDS 英文主站
+      image: img/works/pigsty.io.webp
+      desc: 面向全球开发者的 Pigsty 英文官方网站，整合完整参考手册、200+ 篇英文技术博客、扩展目录与定价落地页。
+      detail: '面向国际开源社区的 Pigsty 英文旗舰站点。将完整的发行版参考手册、200+ 篇英文深度博客、可检索扩展目录、版本生命周期导航与商业支持定价页整合在同一个 Hugo 站点中，展示如何用一套数据驱动架构同时承载文档、内容营销与产品门户。'
+      tags: [英文旗舰门户, 1400+ 页文档 + 博客, 扩展与版本导航, OINK 旗舰案例]
+      url: 'https://pigsty.io'
+      external: true
+      links:
+        - { label: 访问 pigsty.io, url: 'https://pigsty.io', icon: fa-solid fa-earth-americas, external: true }
+        - { label: 英文文档, url: 'https://pigsty.io/docs/', icon: fa-solid fa-book, external: true }
+        - { label: OINK 案例, url: 'https://oink.pgsty.com/zh/case/pigsty-io/', icon: fa-solid fa-palette, external: true }
+    - title: pgsty.pro
+      meta: Pigsty Pro 专业版门户 · 企业级发行版档案
+      image: img/works/pgsty.pro.webp
+      desc: 面向关键业务生产环境的 Pigsty Pro 专业版站点，提供增强特性、合规加固、长期支持与离线交付方案。
+      detail: '面向金融、政企与关键生产负载的 Pigsty Pro 专业版双语门户。采用可复用的结构化发布数据渲染历代专业版发布档案、安全合规加固清单、离线空气隔离（Air-Gapped）交付包规格以及与社区版的能力对比矩阵。'
+      tags: [企业级专业版, 结构化版本档案, 离线交付与合规, OINK 双语案例]
+      url: 'https://pgsty.pro'
+      external: true
+      links:
+        - { label: 访问 pgsty.pro, url: 'https://pgsty.pro/zh/', icon: fa-solid fa-shield-halved, external: true }
+        - { label: OINK 案例, url: 'https://oink.pgsty.com/zh/case/pgsty-pro/', icon: fa-solid fa-palette, external: true }
+    - title: demo.pigsty.io
+      meta: Pigsty 在线实时演示集群 · Grafana 全景可观测性
+      image: img/works/demo.pigsty.io.webp
+      desc: 7×24 小时持续运行的真实 Pigsty 生产级监控演示环境，直接在浏览器中交互体验全套 Grafana 仪表盘。
+      detail: '无需本地安装即可零门槛体验的 Pigsty 在线实时演示环境（Live Demo）。基于真实运行的多节点 PostgreSQL、PgBouncer、Patroni、主机节点、etcd 与 SILO/MinIO 集群，完整开放 PGSQL、PGCAT、PGRDS、NODE、INFRA 等数十张精心设计的 Grafana 监控大盘与下钻视图。'
+      tags: [7×24 实时在线集群, 数十张 Grafana 大盘, 主机与数据库下钻, 零安装直接体验]
+      url: 'https://demo.pigsty.io'
+      external: true
+      links:
+        - { label: 打开实时监控大盘, url: 'https://demo.pigsty.io', icon: fa-solid fa-chart-line, external: true }
+
+  # 4c. 站点详情页第三组：开源基础设施项目与 OINK 样板站 (3×2 detailed grid on /sites/)
+  sites_infra:
+    - title: silo.pgsty.com
+      meta: SILO 对象存储双语文档站 · OINK 大型迁移样板
+      image: img/works/silo.pgsty.com.webp
+      desc: 社区维护的开源 S3 兼容对象存储 SILO 官方双语文档站，覆盖服务端、客户端、控制台与多平台下载。
+      detail: '高性能开源 S3 兼容对象存储 SILO 的官方中英双语文档与发布站点（每种语言 410+ 页）。通过受检查的迁移清单（CSV/JSON）自动生成双语文档侧栏树，完整覆盖集群部署、纠删码、IAM 权限、生命周期管理、mcli 命令行工具及 RPM/DEB/Docker 软件包下载，是大型上游文档迁移的标杆案例。'
+      tags: [中英各 410+ 页, 清单驱动导航, 独立下载中心, OINK 迁移案例]
+      url: 'https://silo.pgsty.com'
+      external: true
+      links:
+        - { label: 中文文档站, url: 'https://silo.pgsty.com/zh/', icon: fa-solid fa-globe, external: true }
+        - { label: 英文文档站, url: 'https://silo.pgsty.com/', icon: fa-solid fa-earth-americas, external: true }
+        - { label: OINK 案例, url: 'https://oink.pgsty.com/zh/case/silo/', icon: fa-solid fa-palette, external: true }
+    - title: oink.pgsty.com
+      meta: OINK 主题官网 · 21 个组件画廊与 15 个生产样板
+      image: img/works/oink.pgsty.com.webp
+      desc: 本地优先、零外部依赖的 Hugo 工程文档与博客主题官网，收录 21 个交互式组件示例与 15 个生产级案例。
+      detail: '驱动本页所有站点的 OINK Hugo 主题官方参考主站。将快速上手指南、设计契约、6 种内容形态演示（Docs、Blog、Book、Landing、Expo、OpenAPI）、21 个实时渲染组件画廊以及 15 个生产级案例库集中在同一仓库中，所有文档示例均直接参与构建回归测试。'
+      tags: [主题官方主站, 21 个实时组件画廊, 15 个生产案例剖析, 中英双语]
+      url: 'https://oink.pgsty.com/zh/'
+      external: true
+      links:
+        - { label: 中文主站, url: 'https://oink.pgsty.com/zh/', icon: fa-solid fa-globe, external: true }
+        - { label: 15 个案例库, url: 'https://oink.pgsty.com/zh/case/', icon: fa-solid fa-layer-group, external: true }
+        - { label: 组件参考, url: 'https://oink.pgsty.com/zh/docs/components/', icon: fa-solid fa-cubes, external: true }
+    - title: pig.pgsty.com
+      meta: PIG 扩展包管理器官网 · CLI 工具手册与博客
+      image: img/works/pig.pgsty.com.webp
+      desc: 一条命令安装任意 PostgreSQL 扩展的包管理器官网，包含双语命令手册、安装脚本与 40+ 篇扩展生态博客。
+      detail: 'PostgreSQL 扩展与包管理器 PIG 的中英双语产品站点。采用紧凑的 CLI 命令参考手册（pig repo / ext / pg / build / sty）搭配数据驱动的首页、跨平台安装页，以及体量丰富的扩展生态与发布博客（每种语言 40+ 篇），是命令行工具文档站的理想起步模板。'
+      tags: [CLI 产品手册, 40+ 篇双语博客, 软件包下载页, OINK 产品站案例]
+      url: 'https://pig.pgsty.com'
+      external: true
+      links:
+        - { label: 中文站点, url: 'https://pig.pgsty.com/zh/', icon: fa-solid fa-globe, external: true }
+        - { label: 英文站点, url: 'https://pig.pgsty.com/', icon: fa-solid fa-earth-americas, external: true }
+        - { label: OINK 案例, url: 'https://oink.pgsty.com/zh/case/pig/', icon: fa-solid fa-palette, external: true }
+    - title: sow.pgsty.com
+      meta: SOW 软件仓库管理器官网 · 运维手册与发布中心
+      image: img/works/sow.pgsty.com.webp
+      desc: APT 与 YUM 软件仓库管理器 SOW 的双语文档站，共享结构化发布元数据与多架构下载页。
+      detail: 'APT 与 YUM 软件仓库管理器 SOW 的官方双语文档站（每种语言 55+ 页）。系统展示如何用单二进制完成包池管理、仓库快照与增量发布，并使用 OINK 独立的 download 内容类型从单一结构化数据源渲染各平台安装包、校验值与升级说明。'
+      tags: [中英各 55+ 页, 结构化下载页, APT & YUM 运维手册, OINK 案例]
+      url: 'https://sow.pgsty.com'
+      external: true
+      links:
+        - { label: 中文站点, url: 'https://sow.pgsty.com/zh/', icon: fa-solid fa-globe, external: true }
+        - { label: 英文站点, url: 'https://sow.pgsty.com/', icon: fa-solid fa-earth-americas, external: true }
+        - { label: OINK 案例, url: 'https://oink.pgsty.com/zh/case/sow/', icon: fa-solid fa-palette, external: true }
+    - title: exp.pgsty.com
+      meta: pg_exporter 指标采集器官网 · 600+ 指标目录
+      image: img/works/exp.pgsty.com.webp
+      desc: 面向 PostgreSQL 与 PgBouncer 的 Prometheus 指标导出器双语文档站，结合生成导航与结构化指标目录。
+      detail: 'PostgreSQL 与 PgBouncer 指标采集器 pg_exporter 的官方双语文档站。除了配置手册、采集器编写指南与 37 篇版本发布博客外，站点还通过结构化数据生成了涵盖 600+ 监控指标的完整参考目录，方便运维人员按采集器模块快速检索指标含义与 SQL 定义。'
+      tags: [600+ 指标参考目录, 自动生成导航, 37 篇发布归档, OINK 案例]
+      url: 'https://exp.pgsty.com'
+      external: true
+      links:
+        - { label: 中文站点, url: 'https://exp.pgsty.com/zh/', icon: fa-solid fa-globe, external: true }
+        - { label: 英文站点, url: 'https://exp.pgsty.com/', icon: fa-solid fa-earth-americas, external: true }
+        - { label: OINK 案例, url: 'https://oink.pgsty.com/zh/case/pg-exporter/', icon: fa-solid fa-palette, external: true }
+    - title: barn.pgsty.com
+      meta: Barn 本地虚拟机管理器官网 · Linux 与 macOS 实验集群
+      image: img/works/barn.pgsty.com.webp
+      desc: 单份 YAML 清单驱动的 Linux 与 Apple Silicon 原生 macOS 虚拟机管理器官方双语文档站。
+      detail: '本地轻量虚拟机集群管理器 Barn 的中英双语文档站。详细记录如何使用单份 YAML 清单在 macOS（Apple Silicon 原生虚拟化）与 Linux（KVM/libvirt）上秒级拉起多节点数据库实验集群、管理快照克隆、配置桥接网络以及运行自动化回归测试。'
+      tags: [双语工具手册, Linux & macOS 虚拟化, 多节点沙箱指南, Homebrew 分发]
+      url: 'https://barn.pgsty.com/'
+      external: true
+      links:
+        - { label: 中文站点, url: 'https://barn.pgsty.com/zh/', icon: fa-solid fa-globe, external: true }
+        - { label: 英文站点, url: 'https://barn.pgsty.com/', icon: fa-solid fa-earth-americas, external: true }
+
+  # 4d. 站点详情页第四组：原创专著、数字典籍与交互工具站 (2×2 detailed grid on /sites/)
+  sites_originals:
+    - title: pg36g.vonng.com
+      meta: 《PG 三十六计》原创工程专著在线阅读站
+      image: img/works/pg36g.vonng.com.webp
+      desc: 从 SQL 到生产：36 章 242 节 PostgreSQL 18.6 与 Pigsty 4.5 实战工程专著独立阅读站点。
+      detail: '采用 OINK Book 外壳构建的原创工程专著《PG 三十六计》独立子站。按六卷三十六计组织 242 个工程小节，支持章节级进度导航、公式图表编号、深浅色纸张切换与整书打印排版，将可动手复现的沙箱实验与生产级架构经验融为一体。'
+      tags: [OINK Book 模式, 6 卷 36 章 242 节, PostgreSQL 18.6, 整书可打印排版]
+      url: 'https://pg36g.vonng.com/'
+      external: true
+      links:
+        - { label: 访问 pg36g.vonng.com, url: 'https://pg36g.vonng.com/', icon: fa-solid fa-book-open, external: true }
+    - title: dharma.vonng.com
+      meta: 《赛博经藏 · Cyber Dharma》跨文明数字藏经阁
       image: img/works/dharma.vonng.com.webp
-      desc: 七种传统绕着一台机器旋转 —— 关于技术与信仰的札记。
+      desc: 基于 OINK 图书模式构建的跨文明数字藏经阁，展示多卷本双语经文、注疏对照与长文阅读体验。
+      detail: '将古典经文阅读体验与现代技术哲思结合的双语数字藏经阁。收录佛、道、儒、基、伊、印、哲七大传统经典及 AI Agent 治理思考，在 OINK Paper 暖色纸面风格下提供沉浸式章节阅读、中英对照与结构化目录索引。'
+      tags: [中英双语藏经阁, 七大古典传统, Paper 暖色纸面, OINK Book 样板]
       url: 'https://dharma.vonng.com'
       external: true
-    - title: 人工智能帝国
-      meta: 中文翻译本
+      links:
+        - { label: 中文藏经阁, url: 'https://dharma.vonng.com', icon: fa-solid fa-yin-yang, external: true }
+        - { label: English Canon, url: 'https://dharma.vonng.com/en/', icon: fa-solid fa-language, external: true }
+    - title: caps.vonng.com
+      meta: Capslock 键盘效率方案与在线交互配置器
+      image: img/works/caps.vonng.com.webp
+      desc: 每种语言仅两页的极简交互站点：将 CapsLock 第五修饰键方案介绍与数据驱动的在线键位定制器合二为一。
+      detail: '展示 OINK 主题极小规模下限与自定义外壳扩展能力的代表作。全站每种语言仅包含两个页面：项目落地页与在线交互式配置生成器（Customizer）。生成器直接读取 JSON 键位定义，允许用户在浏览器中可视化勾选组合键层并一键导出 Karabiner-Elements 配置文件。'
+      tags: [2 页极简交互站, 在线 JSON 配置生成器, 自定义 Shell 外壳, OINK 经典案例]
+      url: 'https://caps.vonng.com/'
+      external: true
+      links:
+        - { label: 中文配置站, url: 'https://caps.vonng.com/zh/', icon: fa-solid fa-sliders, external: true }
+        - { label: 英文配置站, url: 'https://caps.vonng.com/', icon: fa-solid fa-earth-americas, external: true }
+        - { label: OINK 案例, url: 'https://oink.pgsty.com/zh/case/capslock/', icon: fa-solid fa-palette, external: true }
+    - title: aiempire.vonng.com
+      meta: 《人工智能帝国 · Empire of AI》中文读书站
       image: img/works/aiempire.vonng.com.webp
-      desc: Karen Hao《Empire of AI》中文版，山姆·奥特曼的 OpenAI：梦想与梦魇。
+      desc: Karen Hao 深度调查 OpenAI 权力博弈与 AI 行业纪实专著的独立在线阅读站点。
+      detail: '基于 OINK 单语 Book 外壳构建的纪实文学在线读书站。完整呈现《Empire of AI》全书序幕、四部曲与尾声，针对长篇叙事文本优化了段落行距、章节翻页与移动端阅读体验。'
+      tags: [长篇纪实读书站, OpenAI 深度调查, 移动端阅读优化, OINK Book 模式]
       url: 'https://aiempire.vonng.com'
       external: true
-    - title: 产品思维工程师
-      meta: 中文翻译本
+      links:
+        - { label: 访问 aiempire.vonng.com, url: 'https://aiempire.vonng.com', icon: fa-solid fa-book-open, external: true }
+
+  # 4e. 站点详情页第五组：经典译著与 PostgreSQL 教程书站矩阵 (5×2 detailed grid on /sites/)
+  sites_books:
+    - title: ddia.vonng.com
+      meta: 《设计数据密集型应用（DDIA）》多版本多语种书站
+      image: img/works/ddia.vonng.com.webp
+      desc: 承载简、繁、英三语及 DDIA 第一/第二版全文的在线书籍站，OINK 交叉引用与图表编号的标杆案例。
+      detail: '分布式系统名著《Designing Data-Intensive Applications》的独立在线出版站。在同一站点内同时维护第一版与第二版、简体中文/繁体中文/英文共五套完整书稿树，包含 130+ 处自动编号图表、跨章节稳定引用与生成式术语索引，是 OINK Book 模式最完整的功能展示站。'
+      tags: [第一版 & 第二版, 简 / 繁 / 英多语种, 130+ 编号图表与索引, OINK 标杆案例]
+      url: 'https://ddia.vonng.com'
+      external: true
+      links:
+        - { label: 访问 ddia.vonng.com, url: 'https://ddia.vonng.com', icon: fa-solid fa-book-open, external: true }
+        - { label: OINK 案例, url: 'https://oink.pgsty.com/zh/case/ddia/', icon: fa-solid fa-palette, external: true }
+    - title: tpme.vonng.com
+      meta: 《产品思维工程师（TPME）》中英双语书站
       image: img/works/tpme.vonng.com.webp
-      desc: 《The Product-Minded Engineer》中文版。
+      desc: Drew Hoskins《The Product-Minded Engineer》中英双语 18 章在线阅读站，精简纯粹的 OINK Book 出版案例。
+      detail: '面向软件工程方法论译著《The Product-Minded Engineer》打造的精简双语书籍站。通过将页面外壳收窄为纯粹的 Book 模式，让中英文各 18 章内容共享同一套章节导航、全文检索与排版体系，是单本双语图书出版的标准参考模板。'
+      tags: [中英各 18 章, 纯粹 Book 外壳, 双语一键切换, OINK 书籍案例]
       url: 'https://tpme.vonng.com'
       external: true
+      links:
+        - { label: 中文版, url: 'https://tpme.vonng.com/', icon: fa-solid fa-book-open, external: true }
+        - { label: OINK 案例, url: 'https://oink.pgsty.com/zh/case/tpme/', icon: fa-solid fa-palette, external: true }
+    - title: pgint.vonng.com
+      meta: 《PostgreSQL 技术内幕》单语经典内核书站
+      image: img/works/pgint.vonng.com.webp
+      desc: 铃木启修《The Internals of PostgreSQL》11 章完整中文译本独立站点，高清呈现数百幅内核结构图。
+      detail: '专为已完稿中文译著《PostgreSQL 技术内幕》打造的免维护单语 Book 站点。剥离多余的多语言切换与文档树侧栏，专注于呈现 11 章内核剖析正文、高清 SVG/PNG 物理存储布局图与代码结构交叉链接。'
+      tags: [11 章完整内核书, 高清架构图解, 单语 Book 模式, OINK 书籍案例]
+      url: 'https://pgint.vonng.com'
+      external: true
+      links:
+        - { label: 访问 pgint.vonng.com, url: 'https://pgint.vonng.com', icon: fa-solid fa-book-open, external: true }
+        - { label: OINK 案例, url: 'https://oink.pgsty.com/zh/case/pg-internal/', icon: fa-solid fa-palette, external: true }
+    - title: int18.pgsql.cc
+      meta: 《PostgreSQL 18 内参》中英俄多版本内核书站
+      image: img/works/int18.pgsql.cc.webp
+      desc: Egor Rogov 700 余页内核专著《PostgreSQL 18 Internals》独立阅读站点，支持中、英、俄多版本对照。
+      detail: '承载《PostgreSQL Internals》系列（PG 14 / PG 18）中、英、俄多语种版本的独立书站。针对超长技术专著优化了五卷二十余章的目录层级、SQL 执行输出高亮与跨章节概念跳转。'
+      tags: [PostgreSQL 18, 700+ 页内核巨著, 中 / 英 / 俄多版本, 独立专题书站]
+      url: 'https://int18.pgsql.cc/zh18/'
+      external: true
+      links:
+        - { label: 中文版 (PG 18), url: 'https://int18.pgsql.cc/zh18/', icon: fa-solid fa-book-open, external: true }
+        - { label: 英文版 (PG 18), url: 'https://int18.pgsql.cc/en/', icon: fa-solid fa-language, external: true }
+    - title: pgmon.pgsql.cc
+      meta: 《PostgreSQL 监控》性能可观测性专著站
+      image: img/works/pgmon.pgsql.cc.webp
+      desc: Alexey Lesovsky《PostgreSQL Monitoring》中文独立书站，系统呈现统计指标体系与生产故障排查方法。
+      detail: '专注于 PostgreSQL 运行时可观测性与性能排障的独立在线书站。按统计收集器、系统活动、查询剖析、I/O 监控、WAL 复制与操作系统遥测分章组织，方便 DBA 在排查线上抖动时按图索骥查阅诊断 SQL。'
+      tags: [性能监控专著, 诊断 SQL 速查, 统计视图全解, 独立专题书站]
+      url: 'https://pgmon.pgsql.cc/'
+      external: true
+      links:
+        - { label: 访问 pgmon.pgsql.cc, url: 'https://pgmon.pgsql.cc/', icon: fa-solid fa-book-open, external: true }
+    - title: pgqpt.pgsql.cc
+      meta: 《PostgreSQL 18 查询优化》调优实战书站
+      image: img/works/pgqpt.pgsql.cc.webp
+      desc: Pavel Tolmachev 等著《PostgreSQL 18 Query Optimization》中文独立书站，详解执行计划与 SQL 调优。
+      detail: '围绕 PostgreSQL 18 查询优化器打造的独立专题书站。完整收录全书扫描方法、连接策略、统计信息与执行计划剖析章节，对大量 EXPLAIN (ANALYZE, BUFFERS) 输出进行了清晰的等宽排版优化。'
+      tags: [PostgreSQL 18, EXPLAIN 计划精读, 慢查询改写, 独立专题书站]
+      url: 'https://pgqpt.pgsql.cc/'
+      external: true
+      links:
+        - { label: 访问 pgqpt.pgsql.cc, url: 'https://pgqpt.pgsql.cc/', icon: fa-solid fa-book-open, external: true }
+    - title: feat.pgsql.cc
+      meta: 《PostgreSQL 新特性介绍（9.5–19）》跨版本书站
+      image: img/works/feat.pgsql.cc.webp
+      desc: 篠田典良编著的 PostgreSQL 9.5 至 19 十二个大版本新特性解读与 SQL 验证示例独立站点。
+      detail: '纵览 PostgreSQL 近十年（9.5–19）技术演进的专题站点。按大版本与技术模块（管理、安全、复制、性能、SQL、优化器、备份）结构化呈现每一个新特性的来龙去脉与可复现测试脚本。'
+      tags: [PG 9.5–19 全覆盖, 12 个大版本对比, 可运行 SQL 示例, 升级评估指南]
+      url: 'https://feat.pgsql.cc/'
+      external: true
+      links:
+        - { label: 访问 feat.pgsql.cc, url: 'https://feat.pgsql.cc/', icon: fa-solid fa-book-open, external: true }
+    - title: intro.pgsql.cc
+      meta: 《PostgreSQL 入门（第 11 版）》零基础教程站
+      image: img/works/intro.pgsql.cc.webp
+      desc: 'Pavel Luzanov 等著《Postgres: The First Experience》第 11 版中文在线阅读站，零基础起步指南。'
+      detail: '面向数据库初学者的循序渐进式在线教程站。从安装 PostgreSQL 服务器与编写第一条 SELECT 语句开始，逐步涵盖数据建模、事务并发、视图触发器与应用程序连接，每章末尾均附有动手思考题。'
+      tags: [第 11 版入门教程, 零基础学习路径, 配套章节练习, 独立专题书站]
+      url: 'https://intro.pgsql.cc/'
+      external: true
+      links:
+        - { label: 访问 intro.pgsql.cc, url: 'https://intro.pgsql.cc/', icon: fa-solid fa-book-open, external: true }
+    - title: pgexp.pgsql.cc
+      meta: 《PostgreSQL 实例教程》57 节动手实验站
+      image: img/works/pgexp.pgsql.cc.webp
+      desc: Dariush Abbasi《Postgres by Example》中文独立站点，通过 57 节精悍可运行的 SQL 短课掌握核心能力。
+      detail: '以代码与终端输出为核心的交互式风味教程站。57 节独立短课覆盖 PostgreSQL 日常开发与运维中最常用的语法特性，读者可在左侧阅读简明解析、右侧直接复制 SQL 在本地沙箱中验证。'
+      tags: [57 节 SQL 短课, 实例驱动教学, 开发者速查手册, 独立专题书站]
+      url: 'https://pgexp.pgsql.cc/'
+      external: true
+      links:
+        - { label: 访问 pgexp.pgsql.cc, url: 'https://pgexp.pgsql.cc/', icon: fa-solid fa-book-open, external: true }
+    - title: basic.pgsql.cc
+      meta: 《PostgreSQL 基础（Eight Kilobytes）》存储与运维书站
+      image: img/works/basic.pgsql.cc.webp
+      desc: Chase Pierce《Eight Kilobytes》中文独立书站，从磁盘上的 8 KB 数据页一直讲到事务隔离与生产运维。
+      detail: '以“8 KB 数据页”为主线的 PostgreSQL 原理与运维进阶书站。将底层物理存储结构（页头、行指针、元组、TOAST）与上层工程实践（索引设计、执行计划、锁竞争、高可用与日常维护）紧密串联。'
+      tags: [Eight Kilobytes, 8KB 页与元组剖析, 原理到运维闭环, 独立专题书站]
+      url: 'https://basic.pgsql.cc/'
+      external: true
+      links:
+        - { label: 访问 basic.pgsql.cc, url: 'https://basic.pgsql.cc/', icon: fa-solid fa-book-open, external: true }
 
 en:
 
-  # Open source projects
+  # ==========================================================================
+  # 1. Open-Source Projects (9 projects: 3×3 on Home, 1-column detail on /en/project/)
+  # ==========================================================================
   project:
     - title: Pigsty
-      meta: FOSS PostgreSQL RDS
+      meta: FOSS PostgreSQL RDS · Apache-2.0
       image: img/works/pigsty.io.webp
-      desc: A battery-included PostgreSQL distribution — the local-first, free and open source RDS.
+      desc: A battery-included PostgreSQL distribution — the local-first, free and open-source RDS alternative.
+      detail: 'A battery-included, local-first open-source PostgreSQL RDS distribution (PostgreSQL In Great STYle). It integrates financial-grade high availability (Patroni), point-in-time recovery (pgBackRest), connection pooling (PgBouncer), service discovery (HAProxy), full-stack observability (pg_exporter + VictoriaMetrics + Grafana), and 570+ pre-packaged extensions into a self-hosted data platform on bare metal or VMs.'
+      tags: [Ansible, PostgreSQL 14–19, 570+ Extensions, HA + PITR + Monitoring]
       url: 'https://pigsty.io'
       external: true
+      links:
+        - { label: English Portal, url: 'https://pigsty.io', icon: fa-solid fa-earth-americas, external: true }
+        - { label: Chinese Portal, url: 'https://pigsty.cc', icon: fa-solid fa-globe, external: true }
+        - { label: Live Demo, url: 'https://demo.pigsty.io', icon: fa-solid fa-chart-line, external: true }
+        - { label: GitHub, url: 'https://github.com/pgsty/pigsty', icon: fa-brands fa-github, external: true }
     - title: SILO
-      meta: S3-compatible object storage
+      meta: S3-Compatible Object Storage · AGPL-3.0
       image: img/works/silo.pgsty.com.webp
-      desc: The community-maintained MinIO fork that keeps S3-compatible storage open source.
+      desc: The community-maintained MinIO fork that keeps high-performance S3-compatible object storage genuinely open source.
+      detail: 'A community-maintained, high-performance S3-compatible object storage distribution forked from MinIO. After upstream stripped the graphical admin console and binary packages from open source, SILO preserves and maintains the complete server (silo), CLI client (mcli), web management console (silo-console), and native RPM/DEB/Docker artifacts for self-hosted backups, AI data lakes, and sovereign infrastructure.'
+      tags: [Go, S3 Object Storage, Built-in Web Console, RPM / DEB / Docker]
       url: 'https://silo.pgsty.com'
       external: true
+      links:
+        - { label: Documentation, url: 'https://silo.pgsty.com/', icon: fa-solid fa-book, external: true }
+        - { label: OINK Case, url: 'https://oink.pgsty.com/case/silo/', icon: fa-solid fa-palette, external: true }
+        - { label: GitHub, url: 'https://github.com/pgsty/silo', icon: fa-brands fa-github, external: true }
     - title: OINK
-      meta: Hugo documentation theme
+      meta: Hugo Documentation Theme · Apache-2.0
       image: img/works/oink.pgsty.com.webp
-      desc: A local-first Hugo theme for engineering docs — the one this site runs on.
+      desc: A local-first, zero-external-dependency Hugo theme for engineering documentation, books, and technical blogs.
+      detail: 'A local-first, zero-runtime-external-dependency Hugo Extended theme built for engineering documentation, multi-volume books, and technical blogs. A single unified shell powers six content models (Docs, Blog, Book, Landing, Expo, OpenAPI), four visual presets (Paper, Slate, Ink, Terminal), 21 on-demand components, and offline CJK/Latin search — with one `hugo` command and no Node.js toolchain.'
+      tags: [Hugo 0.168+, 6 Content Shells, 21 Native Components, Zero npm Toolchain]
       url: 'https://oink.pgsty.com'
       external: true
+      links:
+        - { label: Official Site, url: 'https://oink.pgsty.com/', icon: fa-solid fa-globe, external: true }
+        - { label: 15 Showcase Cases, url: 'https://oink.pgsty.com/case/', icon: fa-solid fa-layer-group, external: true }
+        - { label: GitHub, url: 'https://github.com/pgsty/oink', icon: fa-brands fa-github, external: true }
     - title: PIG
-      meta: PostgreSQL package manager
+      meta: Postgres Package Manager · Apache-2.0
       image: img/works/pig.pgsty.com.webp
-      desc: One command, any extension — across EL, Debian and Ubuntu.
+      desc: One command, any PostgreSQL extension — native RPM and DEB package management across EL, Debian, and Ubuntu.
+      detail: 'A Go command-line package manager for PostgreSQL and its extension ecosystem. Paired with the pgext.cloud catalog and native DNF/YUM and APT repositories, PIG lets engineers configure upstream repos, install PostgreSQL 14–19, and discover, install, upgrade, or build 570+ extensions with a single command across EL 8/9/10, Debian 12/13, and Ubuntu 22.04/24.04 (x86_64 & ARM64).'
+      tags: [Go CLI, 570+ Extension Packages, EL / Debian / Ubuntu, x86_64 & ARM64]
       url: 'https://pig.pgsty.com'
       external: true
+      links:
+        - { label: Documentation, url: 'https://pig.pgsty.com/', icon: fa-solid fa-book, external: true }
+        - { label: Extension Catalog, url: 'https://pgext.cloud', icon: fa-solid fa-puzzle-piece, external: true }
+        - { label: GitHub, url: 'https://github.com/pgsty/pig', icon: fa-brands fa-github, external: true }
     - title: SOW
-      meta: Repository manager
+      meta: Repository Manager · Apache-2.0
       image: img/works/sow.pgsty.com.webp
-      desc: Store once, serve everywhere — building and mirroring APT and YUM repositories.
+      desc: Store once, serve everywhere — one self-contained binary for building, snapshotting, and publishing APT and YUM repos.
+      detail: 'A self-contained Go binary for building, snapshotting, and serving private and public APT and YUM package repositories (Store Once, Serve Everywhere). Backed by a content-addressed package pool, SOW handles GPG signing, incremental metadata indexing, immutable release snapshots, and differential sync to local directories or S3/R2 object storage.'
+      tags: [Go, APT & YUM Repos, Content-Addressed Pool, Snapshots & GPG]
       url: 'https://sow.pgsty.com'
       external: true
-    - title: PG Exporter
-      meta: Monitoring
+      links:
+        - { label: Documentation, url: 'https://sow.pgsty.com/', icon: fa-solid fa-book, external: true }
+        - { label: Architecture Essay, url: '/en/db/sow/', icon: fa-solid fa-newspaper }
+        - { label: GitHub, url: 'https://github.com/pgsty/sow', icon: fa-brands fa-github, external: true }
+    - title: pg_exporter
+      meta: Observability & Metrics · Apache-2.0
       image: img/works/exp.pgsty.com.webp
-      desc: PostgreSQL observability expressed in SQL — 600+ metrics, declarative collectors.
+      desc: PostgreSQL observability expressed in SQL — 600+ metrics via declarative YAML collectors for Prometheus.
+      detail: 'A declarative Prometheus metrics exporter for PostgreSQL and PgBouncer. Every collector is defined in structured YAML and SQL with automatic server-version (PG 10–19) and extension gating, fine-grained query timeouts, caching, and health probes — exposing 600+ production observability metrics without recompiling a single line of Go.'
+      tags: [Go, Prometheus Exporter, 600+ Declarative Metrics, PostgreSQL & PgBouncer]
       url: 'https://exp.pgsty.com'
       external: true
-    - title: Capslock Enhancement
-      meta: Keyboard tooling
+      links:
+        - { label: Documentation, url: 'https://exp.pgsty.com/', icon: fa-solid fa-book, external: true }
+        - { label: OINK Case, url: 'https://oink.pgsty.com/case/pg-exporter/', icon: fa-solid fa-palette, external: true }
+        - { label: GitHub, url: 'https://github.com/pgsty/pg_exporter', icon: fa-brands fa-github, external: true }
+    - title: Barn
+      meta: Local VM Manager · Apache-2.0
+      image: img/works/barn.pgsty.com.webp
+      desc: Boot multi-node Linux labs from a single YAML inventory, or run isolated native macOS VMs on Apple Silicon.
+      detail: 'A lightweight local virtual machine fleet manager designed for database clustering labs and infrastructure testing. From a single declarative YAML inventory, Barn boots multi-node Linux sandboxes in seconds (via KVM/libvirt or Apple Virtualization) or manages isolated native macOS VMs on Apple Silicon — replacing clunky Vagrant + VirtualBox setups.'
+      tags: [Go, Linux & macOS VMs, Single-YAML Fleet, Apple Silicon Native]
+      url: 'https://barn.pgsty.com/'
+      external: true
+      links:
+        - { label: Documentation, url: 'https://barn.pgsty.com/', icon: fa-solid fa-book, external: true }
+        - { label: GitHub, url: 'https://github.com/pgsty/barn', icon: fa-brands fa-github, external: true }
+    - title: Capslock
+      meta: Keyboard Ergonomics · MIT
       image: img/works/caps.vonng.com.webp
-      desc: Turn the mostly useless CapsLock key into a fifth modifier.
-      url: 'https://caps.vonng.com'
+      desc: Turn the forgotten CapsLock key into a fifth modifier (Hyper) for sixteen home-row keyboard control planes.
+      detail: 'An eight-year keyboard ergonomics system for macOS (Karabiner-Elements) and Windows (AutoHotkey). By turning the idle CapsLock key beside your left pinky into a fifth modifier (Hyper), Capslock unlocks 16 orthogonal home-row layers for cursor navigation, window tiling, app switching, media control, and symbol entry — complete with an interactive web customizer.'
+      tags: [Karabiner & AHK, 16 Control Layers, Interactive Web Customizer, macOS & Windows]
+      url: 'https://caps.vonng.com/'
       external: true
-    - title: PGEXT.CLOUD
-      meta: Extension catalog
-      image: img/works/ext.pgsty.com.webp
-      desc: An index, catalog and metadata for 2200+ PostgreSQL extensions, plus download, install and build matrices for 570+ of them.
-      url: 'https://ext.pgsty.com'
+      links:
+        - { label: Web Customizer, url: 'https://caps.vonng.com/', icon: fa-solid fa-sliders, external: true }
+        - { label: OINK Case, url: 'https://oink.pgsty.com/case/capslock/', icon: fa-solid fa-palette, external: true }
+        - { label: GitHub, url: 'https://github.com/Vonng/Capslock', icon: fa-brands fa-github, external: true }
+    - title: ACDAT
+      meta: Aho-Corasick Trie Extension · Apache-2.0
+      image: img/works/acdat.webp
+      desc: Zero-dependency C11 PostgreSQL extension compiling large literal pattern sets into a Double-Array Trie for O(n) scanning.
+      detail: 'A zero-dependency C11 PostgreSQL extension for high-throughput multi-pattern string matching. ACDAT compiles thousands of literal patterns into a compact, read-only Aho-Corasick Double-Array Trie stored directly inside a PostgreSQL varlena datum, performing single-pass O(n) pattern matching, position extraction, counting, and leftmost-longest replacement.'
+      tags: [C11, PostgreSQL 14–19, Double-Array Aho-Corasick, O(n) Single-Pass Scan]
+      url: 'https://github.com/pgsty/acdat'
       external: true
-    - title: PGSTY
-      meta: Company site
-      image: img/works/pgsty.com.webp
-      desc: The team behind Pigsty, and the open source and services around it.
-      url: 'https://pgsty.com'
+      links:
+        - { label: GitHub Repo, url: 'https://github.com/pgsty/acdat', icon: fa-brands fa-github, external: true }
+        - { label: Extension Catalog, url: 'https://pgext.cloud/e/acdat/', icon: fa-solid fa-puzzle-piece, external: true }
+
+  # ==========================================================================
+  # 2. Works (2×2 on Home & About: Top 2 = Monographs, Bottom 2 = Research Papers)
+  # ==========================================================================
+  works:
+    - title: 36 Stratagems of PostgreSQL
+      meta: Original Monograph · 36 Chapters & 242 Sections
+      image: img/works/pg36g.vonng.com.webp
+      desc: 'From SQL to Production: a 36-chapter, 242-section engineering monograph built on PostgreSQL 18.6 and Pigsty 4.5 with reproducible labs.'
+      url: 'https://pg36g.vonng.com/'
+      external: true
+    - title: Cyber Dharma (赛博经藏)
+      meta: Digital Monograph · Philosophy & AI
+      image: img/works/dharma.vonng.com.webp
+      desc: 'Seven ancient contemplative traditions orbiting one modern machine — a bilingual canon translating timeless wisdom into AI Agent governance.'
+      url: 'https://dharma.vonng.com'
+      external: true
+    - title: 'D-Bot: Database Diagnosis System using Large Language Models'
+      meta: PVLDB Vol. 17 · VLDB 2024
+      image: img/works/dbot.jpg
+      desc: 'Co-authored with the Tsinghua University database group (VLDB 2024): collaborative LLM agents with tool use and knowledge retrieval for automated root-cause diagnosis.'
+      url: 'https://www.vldb.org/pvldb/vol17/p2514-li.pdf'
+      external: true
+    - title: 'Unified Access Layer with PostgreSQL FDW for Heterogeneous Databases'
+      meta: Springer LNCS · NPC 2017
+      image: img/works/hbase_fdw.webp
+      desc: 'Published at IFIP NPC 2017 (Springer LNCS Vol. 10578): federating HBase, Redis, MongoDB, and MySQL behind a unified SQL interface via PostgreSQL Foreign Data Wrappers.'
+      url: 'https://dl.acm.org/doi/10.1007/978-3-319-68210-5_14'
       external: true
 
-  # Books, translations and papers
-  publication:
+  # 2a. Original Monographs (1-column horizontal showcase on /en/works/)
+  works_monographs:
+    - title: 36 Stratagems of PostgreSQL (PG 三十六计)
+      meta: Original Engineering Monograph · 6 Volumes, 36 Chapters & 242 Sections
+      image: img/works/pg36g.vonng.com.webp
+      desc: 'From SQL to Production: a 36-chapter, 242-section engineering monograph built on PostgreSQL 18.6 and Pigsty 4.5.'
+      detail: 'A comprehensive production engineering monograph structured after the classical Thirty-Six Stratagems across six volumes, 36 chapters, and 242 sections. Anchored to reproducible labs on PostgreSQL 18.6 and Pigsty 4.5, it walks from relational modeling, advanced SQL, MVCC concurrency, and index internals all the way to Patroni high availability, PITR backup, observability, cloud-exit economics, and incident postmortems.'
+      tags: [PostgreSQL 18.6, Pigsty 4.5, 6 Volumes · 36 Chapters · 242 Sections, Reproducible Labs]
+      url: 'https://pg36g.vonng.com/'
+      external: true
+      links:
+        - { label: Read Online, url: 'https://pg36g.vonng.com/', icon: fa-solid fa-book-open, external: true }
+    - title: Cyber Dharma (赛博经藏)
+      meta: Original Digital Canon · Comparative Philosophy & AI
+      image: img/works/dharma.vonng.com.webp
+      desc: 'Seven ancient contemplative traditions orbiting one modern machine — a bilingual digital canon on technology, mind, and AI agents.'
+      detail: 'A cross-civilizational bilingual digital canon bringing together foundational texts from seven traditions — Buddhism, Daoism, Confucianism, Christianity, Islam, Hinduism, and Western Philosophy — alongside architectural essays on LLM alignment, perception, memory, causality, and autonomous AI agent governance.'
+      tags: [Bilingual Canon, 7 Classical Traditions, AI Agent Philosophy, OINK Book Mode]
+      url: 'https://dharma.vonng.com/en/'
+      external: true
+      links:
+        - { label: English Edition, url: 'https://dharma.vonng.com/en/', icon: fa-solid fa-yin-yang, external: true }
+        - { label: Chinese Edition, url: 'https://dharma.vonng.com', icon: fa-solid fa-language, external: true }
+
+  # 2b. Research Papers (2-column detailed cards on /en/works/)
+  works_papers:
+    - title: 'D-Bot: Database Diagnosis System using Large Language Models'
+      meta: PVLDB Vol. 17, No. 10 · VLDB 2024
+      image: img/works/dbot.jpg
+      desc: 'Co-authored with the Tsinghua University database group (VLDB 2024): collaborative LLM agents for automated database root-cause diagnosis.'
+      detail: 'Co-authored with Prof. Guoliang Li’s database group at Tsinghua University and ModelBest, published at VLDB 2024 (PVLDB Vol. 17, pp. 2514–2527). D-Bot extracts diagnostic chunks from operational manuals, equips domain-specialist LLM agents with metric/log/SQL inspection tools, and coordinates them via tree-search reasoning to pinpoint root causes of complex compound anomalies in production PostgreSQL clusters.'
+      tags: [VLDB 2024, LLM Multi-Agent, Root-Cause Diagnosis, Tsinghua & Pigsty]
+      url: 'https://www.vldb.org/pvldb/vol17/p2514-li.pdf'
+      external: true
+      links:
+        - { label: VLDB PDF, url: 'https://www.vldb.org/pvldb/vol17/p2514-li.pdf', icon: fa-solid fa-file-pdf, external: true }
+        - { label: arXiv Preprint, url: 'https://arxiv.org/abs/2312.01454', icon: fa-solid fa-graduation-cap, external: true }
+    - title: 'Unified Access Layer with PostgreSQL FDW for Heterogeneous Databases'
+      meta: Springer LNCS Vol. 10578 · IFIP NPC 2017
+      image: img/works/hbase_fdw.webp
+      desc: 'Published at IFIP NPC 2017: federating HBase, Redis, MongoDB, and MySQL behind a unified SQL interface via PostgreSQL FDW.'
+      detail: 'Published at the 14th IFIP International Conference on Network and Parallel Computing (NPC 2017, Springer LNCS Vol. 10578, pp. 173–185). Born out of production systems at Alibaba, this paper presents a Foreign Data Wrapper (FDW) federation layer that enables cross-engine joins, predicate pushdown, and ETL pipelines across HBase, Redis, MongoDB, and MySQL through standard PostgreSQL SQL.'
+      tags: [IFIP NPC 2017, PostgreSQL FDW, Heterogeneous Federation, Predicate Pushdown]
+      url: 'https://dl.acm.org/doi/10.1007/978-3-319-68210-5_14'
+      external: true
+      links:
+        - { label: ACM / Springer Paper, url: 'https://dl.acm.org/doi/10.1007/978-3-319-68210-5_14', icon: fa-solid fa-scroll, external: true }
+        - { label: GitHub (hbase_fdw), url: 'https://github.com/Vonng/hbase_fdw', icon: fa-brands fa-github, external: true }
+
+  # 2c. Talks, Interactive Reports & Dossier (2-column detailed cards on /en/works/)
+  works_reports:
+    - title: Extensions for Everyone
+      meta: PGConf.Dev 2026 · Vancouver Conference Deck
+      image: img/works/extensions-for-everyone.webp
+      desc: 'Interactive slide deck from PGConf.Dev 2026 in Vancouver on building the metadata catalog, packaging matrix, and delivery layer for Postgres extensions.'
+      detail: 'Interactive HTML slide deck presented at PGConf.Dev 2026 in Vancouver, Canada. Dissects the "last-mile delivery problem" of the PostgreSQL extension ecosystem and demonstrates how the pgext.cloud metadata registry, the PIG CLI package manager, and the SOW repository build pipeline make 570+ binary extensions installable with one command across 16 Linux distributions.'
+      tags: [PGConf.Dev 2026, Vancouver Talk, Interactive Slide Deck, Extension Supply Chain]
+      url: '/work/extensions-for-everyone/'
+      external: false
+      links:
+        - { label: Open Slide Deck, url: '/work/extensions-for-everyone/', icon: fa-solid fa-chalkboard-user }
+        - { label: Conference Recap, url: '/en/pg/pgconfdev-2026/', icon: fa-solid fa-newspaper }
+    - title: StackOverflow 2026 Visual Report
+      meta: Data Journalism · Interactive Survey Breakdown
+      image: img/works/so2026.webp
+      desc: 'An interactive visual breakdown of the 2026 StackOverflow Developer Survey, charting PostgreSQL’s dominance and the AI toolchain shift.'
+      detail: 'A single-page interactive data journalism report built from the StackOverflow Developer Survey dataset. Visualizes PostgreSQL’s multi-year surge to the #1 most used, admired, and desired database, alongside cloud provider trajectories, programming language shifts, and the adoption vs. trust gap in AI coding assistants.'
+      tags: [StackOverflow Survey, Interactive Charts, Database Trends, AI Toolchains]
+      url: '/work/so2026/'
+      external: false
+      links:
+        - { label: Open Interactive Report, url: '/work/so2026/', icon: fa-solid fa-chart-pie }
+    - title: PostgreSQL Contributor Dossier
+      meta: Contributor Dossier · 2015–2026
+      image: img/works/dossier.webp
+      desc: 'Nomination dossier documenting 11 years of independent contributions to PostgreSQL across packaging, patches, open-source RDS, and books.'
+      detail: 'A structured community nomination dossier documenting over a decade of independent work in the PostgreSQL ecosystem (2015–2026): maintaining 570+ binary extension packages and pgext.cloud, authoring the Pigsty open-source RDS distribution, translating the PostgreSQL 14–19 manuals and 10+ books, contributing kernel patches, and delivering 25+ conference talks.'
+      tags: [PostgreSQL Community, 2015–2026 Dossier, Verifiable Evidence, Bilingual]
+      url: '/en/dossier/'
+      external: false
+      links:
+        - { label: English Dossier, url: '/en/dossier/', icon: fa-solid fa-id-card }
+        - { label: Chinese Dossier, url: '/dossier/', icon: fa-solid fa-language, raw_url: true }
+    - title: Anthropic Economic Index & AI Report
+      meta: Industry Analysis · Interactive Visualization
+      image: img/works/anthropic-report.webp
+      desc: 'Interactive visual report dissecting AI adoption across software engineering, data science, and knowledge work from millions of Claude conversations.'
+      detail: 'An interactive visual analysis of the Anthropic Economic Index dataset, mapping millions of real-world Claude conversations onto the O*NET occupational taxonomy to measure automation vs. augmentation across software engineering, database operations, data analysis, and knowledge work.'
+      tags: [Anthropic Economic Index, Interactive Visualization, AI Adoption, Software Engineering]
+      url: '/work/anthropic-report.html'
+      external: false
+      links:
+        - { label: Open Visual Report, url: '/work/anthropic-report.html', icon: fa-solid fa-chart-line }
+    - title: PostgreSQL range_length(NaN) Patch Report
+      meta: Kernel Research · Edge-Case Semantics
+      image: img/works/pg-range-length-nan.webp
+      desc: 'Technical analysis and patch report on PostgreSQL range type length calculation and selectivity estimation when bounds contain IEEE 754 NaN.'
+      detail: 'An in-depth kernel bug analysis and patch report examining how PostgreSQL Range and Multirange types compute distances, build ANALYZE length histograms, and evaluate GiST index penalty functions when endpoints contain IEEE 754 NaN values — complete with reproducers and cross-version behavior matrices.'
+      tags: [PostgreSQL Kernel, Range Types & GiST, IEEE 754 NaN, Patch Analysis]
+      url: '/work/pg-range-length-nan/'
+      external: false
+      links:
+        - { label: Read Technical Report, url: '/work/pg-range-length-nan/', icon: fa-solid fa-bug-slash }
+    - title: Pigsty Ecosystem Panorama Board
+      meta: Architecture Poster · Interactive Overview
+      image: img/works/pigsty-board.webp
+      desc: 'Single-page interactive architecture board covering Pigsty’s release history, 470+ extension matrix, HA topology, and observability stack.'
+      detail: 'A high-density interactive single-page architecture board presenting the evolution of Pigsty since 2018, its four core modules (PGSQL, INFRA, NODE, ETCD), high-availability failover topology, Linux distro compatibility matrix, and full observability stack.'
+      tags: [Architecture Panorama, HA Topology, Extension Matrix, Interactive Poster]
+      url: '/work/pigsty-board.html'
+      external: false
+      links:
+        - { label: Open Panorama Board, url: '/work/pigsty-board.html', icon: fa-solid fa-table-columns }
+
+  # ==========================================================================
+  # 3. Translations (9 translated books in 3×3 on Home; expanded 2-col on /en/translation/)
+  # ==========================================================================
+  translation:
     - title: DDIA
-      meta: Chinese translation
+      meta: Designing Data-Intensive Apps · 2nd Ed
       image: img/works/ddia.vonng.com.webp
-      desc: Designing Data-Intensive Applications, translated into Chinese.
+      desc: Chinese translation of Martin Kleppmann’s Designing Data-Intensive Applications (2nd Edition) — the distributed systems classic.
       url: 'https://ddia.vonng.com'
       external: true
-    - title: PostgreSQL Internals
-      meta: Chinese translation
+    - title: Internals of PostgreSQL
+      meta: Storage, Query Processing & MVCC
       image: img/works/pgint.vonng.com.webp
-      desc: PostgreSQL Internals, translated into Chinese.
+      desc: Chinese edition of Hironobu Suzuki’s classic guide to PostgreSQL storage layout, query execution, MVCC, and WAL.
       url: 'https://pgint.vonng.com'
       external: true
+    - title: PostgreSQL 18 Internals
+      meta: Concurrency, Buffer Cache & Indexes
+      image: img/works/int18.pgsql.cc.webp
+      desc: Chinese edition of Egor Rogov’s comprehensive volume on PostgreSQL 18 concurrency, buffer management, locks, and access methods.
+      url: 'https://int18.pgsql.cc/zh18/'
+      external: true
+    - title: PostgreSQL Monitoring
+      meta: Telemetry, Metrics & Observability
+      image: img/works/pgmon.pgsql.cc.webp
+      desc: Chinese edition of Alexey Lesovsky’s handbook on PostgreSQL statistics views, I/O telemetry, lock analysis, and OS profiling.
+      url: 'https://pgmon.pgsql.cc/'
+      external: true
+    - title: PostgreSQL 18 Query Optimization
+      meta: Execution Plans & SQL Tuning
+      image: img/works/pgqpt.pgsql.cc.webp
+      desc: Chinese edition of Pavel Tolmachev’s query optimization handbook covering access methods, join strategies, statistics, and tuning.
+      url: 'https://pgqpt.pgsql.cc/'
+      external: true
+    - title: PostgreSQL New Features
+      meta: PG 9.5–19 · Release Evolution
+      image: img/works/feat.pgsql.cc.webp
+      desc: Chinese edition of Noriyoshi Shinoda’s guide to new features, SQL examples, and compatibility changes across 12 major PG releases.
+      url: 'https://feat.pgsql.cc/'
+      external: true
+    - title: 'PostgreSQL: First Experience'
+      meta: 11th Edition · Getting Started
+      image: img/works/intro.pgsql.cc.webp
+      desc: Chinese edition of Pavel Luzanov et al.’s beginner guide — from installing PostgreSQL and writing SQL to connecting applications.
+      url: 'https://intro.pgsql.cc/'
+      external: true
+    - title: PostgreSQL by Example
+      meta: 57 Hands-On Lessons
+      image: img/works/pgexp.pgsql.cc.webp
+      desc: Chinese edition of Dariush Abbasi’s Postgres by Example — 57 concise, runnable SQL lessons from queries to administration.
+      url: 'https://pgexp.pgsql.cc/'
+      external: true
+    - title: PostgreSQL Basics (8KB)
+      meta: Eight Kilobytes · From the Page Up
+      image: img/works/basic.pgsql.cc.webp
+      desc: Chinese edition of Chase Pierce’s Eight Kilobytes — understanding PostgreSQL from 8 KB disk pages and tuples to production ops.
+      url: 'https://basic.pgsql.cc/'
+      external: true
+
+  # 3a. Translations Page Section 1: Data Systems & Tech Humanities (2×2 detailed grid on /en/translation/)
+  translation_classics:
+    - title: Designing Data-Intensive Applications (DDIA 2nd & 1st Ed)
+      meta: Martin Kleppmann & Chris Riccomini · Translated by Ruohang Feng
+      image: img/works/ddia.vonng.com.webp
+      desc: 'The definitive distributed systems and data engineering classic, published with Simplified Chinese, Traditional Chinese, and English editions.'
+      detail: 'Chinese translation of Martin Kleppmann and Chris Riccomini’s landmark book Designing Data-Intensive Applications. Hosts both the 1st Edition (12 chapters) and the substantially rewritten 2nd Edition (14 chapters plus reading notes) across Simplified Chinese, Traditional Chinese, and English — covering storage engines, replication, sharding, consensus, and stream processing.'
+      tags: [1st & 2nd Editions, Simplified / Traditional / EN, 130+ Numbered Figures, 20k+ GitHub Stars]
+      url: 'https://ddia.vonng.com'
+      external: true
+      links:
+        - { label: Read Online, url: 'https://ddia.vonng.com', icon: fa-solid fa-book-open, external: true }
+        - { label: OINK Case, url: 'https://oink.pgsty.com/case/ddia/', icon: fa-solid fa-palette, external: true }
+        - { label: GitHub, url: 'https://github.com/Vonng/ddia', icon: fa-brands fa-github, external: true }
+    - title: The Internals of PostgreSQL
+      meta: Hironobu Suzuki · Translated by Ruohang Feng et al.
+      image: img/works/pgint.vonng.com.webp
+      desc: 'Hironobu Suzuki’s illustrated 11-chapter guide to PostgreSQL heap layout, query execution, MVCC, VACUUM, buffer management, and WAL.'
+      detail: 'Complete 11-chapter Chinese edition of Japanese database expert Hironobu Suzuki’s classic guide to PostgreSQL internals. Richly illustrated with hundreds of architectural diagrams, it walks through cluster physical layout, query cost estimation, parallel plans, MVCC snapshots, VACUUM & freeze, buffer pool management, WAL logging, and streaming replication.'
+      tags: [11 Complete Chapters, Illustrated Storage & MVCC, WAL & Replication, OINK Book Mode]
+      url: 'https://pgint.vonng.com'
+      external: true
+      links:
+        - { label: Read Online, url: 'https://pgint.vonng.com', icon: fa-solid fa-book-open, external: true }
+        - { label: OINK Case, url: 'https://oink.pgsty.com/case/pg-internal/', icon: fa-solid fa-palette, external: true }
+    - title: Empire of AI (人工智能帝国)
+      meta: Karen Hao · Investigative Tech Chronicle
+      image: img/works/aiempire.vonng.com.webp
+      desc: 'Chinese edition of Karen Hao’s investigative account of power, ambition, scale, and the global cost inside Sam Altman’s OpenAI.'
+      detail: 'Chinese translation of journalist Karen Hao’s investigative book Empire of AI: Dreams and Nightmares in Sam Altman’s OpenAI. Drawing on hundreds of insider interviews and primary documents, it traces OpenAI’s transformation from a non-profit safety lab into a compute empire, alongside its boardroom crisis, labor supply chains, and resource footprint.'
+      tags: [OpenAI Investigation, Tech Journalism, Complete Chinese Edition, OINK Book Mode]
+      url: 'https://aiempire.vonng.com'
+      external: true
+      links:
+        - { label: Read Online, url: 'https://aiempire.vonng.com', icon: fa-solid fa-book-open, external: true }
+    - title: The Product-Minded Engineer
+      meta: Drew Hoskins · Software Engineering Craft
+      image: img/works/tpme.vonng.com.webp
+      desc: 'Bilingual 18-chapter edition of Drew Hoskins’s guide to building high-leverage software with strong product judgment and user empathy.'
+      detail: 'Bilingual (Chinese & English) edition of Principal Engineer Drew Hoskins’s 18-chapter book on moving beyond ticket-taking to become a high-leverage product-minded engineer — aligning technical architecture with user needs, business economics, iterative validation, and AI-era product ownership.'
+      tags: [18 Chapters, Bilingual EN / ZH, Engineering Leverage, OINK Book Showcase]
+      url: 'https://tpme.vonng.com'
+      external: true
+      links:
+        - { label: Chinese Edition, url: 'https://tpme.vonng.com/', icon: fa-solid fa-book-open, external: true }
+        - { label: OINK Case, url: 'https://oink.pgsty.com/case/tpme/', icon: fa-solid fa-palette, external: true }
+
+  # 3b. Translations Page Section 2: PostgreSQL Internals, Tuning & Tutorials (4×2 detailed grid on /en/translation/)
+  translation_pg:
+    - title: PostgreSQL 18 Internals
+      meta: Egor Rogov · Translated by Ruohang Feng · 2026 Edition
+      image: img/works/int18.pgsql.cc.webp
+      desc: 'Egor Rogov’s 700-page encyclopedia on PostgreSQL 18 concurrency, MVCC, locks, buffer cache, WAL, query execution, and index access methods.'
+      detail: 'Chinese edition of Egor Rogov’s monumental five-part volume on PostgreSQL 18 internals: Part I covers tuple versions, snapshots, page pruning, VACUUM, and freeze; Part II dissects the buffer cache, WAL, and crash recovery; Part III explains heavyweight/lightweight locks; Part IV traces query compilation and joins; Part V examines B-Tree, GiST, SP-GiST, GIN, BRIN, and Hash indexes.'
+      tags: [PostgreSQL 18, 5-Part Kernel Treatise, MVCC / Locks / Buffer / Indexes, EN / ZH / RU]
+      url: 'https://int18.pgsql.cc/zh18/'
+      external: true
+      links:
+        - { label: Chinese Edition (PG 18), url: 'https://int18.pgsql.cc/zh18/', icon: fa-solid fa-book-open, external: true }
+        - { label: English Edition (PG 18), url: 'https://int18.pgsql.cc/en/', icon: fa-solid fa-language, external: true }
+    - title: PostgreSQL 18 Query Optimization
+      meta: Pavel Tolmachev et al. · Translated by Ruohang Feng · 2026 Edition
+      image: img/works/pgqpt.pgsql.cc.webp
+      desc: 'Practical handbook on execution plan analysis, scan & join strategies, extended statistics, and SQL query tuning on PostgreSQL 18.'
+      detail: 'Hands-on query optimization treatise built around the realistic Bookings airline database on PostgreSQL 18. Walks through planner cost models, sequential vs. index scan crossovers, Nested Loop / Hash / Merge joins, multivariate statistics, OS and SQL profiling tools, and systematic query refactoring patterns.'
+      tags: [PostgreSQL 18, Planner Cost Model, Bookings Demo DB, SQL Tuning]
+      url: 'https://pgqpt.pgsql.cc/'
+      external: true
+      links:
+        - { label: Read Online, url: 'https://pgqpt.pgsql.cc/', icon: fa-solid fa-book-open, external: true }
+    - title: PostgreSQL Monitoring
+      meta: Alexey Lesovsky · Translated by Ruohang Feng
+      image: img/works/pgmon.pgsql.cc.webp
+      desc: 'Comprehensive handbook on PostgreSQL statistics views, active session profiling, I/O telemetry, WAL replication, and Linux troubleshooting.'
+      detail: 'Chinese edition of Alexey Lesovsky’s practical guide to PostgreSQL observability. Covers the cumulative statistics subsystem, connection and wait-event analysis, pg_stat_statements query profiling, checkpoint and WAL pacing, replication lag, VACUUM bloat, and host-level CPU, memory, disk, and network diagnostics.'
+      tags: [Statistics Subsystem, Wait Events & Locks, I/O & WAL Telemetry, Production Triage]
+      url: 'https://pgmon.pgsql.cc/'
+      external: true
+      links:
+        - { label: Read Online, url: 'https://pgmon.pgsql.cc/', icon: fa-solid fa-book-open, external: true }
+    - title: PostgreSQL New Features (PG 9.5–19)
+      meta: Noriyoshi Shinoda · Translated by Ruohang Feng
+      image: img/works/feat.pgsql.cc.webp
+      desc: 'Feature evolution, runnable SQL demonstrations, and compatibility notes across 12 major PostgreSQL releases from 9.5 to 19.'
+      detail: 'Chinese edition of HPE Principal Technologist Noriyoshi Shinoda’s major-release guide series, spanning 12 major PostgreSQL versions (9.5 through 19). Every feature is documented with architectural context, GUC/catalog changes, and self-contained SQL test scripts for upgrade planning.'
+      tags: [PostgreSQL 9.5–19, 12 Major Releases, Runnable SQL Demos, Upgrade Reference]
+      url: 'https://feat.pgsql.cc/'
+      external: true
+      links:
+        - { label: Read Online, url: 'https://feat.pgsql.cc/', icon: fa-solid fa-book-open, external: true }
+    - title: PostgreSQL Basics (Eight Kilobytes)
+      meta: Chase Pierce · Translated by Ruohang Feng · PostgreSQL 18
+      image: img/works/basic.pgsql.cc.webp
+      desc: 'From 8 KB disk pages, line pointers, and tuples all the way up to B-Tree indexes, query plans, locks, migrations, and production ops.'
+      detail: 'Chinese edition of Chase Pierce’s Eight Kilobytes: From the Page Up. Starting from PostgreSQL’s fundamental 8 KB storage page, it builds a first-principles mental model of how tuples live on disk, how indexes reference pages, how MVCC creates dead tuples, and how those mechanics shape schema design and production operations.'
+      tags: [Eight Kilobytes, 8KB Page Architecture, Storage to Operations, PostgreSQL 18]
+      url: 'https://basic.pgsql.cc/'
+      external: true
+      links:
+        - { label: Read Online, url: 'https://basic.pgsql.cc/', icon: fa-solid fa-book-open, external: true }
+    - title: 'PostgreSQL: The First Experience (11th Edition)'
+      meta: Pavel Luzanov, Egor Rogov & Igor Levshin
+      image: img/works/intro.pgsql.cc.webp
+      desc: 'Step-by-step beginner textbook covering server installation, relational modeling, SQL queries, transactions, and application connections.'
+      detail: 'The 11th edition of Postgres Professional’s introductory textbook, translated into Chinese. Guides newcomers from installing PostgreSQL and using psql to designing normalized schemas, writing joins and window functions, understanding ACID transactions, and performing backups.'
+      tags: [11th Edition, Beginner Friendly, SQL & Relational Modeling, Chapter Exercises]
+      url: 'https://intro.pgsql.cc/'
+      external: true
+      links:
+        - { label: Read Online, url: 'https://intro.pgsql.cc/', icon: fa-solid fa-book-open, external: true }
+    - title: PostgreSQL by Example
+      meta: Dariush Abbasi · 57 Hands-On SQL Lessons
+      image: img/works/pgexp.pgsql.cc.webp
+      desc: 'Inspired by Go by Example: 57 concise, runnable SQL lessons walking from basic queries to JSONB, CTEs, partitioning, and administration.'
+      detail: 'A code-first workbook modeled after Go by Example. Across 57 focused lessons, it covers everyday PostgreSQL capabilities — CRUD, recursive CTEs, JSONB indexing, arrays, range types, full-text search, triggers, partitioning, and replication — through copy-pasteable SQL snippets.'
+      tags: [57 SQL Lessons, Example-Driven, JSONB / CTE / Partitioning, Quick Reference]
+      url: 'https://pgexp.pgsql.cc/'
+      external: true
+      links:
+        - { label: Read Online, url: 'https://pgexp.pgsql.cc/', icon: fa-solid fa-book-open, external: true }
+    - title: doc.pg.center · 8-Language Ecosystem Manuals
+      meta: Patroni · pgBackRest · PgBouncer · pgBadger · etcd · HAProxy
+      image: img/works/doc.pg.center.webp
+      desc: 'Multilingual reference manuals for the six core high-availability, backup, pooling, log analysis, and load-balancing components around PostgreSQL.'
+      detail: 'A unified multilingual documentation hub for the six essential components of a production PostgreSQL cluster: Patroni (HA orchestration), pgBackRest (PITR backup), PgBouncer (connection pooling), pgBadger (log analysis), etcd (distributed consensus), and HAProxy (load balancing) — published across eight languages.'
+      tags: [6 Core HA Components, 8 Languages, Unified Search, OINK Aggregate Case]
+      url: 'https://doc.pg.center/'
+      external: true
+      links:
+        - { label: English Hub, url: 'https://doc.pg.center/', icon: fa-solid fa-globe, external: true }
+        - { label: Chinese Hub, url: 'https://doc.pg.center/zh/', icon: fa-solid fa-language, external: true }
+
+  # 3c. Training Series Cards (Shown on Home, About, and /en/sites/ — balanced 2×8)
+  training_series:
+    - title: Dalibo PostgreSQL Training Courses
+      meta: Dalibo · 14 Courses
+      icon: fa-solid fa-chalkboard-user
+      url: 'https://dalibo.pgsql.cc/'
+      desc: 'Open-access PostgreSQL training curriculum by French consultancy Dalibo, spanning core DBA operations, Patroni HA, performance tuning, and CloudNativePG:'
+      books:
+        - { code: DBA1, title: PostgreSQL Administration, url: 'https://dalibo.pgsql.cc/dba1/' }
+        - { code: DBA2, title: Advanced Administration, url: 'https://dalibo.pgsql.cc/dba2/' }
+        - { code: DBA3, title: Backup & Replication, url: 'https://dalibo.pgsql.cc/dba3/' }
+        - { code: HAPAT, title: High Availability with Patroni, url: 'https://dalibo.pgsql.cc/hapat/' }
+        - { code: PERF1, title: PostgreSQL Performance, url: 'https://dalibo.pgsql.cc/perf1/' }
+        - { code: PERF2, title: Advanced Indexing & SQL, url: 'https://dalibo.pgsql.cc/perf2/' }
+        - { code: DEVPG, title: Developing with SQL, url: 'https://dalibo.pgsql.cc/devpg/' }
+        - { code: CNPG1, title: Kubernetes & CloudNativePG, url: 'https://dalibo.pgsql.cc/cnpg1/' }
+    - title: PostgreSQL Pro Training Courses
+      meta: Postgres Pro · 8 Courses
+      icon: fa-solid fa-graduation-cap
+      url: 'https://pgpro.pgsql.cc/'
+      desc: 'Eight structured training courses from Postgres Professional (134 topics and 5,300+ slide/workbook pages) covering administration, security, and backend development:'
+      books:
+        - { code: DBA1, title: Administration Basics, url: 'https://pgpro.pgsql.cc/dba1/' }
+        - { code: DBA2, title: Configuration & Monitoring, url: 'https://pgpro.pgsql.cc/dba2/' }
+        - { code: DBA3, title: Backup & Replication, url: 'https://pgpro.pgsql.cc/dba3/' }
+        - { code: DBS, title: Access Control & Security, url: 'https://pgpro.pgsql.cc/dbs/' }
+        - { code: DEV1, title: Backend Development I, url: 'https://pgpro.pgsql.cc/dev1/' }
+        - { code: DEV2, title: Advanced Backend Dev II, url: 'https://pgpro.pgsql.cc/dev2/' }
+        - { code: QPT, title: Query Performance Tuning, url: 'https://pgpro.pgsql.cc/qpt/' }
+        - { code: PGPRO, title: Enterprise Features, url: 'https://pgpro.pgsql.cc/pgpro/' }
+
+  # 3d. Full Curricula & Manuals Matrix (Shown on /en/translation/ — all 14 Dalibo + 8 PGPro + community docs)
+  training_series_full:
+    - title: Dalibo Complete PostgreSQL Curriculum
+      meta: Dalibo · All 14 Courses
+      icon: fa-solid fa-chalkboard-user
+      url: 'https://dalibo.pgsql.cc/'
+      desc: 'All 14 open-source training courses and lab workbooks from French PostgreSQL consultancy Dalibo (CC BY-SA), covering administration, HA, tuning, K8s, and PostGIS:'
+      books:
+        - { code: DBA1, title: PostgreSQL Administration, url: 'https://dalibo.pgsql.cc/dba1/' }
+        - { code: DBA2, title: Advanced Administration, url: 'https://dalibo.pgsql.cc/dba2/' }
+        - { code: DBA3, title: Backup & Replication, url: 'https://dalibo.pgsql.cc/dba3/' }
+        - { code: DBAADM, title: Senior DBA Operations, url: 'https://dalibo.pgsql.cc/dbaadm/' }
+        - { code: DBA42, title: FDW, Extensions & Pooling, url: 'https://dalibo.pgsql.cc/dba42/' }
+        - { code: HAPAT, title: Patroni High Availability, url: 'https://dalibo.pgsql.cc/hapat/' }
+        - { code: CNPG1, title: K8s & CloudNativePG, url: 'https://dalibo.pgsql.cc/cnpg1/' }
+        - { code: PERF1, title: Performance Tuning I, url: 'https://dalibo.pgsql.cc/perf1/' }
+        - { code: PERF2, title: Advanced Indexing & SQL, url: 'https://dalibo.pgsql.cc/perf2/' }
+        - { code: DEV1, title: SQL Fundamentals, url: 'https://dalibo.pgsql.cc/dev1/' }
+        - { code: DEVPG, title: Application Development, url: 'https://dalibo.pgsql.cc/devpg/' }
+        - { code: DEV42, title: PL/pgSQL & Advanced Dev, url: 'https://dalibo.pgsql.cc/dev42/' }
+        - { code: SIG1, title: PostGIS Fundamentals, url: 'https://dalibo.pgsql.cc/sig1/' }
+        - { code: SIG2, title: Advanced PostGIS Spatial, url: 'https://dalibo.pgsql.cc/sig2/' }
+    - title: Postgres Pro Courses & Ecosystem Manuals
+      meta: Postgres Pro 8 Courses · Reference Manuals
+      icon: fa-solid fa-graduation-cap
+      url: 'https://pgpro.pgsql.cc/'
+      desc: 'Eight official courses from Postgres Professional (134 topics, 5,300+ pages) alongside synchronized PostgreSQL manuals and component handbooks:'
+      books:
+        - { code: DBA1, title: PGPro Admin Basics, url: 'https://pgpro.pgsql.cc/dba1/' }
+        - { code: DBA2, title: PGPro Config & Monitoring, url: 'https://pgpro.pgsql.cc/dba2/' }
+        - { code: DBA3, title: PGPro Backup & Replication, url: 'https://pgpro.pgsql.cc/dba3/' }
+        - { code: DBS, title: PGPro Security & Access, url: 'https://pgpro.pgsql.cc/dbs/' }
+        - { code: DEV1, title: PGPro Backend Dev I, url: 'https://pgpro.pgsql.cc/dev1/' }
+        - { code: DEV2, title: PGPro Backend Dev II, url: 'https://pgpro.pgsql.cc/dev2/' }
+        - { code: QPT, title: PGPro Query Tuning, url: 'https://pgpro.pgsql.cc/qpt/' }
+        - { code: PGPRO, title: PGPro Enterprise Features, url: 'https://pgpro.pgsql.cc/pgpro/' }
+        - { code: DOCS, title: PostgreSQL 14–19 Manuals (ZH), url: 'https://pgsql.cc/docs/' }
+        - { code: HOWTO, title: PostgreSQL How To Runbooks, url: 'https://postgres-howto.cn/' }
+        - { code: INT14, title: PostgreSQL 14 Internals (ZH), url: 'https://postgres-internals.cn/docs/' }
+        - { code: GIS, title: PostGIS Official Manual (ZH), url: 'https://postgis.net/docs/manual-dev/zh_Hans/' }
+        - { code: HA, title: Patroni HA Cluster Manual, url: 'https://doc.pg.center/patroni/' }
+        - { code: PITR, title: pgBackRest Backup Manual, url: 'https://doc.pg.center/pgbackrest/' }
+
+  # ==========================================================================
+  # 4. Sites (6 flagship websites in 2×3 on Home; 5 grouped 2-col sections on /en/sites/)
+  # ==========================================================================
+  sites:
     - title: pg.center
-      meta: PostgreSQL knowledge, connected
+      meta: Knowledge Graph · PostgreSQL 14–19
       image: img/works/pg.center.webp
-      desc: PostgreSQL manuals, reference, and ecosystem knowledge across versions.
+      desc: Connected PostgreSQL manuals, GUC parameters, system catalogs, and 500+ extension references across versions.
       url: 'https://pg.center'
       external: true
     - title: pgsql.cc
-      meta: PostgreSQL documentation in Chinese
+      meta: Chinese Portal · Reference Library
       image: img/works/pgsql.cc.webp
-      desc: PostgreSQL documentation and technical resources in Chinese, maintained by the Pigsty team.
+      desc: Chinese PostgreSQL community portal with synchronized manuals, daily news, version comparisons, books, and tutorials.
       url: 'https://pgsql.cc'
       external: true
-    - title: "Paper: D-Bot DB Diagnosis with LLMs"
-      meta: VLDB paper
-      image: img/works/dbot.jpg
-      desc: Database Diagnosis System using Large Language Models, VLDB 2024.
-      url: 'https://www.vldb.org/pvldb/vol17/p2514-li.pdf'
+    - title: pgext.cloud
+      meta: Extension Catalog & Binary Repo
+      image: img/works/ext.pgsty.com.webp
+      desc: An index, catalog, and metadata registry for 2,200+ PostgreSQL extensions, with binary packages and build matrices for 570+ of them.
+      url: 'https://pgext.cloud'
       external: true
-    - title: "Paper : Unified DB Access Layer"
-      meta: NPC 2017 paper - hbase_fdw
-      image: img/works/hbase_fdw.webp
-      desc: A unified access layer over heterogeneous databases through PostgreSQL FDW.
-      url: 'https://dl.acm.org/doi/10.1007/978-3-319-68210-5_14'
+    - title: vonng.com
+      meta: Vonng’s Blog · Technical Essays
+      image: img/works/vonng.com.webp
+      desc: Ruohang Feng’s personal website and long-form engineering columns on databases, cloud repatriation, PostgreSQL internals, and AI agents.
+      url: 'https://vonng.com/en'
       external: true
-    - title: Cyber Dharma
-      meta: 赛博经藏 - ancient religions wisdom
+    - title: pigsty
+      meta: Open-Source PostgreSQL RDS
+      image: img/works/pigsty.io.webp
+      desc: Official documentation and portal for Pigsty — the battery-included, local-first open-source PostgreSQL RDS distribution.
+      url: 'https://pigsty.io'
+      external: true
+    - title: pgsty.com
+      meta: Open-Source Studio · Support
+      image: img/works/pgsty.com.webp
+      desc: The studio behind Pigsty, delivering open-source PostgreSQL infrastructure, enterprise subscriptions, and consulting services.
+      url: 'https://pgsty.com'
+      external: true
+
+  # 4a. Sites Page Group 1: Core Portals & Knowledge Hubs (3×2 detailed grid on /en/sites/)
+  sites_portals:
+    - title: pg.center
+      meta: PostgreSQL Knowledge Graph & Reference Portal
+      image: img/works/pg.center.webp
+      desc: Connected PostgreSQL manuals, GUC parameters, system catalogs, and 500+ extension references across versions.
+      detail: 'An international knowledge graph and reference portal connecting PostgreSQL 14–19 manuals, 390+ GUC configuration parameters, system catalogs, built-in functions, wait events, CVE security advisories, and 500+ extensions into a cross-version bilingual network.'
+      tags: [PostgreSQL 14–19, Knowledge Graph Wiki, GUC & System Catalogs, Bilingual EN / ZH]
+      url: 'https://pg.center'
+      external: true
+      links:
+        - { label: English Portal, url: 'https://pg.center', icon: fa-solid fa-earth-americas, external: true }
+        - { label: Chinese Portal, url: 'https://pg.center/zh', icon: fa-solid fa-globe, external: true }
+        - { label: Knowledge Wiki, url: 'https://pg.center/wiki/', icon: fa-solid fa-diagram-project, external: true }
+    - title: pgsql.cc
+      meta: Chinese PostgreSQL Community & Documentation Portal
+      image: img/works/pgsql.cc.webp
+      desc: Chinese PostgreSQL community portal with synchronized manuals, daily news, version comparisons, books, and tutorials.
+      detail: 'One-stop Chinese PostgreSQL portal maintained by the Pigsty team. Hosts full-text searchable Chinese manuals for PostgreSQL 14–19 alongside daily community news, release matrices, CVE tracking, kernel contributor profiles (Hackers), and 12 open-access books and training curricula.'
+      tags: [PG 14–19 Manuals (ZH), Tutorials & Books Hub, News & CVE Tracker, Kernel Hackers]
+      url: 'https://pgsql.cc'
+      external: true
+      links:
+        - { label: Visit Portal, url: 'https://pgsql.cc', icon: fa-solid fa-globe, external: true }
+        - { label: PG Manuals, url: 'https://pgsql.cc/docs/', icon: fa-solid fa-book, external: true }
+        - { label: Tutorials Hub, url: 'https://pgsql.cc/docs/tutorials/', icon: fa-solid fa-graduation-cap, external: true }
+    - title: pgext.cloud
+      meta: PostgreSQL Extension Catalog & Binary Build Matrix
+      image: img/works/ext.pgsty.com.webp
+      desc: An index, catalog, and metadata registry for 2,200+ PostgreSQL extensions, with binary packages and build matrices for 570+ of them.
+      detail: 'The comprehensive PostgreSQL extension registry and binary packaging matrix (also served at ext.pgsty.com). Indexes 2,240+ extensions across 16 functional categories with source links, licenses, and dependencies, while tracking live RPM/DEB availability for 570+ packaged extensions across PG 14–19 and 16 Linux distributions.'
+      tags: [2,240+ Extensions, 570+ Binary Packages, 16 Linux Distros, OINK Dataset Case]
+      url: 'https://pgext.cloud'
+      external: true
+      links:
+        - { label: English Catalog, url: 'https://pgext.cloud', icon: fa-solid fa-puzzle-piece, external: true }
+        - { label: Chinese Catalog, url: 'https://pgext.cloud/zh', icon: fa-solid fa-globe, external: true }
+        - { label: OINK Case, url: 'https://oink.pgsty.com/case/pgext-cloud/', icon: fa-solid fa-palette, external: true }
+    - title: doc.pg.center
+      meta: 8-Language PostgreSQL Ecosystem Component Manuals
+      image: img/works/doc.pg.center.webp
+      desc: Multilingual reference manuals for Patroni, pgBackRest, PgBouncer, pgBadger, etcd, and HAProxy across eight languages.
+      detail: 'An aggregate operations library bringing together the six foundational components of production PostgreSQL clusters — Patroni (HA), pgBackRest (PITR backup), PgBouncer (pooling), pgBadger (log analysis), etcd (consensus), and HAProxy (load balancing) — across English, Chinese, Japanese, Korean, French, German, Spanish, and Russian.'
+      tags: [6 Core HA Components, 8 Languages, Unified Search, OINK Aggregate Case]
+      url: 'https://doc.pg.center/'
+      external: true
+      links:
+        - { label: English Hub, url: 'https://doc.pg.center/', icon: fa-solid fa-earth-americas, external: true }
+        - { label: Chinese Hub, url: 'https://doc.pg.center/zh/', icon: fa-solid fa-language, external: true }
+        - { label: OINK Case, url: 'https://oink.pgsty.com/case/pgsql-cc/', icon: fa-solid fa-palette, external: true }
+    - title: vonng.com
+      meta: Vonng’s Blog · Bilingual Engineering Columns
+      image: img/works/vonng.com.webp
+      desc: Ruohang Feng’s personal website and long-form engineering columns on databases, cloud repatriation, PostgreSQL internals, and AI agents.
+      detail: 'The site you are currently reading (mirrored at blog.vonng.com). Established in 2018 and built on OINK, it publishes 340+ bilingual long-form essays across six thematic columns: Database Guru, Cloud-Exiter, PostgreSQL Mage, AI Agent Explorer, Pigsty Releases, Travel Notes, and Miscellaneous.'
+      tags: [Bilingual Blog, 340+ Long-Form Essays, 6 Thematic Columns, Dedicated RSS Feeds]
+      url: 'https://vonng.com/en'
+      external: true
+      links:
+        - { label: All Columns, url: '/en/column/', icon: fa-solid fa-layer-group }
+        - { label: Chinese Site (/), url: '/', icon: fa-solid fa-language, raw_url: true }
+        - { label: GitHub Source, url: 'https://github.com/Vonng/vonng.com', icon: fa-brands fa-github, external: true }
+    - title: pgsty.com
+      meta: PGSTY Open-Source Studio & Enterprise Support
+      image: img/works/pgsty.com.webp
+      desc: The studio behind Pigsty, delivering open-source PostgreSQL infrastructure, enterprise subscriptions, and consulting services.
+      detail: 'Corporate and studio portal for PGSTY — the company behind Pigsty. Showcases the open-source product suite, enterprise subscription tiers, principal-architect consulting, cloud-exit migration services, and an interactive 3-year Cloud RDS vs. Self-Hosted TCO calculator.'
+      tags: [Open-Source Studio, Enterprise PG Support, Cloud TCO Calculator, OINK Landing Case]
+      url: 'https://pgsty.com'
+      external: true
+      links:
+        - { label: English Site, url: 'https://pgsty.com', icon: fa-solid fa-building, external: true }
+        - { label: Chinese Site, url: 'https://pgsty.com/zh', icon: fa-solid fa-globe, external: true }
+        - { label: OINK Case, url: 'https://oink.pgsty.com/case/pgsty-com/', icon: fa-solid fa-palette, external: true }
+
+  # 4b. Sites Page Group 2: Pigsty Distribution & Live Demo (2×2 detailed grid on /en/sites/)
+  sites_distro:
+    - title: pigsty.io
+      meta: Pigsty Open-Source PostgreSQL RDS English Portal
+      image: img/works/pigsty.io.webp
+      desc: Official English documentation and product portal for Pigsty — combining 1,400+ manual pages, 200+ blog posts, and extension catalogs.
+      detail: 'The flagship English portal for the Pigsty PostgreSQL distribution. Combines a 1,400-page operations manual, 200+ editorial blog posts, a searchable extension catalog, version navigation, and data-driven pricing pages inside a single Hugo repository.'
+      tags: [English Flagship Portal, 1,400+ Docs & Blog Pages, Extension Catalog, OINK Flagship Case]
+      url: 'https://pigsty.io'
+      external: true
+      links:
+        - { label: Visit pigsty.io, url: 'https://pigsty.io', icon: fa-solid fa-earth-americas, external: true }
+        - { label: Documentation, url: 'https://pigsty.io/docs/', icon: fa-solid fa-book, external: true }
+        - { label: OINK Case, url: 'https://oink.pgsty.com/case/pigsty-io/', icon: fa-solid fa-palette, external: true }
+    - title: pigsty.cc
+      meta: Pigsty Open-Source PostgreSQL RDS Chinese Portal
+      image: img/works/pigsty.cc.webp
+      desc: Standalone Chinese documentation and community portal for Pigsty with 1,400+ pages of playbooks, parameters, and release archives.
+      detail: 'Deployed as an independent single-language Chinese peer to pigsty.io, hosting 1,400+ structured documentation pages, architecture playbooks, parameter references, dashboard galleries, and release notes.'
+      tags: [1,400+ Chinese Docs, Architecture Playbooks, Dashboard Gallery, OINK Large-Site Case]
+      url: 'https://pigsty.cc'
+      external: true
+      links:
+        - { label: Visit pigsty.cc, url: 'https://pigsty.cc', icon: fa-solid fa-globe, external: true }
+        - { label: Documentation, url: 'https://pigsty.cc/docs/', icon: fa-solid fa-book, external: true }
+        - { label: OINK Case, url: 'https://oink.pgsty.com/case/pigsty-cc/', icon: fa-solid fa-palette, external: true }
+    - title: pgsty.pro
+      meta: Pigsty Pro Commercial Edition Portal & Release Archive
+      image: img/works/pgsty.pro.webp
+      desc: Enterprise portal for Pigsty Pro — hardened releases, compliance tooling, long-term support, and air-gapped delivery for critical workloads.
+      detail: 'Bilingual commercial edition portal for Pigsty Pro. Renders structured version lifecycles, security hardening specifications, air-gapped offline package matrices, and community-vs-pro capability comparisons from reusable release data.'
+      tags: [Commercial Edition, Structured Release Archive, Air-Gapped Delivery, OINK Case]
+      url: 'https://pgsty.pro'
+      external: true
+      links:
+        - { label: Visit pgsty.pro, url: 'https://pgsty.pro/', icon: fa-solid fa-shield-halved, external: true }
+        - { label: OINK Case, url: 'https://oink.pgsty.com/case/pgsty-pro/', icon: fa-solid fa-palette, external: true }
+    - title: demo.pigsty.io
+      meta: Live Pigsty Observability Demo · Interactive Grafana Stack
+      image: img/works/demo.pigsty.io.webp
+      desc: A living multi-node Pigsty deployment — explore dozens of real-time Grafana observability dashboards directly in your browser.
+      detail: 'A 24/7 live Pigsty demonstration cluster running real PostgreSQL, PgBouncer, Patroni, host node, etcd, and SILO/MinIO workloads. Lets engineers interactively drill down across PGSQL, PGCAT, PGRDS, NODE, and INFRA Grafana dashboards with zero local setup.'
+      tags: [24/7 Live Cluster, Dozens of Grafana Dashboards, Interactive Drill-Down, Zero Install]
+      url: 'https://demo.pigsty.io'
+      external: true
+      links:
+        - { label: Open Live Dashboards, url: 'https://demo.pigsty.io', icon: fa-solid fa-chart-line, external: true }
+
+  # 4c. Sites Page Group 3: Open-Source Infrastructure & OINK Showcases (3×2 detailed grid on /en/sites/)
+  sites_infra:
+    - title: silo.pgsty.com
+      meta: SILO Object Storage Docs · OINK Large Migration Case
+      image: img/works/silo.pgsty.com.webp
+      desc: Bilingual documentation portal for SILO S3-compatible object storage, generated from a checked migration manifest.
+      detail: 'Official bilingual documentation and release portal for SILO S3-compatible object storage (410+ pages per language). Demonstrates how a verified CSV/JSON manifest drives a large upstream documentation tree alongside custom module taxonomies and binary download pages.'
+      tags: [410+ Pages / Lang, Manifest-Driven Nav, Download Center, OINK Migration Case]
+      url: 'https://silo.pgsty.com'
+      external: true
+      links:
+        - { label: English Docs, url: 'https://silo.pgsty.com/', icon: fa-solid fa-earth-americas, external: true }
+        - { label: Chinese Docs, url: 'https://silo.pgsty.com/zh/', icon: fa-solid fa-globe, external: true }
+        - { label: OINK Case, url: 'https://oink.pgsty.com/case/silo/', icon: fa-solid fa-palette, external: true }
+    - title: oink.pgsty.com
+      meta: OINK Theme Reference Site · 21 Components & 15 Showcases
+      image: img/works/oink.pgsty.com.webp
+      desc: Official portal for the local-first OINK Hugo theme, featuring 21 live component demos and 15 production showcase sites.
+      detail: 'The full reference site for the OINK Hugo theme that powers every site on this page. Combines public documentation, live interactive examples for all 21 components, design contracts, six content shells (Docs, Blog, Book, Landing, Expo, OpenAPI), and 15 production case studies.'
+      tags: [Theme Reference Hub, 21 Live Component Demos, 15 Case Studies, Bilingual EN / ZH]
+      url: 'https://oink.pgsty.com'
+      external: true
+      links:
+        - { label: Official Site, url: 'https://oink.pgsty.com/', icon: fa-solid fa-earth-americas, external: true }
+        - { label: 15 Case Studies, url: 'https://oink.pgsty.com/case/', icon: fa-solid fa-layer-group, external: true }
+        - { label: Component Catalog, url: 'https://oink.pgsty.com/docs/components/', icon: fa-solid fa-cubes, external: true }
+    - title: pig.pgsty.com
+      meta: PIG Extension Manager Portal · CLI Manual & Blog
+      image: img/works/pig.pgsty.com.webp
+      desc: Bilingual CLI manual, installation hub, and 40+ extension release blog posts for the PIG package manager.
+      detail: 'Official product portal for the PIG PostgreSQL package manager. Pairs a compact bilingual CLI command manual (pig repo / ext / pg / build / sty) with a data-driven home page, release download tables, and a 40+ post companion blog.'
+      tags: [CLI Product Manual, 40+ Bilingual Blog Posts, Release Downloads, OINK Case]
+      url: 'https://pig.pgsty.com'
+      external: true
+      links:
+        - { label: English Site, url: 'https://pig.pgsty.com/', icon: fa-solid fa-earth-americas, external: true }
+        - { label: Chinese Site, url: 'https://pig.pgsty.com/zh/', icon: fa-solid fa-globe, external: true }
+        - { label: OINK Case, url: 'https://oink.pgsty.com/case/pig/', icon: fa-solid fa-palette, external: true }
+    - title: sow.pgsty.com
+      meta: SOW Repository Manager Portal · Ops Manual & Releases
+      image: img/works/sow.pgsty.com.webp
+      desc: Bilingual operations manual and structured artifact download center for the SOW APT & YUM repository manager.
+      detail: 'Official bilingual documentation portal for the SOW repository manager (55+ pages per language). Demonstrates how a dedicated `download` content type shares structured release metadata with installation guides and multi-arch package tables.'
+      tags: [55+ Pages / Lang, Structured Download Type, APT & YUM Ops, OINK Case]
+      url: 'https://sow.pgsty.com'
+      external: true
+      links:
+        - { label: English Site, url: 'https://sow.pgsty.com/', icon: fa-solid fa-earth-americas, external: true }
+        - { label: Chinese Site, url: 'https://sow.pgsty.com/zh/', icon: fa-solid fa-globe, external: true }
+        - { label: OINK Case, url: 'https://oink.pgsty.com/case/sow/', icon: fa-solid fa-palette, external: true }
+    - title: exp.pgsty.com
+      meta: pg_exporter Documentation · 600+ Metrics Catalog
+      image: img/works/exp.pgsty.com.webp
+      desc: Bilingual documentation portal for pg_exporter, combining generated navigation with a structured 600+ metric catalog.
+      detail: 'Official bilingual manual for the pg_exporter Prometheus exporter. Combines configuration guides and 37 release posts with a generated reference catalog detailing 600+ PostgreSQL and PgBouncer metrics.'
+      tags: [600+ Metrics Catalog, Generated Navigation, 37 Release Posts, OINK Case]
+      url: 'https://exp.pgsty.com'
+      external: true
+      links:
+        - { label: English Site, url: 'https://exp.pgsty.com/', icon: fa-solid fa-earth-americas, external: true }
+        - { label: Chinese Site, url: 'https://exp.pgsty.com/zh/', icon: fa-solid fa-globe, external: true }
+        - { label: OINK Case, url: 'https://oink.pgsty.com/case/pg-exporter/', icon: fa-solid fa-palette, external: true }
+    - title: barn.pgsty.com
+      meta: Barn Local VM Fleet Portal · Linux & macOS Labs
+      image: img/works/barn.pgsty.com.webp
+      desc: Bilingual documentation portal for the Barn single-YAML Linux and Apple Silicon macOS VM fleet manager.
+      detail: 'Official bilingual manual for Barn, documenting how to spin up multi-node Linux clusters and isolated Apple Silicon macOS VMs from a single YAML inventory, manage snapshots, and run local database HA experiments.'
+      tags: [Bilingual CLI Manual, Linux & macOS VMs, Multi-Node Sandbox, Homebrew Tap]
+      url: 'https://barn.pgsty.com/'
+      external: true
+      links:
+        - { label: English Site, url: 'https://barn.pgsty.com/', icon: fa-solid fa-earth-americas, external: true }
+        - { label: Chinese Site, url: 'https://barn.pgsty.com/zh/', icon: fa-solid fa-globe, external: true }
+
+  # 4d. Sites Page Group 4: Original Monographs, Digital Canons & Interactive Tools (2×2 detailed grid on /en/sites/)
+  sites_originals:
+    - title: pg36g.vonng.com
+      meta: 36 Stratagems of PostgreSQL · Original Monograph Site
+      image: img/works/pg36g.vonng.com.webp
+      desc: Dedicated OINK Book site hosting the 36-chapter, 242-section engineering monograph on PostgreSQL 18.6 and Pigsty 4.5.
+      detail: 'Standalone publication portal for the 36-chapter, 242-section monograph 36 Stratagems of PostgreSQL. Built with OINK’s Book shell, featuring chapter-level navigation, numbered figures, and full-book print layout.'
+      tags: [OINK Book Mode, 6 Volumes · 36 Chapters, PostgreSQL 18.6, Printable Layout]
+      url: 'https://pg36g.vonng.com/'
+      external: true
+      links:
+        - { label: Visit pg36g.vonng.com, url: 'https://pg36g.vonng.com/', icon: fa-solid fa-book-open, external: true }
+    - title: dharma.vonng.com
+      meta: Cyber Dharma · Bilingual Digital Canon Showcase
       image: img/works/dharma.vonng.com.webp
-      desc: Seven traditions orbiting one machine — notes on technology and belief.
-      url: 'https://dharma.vonng.com'
+      desc: Multi-volume bilingual digital canon built with OINK’s book mode, pairing classical texts with AI engineering commentary.
+      detail: 'A cross-civilizational bilingual digital library hosting classical texts from seven contemplative traditions alongside philosophical essays on AI Agent governance, styled with OINK’s warm Paper preset.'
+      tags: [Bilingual Digital Canon, 7 Classical Traditions, Paper Preset, OINK Book Showcase]
+      url: 'https://dharma.vonng.com/en/'
       external: true
-    - title: Empire of AI
-      meta: Chinese book translation
+      links:
+        - { label: English Canon, url: 'https://dharma.vonng.com/en/', icon: fa-solid fa-yin-yang, external: true }
+        - { label: Chinese Canon, url: 'https://dharma.vonng.com', icon: fa-solid fa-language, external: true }
+    - title: caps.vonng.com
+      meta: Capslock Keyboard Ergonomics & Interactive Customizer
+      image: img/works/caps.vonng.com.webp
+      desc: A two-page-per-language micro-site pairing the Capslock Hyper-key overview with an interactive JSON keymap generator.
+      detail: 'Demonstrates the compact lower bound of an OINK site and custom shell registration: two pages per language hosting the project overview and a data-driven interactive Karabiner-Elements configuration generator.'
+      tags: [2-Page Micro-Site, Interactive JSON Customizer, Custom Shell Type, OINK Case]
+      url: 'https://caps.vonng.com/'
+      external: true
+      links:
+        - { label: English Customizer, url: 'https://caps.vonng.com/', icon: fa-solid fa-sliders, external: true }
+        - { label: Chinese Customizer, url: 'https://caps.vonng.com/zh/', icon: fa-solid fa-globe, external: true }
+        - { label: OINK Case, url: 'https://oink.pgsty.com/case/capslock/', icon: fa-solid fa-palette, external: true }
+    - title: aiempire.vonng.com
+      meta: Empire of AI · Chinese Book Portal
       image: img/works/aiempire.vonng.com.webp
-      desc: Dreams and nightmares inside OpenAI, translated into Chinese.
+      desc: Dedicated online reading portal for the Chinese edition of Karen Hao’s investigative chronicle on OpenAI.
+      detail: 'Single-language OINK Book site presenting the complete Chinese translation of Karen Hao’s Empire of AI, tuned for long-form narrative reading across desktop and mobile.'
+      tags: [Narrative Book Portal, OpenAI Chronicle, Mobile Reading Tuned, OINK Book Mode]
       url: 'https://aiempire.vonng.com'
       external: true
-    - title: The Product-Minded Engineer
-      meta: Chinese book translation
+      links:
+        - { label: Visit aiempire.vonng.com, url: 'https://aiempire.vonng.com', icon: fa-solid fa-book-open, external: true }
+
+  # 4e. Sites Page Group 5: Translated Classics & PostgreSQL Tutorial Book Sites (5×2 detailed grid on /en/sites/)
+  sites_books:
+    - title: ddia.vonng.com
+      meta: Designing Data-Intensive Applications · Multi-Edition Book Site
+      image: img/works/ddia.vonng.com.webp
+      desc: Multilingual, multi-edition book portal for DDIA — OINK’s flagship showcase for numbered figures, cross-references, and indexes.
+      detail: 'Hosts both the 1st and 2nd editions of Designing Data-Intensive Applications across Simplified Chinese, Traditional Chinese, and English, with 130+ numbered figures/tables, stable cross-references, and generated book indexes.'
+      tags: [1st & 2nd Editions, ZH-Hans / ZH-Hant / EN, 130+ Numbered Figures, OINK Flagship Case]
+      url: 'https://ddia.vonng.com'
+      external: true
+      links:
+        - { label: Visit ddia.vonng.com, url: 'https://ddia.vonng.com', icon: fa-solid fa-book-open, external: true }
+        - { label: OINK Case, url: 'https://oink.pgsty.com/case/ddia/', icon: fa-solid fa-palette, external: true }
+    - title: tpme.vonng.com
+      meta: The Product-Minded Engineer · Bilingual Book Site
       image: img/works/tpme.vonng.com.webp
-      desc: A book on engineering with a product mind, translated into Chinese.
+      desc: Focused 18-chapter bilingual book site for Drew Hoskins’s The Product-Minded Engineer, using a pure OINK Book shell.
+      detail: 'A streamlined bilingual publication narrowing OINK to the `[book]` shell alone, pairing 18 English and 18 Chinese chapters under a shared navigation and search system.'
+      tags: [18 Bilingual Chapters, Pure Book Shell, EN / ZH Toggle, OINK Book Case]
       url: 'https://tpme.vonng.com'
       external: true
+      links:
+        - { label: Chinese Edition, url: 'https://tpme.vonng.com/', icon: fa-solid fa-book-open, external: true }
+        - { label: OINK Case, url: 'https://oink.pgsty.com/case/tpme/', icon: fa-solid fa-palette, external: true }
+    - title: pgint.vonng.com
+      meta: The Internals of PostgreSQL · Classic Book Site
+      image: img/works/pgint.vonng.com.webp
+      desc: Standalone single-language book site for Hironobu Suzuki’s 11-chapter classic on PostgreSQL storage, MVCC, and WAL.
+      detail: 'A deliberately single-language OINK Book site hosting the completed 11-chapter Chinese translation of Hironobu Suzuki’s The Internals of PostgreSQL with hundreds of architectural diagrams.'
+      tags: [11 Kernel Chapters, Architectural Diagrams, Single-Language Book, OINK Case]
+      url: 'https://pgint.vonng.com'
+      external: true
+      links:
+        - { label: Visit pgint.vonng.com, url: 'https://pgint.vonng.com', icon: fa-solid fa-book-open, external: true }
+        - { label: OINK Case, url: 'https://oink.pgsty.com/case/pg-internal/', icon: fa-solid fa-palette, external: true }
+    - title: int18.pgsql.cc
+      meta: PostgreSQL 18 Internals · Multilingual Kernel Book Site
+      image: img/works/int18.pgsql.cc.webp
+      desc: Dedicated book portal for Egor Rogov’s 700-page PostgreSQL 18 Internals across Chinese, English, and Russian editions.
+      detail: 'Hosts the five-volume PostgreSQL Internals treatise (PG 14 & PG 18) across Chinese, English, and Russian, tuned for deep technical reading and terminal output blocks.'
+      tags: [PostgreSQL 18, 700+ Page Treatise, ZH / EN / RU Editions, Dedicated Book Site]
+      url: 'https://int18.pgsql.cc/zh18/'
+      external: true
+      links:
+        - { label: Chinese (PG 18), url: 'https://int18.pgsql.cc/zh18/', icon: fa-solid fa-book-open, external: true }
+        - { label: English (PG 18), url: 'https://int18.pgsql.cc/en/', icon: fa-solid fa-language, external: true }
+    - title: pgmon.pgsql.cc
+      meta: PostgreSQL Monitoring · Observability Book Site
+      image: img/works/pgmon.pgsql.cc.webp
+      desc: Dedicated book portal for Alexey Lesovsky’s PostgreSQL Monitoring on telemetry, metrics, and production triage.
+      detail: 'Standalone online book site for PostgreSQL Monitoring, organized by statistics collector subsystems, session profiling, I/O telemetry, WAL replication, and Linux host diagnostics.'
+      tags: [Observability Handbook, Diagnostic SQL Queries, Stats Views Reference, Dedicated Book Site]
+      url: 'https://pgmon.pgsql.cc/'
+      external: true
+      links:
+        - { label: Visit pgmon.pgsql.cc, url: 'https://pgmon.pgsql.cc/', icon: fa-solid fa-book-open, external: true }
+    - title: pgqpt.pgsql.cc
+      meta: PostgreSQL 18 Query Optimization · Tuning Book Site
+      image: img/works/pgqpt.pgsql.cc.webp
+      desc: Dedicated book portal for Pavel Tolmachev’s PostgreSQL 18 Query Optimization handbook on execution plans and SQL tuning.
+      detail: 'Standalone book site for PostgreSQL 18 Query Optimization, featuring monospace formatting tuned for complex EXPLAIN (ANALYZE, BUFFERS) plan trees and join cost comparisons.'
+      tags: [PostgreSQL 18, EXPLAIN Plan Deep Dives, SQL Refactoring, Dedicated Book Site]
+      url: 'https://pgqpt.pgsql.cc/'
+      external: true
+      links:
+        - { label: Visit pgqpt.pgsql.cc, url: 'https://pgqpt.pgsql.cc/', icon: fa-solid fa-book-open, external: true }
+    - title: feat.pgsql.cc
+      meta: PostgreSQL New Features (9.5–19) · Release Evolution Site
+      image: img/works/feat.pgsql.cc.webp
+      desc: Dedicated portal for Noriyoshi Shinoda’s guide to new features and SQL demos across 12 major PostgreSQL releases.
+      detail: 'Tracks a decade of PostgreSQL evolution from 9.5 through 19, structured by major release and subsystem with runnable verification SQL for every feature.'
+      tags: [PG 9.5–19 Coverage, 12 Major Releases, Runnable SQL Demos, Upgrade Guide]
+      url: 'https://feat.pgsql.cc/'
+      external: true
+      links:
+        - { label: Visit feat.pgsql.cc, url: 'https://feat.pgsql.cc/', icon: fa-solid fa-book-open, external: true }
+    - title: intro.pgsql.cc
+      meta: 'Postgres: The First Experience (11th Ed) · Beginner Site'
+      image: img/works/intro.pgsql.cc.webp
+      desc: Dedicated book site for the 11th edition of Pavel Luzanov et al.’s beginner textbook on SQL and PostgreSQL fundamentals.
+      detail: 'Step-by-step online textbook guiding newcomers from installing PostgreSQL and writing SQL queries to transactions, indexing, and application connectivity.'
+      tags: [11th Edition Textbook, Beginner Friendly, Chapter Exercises, Dedicated Book Site]
+      url: 'https://intro.pgsql.cc/'
+      external: true
+      links:
+        - { label: Visit intro.pgsql.cc, url: 'https://intro.pgsql.cc/', icon: fa-solid fa-book-open, external: true }
+    - title: pgexp.pgsql.cc
+      meta: PostgreSQL by Example · 57 Hands-On Lessons Site
+      image: img/works/pgexp.pgsql.cc.webp
+      desc: Standalone workbook site for Dariush Abbasi’s 57 concise, runnable SQL lessons from basic queries to administration.
+      detail: 'Code-driven tutorial site presenting 57 bite-sized PostgreSQL lessons with copy-pasteable SQL examples and terminal outputs.'
+      tags: [57 SQL Lessons, Example-Driven, Developer Cheat Sheet, Dedicated Book Site]
+      url: 'https://pgexp.pgsql.cc/'
+      external: true
+      links:
+        - { label: Visit pgexp.pgsql.cc, url: 'https://pgexp.pgsql.cc/', icon: fa-solid fa-book-open, external: true }
+    - title: basic.pgsql.cc
+      meta: PostgreSQL Basics (Eight Kilobytes) · Book Site
+      image: img/works/basic.pgsql.cc.webp
+      desc: Dedicated book site for Chase Pierce’s Eight Kilobytes — from 8 KB disk pages and tuples to production operations.
+      detail: 'Connects low-level 8 KB page layout, tuple headers, and MVCC mechanics directly to indexing, query planning, lock contention, and production operations.'
+      tags: [Eight Kilobytes, 8KB Page Internals, Storage to Ops, Dedicated Book Site]
+      url: 'https://basic.pgsql.cc/'
+      external: true
+      links:
+        - { label: Visit basic.pgsql.cc, url: 'https://basic.pgsql.cc/', icon: fa-solid fa-book-open, external: true }

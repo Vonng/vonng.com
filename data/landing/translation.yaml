@@ -1,0 +1,75 @@
+# Standalone Translations page (/translation/ & /en/translation/)
+
+zh-cn:
+  sections:
+    - type: cards
+      key: classics
+      partial: landing/sections/link-cards.html
+    - type: cards
+      key: pg_books
+      partial: landing/sections/link-cards.html
+    - type: cards
+      key: curricula
+      partial: landing/sections/link-cards.html
+
+  classics:
+    level: 1
+    hide_eyebrow: true
+    title: 翻译作品
+    text: 独立翻译的分布式数据系统必读经典、PostgreSQL 内核奠基之作、科技纪实专著与软件工程方法论。
+    head_links:
+      - { label: 教程中心 (pgsql.cc), url: 'https://pgsql.cc/docs/tutorials/', icon: fa-solid fa-book-open, external: true }
+      - { label: 组件文档 (doc.pg.center), url: 'https://doc.pg.center/zh', icon: fa-solid fa-language, external: true }
+      - { label: 中文手册 (pgsql.cc/docs), url: 'https://pgsql.cc/docs/', icon: fa-solid fa-file-lines, external: true }
+    columns: 2
+    detailed: true
+    items_from: translation_classics
+
+  pg_books:
+    eyebrow: PostgreSQL 内核、调优与实战教程
+    text: 系统覆盖 PostgreSQL 18 内核架构、查询计划调优、可观测性监控、跨版本特性演进、8KB 存储基础与循序渐进的动手实验。
+    columns: 2
+    detailed: true
+    items_from: translation_pg
+
+  curricula:
+    eyebrow: 权威培训体系与多语种手册文库
+    text: 法国 Dalibo 与 Postgres Pro 两大官方认证培训课程全集（共 22 门课程），以及高可用、备份、连接池生态组件的八语种参考手册。
+    series_from: training_series_full
+
+en:
+  sections:
+    - type: cards
+      key: classics
+      partial: landing/sections/link-cards.html
+    - type: cards
+      key: pg_books
+      partial: landing/sections/link-cards.html
+    - type: cards
+      key: curricula
+      partial: landing/sections/link-cards.html
+
+  classics:
+    level: 1
+    hide_eyebrow: true
+    title: Translations & Tutorials
+    text: Chinese translations of distributed systems and PostgreSQL classics, tech journalism chronicles, and software engineering handbooks.
+    head_links:
+      - { label: Tutorials Portal (pgsql.cc), url: 'https://pgsql.cc/docs/tutorials/', icon: fa-solid fa-book-open, external: true }
+      - { label: Component Docs (doc.pg.center), url: 'https://doc.pg.center/', icon: fa-solid fa-language, external: true }
+      - { label: PG Manuals (pgsql.cc/docs), url: 'https://pgsql.cc/docs/', icon: fa-solid fa-file-lines, external: true }
+    columns: 2
+    detailed: true
+    items_from: translation_classics
+
+  pg_books:
+    eyebrow: PostgreSQL Internals, Tuning & Hands-On Guides
+    text: Comprehensive translated volumes covering PostgreSQL 18 internals, execution plan tuning, observability, version evolution, 8KB page storage, and SQL workbooks.
+    columns: 2
+    detailed: true
+    items_from: translation_pg
+
+  curricula:
+    eyebrow: Training Curricula & Multilingual Component Manuals
+    text: Complete open-access training curricula from Dalibo (14 courses) and Postgres Pro (8 courses), plus 8-language reference manuals for the PostgreSQL HA stack.
+    series_from: training_series_full
