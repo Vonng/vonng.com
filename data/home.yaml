@@ -1,14 +1,8 @@
 # The home page, both languages in one file.
 #
 # Everything the home page shows is configured here — the hero copy, the column
-# cards, the project and publication grids, and the closing call to action.
-# Two of them read their contents from elsewhere: `recent` lists the newest
-# posts straight from the content tree, and the `project` / `publication`
-# grids take their cards from data/works.yaml, which the About page shares.
-#
-# Section entries name a partial under layouts/_partials/landing/sections/ when
-# the theme has no section of that shape. Everything else is an OINK landing
-# section: https://oink.pgsty.com/docs/customize/home/
+# cards, the recent articles, and the four portfolio pillars (`project`,
+# `translation`, `works`, `sites`) sourced from data/works.yaml.
 
 zh-cn:
   sections:
@@ -24,69 +18,113 @@ zh-cn:
       key: project
       partial: landing/sections/link-cards.html
     - type: cards
-      key: publication
+      key: works
+      partial: landing/sections/link-cards.html
+    - type: cards
+      key: translation
+      partial: landing/sections/link-cards.html
+    - type: cards
+      key: sites
       partial: landing/sections/link-cards.html
     - cta
 
   hero:
-    eyebrow: 冯若航 · 数据库老司机 · 云计算泥石流
+    eyebrow: 冯若航 · 数据库老司机 · 云计算泥石流 · PG 大法师
     title: 老冯云数
     lead: >-
-      [冯若航](/about/)（[@Vonng](https://github.com/Vonng)）：[Pigsty](https://pigsty.cc/) 作者，
-      [PGSTY](https://pgsty.com/zh) 创始人，[活跃](https://committers.top/china)[开源贡献者](https://gitstar-ranking.com/Vonng)。<br>
-      [数据库老司机](/db/)，[云计算泥石流](/cloud/)，[PostgreSQL 大法师](/pg/)，[AI Agent 探路者](/ai/)。
+      [冯若航](/about/)（[@Vonng](https://github.com/Vonng)）：开源 PostgreSQL 发行版 [Pigsty](https://pigsty.cc/) 作者，
+      [PGSTY](https://pgsty.com/zh) 创始人，[活跃](https://committers.top/singapore)[开源贡献者](https://gitstar-ranking.com/Vonng)。<br>
+      深耕[数据库](/db/)、[下云与自建基础设施](/cloud/)、[PostgreSQL 内核与生态](/pg/)，以及 [AI Agent 工程实践](/ai/)。
+    actions:
+      - { label: 关于老冯, url: about/, icon: fa-solid fa-circle-user, style: primary }
+      - { label: GitHub, url: 'https://github.com/Vonng', icon: fa-brands fa-github, external: true, style: ghost }
+      - { label: 名片, url: '/me/0/', icon: fa-solid fa-id-card, style: ghost }
+      - { label: 公众号, url: '/wechat/', icon: fa-brands fa-weixin, style: ghost }
     portrait: img/about/vonng.jpg
     portrait_alt: 冯若航
+    portrait_url: about/
 
   columns:
     eyebrow: 专栏
+    text: 按领域划分的六个长青专栏，均提供独立的 RSS 订阅源。
+    head_links:
+      - { label: RSS, url: index.xml, icon: fa-solid fa-rss }
+      - { label: 标签, url: tags/, icon: fa-solid fa-tags }
+      - { label: 作者, url: authors/, icon: fa-solid fa-user-pen }
     columns: 3
     unit: 篇
     items:
       - page: /db
         title: 数据库老司机
-        desc: 数据库行业的动态、新闻、调查、理念与最佳实践。
+        desc: 数据库行业的动态、新闻、调查、架构理念与工程最佳实践。
       - page: /cloud
         title: 云计算泥石流
-        desc: 云计算、下云与基础设施自建的深度思考与成本分析。
-      - page: /ai
-        title: Agent 探路者
-        desc: 关于 AI、Agent、LLM，以及 AI 与数据库之间的一切。
+        desc: 云计算经济学、下云浪潮与主权基础设施自建的深度思考。
       - page: /pg
         title: Postgres 大法师
-        desc: PostgreSQL 生态进展，以及开发、运维、诊断与调优的经验。
+        desc: PostgreSQL 生态演进，以及内核、开发、运维、诊断与调优实战。
+      - page: /ai
+        title: Agent 探路者
+        desc: 关于 AI、Agent、LLM 工程落地，以及 AI 与数据库之间的一切。
       - page: /trip
         title: 行万里路
-        desc: 旅行、徒步与、游记与见闻。山川湖海，风物人情。
+        desc: 旅行、徒步、游记与见闻。山川湖海，风物人情。
       - page: /misc
         title: 人生旅途
         desc: 随笔与杂谈，闲杂记录，也许与技术有关，或者完全无关。
 
   recent:
-    eyebrow: 最新文章
-    limit: 12
+    eyebrow: 文章
+    text: 覆盖全站所有专栏的最新 9 篇原创文章与深度译介。
+    head_links:
+      - { label: 全部文章, url: column/, icon: fa-solid fa-layer-group }
+    limit: 9
     columns: 3
-    more:
-      - { label: 按标签浏览, url: tags/, icon: fa-solid fa-tags }
-      - { label: 按作者浏览, url: authors/, icon: fa-solid fa-user-pen }
 
   project:
-    eyebrow: 开源项目
+    eyebrow: 开源
+    text: 围绕 PostgreSQL、对象存储、软件源分发、本地虚拟化与工程效率构建的 9 个核心开源项目。
+    head_links:
+      - { label: 全部项目, url: project/, icon: fa-solid fa-cubes }
+      - { label: VONNG, url: 'https://github.com/Vonng', icon: fa-brands fa-github, external: true }
+      - { label: PGSTY, url: 'https://github.com/pgsty', icon: fa-brands fa-github, external: true }
     columns: 3
     items_from: project
 
-  publication:
-    eyebrow: 译作与著述
+  works:
+    eyebrow: 作品
+    text: 围绕 PostgreSQL 生产工程与跨文明思想传统撰写的原创专著，以及数据库智能诊断与异构联邦查询领域的学术论文。
+    head_links:
+      - { label: 全部作品, url: works/, icon: fa-solid fa-compass-drafting }
+      - { label: 贡献档案, url: dossier/, icon: fa-solid fa-id-card }
+    columns: 2
+    items_from: works
+
+  translation:
+    eyebrow: 翻译
+    text: 独立翻译的计算机与 PostgreSQL 核心著作、教程及权威培训课程体系。
+    head_links:
+      - { label: 全部, url: translation/, icon: fa-solid fa-book-bookmark }
+      - { label: 教程, url: 'https://pgsql.cc/docs/tutorials/', icon: fa-solid fa-book-open, external: true }
+      - { label: 文档, url: 'https://doc.pg.center/zh', icon: fa-solid fa-language, external: true }
     columns: 3
-    items_from: publication
+    items_from: translation
+    series_from: training_series
+
+  sites:
+    eyebrow: 站点
+    text: 围绕 PostgreSQL 生态与开源基础设施构建的核心门户、扩展目录与官方站点。
+    head_links:
+      - { label: 全部站点, url: sites/, icon: fa-solid fa-globe }
+    columns: 3
+    items_from: sites
 
   cta:
     title: 有问题，或者想聊聊？
-    text: 欢迎在任何一篇文章下留言，也可以订阅 RSS，或者直接找我。
+    text: 欢迎在任何一篇文章下留言讨论，也可以订阅全站 RSS，或者直接写信给我。
     actions:
-      - { label: 关于我, url: about/, icon: fa-solid fa-circle-user, style: primary }
+      - { label: 关于老冯, url: about/, icon: fa-solid fa-circle-user, style: primary }
       - { label: 订阅 RSS, url: index.xml, icon: fa-solid fa-rss, style: ghost }
-      - { label: GitHub, url: 'https://github.com/Vonng', icon: fa-brands fa-github, external: true, style: ghost }
       - { label: 写封邮件, url: 'mailto:rh@vonng.com', icon: fa-solid fa-envelope, style: ghost }
 
 en:
@@ -103,68 +141,111 @@ en:
       key: project
       partial: landing/sections/link-cards.html
     - type: cards
-      key: publication
+      key: works
+      partial: landing/sections/link-cards.html
+    - type: cards
+      key: translation
+      partial: landing/sections/link-cards.html
+    - type: cards
+      key: sites
       partial: landing/sections/link-cards.html
     - cta
 
   hero:
-    eyebrow: Ruohang Feng · Database Guru · Cloud Exiter
+    eyebrow: Ruohang Feng · Database Guru · Cloud Exiter · PG Mage
     title: Vonng's Blog
-    # The four titles on the second line each link to their column.
     lead: >-
-      [Ruohang Feng](/en/about/) ([@Vonng](https://github.com/Vonng)): [Pigsty](https://pigsty.io/) author, [PGSTY](https://pgsty.com/) founder,
-      [OSS contributor](https://gitstar-ranking.com/Vonng).<br>
-      [Database Guru](/en/db/), [Cloud Exiter](/en/cloud/), [PostgreSQL Mage](/en/pg/), and [AI Agent Explorer](/en/ai/).
+      [Ruohang Feng](/en/about/) ([@Vonng](https://github.com/Vonng)): author of [Pigsty](https://pigsty.io/), founder of [PGSTY](https://pgsty.com/),
+      and [active](https://committers.top/singapore) [OSS contributor](https://gitstar-ranking.com/Vonng).<br>
+      Writing on [Databases](/en/db/), [Cloud-Exit & Self-Hosting](/en/cloud/), [PostgreSQL Internals](/en/pg/), and [AI Agents](/en/ai/).
+    actions:
+      - { label: About Vonng, url: about/, icon: fa-solid fa-circle-user, style: primary }
+      - { label: GitHub, url: 'https://github.com/Vonng', icon: fa-brands fa-github, external: true, style: ghost }
+      - { label: Name Card, url: '/en/me/0/', icon: fa-solid fa-id-card, style: ghost }
+      - { label: WeChat, url: '/en/wechat/', icon: fa-brands fa-weixin, style: ghost }
     portrait: img/about/vonng.jpg
     portrait_alt: Ruohang Feng
+    portrait_url: about/
 
   columns:
     eyebrow: Columns
+    text: Six thematic columns, each with its own dedicated RSS feed.
+    head_links:
+      - { label: RSS, url: index.xml, icon: fa-solid fa-rss }
+      - { label: Tags, url: tags/, icon: fa-solid fa-tags }
+      - { label: Authors, url: authors/, icon: fa-solid fa-user-pen }
     columns: 3
     unit: posts
     items:
       - page: /db
         title: Database Guru
-        desc: News, insights, and best practices from the database industry.
+        desc: Database news, industry surveys, architecture, and best practices.
       - page: /cloud
         title: Cloud-Exiter
-        desc: Cloud-exit and self-hosting — deep dives and cost analyses.
-      - page: /ai
-        title: AI Agent Explorer
-        desc: Agents, LLMs, and everything between AI and databases.
+        desc: Cloud economics, repatriation, and building sovereign infrastructure.
       - page: /pg
         title: Postgres Mage
-        desc: Blogs about PG ecosystem, admin, development and operations.
+        desc: PostgreSQL ecosystem, internals, extensions, and production tuning.
+      - page: /ai
+        title: AI Agent Explorer
+        desc: Practical engineering with coding agents, LLMs, AI4DB, and DB4AI.
       - page: /trip
         title: Travel Notes
-        desc: Trips, hikes and the things seen along the way.
+        desc: Trips, hikes, landscapes, and field notes across mountains and seas.
       - page: /misc
         title: Miscellaneous
-        desc: The things that are not about technology, or not only about it.
+        desc: Essays, reflections, and personal writing inside and outside of tech.
 
   recent:
-    eyebrow: Latest Posts
-    limit: 12
+    eyebrow: Articles
+    text: The nine newest original essays, deep dives, and translations across all columns.
+    head_links:
+      - { label: All Articles, url: column/, icon: fa-solid fa-layer-group }
+    limit: 9
     columns: 3
-    more:
-      - { label: Browse by tag, url: tags/, icon: fa-solid fa-tags }
-      - { label: Browse by author, url: authors/, icon: fa-solid fa-user-pen }
 
   project:
-    eyebrow: Projects
+    eyebrow: Open Source
+    text: Nine open-source projects across PostgreSQL RDS, S3 object storage, package management, local VMs, and developer ergonomics.
+    head_links:
+      - { label: All Projects, url: project/, icon: fa-solid fa-cubes }
+      - { label: VONNG, url: 'https://github.com/Vonng', icon: fa-brands fa-github, external: true }
+      - { label: PGSTY, url: 'https://github.com/pgsty', icon: fa-brands fa-github, external: true }
     columns: 3
     items_from: project
 
-  publication:
-    eyebrow: Publications
+  works:
+    eyebrow: Works
+    text: Original monographs on production PostgreSQL and comparative philosophy, alongside research papers on LLM-powered database diagnosis and heterogeneous data federation.
+    head_links:
+      - { label: All Works, url: works/, icon: fa-solid fa-compass-drafting }
+      - { label: PG Dossier, url: dossier/, icon: fa-solid fa-id-card }
+    columns: 2
+    items_from: works
+
+  translation:
+    eyebrow: Translations
+    text: Chinese translations of distributed systems and PostgreSQL classics, tutorials, and official training curricula.
+    head_links:
+      - { label: All, url: translation/, icon: fa-solid fa-book-bookmark }
+      - { label: Tutorials, url: 'https://pgsql.cc/docs/tutorials/', icon: fa-solid fa-book-open, external: true }
+      - { label: Docs, url: 'https://doc.pg.center/', icon: fa-solid fa-language, external: true }
     columns: 3
-    items_from: publication
+    items_from: translation
+    series_from: training_series
+
+  sites:
+    eyebrow: Sites
+    text: Core PostgreSQL knowledge portals, extension catalogs, and open-source project websites.
+    head_links:
+      - { label: All Sites, url: sites/, icon: fa-solid fa-globe }
+    columns: 3
+    items_from: sites
 
   cta:
     title: Questions, or just want to talk?
-    text: Leave a comment under any article, subscribe by RSS, or reach me directly.
+    text: Leave a comment under any article, subscribe via RSS, or reach out directly.
     actions:
-      - { label: About me, url: about/, icon: fa-solid fa-circle-user, style: primary }
-      - { label: Subscribe, url: index.xml, icon: fa-solid fa-rss, style: ghost }
-      - { label: GitHub, url: 'https://github.com/Vonng', icon: fa-brands fa-github, external: true, style: ghost }
+      - { label: About Vonng, url: about/, icon: fa-solid fa-circle-user, style: primary }
+      - { label: Subscribe RSS, url: index.xml, icon: fa-solid fa-rss, style: ghost }
       - { label: Email, url: 'mailto:rh@vonng.com', icon: fa-solid fa-envelope, style: ghost }

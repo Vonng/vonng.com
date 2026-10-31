@@ -13,6 +13,7 @@ server:
     - for: /**
       values:
         Access-Control-Allow-Origin: '*'
+        Cache-Control: 'no-store, no-cache, must-revalidate'
 enableEmoji: true
 enableGitInfo: false
 hasCJKLanguage: true
@@ -118,7 +119,7 @@ params:
   logo: img/vonng-logo.svg
   images: [img/wusu.jpg]
   github_repo: https://github.com/Vonng/vonng.com
-  github_project_repo: https://github.com/Vonng
+  github_project_repo: https://github.com/Vonng/vonng.com
   github_branch: main
   github_subdir: ''
   version: ''
@@ -228,27 +229,87 @@ languages:
       time_format_blog: 2006-01-02
     menus:
       main:
-        # Four columns stand on their own; the rest live under 专栏.
-        - { identifier: db, name: 数据库, pageRef: /db, weight: 10, params: { icon: 'fa-solid fa-database' } }
-        - { identifier: cloud, name: 云计算, pageRef: /cloud, weight: 20, params: { icon: 'fa-solid fa-cloud-bolt' } }
-        - { identifier: pg, name: PG, pageRef: /pg, weight: 30, params: { icon: 'fa-solid fa-hat-wizard' } }
-        - { identifier: ai, name: AI, pageRef: /ai, weight: 40, params: { icon: 'fa-solid fa-robot' } }
-
-        - identifier: column
+        # 1. 专栏 (Columns) — identifier `blog` highlights across all blog sections
+        - identifier: blog
           name: 专栏
-          pageRef: /
-          weight: 50
+          pageRef: /column
+          weight: 10
           params: { icon: 'fa-solid fa-layer-group' }
-        - { identifier: column-db, parent: column, name: 数据库老司机, pageRef: /db, weight: 10, params: { icon: 'fa-solid fa-database', description: 数据库行业的动态、新闻、调查、理念与最佳实践 } }
-        - { identifier: column-cloud, parent: column, name: 云计算泥石流, pageRef: /cloud, weight: 20, params: { icon: 'fa-solid fa-cloud-bolt', description: 云计算、下云与基础设施自建的深度思考 } }
-        - { identifier: column-pg, parent: column, name: PostgreSQL 大法师, pageRef: /pg, weight: 30, params: { icon: 'fa-solid fa-hat-wizard', description: PostgreSQL 开发、使用、运维、管理、诊断、调优 } }
-        - { identifier: column-ai, parent: column, name: AI 探路者, pageRef: /ai, weight: 40, params: { icon: 'fa-solid fa-robot', description: AI、Agent、LLM，以及 AI 与数据库 } }
-        - { identifier: column-pigsty, parent: column, name: Pigsty 发行版, pageRef: /pigsty, weight: 50, params: { icon: 'fa-solid fa-rocket', description: 开源 PostgreSQL RDS 发行版的版本发布记录 } }
-        - { identifier: column-trip, parent: column, name: 行万里路, pageRef: /trip, weight: 60, params: { icon: 'fa-solid fa-person-hiking', description: 旅行、徒步与见闻 } }
-        - { identifier: column-misc, parent: column, name: 人生旅途, pageRef: /misc, weight: 70, params: { icon: 'fa-solid fa-feather', description: 随笔、杂谈与个人写作 } }
-        - { identifier: column-tags, parent: column, name: 标签, pageRef: /tags, weight: 80, params: { icon: 'fa-solid fa-tags', description: 按标签浏览全站文章 } }
-        - { identifier: column-authors, parent: column, name: 作者, pageRef: /authors, weight: 90, params: { icon: 'fa-solid fa-user-pen', description: 本站原创与译介文章的作者们 } }
+        - { identifier: column-db, parent: blog, name: 数据库老司机, pageRef: /db, weight: 10, params: { icon: 'fa-solid fa-database', description: 数据库行业的动态、新闻、调查、理念与最佳实践 } }
+        - { identifier: column-cloud, parent: blog, name: 云计算泥石流, pageRef: /cloud, weight: 20, params: { icon: 'fa-solid fa-cloud-bolt', description: 云计算经济学、下云浪潮与主权基础设施自建 } }
+        - { identifier: column-pg, parent: blog, name: PostgreSQL 大法师, pageRef: /pg, weight: 30, params: { icon: 'fa-solid fa-hat-wizard', description: PostgreSQL 内核、开发、运维、诊断与调优实战 } }
+        - { identifier: column-ai, parent: blog, name: AI 探路者, pageRef: /ai, weight: 40, params: { icon: 'fa-solid fa-robot', description: AI、Agent、LLM 工程落地，以及 AI 与数据库 } }
+        - { identifier: column-pigsty, parent: blog, name: Pigsty 发行版, pageRef: /pigsty, weight: 50, params: { icon: 'fa-solid fa-rocket', description: 开源 PostgreSQL RDS 发行版的版本发布归档 } }
+        - { identifier: column-trip, parent: blog, name: 行万里路, pageRef: /trip, weight: 60, params: { icon: 'fa-solid fa-person-hiking', description: 旅行、徒步、游记与山川湖海见闻 } }
+        - { identifier: column-misc, parent: blog, name: 人生旅途, pageRef: /misc, weight: 70, params: { icon: 'fa-solid fa-feather', description: 随笔、杂谈与技术之外的个人写作 } }
+        - { identifier: column-tags, parent: blog, name: 标签索引, pageRef: /tags, weight: 80, params: { icon: 'fa-solid fa-tags', description: 按主题标签检索全站文章 } }
+        - { identifier: column-authors, parent: blog, name: 作者列表, pageRef: /authors, weight: 90, params: { icon: 'fa-solid fa-user-pen', description: 本站原创与译介文章的署名作者们 } }
 
+        # 2. 项目 (Open-Source Projects — exact 9 items in user-specified order)
+        - identifier: project
+          name: 项目
+          pageRef: /project
+          weight: 20
+          params: { icon: 'fa-solid fa-cubes' }
+        - { identifier: proj-pigsty, parent: project, name: Pigsty, url: 'https://pigsty.cc', weight: 10, params: { icon: 'fa-solid fa-server', description: 开箱即用的本地优先开源 PostgreSQL RDS 发行版 } }
+        - { identifier: proj-silo, parent: project, name: SILO, url: 'https://silo.pgsty.com', weight: 20, params: { icon: 'fa-solid fa-hard-drive', description: 社区维护的高性能开源 S3 兼容对象存储 } }
+        - { identifier: proj-oink, parent: project, name: OINK, url: 'https://oink.pgsty.com', weight: 30, params: { icon: 'fa-solid fa-palette', description: 本地优先、零外部依赖的 Hugo 工程文档与博客主题 } }
+        - { identifier: proj-pig, parent: project, name: PIG, url: 'https://pig.pgsty.com', weight: 40, params: { icon: 'fa-solid fa-box-open', description: 一条命令安装任意 PostgreSQL 扩展的包管理器 } }
+        - { identifier: proj-sow, parent: project, name: SOW, url: 'https://sow.pgsty.com', weight: 50, params: { icon: 'fa-solid fa-warehouse', description: 一次入库、处处分发的 APT 与 YUM 软件仓库管理器 } }
+        - { identifier: proj-exp, parent: project, name: pg_exporter, url: 'https://exp.pgsty.com', weight: 60, params: { icon: 'fa-solid fa-gauge-high', description: 用 SQL 表达的 600+ 指标声明式 Prometheus 采集器 } }
+        - { identifier: proj-barn, parent: project, name: Barn, url: 'https://barn.pgsty.com/', weight: 70, params: { icon: 'fa-solid fa-tractor', description: 单份 YAML 清单驱动的 Linux 与 macOS 本地虚拟机管理器 } }
+        - { identifier: proj-caps, parent: project, name: Capslock, url: 'https://github.com/Vonng/Capslock', weight: 80, params: { icon: 'fa-solid fa-keyboard', description: 把闲置大写锁定键改造为第五修饰键的键盘效率方案 } }
+        - { identifier: proj-acdat, parent: project, name: ACDAT, url: 'https://github.com/pgsty/acdat', weight: 90, params: { icon: 'fa-solid fa-bolt', description: 基于双数组 AC 自动机的 PostgreSQL 高速多模式匹配扩展 } }
+
+        # 3. 作品 (Original Monographs, Papers, Talks & Dossier)
+        - identifier: works
+          name: 作品
+          pageRef: /works
+          weight: 30
+          params: { icon: 'fa-solid fa-compass-drafting' }
+        - { identifier: work-pg36g, parent: works, name: PG 三十六计, url: 'https://pg36g.vonng.com/', weight: 10, params: { icon: 'fa-solid fa-chess-knight', description: 从 SQL 到生产：36 章 242 节 PostgreSQL 与 Pigsty 实战专著 } }
+        - { identifier: work-dharma, parent: works, name: 赛博经藏, url: 'https://dharma.vonng.com', weight: 20, params: { icon: 'fa-solid fa-yin-yang', description: 七种古老传统绕着一台现代机器旋转：技术与信仰的数字藏经阁 } }
+        - { identifier: work-dbot, parent: works, name: 'D-Bot (VLDB 2024)', url: 'https://www.vldb.org/pvldb/vol17/p2514-li.pdf', weight: 30, params: { icon: 'fa-solid fa-graduation-cap', description: 基于大语言模型的多 Agent 数据库自动根因诊断论文 } }
+        - { identifier: work-hbase, parent: works, name: 'HBase FDW (NPC 2017)', url: 'https://dl.acm.org/doi/10.1007/978-3-319-68210-5_14', weight: 40, params: { icon: 'fa-solid fa-scroll', description: 基于 PostgreSQL FDW 的异构数据库统一访问层架构论文 } }
+        - { identifier: work-ext-talk, parent: works, name: Extensions for Everyone, url: '/work/extensions-for-everyone/', weight: 50, params: { icon: 'fa-solid fa-chalkboard-user', description: PGConf.Dev 2026 温哥华演讲：PostgreSQL 扩展生态与分发 } }
+        - { identifier: work-so2026, parent: works, name: StackOverflow 2026 报告, url: '/work/so2026/', weight: 60, params: { icon: 'fa-solid fa-chart-pie', description: 2026 全球开发者调查数据交互式可视化深度解读 } }
+        - { identifier: work-dossier, parent: works, name: PG 贡献者档案, pageRef: /dossier, weight: 70, params: { icon: 'fa-solid fa-id-card', description: 十年独立深耕 PostgreSQL 生态的社区贡献提名档案 } }
+
+        # 4. 翻译 (Translated Books & Training Series)
+        - identifier: translation
+          name: 翻译
+          pageRef: /translation
+          weight: 40
+          params: { icon: 'fa-solid fa-book-bookmark' }
+        - { identifier: trans-ddia, parent: translation, name: DDIA 设计数据密集型应用, url: 'https://ddia.vonng.com/', weight: 10, params: { icon: 'fa-solid fa-layer-group', description: Martin Kleppmann 分布式与数据系统必读经典中文译本 } }
+        - { identifier: trans-pgint, parent: translation, name: PostgreSQL 技术内幕, url: 'https://pgint.vonng.com/', weight: 20, params: { icon: 'fa-solid fa-gears', description: 铃木启修著，存储布局、查询处理、事务与并发机制详解 } }
+        - { identifier: trans-int18, parent: translation, name: PostgreSQL 18 内参, url: 'https://int18.pgsql.cc/zh18/', weight: 30, params: { icon: 'fa-solid fa-microchip', description: Egor Rogov 著，系统剖析 MVCC、WAL 与内核原理 } }
+        - { identifier: trans-pgmon, parent: translation, name: PostgreSQL 监控, url: 'https://pgmon.pgsql.cc/', weight: 40, params: { icon: 'fa-solid fa-gauge-high', description: Alexey Lesovsky 著，统计指标体系与性能故障观测方法 } }
+        - { identifier: trans-pgqpt, parent: translation, name: PostgreSQL 18 查询优化, url: 'https://pgqpt.pgsql.cc/', weight: 50, params: { icon: 'fa-solid fa-bolt', description: Pavel Tolmachev 著，执行计划解读与实战查询调优 } }
+        - { identifier: trans-feat, parent: translation, name: PostgreSQL 新特性介绍, url: 'https://feat.pgsql.cc/', weight: 60, params: { icon: 'fa-solid fa-timeline', description: 篠田典良著，跨越十二个大版本的特性演进与 SQL 示例 } }
+        - { identifier: trans-intro, parent: translation, name: PostgreSQL 入门, url: 'https://intro.pgsql.cc/', weight: 70, params: { icon: 'fa-solid fa-seedling', description: 从安装服务器、编写 SQL 到连接应用的循序渐进指南 } }
+        - { identifier: trans-pgexp, parent: translation, name: PostgreSQL 实例教程, url: 'https://pgexp.pgsql.cc/', weight: 80, params: { icon: 'fa-solid fa-flask', description: Dariush Abbasi 著，57 节渐进式实例短课打通核心能力 } }
+        - { identifier: trans-basic, parent: translation, name: PostgreSQL 基础, url: 'https://basic.pgsql.cc/', weight: 90, params: { icon: 'fa-solid fa-table-cells', description: Chase Pierce《Eight Kilobytes》译本，从数据页到生产运维 } }
+        - { identifier: trans-dalibo, parent: translation, name: Dalibo PG 培训教程, url: 'https://dalibo.pgsql.cc/', weight: 100, params: { icon: 'fa-solid fa-graduation-cap', description: 法国 Dalibo 十四门公开课合集：DBA、高可用、性能与 CloudNativePG } }
+        - { identifier: trans-pgpro, parent: translation, name: Postgres Pro 培训教程, url: 'https://pgpro.pgsql.cc/', weight: 110, params: { icon: 'fa-solid fa-chalkboard-user', description: Postgres Pro 八门官方培训教材：管理、应用开发与查询调优 } }
+
+        # 5. 站点 (Portals, Repositories & Showcase Sites)
+        - identifier: sites
+          name: 站点
+          pageRef: /sites
+          weight: 50
+          params: { icon: 'fa-solid fa-globe' }
+        - { identifier: site-pgcenter, parent: sites, name: pg.center, url: 'https://pg.center/zh', weight: 10, params: { icon: 'fa-solid fa-sitemap', description: 串联 PostgreSQL 各大版本双语手册、参数与扩展的知识图谱 } }
+        - { identifier: site-pgsqlcc, parent: sites, name: pgsql.cc, url: 'https://pgsql.cc', weight: 20, params: { icon: 'fa-solid fa-file-lines', description: Pigsty 团队维护的 PostgreSQL 中文社区门户与技术资料库 } }
+        - { identifier: site-pgext, parent: sites, name: pgext.cloud, url: 'https://pgext.cloud/zh', weight: 30, params: { icon: 'fa-solid fa-puzzle-piece', description: 2200+ PostgreSQL 扩展目录索引与 570+ 预编译包构建矩阵 } }
+        - { identifier: site-vonng, parent: sites, name: vonng.com, url: '/', weight: 40, params: { icon: 'fa-solid fa-compass', description: 冯若航个人网站与技术专栏：数据库、下云、PG 与 AI } }
+        - { identifier: site-pigsty, parent: sites, name: pigsty, url: 'https://pigsty.cc', weight: 50, params: { icon: 'fa-solid fa-server', description: 开箱即用的开源企业级 PostgreSQL RDS 发行版中文文档站 } }
+        - { identifier: site-pgsty, parent: sites, name: pgsty.com, url: 'https://pgsty.com/zh', weight: 60, params: { icon: 'fa-solid fa-building', description: Pigsty 背后的开源工作室与企业级 PostgreSQL 订阅支持服务 } }
+        - { identifier: site-docpgcenter, parent: sites, name: doc.pg.center, url: 'https://doc.pg.center/zh/', weight: 70, params: { icon: 'fa-solid fa-language', description: Patroni、pgBackRest、PgBouncer、etcd、HAProxy 八语种手册 } }
+        - { identifier: site-demo, parent: sites, name: demo.pigsty.io, url: 'https://demo.pigsty.io/', weight: 80, params: { icon: 'fa-solid fa-chart-line', description: 持续运行的 Pigsty 实时演示集群与全套 Grafana 监控大盘 } }
+        - { identifier: site-oinkcase, parent: sites, name: OINK 样例站点库, url: 'https://oink.pgsty.com/zh/case/', weight: 90, params: { icon: 'fa-solid fa-palette', description: 浏览基于 OINK 主题打造的 15 个生产级文档、门户与书籍站点 } }
+
+        # 6. 关于 (About)
         - { identifier: about, name: 关于, pageRef: /about, weight: 60, params: { icon: 'fa-solid fa-circle-user' } }
   en:
     label: English
@@ -265,25 +326,85 @@ languages:
       time_format_blog: 2006-01-02
     menus:
       main:
-        # Four columns stand on their own; the rest live under Columns.
-        - { identifier: db, name: DB, pageRef: /db, weight: 10, params: { icon: 'fa-solid fa-database' } }
-        - { identifier: cloud, name: Cloud, pageRef: /cloud, weight: 20, params: { icon: 'fa-solid fa-cloud-bolt' } }
-        - { identifier: pg, name: PG, pageRef: /pg, weight: 30, params: { icon: 'fa-solid fa-hat-wizard' } }
-        - { identifier: ai, name: AI, pageRef: /ai, weight: 40, params: { icon: 'fa-solid fa-robot' } }
-
-        - identifier: column
+        # 1. Columns — identifier `blog` highlights across all blog sections
+        - identifier: blog
           name: Columns
-          pageRef: /
-          weight: 50
+          pageRef: /column
+          weight: 10
           params: { icon: 'fa-solid fa-layer-group' }
-        - { identifier: column-db, parent: column, name: Database Guru, pageRef: /db, weight: 10, params: { icon: 'fa-solid fa-database', description: 'News, reports and best practices from the database industry' } }
-        - { identifier: column-cloud, parent: column, name: Cloud-Exiter, pageRef: /cloud, weight: 20, params: { icon: 'fa-solid fa-cloud-bolt', description: 'Cloud economics, cloud-exit and self-hosting like a pro' } }
-        - { identifier: column-pg, parent: column, name: PostgreSQL Mage, pageRef: /pg, weight: 30, params: { icon: 'fa-solid fa-hat-wizard', description: 'PostgreSQL development, operations, internals and tuning' } }
-        - { identifier: column-ai, parent: column, name: AI Explorer, pageRef: /ai, weight: 40, params: { icon: 'fa-solid fa-robot', description: 'Agents, LLMs, AI coding, AI4DB and DB4AI' } }
-        - { identifier: column-pigsty, parent: column, name: Pigsty Releases, pageRef: /pigsty, weight: 50, params: { icon: 'fa-solid fa-rocket', description: 'Release notes for the open-source PostgreSQL RDS distribution' } }
-        - { identifier: column-trip, parent: column, name: Travel Notes, pageRef: /trip, weight: 60, params: { icon: 'fa-solid fa-person-hiking', description: 'Trips, hikes and things seen along the way' } }
-        - { identifier: column-misc, parent: column, name: Miscellaneous, pageRef: /misc, weight: 70, params: { icon: 'fa-solid fa-feather', description: 'Essays, notes and miscellaneous writing' } }
-        - { identifier: column-tags, parent: column, name: Tags, pageRef: /tags, weight: 80, params: { icon: 'fa-solid fa-tags', description: 'Browse every article by tag' } }
-        - { identifier: column-authors, parent: column, name: Authors, pageRef: /authors, weight: 90, params: { icon: 'fa-solid fa-user-pen', description: 'The writers behind the originals and the translations' } }
+        - { identifier: column-db, parent: blog, name: Database Guru, pageRef: /db, weight: 10, params: { icon: 'fa-solid fa-database', description: 'News, reports, and best practices from the database industry' } }
+        - { identifier: column-cloud, parent: blog, name: Cloud-Exiter, pageRef: /cloud, weight: 20, params: { icon: 'fa-solid fa-cloud-bolt', description: 'Cloud economics, repatriation, and self-hosting like a pro' } }
+        - { identifier: column-pg, parent: blog, name: PostgreSQL Mage, pageRef: /pg, weight: 30, params: { icon: 'fa-solid fa-hat-wizard', description: 'PostgreSQL development, operations, internals, and tuning' } }
+        - { identifier: column-ai, parent: blog, name: AI Explorer, pageRef: /ai, weight: 40, params: { icon: 'fa-solid fa-robot', description: 'Agents, LLMs, AI coding, AI4DB, and DB4AI' } }
+        - { identifier: column-pigsty, parent: blog, name: Pigsty Releases, pageRef: /pigsty, weight: 50, params: { icon: 'fa-solid fa-rocket', description: 'Release notes for the open-source PostgreSQL RDS distribution' } }
+        - { identifier: column-trip, parent: blog, name: Travel Notes, pageRef: /trip, weight: 60, params: { icon: 'fa-solid fa-person-hiking', description: 'Trips, hikes, landscapes, and notes from the road' } }
+        - { identifier: column-misc, parent: blog, name: Miscellaneous, pageRef: /misc, weight: 70, params: { icon: 'fa-solid fa-feather', description: 'Essays, reflections, and personal writing outside tech' } }
+        - { identifier: column-tags, parent: blog, name: Tags, pageRef: /tags, weight: 80, params: { icon: 'fa-solid fa-tags', description: 'Browse every article across the site by topic tag' } }
+        - { identifier: column-authors, parent: blog, name: Authors, pageRef: /authors, weight: 90, params: { icon: 'fa-solid fa-user-pen', description: 'The writers behind the originals and translations' } }
 
+        # 2. Projects (9 open-source projects in user-specified order)
+        - identifier: project
+          name: Projects
+          pageRef: /project
+          weight: 20
+          params: { icon: 'fa-solid fa-cubes' }
+        - { identifier: proj-pigsty, parent: project, name: Pigsty, url: 'https://pigsty.io', weight: 10, params: { icon: 'fa-solid fa-server', description: 'Battery-included, local-first open-source PostgreSQL RDS' } }
+        - { identifier: proj-silo, parent: project, name: SILO, url: 'https://silo.pgsty.com', weight: 20, params: { icon: 'fa-solid fa-hard-drive', description: 'Community-maintained open-source S3-compatible object storage' } }
+        - { identifier: proj-oink, parent: project, name: OINK, url: 'https://oink.pgsty.com', weight: 30, params: { icon: 'fa-solid fa-palette', description: 'Local-first Hugo theme for engineering docs and technical blogs' } }
+        - { identifier: proj-pig, parent: project, name: PIG, url: 'https://pig.pgsty.com', weight: 40, params: { icon: 'fa-solid fa-box-open', description: 'One command, any PostgreSQL extension across EL, Debian & Ubuntu' } }
+        - { identifier: proj-sow, parent: project, name: SOW, url: 'https://sow.pgsty.com', weight: 50, params: { icon: 'fa-solid fa-warehouse', description: 'Store once, serve everywhere — APT and YUM repository manager' } }
+        - { identifier: proj-exp, parent: project, name: pg_exporter, url: 'https://exp.pgsty.com', weight: 60, params: { icon: 'fa-solid fa-gauge-high', description: 'Declarative Prometheus exporter for PostgreSQL with 600+ metrics' } }
+        - { identifier: proj-barn, parent: project, name: Barn, url: 'https://barn.pgsty.com/', weight: 70, params: { icon: 'fa-solid fa-tractor', description: 'Local Linux labs and native macOS VMs from one YAML inventory' } }
+        - { identifier: proj-caps, parent: project, name: Capslock, url: 'https://github.com/Vonng/Capslock', weight: 80, params: { icon: 'fa-solid fa-keyboard', description: 'Turn the forgotten CapsLock key into a fifth modifier (Hyper)' } }
+        - { identifier: proj-acdat, parent: project, name: ACDAT, url: 'https://github.com/pgsty/acdat', weight: 90, params: { icon: 'fa-solid fa-bolt', description: 'Aho-Corasick Double-Array Trie extension for PostgreSQL in C11' } }
+
+        # 3. Works (Monographs, Papers, Talks & Dossier)
+        - identifier: works
+          name: Works
+          pageRef: /works
+          weight: 30
+          params: { icon: 'fa-solid fa-compass-drafting' }
+        - { identifier: work-pg36g, parent: works, name: 36 Stratagems of PG, url: 'https://pg36g.vonng.com/', weight: 10, params: { icon: 'fa-solid fa-chess-knight', description: '36-chapter engineering monograph on PostgreSQL 18.6 & Pigsty 4.5' } }
+        - { identifier: work-dharma, parent: works, name: Cyber Dharma, url: 'https://dharma.vonng.com', weight: 20, params: { icon: 'fa-solid fa-yin-yang', description: 'Seven traditions orbiting one machine — technology and belief' } }
+        - { identifier: work-dbot, parent: works, name: 'D-Bot (VLDB 2024)', url: 'https://www.vldb.org/pvldb/vol17/p2514-li.pdf', weight: 30, params: { icon: 'fa-solid fa-graduation-cap', description: 'Database Diagnosis System using Large Language Models (VLDB 2024)' } }
+        - { identifier: work-hbase, parent: works, name: 'HBase FDW (NPC 2017)', url: 'https://dl.acm.org/doi/10.1007/978-3-319-68210-5_14', weight: 40, params: { icon: 'fa-solid fa-scroll', description: 'Unified access layer over heterogeneous databases via PostgreSQL FDW' } }
+        - { identifier: work-ext-talk, parent: works, name: Extensions for Everyone, url: '/work/extensions-for-everyone/', weight: 50, params: { icon: 'fa-solid fa-chalkboard-user', description: 'PGConf.Dev 2026 slide deck on the PostgreSQL extension supply chain' } }
+        - { identifier: work-so2026, parent: works, name: StackOverflow 2026 Report, url: '/work/so2026/', weight: 60, params: { icon: 'fa-solid fa-chart-pie', description: 'Interactive visual breakdown of the 2026 StackOverflow survey' } }
+        - { identifier: work-dossier, parent: works, name: PG Contributor Dossier, pageRef: /dossier, weight: 70, params: { icon: 'fa-solid fa-id-card', description: 'Nomination dossier for PostgreSQL Recognized Contributor' } }
+
+        # 4. Translations & Books
+        - identifier: translation
+          name: Translations
+          pageRef: /translation
+          weight: 40
+          params: { icon: 'fa-solid fa-book-bookmark' }
+        - { identifier: trans-ddia, parent: translation, name: DDIA (2nd Edition, ZH), url: 'https://ddia.vonng.com/', weight: 10, params: { icon: 'fa-solid fa-layer-group', description: 'Designing Data-Intensive Applications, translated into Chinese' } }
+        - { identifier: trans-pgint, parent: translation, name: Internals of PostgreSQL, url: 'https://pgint.vonng.com/', weight: 20, params: { icon: 'fa-solid fa-gears', description: 'Hironobu Suzuki’s classic on storage, query execution, and MVCC' } }
+        - { identifier: trans-int18, parent: translation, name: PostgreSQL 18 Internals, url: 'https://int18.pgsql.cc/zh18/', weight: 30, params: { icon: 'fa-solid fa-microchip', description: 'Egor Rogov’s deep dive into MVCC, WAL, and PG 18 internals' } }
+        - { identifier: trans-pgmon, parent: translation, name: PostgreSQL Monitoring, url: 'https://pgmon.pgsql.cc/', weight: 40, params: { icon: 'fa-solid fa-gauge-high', description: 'Alexey Lesovsky’s guide to Postgres metrics and troubleshooting' } }
+        - { identifier: trans-pgqpt, parent: translation, name: PG 18 Query Optimization, url: 'https://pgqpt.pgsql.cc/', weight: 50, params: { icon: 'fa-solid fa-bolt', description: 'Pavel Tolmachev’s handbook on execution plans and query tuning' } }
+        - { identifier: trans-feat, parent: translation, name: PG New Features (9.5–19), url: 'https://feat.pgsql.cc/', weight: 60, params: { icon: 'fa-solid fa-timeline', description: 'Noriyoshi Shinoda’s guide across 12 major PostgreSQL releases' } }
+        - { identifier: trans-intro, parent: translation, name: 'Postgres: First Experience', url: 'https://intro.pgsql.cc/', weight: 70, params: { icon: 'fa-solid fa-seedling', description: 'Step-by-step introduction from SQL basics to app connections' } }
+        - { identifier: trans-pgexp, parent: translation, name: PostgreSQL by Example, url: 'https://pgexp.pgsql.cc/', weight: 80, params: { icon: 'fa-solid fa-flask', description: 'Dariush Abbasi’s 57 hands-on PostgreSQL SQL lessons' } }
+        - { identifier: trans-basic, parent: translation, name: PostgreSQL Basics (8KB), url: 'https://basic.pgsql.cc/', weight: 90, params: { icon: 'fa-solid fa-table-cells', description: 'Chase Pierce’s Eight Kilobytes: from 8 KB pages to production' } }
+        - { identifier: trans-dalibo, parent: translation, name: Dalibo PG Training, url: 'https://dalibo.pgsql.cc/', weight: 100, params: { icon: 'fa-solid fa-graduation-cap', description: '14 Dalibo training courses on DBA, HA, tuning, and CloudNativePG' } }
+        - { identifier: trans-pgpro, parent: translation, name: Postgres Pro Courses, url: 'https://pgpro.pgsql.cc/', weight: 110, params: { icon: 'fa-solid fa-chalkboard-user', description: '8 Postgres Pro courses on administration, app dev, and QPT' } }
+
+        # 5. Sites (Portals, Repositories & Showcase Sites)
+        - identifier: sites
+          name: Sites
+          pageRef: /sites
+          weight: 50
+          params: { icon: 'fa-solid fa-globe' }
+        - { identifier: site-pgcenter, parent: sites, name: pg.center, url: 'https://pg.center', weight: 10, params: { icon: 'fa-solid fa-sitemap', description: 'PostgreSQL manuals, parameters, and extension knowledge across versions' } }
+        - { identifier: site-pgsqlcc, parent: sites, name: pgsql.cc, url: 'https://pgsql.cc', weight: 20, params: { icon: 'fa-solid fa-file-lines', description: 'Chinese PostgreSQL documentation, news, and tutorial portal' } }
+        - { identifier: site-pgext, parent: sites, name: pgext.cloud, url: 'https://pgext.cloud', weight: 30, params: { icon: 'fa-solid fa-puzzle-piece', description: 'Catalog of 2,200+ PostgreSQL extensions and 570+ binary packages' } }
+        - { identifier: site-vonng, parent: sites, name: vonng.com, url: '/en/', weight: 40, params: { icon: 'fa-solid fa-compass', description: 'Ruohang Feng’s blog and essays on PostgreSQL, cloud-exit, and AI' } }
+        - { identifier: site-pigsty, parent: sites, name: pigsty, url: 'https://pigsty.io', weight: 50, params: { icon: 'fa-solid fa-server', description: 'Battery-included open-source PostgreSQL RDS distribution portal' } }
+        - { identifier: site-pgsty, parent: sites, name: pgsty.com, url: 'https://pgsty.com', weight: 60, params: { icon: 'fa-solid fa-building', description: 'The open-source studio and enterprise support behind Pigsty' } }
+        - { identifier: site-docpgcenter, parent: sites, name: doc.pg.center, url: 'https://doc.pg.center/', weight: 70, params: { icon: 'fa-solid fa-language', description: '8-language manuals for Patroni, pgBackRest, PgBouncer, etcd & HAProxy' } }
+        - { identifier: site-demo, parent: sites, name: demo.pigsty.io, url: 'https://demo.pigsty.io/', weight: 80, params: { icon: 'fa-solid fa-chart-line', description: 'Live Pigsty deployment with interactive Grafana observability dashboards' } }
+        - { identifier: site-oinkcase, parent: sites, name: OINK Showcase (15 Sites), url: 'https://oink.pgsty.com/case/', weight: 90, params: { icon: 'fa-solid fa-palette', description: 'Explore all 15 production documentation, book, and portal showcase sites' } }
+
+        # 6. About
         - { identifier: about, name: About, pageRef: /about, weight: 60, params: { icon: 'fa-solid fa-circle-user' } }

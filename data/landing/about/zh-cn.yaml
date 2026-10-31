@@ -8,11 +8,14 @@ sections:
     key: project
     partial: landing/sections/link-cards.html
   - type: cards
-    key: publication
+    key: works
     partial: landing/sections/link-cards.html
   - type: cards
-    key: columns
-    partial: landing/sections/column-cards.html
+    key: translation
+    partial: landing/sections/link-cards.html
+  - type: cards
+    key: sites
+    partial: landing/sections/link-cards.html
   - cta
 
 hero:
@@ -23,10 +26,10 @@ hero:
     - words:
         - { text: '@Vonng' }
   lead: >-
-    [Pigsty](https://pigsty.cc) 创始人，[活跃](https://committers.top/singapore)的[开源贡献者](https://gitstar-ranking.com/Vonng)。<br>
-    架构师，DBA，全栈工程师 @ Alibaba、TanTan、Apple。<br>
-    数据库 KOL，下云布道师，资深驴友，骨灰级玩家。
-  note: 本站文章以 CC BY 4.0 协议开放，欢迎转载与引用
+    [Pigsty](https://pigsty.cc) 作者与 [PGSTY](https://pgsty.com/zh) 创始人，[活跃](https://committers.top/singapore)的[独立开源贡献者](https://gitstar-ranking.com/Vonng)。<br>
+    架构师、DBA、全栈工程师 @ Alibaba、TanTan、Apple。<br>
+    PostgreSQL 大法师，数据库老司机，下云布道师，资深驴友，骨灰级玩家。
+  note: 本站原创文章以 CC BY 4.0 协议开放，欢迎注明出处转载与引用
   note_icon: fa-brands fa-creative-commons
   image:
     light: img/about/vonng.jpg
@@ -38,28 +41,28 @@ hero:
     hide_below: md
   actions:
     - { label: GitHub, url: 'https://github.com/Vonng', icon: fa-brands fa-github, external: true, style: primary }
+    - { label: PG 贡献档案, url: dossier/, icon: fa-solid fa-id-card, style: ghost }
+    - { label: 名片, url: '/me/0/', icon: fa-solid fa-id-card, style: ghost }
+    - { label: 公众号, url: '/wechat/', icon: fa-brands fa-weixin, style: ghost }
     - { label: 写封邮件, url: 'mailto:rh@vonng.com', icon: fa-solid fa-envelope, style: ghost }
-  detail: { label: 全部文章都收录在作者主页, url: authors/vonng/ }
+  detail: { label: 全部署名文章均收录在作者档案页, url: authors/vonng/ }
 
 metrics:
-  # Live numbers: layouts/_partials/landing/sections/live-metrics.html reads
-  # `metric` from data/metrics.yaml, refreshed at build time when the network
-  # is there. `make metrics` updates the checked-in fallback.
-  eyebrow: 数字指标
+  eyebrow: 开源影响力
   columns: 4
   items:
     - metric: stars
       format: compact
       label: GitHub Star
-      desc: 个人公开仓库累计获得的星标
+      desc: 个人与组织公开仓库累计获得的星标
       source: { label: github.com/Vonng, url: 'https://github.com/Vonng' }
     - metric: followers
       label: GitHub Follower
-      desc: 在 GitHub 上关注我的开发者
+      desc: 在 GitHub 上关注我的全球开发者
       source: { label: 'github.com/Vonng?tab=followers', url: 'https://github.com/Vonng?tab=followers' }
-    - value: No.662
+    - value: No.585
       label: GitHub Star Rank
-      desc: 个人仓库累计星标的全球排名
+      desc: 全球开发者个人仓库星标总榜排名
       source: { label: gitstar-ranking.com/Vonng, url: 'https://gitstar-ranking.com/Vonng' }
     - metric: rank
       format: '#%d'
@@ -68,70 +71,64 @@ metrics:
       source: { label: committers.top/singapore, url: 'https://committers.top/singapore' }
 
 bio:
-  eyebrow: 简介
+  eyebrow: 个人履历
   title: 我是谁，我在做什么
   body: |
-    我叫**冯若航**，在网上一般叫 **Vonng**。我做数据库，写数据库，也写关于数据库的文章。
+    我叫**冯若航**，在网上通常被称为 **Vonng**。自 2015 年起持续深耕 PostgreSQL 与基础设施领域 —— 我用数据库，造数据库工具，也写关于数据库的书与文章。
 
-    2018 年我开始做 [**Pigsty**](https://pigsty.cc) —— 一个开箱即用的开源 PostgreSQL 发行版。
-    它把高可用、时间点恢复、连接池、监控系统与四百多个扩展插件打包成一套可以自己跑起来的
-    RDS，让任何人都能在自己的服务器上获得云数据库级别的能力，而不必支付云上的溢价。
+    2018 年我发起了开源项目 [**Pigsty**](https://pigsty.cc)（*PostgreSQL In Great STYle*）：一套本地优先、开箱即用的开源 PostgreSQL RDS 发行版。它将高可用（Patroni）、时间点恢复（pgBackRest）、连接池（PgBouncer）、可观测性栈（[**pg_exporter**](https://exp.pgsty.com) + Grafana/VictoriaMetrics）以及 [**pgext.cloud**](https://pgext.cloud/zh) 收录的 **2200+ 扩展目录与 570+ 预编译扩展包** 整合成一套可自主掌控的数据基础设施，帮助全球上万名开发者与企业在裸金属和虚拟机上跑出云数据库水准的体验，而不必支付昂贵的云溢价。
 
-    在此之前，我是架构师、DBA 与全栈工程师，先后在 **Alibaba**、**TanTan** 与 **Apple**
-    工作，管理过数百套 PostgreSQL 集群，也踩过足够多的坑。
+    在创立 [**pgsty.com**](https://pgsty.com/zh) 全职投入开源之前，我曾先后在 **阿里巴巴（Alibaba）**、**探探（TanTan）** 与 **苹果（Apple）** 担任研发工程师、首席 DBA 与基础架构师，亲手设计并管理过数百套核心生产环境 PostgreSQL 集群。
 
-    工作之外，我翻译了 [**DDIA**](https://ddia.vonng.com)（《设计数据密集型应用》）与
-    [**PostgreSQL 内幕探索**](https://pgint.vonng.com) 的中文版，维护
-    [**pg_exporter**](https://pigsty.io/docs/pg_exporter) 等一系列开源工具，
-    并在公众号《老冯云数》与这个博客上持续写作。
+    工程之外，我独立翻译了分布式系统经典 [**《设计数据密集型应用》（DDIA）**](https://ddia.vonng.com)、[**《PostgreSQL 技术内幕》**](https://pgint.vonng.com)、[**《PostgreSQL 18 内参》**](https://int18.pgsql.cc/zh18/)、[**《PostgreSQL 监控》**](https://pgmon.pgsql.cc/) 与 [**《PostgreSQL 18 查询优化》**](https://pgqpt.pgsql.cc/)，维护着 PostgreSQL 知识库 [**pg.center**](https://pg.center/zh) 与中文文档站 [**pgsql.cc**](https://pgsql.cc)，并在公众号《老冯云数》与本站专栏中持续输出技术评论（全网读者约 10 万）。完整社区贡献可见我的 [**PostgreSQL 贡献者档案**](/dossier/)。
 
-    我也徒步、旅行、打游戏。这些东西同样会出现在[行万里路](trip/)与[闲言随笔](misc/)里。
+    工作之余，我热爱徒步、旅行、历史哲学与电子游戏 —— 这些足迹散落在 [**赛博经藏**](https://dharma.vonng.com)、[**行万里路**](/trip/) 与 [**人生旅途**](/misc/) 之中。
 
 project:
-  eyebrow: 开源项目
-  title: 写代码
-  text: 自己做的、还在维护的东西。
+  eyebrow: 开源
+  text: 围绕 PostgreSQL、对象存储、软件源分发、本地虚拟化与工程效率构建并长期维护的开源项目。
+  head_links:
+    - { label: 全部项目, url: project/, icon: fa-solid fa-cubes }
+    - { label: VONNG, url: 'https://github.com/Vonng', icon: fa-brands fa-github, external: true }
+    - { label: PGSTY, url: 'https://github.com/pgsty', icon: fa-brands fa-github, external: true }
   columns: 3
-  items_from: project       # the cards live in data/works.yaml
+  items_from: project
 
-publication:
-  eyebrow: 译作与著述
-  title: 也写书
-  text: 翻译、文库与论文。
-  columns: 3
-  items_from: publication   # the cards live in data/works.yaml
+works:
+  eyebrow: 作品
+  text: 围绕 PostgreSQL 生产工程与跨文明思想传统撰写的原创专著，以及数据库智能诊断与异构联邦查询领域的学术论文。
+  head_links:
+    - { label: 全部作品, url: works/, icon: fa-solid fa-compass-drafting }
+    - { label: 贡献档案, url: dossier/, icon: fa-solid fa-id-card }
+  columns: 2
+  items_from: works
 
-columns:
-  eyebrow: 专栏
-  title: 也写文章
-  text: 本站的文章按主题分成几个专栏，各自有独立的 RSS 订阅。
+translation:
+  eyebrow: 翻译
+  text: 独立翻译的计算机与 PostgreSQL 核心著作、教程及权威培训课程体系。
+  head_links:
+    - { label: 全部, url: translation/, icon: fa-solid fa-book-bookmark }
+    - { label: 教程, url: 'https://pgsql.cc/docs/tutorials/', icon: fa-solid fa-book-open, external: true }
+    - { label: 文档, url: 'https://doc.pg.center/zh', icon: fa-solid fa-language, external: true }
   columns: 3
-  unit: 篇
-  items:
-    - page: /db
-      title: 数据库老司机
-      desc: 数据库行业的动态、新闻、调查、理念与最佳实践。
-    - page: /cloud
-      title: 云计算泥石流
-      desc: 云计算、下云与基础设施自建的深度思考与成本分析。
-    - page: /ai
-      title: Agent 探路者
-      desc: 关于 AI、Agent、LLM，以及 AI 与数据库之间的一切。
-    - page: /pg
-      title: Postgres 大法师
-      desc: PostgreSQL 生态进展，以及开发、运维、诊断与调优的经验。
-    - page: /trip
-      title: 行万里路
-      desc: 旅行、徒步与、游记与见闻。山川湖海，风物人情。
-    - page: /misc
-      title: 人生旅途
-      desc: 随笔与杂谈，闲杂记录，也许与技术有关，或者完全无关。
+  items_from: translation
+  series_from: training_series
+
+sites:
+  eyebrow: 站点
+  text: 围绕 PostgreSQL 生态与开源基础设施构建的核心门户、扩展目录与官方站点。
+  head_links:
+    - { label: 全部站点, url: sites/, icon: fa-solid fa-globe }
+  columns: 3
+  items_from: sites
 
 cta:
-  title: 有问题，或者想聊聊？
-  text: 欢迎在任何一篇文章下留言，或者直接找我。
+  title: 保持联系
+  text: 无论是技术交流、开源合作、商业咨询，还是单纯想聊聊数据库与下云，都欢迎随时联系我。
   actions:
-    - { label: 发邮件, url: 'mailto:rh@vonng.com', icon: fa-solid fa-envelope, style: primary }
+    - { label: 发送邮件, url: 'mailto:rh@vonng.com', icon: fa-solid fa-envelope, style: primary }
+    - { label: 名片, url: '/me/0/', icon: fa-solid fa-id-card, style: ghost }
+    - { label: 公众号, url: '/wechat/', icon: fa-brands fa-weixin, style: ghost }
     - { label: GitHub, url: 'https://github.com/Vonng', icon: fa-brands fa-github, external: true, style: ghost }
     - { label: X / Twitter, url: 'https://x.com/RonVonng', icon: fa-brands fa-x-twitter, external: true, style: ghost }
     - { label: LinkedIn, url: 'https://www.linkedin.com/in/vonng/', icon: fa-brands fa-linkedin, external: true, style: ghost }

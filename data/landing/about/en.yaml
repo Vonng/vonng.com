@@ -8,11 +8,14 @@ sections:
     key: project
     partial: landing/sections/link-cards.html
   - type: cards
-    key: publication
+    key: works
     partial: landing/sections/link-cards.html
   - type: cards
-    key: columns
-    partial: landing/sections/column-cards.html
+    key: translation
+    partial: landing/sections/link-cards.html
+  - type: cards
+    key: sites
+    partial: landing/sections/link-cards.html
   - cta
 
 hero:
@@ -23,11 +26,11 @@ hero:
     - words:
         - { text: '@Vonng' }
   lead: >-
-    Founder of [Pigsty](https://pigsty.io), [active](https://committers.top/singapore)
-    [open source contributor](https://gitstar-ranking.com/Vonng).<br>
+    Creator of [Pigsty](https://pigsty.io) &amp; founder of [PGSTY](https://pgsty.com),
+    [active](https://committers.top/singapore) [independent open-source contributor](https://gitstar-ranking.com/Vonng).<br>
     Architect, DBA and full-stack engineer @ Alibaba, TanTan and Apple.<br>
-    Database KOL, cloud-exit evangelist, seasoned hiker, lifelong gamer.
-  note: Everything here is published under CC BY 4.0
+    PostgreSQL mage, database KOL, cloud-exit evangelist, seasoned hiker, lifelong gamer.
+  note: Original articles on this site are published under CC BY 4.0
   note_icon: fa-brands fa-creative-commons
   image:
     light: img/about/vonng.jpg
@@ -39,26 +42,26 @@ hero:
     hide_below: md
   actions:
     - { label: GitHub, url: 'https://github.com/Vonng', icon: fa-brands fa-github, external: true, style: primary }
+    - { label: PG Dossier, url: '/dossier/', icon: fa-solid fa-id-card, style: ghost }
+    - { label: Name Card, url: '/me/0/', icon: fa-solid fa-id-card, style: ghost }
+    - { label: WeChat, url: '/wechat/', icon: fa-brands fa-weixin, style: ghost }
     - { label: Send an email, url: 'mailto:rh@vonng.com', icon: fa-solid fa-envelope, style: ghost }
-  detail: { label: Every article is collected on the author page, url: authors/vonng/ }
+  detail: { label: Every bylined article is collected on the author page, url: '/authors/vonng/' }
 
 metrics:
-  # Live numbers: layouts/_partials/landing/sections/live-metrics.html reads
-  # `metric` from data/metrics.yaml, refreshed at build time when the network
-  # is there. `make metrics` updates the checked-in fallback.
-  eyebrow: Metrics
+  eyebrow: Open-Source Footprint
   columns: 4
   items:
     - metric: stars
       format: compact
-      label: GitHub Star
+      label: GitHub Stars
       desc: Stars across my public repositories
       source: { label: github.com/Vonng, url: 'https://github.com/Vonng' }
     - metric: followers
-      label: GitHub Follower
-      desc: Developers following me on GitHub
+      label: GitHub Followers
+      desc: Developers following my work on GitHub
       source: { label: 'github.com/Vonng?tab=followers', url: 'https://github.com/Vonng?tab=followers' }
-    - value: No.662
+    - value: No.585
       label: GitHub Star Rank
       desc: Worldwide rank by stars across personal repositories
       source: { label: gitstar-ranking.com/Vonng, url: 'https://gitstar-ranking.com/Vonng' }
@@ -69,76 +72,64 @@ metrics:
       source: { label: committers.top/singapore, url: 'https://committers.top/singapore' }
 
 bio:
-  eyebrow: Introduction
+  eyebrow: Biography
   title: Who I am, and what I work on
   body: |
-    I am **Ruohang Feng**, generally known online as **Vonng**. I build databases,
-    I run databases, and I write about databases.
+    I am **Ruohang Feng**, widely known online as **Vonng**. Since 2015 I have focused on PostgreSQL and data infrastructure — building database tooling, running large-scale clusters, and writing extensively about databases and cloud economics.
 
-    In 2018 I started [**Pigsty**](https://pigsty.io) — a battery-included open
-    source PostgreSQL distribution. It packages high availability, point-in-time
-    recovery, connection pooling, a full monitoring stack and four hundred-odd
-    extensions into an RDS you can run yourself, so that anyone can have
-    cloud-database capability on their own servers without paying the cloud premium.
+    In 2018 I created [**Pigsty**](https://pigsty.io) (*PostgreSQL In Great STYle*) — a battery-included, local-first open-source PostgreSQL RDS distribution. It integrates high availability (Patroni), point-in-time recovery (pgBackRest), connection pooling (PgBouncer), observability ([**pg_exporter**](https://exp.pgsty.com) + Grafana/VictoriaMetrics), and the [**pgext.cloud**](https://pgext.cloud) supply chain (**2,200+ cataloged extensions and 570+ pre-built binary packages** across 16 Linux distros) into a self-hosted RDS that gives anyone cloud-grade database capability on bare metal without paying the cloud premium.
 
-    Before that I worked as an architect, DBA and full-stack engineer at
-    **Alibaba**, **TanTan** and **Apple**, where I ran hundreds of PostgreSQL
-    clusters and made most of the mistakes worth making.
+    Before founding [**pgsty.com**](https://pgsty.com) to work on open-source infrastructure full-time, I served as a software engineer, lead DBA, and infrastructure architect at **Alibaba**, **TanTan**, and **Apple**, where I designed and operated hundreds of production PostgreSQL clusters.
 
-    Outside of work I translated [**DDIA**](https://ddia.vonng.com) (*Designing
-    Data-Intensive Applications*) and [**PostgreSQL
-    Internals**](https://pgint.vonng.com) into Chinese, maintain
-    [**pg_exporter**](https://pigsty.io/docs/pg_exporter) and a handful of other
-    open source tools, and keep writing here.
+    Outside of engineering, I translated [**Designing Data-Intensive Applications (DDIA)**](https://ddia.vonng.com), [**Internals of PostgreSQL**](https://pgint.vonng.com), [**PostgreSQL 18 Internals**](https://int18.pgsql.cc/zh18/), [**PostgreSQL Monitoring**](https://pgmon.pgsql.cc/), and [**PostgreSQL 18 Query Optimization**](https://pgqpt.pgsql.cc/) into Chinese; maintain the [**pg.center**](https://pg.center) knowledge graph and [**pgsql.cc**](https://pgsql.cc) documentation portal; and write for a combined readership of ~100,000 engineers. For a structured record of my ecosystem work, see my [**PostgreSQL Contributor Dossier**](/en/dossier/).
 
-    I also hike, travel and play games. Those show up in
-    [Travel Notes](trip/) and [Miscellaneous](misc/).
+    Away from the terminal, I hike, travel, study comparative religion and philosophy, and play strategy games — documented in [**Cyber Dharma**](https://dharma.vonng.com), [**Travel Notes**](/en/trip/), and [**Miscellaneous**](/en/misc/).
 
 project:
-  eyebrow: Projects
-  title: Code
-  text: The things I build and keep running.
+  eyebrow: Open Source
+  text: Nine open-source projects across PostgreSQL RDS, S3 object storage, package management, local VMs, and developer ergonomics.
+  head_links:
+    - { label: All Projects, url: project/, icon: fa-solid fa-cubes }
+    - { label: VONNG, url: 'https://github.com/Vonng', icon: fa-brands fa-github, external: true }
+    - { label: PGSTY, url: 'https://github.com/pgsty', icon: fa-brands fa-github, external: true }
   columns: 3
-  items_from: project       # the cards live in data/works.yaml
+  items_from: project
 
-publication:
-  eyebrow: Publications
-  title: And books
-  text: Translations, libraries and papers.
-  columns: 3
-  items_from: publication   # the cards live in data/works.yaml
+works:
+  eyebrow: Works
+  text: Original monographs on production PostgreSQL and comparative philosophy, alongside research papers on LLM-powered database diagnosis and heterogeneous data federation.
+  head_links:
+    - { label: All Works, url: works/, icon: fa-solid fa-compass-drafting }
+    - { label: PG Dossier, url: dossier/, icon: fa-solid fa-id-card }
+  columns: 2
+  items_from: works
 
-columns:
-  eyebrow: Columns
-  title: And prose
-  text: Articles here are grouped into columns, each with its own RSS feed.
+translation:
+  eyebrow: Translations
+  text: Chinese translations of distributed systems and PostgreSQL classics, tutorials, and official training curricula.
+  head_links:
+    - { label: All, url: translation/, icon: fa-solid fa-book-bookmark }
+    - { label: Tutorials, url: 'https://pgsql.cc/docs/tutorials/', icon: fa-solid fa-book-open, external: true }
+    - { label: Docs, url: 'https://doc.pg.center/', icon: fa-solid fa-language, external: true }
   columns: 3
-  unit: posts
-  items:
-    - page: /db
-      title: Database Guru
-      desc: News, insights, and best practices from the database industry.
-    - page: /cloud
-      title: Cloud-Exiter
-      desc: Cloud-exit and self-hosting — deep dives and cost analyses.
-    - page: /ai
-      title: AI Agent Explorer
-      desc: Agents, LLMs, and everything between AI and databases.
-    - page: /pg
-      title: Postgres Mage
-      desc: Blogs about PG ecosystem, admin, development and operations.
-    - page: /trip
-      title: Travel Notes
-      desc: Trips, hikes and the things seen along the way.
-    - page: /misc
-      title: Miscellaneous
-      desc: The things that are not about technology, or not only about it.
+  items_from: translation
+  series_from: training_series
+
+sites:
+  eyebrow: Sites
+  text: Core PostgreSQL knowledge portals, extension catalogs, and open-source project websites.
+  head_links:
+    - { label: All Sites, url: sites/, icon: fa-solid fa-globe }
+  columns: 3
+  items_from: sites
 
 cta:
-  title: Questions, or just want to talk?
-  text: Leave a comment under any article, or reach me directly.
+  title: Get in Touch
+  text: Whether it is about PostgreSQL, open-source collaboration, commercial consulting, or cloud-exit architecture — feel free to reach out.
   actions:
     - { label: Email, url: 'mailto:rh@vonng.com', icon: fa-solid fa-envelope, style: primary }
+    - { label: Name Card, url: '/me/0/', icon: fa-solid fa-id-card, style: ghost }
+    - { label: WeChat, url: '/wechat/', icon: fa-brands fa-weixin, style: ghost }
     - { label: GitHub, url: 'https://github.com/Vonng', icon: fa-brands fa-github, external: true, style: ghost }
     - { label: X / Twitter, url: 'https://x.com/RonVonng', icon: fa-brands fa-x-twitter, external: true, style: ghost }
     - { label: LinkedIn, url: 'https://www.linkedin.com/in/vonng/', icon: fa-brands fa-linkedin, external: true, style: ghost }

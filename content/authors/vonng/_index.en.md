@@ -1,23 +1,14 @@
 ---
 title: "Ruohang Feng"
-description: "Pigsty founder, PostgreSQL mage, database guru, cloud-exit evangelist"
+description: "Creator of Pigsty & founder of PGSTY, PostgreSQL mage, database guru, cloud-exit evangelist"
 images: [img/vonng.jpg]
 ---
 
-**Ruohang Feng** ([@Vonng](https://github.com/Vonng)) is the author and founder of
-[Pigsty](https://pigsty.io), a software engineer and open source enthusiast who has
-been working on PostgreSQL infrastructure since 2018.
+**Ruohang Feng** ([@Vonng](https://github.com/Vonng)) is the creator of [Pigsty](https://pigsty.io) and founder of [PGSTY](https://pgsty.com), an independent software engineer and open-source contributor focused on PostgreSQL infrastructure since 2015.
 
-Architect, DBA and full-stack engineer @ TanTan, Alibaba and Apple.
-Independent open source contributor — [GitStar Ranking 585](https://gitstar-ranking.com/Vonng),
-[Top 20 active committers in China](https://committers.top/china).
-Chinese translator of [DDIA](https://ddia.vonng.com) and [PostgreSQL Internals](https://pgint.vonng.com).
+Formerly architect, DBA, and full-stack engineer @ **Alibaba**, **TanTan**, and **Apple**.
+[GitStar Ranking No.585](https://gitstar-ranking.com/Vonng) worldwide and [Top 5 active committer in Singapore](https://committers.top/singapore).
+Chinese translator of [Designing Data-Intensive Applications (DDIA)](https://ddia.vonng.com), [PostgreSQL Internals](https://pgint.vonng.com), [Empire of AI](https://aiempire.vonng.com), and [The Product-Minded Engineer](https://tpme.vonng.com).
 
-## Elsewhere
-
-- [Website](https://vonng.com/)
-- [Email](mailto:rh@vonng.com)
-- [GitHub](https://github.com/Vonng)
-- [LinkedIn](https://www.linkedin.com/in/vonng/)
-- [Medium](https://medium.com/@fengruohang/)
-- [X / Twitter](https://x.com/RonVonng)
+- [About Page](/en/about/) · [PostgreSQL Contributor Dossier](/en/dossier/) · [Name Card](/en/me/0/)
+- [GitHub](https://github.com/Vonng) · [X / Twitter](https://x.com/RonVonng) · [LinkedIn](https://www.linkedin.com/in/vonng/) · [Email](mailto:rh@vonng.com)
