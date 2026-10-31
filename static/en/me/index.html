@@ -1,0 +1,2055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ruohang Feng (@Vonng) — Name Cards (00–09)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    min-height: 100%;
+    background: #0d1017;
+    color: #f1f5f9;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  .page-wrap {
+    max-width: 1460px;
+    margin: 0 auto;
+    padding: 28px 24px 64px;
+  }
+  .top-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 22px;
+    margin-bottom: 26px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .brand-title h1 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-title p {
+    margin-top: 5px;
+    font-size: 13px;
+    color: #94a3b8;
+  }
+  .header-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .nav-pill {
+    font: 600 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #cbd5e1;
+    transition: all 0.15s ease;
+  }
+  .nav-pill:hover {
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+  }
+  .lang-switch {
+    font: 600 12px/1 -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: #336791;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: #fff;
+    margin-left: 6px;
+    transition: all 0.15s ease;
+  }
+  .lang-switch:hover {
+    background: #2563eb;
+  }
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+    gap: 24px;
+  }
+  @media (min-width: 1380px) {
+    .cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 520px) {
+    .cards-grid {
+      grid-template-columns: 1fr;
+    }
+    .page-wrap {
+      padding: 18px 12px 48px;
+    }
+  }
+  .gallery-tile {
+    background: #151923;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+  }
+  .gallery-tile:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.24);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
+  }
+  .tile-stage {
+    padding: 28px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .card-host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: center center;
+  }
+  @media (min-width: 560px) {
+    .card-host { zoom: 1.26; }
+  }
+  @media (min-width: 1100px) {
+    .card-host { zoom: 1.42; }
+  }
+  @media (min-width: 1400px) {
+    .card-host { zoom: 1.56; }
+  }
+  .tile-bar {
+    padding: 12px 16px;
+    background: rgba(15, 18, 26, 0.95);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .tile-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+  .tile-idx {
+    font: 800 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    padding: 6px 8px;
+    border-radius: 7px;
+    flex-shrink: 0;
+  }
+  .tile-names {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  .tile-names strong {
+    font-size: 14px;
+    font-weight: 700;
+    color: #f8fafc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .tile-names small {
+    font-size: 11px;
+    color: #94a3b8;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .tile-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .btn-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font: 600 12px/1 inherit;
+    padding: 7px 12px;
+    border-radius: 8px;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .btn-dl {
+    background: rgba(56, 189, 248, 0.14);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    color: #7dd3fc;
+  }
+  .btn-dl:hover {
+    background: #0284c7;
+    border-color: #0284c7;
+    color: #fff;
+  }
+  .btn-open {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #e2e8f0;
+  }
+  .btn-open:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+  }
+  .style-dock {
+    position: fixed;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 5px 8px;
+    border-radius: 999px;
+    background: rgba(16, 18, 22, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    font: 500 11px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    z-index: 100;
+    white-space: nowrap;
+  }
+  .style-dock a {
+    color: rgba(255, 255, 255, 0.72);
+    padding: 5px 8px;
+    border-radius: 999px;
+    transition: all 0.15s ease;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .style-dock a:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.14);
+  }
+  .style-dock a[aria-current="page"] {
+    background: #336791;
+    color: #ffffff;
+    font-weight: 700;
+  }
+  .style-dock .icon-btn {
+    color: rgba(255, 255, 255, 0.88);
+    padding: 5px 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .style-dock .icon-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.18);
+  }
+  .style-dock .sep {
+    width: 1px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 0 2px;
+  }
+</style>
+</head>
+<body>
+  <div class="page-wrap" style="padding-bottom: 88px;">
+    <header class="top-header">
+      <div class="brand-title">
+        <h1><a href="/en/about/">Ruohang Feng · Name Cards</a></h1>
+        <p>10 bespoke 90×54mm name cards (00 classic default first) & WeChat QR cards · Every link on every card is interactive · Switch via ←/→, A/D, or H/L</p>
+      </div>
+      <nav class="header-controls" aria-label="Quick Jump">
+        <a class="nav-pill" href="/en/me/0/" title="PostgreSQL Classic Default">00</a><a class="nav-pill" href="/en/me/1/" title="Swiss International Grid">01</a><a class="nav-pill" href="/en/me/2/" title="Kyoto Washi & Cinnabar Seal">02</a><a class="nav-pill" href="/en/me/3/" title="PostgreSQL psql Terminal">03</a><a class="nav-pill" href="/en/me/4/" title="Obsidian & Champagne Gold">04</a><a class="nav-pill" href="/en/me/5/" title="Engineering Blueprint">05</a><a class="nav-pill" href="/en/me/6/" title="Bauhaus Weimar 1923">06</a><a class="nav-pill" href="/en/me/7/" title="Alpine Topographic Field Note">07</a><a class="nav-pill" href="/en/me/8/" title="Titanium & Frosted Glass">08</a><a class="nav-pill" href="/en/me/9/" title="Neo-Brutalist Pop Sticker">09</a><a class="nav-pill" style="border-color:rgba(7,193,96,0.45);color:#4ade80;" href="/en/wechat/" title="微信公众号：老冯云数">WeChat</a>
+        <a class="nav-pill" href="/me/" title="Switch Language: 中文" aria-label="Switch Language: 中文" style="display:inline-flex;align-items:center;justify-content:center;"><svg viewBox="0 0 640 512" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.8 27.4s-18 12.5-27.4 6.8l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg></a>
+        <a class="nav-pill" href="/en/" title="Home" aria-label="Home" style="display:inline-flex;align-items:center;justify-content:center;"><svg viewBox="0 0 576 512" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg></a>
+      </nav>
+    </header>
+    <main class="cards-grid">
+      
+      <section class="gallery-tile" data-href="/en/me/0/">
+        <div class="tile-stage" style="background: #cfdde8;" data-card-href="/en/me/0/">
+          <div class="card-host">
+            <template shadowrootmode="open">
+              <style>
+                *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+                
+  .card {
+    --pg: #336791;
+    --deep: #234a6b;
+    --navy: #16334c;
+    --sky: #a8c8de;
+    --ice: #ddeaf4;
+    --pale: #f0f6fa;
+    --paper: #fafcfe;
+    --body: #25394c;
+    position: relative;
+    width: 90mm; height: 54mm;
+    background: var(--paper);
+    color: var(--body);
+    font-family: "Archivo", "Noto Sans SC", "PingFang SC", sans-serif;
+    box-shadow: 0 18px 50px rgba(22,51,76,.28);
+    overflow: hidden;
+  }
+  .axis-v { position: absolute; left: 56mm; top: 0; bottom: 0; width: 0.55mm; background: var(--navy); }
+  .axis-h { position: absolute; left: 0; right: 0; top: 26mm; height: 0.55mm; background: var(--navy); }
+  .qzone {
+    position: absolute; left: 56.55mm; right: 0; top: 0; height: 26mm;
+    background: var(--pale);
+    overflow: hidden;
+  }
+  .qzone::before {
+    content: "";
+    position: absolute; right: -13mm; top: -13mm;
+    width: 30mm; height: 30mm;
+    border-radius: 50%;
+    background: var(--ice);
+  }
+  .qzone::after {
+    content: "";
+    position: absolute; left: 3.4mm; top: 0;
+    width: 5.2mm; height: 2.6mm;
+    border-radius: 0 0 5.2mm 5.2mm;
+    background: var(--pg);
+  }
+  .qr-svg {
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 18mm; height: 18mm;
+    color: var(--pg);
+    display: block;
+  }
+  .name-zone { position: absolute; left: 5mm; top: 6mm; width: 48mm; }
+  .name-cn {
+    margin: 0;
+    font-family: "Noto Sans SC", sans-serif;
+    font-size: 10.4mm; font-weight: 900;
+    line-height: 1; letter-spacing: 0.07em;
+    color: var(--navy);
+  }
+  .name-cn a { color: inherit; text-decoration: none; }
+  .name-en {
+    display: inline-block; margin-top: 1.8mm;
+    font-size: 2.7mm; font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--paper);
+    background: var(--pg);
+    padding: 0.6mm 2mm;
+    text-decoration: none;
+  }
+  .contacts {
+    position: absolute; left: 5mm; top: 29.6mm; bottom: 4.8mm; width: 48.5mm;
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
+    column-gap: 2.8mm;
+    align-content: space-between;
+    font-size: 2.0mm;
+  }
+  .cell {
+    display: flex; align-items: center; gap: 1.5mm;
+    height: 2.8mm;
+    min-width: 0;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    color: var(--body);
+  }
+  .cell a { color: inherit; text-decoration: none; }
+  .cell a:hover { color: var(--pg); }
+  .ic { width: 2.6mm; height: 2.6mm; flex: none; color: var(--pg); }
+  .tags {
+    position: absolute; left: 56.55mm; right: 0; top: 26.55mm; bottom: 0;
+    background: var(--deep);
+    background-image:
+      radial-gradient(circle at 90% 115%, rgba(168,200,222,.26) 0 6.5mm, transparent 6.7mm),
+      radial-gradient(circle at 90% 115%, rgba(168,200,222,.16) 0 10mm, transparent 10.2mm);
+    color: #eaf2f8;
+    padding: 3.05mm 3.2mm 4.8mm;
+    display: flex; flex-direction: column;
+    justify-content: space-between;
+  }
+  .tag {
+    display: flex; align-items: center; gap: 1.7mm;
+    height: 2.8mm;
+    font-size: 2.12mm; font-weight: 800;
+    letter-spacing: 0.04em;
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .tag::before {
+    content: "";
+    width: 1.3mm; height: 1.3mm; flex: none;
+    background: var(--sky);
+  }
+  .tag:nth-child(even)::before { background: var(--pg); }
+  a.tag:hover { color: var(--sky); }
+
+                .card { cursor: pointer; }
+              </style>
+              <article class="card" aria-label="冯若航的名片">
+      <svg style="display:none" aria-hidden="true">
+        <defs>
+          <symbol id="i-phone" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </symbol>
+          <symbol id="i-globe" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9.6"/>
+              <path d="M2.4 12h19.2"/>
+              <path d="M12 2.4c2.7 2.7 4.1 6 4.1 9.6s-1.4 6.9-4.1 9.6c-2.7-2.7-4.1-6-4.1-9.6S9.3 5.1 12 2.4z"/>
+            </g>
+          </symbol>
+          <symbol id="i-wechat" viewBox="0 0 24 24">
+            <g fill="currentColor" fill-rule="evenodd">
+              <path d="M9.3 2.4C5 2.4 1.5 5.3 1.5 8.9c0 2 1.1 3.8 2.8 5l-.7 2.4 2.7-1.4c.8.2 1.6.4 2.5.4h.6a5.5 5.5 0 0 1-.3-1.8c0-3.4 3.2-6.1 7-6.1h.6C16 4.6 12.9 2.4 9.3 2.4zM6.7 7.8a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1zm5.2 0a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1z"/>
+              <path d="M16.5 8.6c-3.4 0-6.1 2.4-6.1 5.3s2.7 5.3 6.1 5.3c.7 0 1.4-.1 2-.3l2.3 1.2-.6-2c1.5-1 2.4-2.5 2.4-4.2 0-2.9-2.7-5.3-6.1-5.3zm-2.1 4.5a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9zm4.2 0a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9z"/>
+            </g>
+          </symbol>
+          <symbol id="i-mp" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M11 5L6 9H2.5v6H6l5 4V5z"/>
+              <path d="M15.5 9a4.5 4.5 0 0 1 0 6"/>
+              <path d="M18.5 6a9 9 0 0 1 0 12"/>
+            </g>
+          </symbol>
+          <symbol id="i-mail" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2.4" y="4.4" width="19.2" height="15.2" rx="2.2"/>
+              <path d="M3.2 6.4l8.8 6.8 8.8-6.8"/>
+            </g>
+          </symbol>
+          <symbol id="i-link" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+            </g>
+          </symbol>
+          <symbol id="i-github" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12z"/>
+          </symbol>
+          <symbol id="i-linkedin" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+          </symbol>
+        </defs>
+      </svg>
+      <div class="qzone">
+        <a href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2" title="Scan on WeChat">
+          <svg class="qr-svg" viewBox="0 0 33 33" shape-rendering="crispEdges" role="img" aria-label="WeChat QR"><path fill="currentColor" d="M0 0h7v1h-7zM8 0h1v1h-1zM10 0h1v1h-1zM13 0h1v1h-1zM15 0h1v1h-1zM17 0h2v1h-2zM21 0h1v1h-1zM23 0h1v1h-1zM28 0h3v1h-3zM0 1h1v1h-1zM6 1h1v1h-1zM11 1h1v1h-1zM13 1h7v1h-7zM23 1h1v1h-1zM25 1h5v1h-5zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM8 2h2v1h-2zM11 2h4v1h-4zM19 2h1v1h-1zM22 2h2v1h-2zM26 2h2v1h-2zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM8 3h1v1h-1zM10 3h3v1h-3zM17 3h6v1h-6zM24 3h2v1h-2zM27 3h1v1h-1zM29 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM9 4h2v1h-2zM12 4h4v1h-4zM17 4h1v1h-1zM20 4h1v1h-1zM23 4h6v1h-6zM30 4h2v1h-2zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM10 5h6v1h-6zM19 5h1v1h-1zM21 5h1v1h-1zM23 5h2v1h-2zM28 5h3v1h-3zM32 5h1v1h-1zM0 6h7v1h-7zM8 6h2v1h-2zM11 6h1v1h-1zM13 6h2v1h-2zM16 6h1v1h-1zM19 6h6v1h-6zM26 6h1v1h-1zM28 6h1v1h-1zM8 7h1v1h-1zM10 7h4v1h-4zM16 7h2v1h-2zM19 7h1v1h-1zM24 7h1v1h-1zM28 7h2v1h-2zM32 7h1v1h-1zM0 8h1v1h-1zM4 8h3v1h-3zM10 8h1v1h-1zM12 8h1v1h-1zM15 8h1v1h-1zM24 8h5v1h-5zM30 8h1v1h-1zM1 9h1v1h-1zM4 9h1v1h-1zM7 9h1v1h-1zM9 9h2v1h-2zM12 9h1v1h-1zM14 9h1v1h-1zM16 9h1v1h-1zM18 9h2v1h-2zM22 9h1v1h-1zM24 9h1v1h-1zM27 9h3v1h-3zM31 9h1v1h-1zM2 10h3v1h-3zM6 10h1v1h-1zM8 10h1v1h-1zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM22 10h5v1h-5zM28 10h1v1h-1zM31 10h2v1h-2zM0 11h5v1h-5zM9 11h2v1h-2zM12 11h1v1h-1zM14 11h2v1h-2zM18 11h1v1h-1zM21 11h2v1h-2zM26 11h1v1h-1zM29 11h1v1h-1zM32 11h1v1h-1zM3 12h6v1h-6zM10 12h1v1h-1zM15 12h1v1h-1zM18 12h1v1h-1zM20 12h3v1h-3zM27 12h1v1h-1zM29 12h3v1h-3zM2 13h4v1h-4zM7 13h1v1h-1zM11 13h1v1h-1zM19 13h1v1h-1zM22 13h1v1h-1zM24 13h2v1h-2zM28 13h1v1h-1zM31 13h1v1h-1zM0 14h3v1h-3zM4 14h7v1h-7zM12 14h6v1h-6zM20 14h3v1h-3zM25 14h4v1h-4zM30 14h2v1h-2zM1 15h1v1h-1zM3 15h1v1h-1zM7 15h4v1h-4zM15 15h1v1h-1zM17 15h2v1h-2zM20 15h2v1h-2zM23 15h2v1h-2zM26 15h1v1h-1zM28 15h2v1h-2zM31 15h1v1h-1zM0 16h2v1h-2zM3 16h2v1h-2zM6 16h1v1h-1zM8 16h1v1h-1zM10 16h1v1h-1zM14 16h2v1h-2zM17 16h7v1h-7zM25 16h2v1h-2zM28 16h3v1h-3zM3 17h1v1h-1zM5 17h1v1h-1zM7 17h1v1h-1zM11 17h1v1h-1zM13 17h1v1h-1zM16 17h1v1h-1zM19 17h4v1h-4zM24 17h3v1h-3zM29 17h2v1h-2zM0 18h1v1h-1zM2 18h1v1h-1zM4 18h1v1h-1zM6 18h1v1h-1zM9 18h1v1h-1zM12 18h6v1h-6zM22 18h1v1h-1zM24 18h1v1h-1zM26 18h2v1h-2zM29 18h2v1h-2zM1 19h1v1h-1zM4 19h2v1h-2zM7 19h1v1h-1zM13 19h1v1h-1zM16 19h3v1h-3zM22 19h3v1h-3zM27 19h1v1h-1zM31 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM4 20h3v1h-3zM8 20h2v1h-2zM18 20h2v1h-2zM24 20h2v1h-2zM27 20h3v1h-3zM2 21h4v1h-4zM7 21h2v1h-2zM10 21h2v1h-2zM13 21h3v1h-3zM18 21h3v1h-3zM24 21h2v1h-2zM27 21h1v1h-1zM29 21h1v1h-1zM31 21h2v1h-2zM1 22h1v1h-1zM3 22h1v1h-1zM6 22h3v1h-3zM12 22h1v1h-1zM14 22h1v1h-1zM16 22h2v1h-2zM21 22h1v1h-1zM23 22h3v1h-3zM27 22h3v1h-3zM31 22h2v1h-2zM0 23h4v1h-4zM7 23h1v1h-1zM18 23h2v1h-2zM21 23h1v1h-1zM23 23h1v1h-1zM26 23h2v1h-2zM29 23h2v1h-2zM32 23h1v1h-1zM0 24h1v1h-1zM2 24h2v1h-2zM5 24h3v1h-3zM10 24h1v1h-1zM12 24h3v1h-3zM18 24h2v1h-2zM21 24h1v1h-1zM26 24h1v1h-1zM29 24h1v1h-1zM31 24h2v1h-2zM8 25h1v1h-1zM11 25h1v1h-1zM17 25h2v1h-2zM20 25h1v1h-1zM23 25h2v1h-2zM0 26h7v1h-7zM8 26h1v1h-1zM10 26h1v1h-1zM12 26h1v1h-1zM14 26h1v1h-1zM16 26h1v1h-1zM18 26h1v1h-1zM20 26h1v1h-1zM22 26h1v1h-1zM24 26h1v1h-1zM26 26h7v1h-7zM0 27h1v1h-1zM6 27h1v1h-1zM13 27h2v1h-2zM18 27h3v1h-3zM22 27h1v1h-1zM24 27h1v1h-1zM26 27h1v1h-1zM32 27h1v1h-1zM0 28h1v1h-1zM2 28h3v1h-3zM6 28h1v1h-1zM9 28h1v1h-1zM12 28h1v1h-1zM14 28h1v1h-1zM20 28h3v1h-3zM26 28h1v1h-1zM28 28h3v1h-3zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h3v1h-3zM6 29h1v1h-1zM8 29h1v1h-1zM10 29h1v1h-1zM14 29h3v1h-3zM19 29h2v1h-2zM22 29h1v1h-1zM26 29h1v1h-1zM28 29h3v1h-3zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h3v1h-3zM6 30h1v1h-1zM12 30h1v1h-1zM17 30h1v1h-1zM20 30h1v1h-1zM23 30h1v1h-1zM26 30h1v1h-1zM28 30h3v1h-3zM32 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM8 31h2v1h-2zM11 31h3v1h-3zM18 31h1v1h-1zM21 31h4v1h-4zM26 31h1v1h-1zM32 31h1v1h-1zM0 32h7v1h-7zM8 32h2v1h-2zM13 32h1v1h-1zM16 32h3v1h-3zM20 32h1v1h-1zM23 32h1v1h-1zM26 32h7v1h-7z"/><rect x="13" y="13" width="7" height="7" fill="#f0f6fa"/><g transform="translate(14.1,14.1) scale(0.2)" fill="currentColor" fill-rule="evenodd"><path d="M9.3 2.4C5 2.4 1.5 5.3 1.5 8.9c0 2 1.1 3.8 2.8 5l-.7 2.4 2.7-1.4c.8.2 1.6.4 2.5.4h.6a5.5 5.5 0 0 1-.3-1.8c0-3.4 3.2-6.1 7-6.1h.6C16 4.6 12.9 2.4 9.3 2.4zM6.7 7.8a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1zm5.2 0a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1z"/><path d="M16.5 8.6c-3.4 0-6.1 2.4-6.1 5.3s2.7 5.3 6.1 5.3c.7 0 1.4-.1 2-.3l2.3 1.2-.6-2c1.5-1 2.4-2.5 2.4-4.2 0-2.9-2.7-5.3-6.1-5.3zm-2.1 4.5a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9zm4.2 0a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9z"/></g></svg>
+        </a>
+      </div>
+      <i class="axis-v" aria-hidden="true"></i>
+      <i class="axis-h" aria-hidden="true"></i>
+
+      <header class="name-zone">
+        <h1 class="name-cn"><a href="/en/about/">冯若航</a></h1>
+        <a class="name-en" href="/en/about/">RUOHANG FENG</a>
+      </header>
+
+      <section class="contacts" aria-label="联系方式">
+        <span class="cell"><svg class="ic"><use href="#i-phone"/></svg><a href="tel:+8618801100571">+86 188 0110 0571</a></span>
+        <span class="cell"><svg class="ic"><use href="#i-globe"/></svg><a href="tel:+15106507902">+1 510 650 7902</a></span>
+        <span class="cell"><svg class="ic"><use href="#i-wechat"/></svg><a href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2">RuohangFeng</a></span>
+        <span class="cell"><svg class="ic"><use href="#i-mp"/></svg><a href="/en/wechat/">公众号：老冯云数</a></span>
+        <span class="cell"><svg class="ic"><use href="#i-mail"/></svg><a href="mailto:rh@vonng.com">rh@vonng.com</a></span>
+        <span class="cell"><svg class="ic"><use href="#i-link"/></svg><a href="/en/">vonng.com</a></span>
+        <span class="cell"><svg class="ic"><use href="#i-github"/></svg><a href="https://github.com/Vonng">github.com/Vonng</a></span>
+        <span class="cell"><svg class="ic"><use href="#i-linkedin"/></svg><a href="https://linkedin.com/in/vonng/">in/vonng</a></span>
+      </section>
+
+      <nav class="tags" aria-label="身份">
+        <a class="tag" href="https://pgsty.com">PGSTY Founder</a>
+        <a class="tag" href="https://pigsty.io">Pigsty Creator</a>
+        <a class="tag" href="https://pg.center">PostgreSQL Expert</a>
+        <a class="tag" href="https://vonng.com/en/column/">Tech Columnist</a>
+      </nav>
+    </article>
+            </template>
+          </div>
+        </div>
+        <footer class="tile-bar">
+          <a class="tile-meta" href="/en/me/0/">
+            <span class="tile-idx" style="background:#336791;color:#ffffff;">00</span>
+            <span class="tile-names">
+              <strong>PostgreSQL Classic Default</strong>
+              <small>PostgreSQL 经典四象限</small>
+            </span>
+          </a>
+          <div class="tile-actions">
+            <button type="button" class="btn-action btn-dl" onclick="downloadTileCard(this, 'vonng-card-en-00.png')" title="Download">
+              <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8m0 0-3-3m3 3 3-3M2.5 13h11"/></svg>
+              <span>Download</span>
+            </button>
+            <a class="btn-action btn-open" href="/en/me/0/">Open Card ↗</a>
+          </div>
+        </footer>
+      </section>
+      <section class="gallery-tile" data-href="/en/me/1/">
+        <div class="tile-stage" style="background: #d8d6d0;" data-card-href="/en/me/1/">
+          <div class="card-host">
+            <template shadowrootmode="open">
+              <style>
+                *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+                
+  .card {
+    --paper: #f6f4ef;
+    --ink: #111111;
+    --muted: #5a5852;
+    --rule: #181818;
+    --accent: #ff2a00;
+    --sans: "Helvetica Neue", "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    --mono: "JetBrains Mono", "SF Mono", "Menlo", "Consolas", monospace;
+    width: 90mm;
+    height: 54mm;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    border-radius: 1.5mm;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22), 0 2px 6px rgba(0, 0, 0, 0.08);
+    display: grid;
+    grid-template-columns: 58.0mm 1fr;
+    grid-template-rows: 9.0mm 24.8mm 1fr;
+    position: relative;
+    overflow: hidden;
+    border: 0.35mm solid var(--rule);
+  }
+  :where(.card) a { color: inherit; text-decoration: none; transition: all 0.12s ease; }
+  .card a:hover { color: var(--accent); }
+  .cell-top-left {
+    grid-column: 1; grid-row: 1;
+    border-bottom: 0.35mm solid var(--rule);
+    border-right: 0.35mm solid var(--rule);
+    padding: 0 3.4mm;
+    display: flex; align-items: center; justify-content: space-between;
+    font-family: var(--mono); font-size: 2.0mm; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .index-tag { display: inline-flex; align-items: center; gap: 1.5mm; }
+  .red-dot { width: 2.1mm; height: 2.1mm; background: var(--accent); display: inline-block; }
+  .cell-main-left {
+    grid-column: 1; grid-row: 2;
+    border-bottom: 0.35mm solid var(--rule);
+    border-right: 0.35mm solid var(--rule);
+    padding: 2.5mm 3.4mm 2.3mm;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .identity-row { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5mm; white-space: nowrap; }
+  .name-cn { font-size: 5.0mm; font-weight: 800; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
+  .name-en { font-size: 2.15mm; font-weight: 600; color: var(--muted); letter-spacing: 0; white-space: nowrap; }
+  .name-en .slash { color: var(--accent); font-weight: 700; margin: 0 0.3mm; }
+  .name-en .accent { color: var(--accent); font-family: var(--mono); font-weight: 700; }
+  .roles { display: flex; flex-wrap: nowrap; gap: 1.0mm; }
+  .role-pill {
+    font-size: 1.85mm; font-weight: 700; letter-spacing: 0.01em;
+    padding: 0.65mm 1.35mm; border: 0.3mm solid var(--rule); line-height: 1.15;
+    background: transparent; white-space: nowrap;
+  }
+  .role-pill.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .role-pill.primary:hover { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .role-pill.dark { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+  .role-pill.dark:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .cell-bottom-left {
+    grid-column: 1; grid-row: 3;
+    border-right: 0.35mm solid var(--rule);
+    padding: 2.0mm 3.4mm;
+    display: grid; grid-template-columns: 27.0mm 1fr; grid-template-rows: repeat(3, 1fr);
+    column-gap: 1.4mm; row-gap: 0.7mm; align-items: center;
+  }
+  .meta-item {
+    display: flex; align-items: baseline; gap: 0.9mm;
+    font-size: 1.72mm; line-height: 1.15; white-space: nowrap;
+  }
+  .meta-item .k {
+    font-family: var(--mono); font-size: 1.45mm; font-weight: 700;
+    color: var(--accent); letter-spacing: 0.03em; width: 4.3mm; flex-shrink: 0;
+  }
+  .meta-item .v { font-family: var(--mono); font-weight: 600; color: var(--ink); letter-spacing: -0.02em; }
+  .meta-item .v.cjk { font-family: var(--sans); font-weight: 700; letter-spacing: 0; }
+  .cell-right {
+    grid-column: 2; grid-row: 1 / span 3;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 2.8mm 2.8mm 2.4mm; background: var(--paper);
+  }
+  .qr-header {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--mono); font-size: 1.72mm; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .qr-box {
+    width: 22.4mm; height: 22.4mm; margin: 0 auto;
+    border: 0.35mm solid var(--rule); padding: 1.1mm; background: #ffffff;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .qr-svg { width: 100%; height: 100%; display: block; color: #111111; }
+  .qr-footer {
+    border-top: 0.35mm solid var(--rule); padding-top: 1.4mm;
+    display: flex; flex-direction: column; gap: 0.35mm;
+  }
+  .qr-footer .wx-id { font-family: var(--mono); font-size: 1.88mm; font-weight: 700; letter-spacing: 0.01em; }
+  .qr-footer .wx-hint { font-size: 1.7mm; font-weight: 600; color: var(--muted); letter-spacing: 0.03em; }
+
+                .card { cursor: pointer; }
+              </style>
+              <article class="card" aria-label="Ruohang Feng Name Card">
+      <header class="cell-top-left">
+        <a class="index-tag" href="/en/"><span class="red-dot"></span><span>No. 01 — 2026</span></a>
+        <a href="/en/">VONNG.COM</a>
+      </header>
+      <section class="cell-main-left">
+        <div class="identity-row">
+          <h1 class="name-cn"><a href="/en/about/">Ruohang Feng</a></h1>
+          <div class="name-en"><a class="accent" href="https://github.com/Vonng">@Vonng</a> <span class="slash">/</span> <a href="/en/about/">冯若航</a></div>
+        </div>
+        <div class="roles">
+          <a class="role-pill primary" href="https://pgsty.com">PGSTY Founder</a>
+          <a class="role-pill dark" href="https://pigsty.io">Pigsty Creator</a>
+          <a class="role-pill" href="https://pg.center">PostgreSQL Expert</a>
+        </div>
+      </section>
+      <footer class="cell-bottom-left">
+        <a class="meta-item" href="/en/"><span class="k">WEB</span><span class="v">vonng.com</span></a>
+        <a class="meta-item" href="https://github.com/Vonng"><span class="k">GH</span><span class="v">github.com/Vonng</span></a>
+        <a class="meta-item" href="mailto:rh@vonng.com"><span class="k">MAIL</span><span class="v">rh@vonng.com</span></a>
+        <a class="meta-item" href="https://linkedin.com/in/vonng/"><span class="k">IN</span><span class="v">in/vonng</span></a>
+        <a class="meta-item" href="tel:+15106507902"><span class="k">TEL</span><span class="v">+1 510 650 7902</span></a>
+        <a class="meta-item" href="https://x.com/RonVonng"><span class="k">X</span><span class="v">x.com/RonVonng</span></a>
+      </footer>
+      <aside class="cell-right">
+        <div class="qr-header">
+          <a href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2">WECHAT</a>
+          <a href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2">QR / 01</a>
+        </div>
+        <a class="qr-box" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2" title="Scan on WeChat">
+          <svg class="qr-svg" viewBox="0 0 33 33" shape-rendering="crispEdges" role="img" aria-label="WeChat QR"><path fill="currentColor" d="M0 0h7v1h-7zM8 0h1v1h-1zM10 0h1v1h-1zM13 0h1v1h-1zM15 0h1v1h-1zM17 0h2v1h-2zM21 0h1v1h-1zM23 0h1v1h-1zM28 0h3v1h-3zM0 1h1v1h-1zM6 1h1v1h-1zM11 1h1v1h-1zM13 1h7v1h-7zM23 1h1v1h-1zM25 1h5v1h-5zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM8 2h2v1h-2zM11 2h4v1h-4zM19 2h1v1h-1zM22 2h2v1h-2zM26 2h2v1h-2zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM8 3h1v1h-1zM10 3h3v1h-3zM17 3h6v1h-6zM24 3h2v1h-2zM27 3h1v1h-1zM29 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM9 4h2v1h-2zM12 4h4v1h-4zM17 4h1v1h-1zM20 4h1v1h-1zM23 4h6v1h-6zM30 4h2v1h-2zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM10 5h6v1h-6zM19 5h1v1h-1zM21 5h1v1h-1zM23 5h2v1h-2zM28 5h3v1h-3zM32 5h1v1h-1zM0 6h7v1h-7zM8 6h2v1h-2zM11 6h1v1h-1zM13 6h2v1h-2zM16 6h1v1h-1zM19 6h6v1h-6zM26 6h1v1h-1zM28 6h1v1h-1zM8 7h1v1h-1zM10 7h4v1h-4zM16 7h2v1h-2zM19 7h1v1h-1zM24 7h1v1h-1zM28 7h2v1h-2zM32 7h1v1h-1zM0 8h1v1h-1zM4 8h3v1h-3zM10 8h1v1h-1zM12 8h1v1h-1zM15 8h1v1h-1zM24 8h5v1h-5zM30 8h1v1h-1zM1 9h1v1h-1zM4 9h1v1h-1zM7 9h1v1h-1zM9 9h2v1h-2zM12 9h1v1h-1zM14 9h1v1h-1zM16 9h1v1h-1zM18 9h2v1h-2zM22 9h1v1h-1zM24 9h1v1h-1zM27 9h3v1h-3zM31 9h1v1h-1zM2 10h3v1h-3zM6 10h1v1h-1zM8 10h1v1h-1zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM22 10h5v1h-5zM28 10h1v1h-1zM31 10h2v1h-2zM0 11h5v1h-5zM9 11h2v1h-2zM12 11h1v1h-1zM14 11h2v1h-2zM18 11h1v1h-1zM21 11h2v1h-2zM26 11h1v1h-1zM29 11h1v1h-1zM32 11h1v1h-1zM3 12h6v1h-6zM10 12h1v1h-1zM15 12h1v1h-1zM18 12h1v1h-1zM20 12h3v1h-3zM27 12h1v1h-1zM29 12h3v1h-3zM2 13h4v1h-4zM7 13h1v1h-1zM11 13h1v1h-1zM19 13h1v1h-1zM22 13h1v1h-1zM24 13h2v1h-2zM28 13h1v1h-1zM31 13h1v1h-1zM0 14h3v1h-3zM4 14h7v1h-7zM12 14h6v1h-6zM20 14h3v1h-3zM25 14h4v1h-4zM30 14h2v1h-2zM1 15h1v1h-1zM3 15h1v1h-1zM7 15h4v1h-4zM15 15h1v1h-1zM17 15h2v1h-2zM20 15h2v1h-2zM23 15h2v1h-2zM26 15h1v1h-1zM28 15h2v1h-2zM31 15h1v1h-1zM0 16h2v1h-2zM3 16h2v1h-2zM6 16h1v1h-1zM8 16h1v1h-1zM10 16h1v1h-1zM14 16h2v1h-2zM17 16h7v1h-7zM25 16h2v1h-2zM28 16h3v1h-3zM3 17h1v1h-1zM5 17h1v1h-1zM7 17h1v1h-1zM11 17h1v1h-1zM13 17h1v1h-1zM16 17h1v1h-1zM19 17h4v1h-4zM24 17h3v1h-3zM29 17h2v1h-2zM0 18h1v1h-1zM2 18h1v1h-1zM4 18h1v1h-1zM6 18h1v1h-1zM9 18h1v1h-1zM12 18h6v1h-6zM22 18h1v1h-1zM24 18h1v1h-1zM26 18h2v1h-2zM29 18h2v1h-2zM1 19h1v1h-1zM4 19h2v1h-2zM7 19h1v1h-1zM13 19h1v1h-1zM16 19h3v1h-3zM22 19h3v1h-3zM27 19h1v1h-1zM31 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM4 20h3v1h-3zM8 20h2v1h-2zM18 20h2v1h-2zM24 20h2v1h-2zM27 20h3v1h-3zM2 21h4v1h-4zM7 21h2v1h-2zM10 21h2v1h-2zM13 21h3v1h-3zM18 21h3v1h-3zM24 21h2v1h-2zM27 21h1v1h-1zM29 21h1v1h-1zM31 21h2v1h-2zM1 22h1v1h-1zM3 22h1v1h-1zM6 22h3v1h-3zM12 22h1v1h-1zM14 22h1v1h-1zM16 22h2v1h-2zM21 22h1v1h-1zM23 22h3v1h-3zM27 22h3v1h-3zM31 22h2v1h-2zM0 23h4v1h-4zM7 23h1v1h-1zM18 23h2v1h-2zM21 23h1v1h-1zM23 23h1v1h-1zM26 23h2v1h-2zM29 23h2v1h-2zM32 23h1v1h-1zM0 24h1v1h-1zM2 24h2v1h-2zM5 24h3v1h-3zM10 24h1v1h-1zM12 24h3v1h-3zM18 24h2v1h-2zM21 24h1v1h-1zM26 24h1v1h-1zM29 24h1v1h-1zM31 24h2v1h-2zM8 25h1v1h-1zM11 25h1v1h-1zM17 25h2v1h-2zM20 25h1v1h-1zM23 25h2v1h-2zM0 26h7v1h-7zM8 26h1v1h-1zM10 26h1v1h-1zM12 26h1v1h-1zM14 26h1v1h-1zM16 26h1v1h-1zM18 26h1v1h-1zM20 26h1v1h-1zM22 26h1v1h-1zM24 26h1v1h-1zM26 26h7v1h-7zM0 27h1v1h-1zM6 27h1v1h-1zM13 27h2v1h-2zM18 27h3v1h-3zM22 27h1v1h-1zM24 27h1v1h-1zM26 27h1v1h-1zM32 27h1v1h-1zM0 28h1v1h-1zM2 28h3v1h-3zM6 28h1v1h-1zM9 28h1v1h-1zM12 28h1v1h-1zM14 28h1v1h-1zM20 28h3v1h-3zM26 28h1v1h-1zM28 28h3v1h-3zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h3v1h-3zM6 29h1v1h-1zM8 29h1v1h-1zM10 29h1v1h-1zM14 29h3v1h-3zM19 29h2v1h-2zM22 29h1v1h-1zM26 29h1v1h-1zM28 29h3v1h-3zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h3v1h-3zM6 30h1v1h-1zM12 30h1v1h-1zM17 30h1v1h-1zM20 30h1v1h-1zM23 30h1v1h-1zM26 30h1v1h-1zM28 30h3v1h-3zM32 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM8 31h2v1h-2zM11 31h3v1h-3zM18 31h1v1h-1zM21 31h4v1h-4zM26 31h1v1h-1zM32 31h1v1h-1zM0 32h7v1h-7zM8 32h2v1h-2zM13 32h1v1h-1zM16 32h3v1h-3zM20 32h1v1h-1zM23 32h1v1h-1zM26 32h7v1h-7z"/><rect x="13" y="13" width="7" height="7" fill="#ffffff"/><g transform="translate(14.1,14.1) scale(0.2)" fill="#ff2a00" fill-rule="evenodd"><path d="M9.3 2.4C5 2.4 1.5 5.3 1.5 8.9c0 2 1.1 3.8 2.8 5l-.7 2.4 2.7-1.4c.8.2 1.6.4 2.5.4h.6a5.5 5.5 0 0 1-.3-1.8c0-3.4 3.2-6.1 7-6.1h.6C16 4.6 12.9 2.4 9.3 2.4zM6.7 7.8a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1zm5.2 0a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1z"/><path d="M16.5 8.6c-3.4 0-6.1 2.4-6.1 5.3s2.7 5.3 6.1 5.3c.7 0 1.4-.1 2-.3l2.3 1.2-.6-2c1.5-1 2.4-2.5 2.4-4.2 0-2.9-2.7-5.3-6.1-5.3zm-2.1 4.5a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9zm4.2 0a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9z"/></g></svg>
+        </a>
+        <div class="qr-footer">
+          <a class="wx-id" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2">ID: RuohangFeng</a>
+          <a class="wx-hint" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2">Scan on WeChat</a>
+        </div>
+      </aside>
+    </article>
+            </template>
+          </div>
+        </div>
+        <footer class="tile-bar">
+          <a class="tile-meta" href="/en/me/1/">
+            <span class="tile-idx" style="background:#ff2a00;color:#ffffff;">01</span>
+            <span class="tile-names">
+              <strong>Swiss International Grid</strong>
+              <small>瑞士国际主义网格</small>
+            </span>
+          </a>
+          <div class="tile-actions">
+            <button type="button" class="btn-action btn-dl" onclick="downloadTileCard(this, 'vonng-card-en-01.png')" title="Download">
+              <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8m0 0-3-3m3 3 3-3M2.5 13h11"/></svg>
+              <span>Download</span>
+            </button>
+            <a class="btn-action btn-open" href="/en/me/1/">Open Card ↗</a>
+          </div>
+        </footer>
+      </section>
+      <section class="gallery-tile" data-href="/en/me/2/">
+        <div class="tile-stage" style="background: #26231f;" data-card-href="/en/me/2/">
+          <div class="card-host">
+            <template shadowrootmode="open">
+              <style>
+                *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+                
+  .card {
+    --washi: #f7f3ea;
+    --sumi: #1c1a17;
+    --muted: #665f55;
+    --hairline: rgba(28, 26, 23, 0.2);
+    --cinnabar: #b62d1c;
+    --serif: "Songti SC", "STSong", "Noto Serif SC", "Source Han Serif SC", "Georgia", serif;
+    --sans: "PingFang SC", "Hiragino Sans GB", "Helvetica Neue", sans-serif;
+    --mono: "JetBrains Mono", "SF Mono", "Menlo", monospace;
+    width: 90mm;
+    height: 54mm;
+    background-color: var(--washi);
+    background-image:
+      radial-gradient(rgba(28, 26, 23, 0.03) 1px, transparent 0),
+      linear-gradient(135deg, #faf7f0 0%, #f2ece0 100%);
+    background-size: 3mm 3mm, 100% 100%;
+    color: var(--sumi);
+    font-family: var(--serif);
+    border-radius: 1.5mm;
+    box-shadow: 0 26px 64px rgba(0, 0, 0, 0.48), 0 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 2.8mm 3.2mm;
+    position: relative;
+    overflow: hidden;
+  }
+  :where(.card) a { color: inherit; text-decoration: none; transition: color 0.12s ease; }
+  .card a:hover { color: var(--cinnabar); }
+  .frame {
+    width: 100%; height: 100%;
+    border: 0.35mm solid var(--sumi);
+    padding: 0.55mm;
+    display: flex;
+  }
+  .frame-inner {
+    width: 100%; height: 100%;
+    border: 0.2mm solid rgba(28, 26, 23, 0.35);
+    display: grid;
+    grid-template-columns: 51.0mm 1fr;
+    padding: 2.2mm 2.4mm;
+    gap: 2.0mm;
+  }
+  .left-col {
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding-right: 1.8mm; border-right: 0.22mm solid var(--hairline);
+  }
+  .identity-head { display: flex; align-items: center; justify-content: space-between; gap: 2mm; }
+  .name-block { display: flex; flex-direction: column; gap: 0.7mm; }
+  .name-cn { font-size: 5.3mm; font-weight: 700; letter-spacing: 0.02em; line-height: 1.05; white-space: nowrap; }
+  .name-en { font-family: var(--mono); font-size: 2.05mm; color: var(--muted); letter-spacing: 0.06em; white-space: nowrap; }
+  .seal {
+    width: 8.6mm; height: 8.6mm; background: var(--cinnabar); color: #f9f5ec;
+    border-radius: 0.6mm; padding: 0.6mm;
+    display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
+    place-items: center; font-family: var(--serif); font-size: 3.1mm; font-weight: 700; line-height: 1;
+    box-shadow: inset 0 0 0 0.25mm rgba(249, 245, 236, 0.45); flex-shrink: 0;
+  }
+  .seal:hover { color: #fff; opacity: 0.92; }
+  .titles-bar {
+    padding: 1.3mm 0;
+    border-top: 0.2mm solid var(--hairline);
+    border-bottom: 0.2mm solid var(--hairline);
+    display: flex; align-items: center; flex-wrap: nowrap;
+    column-gap: 0.95mm;
+    font-size: 1.78mm; font-weight: 700; letter-spacing: 0; white-space: nowrap;
+  }
+  .titles-bar .dot { color: var(--cinnabar); font-size: 1.3mm; }
+  .contact-list {
+    display: grid; grid-template-columns: 25.0mm 1fr;
+    row-gap: 0.85mm; column-gap: 1.0mm;
+    font-family: var(--mono); font-size: 1.62mm;
+  }
+  .contact-row { display: flex; align-items: baseline; gap: 0.8mm; white-space: nowrap; }
+  .contact-row .k { font-family: var(--serif); font-size: 1.56mm; font-weight: 700; color: var(--cinnabar); flex-shrink: 0; }
+  .contact-row .v { color: var(--sumi); font-weight: 500; letter-spacing: -0.02em; }
+  .contact-row .v.cjk { font-family: var(--serif); font-weight: 700; }
+  .right-col { display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 0.2mm 0; }
+  .motto { font-size: 1.72mm; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; }
+  .qr-wrap {
+    width: 19.5mm; height: 19.5mm; padding: 0.95mm;
+    background: #fcfaf5; border: 0.25mm solid var(--sumi); position: relative; display: block;
+  }
+  .qr-wrap::before, .qr-wrap::after {
+    content: ""; position: absolute; width: 1.8mm; height: 1.8mm; border-color: var(--cinnabar); border-style: solid;
+  }
+  .qr-wrap::before { top: -0.5mm; left: -0.5mm; border-width: 0.45mm 0 0 0.45mm; }
+  .qr-wrap::after { bottom: -0.5mm; right: -0.5mm; border-width: 0 0.45mm 0.45mm 0; }
+  .qr-svg { width: 100%; height: 100%; display: block; color: var(--sumi); }
+  .qr-caption { text-align: center; font-family: var(--mono); font-size: 1.62mm; color: var(--muted); letter-spacing: 0.01em; white-space: nowrap; }
+
+                .card { cursor: pointer; }
+              </style>
+              <article class="card" aria-label="Ruohang Feng Name Card">
+      <div class="frame">
+        <div class="frame-inner">
+          <div class="left-col">
+            <div class="identity-head">
+              <div class="name-block">
+                <h1 class="name-cn"><a href="/en/about/">Ruohang Feng</a></h1>
+                <div class="name-en"><a href="https://github.com/Vonng">@VONNG</a> · <a href="/en/about/">冯若航</a></div>
+              </div>
+              <a class="seal" href="/en/about/" title="Ruohang Feng">
+                <span>冯</span><span>印</span>
+                <span>若</span><span>航</span>
+              </a>
+            </div>
+            <div class="titles-bar">
+              <a href="https://pgsty.com">PGSTY Founder</a>
+              <span class="dot">◆</span>
+              <a href="https://pigsty.io">Pigsty Creator</a>
+              <span class="dot">◆</span>
+              <a href="https://pg.center">PostgreSQL Expert</a>
+            </div>
+            <div class="contact-list">
+              <a class="contact-row" href="/en/"><span class="k">WEB</span><span class="v">vonng.com</span></a>
+              <a class="contact-row" href="https://github.com/Vonng"><span class="k">GIT</span><span class="v">github.com/Vonng</span></a>
+              <a class="contact-row" href="mailto:rh@vonng.com"><span class="k">MAIL</span><span class="v">rh@vonng.com</span></a>
+              <a class="contact-row" href="https://linkedin.com/in/vonng/"><span class="k">IN</span><span class="v">in/vonng</span></a>
+              <a class="contact-row" href="tel:+15106507902"><span class="k">TEL</span><span class="v">+1 510 650 7902</span></a>
+              <a class="contact-row" href="https://x.com/RonVonng"><span class="k">X</span><span class="v">x.com/RonVonng</span></a>
+            </div>
+          </div>
+          <div class="right-col">
+            <a class="motto" href="/en/">VONNG.COM</a>
+            <a class="qr-wrap" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2" title="Scan on WeChat">
+              <svg class="qr-svg" viewBox="0 0 33 33" shape-rendering="crispEdges" role="img" aria-label="WeChat QR"><path fill="currentColor" d="M0 0h7v1h-7zM8 0h1v1h-1zM10 0h1v1h-1zM13 0h1v1h-1zM15 0h1v1h-1zM17 0h2v1h-2zM21 0h1v1h-1zM23 0h1v1h-1zM28 0h3v1h-3zM0 1h1v1h-1zM6 1h1v1h-1zM11 1h1v1h-1zM13 1h7v1h-7zM23 1h1v1h-1zM25 1h5v1h-5zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM8 2h2v1h-2zM11 2h4v1h-4zM19 2h1v1h-1zM22 2h2v1h-2zM26 2h2v1h-2zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM8 3h1v1h-1zM10 3h3v1h-3zM17 3h6v1h-6zM24 3h2v1h-2zM27 3h1v1h-1zM29 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM9 4h2v1h-2zM12 4h4v1h-4zM17 4h1v1h-1zM20 4h1v1h-1zM23 4h6v1h-6zM30 4h2v1h-2zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM10 5h6v1h-6zM19 5h1v1h-1zM21 5h1v1h-1zM23 5h2v1h-2zM28 5h3v1h-3zM32 5h1v1h-1zM0 6h7v1h-7zM8 6h2v1h-2zM11 6h1v1h-1zM13 6h2v1h-2zM16 6h1v1h-1zM19 6h6v1h-6zM26 6h1v1h-1zM28 6h1v1h-1zM8 7h1v1h-1zM10 7h4v1h-4zM16 7h2v1h-2zM19 7h1v1h-1zM24 7h1v1h-1zM28 7h2v1h-2zM32 7h1v1h-1zM0 8h1v1h-1zM4 8h3v1h-3zM10 8h1v1h-1zM12 8h1v1h-1zM15 8h1v1h-1zM24 8h5v1h-5zM30 8h1v1h-1zM1 9h1v1h-1zM4 9h1v1h-1zM7 9h1v1h-1zM9 9h2v1h-2zM12 9h1v1h-1zM14 9h1v1h-1zM16 9h1v1h-1zM18 9h2v1h-2zM22 9h1v1h-1zM24 9h1v1h-1zM27 9h3v1h-3zM31 9h1v1h-1zM2 10h3v1h-3zM6 10h1v1h-1zM8 10h1v1h-1zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM22 10h5v1h-5zM28 10h1v1h-1zM31 10h2v1h-2zM0 11h5v1h-5zM9 11h2v1h-2zM12 11h1v1h-1zM14 11h2v1h-2zM18 11h1v1h-1zM21 11h2v1h-2zM26 11h1v1h-1zM29 11h1v1h-1zM32 11h1v1h-1zM3 12h6v1h-6zM10 12h1v1h-1zM15 12h1v1h-1zM18 12h1v1h-1zM20 12h3v1h-3zM27 12h1v1h-1zM29 12h3v1h-3zM2 13h4v1h-4zM7 13h1v1h-1zM11 13h1v1h-1zM19 13h1v1h-1zM22 13h1v1h-1zM24 13h2v1h-2zM28 13h1v1h-1zM31 13h1v1h-1zM0 14h3v1h-3zM4 14h7v1h-7zM12 14h6v1h-6zM20 14h3v1h-3zM25 14h4v1h-4zM30 14h2v1h-2zM1 15h1v1h-1zM3 15h1v1h-1zM7 15h4v1h-4zM15 15h1v1h-1zM17 15h2v1h-2zM20 15h2v1h-2zM23 15h2v1h-2zM26 15h1v1h-1zM28 15h2v1h-2zM31 15h1v1h-1zM0 16h2v1h-2zM3 16h2v1h-2zM6 16h1v1h-1zM8 16h1v1h-1zM10 16h1v1h-1zM14 16h2v1h-2zM17 16h7v1h-7zM25 16h2v1h-2zM28 16h3v1h-3zM3 17h1v1h-1zM5 17h1v1h-1zM7 17h1v1h-1zM11 17h1v1h-1zM13 17h1v1h-1zM16 17h1v1h-1zM19 17h4v1h-4zM24 17h3v1h-3zM29 17h2v1h-2zM0 18h1v1h-1zM2 18h1v1h-1zM4 18h1v1h-1zM6 18h1v1h-1zM9 18h1v1h-1zM12 18h6v1h-6zM22 18h1v1h-1zM24 18h1v1h-1zM26 18h2v1h-2zM29 18h2v1h-2zM1 19h1v1h-1zM4 19h2v1h-2zM7 19h1v1h-1zM13 19h1v1h-1zM16 19h3v1h-3zM22 19h3v1h-3zM27 19h1v1h-1zM31 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM4 20h3v1h-3zM8 20h2v1h-2zM18 20h2v1h-2zM24 20h2v1h-2zM27 20h3v1h-3zM2 21h4v1h-4zM7 21h2v1h-2zM10 21h2v1h-2zM13 21h3v1h-3zM18 21h3v1h-3zM24 21h2v1h-2zM27 21h1v1h-1zM29 21h1v1h-1zM31 21h2v1h-2zM1 22h1v1h-1zM3 22h1v1h-1zM6 22h3v1h-3zM12 22h1v1h-1zM14 22h1v1h-1zM16 22h2v1h-2zM21 22h1v1h-1zM23 22h3v1h-3zM27 22h3v1h-3zM31 22h2v1h-2zM0 23h4v1h-4zM7 23h1v1h-1zM18 23h2v1h-2zM21 23h1v1h-1zM23 23h1v1h-1zM26 23h2v1h-2zM29 23h2v1h-2zM32 23h1v1h-1zM0 24h1v1h-1zM2 24h2v1h-2zM5 24h3v1h-3zM10 24h1v1h-1zM12 24h3v1h-3zM18 24h2v1h-2zM21 24h1v1h-1zM26 24h1v1h-1zM29 24h1v1h-1zM31 24h2v1h-2zM8 25h1v1h-1zM11 25h1v1h-1zM17 25h2v1h-2zM20 25h1v1h-1zM23 25h2v1h-2zM0 26h7v1h-7zM8 26h1v1h-1zM10 26h1v1h-1zM12 26h1v1h-1zM14 26h1v1h-1zM16 26h1v1h-1zM18 26h1v1h-1zM20 26h1v1h-1zM22 26h1v1h-1zM24 26h1v1h-1zM26 26h7v1h-7zM0 27h1v1h-1zM6 27h1v1h-1zM13 27h2v1h-2zM18 27h3v1h-3zM22 27h1v1h-1zM24 27h1v1h-1zM26 27h1v1h-1zM32 27h1v1h-1zM0 28h1v1h-1zM2 28h3v1h-3zM6 28h1v1h-1zM9 28h1v1h-1zM12 28h1v1h-1zM14 28h1v1h-1zM20 28h3v1h-3zM26 28h1v1h-1zM28 28h3v1h-3zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h3v1h-3zM6 29h1v1h-1zM8 29h1v1h-1zM10 29h1v1h-1zM14 29h3v1h-3zM19 29h2v1h-2zM22 29h1v1h-1zM26 29h1v1h-1zM28 29h3v1h-3zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h3v1h-3zM6 30h1v1h-1zM12 30h1v1h-1zM17 30h1v1h-1zM20 30h1v1h-1zM23 30h1v1h-1zM26 30h1v1h-1zM28 30h3v1h-3zM32 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM8 31h2v1h-2zM11 31h3v1h-3zM18 31h1v1h-1zM21 31h4v1h-4zM26 31h1v1h-1zM32 31h1v1h-1zM0 32h7v1h-7zM8 32h2v1h-2zM13 32h1v1h-1zM16 32h3v1h-3zM20 32h1v1h-1zM23 32h1v1h-1zM26 32h7v1h-7z"/><rect x="13" y="13" width="7" height="7" fill="#fcfaf5"/><g transform="translate(14.1,14.1) scale(0.2)" fill="#b62d1c" fill-rule="evenodd"><path d="M9.3 2.4C5 2.4 1.5 5.3 1.5 8.9c0 2 1.1 3.8 2.8 5l-.7 2.4 2.7-1.4c.8.2 1.6.4 2.5.4h.6a5.5 5.5 0 0 1-.3-1.8c0-3.4 3.2-6.1 7-6.1h.6C16 4.6 12.9 2.4 9.3 2.4zM6.7 7.8a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1zm5.2 0a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1z"/><path d="M16.5 8.6c-3.4 0-6.1 2.4-6.1 5.3s2.7 5.3 6.1 5.3c.7 0 1.4-.1 2-.3l2.3 1.2-.6-2c1.5-1 2.4-2.5 2.4-4.2 0-2.9-2.7-5.3-6.1-5.3zm-2.1 4.5a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9zm4.2 0a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9z"/></g></svg>
+            </a>
+            <a class="qr-caption" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2">WECHAT · RuohangFeng</a>
+          </div>
+        </div>
+      </div>
+    </article>
+            </template>
+          </div>
+        </div>
+        <footer class="tile-bar">
+          <a class="tile-meta" href="/en/me/2/">
+            <span class="tile-idx" style="background:#b62d1c;color:#ffffff;">02</span>
+            <span class="tile-names">
+              <strong>Kyoto Washi & Cinnabar Seal</strong>
+              <small>东方宣纸与朱印</small>
+            </span>
+          </a>
+          <div class="tile-actions">
+            <button type="button" class="btn-action btn-dl" onclick="downloadTileCard(this, 'vonng-card-en-02.png')" title="Download">
+              <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8m0 0-3-3m3 3 3-3M2.5 13h11"/></svg>
+              <span>Download</span>
+            </button>
+            <a class="btn-action btn-open" href="/en/me/2/">Open Card ↗</a>
+          </div>
+        </footer>
+      </section>
+      <section class="gallery-tile" data-href="/en/me/3/">
+        <div class="tile-stage" style="background: #05080f;" data-card-href="/en/me/3/">
+          <div class="card-host">
+            <template shadowrootmode="open">
+              <style>
+                *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+                
+  .card {
+    --bg: #0b1220;
+    --panel: #101a2e;
+    --border: #233554;
+    --pg-blue: #58a6ff;
+    --pg-cyan: #39d353;
+    --amber: #f2cc60;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --mono: "JetBrains Mono", "SF Mono", "Fira Code", "Menlo", "Consolas", "PingFang SC", monospace;
+    --sans: "PingFang SC", "Inter", "Helvetica Neue", sans-serif;
+    width: 90mm;
+    height: 54mm;
+    background:
+      radial-gradient(circle at 88% 18%, rgba(51, 103, 145, 0.34), transparent 52%),
+      linear-gradient(160deg, #080d18 0%, #0d1627 60%, #09101d 100%);
+    color: var(--text);
+    font-family: var(--mono);
+    border-radius: 2mm;
+    border: 0.3mm solid var(--border);
+    box-shadow: 0 26px 68px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(88, 166, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+  }
+  :where(.card) a { color: inherit; text-decoration: none; transition: color 0.12s ease, border-color 0.12s ease; }
+  .card a:hover { color: var(--amber); }
+  .top-bar {
+    height: 6.2mm; background: rgba(16, 26, 46, 0.9);
+    border-bottom: 0.25mm solid var(--border);
+    padding: 0 3.0mm; display: flex; align-items: center; justify-content: space-between;
+    font-size: 1.82mm; color: var(--muted);
+  }
+  .dots { display: flex; gap: 1.2mm; align-items: center; }
+  .dot { width: 1.8mm; height: 1.8mm; border-radius: 50%; }
+  .dot.r { background: #ff5f56; }
+  .dot.y { background: #ffbd2e; }
+  .dot.g { background: #27c93f; }
+  .session-title { color: #a5d6ff; font-weight: 600; letter-spacing: 0.02em; }
+  .status-pill {
+    color: var(--pg-cyan); background: rgba(57, 211, 83, 0.12);
+    border: 0.2mm solid rgba(57, 211, 83, 0.35);
+    padding: 0.3mm 1.3mm; border-radius: 0.8mm; font-size: 1.65mm; font-weight: 700;
+  }
+  .body {
+    flex: 1; display: grid; grid-template-columns: 54.0mm 1fr;
+    padding: 2.2mm 3.0mm 2.2mm; gap: 2.2mm;
+  }
+  .left-pane { display: flex; flex-direction: column; justify-content: space-between; min-width: 0; }
+  .prompt-line { font-size: 1.68mm; color: var(--muted); white-space: nowrap; }
+  .prompt-line .ps { color: var(--pg-blue); font-weight: 700; }
+  .prompt-line .kw { color: #ff7b72; font-weight: 700; }
+  .prompt-line .str { color: #a5d6ff; }
+  .hero { display: flex; align-items: baseline; gap: 1.4mm; margin: 0.3mm 0; white-space: nowrap; }
+  .name-cn { font-family: var(--sans); font-size: 4.1mm; font-weight: 800; color: #ffffff; letter-spacing: 0.01em; line-height: 1.05; }
+  .name-en { font-size: 2.15mm; font-weight: 700; color: var(--pg-blue); }
+  .handle { font-size: 1.82mm; color: var(--amber); }
+  .badges { display: flex; flex-wrap: nowrap; gap: 0.7mm; }
+  .badge {
+    font-family: var(--sans); font-size: 1.62mm; font-weight: 700;
+    padding: 0.4mm 1.05mm; border-radius: 0.7mm; white-space: nowrap;
+    background: rgba(88, 166, 255, 0.12); border: 0.2mm solid rgba(88, 166, 255, 0.35); color: #cae8ff;
+  }
+  .badge.gold {
+    background: rgba(242, 204, 96, 0.14); border-color: rgba(242, 204, 96, 0.4); color: var(--amber);
+  }
+  .kv-table {
+    border-top: 0.22mm dashed var(--border); padding-top: 1.4mm;
+    display: grid; grid-template-columns: 26.2mm 1fr;
+    row-gap: 0.8mm; column-gap: 0.9mm; font-size: 1.56mm;
+  }
+  .kv { display: flex; align-items: baseline; gap: 0.65mm; white-space: nowrap; }
+  .kv .key { color: #79c0ff; width: 5.8mm; flex-shrink: 0; font-size: 1.42mm; }
+  .kv .val { color: var(--text); font-weight: 500; }
+  .kv .val.cjk { font-family: var(--sans); font-weight: 600; }
+  .right-pane {
+    border-left: 0.22mm dashed var(--border); padding-left: 2.2mm;
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+  }
+  .qr-label { font-size: 1.65mm; color: var(--pg-blue); letter-spacing: 0.04em; width: 100%; text-align: center; }
+  .qr-card {
+    width: 21.0mm; height: 21.0mm; background: #ffffff;
+    padding: 1.1mm; border-radius: 1.2mm;
+    box-shadow: 0 0 0 0.3mm rgba(88, 166, 255, 0.5); display: block;
+  }
+  .qr-svg { width: 100%; height: 100%; display: block; color: #0b1220; }
+  .qr-meta { text-align: center; font-size: 1.58mm; color: var(--muted); line-height: 1.28; white-space: nowrap; }
+  .qr-meta strong { color: var(--pg-cyan); font-weight: 600; }
+
+                .card { cursor: pointer; }
+              </style>
+              <article class="card" aria-label="Ruohang Feng Name Card">
+      <header class="top-bar">
+        <a class="dots" href="/en/"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></a>
+        <a class="session-title" href="https://pgsty.com">psql (18.x) — vonng@pgsty:5432</a>
+        <a class="status-pill" href="https://pg.center">PID 5432</a>
+      </header>
+      <div class="body">
+        <div class="left-pane">
+          <div class="prompt-line">
+            <a href="/en/"><span class="ps">vonng=#</span> <span class="kw">SELECT</span> * <span class="kw">FROM</span> author <span class="kw">WHERE</span> id = <span class="str">'vonng'</span>;</a>
+          </div>
+          <div class="hero">
+            <h1 class="name-cn"><a href="/en/about/">Ruohang Feng</a></h1>
+            <a class="name-en" href="/en/about/">冯若航</a>
+            <a class="handle" href="https://github.com/Vonng">'@Vonng'::text</a>
+          </div>
+          <div class="badges">
+            <a class="badge gold" href="https://pgsty.com">PGSTY Founder</a>
+            <a class="badge" href="https://pigsty.io">Pigsty Creator</a>
+            <a class="badge" href="https://pg.center">PostgreSQL Expert</a>
+          </div>
+          <div class="kv-table">
+            <a class="kv" href="/en/"><span class="key">site</span><span class="val">vonng.com</span></a>
+            <a class="kv" href="https://github.com/Vonng"><span class="key">github</span><span class="val">github.com/Vonng</span></a>
+            <a class="kv" href="mailto:rh@vonng.com"><span class="key">email</span><span class="val">rh@vonng.com</span></a>
+            <a class="kv" href="https://linkedin.com/in/vonng/"><span class="key">linkedin</span><span class="val">in/vonng</span></a>
+            <a class="kv" href="tel:+15106507902"><span class="key">mobile</span><span class="val">+1 510 650 7902</span></a>
+            <a class="kv" href="https://x.com/RonVonng"><span class="key">twitter</span><span class="val">x.com/RonVonng</span></a>
+          </div>
+        </div>
+        <aside class="right-pane">
+          <a class="qr-label" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2">/* WECHAT QR */</a>
+          <a class="qr-card" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2" title="Scan on WeChat">
+            <svg class="qr-svg" viewBox="0 0 33 33" shape-rendering="crispEdges" role="img" aria-label="WeChat QR"><path fill="currentColor" d="M0 0h7v1h-7zM8 0h1v1h-1zM10 0h1v1h-1zM13 0h1v1h-1zM15 0h1v1h-1zM17 0h2v1h-2zM21 0h1v1h-1zM23 0h1v1h-1zM28 0h3v1h-3zM0 1h1v1h-1zM6 1h1v1h-1zM11 1h1v1h-1zM13 1h7v1h-7zM23 1h1v1h-1zM25 1h5v1h-5zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM8 2h2v1h-2zM11 2h4v1h-4zM19 2h1v1h-1zM22 2h2v1h-2zM26 2h2v1h-2zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM8 3h1v1h-1zM10 3h3v1h-3zM17 3h6v1h-6zM24 3h2v1h-2zM27 3h1v1h-1zM29 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM9 4h2v1h-2zM12 4h4v1h-4zM17 4h1v1h-1zM20 4h1v1h-1zM23 4h6v1h-6zM30 4h2v1h-2zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM10 5h6v1h-6zM19 5h1v1h-1zM21 5h1v1h-1zM23 5h2v1h-2zM28 5h3v1h-3zM32 5h1v1h-1zM0 6h7v1h-7zM8 6h2v1h-2zM11 6h1v1h-1zM13 6h2v1h-2zM16 6h1v1h-1zM19 6h6v1h-6zM26 6h1v1h-1zM28 6h1v1h-1zM8 7h1v1h-1zM10 7h4v1h-4zM16 7h2v1h-2zM19 7h1v1h-1zM24 7h1v1h-1zM28 7h2v1h-2zM32 7h1v1h-1zM0 8h1v1h-1zM4 8h3v1h-3zM10 8h1v1h-1zM12 8h1v1h-1zM15 8h1v1h-1zM24 8h5v1h-5zM30 8h1v1h-1zM1 9h1v1h-1zM4 9h1v1h-1zM7 9h1v1h-1zM9 9h2v1h-2zM12 9h1v1h-1zM14 9h1v1h-1zM16 9h1v1h-1zM18 9h2v1h-2zM22 9h1v1h-1zM24 9h1v1h-1zM27 9h3v1h-3zM31 9h1v1h-1zM2 10h3v1h-3zM6 10h1v1h-1zM8 10h1v1h-1zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM22 10h5v1h-5zM28 10h1v1h-1zM31 10h2v1h-2zM0 11h5v1h-5zM9 11h2v1h-2zM12 11h1v1h-1zM14 11h2v1h-2zM18 11h1v1h-1zM21 11h2v1h-2zM26 11h1v1h-1zM29 11h1v1h-1zM32 11h1v1h-1zM3 12h6v1h-6zM10 12h1v1h-1zM15 12h1v1h-1zM18 12h1v1h-1zM20 12h3v1h-3zM27 12h1v1h-1zM29 12h3v1h-3zM2 13h4v1h-4zM7 13h1v1h-1zM11 13h1v1h-1zM19 13h1v1h-1zM22 13h1v1h-1zM24 13h2v1h-2zM28 13h1v1h-1zM31 13h1v1h-1zM0 14h3v1h-3zM4 14h7v1h-7zM12 14h6v1h-6zM20 14h3v1h-3zM25 14h4v1h-4zM30 14h2v1h-2zM1 15h1v1h-1zM3 15h1v1h-1zM7 15h4v1h-4zM15 15h1v1h-1zM17 15h2v1h-2zM20 15h2v1h-2zM23 15h2v1h-2zM26 15h1v1h-1zM28 15h2v1h-2zM31 15h1v1h-1zM0 16h2v1h-2zM3 16h2v1h-2zM6 16h1v1h-1zM8 16h1v1h-1zM10 16h1v1h-1zM14 16h2v1h-2zM17 16h7v1h-7zM25 16h2v1h-2zM28 16h3v1h-3zM3 17h1v1h-1zM5 17h1v1h-1zM7 17h1v1h-1zM11 17h1v1h-1zM13 17h1v1h-1zM16 17h1v1h-1zM19 17h4v1h-4zM24 17h3v1h-3zM29 17h2v1h-2zM0 18h1v1h-1zM2 18h1v1h-1zM4 18h1v1h-1zM6 18h1v1h-1zM9 18h1v1h-1zM12 18h6v1h-6zM22 18h1v1h-1zM24 18h1v1h-1zM26 18h2v1h-2zM29 18h2v1h-2zM1 19h1v1h-1zM4 19h2v1h-2zM7 19h1v1h-1zM13 19h1v1h-1zM16 19h3v1h-3zM22 19h3v1h-3zM27 19h1v1h-1zM31 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM4 20h3v1h-3zM8 20h2v1h-2zM18 20h2v1h-2zM24 20h2v1h-2zM27 20h3v1h-3zM2 21h4v1h-4zM7 21h2v1h-2zM10 21h2v1h-2zM13 21h3v1h-3zM18 21h3v1h-3zM24 21h2v1h-2zM27 21h1v1h-1zM29 21h1v1h-1zM31 21h2v1h-2zM1 22h1v1h-1zM3 22h1v1h-1zM6 22h3v1h-3zM12 22h1v1h-1zM14 22h1v1h-1zM16 22h2v1h-2zM21 22h1v1h-1zM23 22h3v1h-3zM27 22h3v1h-3zM31 22h2v1h-2zM0 23h4v1h-4zM7 23h1v1h-1zM18 23h2v1h-2zM21 23h1v1h-1zM23 23h1v1h-1zM26 23h2v1h-2zM29 23h2v1h-2zM32 23h1v1h-1zM0 24h1v1h-1zM2 24h2v1h-2zM5 24h3v1h-3zM10 24h1v1h-1zM12 24h3v1h-3zM18 24h2v1h-2zM21 24h1v1h-1zM26 24h1v1h-1zM29 24h1v1h-1zM31 24h2v1h-2zM8 25h1v1h-1zM11 25h1v1h-1zM17 25h2v1h-2zM20 25h1v1h-1zM23 25h2v1h-2zM0 26h7v1h-7zM8 26h1v1h-1zM10 26h1v1h-1zM12 26h1v1h-1zM14 26h1v1h-1zM16 26h1v1h-1zM18 26h1v1h-1zM20 26h1v1h-1zM22 26h1v1h-1zM24 26h1v1h-1zM26 26h7v1h-7zM0 27h1v1h-1zM6 27h1v1h-1zM13 27h2v1h-2zM18 27h3v1h-3zM22 27h1v1h-1zM24 27h1v1h-1zM26 27h1v1h-1zM32 27h1v1h-1zM0 28h1v1h-1zM2 28h3v1h-3zM6 28h1v1h-1zM9 28h1v1h-1zM12 28h1v1h-1zM14 28h1v1h-1zM20 28h3v1h-3zM26 28h1v1h-1zM28 28h3v1h-3zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h3v1h-3zM6 29h1v1h-1zM8 29h1v1h-1zM10 29h1v1h-1zM14 29h3v1h-3zM19 29h2v1h-2zM22 29h1v1h-1zM26 29h1v1h-1zM28 29h3v1h-3zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h3v1h-3zM6 30h1v1h-1zM12 30h1v1h-1zM17 30h1v1h-1zM20 30h1v1h-1zM23 30h1v1h-1zM26 30h1v1h-1zM28 30h3v1h-3zM32 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM8 31h2v1h-2zM11 31h3v1h-3zM18 31h1v1h-1zM21 31h4v1h-4zM26 31h1v1h-1zM32 31h1v1h-1zM0 32h7v1h-7zM8 32h2v1h-2zM13 32h1v1h-1zM16 32h3v1h-3zM20 32h1v1h-1zM23 32h1v1h-1zM26 32h7v1h-7z"/><rect x="13" y="13" width="7" height="7" fill="#ffffff"/><g transform="translate(14.1,14.1) scale(0.2)" fill="#1f6feb" fill-rule="evenodd"><path d="M9.3 2.4C5 2.4 1.5 5.3 1.5 8.9c0 2 1.1 3.8 2.8 5l-.7 2.4 2.7-1.4c.8.2 1.6.4 2.5.4h.6a5.5 5.5 0 0 1-.3-1.8c0-3.4 3.2-6.1 7-6.1h.6C16 4.6 12.9 2.4 9.3 2.4zM6.7 7.8a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1zm5.2 0a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1z"/><path d="M16.5 8.6c-3.4 0-6.1 2.4-6.1 5.3s2.7 5.3 6.1 5.3c.7 0 1.4-.1 2-.3l2.3 1.2-.6-2c1.5-1 2.4-2.5 2.4-4.2 0-2.9-2.7-5.3-6.1-5.3zm-2.1 4.5a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9zm4.2 0a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9z"/></g></svg>
+          </a>
+          <a class="qr-meta" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2">
+            <div><strong>RuohangFeng</strong></div>
+            <div>(1 row) · 0.042 ms</div>
+          </a>
+        </aside>
+      </div>
+    </article>
+            </template>
+          </div>
+        </div>
+        <footer class="tile-bar">
+          <a class="tile-meta" href="/en/me/3/">
+            <span class="tile-idx" style="background:#58a6ff;color:#08101c;">03</span>
+            <span class="tile-names">
+              <strong>PostgreSQL psql Terminal</strong>
+              <small>PostgreSQL 极客终端</small>
+            </span>
+          </a>
+          <div class="tile-actions">
+            <button type="button" class="btn-action btn-dl" onclick="downloadTileCard(this, 'vonng-card-en-03.png')" title="Download">
+              <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8m0 0-3-3m3 3 3-3M2.5 13h11"/></svg>
+              <span>Download</span>
+            </button>
+            <a class="btn-action btn-open" href="/en/me/3/">Open Card ↗</a>
+          </div>
+        </footer>
+      </section>
+      <section class="gallery-tile" data-href="/en/me/4/">
+        <div class="tile-stage" style="background: #060607;" data-card-href="/en/me/4/">
+          <div class="card-host">
+            <template shadowrootmode="open">
+              <style>
+                *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+                
+  .card {
+    --obsidian: #0f0f12;
+    --gold-light: #f3dfb2;
+    --gold: #d4af37;
+    --gold-deep: #9c7a23;
+    --silver: #a7a39b;
+    --serif: "Didot", "Bodoni MT", "Songti SC", "STSong", "Noto Serif SC", serif;
+    --sans: "PingFang SC", "Helvetica Neue", "Inter", sans-serif;
+    --mono: "JetBrains Mono", "SF Mono", "Menlo", monospace;
+    width: 90mm;
+    height: 54mm;
+    background:
+      radial-gradient(ellipse at 20% 0%, rgba(212, 175, 55, 0.14), transparent 55%),
+      radial-gradient(ellipse at 95% 100%, rgba(212, 175, 55, 0.1), transparent 50%),
+      linear-gradient(145deg, #151519 0%, #0b0b0d 55%, #121216 100%);
+    color: var(--gold-light);
+    font-family: var(--sans);
+    border-radius: 1.8mm;
+    padding: 2.5mm 2.8mm;
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.78), 0 0 0 1px rgba(212, 175, 55, 0.22);
+    position: relative;
+    overflow: hidden;
+  }
+  :where(.card) a { color: inherit; text-decoration: none; transition: all 0.12s ease; }
+  .card a:hover { color: #ffffff; }
+  .gold-border {
+    width: 100%; height: 100%;
+    border: 0.25mm solid rgba(212, 175, 55, 0.48);
+    border-radius: 1mm;
+    padding: 2.5mm 3.0mm;
+    display: grid; grid-template-columns: 51.5mm 1fr; gap: 2.2mm;
+    position: relative;
+  }
+  .left { display: flex; flex-direction: column; justify-content: space-between; }
+  .crest-row {
+    display: flex; align-items: center; justify-content: space-between;
+    font-family: var(--mono); font-size: 1.72mm; letter-spacing: 0.2em; color: var(--gold);
+    text-transform: uppercase;
+  }
+  .monogram { display: inline-flex; align-items: center; gap: 1.4mm; }
+  .diamond { width: 1.8mm; height: 1.8mm; background: var(--gold); transform: rotate(45deg); display: inline-block; }
+  .identity { margin: 0.3mm 0; }
+  .name-cn {
+    font-family: var(--serif); font-size: 5.3mm; font-weight: 700;
+    letter-spacing: 0.04em; line-height: 1.05;
+    background: linear-gradient(180deg, #fff6dc 0%, #DFB960 55%, #b5892e 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+  }
+  .name-en {
+    margin-top: 0.7mm; font-family: var(--mono); font-size: 2.0mm;
+    letter-spacing: 0.1em; color: var(--silver); text-transform: uppercase; white-space: nowrap;
+  }
+  .name-en .sep { color: var(--gold); margin: 0 0.8mm; }
+  .roles {
+    display: flex; align-items: center; flex-wrap: nowrap; gap: 0.9mm;
+    padding: 1.2mm 0;
+    border-top: 0.2mm solid rgba(212, 175, 55, 0.26);
+    border-bottom: 0.2mm solid rgba(212, 175, 55, 0.26);
+    font-size: 1.78mm; font-weight: 600; letter-spacing: 0.01em; color: #f5e7c4; white-space: nowrap;
+  }
+  .roles .sep { color: var(--gold); font-size: 1.4mm; }
+  .details {
+    display: grid; grid-template-columns: 26.2mm 1fr;
+    row-gap: 0.8mm; column-gap: 1.2mm;
+    font-family: var(--mono); font-size: 1.62mm;
+  }
+  .detail { display: flex; align-items: baseline; gap: 0.75mm; white-space: nowrap; }
+  .detail .k { color: var(--gold); font-size: 1.42mm; letter-spacing: 0.03em; width: 4.2mm; flex-shrink: 0; }
+  .detail .v { color: #d8d3c8; }
+  .detail .v.cjk { font-family: var(--sans); font-weight: 600; }
+  .right {
+    border-left: 0.2mm solid rgba(212, 175, 55, 0.26); padding-left: 2.2mm;
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+  }
+  .qr-cap-top { font-family: var(--mono); font-size: 1.62mm; letter-spacing: 0.18em; color: var(--gold); }
+  .qr-frame {
+    width: 19.8mm; height: 19.8mm; padding: 1.15mm;
+    background: #141418; border: 0.3mm solid var(--gold); border-radius: 0.8mm;
+    box-shadow: inset 0 0 8px rgba(212, 175, 55, 0.16); display: block;
+  }
+  .qr-svg { width: 100%; height: 100%; display: block; color: #edd18a; }
+  .qr-cap-btm { font-family: var(--mono); font-size: 1.58mm; color: var(--silver); letter-spacing: 0.04em; white-space: nowrap; }
+
+                .card { cursor: pointer; }
+              </style>
+              <article class="card" aria-label="Ruohang Feng Name Card">
+      <div class="gold-border">
+        <div class="left">
+          <div class="crest-row">
+            <a class="monogram" href="https://pgsty.com"><span class="diamond"></span><span>PGSTY · EXECUTIVE</span></a>
+            <a href="/en/">VONNG.COM</a>
+          </div>
+          <div class="identity">
+            <h1 class="name-cn"><a href="/en/about/">Ruohang Feng</a></h1>
+            <div class="name-en"><a href="https://github.com/Vonng">@VONNG</a> <span class="sep">/</span> <a href="/en/about/">冯若航</a></div>
+          </div>
+          <div class="roles">
+            <a href="https://pgsty.com">PGSTY Founder</a>
+            <span class="sep">✦</span>
+            <a href="https://pigsty.io">Pigsty Creator</a>
+            <span class="sep">✦</span>
+            <a href="https://pg.center">PostgreSQL Expert</a>
+          </div>
+          <div class="details">
+            <a class="detail" href="/en/"><span class="k">WEB</span><span class="v">vonng.com</span></a>
+            <a class="detail" href="https://github.com/Vonng"><span class="k">GIT</span><span class="v">github.com/Vonng</span></a>
+            <a class="detail" href="mailto:rh@vonng.com"><span class="k">MAIL</span><span class="v">rh@vonng.com</span></a>
+            <a class="detail" href="https://linkedin.com/in/vonng/"><span class="k">IN</span><span class="v">in/vonng</span></a>
+            <a class="detail" href="tel:+15106507902"><span class="k">TEL</span><span class="v">+1 510 650 7902</span></a>
+            <a class="detail" href="https://x.com/RonVonng"><span class="k">X</span><span class="v">x.com/RonVonng</span></a>
+          </div>
+        </div>
+        <div class="right">
+          <a class="qr-cap-top" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2">WECHAT</a>
+          <a class="qr-frame" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2" title="Scan on WeChat">
+            <svg class="qr-svg" viewBox="0 0 33 33" shape-rendering="crispEdges" role="img" aria-label="WeChat QR"><path fill="currentColor" d="M0 0h7v1h-7zM8 0h1v1h-1zM10 0h1v1h-1zM13 0h1v1h-1zM15 0h1v1h-1zM17 0h2v1h-2zM21 0h1v1h-1zM23 0h1v1h-1zM28 0h3v1h-3zM0 1h1v1h-1zM6 1h1v1h-1zM11 1h1v1h-1zM13 1h7v1h-7zM23 1h1v1h-1zM25 1h5v1h-5zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM8 2h2v1h-2zM11 2h4v1h-4zM19 2h1v1h-1zM22 2h2v1h-2zM26 2h2v1h-2zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM8 3h1v1h-1zM10 3h3v1h-3zM17 3h6v1h-6zM24 3h2v1h-2zM27 3h1v1h-1zM29 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM9 4h2v1h-2zM12 4h4v1h-4zM17 4h1v1h-1zM20 4h1v1h-1zM23 4h6v1h-6zM30 4h2v1h-2zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM10 5h6v1h-6zM19 5h1v1h-1zM21 5h1v1h-1zM23 5h2v1h-2zM28 5h3v1h-3zM32 5h1v1h-1zM0 6h7v1h-7zM8 6h2v1h-2zM11 6h1v1h-1zM13 6h2v1h-2zM16 6h1v1h-1zM19 6h6v1h-6zM26 6h1v1h-1zM28 6h1v1h-1zM8 7h1v1h-1zM10 7h4v1h-4zM16 7h2v1h-2zM19 7h1v1h-1zM24 7h1v1h-1zM28 7h2v1h-2zM32 7h1v1h-1zM0 8h1v1h-1zM4 8h3v1h-3zM10 8h1v1h-1zM12 8h1v1h-1zM15 8h1v1h-1zM24 8h5v1h-5zM30 8h1v1h-1zM1 9h1v1h-1zM4 9h1v1h-1zM7 9h1v1h-1zM9 9h2v1h-2zM12 9h1v1h-1zM14 9h1v1h-1zM16 9h1v1h-1zM18 9h2v1h-2zM22 9h1v1h-1zM24 9h1v1h-1zM27 9h3v1h-3zM31 9h1v1h-1zM2 10h3v1h-3zM6 10h1v1h-1zM8 10h1v1h-1zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM22 10h5v1h-5zM28 10h1v1h-1zM31 10h2v1h-2zM0 11h5v1h-5zM9 11h2v1h-2zM12 11h1v1h-1zM14 11h2v1h-2zM18 11h1v1h-1zM21 11h2v1h-2zM26 11h1v1h-1zM29 11h1v1h-1zM32 11h1v1h-1zM3 12h6v1h-6zM10 12h1v1h-1zM15 12h1v1h-1zM18 12h1v1h-1zM20 12h3v1h-3zM27 12h1v1h-1zM29 12h3v1h-3zM2 13h4v1h-4zM7 13h1v1h-1zM11 13h1v1h-1zM19 13h1v1h-1zM22 13h1v1h-1zM24 13h2v1h-2zM28 13h1v1h-1zM31 13h1v1h-1zM0 14h3v1h-3zM4 14h7v1h-7zM12 14h6v1h-6zM20 14h3v1h-3zM25 14h4v1h-4zM30 14h2v1h-2zM1 15h1v1h-1zM3 15h1v1h-1zM7 15h4v1h-4zM15 15h1v1h-1zM17 15h2v1h-2zM20 15h2v1h-2zM23 15h2v1h-2zM26 15h1v1h-1zM28 15h2v1h-2zM31 15h1v1h-1zM0 16h2v1h-2zM3 16h2v1h-2zM6 16h1v1h-1zM8 16h1v1h-1zM10 16h1v1h-1zM14 16h2v1h-2zM17 16h7v1h-7zM25 16h2v1h-2zM28 16h3v1h-3zM3 17h1v1h-1zM5 17h1v1h-1zM7 17h1v1h-1zM11 17h1v1h-1zM13 17h1v1h-1zM16 17h1v1h-1zM19 17h4v1h-4zM24 17h3v1h-3zM29 17h2v1h-2zM0 18h1v1h-1zM2 18h1v1h-1zM4 18h1v1h-1zM6 18h1v1h-1zM9 18h1v1h-1zM12 18h6v1h-6zM22 18h1v1h-1zM24 18h1v1h-1zM26 18h2v1h-2zM29 18h2v1h-2zM1 19h1v1h-1zM4 19h2v1h-2zM7 19h1v1h-1zM13 19h1v1h-1zM16 19h3v1h-3zM22 19h3v1h-3zM27 19h1v1h-1zM31 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM4 20h3v1h-3zM8 20h2v1h-2zM18 20h2v1h-2zM24 20h2v1h-2zM27 20h3v1h-3zM2 21h4v1h-4zM7 21h2v1h-2zM10 21h2v1h-2zM13 21h3v1h-3zM18 21h3v1h-3zM24 21h2v1h-2zM27 21h1v1h-1zM29 21h1v1h-1zM31 21h2v1h-2zM1 22h1v1h-1zM3 22h1v1h-1zM6 22h3v1h-3zM12 22h1v1h-1zM14 22h1v1h-1zM16 22h2v1h-2zM21 22h1v1h-1zM23 22h3v1h-3zM27 22h3v1h-3zM31 22h2v1h-2zM0 23h4v1h-4zM7 23h1v1h-1zM18 23h2v1h-2zM21 23h1v1h-1zM23 23h1v1h-1zM26 23h2v1h-2zM29 23h2v1h-2zM32 23h1v1h-1zM0 24h1v1h-1zM2 24h2v1h-2zM5 24h3v1h-3zM10 24h1v1h-1zM12 24h3v1h-3zM18 24h2v1h-2zM21 24h1v1h-1zM26 24h1v1h-1zM29 24h1v1h-1zM31 24h2v1h-2zM8 25h1v1h-1zM11 25h1v1h-1zM17 25h2v1h-2zM20 25h1v1h-1zM23 25h2v1h-2zM0 26h7v1h-7zM8 26h1v1h-1zM10 26h1v1h-1zM12 26h1v1h-1zM14 26h1v1h-1zM16 26h1v1h-1zM18 26h1v1h-1zM20 26h1v1h-1zM22 26h1v1h-1zM24 26h1v1h-1zM26 26h7v1h-7zM0 27h1v1h-1zM6 27h1v1h-1zM13 27h2v1h-2zM18 27h3v1h-3zM22 27h1v1h-1zM24 27h1v1h-1zM26 27h1v1h-1zM32 27h1v1h-1zM0 28h1v1h-1zM2 28h3v1h-3zM6 28h1v1h-1zM9 28h1v1h-1zM12 28h1v1h-1zM14 28h1v1h-1zM20 28h3v1h-3zM26 28h1v1h-1zM28 28h3v1h-3zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h3v1h-3zM6 29h1v1h-1zM8 29h1v1h-1zM10 29h1v1h-1zM14 29h3v1h-3zM19 29h2v1h-2zM22 29h1v1h-1zM26 29h1v1h-1zM28 29h3v1h-3zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h3v1h-3zM6 30h1v1h-1zM12 30h1v1h-1zM17 30h1v1h-1zM20 30h1v1h-1zM23 30h1v1h-1zM26 30h1v1h-1zM28 30h3v1h-3zM32 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM8 31h2v1h-2zM11 31h3v1h-3zM18 31h1v1h-1zM21 31h4v1h-4zM26 31h1v1h-1zM32 31h1v1h-1zM0 32h7v1h-7zM8 32h2v1h-2zM13 32h1v1h-1zM16 32h3v1h-3zM20 32h1v1h-1zM23 32h1v1h-1zM26 32h7v1h-7z"/><rect x="13" y="13" width="7" height="7" fill="#141418"/><g transform="translate(14.1,14.1) scale(0.2)" fill="#f3dfb2" fill-rule="evenodd"><path d="M9.3 2.4C5 2.4 1.5 5.3 1.5 8.9c0 2 1.1 3.8 2.8 5l-.7 2.4 2.7-1.4c.8.2 1.6.4 2.5.4h.6a5.5 5.5 0 0 1-.3-1.8c0-3.4 3.2-6.1 7-6.1h.6C16 4.6 12.9 2.4 9.3 2.4zM6.7 7.8a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1zm5.2 0a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1z"/><path d="M16.5 8.6c-3.4 0-6.1 2.4-6.1 5.3s2.7 5.3 6.1 5.3c.7 0 1.4-.1 2-.3l2.3 1.2-.6-2c1.5-1 2.4-2.5 2.4-4.2 0-2.9-2.7-5.3-6.1-5.3zm-2.1 4.5a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9zm4.2 0a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9z"/></g></svg>
+          </a>
+          <a class="qr-cap-btm" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2">ID · RuohangFeng</a>
+        </div>
+      </div>
+    </article>
+            </template>
+          </div>
+        </div>
+        <footer class="tile-bar">
+          <a class="tile-meta" href="/en/me/4/">
+            <span class="tile-idx" style="background:#d4af37;color:#0b0b0c;">04</span>
+            <span class="tile-names">
+              <strong>Obsidian & Champagne Gold</strong>
+              <small>黑金奢华压凹</small>
+            </span>
+          </a>
+          <div class="tile-actions">
+            <button type="button" class="btn-action btn-dl" onclick="downloadTileCard(this, 'vonng-card-en-04.png')" title="Download">
+              <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8m0 0-3-3m3 3 3-3M2.5 13h11"/></svg>
+              <span>Download</span>
+            </button>
+            <a class="btn-action btn-open" href="/en/me/4/">Open Card ↗</a>
+          </div>
+        </footer>
+      </section>
+      <section class="gallery-tile" data-href="/en/me/5/">
+        <div class="tile-stage" style="background: #07101c;" data-card-href="/en/me/5/">
+          <div class="card-host">
+            <template shadowrootmode="open">
+              <style>
+                *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+                
+  .card {
+    --bp-deep: #0b223e;
+    --bp-mid: #103158;
+    --line-strong: rgba(140, 208, 255, 0.72);
+    --line-soft: rgba(140, 208, 255, 0.24);
+    --cyan: #7dd3fc;
+    --amber: #ffb020;
+    --white: #f0f7ff;
+    --mono: "JetBrains Mono", "SF Mono", "Menlo", "Consolas", monospace;
+    --sans: "PingFang SC", "Inter", "Helvetica Neue", sans-serif;
+    width: 90mm;
+    height: 54mm;
+    background-color: var(--bp-deep);
+    background-image:
+      linear-gradient(rgba(125, 211, 252, 0.14) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(125, 211, 252, 0.14) 1px, transparent 1px),
+      linear-gradient(rgba(125, 211, 252, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(125, 211, 252, 0.05) 1px, transparent 1px),
+      radial-gradient(circle at 70% 30%, #153e6e 0%, #091d36 100%);
+    background-size: 10mm 10mm, 10mm 10mm, 2mm 2mm, 2mm 2mm, 100% 100%;
+    color: var(--white);
+    font-family: var(--mono);
+    border-radius: 1.2mm;
+    padding: 2.4mm;
+    box-shadow: 0 26px 64px rgba(0, 0, 0, 0.6);
+    position: relative;
+    overflow: hidden;
+  }
+  :where(.card) a { color: inherit; text-decoration: none; transition: color 0.12s ease; }
+  .card a:hover { color: var(--amber); }
+  .sheet {
+    width: 100%; height: 100%;
+    border: 0.35mm solid var(--line-strong);
+    display: grid;
+    grid-template-columns: 55.0mm 1fr;
+    grid-template-rows: 5.8mm 1fr;
+  }
+  .spec-bar {
+    grid-column: 1 / span 2; grid-row: 1;
+    border-bottom: 0.3mm solid var(--line-strong);
+    display: grid; grid-template-columns: 28mm 30mm 1fr;
+    font-size: 1.65mm; letter-spacing: 0.06em;
+    background: rgba(9, 29, 54, 0.65);
+  }
+  .spec-cell {
+    padding: 0 2.4mm; display: flex; align-items: center; justify-content: space-between;
+    border-right: 0.25mm solid var(--line-soft);
+  }
+  .spec-cell:last-child { border-right: none; color: var(--amber); font-weight: 700; }
+  .main-zone {
+    grid-column: 1; grid-row: 2;
+    border-right: 0.3mm solid var(--line-strong);
+    padding: 2.4mm 2.8mm;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .title-block { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5mm; white-space: nowrap; }
+  .name-cn { font-family: var(--sans); font-size: 5.1mm; font-weight: 800; letter-spacing: 0.02em; line-height: 1; color: #fff; }
+  .name-en { font-size: 2.25mm; font-weight: 700; color: var(--cyan); }
+  .tag-id {
+    font-size: 1.85mm; color: var(--amber);
+    border: 0.25mm solid var(--amber); padding: 0.25mm 1.2mm;
+  }
+  .arch-roles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.0mm; }
+  .arch-node {
+    border: 0.25mm solid var(--line-strong);
+    background: rgba(16, 49, 88, 0.65);
+    padding: 0.85mm 0.8mm;
+    font-family: var(--sans); font-size: 1.72mm; font-weight: 700;
+    text-align: center; white-space: nowrap;
+  }
+  .arch-node span { display: block; font-family: var(--mono); font-size: 1.35mm; color: var(--cyan); font-weight: 500; margin-bottom: 0.2mm; }
+  .coords-grid {
+    border-top: 0.25mm solid var(--line-soft);
+    padding-top: 1.4mm;
+    display: grid; grid-template-columns: 26.2mm 1fr;
+    row-gap: 0.8mm; column-gap: 1.2mm;
+    font-size: 1.62mm;
+  }
+  .coord { display: flex; align-items: baseline; gap: 0.75mm; white-space: nowrap; }
+  .coord .k { color: var(--amber); font-weight: 700; width: 4.3mm; flex-shrink: 0; font-size: 1.42mm; }
+  .coord .v { color: var(--white); }
+  .coord .v.cjk { font-family: var(--sans); font-weight: 700; }
+  .qr-zone {
+    grid-column: 2; grid-row: 2;
+    padding: 2.0mm 2.2mm;
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+  }
+  .dim-line {
+    width: 100%; display: flex; align-items: center; justify-content: space-between;
+    font-size: 1.55mm; color: var(--cyan);
+  }
+  .qr-blueprint {
+    width: 20.5mm; height: 20.5mm; padding: 1.1mm;
+    background: #ffffff; border: 0.35mm solid var(--cyan); display: block;
+  }
+  .qr-svg { width: 100%; height: 100%; display: block; color: #0b223e; }
+  .qr-stamp {
+    width: 100%; border: 0.22mm solid var(--line-soft);
+    padding: 0.55mm 1mm; text-align: center; font-size: 1.55mm; color: var(--cyan); white-space: nowrap;
+  }
+
+                .card { cursor: pointer; }
+              </style>
+              <article class="card" aria-label="Ruohang Feng Name Card">
+      <div class="sheet">
+        <header class="spec-bar">
+          <a class="spec-cell" href="/en/"><span>DWG NO.</span><span>VN-2026-05</span></a>
+          <a class="spec-cell" href="https://pigsty.io"><span>SCALE 1:1</span><span>90×54MM</span></a>
+          <a class="spec-cell" href="https://pgsty.com"><span>PGSTY // PIGSTY</span></a>
+        </header>
+        <section class="main-zone">
+          <div class="title-block">
+            <h1 class="name-cn"><a href="/en/about/">Ruohang Feng</a></h1>
+            <a class="name-en" href="/en/about/">冯若航</a>
+            <a class="tag-id" href="https://github.com/Vonng">@Vonng</a>
+          </div>
+          <div class="arch-roles">
+            <a class="arch-node" href="https://pgsty.com"><span>NODE 01</span>PGSTY Founder</a>
+            <a class="arch-node" href="https://pigsty.io"><span>NODE 02</span>Pigsty Creator</a>
+            <a class="arch-node" href="https://pg.center"><span>NODE 03</span>PostgreSQL Expert</a>
+          </div>
+          <div class="coords-grid">
+            <a class="coord" href="/en/"><span class="k">WEB</span><span class="v">vonng.com</span></a>
+            <a class="coord" href="https://github.com/Vonng"><span class="k">GIT</span><span class="v">github.com/Vonng</span></a>
+            <a class="coord" href="mailto:rh@vonng.com"><span class="k">MAIL</span><span class="v">rh@vonng.com</span></a>
+            <a class="coord" href="https://linkedin.com/in/vonng/"><span class="k">IN</span><span class="v">in/vonng</span></a>
+            <a class="coord" href="tel:+15106507902"><span class="k">TEL</span><span class="v">+1 510 650 7902</span></a>
+            <a class="coord" href="https://x.com/RonVonng"><span class="k">X</span><span class="v">x.com/RonVonng</span></a>
+          </div>
+        </section>
+        <aside class="qr-zone">
+          <a class="dim-line" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2"><span>├ 21MM ┤</span><span>WECHAT</span></a>
+          <a class="qr-blueprint" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2" title="Scan on WeChat">
+            <svg class="qr-svg" viewBox="0 0 33 33" shape-rendering="crispEdges" role="img" aria-label="WeChat QR"><path fill="currentColor" d="M0 0h7v1h-7zM8 0h1v1h-1zM10 0h1v1h-1zM13 0h1v1h-1zM15 0h1v1h-1zM17 0h2v1h-2zM21 0h1v1h-1zM23 0h1v1h-1zM28 0h3v1h-3zM0 1h1v1h-1zM6 1h1v1h-1zM11 1h1v1h-1zM13 1h7v1h-7zM23 1h1v1h-1zM25 1h5v1h-5zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM8 2h2v1h-2zM11 2h4v1h-4zM19 2h1v1h-1zM22 2h2v1h-2zM26 2h2v1h-2zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM8 3h1v1h-1zM10 3h3v1h-3zM17 3h6v1h-6zM24 3h2v1h-2zM27 3h1v1h-1zM29 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM9 4h2v1h-2zM12 4h4v1h-4zM17 4h1v1h-1zM20 4h1v1h-1zM23 4h6v1h-6zM30 4h2v1h-2zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM10 5h6v1h-6zM19 5h1v1h-1zM21 5h1v1h-1zM23 5h2v1h-2zM28 5h3v1h-3zM32 5h1v1h-1zM0 6h7v1h-7zM8 6h2v1h-2zM11 6h1v1h-1zM13 6h2v1h-2zM16 6h1v1h-1zM19 6h6v1h-6zM26 6h1v1h-1zM28 6h1v1h-1zM8 7h1v1h-1zM10 7h4v1h-4zM16 7h2v1h-2zM19 7h1v1h-1zM24 7h1v1h-1zM28 7h2v1h-2zM32 7h1v1h-1zM0 8h1v1h-1zM4 8h3v1h-3zM10 8h1v1h-1zM12 8h1v1h-1zM15 8h1v1h-1zM24 8h5v1h-5zM30 8h1v1h-1zM1 9h1v1h-1zM4 9h1v1h-1zM7 9h1v1h-1zM9 9h2v1h-2zM12 9h1v1h-1zM14 9h1v1h-1zM16 9h1v1h-1zM18 9h2v1h-2zM22 9h1v1h-1zM24 9h1v1h-1zM27 9h3v1h-3zM31 9h1v1h-1zM2 10h3v1h-3zM6 10h1v1h-1zM8 10h1v1h-1zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM22 10h5v1h-5zM28 10h1v1h-1zM31 10h2v1h-2zM0 11h5v1h-5zM9 11h2v1h-2zM12 11h1v1h-1zM14 11h2v1h-2zM18 11h1v1h-1zM21 11h2v1h-2zM26 11h1v1h-1zM29 11h1v1h-1zM32 11h1v1h-1zM3 12h6v1h-6zM10 12h1v1h-1zM15 12h1v1h-1zM18 12h1v1h-1zM20 12h3v1h-3zM27 12h1v1h-1zM29 12h3v1h-3zM2 13h4v1h-4zM7 13h1v1h-1zM11 13h1v1h-1zM19 13h1v1h-1zM22 13h1v1h-1zM24 13h2v1h-2zM28 13h1v1h-1zM31 13h1v1h-1zM0 14h3v1h-3zM4 14h7v1h-7zM12 14h6v1h-6zM20 14h3v1h-3zM25 14h4v1h-4zM30 14h2v1h-2zM1 15h1v1h-1zM3 15h1v1h-1zM7 15h4v1h-4zM15 15h1v1h-1zM17 15h2v1h-2zM20 15h2v1h-2zM23 15h2v1h-2zM26 15h1v1h-1zM28 15h2v1h-2zM31 15h1v1h-1zM0 16h2v1h-2zM3 16h2v1h-2zM6 16h1v1h-1zM8 16h1v1h-1zM10 16h1v1h-1zM14 16h2v1h-2zM17 16h7v1h-7zM25 16h2v1h-2zM28 16h3v1h-3zM3 17h1v1h-1zM5 17h1v1h-1zM7 17h1v1h-1zM11 17h1v1h-1zM13 17h1v1h-1zM16 17h1v1h-1zM19 17h4v1h-4zM24 17h3v1h-3zM29 17h2v1h-2zM0 18h1v1h-1zM2 18h1v1h-1zM4 18h1v1h-1zM6 18h1v1h-1zM9 18h1v1h-1zM12 18h6v1h-6zM22 18h1v1h-1zM24 18h1v1h-1zM26 18h2v1h-2zM29 18h2v1h-2zM1 19h1v1h-1zM4 19h2v1h-2zM7 19h1v1h-1zM13 19h1v1h-1zM16 19h3v1h-3zM22 19h3v1h-3zM27 19h1v1h-1zM31 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM4 20h3v1h-3zM8 20h2v1h-2zM18 20h2v1h-2zM24 20h2v1h-2zM27 20h3v1h-3zM2 21h4v1h-4zM7 21h2v1h-2zM10 21h2v1h-2zM13 21h3v1h-3zM18 21h3v1h-3zM24 21h2v1h-2zM27 21h1v1h-1zM29 21h1v1h-1zM31 21h2v1h-2zM1 22h1v1h-1zM3 22h1v1h-1zM6 22h3v1h-3zM12 22h1v1h-1zM14 22h1v1h-1zM16 22h2v1h-2zM21 22h1v1h-1zM23 22h3v1h-3zM27 22h3v1h-3zM31 22h2v1h-2zM0 23h4v1h-4zM7 23h1v1h-1zM18 23h2v1h-2zM21 23h1v1h-1zM23 23h1v1h-1zM26 23h2v1h-2zM29 23h2v1h-2zM32 23h1v1h-1zM0 24h1v1h-1zM2 24h2v1h-2zM5 24h3v1h-3zM10 24h1v1h-1zM12 24h3v1h-3zM18 24h2v1h-2zM21 24h1v1h-1zM26 24h1v1h-1zM29 24h1v1h-1zM31 24h2v1h-2zM8 25h1v1h-1zM11 25h1v1h-1zM17 25h2v1h-2zM20 25h1v1h-1zM23 25h2v1h-2zM0 26h7v1h-7zM8 26h1v1h-1zM10 26h1v1h-1zM12 26h1v1h-1zM14 26h1v1h-1zM16 26h1v1h-1zM18 26h1v1h-1zM20 26h1v1h-1zM22 26h1v1h-1zM24 26h1v1h-1zM26 26h7v1h-7zM0 27h1v1h-1zM6 27h1v1h-1zM13 27h2v1h-2zM18 27h3v1h-3zM22 27h1v1h-1zM24 27h1v1h-1zM26 27h1v1h-1zM32 27h1v1h-1zM0 28h1v1h-1zM2 28h3v1h-3zM6 28h1v1h-1zM9 28h1v1h-1zM12 28h1v1h-1zM14 28h1v1h-1zM20 28h3v1h-3zM26 28h1v1h-1zM28 28h3v1h-3zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h3v1h-3zM6 29h1v1h-1zM8 29h1v1h-1zM10 29h1v1h-1zM14 29h3v1h-3zM19 29h2v1h-2zM22 29h1v1h-1zM26 29h1v1h-1zM28 29h3v1h-3zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h3v1h-3zM6 30h1v1h-1zM12 30h1v1h-1zM17 30h1v1h-1zM20 30h1v1h-1zM23 30h1v1h-1zM26 30h1v1h-1zM28 30h3v1h-3zM32 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM8 31h2v1h-2zM11 31h3v1h-3zM18 31h1v1h-1zM21 31h4v1h-4zM26 31h1v1h-1zM32 31h1v1h-1zM0 32h7v1h-7zM8 32h2v1h-2zM13 32h1v1h-1zM16 32h3v1h-3zM20 32h1v1h-1zM23 32h1v1h-1zM26 32h7v1h-7z"/><rect x="13" y="13" width="7" height="7" fill="#ffffff"/><g transform="translate(14.1,14.1) scale(0.2)" fill="#d97706" fill-rule="evenodd"><path d="M9.3 2.4C5 2.4 1.5 5.3 1.5 8.9c0 2 1.1 3.8 2.8 5l-.7 2.4 2.7-1.4c.8.2 1.6.4 2.5.4h.6a5.5 5.5 0 0 1-.3-1.8c0-3.4 3.2-6.1 7-6.1h.6C16 4.6 12.9 2.4 9.3 2.4zM6.7 7.8a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1zm5.2 0a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1z"/><path d="M16.5 8.6c-3.4 0-6.1 2.4-6.1 5.3s2.7 5.3 6.1 5.3c.7 0 1.4-.1 2-.3l2.3 1.2-.6-2c1.5-1 2.4-2.5 2.4-4.2 0-2.9-2.7-5.3-6.1-5.3zm-2.1 4.5a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9zm4.2 0a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9z"/></g></svg>
+          </a>
+          <a class="qr-stamp" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2">ID: RuohangFeng</a>
+        </aside>
+      </div>
+    </article>
+            </template>
+          </div>
+        </div>
+        <footer class="tile-bar">
+          <a class="tile-meta" href="/en/me/5/">
+            <span class="tile-idx" style="background:#ffb020;color:#0a1829;">05</span>
+            <span class="tile-names">
+              <strong>Engineering Blueprint</strong>
+              <small>工程蓝图与架构制图</small>
+            </span>
+          </a>
+          <div class="tile-actions">
+            <button type="button" class="btn-action btn-dl" onclick="downloadTileCard(this, 'vonng-card-en-05.png')" title="Download">
+              <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8m0 0-3-3m3 3 3-3M2.5 13h11"/></svg>
+              <span>Download</span>
+            </button>
+            <a class="btn-action btn-open" href="/en/me/5/">Open Card ↗</a>
+          </div>
+        </footer>
+      </section>
+      <section class="gallery-tile" data-href="/en/me/6/">
+        <div class="tile-stage" style="background: #cbc6bc;" data-card-href="/en/me/6/">
+          <div class="card-host">
+            <template shadowrootmode="open">
+              <style>
+                *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+                
+  .card {
+    --cream: #f4efe4;
+    --black: #141413;
+    --red: #d92b22;
+    --blue: #1b4793;
+    --yellow: #f2b705;
+    --sans: "Futura", "Avenir Next", "Helvetica Neue", "PingFang SC", sans-serif;
+    --mono: "JetBrains Mono", "SF Mono", "Menlo", monospace;
+    width: 90mm;
+    height: 54mm;
+    background: var(--cream);
+    color: var(--black);
+    font-family: var(--sans);
+    border-radius: 1.5mm;
+    border: 0.65mm solid var(--black);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+    display: grid;
+    grid-template-columns: 4.2mm 54.0mm 1fr;
+    grid-template-rows: 7.2mm 1fr;
+    overflow: hidden;
+    position: relative;
+  }
+  :where(.card) a { color: inherit; text-decoration: none; transition: opacity 0.12s ease, transform 0.12s ease; }
+  .card a:hover { opacity: 0.82; }
+  .color-pillar {
+    grid-column: 1; grid-row: 1 / span 2;
+    border-right: 0.55mm solid var(--black);
+    display: grid; grid-template-rows: 18mm 18mm 1fr;
+  }
+  .color-pillar .r { background: var(--red); border-bottom: 0.55mm solid var(--black); }
+  .color-pillar .b { background: var(--blue); border-bottom: 0.55mm solid var(--black); }
+  .color-pillar .y { background: var(--yellow); }
+  .top-strip {
+    grid-column: 2; grid-row: 1;
+    border-bottom: 0.55mm solid var(--black);
+    border-right: 0.55mm solid var(--black);
+    padding: 0 2.8mm;
+    display: flex; align-items: center; justify-content: space-between;
+    font-family: var(--mono); font-size: 1.82mm; font-weight: 800; letter-spacing: 0.1em;
+    background: var(--cream);
+  }
+  .top-right-cap {
+    grid-column: 3; grid-row: 1;
+    border-bottom: 0.55mm solid var(--black);
+    background: var(--yellow);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono); font-size: 1.9mm; font-weight: 800; letter-spacing: 0.1em;
+  }
+  .main-stage {
+    grid-column: 2; grid-row: 2;
+    border-right: 0.55mm solid var(--black);
+    padding: 2.4mm 2.6mm;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .hero-block { display: flex; align-items: center; justify-content: space-between; gap: 1.2mm; }
+  .name-cn { font-size: 4.7mm; font-weight: 900; line-height: 1; letter-spacing: 0; white-space: nowrap; }
+  .sub-id { text-align: right; white-space: nowrap; }
+  .sub-id .en { font-size: 2.05mm; font-weight: 800; letter-spacing: 0.04em; display: block; }
+  .sub-id .handle {
+    display: inline-block; margin-top: 0.45mm;
+    background: var(--black); color: var(--cream);
+    font-family: var(--mono); font-size: 1.65mm; font-weight: 700; padding: 0.2mm 1.0mm;
+  }
+  .geo-roles { display: flex; gap: 0.75mm; align-items: center; flex-wrap: nowrap; }
+  .geo-tag {
+    font-size: 1.58mm; font-weight: 800; padding: 0.5mm 0.95mm;
+    border: 0.4mm solid var(--black); line-height: 1.1; white-space: nowrap;
+  }
+  .geo-tag.r { background: var(--red); color: #fff; }
+  .geo-tag.b { background: var(--blue); color: #fff; }
+  .geo-tag.y { background: var(--yellow); color: var(--black); }
+  .bau-contacts {
+    border-top: 0.45mm solid var(--black);
+    padding-top: 1.4mm;
+    display: grid; grid-template-columns: 26.2mm 1fr;
+    row-gap: 0.8mm; column-gap: 1.0mm;
+    font-family: var(--mono); font-size: 1.62mm; font-weight: 700;
+  }
+  .bc { display: flex; align-items: center; gap: 1.0mm; white-space: nowrap; }
+  .shape { width: 1.7mm; height: 1.7mm; flex-shrink: 0; display: inline-block; }
+  .shape.cir { background: var(--red); border-radius: 50%; }
+  .shape.sq { background: var(--blue); }
+  .shape.tri {
+    width: 0; height: 0;
+    border-left: 0.95mm solid transparent; border-right: 0.95mm solid transparent;
+    border-bottom: 1.7mm solid var(--black);
+  }
+  .bc .v.cjk { font-family: var(--sans); font-weight: 800; }
+  .qr-stage {
+    grid-column: 3; grid-row: 2;
+    padding: 2.2mm;
+    background: var(--cream);
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+    position: relative;
+  }
+  .qr-bau-box {
+    width: 21.0mm; height: 21.0mm;
+    background: #ffffff;
+    border: 0.55mm solid var(--black);
+    box-shadow: 1.0mm 1.0mm 0 var(--red);
+    padding: 1.1mm; display: block;
+  }
+  .qr-svg { width: 100%; height: 100%; display: block; color: var(--black); }
+  .qr-bau-foot {
+    width: 100%; background: var(--black); color: var(--cream);
+    font-family: var(--mono); font-size: 1.58mm; font-weight: 700;
+    text-align: center; padding: 0.6mm 0; letter-spacing: 0.03em; white-space: nowrap;
+  }
+
+                .card { cursor: pointer; }
+              </style>
+              <article class="card" aria-label="Ruohang Feng Name Card">
+      <div class="color-pillar"><div class="r"></div><div class="b"></div><div class="y"></div></div>
+      <header class="top-strip">
+        <a href="/en/">BAUHAUS · WEIMAR</a>
+        <a href="https://github.com/Vonng">VONNG / 06</a>
+      </header>
+      <a class="top-right-cap" href="/en/">VONNG.COM</a>
+      <section class="main-stage">
+        <div class="hero-block">
+          <h1 class="name-cn"><a href="/en/about/">Ruohang Feng</a></h1>
+          <div class="sub-id">
+            <a class="en" href="/en/about/">冯若航</a>
+            <a class="handle" href="https://github.com/Vonng">@VONNG</a>
+          </div>
+        </div>
+        <div class="geo-roles">
+          <a class="geo-tag r" href="https://pgsty.com">PGSTY Founder</a>
+          <a class="geo-tag b" href="https://pigsty.io">Pigsty Creator</a>
+          <a class="geo-tag y" href="https://pg.center">PostgreSQL Expert</a>
+        </div>
+        <div class="bau-contacts">
+          <a class="bc" href="/en/"><span class="shape cir"></span><span class="v">vonng.com</span></a>
+          <a class="bc" href="https://github.com/Vonng"><span class="shape sq"></span><span class="v">github.com/Vonng</span></a>
+          <a class="bc" href="mailto:rh@vonng.com"><span class="shape tri"></span><span class="v">rh@vonng.com</span></a>
+          <a class="bc" href="https://linkedin.com/in/vonng/"><span class="shape cir"></span><span class="v">in/vonng</span></a>
+          <a class="bc" href="tel:+15106507902"><span class="shape sq"></span><span class="v">+1 510 650 7902</span></a>
+          <a class="bc" href="https://x.com/RonVonng"><span class="shape tri"></span><span class="v">x.com/RonVonng</span></a>
+        </div>
+      </section>
+      <aside class="qr-stage">
+        <a class="qr-bau-box" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2" title="Scan on WeChat">
+          <svg class="qr-svg" viewBox="0 0 33 33" shape-rendering="crispEdges" role="img" aria-label="WeChat QR"><path fill="currentColor" d="M0 0h7v1h-7zM8 0h1v1h-1zM10 0h1v1h-1zM13 0h1v1h-1zM15 0h1v1h-1zM17 0h2v1h-2zM21 0h1v1h-1zM23 0h1v1h-1zM28 0h3v1h-3zM0 1h1v1h-1zM6 1h1v1h-1zM11 1h1v1h-1zM13 1h7v1h-7zM23 1h1v1h-1zM25 1h5v1h-5zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM8 2h2v1h-2zM11 2h4v1h-4zM19 2h1v1h-1zM22 2h2v1h-2zM26 2h2v1h-2zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM8 3h1v1h-1zM10 3h3v1h-3zM17 3h6v1h-6zM24 3h2v1h-2zM27 3h1v1h-1zM29 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM9 4h2v1h-2zM12 4h4v1h-4zM17 4h1v1h-1zM20 4h1v1h-1zM23 4h6v1h-6zM30 4h2v1h-2zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM10 5h6v1h-6zM19 5h1v1h-1zM21 5h1v1h-1zM23 5h2v1h-2zM28 5h3v1h-3zM32 5h1v1h-1zM0 6h7v1h-7zM8 6h2v1h-2zM11 6h1v1h-1zM13 6h2v1h-2zM16 6h1v1h-1zM19 6h6v1h-6zM26 6h1v1h-1zM28 6h1v1h-1zM8 7h1v1h-1zM10 7h4v1h-4zM16 7h2v1h-2zM19 7h1v1h-1zM24 7h1v1h-1zM28 7h2v1h-2zM32 7h1v1h-1zM0 8h1v1h-1zM4 8h3v1h-3zM10 8h1v1h-1zM12 8h1v1h-1zM15 8h1v1h-1zM24 8h5v1h-5zM30 8h1v1h-1zM1 9h1v1h-1zM4 9h1v1h-1zM7 9h1v1h-1zM9 9h2v1h-2zM12 9h1v1h-1zM14 9h1v1h-1zM16 9h1v1h-1zM18 9h2v1h-2zM22 9h1v1h-1zM24 9h1v1h-1zM27 9h3v1h-3zM31 9h1v1h-1zM2 10h3v1h-3zM6 10h1v1h-1zM8 10h1v1h-1zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM22 10h5v1h-5zM28 10h1v1h-1zM31 10h2v1h-2zM0 11h5v1h-5zM9 11h2v1h-2zM12 11h1v1h-1zM14 11h2v1h-2zM18 11h1v1h-1zM21 11h2v1h-2zM26 11h1v1h-1zM29 11h1v1h-1zM32 11h1v1h-1zM3 12h6v1h-6zM10 12h1v1h-1zM15 12h1v1h-1zM18 12h1v1h-1zM20 12h3v1h-3zM27 12h1v1h-1zM29 12h3v1h-3zM2 13h4v1h-4zM7 13h1v1h-1zM11 13h1v1h-1zM19 13h1v1h-1zM22 13h1v1h-1zM24 13h2v1h-2zM28 13h1v1h-1zM31 13h1v1h-1zM0 14h3v1h-3zM4 14h7v1h-7zM12 14h6v1h-6zM20 14h3v1h-3zM25 14h4v1h-4zM30 14h2v1h-2zM1 15h1v1h-1zM3 15h1v1h-1zM7 15h4v1h-4zM15 15h1v1h-1zM17 15h2v1h-2zM20 15h2v1h-2zM23 15h2v1h-2zM26 15h1v1h-1zM28 15h2v1h-2zM31 15h1v1h-1zM0 16h2v1h-2zM3 16h2v1h-2zM6 16h1v1h-1zM8 16h1v1h-1zM10 16h1v1h-1zM14 16h2v1h-2zM17 16h7v1h-7zM25 16h2v1h-2zM28 16h3v1h-3zM3 17h1v1h-1zM5 17h1v1h-1zM7 17h1v1h-1zM11 17h1v1h-1zM13 17h1v1h-1zM16 17h1v1h-1zM19 17h4v1h-4zM24 17h3v1h-3zM29 17h2v1h-2zM0 18h1v1h-1zM2 18h1v1h-1zM4 18h1v1h-1zM6 18h1v1h-1zM9 18h1v1h-1zM12 18h6v1h-6zM22 18h1v1h-1zM24 18h1v1h-1zM26 18h2v1h-2zM29 18h2v1h-2zM1 19h1v1h-1zM4 19h2v1h-2zM7 19h1v1h-1zM13 19h1v1h-1zM16 19h3v1h-3zM22 19h3v1h-3zM27 19h1v1h-1zM31 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM4 20h3v1h-3zM8 20h2v1h-2zM18 20h2v1h-2zM24 20h2v1h-2zM27 20h3v1h-3zM2 21h4v1h-4zM7 21h2v1h-2zM10 21h2v1h-2zM13 21h3v1h-3zM18 21h3v1h-3zM24 21h2v1h-2zM27 21h1v1h-1zM29 21h1v1h-1zM31 21h2v1h-2zM1 22h1v1h-1zM3 22h1v1h-1zM6 22h3v1h-3zM12 22h1v1h-1zM14 22h1v1h-1zM16 22h2v1h-2zM21 22h1v1h-1zM23 22h3v1h-3zM27 22h3v1h-3zM31 22h2v1h-2zM0 23h4v1h-4zM7 23h1v1h-1zM18 23h2v1h-2zM21 23h1v1h-1zM23 23h1v1h-1zM26 23h2v1h-2zM29 23h2v1h-2zM32 23h1v1h-1zM0 24h1v1h-1zM2 24h2v1h-2zM5 24h3v1h-3zM10 24h1v1h-1zM12 24h3v1h-3zM18 24h2v1h-2zM21 24h1v1h-1zM26 24h1v1h-1zM29 24h1v1h-1zM31 24h2v1h-2zM8 25h1v1h-1zM11 25h1v1h-1zM17 25h2v1h-2zM20 25h1v1h-1zM23 25h2v1h-2zM0 26h7v1h-7zM8 26h1v1h-1zM10 26h1v1h-1zM12 26h1v1h-1zM14 26h1v1h-1zM16 26h1v1h-1zM18 26h1v1h-1zM20 26h1v1h-1zM22 26h1v1h-1zM24 26h1v1h-1zM26 26h7v1h-7zM0 27h1v1h-1zM6 27h1v1h-1zM13 27h2v1h-2zM18 27h3v1h-3zM22 27h1v1h-1zM24 27h1v1h-1zM26 27h1v1h-1zM32 27h1v1h-1zM0 28h1v1h-1zM2 28h3v1h-3zM6 28h1v1h-1zM9 28h1v1h-1zM12 28h1v1h-1zM14 28h1v1h-1zM20 28h3v1h-3zM26 28h1v1h-1zM28 28h3v1h-3zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h3v1h-3zM6 29h1v1h-1zM8 29h1v1h-1zM10 29h1v1h-1zM14 29h3v1h-3zM19 29h2v1h-2zM22 29h1v1h-1zM26 29h1v1h-1zM28 29h3v1h-3zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h3v1h-3zM6 30h1v1h-1zM12 30h1v1h-1zM17 30h1v1h-1zM20 30h1v1h-1zM23 30h1v1h-1zM26 30h1v1h-1zM28 30h3v1h-3zM32 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM8 31h2v1h-2zM11 31h3v1h-3zM18 31h1v1h-1zM21 31h4v1h-4zM26 31h1v1h-1zM32 31h1v1h-1zM0 32h7v1h-7zM8 32h2v1h-2zM13 32h1v1h-1zM16 32h3v1h-3zM20 32h1v1h-1zM23 32h1v1h-1zM26 32h7v1h-7z"/><rect x="13" y="13" width="7" height="7" fill="#ffffff"/><g transform="translate(14.1,14.1) scale(0.2)" fill="#1b4793" fill-rule="evenodd"><path d="M9.3 2.4C5 2.4 1.5 5.3 1.5 8.9c0 2 1.1 3.8 2.8 5l-.7 2.4 2.7-1.4c.8.2 1.6.4 2.5.4h.6a5.5 5.5 0 0 1-.3-1.8c0-3.4 3.2-6.1 7-6.1h.6C16 4.6 12.9 2.4 9.3 2.4zM6.7 7.8a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1zm5.2 0a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1z"/><path d="M16.5 8.6c-3.4 0-6.1 2.4-6.1 5.3s2.7 5.3 6.1 5.3c.7 0 1.4-.1 2-.3l2.3 1.2-.6-2c1.5-1 2.4-2.5 2.4-4.2 0-2.9-2.7-5.3-6.1-5.3zm-2.1 4.5a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9zm4.2 0a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9z"/></g></svg>
+        </a>
+        <a class="qr-bau-foot" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2">WECHAT: RuohangFeng</a>
+      </aside>
+    </article>
+            </template>
+          </div>
+        </div>
+        <footer class="tile-bar">
+          <a class="tile-meta" href="/en/me/6/">
+            <span class="tile-idx" style="background:#d92b22;color:#ffffff;">06</span>
+            <span class="tile-names">
+              <strong>Bauhaus Weimar 1923</strong>
+              <small>包豪斯几何构成</small>
+            </span>
+          </a>
+          <div class="tile-actions">
+            <button type="button" class="btn-action btn-dl" onclick="downloadTileCard(this, 'vonng-card-en-06.png')" title="Download">
+              <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8m0 0-3-3m3 3 3-3M2.5 13h11"/></svg>
+              <span>Download</span>
+            </button>
+            <a class="btn-action btn-open" href="/en/me/6/">Open Card ↗</a>
+          </div>
+        </footer>
+      </section>
+      <section class="gallery-tile" data-href="/en/me/7/">
+        <div class="tile-stage" style="background: #1c2826;" data-card-href="/en/me/7/">
+          <div class="card-host">
+            <template shadowrootmode="open">
+              <style>
+                *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+                
+  .card {
+    --stone: #f3f1ea;
+    --pine: #1b3b32;
+    --pine-muted: #4b665d;
+    --terra: #c86446;
+    --rule: rgba(27, 59, 50, 0.24);
+    --serif: "Palatino", "Georgia", "Songti SC", "STSong", "Noto Serif SC", serif;
+    --sans: "PingFang SC", "Helvetica Neue", "Inter", sans-serif;
+    --mono: "JetBrains Mono", "SF Mono", "Menlo", monospace;
+    width: 90mm;
+    height: 54mm;
+    background-color: var(--stone);
+    color: var(--pine);
+    font-family: var(--sans);
+    border-radius: 1.8mm;
+    box-shadow: 0 26px 64px rgba(0, 0, 0, 0.48);
+    position: relative;
+    overflow: hidden;
+    border: 0.35mm solid rgba(27, 59, 50, 0.45);
+  }
+  :where(.card) a { color: inherit; text-decoration: none; transition: color 0.12s ease; }
+  .card a:hover { color: var(--terra); }
+  .topo-bg {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    pointer-events: none; opacity: 0.22;
+  }
+  .layout {
+    position: relative; z-index: 1;
+    width: 100%; height: 100%;
+    padding: 2.8mm 3.2mm;
+    display: grid; grid-template-columns: 53.5mm 1fr; gap: 2.2mm;
+  }
+  .left { display: flex; flex-direction: column; justify-content: space-between; }
+  .coord-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    font-family: var(--mono); font-size: 1.65mm; font-weight: 600;
+    color: var(--pine-muted); letter-spacing: 0.06em;
+    border-bottom: 0.22mm solid var(--rule); padding-bottom: 1.1mm;
+  }
+  .coord-bar .terra { color: var(--terra); font-weight: 700; }
+  .identity { display: flex; align-items: baseline; justify-content: space-between; gap: 1.4mm; white-space: nowrap; }
+  .name-cn { font-family: var(--serif); font-size: 4.8mm; font-weight: 700; letter-spacing: 0.02em; line-height: 1.05; }
+  .name-en { font-family: var(--mono); font-size: 2.0mm; font-weight: 600; color: var(--pine-muted); }
+  .name-en .terra { color: var(--terra); font-weight: 700; }
+  .field-tags { display: flex; flex-wrap: nowrap; gap: 0.9mm; }
+  .ftag {
+    font-size: 1.75mm; font-weight: 700;
+    padding: 0.5mm 1.25mm; border-radius: 99mm;
+    border: 0.28mm solid var(--pine); background: rgba(243, 241, 234, 0.85);
+    line-height: 1.15; white-space: nowrap;
+  }
+  .ftag.fill { background: var(--pine); color: var(--stone); }
+  .ftag.fill:hover { background: var(--terra); border-color: var(--terra); color: #fff; }
+  .ftag.terra { background: var(--terra); border-color: var(--terra); color: #fff; }
+  .ftag.terra:hover { background: var(--pine); border-color: var(--pine); color: #fff; }
+  .log-grid {
+    border-top: 0.22mm solid var(--rule); padding-top: 1.4mm;
+    display: grid; grid-template-columns: 26.5mm 1fr;
+    row-gap: 0.8mm; column-gap: 1.2mm;
+    font-family: var(--mono); font-size: 1.62mm;
+  }
+  .log-item { display: flex; align-items: baseline; gap: 0.8mm; white-space: nowrap; }
+  .log-item .k { color: var(--terra); font-weight: 700; font-size: 1.42mm; width: 4.3mm; flex-shrink: 0; }
+  .log-item .v { color: var(--pine); font-weight: 600; }
+  .log-item .v.cjk { font-family: var(--sans); font-weight: 700; }
+  .right {
+    border-left: 0.22mm solid var(--rule); padding-left: 2.2mm;
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+  }
+  .compass { font-family: var(--mono); font-size: 1.62mm; font-weight: 700; letter-spacing: 0.12em; color: var(--pine-muted); }
+  .qr-specimen {
+    width: 21.0mm; height: 21.0mm; padding: 1.1mm;
+    background: #ffffff; border: 0.3mm solid var(--pine); border-radius: 1.2mm;
+    box-shadow: 0 3px 10px rgba(27, 59, 50, 0.12); display: block;
+  }
+  .qr-svg { width: 100%; height: 100%; display: block; color: var(--pine); }
+  .qr-note { font-family: var(--mono); font-size: 1.6mm; color: var(--pine-muted); font-weight: 600; white-space: nowrap; }
+
+                .card { cursor: pointer; }
+              </style>
+              <article class="card" aria-label="Ruohang Feng Name Card">
+      <svg class="topo-bg" viewBox="0 0 360 216" fill="none" stroke="#1b3b32" stroke-width="0.9">
+        <path d="M-20 40 C 60 10, 140 80, 240 30 C 300 0, 340 50, 380 20" />
+        <path d="M-20 75 C 70 40, 150 115, 250 65 C 310 35, 345 85, 380 55" />
+        <path d="M-20 110 C 80 75, 160 150, 260 100 C 320 70, 350 120, 380 90" />
+        <path d="M-20 145 C 90 110, 175 185, 275 135 C 330 105, 355 155, 380 125" />
+        <path d="M-20 180 C 100 145, 190 215, 290 170 C 340 140, 360 185, 380 165" />
+      </svg>
+      <div class="layout">
+        <div class="left">
+          <div class="coord-bar">
+            <a href="/en/">39°54'N 116°24'E · ELEV 43M</a>
+            <a class="terra" href="/en/">FIELD NOTE // 07</a>
+          </div>
+          <div class="identity">
+            <h1 class="name-cn"><a href="/en/about/">Ruohang Feng</a></h1>
+            <div class="name-en"><a class="terra" href="https://github.com/Vonng">@Vonng</a> · <a href="/en/about/">冯若航</a></div>
+          </div>
+          <div class="field-tags">
+            <a class="ftag terra" href="https://pgsty.com">PGSTY Founder</a>
+            <a class="ftag fill" href="https://pigsty.io">Pigsty Creator</a>
+            <a class="ftag" href="https://pg.center">PostgreSQL Expert</a>
+          </div>
+          <div class="log-grid">
+            <a class="log-item" href="/en/"><span class="k">WEB</span><span class="v">vonng.com</span></a>
+            <a class="log-item" href="https://github.com/Vonng"><span class="k">GIT</span><span class="v">github.com/Vonng</span></a>
+            <a class="log-item" href="mailto:rh@vonng.com"><span class="k">MAIL</span><span class="v">rh@vonng.com</span></a>
+            <a class="log-item" href="https://linkedin.com/in/vonng/"><span class="k">IN</span><span class="v">in/vonng</span></a>
+            <a class="log-item" href="tel:+15106507902"><span class="k">TEL</span><span class="v">+1 510 650 7902</span></a>
+            <a class="log-item" href="https://x.com/RonVonng"><span class="k">X</span><span class="v">x.com/RonVonng</span></a>
+          </div>
+        </div>
+        <aside class="right">
+          <a class="compass" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2">▲ N · WECHAT</a>
+          <a class="qr-specimen" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2" title="Scan on WeChat">
+            <svg class="qr-svg" viewBox="0 0 33 33" shape-rendering="crispEdges" role="img" aria-label="WeChat QR"><path fill="currentColor" d="M0 0h7v1h-7zM8 0h1v1h-1zM10 0h1v1h-1zM13 0h1v1h-1zM15 0h1v1h-1zM17 0h2v1h-2zM21 0h1v1h-1zM23 0h1v1h-1zM28 0h3v1h-3zM0 1h1v1h-1zM6 1h1v1h-1zM11 1h1v1h-1zM13 1h7v1h-7zM23 1h1v1h-1zM25 1h5v1h-5zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM8 2h2v1h-2zM11 2h4v1h-4zM19 2h1v1h-1zM22 2h2v1h-2zM26 2h2v1h-2zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM8 3h1v1h-1zM10 3h3v1h-3zM17 3h6v1h-6zM24 3h2v1h-2zM27 3h1v1h-1zM29 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM9 4h2v1h-2zM12 4h4v1h-4zM17 4h1v1h-1zM20 4h1v1h-1zM23 4h6v1h-6zM30 4h2v1h-2zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM10 5h6v1h-6zM19 5h1v1h-1zM21 5h1v1h-1zM23 5h2v1h-2zM28 5h3v1h-3zM32 5h1v1h-1zM0 6h7v1h-7zM8 6h2v1h-2zM11 6h1v1h-1zM13 6h2v1h-2zM16 6h1v1h-1zM19 6h6v1h-6zM26 6h1v1h-1zM28 6h1v1h-1zM8 7h1v1h-1zM10 7h4v1h-4zM16 7h2v1h-2zM19 7h1v1h-1zM24 7h1v1h-1zM28 7h2v1h-2zM32 7h1v1h-1zM0 8h1v1h-1zM4 8h3v1h-3zM10 8h1v1h-1zM12 8h1v1h-1zM15 8h1v1h-1zM24 8h5v1h-5zM30 8h1v1h-1zM1 9h1v1h-1zM4 9h1v1h-1zM7 9h1v1h-1zM9 9h2v1h-2zM12 9h1v1h-1zM14 9h1v1h-1zM16 9h1v1h-1zM18 9h2v1h-2zM22 9h1v1h-1zM24 9h1v1h-1zM27 9h3v1h-3zM31 9h1v1h-1zM2 10h3v1h-3zM6 10h1v1h-1zM8 10h1v1h-1zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM22 10h5v1h-5zM28 10h1v1h-1zM31 10h2v1h-2zM0 11h5v1h-5zM9 11h2v1h-2zM12 11h1v1h-1zM14 11h2v1h-2zM18 11h1v1h-1zM21 11h2v1h-2zM26 11h1v1h-1zM29 11h1v1h-1zM32 11h1v1h-1zM3 12h6v1h-6zM10 12h1v1h-1zM15 12h1v1h-1zM18 12h1v1h-1zM20 12h3v1h-3zM27 12h1v1h-1zM29 12h3v1h-3zM2 13h4v1h-4zM7 13h1v1h-1zM11 13h1v1h-1zM19 13h1v1h-1zM22 13h1v1h-1zM24 13h2v1h-2zM28 13h1v1h-1zM31 13h1v1h-1zM0 14h3v1h-3zM4 14h7v1h-7zM12 14h6v1h-6zM20 14h3v1h-3zM25 14h4v1h-4zM30 14h2v1h-2zM1 15h1v1h-1zM3 15h1v1h-1zM7 15h4v1h-4zM15 15h1v1h-1zM17 15h2v1h-2zM20 15h2v1h-2zM23 15h2v1h-2zM26 15h1v1h-1zM28 15h2v1h-2zM31 15h1v1h-1zM0 16h2v1h-2zM3 16h2v1h-2zM6 16h1v1h-1zM8 16h1v1h-1zM10 16h1v1h-1zM14 16h2v1h-2zM17 16h7v1h-7zM25 16h2v1h-2zM28 16h3v1h-3zM3 17h1v1h-1zM5 17h1v1h-1zM7 17h1v1h-1zM11 17h1v1h-1zM13 17h1v1h-1zM16 17h1v1h-1zM19 17h4v1h-4zM24 17h3v1h-3zM29 17h2v1h-2zM0 18h1v1h-1zM2 18h1v1h-1zM4 18h1v1h-1zM6 18h1v1h-1zM9 18h1v1h-1zM12 18h6v1h-6zM22 18h1v1h-1zM24 18h1v1h-1zM26 18h2v1h-2zM29 18h2v1h-2zM1 19h1v1h-1zM4 19h2v1h-2zM7 19h1v1h-1zM13 19h1v1h-1zM16 19h3v1h-3zM22 19h3v1h-3zM27 19h1v1h-1zM31 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM4 20h3v1h-3zM8 20h2v1h-2zM18 20h2v1h-2zM24 20h2v1h-2zM27 20h3v1h-3zM2 21h4v1h-4zM7 21h2v1h-2zM10 21h2v1h-2zM13 21h3v1h-3zM18 21h3v1h-3zM24 21h2v1h-2zM27 21h1v1h-1zM29 21h1v1h-1zM31 21h2v1h-2zM1 22h1v1h-1zM3 22h1v1h-1zM6 22h3v1h-3zM12 22h1v1h-1zM14 22h1v1h-1zM16 22h2v1h-2zM21 22h1v1h-1zM23 22h3v1h-3zM27 22h3v1h-3zM31 22h2v1h-2zM0 23h4v1h-4zM7 23h1v1h-1zM18 23h2v1h-2zM21 23h1v1h-1zM23 23h1v1h-1zM26 23h2v1h-2zM29 23h2v1h-2zM32 23h1v1h-1zM0 24h1v1h-1zM2 24h2v1h-2zM5 24h3v1h-3zM10 24h1v1h-1zM12 24h3v1h-3zM18 24h2v1h-2zM21 24h1v1h-1zM26 24h1v1h-1zM29 24h1v1h-1zM31 24h2v1h-2zM8 25h1v1h-1zM11 25h1v1h-1zM17 25h2v1h-2zM20 25h1v1h-1zM23 25h2v1h-2zM0 26h7v1h-7zM8 26h1v1h-1zM10 26h1v1h-1zM12 26h1v1h-1zM14 26h1v1h-1zM16 26h1v1h-1zM18 26h1v1h-1zM20 26h1v1h-1zM22 26h1v1h-1zM24 26h1v1h-1zM26 26h7v1h-7zM0 27h1v1h-1zM6 27h1v1h-1zM13 27h2v1h-2zM18 27h3v1h-3zM22 27h1v1h-1zM24 27h1v1h-1zM26 27h1v1h-1zM32 27h1v1h-1zM0 28h1v1h-1zM2 28h3v1h-3zM6 28h1v1h-1zM9 28h1v1h-1zM12 28h1v1h-1zM14 28h1v1h-1zM20 28h3v1h-3zM26 28h1v1h-1zM28 28h3v1h-3zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h3v1h-3zM6 29h1v1h-1zM8 29h1v1h-1zM10 29h1v1h-1zM14 29h3v1h-3zM19 29h2v1h-2zM22 29h1v1h-1zM26 29h1v1h-1zM28 29h3v1h-3zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h3v1h-3zM6 30h1v1h-1zM12 30h1v1h-1zM17 30h1v1h-1zM20 30h1v1h-1zM23 30h1v1h-1zM26 30h1v1h-1zM28 30h3v1h-3zM32 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM8 31h2v1h-2zM11 31h3v1h-3zM18 31h1v1h-1zM21 31h4v1h-4zM26 31h1v1h-1zM32 31h1v1h-1zM0 32h7v1h-7zM8 32h2v1h-2zM13 32h1v1h-1zM16 32h3v1h-3zM20 32h1v1h-1zM23 32h1v1h-1zM26 32h7v1h-7z"/><rect x="13" y="13" width="7" height="7" fill="#ffffff"/><g transform="translate(14.1,14.1) scale(0.2)" fill="#c86446" fill-rule="evenodd"><path d="M9.3 2.4C5 2.4 1.5 5.3 1.5 8.9c0 2 1.1 3.8 2.8 5l-.7 2.4 2.7-1.4c.8.2 1.6.4 2.5.4h.6a5.5 5.5 0 0 1-.3-1.8c0-3.4 3.2-6.1 7-6.1h.6C16 4.6 12.9 2.4 9.3 2.4zM6.7 7.8a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1zm5.2 0a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1z"/><path d="M16.5 8.6c-3.4 0-6.1 2.4-6.1 5.3s2.7 5.3 6.1 5.3c.7 0 1.4-.1 2-.3l2.3 1.2-.6-2c1.5-1 2.4-2.5 2.4-4.2 0-2.9-2.7-5.3-6.1-5.3zm-2.1 4.5a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9zm4.2 0a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9z"/></g></svg>
+          </a>
+          <a class="qr-note" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2">ID: RuohangFeng</a>
+        </aside>
+      </div>
+    </article>
+            </template>
+          </div>
+        </div>
+        <footer class="tile-bar">
+          <a class="tile-meta" href="/en/me/7/">
+            <span class="tile-idx" style="background:#c86446;color:#ffffff;">07</span>
+            <span class="tile-names">
+              <strong>Alpine Topographic Field Note</strong>
+              <small>冰川等高线博物手札</small>
+            </span>
+          </a>
+          <div class="tile-actions">
+            <button type="button" class="btn-action btn-dl" onclick="downloadTileCard(this, 'vonng-card-en-07.png')" title="Download">
+              <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8m0 0-3-3m3 3 3-3M2.5 13h11"/></svg>
+              <span>Download</span>
+            </button>
+            <a class="btn-action btn-open" href="/en/me/7/">Open Card ↗</a>
+          </div>
+        </footer>
+      </section>
+      <section class="gallery-tile" data-href="/en/me/8/">
+        <div class="tile-stage" style="background: #05070e;" data-card-href="/en/me/8/">
+          <div class="card-host">
+            <template shadowrootmode="open">
+              <style>
+                *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+                
+  .card {
+    --bg: #0b0f1a;
+    --glass: rgba(255, 255, 255, 0.06);
+    --border: rgba(255, 255, 255, 0.16);
+    --text: #f8fafc;
+    --muted: #94a3b8;
+    --cyan: #38bdf8;
+    --indigo: #818cf8;
+    --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "PingFang SC", sans-serif;
+    --mono: "SF Mono", "JetBrains Mono", "Menlo", monospace;
+    width: 90mm;
+    height: 54mm;
+    background:
+      radial-gradient(circle at 16% 18%, rgba(56, 189, 248, 0.28), transparent 45%),
+      radial-gradient(circle at 86% 82%, rgba(129, 140, 248, 0.26), transparent 48%),
+      radial-gradient(circle at 55% 45%, rgba(16, 185, 129, 0.12), transparent 55%),
+      linear-gradient(135deg, #090d16 0%, #111827 50%, #090d16 100%);
+    color: var(--text);
+    font-family: var(--sans);
+    border-radius: 2.8mm;
+    border: 0.3mm solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 28px 72px rgba(0, 0, 0, 0.72), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+    padding: 2.8mm 3.2mm;
+    display: grid;
+    grid-template-columns: 53.0mm 1fr;
+    gap: 2.4mm;
+    position: relative;
+    overflow: hidden;
+  }
+  :where(.card) a { color: inherit; text-decoration: none; transition: color 0.12s ease, border-color 0.12s ease; }
+  .card a:hover { color: var(--cyan); }
+  .left { display: flex; flex-direction: column; justify-content: space-between; }
+  .top-chip-row {
+    display: flex; align-items: center; justify-content: space-between;
+    font-family: var(--mono); font-size: 1.68mm; font-weight: 600;
+    color: var(--cyan); letter-spacing: 0.08em;
+  }
+  .pulse-badge {
+    display: inline-flex; align-items: center; gap: 1.2mm;
+    background: rgba(56, 189, 248, 0.12);
+    border: 0.22mm solid rgba(56, 189, 248, 0.35);
+    padding: 0.35mm 1.4mm; border-radius: 99mm;
+  }
+  .pulse-dot { width: 1.5mm; height: 1.5mm; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 6px var(--cyan); }
+  .hero { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5mm; white-space: nowrap; }
+  .name-cn {
+    font-size: 5.1mm; font-weight: 800; line-height: 1.04; letter-spacing: -0.01em;
+    background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .name-en-wrap { text-align: right; }
+  .name-en { font-size: 2.2mm; font-weight: 600; color: #e2e8f0; display: block; }
+  .handle { font-family: var(--mono); font-size: 1.75mm; color: var(--cyan); }
+  .glass-pills { display: flex; gap: 0.75mm; flex-wrap: nowrap; }
+  .gpill {
+    font-size: 1.62mm; font-weight: 600;
+    padding: 0.45mm 1.05mm; border-radius: 1.2mm;
+    background: rgba(255, 255, 255, 0.08);
+    border: 0.22mm solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(8px);
+    color: #f1f5f9; white-space: nowrap;
+  }
+  .gpill.hi {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.24), rgba(129, 140, 248, 0.24));
+    border-color: rgba(56, 189, 248, 0.5); color: #fff;
+  }
+  .bento-grid {
+    background: rgba(15, 23, 42, 0.55);
+    border: 0.22mm solid rgba(255, 255, 255, 0.12);
+    border-radius: 1.6mm;
+    padding: 1.3mm 1.3mm;
+    display: grid; grid-template-columns: 25.0mm 1fr;
+    row-gap: 0.8mm; column-gap: 0.8mm;
+    font-family: var(--mono); font-size: 1.56mm;
+  }
+  .bitem { display: flex; align-items: baseline; gap: 0.65mm; white-space: nowrap; }
+  .bitem .k { color: var(--cyan); font-size: 1.38mm; font-weight: 700; width: 4.0mm; flex-shrink: 0; }
+  .bitem .v { color: #e2e8f0; font-weight: 500; }
+  .bitem .v.cjk { font-family: var(--sans); font-weight: 600; }
+  .right {
+    background: rgba(255, 255, 255, 0.05);
+    border: 0.22mm solid rgba(255, 255, 255, 0.15);
+    border-radius: 2mm;
+    padding: 1.8mm;
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+  }
+  .qr-top { font-family: var(--mono); font-size: 1.6mm; color: var(--muted); letter-spacing: 0.1em; }
+  .qr-glass {
+    width: 20.5mm; height: 20.5mm; padding: 1.1mm;
+    background: #ffffff; border-radius: 1.4mm;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35); display: block;
+  }
+  .qr-svg { width: 100%; height: 100%; display: block; color: #0f172a; }
+  .qr-btm { font-family: var(--mono); font-size: 1.6mm; color: #cbd5e1; font-weight: 600; white-space: nowrap; }
+
+                .card { cursor: pointer; }
+              </style>
+              <article class="card" aria-label="Ruohang Feng Name Card">
+      <div class="left">
+        <div class="top-chip-row">
+          <a class="pulse-badge" href="https://pgsty.com"><span class="pulse-dot"></span><span>PGSTY · CLOUD NATIVE</span></a>
+          <a href="/en/">VONNG.COM</a>
+        </div>
+        <div class="hero">
+          <h1 class="name-cn"><a href="/en/about/">Ruohang Feng</a></h1>
+          <div class="name-en-wrap">
+            <a class="name-en" href="/en/about/">冯若航</a>
+            <a class="handle" href="https://github.com/Vonng">@Vonng</a>
+          </div>
+        </div>
+        <div class="glass-pills">
+          <a class="gpill hi" href="https://pgsty.com">PGSTY Founder</a>
+          <a class="gpill" href="https://pigsty.io">Pigsty Creator</a>
+          <a class="gpill" href="https://pg.center">PostgreSQL Expert</a>
+        </div>
+        <div class="bento-grid">
+          <a class="bitem" href="/en/"><span class="k">WEB</span><span class="v">vonng.com</span></a>
+          <a class="bitem" href="https://github.com/Vonng"><span class="k">GIT</span><span class="v">github.com/Vonng</span></a>
+          <a class="bitem" href="mailto:rh@vonng.com"><span class="k">MAIL</span><span class="v">rh@vonng.com</span></a>
+          <a class="bitem" href="https://linkedin.com/in/vonng/"><span class="k">IN</span><span class="v">in/vonng</span></a>
+          <a class="bitem" href="tel:+15106507902"><span class="k">TEL</span><span class="v">+1 510 650 7902</span></a>
+          <a class="bitem" href="https://x.com/RonVonng"><span class="k">X</span><span class="v">x.com/RonVonng</span></a>
+        </div>
+      </div>
+      <aside class="right">
+        <a class="qr-top" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2">WECHAT QR</a>
+        <a class="qr-glass" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2" title="Scan on WeChat">
+          <svg class="qr-svg" viewBox="0 0 33 33" shape-rendering="crispEdges" role="img" aria-label="WeChat QR"><path fill="currentColor" d="M0 0h7v1h-7zM8 0h1v1h-1zM10 0h1v1h-1zM13 0h1v1h-1zM15 0h1v1h-1zM17 0h2v1h-2zM21 0h1v1h-1zM23 0h1v1h-1zM28 0h3v1h-3zM0 1h1v1h-1zM6 1h1v1h-1zM11 1h1v1h-1zM13 1h7v1h-7zM23 1h1v1h-1zM25 1h5v1h-5zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM8 2h2v1h-2zM11 2h4v1h-4zM19 2h1v1h-1zM22 2h2v1h-2zM26 2h2v1h-2zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM8 3h1v1h-1zM10 3h3v1h-3zM17 3h6v1h-6zM24 3h2v1h-2zM27 3h1v1h-1zM29 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM9 4h2v1h-2zM12 4h4v1h-4zM17 4h1v1h-1zM20 4h1v1h-1zM23 4h6v1h-6zM30 4h2v1h-2zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM10 5h6v1h-6zM19 5h1v1h-1zM21 5h1v1h-1zM23 5h2v1h-2zM28 5h3v1h-3zM32 5h1v1h-1zM0 6h7v1h-7zM8 6h2v1h-2zM11 6h1v1h-1zM13 6h2v1h-2zM16 6h1v1h-1zM19 6h6v1h-6zM26 6h1v1h-1zM28 6h1v1h-1zM8 7h1v1h-1zM10 7h4v1h-4zM16 7h2v1h-2zM19 7h1v1h-1zM24 7h1v1h-1zM28 7h2v1h-2zM32 7h1v1h-1zM0 8h1v1h-1zM4 8h3v1h-3zM10 8h1v1h-1zM12 8h1v1h-1zM15 8h1v1h-1zM24 8h5v1h-5zM30 8h1v1h-1zM1 9h1v1h-1zM4 9h1v1h-1zM7 9h1v1h-1zM9 9h2v1h-2zM12 9h1v1h-1zM14 9h1v1h-1zM16 9h1v1h-1zM18 9h2v1h-2zM22 9h1v1h-1zM24 9h1v1h-1zM27 9h3v1h-3zM31 9h1v1h-1zM2 10h3v1h-3zM6 10h1v1h-1zM8 10h1v1h-1zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM22 10h5v1h-5zM28 10h1v1h-1zM31 10h2v1h-2zM0 11h5v1h-5zM9 11h2v1h-2zM12 11h1v1h-1zM14 11h2v1h-2zM18 11h1v1h-1zM21 11h2v1h-2zM26 11h1v1h-1zM29 11h1v1h-1zM32 11h1v1h-1zM3 12h6v1h-6zM10 12h1v1h-1zM15 12h1v1h-1zM18 12h1v1h-1zM20 12h3v1h-3zM27 12h1v1h-1zM29 12h3v1h-3zM2 13h4v1h-4zM7 13h1v1h-1zM11 13h1v1h-1zM19 13h1v1h-1zM22 13h1v1h-1zM24 13h2v1h-2zM28 13h1v1h-1zM31 13h1v1h-1zM0 14h3v1h-3zM4 14h7v1h-7zM12 14h6v1h-6zM20 14h3v1h-3zM25 14h4v1h-4zM30 14h2v1h-2zM1 15h1v1h-1zM3 15h1v1h-1zM7 15h4v1h-4zM15 15h1v1h-1zM17 15h2v1h-2zM20 15h2v1h-2zM23 15h2v1h-2zM26 15h1v1h-1zM28 15h2v1h-2zM31 15h1v1h-1zM0 16h2v1h-2zM3 16h2v1h-2zM6 16h1v1h-1zM8 16h1v1h-1zM10 16h1v1h-1zM14 16h2v1h-2zM17 16h7v1h-7zM25 16h2v1h-2zM28 16h3v1h-3zM3 17h1v1h-1zM5 17h1v1h-1zM7 17h1v1h-1zM11 17h1v1h-1zM13 17h1v1h-1zM16 17h1v1h-1zM19 17h4v1h-4zM24 17h3v1h-3zM29 17h2v1h-2zM0 18h1v1h-1zM2 18h1v1h-1zM4 18h1v1h-1zM6 18h1v1h-1zM9 18h1v1h-1zM12 18h6v1h-6zM22 18h1v1h-1zM24 18h1v1h-1zM26 18h2v1h-2zM29 18h2v1h-2zM1 19h1v1h-1zM4 19h2v1h-2zM7 19h1v1h-1zM13 19h1v1h-1zM16 19h3v1h-3zM22 19h3v1h-3zM27 19h1v1h-1zM31 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM4 20h3v1h-3zM8 20h2v1h-2zM18 20h2v1h-2zM24 20h2v1h-2zM27 20h3v1h-3zM2 21h4v1h-4zM7 21h2v1h-2zM10 21h2v1h-2zM13 21h3v1h-3zM18 21h3v1h-3zM24 21h2v1h-2zM27 21h1v1h-1zM29 21h1v1h-1zM31 21h2v1h-2zM1 22h1v1h-1zM3 22h1v1h-1zM6 22h3v1h-3zM12 22h1v1h-1zM14 22h1v1h-1zM16 22h2v1h-2zM21 22h1v1h-1zM23 22h3v1h-3zM27 22h3v1h-3zM31 22h2v1h-2zM0 23h4v1h-4zM7 23h1v1h-1zM18 23h2v1h-2zM21 23h1v1h-1zM23 23h1v1h-1zM26 23h2v1h-2zM29 23h2v1h-2zM32 23h1v1h-1zM0 24h1v1h-1zM2 24h2v1h-2zM5 24h3v1h-3zM10 24h1v1h-1zM12 24h3v1h-3zM18 24h2v1h-2zM21 24h1v1h-1zM26 24h1v1h-1zM29 24h1v1h-1zM31 24h2v1h-2zM8 25h1v1h-1zM11 25h1v1h-1zM17 25h2v1h-2zM20 25h1v1h-1zM23 25h2v1h-2zM0 26h7v1h-7zM8 26h1v1h-1zM10 26h1v1h-1zM12 26h1v1h-1zM14 26h1v1h-1zM16 26h1v1h-1zM18 26h1v1h-1zM20 26h1v1h-1zM22 26h1v1h-1zM24 26h1v1h-1zM26 26h7v1h-7zM0 27h1v1h-1zM6 27h1v1h-1zM13 27h2v1h-2zM18 27h3v1h-3zM22 27h1v1h-1zM24 27h1v1h-1zM26 27h1v1h-1zM32 27h1v1h-1zM0 28h1v1h-1zM2 28h3v1h-3zM6 28h1v1h-1zM9 28h1v1h-1zM12 28h1v1h-1zM14 28h1v1h-1zM20 28h3v1h-3zM26 28h1v1h-1zM28 28h3v1h-3zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h3v1h-3zM6 29h1v1h-1zM8 29h1v1h-1zM10 29h1v1h-1zM14 29h3v1h-3zM19 29h2v1h-2zM22 29h1v1h-1zM26 29h1v1h-1zM28 29h3v1h-3zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h3v1h-3zM6 30h1v1h-1zM12 30h1v1h-1zM17 30h1v1h-1zM20 30h1v1h-1zM23 30h1v1h-1zM26 30h1v1h-1zM28 30h3v1h-3zM32 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM8 31h2v1h-2zM11 31h3v1h-3zM18 31h1v1h-1zM21 31h4v1h-4zM26 31h1v1h-1zM32 31h1v1h-1zM0 32h7v1h-7zM8 32h2v1h-2zM13 32h1v1h-1zM16 32h3v1h-3zM20 32h1v1h-1zM23 32h1v1h-1zM26 32h7v1h-7z"/><rect x="13" y="13" width="7" height="7" fill="#ffffff"/><g transform="translate(14.1,14.1) scale(0.2)" fill="#0284c7" fill-rule="evenodd"><path d="M9.3 2.4C5 2.4 1.5 5.3 1.5 8.9c0 2 1.1 3.8 2.8 5l-.7 2.4 2.7-1.4c.8.2 1.6.4 2.5.4h.6a5.5 5.5 0 0 1-.3-1.8c0-3.4 3.2-6.1 7-6.1h.6C16 4.6 12.9 2.4 9.3 2.4zM6.7 7.8a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1zm5.2 0a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1z"/><path d="M16.5 8.6c-3.4 0-6.1 2.4-6.1 5.3s2.7 5.3 6.1 5.3c.7 0 1.4-.1 2-.3l2.3 1.2-.6-2c1.5-1 2.4-2.5 2.4-4.2 0-2.9-2.7-5.3-6.1-5.3zm-2.1 4.5a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9zm4.2 0a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9z"/></g></svg>
+        </a>
+        <a class="qr-btm" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2">RuohangFeng</a>
+      </aside>
+    </article>
+            </template>
+          </div>
+        </div>
+        <footer class="tile-bar">
+          <a class="tile-meta" href="/en/me/8/">
+            <span class="tile-idx" style="background:#38bdf8;color:#06070f;">08</span>
+            <span class="tile-names">
+              <strong>Titanium & Frosted Glass</strong>
+              <small>钛金属与极光毛玻璃</small>
+            </span>
+          </a>
+          <div class="tile-actions">
+            <button type="button" class="btn-action btn-dl" onclick="downloadTileCard(this, 'vonng-card-en-08.png')" title="Download">
+              <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8m0 0-3-3m3 3 3-3M2.5 13h11"/></svg>
+              <span>Download</span>
+            </button>
+            <a class="btn-action btn-open" href="/en/me/8/">Open Card ↗</a>
+          </div>
+        </footer>
+      </section>
+      <section class="gallery-tile" data-href="/en/me/9/">
+        <div class="tile-stage" style="background: #18181b;" data-card-href="/en/me/9/">
+          <div class="card-host">
+            <template shadowrootmode="open">
+              <style>
+                *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+                
+  .card {
+    --yellow: #ffe600;
+    --pink: #ff4ecd;
+    --cyan: #00f0ff;
+    --lime: #a3ff00;
+    --black: #0a0a0a;
+    --white: #ffffff;
+    --sans: "Arial Black", "Impact", "PingFang SC", "Heiti SC", sans-serif;
+    --mono: "JetBrains Mono", "SF Mono", "Menlo", monospace;
+    width: 90mm;
+    height: 54mm;
+    background-color: var(--yellow);
+    background-image: radial-gradient(var(--black) 0.55px, transparent 0.55px);
+    background-size: 2.4mm 2.4mm;
+    color: var(--black);
+    font-family: var(--sans);
+    border-radius: 2mm;
+    border: 0.7mm solid var(--black);
+    box-shadow: 2mm 2mm 0 var(--black);
+    padding: 2.5mm 2.8mm;
+    display: grid;
+    grid-template-columns: 53.5mm 1fr;
+    gap: 2.2mm;
+    position: relative;
+    overflow: hidden;
+  }
+  :where(.card) a { color: inherit; text-decoration: none; transition: transform 0.1s ease; }
+  .card a:hover { transform: translate(-0.2mm, -0.2mm); }
+  .left { display: flex; flex-direction: column; justify-content: space-between; }
+  .top-row { display: flex; align-items: center; justify-content: space-between; gap: 1.5mm; }
+  .sticker-tag {
+    background: var(--black); color: var(--white);
+    font-family: var(--mono); font-size: 1.8mm; font-weight: 800;
+    padding: 0.4mm 1.5mm; border: 0.45mm solid var(--black);
+    letter-spacing: 0.06em;
+  }
+  .sticker-tag.cyan { background: var(--cyan); color: var(--black); box-shadow: 0.6mm 0.6mm 0 var(--black); }
+  .hero-box {
+    background: var(--white);
+    border: 0.55mm solid var(--black);
+    box-shadow: 0.9mm 0.9mm 0 var(--black);
+    padding: 1.3mm 2.0mm;
+    display: flex; align-items: baseline; justify-content: space-between; gap: 1.4mm;
+    white-space: nowrap;
+  }
+  .name-cn { font-size: 5.3mm; font-weight: 900; line-height: 1; letter-spacing: -0.01em; }
+  .name-en { font-family: var(--mono); font-size: 2.15mm; font-weight: 900; background: var(--lime); padding: 0.2mm 1mm; border: 0.35mm solid var(--black); }
+  .pop-roles { display: flex; flex-wrap: nowrap; gap: 0.7mm; }
+  .pop-pill {
+    font-size: 1.56mm; font-weight: 900;
+    padding: 0.4mm 0.92mm;
+    border: 0.45mm solid var(--black);
+    box-shadow: 0.6mm 0.6mm 0 var(--black);
+    line-height: 1.1; white-space: nowrap;
+  }
+  .pop-pill.p1 { background: var(--pink); color: var(--white); }
+  .pop-pill.p2 { background: var(--cyan); color: var(--black); }
+  .pop-pill.p3 { background: var(--lime); color: var(--black); }
+  .pop-grid {
+    background: var(--white);
+    border: 0.5mm solid var(--black);
+    box-shadow: 0.85mm 0.85mm 0 var(--black);
+    padding: 1.05mm 1.15mm;
+    display: grid; grid-template-columns: 24.8mm 1fr;
+    row-gap: 0.65mm; column-gap: 0.8mm;
+    font-family: var(--mono); font-size: 1.54mm; font-weight: 800;
+  }
+  .pitem { display: flex; align-items: baseline; gap: 0.65mm; white-space: nowrap; }
+  .pitem .k {
+    background: var(--black); color: var(--yellow);
+    font-size: 1.35mm; padding: 0.1mm 0.6mm; flex-shrink: 0;
+  }
+  .pitem .v { color: var(--black); }
+  .pitem .v.cjk { font-family: var(--sans); font-weight: 900; }
+  .right {
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+    padding: 0 0.8mm 0.8mm 0;
+  }
+  .qr-pop-card {
+    width: 100%; height: 100%;
+    background: var(--white);
+    border: 0.55mm solid var(--black);
+    box-shadow: 0.8mm 0.8mm 0 var(--black);
+    padding: 1.3mm;
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+  }
+  .qr-pop-head {
+    width: 100%; background: var(--pink); color: var(--white);
+    border: 0.4mm solid var(--black);
+    font-family: var(--mono); font-size: 1.58mm; font-weight: 900;
+    text-align: center; padding: 0.25mm 0;
+  }
+  .qr-pop-box { width: 19.6mm; height: 19.6mm; padding: 0.5mm; background: #fff; display: block; }
+  .qr-svg { width: 100%; height: 100%; display: block; color: var(--black); }
+  .qr-pop-foot {
+    font-family: var(--mono); font-size: 1.58mm; font-weight: 900;
+    background: var(--lime); border: 0.35mm solid var(--black);
+    width: 100%; text-align: center; padding: 0.2mm 0; white-space: nowrap;
+  }
+
+                .card { cursor: pointer; }
+              </style>
+              <article class="card" aria-label="Ruohang Feng Name Card">
+      <div class="left">
+        <div class="top-row">
+          <a class="sticker-tag" href="/en/">VONNG.COM</a>
+          <a class="sticker-tag cyan" href="https://github.com/Vonng">@VONNG // 09</a>
+        </div>
+        <div class="hero-box">
+          <h1 class="name-cn"><a href="/en/about/">Ruohang Feng</a></h1>
+          <a class="name-en" href="/en/about/">冯若航</a>
+        </div>
+        <div class="pop-roles">
+          <a class="pop-pill p1" href="https://pgsty.com">PGSTY Founder</a>
+          <a class="pop-pill p2" href="https://pigsty.io">Pigsty Creator</a>
+          <a class="pop-pill p3" href="https://pg.center">PostgreSQL Mage</a>
+        </div>
+        <div class="pop-grid">
+          <a class="pitem" href="/en/"><span class="k">WEB</span><span class="v">vonng.com</span></a>
+          <a class="pitem" href="https://github.com/Vonng"><span class="k">GH</span><span class="v">github.com/Vonng</span></a>
+          <a class="pitem" href="mailto:rh@vonng.com"><span class="k">MAIL</span><span class="v">rh@vonng.com</span></a>
+          <a class="pitem" href="https://linkedin.com/in/vonng/"><span class="k">IN</span><span class="v">in/vonng</span></a>
+          <a class="pitem" href="tel:+15106507902"><span class="k">TEL</span><span class="v">+1 510 650 7902</span></a>
+          <a class="pitem" href="https://x.com/RonVonng"><span class="k">X</span><span class="v">x.com/RonVonng</span></a>
+        </div>
+      </div>
+      <aside class="right">
+        <div class="qr-pop-card">
+          <a class="qr-pop-head" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2">SCAN WECHAT</a>
+          <a class="qr-pop-box" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2" title="Scan on WeChat">
+            <svg class="qr-svg" viewBox="0 0 33 33" shape-rendering="crispEdges" role="img" aria-label="WeChat QR"><path fill="currentColor" d="M0 0h7v1h-7zM8 0h1v1h-1zM10 0h1v1h-1zM13 0h1v1h-1zM15 0h1v1h-1zM17 0h2v1h-2zM21 0h1v1h-1zM23 0h1v1h-1zM28 0h3v1h-3zM0 1h1v1h-1zM6 1h1v1h-1zM11 1h1v1h-1zM13 1h7v1h-7zM23 1h1v1h-1zM25 1h5v1h-5zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM8 2h2v1h-2zM11 2h4v1h-4zM19 2h1v1h-1zM22 2h2v1h-2zM26 2h2v1h-2zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM8 3h1v1h-1zM10 3h3v1h-3zM17 3h6v1h-6zM24 3h2v1h-2zM27 3h1v1h-1zM29 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM9 4h2v1h-2zM12 4h4v1h-4zM17 4h1v1h-1zM20 4h1v1h-1zM23 4h6v1h-6zM30 4h2v1h-2zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM10 5h6v1h-6zM19 5h1v1h-1zM21 5h1v1h-1zM23 5h2v1h-2zM28 5h3v1h-3zM32 5h1v1h-1zM0 6h7v1h-7zM8 6h2v1h-2zM11 6h1v1h-1zM13 6h2v1h-2zM16 6h1v1h-1zM19 6h6v1h-6zM26 6h1v1h-1zM28 6h1v1h-1zM8 7h1v1h-1zM10 7h4v1h-4zM16 7h2v1h-2zM19 7h1v1h-1zM24 7h1v1h-1zM28 7h2v1h-2zM32 7h1v1h-1zM0 8h1v1h-1zM4 8h3v1h-3zM10 8h1v1h-1zM12 8h1v1h-1zM15 8h1v1h-1zM24 8h5v1h-5zM30 8h1v1h-1zM1 9h1v1h-1zM4 9h1v1h-1zM7 9h1v1h-1zM9 9h2v1h-2zM12 9h1v1h-1zM14 9h1v1h-1zM16 9h1v1h-1zM18 9h2v1h-2zM22 9h1v1h-1zM24 9h1v1h-1zM27 9h3v1h-3zM31 9h1v1h-1zM2 10h3v1h-3zM6 10h1v1h-1zM8 10h1v1h-1zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM22 10h5v1h-5zM28 10h1v1h-1zM31 10h2v1h-2zM0 11h5v1h-5zM9 11h2v1h-2zM12 11h1v1h-1zM14 11h2v1h-2zM18 11h1v1h-1zM21 11h2v1h-2zM26 11h1v1h-1zM29 11h1v1h-1zM32 11h1v1h-1zM3 12h6v1h-6zM10 12h1v1h-1zM15 12h1v1h-1zM18 12h1v1h-1zM20 12h3v1h-3zM27 12h1v1h-1zM29 12h3v1h-3zM2 13h4v1h-4zM7 13h1v1h-1zM11 13h1v1h-1zM19 13h1v1h-1zM22 13h1v1h-1zM24 13h2v1h-2zM28 13h1v1h-1zM31 13h1v1h-1zM0 14h3v1h-3zM4 14h7v1h-7zM12 14h6v1h-6zM20 14h3v1h-3zM25 14h4v1h-4zM30 14h2v1h-2zM1 15h1v1h-1zM3 15h1v1h-1zM7 15h4v1h-4zM15 15h1v1h-1zM17 15h2v1h-2zM20 15h2v1h-2zM23 15h2v1h-2zM26 15h1v1h-1zM28 15h2v1h-2zM31 15h1v1h-1zM0 16h2v1h-2zM3 16h2v1h-2zM6 16h1v1h-1zM8 16h1v1h-1zM10 16h1v1h-1zM14 16h2v1h-2zM17 16h7v1h-7zM25 16h2v1h-2zM28 16h3v1h-3zM3 17h1v1h-1zM5 17h1v1h-1zM7 17h1v1h-1zM11 17h1v1h-1zM13 17h1v1h-1zM16 17h1v1h-1zM19 17h4v1h-4zM24 17h3v1h-3zM29 17h2v1h-2zM0 18h1v1h-1zM2 18h1v1h-1zM4 18h1v1h-1zM6 18h1v1h-1zM9 18h1v1h-1zM12 18h6v1h-6zM22 18h1v1h-1zM24 18h1v1h-1zM26 18h2v1h-2zM29 18h2v1h-2zM1 19h1v1h-1zM4 19h2v1h-2zM7 19h1v1h-1zM13 19h1v1h-1zM16 19h3v1h-3zM22 19h3v1h-3zM27 19h1v1h-1zM31 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM4 20h3v1h-3zM8 20h2v1h-2zM18 20h2v1h-2zM24 20h2v1h-2zM27 20h3v1h-3zM2 21h4v1h-4zM7 21h2v1h-2zM10 21h2v1h-2zM13 21h3v1h-3zM18 21h3v1h-3zM24 21h2v1h-2zM27 21h1v1h-1zM29 21h1v1h-1zM31 21h2v1h-2zM1 22h1v1h-1zM3 22h1v1h-1zM6 22h3v1h-3zM12 22h1v1h-1zM14 22h1v1h-1zM16 22h2v1h-2zM21 22h1v1h-1zM23 22h3v1h-3zM27 22h3v1h-3zM31 22h2v1h-2zM0 23h4v1h-4zM7 23h1v1h-1zM18 23h2v1h-2zM21 23h1v1h-1zM23 23h1v1h-1zM26 23h2v1h-2zM29 23h2v1h-2zM32 23h1v1h-1zM0 24h1v1h-1zM2 24h2v1h-2zM5 24h3v1h-3zM10 24h1v1h-1zM12 24h3v1h-3zM18 24h2v1h-2zM21 24h1v1h-1zM26 24h1v1h-1zM29 24h1v1h-1zM31 24h2v1h-2zM8 25h1v1h-1zM11 25h1v1h-1zM17 25h2v1h-2zM20 25h1v1h-1zM23 25h2v1h-2zM0 26h7v1h-7zM8 26h1v1h-1zM10 26h1v1h-1zM12 26h1v1h-1zM14 26h1v1h-1zM16 26h1v1h-1zM18 26h1v1h-1zM20 26h1v1h-1zM22 26h1v1h-1zM24 26h1v1h-1zM26 26h7v1h-7zM0 27h1v1h-1zM6 27h1v1h-1zM13 27h2v1h-2zM18 27h3v1h-3zM22 27h1v1h-1zM24 27h1v1h-1zM26 27h1v1h-1zM32 27h1v1h-1zM0 28h1v1h-1zM2 28h3v1h-3zM6 28h1v1h-1zM9 28h1v1h-1zM12 28h1v1h-1zM14 28h1v1h-1zM20 28h3v1h-3zM26 28h1v1h-1zM28 28h3v1h-3zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h3v1h-3zM6 29h1v1h-1zM8 29h1v1h-1zM10 29h1v1h-1zM14 29h3v1h-3zM19 29h2v1h-2zM22 29h1v1h-1zM26 29h1v1h-1zM28 29h3v1h-3zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h3v1h-3zM6 30h1v1h-1zM12 30h1v1h-1zM17 30h1v1h-1zM20 30h1v1h-1zM23 30h1v1h-1zM26 30h1v1h-1zM28 30h3v1h-3zM32 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM8 31h2v1h-2zM11 31h3v1h-3zM18 31h1v1h-1zM21 31h4v1h-4zM26 31h1v1h-1zM32 31h1v1h-1zM0 32h7v1h-7zM8 32h2v1h-2zM13 32h1v1h-1zM16 32h3v1h-3zM20 32h1v1h-1zM23 32h1v1h-1zM26 32h7v1h-7z"/><rect x="13" y="13" width="7" height="7" fill="#ffffff"/><g transform="translate(14.1,14.1) scale(0.2)" fill="#ff007f" fill-rule="evenodd"><path d="M9.3 2.4C5 2.4 1.5 5.3 1.5 8.9c0 2 1.1 3.8 2.8 5l-.7 2.4 2.7-1.4c.8.2 1.6.4 2.5.4h.6a5.5 5.5 0 0 1-.3-1.8c0-3.4 3.2-6.1 7-6.1h.6C16 4.6 12.9 2.4 9.3 2.4zM6.7 7.8a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1zm5.2 0a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1z"/><path d="M16.5 8.6c-3.4 0-6.1 2.4-6.1 5.3s2.7 5.3 6.1 5.3c.7 0 1.4-.1 2-.3l2.3 1.2-.6-2c1.5-1 2.4-2.5 2.4-4.2 0-2.9-2.7-5.3-6.1-5.3zm-2.1 4.5a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9zm4.2 0a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9z"/></g></svg>
+          </a>
+          <a class="qr-pop-foot" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2">RuohangFeng</a>
+        </div>
+      </aside>
+    </article>
+            </template>
+          </div>
+        </div>
+        <footer class="tile-bar">
+          <a class="tile-meta" href="/en/me/9/">
+            <span class="tile-idx" style="background:#ffe600;color:#0a0a0a;">09</span>
+            <span class="tile-names">
+              <strong>Neo-Brutalist Pop Sticker</strong>
+              <small>新粗野主义波普</small>
+            </span>
+          </a>
+          <div class="tile-actions">
+            <button type="button" class="btn-action btn-dl" onclick="downloadTileCard(this, 'vonng-card-en-09.png')" title="Download">
+              <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8m0 0-3-3m3 3 3-3M2.5 13h11"/></svg>
+              <span>Download</span>
+            </button>
+            <a class="btn-action btn-open" href="/en/me/9/">Open Card ↗</a>
+          </div>
+        </footer>
+      </section>
+      <section class="gallery-tile" data-href="/en/wechat/">
+        <div class="tile-stage" style="background: radial-gradient(circle at 50% 25%, rgba(7, 193, 96, 0.16), transparent 60%), #111916; padding: 24px 18px;" data-card-href="/en/wechat/">
+          <div style="width: 310px; max-width: 82vw; filter: drop-shadow(0 18px 38px rgba(0,0,0,0.45));">
+            <img src="/img/wechat-official.svg" alt="WeChat Official Account · 老冯云数" style="width:100%;height:auto;display:block;border-radius:18px;" loading="lazy">
+          </div>
+        </div>
+        <footer class="tile-bar">
+          <a class="tile-meta" href="/en/wechat/">
+            <span class="tile-idx" style="background:#07c160;color:#ffffff;">MP</span>
+            <span class="tile-names">
+              <strong>WeChat Official Account · 老冯云数</strong>
+              <small>微信公众号 · 老冯云数</small>
+            </span>
+          </a>
+          <div class="tile-actions">
+            <a class="btn-action btn-dl" href="/img/wechat-official.svg" download="vonng-wechat-official.svg" title="SVG">
+              <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8m0 0-3-3m3 3 3-3M2.5 13h11"/></svg>
+              <span>SVG</span>
+            </a>
+            <a class="btn-action btn-open" href="/en/wechat/">Open Card ↗</a>
+          </div>
+        </footer>
+      </section>
+      <section class="gallery-tile" data-href="/img/wechat.svg">
+        <div class="tile-stage" style="background: radial-gradient(circle at 50% 25%, rgba(7, 193, 96, 0.16), transparent 60%), #111916; padding: 24px 18px;" data-card-href="/img/wechat.svg">
+          <div style="width: 310px; max-width: 82vw; filter: drop-shadow(0 18px 38px rgba(0,0,0,0.45));">
+            <img src="/img/wechat.svg" alt="Personal WeChat · Ruohang Feng" style="width:100%;height:auto;display:block;border-radius:18px;" loading="lazy">
+          </div>
+        </div>
+        <footer class="tile-bar">
+          <a class="tile-meta" href="/img/wechat.svg">
+            <span class="tile-idx" style="background:#07c160;color:#ffffff;">WX</span>
+            <span class="tile-names">
+              <strong>Personal WeChat · Ruohang Feng</strong>
+              <small>个人微信 · RuohangFeng</small>
+            </span>
+          </a>
+          <div class="tile-actions">
+            <a class="btn-action btn-dl" href="/img/wechat.svg" download="vonng-wechat.svg" title="SVG">
+              <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8m0 0-3-3m3 3 3-3M2.5 13h11"/></svg>
+              <span>SVG</span>
+            </a>
+            <a class="btn-action btn-open" href="/img/wechat.svg">Open Card ↗</a>
+          </div>
+        </footer>
+      </section>
+    </main>
+  </div>
+  <nav class="style-dock" aria-label="Name Card Navigation">
+    <a class="nav-arrow" href="/en/wechat/" title="←" aria-label="Previous">‹</a><a href="/en/me/" aria-current="page" title="Overview">Overview</a><span class="sep"></span><a href="/en/me/0/" title="PostgreSQL Classic Default">00</a><a href="/en/me/1/" title="Swiss International Grid">01</a><a href="/en/me/2/" title="Kyoto Washi & Cinnabar Seal">02</a><a href="/en/me/3/" title="PostgreSQL psql Terminal">03</a><a href="/en/me/4/" title="Obsidian & Champagne Gold">04</a><a href="/en/me/5/" title="Engineering Blueprint">05</a><a href="/en/me/6/" title="Bauhaus Weimar 1923">06</a><a href="/en/me/7/" title="Alpine Topographic Field Note">07</a><a href="/en/me/8/" title="Titanium & Frosted Glass">08</a><a href="/en/me/9/" title="Neo-Brutalist Pop Sticker">09</a><span class="sep"></span><a href="/en/wechat/" title="微信公众号：老冯云数">WeChat</a><a class="nav-arrow" href="/en/me/0/" title="→" aria-label="Next">›</a><span class="sep"></span><a class="icon-btn lang-btn" href="/me/" title="Switch Language: 中文" aria-label="Switch Language: 中文"><svg viewBox="0 0 640 512" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.8 27.4s-18 12.5-27.4 6.8l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg></a><a class="icon-btn home-btn" href="/en/" title="Home" aria-label="Home"><svg viewBox="0 0 576 512" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg></a>
+  </nav>
+  <script>
+    async function downloadTileCard(btnEl, filename) {
+      try {
+        btnEl.style.opacity = '0.55';
+        const tile = btnEl.closest('.gallery-tile');
+        const host = tile.querySelector('.card-host');
+        const sr = host.shadowRoot;
+        const cardEl = sr.querySelector('.card');
+        const styleEl = sr.querySelector('style');
+        const cssText = styleEl ? styleEl.textContent : '';
+        const clone = cardEl.cloneNode(true);
+        clone.style.transformOrigin = '0 0';
+        clone.style.transform = 'scale(4.40972222)';
+        clone.style.boxShadow = 'none';
+        clone.style.margin = '0';
+        const serialized = new XMLSerializer().serializeToString(clone);
+        const svgStr = `<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900"><foreignObject x="0" y="0" width="1500" height="900"><div xmlns="http://www.w3.org/1999/xhtml" style="width:1500px;height:900px;overflow:hidden;margin:0;padding:0;-webkit-font-smoothing:antialiased;"><style><![CDATA[${cssText}]]></style>${serialized}</div></foreignObject></svg>`;
+        const dataUrl = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgStr);
+        const img = new Image();
+        await new Promise((resolve, reject) => {
+          img.onload = resolve;
+          img.onerror = reject;
+          img.src = dataUrl;
+        });
+        const canvas = document.createElement('canvas');
+        canvas.width = 1500;
+        canvas.height = 900;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, 1500, 900);
+        const a = document.createElement('a');
+        a.href = canvas.toDataURL('image/png');
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      } finally {
+        btnEl.style.opacity = '';
+      }
+    }
+    document.querySelectorAll('.tile-stage').forEach(stage => {
+      const href = stage.getAttribute('data-card-href');
+      stage.addEventListener('click', e => {
+        const path = e.composedPath();
+        for (const el of path) {
+          if (el && el.tagName === 'A' && el.getAttribute('href')) {
+            return;
+          }
+        }
+        window.location.href = href;
+      });
+    });
+    document.addEventListener('keydown', e => {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D' || e.key === 'l' || e.key === 'L') location.href = '/en/me/0/';
+      if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A' || e.key === 'h' || e.key === 'H') location.href = '/en/wechat/';
+    });
+  </script>
+</body>
+</html>

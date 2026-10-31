@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ruohang Feng (@Vonng) — Titanium & Frosted Glass (08)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style id="card-style">
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    min-height: 100%;
+    background: #05070e;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px 68px;
+  }
+  .stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @media (min-width: 640px)  { .stage { zoom: 1.5; } }
+  @media (min-width: 1024px) { .stage { zoom: 1.95; } }
+  @media (min-width: 1440px) { .stage { zoom: 2.3; } }
+
+  .card {
+    --bg: #0b0f1a;
+    --glass: rgba(255, 255, 255, 0.06);
+    --border: rgba(255, 255, 255, 0.16);
+    --text: #f8fafc;
+    --muted: #94a3b8;
+    --cyan: #38bdf8;
+    --indigo: #818cf8;
+    --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "PingFang SC", sans-serif;
+    --mono: "SF Mono", "JetBrains Mono", "Menlo", monospace;
+    width: 90mm;
+    height: 54mm;
+    background:
+      radial-gradient(circle at 16% 18%, rgba(56, 189, 248, 0.28), transparent 45%),
+      radial-gradient(circle at 86% 82%, rgba(129, 140, 248, 0.26), transparent 48%),
+      radial-gradient(circle at 55% 45%, rgba(16, 185, 129, 0.12), transparent 55%),
+      linear-gradient(135deg, #090d16 0%, #111827 50%, #090d16 100%);
+    color: var(--text);
+    font-family: var(--sans);
+    border-radius: 2.8mm;
+    border: 0.3mm solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 28px 72px rgba(0, 0, 0, 0.72), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+    padding: 2.8mm 3.2mm;
+    display: grid;
+    grid-template-columns: 53.0mm 1fr;
+    gap: 2.4mm;
+    position: relative;
+    overflow: hidden;
+  }
+  :where(.card) a { color: inherit; text-decoration: none; transition: color 0.12s ease, border-color 0.12s ease; }
+  .card a:hover { color: var(--cyan); }
+  .left { display: flex; flex-direction: column; justify-content: space-between; }
+  .top-chip-row {
+    display: flex; align-items: center; justify-content: space-between;
+    font-family: var(--mono); font-size: 1.68mm; font-weight: 600;
+    color: var(--cyan); letter-spacing: 0.08em;
+  }
+  .pulse-badge {
+    display: inline-flex; align-items: center; gap: 1.2mm;
+    background: rgba(56, 189, 248, 0.12);
+    border: 0.22mm solid rgba(56, 189, 248, 0.35);
+    padding: 0.35mm 1.4mm; border-radius: 99mm;
+  }
+  .pulse-dot { width: 1.5mm; height: 1.5mm; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 6px var(--cyan); }
+  .hero { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5mm; white-space: nowrap; }
+  .name-cn {
+    font-size: 5.1mm; font-weight: 800; line-height: 1.04; letter-spacing: -0.01em;
+    background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .name-en-wrap { text-align: right; }
+  .name-en { font-size: 2.2mm; font-weight: 600; color: #e2e8f0; display: block; }
+  .handle { font-family: var(--mono); font-size: 1.75mm; color: var(--cyan); }
+  .glass-pills { display: flex; gap: 0.75mm; flex-wrap: nowrap; }
+  .gpill {
+    font-size: 1.62mm; font-weight: 600;
+    padding: 0.45mm 1.05mm; border-radius: 1.2mm;
+    background: rgba(255, 255, 255, 0.08);
+    border: 0.22mm solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(8px);
+    color: #f1f5f9; white-space: nowrap;
+  }
+  .gpill.hi {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.24), rgba(129, 140, 248, 0.24));
+    border-color: rgba(56, 189, 248, 0.5); color: #fff;
+  }
+  .bento-grid {
+    background: rgba(15, 23, 42, 0.55);
+    border: 0.22mm solid rgba(255, 255, 255, 0.12);
+    border-radius: 1.6mm;
+    padding: 1.3mm 1.3mm;
+    display: grid; grid-template-columns: 25.0mm 1fr;
+    row-gap: 0.8mm; column-gap: 0.8mm;
+    font-family: var(--mono); font-size: 1.56mm;
+  }
+  .bitem { display: flex; align-items: baseline; gap: 0.65mm; white-space: nowrap; }
+  .bitem .k { color: var(--cyan); font-size: 1.38mm; font-weight: 700; width: 4.0mm; flex-shrink: 0; }
+  .bitem .v { color: #e2e8f0; font-weight: 500; }
+  .bitem .v.cjk { font-family: var(--sans); font-weight: 600; }
+  .right {
+    background: rgba(255, 255, 255, 0.05);
+    border: 0.22mm solid rgba(255, 255, 255, 0.15);
+    border-radius: 2mm;
+    padding: 1.8mm;
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+  }
+  .qr-top { font-family: var(--mono); font-size: 1.6mm; color: var(--muted); letter-spacing: 0.1em; }
+  .qr-glass {
+    width: 20.5mm; height: 20.5mm; padding: 1.1mm;
+    background: #ffffff; border-radius: 1.4mm;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35); display: block;
+  }
+  .qr-svg { width: 100%; height: 100%; display: block; color: #0f172a; }
+  .qr-btm { font-family: var(--mono); font-size: 1.6mm; color: #cbd5e1; font-weight: 600; white-space: nowrap; }
+
+  @media print {
+    @page { size: 90mm 54mm; margin: 0; }
+    html, body { background: none; padding: 0; margin: 0; min-height: auto; display: block; }
+    .stage { zoom: 1 !important; display: block; }
+    .card { box-shadow: none !important; border-radius: 0 !important; }
+  }
+</style>
+</head>
+<body>
+  <main class="stage">
+    <article class="card" aria-label="Ruohang Feng Name Card">
+      <div class="left">
+        <div class="top-chip-row">
+          <a class="pulse-badge" href="https://pgsty.com"><span class="pulse-dot"></span><span>PGSTY · CLOUD NATIVE</span></a>
+          <a href="/en/">VONNG.COM</a>
+        </div>
+        <div class="hero">
+          <h1 class="name-cn"><a href="/en/about/">Ruohang Feng</a></h1>
+          <div class="name-en-wrap">
+            <a class="name-en" href="/en/about/">冯若航</a>
+            <a class="handle" href="https://github.com/Vonng">@Vonng</a>
+          </div>
+        </div>
+        <div class="glass-pills">
+          <a class="gpill hi" href="https://pgsty.com">PGSTY Founder</a>
+          <a class="gpill" href="https://pigsty.io">Pigsty Creator</a>
+          <a class="gpill" href="https://pg.center">PostgreSQL Expert</a>
+        </div>
+        <div class="bento-grid">
+          <a class="bitem" href="/en/"><span class="k">WEB</span><span class="v">vonng.com</span></a>
+          <a class="bitem" href="https://github.com/Vonng"><span class="k">GIT</span><span class="v">github.com/Vonng</span></a>
+          <a class="bitem" href="mailto:rh@vonng.com"><span class="k">MAIL</span><span class="v">rh@vonng.com</span></a>
+          <a class="bitem" href="https://linkedin.com/in/vonng/"><span class="k">IN</span><span class="v">in/vonng</span></a>
+          <a class="bitem" href="tel:+15106507902"><span class="k">TEL</span><span class="v">+1 510 650 7902</span></a>
+          <a class="bitem" href="https://x.com/RonVonng"><span class="k">X</span><span class="v">x.com/RonVonng</span></a>
+        </div>
+      </div>
+      <aside class="right">
+        <a class="qr-top" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2">WECHAT QR</a>
+        <a class="qr-glass" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2" title="Scan on WeChat">
+          <svg class="qr-svg" viewBox="0 0 33 33" shape-rendering="crispEdges" role="img" aria-label="WeChat QR"><path fill="currentColor" d="M0 0h7v1h-7zM8 0h1v1h-1zM10 0h1v1h-1zM13 0h1v1h-1zM15 0h1v1h-1zM17 0h2v1h-2zM21 0h1v1h-1zM23 0h1v1h-1zM28 0h3v1h-3zM0 1h1v1h-1zM6 1h1v1h-1zM11 1h1v1h-1zM13 1h7v1h-7zM23 1h1v1h-1zM25 1h5v1h-5zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM8 2h2v1h-2zM11 2h4v1h-4zM19 2h1v1h-1zM22 2h2v1h-2zM26 2h2v1h-2zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM8 3h1v1h-1zM10 3h3v1h-3zM17 3h6v1h-6zM24 3h2v1h-2zM27 3h1v1h-1zM29 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM9 4h2v1h-2zM12 4h4v1h-4zM17 4h1v1h-1zM20 4h1v1h-1zM23 4h6v1h-6zM30 4h2v1h-2zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM10 5h6v1h-6zM19 5h1v1h-1zM21 5h1v1h-1zM23 5h2v1h-2zM28 5h3v1h-3zM32 5h1v1h-1zM0 6h7v1h-7zM8 6h2v1h-2zM11 6h1v1h-1zM13 6h2v1h-2zM16 6h1v1h-1zM19 6h6v1h-6zM26 6h1v1h-1zM28 6h1v1h-1zM8 7h1v1h-1zM10 7h4v1h-4zM16 7h2v1h-2zM19 7h1v1h-1zM24 7h1v1h-1zM28 7h2v1h-2zM32 7h1v1h-1zM0 8h1v1h-1zM4 8h3v1h-3zM10 8h1v1h-1zM12 8h1v1h-1zM15 8h1v1h-1zM24 8h5v1h-5zM30 8h1v1h-1zM1 9h1v1h-1zM4 9h1v1h-1zM7 9h1v1h-1zM9 9h2v1h-2zM12 9h1v1h-1zM14 9h1v1h-1zM16 9h1v1h-1zM18 9h2v1h-2zM22 9h1v1h-1zM24 9h1v1h-1zM27 9h3v1h-3zM31 9h1v1h-1zM2 10h3v1h-3zM6 10h1v1h-1zM8 10h1v1h-1zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM22 10h5v1h-5zM28 10h1v1h-1zM31 10h2v1h-2zM0 11h5v1h-5zM9 11h2v1h-2zM12 11h1v1h-1zM14 11h2v1h-2zM18 11h1v1h-1zM21 11h2v1h-2zM26 11h1v1h-1zM29 11h1v1h-1zM32 11h1v1h-1zM3 12h6v1h-6zM10 12h1v1h-1zM15 12h1v1h-1zM18 12h1v1h-1zM20 12h3v1h-3zM27 12h1v1h-1zM29 12h3v1h-3zM2 13h4v1h-4zM7 13h1v1h-1zM11 13h1v1h-1zM19 13h1v1h-1zM22 13h1v1h-1zM24 13h2v1h-2zM28 13h1v1h-1zM31 13h1v1h-1zM0 14h3v1h-3zM4 14h7v1h-7zM12 14h6v1h-6zM20 14h3v1h-3zM25 14h4v1h-4zM30 14h2v1h-2zM1 15h1v1h-1zM3 15h1v1h-1zM7 15h4v1h-4zM15 15h1v1h-1zM17 15h2v1h-2zM20 15h2v1h-2zM23 15h2v1h-2zM26 15h1v1h-1zM28 15h2v1h-2zM31 15h1v1h-1zM0 16h2v1h-2zM3 16h2v1h-2zM6 16h1v1h-1zM8 16h1v1h-1zM10 16h1v1h-1zM14 16h2v1h-2zM17 16h7v1h-7zM25 16h2v1h-2zM28 16h3v1h-3zM3 17h1v1h-1zM5 17h1v1h-1zM7 17h1v1h-1zM11 17h1v1h-1zM13 17h1v1h-1zM16 17h1v1h-1zM19 17h4v1h-4zM24 17h3v1h-3zM29 17h2v1h-2zM0 18h1v1h-1zM2 18h1v1h-1zM4 18h1v1h-1zM6 18h1v1h-1zM9 18h1v1h-1zM12 18h6v1h-6zM22 18h1v1h-1zM24 18h1v1h-1zM26 18h2v1h-2zM29 18h2v1h-2zM1 19h1v1h-1zM4 19h2v1h-2zM7 19h1v1h-1zM13 19h1v1h-1zM16 19h3v1h-3zM22 19h3v1h-3zM27 19h1v1h-1zM31 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM4 20h3v1h-3zM8 20h2v1h-2zM18 20h2v1h-2zM24 20h2v1h-2zM27 20h3v1h-3zM2 21h4v1h-4zM7 21h2v1h-2zM10 21h2v1h-2zM13 21h3v1h-3zM18 21h3v1h-3zM24 21h2v1h-2zM27 21h1v1h-1zM29 21h1v1h-1zM31 21h2v1h-2zM1 22h1v1h-1zM3 22h1v1h-1zM6 22h3v1h-3zM12 22h1v1h-1zM14 22h1v1h-1zM16 22h2v1h-2zM21 22h1v1h-1zM23 22h3v1h-3zM27 22h3v1h-3zM31 22h2v1h-2zM0 23h4v1h-4zM7 23h1v1h-1zM18 23h2v1h-2zM21 23h1v1h-1zM23 23h1v1h-1zM26 23h2v1h-2zM29 23h2v1h-2zM32 23h1v1h-1zM0 24h1v1h-1zM2 24h2v1h-2zM5 24h3v1h-3zM10 24h1v1h-1zM12 24h3v1h-3zM18 24h2v1h-2zM21 24h1v1h-1zM26 24h1v1h-1zM29 24h1v1h-1zM31 24h2v1h-2zM8 25h1v1h-1zM11 25h1v1h-1zM17 25h2v1h-2zM20 25h1v1h-1zM23 25h2v1h-2zM0 26h7v1h-7zM8 26h1v1h-1zM10 26h1v1h-1zM12 26h1v1h-1zM14 26h1v1h-1zM16 26h1v1h-1zM18 26h1v1h-1zM20 26h1v1h-1zM22 26h1v1h-1zM24 26h1v1h-1zM26 26h7v1h-7zM0 27h1v1h-1zM6 27h1v1h-1zM13 27h2v1h-2zM18 27h3v1h-3zM22 27h1v1h-1zM24 27h1v1h-1zM26 27h1v1h-1zM32 27h1v1h-1zM0 28h1v1h-1zM2 28h3v1h-3zM6 28h1v1h-1zM9 28h1v1h-1zM12 28h1v1h-1zM14 28h1v1h-1zM20 28h3v1h-3zM26 28h1v1h-1zM28 28h3v1h-3zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h3v1h-3zM6 29h1v1h-1zM8 29h1v1h-1zM10 29h1v1h-1zM14 29h3v1h-3zM19 29h2v1h-2zM22 29h1v1h-1zM26 29h1v1h-1zM28 29h3v1h-3zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h3v1h-3zM6 30h1v1h-1zM12 30h1v1h-1zM17 30h1v1h-1zM20 30h1v1h-1zM23 30h1v1h-1zM26 30h1v1h-1zM28 30h3v1h-3zM32 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM8 31h2v1h-2zM11 31h3v1h-3zM18 31h1v1h-1zM21 31h4v1h-4zM26 31h1v1h-1zM32 31h1v1h-1zM0 32h7v1h-7zM8 32h2v1h-2zM13 32h1v1h-1zM16 32h3v1h-3zM20 32h1v1h-1zM23 32h1v1h-1zM26 32h7v1h-7z"/><rect x="13" y="13" width="7" height="7" fill="#ffffff"/><g transform="translate(14.1,14.1) scale(0.2)" fill="#0284c7" fill-rule="evenodd"><path d="M9.3 2.4C5 2.4 1.5 5.3 1.5 8.9c0 2 1.1 3.8 2.8 5l-.7 2.4 2.7-1.4c.8.2 1.6.4 2.5.4h.6a5.5 5.5 0 0 1-.3-1.8c0-3.4 3.2-6.1 7-6.1h.6C16 4.6 12.9 2.4 9.3 2.4zM6.7 7.8a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1zm5.2 0a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1z"/><path d="M16.5 8.6c-3.4 0-6.1 2.4-6.1 5.3s2.7 5.3 6.1 5.3c.7 0 1.4-.1 2-.3l2.3 1.2-.6-2c1.5-1 2.4-2.5 2.4-4.2 0-2.9-2.7-5.3-6.1-5.3zm-2.1 4.5a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9zm4.2 0a.95.95 0 1 1 0-1.9.95.95 0 0 1 0 1.9z"/></g></svg>
+        </a>
+        <a class="qr-btm" href="https://u.wechat.com/MCSMxIo4eNCBgmF6wloeEAE?s=2">RuohangFeng</a>
+      </aside>
+    </article>
+  </main>
+  
+<nav class="style-dock" aria-label="Name Card Navigation">
+  <a class="nav-arrow" href="/en/me/7/" title="←" aria-label="Previous">‹</a><a href="/en/me/" title="Overview">Overview</a><span class="sep"></span><a href="/en/me/0/" title="PostgreSQL Classic Default">00</a><a href="/en/me/1/" title="Swiss International Grid">01</a><a href="/en/me/2/" title="Kyoto Washi & Cinnabar Seal">02</a><a href="/en/me/3/" title="PostgreSQL psql Terminal">03</a><a href="/en/me/4/" title="Obsidian & Champagne Gold">04</a><a href="/en/me/5/" title="Engineering Blueprint">05</a><a href="/en/me/6/" title="Bauhaus Weimar 1923">06</a><a href="/en/me/7/" title="Alpine Topographic Field Note">07</a><a href="/en/me/8/" aria-current="page" title="Titanium & Frosted Glass">08</a><a href="/en/me/9/" title="Neo-Brutalist Pop Sticker">09</a><span class="sep"></span><a href="/en/wechat/" title="微信公众号：老冯云数">WeChat</a><a class="nav-arrow" href="/en/me/9/" title="→" aria-label="Next">›</a><span class="sep"></span><button type="button" class="dl-btn" onclick="downloadSingleCard(this, 'vonng-card-en-08.png')" title="Download"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8m0 0-3-3m3 3 3-3M2.5 13h11"/></svg><span>Download</span></button><a class="icon-btn lang-btn" href="/me/8/" title="Switch Language: 中文" aria-label="Switch Language: 中文"><svg viewBox="0 0 640 512" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.8 27.4s-18 12.5-27.4 6.8l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg></a><a class="icon-btn home-btn" href="/en/" title="Home" aria-label="Home"><svg viewBox="0 0 576 512" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg></a>
+</nav>
+<style>
+  .style-dock {
+    position: fixed;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 5px 8px;
+    border-radius: 999px;
+    background: rgba(16, 18, 22, 0.84);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.38);
+    font: 500 11px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    z-index: 100;
+    white-space: nowrap;
+  }
+  .style-dock a {
+    color: rgba(255, 255, 255, 0.72);
+    padding: 5px 8px;
+    border-radius: 999px;
+    transition: all 0.15s ease;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .style-dock a:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.14);
+    text-decoration: none;
+  }
+  .style-dock a[aria-current="page"] {
+    background: #38bdf8;
+    color: #06070f;
+    font-weight: 700;
+  }
+  .style-dock .dl-btn {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.15s ease;
+  }
+  .style-dock .dl-btn:hover {
+    background: #38bdf8;
+    color: #06070f;
+  }
+  .style-dock .icon-btn {
+    color: rgba(255, 255, 255, 0.88);
+    padding: 5px 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .style-dock .icon-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.18);
+  }
+  .style-dock .sep {
+    width: 1px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 0 2px;
+  }
+  html.export-mode, html.export-mode body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 1500px !important;
+    height: 900px !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    background: transparent !important;
+    display: block !important;
+  }
+  html.export-mode .stage {
+    zoom: 1 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+  html.export-mode .card {
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    margin: 0 !important;
+    transform-origin: 0 0 !important;
+    transform: scale(4.40972222) !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+  html.export-mode .style-dock {
+    display: none !important;
+  }
+  @media print {
+    .style-dock { display: none !important; }
+  }
+</style>
+<script>
+if (new URLSearchParams(location.search).has('export')) {
+  document.documentElement.classList.add('export-mode');
+}
+async function exportCardToPng(cardEl, cssText, filename, btnEl) {
+  try {
+    if (btnEl) btnEl.style.opacity = '0.55';
+    const clone = cardEl.cloneNode(true);
+    clone.style.transformOrigin = '0 0';
+    clone.style.transform = 'scale(4.40972222)';
+    clone.style.boxShadow = 'none';
+    clone.style.margin = '0';
+    const serialized = new XMLSerializer().serializeToString(clone);
+    const svgStr = `<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900"><foreignObject x="0" y="0" width="1500" height="900"><div xmlns="http://www.w3.org/1999/xhtml" style="width:1500px;height:900px;overflow:hidden;margin:0;padding:0;-webkit-font-smoothing:antialiased;"><style><![CDATA[*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+${cssText}]]></style>${serialized}</div></foreignObject></svg>`;
+    const dataUrl = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgStr);
+    const img = new Image();
+    await new Promise((resolve, reject) => {
+      img.onload = resolve;
+      img.onerror = reject;
+      img.src = dataUrl;
+    });
+    const canvas = document.createElement('canvas');
+    canvas.width = 1500;
+    canvas.height = 900;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0, 1500, 900);
+    const a = document.createElement('a');
+    a.href = canvas.toDataURL('image/png');
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  } finally {
+    if (btnEl) btnEl.style.opacity = '';
+  }
+}
+function downloadSingleCard(btnEl, filename) {
+  const cardEl = document.querySelector('.card');
+  const styleEl = document.getElementById('card-style');
+  exportCardToPng(cardEl, styleEl ? styleEl.textContent : '', filename, btnEl);
+}
+document.addEventListener('keydown', e => {
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D' || e.key === 'l' || e.key === 'L') location.href = '/en/me/9/';
+  if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A' || e.key === 'h' || e.key === 'H') location.href = '/en/me/7/';
+});
+</script>
+
+</body>
+</html>
