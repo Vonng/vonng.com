@@ -5,8 +5,6 @@ authors: [vonng]
 summary: >
   AI coding and micro-dramas have both hit the ceiling of human attention, and personal agents cannot pick up the slack. AI for Science and embodied AI could drive the next wave, but neither will scale before the infrastructure bill comes due.
 tags: [AI, Business, Commentary]
-images: [wall.webp]
-ai: true
 ---
 
 > Data as of October 30, 2026. Based on discussions with Claude and Gemini. Nothing here is investment advice.

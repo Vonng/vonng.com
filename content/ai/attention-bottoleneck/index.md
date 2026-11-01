@@ -5,8 +5,6 @@ authors: [vonng]
 summary: >
   AI 编程和短剧同时撞上人类注意力天花板，个人秘书扛不起大梁。想靠 AI 科学、具身智能续命，但又赶不上泡沫账期。AI 基建泡沫，靠什么续命？
 tags: [AI, 商业, 技术评论]
-images: [wall.webp]
-ai: true
 ---
 
 > 数据截至 2026 年 10 月 30 日。本文源于老冯与 Claude、Gemini 的讨论，汇总成文，不构成任何投资建议。
