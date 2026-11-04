@@ -5,6 +5,7 @@ authors: [vonng]
 summary: >
   从 Stonebraker 的一句「感谢 Oracle」说起，聊聊 PostgreSQL 社区的独特的治理结构，与新时代面临的挑战
 tags: [PostgreSQL, 开源, 社区治理, 云计算]
+aliases: ["/pg/oracle-mistake-pg-win/"]
 ---
 > [微信公众号原文](https://mp.weixin.qq.com/s/-xbCSmcYT-fIGXgQuQQUow)
 

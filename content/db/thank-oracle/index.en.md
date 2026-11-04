@@ -5,6 +5,7 @@ authors: [vonng]
 summary: >
   Starting with Stonebraker's remark that PostgreSQL should "thank Oracle," this essay looks at the community's unusual governance model and the challenges it now faces.
 tags: [PostgreSQL, Open Source, Governance, Cloud]
+aliases: ["/pg/oracle-mistake-pg-win/"]
 ---
 > [Original WeChat article](https://mp.weixin.qq.com/s/-xbCSmcYT-fIGXgQuQQUow)
 
