@@ -227,6 +227,7 @@ UTF-8因为已经采用字节作为码元了，所以实际上不存在字节序
 | `00000yyy yyxxxxxx`          | `110yyyyy` | `10xxxxxx` |            |            |
 | `zzzzyyyy yyxxxxxx`          | `1110zzzz` | `10yyyyyy` | `10xxxxxx` |            |
 | `000uuuuu zzzzyyyy yyxxxxxx` | `11110uuu` | `10uuzzzz` | `10yyyyyy` | `10xxxxxx` |
+{.wide .expand}
 
 其实比起死记硬背，UTF-8的编码规则可以通过几个约束自然而然地推断出来：
 

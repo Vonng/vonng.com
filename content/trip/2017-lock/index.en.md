@@ -35,6 +35,7 @@ Originally planned to complete the Luoke Line in 5 days, ended up finishing in t
 | 10-06                     | Kangding | Chengdu | Route 318 classic route, major traffic jam               |
 | 10-07                     | Chengdu | Guiyang |                             |
 | 10-07                     | Guiyang | Beijing |                             |
+{.wide .expand}
 
 ## Route
 
@@ -74,6 +75,7 @@ Equipment preparation was quite thorough, the only oversight was medicine - brou
 | Sanitary pads/toilet paper/wet wipes/bandages | 220          |
 | Water reservoir                    | 128          |
 | Trekking poles (carried in hand)   | 511          |
+{.wide .expand}
 
 ## Food
 

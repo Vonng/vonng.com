@@ -89,6 +89,7 @@ Of these, about half are maintained by the official PGDG repos (**126** RPM, **1
 |:--------------------------------------:|:---:|:----:|:------:|:-------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
 | [**RPM**](https://pigsty.io/ext/rpm/) | 334 | 115  |  143   |   70    |  4   |  6   | 301  | 330  | 333  | 319  | 307  | 294  |
 | [**DEB**](https://pigsty.io/ext/deb/) | 326 | 104  |  144   |   70    |  4   |  14  | 302  | 322  | 325  | 316  | 303  | 293  |
+{.wide .expand}
 
 For each extension, I’ve built versions for the **6** major PostgreSQL versions (12–17) across five popular Linux distributions: EL8, EL9, Ubuntu 22.04, Ubuntu 24.04, and Debian 12.
 I’ve also provided some limited support for older OS versions like EL7, Debian 11, and Ubuntu 20.04.

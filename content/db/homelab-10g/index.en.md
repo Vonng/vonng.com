@@ -71,6 +71,7 @@ With all the drives in place, I split the storage into three pools:
 | DS923+ | 4 × 10 TB HGST | SHR-1 | ~26 TB | Primary storage pool |
 | ME Pro | 2 × 16 TB Seagate IronWolf | RAID 0 | ~30 TB | Bulk storage pool |
 | ME Pro | 2 × 4 TB NVMe | RAID 0 | ~8 TB | Large databases |
+{.wide .expand}
 
 ## 10GbE Networking: A 1,300-Yuan Switch
 

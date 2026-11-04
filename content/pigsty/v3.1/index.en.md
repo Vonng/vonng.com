@@ -102,6 +102,7 @@ We provide the latest software packages and complete extension sets for these fi
 | **D11** | Debian 11 (`bullseye`)            | `d12.x86_64` |  Legacy   |   Legacy   |   Legacy   |   Legacy   |   Legacy   |  Legacy   | `d11.arm64` |           |            |            |            |            |           |
 | **U20** | Ubuntu 20.04 (`focal`)            | `d12.x86_64` |  Legacy   |   Legacy   |   Legacy   |   Legacy   |   Legacy   |  Legacy   | `u20.arm64` |           |            |            |            |            |           |
 | **EL7** | RHEL7 / CentOS7 / UOS ...         | `d12.x86_64` |           |            |   Legacy   |   Legacy   |   Legacy   |  Legacy   | `el7.arm64` |           |            |            |            |            |           |
+{.wide .expand}
 
 > Primary = Primary version support; Supported = Configurable support; Legacy = Legacy version commercial support
 

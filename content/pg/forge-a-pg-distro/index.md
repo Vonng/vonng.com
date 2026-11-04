@@ -64,6 +64,7 @@ tags: [PostgreSQL, Pigsty]
 | pg_jieba         | 392  | 使用结巴分词的 PG 中文分词扩展          |
 | VectorChord-bm25 | 314  | PG 原生的 BM25 排序索引算法         |
 | pg_roaringbitmap | 263  | PG 中的 RoaringBitmap 位图     |
+{.wide .expand}
 
 我这两年参加了几场 [国际 PostgreSQL 会议](/pg/pgcondev-2024/)，感受很复杂。
 去年 PG 开发者大会里，我碰上了瀚高北美的 Grant Zhou 和 Carry Huang，富士通的 Zhijie Hou，再加上我，就没有别的中国开发者影子了。

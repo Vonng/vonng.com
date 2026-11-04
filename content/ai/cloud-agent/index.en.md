@@ -136,6 +136,7 @@ If this logic resonates, here are concrete recommendations:
 | Daily AI chat | Use services outside your local ecosystem | Leverage isolation |
 | Highly sensitive use | Deploy open-source models locally | Data never leaves your machine |
 | Low sensitivity | Choose freely | Risk is manageable |
+{.wide .expand}
 
 ### Account Hygiene
 

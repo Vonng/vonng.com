@@ -144,6 +144,7 @@ Shows statistics.
 | `avg_xact_time`     | Average transaction time (milliseconds) |
 | `avg_query_time`    | Average query time (milliseconds) |
 | `avg_wait_time`     | Average wait time (milliseconds) |
+{.wide .expand}
 
 Two variants: `SHOW STATS_TOTALS` and `SHOW STATS_AVERAGES`, showing totals and averages respectively.
 
@@ -165,6 +166,7 @@ TOTAL metrics are actually counters, while AVG are typically gauges. For monitor
 | `ptr`          | Address of internal object for this connection, used as unique identifier                         |
 | `link`         | Address of paired client connection                                 |
 | `remote_pid`   | PID of backend server process. If connected via unix socket and OS supports getting process ID info, it's the OS pid. Otherwise extracted from cancel packet sent by server - if server is Postgres, should be PID, but if server is another PgBouncer, it's a random number. |
+{.wide .expand}
 
 ### `SHOW CLIENTS`
 
@@ -182,6 +184,7 @@ TOTAL metrics are actually counters, while AVG are typically gauges. For monitor
 | `ptr`          | Address of internal object for this connection, used as unique identifier                         |
 | `link`         | Address of paired server connection                                     |
 | `remote_pid`   | If connected via unix socket and OS supports getting process ID info, it's the OS pid |
+{.wide .expand}
 
 ### SHOW POOLS;
 

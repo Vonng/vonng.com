@@ -182,6 +182,7 @@ curl -fsSL https://repo.pigsty.io/get | bash; cd ~/pigsty;
 |    [PolarDB](https://pigsty.cc/docs/pgsql/kernel/polardb)    | **Aurora 风格 RAC** | RAC，中国国产合规                         |
 |   [Supabase](https://pigsty.cc/docs/pgsql/kernel/supabase)   |     **后端即服务**     | 基于 PostgreSQL 的 BaaS，Firebase 替代方案 |
 | [Cloudberry](https://pigsty.cc/docs/pgsql/kernel/cloudberry/) |  **MPP 数厂与数据分析**  | 大规模并行处理数据仓库（等待2.0GA）               |
+{.wide .expand}
 
 在以前，这种服务你需要在 AWS 或者各家 DBaaS 上花大钱去购买，而且还会被束手束脚，忍受各种功能阉割，以及乞丐云盘带来的性能羞辱（PlanetScale 刚刚也群嘲过了）。
 而如果想要自建，经验丰富足的 PostgreSQL DBA 是如此稀缺，即使是 [像 OpenAI 这样的顶级独角兽也要付出高昂的故障代价自己砸人培养](/db/openai-pg/)。

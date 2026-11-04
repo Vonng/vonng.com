@@ -121,6 +121,7 @@ npx @insforge/install --client cursor \
 | 连接池      | Supavisor（Elixir）      | 无                       |
 | 日志       | Logflare + Vector      | Vector 0.28             |
 | **总容器数** | **~15 个**              | **5 个**                 |
+{.wide .expand}
 
 Insforge 策略很清楚：砍掉 Supabase 里的重量级组件（GoTrue、Realtime Elixir Server、Kong、Supavisor、imgproxy），全部用 TypeScript 重写，换来极简部署。对于 Vibe Coding 的典型场景——快速原型、个人项目、黑客松——够了。
 

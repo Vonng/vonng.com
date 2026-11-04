@@ -28,11 +28,13 @@ However, the field of computer hardware is quite unique—with a Moore's Law tha
 | [2014](http://aws.typepad.com/aws/2014/03/aws-price-reduction-42-ec2-s3-rds-elasticache-and-elastic-mapreduce.html).04 |    0.030     |      12600      |       371        |     9051      |
 |             [2016](https://aws.amazon.com/ru/blogs/aws/aws-storage-update-s3-glacier-price-reductions/).12             |    0.023     |      9660       |       245        |     3766      |
 |                                    [2023](https://aws.amazon.com/cn/s3/pricing).12                                     |    0.023     |      9660       |       105        |      280      |
+{.wide .expand}
 
 |                                                     **Price Ref**                                                      |   **EBS**    | **All Upfront** | **Buy NVMe SSD** | **Price Ref** |
 |:----------------------------------------------------------------------------------------------------------------------:|:------------:|:---------------:|:----------------:|:-------------:|
 |                                                       S3 Express                                                       |    0.160     |      67200      |     DHH 12T      |     1400      |
 |                                                        EBS io2                                                         | 0.125 + IOPS |     114000      |   Shannon 3.2T   |      900      |
+{.wide .expand}
 
 It's not hard to see that the unit price of S3's standard tier dropped from **$0.15/GB·month** in 2006 to **$0.023/GB·month** in 2023, a reduction to **15%** of the original or a **6-fold** decrease, which sounds good. However, when you consider that the price of the underlying HDDs for S3 dropped to **3.7%** of their original, a whopping **26-fold** decrease, the trickery becomes apparent.
 
@@ -62,6 +64,7 @@ The gap in performance is just one aspect; the cost is even more crucial. The pr
 | Latency     | 4K random read: 75µs 4K random write: 15µs                                           | 4K random read: 200µs                                                                                                                                                                                                                               | Random IO: 500µs (assumed 16K)                                                                                                                                                                       |
 | Reliability | UBER < 1e-18, equivalent to 18 nines MTBF: 2 million hours 5DWPD, over three years   | Data reliability: 9 nines [Storage and Data Reliability](https://help.aliyun.com/document_detail/476273.html)                                                                                                                                       | **Durability**: 99.999%, 5 nines (0.001% annual failure rate) [io2 details](https://aws.amazon.com/cn/blogs/storage/achieve-higher-database-performance-using-amazon-ebs-io2-block-express-volumes/) |
 | SLA         | 5-year warranty, direct replacement for issues                                       | [Aliyun RDS SLA](https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud201910310944_35008.html?spm=a2c4g.11186623.0.0.270e6e37n8Exh5) Availability 99.99%: 15% monthly fee 99%: 30% monthly fee 95%: 100% monthly fee | [Amazon RDS SLA](https://d1.awsstatic.com/legal/amazonrdsservice/Amazon-RDS-Service-Level-Agreement-Chinese.pdf) Availability 99.95%: 15% monthly fee 99%: 25% monthly fee 95%: 100% monthly fee     |
+{.wide .expand}
 
 e local NVMe SSD example used here is the Shannon DirectIO G5i 3.2TB MLC particle enterprise-level SSD, extensively used by us. Brand new, disassembled retail pieces are priced at ¥2788 (available on Xianyu!), translating to a monthly cost per TB of 14.5 RMB over 60 months (5 years). Even if we calculate using the Inspur list price of ¥4388, the cost per TB·month is only 22.8. If this example is not convincing enough, we can refer to the 12 TB Gen4 NVMe enterprise-level SSDs purchased by DHH in ["Is It Time to Give Up on Cloud Computing?"](https://mp.weixin.qq.com/s/CicctyvV1xk5B-AsKfzPjw), priced at $2390 each, with a cost per TB·month of exactly **23** RMB.
 

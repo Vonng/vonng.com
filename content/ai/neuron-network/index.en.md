@@ -75,6 +75,7 @@ Now consider a single-layer neural network with $n$ inputs and $s$ neurons (outp
 | Bias   | $b$  | Changes from $1 × 1$ scalar to $s × 1$ column vector                  |
 | Weighted Input | $z$  | Changes from $1 × 1$ scalar to $s × 1$ column vector                  |
 | Activation  | $a$  | Changes from $1 × 1$ scalar to $s × 1$ column vector                  |
+{.wide .expand}
 
 #### Activation Function Vector Expression
 
@@ -111,6 +112,7 @@ Now consider an $L$-layer neural network with layer sizes: $d_1,d_2,⋯,d_L$. Th
 | Bias   | $b$  | Extended from $s × 1$ column vector to list of $L-1$ column vectors: $b^2_{d_2},⋯,b^L_{d_L}$ |
 | Weighted Input | $z$  | Extended from $s × 1$ column vector to list of $L-1$ column vectors: $z^2_{d_2},⋯,z^L_{d_L}$ |
 | Activation  | $a$  | Extended from $s × 1$ column vector to list of **$L$** column vectors: $a^1_{d_1},a^2_{d_2},⋯,a^L_{d_L}$ |
+{.wide .expand}
 
 #### Activation Function Matrix Expression
 
@@ -273,6 +275,7 @@ When error function is MSE: $C = \frac 1 2 \|\vec{y} -\vec{a}\|^2= \frac 1 2 [(y
 | $δ^l = (W^{l+1})^T δ^{l+1} ⊙(1-a^l)⊙ a^l $ | Current layer error requires: next layer weights $W^{l+1}$, next layer error $δ^{l+1}$, current layer output $a^l$ | BP2  |
 | $∇C_{W^l} = δ^l × {(a^{l-1})}^T $        | Weight gradient requires: current layer error $δ^l$, previous layer output $a^{l-1}$           | BP3  |
 | $∇C_b = δ^l$                             | Bias gradient requires: current layer error $δ^l$                         | BP4  |
+{.wide .expand}
 
 ### Proof of Backpropagation Equations
 

@@ -164,6 +164,7 @@ None of these changes is a new feature. Every one of them corresponds to a real 
 | `jmx-exporter`     | -       | 1.6.0    | Added for Kafka monitoring         |
 | `k3s`              | -       | 1.36.3   | Added with matching offline images |
 | `duckdb`           | 1.5.4   | 1.5.5    |                                    |
+{.wide .expand}
 
 For the complete Infra and extension package change logs, see the [**release note**](https://pigsty.io/docs/about/release/#v450).
 

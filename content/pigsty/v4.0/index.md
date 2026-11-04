@@ -110,6 +110,7 @@ Pigsty v4 的一个核心目标，就是确保 PostgreSQL 18 成为生产可用�
 | [weighted_statistics](https://pgext.cloud/e/weighted_statistics/) | 1.0.0 | 稀疏数据的高性能加权统计函数                 |
 | [pg_enigma](https://pgext.cloud/e/pg_enigma/)                     | 0.5.0 | 加密的 Postgres 数据类型              |
 | [pglinter](https://pgext.cloud/e/pglinter/)                       | 1.0.1 | PostgreSQL SQL Linter          |
+{.wide .expand}
 
 与此同时，我们还进一步优化了 PG 的默认参数配置策略。
 例如，允许用户配置新增的 `io_method` 以充分利用异步 IO 能力，并且启用了 `file_copy_method` = `clone`，以实现对 “[瞬间克隆数据库](/pg/pg-clone)” 的支持。
@@ -403,6 +404,7 @@ MinIO 开始使用 [**pgsty/minio**](https://github.com/pgsty/minio) fork RPM/DE
 | code-server         | 4.100.2 | caddy             | 2.10.2   |
 | hugo                | 0.154.5 | cloudflared       | 2026.1.1 |
 | headscale           | 0.27.1  |                   |          |
+{.wide .expand}
 
 ### Docker 支持
 
@@ -500,6 +502,7 @@ v4.0.0 新增两个 **可选模块**，不影响 Pigsty 核心功能，按需安
 | pg_timeseries  | 0.1.7  | 0.2.0  | 时序扩展              |
 | pg_convert     | 0.0.4  | 0.1.0  | 类型转换              |
 | pg_clickhouse  | 0.1.2  | 0.1.3  | ClickHouse FDW    |
+{.wide .expand}
 
 pgBackRest 更新至 2.58，支持 HTTP。
 
@@ -709,6 +712,7 @@ pgBackRest 更新至 2.58，支持 HTTP。
 | etcd/MinIO 移除时清理不完整                      | 修复 systemd 服务和 DNS 条目清理       |
 | IvorySql 18 file_copy_method             | 修复 IvorySql 18 不支持 clone 方法问题 |
 | tuned profile 激活                         | 通过重启 tuned 服务修复激活问题           |
+{.wide .expand}
 
 ### 参数变化
 
@@ -746,6 +750,7 @@ pgBackRest 更新至 2.58，支持 HTTP。
 | `nodejs_registry`        | string | ''            | npm registry，自动配置中国镜像            |
 | `node_uv_env`            | path   | /data/venv    | 节点 UV 虚拟环境路径，空则跳过                |
 | `node_pip_packages`      | string | ''            | UV 虚拟环境中安装的 pip 包                |
+{.wide .expand}
 
 **移除参数**
 
@@ -767,6 +772,7 @@ pgBackRest 更新至 2.58，支持 HTTP。
 | `effective_io_concurrency` | 1000 → 200               | 更合理的默认值    |
 | `node_firewall_mode`       | zone → none              | 默认不启用防火墙规则 |
 | `install.yml`              | 重命名为 `deploy.yml`        | 更符合语义      |
+{.wide .expand}
 
 ### 兼容性
 

@@ -48,6 +48,7 @@ Therefore, in Pigsty v2.7, we've re-examined the entire PostgreSQL ecosystem's e
 | [md5hash](https://github.com/tvondra/md5hash)                                | 1.0.1     | Native 128-bit MD5 data type                               |
 | [pg_tde](https://github.com/percona/pg_tde)                              | 1.0-alpha | Experimental encrypted storage engine                      |
 | [pg_dirtyread](https://github.com/df7cb/pg_dirtyread)                        | 2.6       | Read dead tuples for dirty reads                           |
+{.wide .expand}
 
 Many of these are extensions developed with Rust and **pgrx**, providing incredibly powerful capabilities:
 
@@ -67,6 +68,7 @@ Supabase's [**wrappers**](https://github.com/supabase/wrappers) looks like one e
 | SQL Server  | FDW for Microsoft SQL Server                   | ✅   | ❌     |
 | Redis       | FDW for Redis                                  | ✅   | ❌     |
 | AWS Cognito | FDW for AWS Cognito                            | ✅   | ❌     |
+{.wide .expand}
 
 This means you can now **read and write** BigQuery, ClickHouse, and Stripe data from PostgreSQL. Firebase, Airtable, S3, Logflare, Auth0, SQL Server, Redis, and Cognito also provide SQL read access through PostgreSQL.
 

@@ -132,6 +132,7 @@ Plus 10 brand new extensions:
 | [weighted_stats]    | 1.0.0   | High-perf weighted stats for sparse data       |
 | [pg_enigma]         | 0.5.0   | Encrypted Postgres data types                  |
 | [pglinter]          | 1.0.1   | PostgreSQL SQL Linter                          |
+{.wide .expand}
 
 [pg_textsearch]: https://pgext.cloud/e/pg_textsearch/
 [pg_clickhouse]: https://pgext.cloud/e/pg_clickhouse/
@@ -558,6 +559,7 @@ MinIO now uses [**pgsty/minio**](https://github.com/pgsty/minio) fork RPM/DEB.
 | code-server         | 4.100.2 | caddy               | 2.10.2   |
 | hugo                | 0.154.5 | cloudflared         | 2026.1.1 |
 | headscale           | 0.27.1  |                     |          |
+{.wide .expand}
 
 ### Docker Support
 
@@ -670,6 +672,7 @@ age, citus, documentdb, pg_search, timescaledb, pg_bulkload, rum, etc.
 | pg_timeseries   | 0.1.7   | 0.2.0  | Time series            |
 | pg_convert      | 0.0.4   | 0.1.0  | Type conversion        |
 | pg_clickhouse   | 0.1.2   | 0.1.3  | ClickHouse FDW         |
+{.wide .expand}
 
 pgBackRest updated to 2.58 with HTTP support.
 
@@ -879,6 +882,7 @@ pgBackRest updated to 2.58 with HTTP support.
 | etcd/MinIO removal cleanup incomplete  | Fixed systemd service and DNS cleanup |
 | IvorySql 18 file_copy_method           | Fixed incompatibility with clone      |
 | tuned profile activation               | Fixed by restarting tuned service     |
+{.wide .expand}
 
 ### Parameter Changes
 
@@ -916,6 +920,7 @@ pgBackRest updated to 2.58 with HTTP support.
 | `nodejs_registry`        | string | ''            | npm registry, auto china mirror       |
 | `node_uv_env`            | path   | /data/venv    | Node UV venv path, empty to skip      |
 | `node_pip_packages`      | string | ''            | pip packages for UV venv              |
+{.wide .expand}
 
 **Removed Parameters**
 
@@ -937,6 +942,7 @@ pgBackRest updated to 2.58 with HTTP support.
 | `effective_io_concurrency` | 1000 → 200                | More reasonable default  |
 | `node_firewall_mode`       | zone → none               | Disable firewall rules   |
 | `install.yml`              | Renamed to `deploy.yml`   | Better semantics         |
+{.wide .expand}
 
 ### Compatibility
 

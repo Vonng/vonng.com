@@ -111,6 +111,7 @@ As a seasoned data hand, I’m bundling all the PG+DuckDB integration [**extensi
 | [**plproxy**](https://pgext.cloud/e/plproxy/)               |  PGDG   | Database partitioning implemented as procedural language       |
 | [**pg_strom**](https://pgext.cloud/e/pg_strom/)             |  PGDG   | PG-Strom - big-data processing acceleration using GPU and NVME |
 | [**tablefunc**](https://pgext.cloud/e/tablefunc/)           | CONTRIB | functions that manipulate whole tables, including crosstab     |
+{.wide .expand}
 
 Sure, a lot of these plugins are alpha/beta: concurrency quirks, partial feature sets, performance oddities. But fortune favors the bold. I’m convinced this “PG + DuckDB” show is about to take center stage.
 

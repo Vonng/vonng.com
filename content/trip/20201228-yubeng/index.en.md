@@ -63,6 +63,7 @@ Yubeng Village is split in two: **Upper Yubeng Village** and **Lower Yubeng Vill
 | 3-Sacred Waterfall | Lower Yubeng Village | 12km | 4h | Paved stone path | Classic route, moderate difficulty, nice scenery |
 | 4-Sacred Lake | Lower Yubeng Village | 11km | 8h | Non-standard, needs guide | Winter needs crampons, somewhat difficult |
 | 5-Ninong Canyon | Lower Yubeng Village | 14km | 3h | Half concrete half dirt road | Nice scenery, all downhill, along cliffs |
+{.wide .expand}
 
 Usual travel arrangement is 4 days 3 nights:
 

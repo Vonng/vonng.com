@@ -141,6 +141,7 @@ SELECT pg_get_triggerdef(oid) FROM pg_trigger; -- WHERE xxx
 | `tgqual`         | `pg_node_tree` |                       | 触发器 `WHEN` 条件的内部表示                         |
 | `tgoldtable`     | `name`         |                       | `OLD TABLE` 的 `REFERENCING` 列名称，无则为空         |
 | `tgnewtable`     | `name`         |                       | `NEW TABLE` 的 `REFERENCING` 列名称，无则为空         |
+{.wide .expand}
 
 ## 触发器类型
 

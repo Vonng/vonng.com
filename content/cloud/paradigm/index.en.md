@@ -76,6 +76,7 @@ When cloud first appeared, their core was hardware/**IaaS** layer: storage, band
 |        Alibaba-Cloud RDS PG 4x Memory (Dedicated)        |  320  |
 |        Alibaba-Cloud RDS PG 8x Memory (Dedicated)        |  410  |
 |            Oracle Database License            | 10000 |
+{.wide .expand}
 
 > How cloud sells ~20 RMB hardware at ten-times markups
 

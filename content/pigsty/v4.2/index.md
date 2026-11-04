@@ -38,6 +38,7 @@ PostgreSQL 以极致的可扩展性闻名。生态中有超过 1000 个扩展，
 | **PolarDB**             | `polar`  | 共享存储架构                     | 15      |
 | **Citus**               | `citus`  | 分布式 HTAP                   | 17      |
 | **Ferret / DocumentDB** | `mongo`  | MongoDB 协议兼容               | 17      |
+{.wide .expand}
 
 十二内核，一份配置。下面逐个展开。
 
@@ -255,6 +256,7 @@ Pigsty 本身会继续跟着 PG 小版本的节奏走。下个版本可能会正
 | `antlr4-runtime413` | -               | 4.13     | 新增 Babelfish 依赖运行时    |
 | `cloudberry`        | -               | 2.0.0    | 仅 RPM 构建              |
 | `pg_background`     | -               | 1.8      | 仅 DEB 构建              |
+{.wide .expand}
 
 #### 基础设施软件更新
 
@@ -298,6 +300,7 @@ Pigsty 本身会继续跟着 PG 小版本的节奏走。下个版本可能会正
 | `pig`                        | 1.1.2          | 1.3.0          |
 | `stalwart`                   | -              | 0.15.5         |
 | `maddy`                      | -              | 0.8.2          |
+{.wide .expand}
 
 #### API 变化
 
@@ -398,6 +401,7 @@ PGDG YUM 仓库已经归档移除 [pg13](https://yum.postgresql.org/news/pg13-en
 | `gost`                       | -              | 2.12.0         | 新增 |
 | `sabiql`                     | -              | 1.6.2          | 新增 |
 | `agentsview`                 | -              | 0.10.0         | 新增 |
+{.wide .expand}
 
 #### 校验和
 

@@ -92,6 +92,7 @@ The two projects are strikingly similar:
 | Test oracle | Bun's language-neutral TypeScript suite | PostgreSQL's SQL regression and isolation suites |
 | Ownership   | Its own production system               | A new implementation of upstream code            |
 | Status      | Shipping; publicly validated by Prisma  | Not production-ready; no public deployments      |
+{.wide .expand}
 
 The decisive difference is ownership.
 

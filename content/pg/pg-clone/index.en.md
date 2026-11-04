@@ -179,6 +179,7 @@ Three cloning methods, each for different scenarios:
 | Database Clone | ~200ms, constant | Template DB disconnect | Database connection only | AI Agent, CI/CD, rapid testing   |
 | Instance Clone | ~200ms, constant | None                   | Filesystem access        | Accidental recovery, branch testing, CI/CD |
 | Cluster Clone  | Minutes to hours | None                   | Backup repository access | Cross-datacenter recovery, DR drills |
+{.wide .expand}
 
 Although `pg-fork` already provides instance-level "instant cloning" without the few-hundred-millisecond downtime limitation of database template cloning,
 this operation requires filesystem access on the database server. And cloned instances can only run on the same machine—not on replicas.

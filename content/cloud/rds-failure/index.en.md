@@ -132,6 +132,7 @@ In "[Are Cloud Disks Pig-Slaughtering Scams](/cloud/ebs)" we analyzed that the m
 | ESSD Cloud Disk PL2    | 100K | 750 MB/s    | 461G-32T  |      3.02       |     2.00     |     1.70     |      1.00       |
 | ESSD Cloud Disk PL3    |  1M  | 4 GB/s      | 1.2T-32T  |      6.05       |     4.00     |     3.40     |      2.00       |
 | Local NVMe SSD          |  3M  | 7 GB/s      | Max 64T/card | **0.02**      |     0.02     |     0.02     |      0.02       |
+{.wide .expand}
 
 Following the recommendation to "upgrade" to ESSD PL2, yes, IOPS throughput would double, but unit price would also double. This single "upgrade" operation alone **could bring cloud vendors an additional 120,000 in revenue**.
 

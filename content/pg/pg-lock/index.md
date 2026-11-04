@@ -148,6 +148,7 @@ CREATE TABLE pg_locks
 | `mode`               | `text`     | 持有或者等待锁的模式                                                                                                     |
 | `granted`            | `boolean`  | 为真表示已经获得的锁，为假表示还在等待的锁                                                                                          |
 | `fastpath`           | `boolean`  | 为真表示锁是通过fastpath获取的                                                                                            |
+{.wide .expand}
 
 ### 样例数据
 

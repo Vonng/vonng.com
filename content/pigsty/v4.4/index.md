@@ -28,6 +28,7 @@ Pig 1.5 完成了 PostgreSQL 日常运维命令行的重构。克隆数据库、
 | `pig pt`   | Patroni 集群操作     | 重启、重建副本、切主、故障转移、配置与日志                      |
 | `pig pb`   | pgBackRest 低层原语  | 备份、仓库、备份集、清理与底层 restore                    |
 | `pig pitr` | 恢复编排             | 协调 Patroni、PostgreSQL 与 pgBackRest 完成 PITR |
+{.wide .expand}
 
 这一轮最重要的变化不是命令数量，而是 **职责边界**。过去，这些操作主要靠 DBA 记住 SOP 与命令别名：什么时候调用什么工具，下一步做什么，会有什么副作用。现在，这些经验被直接写进命令，高风险操作统一沿着同一条链路推进：
 
@@ -291,6 +292,7 @@ Pigsty v4.4.0 是一个维护版本，重点涵盖 PostgreSQL 18.4、PostgreSQL 
 | `toastinfo`           | `1.5`         | `1.7`                          | PG 14-18                                |
 | `pg_ivm`              | `1.14`        | `1.15` DEB / `1.14` RPM        | PG 14-18                                |
 | `timeseries`          | `0.2.0`       | `0.2.1`                        | PG 14-18                                |
+{.wide .expand}
 
 **基础设施软件包变更**
 
@@ -354,6 +356,7 @@ Pigsty v4.4.0 是一个维护版本，重点涵盖 PostgreSQL 18.4、PostgreSQL 
 | `sabiql`                     | `1.11.1`         | `1.14.0`         |                       |
 | `pev2`                       | `1.21.0`         | `1.22.0`         |                       |
 | `rainfrog`                   | `0.3.18`         | `0.3.19`         |                       |
+{.wide .expand}
 
 **验证与校验和**
 

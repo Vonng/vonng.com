@@ -79,6 +79,7 @@ Any rational enterprise user can see the folly in this: **If the procurement of 
 | AWS China/Ningxia (On-demand)            | ¥197,489 / month     | 237                  |
 | AWS China/Ningxia (1-year, no upfront)   | ¥143,176 / month     | 171                  |
 | AWS China/Ningxia (3-year, full upfront) | ¥647k + ¥116k/month  | 160.6                |
+{.wide .expand}
 
 Comparing the costs of self-hosting versus using a cloud database:
 

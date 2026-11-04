@@ -12,7 +12,7 @@ This is **Ruohang Feng** / [Vonng](https://github.com/Vonng)'s blog, about Postg
 
 ## Build
 
-Requires **Hugo Extended 0.168.0+** and Go (Hugo Modules pull the theme).
+Requires **Hugo Extended 0.168.0** and **Go 1.27.3** (Hugo Modules pull the theme).
 
 
 ```bash

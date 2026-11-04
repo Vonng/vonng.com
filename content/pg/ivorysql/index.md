@@ -130,6 +130,7 @@ vagrant@meta:~$ psql -p 1521 -c 'select version()'
 | [**Cloudberry**](https://pigsty.cc/docs/pgsql/kernel/cloudberry)  |  **MPP数仓与数据分析**   | 大规模并行处理数据仓库                        |
 | [**AgensGraph**](https://pigsty.cc/docs/pgsql/kernel/agensgraph)  |    **图数据库内核**     | 基于 PostgreSQL 的图数据库分支              |
 |     [**pgEdge**](https://pigsty.cc/docs/pgsql/kernel/pgedge)      |   **多主复制，地理分布**   | 面向边缘场景的分布式 PostgreSQL 发行版          |
+{.wide .expand}
 
 ![pg-forks.webp](pg-forks.webp)
 

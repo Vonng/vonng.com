@@ -179,6 +179,7 @@ With Percona's TDE kernel, we currently support several flavors of PG kernels. I
 |    [PolarDB](https://pigsty.io/docs/pgsql/kernel/polardb)    |        **Aurora-style RAC**        | RAC, Chinese domestic compliance                               |
 |   [Supabase](https://pigsty.io/docs/pgsql/kernel/supabase)   |      **Backend as a Service**      | PostgreSQL-based BaaS, Firebase alternative                    |
 | [Cloudberry](https://pigsty.io/docs/pgsql/kernel/cloudberry/) | **MPP Data Warehouse & Analytics** | Massively parallel processing data warehouse (awaiting 2.0 GA) |
+{.wide .expand}
 
 Previously, you needed to spend big money on AWS or various DBaaS platforms for such services, and you'd still be constrained with various feature limitations and performance humiliation from budget cloud disks (PlanetScale just mocked this too).
 If you wanted to self-build, experienced PostgreSQL DBAs are so scarce that even [top unicorns like OpenAI pay high failure costs to train their own people](/db/openai-pg/).

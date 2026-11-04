@@ -77,6 +77,7 @@ tags: [下云, 硬件, 本地优先]
 | DS923+ | 4 × 10TB HGST | SHR-1 | 约 26TB | 主存储池 |
 | ME Pro | 2 × 16TB 希捷酷狼 | RAID 0 | 约 30TB | 大容量池 |
 | ME Pro | 2 × 4TB NVMe | RAID 0 | 约 8TB | 放体量较大的数据库 |
+{.wide .expand}
 
 <!-- source-image: 8 -->
 

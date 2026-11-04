@@ -52,6 +52,7 @@ Why is the middle layer getting squashed? Let's look at the traditional software
 | Backend    | Node/Go/Java    | Translates requests into SQL                        |
 | Middleware | Redis/Kafka/... | Patches for when translation isn't efficient enough |
 | Database   | PostgreSQL...   | Where data actually lives                           |
+{.wide .expand}
 
 What's the essence of those middle layers? **Translation layers.**
 

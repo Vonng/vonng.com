@@ -76,6 +76,7 @@ Although various combinations are possible, in practice, only three situations a
 |  **i**ndex   |   x    |  **Valid**   |    x    |
 |   **f**ull   | **Inefficient** |  **Inefficient**   | **Inefficient**  |
 | **n**othing  |  xxxx  |   xxxx    |  xxxx   |
+{.wide .expand}
 
 ### Managing Publications
 
@@ -814,6 +815,7 @@ Replica identity configuration on tables and whether tables have indexes are two
 |  **i**ndex   |   x    |  **Valid**   |    x    |
 |   **f**ull   | **Inefficient** |  **Inefficient**   | **Inefficient**  |
 | **n**othing  |   x    |     x     |    x    |
+{.wide .expand}
 
 > In all cases, `INSERT` can be replicated normally. `x` represents missing key information needed for `DELETE|UPDATE` to complete normally.
 

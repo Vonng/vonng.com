@@ -19,6 +19,7 @@ PG 12's final minor version is 12.21, released on 2024-11-14, and this will be P
 | 14      | 14.14         | Yes       | September 30, 2021 | November 12, 2026 |
 | 13      | 13.17         | Yes       | September 24, 2020 | November 13, 2025 |
 | 12      | 12.21         | No        | October 3, 2019    | November 14, 2024 |
+{.wide .expand}
 
 ## PG12 Steps Down
 
@@ -98,6 +99,7 @@ This time, the replacement from PG 16 to PG 17 saw significantly accelerated eco
 | v2.0.2 | 2023-03-31 | Added pgvector support, fixed MinIO CVE                     | [v2.0.2](https://github.com/Vonng/pigsty/releases/tag/v2.0.2) |
 | v2.0.1 | 2023-03-21 | v2 bug fixes, security enhancements, Grafana version upgrade | [v2.0.1](https://github.com/Vonng/pigsty/releases/tag/v2.0.1) |
 | v2.0.0 | 2023-02-28 | Major architecture upgrade, significantly enhanced compatibility, security, maintainability | [v2.0.0](https://github.com/Vonng/pigsty/releases/tag/v2.0.0) |
+{.wide .expand}
 
 > [Pigsty Release Note](https://pigsty.cc/docs/about/release/)
 
@@ -113,6 +115,7 @@ Current results: On EL systems, 301 of 334 available extensions are available on
 |:--------------:|:---:|:----:|:------:|:-------:|:----:|:----:|:--------:|:----:|:----:|:----:|:----:|:----:|
 | RPM Extension  | 334 | 115  |  143   |   70    |  4   |  6   |   301    | 330  | 333  | 319  | 307  | 294  |
 | DEB Extension  | 326 | 104  |  144   |   70    |  4   |  14  |   302    | 322  | 325  | 316  | 303  | 293  |
+{.wide .expand}
 
 [![extension.png](extension.png)](https://pgext.cloud)
 

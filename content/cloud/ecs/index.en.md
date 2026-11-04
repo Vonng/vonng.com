@@ -28,6 +28,7 @@ Without considering storage, cloud on-demand, monthly, annual, and 5-year prepai
 |   Multiple of Self-Built   |    **25x**     |     17x      |     13x     |      8x       |      7x       |
 |  **Computing Unit Price**   |    187 RMB     |   125 RMB    |    81 RMB   |     53 RMB    |     37 RMB    |
 |   Multiple of Self-Built   |       9x       |      6x      |     4x      |      3x       |    **2x**     |
+{.wide .expand}
 
 We then further quantitatively analyze Alibaba-Cloud server pricing data, discovering the most impactful factors on unit prices: additional storage, payment method, availability zone, instance family (chip architecture, instance generation, memory ratio), and explain how the above numbers were calculated.
 
@@ -45,6 +46,7 @@ As shown in the table, the standard price for unit computing (1C4G) is the month
 |  Multiple of Self-Built  |       9x       |      6x      |     4x      |      3x       |      2x       |
 |  Self-Built Cost Savings %  |      89%       |     84%      |     75%     |      62%      |      46%      |
 | Self-Built Cost Reduces to % |      11%       |     16%      |     25%     |      38%      |      54%      |
+{.wide .expand}
 
 [![Analyzing Alibaba-Cloud Server Computing Cost — Pure Computing Prices (figure 1)](ecs-2.png)](https://demo.pigsty.cc/ui/d/ecs?viewPanel=63)
 
@@ -69,6 +71,7 @@ Large-scale computing often requires high-performance local storage - for exampl
 | ESSD Cloud Disk PL2      | 100K | 750 MB/s    | 461G-32T    |      3.02      |     2.00      |     1.70     |      1.00      |
 | ESSD Cloud Disk PL3      |  1M  | 4 GB/s      | 1.2T-32T    |      6.05      |     4.00      |     3.40     |      2.00      |
 | Local NVMe SSD           |  3M  | 7 GB/s      | Max 64T per card |      0.02      |     0.02      |     0.02     |      0.02      |
+{.wide .expand}
 
 Aside from system disks/HDDs and other budget options, Alibaba-Cloud offers four different specification levels of block storage: ESSD PL0 ~ PL3. Their unit prices are: **0.5, 1, 2, 4** respectively. ESSD PL3's performance barely approaches local Gen3 NVMe SSD, but its 4 RMB unit price is 200 times local self-built! Of course ESSD has its own discount strategy - with 3+ year prepaid, ESSD can get maximum 50% discount, but that's still 100x premium!
 
@@ -78,6 +81,7 @@ Aside from system disks/HDDs and other budget options, Alibaba-Cloud offers four
 |   Multiple of Self-Built   |    **25x**     |     17x      |     13x     |      8x       |      7x       |
 |  Self-Built Cost Savings %  |      96%       |     94%      |     92%     |      88%      |      86%      |
 | Self-Built Cost Reduces to % |       4%       |      6%      |      8%     |      12%      |      14%      |
+{.wide .expand}
 
 In "[Is Cloud Disk a Slaughter Plate](/cloud/ebs)" we've already detailed the performance, reliability, and cost comparison between cloud disks and local disks, so here we mainly use ESSD PL3 closest to local NVMe SSD for comparison. If we configure 64 GiB PL3 block storage per CPU core, the adjusted cloud server unit price becomes: **381 RMB**. Based on this: on-demand requires additional 50% premium at **571 RMB**; annual prepaid at **298 RMB**, 3-year gets 44% discount at **181 RMB**, 5-year prepaid gets 30% discount at **165 RMB**.
 
@@ -104,6 +108,7 @@ With PL3 ESSD, **storage cost percentage** can reach **67% ~ 77%**. We can also 
 | **+PL1 ESSD**          | 69 RMB            | 76 RMB            | 85 RMB            | 113 RMB           | 135 RMB         | 189 RMB          | 283 RMB      |
 | **+PL0 ESSD**          | 53 RMB            | 60 RMB            | 69 RMB            | 91 RMB            | 108 RMB         | 157 RMB          | 235 RMB      |
 | **Pure Computing Price** | 37 RMB            | 44 RMB            | 53 RMB            | 68 RMB            | 81 RMB          | 125 RMB          | 187 RMB      |
+{.wide .expand}
 
 Note that ESSD block storage and ECS computing have different discount structures. Since SSD's maximum discount (50% off) is weaker than pure computing's maximum discount (30% off), storage cost percentages increase with longer prepaid periods.
 
@@ -114,6 +119,7 @@ Note that ESSD block storage and ECS computing have different discount structure
 | **+PL1 ESSD**          | 46%               | 42%               | 38%               | 40%               | 40%             | 34%              | 34%          |
 | **+PL0 ESSD**          | 30%               | 27%               | 23%               | 25%               | 25%             | 20%              | 20%          |
 | **Pure Computing Price** | 0%                | 0%                | 0%                | 0%                | 0%              | 0%               | 0%           |
+{.wide .expand}
 
 Some argue that cloud ESSD should be compared to SAN storage, while local NVMe SSD should be compared to instance storage. This issue was already explained in "[Is Cloud Disk a Slaughter Plate](/cloud/ebs)". Direct user-facing database services almost all use EBS rather than instance storage; furthermore, Alibaba-Cloud does have instance types with local NVMe SSD instance storage, like the `i` series, but unit prices here are far from cheap either.
 
@@ -130,6 +136,7 @@ Prepaid payment methods significantly impact cloud server prices: **Computing pr
 | 3-Year Prepaid |       44%        |         53          |     50%       | 2.00 | 1.00 | 0.50 | 0.25 |
 | 4-Year Prepaid |       35%        |         44          |     50%       | 2.00 | 1.00 | 0.50 | 0.25 |
 | 5-Year Prepaid |    **30%**       |         37          |   **50%**     | 2.00 | 1.00 | 0.50 | 0.25 |
+{.wide .expand}
 
 For pure computing, the latest three generations of mainstream instance families' prices and ratios are shown below, clearly demonstrating actual pricing closely matches the model above:
 
@@ -144,6 +151,7 @@ For pure computing, the latest three generations of mainstream instance families
 | **r6**                        | 45 RMB            | 53 RMB            | 65 RMB            | 83 RMB            | 98 RMB          | 150 RMB          | 225 RMB      |
 | **r7**                        | 49 RMB            | 57 RMB            | 70 RMB            | 89 RMB            | 105 RMB         | 164 RMB          | 246 RMB      |
 | **r8i**                       | 52 RMB            | 61 RMB            | 75 RMB            | 95 RMB            | 113 RMB         | 173 RMB          | 260 RMB      |
+{.wide .expand}
 
 | **Instance Family Discount** | **5-Year Prepaid** | **4-Year Prepaid** | **3-Year Prepaid** | **2-Year Prepaid** | **Annual Price** | **Monthly Price** | **On-Demand** |
 |------------------------------|--------------------|--------------------|--------------------|--------------------|------------------|-------------------|---------------|
@@ -156,6 +164,7 @@ For pure computing, the latest three generations of mainstream instance families
 | **r6**                      | 30%               | 35%               | 43%               | 55%               | 65%             | 100%             | 150%         |
 | **r7**                      | 30%               | 35%               | 43%               | 54%               | 64%             | 100%             | 150%         |
 | **r8i**                     | 30%               | 35%               | 43%               | 55%               | 65%             | 100%             | 150%         |
+{.wide .expand}
 
 The chart above shows price comparisons for different instance families under various payment modes. If we average all instance prices (roughly equivalent to 1c4g standard pricing), the computing average prices under different payment modes are shown in the bar chart:
 
@@ -176,6 +185,7 @@ Memory ratio refers to how many times memory per CPU core, with memory units in 
 |  6  |   88 RMB    |   114 RMB   |  150 RMB   |  78%  | 132%  |
 |  7  |   96 RMB    |   123 RMB   |  164 RMB   |  78%  | 133%  |
 |  8  |   101 RMB   |   130 RMB   |  173 RMB   |  78%  | 133%  |
+{.wide .expand}
 
 Statistically, compared to `4x` general-purpose instance families, same-core memory-optimized instances `8x` with double memory cost **132%** of general-purpose instances; same-core compute-optimized instances `2x` with half memory cost **78%** of general-purpose instances.
 We can also calculate from this pattern that Alibaba-Cloud's memory pricing is about 12 RMB/GiB·month: not cheap either - 16GB for two months could buy a memory stick.
@@ -189,6 +199,7 @@ Additionally, instance/CPU generation affects pricing. For example, using curren
 |  6  | 117 RMB | 104 RMB |     89%     |        |                |
 |  7  | 128 RMB | 105 RMB |     82%     |        |                |
 |  8  | 135 RMB | 125 RMB |     92%     | 96 RMB |      71%       |
+{.wide .expand}
 
 From chip architecture perspective, ARM instances cost 90% of standard Intel instances, while Alibaba's self-developed Yitian chip instances cost 70% of standard Intel instances. 30% off to find guinea pigs for testing shows insufficient sincerity.
 

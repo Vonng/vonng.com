@@ -146,6 +146,7 @@ Actually, we can restore the design intention behind this exception classificati
 |------------------|--------------------------------|-------------------------------------|
 | Design flaw | False proposition | RuntimeException |
 | Operation failure | Normal Exception, needs explicit handling | Error |
+{.wide .expand}
 
 Our old friend division by zero exception changed its disguise: `java.lang.ArithmeticException` hiding in `RuntimeException`.
 

@@ -81,3 +81,4 @@ Below is the current snapshot of what Pigsty mirrors (PostgreSQL ecosystem, obse
 | [pev2](https://github.com/pgsty/infra-pkg/tree/main/pev2) 1.17.0 | | [redis_exporter](https://github.com/oliver006/redis_exporter) 1.80.0 | | [genai-toolbox](https://github.com/googleapis/genai-toolbox) 0.18.0 | |
 | [promscale](https://github.com/timescale/promscale) 0.17.0 | | [kafka_exporter](https://github.com/danielqsj/kafka_exporter) 1.9.0 | | [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.8.0 | |
 | [pgschema](https://github.com/pgschema/pgschema) 1.4.2 | | [mongodb_exporter](https://github.com/percona/mongodb_exporter) 0.47.1 | | | |
+{.wide .expand}

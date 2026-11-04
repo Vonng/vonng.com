@@ -74,6 +74,7 @@ Currently, OrioleDB is a storage engine PG extension plugin. However, because so
 | ✉️   | Generalize relation analyze in table AM interface                 | [Link](https://commitfest.postgresql.org/48/4958/)                                           | PostgreSQL 18 |
 | ✉️   | Custom reloptions for table AM                                    | [Link](https://commitfest.postgresql.org/48/4958/)                                           | PostgreSQL 18 |
 | ✉️   | Let table AM insertion methods control index insertion            | [Link](https://commitfest.postgresql.org/48/4958/)                                           | PostgreSQL 18 |
+{.wide .expand}
 
 I've created patched PG `oriolepg_17` and extension plugin `orioledb_17` on EL, and provided a ready-to-use configuration template for one-click OrioleDB testing.
 

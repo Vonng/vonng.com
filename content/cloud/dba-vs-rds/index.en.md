@@ -36,6 +36,7 @@ At this stage, advanced experience is "monopolized" by a few top experts. In fac
 | Stage 2 | Open-Source Databases | Open source broke commercial database monopoly,<br />but technical monopoly is in the hands of a few top open source experts. | High-paying expert positions |
 | Stage 3 | Cloud Databases | Cloud broke the technical monopoly of open source experts<br />but formed monopoly on the ability to use databases well | Management software rental |
 | Stage 4 | "Cloud Native?" | Open source management software broke cloud management software monopoly<br />The ability to use databases well spread to thousands of households | Consulting and insurance backup |
+{.wide .expand}
 
 So, recruiting experts who can use open source databases well as much as possible, creating a shared expert pool allowing scarce senior DBAs to be time-shared, and packaging this with DBA experience-precipitated management software as rental services, becomes a very profitable business model - and cloud database RDS does exactly this, making tons of money.
 
@@ -54,6 +55,7 @@ DBA work is mainly divided into **construction** and **maintenance** phases in t
 | **Database Layer** | Infrastructure building, database deployment |  Backup recovery / monitoring alerts / security compliance / version upgrades / parameter tuning   |
 |  OS Layer   |   OS tuning, kernel parameters   |               Storage space management                |
 |   Hardware Layer    |   Testing selection, driver adaptation   |               (Hardware replacement)                |
+{.wide .expand}
 
 System building isn't a one-time purchase but an evolutionary process where proficiency grows logarithmically with time. Interested and dedicated DBAs continuously pursue higher levels of automation construction, condensing the construction process into replicable experience, documentation, processes, scripts, tools, solutions, platforms, **management software**. Management software might be the ultimate form of DBA experience precipitation - using software to replace yourself doing DBA work.
 
@@ -90,6 +92,7 @@ Another benefit of management software replacing DBA work is that DBAs can add l
 | Cloud Database |       60% Management + 38% Manpower + **2%** DBA Manpower       |  50   |
 | Top User - Maintenance Phase |       90% Management + 9% Manpower + **1%** DBA Manpower        |  100  |
 | Future State Imagination | 95% Management + 4% Large Model + 0.9% Manpower + **0.1%** DBA Manpower | 1000  |
+{.wide .expand}
 
 So cloud providers' model is similar to banks. There's so-called "deposit reserve ratio" and "DBA multiplier" - ten or even hundreds of jars with one lid. Fully releasing (exploiting) the idle time and surplus value of DBA veterans, using lower manpower costs to provide "backup" services for more customers. This solved the problem of very scarce "ability to use databases well" and made tons of money.
 

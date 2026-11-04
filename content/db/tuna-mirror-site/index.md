@@ -171,3 +171,4 @@ PIGSTY PGSQL 仓库：提供 [几款不同风味的 PG 内核分支](https://pig
 | [pev2](https://github.com/pgsty/infra-pkg/tree/main/pev2)  |     1.17.0     |        [redis_exporter](https://github.com/oliver006/redis_exporter)        | 1.80.0  |                            [mtail](https://github.com/google/mtail)                            | 3.0.8  |
 |    [promscale](https://github.com/timescale/promscale)            |     0.17.0     |            [kafka_exporter](https://github.com/danielqsj/kafka_exporter)    |  1.9.0  |                  [genai-toolbox](https://github.com/googleapis/genai-toolbox)                  | 0.18.0 |
 |         [pgschema](https://github.com/pgschema/pgschema)          |   1.4.2        |       [mongodb_exporter](https://github.com/percona/mongodb_exporter)       | 0.47.1  |                        [sqlcmd](https://github.com/microsoft/go-sqlcmd)                        | 1.8.0  |
+{.wide .expand}

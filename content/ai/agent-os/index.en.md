@@ -39,6 +39,7 @@ What sits between applications and resources? The abstraction we call an "operat
 | Process Management | fork/exec/scheduler | Agent lifecycle, task orchestration | Red ocean (LangGraph et al.) |
 | I/O Management | Device drivers | Tool calling, MCP/CLI | Currently hot (MCP, Skills) |
 | Security | Permissions, audit, sandbox | Isolation, observability, decision audit | About to explode (E2B etc.) |
+{.wide .expand}
 
 These five subsystems form the skeleton of Agent OS. Let me break them down by importance.
 

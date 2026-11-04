@@ -159,6 +159,7 @@ PostgreSQL has won the growth market: new projects, new developers, new platform
 | Hyperscale deployments | OpenAI (800 million users), Instagram | Meta, Shopify (both chosen before 2010) | ★★★☆☆ |
 | Community governance | Decentralized, stable | Oracle-controlled, community crisis | ★★★★★ |
 | Acquisition capital | Neon $1 billion + Crunchy $250 million + Mooncake | Zero | ★★★★★ |
+{.wide .expand}
 
 But that "installed-base advantage" is historical inertia. It does not generate new technical vitality, attract new developers, or drive new platform choices. When core contributors from the MySQL community are signing an open letter saying "we are becoming legacy technology," the direction of travel is no longer debatable.
 
@@ -181,6 +182,7 @@ But that "installed-base advantage" is historical inertia. It does not generate 
 | Supabase Series E | $5.1 billion valuation | ★★★☆☆ |
 | AWS PostgreSQL vs. MySQL | Industry sources | ★★☆☆☆ |
 | Alibaba Cloud MySQL:PostgreSQL | Industry sources | ★★☆☆☆ |
+{.wide .expand}
 
 ## Further Reading
 

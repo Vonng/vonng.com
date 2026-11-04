@@ -19,6 +19,7 @@ PG 12 最后一个小版本为 2024-11-14 发布的 12.21，而这将是 PG 12 �
 | 14      | 14.14         | Yes       | September 30, 2021 | November 12, 2026 |
 | 13      | 13.17         | Yes       | September 24, 2020 | November 13, 2025 |
 | 12      | 12.21         | No        | October 3, 2019    | November 14, 2024 |
+{.wide .expand}
 
 ## PG12下台
 
@@ -98,6 +99,7 @@ PostgreSQL 12 是五年前发布的版本，我认为是继 PG 10 之后的一�
 | v2.0.2 | 2023-03-31 | 新增 pgvector 支持，修复 MinIO CVE                             | [v2.0.2](https://github.com/Vonng/pigsty/releases/tag/v2.0.2) |
 | v2.0.1 | 2023-03-21 | v2 错误修复，安全增强，升级 Grafana 版本                              | [v2.0.1](https://github.com/Vonng/pigsty/releases/tag/v2.0.1) |
 | v2.0.0 | 2023-02-28 | 架构大升级，兼容性、安全性、可维护性显著增强                                  | [v2.0.0](https://github.com/Vonng/pigsty/releases/tag/v2.0.0) |
+{.wide .expand}
 
 > [Pigsty Release Note](https://pigsty.cc/docs/about/release/)
 
@@ -111,6 +113,7 @@ PostgreSQL 12 是五年前发布的版本，我认为是继 PG 10 之后的一�
 |:--------------:|:---:|:----:|:------:|:-------:|:----:|:----:|:--------:|:----:|:----:|:----:|:----:|:----:|
 | RPM Extension  | 334 | 115  |  143   |   70    |  4   |  6   |   301    | 330  | 333  | 319  | 307  | 294  |
 | DEB Extension  | 326 | 104  |  144   |   70    |  4   |  14  |   302    | 322  | 325  | 316  | 303  | 293  |
+{.wide .expand}
 
 [![extension.png](extension.png)](https://pgext.cloud/zh)
 

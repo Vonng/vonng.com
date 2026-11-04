@@ -98,6 +98,7 @@ Fitting a Pareto tail to the spending shares of the top 10% and top 1% yields an
 |---|---|---|---|
 | Top 1% | ~$370 | $903 (measured by a16z) | One or two $200 top-tier plans, plus a stack of add-on tools |
 | Top 0.1% | ~$1,400 | ~$3,500 (extrapolated) | Seven to eighteen $200 top-tier plans burning concurrently |
+{.wide .expand}
 
 That matches the financial footprint of an agent fleet. Accordingly, I map **the top 1% of paying users to L3, and the top 0.1% to L4**.
 

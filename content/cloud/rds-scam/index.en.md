@@ -146,6 +146,7 @@ Alibaba RDS: 7x-11x, PolarDB: 6x~10x, AWS: 14x ~ 22x
 | AWS RDS HA Reference      | **¥1,160**        | **¥1,582**        |
 | Alibaba-Cloud PolarDB Ref | **¥250**          | **¥400**          |
 | DHH Tantan Self-Built 1C Computing (Excluding Storage) |                  | **¥40**           |
+{.wide .expand}
 
 Cloud servers - on-demand, monthly, annual, 5-year prepaid unit prices are **187¥, 125¥, 81¥, 37¥** respectively, compared to self-built **20¥** with markups of **8x, 5x, 3x, 1x**. After configuring common-ratio block storage (1 core:64GB, ESSD PL3), unit prices are: **571¥, 381¥, 298¥, 165¥**, compared to self-built **22.4¥** with markups of **24x, 16x, 12x, 6x**.
 

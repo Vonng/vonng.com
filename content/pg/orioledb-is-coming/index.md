@@ -76,6 +76,7 @@ CREATE TABLE blog_post
 | ✉️   | Generalize relation analyze in table AM interface                 | [Link](https://commitfest.postgresql.org/48/4958/)                                           | PostgreSQL 18 |
 | ✉️   | Custom reloptions for table AM                                    | [Link](https://commitfest.postgresql.org/48/4958/)                                           | PostgreSQL 18 |
 | ✉️   | Let table AM insertion methods control index insertion            | [Link](https://commitfest.postgresql.org/48/4958/)                                           | PostgreSQL 18 |
+{.wide .expand}
 
 我在 EL 上做好了 `oriolepg_17` 的补丁版 PG，以及 `orioledb_17` 的扩展插件，并且提供了一个开箱即用的配置模板，可以一键拉起 OrioleDB 尝鲜。
 

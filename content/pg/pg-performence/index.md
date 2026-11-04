@@ -44,6 +44,7 @@ PGBENCH是 PostgreSQL 自带的压测工具，默认使用类 TPC-B 的查询，
 | 3  | Apple MBP M1 Max 2021 | Normal  | 10  | 600MHz - 3.22GHz | 1000 | 240841  | 31903  |
 | 4  | AWS c5d.metal         | Normal  | 96  | 3.6GHz           | 1000 | 625849  | 71624  |
 | 5  | AWS c5d.metal         | Extreme | 96  | 3.6GHz           | 5000 | 1998580 | 137127 |
+{.wide .expand}
 
 ### **Read Write**
 
@@ -154,6 +155,7 @@ MySQL 并没有提供一个官方的 sysbench 测试结果，只是在官网上�
 | Table                 | 16 x 10M     | 16 x 10M                                 | 30 x 10M                                | 1 x 160M   | N/A            | 10 x 0.1M     |
 | CPU                   | 96           | 108                                      | 96                                      | 64         | 108            | 48            |
 | Source                | Vonng        | TiDB 6.1                                 | OceanBase                               | PolarDB    | Cockroach      | YugaByte      |
+{.wide .expand}
 
 ![pg-performence-10.png](pg-performence-10.png)
 
@@ -181,6 +183,7 @@ TPC-H 是一个模拟数仓，包含8张数据表，与22条复杂分析类SQL�
 | 100          | 4835     | 10  | 10C / 64G   | apple m1 max |
 | 1            | 13.5     | 8   | 8C / 64G    | z1d.2xlarge  |
 | 10           | 133      | 8   | 8C / 64G    | z1d.2xlarge  |
+{.wide .expand}
 
 作为横向对比，我们选取了一些其他数据库官网或比较详细的第三方测评结果。不过在对比前，有几点需要注意：一是有一些数据库产品仓数并非100，二来硬件规格也不尽相同，三来并不是所有数据库评测结果都来自原厂，因此只能作为 **大致的对照和参考**。
 
@@ -203,6 +206,7 @@ TPC-H 是一个模拟数仓，包含8张数据表，与22条复杂分析类SQL�
 | OceanBase  | 189    | 100  | 96  | 19.8 | 96C / 384G           | OceanBase |
 | PolarDB    | 387    | 50   | 32  | 14.5 | 32C / 128G           | 阿里云       |
 | PolarDB    | 755    | 50   | 16  | 14.9 | 16C / 64G            | 阿里云       |
+{.wide .expand}
 
 为了便于衡量，我们可以归一化核数与仓数，用 QPH ，即每小时，每核，执行1仓 TPC-H 查询可以执行多少轮，来近似评估数据库的相对分析性能。
 

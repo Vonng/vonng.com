@@ -28,6 +28,7 @@ This release also updates the self-hosted Supabase template to the latest upstre
 | `pig pt`   | Patroni cluster operations  | Restart, rebuild replicas, switchover, failover, configuration, and logs       |
 | `pig pb`   | Low-level pgBackRest primitives | Backups, repositories, backup sets, cleanup, and low-level restore          |
 | `pig pitr` | Recovery orchestration      | Coordinate Patroni, PostgreSQL, and pgBackRest to perform PITR                  |
+{.wide .expand}
 
 The most important change in this round is not the number of commands, but the **separation of responsibilities**. In the past, these operations depended largely on DBAs remembering SOPs and command aliases: which tool to call, what to do next, and what side effects to expect. That operational knowledge is now encoded directly in the commands, with high-risk operations consistently proceeding through the same chain:
 
@@ -291,6 +292,7 @@ This release adds 21 extensions, refreshes the PostgreSQL 18.4 package set, intr
 | `toastinfo`             | `1.5`           | `1.7`                            | PG 14-18                                                |
 | `pg_ivm`                | `1.14`          | `1.15` DEB / `1.14` RPM          | PG 14-18                                                |
 | `timeseries`            | `0.2.0`         | `0.2.1`                          | PG 14-18                                                |
+{.wide .expand}
 
 **Infrastructure Package Changes**
 
@@ -354,6 +356,7 @@ This release adds 21 extensions, refreshes the PostgreSQL 18.4 package set, intr
 | `sabiql`                       | `1.11.1`           | `1.14.0`           |                                          |
 | `pev2`                         | `1.21.0`           | `1.22.0`           |                                          |
 | `rainfrog`                     | `0.3.18`           | `0.3.19`           |                                          |
+{.wide .expand}
 
 **Validation and Checksums**
 

@@ -40,6 +40,7 @@ PostgreSQL 是数据库领域的祖师爷级开源项目，也是世界上最流
 | YANDEX        | 俄罗斯 | **2025-08-13** | https://mirror.yandex.ru/mirrors/postgresql/                          |
 | XTOM          | 德国  | **2025-07-24** | https://mirrors.xtom.de/postgresql/                                   |
 | PIGSTY        | 中国  | **2025-08-14** | https://repo.pigsty.cc/                                               |
+{.wide .expand}
 
 ## 镜像站的“断更”
 

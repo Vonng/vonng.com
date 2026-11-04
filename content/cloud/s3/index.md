@@ -32,6 +32,7 @@ tags: [下云, 云计算, 对象存储, AWS]
 |                                                       **其他参考价**                                                        |  **高性能存储**   | **顶配底折价** | **与采购NVMe SSD** | **价格参考** |
 |                                                       S3 Express                                                       |    0.160     |   67200   |     DHH 12T     |   1400   |
 |                                                        EBS io2                                                         | 0.125 + IOPS |  114000   |  Shannon 3.2T   |   900    |
+{.wide .expand}
 
 不难看出，S3 标准档的单价从 2006 年的 **0.15 $/GB·月** 到 2023 年的 **0.023 $/GB·月** ，降到原来的 **15%**，便宜了 **6** 倍，听上去不错；然而当你考虑到 S3 底层 HDD 的价格从降到原来的 **3.7%** ，便宜了整整 **26** 倍时，就能发现这里面的猫腻了。
 
@@ -61,6 +62,7 @@ S3 Express 的毫秒级延迟听上去很不错，但是当我们将其与 NVMe 
 | 延迟     | 4K随机读：75µs 4K随机写：15µs                              | 4K 随机读： 200µs                                                                                                                                                                                                   | 随机IO：500µs 上下文推断为16K                                                                                                                                                |
 | 可靠     | UBER < 1e-18，折合18个9 MTBF: 200万小时 5DWPD，持续三年        | 数据可靠性 9个9 [存储与数据可靠性](https://help.aliyun.com/document_detail/476273.html)                                                                                                                                       | **持久性**：99.999%，5个9 （0.001% 年故障率） [io2 说明](https://aws.amazon.com/cn/blogs/storage/achieve-higher-database-performance-using-amazon-ebs-io2-block-express-volumes/) |
 | SLA    | 5年质保 出问题直接换新                                       | [Aliyun RDS SLA](https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud201910310944_35008.html?spm=a2c4g.11186623.0.0.270e6e37n8Exh5) 可用性 99.99%: 月费 15% 99%: 月费 30% 95%: 月费 100% | [Amazon RDS SLA](https://d1.awsstatic.com/legal/amazonrdsservice/Amazon-RDS-Service-Level-Agreement-Chinese.pdf) 可用性 99.95%: 月费 15% 99%: 月费 25% 95%: 月费 100%        |
+{.wide .expand}
 
 这里本地 NVMe SSD 使用的例子是 Shannon DirectIO G5i 3.2TB MLC颗粒企业级SSD，是我们自己大规模使用的SSD卡。全新拆机零售件价 ¥2788 （闲鱼都有！），按5年60个月折算的每TB·月的人民币价格为 14.5 元。咱们退一步将按浪潮列表价 ¥4388 核算，TB·月价也就是 22.8。如果这个例子还不够，我们可以参考《[是时候放弃云计算吗](https://mp.weixin.qq.com/s/CicctyvV1xk5B-AsKfzPjw)》里面 DHH 下云采购的 12 TB Gen4 NVMe 企业级 SSD，2390\$ 一块，TB·月价也正好是 **23** 块钱。
 

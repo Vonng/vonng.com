@@ -56,7 +56,7 @@ Mac Studio 的 512 GB 统一内存，CPU 和 GPU 可以同时访问。它当然�
 | Qwen3.8-27B | 约 15–20 GB | 轻松 | 轻松 | 可以 |
 | DeepSeek-V4-Flash-0731 | 约 167 GB（官方 FP4+FP8 混合） | 可以 | 装不下 | 装不下 |
 | GLM-5.3 | 4-bit 约 400–450 GB（估算） | 勉强可以 | 装不下 | 装不下 |
-{.wide}
+{.wide .expand}
 
 最后这个数字是关键。
 
@@ -85,7 +85,7 @@ Mac Studio 的 512 GB 统一内存，CPU 和 GPU 可以同时访问。它当然�
 | DGX Spark | 128 GB | 273 GB/s |
 | RTX 5090 | 32 GB | 1.79 TB/s |
 | RTX PRO 6000 Blackwell | 96 GB | 1.79 TB/s |
-{.wide}
+{.wide .expand}
 
 看这张表你就明白了：RTX 5090 的带宽比 M5 Ultra 还高一半，但它只有 32 GB。**带宽决定单 token 多快，容量决定能不能跑。**
 
@@ -98,7 +98,7 @@ Mac Studio 的 512 GB 统一内存，CPU 和 GPU 可以同时访问。它当然�
 | Qwen 27B 级别 | 45–65 token/s | 100+ token/s |
 | DeepSeek-V4-Flash | 20–35 token/s | 45–100 token/s |
 | GLM-5.3 级别 | 22–32 token/s | 40–75 token/s |
-{.wide}
+{.wide .expand}
 
 **这些数字不是实测。新机器还没交付，MLX、llama.cpp 这些框架也需要时间适配新的 GPU 和 Neural Accelerator。量化方法、上下文长度、提示词缓存、并发数、推理引擎，每一项都会让最终结果产生巨大差异。**
 

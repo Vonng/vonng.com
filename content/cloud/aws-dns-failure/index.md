@@ -78,6 +78,7 @@ us-east-1 的特殊地位源于历史 —— 作为 AWS 的第一个区域，19 
 | **监控失明** | Service Health Dashboard 宕机 | CloudWatch 降级                                        | CloudWatch 和 服务健康看板受影响                                 |
 | **全局影响** | US-EAST-1，但影响依赖服务          | US-EAST-1 区域                                          | 全球(IAM、全局表依赖)                                          |
 | **经济影响** | $1.5 亿(S&P 500 公司)           | 未公开估计                                                | 数十亿～数千亿美元                                              |
+{.wide .expand}
 
 ### 循环依赖的死亡螺旋
 

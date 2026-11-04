@@ -81,6 +81,7 @@ Supabase 内置了一系列由他们自己开发维护的 PG 扩展插件，并�
 | [`pgsodium`](https://pgext.cloud/e/pgsodium/)           | 表数据加密存储 TDE，扩展，由PIGSTY提供                               |
 | [`supautils`](https://pgext.cloud/e/supautils/)         | 用于在云环境中确保数据库集群的安全，C扩展，由PIGSTY提供                        |
 | [`pg_plan_filter`](https://pgext.cloud/e/plan_filter/)  | 使用执行计划代价过滤阻止特定查询语句，C扩展，由PIGSTY提供                       |
+{.wide .expand}
 
 同时，我们在 Supabase 自建部署中默认 [安装](https://pigsty.cc/docs/pgsql/ext/install/)绝大多数扩展，您可以参考可用扩展列表按需 [启用](https://pigsty.cc/docs/pgsql/ext/create/)。
 

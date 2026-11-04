@@ -16,6 +16,7 @@ tags: [PostgreSQL, PG开发, 机器学习, GIS]
 |   3   |       联合索引       |    10     | 复杂度/魔数问题  |          额外复杂度          |
 |   4   |       GIST       |     4     | 最简表达，完全精确 | 形式简单，距离更精确，PostgreSQL限定 |
 |   5   | `btree_gist` 联合索引 |     1     | 最简表达，完全精确 | 形式简单，距离更精确，PostgreSQL限定 |
+{.wide .expand}
 
 ## 场景
 
@@ -587,6 +588,7 @@ with http.server.HTTPServer(("localhost", 3001), GetHandler) as httpd: httpd.ser
 |   3   |       联合索引       |    10     | 复杂度/魔数问题  |          额外复杂度          |
 |   4   |       GIST       |     4     | 最简表达，完全精确 | 形式简单，距离更精确，PostgreSQL限定 |
 |   5   | `btree_gist` 联合索引 |     1     | 最简表达，完全精确 | 形式简单，距离更精确，PostgreSQL限定 |
+{.wide .expand}
 
 那么好的，经过这么漫长的旅途，通过PostGIS与PostgreSQL，将原本需要3万毫秒的查询加速至1毫秒，三万倍的提升。相比传统关系型数据库，除了超过十倍以上的性能提升，还有很多优点：
 

@@ -140,6 +140,7 @@ SELECT pg_get_triggerdef(oid) FROM pg_trigger; -- WHERE xxx
 | `tgqual`         | `pg_node_tree` |                       | Internal representation of trigger `WHEN` condition |
 | `tgoldtable`     | `name`         |                       | `REFERENCING` column name for `OLD TABLE`, empty if none |
 | `tgnewtable`     | `name`         |                       | `REFERENCING` column name for `NEW TABLE`, empty if none |
+{.wide .expand}
 
 ## Trigger Types
 

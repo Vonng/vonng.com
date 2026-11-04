@@ -29,6 +29,7 @@ SQL标准定义了四种隔离级别，但实际上这也是很粗鄙的一种�
 | RC（monotonic atomic views） | -  | -        | -       | -  |
 | RR（snapshot isolation）     | ✓  | ✓        | -       | -  |
 | Serializable               | ✓  | ✓        | ✓       | ✓  |
+{.wide .expand}
 
 ## 隔离等级与并发问题
 
@@ -106,6 +107,7 @@ select * from test; -- either. Shows 1 => 12, 2 => 22
 |                                                           |                  `select * from pair;`                   | T2看见T1的结果和自己的修改 |
 |                                                           |            `update t set v = 22 where k = 2`             |                 |
 |                                                           |                         `commit`                          |                 |
+{.wide .expand}
 
 提交后的结果
 

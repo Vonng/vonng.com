@@ -54,6 +54,7 @@ tags: [Pigsty]
 | [md5hash](https://github.com/tvondra/md5hash)                              |   1.0.1   | 提供 128 位 MD5 的原生数据类型                         |
 | [pg_tde](https://github.com/percona/pg_tde)                            | 1.0-alpha | PostgreSQL 的实验性加密存储引擎。                   |
 | [pg_dirtyread](https://github.com/df7cb/pg_dirtyread)                      |    2.6    | 从 PostgreSQL 表中读取未清理的死元组，用于脏读            |
+{.wide .expand}
 
 这里面有许多使用 Rust 和 **pgrx** 开发的扩展插件，许多扩展都提供了非常强大的能力 —— 比如说：
 
@@ -73,6 +74,7 @@ Supabase 出品的 [**wrappers**](https://github.com/supabase/wrappers) 看上�
 | SQL Server  | A FDW for [Microsoft SQL Server](https://www.microsoft.com/en-au/sql-server/) | ✅    | ❌      |
 | Redis       | A FDW for [Redis](https://redis.io/)                                          | ✅    | ❌      |
 | AWS Cognito | A FDW for [AWS Cognito](https://aws.amazon.com/cognito/)                      | ✅    | ❌      |
+{.wide .expand}
 
 这意味着，你现在可以用 PostgreSQL **读写** BigQuery，ClickHouse，以及支付服务 Stripe 数据了。Firebase，Airtable，S3，Logflare，Auth0，SQL Server，Redis，Cognito 也提供了通过 PostgreSQL，使用 SQL 读取的能力。
 
@@ -213,6 +215,7 @@ SELECT COUNT(*) FROM trips;
 | STAT   | pg_permissions, pg_qualstats, pg_stat_kcache, pg_stat_monitor, pg_track_settings, pg_wait_sampling, plprofiler, powa, pgexporter_ext, system_stats, pg_store_plans, pgmeminfo, pg_profile, pg_show_plans, pg_statviz |
 | AI     | pg_tiktoken, imgsmlr, svector, pg_similarity, pgml, vectorize, vector                                                                                                                                                |
 | FEAT   | periods, pg_ivm, jsquery, hll, pgtt, rum, pg_hint_plan, age, temporal_tables, table_version, pg_graphql, pgq, pgmq, pg_strom, pg_jsonschema, hypopg, emaj, pgq_node, pre_prepare, rdkit                              |
+{.wide .expand}
 
 这些扩展之间，许多都可以相互组合使用，产生协同效应，产生 1+1 >> 2 的神奇效果。
 
@@ -309,6 +312,7 @@ Pigsty 已经提供了开箱即用的 PITR，允许用户回滚到任意时间�
 | 功能：核心模块 | 功能：所有模块 | 功能：所有模块 | 功能：所有模块 |
 | SLA：无 | SLA：工作日时效内响应 | SLA：5 x 8 (<4h) | SLA：7 x 24 (紧急 on-call) |
 | 社区公益支持答疑 | 提供基础咨询服务 | 提供专业咨询服务 | 提供企业级咨询服务 |
+{.wide .expand}
 
 Pigsty 专业版与开源的区别主要在于兼容性与功能模块，例如 PostgreSQL 大版本支持范围，操作系统大版本支持范围，芯片架构支持范围。
 

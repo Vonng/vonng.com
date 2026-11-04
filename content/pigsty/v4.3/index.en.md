@@ -63,6 +63,7 @@ Pigsty now supports 8 major OS versions across both x86_64 and arm64, for a tota
 | Ubuntu | 22.04   | Yes     | Yes     | Maintained, near EOL                  |
 | Ubuntu | 24.04   | Yes     | Yes     | noble, currently the most widely used |
 | Ubuntu | 26.04   | **New** | **New** | Supported since v4.3                  |
+{.wide .expand}
 
 Ubuntu 24.04, noble, is still the most widely used baseline today. Ubuntu 26.04 will likely replace it gradually over the next few years.
 
@@ -260,6 +261,7 @@ Pigsty rolls all of that into a release. You just use it. The complete v4.3.0 re
 | `timescaledb`        | 2.25.2       | 2.26.4      | Upgrade; TSL minor update                                               |
 | `ulak`               | -            | 0.0.2       | New; PG 14-18                                                           |
 | `wrappers`           | 0.5.7        | 0.6.0       | Upgrade; Rust/pgrx 0.16.1 -> 0.17.0                                     |
+{.wide .expand}
 
 **Infrastructure Package Updates**
 
@@ -319,6 +321,7 @@ Pigsty rolls all of that into a release. You just use it. The complete v4.3.0 re
 | `vector`                     | 0.54.0         | 0.55.0         | Direct-link metadata update                                  |
 | `v2ray`                      | 5.47.0         | 5.48.0         |                                                              |
 | `xray`                       | 26.2.6         | 26.3.27        |                                                              |
+{.wide .expand}
 
 **Checksums**
 

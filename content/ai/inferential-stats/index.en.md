@@ -81,6 +81,7 @@ Experimental power is defined as: the probability that experimental results allo
 | --- | --- | --- |
 | $H_0$ is true (random factors) $p_1$ | Correct decision, True Negative, TN, (1-α) | Type I error, FP, incorrectly rejected $H_0$ (α) |
 | $H_0$ is false (independent variable effective) $p_2$ | Type II error, FN, incorrectly retained $H_0$ (β) | Correct decision, True Positive, TP, (power = 1-β) |
+{.wide .expand}
 
 * The α level determines the probability of making a Type I error, and the β level determines the probability of making a Type II error.
 * The p-value **is the likelihood of the current data appearing when you assume there is no effect**.

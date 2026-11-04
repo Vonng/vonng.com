@@ -163,6 +163,7 @@ This is why I call Pigsty a **meta-distribution**, not just another PostgreSQL d
 | [**Cloudberry**](https://pigsty.io/docs/pgsql/kernel/cloudberry)  | **MPP DW and analytics**              | Massively parallel data warehouse             |
 | [**AgensGraph**](https://pigsty.io/docs/pgsql/kernel/agensgraph)  | **Graph database kernel**             | PostgreSQL-based graph database branch        |
 |     [**pgEdge**](https://pigsty.io/docs/pgsql/kernel/pgedge)      | **Distributed edge kernel**           | Distributed PostgreSQL for edge scenarios     |
+{.wide .expand}
 
 ![pg-forks.webp](pg-forks.webp)
 

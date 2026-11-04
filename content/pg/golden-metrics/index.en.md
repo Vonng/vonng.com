@@ -60,6 +60,7 @@ Based on experience and usage frequency, continuously subtracting, we can filter
 | **Database Age** | Age | DB | Database | Saturation |
 | **Queries Per Second** | QPS | **APP** | Connection-Pool | Traffic |
 | **CPU Usage** | CPU Usage | SYS | Machine Node | Saturation |
+{.wide .expand}
 
 In emergency situations: Errors are always the first priority golden metric.
 
@@ -122,3 +123,4 @@ The load metric users expect is a **saturation** metric. So-called saturation is
 | Memory Usage | Mem Usage | SYS | Machine Node | Saturation |
 | Network Bandwidth Usage | Net Usage | SYS | Machine Node | Saturation |
 | TCP Errors: Overflow/Retransmission | TCP ERROR | SYS | Machine Node | Error |
+{.wide .expand}

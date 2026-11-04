@@ -95,6 +95,7 @@ For example, your incoming data might look like this:
 | 2017-01-01 01:03:12 | ABC123    | 80         | 500MB    | 72          | 335         | field    |
 | 2017-01-01 01:03:35 | def456    | 95         | 350MB    | 64          | 335         | roof     |
 | 2017-01-01 01:03:42 | ghi789    | 100        | 100MB    | 56          | 77          | roof     |
+{.wide .expand}
 
 Now, let's look at various ways to model this data.
 
@@ -150,6 +151,7 @@ Our wide table model looks exactly like the initial data stream:
 | 2017-01-01 01:03:12 | ABC123    | 80         | 500MB    | 72          | 42          | field    |
 | 2017-01-01 01:03:35 | def456    | 95         | 350MB    | 64          | 42          | roof     |
 | 2017-01-01 01:03:42 | ghi789    | 100        | 100MB    | 56          | 77          | roof     |
+{.wide .expand}
 
 Here, each row is a new reading with a set of metrics and metadata at a given time. This allows us to preserve relationships in the data and ask more interesting or exploratory questions than before.
 
@@ -165,6 +167,7 @@ In our example, we could have a separate locations table that maps `location_id`
 |-------------|---------------|------------|------------|----------|--------|
 | 42          | Grand Central | 40.7527°N  | 73.9772°W  | 10017    | NYC    |
 | 77          | Hall 7        | 42.3593°N  | 71.0935°W  | 02139    | MA     |
+{.wide .expand}
 
 Then during queries, by joining our two tables, we can ask questions like: What's the average `free_mem` of our devices in zip code 10017?
 

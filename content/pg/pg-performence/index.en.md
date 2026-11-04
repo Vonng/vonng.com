@@ -45,6 +45,7 @@ PGBENCH is PostgreSQL's built-in benchmarking tool that uses TPC-B-like queries 
 | 3  | Apple MBP M1 Max 2021 | Normal  | 10  | 600MHz - 3.22GHz | 1000 | 240841  | 31903  |
 | 4  | AWS c5d.metal         | Normal  | 96  | 3.6GHz           | 1000 | 625849  | 71624  |
 | 5  | AWS c5d.metal         | Extreme | 96  | 3.6GHz           | 5000 | 1998580 | 137127 |
+{.wide .expand}
 
 ### **Read Write**
 
@@ -155,6 +156,7 @@ We collected official sysbench evaluation reports from several representative Ne
 | Table                 | 16 x 10M     | 16 x 10M                                 | 30 x 10M                                | 1 x 160M   | N/A            | 10 x 0.1M     |
 | CPU                   | 96           | 108                                      | 96                                      | 64         | 108            | 48            |
 | Source                | Vonng        | TiDB 6.1                                 | OceanBase                               | PolarDB    | Cockroach      | YugaByte      |
+{.wide .expand}
 
 ![pg-performence-10.png](pg-performence-10.png)
 
@@ -182,6 +184,7 @@ TPC-H is a simulated data warehouse with 8 data tables and 22 complex analytical
 | 100          | 4835     | 10  | 10C / 64G   | apple m1 max |
 | 1            | 13.5     | 8   | 8C / 64G    | z1d.2xlarge  |
 | 10           | 133      | 8   | 8C / 64G    | z1d.2xlarge  |
+{.wide .expand}
 
 For horizontal comparison, we selected some other database official results or detailed third-party evaluation results. However, several points need attention: some database products don't use 100 warehouses, hardware specs vary, and not all database evaluation results come from original manufacturers, so they can only serve as **rough comparisons and references**.
 
@@ -204,6 +207,7 @@ For horizontal comparison, we selected some other database official results or d
 | OceanBase  | 189    | 100  | 96  | 19.8 | 96C / 384G           | OceanBase |
 | PolarDB    | 387    | 50   | 32  | 14.5 | 32C / 128G           | Alibaba-Cloud |
 | PolarDB    | 755    | 50   | 16  | 14.9 | 16C / 64G            | Alibaba-Cloud |
+{.wide .expand}
 
 For easier measurement, we can normalize cores and warehouses using QPH (Queries Per Hour) - how many rounds of 1-warehouse TPC-H queries can be executed per hour per core, to approximately evaluate databases' relative analytical performance.
 

@@ -16,6 +16,7 @@ Flexibly applying database functionality can easily achieve a 30,000-fold perfor
 |   3   |   Compound Index    |         10           |  Complexity/Magic Numbers |      Extra complexity      |
 |   4   |        GIST         |          4           |  Simplest expression, fully accurate | Simple form, more accurate distance, PostgreSQL specific |
 |   5   | `btree_gist` Compound Index |     1      |  Simplest expression, fully accurate | Simple form, more accurate distance, PostgreSQL specific |
+{.wide .expand}
 
 ## Scenario
 
@@ -573,6 +574,7 @@ with http.server.HTTPServer(("localhost", 3001), GetHandler) as httpd: httpd.ser
 |   3   |   Compound Index    |         10           |  Complexity/Magic Numbers |      Extra complexity      |
 |   4   |        GIST         |          4           |  Simplest expression, fully accurate | Simple form, more accurate distance, PostgreSQL specific |
 |   5   | `btree_gist` Compound Index |     1      |  Simplest expression, fully accurate | Simple form, more accurate distance, PostgreSQL specific |
+{.wide .expand}
 
 Well then, after this long journey, through PostGIS and PostgreSQL, we've accelerated a query that originally took 30,000 milliseconds to 1 millisecond - a 30,000-fold improvement. Compared to traditional relational databases, besides more than 10x performance improvement, there are many other advantages:
 

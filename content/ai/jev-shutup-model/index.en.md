@@ -138,6 +138,7 @@ I had a few models estimate how local hardware behaves under a judgment-only wor
 | Ryzen AI Max+ 395                     | 233 ms | 554 ms | 2.08 s | 6.27 s   |
 | RTX 5090 (32 GB)                      | 25 ms  | 45 ms  | 187 ms | won't fit |
 | RTX PRO 6000 (96 GB)                  | 24 ms  | 40 ms  | 169 ms | 406 ms   |
+{.wide .expand}
 
 The table says three things.
 
@@ -222,6 +223,7 @@ If the judgment layer is a component that makes probabilistic estimates from a c
 | One digit off in a cardinality estimate, a plan a thousand times slower | One wrong confidence, one wrong action                            |
 | Plan hints                                                           | Human override                                                      |
 | AQO, Oracle adaptive plans: fix estimates with execution feedback    | Audit backfill, online recalibration                                |
+{.wide .expand}
 
 The `random_page_cost` row deserves its own paragraph. The default is 4; a DBA on SSDs sets it to 1.1. That is what "programming becomes writing a cost matrix" already looks like inside a database, and it exposes the same disease: the default is wrong for modern hardware, nobody knows what number to put there, and everybody cargo-cults. Which is why the database community has kept trying to learn cost parameters from execution feedback. On "can you write the costs down," the planner answered long ago: not well, you have to learn them.
 
@@ -308,6 +310,7 @@ An article about calibration ought to have an author willing to put probabilitie
 | A mainstream programming language adds keywords for uncertainty                 | 10 years    | 0.2 |
 | TypeSafe becomes the long-term winner of this category                          | 5 years     | 0.15 |
 | Total HBM demand falls as a result                                              | any horizon | 0.05 |
+{.wide .expand}
 
 Three things would invalidate all of this, in order of destructive power. The ceiling on discriminative judgment is too low, in which case it stays a prefilter forever and the impact halves. Calibration cannot be made to hold out of distribution, in which case it only works in closed-loop industries. Reasoning-token prices fall faster than expected, in which case the cost advantage goes to zero and only the latency advantage survives. So, once more, the two stakes in the ground: **the latency advantage is structural, the cost advantage is temporary.** Discount any argument built on "400x cheaper." Do not discount the ones built on "a hundred milliseconds, inside the request path." And all the accounting is conditional on the quality holding up—cut the accuracy along with everything else and of course you can make anything faster.
 

@@ -48,6 +48,7 @@ Let's also look at AWS, the public cloud leader【4】【5】. The closest on AW
 | AWS China/Ningxia On-Demand | ¥197,489 / month | 237           |
 | AWS China/Ningxia 1-Year No Prepay | ¥143,176 / month | 171           |
 | AWS China/Ningxia 3-Year Full Prepay | ¥647k + ¥116k/month | 160.6         |
+{.wide .expand}
 
 We can compare self-built vs cloud database cost differences:
 
@@ -126,6 +127,7 @@ Here we can use a simple method to calculate unit costs: one core computing powe
 |        Alibaba-Cloud RDS PG 4x Memory (Dedicated)        |      320      |
 |        Alibaba-Cloud RDS PG 8x Memory (Dedicated)        |      410      |
 |            Oracle Database License            |     10000     |
+{.wide .expand}
 
 So the question becomes: why can 20-yuan server hardware sell for hundreds, and with cloud database software can multiply several times more? **Are operations made of gold, or are servers made of gold?**
 

@@ -44,6 +44,7 @@ Two basic operations required for sortable objects are: Compare and Swap
 | Exchange Sort | Bubble Sort | $O(n^2)$          | $O(n^2)$          | $O(n^2)$          | $O(1)$            | Stable  |
 |      | Quicksort | $O(n\log_{2}{n})$ | $O(n\log_{2}{n})$ | $O(n^2)$          | $O(n\log_{2}{n})$ | Unstable |
 | Merge Sort | Merge Sort | $O(n\log_{2}{n})$ | $O(n\log_{2}{n})$ | $O(n\log_{2}{n})$ | $O(1)$            | Stable  |
+{.wide .expand}
 
 ### Memory Techniques
 

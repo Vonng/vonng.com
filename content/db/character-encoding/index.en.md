@@ -159,6 +159,7 @@ Based on different code unit units used, we have three character encoding forms:
 | Code Unit Length  | 1byte = 8bit | 2byte = 16bit | 4byte =  32bit |
 | Encoding Length  | 1 code point = 1~4 code units  |  1 code point = 1 or 2 code units  |   1 code point = 1 code unit    |
 | Unique Feature  |   ASCII Compatible    |    BMP Optimized    |      Fixed-length Encoding      |
+{.wide .expand}
 
 ### Fixed-length and Variable-length Encoding
 
@@ -230,6 +231,7 @@ After introducing the modern encoding model, let's deep dive into a specific enc
 | `00000yyy yyxxxxxx`          | `110yyyyy` | `10xxxxxx` |            |            |
 | `zzzzyyyy yyxxxxxx`          | `1110zzzz` | `10yyyyyy` | `10xxxxxx` |            |
 | `000uuuuu zzzzyyyy yyxxxxxx` | `11110uuu` | `10uuzzzz` | `10yyyyyy` | `10xxxxxx` |
+{.wide .expand}
 
 Rather than rote memorization, UTF-8's encoding rules can be naturally derived from several constraints:
 

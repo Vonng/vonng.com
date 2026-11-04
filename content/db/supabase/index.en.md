@@ -81,6 +81,7 @@ We package all 10 missing extensions developed and used by Supabase into ready-t
 | [`pgsodium`](https://pgext.cloud/e/pgsodium/)           | Table data encryption storage TDE, extension, provided by PIGSTY                                                 |
 | [`supautils`](https://pgext.cloud/e/supautils/)         | Used to ensure database cluster security in cloud environments, C extension, provided by PIGSTY                  |
 | [`pg_plan_filter`](https://pgext.cloud/e/plan_filter/)  | Filter and block specific query statements using execution plan costs, C extension, provided by PIGSTY           |
+{.wide .expand}
 
 Meanwhile, we [install](https://pigsty.io/docs/pgsql/ext/install/) most extensions by default in Supabase self-hosting deployment. You can refer to the available extension list to [enable](https://pigsty.io/docs/pgsql/ext/create/) them as needed.
 

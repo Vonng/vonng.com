@@ -222,3 +222,4 @@ The `MONGO` module provides 9 related configuration parameters, as shown in the 
 | `mongo_ssl_port`      | port   | C     | mongo TLS listen port, default uses 27018 |
 | `mongo_exporter_port` | port   | C     | mongo exporter port, default uses 9216 |
 | `mongo_extra_vars`    | string | C     | MONGO server extra environment variables, default empty string |
+{.wide .expand}

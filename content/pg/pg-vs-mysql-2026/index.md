@@ -158,6 +158,7 @@ PostgreSQL 赢了增量世界：新项目、新开发者、新平台、AI Agent 
 | 超大规模案例        | OpenAI（8 亿用户）、Instagram                | Meta、Shopify（均 2010 前选型） | ★★★☆☆ |
 | 社区治理          | 去中心化，稳健                                | Oracle 控制，社区危机           | ★★★★★ |
 | 收购资金流向        | Neon $10 亿 + Crunchy $2.5 亿 + Mooncake | 零                        | ★★★★★ |
+{.wide .expand}
 
 但这个"存量优势"是历史惯性，它不生成新的技术活力，不吸引新的开发者，也不驱动新的平台选型。当 MySQL 自己的社区核心贡献者都在签公开信说“我们正在变成 legacy”的时候，趋势已经不需要争论了。
 
@@ -180,6 +181,7 @@ PostgreSQL 赢了增量世界：新项目、新开发者、新平台、AI Agent 
 | Supabase Series E         | 估值 $51 亿        | ★★★☆☆ |
 | AWS PG vs MySQL           | 业内口径            | ★★☆☆☆ |
 | 阿里云 MySQL:PG              | 业内口径            | ★★☆☆☆ |
+{.wide .expand}
 
 ## 延伸阅读
 

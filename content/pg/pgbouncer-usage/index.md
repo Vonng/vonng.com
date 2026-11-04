@@ -145,6 +145,7 @@ $ psql -p 6543 pgbouncer
 | `avg_xact_time`     | 平均事务时长（以毫秒计）   |
 | `avg_query_time`    | 平均查询时长（以毫秒计）   |
 | `avg_wait_time`     | 平均等待时长（以毫秒计）   |
+{.wide .expand}
 
 两个变体：`SHOW STATS_TOTALS` 与 `SHOW STATS_AVERAGES`，分别显示整体与平均的统计。
 
@@ -166,6 +167,7 @@ TOTAL实际上是Counter，而AVG通常是Guage。监控时建议采集TOTAL，�
 | `ptr`          | 该连接内部对象的地址，用作唯一标识符                         |
 | `link`         | 服务器配对的客户端连接地址。                                 |
 | `remote_pid`   | 后端服务器进程的pid。如果通过unix套接字进行连接， 并且OS支持获取进程ID信息，则为OS pid。 否则它将从服务器发送的取消数据包中提取出来，如果服务器是Postgres， 则应该是PID，但是如果服务器是另一个PgBouncer，则它是一个随机数。 |
+{.wide .expand}
 
 ### `SHOW CLIENTS`
 
@@ -183,6 +185,7 @@ TOTAL实际上是Counter，而AVG通常是Guage。监控时建议采集TOTAL，�
 | `ptr`          | 该连接内部对象的地址，用作唯一标识符                         |
 | `link`         | 配对的服务器端连接地址。                                     |
 | `remote_pid`   | 如果通过unix套接字进行连接， 并且OS支持获取进程ID信息，则为OS pid。 |
+{.wide .expand}
 
 ### SHOW POOLS;
 

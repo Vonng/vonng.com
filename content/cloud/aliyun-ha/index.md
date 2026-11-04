@@ -42,6 +42,7 @@ tags: [下云, 阿里云, 故障复盘]
 | 主从 + <i class="fa-solid fa-wrench text-secondary"></i> 手工故障切换                                                              | <i class="fa-solid fa-triangle-exclamation text-primary"></i>  十分钟              | <i class="fa-solid fa-circle-check text-primary"></i> 丢失复制延迟中的数据（约百 KB）               |
 | 主从 + <i class="fa-solid fa-infinity text-primary"></i> 自动故障切换                                                              | <i class="fa-solid fa-circle-check text-primary"></i> 一分钟内                      | <i class="fa-solid fa-circle-check text-primary"></i> 丢失复制延迟中的数据（约百 KB）               |
 | 主从 + <i class="fa-solid fa-infinity text-primary"></i> 自动故障切换 + <i class="fa-solid fa-rotate text-success"></i> 同步提交       | <i class="fa-solid fa-circle-check text-success"></i> 一分钟内                      | <i class="fa-solid fa-circle-check text-success"></i> 无数据丢失                          |
+{.wide .expand}
 
 毕竟，[**SLA**](/cloud/sla/) 中的规定的几个 9 可用性指标 **并非真实历史战绩**，而是达不到此水平就补偿月消费 XX 元代金券的承诺。要想考察产品真正的容灾能力，还是要靠演练或真实灾难下的实际战绩表现。
 

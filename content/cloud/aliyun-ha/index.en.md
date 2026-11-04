@@ -41,6 +41,7 @@ The core metrics of disaster recovery are **RTO** (Recovery Time Objective) and 
 | Primary-Secondary + <i class="fa-solid fa-wrench text-secondary"></i> Manual failover | <i class="fa-solid fa-triangle-exclamation text-primary"></i> Ten minutes | <i class="fa-solid fa-circle-check text-primary"></i> Data in replication lag lost (about 100KB) |
 | Primary-Secondary + <i class="fa-solid fa-infinity text-primary"></i> Automatic failover | <i class="fa-solid fa-circle-check text-primary"></i> Within one minute | <i class="fa-solid fa-circle-check text-primary"></i> Data in replication lag lost (about 100KB) |
 | Primary-Secondary + <i class="fa-solid fa-infinity text-primary"></i> Automatic failover + <i class="fa-solid fa-rotate text-success"></i> Synchronous commit | <i class="fa-solid fa-circle-check text-success"></i> Within one minute | <i class="fa-solid fa-circle-check text-success"></i> No data loss |
+{.wide .expand}
 
 After all, the multiple 9s availability metrics specified in [**SLA**](/cloud/sla/) are **not actual historical performance**, but promises to compensate with XX yuan vouchers if this level isn't achieved. To examine the real disaster recovery capability of products, we need to rely on drills or actual performance under real disasters.
 

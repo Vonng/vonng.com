@@ -61,6 +61,7 @@ From 2017 to 2025, every us-east-1 catastrophe exposed the same anti-patterns. N
 | Monitoring blind spots | Service Health Dashboard down | CloudWatch degraded | CloudWatch & SHD impaired |
 | Blast radius | us-east-1 (plus dependents) | us-east-1 | Global (IAM/global tables) |
 | Economic impact | $150M for S&P 500 firms | N/A | Billions to hundreds of billions |
+{.wide .expand}
 
 **Looped dependencies, death-spiral edition.** AWS microservices are a hairball. IAM, EC2 management, ELB—all lean on DynamoDB; DynamoDB leans on them. Complexity hides inside layers of abstraction, making diagnosis painfully slow. We’ve seen the exact same story at [Alicloud](https://mp.weixin.qq.com/s/OIlR0rolEQff9YfCpj3wIQ), [OpenAI](https://mp.weixin.qq.com/s/ze4y9x7VpPmibitH7tAGMQ), and [Didi](https://mp.weixin.qq.com/s/FIOB_Oqefx1oez1iu7AGGg): circular dependencies kill you the day something hiccups.
 

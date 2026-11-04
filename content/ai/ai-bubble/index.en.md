@@ -881,6 +881,7 @@ To tell which branch we are actually traveling down, ignore the talking heads an
 | Junior tranche yields on off-balance-sheet AI debt | Whether yields keep widening after jumping from **8.5%** to **10%+** | Continued widening signals rising risk of peripheral credit defaults |
 | OpenAI's 2027 IPO | Whether it clears smoothly at a **$1T** valuation | Another delay or a down-round IPO is a strong top signal |
 | Early-2028 CapEx guidance | Whether **Meta** or **Oracle** cuts guidance first | Separates **B (Orderly Unwind)** from **C (Hard Landing)** |
+{.wide .expand}
 
 ## 6. The Endgame: As the Coasean Boundary Collapses, Are We New Freeholders or Digital Sharecroppers?
 

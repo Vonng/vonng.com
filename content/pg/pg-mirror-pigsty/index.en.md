@@ -39,6 +39,7 @@ At that time, I observed Germany's XTOM actually attempting a manual monthly upd
 | YANDEX          | Russia  | **2025-08-13**    | https://mirror.yandex.ru/mirrors/postgresql/                          |
 | XTOM            | Germany | **2025-07-24**    | https://mirrors.xtom.de/postgresql/                                   |
 | PIGSTY          | China   | **2025-08-14**    | https://repo.pigsty.cc/                                               |
+{.wide .expand}
 
 ## Mirrors "Stop Updating"
 

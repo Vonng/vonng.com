@@ -43,6 +43,7 @@ tags: [数据库, 哲学, 技术评论]
 | 事物之间的关联 | 关系（Relation）   | 外键（FK）    | 关联（Association） | Link        |
 | 对事物的操作  | —              | 存储过程（SP）  | 方法（Method）      | Action      |
 | 一个具体事物  | 个体（Individual） | 行（Row）    | 对象（Object）      | Object      |
+{.wide .expand}
 
 四列。四种术语体系。同一件事。不是“可以类比”，不是“有点像”，而是完全重叠，严格同构。
 Palantir 在文档里定义了 Interface（接口多态）、Function（代码逻辑）、 Virtual Table（虚拟表）等子概念 —— 翻译过来就是 View、UDF 和 Materialized View。

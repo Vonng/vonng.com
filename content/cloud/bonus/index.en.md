@@ -88,6 +88,7 @@ I believe DHH's figures are accurate, as at Tantan, from day one, we chose to bu
 |            AWS C5N.METAL 96C (On Demand)             |      35.0       |
 |     AWS C5N.METAL 96C (1y Reserve, All Upfront)      |      20.6       |
 |     AWS C5N.METAL 96C (3y Reserve, All Upfront)      |      12.8       |
+{.wide .expand}
 
 ## Cloud Rental Price
 

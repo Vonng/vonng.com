@@ -220,6 +220,7 @@ But the structural correspondence is real enough to be useful:
 | Humean bundle theory | Entities have no fixed underlying structure | Document databases | Schema-light flexible documents |
 | Ockham-style nominalism | Only individuals exist | Key-value stores | Minimal structure, minimal assumptions |
 | Heraclitean flux | To be is to change | Time-series databases | Everything is a time series |
+{.wide .expand}
 
 The lesson is simple:
 ontology is not one method.

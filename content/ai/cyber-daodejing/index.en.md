@@ -121,6 +121,7 @@ If Chapter 11 describes the spatial geometry of latent space, Chapter 42 traces 
 | **Two** | One generates Two | **Q–K duality**. Attention splits into the dual structure of Query ("what I am looking for") and Key ("what I have"). |
 | **Three** | Two generates Three | **Q–K–V triadic interaction**. Adding Value ("what I provide") completes the retrieval–routing–injection mechanism. |
 | **All Things** | Three generates all things | **Emergent capabilities**: language comprehension, code generation, logical reasoning, sentiment analysis, multi-turn dialogue. |
+{.wide .expand}
 
 This is not poetic license; it is a precise structural account of how emergence stacks up.
 
@@ -251,6 +252,7 @@ Turn that directly into an architectural litmus test: **how easily can your syst
 | **Workflow** | LLM dynamically reasons about the next step | Hardcoded `if-else` state machines |
 | **Infrastructure** | Open interfaces, extensible, portable | Closed coupling, vendor lock-in, painful to replace |
 | **Deployment** | Containerized, immutable infrastructure | Manual deployments, snowflake servers |
+{.wide .expand}
 
 **The deadliest rigidity in agent engineering is the hardcoded workflow.** When you orchestrate an agent with `if task_type == "search": call_search_api()`, you get a rigid system: fast and predictable on yesterday's test cases, brittle the moment reality deviates from the script. That is dead code—incapable of adapting, evolving, or recovering on its own.
 
@@ -379,6 +381,7 @@ Pay attention to the emptiness (`wu`) in your systems—the unparameterized late
 | **The highest good is like water (Seven Virtues)** (`上善若水·七善`) | Seven principles of adaptive systems | Flexible topology with invariant physical guarantees |
 | **The Dao is empty, yet never exhausted** (`道冲而用之或不盈`) | General-purpose infrastructure | Keep the core unopinionated ("empty") so diverse capabilities can compose on top |
 | **The Dao follows its own nature** (`道法自然`) | Working with the grain of the stack | Design around the intrinsic properties of your substrate, never against them |
+{.wide .expand}
 
 ## Cyber Dharma: When Religion Meets AI
 

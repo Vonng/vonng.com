@@ -29,6 +29,7 @@ Or set the transaction isolation level for the current session lifetime:
 | RC（monotonic atomic views） | -  | -        | -       | -  |
 | RR（snapshot isolation）     | ✓  | ✓        | -       | -  |
 | Serializable               | ✓  | ✓        | ✓       | ✓  |
+{.wide .expand}
 
 ## Isolation Levels and Concurrency Issues
 
@@ -70,6 +71,7 @@ Using atomic operations:
 |                                      | `update t set v = v + 1 where k = 1;` | T2 blocked by T1  |
 |               `COMMIT`               |                                        | T2 resumes, writes  |
 |                                      |                `COMMIT`                | T2 write overwrites T1 |
+{.wide .expand}
 
 There are two ways to solve this problem: use atomic operations, or execute transactions at the repeatable read isolation level.
 
@@ -106,6 +108,7 @@ select * from test; -- either. Shows 1 => 12, 2 => 22
 |                                                           |                  `select * from pair;`                   | T2 sees T1's results and its own changes |
 |                                                           |            `update t set v = 22 where k = 2`             |                 |
 |                                                           |                         `commit`                          |                 |
+{.wide .expand}
 
 Result after commit
 

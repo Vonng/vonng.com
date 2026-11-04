@@ -48,6 +48,7 @@ That turned into this release: **32 new additions, 22 updates, and the Pigsty ex
 | **Total**    |     504 |      155 |        332 |          71 |        0 |      481 |      488 |      479 |      473 |      457 |
 | **EL**       |     499 |      150 |        332 |          71 |        5 |      472 |      482 |      474 |      468 |      452 |
 | **Debian**   |     489 |      107 |        311 |          71 |       15 |      466 |      474 |      464 |      458 |      442 |
+{.wide .expand}
 
 Out of these 500-odd extensions, around 70 ship with PostgreSQL itself, roughly 150 are packaged by PGDG, and the remaining 330 are third-party extensions that I package and maintain myself.
 

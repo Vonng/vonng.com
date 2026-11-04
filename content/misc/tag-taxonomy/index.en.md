@@ -139,6 +139,7 @@ So, we can assign encodings for tag formal types as follows:
 | Single-weight tag | 0x01 | Value is single atomic type with weight, represented as length-2 array |
 | Multi-value tag | 0x10 | Value is list of same atomic type |
 | Weight tag | 0x11 | Value is dictionary of same atomic type, key can only be string or string(bigint) |
+{.wide .expand}
 
 #### 1.4.2 Tag Atomic Type Field
 
@@ -148,6 +149,7 @@ So, we can assign encodings for tag formal types as follows:
 | Integer tag | 0x01 | Integer numeric atomic tag |
 | Text tag | 0x10 | String atomic tag |
 | Floating-point tag | 0x11 | Floating-point numeric atomic tag |
+{.wide .expand}
 
 #### 1.4.3 Tag Formal Classification Overview
 
@@ -168,6 +170,7 @@ So, we can assign encodings for tag formal types as follows:
 | 12 | dict-enum | Multi-weight enumeration | 3 | Multi-weight | 0 | Enumeration | json |
 | 13 | dict-int | Multi-weight integer | 3 | Multi-weight | 1 | Integer | json |
 | 14 | dict-text | Multi-weight text | 3 | Multi-weight | 2 | Text | json |
+{.wide .expand}
 
 Note the relationship between tag formal classification and storage types:
 
@@ -196,6 +199,7 @@ Here are examples for each tag type:
 | 12 | Multi-weight enumeration | json | Alarm settings probability distribution: {"1":0.98, "2":0.75, "3":0.75, "4":0.5, "5":0.3} |
 | 13 | Multi-weight integer | json | Lucky numbers preference: {"7":0.32, "5":0.63} |
 | 14 | Multi-weight text | json | Website browsing preference tags: {"Q&A":0.55, "Social":0.75} |
+{.wide .expand}
 
 ## 2. Content Classification of Tags
 

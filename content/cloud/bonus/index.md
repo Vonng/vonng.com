@@ -76,6 +76,7 @@ SSD/NVMe 存储上的代际跃进幅度甚至比 CPU 领域还要大得多。我
 | AWS C5D.METAL 96C 200G (按月无预付) |    100    | AWS RDS PostgreSQL db.T2 (2x)  |   440   |
 | AWS C5D.METAL 96C 200G (预付三年)  |    80     | AWS RDS PostgreSQL db.M5 (4x)  |   611   |
 | AWS C7A.METAL 192C 384G (预付三年) |   104.8   | AWS RDS PostgreSQL db.R6G (8x) |   786   |
+{.wide .expand}
 
 ## 与云租赁价格对比
 

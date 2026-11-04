@@ -38,6 +38,7 @@ Using these kernels in Pigsty is virtually identical to using vanilla PostgreSQL
 | **PolarDB**               | `polar`  | Shared-storage architecture                  | 15          |
 | **Citus**                 | `citus`  | Distributed HTAP                             | 17          |
 | **Ferret / DocumentDB**   | `mongo`  | MongoDB wire-protocol compatible             | 17          |
+{.wide .expand}
 
 Twelve kernels, one config file. Let's walk through them one by one.
 
@@ -243,6 +244,7 @@ Pigsty itself will continue to follow the PG minor release cadence. The next ver
 | `antlr4-runtime413` | -               | 4.13        | New runtime dependency for Babelfish     |
 | `cloudberry`        | -               | 2.0.0       | RPM build only                           |
 | `pg_background`     | -               | 1.8         | DEB build only                           |
+{.wide .expand}
 
 **Infrastructure Software Updates**
 
@@ -286,6 +288,7 @@ Pigsty itself will continue to follow the PG minor release cadence. The next ver
 | `pig`                         | 1.1.2            | 1.3.0            |
 | `stalwart`                    | -                | 0.15.5           |
 | `maddy`                       | -                | 0.8.2            |
+{.wide .expand}
 
 **API Changes**
 
@@ -386,6 +389,7 @@ No other breaking API or configuration changes in this release.
 | `gost`                       | -              | 2.12.0         | New   |
 | `sabiql`                     | -              | 1.6.2          | New   |
 | `agentsview`                 | -              | 0.10.0         | New   |
+{.wide .expand}
 
 **Checksums**
 

@@ -101,6 +101,7 @@ Two basic counting problems include:
 | ----- | ---------------------------------------- | ------------------ |
 | Ordered sample  | $\frac {n!} {(n-r)! } = \binom n r \cdot r! $ | $n^r$              |
 | Unordered subpopulation | $\binom n r = \frac {n!}{(n-r)!r!}$      | $\binom {n+r-1} r$ |
+{.wide .expand}
 
 * Ordered with replacement is simplest: n possibilities each time, r samplings, so $n^r$
 * Ordered without replacement: selecting ordered samples of size r from n populations, so $\binom n r \cdot r! = \frac {n!}{(n-r)!}$

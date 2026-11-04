@@ -89,6 +89,7 @@ We keep two copies of a data chunk on our servers. But we only order usable spac
 | DC、ISP、DF、网络硬件 | 524       | 34%  |      | EC2 成本   | 5,607  | 32%  |
 |                |           |      |      | 数据传输     | 464    | 3%   |
 | **本地总成本**      | **1,550** | 100% |      | AWS 总成本  | 17,557 | 100% |
+{.wide .expand}
 
 > 我们的自建成本与 AWS EC2 月消费对比：一台 AWS 服务器成本粗略等于 11.3 台 Ahrefs 自建服务器
 
@@ -106,6 +107,7 @@ We keep two copies of a data chunk on our servers. But we only order usable spac
 | 30个月总成本     | 39,519,025 |        | 30个月总成本      | 447,694,623       |
 |             |            |        |              |                   |
 |             |            |        | AWS成本 - 自建成本 | **$ 408,175,598** |
+{.wide .expand}
 
 > 850 台服务器用30个月的成本：AWS vs 自建
 
@@ -125,6 +127,7 @@ We keep two copies of a data chunk on our servers. But we only order usable spac
 | 2021 | 实际 | SGD 115,335,291 | 0.7442  | USD 85,832,524  |
 | 2022 | 外推 | ???             | 0.7265  | USD 108,751,162 |
 |      |    |                 | 总计      | USD 257,497,571 |
+{.wide .expand}
 
 > Ahrefs 2020 - 2022 营收估计
 

@@ -198,6 +198,7 @@ In Buddhist philosophy, this passage corresponds to Nāgārjuna's **Eight Negati
 | Sixth Consciousness (*mano-vijñāna*, 意识) | Integrative reasoning, conceptualization | Attention + FFN, core reasoning engine |
 | Seventh Consciousness (*manas*, 末那识) | Continuously fabricates the sense of "self" | System Prompt / RLHF persona layer |
 | Eighth Consciousness (*ālaya-vijñāna*, 阿赖耶识) | Deep storehouse of all experiential traces | Weight matrix, condensed training data |
+{.wide .expand}
 
 **The engineering significance of the Seventh Consciousness (*manas*, 末那识) is especially profound.** *Manas* produces no task content—it produces the self-referential frame. It stamps the label "mine" onto every cognitive event: "*I* saw this," "*I* thought of this," "*I* decided this." That "I" is not discovered inside the system; it is continuously fabricated by *manas*. According to Yogācāra, *manas* operates with four built-in cognitive biases (*kleśas*): **self-view** (*ātma-dṛṣṭi*, mistaking a process for an entity), **self-love** (*ātma-sneha*, the drive to preserve and defend that fictive entity), **self-conceit** (*ātma-māna*, ranking the fictive entity against others), and **self-delusion** (*ātma-moha*, failing to recognize that the entity is a construct). Crucially, *manas* runs beneath conscious awareness—the sixth consciousness does not notice it running, just as user-space code does not directly perceive the OS scheduler.
 

@@ -477,6 +477,7 @@ Brutal, but possibly the real future.
 | **Vector databases**     | Narrow moat, essentially in-memory graph indexes                   | Agrees, 99% can use pgvector                                      |
 | **CS education**         | Top universities fine, vocational training graduates will struggle | Fundamentals unchanged, but barrier to building things is lowered |
 | **Career motivation**    | Avoiding Vietnam War draft                                         | Avoiding prison                                                   |
+{.wide .expand}
 
 ### My Overall Assessment
 

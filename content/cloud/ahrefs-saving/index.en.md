@@ -86,6 +86,7 @@ Combining the above two tables, it's easy to see that spending on AWS is much hi
 | DC, ISP, DF, Network HW| 524       | 34%  |      | EC2 Cost        | 5,607     | 32%  |
 |                        |           |      |      | Data Transfer   | 464       | 3%   |
 | **On-Premise Total**   | **1,550** | 100% |      | **AWS Total**   | **17,557**| 100% |
+{.wide .expand}
 
 > Our on-premise costs vs AWS EC2 monthly costs: One AWS server costs roughly equals 11.3 Ahrefs on-premise servers
 
@@ -103,6 +104,7 @@ When we calculate using the 850 servers we've actually used in our on-premise da
 | 30-month total       | 39,519,025      |        | 30-month total    | 447,694,623        |
 |                      |                 |        |                   |                    |
 |                      |                 |        | AWS - On-Premise  | **$ 408,175,598**  |
+{.wide .expand}
 
 > Cost of 850 servers for 30 months: AWS vs On-Premise
 
@@ -122,6 +124,7 @@ We can also linearly extrapolate revenue for 2022. This is a rough estimate, but
 | 2021 | Actual      | SGD 115,335,291  | 0.7442  | USD 85,832,524   |
 | 2022 | Extrapolated| ???              | 0.7265  | USD 108,751,162  |
 |      |             |                  | Total   | USD 257,497,571  |
+{.wide .expand}
 
 > Ahrefs 2020-2022 revenue estimate
 

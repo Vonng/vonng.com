@@ -190,6 +190,7 @@ demo 模板：`conf/demo/mysql.yml`。另外，如果你要的其实是 "让 PG 
 | `jmx-exporter`     | -       | 1.6.0    | Kafka 监控新增         |
 | `k3s`              | -       | 1.36.3   | 新增，含配套离线镜像         |
 | `duckdb`           | 1.5.4   | 1.5.5    |                    |
+{.wide .expand}
 
 完整的 Infra 与扩展软件包变更记录见 [**发布注记**](https://pigsty.cc/docs/about/release/#v450)。
 

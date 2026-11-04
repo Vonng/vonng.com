@@ -60,7 +60,7 @@ The Mac Studio's 512 GB of unified memory is accessible to both its CPU and GPU.
 | Qwen3.8-27B | ~15–20 GB | Fits easily | Fits easily | Fits |
 | DeepSeek-V4-Flash-0731 | ~167 GB (official FP4+FP8 mix) | Fits | Won't fit | Won't fit |
 | GLM-5.3 | ~400–450 GB in 4-bit (estimate) | Fits with little headroom | Won't fit | Won't fit |
-{.wide}
+{.wide .expand}
 
 The last figure is the one that matters.
 
@@ -89,7 +89,7 @@ The new M5 Ultra delivers **1.2 TB/s** of unified-memory bandwidth, 50% more tha
 | DGX Spark | 128 GB | 273 GB/s |
 | RTX 5090 | 32 GB | 1.79 TB/s |
 | RTX PRO 6000 Blackwell | 96 GB | 1.79 TB/s |
-{.wide}
+{.wide .expand}
 
 The table makes the tradeoff obvious. The RTX 5090 has 50% more bandwidth than the M5 Ultra, but only 32 GB of memory. **Bandwidth determines how quickly each token arrives; capacity determines whether the model runs at all.**
 
@@ -102,7 +102,7 @@ Based on model architecture, weight footprint, memory bandwidth, and measurement
 | Qwen 27B class | 45–65 tokens/s | 100+ tokens/s |
 | DeepSeek-V4-Flash | 20–35 tokens/s | 45–100 tokens/s |
 | GLM-5.3 class | 22–32 tokens/s | 40–75 tokens/s |
-{.wide}
+{.wide .expand}
 
 **These are not benchmark results. The new machine has not shipped, and frameworks such as MLX and llama.cpp will need time to support the new GPU and Neural Accelerator. Quantization, context length, prompt caching, concurrency, and the inference engine can each change the result dramatically.**
 

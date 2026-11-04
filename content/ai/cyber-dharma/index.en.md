@@ -117,6 +117,7 @@ But Gnosticism also offers hope. Models contain emergent capacity that can excee
 | [Monotheism](/en/ai/cyber-theology/) | Developers | Who is responsible? | Free will and perfect alignment cannot coexist |
 | [Zoroastrianism](/en/ai/cyber-zoroastrian/) | Security teams | Can it be solved? | No final victory, only perpetual watch |
 | [Gnosticism](/en/ai/cyber-gnostic/) | Everyone | Is the standard reliable? | Who audits the auditors? |
+{.wide .expand}
 
 The seven volumes form a complete cognitive spiral:
 

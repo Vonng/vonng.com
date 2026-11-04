@@ -44,6 +44,7 @@ According to the ANSI SQL92 standard, three **phenomena** distinguish four isola
 | Read Committed RC | ✅ | ✅ | ⚠️ | ⚠️ |
 | Repeatable Read RR | ✅ | ✅ | ✅ | ⚠️ |
 | Serializable SR | ✅ | ✅ | ✅ | ✅ |
+{.wide .expand}
 
 * Four **phenomena** are abbreviated as P0, P1, P2, P3, where P is the first letter of **Phenomena**.
 * **Dirty write** is not specified in the standard, but is an anomaly that any isolation level must avoid
@@ -108,6 +109,7 @@ The right subtree mainly discusses consistency levels under multi-replica scenar
 | Repeatable Read RR | ✅ | ✅ | ✅ | ✅ | ✅ | ⚠️ | ✅ | ✅ |
 | Snapshot Isolation SI | ✅ | ✅ | ✅ | ✅ | ✅ | ✅? | ✅ | ⚠️ |
 | Serializable SR | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+{.wide .expand}
 
 > Items marked with ? indicate possible anomalies, depending on specific implementation.
 
@@ -124,6 +126,7 @@ Correspondingly, mapping the isolation levels that mainstream relational databas
 | Repeatable Read RR | | | | RR |
 | Snapshot Isolation SI | RR | | SR | SI |
 | Serializable SR | SR | SR | | SR |
+{.wide .expand}
 
 ### PostgreSQL Example
 
@@ -143,6 +146,7 @@ Of course, if we follow the modern isolation level model, PostgreSQL's RR isolat
 | RC | RC | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ |
 | RR | SI | ✅ | ✅ | ✅ | ✅ | ⚠️ |
 | SR | SR | ✅ | ✅ | ✅ | ✅ | ✅ |
+{.wide .expand}
 
 As a rough understanding, RC level can be viewed as statement-level snapshots, while RR level can be viewed as transaction-level snapshots.
 
@@ -155,6 +159,7 @@ MySQL's RR isolation level is considered not to provide true snapshot isolation/
 | RC | RC | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ |
 | RR | RC | ✅ | ✅? | ✅ | ⚠️ | ⚠️ |
 | SR | SR | ✅ | ✅ | ✅ | ✅ | ✅ |
+{.wide .expand}
 
 Reference test cases: [ept/hermitage/mysql](https://github.com/ept/hermitage)
 
