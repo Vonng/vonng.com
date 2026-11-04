@@ -268,6 +268,16 @@
     background: rgba(255, 255, 255, 0.2);
     margin: 0 2px;
   }
+  @media (max-width: 640px) {
+    .style-dock { max-width: calc(100vw - 16px); overflow-x: auto; scrollbar-width: none; gap: 1px; padding: 4px 6px; }
+    .style-dock::-webkit-scrollbar { display: none; }
+    .style-dock a[href*="/me/"]:not([href$="/me/"]):not(.nav-arrow):not(.icon-btn):not([aria-current]) { display: none; }
+    .style-dock > .sep:first-of-type { display: none; }
+  }
+  @media (max-width: 420px) {
+    .style-dock .dl-btn span { display: none; }
+    .style-dock .dl-btn { padding: 5px 8px; }
+  }
 </style>
 </head>
 <body>
@@ -553,14 +563,14 @@
     display: flex; flex-direction: column; justify-content: space-between;
   }
   .identity-row { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5mm; white-space: nowrap; }
-  .name-cn { font-size: 5.0mm; font-weight: 800; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
+  .name-cn { font-size: 4.5mm; font-weight: 800; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
   .name-en { font-size: 2.15mm; font-weight: 600; color: var(--muted); letter-spacing: 0; white-space: nowrap; }
   .name-en .slash { color: var(--accent); font-weight: 700; margin: 0 0.3mm; }
   .name-en .accent { color: var(--accent); font-family: var(--mono); font-weight: 700; }
-  .roles { display: flex; flex-wrap: nowrap; gap: 1.0mm; }
+  .roles { display: flex; flex-wrap: nowrap; gap: 0.8mm; }
   .role-pill {
-    font-size: 1.85mm; font-weight: 700; letter-spacing: 0.01em;
-    padding: 0.65mm 1.35mm; border: 0.3mm solid var(--rule); line-height: 1.15;
+    font-size: 1.66mm; font-weight: 700; letter-spacing: 0;
+    padding: 0.65mm 1.1mm; border: 0.3mm solid var(--rule); line-height: 1.15;
     background: transparent; white-space: nowrap;
   }
   .role-pill.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
@@ -884,7 +894,7 @@
   .prompt-line .ps { color: var(--pg-blue); font-weight: 700; }
   .prompt-line .kw { color: #ff7b72; font-weight: 700; }
   .prompt-line .str { color: #a5d6ff; }
-  .hero { display: flex; align-items: baseline; gap: 1.4mm; margin: 0.3mm 0; white-space: nowrap; }
+  .hero { display: flex; align-items: baseline; gap: 1.1mm; margin: 0.3mm 0; white-space: nowrap; }
   .name-cn { font-family: var(--sans); font-size: 4.1mm; font-weight: 800; color: #ffffff; letter-spacing: 0.01em; line-height: 1.05; }
   .name-en { font-size: 2.15mm; font-weight: 700; color: var(--pg-blue); }
   .handle { font-size: 1.82mm; color: var(--amber); }
@@ -903,7 +913,7 @@
     row-gap: 0.8mm; column-gap: 0.9mm; font-size: 1.56mm;
   }
   .kv { display: flex; align-items: baseline; gap: 0.65mm; white-space: nowrap; }
-  .kv .key { color: #79c0ff; width: 5.8mm; flex-shrink: 0; font-size: 1.42mm; }
+  .kv .key { color: #79c0ff; width: 8.4ch; flex-shrink: 0; font-size: 1.42mm; }
   .kv .val { color: var(--text); font-weight: 500; }
   .kv .val.cjk { font-family: var(--sans); font-weight: 600; }
   .right-pane {
@@ -1195,8 +1205,8 @@
     padding: 2.4mm 2.8mm;
     display: flex; flex-direction: column; justify-content: space-between;
   }
-  .title-block { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5mm; white-space: nowrap; }
-  .name-cn { font-family: var(--sans); font-size: 5.1mm; font-weight: 800; letter-spacing: 0.02em; line-height: 1; color: #fff; }
+  .title-block { display: flex; align-items: baseline; justify-content: space-between; gap: 1.1mm; white-space: nowrap; }
+  .name-cn { font-family: var(--sans); font-size: 4.3mm; font-weight: 800; letter-spacing: 0.005em; line-height: 1; color: #fff; }
   .name-en { font-size: 2.25mm; font-weight: 700; color: var(--cyan); }
   .tag-id {
     font-size: 1.85mm; color: var(--amber);
@@ -1369,9 +1379,9 @@
     background: var(--black); color: var(--cream);
     font-family: var(--mono); font-size: 1.65mm; font-weight: 700; padding: 0.2mm 1.0mm;
   }
-  .geo-roles { display: flex; gap: 0.75mm; align-items: center; flex-wrap: nowrap; }
+  .geo-roles { display: flex; gap: 0.6mm; align-items: center; flex-wrap: nowrap; }
   .geo-tag {
-    font-size: 1.58mm; font-weight: 800; padding: 0.5mm 0.95mm;
+    font-size: 1.5mm; font-weight: 800; padding: 0.5mm 0.8mm;
     border: 0.4mm solid var(--black); line-height: 1.1; white-space: nowrap;
   }
   .geo-tag.r { background: var(--red); color: #fff; }

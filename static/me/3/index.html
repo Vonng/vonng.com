@@ -86,7 +86,7 @@
   .prompt-line .ps { color: var(--pg-blue); font-weight: 700; }
   .prompt-line .kw { color: #ff7b72; font-weight: 700; }
   .prompt-line .str { color: #a5d6ff; }
-  .hero { display: flex; align-items: baseline; gap: 1.4mm; margin: 0.3mm 0; white-space: nowrap; }
+  .hero { display: flex; align-items: baseline; gap: 1.1mm; margin: 0.3mm 0; white-space: nowrap; }
   .name-cn { font-family: var(--sans); font-size: 6.8mm; font-weight: 800; color: #ffffff; letter-spacing: 0.01em; line-height: 1.05; }
   .name-en { font-size: 2.15mm; font-weight: 700; color: var(--pg-blue); }
   .handle { font-size: 1.82mm; color: var(--amber); }
@@ -105,7 +105,7 @@
     row-gap: 0.8mm; column-gap: 0.9mm; font-size: 1.56mm;
   }
   .kv { display: flex; align-items: baseline; gap: 0.65mm; white-space: nowrap; }
-  .kv .key { color: #79c0ff; width: 5.8mm; flex-shrink: 0; font-size: 1.42mm; }
+  .kv .key { color: #79c0ff; width: 8.4ch; flex-shrink: 0; font-size: 1.42mm; }
   .kv .val { color: var(--text); font-weight: 500; }
   .kv .val.cjk { font-family: var(--sans); font-weight: 600; }
   .right-pane {
@@ -286,6 +286,15 @@
   }
   @media print {
     .style-dock { display: none !important; }
+  }
+  @media (max-width: 640px) {
+    .style-dock { max-width: calc(100vw - 16px); overflow-x: auto; scrollbar-width: none; gap: 1px; padding: 4px 6px; }
+    .style-dock::-webkit-scrollbar { display: none; }
+    .style-dock a[href*="/me/"]:not([href$="/me/"]):not(.nav-arrow):not(.icon-btn):not([aria-current]) { display: none; }
+  }
+  @media (max-width: 420px) {
+    .style-dock .dl-btn span { display: none; }
+    .style-dock .dl-btn { padding: 5px 8px; }
   }
 </style>
 <script>

@@ -95,9 +95,9 @@
     background: var(--black); color: var(--cream);
     font-family: var(--mono); font-size: 1.65mm; font-weight: 700; padding: 0.2mm 1.0mm;
   }
-  .geo-roles { display: flex; gap: 0.75mm; align-items: center; flex-wrap: nowrap; }
+  .geo-roles { display: flex; gap: 0.6mm; align-items: center; flex-wrap: nowrap; }
   .geo-tag {
-    font-size: 1.58mm; font-weight: 800; padding: 0.5mm 0.95mm;
+    font-size: 1.5mm; font-weight: 800; padding: 0.5mm 0.8mm;
     border: 0.4mm solid var(--black); line-height: 1.1; white-space: nowrap;
   }
   .geo-tag.r { background: var(--red); color: #fff; }
@@ -299,6 +299,15 @@
   }
   @media print {
     .style-dock { display: none !important; }
+  }
+  @media (max-width: 640px) {
+    .style-dock { max-width: calc(100vw - 16px); overflow-x: auto; scrollbar-width: none; gap: 1px; padding: 4px 6px; }
+    .style-dock::-webkit-scrollbar { display: none; }
+    .style-dock a[href*="/me/"]:not([href$="/me/"]):not(.nav-arrow):not(.icon-btn):not([aria-current]) { display: none; }
+  }
+  @media (max-width: 420px) {
+    .style-dock .dl-btn span { display: none; }
+    .style-dock .dl-btn { padding: 5px 8px; }
   }
 </style>
 <script>

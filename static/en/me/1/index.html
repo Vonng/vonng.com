@@ -74,14 +74,14 @@
     display: flex; flex-direction: column; justify-content: space-between;
   }
   .identity-row { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5mm; white-space: nowrap; }
-  .name-cn { font-size: 5.0mm; font-weight: 800; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
+  .name-cn { font-size: 4.5mm; font-weight: 800; line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
   .name-en { font-size: 2.15mm; font-weight: 600; color: var(--muted); letter-spacing: 0; white-space: nowrap; }
   .name-en .slash { color: var(--accent); font-weight: 700; margin: 0 0.3mm; }
   .name-en .accent { color: var(--accent); font-family: var(--mono); font-weight: 700; }
-  .roles { display: flex; flex-wrap: nowrap; gap: 1.0mm; }
+  .roles { display: flex; flex-wrap: nowrap; gap: 0.8mm; }
   .role-pill {
-    font-size: 1.85mm; font-weight: 700; letter-spacing: 0.01em;
-    padding: 0.65mm 1.35mm; border: 0.3mm solid var(--rule); line-height: 1.15;
+    font-size: 1.66mm; font-weight: 700; letter-spacing: 0;
+    padding: 0.65mm 1.1mm; border: 0.3mm solid var(--rule); line-height: 1.15;
     background: transparent; white-space: nowrap;
   }
   .role-pill.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
@@ -287,6 +287,15 @@
   }
   @media print {
     .style-dock { display: none !important; }
+  }
+  @media (max-width: 640px) {
+    .style-dock { max-width: calc(100vw - 16px); overflow-x: auto; scrollbar-width: none; gap: 1px; padding: 4px 6px; }
+    .style-dock::-webkit-scrollbar { display: none; }
+    .style-dock a[href*="/me/"]:not([href$="/me/"]):not(.nav-arrow):not(.icon-btn):not([aria-current]) { display: none; }
+  }
+  @media (max-width: 420px) {
+    .style-dock .dl-btn span { display: none; }
+    .style-dock .dl-btn { padding: 5px 8px; }
   }
 </style>
 <script>

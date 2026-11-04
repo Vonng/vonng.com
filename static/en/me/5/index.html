@@ -87,8 +87,8 @@
     padding: 2.4mm 2.8mm;
     display: flex; flex-direction: column; justify-content: space-between;
   }
-  .title-block { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5mm; white-space: nowrap; }
-  .name-cn { font-family: var(--sans); font-size: 5.1mm; font-weight: 800; letter-spacing: 0.02em; line-height: 1; color: #fff; }
+  .title-block { display: flex; align-items: baseline; justify-content: space-between; gap: 1.1mm; white-space: nowrap; }
+  .name-cn { font-family: var(--sans); font-size: 4.3mm; font-weight: 800; letter-spacing: 0.005em; line-height: 1; color: #fff; }
   .name-en { font-size: 2.25mm; font-weight: 700; color: var(--cyan); }
   .tag-id {
     font-size: 1.85mm; color: var(--amber);
@@ -291,6 +291,15 @@
   }
   @media print {
     .style-dock { display: none !important; }
+  }
+  @media (max-width: 640px) {
+    .style-dock { max-width: calc(100vw - 16px); overflow-x: auto; scrollbar-width: none; gap: 1px; padding: 4px 6px; }
+    .style-dock::-webkit-scrollbar { display: none; }
+    .style-dock a[href*="/me/"]:not([href$="/me/"]):not(.nav-arrow):not(.icon-btn):not([aria-current]) { display: none; }
+  }
+  @media (max-width: 420px) {
+    .style-dock .dl-btn span { display: none; }
+    .style-dock .dl-btn { padding: 5px 8px; }
   }
 </style>
 <script>
