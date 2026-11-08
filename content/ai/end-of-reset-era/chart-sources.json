@@ -1,0 +1,72 @@
+{
+  "snapshot_id": "20261107T123740Z-fb622cfc",
+  "retrieved_at": "2026-11-08",
+  "manifest_url": "https://pgsty.com/report/manifest.json",
+  "published_at": "2026-11-07T12:38:48+00:00",
+  "implementation": "Native OINK v1.5.1 echarts fences; data embedded in both language editions. No runtime data fetch.",
+  "charts": [
+    {
+      "id": "github-stars",
+      "source_url": "https://pgsty.com/zh/report/#report=github&period=180d&cfMetric=requests",
+      "english_source_url": "https://pgsty.com/report/#report=github&period=180d&cfMetric=requests",
+      "path": "data/7f0f388200bd3315e9d1789966e6a3f386c983b6fd3ce3150ae078f228906624.json",
+      "sha256": "7f0f388200bd3315e9d1789966e6a3f386c983b6fd3ce3150ae078f228906624",
+      "bytes": 1049722,
+      "data_url": "https://pgsty.com/report/data/7f0f388200bd3315e9d1789966e6a3f386c983b6fd3ce3150ae078f228906624.json",
+      "data_path": "datasets.github.retained_star_series.monthly_by_repository",
+      "range": [
+        "2018-01-01",
+        "2026-11-07"
+      ],
+      "points": 107,
+      "series": [
+        "pigsty",
+        "silo",
+        "acdat",
+        "pg_exporter",
+        "pig",
+        "oink",
+        "other",
+        "total"
+      ],
+      "method": "Top six repositories by retained stars at cutoff; sum the remaining 40 into other. Month-end timestamps, except the final partial month uses the source as_of date. The total is the sum of all 46 repository series. Retained star history excludes unstarred events and is not a record of historical net star counts.",
+      "replaces": [
+        "github.webp",
+        "github-en.webp"
+      ]
+    },
+    {
+      "id": "ga-daily-users",
+      "source_url": "https://pgsty.com/zh/report/#report=ga&period=180d&cfMetric=requests",
+      "english_source_url": "https://pgsty.com/report/#report=ga&period=180d&cfMetric=requests",
+      "path": "data/06f4764a8af566fe82d875fa7c6e97de9b07f70539b0293148ab5cc037e6d591.json",
+      "sha256": "06f4764a8af566fe82d875fa7c6e97de9b07f70539b0293148ab5cc037e6d591",
+      "bytes": 2998732,
+      "data_url": "https://pgsty.com/report/data/06f4764a8af566fe82d875fa7c6e97de9b07f70539b0293148ab5cc037e6d591.json",
+      "data_path": "datasets.ga.aggregate.daily",
+      "range": [
+        "2026-05-12",
+        "2026-11-06"
+      ],
+      "points": 179,
+      "metric": "uv",
+      "method": "Use the upstream 180-day filter: publication day minus 179 days through publication day. The latest observed day is November 6. Trailing average uses complete observations in (date - 7 days, date], requires at least four observations, and is rounded to two decimals; missing averages stay null. No partial-day flags are set in this window. Like the upstream renderer, the average uses the reported aggregate daily values even when individual site bindings are missing; these coverage gaps are disclosed below the chart. Monthly metrics come from the directly queried October row in aggregate.monthly; sessions are summed over the selected daily window. Site totals are not deduplicated across sites.",
+      "replaces": [
+        "audience.webp",
+        "audience-en.webp"
+      ],
+      "coverage": {
+        "days_with_missing_bindings": 47,
+        "maximum_missing_bindings_per_day": 10,
+        "expected_binding_counts": [
+          12,
+          21,
+          24,
+          25,
+          26
+        ],
+        "scope": "The coverage and tracking scope change over time. These are aggregate site counts, not a constant-site cohort."
+      }
+    }
+  ]
+}

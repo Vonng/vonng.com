@@ -1,0 +1,58 @@
+{
+  "verified_date": "2026-11-08",
+  "images": [
+    {
+      "asset": "home-en.webp",
+      "original": "home.webp",
+      "source_url": "https://mooncake.pgsty.com/",
+      "method": "browser-screenshot",
+      "capture_date": "2026-11-08",
+      "dimensions": { "width": 1080, "height": 1107 }
+    },
+    {
+      "asset": "upstream.webp",
+      "original": "upstream.webp",
+      "source_url": "https://github.com/Mooncake-Labs/pg_mooncake",
+      "method": "browser-screenshot",
+      "capture_date": null,
+      "dimensions": { "width": 1080, "height": 956 },
+      "retained": true,
+      "note": "Original English screenshot retained to preserve historical repository state; original capture date is unknown."
+    },
+    {
+      "asset": "docs-en.webp",
+      "original": "docs.webp",
+      "source_url": "https://mooncake.pgsty.com/docs/",
+      "method": "browser-screenshot",
+      "capture_date": "2026-11-08",
+      "dimensions": { "width": 1080, "height": 1107 }
+    },
+    {
+      "asset": "blog-en.webp",
+      "original": "blog.webp",
+      "source_url": "https://mooncake.pgsty.com/blog/",
+      "method": "browser-screenshot",
+      "capture_date": "2026-11-08",
+      "dimensions": { "width": 1080, "height": 1215 }
+    },
+    {
+      "asset": "install-en.webp",
+      "original": "install.webp",
+      "source_url": "https://mooncake.pgsty.com/download/",
+      "method": "browser-screenshot",
+      "capture_date": "2026-11-08",
+      "dimensions": { "width": 1080, "height": 1215 }
+    },
+    {
+      "asset": "packages.webp",
+      "original": "packages.webp",
+      "source_url": "https://ext.pgsty.com/e/pg_mooncake/",
+      "captured_url": "https://doc.pgext.cloud/e/pg_mooncake/",
+      "method": "browser-screenshot",
+      "capture_date": null,
+      "dimensions": { "width": 1080, "height": 1215 },
+      "retained": true,
+      "note": "Original English screenshot retained to preserve the historical package matrix; source_url is the verified canonical URL. Original capture date is unknown."
+    }
+  ]
+}

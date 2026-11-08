@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "article": "index.en.md",
+  "date": "2026-11-08",
+  "images": [
+    {
+      "asset": "featured.webp",
+      "original_asset": "featured.webp",
+      "date": "2026-11-08",
+      "method": "unchanged_original",
+      "dimensions": {
+        "width": 1600,
+        "height": 683
+      },
+      "original_dimensions": {
+        "width": 1600,
+        "height": 683
+      },
+      "sha256": "e4cd1b44a5a05cf59beb3b1c240bf56035da278eecaa540dfb7af2fb6ea9aed3",
+      "original_sha256": "e4cd1b44a5a05cf59beb3b1c240bf56035da278eecaa540dfb7af2fb6ea9aed3",
+      "sources": [],
+      "notes": "Text-free cover illustration retained unchanged."
+    },
+    {
+      "asset": "calendar.webp",
+      "original_asset": "calendar.webp",
+      "date": "2026-11-08",
+      "method": "unchanged_original",
+      "dimensions": {
+        "width": 1688,
+        "height": 450
+      },
+      "original_dimensions": {
+        "width": 1688,
+        "height": 450
+      },
+      "sha256": "4745c07f3e57d658a6eafa768d99b468c8271e1a2e2035bb5223773fbcc8fc83",
+      "original_sha256": "4745c07f3e57d658a6eafa768d99b468c8271e1a2e2035bb5223773fbcc8fc83",
+      "sources": [
+        {
+          "url": "https://codex-resets.com/",
+          "role": "data_source"
+        }
+      ],
+      "notes": "Already-English calendar retained unchanged. The article cites Codex Resets; its current site layout differs from this chart, so this URL is credited as the data source, not an exact screenshot match."
+    },
+    {
+      "asset": "subsidy-en.webp",
+      "original_asset": "subsidy.webp",
+      "date": "2026-11-08",
+      "method": "imagegen_translation",
+      "dimensions": {
+        "width": 1269,
+        "height": 1240
+      },
+      "original_dimensions": {
+        "width": 2024,
+        "height": 1976
+      },
+      "sha256": "8cb213eb2bbc040ff012bee2cded9b5455c30a08cd72ef276109f8a6f58d77c7",
+      "original_sha256": "e34bc7736b8398dc99c849ad8f978a883033c1773c61a7e0ec5c96a1cc7f967b",
+      "sources": [],
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "prompt": "Use case: text-localization. Translate this historical blog-excerpt/payment-table screenshot into English, preserving the original layout, aspect ratio 2024x1976, cream background, blue linked phrases, payment logos, row order, amounts, dates and ALL blurred/redacted account identifiers. Heading: \"The subsidies are still here. Make the most of them.\" Paragraph 1: \"I've covered subscriptions in earlier posts. Coding plans offer the best deal in AI right now. If Codex and Claude are too expensive or unavailable, GLM's coding plan is a workable alternative.\" Paragraph 2: \"I recently switched from US App Store purchases to direct subscriptions with an Airwallex Singapore virtual card, and it has worked well. The two routes I know work are a US App Store account linked to PayPal, and an Airwallex Singapore virtual card. Some friends ask someone in the US to pay on their behalf. Beyond that, I can't vouch for other methods.\" Table headers Date / Merchant / Account / Amount. Chinese 软件 -> Software, 现金 -> Cash, 处理中 -> Processing, 已拒绝 -> Declined, 卡片验证 -> Card verification. Keep the original 8 rows exactly: 2026-07-10 Anthropic 300.00 SGD Processing; next FOUR rows same date Anthropic 300.00 SGD Declined; then 2026-07-10 Anthropic 0.00 USD Card verification; 2026-07-10 Google Chrome 0.00 USD Card verification; 2026-07-05 OpenAI 0.00 USD Card verification. Keep all account fields obscured exactly as in the source; never reconstruct hidden characters. Footer text: \"If you're still paying per token through a proxy for Fable or Codex, you're overpaying badly. At that point, even GLM's coding plan is a better buy.\" Keep pagination Rows per page:20 and 1–8 of8. No remaining Chinese text; no changed financial values or new information."
+      },
+      "notes": "English translation of the original essay excerpt and private payment table. No exact public source URL was verified. All eight rows, amounts, dates, statuses, and account redactions were checked against the original."
+    },
+    {
+      "asset": "grok-en.webp",
+      "original_asset": "grok.webp",
+      "date": "2026-11-08",
+      "method": "live_english_screenshot",
+      "dimensions": {
+        "width": 600,
+        "height": 173
+      },
+      "original_dimensions": {
+        "width": 1192,
+        "height": 492
+      },
+      "sha256": "6323066a5fc28ee566fc02b4e043b90dda72dfc4b11dbdf94daab76620a3b6f5",
+      "original_sha256": "7e2d481c0564872f91d8bc62efad9b8ed4317b4a2bbff1f8459da82daec19124",
+      "sources": [
+        {
+          "url": "https://x.com/elonmusk/status/2116992258520064397?lang=en",
+          "role": "screenshot_source"
+        }
+      ],
+      "notes": "Real English X screenshot captured on 2026-11-08 and cropped to the tweet. Not generated. Live engagement counts and displayed abbreviations may differ from the original Chinese capture."
+    },
+    {
+      "asset": "device-limit-en.webp",
+      "original_asset": "device-limit.webp",
+      "date": "2026-11-08",
+      "method": "imagegen_translation",
+      "dimensions": {
+        "width": 1410,
+        "height": 1116
+      },
+      "original_dimensions": {
+        "width": 2256,
+        "height": 1784
+      },
+      "sha256": "70ed785a22831ce8f4b0f44571fc70c412028ca8e4bb72f0c273aa99ab3f80a1",
+      "original_sha256": "abf42952aa9d493a432a75836491d0ecd9cee5127173a93173cb39d899c85ae1",
+      "sources": [
+        {
+          "url": "https://help.openai.com/en/articles/20001559-understanding-card-and-device-limits-in-chatgpt",
+          "role": "related_official_documentation"
+        }
+      ],
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "prompt": "Translate Chinese text to English; preserve layout, all data and existing redactions."
+      },
+      "notes": "English translation of the original device-warning screenshot; account redactions preserved. The linked help article explains the restriction but is not the source of the screenshot."
+    },
+    {
+      "asset": "account-ban-en.webp",
+      "original_asset": "account-ban.webp",
+      "date": "2026-11-08",
+      "method": "imagegen_translation",
+      "dimensions": {
+        "width": 1155,
+        "height": 1362
+      },
+      "original_dimensions": {
+        "width": 1156,
+        "height": 1362
+      },
+      "sha256": "449a589ea187302a293eb058d3c9d951e3bb597785a340d796162f15896527f0",
+      "original_sha256": "6997bc44cab3ca4d56e2dc1fd87d1052779911d0032937ce01c5c7b1ba373ef9",
+      "sources": [],
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "prompt": "Translate Chinese text to English; preserve layout, all data and existing redactions."
+      },
+      "notes": "English translation of the original X screenshot showing @landiantech quoting @missuo. The exact post URL was not verified. The embedded authentication error and diagnostic values are retained."
+    },
+    {
+      "asset": "reset-plan-en.webp",
+      "original_asset": "reset-plan.webp",
+      "date": "2026-11-08",
+      "method": "imagegen_translation",
+      "dimensions": {
+        "width": 1019,
+        "height": 1544
+      },
+      "original_dimensions": {
+        "width": 1808,
+        "height": 2738
+      },
+      "sha256": "065eb67132a3a54bd5405b162e400401778e7964b43fa5fd545726fc129f9513",
+      "original_sha256": "47cc9e8b0b63c5095317440db0c376f506ed90ca2afba2c1678777e0da24412f",
+      "sources": [],
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "prompt": "Use case: text-localization. Translate only the Chinese labels in this dense calendar screenshot into clear compact English. Preserve the exact portrait aspect ratio 1808x2738, ALL calendar date cells in their original positions, ALL event times, all numeric totals, every question mark and asterisk, colors and calendar structure. Do not omit rows or simplify data. Top five cards: \"4-month total\", \"55.6x\", \"49 Pro weeks\"; \"Month 1 · Jul 7–Aug 7\", \"63.2x\", \"14 weeks\"; \"Month 2 · Aug 7–Sep 7\", \"49.7x\", \"11 weeks\"; \"Month 3 · Sep 7–Oct 7\", \"51.3x\", \"11 weeks\"; \"Month 4 · Oct 7–Nov 7\", \"57.9x\", \"13 weeks\". Legend: \"Global reset\", \"Redeem banked grant\", \"Weekly reset\", \"Bank grant\", \"? Pro eligibility uncertain\", \"* preserved with banked grant\", \"Times in UTC\". Weekdays Mon Tue Wed Thu Fri Sat Sun. Replace calendar prefixes 全局 with \"Global\", 用卡 with \"Redeem\", 自然 with \"Weekly\", 收卡 with \"Bank\", 开局 with \"Start\". 第1月/第2月/第3月/第4月 become \"Month 1\"/\"Month 2\"/\"Month 3\"/\"Month 4\". Keep EVERY adjacent date/time exactly. Footer: \"1. Effective multiplier: The optimal schedule yields 49 Pro weekly allowances = 980 Plus weekly allowances, about 55.6x. Excluding the two grants with uncertain Pro eligibility leaves 47 allowances, or 53.3x.\" English text only, compact enough to fit. No invented dates or numeric values."
+      },
+      "notes": "English translation of the original custom reset schedule. All 59 event entries were visually checked against the original, including dates, times, five question marks, and three asterisks. These entries comprise 49 allowance events, including the initial allowance, and 10 banked-grant receipts. Headline multipliers and footer values match."
+    },
+    {
+      "asset": "spending-en.webp",
+      "original_asset": "spending.webp",
+      "date": "2026-11-08",
+      "method": "imagegen_translation",
+      "dimensions": {
+        "width": 1909,
+        "height": 824
+      },
+      "original_dimensions": {
+        "width": 1990,
+        "height": 858
+      },
+      "sha256": "320f282766ba2c32ea5832e77ace063c69b6bd86d411229ff1b99ad7d5157e7b",
+      "original_sha256": "1e76d2ba58c7ebf5ffef4dc20c35a096aceb7552cdadc81086cbba782d3b617a",
+      "sources": [],
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "prompt": "Use case: text-localization. Translate Chinese text in this screenshot into English with the identical composition, aspect ratio 1990x858, logos, area-chart geometry, purple colors, row order and ALL NUMBERS unchanged. Translate title to \"Spending by vendor\", top right to \"View more analytics →\", label to \"Total\", group \"Other (10)\", bottom dates to \"Dec 1, 2025\" and \"Nov 1, 2026\". Preserve exact amounts and percentages: Total 10,751.64 USD; ChatGPT 3,888.78 USD 36.2%; DMIT, Inc. 1,496.80 USD 13.9%; Anthropic 1,231.33 USD 11.4%; OpenAI 1,031.06 USD 9.6%; Cloudflare 208.29 USD 1.9%; Other (10) 2,895.38 USD; Google One 199.99 USD 1.9%. Preserve chart axis labels 4.3k,3.4k,2.5k,1.7k,850,0 and exact chart shapes. Do not round, change any statistics, or add elements. No Chinese text remains. Historical screenshot translated for an English blog."
+      },
+      "notes": "English translation of private spending analytics. No exact public source URL was verified. Total, merchant amounts, percentages, date endpoints, and axis labels were checked against the original."
+    },
+    {
+      "asset": "usage-en.webp",
+      "original_asset": "usage.webp",
+      "date": "2026-11-08",
+      "method": "imagegen_translation",
+      "dimensions": {
+        "width": 1446,
+        "height": 1088
+      },
+      "original_dimensions": {
+        "width": 2908,
+        "height": 2186
+      },
+      "sha256": "441e07b7b4e5407a147bd209a69a858339c316a2cff39d82435cb35de7316e5e",
+      "original_sha256": "5c09325a3d0c59d93819da17fedf84cbaef3450ae4e141f5c2eeac378759e8c0",
+      "sources": [],
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "prompt": "Use case: text-localization. Produce a high-fidelity English translation of the provided magpie usage dashboard screenshot. Keep identical landscape aspect ratio 2908x2186, dark outer margin, window layout, every original chart bar/heatmap square/color, numeric value, model name and logo. Only translate Chinese UI labels. Header: Agent, Chats, Library, Providers, Routing, Gateway, Usage, Redaction, Plugins; Update. Tabs Overview, Requests, Chats, Context; Today, 7 days, 30 days, All time, Custom. Filters All agents, All purposes, All providers, All models, All accounts, All gateway keys; All, Failed, Retried successfully; Search models, providers, chats; Export CSV. Preserve 267.02B tokens, input 7.56B, output 1.04B, cached 258.42B; 1,647,858 requests, 6,063 failures, 99.6% success, 5,742 successful retries; cost ≈$209516+ with 18,339 unpriced calls excluded; cache hit 97.1%; output ≥41 tokens/s, 163,276 responses; 53 tokens/s, 57,817 measurements; first token avg 9.7s, 240,739 measurements. Chart labels Tokens / Cost / Requests / Speed, Group by Model / Model · Provider / Provider / Agent / Gateway key. Preserve gpt-6-astra $117712, gpt-5.6-sol $50032, GLM-5.3 $18338 and every other visible number exactly. Translate numeric row descriptors compactly. Heatmap title \"Usage heatmap\", subtitle \"Daily usage over the last 53 weeks\", month names Nov Dec Jan Feb Mar Apr May Jun Jul Aug Sep Oct, Mon Wed Fri Sun, Less/More. Bottom summary cards: \"All requests\" 1,647,858 /267.02B tokens; \"Via magpie\" 250,379 /37.23B tokens; \"Outside magpie\" 1,397,479 /229.79B tokens. Preserve bottom thin status line values 1,649,956 requests, input7.56B output1.04B cache write96M cache read258.33B 6063 failures 5742 successful retries. Translate all other Chinese accurately without changing data. No omitted panels, no invented statistics, no remaining Chinese.",
+        "revisions": [
+          {
+            "date": "2026-11-08",
+            "change": "Selected Requests instead of Overview to match the original screenshot."
+          },
+          {
+            "date": "2026-11-08",
+            "change": "Corrected the two small UI explanations without changing data.",
+            "summary_note": "Includes gateway calls and requests recorded in conversation logs; locally rejected requests are excluded.",
+            "status_hint": "Narrow window: requested model, reasoning effort, and cache…"
+          }
+        ]
+      },
+      "notes": "English translation of the author's local magpie dashboard. Key totals and per-model figures were checked against the original. The original distinguishes 1,647,858 summary requests from 1,649,956 requests in the thin status line; both are preserved."
+    },
+    {
+      "asset": "github-en.webp",
+      "original_asset": "github.webp",
+      "date": "2026-11-08",
+      "method": "imagegen_translation",
+      "dimensions": {
+        "width": 1604,
+        "height": 981
+      },
+      "original_dimensions": {
+        "width": 2446,
+        "height": 1496
+      },
+      "sha256": "4606082ba17aa6e1083409b7e3750fdfcb94833a3914b50584eddec3f29019c1",
+      "original_sha256": "5a3316665fb356fc6616ce20b8767479c1abf52b70226c147b51639d3d6003a9",
+      "sources": [],
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "prompt": "Use case: text-localization. Translate only Chinese text in this historical metrics screenshot to English, preserving its exact layout, aspect ratio 2446x1496, chart geometry, colors, and EVERY number. Title \"Open-source community and release assets\". Subtitle \"GitHub public API · As of Oct 27, 2026 · Organization-wide public repositories; cumulative totals.\" Four cards: \"Public repository stars\" 11,887, \"62 repositories · Oct 27, 2026\"; \"Public repository forks\" 904, \"Repository interest and reuse across the organization\"; \"Release asset downloads\" 171,971, \"Software and archives; excluding auxiliary files\"; \"Auxiliary asset downloads\" 128,603, \"Checksums, signatures and metadata, counted separately\". Chart title \"All repositories · Cumulative current stars, stacked by repository\". Subtitle \"Jan 2018–Oct 27, 2026 · 40 public repositories with stars · 11,887 stars sampled\". Top right 11,887 and 2026-10-27 unchanged. Y-axis labels 15,000 /10,000 /5,000 /0. Month labels July become \"Jul\", existing years unchanged. Legend pigsty, silo, acdat, pg_exporter, pig, oink, \"34 other repositories\". Footer: \"Monthly cumulative totals reconstructed from the historical dates of current GitHub stars, stacked by repository to show the organization total. Removed stars are excluded; these are not historical net star counts. The current month runs through the stated cutoff.\" Keep charts and all original data exactly; no invented figures; no Chinese text remains."
+      },
+      "notes": "English translation of historical GitHub metrics through 2026-10-27. Checked 11,887 stars, 904 forks, 171,971 release-asset downloads, 128,603 auxiliary downloads, 62 repositories, 40 repositories with stars, and the historical-star counting caveat. No exact public chart URL was verified; neither public dossier page contains this panel.",
+      "superseded_by": {
+        "type": "native_echarts",
+        "provenance": "chart-sources.json",
+        "id": "github-stars"
+      }
+    },
+    {
+      "asset": "audience-en.webp",
+      "original_asset": "audience.webp",
+      "date": "2026-11-08",
+      "method": "imagegen_translation",
+      "dimensions": {
+        "width": 1713,
+        "height": 918
+      },
+      "original_dimensions": {
+        "width": 2432,
+        "height": 1304
+      },
+      "sha256": "81a78b968a65b73cb29a2e4bac02bb09c721d6d189da555d1e9aa6ca86cab572",
+      "original_sha256": "d816b8234fa1a1831f0f5b2304461e17e379a85731294edead3fe5507f011bc4",
+      "sources": [],
+      "generation": {
+        "tool": "image_gen.imagegen",
+        "prompt": "Use case: text-localization. Translate Chinese labels in this historical analytics screenshot into English while preserving exact chart geometry, white cards, layout, blue line and pale fill, hollow orange endpoint marker, aspect ratio2432x1304, and ALL figures. Title \"Annual website audience\". Subtitle \"Google Analytics · All tracked sites · Queried by calendar year, without monthly reporting-window truncation. Annual active users are summed across sites without cross-site deduplication.\" Card 1: \"Active users in the latest complete year\",149,463,↑176.7%,\"vs. full-year 2024\",\"2025 · Full year · All tracked sites\". Card2: \"Year-to-date active users\",473,193,↑767.5%,\"vs. the same period in 2025\",\"Jan 1–Oct 26, 2026 · Year to date\". Card3: \"Active users in the same period last year\",54,544,\"Jan 1–Oct 26, 2025 · Matching period\". Chart title \"All tracked sites · Annual active users\". Subtitle \"2022–2026 · Annual data collected Oct 27, 2026, 20:58 UTC+8 · Each site's original time zone\". TOP RIGHT metric must be \"149K\" with \"2025\" below it, not 2026; this is source data. Y axis600,000/400,000/200,000/0. X axis2022/2023/2024/2025/2026. Legend hollow orange circle \"Partial-year period\". Footer: \"Active users are queried directly by calendar year, not summed from monthly or daily counts. Annual counts are added across sites without cross-site deduplication. The hollow marker indicates year-to-date data. Incomplete years are compared only with the same date range in the previous year, not with the previous full year.\" No omitted labels or new statistics, all text English and cleanly legible. Preserve the original plotted line/data."
+      },
+      "notes": "English translation of historical Google Analytics metrics collected 2026-10-27 at 20:58 UTC+8. Checked 149,463 users for full-year 2025, 473,193 through 2026-10-26, 54,544 for the matching 2025 period, growth rates of 176.7% and 767.5%, and chart label 149K / 2025. Cross-site non-deduplication and partial-year caveats are preserved. No exact public chart URL was verified; neither public dossier page contains this panel.",
+      "superseded_by": {
+        "type": "native_echarts",
+        "provenance": "chart-sources.json",
+        "id": "ga-daily-users"
+      }
+    }
+  ],
+  "review": {
+    "scope": "Imagery, adjacent captions and source links only. Chinese article, original assets, front matter, and unrelated English prose preserved.",
+    "passes_completed": [
+      "Fidelity, completeness, structure, and nuance",
+      "Technical terminology, figures, calendar events, links, and captions",
+      "Idiomatic English and cultural adaptation",
+      "Grammar, spelling, punctuation, and clarity",
+      "Front matter, Markdown, media references, and provenance formatting",
+      "Standalone English article read-through"
+    ]
+  }
+}

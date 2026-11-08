@@ -1,63 +1,77 @@
 ---
-title: "The Open-Source Maintainer of Last Resort Is Back: vchord Yesterday, Mooncake Today"
+title: "Taking Over Another PostgreSQL Extension: vchord Yesterday, pg_mooncake Today"
 date: 2026-11-05
 authors: [vonng]
 summary: >
-  The day after taking over vchord, Lao Feng took on pg_mooncake too: rescuing its docs and blog, updating it for pg_duckdb and pgrx, and keeping it working for Pigsty users.
+  A day after taking over VectorChord, I forked pg_mooncake—restoring its documentation and blog from the Internet Archive, updating it for pg_duckdb 1.2 and pgrx 0.19.3, and shipping packages for Pigsty users.
 tags: [PostgreSQL, Extension, Open Source]
-images: [home.webp]
 ---
 
 > [Originally published on WeChat](https://mp.weixin.qq.com/s/hvOHVOmZqFozun6O5eIkDg)
 
-Lao Feng, open source's maintainer of last resort, is back yet again...
+Here we go again with another orphaned open-source project.
 
-Yesterday I published a piece about `vchord`, [**a look at taking over a vector database extension in a day**](/en/pg/maintain-vchord/). Before that post had even settled, I casually took on another extension of roughly the same size—**`pg_mooncake`**. As it happens, it is written in Rust too. Since I had already taken over `vchord`, I figured I might as well go all the way and maintain `pg_mooncake` too.
+Yesterday I wrote about [**how I spent a day taking over the `vchord` vector search extension**](/en/pg/maintain-vchord/). Barely a day later, I ended up taking on another PostgreSQL extension of roughly the same scale: **`pg_mooncake`**. Like `vchord`, it is written in Rust. Since I already had the tooling and workflow warmed up from `vchord`, pulling `pg_mooncake` under the same maintenance umbrella was a natural next step.
 
 <https://mooncake.pgsty.com/>
 
-![The new Mooncake documentation site homepage](home.webp)
+[![New Mooncake documentation site homepage](home-en.webp)](https://mooncake.pgsty.com/)
 
-## Why Take Over pg_mooncake?
+## Why Take Over `pg_mooncake`?
 
-The immediate reason is simple: **the upstream was acquired, and the subextension was about to be left without support.**
+The immediate reason is simple: **upstream was acquired, leaving a dependent extension stranded.**
 
-Mooncake Labs, the team behind `pg_mooncake`, was acquired by Databricks this year. The usual open-source script is that once a startup team is absorbed by a large company, the open-source projects it leaves behind are unlikely to keep receiving maintenance.
+Mooncake Labs, the team behind `pg_mooncake`, was acquired by Databricks. As often happens in open source, once a startup team is absorbed by a larger company, the standalone open-source repositories they leave behind rarely see active maintenance again.
 
-![The upstream pg_mooncake repository, whose latest commit is already a year old](upstream.webp)
+[![Upstream pg_mooncake repository with the last commit over a year ago](upstream.webp)](https://github.com/Mooncake-Labs/pg_mooncake)
 
-And this was precisely when a critical major-version update landed underneath it. `pg_mooncake` is a subextension built on `pg_duckdb`; **DuckDB 2.0.0** was released recently, with plenty of changes under the hood, and the parent extension `pg_duckdb` followed with a new release. With dependencies this tight, an upgrade to the parent makes the child unusable unless the child is updated to match.
+The timing collided with a major upgrade in the underlying stack. `pg_mooncake` is a sub-extension built on top of `pg_duckdb`. Following the recent **DuckDB 2.0.0** release—which introduced substantial internal changes—the parent extension `pg_duckdb` shipped a new release of its own. Because `pg_mooncake` is tightly coupled to `pg_duckdb`, upgrading the parent breaks the child unless `pg_mooncake` is updated in lockstep.
 
-The original team had already been acquired and moved on, with no word for over a year. So what do you do? You step in and take it over.
+With the original team long since folded into Databricks and the upstream repository silent for over a year, someone had to step in and maintain a fork.
 
-## The Usual Three-Move Playbook: Rescue, Revive, and Backstop
+## The Three-Step Playbook: Recover, Update, Maintain
 
-After taking it on, I followed the same familiar playbook:
+Once I forked the repository, the work followed a straightforward three-step playbook:
 
-**First: rescue the documentation and blog.** Its official documentation site was gone; visiting `mooncake.dev` now redirects straight to the Databricks website. Fortunately, the Internet Archive still had historical snapshots. I dug the complete documentation set and historical blog posts out of the dusty archives. Honestly, it would be a shame to let such a good extension rot unfinished.
+**First, recover the documentation and engineering blog.** The original documentation site is gone; visiting `mooncake.dev` now redirects straight to Databricks. Fortunately, the Internet Archive still held complete snapshots, so I pulled the full documentation set and historical engineering blog posts out of the Wayback Machine and republished them. `pg_mooncake` is a well-designed extension, and letting its documentation vanish would have been a waste.
 
-![Restored Mooncake technical documentation](docs.webp)
+[![Restored Mooncake technical documentation](docs-en.webp)](https://mooncake.pgsty.com/docs/)
 
-![Restored Mooncake engineering blog](blog.webp)
+[![Restored Mooncake engineering blog](blog-en.webp)](https://mooncake.pgsty.com/blog/)
 
-**Second: update it for the new stack and give the code another lease on life.** `pg_mooncake` had been stuck at `0.2`; this time I took it straight to **`0.3`**, added compatibility with **`pg_duckdb 1.2`**, and upgraded the underlying **`pgrx`** framework to its latest version, 0.19.3. When **PostgreSQL 19** arrives, I will update it for that too.
+**Second, update the codebase for the current stack.** `pg_mooncake` had been frozen at version `0.2`. I bumped it to **`0.3`**, updated it to work with **`pg_duckdb 1.2`**, and upgraded the underlying **`pgrx`** framework to `0.19.3`. When **PostgreSQL 19** ships, I will update it for that as well.
 
-Why did I bother? Because I know several Pigsty users actually use it. The biggest sin in maintaining a distribution is to provide an extension in one release, then tell users it disappeared when the next release arrives. That is awkward. Someone has to take the baton. And I had just finished `vchord`; the first time is a learning curve, the second is routine.
+Why go through the trouble? Because I know several Pigsty users run `pg_mooncake` in production. When you maintain a distribution, one of the worst things you can do to users is ship an extension in one release and tell them it disappeared in the next. Someone needed to keep it working—and having just gone through the exact same process with `vchord` the day before, doing it a second time was routine.
 
-**Third: keep it on a light maintenance schedule and evolve it as needed.** It is not much of a day-to-day burden. There is no need to keep tinkering with it; once a year, catch up with a PostgreSQL major release or an update to `pgrx` or `pg_duckdb`. If users need something new, they can ask; if it looks sensible and is easy enough, Lao Feng will do it.
+**Third, keep it on a low-overhead maintenance cadence.** Day-to-day maintenance doesn't require much effort. There is no need for constant churn—just periodic updates when a new PostgreSQL major version lands or when `pgrx` and `pg_duckdb` cut new releases. If users run into issues or have practical feature requests, I can fold in reasonable changes along the way.
 
-![The pg_mooncake download and installation guide](install.webp)
+[![pg_mooncake download and installation guide](install-en.webp)](https://mooncake.pgsty.com/download/)
 
-## Upstream Can Walk Away; the Distribution Has to Keep Users Covered
+## Upstream Can Move On; the Distribution Layer Has to Hold
 
-As PostgreSQL continues to eat the database world, having a few good extension cards in hand is a nice position to be in.
+As PostgreSQL continues to absorb more of the database landscape, having reliable, well-maintained extensions in the toolkit matters.
 
-Apache AGE, a graph database extension for PG, was once used by many people. It stalled for a while when its core maintainer lost their job. At the time I thought: if nobody takes it over, I will. Fortunately, interest in graph databases heated up again, and the project came back to life on its own.
+Take **Apache AGE**, a graph database extension for PostgreSQL. A while back, the project stalled after its core maintainer lost their job. At the time, I considered maintaining a fork if nobody else stepped up; fortunately, renewed demand for graph workloads brought fresh momentum, and the project recovered on its own.
 
-Not every open-source project gets that lucky. Upstream startups get acquired, pivot, or abandon projects altogether; half-finished projects are simply part of the open-source ecosystem. **I build a distribution; my job is to package, compile, and distribute software. No matter how upstream projects are abandoned or their maintainers walk away, if the distribution layer can keep users supplied and prevent the software supply chain from breaking, that is enough.**
+Not every open-source project is that lucky. Startups get acquired, pivot, or wind down—that is simply the reality of the open-source ecosystem. **My job as a distribution maintainer is to compile, package, and deliver working software. Even when an upstream team moves on, the distribution layer should absorb the shock and keep the software supply chain intact for downstream users.**
 
-Yesterday's `vchord` and today's `pg_mooncake` are two attempts in that direction. Once you understand PostgreSQL's internals and the architecture of its lower-level extensions, the whole thing is manageable and reliable at a high level; for users, being able to keep using it reliably matters more than anything.
+Taking on `vchord` yesterday and `pg_mooncake` today are two practical steps in that direction. Once you understand PostgreSQL internals and its extension architecture, keeping these extensions building and passing tests across releases is a bounded, manageable problem. For users, knowing a dependency won't vanish on the next upgrade is what counts.
 
-The extensions discussed yesterday (`vchord`) and updated today (`pg_mooncake`), along with the rest of the collection, are now officially released and ready to use. They are all included in the **Pigsty** extension repository and work out of the box, support **PG 14 through PG 18**, and cover **16 operating systems**. You can download the packages directly or install them with your system package manager.
+Both `vchord` and the updated `pg_mooncake` are now released and available in the **Pigsty** extension repository, with prebuilt packages for **PostgreSQL 14 through 18** across **16 operating systems**. You can download the packages directly or install them with a single command through your system package manager.
 
-![The pg_mooncake packages and platform support matrix in the Pigsty extension repository](packages.webp)
+[![pg_mooncake packages and platform support matrix in the Pigsty extension repository](packages.webp)](https://ext.pgsty.com/e/pg_mooncake/)
+
+## Read More
+
+- [Why I'm Maintaining a VectorChord Fork](/en/pg/maintain-vchord/)
+- [PostgreSQL Ecosystem Update: The AI Bug-Hunting Crunch](/en/pg/eco-update-202611/)
+- [AWS Acquires DuckDB: The Duck Flies into the Amazon Rainforest](/en/db/aws-get-duckdb/)
+- [MinIO's One-Year Memorial: How to Revive a Dead Open-Source Project](/en/db/minio-silo-1year/)
+- [Silo: A Maintained, MinIO-Compatible Object Store](/en/db/long-live-silo/)
+- [MinIO Nuked Its Docker Hub Repos—Your Object Storage Doesn't Have to Go Down With It](/en/db/silo-is-coming/)
+- [Extensions for Everyone](/en/pg/extensions-for-everyone/)
+- [504 Extensions: Expand the PostgreSQL Landscape](/en/pg/extension-504/)
+- [What Is a PostgreSQL Distribution?](/en/pg/what-is-pg-distro/)
+- [Pig, The Postgres Extension Wizard](/en/pg/pig/)
+- [SOW: Postpartum Care for 100,000 Packages](/en/db/sow/)
+- [AI Software Engineering: Choose Problems You Care About](/en/ai/ikigai/)

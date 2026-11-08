@@ -8,7 +8,7 @@ tags: [PostgreSQL, PG生态, 开源]
 ---
 老冯又接盘了。
 
-这话说出来，我自己都想笑。去年[接了 MinIO 的盘](/db/minio-resurrect/)，做成了 [Silo](/db/long-live-silo/)，一年下来，它基本成了 [MinIO](https://github.com/minio/minio) 所有 fork 里最成功的那一个。后来又顺手接了几个：做了一个 [Vagrant](https://www.vagrantup.com/) 的替代品 [`barn`](https://github.com/pgsty/barn)，fork 了 [Docsy](https://www.docsy.dev/) 改成文档[主题 Oink](/ai/oink-intro/)。这些东西我自己天天在用，用得很顺手，外面也陆陆续续有了一些用户。
+这话说出来，我自己都想笑。去年[接了 MinIO 的盘](/db/minio-resurrect/)，做成了 [Silo](/db/long-live-silo/)，一年下来，它基本成了 [MinIO](https://github.com/minio/minio) 所有 fork 里最成功的那一个。后来又顺手接了几个：做了一个 [Vagrant](https://www.vagrantup.com/) 的替代品 [`barn`](https://github.com/pgsty/barn)，fork 了 [Docsy](https://www.docsy.dev/) 改成[文档主题 Oink](/ai/oink-intro/)。这些东西我自己天天在用，用得很顺手，外面也陆陆续续有了一些用户。
 
 接一次盘是意外，接两次是巧合，接到第三第四次，老冯真成接盘侠了。
 
@@ -30,7 +30,7 @@ tags: [PostgreSQL, PG生态, 开源]
 
 [![Immich photo and video management](immich-photo-management.webp)](https://immich.app/)
 
-如果你不想折腾一套笨重的 NAS 操作系统，自己搭一个 [Immich](https://github.com/immich-app/immich)，可能就是目前管理私人照片的最佳方式，[Pigsty 的应用模板](https://pigsty.cc/docs/app/immich/)里也很早就收录了它。Immich 里最核心的相似图片检索、语义模糊搜索，底层全靠向量索引支撑，而他们官方选定的正是 `vchord`。在我看来，从技术上，这是一个相当明智的选型。
+如果你不想折腾一套笨重的 NAS 操作系统，自己搭一个 [Immich](https://github.com/immich-app/immich)，可能就是目前管理私人照片的最佳方式。[Pigsty 的应用模板](https://pigsty.cc/docs/app/immich/)里也很早就收录了它。Immich 里最核心的相似图片检索、语义模糊搜索，底层全靠向量索引支撑，而他们官方选定的正是 `vchord`。从技术角度看，这是一个相当明智的选型。
 
 ## 二、为什么要接
 
@@ -46,7 +46,7 @@ tags: [PostgreSQL, PG生态, 开源]
 
 说句实在话，看着一个由中国团队打磨出来、在全世界都有大量真实用户的好项目，就这么冷清地在角落里一点点生锈，我心里挺不忍的。
 
-当然，要是放在一年以前问我，老冯大概不会接这个活。按过去的经验，维护一个底层开源项目是很耗心力的事，一旦接过来，就是一份看不见尽头的责任。但站在今天这个时间点，情况不一样了：我已经[接过一次盘](/db/minio-silo-1year/)，完整趟过了一遍路，手里再多接一个、两个、三个，边际负担其实差不了太多。
+当然，要是放在一年以前问我，老冯大概不会接这个活。按过去的经验，维护一个底层开源项目是很耗心力的事，一旦接过来，就是一份看不见尽头的责任。但站在今天这个时间点，情况不一样了：我已经[接过一次盘](/db/minio-silo-1year/)，完整趟过了一遍路，手里再多接两三个，增加的边际负担其实并不大。
 
 何况对我这种日常 Token 过剩、有时候甚至[拿着锤子满世界找钉子](/ai/ai-machinegun-for-everyone/)的人来说，眼下有一颗值得敲的钉子主动送上门来，我是很乐意接招的。
 
@@ -112,9 +112,9 @@ tags: [PostgreSQL, PG生态, 开源]
 
 [![PostgreSQL extension package matrix](pgext-package-matrix.webp)](https://pgext.cloud/matrix)
 
-但我不介意把它敞开给所有开源用户使用。如今整个站点的月请求量已经在亿级，每月将近 2TB 流量，商业客户的下载流量其实很小，每天跑出来的海量带宽几乎全来自开源用户。
+但我不介意把它敞开给所有开源用户使用。如今整个站点的月请求量已经在亿级，每月将近 2 TB 流量；商业客户的下载流量其实很小，每天跑出来的海量带宽几乎全来自开源用户。
 
-老实说，这事能一直做下去，首先要感谢“赛博菩萨” [Cloudflare](https://www.cloudflare.com/) 愿意免费托管网站——每个月 2TB 的流量费一分钱不要，而为了让国内用户也能顺畅下载，国内的镜像 CDN 依然得真金白银地花钱，每个月雷打不动六七百块。这都是毛毛雨，比流量费贵得多的，是背后持续投入的人力、时间与注意力——跟人的精力比起来，那点带宽费微不足道。这，就是开源背后看不见的真实成本。
+老实说，这事能一直做下去，首先要感谢“赛博菩萨”[Cloudflare](https://www.cloudflare.com/) 愿意免费托管网站——每个月 2 TB 的流量费一分钱不要。不过为了让国内用户也能顺畅下载，国内的镜像 CDN 依然得真金白银地花钱，每个月雷打不动六七百块。但这些都是毛毛雨，真正昂贵的，是背后持续投入的人力、时间与注意力——跟人的精力比起来，那点带宽费微不足道。这，就是开源背后看不见的真实成本。
 
 ## 六、开源与商业化冲突吗？
 
@@ -141,7 +141,7 @@ tags: [PostgreSQL, PG生态, 开源]
 
 1. **利益相关（Skin in the game）**：我自己就是重度真实用户，有具体的落地场景，利益高度绑定。它要是炸了，我自己会难受。
 2. **专业判断力**：这一项在当下的变化其实最大。以前“写得出代码”是最高的门槛；现在 AI Coding Agent 已经足够强悍，执行层面不太需要你亲力亲为，但在提需求、做取舍、拍板和验收的关口，依然极度依赖顶级专业判断。
-3. **现成的分发渠道**：做出来的东西如果分发不出去、没人用，那就等于白做。因为老冯有自己的发行版 [Pigsty](https://pigsty.cc)，而且已经在分发 MinIO 和这些扩展了，所以做出来的东西能直接被用户使用上。
+3. **现成的分发渠道**：做出来的东西如果分发不出去、没人用，那就等于白做。因为老冯有自己的发行版 [Pigsty](https://pigsty.cc)，而且已经在分发 MinIO 和这些扩展了，所以做出来的东西用户立刻就能用上。
 4. **流量与叙事能力**：任何事情想做成气候，最后都绕不开流量与信任。你得把来龙去脉讲透，把故事讲好，让大家理解这东西为什么有用、愿意来试一试。老冯当初写的[那篇复活 MinIO 的长文](/db/minio-revive-hn/)直接冲上了 [Hacker News 首页](https://news.ycombinator.com/item?id=43055865)，那才是引爆 Silo 社区共识的关键一步。
 
 [![MinIO fork list](silo-fork-list.webp)](https://github.com/minio/minio/forks?include=active&page=1&period=2y&sort_by=stargazer_counts)
@@ -166,8 +166,10 @@ tags: [PostgreSQL, PG生态, 开源]
 - 官方文档站点：[vchord.pgsty.com](https://vchord.pgsty.com)
 - PG 扩展目录：[pgext.cloud](https://pgext.cloud)
 
-## 参考阅读
+## 扩展阅读
 
+- [开源接盘侠又来了：昨天 vchord，今天吃月饼](/pg/fork-pg-mooncake/)
+- [渡劫期的 PostgreSQL 生态大更新](/pg/eco-update-202611/)
 - [MinIO 周年祭：如何让死掉的开源项目重生](/db/minio-silo-1year/)
 - [MinIO 已死，MinIO 复生](/db/minio-resurrect/)
 - [两小时复活 MinIO，然后网站炸了](/db/minio-revive-hn/)

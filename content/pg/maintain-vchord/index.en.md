@@ -7,7 +7,7 @@ summary: >
 tags: [PostgreSQL, PG Ecosystem, Open Source]
 ---
 
-I am now maintaining forks of [VectorChord](https://github.com/tensorchord/VectorChord) ([`vchord`](https://github.com/pgsty/vchord)) — one of the best-known vector search extensions in the PostgreSQL ecosystem—and its companion extensions, [`vchord_bm25`](https://github.com/pgsty/vchord_bm25) and [`pg_tokenizer`](https://github.com/pgsty/pg_tokenizer), under the [`pgsty`](https://github.com/pgsty) GitHub organization. When active upstream maintenance stalled, the original authors at [TensorChord](https://github.com/tensorchord) reached out to ask if I would step in, and the downstream [Immich](https://github.com/immich-app/immich) community offered to contribute bug reports, testing, and patches.
+I am now maintaining forks of [VectorChord](https://github.com/tensorchord/VectorChord) ([`vchord`](https://github.com/pgsty/vchord))—one of the best-known vector search extensions in the PostgreSQL ecosystem—and its companion extensions, [`vchord_bm25`](https://github.com/pgsty/vchord_bm25) and [`pg_tokenizer`](https://github.com/pgsty/pg_tokenizer), under the [`pgsty`](https://github.com/pgsty) GitHub organization. When active upstream maintenance stalled, the original authors at [TensorChord](https://github.com/tensorchord) reached out to ask if I would step in, and the downstream [Immich](https://github.com/immich-app/immich) community offered to contribute bug reports, testing, and patches.
 
 This isn't the first time I've stepped in to keep an upstream dependency alive. Last year, I [took on a MinIO fork](/en/db/minio-resurrect/) that became [Silo](/en/db/long-live-silo/), which has gained steady traction among [MinIO](https://github.com/minio/minio) forks. Along the way, I also built [`barn`](https://github.com/pgsty/barn), a lightweight [Vagrant](https://www.vagrantup.com/) replacement, and [Oink](/en/ai/oink-intro/), a Hugo documentation theme forked from [Docsy](https://www.docsy.dev/). I rely on all of them in my daily workflow, and they have steadily picked up outside users as well. Apparently, I've made a habit of this.
 
@@ -37,11 +37,11 @@ After recent team changes at TensorChord, active maintenance stalled: `pg_tokeni
 
 In the past, a six- to ten-month pause might not have been an immediate problem. A mature low-level database extension could sit untouched and keep running fine across minor updates. Today, with new PostgreSQL major releases, `pgrx` framework updates, and automated vulnerability discovery moving much faster, an unmaintained extension accumulates risk quickly.
 
-As I wrote in *[When the Cloud Gets Riddled with Holes](/en/cloud/blackwall/)*, LLMs have made large-scale code auditing and vulnerability discovery drastically cheaper. Without active maintenance, newly discovered bugs and security flaws can remain unpatched—and unmaintained code stops being "stable" very quickly. **Unmaintained code isn't "stable"—it's an open door.**
+As I wrote in *[When the Cloud Gets Riddled with Holes](/en/cloud/blackwall/)*, LLMs have made continuous, large-scale code auditing cheap enough that attackers have effectively traded magnifying glasses for microscopes. When nobody is home to patch what turns up, foundational software ages badly. **Unmaintained code isn't "stable"—it's an open door.**
 
 So when the original authors reached out to ask if I would take over maintenance, and the downstream [Immich](https://github.com/immich-app/immich) community made it clear they were ready to help with bug reports, testing, and patches, the decision was straightforward. The extensions solve a real problem, the production user base is active, and I hated the thought of watching a solid piece of engineering—built by a Chinese team and relied on by users worldwide—slowly rust away.
 
-If you had asked me a year ago, I probably would have said no. Historically, maintaining low-level systems software was a grueling commitment with no finish line in sight. Today, having already [maintained Silo for a year](/en/db/minio-silo-1year/) with [AI-assisted workflows](/en/ai/ai-machinegun-for-everyone/), taking on another set of extensions adds manageable marginal overhead.
+If you had asked me a year ago, I probably would have said no. Historically, maintaining low-level systems software was a grueling commitment with no finish line in sight. Today, having already [maintained Silo for a year](/en/db/minio-silo-1year/), the workflow is familiar and taking on another set of extensions adds manageable marginal overhead. And for someone with spare token capacity who occasionally goes [looking for nails to hit with an AI hammer](/en/ai/ai-machinegun-for-everyone/), having a genuinely worthwhile nail show up at my door was hard to turn down.
 
 ## 3. How the Handover Works
 
@@ -49,7 +49,7 @@ Deciding to step in was easy; executing a clean handover took four concrete step
 
 ### 1. Clean-Slate Forks Under pgsty
 
-In this case, we couldn't add outside maintainers or transfer the company-owned repositories, even with thousands of GitHub stars on the originals. Rather than get stuck on administrative hurdles, I created clean-slate forks under the [`pgsty`](https://github.com/pgsty) GitHub organization, named directly after the extensions themselves:
+Because the original repositories were company assets, corporate changes made it impractical to add outside maintainers, adjust organization membership, or transfer repository ownership—even with thousands of GitHub stars on the originals. Rather than get bogged down in administrative hurdles, I created clean-slate forks under the [`pgsty`](https://github.com/pgsty) GitHub organization. Instead of keeping the umbrella `VectorChord` branding, each repository is named directly after the extension itself:
 
 - [**`pgsty/vchord`**](https://github.com/pgsty/vchord): Scalable vector search core extension for PostgreSQL (forked from [`VectorChord`](https://github.com/tensorchord/VectorChord))
 - [**`pgsty/vchord_bm25`**](https://github.com/pgsty/vchord_bm25): Native BM25 full-text ranking index extension for PostgreSQL (forked from [`VectorChord-bm25`](https://github.com/tensorchord/VectorChord-bm25))
@@ -67,7 +67,7 @@ Next, I forked the original [technical blog and documentation repository](https:
 
 ### 3. Auditing, Fixing, and Packaging the Extensions
 
-With the repository and docs scaffolding in place, the real engineering work began. Using AI-assisted code auditing paired with manual review and reproduction tests, we audited all three codebases and uncovered roughly 20–30 issues, including several severe bugs and release blockers:
+With the repository and docs scaffolding in place, the real engineering work began. Using frontier-model code auditing paired with manual review and reproduction tests, we audited all three codebases and uncovered roughly 20–30 issues, including several severe bugs and release blockers:
 
 - **Index-build crashes and OOMs ([`465d29f`](https://github.com/pgsty/vchord/commit/465d29f))**: External centroid hierarchy traversal used unbounded recursion, allowing a deep or cyclic `parent` chain to overflow the backend stack (`SIGSEGV`) during `CREATE INDEX` and force PostgreSQL into crash recovery. Internal `vchordrq` builds also pre-allocated the sampling buffer from the `lists` upper bound rather than actual row counts, so large `lists` settings on small tables could trigger the Linux OOM killer. We replaced recursion with iterative depth validation (`2..=9`) and bounded sampling allocations by estimated live tuples and `maintenance_work_mem`.
 - **Missing privilege checks ([`f1d51d0`](https://github.com/pgsty/vchord/commit/f1d51d0))**: Once an admin enabled query sampling, any unprivileged role could read other users' sampled query vectors or run `vchordrq_prewarm` / `vchordg_prewarm` without `SELECT` privileges on the underlying table. Both paths now enforce table ownership, `SELECT` privilege, or `pg_read_all_stats` membership.
@@ -102,7 +102,9 @@ See the [Upgrade & Migration Guide](https://vchord.pgsty.com/docs/vchord/admin/m
 
 The whole episode highlights why software freedom matters in practice.
 
-Most people equate "open source" with "free of charge," even though the "free" in [Free Software](https://www.gnu.org/philosophy/free-sw.html) has always meant *free as in speech*, not *free as in beer*. To me, the core value of open source is the right to **inspect, modify, and maintain the code so the software continues to meet your needs**.
+Most people equate "open source" with "free of charge," even though veterans have spent decades explaining that the "free" in [Free Software](https://www.gnu.org/philosophy/free-sw.html) means *free as in speech*, not *free as in beer*. Still, human nature being what it is, most users treat it simply as software they don't have to pay for. It is sobering that a team capable of building database extensions of this caliber struggled to monetize them and eventually had to move on.
+
+To me, the core value of open source is the right to **inspect, modify, and maintain the code so the software continues to fit your needs**—not an entitlement to someone else's labor for nothing, even if that is often how it plays out in practice. For an open-source author, the point is giving users control over their stack; zero price is just a side effect.
 
 When an upstream team's priorities change or maintenance pauses, the source code and open-source licenses (`AGPL-3.0` and `Apache-2.0`) remain in place. Anyone with the technical capability and willingness to do the work has the legal right to step in and keep the stack running. Had this been a proprietary product, an upstream pause or company pivot would have left downstream users with no recourse at all.
 
@@ -124,28 +126,28 @@ Over the past few years, I built a PostgreSQL [extension repository at PGEXT.CLO
 
 Still, I decided to open it up to the entire open-source community. Today, the repository serves hundreds of millions of requests and nearly 2 TB of traffic every month. Paying enterprise customers account for only a tiny fraction of that bandwidth; almost all of the daily load comes from open-source users.
 
-Candidly, the main reason this remains financially viable is [Cloudflare](https://www.cloudflare.com/)—the patron saint of free bandwidth—which absorbs nearly 2 TB of monthly egress without charging a dime. To give users inside mainland China fast downloads as well, I still pay out of pocket for a domestic mirror CDN—around 600 to 700 RMB (roughly 100 USD) every month like clockwork. Even so, bandwidth bills are pocket change. What actually costs real money is the ongoing engineering time, build maintenance, and human attention required to keep those packages working. Compared to human attention, bandwidth is cheap. That is the invisible cost behind "free" open source.
+Candidly, the main reason this remains financially viable is [Cloudflare](https://www.cloudflare.com/), which generously hosts the site for free and absorbs nearly 2 TB of monthly egress without charging a dime. To give users inside mainland China fast downloads as well, I still pay out of pocket for a domestic mirror CDN—around 600 to 700 RMB (roughly 100 USD) every month like clockwork. Even so, bandwidth bills are pocket change. What actually costs real money is the ongoing engineering time, build maintenance, and human attention required to keep those packages working. Compared to human attention, bandwidth is cheap. That is the invisible cost behind "free" open source.
 
 ## 6. Are Open Source and Commercialization at Odds?
 
 If open source brings in zero license revenue while consuming cash and engineering time, does it conflict with running a business?
 
-In my view, open source makes a business built solely on charging for access to the code much harder to sustain. In my case, the commercial value lies in reliable delivery and ongoing maintenance. If you build the business around something else, you can make the arrangement work for both users and maintainers.
+Viewed strictly through the lens of traditional software licensing, open source works against the classic business model: once you publish your core intellectual property, you cannot build a business around selling copies of that IP. That does not mean open source has to run on charity alone—if you close the loop on a different dimension, you can build a model that works for both users and maintainers.
 
 Consider why Cloudflare hosts millions of websites around the world for free. Part of it is genuine technical idealism, sure, but it is also a smart business model. By fronting a massive swath of the free internet, Cloudflare observes attack traffic at global scale, which strengthens its paid enterprise defense products. **The free tier sharpens the blade for the paid tier.** Free users benefit from better protection, while enterprise customers pay for mission-critical guarantees.
 
 - [Cloudflare - The Cyber Buddha That Destroys Public Cloud](/en/cloud/cloudflare/)
 - [Cloudflare Roundtable Interview and Q&A Record](/en/cloud/cf-interview/)
 
-By the same logic, I am happy to let anyone—including competitors—use one of [Pigsty](https://pigsty.io)'s core assets, the [PostgreSQL extension repository](https://pgext.cloud), because **real-world usage across diverse environments is the best way to harden infrastructure software.**
+By the same logic, I am happy to let anyone—including competitors—use one of [Pigsty](https://pigsty.io)'s core assets, the [PostgreSQL extension repository](https://pgext.cloud), because **the greatest engineering value of open source is crowd-sourced testing at scale.**
 
-The more people run infrastructure software across heterogeneous environments, the faster edge-case bugs surface and get fixed—which directly improves the reliability of what we deliver to paying customers. Especially in the AI era, as writing code gets cheaper, the bottleneck shifts toward testing, verification, and production burn-in. Community bug reports across diverse production environments help improve reliability for everyone, including paying customers.
+The more people run infrastructure software across heterogeneous environments, the faster edge-case bugs surface and get fixed—which directly improves the reliability of what we deliver to paying customers. Especially in the AI era, as writing code gets cheaper, the bottleneck shifts toward testing, verification, and production burn-in. Open source puts your software in the hands of thousands of users who will stress-test it in combinations you would never think to simulate in-house. **Free users aren't a burden—they are a global QA team you couldn't buy at any price.**
 
 ## 7. What It Takes to Maintain a Fork
 
 Even when the economics work out, maintaining open source still requires genuine care for the craft.
 
-As I wrote in *[AI Software Engineering: Choose Problems You Care About](/en/ai/ikigai/)*, for the projects I maintain, shared tooling and AI assistance have substantially reduced the cost of taking on another one. I still own the design decisions, review, and release checks.
+As I wrote in *[AI Software Engineering: Choose Problems You Care About](/en/ai/ikigai/)*, the personal cost of maintaining an open-source project is much lower today than it used to be—provided you shift how you work. When you had to roll up your sleeves and write every patch by hand, personal bandwidth ran out fast. Once your day-to-day role shifts to triaging feedback, making architectural calls, and enforcing verification gates, the personal overhead of maintaining ten projects is not drastically different from maintaining one.
 
 Even so, maintaining a fork is much harder than simply clicking the Fork button. Take MinIO: after upstream locked down the project, more than a dozen forks popped up—OpenMaxIO and plenty of others. Why did [Silo](https://github.com/pgsty/silo) end up being one that gained steady traction and held its ground? Looking back, it came down to having four pieces in place at the same time:
 
@@ -176,8 +178,10 @@ Yet that is also the best thing about open source: **as long as the code is out 
 - Official Documentation: [vchord.pgsty.com](https://vchord.pgsty.com)
 - PostgreSQL Extension Catalog: [pgext.cloud](https://pgext.cloud)
 
-## Further Reading
+## Read More
 
+- [Taking Over Another PostgreSQL Extension: vchord Yesterday, pg_mooncake Today](/en/pg/fork-pg-mooncake/)
+- [PostgreSQL Ecosystem Update: The AI Bug-Hunting Crunch](/en/pg/eco-update-202611/)
 - [MinIO's One-Year Memorial: How to Revive a Dead Open-Source Project](/en/db/minio-silo-1year/)
 - [MinIO Is Dead, Long Live MinIO](/en/db/minio-resurrect/)
 - [Reviving MinIO in Two Hours — And Then My Website Blew Up](/en/db/minio-revive-hn/)
