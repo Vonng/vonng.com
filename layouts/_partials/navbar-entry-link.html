@@ -12,7 +12,7 @@
 {{- $active := or $current ($page.HasMenuCurrent "main" $entry) -}}
 {{- if and (eq $entry.Identifier "docs") (eq $page.Type "docs") -}}
   {{- $active = true -}}
-{{- else if and (eq $entry.Identifier "blog") (eq $page.Type "blog") -}}
+{{- else if and (eq $entry.Identifier "blog") (or (eq $page.Type "blog") (eq $page.Section "opinion")) -}}
   {{- $active = true -}}
 {{- end -}}
 {{- $href := $entry.URL -}}

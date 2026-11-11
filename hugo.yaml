@@ -185,6 +185,7 @@ params:
     toc_style: flow
     toc_taxonomies: false
     sidebar_enabled: false
+    sidebar_root_menu: false
     section_index: cards
     section_index_columns: 3
 
@@ -245,6 +246,7 @@ languages:
         - { identifier: column-misc, parent: blog, name: 人生旅途, pageRef: /misc, weight: 70, params: { icon: 'fa-solid fa-feather', description: 随笔、杂谈与技术之外的个人写作 } }
         - { identifier: column-tags, parent: blog, name: 标签索引, pageRef: /tags, weight: 80, params: { icon: 'fa-solid fa-tags', description: 按主题标签检索全站文章 } }
         - { identifier: column-authors, parent: blog, name: 作者列表, pageRef: /authors, weight: 90, params: { icon: 'fa-solid fa-user-pen', description: 本站原创与译介文章的署名作者们 } }
+        - { identifier: column-opinion, parent: blog, name: 观点总览, pageRef: /opinion, weight: 100, params: { icon: 'fa-solid fa-lightbulb', description: 本站作者的个人观点与看法 } }
 
         # 2. 项目 (Open-Source Projects — exact 9 items in user-specified order)
         - identifier: project
@@ -342,6 +344,7 @@ languages:
         - { identifier: column-misc, parent: blog, name: Miscellaneous, pageRef: /misc, weight: 70, params: { icon: 'fa-solid fa-feather', description: 'Essays, reflections, and personal writing outside tech' } }
         - { identifier: column-tags, parent: blog, name: Tags, pageRef: /tags, weight: 80, params: { icon: 'fa-solid fa-tags', description: 'Browse every article across the site by topic tag' } }
         - { identifier: column-authors, parent: blog, name: Authors, pageRef: /authors, weight: 90, params: { icon: 'fa-solid fa-user-pen', description: 'The writers behind the originals and translations' } }
+        - { identifier: column-opinion, parent: blog, name: Opinions, pageRef: /opinion, weight: 100, params: { icon: 'fa-solid fa-lightbulb', description: "The author's personal views, theses, and FAQ index" } }
 
         # 2. Projects (9 open-source projects in user-specified order)
         - identifier: project
