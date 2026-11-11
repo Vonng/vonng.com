@@ -10,7 +10,9 @@ On February 27, 2026, U.S. President Donald Trump issued a directive on Truth So
 
 This head-on collision between the U.S. government and a frontier AI lab is redrawing the boundaries for how artificial intelligence is used in national defense.
 
-![Pete Hegseth's statement on X](01.webp)
+![Pete Hegseth's complete English statement on X](01-en.webp)
+
+*Original English statement by [Pete Hegseth (@SecWar)](https://x.com/SecWar/status/2027507717469049070), February 27, 2026.*
 
 ## Background
 
@@ -94,7 +96,9 @@ The standoff sparked widespread reaction across Silicon Valley and Washington.
 
 ## Timeline of Events
 
-![Timeline of Events](04.webp)
+![Sixteen-row timeline of the Anthropic–Pentagon dispute, from summer 2025 through February 27, 2026](04-en.webp)
+
+*English translation of the [author's timeline](04.webp); dates, approximate times, and source attributions follow the original.*
 
 ## Where the Key Players Stand
 

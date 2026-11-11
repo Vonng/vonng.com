@@ -76,7 +76,13 @@ I keep a single V1 plan for GLM and throw miscellaneous chores and straightforwa
 
 My own impressions are only one perspective. Since we are treating these models as office coworkers, I brought all six together for a round of 360-degree peer reviews to see how each model evaluates the others, and compiled their portraits into a matrix. The results are well worth a read:
 
-![Six-by-six peer-review matrix of the six frontier AI models' personalities and working styles](peer-review.webp)
+![Peer-review matrix, panel 1 of 3: six reviewers assess Claude and GPT; reviewers are columns and reviewed models are rows](peer-review-panel1-en.webp)
+
+![Peer-review matrix, panel 2 of 3: six reviewers assess Gemini and GLM; shaded cells mark self-reviews](peer-review-panel2-en.webp)
+
+![Peer-review matrix, panel 3 of 3: six reviewers assess DeepSeek and Qwen; shaded cells mark self-reviews](peer-review-panel3-en.webp)
+
+*English translation of the original Chinese matrix, generated in three panels for readability. Reviewers run across the columns; reviewed models run down the rows. Read across to see how one model is reviewed, and down to see one reviewer's opinions. All 36 cells retain the original comments and figures; shaded cells are self-reviews.*
 
 ### Claude (Fable 5.1 & Opus 5.5)
 

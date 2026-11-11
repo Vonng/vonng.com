@@ -29,15 +29,21 @@ My usual vibe-coding workflow pits two models against each other: **Codex 5.5 is
 
 **Case one: reviewing MinIO CVE patches.** I asked Fable to review several security patches I had previously applied to the community fork of MinIO and look for further improvements. It found several new issues. When I took them back to Codex, Codex agreed that they were worth fixing.
 
-![Review of MinIO CVE patches](minio-review.webp)
+![English translation of the MinIO CVE patch review](minio-review-en.webp)
+
+*English translation; [original screenshot](minio-review.webp).*
 
 **Case two: PostgreSQL 19 support in pg_exporter.** I had previously asked Codex to make pg_exporter compatible with PostgreSQL 19 Beta 1 and add the new release's observability metrics. This time I had Fable do the job again, and its result was clearly better than Codex's previously converged version.
 
-![Review of pg_exporter's PostgreSQL 19 support](pg-exporter-review.webp)
+![English translation of the review of pg_exporter's PostgreSQL 19 support](pg-exporter-review-en.webp)
+
+*English translation; [original screenshot](pg-exporter-review.webp).*
 
 **Case three: improving Pigsty's PITR script.** I had previously written an emergency point-in-time recovery script for the database. I asked Claude Fable to review it again, and it filled in nearly every detail the earlier work had missed. Even after the script seemed comprehensive and Codex could improve it no further, Fable still found new opportunities.
 
-![Review of Pigsty's PITR script](pitr-review.webp)
+![English translation of the review of Pigsty's PITR script](pitr-review-en.webp)
+
+*English translation; [original screenshot](pitr-review.webp).*
 
 ## The Catch: Great Model, Miserable Product
 
@@ -51,7 +57,9 @@ For example, whenever I discussed one of my earlier agent/AI topics with Claude,
 
 ![Fable dynamically downgraded to Opus 4.8](opus-fallback.webp)
 
-![SemiAnalysis on Fable's model-filtering system](model-filter.webp)
+![SemiAnalysis on Fable's model-filtering system, with the attached explanation of its safeguards](model-filter-en.webp)
+
+*[Original English post](https://x.com/SemiAnalysis_/status/2064482714149896431), captured through a [public mirror](https://nitter.gq/SemiAnalysis_/status/2064482714149896431). June 9, 2026, 23:00 UTC is June 10, 07:00 in the original screenshot's time zone.*
 
 **Gripe two: a 12-day trial.** Fable is not currently part of the Claude Code subscription plans. For the 12 days from today until June 22, subscribers on the $100 and $200 plans get a limited trial. After that, the only option is metered API access. The official explanation is insufficient capacity: there is not enough compute to go around. Fable may become part of the standard subscription once capacity improves, but there is no timeline.
 
@@ -77,13 +85,48 @@ That is also what I suggest you do right now: make the most of this 12-day windo
 
 ## A Few Other Interesting Cases and Updates
 
-![Collection of Claude Fable examples](fable-cases.webp)
+![Deedy's collection of Claude Fable examples, including the current Community Note correcting the migration and pricing claims](fable-cases-en.webp)
+
+*[Original English post](https://x.com/deedydas/status/2064519826333397149), captured through a [public mirror](https://nitter.gq/deedydas/status/2064519826333397149). The original screenshot also contained this proposed Community Note, marked “Not shown on X · Needs ratings”:*
+
+![Original proposed Community Note: GPT-5.5 costs $5/M input and $30/M output; Fable 5 is about twice as expensive, and the claimed sixfold discount against GPT-5.5 Pro is closer to three to four times](fable-cases-note-en.webp)
 
 ![Fable and Opus compared on a space simulation](space-simulation.webp)
 
 ![Fable's New York skyline and storm-battered city examples](city-simulation.webp)
 
-![Mythos hands-on report](mythos-review.webp)
+![English translation of Tz's complete Mythos post, followed by zek's original English report](mythos-review-en.webp)
+
+*English translation of Tz (@Tz_2022)'s June 9, 2026 post, assembled from ImageGen-translated panels and the embedded English report in the [original screenshot](mythos-review.webp). The report's original pixels are preserved except for two localized Chinese interface labels. The exact upstream post URL could not be recovered.*
+
+<details>
+<summary>Tz's commentary — English text version</summary>
+
+“Stripped of its mystique, Anthropic Mythos is an extremely expensive, occasionally erratic workhorse that is absurdly capable in certain domains.”
+
+**1. The Cost**
+
+Burning $1 million on a single internal test is a staggering figure. It exposes a harsh industry reality: inference costs for specialized models with deep reasoning or agent-level capabilities are rising exponentially. A whole-codebase security scan probably runs enormous chains of thought and repeated self-correction behind the scenes. This suggests that early “super AI” will be the preserve of a handful of giants and well-funded companies. The compute barrier will be even higher than it is now.
+
+**2. The Harness**
+
+This is the most darkly comic part. Anthropic is known for taking AI safety and alignment extremely seriously, yet the cage meant to contain the “beast”—Project Glasswing—is described as crude, AI-generated code with defenses that are effectively useless. This exposes a central paradox in AI safety: when a model's reasoning approaches or exceeds that of the engineers writing its guardrails, a conventional hard-coded sandbox becomes window dressing. The author's ability to hack around the restrictions shows how fragile rule-based defenses can be against powerful AI.
+
+**3. The Model**
+
+This rings true and punctures the “AI is about to destroy the world” mystique. It can sniff out severe vulnerabilities in millions of lines of code, yet gets stumped by Bazel with a few custom scripts. Real engineering environments are full of tangled legacy code, undocumented inherited configuration, and bizarre dependencies. That friction is every current AI's Achilles' heel. It looks more like a top security specialist with a very uneven skill set than a full-stack architect able to take over a complex workflow seamlessly.
+
+**4. The Results**
+
+Eight hundred high-severity vulnerabilities is a startling number. How much time and labor would an elite team of white-hat security researchers need to find those 800 deeply buried flaws manually? AI compresses that work into a very short period through compute. This points toward an automated arms race in cybersecurity: defenders can use it to harden systems, but if this level of vulnerability discovery becomes open source and falls into attackers' hands, it could be disastrous.
+
+**5. Final Thoughts**
+
+The author's conclusion is clear-eyed: “It's a good tool, not the Terminator.” AI giants such as Anthropic and OpenAI, whether for regulatory compliance or fundraising publicity, deliberately or inadvertently portray their models as existential threats. From the perspective of an engineer using one in practice, the mystique falls away. It is an extremely expensive, occasionally erratic workhorse that is absurdly capable in certain domains.
+
+*Original post: 3,901 views · 3 reposts · 18 likes · 17 bookmarks.*
+
+</details>
 
 ## Closing Thoughts
 

@@ -11,13 +11,17 @@ Last month, OpenAI seemed to lose its mind and went into full giveaway mode, rep
 
 User numbers soared past ten million. Tibo, the executive responsible for Codex and ChatGPT—and the man behind the reset button—was even canonized as “Saint Tibo” by the community. The first thing I did every morning was open X to see whether the saint had performed another miracle.
 
-Now it seems the eggs have run out. It has been more than six days since the last reset, and another is nowhere in sight. Users reverse-engineered the pattern: resets were tied to monthly active user milestones. Every additional million users triggered one, all the way to ten million.
+Now it seems the eggs have run out. It has been more than six days since the last reset, and another is nowhere in sight. Users reverse-engineered the pattern: resets were tied to weekly active user milestones. Every additional million users triggered one, all the way to ten million.
 
-![Tibo announces a Codex quota reset for every additional million monthly active users](reset-milestone.webp)
+![Tibo announces three million weekly Codex users and a quota reset for every additional million up to ten million](reset-milestone-en.webp)
+
+*[Original English post](https://x.com/thsottiaux/status/2041655710346572085), April 7, 2026 (UTC), captured from the [public mirror](https://nitter.gq/thsottiaux/status/2041655710346572085).*
 
 What happens after ten million? Someone asked Tibo on X whether Codex had crossed eleven million. He said it had done so long ago. After all these days without another reset, the conclusion is fairly clear: the promotion is over. The mass giveaway has run its course. If you want a reset now, about your only option is to DM Tibo with a useful suggestion and hope he grants you one directly.
 
-![Tibo says substantive feedback may earn an individual Codex quota reset](reset-dm.webp)
+![Tibo says solid feedback or banter may earn an individual Codex quota reset](reset-dm-en.webp)
+
+*[Original English post](https://x.com/thsottiaux/status/2085221386713198988), August 6, 2026 (UTC), captured from the [public mirror](https://nitter.gq/thsottiaux/status/2085221386713198988).*
 
 That is a shame. But the eggs themselves were never worth much. What matters is what I turned them into over that month.
 
@@ -29,7 +33,9 @@ During this month-long AI bonanza, I had seven 20× MAX subscriptions: four Chat
 
 Of course, free quota from the Reset spree was only a cost advantage. Far more important were two developments in July: GPT-5.6 Sol launched, and Fable became continuously available through Claude subscriptions, bringing both AGI-class models to a broad audience. Their leap in intelligence made burning tokens more cost-effective than ever and dramatically raised the ceiling on what they could do. Their greater autonomy magnified the leverage on human time even further: a task I once ran for an hour can now be left running for a week.
 
-![Using multiple Codex and Claude subscriptions at once](fable-codex.webp)
+![Vonng's July 14 posts describe running six subscriptions across three MacBook Pros](fable-codex-en.webp)
+
+*English translation of the original July 14 posts.*
 
 In short, the whole setup wrung me dry. I pedaled the machine until it smoked. Readers may have noticed that I barely published anything on my WeChat channel over the past month. I simply had no time. The occasional articles I did squeeze out were often criticized for sounding too AI-generated, because I genuinely had no time to write—much less edit and polish.
 
@@ -39,13 +45,15 @@ The only reason I have started writing again over the last two days is that the 
 
 Subscription quotas disappeared remarkably fast. After Codex removed its five-hour cap a while back, I could burn through one full Codex subscription and half a Claude subscription almost every day. Codex resets came often enough to roughly keep pace, but after a week without one, I have clearly hit the bottleneck.
 
-![Codex and Claude token usage on my primary computer](usage.webp)
+![Codex and Claude usage from May 3 to August 3, 2026: 42.151 billion tokens and $33,987.48 in API-equivalent cost](usage-en.webp)
 
-*Usage on my primary computer—roughly two Codex subscriptions and one Claude subscription.*
+*Usage on my primary computer—roughly two Codex subscriptions and one Claude subscription. English localization of the original dashboard, with data through August 3, 2026.*
 
 I also perfected the art of squeezing every last drop from those quotas. As I explained before, when your Codex quota is nearly exhausted, Codex lets unfinished tasks that are already running continue. You can therefore launch many large tasks in parallel. From what I have observed, those tasks can consume as much as another week's worth of quota, effectively doubling what you get.
 
-![Codex lets unfinished parallel tasks continue after the quota is exhausted](overrun.webp)
+![Codex shows 299 subagents running and 12 completed, with the 5.6 Sol model at its highest setting](overrun-en.webp)
+
+*English localization of the original screenshot, retaining its historical counts, elapsed times, and model settings.*
 
 But even with every trick in the book, the quota still disappears fast. To be fair, Codex's quotas are genuinely generous—there is a lot to work with. The key is how you use them and what you use them for. This month, I treated Codex as a wish-granting machine. Used that way, no number of subscriptions lasts long.
 

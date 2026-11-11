@@ -116,7 +116,9 @@ $$
 
 The degree to which a phenomenon exists in the population. The definition is relatively loose and can be various indicators of interest:
 
-![Inferential Statistics: The Past and Present of p-values — Definition: Effect Size (ES) (figure 2)](effect-size.png)
+![Common effect-size measures, descriptions, and examples (English translation of the Chinese table)](effect-size-en.webp)
+
+*English translation of the Chinese table, retaining its figures and examples. The Chinese source credits Cumming (2014); the corresponding English table appears in [Cumming (2012), Table 2.1, p. 39](https://api.pageplace.de/preview/DT0400.9781136659195_A23860929/preview-9781136659195_A23860929.pdf#page=54), with different milk prices, a median of 385 ms rather than 485 ms, and 39 states running deficits rather than missing data for 20 provinces.*
 
 Generally, effect sizes have three characteristics:
 

@@ -21,13 +21,15 @@ My old issue with Codex was latency. Even small tasks felt slow.
 In 5.3, whether due to inference stack changes or something else, responsiveness is materially better.
 I now run 8 to 10 sessions in parallel, paired with [**Typelesss voice input**](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247490982&idx=1&sn=789e9d1fdb438574b5014b6187b8a087&scene=21#wechat_redirect), and it feels like command-and-control instead of chat.
 
-![Codex parallel sessions](featured.webp)
+![A lone commander directing an army](featured.webp)
 
 Speed is nice, but the key improvement is reliability.
 With decent prompts and constraints, Codex can play a solid mid-level engineer.
 For code review, my rough estimate is about 95% precision: around 1 correction needed per 20 issues found.
 
-![Codex review output](codex-review-accuracy.webp)
+![External benchmark comparing coding-agent quality and cost](codex-review-accuracy.webp)
+
+*A separate [Superconductor benchmark](https://www.superconductor.com/blog/gpt-5-3-codex-vs-opus-4-6-benchmark) on a Rails codebase, shared on r/ClaudeAI.*
 
 I do not care much about benchmark leaderboards. I trust in-situ results.
 My evaluation method is simple: **cross-scanning**.
@@ -53,7 +55,9 @@ My current focus is the `pig` CLI.
 I am building it as an agent-native command surface over PostgreSQL, Patroni, PgBouncer, and pgBackRest, exposing context and capability maps in YAML/JSON for agents.
 In about five days, this added roughly 40,000 lines of Go.
 
-![pig CLI progress](pig-cli-growth.webp)
+![pig CLI progress](pig-cli-growth-en.webp)
+
+*AI-localized reconstruction of my Chinese-language Codex session; [original screenshot](pig-cli-growth.webp).*
 
 Pigsty is the most representative case, but not the only one.
 
@@ -63,7 +67,9 @@ After four days of autonomous loops, I ran smoke tests, extracted capabilities, 
 The operating loop was mostly mechanical:
 CreateStory -> DevStory -> CodeReview -> FixThis.
 
-![Story dev/review loop](story-dev-review-fix-loop.webp)
+![Story dev/review loop](story-dev-review-fix-loop-en.webp)
+
+*AI-translated version of my Chinese post; the embedded desktop screenshot is unchanged. [Original post image](story-dev-review-fix-loop.webp).*
 
 I did not write a single line of implementation code in that cycle.
 
@@ -84,7 +90,9 @@ These are the two methods I use.
 I borrow the biology metaphor: **DNA -> RNA -> Protein**.
 Software equivalent:
 
-![Intent to code cascade](central-dogma-software.webp)
+![Intent to code cascade](central-dogma-software-en.webp)
+
+*AI-localized version of the [original Chinese table](central-dogma-software.webp).*
 
 My workflow is BMAD, simplified in practice to BMA:
 
@@ -92,7 +100,9 @@ My workflow is BMAD, simplified in practice to BMA:
 2. **Map**: convert intent into PRD, then EPICs and Stories.
 3. **Act**: execute Stories iteratively.
 
-![BMAD workflow](bmad-workflow.webp)
+![BMAD workflow](bmad-workflow-en.webp)
+
+*AI-localized reconstruction of my Chinese-language project notes; [original screenshot](bmad-workflow.webp).*
 
 The core rule: **do not code by impulse**.
 No random local patching.

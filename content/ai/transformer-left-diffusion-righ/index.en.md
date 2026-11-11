@@ -93,7 +93,9 @@ It prompted a conversation with Claude, which I have edited into the Socratic di
 
 **A:** I do. A purely symbolic account of intelligence misses its field-state half. A purely field-state account misses its symbolic half. Both must coexist, and the **tension between them** must be preserved.
 
-![dual.webp](dual.webp)
+![Wave–particle duality diagram — English translation](dual-en.webp)
+
+*English translation of the original Chinese diagram, generated for this English edition.*
 
 ## MoE Is Not a Two-Hemisphere Brain
 

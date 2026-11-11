@@ -26,7 +26,9 @@ Anyone who has hiked at high altitude knows the difference between the sixth and
 
 Psychologists describe consciousness as the awake state where we perceive, think, feel, and notice the world (sixth sense) and **notice ourselves noticing** (seventh). Consciousness is an evolved “inner eye.” It enables empathy—putting yourself in someone else’s shoes—and “free won’t,” vetoing unconscious impulses.
 
-![psy.png](psy.png)
+![Functions of consciousness and the timing of conscious action](psy.en.webp)
+
+*English localization of a historical textbook page summarizing Dehaene and Naccache, Baars, Frith, Perry and Lumer, and Libet.*
 
 Neuroscience points to a left-hemisphere interpreter. Split-brain studies show the left hemisphere constructs narratives, categories, causes. The right simply monitors raw experience. The left’s self-monitoring loop gives us an internal narrator.
 

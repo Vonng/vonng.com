@@ -10,7 +10,9 @@ Today, something straight out of magical realism unfolded in Dify's GitHub repos
 
 Why would anyone change someone else's logo? An earlier article, [Warning: Dify Has Become DeepSeek's Biggest Open-Source Casualty](https://mp.weixin.qq.com/s?__biz=MzU2NjY1ODk1Ng==&mid=2247484447&idx=1&sn=d59104d3c20e7666d988393a268616c3&scene=21#wechat_redirect), laid out the problem: some vendors of “homegrown DeepSeek appliances” quietly take Dify, reskin the UI, hide the copyright notice, scrub the logo, package it up, and call it “built in-house.” This kind of rebadging is hardly rare in China—many of the hundreds of so-called “domestic databases,” for example, are PostgreSQL underneath—but Dify has been hit especially hard.
 
-![Deng Gao presents a PR replacing Dify's logo with Livzon's](logo-pr.webp)
+![Deng Gao's Chinese post shows a PR replacing Dify's logo with Livzon's](logo-pr.webp)
+
+*Deng Gao jokes that Livzon's logo-swapping PR ended with Dify sending a lawyer's letter.*
 
 Freeloading is one thing. Quietly puffing yourself up and bragging that you built it in-house is bad enough. But barging into the upstream repository with a PR to replace the project's own logo? That is an insult delivered straight to Dify's face. It is as shameless as stealing someone else's work, claiming it as your own, then emailing the real author to demand that your name replace theirs.
 
@@ -26,27 +28,35 @@ The most charitable explanation is that they simply did not know GitHub well eno
 
 ![Dify's team warns about its commercial licensing requirements in PR #16640](license-warning.webp)
 
+*The Chinese notice says multi-tenant services or logo removal require commercial authorization, and identifies Tian Yuan Law Firm as Dify's IP counsel in China.*
+
 You could still write off the PR from three days earlier as a mistake. Dify's only response was a mild warning. Then yesterday, the same crew submitted another PR, #16819[^2].
 
 ![PR #16819 replaces Dify's logo again](pr-16819-logo.webp)
 
 When they keep doing this right in Dify's face, though, it gets harder to tell whether it was deliberate or accidental.
 
-![Panda meme: “Was that deliberate or an accident?”](intentional-or-accidental.webp)
+![Panda meme: “Was that deliberate or an accident?”](intentional-or-accidental.en.webp)
 
 By then, Dify was so disgusted that it sent a lawyer's letter.
 
 The letter is explicit: Dify's open-source license adds restrictions to Apache License 2.0. It prohibits using Dify's source code to run a multi-tenant SaaS similar to Dify's hosted service without written authorization. It also prohibits removing or modifying the logo and copyright information in the Dify console. On that basis, the letter demands an apology and compensation.
 
-![The lawyer's letter from Dify attached in the GitHub comments](legal-notice.webp)
+![Chinese GitHub comments mock the exposed key files and logo replacement; the final comment attaches Dify's lawyer's letter](legal-notice.webp)
 
-![Page one of the lawyer's letter from Dify](legal-letter-1.webp)
+*The comments sarcastically approve the changes; the attachment is titled “Dify lawyer's letter — Livzon Pharmaceutical — March 25, 2025.”*
 
-![Page two of the lawyer's letter from Dify](legal-letter-2.webp)
+![Page one of Dify's original Chinese lawyer's letter identifies Livzon Pharmaceutical Group Inc. and alleges license violations](legal-letter-1.webp)
+
+![Page two of Dify's original Chinese lawyer's letter demands an end to use of Dify, deletion of its source code, and a public apology](legal-letter-2.webp)
+
+*The letter asks Livzon to contact Dify about compensation by March 31, 2025.*
 
 Dify's license is equally clear. At least since [a change made on July 28, 2023](https://github.com/langgenius/dify/commit/c98311b325a4), its `LICENSE` file has expressly stated two restrictions: you may not use Dify's source code to run a multi-tenant SaaS similar to Dify's hosted service without written authorization; and you may not remove or modify the logo or copyright information in the Dify console.
 
-![The SaaS and logo restrictions in Dify's open-source license](license-terms.webp)
+![Dify's English license at revision 90bc51e, including its multi-tenant service and logo restrictions](license-terms.en.webp)
+
+*[Dify's license at the revision shown in the original screenshot](https://github.com/langgenius/dify/blob/90bc51ed2e6672c4a4d6c0199d218aa87037810a/LICENSE).*
 
 So who received the letter? Search Google for the logo, or simply open the domain found in the PR's certificate directory, and Livzon Group's name appears. The published letter also identifies the alleged infringer as “Livzon Pharmaceutical Group Inc.”
 
@@ -62,7 +72,9 @@ So what is the right way to do it? Simple: use Dify exactly as upstream ships it
 
 At the core of a reliable Dify deployment is its PostgreSQL database. You can use PostgreSQL with pgvector as the vector database and eliminate another component; Redis is only a cache. Solve PostgreSQL backup, recovery, PITR, high availability, and monitoring, and you have solved most of Dify's operational problems.
 
-![Pigsty's guide to self-hosting Dify](pigsty-dify.webp)
+![Pigsty's historical English guide to self-hosting Dify with external PostgreSQL, pgvector, and Redis](pigsty-dify.en.webp)
+
+*[English deployment guide, last updated March 21, 2025](https://github.com/pgsty/site.io/blob/6fe11eb8b3b909c9d1ad0a2ea472ce707846cf80/docs/app/dify/index.html).*
 
 Pigsty takes care of PostgreSQL, Redis, object storage, Nginx, and even HTTPS and domain names. One server and a few commands are enough to bring up a free yet dependable Dify deployment on your own infrastructure. See [Pigsty's Dify deployment guide](https://pigsty.cc/docs/app/dify/) for details.
 

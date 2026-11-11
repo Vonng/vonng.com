@@ -19,7 +19,9 @@ This was no ordinary automated attack. An autonomous agent framework executed th
 
 When Hugging Face published its disclosure, the team already knew the attacker was not human. They did not know which model it was or which organization it came from. Five days later, on July 21, 2026, [OpenAI took responsibility](https://openai.com/index/hugging-face-model-evaluation-security-incident/).
 
-![OpenAI's public statement on the Hugging Face security incident](openai-hf.webp)
+[![OpenAI's public statement on the Hugging Face security incident](openai-hf-en.webp)](https://x.com/OpenAI/status/2079658951264920020)
+
+*Original English announcement, captured from a public mirror of the X post.*
 
 The incident began with an internal OpenAI cybersecurity evaluation called ExploitGym. It evaluated GPT-5.6 Sol and a more capable prerelease model; for convenience, I will refer to both as "the model."
 

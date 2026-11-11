@@ -242,7 +242,9 @@ When a curve is negatively skewed, **most data** concentrates in the **high scor
 
 ## 4. Central Tendency and Variability Measurement
 
-![Statistics Fundamentals: Descriptive Statistics — 4. Central Tendency and Variability Measurement (figure 1)](simple-statistics.jpeg)
+![Table comparing the mean, variance, standard deviation, coefficient of variation, and z-score for populations, samples, and random variables](simple-statistics-en.webp)
+
+*The table retains the original's mixed $n/N$ notation; $\sigma(\mu)$ labels the population standard deviation. Variance is the expected squared deviation; the sample estimate shown uses $N-1$. The $Z$ formula standardizes a sample mean using $\sigma/\sqrt{n}$ for independent observations with known $\sigma$. For a normal sample, replacing $\sigma$ with the sample standard deviation $s$ gives a $t$ statistic.*
 
 ### Measures of Central Tendency
 
