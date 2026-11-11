@@ -22,21 +22,21 @@ Finally, social media platforms erupted with flame wars between the two companie
 
 - [Automattic is doing open source dirty](https://world.hey.com/dhh/automattic-is-doing-open-source-dirty-b95cf128)
 
-![dhh1.png](dhh1.png)
+![Automattic is doing open source dirty](dhh1-en.webp)
 
 - [Open source royalty and mad kings](https://world.hey.com/dhh/open-source-royalty-and-mad-kings-a8f79d16)
 
-![dhh2.webp](dhh2.webp)
+![Open source royalty and mad kings](dhh2-en.webp)
 
 Then Mullenweg's two blog responses:
 
 - [Response to DHH](https://ma.tt/2024/10/on-dhh/)
 
-![matt1.png](matt1.png)
+![Response to DHH](matt1-en.webp)
 
-- Those Other Lawsuits (original link unavailable)
+- [Those Other Lawsuits](https://ma.tt/2024/10/other-lawsuits/) (original post removed; English rendering reconstructed from the original screenshot)
 
-![matt2.png](matt2.png)
+![Those Other Lawsuits](matt2-en.webp)
 
 ## Vonng's Commentary
 

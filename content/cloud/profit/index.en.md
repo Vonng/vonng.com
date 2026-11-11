@@ -28,7 +28,7 @@ Industry benchmarks AWS and Azure easily achieve 60% and 70% margins. Looking at
 
 Regarding net profits, domestic public cloud vendors are even more miserable. AWS/Azure net profit margins can reach 30%-40%. Benchmark Alibaba-Cloud merely struggles around the break-even line. This begs the question: how did these cloud vendors turn a 30-40% pure profit business into this state?
 
-![Why Isn't Cloud Computing More Profitable Than Sand Mining? — Public Cloud Margins Worse Than Sand Mining (figure 2)](profit-1.png)
+![Operating profit margins for the four global cloud vendors, 2020–2022 (figure 2)](profit-1-en.webp)
 
 ## Why Are Pig-Butchering Schemes Losing Money
 
@@ -38,7 +38,7 @@ But the core problem of domestic cloud vendors losing money is **profit margins 
 
 Public clouds can be divided into IaaS, PaaS, SaaS three layers. Although all three carry **S**(ervice), there are significant differences: **lower layers lean toward selling resources, upper layers lean toward selling capabilities** (services/technology/knowledge/cognition/insurance). **IaaS layer dominated by resources, SaaS layer dominated by capabilities, PaaS layer between the two**—for example, databases can be viewed as **capability** utilizing and integrating underlying storage/compute resources, or as higher-level abstract software **resources**.
 
-![Why Isn't Cloud Computing More Profitable Than Sand Mining? — Why Are Pig-Butchering Schemes Losing Money (figure 3)](profit-2.png)
+![Ecosystem partnerships among the three major U.S. cloud vendors (figure 3)](profit-2-en.webp)
 
 When cloud first appeared, the core was hardware/**IaaS** layer: storage, bandwidth, computing power, servers. Cloud vendors' origin story was: **make computing and storage resources like water and electricity, playing infrastructure provider roles**. This was an attractive vision: public cloud vendors could use economies of scale to reduce hardware costs and amortize labor costs; ideally, while retaining sufficient profit margins, they could provide storage/compute **resources** to the public with better pricing and elasticity than IDCs.
 
@@ -48,7 +48,7 @@ Although domestic public cloud **IaaS** layer storage, computing, networking rev
 
 For public clouds, **PaaS is the core technical barrier**, **IaaS is the revenue foundation**. Cloud vendors' main revenue comes from both. However, **the former faces open source alternative impact, the latter faces price war challenges.**
 
-![Why Isn't Cloud Computing More Profitable Than Sand Mining? — Why Are Pig-Butchering Schemes Losing Money (figure 4)](profit-3.png)
+![Revenue growth for the four global cloud vendors, 2020–2022 (figure 4)](profit-3-en.webp)
 
 AWS's barrier is first-mover advantage and thriving software ecosystem, Azure's barrier is Office SaaS and large model PaaS, GCP's barrier is global unified network. Looking at domestic cloud vendor barriers: Alibaba-Cloud's databases, Tencent Cloud's WeChat ecosystem, Baidu Cloud's large models?
 
@@ -56,7 +56,7 @@ AWS's barrier is first-mover advantage and thriving software ecosystem, Azure's 
 
 Plucked phoenix worse than chicken—public clouds losing technical monopolies will sink into resource-selling price war quagmires. When **quality**, **security**, **efficiency** can't create highlights, the only choice to grab market share is working on **costs**—**price wars**.
 
-![Why Isn't Cloud Computing More Profitable Than Sand Mining? — Resource-Selling Models Heading Toward Price Wars (figure 5)](profit-4.png)
+![Cloud price cuts and price-matching promotions in June 2023 (figure 5)](profit-4-en.webp)
 
 However, competing with public cloud **IaaS** cloud hardware are telecom operators/state clouds/IDC2.0. These opponents' characteristics are various resources—special pedigree identity relationships, self-owned data centers/networks/land, cheap bandwidth/low-interest loans; selling resources while lying down making money, focusing on quality and affordability: no high-tech PaaS/SaaS, but IDCs can happily sell VMs at 20% of public cloud list prices or lower, self-building rack rentals even cheaper. Comprehensive costs 1/5 to 1/10 of cloud list prices, not playing [cloud disk pig-butchering](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485391&idx=1&sn=4cec9af2b58160eb345a6b12411f0b68&chksm=fe4b3214c93cbb023c13a89133c75bf1e88e1543de9359df7447498e4a9d5ec555313a954566&scene=21#wechat_redirect) fancy stuff, just pure resource selling.
 
@@ -100,7 +100,7 @@ Even cloud vendors must admit Kubernetes success: it's become the de facto stand
 
 Similarly, when users' average database usage level was yum install + scheduled backup + password setting, cloud database RDS services could dominate with qualified standard product advantages in quality/security/efficiency. However, when top-level users output best practices in replicable forms, producing superior open source free alternatives, cafeteria-level qualified RDS can only pale in comparison.
 
-![Why Isn't Cloud Computing More Profitable Than Sand Mining? — Service Competitiveness Gradually Neutralized (figure 8)](profit-7.png)
+![Database needs pyramids: public-cloud RDS, average usage, and Pigsty self-hosted (figure 8)](profit-7-en.webp)
 
 Cloud PaaS as public cloud barriers will head toward independence/disintegration/shrinkage/extinction under open source alternative impact. However, when whales fall, all things grow—this also means more PaaS/SaaS startup teams will be liberated.
 

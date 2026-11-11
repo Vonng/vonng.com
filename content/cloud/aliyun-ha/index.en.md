@@ -117,9 +117,9 @@ I suggest cloud products including RDS should be truthful and accurately label t
 In this Singapore Zone C failure, as well as the previous Hong Kong Zone C failure, one problem Alibaba-Cloud demonstrated is that single data center failures spread to the entire availability zone, and single availability zone failures affect the entire region.
 
 In cloud computing, **Region** and **Availability Zone (AZ)** are very basic concepts that users familiar with AWS won't find unfamiliar.
-According to [AWS's definition](https://aws.amazon.com/cn/about-aws/global-infrastructure/regions_az): a **Region** contains multiple availability zones, each availability zone is one or more independent data centers.
+According to [AWS's definition](https://aws.amazon.com/about-aws/global-infrastructure/regions_az/): a **Region** contains multiple availability zones, each availability zone is one or more independent data centers.
 
-![aws-az-region.png](aws-az-region.png)
+[![English AWS Regions and Availability Zones documentation](aws-az-region-en.webp)](https://aws.amazon.com/about-aws/global-infrastructure/regions_az/)
 
 For AWS, there aren't many Regions - for example, the US has only four regions, but each region has [two or three availability zones](https://gist.github.com/karstenmueller/98381c897178a260be8c08f98ffe2c3e), and one availability zone (AZ) typically corresponds to multiple data centers (DC).
 AWS's practice is to control DC scale at 80,000 hosts, with distances between DCs of 70-100 kilometers. This forms a three-tier relationship of Region - AZ - DC.

@@ -82,7 +82,9 @@ During the Cloudflare Immerse cocktail party and dinner, I had in-depth discussi
 
 Actually, Cloudflare isn't traditional public cloud but a kind of **SaaS**. We now call ourselves "Connectivity Cloud" (translated as: **Global Connectivity Cloud**), aiming to establish connections between all things, integrate with all networks; built-in intelligence prevents security risks, providing unified, simplified interfaces to restore **visibility** and **control**. From traditional perspective, we're like an integration of security, CDN, and edge computing. AWS CloudFront competes with us.
 
-![Cloudflare Roundtable Interview and Q&A Record — Part Two: Interactive Q&A (figure 4)](cf-interview-3.png)
+[![Cloudflare's connectivity cloud: Connect, Protect, and Build on a programmable global network](cf-interview-3-en.webp)](https://cf-assets.www.cloudflare.com/slt3lc6tev37/3du00S5t9zHvxmKsR1dFJW/7f6e7dfb533254b35c083b5bf6cc6ac2/Digital_Modernization_Solution_Brief.pdf)
+
+*The matching English diagram from Cloudflare's January 2024 Digital Modernization solution brief.*
 
 **Why does Cloudflare provide such generous free plans? How do you actually make money?**
 
@@ -100,7 +102,9 @@ Cloudflare's core business model is **security**. Compared to serving only payin
 
 Actually, Cloudflare's CEO personally [answered this question on StackOverflow](https://webmasters.stackexchange.com/questions/88659/how-can-cloudflare-offer-a-free-cdn-with-unlimited-bandwidth):
 
-![Cloudflare Roundtable Interview and Q&A Record — Part Two: Interactive Q&A (figure 5)](cf-interview-4.webp)
+[![Matthew Prince's five reasons for Cloudflare's free plan: attack data, customer referrals, employee referrals, QA, and bandwidth economics](cf-interview-4-en.webp)](https://webmasters.stackexchange.com/questions/88659/how-can-cloudflare-offer-a-free-cdn-with-unlimited-bandwidth)
+
+*English localization of the original answer screenshot, preserving its historical vote and profile counts.*
 
 > Five reasons we offer a free version of the service and always will:
 >
@@ -120,25 +124,31 @@ Founder vision and sentiment are quite important... Cloudflare's early services 
 
 Our free customers' main transition to enterprise paying customers is through security issues. Cloudflare console has an "**under attack**" button — when users click this "Under Attack" button, even free customers get immediate human response helping solve problems. For example, during the pandemic, a major video conferencing vendor suffered security attacks. We immediately allocated personnel to help customers solve problems — they were satisfied, so we signed deals.
 
-![Cloudflare Roundtable Interview and Q&A Record — Part Two: Interactive Q&A (figure 6)](cf-interview-5.webp)
+![Cloudflare Quick Actions showing Under Attack Mode and Development Mode, both switched off](cf-interview-5-en.webp)
+
+*English localization of the original dashboard screenshot.*
 
 **Could Cloudflare's free tier be cancelled in the future?**
 
 Costco has a $1.50 hot dog soda combo, the founder promised never to raise hot dog and soda combo prices. I know SaaS vendors like Vercel, PlanetScale started cutting free tiers, but I think this basically won't happen to Cloudflare. Because as mentioned above, we have sufficient reasons to continue providing free plans. Actually, most of our customers don't pay, using Free Plan.
 
-![Cloudflare Roundtable Interview and Q&A Record — Part Two: Interactive Q&A (figure 7)](cf-interview-6.webp)
+![News excerpts about Costco's commitment to its $1.50 hot dog and soda combo](cf-interview-6-en.webp)
+
+*English localization of the original news-excerpt collage, with the original Costco photograph retained.*
 
 **Why does Cloudflare have the CEO personally write post-mortems after outages?**
 
 Our CEO has technical background, engineering experience. When outages occur with lots of people arguing in IM, CEO jumps out saying: enough, I'll write the post-mortem report — then publishes it the same day as the outage. This is quite rare among public cloud vendors... We're actually quite shocked...
 
-![Cloudflare Roundtable Interview and Q&A Record — Part Two: Interactive Q&A (figure 8)](cf-interview-7.webp)
+[![English Cloudflare Code Orange postmortem](cf-interview-7-en.webp)](https://blog.cloudflare.com/major-data-center-power-failure-again-cloudflare-code-orange-tested/)
 
 **Why is Cloudflare access so slow in China regions?**
 
 China region bandwidth/traffic costs are too expensive, so ordinary users actually mainly access North American data centers and nodes. We have excellent latency performance in 95% of the world, but the remaining 5% mainly refers to... here.
 
-![Cloudflare Roundtable Interview and Q&A Record — Part Two: Interactive Q&A (figure 9)](cf-interview-8.webp)
+![Historical latency measurements comparing Cloudflare with an unnamed Chinese CDN](cf-interview-8-en.webp)
+
+*Tabs denote all providers, China Telecom, multiple networks, China Unicom, China Mobile, and other providers. Location codes: JP (Japan), NL (Netherlands), US (United States), HK (Hong Kong), RU (Russia), KR (South Korea), DE (Germany), TW (Taiwan), and AU (Australia). The original measurements and maps are unchanged; Chinese map credits, approval identifiers, and inset place names are retained as source evidence.*
 
 If your main user base is domestic and you care about speed, consider Cloudflare Enterprise, or domestic CDN vendors. We cooperate with JD Cloud, enterprise customers can also use nodes they provide domestically.
 
@@ -164,7 +174,9 @@ Business harmony generates wealth, we can't publicly comment on other clouds. Bu
 
 Traffic priority. For example, your overseas traffic probably goes through certain cross-sea fiber from Shanghai. Normally this line utilization is `<Redacted>`%, but during peak periods, we prioritize enterprise user service quality.
 
-![Cloudflare Roundtable Interview and Q&A Record — Part Two: Interactive Q&A (figure 10)](cf-interview-9.webp)
+![Historical Cloudflare Enterprise benefits, including network prioritization, China network access, and a 100% uptime SLA with 25x reimbursement](cf-interview-9-en.webp)
+
+*English localization of the Enterprise benefits shown in the original screenshot.*
 
 **Does Cloudflare consider launching managed RDS, Postgres database services?**
 

@@ -64,7 +64,7 @@ Some people use cloud services to "pass the buck," absolving themselves of respo
 
 In storage products offered by various cloud providers, it's common to see promises of nine nines of reliability [1], implying a one in a billion chance of data loss when using cloud disks. Examining actual reports on cloud provider disk failure rates [6] casts doubt on these figures. However, as long as providers are bold enough to make, stand by, and honor such claims, there shouldn't be an issue.
 
-![SLA: Placebo or Insurance? — Vanished Reliability (figure 3)](sla-3.png)
+![Alibaba Cloud ESSD specifications: performance levels, capacity ranges, and 99.9999999% data durability (figure 3)](sla-3-en.webp)
 
 Yet, upon examining the SLAs of various cloud providers, this promise disappears! [2]
 

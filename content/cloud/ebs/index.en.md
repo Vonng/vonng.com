@@ -34,11 +34,11 @@ When you use a microwave at home to heat up a ready-to-eat braised chicken rice 
 
 With hardware technology evolving rapidly, **PCI-E NVMe SSDs** have reached a new level of performance across various metrics. A common 3.2 TB enterprise-grade MLC SSD offers incredible performance, reliability, and value for money, costing less than ¥3000, significantly outperforming older storage solutions.
 
-![EBS: Pig Slaughter Scam — WHAT a Scam! (figure 2)](ebs-1.png)
+![EBS: PCI-E NVMe SSD specifications (2023 figure)](ebs-1-en.webp)
 
 Aliyun ESSD PL3 and our own IDC's procured PCI-E NVMe SSDs come from the same supplier. Hence, their maximum capacity and IOPS limitations are identical. AWS's top-tier block storage solution, io2 Block Express, also shares similar specifications and metrics. Cloud providers' highest-end storage solutions utilize these 32TB single cards, leading to a maximum capacity limit of 32TB (64TB for AWS), which suggests a high degree of hardware consistency underneath.
 
-![EBS: Pig Slaughter Scam — WHAT a Scam! (figure 3)](ebs-2.png)
+[![EBS: Local SSD, Alibaba ESSD PL3, and AWS io2 comparison (2023 figures)](ebs-2-en.webp)](https://v45.pgsty.pro/docs/about/compare/cost/#ebs-cost-reference)
 
 However, compared to direct hardware procurement, **the cost of AWS EBS io2 is up to 120 times higher, while Aliyun's ESSD PL3 is up to 200 times higher**. Taking a 3.2TB enterprise-grade PCI-E SSD card as a reference, the ratio of on-demand rental to purchase price is 15 days on AWS and less than 5 days on Aliyun, meaning you could own the entire disk after renting it for this duration. If you opt for a three-year prepaid purchase on Aliyun, taking advantage of the maximum 50% discount, the rental fees over three years could buy over 120 disks of the same model.
 
@@ -72,9 +72,9 @@ Even engineers within public cloud services may not fully grasp the rationale be
 
 Storage follows a de facto standard: **POSIX file system + block storage**. Whether it's database files, images, audio, or video, they all use the same file system interface to store data on disks. But AWS's "divine intervention" splits this into two distinct services: **S3** (Simple Storage Service) and **EBS** (Elastic Block Store). Many "followers" have imitated AWS's product design and pricing model, yet the logic and principles behind such actions remain elusive.
 
-![EBS: Pig Slaughter Scam — WHY so Pricing? (figure 6)](ebs-5.png)
+![EBS: Block storage vs. Object Storage OSS comparison](ebs-5-en.webp)
 
-> Aliyun EBS OSS Compare
+> Alibaba Cloud's block storage and OSS comparison
 
 **S3**, standing for **Simple Storage Service**, is a simplified alternative to file system/storage: sacrificing strong consistency, directory management, and access latency for the sake of low cost and massive scalability. It offers a simple, high-latency, high-throughput flat KV storage service, detached from standard storage services. This aspect, being cost-effective, serves as a major allure for users to migrate to the cloud, thus becoming possibly the only **de facto cloud computing standard across all public cloud providers**.
 
@@ -88,7 +88,7 @@ Firstly, **instance storage**, which is best suited for self-hosted databases, m
 
 Of course, to make customers bite, some cloud computing KOLs promote the accompanying "public cloud-native" philosophy: "EC2 is not suitable for stateful applications. Please store state in S3 or RDS and other managed services, as these are the 'best practices' for using our cloud."
 
-![EBS: Pig Slaughter Scam — WHY so Pricing? (figure 7)](ebs-7.png)
+![EBS: Wang’s four cloud-native rules, translated into English](ebs-7-en.webp)
 
 These four points are well summarized, but what public clouds will not disclose is the cost of these "best practices." To put [these four points](https://github.com/lipingtababa/cloud-native-best-practices/blob/main/云原生王四条.md) in layman's terms, they form a carefully designed trap for customers:
 
@@ -174,9 +174,9 @@ Unfortunately, for the sake of obfuscation, both cloud software and cloud hardwa
 
 At the infrastructure level, telecom operators, state-owned clouds, and IDC 1.5/2.0 have entered the fray, offering highly competitive IaaS services. These services include turnkey network and electricity hosting and maintenance, with high-end servers available for either purchase and hosting or direct rental at actual prices, showing no fear in terms of flexibility.
 
-![EBS: Pig Slaughter Scam — Where to Go (figure 9)](ebs-11.png)
+![English localization of the author's 2023 Alibaba Cloud pricing screenshot and rental discussion](ebs-11-en.webp)
 
-> IDC 2.0's new server rental model: Actual price rental, ownership transfers to the user after a full term
+> English localization of the 2023 screenshot and rental discussion. IDC 2.0 server rental model: lease at the hardware price; ownership transfers after the term. The discussion contrasts the ¥27,809.78 configuration total with a ¥3,000 monthly rental offer.
 
 On the software front, what once were the technical barriers of public clouds, various management software / **PaaS** solutions, have seen excellent open-source alternatives emerge. OpenStack / Kubernetes have replaced EC2, MinIO / Ceph have taken the place of S3, and on RDS, open-source alternatives like **Pigsty** and various K8S Operators have appeared.
 
@@ -192,7 +192,7 @@ Considering these trends, the combination of IDC2.0 and open-source self-buildin
 
 Staying true to the original mission is essential. Public clouds do an admirable job at the cloud hardware / IaaS level, except for being outrageously expensive, there aren’t many issues, and the offerings are indeed solid. If they could return to their original vision and truly excel as providers of basic infrastructure, akin to utilities, selling resources might not offer high margins, but it would allow them to earn money standing up. Continuing down the path of exploitation, however, will ultimately lead customers to vote with their feet.
 
-![EBS: Pig Slaughter Scam — Where to Go (figure 11)](ebs-13.png)
+![EBS: Revenue growth of four global cloud providers, 2020–2022](ebs-13-en.webp)
 
 ## References
 

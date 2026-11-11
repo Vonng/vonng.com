@@ -20,7 +20,7 @@ The software industry has undergone several paradigm shifts, and databases are n
 
 The software industry has experienced several paradigm shifts, and databases are no exception.
 
-[![paradigm-title.png](paradigm-title.png)](https://mp.weixin.qq.com/s/Yp6L0hh4b4HuJQRPD3aJYw)
+[![Fish swallowing one another represent commercial software, open source, cloud services, and local-first tools.](paradigm-title.png)](https://mp.weixin.qq.com/s/Yp6L0hh4b4HuJQRPD3aJYw)
 
 > Software eats the world, open source eats software, cloud eats open source—who will eat the cloud?
 
@@ -46,7 +46,7 @@ The Cold War has ended, but in the **software industry**, the struggle between m
 
 Just as the concept of open source software completely changed the software world: commercial software companies spent massive funds fighting this idea for decades. Ultimately, they couldn't resist the rise of open source software—software, this core means of production in the IT industry, became publicly owned by developers worldwide, distributed according to need. Developers contribute according to ability, everyone for me, me for everyone—this directly spawned the golden prosperity era of the internet.
 
-![paradigm-2.png](paradigm-2.png)
+![Larry Ellison: “Once open source gets good enough, competing with it would be insane.”](paradigm-2.png)
 
 However, prosperity leads to decline, extremes lead to reversal. Commercial software made a comeback in the form of cloud services, while open source software concepts encountered problems in the cloud computing era. **Cloud software is essentially an upgraded form of commercial software**: if software can only run on vendor servers rather than users' local servers, new monopolies can form. Even better, cloud software can completely freeload off open source, using their spear against their shield. Free open source software plus vendor operations and servers, packaged as ethereal services, saves R&D costs while charging markups of several to over ten times.
 
@@ -109,7 +109,7 @@ Local-first software runs on your own hardware using local data storage while re
 
 Before open source/local-first alternatives to cloud software appear, public cloud vendors can harvest freely, extracting monopolistic profits. Once better, easier, much cheaper open source alternatives emerge, the good days end. Just as Kubernetes replaces cloud computing services like EC2, MinIO/Ceph replaces cloud storage services like S3, and Pigsty aims to replace cloud database services: RDS PostgreSQL. More and more open source/local-first alternatives to cloud software are sprouting like mushrooms after rain.
 
-![paradigm-3.jpeg](paradigm-3.jpeg)
+![Cloud Native Computing Foundation landscape of projects and tools.](paradigm-3.jpeg)
 
 > CNCF Landscape
 
@@ -117,9 +117,9 @@ Before open source/local-first alternatives to cloud software appear, public clo
 
 The cloud computing story parallels the electricity promotion process exactly—let's look back to the early 20th century, drawing historical experience from electricity promotion, popularization, monopolization, and regulation.
 
-![paradigm-4.jpeg](paradigm-4.jpeg)
+![English rendering of a historical ChatGPT answer outlining four stages of electricity adoption, with economies of scale highlighted.](paradigm-4.en.webp)
 
-> ChatGPT: The electricity promotion process
+> English rendering of the historical ChatGPT answer reproduced in this February 3, 2023 article. The original claims, dates, and red highlight are preserved. [Original Chinese screenshot](paradigm-4.jpeg).
 
 **Power supply may move toward monopoly, centralization, and nationalization, but you can't control appliances**. If cloud hardware (computing power) is like electricity, then cloud software is like appliances. Living in modern times, we can hardly imagine washing machines, refrigerators, water heaters, and computers having to be used in machine rooms next to power stations, nor can we easily imagine residents needing their own generators rather than public power plants for electricity.
 

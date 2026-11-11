@@ -54,9 +54,11 @@ The first lesson is: **Don't run serious databases on cloud disks!** On this mat
 
 The second lesson — **Self-developed solutions are fine, but keep people around to maintain them**. Cost reduction eliminated the entire storage team, leaving no one to help when problems arose.
 
-The third lesson: **Beware of big company open source**. As an underlying storage project, once deployed, it's not something you can simply replace. When NetEase killed the Curve project, all infrastructure using Curve became unmaintained ruins. Stonebraker mentioned this in his famous paper "What Goes Around Comes Around":
+The third lesson: **Beware of big company open source**. As an underlying storage project, once deployed, it's not something you can simply replace. When NetEase killed the Curve project, all infrastructure using Curve became unmaintained ruins. Michael Stonebraker and Andrew Pavlo offer a related warning in their 2024 paper, "What Goes Around Comes Around... And Around...":
 
-![stonebraker.png](stonebraker.png)
+[![Beware of DBMSs from large non-DBMS vendors: an excerpt discussing Meta, LinkedIn, and immature open-source systems](stonebraker-en.webp)](https://db.cs.cmu.edu/papers/2024/whatgoesaround-sigmodrec2024.pdf#page=11)
+
+*Source: [Stonebraker and Pavlo, SIGMOD Record, June 2024, pp. 31–32](https://db.cs.cmu.edu/papers/2024/whatgoesaround-sigmodrec2024.pdf#page=11). Cropped from consecutive pages and joined.*
 
 ## Reference Reading
 

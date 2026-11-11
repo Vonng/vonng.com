@@ -49,7 +49,9 @@ If Alibaba Cloud thinks this is rumor-mongering, maybe they should sync up with 
 
 The reality is that RedNote's current strategy is crystal clear: **"self-built data centers as primary, public cloud as secondary."** They're not just renting colo space—they're designing and operating their own data centers.
 
-![idc-en.jpg](idc-en.jpg)
+> English translation of the original Chinese BOSS Zhipin screenshot from [RedNote's hybrid-cloud article](https://mp.weixin.qq.com/s/pCDobFG3uSWRO_7ZXSCBgQ). This is an editorial translation, not an official English recruitment page.
+
+[![English translation of the original Chinese BOSS Zhipin screenshot (not an official English page)](idc-en-v2.webp)](https://mp.weixin.qq.com/s/pCDobFG3uSWRO_7ZXSCBgQ)
 
 So here's the question: when a company elevates self-built infrastructure to the top of the stack, is that "cloud exit" or not?
 

@@ -12,7 +12,7 @@ Leaving the cloud has never been just about saving money. It is about buying bac
 
 This morning, I spotted a spectacular humblebrag from DHH on X:
 
-![DHH looks back at the 19 PB all-flash system bought for the AWS S3 exit](dhh-s3-tweet.webp)
+[![DHH looks back at the 19 PB all-flash system bought for the AWS S3 exit](dhh-s3-tweet-en.webp)](https://x.com/dhh/status/2088326278659092646)
 
 “Don’t know if I’ve ever timed a trade this well in my life.” A system bought for $1.5 million carried a $19 million list price just over a year later—more than 12×.
 

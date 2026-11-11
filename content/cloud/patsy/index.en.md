@@ -18,11 +18,13 @@ The result was both laughable and crying-worthy. He wasn't dealing with data bur
 
 I thought: Going distributed already, must have massive data, crazy QPS—definitely a tough customer? Probably hundreds of TB minimum?
 
-![zhuniaopao.gif](zhuniaopao.gif)
+![Kung Fu Hustle: an overconfident challenger meets a much stronger opponent](zhuniaopao.gif)
+
+*A Kung Fu Hustle gag: looking for a fight, then discovering you have picked the wrong opponent.*
 
 Open source distributed extension Citus does have quite a reputation in the PostgreSQL ecosystem, especially after Microsoft's acquisition, even packaged as CosmosDB/Hyperscale PG on Azure. Making PG upgrade to distributed database in place sounds pretty cool.
 
-![Escaping Cloud Computing Scam Mills: The Big Fool Paying for Pain — Clutching Wallet, Frantically Going Distributed (figure 2)](intro.png)
+![Consultation about replacing TimescaleDB with Citus for tables with tens of billions of rows and 5,000 QPS](intro.en.webp)
 
 But old friends know I'm not fond of distributed databases. ([Are Distributed Databases Fake Requirements?](/db/distributive-bullshit/))
 
@@ -63,7 +65,7 @@ Plus EC2 host costs (usually cloud database storage/compute cost ratio estimated
 
 More outrageous: spending this much money gets incredibly poor performance storage. "Paying protection money and still getting beaten"—that's exactly what this is.
 
-![Escaping Cloud Computing Scam Mills: The Big Fool Paying for Pain — Astronomical Pig-Butchering Making Moves Look Deformed (figure 3)](ebs-2.png)
+[![Historical comparison of local NVMe SSDs, Alibaba ESSD PL3, and AWS io2 Block Express](ebs-2.en.webp)](https://v45.pgsty.pro/docs/about/compare/cost/#ebs-cost-reference)
 
 To save this cloud disk cost, they'd rather tear apart business architecture, or have ops spend days adding replicas, throwing bottomless labor and time costs in. Finally even wanting distributed databases for "self-rescue," thinking this could save storage costs.
 
@@ -84,7 +86,7 @@ Of course some will say: major public cloud vendors have Serverless, or elastic 
 But actually, go look at those cloud database's absurd pricing! [Are Cloud Databases Intelligence Tax](https://mp.weixin.qq.com/s/LefEAXTcBH-KBJNhXNoc7A)
 —using cloud databases costs only more shocking than pure resource pricing. After all, PaaS 50%-70% gross margins don't fall from the sky.
 
-![price.webp](price.webp)
+![Historical RDS, ECS, and self-hosted database prices and cost ratios](price.en.webp)
 
 As [Cloud-Exit Odyssey: Is It Time to Abandon Cloud Computing?](https://mp.weixin.qq.com/s/CicctyvV1xk5B-AsKfzPjw) DHH said:
 "In several key examples, cloud costs are extremely high—whether large physical machine databases, large NVMe storage, or just the latest fastest computing power.
@@ -113,7 +115,7 @@ Even if you must run on cloud, I strongly recommend choosing affordable clouds w
 After all, Hetzner, Linode, DigitalOcean all provide high-quality affordable (+15% margins, very reasonable) fully managed dedicated servers.
 These affordable cloud prices are enough to make users accustomed to 10x-100x markups from traditional cloud computing scam mills jaw-dropping.
 
-![hetzner.jpg](hetzner.jpg)
+![Hetzner dedicated-server listings: EX130-R at $293 per month and DX293 starting at $333 per month](hetzner.jpg)
 
 > Hey, I mean, how much do you think AWS would charge monthly for this spec?
 
@@ -130,7 +132,7 @@ I've always advocated cloud database capabilities should be democratized to all 
 Therefore I made open source RDS for PostgreSQL: Pigsty, letting you spin up PostgreSQL stronger than RDS with one click on physical/virtual machines without depending on DBA experts,
 fully utilizing new hardware's high performance and low costs. Solving the key cloud exit bottleneck.
 
-![Escaping Cloud Computing Scam Mills: The Big Fool Paying for Pain — Open-Source RDS Solves Key Cloud-Exit Challenges (figure 6)](https://pigsty.io/img/pigsty/ecosystem.png)
+![PostgreSQL extension ecosystem, including Citus, TimescaleDB, PostGIS, and foreign data wrappers](https://pigsty.io/img/pigsty/ecosystem.png)
 
 Pigsty contains PostgreSQL ecosystem's unique [351 extension plugins](https://pgext.cloud/zh), [far superior to cloud's pitiful dozens of castrated plugins](https://mp.weixin.qq.com/s/EH7RPB6ImfMHXhOMU7P5Qg), plus provides zero-configuration out-of-box [high availability architecture](https://pgext.cloud/zh/pgsql/arch) and industry-leading monitoring systems.
 

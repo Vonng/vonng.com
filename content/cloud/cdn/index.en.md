@@ -16,7 +16,7 @@ I have software hosted on **GitHub**, providing **1MB** source code packages and
 
 My **CDN** intentions were simple: 1. Acceleration, 2. Cost savings. Internet traffic fees are usually 0.8 yuan per GB, using **CDN** traffic packages can save substantial traffic costs by half. Since CDN is exclusively for domestic users, I only bought domestic traffic packages. It worked reasonably well until late February, when I suddenly discovered some anomalous charges.
 
-![Garbage QCloud CDN: From Getting Started to Giving Up? — Background (figure 2)](cdn-1.png)
+![Garbage QCloud CDN: From Getting Started to Giving Up? — Cost overview (figure 2)](cdn-1.en.webp)
 
 Clicking in, I saw CDN charged **several hundred yuan**. I thought maybe some channel made downloads popular? So I entered the data statistics analysis interface and saw that during this period, total software package downloads were less than **100GB**, at most tens of yuan — how could I be charged hundreds?
 
@@ -24,7 +24,7 @@ Clicking in, I saw CDN charged **several hundred yuan**. I thought maybe some ch
 
 Clicking for analysis — good grief, 1TB access traffic, all from "**overseas other**" — what the hell?
 
-![Garbage QCloud CDN: From Getting Started to Giving Up? — Background (figure 4)](cdn-3.png)
+![Garbage QCloud CDN: From Getting Started to Giving Up? — Traffic analysis (figure 4)](cdn-3.en.webp)
 
 ![Garbage QCloud CDN: From Getting Started to Giving Up? — Background (figure 5)](cdn-1.jpeg)
 

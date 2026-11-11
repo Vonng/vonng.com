@@ -14,7 +14,7 @@ Imagine a scenario where all account balances and contacts are completely lost. 
 
 ## Where Did It All Begin?
 
-![fish.png](fish.png)
+![Software, open source, cloud, and cloud-native platforms as progressively larger fish](fish.png)
 
 > Software eats the world, open source eats software, cloud devours open source - who will devour the cloud?
 
@@ -56,15 +56,27 @@ From a long-term perspective, such cloud software represents the development dir
 
 Whether system administrators or database administrators, the only way for administrator positions to disappear is to be renamed "DevOps Engineer" or SRE. Cloud won't eliminate administrators; you might need fewer people to manage these cloud software systems, but you still need people to manage them. From an industry-wide perspective, cloud software promotion will turn 100 junior-to-intermediate operations positions (traditional system administrators) into 10 intermediate-to-senior operations positions (DevOps/SRE). The same might happen to DBAs. For example, **DRE** corresponding to SRE has now emerged: **Database Reliability Engineer**.
 
-![![img](https://mmbiz.qpic.cn/mmbiz_png/Wkpr3rA9wF3tOia3iaRAvic4V4zEatQO3wLxHQsF1Ag4mibeOiccL2KxWv0ngWGKlQ4aB9WseuqnEB1fJjBB8ZxOcqQ/0?wx_fmt=png&from=appmsg)](dre.webp)
+![Datadog job listing for a software engineer in database reliability](dre.webp)
 
 > Database Reliability
 
 On the other hand, cloud RDS provides performance and reliability that belongs to cheap 70% correctness cafeteria food, still far from the performance of local databases carefully tended by excellent dedicated DBAs. Cloud databases are like every round of hype in IT: things are popular, everyone is fascinated by toy demos, until they put them into production. Then they finally discover what the trendy garbage fire looks like and turn back to study proven real technology. Always the same - AI is a case in point.
 
-![cost-sec.webp](cost-sec.webp)
+![Historical Pigsty documentation on cloud database control, security, and cost](cost-sec-en.webp)
 
-> Public cloud RDS's two core problems: cost/autonomy and control
+> Public cloud RDS's two core problems: cost and control. These excerpts reproduce the original English wording from Pigsty's [archived documentation](https://v15.pgsty.pro/docs/s-feature/#safety-and-thrifty), including its historical spelling and phrasing.
+
+![Five-year database costs in units of CNY 10,000: RDS 81, cloud servers 31, and owned servers 15](cost-chart-en.webp)
+
+> English localization of the original 2022 cost diagram. The configuration is two servers, each with 52 cores, 384 GB RAM, and 3.2 TB NVMe storage. The original totals and rounded annual figures are retained. The English archive's table reverses the RDS and owned-server costs and rounds the hardware specifications; this diagram follows the Chinese original.
+
+![Original Chinese vendor quotation excerpts preserved as historical evidence](cost-quotes-en.webp)
+
+> Original vendor quote excerpts: RDS, ¥280,000 for one year or ¥810,000 for five years; ECS, ¥157,000 for one year or ¥314,000 for five years. These purchase quotes differ from the rounded annual averages in the diagram. The small Chinese interface details remain as authentic historical evidence.
+
+![Historical Pigsty documentation on cost savings and reducing routine database administration](cost-efficiency-en.webp)
+
+> The corresponding English conclusion: self-hosting, administrative efficiency, and the original claim of 50–80% savings.
 
 Although DBA sounds like a profession with glorious history and dim prospects, the future remains unknown. Who knows if DBAs might become trendy again after a few terrifying major cloud database incidents?
 
@@ -72,18 +84,22 @@ Although DBA sounds like a profession with glorious history and dim prospects, t
 
 **Open source and free** database distribution solutions can also enable large numbers of development/operations engineers to become qualified part-time DBAs. This is exactly what I'm doing: **Pigsty - Ready-to-use Open-Source Database Distribution**, ready to use out of the box, mass-producing DBAs.
 
-![pigsty-arch.png](pigsty-arch.png)
+![Pigsty database ecosystem, cluster topology, and infrastructure components](pigsty-arch.png)
 
 > Pigsty Architecture Overview
 
-![pigsty-mon.png](pigsty-mon.png)
+![Overview of Pigsty's PostgreSQL monitoring dashboards](pigsty-mon.png)
 
 > Pigsty Monitoring Interface Overview
 
 I'm a PostgreSQL DBA, but also a software architect and full-stack application developer. Pigsty is my attempt to use software to complete my work as a DBA: it successfully completes most of my daily work. The unparalleled monitoring system provides solid data support for performance optimization and troubleshooting/early warning; automatic failover high-availability clusters allow me to handle outages with ease, even processing them slowly after waking up; one-click installation, deployment, scaling, backup, and recovery turn daily management tasks into a few scattered commands.
 
-![pigsty-desc.webp](pigsty-desc.webp)
+![Pigsty's four roles: database distribution, monitoring and management, developer toolbox, and cloud RDS alternative](pigsty-desc-en.webp)
 
-> What is Pigsty
+> What is Pigsty? [Original English artwork from April 24, 2022](https://github.com/pgsty/pigsty/blob/3c1275fc673f571ed35b0b2c89e32f84cbcc0fc0/docs/_media/WHAT_EN.svg), preserving the four panels, 30+ dashboards, 1200+ metrics, and 50–80% cost comparison.
+>
+> The Chinese artwork adds several details: TimescaleDB handles time-series data, PostGIS geospatial data, and Citus distributed workloads; monitoring spans the global overview down to individual database objects; services remain available while any cluster member survives; and interchangeable instances give users an experience similar to a distributed database. It also names synchronous and offline PostgreSQL replicas and Redis primary/replica setups.
+>
+> Declarative configuration and idempotent playbooks keep deployment environments consistent, from a 1-core/1-GB laptop to thousands of databases and tens of thousands of CPU cores. The Chinese version also describes lower barriers and richer features than cloud RDS, hardware and software savings, management of hundreds or thousands of databases by junior developers, a missing piece of the cloud-native ecosystem, and optional professional support.
 
 If you want to use PostgreSQL / Redis / Greenplum and other databases, compared to hiring expensive and scarce dedicated DBAs or using costly and uncontrollable cloud databases, this might be a good alternative choice. Scan the QR code to join our WeChat official account and discussion groups to learn more.

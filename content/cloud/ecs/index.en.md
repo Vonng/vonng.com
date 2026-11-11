@@ -48,7 +48,7 @@ As shown in the table, the standard price for unit computing (1C4G) is the month
 | Self-Built Cost Reduces to % |      11%       |     16%      |     25%     |      38%      |      54%      |
 {.wide .expand}
 
-[![Analyzing Alibaba-Cloud Server Computing Cost — Pure Computing Prices (figure 1)](ecs-2.png)](https://demo.pigsty.cc/ui/d/ecs?viewPanel=63)
+[![Compute prices by instance family and billing term, in RMB per core-month (March 2024)](ecs-1.en.webp)](https://demo.pigsty.cc/ui/d/ecs?viewPanel=63)
 
 We can use DHH's 2023 cloud exit self-built case and my personal experience with Tantan's off-cloud IDC self-built case as comparisons.
 Excluding NVMe storage, DHH's self-built pure computing unit price is **22 RMB**, Tantan's self-built unit price is **18 RMB**.
@@ -87,7 +87,7 @@ In "[Is Cloud Disk a Slaughter Plate](/cloud/ebs)" we've already detailed the pe
 
 Compared to DHH/Tantan's self-built unit price with storage of **22.4 RMB**, cloud server unit prices reach **6-25 times** self-built!
 
-[![Analyzing Alibaba-Cloud Server Computing Cost — Slaughter Plate Pricing (figure 2)](ecs-1.png)](https://demo.pigsty.cc/ui/d/ecs?viewPanel=79)
+[![Compute plus 64 GiB of PL3 ESSD per core, by instance family and billing term (March 2024)](ecs-2.en.webp)](https://demo.pigsty.cc/ui/d/ecs?viewPanel=79)
 
 > Chart: Unit price comparison with 64x storage
 
@@ -97,7 +97,7 @@ Among factors affecting server prices, storage has the largest variance.
 
 For example, with the standard configuration above: **1 core:4x memory:64x storage**, when using different ESSD specifications, storage costs as a percentage of server costs vary dramatically.
 
-[![Analyzing Alibaba-Cloud Server Computing Cost — Cloud Storage's Impact on Unit Prices (figure 3)](ecs-3.png)](https://demo.pigsty.cc/ui/d/ecs?viewPanel=69)
+[![Compute and storage costs by ESSD tier and billing term, in RMB per core-month (March 2024)](ecs-3.en.webp)](https://demo.pigsty.cc/ui/d/ecs?viewPanel=69)
 
 With PL3 ESSD, **storage cost percentage** can reach **67% ~ 77%**. We can also choose worse budget disks as storage, trading IOPS/bandwidth throughput performance for "cost reduction." For example, using PL2 sacrifices **90%** IOPS performance to reduce this ratio to 51% ~ 63%, PL1/PL Auto sacrifices 95% performance to reduce this ratio to 34% ~ 46%. PL0 sacrifices 99% performance to reduce this ratio to 20% ~ 30%.
 
@@ -168,7 +168,7 @@ For pure computing, the latest three generations of mainstream instance families
 
 The chart above shows price comparisons for different instance families under various payment modes. If we average all instance prices (roughly equivalent to 1c4g standard pricing), the computing average prices under different payment modes are shown in the bar chart:
 
-[![Analyzing Alibaba-Cloud Server Computing Cost — Prepaid Impact on Unit Prices (figure 4)](ecs-5.png)](https://demo.pigsty.cc/ui/d/ecs?viewPanel=79)
+[![Average compute prices by billing term, in RMB per core-month (March 2024)](ecs-5.en.webp)](https://demo.pigsty.cc/ui/d/ecs?viewPanel=79)
 
 ## Instance Family Impact on Pricing
 
@@ -176,7 +176,7 @@ Instance family impact on pricing mainly depends on three factors: **memory rati
 
 First, within the same instance family, **instance unit prices are independent of CPU core count**, meaning the final computing portion price is linearly proportional to CPU cores. Therefore, there's no phenomenon where larger specifications are cheaper or more expensive per unit (this means cloud server instances have lower cost-effectiveness at larger scales).
 
-[![Analyzing Alibaba-Cloud Server Computing Cost — Instance Family Impact on Pricing (figure 5)](ecs-6.png)](https://demo.pigsty.cc/ui/d/ecs?viewPanel=16)
+[![Compute prices by instance family and CPU core count, in RMB per core-month (March 2024)](ecs-6.en.webp)](https://demo.pigsty.cc/ui/d/ecs?viewPanel=16)
 
 Memory ratio refers to how many times memory per CPU core, with memory units in GiB. On Alibaba-Cloud, general-purpose (g) instances have 1:4 memory ratio, marked as `4x`, meaning one CPU core gets 4 GiB memory. Compute-optimized (c) instances have 1:2 memory ratio, memory-optimized (r) instances have 1:8 ratio.
 
@@ -190,7 +190,7 @@ Memory ratio refers to how many times memory per CPU core, with memory units in 
 Statistically, compared to `4x` general-purpose instance families, same-core memory-optimized instances `8x` with double memory cost **132%** of general-purpose instances; same-core compute-optimized instances `2x` with half memory cost **78%** of general-purpose instances.
 We can also calculate from this pattern that Alibaba-Cloud's memory pricing is about 12 RMB/GiB·month: not cheap either - 16GB for two months could buy a memory stick.
 
-[![Analyzing Alibaba-Cloud Server Computing Cost — Instance Family Impact on Pricing (figure 6)](ecs-7.png)](https://demo.pigsty.cc/ui/d/ecs?viewPanel=45)
+[![Compute prices by memory capacity and CPU core count, in RMB per core-month (March 2024)](ecs-7.en.webp)](https://demo.pigsty.cc/ui/d/ecs?viewPanel=45)
 
 Additionally, instance/CPU generation affects pricing. For example, using current eighth-generation instances as baseline, previous generation Gen7 instances get 95% discount, and Gen6 instances get 87% discount.
 
@@ -207,7 +207,7 @@ From chip architecture perspective, ARM instances cost 90% of standard Intel ins
 
 From a macro perspective, Alibaba-Cloud's availability zones can be divided into domestic/international regions, with distinctly different pricing. Overseas availability zones (including Hong Kong) cost much more than domestic zones, with Hong Kong being the most expensive - nearly double domestic zone prices across all instance families.
 
-[![Analyzing Alibaba-Cloud Server Computing Cost — Availability Zone Impact on Pricing (figure 7)](ecs-8.png)](https://demo.pigsty.cc/ui/d/ecs?viewPanel=52)
+[![Monthly compute prices by region and instance family, in RMB per core-month (March 2024)](ecs-8.en.webp)](https://demo.pigsty.cc/ui/d/ecs?viewPanel=52)
 
 Domestic availability zones generally fall into two categories: central cities (Beijing, Shanghai, Guangzhou, Shenzhen, Hangzhou + Nanjing, Wuhan, Chengdu, Fuzhou, Qingdao) and remote corners (Ulanqab, Heyuan, Hohhot, Zhangjiakou). Central city availability zone instance pricing remains highly consistent (Chengdu is an exception, with some instance families slightly cheaper). Remote corner pricing can be cheaper, with up to 30% discounts compared to central cities.
 

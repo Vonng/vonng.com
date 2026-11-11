@@ -8,7 +8,9 @@ tags: [Cloud-Exit, Alibaba Cloud]
 ---
 Alibaba-Cloud's Double 11 offered a great deal: 2C/2G/3M ECS servers with a list price of **¥1500/year** for just **¥99/year** for three years (¥99 annual renewal available until 2026), plus they're reportedly giving every Chinese university student a free one.
 
-![ecs-price-1.jpg](aliyun-ecs-price-1.jpg)
+![Alibaba Cloud Double 11 ECS promotion: 2 vCPUs, 2 GiB, 3 Mbps, and ¥99/year](aliyun-ecs-price-1.en.webp)
+
+*English localization of the original offer. The console screenshots below are also localized from this article's original captures.*
 
 While I often mock public cloud as **pig-butchering schemes**, that's targeted at users of our scale. For individual developers, such pricing is truly generous welfare. 2C/2G isn't worth much, but the 3M bandwidth and public IP are quite powerful. Both new and existing users can buy this. Until Double 11 ends, I recommend all developers harvest this wool for building a DevBox.
 
@@ -56,7 +58,7 @@ Directly click "Renew" on the instance page — current price for 1-year renewal
 
 After purchasing the cloud server, click console. Or click the menu icon beside the Logo in the upper left to enter ECS console, where you can see your purchased instance is running. We can further configure networking, operating system, passwords and keys here.
 
-![instance-summary.jpg](aliyun-instance-summary.jpg)
+![Alibaba Cloud ECS instance summary showing a running 2 vCPU, 2 GiB instance](aliyun-instance-summary.en.webp)
 
 Directly click "Stop" beside the instance, click the instance name link to enter details page, select "Change Operating System." Then select "Public Images," choose your desired OS image. Pigsty supports EL 7/8/9 and compatible operating systems, Ubuntu 22.04/20.04, Debian 12/11.
 
@@ -77,7 +79,7 @@ Domains are very cheap now, just teens of yuan annually. I highly recommend gett
 
 For example, I bought a `pdata.cc` domain for tens of yuan on Alibaba-Cloud, then in Alibaba-Cloud DNS console I can add domain resolution pointing to the newly applied server IP address. One `@` record, one `*` wildcard record, A records pointing to the ECS instance's **public IP address**.
 
-![dns-resolv.jpg](aliyun-dns-resolv.jpg)
+![Alibaba Cloud DNS settings for pdata.cc with wildcard and root A records](aliyun-dns-resolv.en.webp)
 
 With a domain, you can login using `ssh root@pdata.cc` without remembering IP addresses. You can also configure more subdomains here pointing to different addresses. If the domain is for websites, in mainland China you also need ICP filing — Alibaba-Cloud also provides one-stop service.
 
@@ -87,11 +89,11 @@ Newly created cloud servers have default security group rules only allowing SSH 
 
 If you want to be lazy, you could indeed add a rule opening all ports, but cloud servers aren't your laptop — you don't want your ECS hacked and used for bad things getting your account banned. So let's follow proper procedures. Click security groups in instance details page, then click that specific security group to enter details page for configuration:
 
-![security-group.jpg](aliyun-security-group.jpg)
+![Alibaba Cloud ECS security-group list for the instance](aliyun-security-group.en.webp)
 
 In default "Inbound" add an "Allow" rule, protocol select `TCP`, port range enter `80/443/3000/5432`, accessible from any address `0.0.0.0/0` to these ports.
 
-![security-group-rule.jpg](aliyun-security-group-rule.jpg)
+![Alibaba Cloud ECS inbound security-group rule allowing TCP ports 80, 443, 3000, and 5432](aliyun-security-group-rule.en.webp)
 
 The above operations are Linux 101 basics, old hat for veterans — using Terraform templates completes this in one command. But many beginners really don't know how to do this.
 
@@ -192,7 +194,7 @@ First point: for security reasons, unless you really want to lazily access remot
 
 If you really want to directly connect remote databases from local, Pigsty default rules allow you to use default superuser `dbuser_dba` with SSL/password authentication access from anywhere. Please ensure you changed the `pg_admin_password` parameter and opened port 5432.
 
-![ssh-tunel.jpg](aliyun-ssh-tunel.jpg)
+![JetBrains PostgreSQL data source configured to use an SSH tunnel](aliyun-ssh-tunel.en.webp)
 
 Second point: using domains instead of IP addresses for access requires some extra work: domains can be bought from cloud vendors, or use local `/etc/hosts` static resolution records as substitute. If you're really too lazy, IP address + port direct connection isn't impossible.
 

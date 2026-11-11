@@ -99,7 +99,7 @@ More severe challenges may lie ahead. Global users seeking monetary compensation
 
 According to Heinrich's Law, behind one serious accident lie dozens of minor incidents, hundreds of near-misses, and thousands of hidden dangers. Last December's Alibaba-Cloud Hong Kong data center major outage already exposed many problems, yet a year later brought users an even bigger "surprise" (shock!). Such incidents are absolutely fatal to Alibaba-Cloud's brand image and even **seriously damage the entire industry's reputation**. Alibaba-Cloud should quickly provide users with explanations and accountability, publish detailed post-mortem reports, clarify subsequent improvement measures, and restore user trust.
 
-![cf-post-moterm.webp](cf-post-moterm.webp)
+[![English Cloudflare control-plane outage postmortem](cf-post-moterm-en.webp)](https://blog.cloudflare.com/post-mortem-on-cloudflare-control-plane-and-analytics-outage/)
 
 After all, failures of this scale can't be solved by "finding a scapegoat, sacrificing a programmer" — the CEO must personally apologize and resolve it. After Cloudflare's control plane outage earlier this month, the CEO immediately wrote a detailed [post-mortem analysis](https://blog.cloudflare.com/post-mortem-on-cloudflare-control-plane-and-analytics-outage/), recovering some reputation. Unfortunately, after several rounds of layoffs and three CEO changes in a year, Alibaba-Cloud probably struggles to find someone capable of taking responsibility.
 

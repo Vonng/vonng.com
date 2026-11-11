@@ -61,7 +61,9 @@ The models may still launch. The APIs will still run. The app may still grow.
 
 But the globally visible, open-source-native human face behind Qwen is gone.
 
-![Justin Lin as Qwen's public voice](editorial.webp)
+![Aakash Gupta's English post on Justin Lin's role at Qwen](editorial-en.webp)
+
+*Original English post, cropped above the automatic Chinese translation.*
 
 That matters more than many executives think. A project like Qwen does not just need model checkpoints. It needs a living bridge to global developers.
 

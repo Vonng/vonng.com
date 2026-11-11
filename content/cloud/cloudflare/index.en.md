@@ -25,9 +25,9 @@ Cloudflare is an American company providing content delivery network (CDN), inte
 
 Of course, Cloudflare also has some very nice services, such as Pages for hosting websites, R2 object storage, D1 distributed database, etc., with excellent developer experience.
 
-![Cloudflare - The Cyber Buddha That Destroys Public Cloud — What is Cloudflare (figure 1)](cloudflare-1.jpg)
+![Cloudflare's 2024 product overview, with English labels and the original illustrations](cloudflare-1.en.webp)
 
-> [Cloudflare Official Introduction](https://www.cloudflare.com/zh-cn/what-is-cloudflare/)
+> [Cloudflare's official introduction](https://www.cloudflare.com/what-is-cloudflare/). English localization of the original 2024 screenshot.
 
 ## Pages: Simple and Easy Website Hosting
 
@@ -108,7 +108,9 @@ Cloudflare R2 provides object storage services. Compared to AWS S3, it's perhaps
 
 For example, my website consumed 300 GB of traffic in the past month with R2. At domestic cloud prices of about 80 cents per GB, I would need to pay 240 yuan, but I didn't pay a cent. Moreover, I know even more extreme examples - like consuming 3TB of traffic in a month and still being within the free tier...
 
-![Cloudflare - The Cyber Buddha That Destroys Public Cloud — R2: Object Storage That Destroys S3 (figure 2)](cloudflare-3.jpg)
+![Cloudflare dashboard for pigsty.io, March 4–April 3: 305 GB served, 203 GB cached, and the Free Plan](cloudflare-3.en.webp)
+
+> English-localized labels; the original charts and usage figures are unchanged.
 
 Cloudflare R2 is integrated with CDN. With traditional cloud service providers, you still need to worry about additional CDN configuration, origin traffic, CDN traffic packages, anti-DDoS, etc. But Cloudflare doesn't need this - just check the configuration to enable it, and your R2 Bucket can be directly read worldwide. Most importantly, you don't have to worry about bill explosions - I know several cases on traditional cloud providers where attacks blew up CDN traffic, draining tens of thousands of yuan overnight into debt (including a case I personally experienced where the cloud provider's own stupid CDN origin design [exploded CDN traffic](/cloud/cdn/)). But on Cloudflare, you don't need to watch [**bills**](/cloud/finops) and traffic like a bulldog and owl. First, Cloudflare traffic is free... More powerfully, Cloudflare already has intelligent anti-DDoS service, even the free plan provides this service by default, effectively avoiding malicious attacks (on traditional cloud providers, this stuff is sold separately as expensive "high defense IP services" costing thousands to tens of thousands). Plus the generous monthly free 10 million read requests (which is already very large for images and software packages!), ensures costs here are highly predictable - if not zero.
 
@@ -116,7 +118,7 @@ Cloudflare R2 is integrated with CDN. With traditional cloud service providers, 
 
 Dr. Wang Jian's book "Online" about cloud computing makes it very clear that the real value of cloud computing is **being online** (not elasticity, agility, cheapness, etc.). For example: I have some cloud exit customers and users who, although they've moved their main business from public cloud to IDC or office servers, still keep some ECS and RDS tails in the cloud - because their data collection APIs are there, feeling that public cloud's network access is more stable and reliable than their own computer rooms/offices - note it's network access, not storage and computing.
 
-![Cloudflare - The Cyber Buddha That Destroys Public Cloud — Cloudflare: The Value of Being Online (figure 3)](cloudflare-4.jpg)
+![The original Chinese edition of Online by Wang Jian](cloudflare-4.jpg)
 
 Many cloud customers pay [several times to dozens of times premium on computing power](/cloud/ebs), [dozens to hundreds of times premium on storage](/cloud/ebs), all for this network "online" capability. But Cloudflare, with its globally distributed CDN with edge computing capabilities, has elevated "online" capability to an entirely new level, solving this problem better than traditional public clouds. For example, AI's current darling OpenAI's website and API do exactly this - providing access through CF.
 

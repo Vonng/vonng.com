@@ -51,7 +51,7 @@ But the current reality is likely: **cloud vendors lack qualified DBAs, unprofes
 
 After hearing about this case, Ma could only helplessly argue: "**Garbage RDS isn't real RDS**".
 
-![wechat-magong.png](wechat-magong.png)
+![Translated chat discussing the RDS failures and the decision to leave the cloud](wechat-magong.en.webp)
 
 ## Memory Expansion: Creating Problems Out of Nothing
 
@@ -61,7 +61,7 @@ Memory alerts and OOM might be a problem for other databases, but for PostgreSQL
 
 PostgreSQL uses double buffering. In OLTP instances using memory, pages are all placed in a fixed-size SharedBuffer. As a **well-known best practice**, PG SharedBuffer is typically configured to about 1/4 of physical memory, with the remaining memory used by the filesystem cache. This means typically 60-70% of memory is flexibly managed by the operating system - when not enough, just evict some cache. If heavy read queries cause memory alerts, I personally find it bewildering.
 
-![memory.png](memory.png)
+![Memory usage split between applications, cache, and the operating system](memory.png)
 
 So, for what might not even be a real problem (false alarm?), the RDS after-sales engineer's recommendation was: *insufficient memory, please expand memory*. The client believed this recommendation and chose to double the memory.
 
@@ -79,7 +79,7 @@ Regardless, crashing due to this parameter is an extremely absurd error, a Postg
 
 If you manually create replicas with `pg_basebackup`, you won't encounter this problem because replica parameters default to match the primary. If you use mature high-availability components, you also won't encounter this problem: the open-source PG high-availability component Patroni forcibly controls these parameters and [prominently tells users in documentation](https://patroni.readthedocs.io/en/latest/patroni_configuration.html#important-rules): these parameters must be consistent between primary and replica, we manage them, don't mess with them.
 
-![patroni.png](patroni.png)
+![Patroni documentation listing PostgreSQL parameters that must match across primary and replicas](patroni.png)
 
 You would encounter this problem in one situation: poorly designed homegrown high-availability service components or insufficiently tested automation scripts that **presumptuously "optimize" this parameter for you**.
 
@@ -93,13 +93,13 @@ Honestly, I find this operation suffocating. Primary fencing is indeed a core is
 
 "**Special handling was done to avoid data corruption**" is indeed quite artistic — yes, directly shutting down the primary can achieve fencing and indeed won't lose data during high-availability failover due to replication lag, **but client data can't be written anymore**! This lost data is far more than that little lag. This operation inevitably reminds one of the famous "[Treating Hunchbacks](https://www.gushiwen.cn/shiwenv_ddbe67aad03d.aspx)" joke:
 
-![tuobei.png](tuobei.png)
+![English translation of The Hunchback Healer: straightening the patient without regard for his life](tuobei.en.webp)
 
 ## WAL Accumulation: Missing Expertise
 
 After fixing the primary-replica failure issues, spending another hour and a half, the primary memory expansion was finally completed. However, when one wave subsides, another rises - WAL logs started accumulating again, reaching nearly 800 GB within a few hours. If not discovered and handled in time, filling up the disk causing database unavailability would be inevitable.
 
-![wal-jam.webp](wal-jam.webp)
+![RDS diagnostics showing WAL growth to 786.75 GB on August 12, 2024](wal-jam.en.webp)
 
 > The two pitfalls are also visible from monitoring
 
@@ -109,7 +109,7 @@ After reviewing the situation, I found it extremely absurd - load hadn't changed
 
 I had the client submit a ticket to RDS for root cause analysis. RDS eventually found the problem was indeed WAL archiving being stuck and manually resolved it, but this was nearly six hours after WAL accumulation began, demonstrating very amateurish competence throughout the process with many absurd recommendations.
 
-![wal.jpg](wal.jpg)
+![Translated support ticket recommending PL2 and traffic to a replica with 16 minutes of lag](wal.en.webp)
 
 > Another absurd recommendation: direct traffic to a replica with 16 minutes replication lag
 
@@ -150,7 +150,7 @@ Some say cloud provides "**scapegoat**" value, but that only means something to 
 
 Of course, things like this have happened more than once. Two months ago client L encountered another absurd replica failure incident — the replica failed, then monitoring on the console couldn't see it at all. The client discovered this problem themselves, submitted tickets, initiated appeals, and still received **1000¥** SLA consolation compensation.
 
-![docker.jpg](docker.jpg)
+![Translated support ticket explaining the replica rebuild and missing monitoring](docker.en.webp)
 
 Of course this is because client L's technical team has competence and ability to independently discover problems and actively seek redress. If it were those technically near-zero novice users, they might just [muddle through](https://mp.weixin.qq.com/s/mgkOybNeEH3LO0gRa1rQBQ) with the problem being covered up.
 
@@ -162,11 +162,11 @@ After several incidents bringing terrible experiences, client L finally couldn't
 
 Client L had cloud exit plans several years ago. They got several servers in an IDC and used Pigsty to build several PostgreSQL clusters as cloud replicas with dual writes, running very well. But taking down the cloud RDS would still require some effort, so they just kept running both systems in parallel. Including multiple terrible experiences before this incident, it finally pushed client L to make the cloud exit decision.
 
-![pigsty.webp](pigsty.webp)
+![Translated client message about leaving RDS, colocation, and reused NVMe drives](pigsty.en.webp)
 
 Client L directly ordered four new servers plus 8 Gen4 15TB NVMe SSDs. Particularly these NVMe disks have IOPS performance that's **20 times** that of cloud ESSD PL1 beggar disks (1M vs 50K), while TB·month unit price is **1/166** of cloud prices (1000¥ vs 6¥).
 
-![procurement.jpg](procurement.jpg)
+![Translated procurement record for eight NVMe drives, with the original SSD specification data](procurement.en.webp)
 
 > Side note: 6 yuan TB·month price, I've only seen on Amazon during Black Friday sales. 125 TB for only 44K ¥ (total new hardware adding 9.6K ¥), truly specialized expertise - a cost control master who's handled hundreds of millions in procurement.
 
@@ -184,7 +184,7 @@ In cloud exit matters, I'm happy to provide help and support for client L. [Pigs
 
 So I provide clearly priced [**expert consulting services**](https://pigsty.cc/docs/about/service) — for clients like L with mature technical teams who just lack domain knowledge, I only charge a fixed **5K ¥/month** consulting fee, equivalent to half a junior operations engineer's salary. But sufficient to let clients confidently use hardware resource costs an order of magnitude lower than cloud, self-building better local PG RDS services — and even when continuing to run RDS on cloud, avoid being fooled and harvested by "experts".
 
-![subscription.png](subscription.png)
+![Pigsty's historical subscription plans, with annual prices of ¥50,000, ¥150,000, and ¥400,000](subscription.en.webp)
 
 I believe **consulting** is a dignified mode of earning money while standing upright: I have no motivation to sell memory and cloud disks, or talk nonsense peddling my own products (because the products are open source and free!). So I can completely stand on the client's side and give recommendations optimal for client interests. Neither client nor vendor needs to do the tedious database operations work, because this work has been completely automated by Pigsty, the open-source tool I wrote. I only need to provide expert opinions and decision support at occasional key moments, consuming little energy and time, yet helping clients achieve effects that originally required full-time employment of top DBA experts, ultimately achieving win-win for both parties.
 

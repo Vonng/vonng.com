@@ -30,7 +30,7 @@ DBA costs aren't included here: two or three people managing tens of thousands o
 
 If you directly purchase cloud database of this specification, what are the costs? Let's look at domestic Alibaba-Cloud pricing【3】. Since the basic version (beggar version) is really unusable for production (refer to: "[Cloud Database: From Database Drop to Exit](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485093&idx=1&sn=5815f71f1d832101d35a75f5aa4acd3c&chksm=fe4b337ec93cba68fbf30eb0ed50d052c6e8972d42cf506051b5016668f4555edaa0756688dc&scene=21#wechat_redirect)"), we choose high-availability version, typically with two to three instances underneath. Annual/monthly payment, PostgreSQL 15 on x86 engine, East China 1 default AZ, dedicated 64-core 256GB instance: pg.x4m.8xlarge.2c, with a 3.2TB ESSD PL3 cloud disk. Annual costs range from 250,000 (3 years) to 750,000 (on-demand), with storage costs accounting for about 1/3.
 
-![Are Cloud Databases an IQ Tax? — Absurd Pricing (figure 2)](rds-1.png)
+![Are Cloud Databases an IQ Tax? — Historical RDS pricing (figure 2)](rds-1.en.webp)
 
 Let's also look at AWS, the public cloud leader【4】【5】. The closest on AWS is db.m5.16xlarge, also 64-core 256GB multi-AZ deployment. Similarly, we add a 3.2TB io1 SSD disk with maximum 80k IOPS. Checking AWS global and China region pricing, total costs range from 1.6-2.17 million yuan annually, with storage costs accounting for about half. Overall costs shown in the table below:
 
@@ -159,23 +159,23 @@ Should say, for toy applications, small websites, personal hosting, and wildcatt
 
 Ultimately, public cloud stems from big tech internal operations capability overflow - big tech people know their own company's tech level, no need for mysterious worship. (Google might be an exception).
 
-![Are Cloud Databases an IQ Tax? — Good Enough? (figure 7)](rds-4.png)
+![Are Cloud Databases an IQ Tax? — The database needs pyramid (figure 7)](rds-4.en.webp)
 
 Taking **performance** as example, performance's core indicator is **latency/response time**, especially tail latency, directly affecting user experience: nobody wants to wait seconds for screen scrolling. In this regard, **disks** play a decisive role.
 
 Our production database environment uses local NVMe SSDs with typical 4K write latency of 15µs, read latency 94µs. Therefore, PostgreSQL simple query response times are typically 100-300µs, application-side query response times typically 200-600µs; for simple queries, our SLO is hit within 1ms, miss within 10ms, over 10ms counts as slow query requiring optimization.
 
-![Are Cloud Databases an IQ Tax? — Good Enough? (figure 8)](rds-41.png)
+![Are Cloud Databases an IQ Tax? — Historical Shannon G5I SSD specifications (figure 8)](rds-41.en.webp)
 
 AWS EBS service performance tested with fio is extremely poor【6】, default gp3 read/write latency is 40ms, io1 read/write latency is 10ms, nearly three orders of magnitude difference, and maximum IOPS is only 80k. RDS uses EBS storage - if single disk access takes 10ms, it's unusable. io2 does use self-built equivalent NVMe SSDs, but remote block storage latency directly doubles compared to local disks.
 
-![Are Cloud Databases an IQ Tax? — Good Enough? (figure 9)](rds-5.png)
+![Are Cloud Databases an IQ Tax? — Latency hierarchy (figure 9)](rds-5.en.webp)
 
 Indeed, sometimes cloud vendors provide good-performance local NVMe SSDs, but they sneakily set various restrictions to prevent users from using EC2 for self-built databases. AWS's restriction is only providing NVMe SSD Ephemeral Storage - these disks automatically wipe clean on EC2 restart, completely unusable. Alibaba-Cloud's restriction is sky-high pricing - compared to direct hardware procurement, **Alibaba-Cloud's ESSD PL3 costs 200 times more**. Using 3.2TB enterprise PCI-E SSD cards as reference, AWS rent-to-buy ratio is 1 month, Alibaba-Cloud is 9 days - renting this duration can buy the entire disk. With Alibaba-Cloud's maximum 3-year 50% discount, three years' rental can buy 123 equivalent disks, nearly 400TB permanent ownership.
 
 **Taking observability as another example, no RDS monitoring can be called "good"**. Just looking at monitoring indicator count - while knowing if a service is dead or alive needs only a few indicators, for failure root cause analysis, you need as many monitoring indicators as possible to build good context. Most RDS only provide basic monitoring indicators and pitifully simple monitoring dashboards. Taking Alibaba-Cloud RDS PG as example【7】, so-called "enhanced monitoring" has only these pitiful indicators. AWS has similar PG-related indicators, under 100, while our own monitoring system has over 800 host indicator types, 610 PostgreSQL database indicator types, 257 Redis indicator types, about 3000 total indicator types, completely crushing these RDS systems.
 
-![Are Cloud Databases an IQ Tax? — Good Enough? (figure 10)](rds-6.png)
+![Are Cloud Databases an IQ Tax? — Historical enhanced monitoring metrics (figure 10)](rds-6.en.webp)
 
 ![Are Cloud Databases an IQ Tax? — Good Enough? (figure 11)](https://pigsty.io/img/pigsty/dashboard.jpg)
 
@@ -274,7 +274,7 @@ Although Pigsty aims to replace manual database operations with database autopil
 
 Pigsty is simple and easy to use, human costs and complexity match RDS, but resource cost differences are earth-shaking. Not comparing self-built data centers' 20 yuan with hundreds of yuan cloud databases, considering RDS has several times markup compared to equivalent EC2, you can completely compromise: use cloud servers to deploy Pigsty RDS, retaining cloud elasticity while saving 50-60% costs immediately. For IDC self-building or maintenance, cutting 90% costs might not be enough.
 
-![Are Cloud Databases an IQ Tax? — Solutions (figure 14)](rds-9.png)
+![Are Cloud Databases an IQ Tax? — RDS cost vs. scale (figure 14)](rds-9.en.webp)
 
 > RDS cost vs scale cost curve
 

@@ -51,13 +51,13 @@ Compared to in-house solutions, **the price of cloud resources is generally seve
 
 In contrast, the price per core month for Alibaba-Cloud's ECS is a couple of hundred yuan, and for AWS EC2, it's two to three hundred yuan. If you "don't care about elasticity" and prepay for three years, you can usually get a discount of about 50-60%. But no matter how you calculate it, the price difference between cloud computing power and local in-house computing power is there and significant.
 
-![FinOps: Endgame Cloud-Exit — Public Clouds: A Slaughterhouse in Disguise (figure 3)](finops-2.png)
+![FinOps: Endgame Cloud-Exit — Compute cost reference (figure 3)](finops-2-en.webp)
 
 The pricing of **cloud storage** resources is even more outrageous. A common 3.2 TB enterprise-grade NVMe SSD, with its formidable performance, reliability, and cost-effectiveness, has a wholesale price of just over **¥3000**, significantly outperforming older storage solutions. However, for the same storage on the cloud, providers dare to charge 100 times the price. Compared to direct hardware procurement, **the cost of AWS EBS io2 is 120 times higher, while Alibaba-Cloud's ESSD PL3 is 200 times higher**.
 
 Using a 3.2TB enterprise-grade PCI-E SSD card as a benchmark, **the rent-to-buy ratio on AWS is 15 days, while on Alibaba-Cloud it's less than 5 days**, meaning renting for this period allows you to purchase the entire disk outright. If you opt for a three-year prepaid purchase on Alibaba-Cloud with the maximum discount of 50%, **the three-year rental fee could buy over 120 similar disks**.
 
-![FinOps: Endgame Cloud-Exit — Public Clouds: A Slaughterhouse in Disguise (figure 4)](finops-3.png)
+[![FinOps: Endgame Cloud-Exit — Local SSD, Alibaba Cloud ESSD PL3, and AWS io2 comparison (figure 4)](finops-3-en.webp)](https://v45.pgsty.pro/docs/about/compare/cost/#ebs-cost-reference)
 
 > 《[EBS: a real Scam](/cloud/ebs/)》
 
@@ -113,7 +113,7 @@ Enterprises should evaluate their scale and stage, assess their business, and we
 
 When the times are favorable, the world joins forces; when fortune fades, even heroes lose their freedom: During the bubble phase, it was easy to disregard spending heavily in the cloud. However, in an economic downturn, cost reduction and efficiency become central themes. An increasing number of companies are realizing that using cloud services is essentially paying a "no-expert tax" and "protection money". Consequently, a trend of "cloud repatriation" has emerged, with 37Signals' DHH being one of the most notable proponents. Correspondingly, the revenue growth rate of major cloud providers worldwide has been experiencing a continuous decline, with Alibaba-Cloud's revenue even starting to shrink in the first quarter of 2023.
 
-![FinOps: Endgame Cloud-Exit — Self-Hosting Matters (figure 5)](finops-5.png)
+![FinOps: Endgame Cloud-Exit — Revenue growth of four global cloud providers, 2020–2022 (figure 5)](finops-5-en.webp)
 
 > 《["Why Cloud Computing Hasn't Yet Hit Its Stride in Earning Profits"](/cloud/profit/)》
 
@@ -169,7 +169,7 @@ Pigsty is a non-profit, open-source software powered by community love. It offer
 
 Although Pigsty is a database distribution, it enables users to practice ultimate FinOps—running production-level PostgreSQL RDS services anywhere (ECS, resource clouds, data center servers, or even local laptop VMs) at almost pure resource cost. **It turns the cost of cloud database capabilities from being proportional to marginal resource costs to nearly zero in fixed learning costs**.
 
-![FinOps: Endgame Cloud-Exit — Database: The Biggest Risk Factor (figure 6)](finops-7.png)
+![FinOps: Endgame Cloud-Exit — Cost model (figure 6)](finops-7-en.webp)
 
 Perhaps it's the socialist ethos of Nordic companies that nurtures such pure free software. Our goal isn’t profit but to promote a philosophy: to democratize the expertise of using the advanced open-source database PostgreSQL for everyone, not just cloud monopolies. Cloud providers monopolize open-source expertise and roles, exploiting free open-source software, and we aim to break this monopoly—**Freedom is not free. You shouldn't concede the world to those you despise but rather overturn their table**.
 

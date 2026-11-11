@@ -22,13 +22,13 @@ No discussion. No transition. The countdown to data deletion had begun.
 
 In November 2025, Salesforce-owned Slack notified users in Greater China that, citing the strategic partnership Salesforce established with Alibaba in 2019, it would stop renewing subscriptions directly for customers in the region. Affected users needed to make arrangements by February 2026. ([The Information's report](https://www.theinformation.com/briefings/salesforces-slack-stop-direct-service-china-farm-alibaba); [this Hacker News thread](https://news.ycombinator.com/item?id=45961157) quotes two different versions of the notification email in full.)
 
-![slack-news.webp](slack-news.webp)
+[![Hacker News thread quoting Slack's Alibaba Cloud reseller notice and a smaller team's termination notice](slack-news-en.webp)](https://news.ycombinator.com/item?id=45961157)
 
-> https://news.ycombinator.com/item?id=45961519
+> Source: [Hacker News, November 18–20, 2025](https://news.ycombinator.com/item?id=45961157). The full thread includes both email versions.
 
 But customers of different sizes received two very different letters.
 
-The email to large customers offered a way forward: continue buying Slack service through an Alibaba Cloud reseller. Small teams received a farewell instead: "Effective February 1, 2026, we will suspend all access to your workspace… Your workspace and all associated data will be deleted within 90 days thereafter." There was no alternative and no migration path. ([An HN user posted the full termination notice sent to small teams](https://news.ycombinator.com/item?id=45961519).)
+The email to large customers offered a way forward: continue buying Slack service through an Alibaba Cloud reseller. Small teams received a farewell instead: "Effective February 1, 2026, we will suspend all access to your workspace… Your workspace and all associated data will be deleted within 90 days of February 1, 2026." There was no alternative and no migration path. ([An HN user posted the full termination notice sent to small teams](https://news.ycombinator.com/item?id=45961519).)
 
 Then, on April 1, 2026, the workspaces were deactivated. Multiple users reported on Reddit that they logged in that day to find their workspaces locked. Some said they had received no notice at all; others said the notice had gone only to Workspace Owners and Workspace Admins, not ordinary members. Even among Workspace Owners and Admins, many said no email had arrived. ([Gizchina's report](https://www.gizchina.com/tech/slack-terminates-services-across-greater-china-triggering-user-backlash/); [yage.ai's detailed analysis](https://yage.ai/share/slack-china-workspace-exit-en-20260402.html).)
 

@@ -15,7 +15,9 @@ The day before yesterday, QingCloud announced **KubeSphere open source edition s
 What's more shocking is that without warning or transition plans, overnight the official website documentation was taken down, image repositories were cleared, and forums and groups were filled with cries of anguish.
 "They ran away! This is naked Rug Pull!" - open source project trust was instantly shattered.
 
-[![rug-pull.jpg](rug-pull.jpg)](https://ask.kubesphere.com.cn/forum/d/24963-guan-yu-kubespherekai-yuan-xiang-mu-diao-zheng-de-gong-gao)
+[![English translation of KubeSphere's July 31, 2025 shutdown announcement](rug-pull.en.webp)](https://ask.kubesphere.com.cn/forum/d/24963-guan-yu-kubespherekai-yuan-xiang-mu-diao-zheng-de-gong-gao)
+
+*English translation posted by Vad1mo in [issue #6550](https://github.com/kubesphere/kubesphere/issues/6550#issuecomment-3139415602) on July 31, 2025.*
 
 ## Former Star Project: What is KubeSphere
 
@@ -25,7 +27,9 @@ It added rich enterprise-needed features like **DevOps pipelines, microservice o
 With near-foolproof installation and full-stack functionality, KubeSphere gained favor from users in hundreds of countries globally, earning 16,000 GitHub Stars.
 However, precisely because it was viewed as a star open source project in the K8S ecosystem, this sudden "supply cut" behavior is all the more heartbreaking.
 
-![banner.jpg](banner.jpg)
+![KubeSphere's historical English homepage advertising a 100% open-source, community-built Kubernetes platform](banner.en.webp)
+
+*Historical English homepage preserved by a [community mirror](https://kubesphere.saowu.top/), checked against the [July 31, 2025 upstream source](https://github.com/kubesphere/website/blob/475dc6c7c0a1007adca1898fa2f87b482b3c5720/content/en/_index.md).*
 
 ## Background: Supply Cut and Run
 
@@ -36,7 +40,9 @@ This move was like pulling the rug out from under users, triggering strong backl
 
 Before the GitHub announcement was posted, there were no warnings; image repositories went directly offline, installation links were cleared, users reported inability to pull images, nodes couldn't update, production environments were affected - this is supply cut "断供", not some "transformation."
 
-![comment.jpg](comment.jpg)
+![A former contributor's Chinese post and QingCloud's support reply confirming the withdrawal of downloads and documentation](comment.jpg)
+
+*Original Chinese post, July 31, 2025. A former contributor says ending development is understandable, but removing documentation and images squanders the community's work. QingCloud's support reply confirms that downloads, documentation, and free community support have stopped, and offers paid support instead.*
 
 Amid shock and anger, furious users flooded GitHub with issues, requesting at least temporarily suspending resource removal and providing image backups.
 There were rational suggestions for community handover maintenance, and emotional questioning of QingCloud's breach of faith, with "Go Fuck Yourself" voices echoing through comment sections.
@@ -45,13 +51,13 @@ The official response was to **lock discussion areas** and close issue comments 
 Community members' disappointment overflowed. One user lamented on Reddit: "Another open source project bites the dust. This feels like someone suddenly yanked the carpet out from under you, making open source promises instantly vanish."
 Others mocked: "I'm glad I didn't use it, saving weeks of life from stepping into this 'open source fishing' trap." Within just days, KubeSphere went from cloud native star to public enemy, with community trust hitting rock bottom.
 
-![reddit.jpg](reddit.jpg)
+![Reddit discussion of KubeSphere's shutdown, including an English support notice and criticism of its open-source promises](reddit.jpg)
 
 At first glance, KubeSphere's source code still hangs on GitHub, seemingly continuing to be "open source." However, closer examination reveals: **it's no longer truly an open source project**.
 As early as 2024, QingCloud changed KubeSphere's license - nominally Apache 2.0, but with additional terms **prohibiting any unauthorized commercial use**, including providing it as a service, integrating into commercial products, or even removing logos.
 This is equivalent to adding a lock after the Apache agreement, blocking competitors and commercial reuse.
 
-![license.jpg](license.jpg)
+![KubeSphere's English license with additional restrictions on commercial use, SaaS offerings, and removal of its name or logo](license.jpg)
 
 This license **completely fails to meet open source definitions** (because it restricts commercial use and discriminates against usage methods), yet still wears Apache 2.0's cloak.
 Unknowing users still think it's an open source project, but in reality, KubeSphere has definitionally become a "source available" project, not "open source."
@@ -63,7 +69,9 @@ Actually, the anger triggered by this KubeSphere incident isn't fundamentally ab
 Compared to conventional gentle approaches of announcing license changes in advance and gradually rolling out paid versions, KubeSphere chose the most extreme method: **hard supply cut** - withdrawing key resources without preparation.
 This behavior is equivalent to breaking tacit agreements, **directly unplugging users' power cords**.
 
-![issue.jpg](issue.jpg)
+![KubeSphere issue 6550 with the Chinese announcement, outage reports, and an English comment criticizing the abrupt withdrawal](issue.jpg)
+
+*Original announcement and replies in [issue #6550](https://github.com/kubesphere/kubesphere/issues/6550). The Chinese replies call for advance notice and report a 12-hour KubeSphere outage after replacement nodes could not pull images; that user says business services were unaffected. The announcement's English translation appears above.*
 
 **Rug Pull style** infrastructure withdrawal is more betraying than simple closed-source. This adjustment mainly doesn't impact upstream developer communities but directly impacts downstream end-user communities.
 In reality, most users don't need source code at all, but ready-to-use binary software products - those images in software repositories.
@@ -83,7 +91,7 @@ The direct trigger appears to be **competitor intrusion** making QingCloud feel 
 As that departing employee said, third-party vendors using KubeSphere source code with minor modifications to launch their own solutions or even commercial services **infringed on QingCloud's interests**.
 After all, QingCloud invested significant human and material resources developing features, only to have others freely take them for profit - anyone would feel aggrieved.
 
-[![farewell.jpg](farewell.jpg)](https://github.com/kubesphere/kubesphere/issues/6557)
+[![Ray Xiaosi Zhou's farewell to KubeSphere, with his full English statement followed by the Chinese version](farewell.jpg)](https://github.com/kubesphere/kubesphere/issues/6557)
 
 This "no upstream contribution" behavior is actually common in recent years - AWS once provided managed services for Elastic's open source code, forcing Elastic to change licenses; MongoDB, Redis, etc. all changed licenses for similar reasons.
 For QingCloud, KubeSphere open source edition might have become competitors' "free lunch" while they lost potential customers.
@@ -91,7 +99,9 @@ For QingCloud, KubeSphere open source edition might have become competitors' "fr
 **Revenue and survival pressure** may be the most important reason. Open source projects need continuous funding and team investment for long-term maintenance. QingCloud as a listed company ultimately must answer to financial reports and shareholders.
 Unfortunately, QingCloud's performance hasn't been great in recent years, with many low-margin businesses cut, let alone open source R&D teams as "cost centers."
 
-![finance.jpg](finance.jpg)
+![QingCloud's net losses from 2020 through Q1 2025, in units of RMB 100 million](finance.en.webp)
+
+*Historical figures retained. The Q1 2025 note's “69%” reduction conflicts with [contemporaneous earnings coverage](https://www.marketscreener.com/quote/stock/BEIJING-QINGCLOUD-TECHNOL-130552322/news/Beijing-QingCloud-Technology-Group-Co-Ltd-Reports-Earnings-Results-for-the-First-Quarter-Ended-Mar-49991525/): the reported loss widened from RMB 7.59 million to RMB 22.9 million.*
 
 ## Deceptive Open-Source Strategy for Conversion Guidance
 

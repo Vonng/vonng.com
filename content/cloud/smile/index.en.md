@@ -8,13 +8,17 @@ tags: [Cloud-Exit, Alibaba Cloud, Incident]
 ---
 Year-end is performance rush time, but internet giants are having major incidents one after another. They've turned "cost reduction and efficiency improvement" into literal "**cost reduction jokes**" — this is no longer just a meme, but official self-mockery.
 
-![smile.png](featured.png)
+![English translation of Alibaba Cloud's “Cut Costs, Raise Smiles” promotional banner](featured.en.webp)
+
+*Translated from the [2020 campaign screenshot](featured.png). The Chinese slogan replaces “efficiency” with the same-sounding word for “smiles.”*
 
 Right after Double 11, Alibaba-Cloud had a [**globally historic epic disaster**](/cloud/aliyun/) that broke industry records, then started November's cascade failure mode. After several minor incidents, came another [**cloud database management plane**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486512&idx=1&sn=43d6340fce93bfbf5439cc2cd8e3b8dd&chksm=fe4b39ebc93cb0fd192c69d9f589ccd36f1c1eb5d34fffc357cf0b8177c746c4b3445ea5f63a&scene=21#wechat_redirect) cross-border two-hour major outage — from monthly explosions to weekly explosions to daily explosions.
 
 But before the dust settled, **Didi** had an outage lasting over 12 hours with **hundreds of millions** in losses — Alibaba's substitute Gaode ride-hailing directly exploded with orders and made a fortune, truly "what's lost in the east is gained in the west."
 
-![didi.png](smile-didi.png)
+![Eleven news headlines about Didi's outage, including service recovery, estimated losses, unusual fares, and a denial of a doctored driver-balance screenshot](smile-didi.en.webp)
+
+*English translation of the [November 2023 news timeline](smile-didi.png), retaining its original timestamps and repeated headlines. The figures are in yuan; rumors and estimates are presented as they appeared at the time.*
 
 I already did a [**postmortem**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486468&idx=1&sn=7fead2b49f12bc2a2a94aae942403c22&chksm=fe4b39dfc93cb0c92e5d4c67241de0519ae6a23ce6f07fe5411b95041accb69e5efb86a38150&scene=21#wechat_redirect) for the silent Alibaba-Cloud in "[What Can We Learn from Alibaba-Cloud's Epic Failure](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486468&idx=1&sn=7fead2b49f12bc2a2a94aae942403c22&chksm=fe4b39dfc93cb0c92e5d4c67241de0519ae6a23ce6f07fe5411b95041accb69e5efb86a38150&scene=21#wechat_redirect)": Auth failed due to misconfiguration, suspected root cause is OSS/Auth circular dependency — one wrong whitelist/blacklist configuration and it deadlocks.
 
@@ -28,7 +32,9 @@ Unfortunately, these internet giants performed far below standards — at least 
 
 According to **Heinrich's Law**, behind one major incident are 29 accidents, 300 near-misses, and thousands of incident risks. In aviation, if similar things happened — not even needing actual consequential accidents, just two consecutive incident precursors — not even accidents yet — severe industry safety overhauls would immediately begin comprehensively.
 
-![prymaid.jpg](smile-prymaid.jpg)
+![Heinrich accident pyramid: fatalities, major incidents, near misses, and hazards, with controllable causes and uncontrollable outcomes](smile-prymaid.en.webp)
+
+*Translated from the [original illustration](smile-prymaid.jpg). Its inconsistent figures are preserved: the illustration's text says 29 minor accidents and 1,000 hazards, while the pyramid labels those levels 30 and 3,000.*
 
 Reliability is important, not just for critical services like air traffic control/flight systems. We also expect more mundane services and applications to run reliably — cloud vendor global unavailability incidents almost equal power/water outages. Transportation platform outages mean transportation network partial paralysis. E-commerce platform and payment tool unavailability causes huge income and reputation losses.
 
@@ -46,7 +52,9 @@ System and problem complexity **W** / Available online intellectual power **P**.
 
 Failure handling optimization aims to shorten failure recovery time `t` as much as possible. For example, Alibaba likes talking about "1-5-10" stability indicators: 1-minute detection, 5-minute handling, 10-minute recovery — setting a hard time indicator.
 
-![time-limit.png](smile-time-limit.png)
+![Incident-response timeline: detection in 1 minute, response in 5 minutes, and recovery in 10 minutes, with alerting, handoff, diagnosis, decision, mitigation, and optional recovery intervals](smile-time-limit.en.webp)
+
+*English translation of the [original response timeline](smile-time-limit.png), preserving its intervals and seven milestones.*
 
 With time limits fixed, you either reduce costs or improve efficiency. However, **cost reduction should target system complexity costs, not personnel costs; efficiency improvement shouldn't be about presentation talking points and jokes, but available online intellectual power and management effectiveness**. Unfortunately, many companies did neither well, turning cost reduction and efficiency improvement into cost reduction jokes.
 
@@ -82,9 +90,11 @@ At Alibaba, on-call usually became R&D concurrent responsibility, 24-hour potent
 
 Not being able to locate root causes reflects inadequate observability construction and failure preparedness. Taking databases as an example, when I worked as PostgreSQL DBA, I built this [**monitoring system**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485827&idx=1&sn=9b13273b559fa63e96d4ac77268bd00a&chksm=fe4b3c58c93cb54e87b062c6db4b3a712037e25dbfbe69aa50ad9b79abf2c97967b625fe1a7f&scene=21#wechat_redirect) (https://demo.pigsty.cc[1]). As shown in the left image, dozens of dashboards tightly organized — any PG failure can be immediately located within 1 minute by drilling down 2-3 levels with mouse clicks, then quickly handled and recovered according to playbooks.
 
-![monitor-1.png](smile-monitor-1.png)
+![Montage of Pigsty's PostgreSQL monitoring dashboards](smile-monitor-1.png)
 
-![monitor-2.png](smile-monitor-2.png)
+![Historical PolarDB for PostgreSQL and RDS for PostgreSQL monitoring dashboards, with standard and advanced or enhanced monitoring views](smile-monitor-2.en.webp)
+
+*Historical monitoring comparison from the 2023 article, with translated headings and the [original dashboard screenshots](smile-monitor-2.png) preserved: PolarDB for PostgreSQL — Standard / Advanced Monitoring; RDS for PostgreSQL — Standard / Enhanced Monitoring.*
 
 Looking at Alibaba-Cloud RDS for PostgreSQL and PolarDB cloud database monitoring systems, everything is just this pitiful single page of charts. If they're using this thing to analyze and locate failures, no wonder others need dozens of minutes.
 
