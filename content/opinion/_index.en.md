@@ -30,7 +30,7 @@ While blog columns flow chronologically as standalone essays, **Opinions** organ
 
 Every entry states a concrete engineering, economic, or philosophical question upfront, answers it directly with first-hand numbers and reasoning, and links to the underlying essays that supply empirical bills, benchmarks, source audits, or postmortems.
 
-> **Language Note**: The Opinion tree is currently maintained in Chinese (`zh-cn`), distilling 319 essays across the [AI Explorer](/en/ai/) (110), [Database](/en/db/) (109), and [Cloud Mudslide](/en/cloud/) (100) columns into 449 question-driven entries with exact section-level anchors. Links below jump directly to the corresponding Chinese topic pages.
+> **Language Note**: The Opinion tree is currently maintained in Chinese (`zh-cn`), distilling 489 essays across the [AI Explorer](/en/ai/) (110), [Database](/en/db/) (109), [Cloud Mudslide](/en/cloud/) (100), and [PostgreSQL](/en/pg/) (170) columns into 620 question-driven entries with 1,646 exact section-level anchors. Links below jump directly to the corresponding Chinese topic pages.
 
 ## AI & Agents Opinion Tree {#ai-themes}
 
@@ -61,4 +61,14 @@ Every entry states a concrete engineering, economic, or philosophical question u
 - [Cloud Outages & Postmortems (云上草台班子与故障启示录)](/opinion/cloud/outages/) — Why cloud SLAs are placebos, global IAM/DNS cascade failures, postmortem culture gaps, and war-era disaster recovery.
 - [RDS Critique & Self-Hosting (云数据库祛魅与工业化自建)](/opinion/cloud/rds-dba/) — How managed RDS castrates PostgreSQL's extension soul, why DBAs remain irreplaceable, and IDC 2.0 + Cloudflare.
 - [Data Sovereignty & Cloud Security (数据主权、云安全与平台阴影)](/opinion/cloud/sovereignty/) — The Data Sovereignty Manifesto, SaaS kill switches, AI-era cloud security sieves, and hyperscaler open-source strip-mining.
+  {.cards}
+
+## PostgreSQL Ecosystem & Engineering Opinion Tree {#pg-themes}
+
+- [PostgreSQL Overview (PostgreSQL 板块总览)](/opinion/pg/) — Master index across PostgreSQL hegemony, the 500+ extension ecosystem & distro philosophy, HA/backup operations, kernel internals, and SQL conventions (171 questions).
+- [PG Hegemony & Business Landscape (PG 盛世、选型与商业版图)](/opinion/pg/hegemony/) — Why PostgreSQL ate the database world, replacing MySQL/Oracle/MSSQL, billion-dollar silicon-valley M&As, and the Chinese PG revival.
+- [Extensions & Distro Philosophy (扩展生态与发行版哲学)](/opinion/pg/extensions/) — Torah-and-Talmud dual-layer evolution, 500+ extensions via `pig`, `pgvector`/`vchord`/DuckDB/OrioleDB, and rescuing orphaned OSS projects.
+- [HA Architecture, Backup & Operations (高可用架构、备份迁移与运维)](/opinion/pg/ha-ops/) — Patroni SOTA topologies, OpenAI's 800M-user PG scaling, PgBouncer pooling, CoW instant clones, and zero-downtime migrations.
+- [Kernel Internals, Tuning & Rescue (内核机理、性能调优与故障急救)](/opinion/pg/kernel-perf/) — WAL vs. dirty pages, MVCC bloat & `pg_repack`, 8-level locking, golden metrics, XID wraparound, and corrupted-page recovery.
+- [Development Conventions & SQL Craft (数据库开发规约与 SQL 技艺)](/opinion/pg/sql-dev/) — Naming & strong-typing rules, UUIDv1/v7 vs. Snowflake, lock-free schema changes, GIN traps, and advanced SQL patterns.
   {.cards}
