@@ -12,7 +12,7 @@ tags: [Domestic Database, Database, Commentary]
 
 If "[cloud databases](/cloud/rds/)" can be considered passable products with slightly underwhelming cost ROI, then many "domestic databases" are simply shoddy, inferior products that can't be helped. Xinchuang OS/databases are essentially **IT pre-made meals in schools**. Users hold their noses while migrating, developers pretend to work hard, and everyone plays along with leaders who neither understand nor care about technology. Massive human and financial resources are squandered on worthless endeavors, wasting real opportunities. The [infrastructure software](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486061&idx=1&sn=a1452dfa864f702d40bf612839a4e9e4&chksm=fe4b3fb6c93cb6a0aa5aef59d4381c49354ee0f741dd7e92c91549864ac58597f93a6ab886ed&scene=21#wechat_redirect) industry isn't being strangled by anyone - the real chokehold comes from the so-called "insiders."
 
-[![featured.jpg](featured.jpg)](https://mp.weixin.qq.com/s/vh1JE_BdaLetWtt5vvPDDw)
+[![A man choking himself while an elephant watches from outside the window](featured.jpg)](https://mp.weixin.qq.com/s/vh1JE_BdaLetWtt5vvPDDw)
 
 ## Monopolistic Relationship Business
 
@@ -22,7 +22,9 @@ The problem is, while people eating pre-made meals might not have a choice, user
 
 Many companies watch Oracle's massive harvesting with envy, drooling with desire - but if users choose to directly use readily available free open-source software, how can domestic databases cut their leeks? This amounts to state asset loss! For the underdog to turn the tables, they must first betray their teachers and ancestors: package up free open-source software and sell it to you at Oracle prices!
 
-![db-choke-1.png](db-choke-1.png)
+![English localization of a social-media allegation about Guiyang Bank, alongside a procurement notice and an Oracle launch poster](db-choke-1.en.webp)
+
+> English localization of the [original Chinese collage](db-choke-1.png): a social-media allegation, the October 19, 2020 procurement notice, and a poster wishing the Oracle deployment a smooth launch.
 
 First, create a hard fork of the database, rename those two letters `pg`; mix in some garbage code for obfuscation, then stir it up with C++ - voilà, 100% autonomous code rate and independent intellectual property! Then find some university professors and old academicians to endorse it, arguing that open-source databases MySQL and PostgreSQL are trash. Finally, tell the leadership: hostile foreign forces are determined to destroy us, open source is imperialism's overt conspiracy to destroy our domestic software industry, we need to "***manage it***", we can't not resist!
 
@@ -40,15 +42,17 @@ Such companies probably dream of national technological blockades: **doors can o
 
 Not to mention compared to open source, even Oracle is still a Paper License with many third-party service providers; some domestic databases die immediately without a license, and when the original manufacturer collapses, business systems suffer along with it. Switching from being "strangled" by leading foreign databases to being strangled by domestic suppliers doesn't improve autonomous control capability and additionally loses functional vitality.
 
-[![db-choke-2.png](db-choke-2.png)](/db/sovereign-dbos)
+[![Seven levels of infrastructure software autonomy and control, from renting services to leading a community](db-choke-2.en.webp)](/en/db/sovereign-dbos/)
 
-> "[What Kind of Autonomous Control Do Infrastructure Software Need?](/db/sovereign-dbos)"
+> [What Kind of Autonomy and Control Does Infrastructure Software Need?](/en/db/sovereign-dbos/)
 
 ## Bad Money Drives Out Good
 
 In CSDN's recent developer survey, 70% of respondents held negative impressions of "domestic databases": "**technically backward**", "**lacking innovation**" - this is a relatively mild way of putting it. Users' true inner evaluations are probably more direct: **false advertising, grandiose claims, backward productivity**. Why do domestic databases have such poor reputations? Is it because software engineers aren't patriotic?
 
-![db-choke-3.png](db-choke-3.png)
+![Net love index for databases, loved percentage minus dreaded percentage](db-choke-3.en.webp)
+
+> Net love = loved percentage − dreaded percentage. “Domestic databases” refers to Chinese domestic database products; all values are reproduced from the [original chart](db-choke-3.png).
 
 According to statistics from CAICT and MoTianLun, there are now over 260 "domestic databases." Those based on open-source PostgreSQL/MySQL account for more than half. This is quite an outrageous number. In reality, a large number of database vendors don't have the capability to provide true "products" - they just simply re-skin and package open-source databases to provide services, supplemented by hyping pseudo-requirements like distributed systems and HTAP.
 
@@ -64,7 +68,7 @@ What's the current situation? Database kernels can't be rolled anymore! As a tec
 
 So what's truly scarce? The ability to use existing kernels well. To solve this problem, there are two approaches: first is developing **extensions**, adding functionality to kernels in the form of incremental feature packages - solving problems in specific domains. Second is ecosystem integration, merging extensions, dependencies, bases, and infrastructure into complete products & solutions - database **distributions**.
 
-![db-choke-4.jpg](db-choke-4.jpg)
+![PostgreSQL ecosystem covering extensibility, observability, availability, interoperability, reliability, and maintainability](db-choke-4.jpg)
 
 Focusing on these two directions can generate real incremental user value, standing on giants' shoulders and deeply participating in global software supply chains, responding to the call to build a true "community of shared future for mankind." Conversely, forking existing mature open-source kernels is extremely foolish. DB/OS kernels like PostgreSQL and Linux are collective wisdom crystals of developers worldwide, tempered and tested by users globally in various scenarios. Expecting any single company to contend with them is unrealistic delusion.
 

@@ -32,7 +32,7 @@ Hence, DuckDB feels more like an “OLAP operator” or a storage engine, akin t
 
 Meanwhile, **PostgreSQL** has spent decades polishing data management—rock-solid transactions, access control, backups, HA, a healthy extension ecosystem, and so on. As an OLTP juggernaut, [Postgres is a performence beast](/en/pg/pg-performence/).. The only lingering complaint is that while Postgres handles standard analytics adequately, it still lags behind specialized OLAP systems when data volumes balloon.
 
-![clickbench.png](clickbench.png)
+![clickbench.png](clickbench-en.webp)
 
 But what if we combine **PostgreSQL** for data management with **DuckDB** for high-speed analytics? If these two join forces deeply, we could see a brand-new hybrid in the DB universe.
 

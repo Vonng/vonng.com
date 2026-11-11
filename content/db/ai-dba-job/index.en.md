@@ -46,7 +46,7 @@ We can compare PostgreSQL to smartphones - they can make calls, GPS navigation, 
 
 I believe that currently, [object storage, APM, and OLAP are a few fields](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489822&idx=1&sn=64d32013b4197f9803ad4cf6688925db&scene=21#wechat_redirect) still worthy of having dedicated database products. Other database subdivision niches have basically converged to the above state. Moreover, the threshold for using specialized components is getting higher and higher, increasingly distant from most application scales. We can expect that at some point in the future, [the database world will achieve unity and convergence](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487513&idx=2&sn=ffb27fc934b6dce3d8571af0e228d21f&scene=21#wechat_redirect) ([Database Mars Collides with Earth: When PG Falls in Love with DuckDB](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489279&idx=1&sn=ca161963f98ec000a4d3bba41edaea85&scene=21#wechat_redirect) / Timescale / Promescale).
 
-![pyramid.webp](pyramid.webp)
+![Translated discussion of ops agents, the seven-level database needs pyramid, and an Anolis 8.10 troubleshooting example](pyramid-en.webp)
 
 Premature optimization is the root of all evil - paying the cost in complexity, expense, manpower, and consistency maintenance for attributes you don't need is meaningless. When enterprises are choosing databases, they must keep their eyes open and not busy themselves with things they don't need - and PostgreSQL is undoubtedly the default safe choice in the database field.
 
@@ -62,7 +62,9 @@ This also means that the IT field is very likely to experience class solidificat
 
 For experts at the pyramid's peak, this is a major positive development. This means experts' capabilities can be rapidly replicated through two methods: through Coding Agents, [settling experts' experience faster into replicable management software, eliminating 90% of database chores](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486903&idx=1&sn=01c57499f41e8f51045bb8dd52586595&scene=21#wechat_redirect); then on this foundation, through DBA Agents, settling experts' experience into Prompts/knowledge bases, solving 9% of routine problems, leaving the remaining 1% (maybe 0.1%) of work for experts to handle manually.
 
-![table.webp](table.webp)
+![DBA workload shares and multipliers: 1, 1.43, 50, 100, and 1000](table-en.webp)
+
+Source: [the author's earlier DBA workload table](/en/cloud/dba-vs-rds/).
 
 This means a DBA database expert can achieve hundreds to thousands of times leverage through management and Agents. For example, many customers' questions I consult on, I throw to GPT o3-pro to solve. I only need to ask the right questions and verify answer validity, completing work that would originally take ten times more time. This is the operating mode of super individuals and one-person companies, allowing me to serve over ten clients while maintaining time freedom. I call this new model Service as Software (SaaS).
 
@@ -74,7 +76,7 @@ For ordinary DBAs, I think there are many opportunities here too. A significant 
 
 Best practice is usually to cobble together a frontend with Next.js hosted on Vercel or Cloudflare, with a "BaaS" database like Supabase behind it - the backend is completely eliminated, and frontend Vibe Coding is relatively easy, but mastery and understanding of Postgres underneath Supabase is a relatively scarce skill. Building and maintaining production-grade PostgreSQL/Supabase clusters has basically become the bottleneck chokepoint in the entire stack.
 
-![practice.webp](practice.webp)
+![Translated WeChat discussion of AI-assisted PostgreSQL development, full-text search, and a two-million-row migration](practice-en.webp)
 
 This is a huge positive for DBAs - because Claude Code has brought everyone's programming abilities to the same level, what matters now is general integration capabilities and scarce database/DBA experience. The PG DBA community already possesses the latter, giving them an inherent advantage over other engineers at the same level.
 

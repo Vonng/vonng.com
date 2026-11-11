@@ -10,11 +10,15 @@ I rented a car today, drove from Shanghai back to Ningbo. Yesterday I watched Do
 
 The video cured my decision fatigue: if I ever buy an EV, it’ll be a Tesla. I don’t care about sofas or fridges; I just want to stop being my own chauffeur. Competent autpilot is the only product feature that matters.
 
-![result.webp](result.webp)
+![Results for 36 cars in six highway driver-assistance scenarios: a crashed car ahead, roadworks with a truck, temporary roadworks, a disappearing lead car, aggressive merging at a highway entrance, and a crossing pig.](result.en.webp)
+
+*[Dongchedi’s July 2025 highway ADAS tests](https://www.youtube.com/watch?v=0xumyEf-WRI), with English labels.*
 
 The show was glorious. They reserved a stretch of highway, lined up the usual snake oil, and said “show me.” The clowns immediately tripped over their own marketing. Even CCTV joined the release, which forced the “遥遥领先” crowd to mumble “no comment.”
 
-![news.webp](news.webp)
+![CCTV News’s July 23 post, with its joint-release wording boxed in red.](news.webp)
+
+*The boxed phrase reads “CCTV News, together with Dongchedi.” The post warns that Level 2 assistance is not autonomous driving: 47% of tested cars avoided the nighttime roadworks-and-truck hazard, and 58% stopped for a child running into the road.*
 
 > Update: CCTV chickened out and removed “joint release.” https://www.sohu.com/a/917915599_133588
 

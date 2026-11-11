@@ -71,9 +71,9 @@ Most importantly, besides RHEL, RockyLinux is the EL-series OS that PostgreSQL o
 
 Anolis/OpenAnolis is Alibaba-Cloud's domestic OS, claiming 100% EL compatibility. I didn't have high expectations initially - I just supported it because users wanted it, but the actual results exceeded expectations: all EL8 RPM packages passed on the first try. Adaptation required no additional work besides handling /etc/os-release. Adapting one Anolis equals adapting over ten "domestic OS" distributions: Alibaba-Cloud, Tongxin Software, China Mobile, Kylin Software, CS2C, Linx Software, Inspur, NFSC, Xinyidian, Softpower, Boyant Technology. Very cost-effective.
 
-![openAnolis.png](rhel-openAnolis.webp)
+![OpenAnolis commercial OS distributions](rhel-openAnolis-en.webp)
 
-> Commercial OS distributions based on OpenAnolis
+> Commercial OS distributions based on OpenAnolis. English localization of the original screenshot.
 
 If you have "domestic" OS requirements, choosing OpenAnolis or derivative commercial distributions is a good choice.
 
@@ -81,9 +81,9 @@ Oracle Linux/AlmaLinux/CentOS Stream have worse compatibility compared to Rocky/
 
 OpenEuler belongs in the worst tier, claiming EL compatibility but being completely different in practice. For example, in PostgreSQL kernel and core extensions, postgresql15*, patroni, postgis33_15, pgbadger, pgbouncer all need recompilation. And because different LLVM versions are used, all plugin LLVMJIT must be recompiled to work, requiring tremendous effort to complete support. We had to castrate some features, making the overall experience terrible.
 
-![openEuler.png](rhel-openEuler.png)
+![openEuler PostgreSQL build guide](rhel-openEuler-en.webp)
 
-> A pile of extra work during adaptation
+> The extra work required during adaptation. English localization of the original build guide.
 
 We have a major client who had to use this OS, so we had to do compatibility adaptation. Adapting this OS is a nightmare - the workload is greater than supporting Debian/Ubuntu series OS. It truly achieves **world-leading** excellence in tormenting users.
 

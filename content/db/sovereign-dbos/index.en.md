@@ -18,9 +18,9 @@ The nation's need is simple: **can existing systems continue running after war a
 
 Software self-reliance and control has two parts: **operational self-reliance** and **R&D self-reliance**. What nations/users truly need is the **former**. If we express infrastructure software "self-reliance and control" needs in a pyramid hierarchy, then in this demand pyramid, the nation's requirement can be described as: **for infrastructure software with practical value: secure level 3, strive for level 5**. At minimum, achieve "**local autonomous operation**", ideally reach "**source code control**".
 
-![prymaid.png](prymaid.png)
+![Seven-level pyramid of infrastructure software self-reliance, from renting services to project leadership](prymaid.en.webp)
 
-> Infrastructure Software Self-Reliance and Control Demand Pyramid
+> Infrastructure software self-reliance and control pyramid.
 
 Pursuing **R&D self-reliance** must consider the **vitality** problem. When mature open source kernels already exist in infrastructure software fields (operating systems/databases), pursuing so-called **self-research** has almost no practical value for nations and users: **only when a team's functional R&D/problem-solving speed exceeds the global open source community does kernel self-research become a meaningful choice**. Most infrastructure software vendors claiming "self-research" are essentially shell-wrapping, reskinning, or modifying open source kernels, with self-reliance and control levels of 2-3 or even lower. Low-quality software forks not only lack practical value but also waste scarce software talent and market opportunities, ultimately leading to Chinese software industry disconnection from global supply chains, creating huge negative externalities.
 

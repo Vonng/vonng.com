@@ -50,9 +50,9 @@ As an industry solution, distributed databases have successfully met the needs o
 
 "Distributed," along with buzzwords like "HTAP," "compute-storage separation," "Serverless," and "lakehouse," holds no inherent meaning for enterprise users. Practical clients focus on tangible attributes and capabilities: functionality, performance, security, reliability, return on investment, and cost-effectiveness. **What truly matters is the trade-off: compared to classic centralized databases, what do distributed databases sacrifice, and what do they gain in return?**
 
-![distributive-bullshit-1.png](distributive-bullshit-1.png)
+![Seven-level database service demand pyramid: functionality, security, reliability, ROI, insight, control, and intelligence](distributive-bullshit-1-en.webp)
 
-> [数据库需求层次金字塔](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485399&idx=1&sn=0b7d5a7dc24295afcc56ec688b2c2d06&chksm=fe4b320cc93cbb1a369f9c9a7c50811c6a4f784fd2dd070f6ce5b16378502b8e5c7c76b716e1&scene=21#wechat_redirect) [1]
+> [Database Demand Hierarchy Pyramid](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247485399&idx=1&sn=0b7d5a7dc24295afcc56ec688b2c2d06&chksm=fe4b320cc93cbb1a369f9c9a7c50811c6a4f784fd2dd070f6ce5b16378502b8e5c7c76b716e1&scene=21#wechat_redirect) [1]
 
 **The core trade-off of distributed databases can be summarized as "quality for quantity": sacrificing functionality, performance, complexity, and reliability to gain greater data capacity and request throughput.**
 
@@ -60,13 +60,13 @@ NewSQL often markets itself on the concept of "distribution," solving **scalabil
 
 **Firstly**, due to their inherent limitations, distributed databases sacrifice many **features**, offering only basic and limited CRUD query support. **Secondly**, because distributed databases require multiple network RPCs to complete requests, their **performance** typically suffers a 70% or more degradation compared to centralized databases. **Furthermore**, distributed databases, consisting of DN/CN and TSO components among others, introduce significant **complexity** in operations and management. **Lastly**, in terms of **high availability and disaster recovery**, distributed databases do not offer a qualitative improvement over the classic centralized master-slave setup; instead, they introduce numerous additional failure points due to their complex components.
 
-![distributive-bullshit-2.png](distributive-bullshit-2.png)
+![Sysbench throughput comparison across databases](distributive-bullshit-2-en.webp)
 
-> [SYSBENCH吞吐对比](https://mp.weixin.qq.com/s/651zXDKGwFy8i0Owrmm-Xg) [2]
+> [Sysbench throughput comparison](https://mp.weixin.qq.com/s/651zXDKGwFy8i0Owrmm-Xg) [2]
 
 In the past, the trade-offs of distributed databases were justified: the internet required larger data storage capacities and higher access throughputs—a must-solve problem, and these drawbacks were surmountable. But today, hardware advancements have rendered the "quantity" question obsolete, thus erasing the raison d'être of distributed databases along with the very problem they sought to solve.
 
-![distributive-bullshit-3.png](distributive-bullshit-3.png)
+![Roman-soldier meme with the caption “Times have changed, my lord!”](distributive-bullshit-3.png)
 
 > Times have changed, My lord!
 

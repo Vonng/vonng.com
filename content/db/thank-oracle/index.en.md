@@ -21,7 +21,7 @@ In the same passage, he said that no vendor controls PostgreSQL. It is run by tw
 
 Today, Oleg Bartunov published a blunt rebuttal on LinkedIn: "PostgreSQL Had Already Solved the Oracle Problem in 2000."
 
-![Oleg Bartunov's LinkedIn post](bartunov-post.webp)
+[![Oleg Bartunov's original English LinkedIn post](bartunov-post-en.webp)](https://www.linkedin.com/posts/olegbartunov_postgresql-activity-7496104102142263296-mJ6m)
 
 Oleg runs Postgres Pro. He has spent more than thirty years in the community and is one of the key people behind PostgreSQL's JSON and full-text search systems.
 
@@ -115,7 +115,7 @@ In 2020, a Spanish nonprofit called Fundación PostgreSQL applied in the Europea
 
 Three years, over a name.
 
-![The settlement of the PostgreSQL community trademark dispute](trademark-dispute.webp)
+[![English PostgreSQL trademark settlement announcement](trademark-dispute-en.webp)](https://www.postgresql.org/about/news/updates-on-trademark-actions-against-the-postgresql-community-2762/)
 
 *Incidentally, someone has registered the mark in China too.*
 

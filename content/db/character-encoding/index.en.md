@@ -39,7 +39,9 @@ Characters refer to letters, numbers, punctuation, ideographic writing (like Chi
 
 Abstract characters are abstract symbols, independent of concrete forms: distinguishing **characters** from **glyphs** is very important. What we see on screen as tangible things are **glyphs** - they are visual representations of abstract characters. Abstract **characters** are presented as **glyphs** through **rendering**. The **glyphs** presented by the user interface are perceived by the human eye, cognized by the human brain, and finally restored to abstract entity concepts in the human mind. Glyphs serve as media in this process but should never be equated with abstract characters themselves.
 
-![Understanding Character Encoding Principles — Characters (figure 1)](char-glyph.png)
+![Abstract characters U+2003E and U+20E0, their rendered glyphs, and their encoded bytes](char-glyph-en.webp)
+
+*Figure 1. Rendering connects abstract characters to visible glyphs; encoding maps them to bytes. The CJK ideograph and combining mark are the character examples.*
 
 Note that while **most** of the time glyphs and characters correspond one-to-one, there are still some many-to-many cases: one glyph might be composed of multiple characters, for example, the abstract character `à` (the fourth tone 'a' in Pinyin). We consider it a single 'character', but it can either be truly a single character or be composed of character `a` and the grave accent character `◌̀`.
 
@@ -74,7 +76,9 @@ Many familiar terms can be categorized into corresponding levels of this model. 
 
 The relationships between these concepts can be represented by the following diagram:
 
-![Understanding Character Encoding Principles — 0x02 Model Overview (figure 2)](char-encoding.png)
+![Character encoding model: characters, code points, code units, and byte sequences](char-encoding-en.webp)
+
+*Figure 2. This English diagram corrects the source's binary values and byte order mark: U+2003E has UTF-16 code units `D840 DC3E`, and the big-endian byte stream shown begins with `FE FF`. The emoji example is likewise corrected to `FE FF D8 3D DE 2F`. These streams use “UTF-16 (BE, with BOM)”: under the UTF-16BE encoding scheme, an initial `FE FF` represents U+FEFF as text, not a BOM ([Unicode §3.10](https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-3/#G28070)).*
 
 We can see that to convert an abstract character to binary, it actually goes through several conceptual conversions. Between abstract character sequences and byte sequences, there are two intermediate forms: code point sequences and code unit sequences. Simply put:
 
@@ -199,7 +203,7 @@ Of course, UTF-8 also has costs. For Chinese, UTF-8 usually uses three bytes for
 
 A huge advantage of UTF-8 is that it has no byte order issues. UTF-16 and UTF-32 have to worry about whether big-endian or little-endian bytes come first. This problem is usually solved in **Character Encoding Schema** through BOM.
 
-![Understanding Character Encoding Principles — UTF8 (figure 3)](char-utf.png)
+![U+1F602 encoded as UTF-8, UTF-16, and UTF-32, with byte-order variants](char-utf.png)
 
 ### Character Encoding Schema
 

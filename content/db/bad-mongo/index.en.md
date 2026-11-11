@@ -32,7 +32,9 @@ There are many bad databases in this world - but those that can successfully blo
 Among all the stories about MongoDB's great deceptions, the most memorable is this LinkedIn post "[MongoDB 3.2 - Now Powered by PostgreSQL](https://mp.weixin.qq.com/s/e3_32Neoy5RVRBSozsa_7A)".
 The brilliance of this article lies in it being a bloody accusation from a MongoDB partner: MongoDB ignored their partner's loyal advice, took a PostgreSQL and disguised it as their own analytics engine, then deceived users at the launch event.
 
-![MongoDB Has No Future: Good Marketing Can't Save a Rotten Mango — Bad Product Rises Through Marketing (figure 3)](mongo-powered-by-pg.webp)
+![The PostgreSQL mailing-list post and John De Goes's account of MongoDB's PostgreSQL-based BI connector](mongo-powered-by-pg-en.webp)
+
+*Screenshots from the [PostgreSQL mailing list](https://www.postgresql.org/message-id/97bfb1531f2f41471a0cb68fec9c5ccb%40dalibo.info) and [John De Goes's original article](https://www.linkedin.com/pulse/mongodb-32-now-powered-postgresql-john-de-goes), arranged to match the original composite.*
 
 As a MongoDB partner in the analytics field, the author was completely disheartened and publicly wrote an accusation - "*MongoDB's analytics engine is a PostgreSQL, so you might as well just use PostgreSQL directly*."
 
@@ -72,7 +74,9 @@ For databases, **correctness is paramount** - the neutral distributed transactio
 
 Of course, MongoDB's strength is shameless "deception." Despite JEPSEN raising so many issues, on MongoDB's official website, their introduction to Jespen's evaluation goes: "*So far, causal consistency has generally been limited to research projects... MongoDB is one of the first commercial databases we know of to provide an implementation*"
 
-![MongoDB Has No Future: Good Marketing Can't Save a Rotten Mango — Crushed in Correctness and Performance (figure 6)](jepsen-mongo.webp)
+![Jepsen's MongoDB 4.2.6 report alongside MongoDB's response, including its notes on fixes in 4.2.8 and default write concern in 5.0](jepsen-mongo-en.webp)
+
+*Left: [Jepsen's report](https://jepsen.io/analyses/mongodb-4.2.6), May 15, 2020, abstract and background. Right: [MongoDB's response](https://web.archive.org/web/20240923013623/https://www.mongodb.com/company/partners/jepsen), archived September 23, 2024.*
 
 This example once again demonstrates MongoDB's marketing shamelessness - using extremely refined language arts, carefully selecting an undigested peanut from a pile of bullshit, while glossing over various fatal flaws in correctness/consistency.
 
@@ -140,21 +144,29 @@ Of course, I later discovered I wasn't the only one with this feeling. On HN and
 
 **About this "MongoDB Challenges PG" news, HN comments are like this:**
 
-![hackernews.webp](hackernews.webp)
+![Hacker News discussion of The Register's MongoDB versus PostgreSQL article, with 24 points and 53 comments](hackernews-en.webp)
+
+*[Hacker News discussion](https://news.ycombinator.com/item?id=41405000), captured from its [September 3, 2024 archive](https://web.archive.org/web/20240903213250/https://news.ycombinator.com/item?id=41405000).*
 
 **About MongoDB, Reddit comments are like this:**
 
-![reddit-comment.png](reddit-comment.png)
+![A PostgreSQL versus MongoDB question and two comments by kenfar on Reddit](reddit-comment-en.webp)
+
+*English localization of the original screenshot, recreated with AI. The wording was checked against the [original Reddit thread](https://www.reddit.com/r/PostgreSQL/comments/19bkn8b/doubt_regarding_postgresql_vs_mongodb/); counts and relative dates are preserved from the original image.*
 
 **Developers specifically taking time to write articles criticizing it, MongoDB's malicious marketing deserves credit:**
 
-![blog.png](blog.png)
+![joepie91's July 19, 2015 article, Why you should never, ever, ever use MongoDB](blog-en.webp)
+
+*Screenshot of [joepie91's original article](https://web.archive.org/web/20240906231600/http://cryto.net/~joepie91/blog/2015/07/19/why-you-should-never-ever-ever-use-mongodb/), preserved by the Internet Archive.*
 
 --------
 
 Partners [breaking into curses and whistleblowing](https://mp.weixin.qq.com/s/e3_32Neoy5RVRBSozsa_7A), I think MongoDB is unique:
 
-![shotgun.webp](shotgun.webp)
+![John De Goes on MongoDB's partner ecosystem, PostgreSQL, and his decision to stop advocating for MongoDB](shotgun-en.webp)
+
+*Excerpts from [John De Goes's original article](https://www.linkedin.com/pulse/mongodb-32-now-powered-postgresql-john-de-goes): “MongoDB: An Island of One,” “PostgreSQL: The MongoDB Killer,” and “Bye-Bye, MongoDB,” arranged to match the original composite.*
 
 ## MongoDB Has No Future
 

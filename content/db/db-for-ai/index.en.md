@@ -12,7 +12,7 @@ This morning, the industry exploded with news of an acquisition. Following Datab
 
 According to insiders, this deal was priced at $250 million. While the price is 1/4 of Neon's, unlike Databricks' stock swap, this time Snowflake paid real cash, giving it a distinctly "whatever Databricks buys, I buy" confrontational flavor.
 
-![twitter.webp](twitter.webp)
+![Sridhar Ramaswamy and Snowflake announce the agreement to acquire Crunchy Data](twitter.en.webp)
 
 But this isn't just a grudge match between two data warehouse giants - PostgreSQL has indeed captured all the favorable timing for database rise in the AI era. Combined with the industry rumors of [OpenAI acquiring Supabase](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489695&idx=1&sn=eb0aa2286ecdbb014fd6b38023ae6749&scene=21#wechat_redirect), it's clear that the common thread among these acquisitions (or potential acquisition intentions) is that these are all PostgreSQL companies - PostgreSQL companies are becoming the hottest commodities in capital markets.
 
@@ -29,13 +29,13 @@ Why is this phenomenon occurring? Microsoft CEO Nadella has already made it very
 
 So who will become the database of the AI era? Among global developers, this question has long had consensus. [PostgreSQL became the most used, most loved, and most in-demand database among global developers three years ago](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488057&idx=1&sn=6733b62b5cd48c62acd798fc48db1c92&scene=21#wechat_redirect).
 
-![trend.webp](trend.webp)
+![Database usage, popularity, and demand trends from 2017 to 2024](trend.webp)
 
 For example, when I asked OpenAI friends **why they chose PostgreSQL**, they asked me back: "Isn't PostgreSQL the default choice and safe bet now? Not using PostgreSQL would need special reasons!" ("[OpenAI: Scaling PostgreSQL to New Heights](/db/openai-pg)").
 
 Companies like OpenAI and Cursor can support their business with just a single master-slave PostgreSQL setup at "true Web Scale" application scale - other companies' scenarios are naturally even less challenging.
 
-![openai.webp](openai.webp)
+![OpenAI presentation on scaling PostgreSQL with a single primary writer](openai.webp)
 
 Now, PostgreSQL has not only become consensus among developers, entrepreneurs, and industry, but has also won capital's favor. Capital has already voted with its feet - PostgreSQL is the database of the AI era.
 
@@ -43,7 +43,7 @@ Many ask, why PostgreSQL? Lao Feng already explained this in "[PostgreSQL is Eat
 
 Open source and advanced technology are PG's backbone, while its edge is "extensibility." **More and more database subdivisions are being integrated into the PostgreSQL ecosystem as "plugins"**. Powerful extensibility has not only made PostgreSQL the [de facto standard in the OLTP world](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489822&idx=1&sn=64d32013b4197f9803ad4cf6688925db&scene=21#wechat_redirect), but also gives it a head start in [integrating OLAP big data ecosystems](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247488131&idx=1&sn=9dc6a377d0b24fb7b92cac840b229433&scene=21#wechat_redirect).
 
-![ecosystem.gif](ecosystem.gif)
+![PostgreSQL extensions for analytics, AI, geospatial data, time series, search, and other workloads](ecosystem.gif)
 
 ## About CrunchyData
 
@@ -51,7 +51,7 @@ The acquired CrunchyData is one of the main players in the [DuckDB stitching com
 
 CrunchyData is a well-known company in the PostgreSQL ecosystem. Tom Lane, a core member of the PostgreSQL community, works at this company. Their core business can be roughly summarized as:
 
-![crunchy.webp](crunchy.webp)
+![Crunchy Data's managed, self-managed, Kubernetes, and data warehouse products](crunchy.webp)
 
 **A PostgreSQL database distribution**: Crunchy Certified PostgreSQL, basically still the usual high availability monitoring backup recovery stuff, with distinctive enterprise security features like SELinux integration/TDE and compliance certifications. Plus some remote DBA, training certification services.
 
@@ -90,7 +90,9 @@ For example, Neon's founder invested in pg_mooncake, and Databricks (Snowflake's
 
 Of course, this path can at most be called "containment" and can't completely block it. For example, pg_mooncake recently started rewriting entirely in Rust, simply using TAM rather than being locked into it. Where there's a will, there's a way.
 
-![pg_mooncake.webp](pg_mooncake.webp)
+![Group discussion of pg_mooncake, Iceberg, PostgreSQL's TAM interface, and concurrent reads and writes](pg_mooncake.en.webp)
+
+*May 2025 group chat discussing pg_mooncake and resistance to TAM changes in recent years (translated).*
 
 On the other hand, Supabase (rumored to be acquired by OpenAI) plans to use the [OrioleDB](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489444&idx=1&sn=840f6632e27899b6764b8c0f96cd368e&scene=21#wechat_redirect) kernel, which also depends on several table access method patches that have been stuck and haven't entered the PG 18 kernel. This acquisition can also constrain other companies wanting to take this path - killing two birds with one stone.
 
@@ -114,6 +116,8 @@ Open-source free PostgreSQL distribution: Look for Pigsty
 
 https://pigsty.io
 
-![pigsty.webp](pigsty.webp)
+![Pigsty's May 2025 English homepage and PostgreSQL infrastructure ecosystem](pigsty.en.webp)
 
-![pigsty2.webp](pigsty2.webp)
+![Pigsty's historical feature overview: high availability, infrastructure as code, observability, and 420+ extensions](pigsty2.en.webp)
+
+*Contemporary English homepage. The Chinese version also advertised setup in minutes at less than one-tenth the cost of RDS.*

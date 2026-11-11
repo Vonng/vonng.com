@@ -31,13 +31,15 @@ Reliable systems need to handle various errors. In the harsh reality of data sys
 
 The transaction abstraction reduces all possible outcomes to two situations: **either succeed and COMMIT, or fail and ROLLBACK**. With this safety net, programmers no longer need to worry about crashes during data processing, leaving behind the horrific accident scene of destroyed data consistency. Application error handling becomes much simpler because it no longer needs to worry about partial failure situations. The guarantees it provides are summarized by the four-letter acronym **ACID**.
 
-![acid.png](mysql-acid.png)
+![ACID: atomicity, consistency, isolation, and durability](mysql-acid.png)
 
 Transaction **Atomicity/A** lets you abort transactions anytime before commit and discard all writes. Correspondingly, transaction **Durability/D** promises that once a transaction successfully commits, any written data won't be lost even if hardware failures or database crashes occur. Transaction **Isolation/I** ensures each transaction can pretend it's the only one running on the entire database — the database ensures that when multiple transactions are committed, the result is the same as if they ran serially one after another, even though they may actually run concurrently. Atomicity and Isolation serve **Consistency** — which is application **Correctness** — the C in ACID is an application property, not a transaction property itself, included to complete the acronym.
 
 However, in engineering practice, complete **Isolation/I** is rare — users rarely use so-called "**Serializable/SR**" isolation levels because they have considerable performance costs. Some popular databases like Oracle don't even implement it — Oracle has an isolation level called "serializable," but it actually implements something called **snapshot isolation**, **which provides weaker guarantees than serializability**.
 
-![ansi-sql.png](mysql-ansi-sql.png)
+![ANSI SQL isolation levels and the anomalies they permit](mysql-ansi-sql-en.webp)
+
+*Original English table from [Jepsen's December 2023 report](https://jepsen.io/analyses/mysql-8.0.34.pdf#page=2). P1 is a dirty read, P2 a non-repeatable read, and P3 a phantom. The source lists the levels from weakest to strongest.*
 
 RDBMS allow different **isolation levels**, letting users trade off between **performance** and **correctness**. ANSI SQL92 used three **concurrent anomalies** to define four different **isolation levels**, standardizing this trade-off (poorly). Weaker isolation levels "theoretically" provide better performance but also allow more types of **concurrent anomalies**, affecting application correctness.
 
@@ -48,13 +50,17 @@ This laid the groundwork for **MySQL's** correctness problems as it rode the int
 
 Before introducing JEPSEN's research, let's review the [Hermitage](https://github.com/ept/hermitage) project. This is a project initiated by Martin Kleppmann, author of the internet classic "DDIA," in **2014**, aimed at evaluating the **correctness** of various mainstream relational databases. The project designed a series of concurrent transaction scenarios to assess the actual level of databases' claimed isolation levels.
 
-![hermitage.png](mysql-hermitage.png)
+![Historical Hermitage results comparing declared and actual isolation levels across seven database systems](mysql-hermitage-en.webp)
+
+*[Historical Hermitage results, November 15, 2023](https://github.com/ept/hermitage/tree/fdb189e1ffb0065b0d15ab80c7aa7bde33d6aea2#summary-of-test-results). The original Chinese figure's red highlights identify MySQL RR's MAV classification and Oracle SR's snapshot isolation classification; Jepsen later contradicted the former. This upstream table distinguishes SQL Server's two read-committed modes, which the Chinese figure combines. A checkmark means the anomaly is prevented, a dash means it is permitted, R/O means prevention only in read-only transactions, and “some” means case-dependent prevention. Stars mark defaults.*
 
 From Hermitage's evaluation results table, it's clear there are two flaws in mainstream database isolation level implementations, marked with red circles: Oracle's **Serializable/SR** is considered actually "**Snapshot Isolation/SI**" because it cannot avoid G2 anomalies.
 
 MySQL's problems are more significant: because the default **Repeatable Read/RR** isolation level cannot avoid PMP/G-Single anomalies, Hermitage rated its actual level as **Monotonic Atomic View/MAV**.
 
-![mysql-level.png](mysql-level.png)
+![Jepsen's isolation hierarchy, with MySQL Repeatable Read at an uncertain position above Read Committed](mysql-level-en.webp)
+
+*Original hierarchy from [Jepsen's report](https://jepsen.io/analyses/mysql-8.0.34.pdf#page=10). The Chinese annotations explain the exclusions: G2-item and write skew rule out Repeatable Read; G-single, write skew, and lost updates rule out Snapshot Isolation; lost updates rule out Cursor Stability. Internal inconsistency rules out Prefix, Causal, Parallel Snapshot Isolation, and Read Atomic. Non-monotonic reads contradict Hermitage's MAV classification. Read-only transactions retain some repeatability, placing MySQL RR somewhat above RC, but it fits none of RR, SI, or MAV; the question marks preserve that uncertainty.*
 
 It should be noted that ANSI SQL 92 isolation levels are a poor, crude, and widely criticized standard that only defined three anomaly phenomena and used them to distinguish four isolation levels — but there are actually many more anomaly types/isolation levels. The famous paper "A Critique of ANSI SQL Isolation Levels" proposed corrections and introduced several important new isolation levels, giving their strength relationship partial order diagram (left figure).
 
@@ -74,7 +80,9 @@ MySQL 8.0.34's **RU**, **RC**, **SR** isolation levels comply with ANSI standard
 4. **Violates internal consistency** (Hermitage disclosure)
 5. **Violates read monotonicity** (JEPSEN new disclosure)
 
-![mysql-level.png](mysql-level.png)
+![The same Jepsen hierarchy showing the uncertain strength of MySQL Repeatable Read](mysql-level-en.webp)
+
+*The same hierarchy, revisited after the anomaly list: MySQL RR's exact position remains uncertain. The annotations are translated in the caption above.*
 
 MySQL RR transactions observed phenomena violating internal consistency, monotonicity, and atomicity. This adjusted its rating to an undefined isolation level only slightly higher than RC.
 
@@ -147,7 +155,9 @@ Another noteworthy issue: MySQL's default configuration transactions exhibit phe
 
 But this argument can't change the fact: MySQL indeed violates the principle of least surprise, allowing users to do such atomicity-violating stupid things under default configuration. Similarly, there's the `replica_preserve_commit_order` parameter.
 
-![mysql-atom.png](mysql-atom.png)
+![MySQL 8.0.29 and PostgreSQL 14.4 terminal examples comparing partial commits, rollback, and savepoints](mysql-atom-en.webp)
+
+*English localization of the author's terminal comparison. The final PostgreSQL example enables psql's `ON_ERROR_ROLLBACK` to use savepoints.*
 
 ## Serializability problems: Useless and terrible
 
@@ -161,7 +171,7 @@ Although this anomalous behavior can be avoided by enabling this parameter, usin
 
 Similarly, Professor Li Haixiang (former Tencent T14), who specializes in database consistency research, evaluated actual isolation levels of various databases including MySQL (InnoDB/8.0.20) in his "Third Generation Distributed Database" series, providing the more detailed "**[Consistency Eight Immortals Diagram](https://mp.weixin.qq.com/s/_BhAjcMkmthTf8Zw3RWKDw)**" from another perspective.
 
-![mysql-baxiantu.png](mysql-baxiantu.png)
+![Li Haixiang's matrix of 33 transaction anomalies and database isolation levels](mysql-baxiantu.png)
 
 In the diagram, blue/green represents correctly using rules/rollback to avoid anomalies; **yellow A represents anomalies occurring, more yellow "A"s mean more correctness problems**; red "D" indicates using performance-affecting deadlock detection to handle anomalies, **more red Ds mean more serious performance problems**.
 
@@ -177,17 +187,19 @@ There are some "habitual" strange circles in the database community. For example
 
 As shown below, there's a vicious cycle: users want better database performance, so developers set application isolation level to RC. However, users, especially those in finance, insurance, securities, telecom industries, expect data correctness guarantees, so developers have to add `SELECT FOR UPDATE` locking in SQL statements to ensure data correctness. This causes serious database system performance degradation. Test results in TPC-C and YCSB scenarios show that user-initiated locking causes serious database system performance degradation, while strong isolation level performance loss isn't that severe.
 
-![circle.png](mysql-circle.png)
+![DTCC 2023 slide showing the cycle from weak isolation to explicit locks and lower performance](mysql-circle-en.webp)
+
+*Li Haixiang's [DTCC 2023 slide](https://mp.weixin.qq.com/s/zz_184uqiSXQ1nSYENGuxg): users want high performance, developers choose weak isolation, users demand correct data, developers add explicit locks, and performance suffers. The slide asks why application developers must determine exactly when `FOR UPDATE` is necessary. Its YCSB read-only and TPC-C comparisons contrast explicit locking with database-managed isolation, including serializable execution. English localization of the original slide; benchmark plot regions are preserved from the historical source.*
 
 Using weak isolation levels seriously deviates from the original intent of the "transaction" abstraction — **writing reliable transactions in important databases with lower isolation levels is extremely complex**, and the number and impact of errors related to weak isolation levels are widely underestimated[13]. Using weak isolation levels essentially **kicks** the correctness & performance responsibility that should be guaranteed by the database to application developers.
 
 The root of habitually using weak isolation levels might be with Oracle and MySQL. For example, Oracle never provided true serializable isolation level (SR is actually **Snapshot Isolation/SI**), even today. So they had to promote *"**using RC isolation level**"* as a good thing. Oracle was one of the most popular databases in the past, so later followers copied this approach.
 
-![consistency.png](mysql-consistency.png)
+![Transaction anomaly results for PostgreSQL, MySQL, and Oracle, grouped by database and isolation level](mysql-consistency.png)
 
 The stereotype that weak isolation levels perform better might come from MySQL — SR implemented with extensive **deadlock detection** (marked red) indeed performs poorly. **But this isn't necessarily true for other DBMS**. For example, PostgreSQL's **Serializable Snapshot Isolation (SSI)** algorithm introduced in 9.1 can provide complete serializability with little performance loss (original link unavailable) compared to **Snapshot Isolation/SI**.
 
-![pgbench.png](mysql-pgbench.png)
+![PostgreSQL operation timings at three isolation levels, using 1,600 threads and 10 connections](mysql-pgbench.png)
 
 Furthermore, [hardware performance improvements and price collapses under Moore's Law](https://mp.weixin.qq.com/s/1OSRcBfd58s0tgZTUZHB9g) make OLTP performance no longer scarce — in the current era where [a single server can run Twitter](https://thume.ca/2023/01/02/one-machine-twitter/), abundant hardware performance really doesn't cost much. Compared to potential losses and mental burden from data errors, worrying about performance losses from serializable isolation levels is indeed unnecessary worry.
 
@@ -197,7 +209,7 @@ Times have changed, and software/hardware progress makes "**default serializable
 
 There are many ways to solve performance problems — even waiting for exponential hardware performance growth is a practical approach (like PayPal); while correctness problems often involve global architectural reconstruction and can't be solved overnight. Over the past decade, PostgreSQL stayed true while innovating, making great strides while ensuring best correctness. [Many scenarios now outperform MySQL](https://mp.weixin.qq.com/s/651zXDKGwFy8i0Owrmm-Xg); functionally, it [comprehensively crushes MySQL](https://mp.weixin.qq.com/s/y3qY9eBfOic6tQYOiErIHg) through ecosystem-introduced vector, JSON, GIS, time-series, full-text search extensions.
 
-![sf2023.png](mysql-sf2023.png)
+![Stack Overflow database usage from 2017 through 2023, with PostgreSQL at 45.6 percent and MySQL at 41.1 percent in 2023](mysql-sf2023-en.webp)
 
 In StackOverflow's 2023 global developer survey, PostgreSQL's developer usage rate officially surpassed MySQL, becoming [the world's most popular database](https://mp.weixin.qq.com/s/xewE87WEaZHp-K5hjuk65A). MySQL, with its terrible correctness and difficulty achieving high performance, should seriously consider its breakthrough path.
 

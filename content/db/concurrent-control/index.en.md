@@ -89,7 +89,7 @@ The standard has other problems, such as P3 only mentioning creation/insertion c
 
 In contrast, modern isolation and consistency levels provide clearer explanations of this problem, as shown in the figures:
 
-![conncurrent-isolation-level.png](conncurrent-isolation-level.png)
+![Isolation levels and the anomalies that distinguish them](conncurrent-isolation-level-en.webp)
 
 > **Figure: Isolation level partial order diagram**
 
@@ -165,7 +165,7 @@ Reference test cases: [ept/hermitage/mysql](https://github.com/ept/hermitage)
 
 ## 0x04 Concurrency Anomalies
 
-![conncurrent-isolation-level.png](conncurrent-isolation-level.png)
+![Isolation levels and the anomalies that distinguish them](conncurrent-isolation-level-en.webp)
 
 Looking back at this diagram, each anomaly level is precisely defined by the anomalies that may occur. If all anomalies that appear in isolation level A do not appear in isolation level B, we consider isolation level A weaker than isolation level B. But if some anomalies appear in level A but are avoided in level B, while other anomalies appear in level B but are avoided in A, these two isolation levels cannot be compared in strength.
 

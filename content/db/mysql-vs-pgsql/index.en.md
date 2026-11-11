@@ -45,13 +45,15 @@ This is where Postgres was always ahead—and the gap is now especially damaging
 
 JEPSEN’s [MySQL 8.0.34 analysis](https://jepsen.io/analyses/mysql-8.0.34) found that MySQL’s default **Repeatable Read (RR)** isn’t repeatable, atomic, or monotonic. It fails to meet **Monotonic Atomic View (MAV)**—the baseline most DBMSes provide at RC. MySQL’s RR is weaker than other vendors’ RC.
 
-[![mysql-bad-case.png](mysql-bad-case.png)](/en/db/bad-mysql/)
+[![Jepsen examples of non-repeatable reads and non-monotonic atomic views in MySQL 8.0.34](mysql-bad-case-en.webp)](/en/db/bad-mysql/)
+
+*Excerpts from sections 2.2–2.3 and 3.4–3.5 of [Jepsen’s December 2023 MySQL report](https://jepsen.io/analyses/mysql-8.0.34).*
 
 To avoid anomalies you must go full Serializable. But MySQL’s serializable mode is slow and rarely used. You can sprinkle manual locks to paper over issues, but that kills performance and invites deadlocks.
 
 PostgreSQL implemented Serializable Snapshot Isolation (SSI) in 9.1, delivering true serializable semantics with minimal overhead, and without Oracle’s quirks.
 
-![consistency.png](consistency.png)
+![Isolation anomaly matrix comparing database systems and isolation levels](consistency.png)
 
 Prof. Li Haixiang’s “[Consistency Octagon](https://mp.weixin.qq.com/s/_BhAjcMkmthTf8Zw3RWKDw)” compares mainstream DBMS isolation levels. Blue/green = clean; yellow “A” = anomalies; red “D” = deadlock-heavy solutions. PostgreSQL SR (and CockroachDB’s PG-derived SR) sit in the clean corner. Oracle SR has mild issues. MySQL lights up yellow and red all over—poor correctness and performance.
 
@@ -89,7 +91,7 @@ Did PostgreSQL “kill” MySQL? Peter Zaitsev argues in “[Oracle Finally Kill
 
 Cloud vendors (AWS et al.) built services atop MySQL without contributing back. Oracle saw no reason to invest in a product competitors monetized more than they did, so they focused on proprietary MySQL HeatWave. AWS cares about RDS/Aurora, not upstream. The community withered—and hyperscalers share the blame.
 
-![dbms-market.png](dbms-market.png)
+![Gartner DBMS market share rankings from 2011 to 2023](dbms-market.png)
 
 ## Summing Up
 

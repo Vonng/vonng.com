@@ -17,7 +17,7 @@ Similar to Maslow's hierarchy of needs, user demands for databases also have a p
 - [Self-Actualization](#self-actualization): Intelligence - standardization/productization/automation
 - [Transcendence Needs](#transcendence-needs): Transformation - true autonomous databases
 
-[![Database Demand Hierarchy Pyramid (figure 1)](pyramid.png)](https://mp.weixin.qq.com/s/1xR92Z67kvvj2_NpUMie1Q)
+[![Eight levels of database needs, from basic functionality to truly autonomous databases (Figure 1)](pyramid-en.webp)](https://mp.weixin.qq.com/s/1xR92Z67kvvj2_NpUMie1Q)
 
 Safety needs and physiological needs both belong to **basic needs**. A serious database system for production environments should at least satisfy these two types of needs to be considered **qualified**. Belonging needs and esteem needs belong to **advanced needs**. Satisfying these two types of needs can be called **decent**. Cognitive needs and aesthetic needs belong to **high-level needs**. Satisfying these two types of needs deserves the word **taste**.
 

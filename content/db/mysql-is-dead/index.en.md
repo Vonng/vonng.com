@@ -36,11 +36,15 @@ The official MySQL website's ["What's New in MySQL 9.0"](https://dev.mysql.com/d
 
 This is surprisingly underwhelming because PostgreSQL’s major releases every year brim with countless new features. For instance, PostgreSQL 17, slated for release this fall, already boasts an impressive list of new features, even though it’s just in beta1:
 
-![pg17-feature.png](pg17-feature.png)
+[![PostgreSQL 17 Beta 1 announcement and feature highlights, May 23, 2024](pg17-feature-en.webp)](https://www.postgresql.org/about/news/postgresql-17-beta-1-released-2865/)
+
+> Feature highlights from the [PostgreSQL 17 Beta 1 announcement](https://www.postgresql.org/about/news/postgresql-17-beta-1-released-2865/), May 23, 2024.
 
 The recent slew of PostgreSQL features could even fill a book, as seen in “[Quickly Mastering New PostgreSQL Features](https://mp.weixin.qq.com/s/2bjblo9t7KNQh1isRwbs2w)”, which covers the key enhancements from the last seven years, packing the contents to the brim:
 
-![pg-features.png](pg-features.png)
+![Book contents covering new features in PostgreSQL 10–16](pg-features-en.webp)
+
+> English translation of the [original contents graphic](pg-features.png), covering PostgreSQL 10–16. Section numbering is retained.
 
 Looking back at MySQL’s update, the last four of the six touted features are mere minor patches, barely worth mentioning. The first two—**vector data types** and **JavaScript stored procedures**—are supposed to be the highlights.
 
@@ -66,7 +70,9 @@ The bar for entry into vector databases is not high—a simple vector distance f
 
 In contrast, let's look at PostgreSQL, MySQL's long-standing rival. Over the past year, the PostgreSQL ecosystem has spawned at least six vector database extensions (`pgvector`, `pgvector.rs`, `pg_embedding`, `latern`, `pase`, `pgvectorscale`) and has reached new heights in a competitive race. The frontrunner, [`pgvector`](https://github.com/pgvector/pgvector), which emerged in 2021, quickly reached heights that many specialized vector databases couldn't, thanks to the collective efforts of developers, vendors, and users standing on PostgreSQL’s shoulders. It could even be argued that `pgvector` single-handedly ended this niche in databases—["Is the Dedicated Vector Database Era Over?"](/en/db/svdb-is-dead/).
 
-![svdb-intro.png](svdb-intro.png)
+![Historical comparison of eleven vector database products](svdb-intro-en.webp)
+
+> English translation of the author's [historical comparison](svdb-intro.png). Ratings, limits, funding figures, and availability reflect the original chart.
 
 Within this year, `pgvector` [improved its performance by 150 times](https://jkatz05.com/post/postgres/pgvector-performance-150x-speedup/), and its functionality has dramatically expanded. `pgvector` offers data types like float vectors, half-precision vectors, bit vectors, and sparse vectors; distance metrics like L1, L2, dot product, Hamming, and Jaccard; various vector and scalar functions and operators; supports IVFFLAT and HNSW vector indexing methods (with the `pgvectorscale` extension adding DiskANN indexing); supports parallel index building, vector quantization, sparse vector handling, sub-vector indexing, and hybrid retrieval, with potential SIMD instruction acceleration. These rich features, combined with a free open-source license and the collaborative power of the entire PostgreSQL ecosystem, have made `pgvector` a resounding success. Together with PostgreSQL, it has become the default database for countless AI projects.
 
@@ -136,7 +142,13 @@ An article, "[The Grave Correctness Problems with MySQL?](/en/db/bad-mysql/)", p
 
 The renowned distributed transaction testing organization, [JEPSEN](https://jepsen.io/analyses/mysql-8.0.34), discovered that the **Repeatable Read (RR)** isolation level claimed by MySQL's documentation actually provides much weaker correctness guarantees. MySQL 8.0.34's default RR isolation level isn’t truly repeatable read, nor is it **atomic** or **monotonic**, failing even the basic threshold of **Monotonic Atomic View (MAV)**.
 
-![isolation-level.jpg](isolation-level.jpg)
+[![Hermitage's historical comparison of advertised and actual isolation levels](isolation-level-en.webp)](https://github.com/ept/hermitage/tree/fdb189e1ffb0065b0d15ab80c7aa7bde33d6aea2#summary-of-test-results)
+
+> [Hermitage's November 2023 table](https://github.com/ept/hermitage/tree/fdb189e1ffb0065b0d15ab80c7aa7bde33d6aea2#summary-of-test-results): ✓ means an anomaly is prevented; — means it can occur; R/O means it is prevented only in read-only transactions; “some” means only some cases are prevented; ★ marks the default. Its classification of MySQL RR as monotonic atomic view was subsequently contradicted by Jepsen's results.
+
+[![Jepsen's consistency hierarchy showing the uncertain position of MySQL Repeatable Read](isolation-hierarchy-en.webp)](https://jepsen.io/analyses/mysql-8.0.34.pdf#page=10)
+
+> [Jepsen's MySQL 8.0.34 analysis](https://jepsen.io/analyses/mysql-8.0.34#discussion), December 19, 2023; diagram from page 10 of the paper. MySQL RR permits G2-item/write skew, which rules out repeatable read; G-single and lost updates rule out snapshot isolation; lost updates also rule out cursor stability. Internal consistency violations rule out read atomic, causal, prefix, and parallel snapshot isolation, while monotonicity violations rule out MAV. Some reads remain repeatable, making MySQL RR stronger than read committed, but its exact position among these models remains uncertain. Arrows point toward stronger guarantees; the question marks preserve that uncertainty.
 
 **MySQL’s ACID properties are flawed and do not align with their documentation**—a blind trust in these false promises can lead to severe correctness issues, such as data discrepancies and reconciliation errors, which are intolerable in scenarios where data integrity is crucial, like finance.
 
@@ -164,7 +176,9 @@ Unfortunately, at least according to the 2023 results of one of the world’s mo
 
 Especially notable, when examining the past seven years of survey data together, one can clearly see the trend of PostgreSQL becoming more popular as MySQL becomes less so (top left chart)—an obvious trend even under the same benchmarking standards.
 
-![so-trend.jpg](so-trend.jpg)
+![Database usage trends and PostgreSQL and MySQL usage by country, 2017–2023](so-trend-en.webp)
+
+> Stack Overflow survey trends, 2017–2023. Country labels are translated; chart lines, color keys, percentages, and raw data are preserved from the [original dashboard screenshot](so-trend.jpg).
 
 This rise and fall trend is also true in China. However, claiming PostgreSQL is more popular than MySQL in China would indeed go against intuition and fact.
 
