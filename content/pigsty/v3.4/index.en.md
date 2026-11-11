@@ -10,7 +10,7 @@ tags: [Pigsty]
 ---
 > [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.4.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v340)
 
-[![Pigsty v3.4: PITR Enhancement, Locale Best Practices, Auto Certificates (figure 1)](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.4.0)
+[![Pigsty v3.4: point-in-time recovery illustrated as time travel](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.4.0)
 
 After a month of intensive development, Pigsty v3.4 is officially released. This version features significant architectural optimizations, addressing several core concerns highly valued by users and customers:
 
@@ -23,19 +23,19 @@ After a month of intensive development, Pigsty v3.4 is officially released. This
 
 Additionally, a new value proposition/feature introduction page was built using Cursor Vibe Coding: https://pigsty.cc/docs/about/feature/
 
-![Pigsty v3.4: PITR Enhancement, Locale Best Practices, Auto Certificates (figure 2)](values.jpg)
+![Pigsty’s eight value propositions: extensibility, reliability, observability, scalability, maintainability, composability, controllability, and affordability](values.en.webp)
 
 ## Auto Certificate Issuance
 
 Many users use Pigsty for self-hosting Dify, Odoo, Supabase. User feedback indicated certificate issuance was cumbersome, requiring manual `certbot` calls, with requests to automate it.
 
-![Pigsty v3.4: PITR Enhancement, Locale Best Practices, Auto Certificates — Auto Certificate Issuance (figure 3)](certbot.jpg)
+![Dify Nginx configuration with a certbot certificate name](certbot.jpg)
 
 This version enhances Nginx configuration: when users define a `certbot` field on an Nginx Server, the `make cert` command completes certificate issuance and application in one step — no additional configuration or commands needed.
 
 The Dify, Odoo, Supabase self-hosting templates all use this feature. After installation, `make cert` automatically updates or issues needed certificates. If `certbot_sign` = `true`, certificates are automatically issued during installation.
 
-![Pigsty v3.4: PITR Enhancement, Locale Best Practices, Auto Certificates — Auto Certificate Issuance (figure 4)](nginx-config.jpg)
+![Nginx portal configuration with certificate issuance, HTTPS enforcement, and custom directives](nginx-config.jpg)
 
 v3.4 offers richer Nginx configuration options: use `config` to inject nginx config, use `enforce` to force HTTPS redirect. Self-hosted websites can now completely avoid touching traditional Nginx config files in most scenarios.
 
@@ -48,7 +48,7 @@ Recommended reading:
 - [Locale Collation in PG](/en/pg/collate/)
 - PGCon.Dev 2024: [Collations from A to Z](https://www.pgevents.ca/events/pgconfdev2024/schedule/session/95-collations-from-a-to-z/)
 
-![Pigsty v3.4: PITR Enhancement, Locale Best Practices, Auto Certificates — Locale Collation Best Practices (figure 5)](collation.jpg)
+![C and C.UTF-8 locale semantics, including PostgreSQL 17’s built-in provider](collation.jpg)
 
 **Best Practice**: Always use `C` or `C.UTF-8` as Locale collation.
 
@@ -69,11 +69,11 @@ Point-in-time recovery is a core feature of relational databases. Previously, Pi
 
 When defining `pg_pitr` parameter on a PG cluster, Pigsty auto-generates the `/pg/bin/pg-restore` command and `/pg/conf/pitr.conf` config file.
 
-![Pigsty v3.4: PITR Enhancement, Locale Best Practices, Auto Certificates — Point-in-Time Recovery Enhancement (figure 6)](pitr-1.jpg)
+![Cross-cluster PITR: restoring pg-meta from pg-test to April 1, 2025 at 12:00 UTC+8](pitr-1.jpg)
 
 When executing `pg-restore`, Pigsty automatically pauses the Patroni cluster, shuts down PG, begins in-place incremental PITR, and restarts PG after recovering to the specified point. Important improvement: when using a centralized backup repository, you can use another cluster's backup to overwrite the current cluster.
 
-![Pigsty v3.4: PITR Enhancement, Locale Best Practices, Auto Certificates — Point-in-Time Recovery Enhancement (figure 7)](pitr-2.jpg)
+![PGSQL PITR dashboard showing repository status and full and incremental backups](pitr-2.jpg)
 
 For backup monitoring, v3.4 introduces `pgbackrest_exporter` to collect backup monitoring metrics, and the PGSQL PITR dashboard now displays current backup status. Previously, users could only query current status through PGCAT Instance with no history — this improvement greatly helps analyze backup status.
 
@@ -81,13 +81,13 @@ For backup monitoring, v3.4 introduces `pgbackrest_exporter` to collect backup m
 
 After a year of continuous extension ecosystem expansion, Pigsty has now collected nearly all mainstream PG ecosystem extensions, reaching **405**. The explosive extension growth phase is essentially complete; recent versions shift focus back to architecture and infrastructure, with extensions mainly consolidating.
 
-![Pigsty v3.4: PITR Enhancement, Locale Best Practices, Auto Certificates — Extension Updates (figure 8)](extensions.jpg)
+![Pigsty’s 400-plus PostgreSQL extensions across analytics, AI, GIS, time series, full-text search, languages, FDWs, and other features](extensions.en.webp)
 
 v3.4 adds extension `pgspider_ext` for multi-data-source queries using various FDWs. Additionally, 28 extensions updated to latest versions with several version and bug fixes.
 
 **Apache AGE Graph Database Extension**: The project's developers seem to have been laid off, and it's essentially in maintenance limbo. As a distribution, Pigsty does its best to provide support — we recompiled AGE 1.5.0 for PG 13-17 based on Debian patches, filling the gap of missing EL RPMs.
 
-![Pigsty v3.4: PITR Enhancement, Locale Best Practices, Auto Certificates — Extension Updates (figure 9)](age.jpg)
+![Apache AGE packages for PostgreSQL 13–17: PIGSTY 1.5.0 RPMs and PGDG 1.5.0~rc0 DEBs across ten platforms](age.en.webp)
 
 ## Multi-Kernel Support Updates
 
@@ -104,9 +104,9 @@ pg_libs: 'liboracle_parser, pg_stat_statements, auto_explain'  # Load Oracle com
 repo_extra_packages: [ ivorysql ]                              # Download IvorySQL packages
 ```
 
-![Pigsty v3.4: PITR Enhancement, Locale Best Practices, Auto Certificates — Multi-Kernel Support Updates (figure 10)](polardb.jpg)
+![PolarDB issue 565: incorrect libicu dependencies in Debian 12 packages](polardb.jpg)
 
-![Pigsty v3.4: PITR Enhancement, Locale Best Practices, Auto Certificates — Multi-Kernel Support Updates (figure 11)](kernels.jpg)
+![PolarDB v15.12.3.0 release fixing Debian 11 and 12 libicu package dependencies](kernels.jpg)
 
 Also updated Supabase template to latest version, updated Citus to 13.0.2. Next steps will focus on OrioleDB (OLTP performance-focused) and OpenHalo (MySQL protocol compatibility) kernels.
 
@@ -120,7 +120,7 @@ v3.4 updates many Infra package versions, adding new components:
 | Restic | Similar to pgBackRest but for file backup |
 | TimescaleDB EventStreamer | Extract data change streams from TimescaleDB hypertables |
 
-![Pigsty v3.4: PITR Enhancement, Locale Best Practices, Auto Certificates — Infrastructure Enhancements (figure 12)](infra.jpg)
+![JuiceFS configuration using PostgreSQL storage for an Odoo filesystem](infra.jpg)
 
 These components are now downloaded by default and ready to install.
 

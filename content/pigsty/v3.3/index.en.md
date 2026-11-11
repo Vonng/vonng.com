@@ -39,7 +39,7 @@ Today, Pigsty v3.3 pushes the available extension count to **404**! Users can pl
 | pgpdf | Directly read/store PDFs, SQL full-text search on PDF content |
 | Omni series | 30+ extensions from Omnigres for web app development inside PG |
 
-![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website — 400+ Extensions Available (figure 4)](omnigres.jpg)
+![Omnigres SQL example serving files through an HTTP handler](omnigres.en.webp)
 
 Pigsty has formed a deep partnership with Omnigres: Pigsty integrates and distributes Omnigres extensions, while Omnigres as a downstream delivers extensions from Pigsty's repository to its users — a mutually beneficial arrangement.
 
@@ -77,7 +77,9 @@ Pigsty provides full-featured Nginx configuration and certificate issuance SOPs.
 
 Simply define Nginx Servers in your config file, and Pigsty automatically creates the required configuration and applies for HTTPS certificates.
 
-![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website — Website Experience: Nginx IaC and Free HTTPS Certificates (figure 8)](certbot.jpg)
+![Pigsty's historical English guide to free HTTPS certificates with Certbot](certbot.en.webp)
+
+*The Chinese guide also includes managing the Nginx configuration in Pigsty.*
 
 Pigsty v3.2 already integrated certbot with default installation. One command handles HTTPS certificate issuance and renewal. You can proxy various services with Nginx, differentiate by domain, and unify access through ports 80/443 — just open inbound 80/443 TCP ports.
 
@@ -89,15 +91,17 @@ Pigsty v3.3 provides a new `app.yml` playbook, compressing PostgreSQL-based Dock
 
 **Odoo ERP System**:
 
-![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website — Application Templates: One-Click Docker Software Delivery (figure 9)](odoo.jpg)
+![Odoo deployment commands and the v3.3 configuration template, using Odoo 18.0 and port 8069](odoo.en.webp)
+
+*The Chinese quick start also runs `pig sty init` and notes initial `admin`/`admin` access, matching database and app passwords, and Docker mirror or proxy setup in mainland China.*
 
 **Dify AI Workflow Orchestration**:
 
-![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website — Application Templates: One-Click Docker Software Delivery (figure 10)](dify.jpg)
+![Dify deployment instructions with English annotations and the original PostgreSQL and pgvector configuration](dify.en.webp)
 
 **Self-hosted Supabase**:
 
-![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website — Application Templates: One-Click Docker Software Delivery (figure 11)](supabase.jpg)
+![Historical English Supabase quick start using the app/supa template and app.yml](supabase.en.webp)
 
 From bare metal to complete production application services — just a few commands and a few minutes of waiting.
 
@@ -121,17 +125,17 @@ The 200+ extensions Pigsty maintains are all built this way. Even if your OS isn
 
 Starting with v3.3, Pigsty's international site (pigsty.io) and Chinese site (pigsty.cc) are officially separated, using independent domains, documentation, demos, and repositories.
 
-![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website — New Website Design (figure 12)](homepage-1.jpg)
+![Pigsty's February 2025 English homepage, advertising 400+ extensions and showing its component architecture](homepage-1.en.webp)
 
 A brand-new homepage built on a Next.js template. With help from GPT o1-pro and Cursor, modern landing page development was completed quickly.
 
-![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website — New Website Design (figure 13)](homepage-2.jpg)
+![The February 2025 English homepage's high availability, infrastructure as code, monitoring, and extension features](homepage-2.en.webp)
 
 For hosting, we tried various solutions: Vercel, Cloudflare Pages, Alibaba Cloud, Tencent Cloud EdgeOne, etc. Final conclusion: put overseas on Cloudflare, domestic on cloud servers.
 
 The website deployment process is highly automated — within ten minutes, you can spin up Pigsty documentation + repository infrastructure sites in any region.
 
-![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website — New Website Design (figure 14)](infra.jpg)
+![Historical Citus extension catalog showing 13.0.1 for PG15–17, 13.0.0 for PG14, and PGDG 11.3.0 for PG13 on EL](infra.en.webp)
 
 The PG extension catalog is now integrated into the documentation site at pigsty.cc/ext, with Chinese version available. A small tool automatically scans Pigsty and PGDG repository extension package versions and generates database records and info pages — users can browse and download extension RPM/DEB packages directly from the web.
 
@@ -139,7 +143,9 @@ The PG extension catalog is now integrated into the documentation site at pigsty
 
 v3.3 tracks IvorySQL 4.2 (PG 17 compatible version), resolving the issue where pgbackrest backups couldn't work with IvorySQL. IvorySQL experience is now consistent with standard PG kernel.
 
-![Pigsty v3.3: 404 Extensions, Turnkey Apps, New Website — Multi-Kernel Support Updates (figure 15)](ivorysql.jpg)
+![Pigsty's historical English overview of PostgreSQL forks, including IvorySQL, PolarDB, and Babelfish](ivorysql.en.webp)
+
+*The Chinese overview also lists PostgresML for training, inference, embeddings, and RAG, and describes PolarDB O as a closed-source PG14 option for custom enterprise editions.*
 
 We also pushed the PolarDB team to provide DEB packages for Debian and ARM64 platforms. PolarDB can now run smoothly on all 10 Linux distributions supported by Pigsty.
 

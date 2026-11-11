@@ -10,7 +10,7 @@ tags: [Pigsty]
 ---
 > [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.6.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v260)
 
-[![Pigsty v2.6: PostgreSQL Crashes the OLAP Party (figure 1)](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v2.6.0)
+[![PostgreSQL elephant kicking through a Big Data sign](featured.webp)](https://github.com/pgsty/pigsty/releases/tag/v2.6.0)
 
 On the last day of February, Pigsty v2.6 is officially released! This version makes PostgreSQL 16 the default major version and introduces a series of new extensions, including [**ParadeDB**](https://www.paradedb.com/) and DuckDB, elevating PostgreSQL's OLAP analytical capabilities to an entirely new level. Calling it the HTAP benchmark and database all-rounder is well-deserved.
 
@@ -22,7 +22,7 @@ Finally, we're officially launching transparently-priced Pigsty Pro and service 
 
 TPC-H and ClickBench are authoritative analytics benchmarks. ClickBench provides horizontal comparisons of many OLAP databases, serving as quantifiable references. In this representative example, we can see relative performance of many well-known database components (lower time is better):
 
-![olap.jpg](olap.jpg)
+![Historical ClickBench results with English PostgreSQL ecosystem annotations](olap-en.webp)
 
 c6a.4xlarge, 500gb gp2 / 1 billion records
 
@@ -32,19 +32,19 @@ This chart shows PostgreSQL and its ecosystem extensions' performance. Native un
 
 And **DuckDB** (**x3.2**) elevates OLAP to an entirely new level — setting aside academic databases like Umbra, DuckDB may be the fastest practical analytics database. While not a PG extension itself, it's an embeddable component, and projects like **DuckDB FDW** and **pg_quack** let PostgreSQL fully leverage DuckDB's complete analytical performance!
 
-![duck.jpg](duck.jpg)
+![Steven Lee and Philippe Noël thanking Pigsty for including DuckDB FDW and ParadeDB](duck-en.webp)
 
-Appreciation from ParadeDB's founder and DuckDB FDW's author
+Appreciation from ParadeDB's founder and DuckDB FDW's author (Steven Lee’s reply translated from Chinese).
 
 ## New Value Propositions
 
 Value propositions are the soul of a database distribution. In this version, we present **six core values** as shown:
 
-![value1.jpg](value1.jpg)
+![Pigsty architecture and the six values represented by PIGSTY](value1.jpg)
 
 This diagram lists six core problems PostgreSQL solves: Postgres extensibility, Infrastructure reliability, Graphics observability, Service availability, Toolbox maintainability, and component composabilitY.
 
-![value2.jpg](value2.jpg)
+![English localization of Pigsty’s 2024 feature overview](value2-en.webp)
 
 Pigsty's six abbreviations form the PIGSTY acronym — besides **P**ostgreSQL **i**n **G**reat **STY**le, these six value propositions offer another interpretation:
 
@@ -54,25 +54,25 @@ Pigsty's six abbreviations form the PIGSTY acronym — besides **P**ostgreSQL **
 
 We've also redesigned the logo, from the sunglasses-wearing pig head to a hexagonal composition with colors matching key components (PG Blue, ETCD Teal, Grafana Orange, Ansible Black, Redis/MinIO Red, Nginx Green) — a condensed version of the large hexagon above. The original sunglasses pig will continue as Pigsty's mascot.
 
-![mascot.jpg](mascot.jpg)
+![Pigsty’s sunglasses-wearing pig mascot riding the PostgreSQL elephant](mascot.jpg)
 
 ## New Website
 
 In this version, we've renovated the old website using the latest Docsy documentation framework, updating substantial content. We abandoned flashy impractical designs, putting Pigsty's value propositions and core features directly on the landing page.
 
-![web1.jpg](web1.jpg)
+![Pigsty’s historical English homepage and feature grid](web1.jpg)
 
 The real content lives in the documentation. We restructured the doc directory:
 
-![web2.jpg](web2.jpg)
+![English localization of the Pigsty v2.6 documentation directory](web2-en.webp)
 
 After letting go of pure Markdown purism, we can use attractive styles and features in documentation:
 
-![web3.jpg](web3.jpg)
+![February 2024 extension comparison for Pigsty, Alibaba Cloud RDS, and AWS RDS](web3-en.webp)
 
 Beyond docs, we've organized recent articles into the Pigsty blog, divided into six columns: Cloud Computing Mudslide, Database Veteran Driver, and PostgreSQL's Ecosystem, Development, Administration, and Kernel sections.
 
-![web4.jpg](web4.jpg)
+![English localization of the historical Pigsty blog navigation](web4-en.webp)
 
 Meanwhile, Pigsty's software repositories now have global mirrors powered by Cloudflare R2, hosted on Cloudflare for smooth access worldwide (China users can continue using pigsty.cc).
 
@@ -86,7 +86,7 @@ Pigsty v2.6 coincides with PostgreSQL 16.2's third minor release, and important 
 
 Therefore, another important technical decision in this version: we've removed the default PG 12-15 packages and extensions from the open-source edition. This doesn't mean Pigsty doesn't support PG 12-15 — with minor config adjustments, you can easily use older PostgreSQL versions and extensions — but we won't run integration tests against these versions (though they've been thoroughly tested in older Pigsty releases).
 
-![pg16.jpg](pg16.jpg)
+![Historical operating-system and PostgreSQL compatibility tables with English explanations](pg16-en.webp)
 
 Similarly, we've narrowed the open-source support scope to EL 8 / EL 9 and Ubuntu 22.04 — the three most widely-used OS distributions. In Pigsty 2.5, we supported PG 12-16 (five major versions) times seven OS distributions, totaling 34 combinations, plus upcoming ARM support, creating significant testing pressure.
 
@@ -100,7 +100,7 @@ Some open-source users have feedback: "I don't need stuff unrelated to PostgreSQ
 
 The specific feature division isn't finalized yet, so 2.6 may be the last fully-featured open-source Pigsty version. But the basic principle: the open-source edition will retain all core modules and PG extensions (PGSQL, INFRA, NODE, ETCD), while modules less related to PostgreSQL may become Pro edition content later.
 
-![pro.jpg](pro.jpg)
+![English localization of Pigsty’s core, optional, pilot, and container modules](pro-en.webp)
 
 Going forward, the Pigsty open-source edition will focus on doing one thing well — providing reliable, highly-available, extensible local PostgreSQL RDS services. Practical features like Docker templates may still stay in the open-source edition.
 
@@ -112,13 +112,13 @@ Open source is a passion project powered by love, but sustainable development re
 
 Besides additional feature modules, Pigsty Professional Subscriptions provide consulting Q&A and backstop services, supporting a broader range of operating systems and database versions:
 
-![svc.jpg](svc.jpg)
+![Pigsty’s 2024 service plans with original annual prices in Chinese yuan](svc-en.webp)
 
 While Pigsty's mission is providing out-of-the-box database services — even with self-healing HA for hardware failures and PITR for software/human errors — you might spin it up and go a year, two, three without issues. Statistically, that's normal.
 
 But database problems are usually big problems. Misusing databases also tends to become big problems. So we provide expert consulting and services for paying customers as ultimate backstop for difficult issues. (Example: we've rescued a burned Gitlab database with no backups). We also offer professional PostgreSQL DBA consulting services: backup, security, compliance recommendations, management and development best practices, performance evaluation and optimization, design guidance and Q&A.
 
-![sub.jpg](sub.jpg)
+![Pigsty’s 2024 subscription and license comparison in Chinese yuan](sub-en.webp)
 
 Often, turning the ordinary into extraordinary and achieving orders-of-magnitude improvements comes down to one sentence from an expert. This is especially true for PostgreSQL, whose soul is extensibility and whose extension ecosystem is incredibly rich. Our services ensure every dollar you spend is worthwhile and spent on what truly matters.
 

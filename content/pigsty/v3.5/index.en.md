@@ -22,9 +22,9 @@ This version brings a brand-new documentation website, full-platform support for
 
 Pigsty is a batteries-included PostgreSQL distribution that works like "self-driving software" for databases. It enables users to spin up enterprise-grade PostgreSQL database services at less than one-tenth the cost of cloud RDS — without needing professional DBAs. Features include high availability, PITR, monitoring, IaC capabilities, and 421 PG ecosystem extensions, running directly on 10 major Linux distributions without containers or Kubernetes.
 
-![Pigsty v3.5: 4K Stars, PG18 Beta, 421 Extensions — What is Pigsty? (figure 3)](arch-1.jpg)
+![Pigsty's English homepage and architecture overview](arch-1.en.webp)
 
-![Pigsty v3.5: 4K Stars, PG18 Beta, 421 Extensions — What is Pigsty? (figure 4)](arch-2.jpg)
+![Pigsty's high availability architecture, configuration example, monitoring dashboards, and 420+ extensions](arch-2.en.webp)
 
 ## PostgreSQL 18 Support
 

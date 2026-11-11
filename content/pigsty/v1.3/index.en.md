@@ -44,9 +44,15 @@ Defining a Redis cluster works the same way as PostgreSQL. After declaring your 
 
 A Redis cluster only needs a few required identity parameters. Of course, you can use additional parameters for fine-grained configuration:
 
-![redis-params-1](redis-params-1.jpg)
+![Redis identity parameters: cluster name, node number, and instance definitions](redis-params-1-en.webp)
 
-![redis-params-2](redis-params-2.jpg)
+Required identity parameters, rendered from the [Pigsty v1.3.0 English documentation](https://github.com/pgsty/pigsty/blob/v1.3.0/docs/t-redis.md#redis-identity). Its node-number examples, `1` and `2`, correct the `primary`/`replica` typo in the original Chinese screenshot.
+
+![Overview of all 20 Redis configuration parameters in Pigsty v1.3.0](redis-params-2-en.webp)
+
+The 20-parameter overview from the [v1.3.0 Redis configuration reference](https://github.com/pgsty/pigsty/blob/v1.3.0/docs/v-redis.md#overview). The source table truncates `redis_exists_action`; the excerpt below shows all three choices and the bind-address default.
+
+![Redis bind-address default and the abort, skip, and clean actions, from the same v1.3.0 reference](redis-params-2-detail-en.webp)
 
 ### Auto-Monitoring
 

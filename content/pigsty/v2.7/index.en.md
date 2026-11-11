@@ -182,13 +182,13 @@ Similar to "domestic databases," many domestic ERP software is awkwardly positio
 
 Many Pigsty users run PG for Odoo, which piqued my curiosity. After exploring the Odoo community and trying it myself, it's incredibly powerful — wish I'd tried it earlier instead of fumbling with DIY solutions.
 
-![Odoo Introduction](odoo-intro.jpg)
+![Odoo homepage in April 2024, showing 24 apps and the US$13.50/month price](odoo-intro.en.webp)
 
 > Odoo has many plugins with functionality far exceeding expectations — a true enterprise application suite king.
 
 As open-source free software, Odoo monetizes via premium plugins, with reasonable subscription pricing. For those who want everything free, the community provides open-source alternatives for premium plugins!
 
-![Odoo Modules](odoo-module.jpg)
+![The author's odoo.pigsty Apps view: 55 apps, with 48 cards visible](odoo-module.en.webp)
 
 Odoo uses only PostgreSQL for data storage. The entire ERP suite needs just one PG database and one Docker image! A perfect PostgreSQL killer app example.
 

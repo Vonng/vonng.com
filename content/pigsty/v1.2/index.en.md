@@ -20,7 +20,9 @@ PostgreSQL 14 was released last month with significant improvements across the b
 
 Meanwhile, the time-series extension TimescaleDB 2.5 and geospatial extension PostGIS 3.1, both compatible with PG14, are now installed and enabled by default. Combined with the distributed database extension Citus 10, this delivers a truly **batteries-included space-time hyper-converged open-source PostgreSQL distribution**.
 
-![timescale-postgis-citus](timescale-postgis-citus.jpg)
+![PostgreSQL ecosystem: FDW for federation, PostGIS for geospatial data, PipelineDB for streaming, Timescale for time series, Citus for distributed workloads, and Greenplum for OLAP](timescale-postgis-citus-en.webp)
+
+*The verse pairs six PostgreSQL extensions and related projects with Heaven, Earth, and the four directions—a parody of the Rites of Zhou.*
 
 All three are mutually compatible and can be used together.
 
@@ -83,7 +85,9 @@ v1.2 provides two new Pigsty App examples:
 
 **WorkTime** — An app for querying work and rest hours at major tech companies.
 
-![worktime](worktime.jpg)
+![WorkTime dashboard showing reported working hours by department, with English column headings and the original Chinese survey responses](worktime-en.webp)
+
+*WorkTime with English interface labels; the original Chinese survey responses are preserved. “Wed.” indicates whether Wednesday has a different schedule.*
 
 Both apps are simple but practical, each built in under an hour. Pigsty is an excellent tool for rapidly prototyping functional applications.
 

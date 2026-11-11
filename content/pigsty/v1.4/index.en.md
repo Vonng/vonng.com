@@ -43,9 +43,11 @@ The core feature of Pigsty v1.4 is a major refactor of the underlying architectu
 
 - **Redis clusters**: Add the REDIS module on Pigsty-managed nodes. Future database modules (like KAFKA, MINIO, MYSQL) can be added to Pigsty in similar fashion.
 
-![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support — Modular Architecture (figure 4)](modular-architecture.jpg)
+![Pigsty configuration categories and parameter counts for INFRA, NODES, PGSQL, and REDIS](modular-architecture-config-en.webp)
 
-> Modular playbooks and configuration parameters
+![Pigsty's four playbook families and the complete table of 16 playbooks](modular-architecture-playbooks-en.webp)
+
+> Modular configuration parameters and playbooks. Screenshots from the v1.4.1 English documentation (April 19, 2022): [configuration](https://github.com/pgsty/pigsty/blob/c33b5fc35db31d9f66b5da45fd89f0def53f9a20/docs/v-config.md#config-category) and [playbooks](https://github.com/pgsty/pigsty/blob/c33b5fc35db31d9f66b5da45fd89f0def53f9a20/docs/p-playbook.md#overview). These tables match v1.4.0.
 
 ## New Database Support
 
@@ -55,7 +57,9 @@ PostgreSQL is a versatile database kernel, but as organizations and data grow, s
 
 Redis further strengthens business system OLTP capabilities, offloads database pressure, and developers love its simple model. Greenplum significantly enhances OLAP capabilities, using the same language, drivers, and interfaces as PostgreSQL, scaling analytics from tens of TB to PB or even ZB scale.
 
-![Pigsty v1.4: Modular Architecture, MatrixDB Data Warehouse Support — New Database Support (figure 6)](redis-greenplum.jpg)
+![PostgreSQL extensions for federation, geospatial data, streaming, time series, distributed workloads, and OLAP](redis-greenplum-en.webp)
+
+> PostgreSQL's extension ecosystem, with the author's parody of the *Rites of Zhou*.
 
 Redis and Greenplum extend PostgreSQL's capability boundaries in two directions — both are common PostgreSQL companions, frequently used together. Therefore, Pigsty v1.4 provides preliminary support for Redis and Greenplum.
 

@@ -10,7 +10,7 @@ tags: [Pigsty]
 ---
 > [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v2.0.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v200)
 
-[![Pigsty v2.0: Open-Source RDS PostgreSQL Alternative (figure 1)](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v2.0.0)
+[![An elephant and a pig beneath a glowing tree, illustrating Pigsty v2.0](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v2.0.0)
 
 **2023/02/28**, **Pigsty v2.0.0 is officially released**, bringing a series of major feature updates.
 
@@ -18,13 +18,15 @@ tags: [Pigsty]
 
 No beating around the bush — this is an ambitious goal: **overthrow cloud database monopolies and disrupt RDS!**
 
-![intro](intro.webp)
+![Fish eating one another, with Oracle, PostgreSQL, cloud, and infrastructure-tool logos](intro.webp)
 
 ## 2.0 New Features
 
 Pigsty is a **better, local-first, open-source RDS for PostgreSQL alternative**.
 
-![features](features.webp)
+![Pigsty's seven features: PostgreSQL extensions, monitoring, high availability, point-in-time recovery, Database-as-Code, Docker applications, and Vagrant and Terraform tooling](features.en.webp)
+
+*Original English feature list from the [v2.0.0 documentation](https://github.com/pgsty/pigsty/blob/464c8b82beb0195c520e8cd9c44b6643ff4f65dc/docs/FEATURE.md#features), February 27, 2023. The stack combines distributed geospatial and time-series capabilities, monitoring, automatic failover with seamless traffic switching, recovery from software or operator errors, simpler daily operations, one-command Docker applications, and consistent development, test, and production environments.*
 
 ### Powerful Distribution
 
@@ -36,7 +38,7 @@ Pigsty deeply integrates PostgreSQL ecosystem's three core extensions: **PostGIS
 
 In Pigsty, functional components are abstracted into **modules** that can be freely combined for various scenarios. The **`INFRA`** module comes with a complete modern monitoring stack, while the `NODE` module tunes nodes to specified states and integrates them into monitoring. Installing the **`PGSQL`** module on multiple nodes automatically forms a high-availability database cluster based on primary-replica replication, and the **`ETCD`** module provides consensus and metadata storage for database HA. The optional **`MINIO`** module can serve as storage for large files like images and videos, or as a database backup repository. **`REDIS`**, which pairs excellently with PG, is also supported. More modules (like **`GPSQL`**, **`MYSQL`**, **`KAFKA`**) will be added later, and you can develop your own modules to extend Pigsty's capabilities.
 
-![modules](modules.webp)
+![PostgreSQL extensions and infrastructure tools grouped by capability around the database kernel](modules.webp)
 
 ### Stunning Observability
 
@@ -48,7 +50,7 @@ Any component managed by Pigsty is automatically integrated into monitoring, inc
 
 Whether for failure analysis or slow query optimization, capacity assessment or resource planning, Pigsty provides comprehensive data support for truly data-driven operations. In Pigsty, over three thousand metric types describe every aspect of the system, further processed, aggregated, analyzed, refined, and presented in intuitive visualizations. From global fleet overviews to CRUD details of individual objects (tables, indexes, functions) in a database instance — everything is visible. You can drill down, roll up, and navigate horizontally, browsing system current state and historical trends while predicting future evolution. See the public demo: **http://demo.pigsty.cc**.
 
-![observability](observability.webp)
+![A collage of Pigsty's Grafana dashboards for clusters, instances, nodes, databases, and queries](observability.webp)
 
 ### Battle-Tested Reliability
 
@@ -60,7 +62,7 @@ More importantly, Pigsty makes high availability and self-healing standard for P
 
 Pigsty includes HAProxy load balancer for automatic traffic switching, offering DNS/VIP/LVS and other access methods for clients. Failover and planned switchover are nearly imperceptible to applications except for brief blips — no need to modify connection strings and restart. Minimal maintenance windows bring great flexibility: you can perform rolling maintenance and upgrades without application coordination. Hardware failures can wait until the next day for leisurely handling — letting developers, ops, and DBAs sleep peacefully. Many large organizations and core institutions have been using Pigsty in production for extended periods. The largest deployment has **25K CPU** cores and 200+ PostgreSQL instances. In this case, Pigsty experienced dozens of hardware failures and incidents over three years while maintaining **99.999%+** overall availability.
 
-![reliability](reliability.webp)
+![A three-node PostgreSQL architecture with DNS, VIP, HAProxy, Pgbouncer, Patroni, pgBackRest, MinIO, and etcd](reliability.webp)
 
 ### Simple and Maintainable
 
@@ -72,7 +74,7 @@ Whether creating/destroying clusters, adding/removing replicas, or provisioning 
 
 Additionally, Pigsty installation itself is one-click simple, with all dependencies pre-packaged for offline installation without internet access. Machine resources for installation can be automatically provisioned via Vagrant or Terraform templates, letting you spin up a complete Pigsty deployment on your local laptop or cloud VMs in ten-ish minutes. The local sandbox can run on 1-core 2GB micro VMs, providing identical functionality to production for development, testing, demos, and learning.
 
-![maintainability](maintainability.webp)
+![A declarative configuration and Ansible command applied to a three-node PostgreSQL cluster](maintainability.webp)
 
 ### Solid Security
 
@@ -84,7 +86,7 @@ Pigsty provides an out-of-the-box, easy-to-use, refined and flexible, easily ext
 
 All network communication can use SSL encryption. Sensitive management pages and API endpoints are protected by multiple layers: username/password authentication, access restricted to management node/infrastructure node IPs/subnets, HTTPS required for network traffic. Patroni API and Pgbouncer have SSL disabled by default for performance reasons, but security switches are available when needed. Properly configured systems pass security certifications easily. With internal network deployment, properly configured security groups and firewalls, database security will no longer be your pain point.
 
-![security](security.webp)
+![Pigsty and PostgreSQL overview dashboards showing instances, alerts, and cluster metrics](security.webp)
 
 ### Broad Application Scenarios
 
@@ -96,7 +98,7 @@ Pigsty provides the Docker module with many out-of-the-box Compose templates. Yo
 
 Pigsty also provides development toolkits tightly integrated with PostgreSQL: PGAdmin4, PGWeb, ByteBase, PostgREST, Kong, plus "upper-layer databases" using PostgreSQL as storage like EdgeDB, FerretDB, and Supabase. Even better, you can build interactive data applications using Pigsty's built-in Grafana and Postgres in a low-code way, and even create more expressive interactive visualizations with Pigsty's built-in ECharts panel.
 
-![applications](applications.webp)
+![Applications and data visualizations built around PostgreSQL, including database tools and geographic dashboards](applications.webp)
 
 ### Open-Source Free Software
 
@@ -108,7 +110,7 @@ Many users choose cloud because they can't handle databases themselves; many use
 
 Pigsty aims to replace tedious manual database ops with database autopilot software, but no software can solve every problem. There will always be some rare edge cases requiring expert intervention. This is why we offer professional subscription services for enterprise users needing PostgreSQL support. A few thousand dollars in subscription/consulting fees is a tiny fraction of a top DBA's annual salary, giving you complete peace of mind and putting costs where they matter. For community users, we also provide free support and daily Q&A.
 
-![opensource](opensource.webp)
+![Historical infrastructure and staffing prices in yuan per month, with an annual cost comparison by CPU count](opensource.webp)
 
 ## 2.0 Quick Start
 
@@ -118,11 +120,11 @@ Pigsty 2.0 installation is still one command:
 curl -fsSL http://download.pigsty.cc/get | bash
 ```
 
-![install](install.webp)
+![Terminal output from downloading Pigsty v2.0.0, with bootstrap, configuration, and installation commands](install.webp)
 
 For limited internet access, you can download the offline package for your OS from GitHub or CDN in advance. The monitoring system has a public demo: **http://demo.pigsty.cc**.
 
-![demo](demo.webp)
+![The Pigsty v2.0.0 demo dashboard showing infrastructure, instances, cluster utilization, and alerts](demo.webp)
 
 ### v2.0.0 Release Notes
 

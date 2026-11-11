@@ -90,7 +90,11 @@ Add this command to crontab to automatically generate database operation reports
 
 PostgreSQL 14 is officially released, and Pigsty v1.1 immediately added support. The `pigsty-pg14` template can now create PostgreSQL databases with version 14 as default in production. However, since TimescaleDB doesn't officially support PG14 yet (expected around 10/30), PG14 won't be the default database version in Pigsty for now.
 
-![pg14](pg14.jpg)
+![Pigsty development and community milestones, 2019–2020](pg14-en-2019-2020.webp)
+
+![Pigsty's 2021 timeline, including the October 23 CSDN talk and planned PostgreSQL 14 upgrade](pg14-en-2021.webp)
+
+*English localization of the original October 2021 timeline, split into two panels. Development milestones appear on the left; community events are dated separately on the right. The December 1 PostgreSQL 14 milestone reflects the plan at publication.*
 
 Pigsty will upgrade the default PG version to PG14 in **v1.2**.
 
@@ -113,9 +117,13 @@ Pigsty includes a built-in database online migration helper script: `pgsql-migra
 
 Fill in the source and target cluster information, and the playbook will automatically generate the scripts needed for migration — just execute them in sequence.
 
-![migration-1](migration-1.jpg)
+![Twelve Pigsty migration helpers with English explanations, including the 1000-step sequence advance at cutover](migration-1-en.webp)
 
-![migration-2](migration-2.jpg)
+*Migration helpers from the [v1.1 tutorial](https://github.com/pgsty/pigsty/blob/v1.1/docs/zh-cn/t-migration.md), with English explanations.*
+
+![Source and destination cluster configuration for migrating pg-meta to pg-test, with the original YAML variables and values](migration-2-en.webp)
+
+*Configuration excerpt from the [archived English v1.5.1 tutorial](https://v15.pgsty.pro/docs/t-migration/#src-and-dst-clusters); its YAML matches v1.1 exactly.*
 
 ## Sample App: Privacy Log Visualization
 

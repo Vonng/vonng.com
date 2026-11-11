@@ -10,7 +10,7 @@ tags: [Pigsty]
 ---
 > [**GitHub Release**](https://github.com/pgsty/pigsty/releases/tag/v3.1.0) | [**Release Note**](https://pigsty.io/docs/about/release/#v310)
 
-[![Pigsty v3.1: One-Click Supabase, PG17 Default, ARM & Ubuntu 24 (figure 1)](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.1.0)
+[![PostgreSQL 17 elephant and Pigsty pig preparing a meal](featured.jpg)](https://github.com/pgsty/pigsty/releases/tag/v3.1.0)
 
 With PostgreSQL 17.2 released just days ago, Pigsty immediately follows up with v3.1. In this version, PostgreSQL 17 becomes the default major version, with nearly 340 extensions available out of the box.
 
@@ -24,7 +24,7 @@ Supabase is an open-source Firebase alternative that wraps PostgreSQL and provid
 Supabase's tagline is: "**Build in a weekend, scale to millions**." After trying it out, I'd say that's no exaggeration.
 It's a low-code one-stop backend platform that lets you say goodbye to most backend development work — just understand database design and frontend, and you can ship fast!
 
-![supa-price.png](supa-price.jpg)
+![Historical Supabase Free, Pro, Team, and Enterprise pricing](supa-price.jpg)
 
 For small-scale workloads (4c8g), Supabase cloud [pricing is extremely competitive](https://supabase.com/pricing) — practically a bargain. So why self-host when Supabase cloud is so attractive? A few reasons:
 
@@ -37,7 +37,7 @@ I've noticed many startups going overseas are using Supabase, and some have reac
 So Pigsty has supported self-hosting Supabase (the required PostgreSQL) since v2.4 released last September. But that still involved some manual steps like configuring the PG cluster and spinning up Docker.
 In this version, we've optimized the experience to this state — on a fresh OS install, run a few commands and a fresh Supabase instance is ready!
 
-![supabase-selfhosting.png](supabase-selfhosting.jpg)
+![Pigsty v3.1 Supabase setup commands and architecture](supabase-selfhosting.en.webp)
 
 I'll be preparing some tutorials on [Supabase self-hosting best practices](https://pigsty.cc/docs/pgsql/kernel/supabase) in the coming days, stay tuned.
 
@@ -51,7 +51,7 @@ Compared to the tests against PostgreSQL 14 three years ago in "[How Powerful is
 For example, PG 14 with standard config had WAL write throughput around 110 MB/s — that was a software bottleneck, not hardware.
 Under PG 17, that number reaches 180 MB/s. Of course, turning off all safety switches can multiply performance further, but fair benchmarks don't play those games.
 
-![perf.png](perf.jpg)
+![PostgreSQL 17 regression test: TPS, CPU usage, rows fetched, and rows modified](perf.jpg)
 
 Performance regression testing for Pigsty 3.1 + PostgreSQL 17. Detailed performance benchmark reports will be published in the coming days, stay tuned.
 
@@ -64,13 +64,13 @@ To achieve this, I built a YUM / APT repository covering EL 8/9, Ubuntu 22.04/24
 plus PG 12-17 (six major versions) with ready-to-use extension RPM/DEB packages. Currently providing x86_64 packages; ARM64 and other architectures are in progress, currently available on-demand for professional users.
 Beyond the repository, more importantly, I maintain an [Extension Catalog](https://pgext.cloud/en) with detailed metadata for each extension, OS/DB version availability, and usage notes to help users find what they need.
 
-![ext-repo.png](ext-repo.jpg)
+![Pigsty's historical repository of 340 PostgreSQL extensions](ext-repo.jpg)
 
 Pigsty's extension repository is based on native OS package managers, publicly shared — you don't have to use Pigsty to install these extensions.
 You can add this repo to existing systems or Dockerfiles and install extensions via yum/apt install.
 I'm pleased that a popular open-source cluster deployment project, postgresql-cluster, already uses this repository by default as part of its installation process to distribute extensions.
 
-![postgresql-cluster.png](postgresql-cluster.jpg)
+![PostgreSQL Cluster's extension list includes the Pigsty repository](postgresql-cluster.jpg)
 
 For more details, see "[PostgreSQL Achieves Mastery: The Most Complete Extension Repository](/pg/pg-ext-repo/)".
 Currently, there are quite a few new projects developing extensions with Rust + pgrx, and Pigsty includes **23** Rust extensions.
@@ -132,7 +132,7 @@ But this quickly leads to combinatorial explosion — if Pigsty provides a dozen
 But any problem in computer science can be solved by adding another layer of indirection, and this is no exception. In v3.1, Pigsty introduces a new `package_map` config file defining package aliases.
 Then for each OS distribution, we generate a `node_id/vars` config file that translates fixed package aliases to concrete package lists for that OS.
 
-![config.png](config.jpg)
+![EL9 package aliases in Pigsty's node configuration](config.en.webp)
 
 For example, the Supabase self-hosting template enables dozens of extensions — users just need to provide extension names, and details like chip architecture, OS version, PG version, and package names are all handled internally.
 
@@ -166,7 +166,9 @@ When we first used MinIO internally, it was still version 0.x, and MinIO has mad
 Back then we stored 25 PB with MinIO, and since MinIO didn't support online expansion, we had to split it into seven or eight independent clusters used sequentially.
 Now, while MinIO still can't modify disk/node counts online, you can achieve smooth expansion by adding storage pools, migrating, and retiring old storage pools.
 
-![minio.png](minio.jpg)
+![MinIO deployment modes, volume parameters, and single-node configuration examples](minio.en.webp)
+
+Source: [Pigsty's English documentation, February 2025 snapshot](https://github.com/pgsty/site.io/blob/e1d772af7860394a717dc3f3fb4c1177792ec80f/docs/minio/config/index.html).
 
 In Pigsty v3.1, I re-read MinIO's documentation and adjusted best practice config templates and SOPs based on new version features.
 Beyond the previous MinIO single-node single-disk, single-node multi-disk, and multi-node multi-disk modes, we now support multi-pool deployment mode and provide MinIO management playbooks in Pigsty —
@@ -192,7 +194,9 @@ Whether you buy Oracle support, EDB, Fujitsu's open-source PG services, or AWS R
 
 My previous service pricing was too low, drawing comments from domestic and international peers — "Aren't you destroying the market with dumping? You as a top domestic PG expert setting and publishing this price, what are we supposed to do?"
 
-![price.png](price.jpg)
+![Historical Pigsty Open Source, Professional, and Enterprise subscription plans](price.en.webp)
+
+Historical plans priced in CNY; amounts remain obscured as in the original.
 
 So this time I've re-adjusted the pricing system, basically anchoring to industry average pricing levels. After all, it's a mutual choice — welcome interested friends to purchase professional services and support! New customers get new pricing, existing customers keep old pricing.
 

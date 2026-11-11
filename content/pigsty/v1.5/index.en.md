@@ -52,7 +52,7 @@ To start a private code hosting service, use this command to launch Gitea:
 cd ~/pigsty/app/gitea; make up
 ```
 
-![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — Code Hosting Platform: Gitea (figure 3)](gitea.jpg)
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — Code Hosting Platform: Gitea (figure 3)](gitea-en.webp)
 
 This command uses Docker Compose to launch the Gitea image, using Pigsty's default CMDB `pg-meta.gitea` as metadata storage. Access the domain or port specified in the config file to access your code hosting service.
 
@@ -74,7 +74,7 @@ Bytebase is a schema change management tool designed for PostgreSQL, using Git w
 cd ~/pigsty/app/bytebase; make up
 ```
 
-![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — Schema Change Tool: Bytebase (figure 5)](bytebase.jpg)
+![Pigsty v1.5: Docker Application Support, Infrastructure Self-Monitoring — Schema Change Tool: Bytebase (figure 5)](bytebase-en.webp)
 
 ### Web Client: PGWEB
 

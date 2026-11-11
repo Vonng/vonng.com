@@ -30,11 +30,17 @@ Pigsty is a **batteries-included PostgreSQL distribution** that bundles producti
 
 ### Core Features
 
-![what](what.jpg)
+![Pigsty's four roles: PostgreSQL distribution, monitoring, provisioning, and sandbox](what-en.webp)
 
-![where](where.jpg)
+[Original English feature slide, v1.0.0](https://github.com/pgsty/pigsty/blob/v1.0.0/docs/_media/what.svg), with its historical wording intact. The Chinese slide specifies PostgreSQL 13.3/14-beta2 where the English artwork says 13/14. It also specifies a fresh CentOS 7 host, excludes the roughly 1GB download from the ten-minute installation time, and describes built-in alert rules and automatic database labels during scaling.
 
-![who](who.jpg)
+![Who wants Pigsty: internet companies, traditional businesses, software vendors, and individuals](where-en.webp)
+
+English localization of the original audience slide. The illustrative command retains the source's `instsall` typo.
+
+![Where to run Pigsty: production, development and testing, cloud demos, and personal sandboxes](who-en.webp)
+
+Deployment environments and hardware examples from the 2021 slide.
 
 ## Distribution
 
@@ -58,7 +64,9 @@ Pigsty pushes **deployment** and **monitoring** to the extreme, turning the hist
 
 **For power users, Pigsty provides the most comprehensive monitoring system available. For everyone else, Pigsty provides the simplest deployment experience.** For data engineers, Pigsty also integrates tools like JupyterLab and ECharts, making it a complete IDE for data development and visualization.
 
-![battery](battery.jpg)
+![Pigsty installation in four stages: prepare, download, configure, and install](battery-en.webp)
+
+[Original English installation slide, v1.0.0](https://github.com/pgsty/pigsty/blob/v1.0.0/docs/_media/how.svg). The Chinese slide additionally recommends downloading packages from upstream during installation when the host is not running CentOS 7.8.
 
 ## Monitoring System
 
@@ -112,7 +120,13 @@ Pigsty embraces the **Infrastructure as Code** philosophy, using Kubernetes-styl
 
 Users simply describe "what kind of database they want" via config files or GUI — no need to worry about how Pigsty creates or modifies it. Pigsty will spin up the desired database cluster from bare metal nodes within minutes.
 
-![iac](iac.jpg)
+![A declarative pg-test cluster configuration and its resulting three-node architecture](iac-en.webp)
+
+Define a cluster in a few lines, then create it with `pgsql.yml -l pg-test`. [Original English configuration figure, added to the upstream documentation on July 28, 2021](https://github.com/pgsty/pigsty/blob/2147b752a18e0ff0294d4110623b955942358d99/docs/_media/provision.jpg). Its original spelling is retained. The sample configuration uses VIP `10.10.10.2`; the accompanying architecture artwork uses `10.10.10.3`. The Chinese figure illustrates application clients with Go, Python, and Java logos.
+
+![Architecture legend and primary, replica, default, and offline PostgreSQL connection strings](iac-services-en.webp)
+
+Connection and arrow legend from the [original v1.0.0 architecture SVG](https://github.com/pgsty/pigsty/blob/v1.0.0/docs/_media/access.svg), retaining the details shown beneath the Chinese article's deployment diagram.
 
 For users who prefer not to work with config files and Ansible playbooks, Pigsty also offers optional CMDB mode and CLI/GUI tools wrapping common operations.
 
@@ -164,9 +178,53 @@ Click to view individual station details and historical weather data
 
 ## Roadmap
 
-![roadmap-1](roadmap-1.jpg)
+![Original English Pigsty timeline from the v1.0.0 documentation](roadmap-1-en.webp)
 
-![roadmap-2](roadmap-2.jpg)
+[Original English timeline, saved July 22, 2021](https://github.com/pgsty/pigsty/blob/v1.0.0/docs/_media/pigsty-timeline.svg). This artwork preserves an earlier planning revision: it shows GA on July 31 and a separate July 15 monitoring milestone, whereas the Chinese announcement dates GA to July 26. Its September–November feature plans also differ. The tables below preserve the Chinese figure's complete milestone and event captions; entries after July 2021 were plans at publication time.
+
+| Date | Development milestone in the Chinese figure |
+|------|--------------------------------------------|
+| 2019-05-15 | Proof of concept: the `pg-test` sandbox. |
+| 2020-04-30 | Overall architecture finalized. |
+| 2020-06-20 | v0.1.0 validated in a testing environment. |
+| 2020-07-10 | v0.2.0 validated in a staging environment. |
+| 2020-07-27 | Refactored around Ansible roles. |
+| 2020-08-19 | Offline installation mode. |
+| 2020-10-22 | Complete database provisioning solution available. |
+| 2020-12-14 | PostgreSQL 13 and Patroni 2.0 support; official documentation site launched. |
+| 2021-01-07 | Custom database templates supported. |
+| 2021-02-19 | Provisioning improvements. |
+| 2021-03-01 | Standalone monitoring deployment supported. |
+| 2021-03-28 | Custom services and access methods; CLI tools. |
+| 2021-04-20 | Installation and usability improvements; GUI tools; extension mechanism proof of concept; official CDN. |
+| 2021-07-26 | v1.0.0 GA released. |
+| 2021-09-01 | Planned v1.1.0: improve the PGSQL and PGCAT applications. |
+| 2021-10-01 | Planned v1.2.0: improve the PGDOG and PGFOX applications. |
+| 2021-11-01 | Planned v1.3.0: TimescaleDB and Citus deployment support. |
+| 2021-12-01 | Planned v1.4.0: upgrade the default database to PostgreSQL 14. |
+
+| Date | Community and adoption event in the Chinese figure |
+|------|---------------------------------------------------|
+| 2019-12-06 | `pg_exporter` repository created. |
+| 2020-04-18 | PostgreSQL Chinese community livestream: “PostgreSQL High Availability in Practice: Patroni.” |
+| 2020-05-30 | GitHub repository created. |
+| 2020-06-06 | PostgreSQL Chinese community livestream: “PostgreSQL Monitoring: Golden Metrics and Cluster Monitoring.” |
+| 2020-08-20 | Representative external user: a military unit. |
+| 2020-08-23 | PostgreSQL Chinese community livestream: “PostgreSQL and Data Visualization.” |
+| 2020-10-22 | First public release. |
+| 2020-11-20 | Beijing, 2020 Database Carnival: “Pigsty: A PostgreSQL Monitoring System.” |
+| 2021-01-07 | Alibaba Cloud's seven-day PostgreSQL training camp: “PostgreSQL Monitoring in Practice: Solving Real Monitoring Problems with Pigsty.” |
+| 2021-01-16 | Guangzhou, 2020 PostgreSQL China Technical Conference: “Pigsty: A Production-Grade PostgreSQL Monitoring System.” |
+| 2021-02-24 | Representative external user: a bank's consumer finance division. |
+| 2021-05-23 | PostgreSQL Chinese community livestream: “Getting Started with the Open-Source PostgreSQL Toolkit: Pigsty v0.9.1.” |
+| 2021-06-08 | Public lecture at Dalian University of Technology: “An Introduction to the Database Industry: What, Why, How & Pigsty.” |
+| 2021-06-20 | GitHub stars passed 100; monthly downloads passed 100. |
+| 2021-08-01 | Scheduled Open Source China Summit, distributed databases track: “New Life for PostgreSQL: Pigsty, a Batteries-Included PostgreSQL Distribution.” |
+| 2021-08-31 | Scheduled DTCC 2021, time-series databases track: “The Prometheus Data Model.” |
+
+![Pigsty's planned platform features, monitoring applications, operating systems, and database support](roadmap-2-en.webp)
+
+English localization of the 2021 feature roadmap. The original marks SUSE and Redis with checkmarks.
 
 ## Open Source
 

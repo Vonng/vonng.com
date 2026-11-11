@@ -22,7 +22,7 @@ For monitoring, Pigsty has optimized the PostgreSQL dashboard experience, added 
 
 [**Pigsty**](https://pigsty.io) is an out-of-the-box [**PostgreSQL**](https://www.postgresql.org/) distribution providing a local-first open-source alternative to RDS PostgreSQL. It enables users to run better enterprise-grade PostgreSQL database services at a fraction of cloud RDS costs using pure hardware. For more information, visit **https://pigsty.io**.
 
-![intro](intro.webp)
+![Pigsty features and ecosystem](intro-en.webp)
 
 ## Ubuntu/Debian Support
 
@@ -36,9 +36,9 @@ As a database distribution that builds **on bare operating systems**, supporting
 
 The massive differences in package management require rewriting the entire bootstrap / local repository build logic for Deb systems. Distro FHS and convention differences need case-by-case handling. You're not just dealing with PostgreSQL kernel and 100+ extensions — there's also etcd, minio, redis, grafana, prometheus, haproxy, and various other components. Fortunately, Pigsty has overcome these issues, giving Ubuntu/Debian the same smooth experience as EL 7-9.
 
-![One-Click Install](one-click-install.webp)
+![Pigsty one-click installation](one-click-install-en.webp)
 
-> One-click Pigsty installation
+> One-click Pigsty installation. The historical terminal recording shown here uses Pigsty v2.0.0.
 
 In terms of user experience, Deb support has an almost identical feature set to EL. The only exception is that Supabase and its specialized extensions haven't been fully ported yet. Beyond that, Deb has some unique extensions like the chemical formula extension `RDKit`, LiDAR point cloud extension `pointcloud`, and extended distance function package `pg_similarity` (the latter two have been backported to EL). To fully leverage PostgresML + CUDA capabilities, Ubuntu is essential.
 
@@ -56,7 +56,9 @@ Pigsty v2.5 includes several user-requested extensions. First up is **PostgresML
 
 So in Pigsty v2.5, you can run native PostgresML clusters on Ubuntu. No fiddling with **NVIDIA Docker** or anything like that — just pip install the Python dependencies and you're ready to go. Train models with SQL, invoke models, and complete your entire AI workflow within the database!
 
-![PostgresML](postgresml.webp)
+![PostgresML SQL notebook](postgresml-en.webp)
+
+> English localization of the original PostgresML demonstration. The prompt and response are translated; the model, SQL parameters, and recorded runtime belong to the original run.
 
 The second noteworthy extension is `pointcloud`. Thanks to PostGIS, PostgreSQL has always been a favorite of autonomous driving/EV companies. PointCloud extends PostgreSQL and PostGIS's power to a new frontier. LiDAR continuously scans surroundings and generates "point cloud" data. The `pointcloud` extension provides PcPoint & PcPatch data types and forty functions, allowing efficient storage, retrieval, and computation on ultra-high-dimensional point sets. This extension is natively available in the PGDG APT repository, and Pigsty has ported it to EL systems so all users can benefit.
 
@@ -64,7 +66,9 @@ The second noteworthy extension is `pointcloud`. Thanks to PostGIS, PostgreSQL h
 
 `imgsmlr` is a reverse image search extension. While many AI models can now encode images into high-dimensional vectors for semantic search using `pgvector`, what makes `imgsmlr` interesting is that it requires no external dependencies and can complete all functionality within the database. In the author's words: "My goal isn't to provide the most advanced image search method, but to show you how to write a PostgreSQL extension for even non-typical database tasks like image processing."
 
-![imgsmlr](imgsmlr.webp)
+![imgsmlr reverse image search example](imgsmlr-en.webp)
+
+> Example from the [historical imgsmlr README](https://github.com/postgrespro/imgsmlr/blob/bda1df6234dfe4adbf2a3e661bdf090773096fb7/README.md#example), with its original SQL preserved.
 
 It first processes PNG/JPG images using Haar wavelet transform into 16K patterns and 64-byte signature digests, then uses GiST index retrieval on digests for efficient reverse image search. Using `imgsmlr` to retrieve the 10 most similar images from 400 million random images takes about 600ms.
 

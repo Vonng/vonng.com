@@ -22,7 +22,7 @@ The installation process has been further simplified: from four steps to three s
 
 Percona's `pg_tde` extension has finally reached 1.0 GA after years of development. Many "enterprise-grade" PostgreSQL distributions tout "transparent encryption" as a core selling point — `pg_tde` may be the first mature enough open-source transparent encryption extension, providing truly enterprise-grade transparent encryption for open-source PostgreSQL.
 
-![Pigsty v3.6: The Ultimate PostgreSQL Distribution — New Kernel Support: Percona PG TDE (figure 2)](percona-tde.jpg)
+![Pigsty and Percona announce pg_tde support in July 2025; the posts are in English, with Chinese interface controls.](percona-tde.jpg)
 
 Currently, this extension requires running on a patched PostgreSQL kernel — Percona's Postgres distribution. Pigsty added support immediately after the announcement — just two commands to enable and install, while enjoying Pigsty's full RDS capabilities: monitoring, high availability, PITR, IaC, and more — identical to the vanilla PG kernel.
 
@@ -38,7 +38,7 @@ Besides the Percona transparent encryption kernel, OrioleDB also released 1.5 be
 
 Another noteworthy extension is `pgactive` — an AWS-developed and open-sourced **PG multi-active extension** that claims to solve sub-second high availability failover. This extension depends on the missing `pgfeutils` and has compilation barriers — Pigsty provides out-of-the-box binary packages.
 
-![Pigsty v3.6: The Ultimate PostgreSQL Distribution — Extension Ecosystem Continues to Strengthen (figure 4)](extensions.jpg)
+[![AWS's pgactive announcement, including the June 2025 open-source update.](extensions-en.webp)](https://aws.amazon.com/blogs/database/using-pgactive-active-active-replication-extension-for-postgresql-on-amazon-rds-for-postgresql/)
 
 Available extensions have reached **423**. PG18 beta2, OrioleDB, TimescaleDB, Citus, FerretDB & DocumentDB, DuckDB, Etcd, and more have completed routine version updates.
 
@@ -66,7 +66,7 @@ Currently, Pigsty and StackGres are the only two open-source vendors providing S
 
 In previous versions, Pigsty provided the `pg-pitr` script for "semi-automatic" PITR recovery assistance. This version adds a fully automated `pgsql-pitr` playbook for one-click point-in-time recovery.
 
-![Pigsty v3.6: The Ultimate PostgreSQL Distribution — PITR Recovery Enhancement (figure 7)](pitr.jpg)
+[![PITR recovery targets: time, named restore point, transaction ID, and LSN.](pitr-en.webp)](https://v37.pgsty.pro/docs/pgsql/backup/restore/#recovery-target)
 
 This playbook automatically performs the following operations:
 
@@ -101,7 +101,7 @@ Previous versions enabled HTTPS for MinIO by default (via locally CA-signed self
 
 This version adds a switch allowing MinIO to run in pure HTTP mode. Note: pgbackrest doesn't accept HTTP-mode MinIO, so local MinIO storage for PG backups still requires HTTPS mode. HTTP mode is only suitable for pure external service scenarios.
 
-![Pigsty v3.6: The Ultimate PostgreSQL Distribution — MinIO Module Improvements (figure 8)](minio.jpg)
+[![Default MinIO buckets, users, policies, and the password-change warning.](minio-en.webp)](https://v37.pgsty.pro/docs/minio/param/#minio_buckets)
 
 Default bucket configuration has also been adjusted:
 
@@ -125,13 +125,13 @@ The "bootstrap" step (extracting offline packages or configuring upstream repos 
 curl -fsSL https://repo.pigsty.io/get | bash; cd ~/pigsty; ./configure; ./install.yml
 ```
 
-![Pigsty v3.6: The Ultimate PostgreSQL Distribution — Installation Process Simplified (figure 9)](install-1.jpg)
+![Pigsty installation in three steps: download, configure, and install.](install-1-en.webp)
 
 ## Online Installation by Default
 
 The default installation strategy has changed: instead of downloading locally first then installing, it now installs directly from upstream internet sources.
 
-![Pigsty v3.6: The Ultimate PostgreSQL Distribution — Online Installation by Default (figure 10)](install-2.jpg)
+![Single-node, high-availability, offline, and minimal installation options, with preparation tools.](install-2-en.webp)
 
 This change brings significant benefits:
 
@@ -145,7 +145,7 @@ A large proportion of users install Pigsty on single-node Linux and "don't need"
 
 The new documentation site is now live: [https://pigsty.io/docs/](https://pigsty.io/docs/)
 
-![Pigsty v3.6: The Ultimate PostgreSQL Distribution — New Documentation Site (figure 11)](doc-site.jpg)
+![Pigsty v3.6 documentation homepage: introduction, installation, and infrastructure modules.](doc-site-en.webp)
 
 This site is built with Next.js and Fumadocs modern frontend stack — thanks to Lantian You and Claude Code for the strong assist. The English version is mostly complete; Chinese version is under translation. Contributions via GitHub PR or Issues are welcome.
 
@@ -168,7 +168,9 @@ PostgreSQL 18 will be released in September — Pigsty plans to officially relea
 
 The main theme of v4.x will be **DBA Agent**. Pigsty already has the complete context needed for a DBA Agent — the core being this industry-leading PG monitoring system. Once the domain knowledge accumulated in documentation is rich enough, wrapping MCP around the Pig CLI tool will birth a capable fully self-driving database DBA Agent.
 
-![Pigsty v3.6: The Ultimate PostgreSQL Distribution — Next Steps: v4.0 and DBA Agent (figure 12)](dba-agent.jpg)
+[![Pigsty v3.6.0 release notes, package versions, API changes, and original release checksums.](dba-agent-en.webp)](https://v37.pgsty.pro/docs/release/note/#v360)
+
+*English release notes, with the original screenshot's checksums retained.*
 
 ## v3.6.0
 

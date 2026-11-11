@@ -63,7 +63,7 @@ Under the hood, this repo is part of the larger Pigsty PostgreSQL distribution, 
 
 Complete ARM64 support builds confidence for more chip architecture support. For example, IBM LinuxOne Cloud provides s390x mainframe support for open-source projects, and Pigsty is evaluating this direction.
 
-![Pigsty v3.2: The pig CLI, Full ARM Support, Supabase & Grafana Enhancements — ARM Extension Repository (figure 7)](ibm-linuxone.jpg)
+![IBM LinuxONE Open Source Cloud request form with its 2024 VM specifications, translated into English](ibm-linuxone-en.webp)
 
 ## Supabase Tracking
 

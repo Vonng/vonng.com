@@ -64,7 +64,7 @@ Pigsty v2.4 is the first LTS version, providing 3 years of long-term support for
 
 **https://pigsty.io/docs/about/service/**
 
-![Support Page](support-page.jpg)
+![Pigsty v2.4 support agreement (English localization)](support-page-en.webp)
 
 ## Redis High Availability
 
