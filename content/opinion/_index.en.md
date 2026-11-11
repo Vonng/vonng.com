@@ -30,7 +30,7 @@ While blog columns flow chronologically as standalone essays, **Opinions** organ
 
 Every entry states a concrete engineering, economic, or philosophical question upfront, answers it directly with first-hand numbers and reasoning, and links to the underlying essays that supply empirical bills, benchmarks, source audits, or postmortems.
 
-> **Language Note**: The Opinion tree is currently maintained in Chinese (`zh-cn`), distilling 219 essays across the [AI Explorer](/en/ai/) (110) and [Database](/en/db/) (109) columns into 335 question-driven entries with exact section-level anchors. Links below jump directly to the corresponding Chinese topic pages.
+> **Language Note**: The Opinion tree is currently maintained in Chinese (`zh-cn`), distilling 319 essays across the [AI Explorer](/en/ai/) (110), [Database](/en/db/) (109), and [Cloud Mudslide](/en/cloud/) (100) columns into 449 question-driven entries with exact section-level anchors. Links below jump directly to the corresponding Chinese topic pages.
 
 ## AI & Agents Opinion Tree {#ai-themes}
 
@@ -52,4 +52,13 @@ Every entry states a concrete engineering, economic, or philosophical question u
 - [Domestic Databases & Sovereignty (国产数据库与自主可控)](/opinion/db/domestic/) — Anatomy of the domestic DB lemon market, shell-fork archaeology, compliance strategies, and genuine open-source software sovereignty.
 - [Open Source & Object Storage (开源变局与对象存储)](/opinion/db/oss-storage/) — How MinIO died and Silo revived it, commercial open-source rug-pulls, software supply-chain trust, and self-built tooling.
 - [Production Ops, Containers & DBAs (生产运维、容器化与DBA)](/opinion/db/ops-career/) — Why stateful production databases stay out of Docker/K8s, Etcd postmortems, 5 TB drop-database lessons, and the future of DBAs.
+  {.cards}
+
+## Cloud & Cloud-Exit Opinion Tree {#cloud-themes}
+
+- [Cloud Overview (云计算板块总览)](/opinion/cloud/) — Master index across cloud tax economics, hyperscaler postmortems, RDS critique & industrialized self-hosting, and data sovereignty (114 questions).
+- [FinOps & Cloud-Exit Economics (云税解剖与下云经济学)](/opinion/cloud/finops/) — Deconstructing compute/EBS/S3 markups, why FinOps ends in cloud exit, DHH & Ahrefs ledgers, and hardware dividends.
+- [Cloud Outages & Postmortems (云上草台班子与故障启示录)](/opinion/cloud/outages/) — Why cloud SLAs are placebos, global IAM/DNS cascade failures, postmortem culture gaps, and war-era disaster recovery.
+- [RDS Critique & Self-Hosting (云数据库祛魅与工业化自建)](/opinion/cloud/rds-dba/) — How managed RDS castrates PostgreSQL's extension soul, why DBAs remain irreplaceable, and IDC 2.0 + Cloudflare.
+- [Data Sovereignty & Cloud Security (数据主权、云安全与平台阴影)](/opinion/cloud/sovereignty/) — The Data Sovereignty Manifesto, SaaS kill switches, AI-era cloud security sieves, and hyperscaler open-source strip-mining.
   {.cards}
