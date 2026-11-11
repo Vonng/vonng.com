@@ -12,13 +12,13 @@ In [*Beware the Bleeding Edge: A PostgreSQL Storage Engine Postmortem*](/pg/new-
 
 PostgreSQL follows a predictable release cadence: one major version per year, typically in late September, followed by quarterly minor releases in February, May, August, and November. Out-of-cycle releases only happen when urgent issues arise. The recent 18.1, 17.7, 16.11, 15.15, 14.20, and 13.23 updates are the scheduled November 2025 minor releases, patching two CVEs and more than 50 bugs—which is why you shouldn't rush a `.0` release like 18.0 into production.
 
-![PostgreSQL November 2025 minor releases](01.webp)
+[![English PostgreSQL November 2025 minor-release announcement](01-en.webp)](https://www.postgresql.org/about/news/postgresql-181-177-1611-1515-1420-and-1323-released-3171/)
 
 Of course, this conservative policy targets mainstream users and stable production environments, not seasoned DBAs or early adopters. Pigsty has supported deploying PostgreSQL 18 ever since `18beta1` shipped, though I only bumped the **default** major version from 17 to 18 a few days ago.
 
 AWS RDS for PostgreSQL follows almost the exact same timeline. When a beta version comes out, it lands in the Database Preview Environment first. General availability on RDS waits until the `.1` release ships (such as 17.1 or 18.1)—which is why the "Amazon RDS for PostgreSQL now supports major version XX" announcement typically arrives in mid-November.
 
-![Amazon RDS for PostgreSQL 18 release timeline](02.webp)
+[![English Amazon RDS for PostgreSQL 18 release announcement](02-en.webp)](https://aws.amazon.com/about-aws/whats-new/2025/11/amazon-rds-postgresql-major-version-18/)
 
 ## The Extension Ecosystem
 

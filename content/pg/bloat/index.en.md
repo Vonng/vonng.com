@@ -113,7 +113,9 @@ To understand the estimation process, we first need to understand PostgreSQL's i
 
 First, let's look at tuple **average length**. The tuple layout in PostgreSQL is shown in the diagram below.
 
-![Relation Bloat Monitoring and Management — Calculating Average Tuple Length (figure 1)](page-tuple.png)
+![PostgreSQL page overview and detailed layouts of the page header, line pointer, and heap tuple header](page-tuple-en.webp)
+
+*The page overview is schematic and not to scale. The three detailed layouts below it show page-header byte offsets, line-pointer bit offsets, and heap-tuple header byte offsets, respectively.*
 
 Space occupied by a tuple can be divided into three parts:
 

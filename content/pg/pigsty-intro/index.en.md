@@ -66,7 +66,9 @@ Databases are software for managing data; management systems are software for ma
 
 Pigsty has a built-in database management solution centered on Ansible. Based on this, it encapsulates command-line tools and graphical interfaces. It integrates core functions in database management: including database cluster creation, destruction, scaling; user, database, and service creation, etc. Pigsty adopts the "Infra as Code" design philosophy, using declarative configuration to describe and customize databases and runtime environments through numerous optional configuration options, and automatically creates required database clusters through idempotent preset playbooks, providing a near-private-cloud user experience.
 
-![Ready-to-Use PostgreSQL Distribution: Pigsty — Stable Reliable Deployment Solution (figure 5)](pigsty-v09-5.jpg)
+![Minimal Pigsty v0.9 configuration and architecture: one primary, two replicas, three nodes, one user, and one database (figure 5)](pigsty-v09-5.en.webp)
+
+*Pigsty v0.9: one primary and two replicas on three nodes, with one user and one database. [Original Chinese slide](pigsty-v09-5.jpg).*
 
 Database clusters created by Pigsty are **distributed** and **highly available**. Pigsty-created databases achieve high availability based on DCS, Patroni, and Haproxy. Each database instance in a database cluster is **idempotent** in **usage** - any instance can provide complete read-write services through built-in load balancing components, offering a distributed database user experience. Database clusters can automatically perform failure detection and master-slave switching. Ordinary failures can self-heal in seconds to tens of seconds, with read-only traffic unaffected during this period. During failures, as long as any instance in the cluster survives, it can provide complete services externally.
 

@@ -26,7 +26,9 @@ Among the only two leading open source relational databases MySQL & PostgreSQL, 
 
 Relational databases have highly overlapping ecological niches, and their relationships can be viewed as a zero-sum game. PostgreSQL's direct competitors are **Oracle** and **MySQL**.
 
-![Why Does PostgreSQL Have a Bright Future? — Competitive Landscape (figure 2)](pg-is-great-2.jpg)
+![The author's view of competition among commercial, open-source relational, NewSQL, and NoSQL databases.](pg-is-great-2-en.webp)
+
+*English localization of the author's 2021 database competition diagram.*
 
 Oracle ranks first in popularity, is an established commercial database with deep historical and technical foundations, rich functionality, and comprehensive support. It sits firmly on the database throne, beloved by enterprises and organizations that aren't short on money. But Oracle is expensive and has become a notorious industry toxin with its litigious behavior. SQL Server, ranking third, belongs to the relatively independent Microsoft ecosystem, similar in nature to Oracle, both being commercial databases. Commercial databases overall are under pressure from open source databases and are in a state of slow decline in popularity.
 
@@ -70,9 +72,11 @@ PG itself is grandfather-level open source software, a pearl in the open source 
 
 PostgreSQL can independently play the role of a multi-talented player within a considerable scale, using one component as multiple components. **Single data component selection can dramatically reduce additional project complexity, meaning significant cost savings. It turns a ten-person job into a one-person job.** If there really is such a technology that can meet all your needs, then using that technology is the best choice, rather than trying to reimplement it with multiple components.
 
-![Why Does PostgreSQL Have a Bright Future? — PostgreSQL's Talent (figure 4)](pg-is-great-4.png)
+![PostgreSQL extensions: FDW for federation, PostGIS for geospatial data, PipelineDB for streaming, Timescale for time series, Citus for distribution, and Greenplum for OLAP.](pg-is-great-4-en.webp)
 
-> Reference reading: [**What Are PostgreSQL's Advantages**](/pg/pg-is-good/)
+*English localization of the author's PostgreSQL parody of the Rites of Zhou, a classical Chinese ritual text.*
+
+> Reference reading: [**What Are PostgreSQL's Advantages**](/en/pg/pg-is-good/)
 
 ## The Virtue of Open-Source
 
@@ -117,9 +121,9 @@ Although many popular things are garbage, popular doesn't necessarily mean backw
 
 In my view, MySQL's philosophy can be called: "Better to live miserably than die well," and "After me, the deluge." Its "availability" is reflected in various "fault tolerance," such as allowing stupid programmers' erroneous SQL queries to still run. The most outrageous example is MySQL actually allowing **partially successful** transaction commits, violating basic constraints of relational databases: **atomicity and data consistency**.
 
-![Why Does PostgreSQL Have a Bright Future? — ACID (figure 5)](pg-is-great-5.jpg)
+![Original MySQL 8.0.23 and PostgreSQL 13.1 terminal sessions with English translations of the author's red commentary.](pg-is-great-5-en.webp)
 
-> Figure: MySQL actually allows partially successful transaction commits
+> The author's 2021 “partially successful transaction” example: MySQL 8.0.23 versus PostgreSQL 13.1. Red annotations localized into English; original terminal commands and output preserved. The example contrasts [MySQL's rollback of a failed statement](https://dev.mysql.com/doc/refman/8.0/en/constraint-primary-key.html) with [PostgreSQL's transaction-abort behavior](https://www.postgresql.org/docs/13/tutorial-transactions.html).
 
 Here, two records were inserted in one transaction, the first succeeded, the second failed due to constraint violation. According to transaction atomicity, the entire transaction should either succeed completely or fail completely (ultimately no records inserted). But MySQL's default behavior actually allows partially successful transaction commits, meaning transactions lack **atomicity**, and **without atomicity there's no consistency**. If this transaction was a money transfer (deduct first, then add), and it failed for some reason, the accounts wouldn't balance. This kind of database used for accounting would probably be a confused mess, so talk of "financial-grade MySQL" is probably a joke.
 
@@ -147,7 +151,9 @@ From **enterprise user** perspective, PostgreSQL can independently play multi-ta
 
 Taking Tantan as an example, at the scale of 2.5M TPS and 200TB data, **single PostgreSQL selection** could still support business stable as a rock. Within a considerable scale, it could be versatile - besides its main OLTP job, PG also served as cache, OLAP, batch processing, even message queue for quite a long time. Of course, even divine turtles have lifespans. Eventually these part-time functions need to be gradually **separated** to dedicated components, but that was only when approaching ten million daily active users.
 
-![Why Does PostgreSQL Have a Bright Future? — Development Prospects (figure 7)](pg-is-great-7.jpg)
+![Five stages of a PostgreSQL architecture: monolith, read/write split, separate fast and slow reads, vertical partitioning by database, and horizontal sharding by table.](pg-is-great-7-en.webp)
+
+*English-localized stage headings; the original architecture diagram is otherwise unchanged.*
 
 From **business ecosystem** perspective, PostgreSQL also has huge advantages. First, PG's **technology is advanced**, can be called "open source Oracle." Native PG can basically achieve 80-90% Oracle compatibility, with EDB having professional PG distributions with 96% Oracle compatibility. Therefore, in capturing markets vacated by Oracle exit, PostgreSQL and its derivatives have overwhelming technical advantages. Second, PG's protocol is friendly, using permissive BSD license. Therefore, various database vendors' and cloud vendors' "self-developed databases" and many "cloud databases" are largely based on PostgreSQL modifications. For example, Huawei's recent choice to base openGaussDB on PostgreSQL was very wise. Don't misunderstand - PG's license indeed allows this, and doing so indeed makes PostgreSQL's ecosystem more prosperous. Selling PostgreSQL derivatives is a mature market: traditional enterprises aren't short of money and are willing to pay for this. Open source genius fire watered with commercial interest oil burns with vigorous vitality.
 

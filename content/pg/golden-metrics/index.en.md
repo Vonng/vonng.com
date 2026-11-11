@@ -12,7 +12,9 @@ Playing with databases and playing with cars have something in common - they bot
 
 What are you doing staring at the dashboard? Looking at metrics. Why look at metrics? You need to understand the current operating state to effectively apply control.
 
-![Golden Monitoring Metrics: Errors, Latency, Throughput, Saturation — Preface (figure 1)](img/blog/golden-metrics-car.jpeg)
+![2012 Audi A6 instrument cluster with English labels for gauges and warning lights](img/blog/golden-metrics-car-en.webp)
+
+*English localization of the [original annotated dashboard photo](img/blog/golden-metrics-car.jpeg), credited to www.19319.cn.*
 
 Cars have many metrics: speed, tire pressure, torque, brake pad wear, various temperatures, and so on - all kinds of different ones.
 

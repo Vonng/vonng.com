@@ -39,7 +39,9 @@ Creating such an MSSQL cluster requires only modifying a few parameters in the c
 
 In practice, you can completely treat a Babelfish cluster as an ordinary PostgreSQL cluster for use and management. The only difference is that clients can choose whether to use TSQL protocol support on port 1433, in addition to using the 5432 PGSQL protocol.
 
-![sqlcmd.png](sqlcmd.png)
+![Installing go-sqlcmd and connecting to Babelfish directly or through Pigsty's primary and replica service ports](sqlcmd.en.webp)
+
+*Source: [Pigsty v3.7 docs](https://v37.pgsty.pro/docs/pgsql/kernel/babelfish/#client-access). Port 5434 routes to a readable node.*
 
 For example, you can easily configure to redirect the Primary service originally pointing to connection pool port 6432 to port 1433, achieving seamless TDS/TSQL traffic switching under failover.
 
@@ -71,7 +73,7 @@ Besides MSSQL, PostgreSQL's ecosystem also has Oracle replacements: PolarDB O an
 
 In fact, almost the entire database world is being impacted by PostgreSQL - except those carving out different ecological niches (SQLite, DuckDB, MinIO) or simply PostgreSQL shells (Supabase, RDS, Aurora/Polar).
 
-![dbengine.png](dbengine.png)
+![DB-Engines score changes since 2012, with PostgreSQL gaining 440 points and Microsoft SQL Server losing 404 points](dbengine.en.webp)
 
 Our recently released open-source RDS PostgreSQL solution - Pigsty - recently supports these PG replacement kernels, allowing users to provide MSSQL, Oracle, MongoDB, Firebase compatibility replacement capabilities in one PostgreSQL deployment.
 

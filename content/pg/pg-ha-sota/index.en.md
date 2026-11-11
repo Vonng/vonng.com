@@ -78,7 +78,7 @@ For zero-data-loss scenarios, use Patroni's synchronous mode or strict synchrono
 
 For those familiar with Oracle, Patroni's replication modes map to Oracle Data Guard's three protection modes: Maximum Performance, Maximum Availability, Maximum Protection.
 
-![protect-mode.webp](protect-mode.webp)
+![protect-mode.webp](protect-mode-en.webp)
 
 In fact, by configuring Patroni and PostgreSQL, you can achieve even stronger consistency than Oracle's Maximum Protection. For example, Oracle Data Guard's Maximum Protection only requires one synchronous standby to acknowledge writes, while Patroni can be configured to require *multiple* synchronous standbys acknowledging writes, or even acknowledging replay completion (`remote_apply`), for even stronger durability and consistency.
 
@@ -138,7 +138,7 @@ Patroni has only 3 core RPO parameters, but RTO involves 10 total: 5 Patroni + 5
 
 Note: default parameters are *not* optimal. Through years of production experience, I've developed four parameter profiles for different network conditions: fast, normal, slow, safe.
 
-![rto-mode.webp](rto-mode.webp)
+![rto-mode.webp](rto-mode-en.webp)
 
 The four modes map to four parameter sets:
 
@@ -146,7 +146,7 @@ The four modes map to four parameter sets:
 
 Worst-case, best-case, and average RTO performance across the four modes:
 
-![rto-chart.webp](rto-chart.webp)
+![rto-chart.webp](rto-chart-en.webp)
 
 Using worst-case as our baseline: default config gives RTO < 45s, optimal ("fast") gives RTO < 30s. More conservative modes target 90s / 150s RTO ceilings.
 

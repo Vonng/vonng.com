@@ -133,7 +133,9 @@ Of course, because the patches required by pg_tde haven't been merged into the P
 However, as a peer, I feel that if you just package patched kernels and the software needed to run high-availability/PITR PG and put them in Percona's software repository, this distribution's value proposition is somewhat thin to support the "fight back against proprietary solutions" mission and banner mentioned above.
 After all, the PostgreSQL Global Development Group (PGDG) has already done this and done it quite well — at least you need to handle deployment and delivery of entire services. Throwing some RPM/DEB packages at customers is clearly insufficient for competing with RDS.
 
-[![percona.jpg](percona.jpg)](https://docs.percona.com/percona-for-postgresql/)
+[![The 15 third-party components included in Percona Distribution for PostgreSQL 17](percona-en.webp)](https://github.com/percona/postgresql-docs/blob/a3d5b1afa933ba6a441ffed284f3f692a874c2e0/docs/third-party.md)
+
+> Percona's component table, December 26, 2024.
 
 So the parts he hasn't done, I can help Percona complete.
 This is why in Pigsty 3.6, we provided [support for Percona PostgreSQL distribution](https://pigsty.io/docs/pgsql/kernel/percona/) — you can now use foolproof one-line commands to enable Percona's TDE-encrypted kernel.
@@ -164,7 +166,7 @@ A few days ago, Pigsty just released version v3.6, which I called a "meta-distri
 It can seamlessly run various PG kernel distributions like "Percona" distribution, IvorySQL distribution, PolarDB distribution, WiltonDB distribution, OrioleDB, OpenHalo, etc., and transform them into ready-to-use RDS services.
 With Percona's TDE kernel, we currently support several flavors of PG kernels. If we count giant extensions like Citus, TimescaleDB, Omnigres, or projects like Supabase and Gel that wrap PG kernels as distributions, the number would be even higher — already dozens.
 
-[![kernels.jpg](kernels.jpg)](https://pigsty.io/docs/pgsql/kernel/)
+[![Pigsty kernel options: ten cards and an eleven-row comparison, with 423 extensions in the PostgreSQL card and 420+ in the table](kernels-en.webp)](https://pigsty.io/docs/pgsql/kernel/)
 
 |                             Kernel                             |            Key Features            | Description                                                    |
 |:--------------------------------------------------------------:|:----------------------------------:|----------------------------------------------------------------|

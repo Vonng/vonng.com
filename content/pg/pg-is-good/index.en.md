@@ -38,7 +38,9 @@ Here, MySQL can only play the role of an OLTP relational database, but if it's P
 
 * **Caching**: Materialized views
 
-![ext](pg-is-good-3.png)
+![PostgreSQL ecosystem: FDW for federation, PostGIS for geospatial data, PipelineDB for streaming, Timescale for time series, Citus for distribution, and Greenplum for OLAP.](pg-is-good-3-en.webp)
+
+*The author's PostgreSQL parody of the Rites of Zhou. The image and the verse below use different mappings to heaven, earth, and the four directions.*
 
 > Using Extensions as six instruments, honoring heaven, earth, and the four directions.
 >
@@ -54,7 +56,7 @@ Here, MySQL can only play the role of an OLTP relational database, but if it's P
 >
 > Honor the north with PostGIS.
 >
-> —— "Book of Rites: PostgreSQL Edition"
+> — The author's PostgreSQL parody of the *Rites of Zhou*
 
 In Tantan's old architecture, the entire system was designed around PostgreSQL. At a scale of millions of daily active users, millions of global DB-TPS, and hundreds of TB of data, only PostgreSQL was used for data components. Independent data warehouses, message queues, and caches were introduced later. And this is just a validated scale level; further exploiting PostgreSQL is completely feasible.
 

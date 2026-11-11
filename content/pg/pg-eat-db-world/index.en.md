@@ -107,9 +107,9 @@ Following this logic, the PostgreSQL ecosystem is poised to snowball, accruing a
 
 > [**StackOverflow 2023 Survey: PostgreSQL, the Decathlete**](https://survey.stackoverflow.co/2023/#section-most-popular-technologies-databases)
 
-[![sf-trend.jpg](sf-trend.jpg)](https://demo.pigsty.cc/ui/d/sf-survey)
+[![Stack Overflow database survey dashboard, 2017–2023: usage, loved, and wanted metrics](sf-trend-en.webp)](https://demo.pigsty.cc/ui/d/sf-survey)
 
-> [**StackOverflow's Database Trends Over the Past 7 Years**](https://demo.pigsty.cc/ui/d/sf-survey)
+> [**Stack Overflow’s Database Trends, 2017–2023**](https://demo.pigsty.cc/ui/d/sf-survey) — English labels; original chart data preserved.
 
 PostgreSQL has long been the favorite database in HackerNews & StackOverflow. Many new open-source projects default to PostgreSQL as their primary, if not only, database choice. And many new-gen companies are going All in PostgreSQL.
 

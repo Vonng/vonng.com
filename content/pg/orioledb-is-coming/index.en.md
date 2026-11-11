@@ -15,7 +15,7 @@ While hardware performance has become severely excessive for OLTP databases in m
 
 [OrioleDB](https://www.orioledb.com/) aims to solve this problem. According to their homepage claims, their read/write throughput can reach four times that of PostgreSQL. Honestly, this is quite an impressive figure — **40% performance improvement isn't enough reason to use a new storage engine, but 400% certainly can be a good reason**.
 
-[![bench.png](bench.png)](https://www.orioledb.com/)
+[![Historical OrioleDB benchmarks for throughput, disk reads, and disk writes](bench.en.webp)](https://www.orioledb.com/)
 
 Moreover, OrioleDB claims to significantly reduce resource consumption in OLTP scenarios and significantly lower disk IOPS read/write usage.
 
@@ -84,7 +84,7 @@ The term "cloud-native" has been overused - nobody knows exactly what it means a
 
 OrioleDB recently changed its slogan from "high-performance OLTP storage engine" to "cloud-native storage engine," which is somewhat of a pivot. I can understand the reasoning behind this — Supabase acquired OrioleDB, and the needs of the financial backer always come first.
 
-[![orioledb-join-supabase.png](orioledb-join-supabase.png)](https://supabase.com/blog/supabase-acquires-oriole)
+[![English Oriole joins Supabase announcement](orioledb-join-supabase-en.webp)](https://supabase.com/blog/supabase-acquires-oriole)
 
 > [Oriole joins Supabase](https://supabase.com/blog/supabase-acquires-oriole)
 
@@ -92,9 +92,9 @@ As a "cloud database service provider," putting users' cold data on ["cheap" obj
 
 So when OrioleDB not only provides a new storage engine but also supports putting data on object storage, I'm quite happy. PG over S3 projects aren't new, but this is the first one that's mature enough, doesn't deviate from mainline, and is open source.
 
-![storage-compute.png](storage-compute.png)
+[![OrioleDB beta10 documentation on decoupled storage and compute](storage-compute-beta10.en.webp)](https://github.com/orioledb/orioledb/blob/beta10/doc/usage/decoupled-storage.mdx)
 
-> [OrioleDB Docs: Decoupled storage and compute](https://www.orioledb.com/docs/usage/decoupled-storage)
+> [OrioleDB beta10: Decoupled storage and compute](https://github.com/orioledb/orioledb/blob/beta10/doc/usage/decoupled-storage.mdx).
 
 ## So, I Want to Try It, How Do I Set It Up?
 
@@ -127,10 +127,10 @@ all:
 
 Of course, supported PG branch kernels aren't limited to just OrioleDB. You can also use:
 
-![forks.png](forks.png)
+![PostgreSQL kernel forks and services supported by Pigsty in April 2025](forks.en.webp)
 
 Additionally, my friend Yurii, founder of Omnigres, is working on adding ETCD protocol support to PostgreSQL. In the not-too-distant future, you'll probably be able to use PG as a better-performing/more reliable etcd for Kubernetes/Patroni.
 
-![kernels.png](kernels.png)
+![Grafana value mappings for PostgreSQL kernel names](kernels.png)
 
 Most importantly, all these capabilities are open source and already available out-of-the-box for free in Pigsty. So if you want to experience OrioleDB, why not find a server to try it out? One-click installation, ready in 10 minutes. See if it's really as awesome as they claim.

@@ -19,7 +19,7 @@ Both bugs will be fixed in the **out-of-cycle minor releases** scheduled for 202
 
 This regression can affect applications. The first and more significant issue is that `substring()` raises an error when reading non-ASCII text from a TOAST-compressed column value.
 
-![bug1.webp](bug1.webp)
+![English screenshot of PostgreSQL bug #19406](bug1-en.webp)
 
 https://www.postgresql.org/message-id/19406-9867fddddd724fca@postgresql.org
 
@@ -36,7 +36,7 @@ This also explains why `SELECT substring('中文测试', 1, 2)` succeeds while `
 
 The second issue occurs in the cross-minor-version WAL replay path, with the error “could not access status of transaction.”
 
-![bug2.webp](bug2.webp)
+![English screenshot of the PostgreSQL WAL replay bug](bug2-en.webp)
 
 https://www.postgresql.org/message-id/349f9c82-3a8b-48ad-8cc4-fe81553793dd%40iki.fi
 

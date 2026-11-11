@@ -8,7 +8,7 @@ tags: [PostgreSQL, PG Admin, Security]
 ---
 As I noted earlier in [Urgent Advisory: Pause PostgreSQL Minor-Release Installs and Upgrades](/en/pg/pg-out-of-sync-202602/), the previous batch of PostgreSQL minor releases shipped with regressions, making it wiser to hold off on deployments until the out-of-cycle fixes arrived. Right on schedule—less than ten days later—PostgreSQL 18.3, 17.9, and the rest of the minor release series are out.
 
-![PostgreSQL out-of-cycle minor release announcement](01.webp)
+[![English PostgreSQL out-of-cycle release announcement](01-en.webp)](https://www.postgresql.org/about/news/postgresql-183-179-1613-1517-and-1422-released-3246/)
 
 That said, the PGDG binary packages are not out yet, and mirror sites will likely take another day to catch up. I am currently wrapping up testing for Pigsty v4.2; as soon as the PGDG packages land, I will build the offline package bundles and cut the new release.
 

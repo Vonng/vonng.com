@@ -64,7 +64,7 @@ Using PostgreSQL for everything isn't a pipe dream but an emerging best practice
 
 Tantan, where I used to work, was a pioneer on this path — PostgreSQL for Everything. This is a Chinese internet app created by a Swedish founding team — using PostgreSQL at a scale and complexity that's second to none in China. Tantan's technical architecture was based on **Instagram** — or rather, more radical, with almost all business logic implemented using PostgreSQL stored procedures (even including 100ms recommendation algorithms!).
 
-![Technical Minimalism: Just Use PostgreSQL for Everything — Translator's Comments (figure 3)](just-use-pg-arch-1.jpg)
+![Tantan's PostgreSQL architecture: monolith, read/write split, separate fast and slow reads, vertical partitioning by database, and horizontal sharding by table](just-use-pg-arch-1-en.webp)
 
 Tantan's entire system architecture was designed and developed around PostgreSQL. With millions of daily active users, millions of global DB-TPS, and hundreds of TB of data, the data components used only PostgreSQL. It wasn't until approaching ten million daily active users that architectural adjustments began, introducing independent data warehouses, message queues, and caches. In 2017, we didn't even use Redis caching—2.5 million TPS was directly handled by PostgreSQL on over a hundred servers. Message queues were also implemented using PostgreSQL, and early-to-mid-stage data analysis was handled by a dedicated PostgreSQL cluster with dozens of TB. We had long practiced the philosophy of "PostgreSQL for Everything" and benefited greatly from it.
 

@@ -196,6 +196,8 @@ Despite some defects, `pg_filedump` is still a good tool. I might consider impro
 
 Finally, I want to say that many software systems need databases, but database installation, deployment, and maintenance is quite challenging work. The PostgreSQL spun up by GitLab is already quite good quality, but still helpless in the face of such situations, not to mention those crude single-instance deployments in homebrew docker images. One major failure can make an enterprise's accumulated code data, CI/CD processes, Issue/PR/MR records vanish into thin air. I really suggest you carefully examine your database systems — at least please do regular backups!
 
-![pg-filedump-10.png](pg-filedump-10.png)
+![Pigsty’s six operational capabilities and the PostgreSQL extension ecosystem](pg-filedump-10-en.webp)
+
+*Pigsty’s six operational capabilities (left) and PostgreSQL’s extension ecosystem (right), as shown in the original 2023 diagram.*
 
 The core difference between GitLab's enterprise and community editions is whether the underlying PG has high availability and monitoring. The [**out-of-the-box PostgreSQL distribution — Pigsty**](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247486135&idx=1&sn=7d9c4920e94efba5d0e0b6af467f596c&chksm=fe4b3f6cc93cb67ac570d5280b37328aed392598b13df88545ff0a06f99630801fc999db8de5&scene=21#wechat_redirect) can also better solve these problems for you, completely open source and free: whether high availability, PITR, or monitoring systems are all included. Next time you encounter such problems, you can automatically switch/one-click rollback with much more ease. Previously our own GitLab, Jira, Confluence and other software all ran on it. If you have similar needs, you might want to give it a try.
