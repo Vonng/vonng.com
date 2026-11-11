@@ -40,15 +40,23 @@ So what is the upcoming script?
 
 I speculate the direction for the next 10-20 years as follows, which is also my understanding of so-called "systemic risks."
 
-![New Year Reflections — The Script (figure 3)](reverie-main.png)
+![The author's historical hypothetical scenario: causes, results, problems and a planned-economy response (figure 3a)](reverie-main-1.en.webp)
+
+![The same hypothetical scenario: political and economic impacts (figure 3b)](reverie-main-2.en.webp)
+
+![The same hypothetical scenario: culture, technology, military affairs and diplomacy (figure 3c)](reverie-main-3.en.webp)
+
+*The author's hypothetical scenario from the original essay, split into three panels for readability. All entries from the [original diagram](reverie-main.png) are retained; these are speculative claims made at the time.*
 
 ### Background
 
 First, the background: China is an export-oriented economy, foreign trade exports have always been China's economic growth engine, with over half of imports serving exports - a typical processing trade model. Foreign trade brought China massive foreign exchange reserves, absorbed huge domestic capacity, solved employment problems. Current account surplus (trade surplus, earned foreign exchange) is the soul of our court's economy. Our main surplus comes from Europe and America, while we have complete deficits with Japan, South Korea, and Taiwan. **92% of 2018 goods trade surplus came from America**, so reform and opening up essentially means **opening up to America**. America is the world's most important ultimate market for export goods. Under full-scale trade war with +25% tariffs, losing the American market demand could halve China's total foreign trade, directly collapsing China's balance of payments. In plain terms: goods can't be sold, money can't be earned.
 
-![New Year Reflections — Background (figure 4)](reverie-GDP.png)
+![Historical GDP curves for China, the United States and India, with 2017 values of 12.24, 19.39 and 2.597 trillion USD respectively (figure 4)](reverie-GDP.en.webp)
 
-**Chart: China's GDP trend, showing real takeoff after China joined WTO in 2001**
+**Chart: China's GDP trend, showing rapid growth after China joined the WTO in 2001.**
+
+*English localization of the [historical Google panel](reverie-GDP.png), retaining its original curves and 2017 figures.*
 
 Here's a digression: what is **money**? In the credit currency era, currency is **national credit backed by state violence**. In the world, the US dollar is hard money, while RMB internationalization collapsed midway, still far from hard currency. So our court adopted the method of pegging to the dollar to gain credit for RMB. RMB is essentially a debt certificate to China's central bank, with collateral listed on the central bank's balance sheet assets - mainly foreign exchange reserves (dollars). RMB being anchored to the dollar means whenever we earn 1 dollar, the central bank issues equivalent RMB worth about 7 yuan at the exchange rate to exchange for it. When we use RMB to buy foreign exchange from the central bank to realize debt claims, for every 1 dollar taken out, the central bank cancels equivalent 7 yuan RMB at the exchange rate. Therefore, holding RMB can be exchanged for dollars - this became the source of RMB's credibility.
 
@@ -58,9 +66,11 @@ Here's a digression: what is **money**? In the credit currency era, currency is 
 
 Back to the main topic: after joining WTO, China accumulated massive foreign exchange reserves (hard money), peaking at about 4 trillion dollars. The central bank used this money as collateral to print over 20 trillion yuan in foreign exchange holdings (base money). This base money was then multiplied through bank lending into about 182 trillion M2 (quasi-money, bank deposits). In twenty years, M2 supply increased tenfold to 182 trillion. Printing ten times more money but food prices and various daily necessities didn't increase tenfold because this money was absorbed by real estate and IT/finance enterprises. Houses and enterprises became storage tools for excess currency, so home buyers and high-salary IT/finance workers should clearly realize their earnings are dividends of the era.
 
-![New Year Reflections — Background (figure 6)](reverie-m2.jpg)
+![M2 in red and funds outstanding for foreign exchange in blue, with date labels from December 1999 to October 2015 (figure 6)](reverie-m2.en.webp)
 
-**Chart: 20-year change in quasi-money supply M2**
+**Chart: M2 and funds outstanding for foreign exchange.**
+
+*English localization of the [original chart](reverie-m2.jpg). Its date labels span December 1999–October 2015; the source does not specify units. The original scale and curves are retained.*
 
 Accompanying M2's explosive growth is massive loans and debt (leverage) - enterprises borrowing to survive, individuals borrowing to buy houses, local governments borrowing for infrastructure projects. Total social leverage has reached 250%, meaning total social debt equals 2.5 times GDP. Interest alone on these debts is astronomical. During economic upswing, these problems can be hidden - continuously earned dollars become RMB to pay interest. But if foreign trade collapses, dollars outflow, RMB needs cancellation, base money loss, macroeconomic liquidity tension, and debt explosions somewhere are inevitable. Unemployed mortgage holders can't pay monthly payments, enterprises face cash flow breaks and bankruptcy. The second half of 2018's P2P explosion wave and bond default wave already showed us a vivid picture. As for local governments' 50 trillion shit debt, they never planned to repay it - how to resolve this can only be swallowed by banks (bank bankruptcy, personal deposits have 500k insurance).
 

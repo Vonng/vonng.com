@@ -47,7 +47,7 @@ From another angle, internet companies' "power" manifests more directly. Take Al
 
 I have no doubt that when AI and drone/robot technology develop to the point where tech companies can monopolize violence, this world will be completely dominated by tech companies.
 
-![Understanding the Internet — The World Ruled by the Internet (figure 1)](internet-ai-kill-drone.png)
+![A miniature drone beside a cutaway human head, illustrating an attack on the brain; the English subtitle reads “and destroy the contents.”](internet-ai-kill-drone.png)
 
 ## Transfer of Power
 
@@ -57,7 +57,9 @@ I have no doubt that when AI and drone/robot technology develop to the point whe
 
 The internet industry is very wealthy—wealthy enough to make practitioners in many traditional industries question life. Take 2019 campus recruitment as an example; domestic internet companies offered new graduates the following prices:
 
-![Understanding the Internet — Transfer of Power (figure 2)](internet-2019-salary.JPG)
+![2019 graduate salaries at Alibaba, Tencent, Baidu, ByteDance, Meituan, DiDi and Huawei, comparing R&D and algorithm roles across Standard, SP and SSP offer tiers.](internet-2019-salary-en.webp)
+
+*English localization of the chart in [100offer’s October 2018 report](https://www.jiemian.com/article/2525542.html) on recruitment for the graduating class of 2019. Figures are annual pay in units of RMB 10,000: 24 means RMB 240,000. Standard, SP and SSP denote progressively higher offer tiers; a slash means no figure was reported.*
 
 The internet's backbone force also commands impressive prices. According to hearsay, Alibaba P7 (technical experts, 3-5 years) total compensation is about 1M yuan pre-tax, while P8 (senior technical experts) total compensation is about 1M yuan post-tax. Traditional enterprise executives or leadership might not have such salaries.
 
@@ -93,4 +95,6 @@ The internet's future is bright, but the path is extremely tortuous—possibly f
 
 To wear the crown, one must bear its weight. With direction comes hope.
 
-![Understanding the Internet — Future Impact (figure 3)](internet-fin.jpeg)
+![A cartoon princess wearing a crown, with a Chinese caption encouraging her to keep her head up.](internet-fin.jpeg)
+
+*The caption reads: “Keep your head up, or your crown will fall.”*

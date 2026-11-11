@@ -29,7 +29,9 @@ The long-term development of the internet is immensely bright because it represe
 
 Take Alibaba as an example: why could a website that started as a B2B trading platform develop into today's behemoth encompassing everything from clothing, food, housing, transportation, dining, entertainment, education, healthcare, finance, payments, tax payments, and services? The reason is that the internet is an advanced organizational form, and Alibaba's organizational capabilities have spilled over. It can complete the same tasks with smaller organizational scale and has higher upper limits for organizational scale. Therefore, Alibaba can not only effortlessly control its core business but also extend its reach into various industries, leveraging its organizational advantages for low costs and high efficiency to sweep away traditional competitors and become the core of the "new economy."
 
-![The Internet Winter (figure 1)](winter-alibaba.jpeg)
+![Historical EnfoDesk map of Alibaba’s businesses, payment services, logistics, finance, media, and traffic gateways](winter-alibaba-en.webp)
+
+*English localization of the [EnfoDesk / Analysys business map](winter-alibaba.jpeg); company names and relationships reflect the historical diagram.*
 
 Traditionally, organizational costs often grow quadratically with organizational scale, so organizational capacity limits organizational size. When scale exceeds organizational capacity, there's risk of losing control. Therefore, the size of cells that nuclei can control is limited, and the scale of enterprises is also limited. Traditional bureaucratic organizations, through tree structures, reduced the magnitude of organizational cost growth with organizational scale (e.g., from O(n²) to O(nlogn)), enabling humanity to advance from primitive tribes to feudal dynasties and imperial eras. The internet will again change the growth function of organizational costs.
 
@@ -65,7 +67,9 @@ So under the CW backdrop, what fate awaits internet companies? Of course, China 
 
 For internet companies, the first to bear the brunt is the collapse of valuation bubbles. Over the past decade, the internet has carried too many hopes and fantasies. Capital began panicking in the face of an approaching epic economic crisis, eagerly hoping to create a new round of technological revolution before the crisis breaks to extend their lifeline. Investors flocked to internet and tech companies, leading to endless buzzwords: big data, cloud computing, AR, VR, AI, blockchain, quantum computing—any tom-dick-harry could get money by writing a PPT. Quantum computing is emerging, AI is struggling to survive, blockchain's corpse is still warm, VR has vanished without a trace. Only mobile internet (2C) and cloud computing (2B) have genuinely taken root with real money, while most others became bubbles. Various startups burned money, cheated money, cheated subsidies—less than one in a hundred truly survived. But under loose conditions, internet companies became reservoirs for excess money supply. Like houses, they became value storage tools, with stock prices skyrocketing like rockets, just like houses in 2008, 2013, and 2016, driving people crazy. Therefore, no matter how unreliable projects were, they couldn't stop investors' enthusiasm—after all, "dreams must exist; what if they succeed?"
 
-![The Internet Winter — Impact (figure 4)](winter-stock.png)
+![Historical stock-price charts for Apple, Alphabet, Facebook, Amazon, and Alibaba](winter-stock.png)
+
+*The Chinese controls read: 1 day, 1 week, 1/3/6 months, 1/2/5/10 years, and All. Date labels are years.*
 
 As a result, IT became the second industry (after finance) with **industry average** annual salaries exceeding 100,000 yuan, becoming a wealth-creating machine of the new era. These years at the forefront have made many programmers' hearts float. In a sense, IT is a happy industry—programmers can ignore outside affairs and focus solely on working overtime. Many still retain the kindness and simplicity of student days. But this society is realistic and cruel. Programmers are wrapped in bubbles blown by capital, living in a happy fantasy paradise, busy being strivers and making money quietly. They have neither time nor interest to understand this society's current state, rules, logic, and future. During industry upswings, this isn't a problem. But when history's wheels change direction, those without seatbelts are easily thrown out.
 
@@ -77,47 +81,69 @@ On the other hand, such disasters cannot be avoided simply through hard work and
 
 The average age of Chinese internet workers is about 28. Today's internet backbone is basically post-80s and post-90s generations. These people share a characteristic: born after reform and opening up, growing up in a world with peace and development as the main theme after the Cold War's end, receiving depoliticized education. Compared to predecessors, post-80s and post-90s often live materially abundant, happy, peaceful lives, but this also makes them take these for granted, becoming so-called "three-season people" who can only use recent experiences to predict the future but cannot draw any lessons from previous history, ignoring history's spirals and cycles on macro scales.
 
-![The Internet Winter — Impact (figure 6)](winter-duangong.jpg)
+![Sina Finance post questioning reports of Shenzhen mortgage defaults and homes auctioned at 30 percent off](winter-duangong-en.webp)
+
+*English localization of the [Sina Finance post](winter-duangong.jpg), November 11, 13:15. The original thumbnail asks: “Many Shenzhen homes auctioned at 30% off? Luxury homes worth tens of millions of yuan in a fire sale? Don’t be misled.”*
 
 For example, with today's abnormally high housing prices, among ordinary industries, basically only IT and finance have conditions to massively leverage and buy houses. Six wallets scraped together for down payments, taking on twenty to thirty years of debt to satisfy so-called "rigid demand." I don't understand why these people have such confidence in the future. As Master Roshi said: "Business requires capital, borrowed money must be repaid, investment carries risk, and wrongdoing comes with consequences." When facing food and survival, what kind of rigid demand is housing?
 
-![The Internet Winter — Impact (figure 7)](winter-mao.jpg)
+![Historical wall slogan attributed to Chairman Mao urging thrift and simple meals](winter-mao.jpg)
+
+*“Our great leader Chairman Mao teaches us: practice thrift to make revolution. Eat gruel when work is light and solid food when work is heavy; at other times, a mix of the two, with sweet potatoes and vegetables.”*
 
 Life is a Kondratieff wave. An economic crisis comparable to the Great Depression is at hand. History has once again reached a turning point: all assets will be revalued, and violence will negate all transaction results. Each of us is just a cell in Leviathan's body, incredibly fragile as behemoths fight and devour each other. We might be pulverized by external impacts or apoptose into nutrients during healing. Even the financial god of tens of thousands of Huawei programmers is just a pawn or chip in such top-level gaming impacts, let alone ordinary people within? Sanctions, technology blockades, embargos—many people don't know what these mean. Some shout "Amazing, my country!" in mysterious confidence while ignoring the fates of 1970s China, North Korea, Russia, Iran, Venezuela, and Turkey. Many people like mocking North Korea, not knowing what kind of place North Korea was before Eastern European upheaval:
 
-![The Internet Winter — Impact (figure 8)](winter-korean.png)
+![English translation of a 2013 People’s Daily Online and Global Times article on North Korea’s past economic development](winter-korean-en.webp)
+
+*English localization of the [archived excerpt](winter-korean.png), April 19, 2013, 10:15. The figures, qualifications, and historical judgments are those of the original report.*
 
 Saying more would be playing with fire—let's return to the internet. From a long-term perspective, the internet's prospects are definitely incredibly bright. But at this stage, it may face great setbacks. Winter is far from arriving—now is merely Double Ninth Festival, autumn growing cool, but we can already smell traces of unease in the air:
 
-**Image: Some companies' layoff news**
+**Image: Layoff and hiring-cut rumors, with company responses**
 
-![The Internet Winter — Impact (figure 9)](winter-rumor.jpg)
+![Jiemian’s 2018 table of layoff and hiring-cut rumors, dates, allegations, and company responses](winter-rumor-en.webp)
 
-**Image: Zhihu layoffs**
+*English localization of [Jiemian News’s table](winter-rumor.jpg), compiled from public information. Rumors, denials, and the absence of a response remain distinct.*
 
-![The Internet Winter — Impact (figure 10)](winter-zhihu.png)
+**Image: Zhihu layoff reports and the company’s denial**
 
-![The Internet Winter — Impact (figure 11)](winter-douyu.png)
+![A repost alleging 300 Zhihu layoffs, an employee’s account, and Zhihu’s denial of large-scale layoffs](winter-zhihu-en.webp)
+
+*English localization of the [original social post](winter-zhihu.png), including its December 11 reference and the embedded PegasusWang post.*
+
+![36Kr report on roughly 70 affected Douyu overseas-business staff and the company’s explanation of a normal team adjustment](winter-douyu-en.webp)
+
+*English localization of the [36Kr / Baijiahao excerpt](winter-douyu.png), December 6, 11:57.*
 
 **Image: HR discusses recruitment**
 
-![The Internet Winter — Impact (figure 12)](winter-hr.jpg)
+![Liu Huipu’s account of laid-off job applicants, salary expectations, and an engineering team with frozen pay rises](winter-hr-en.webp)
+
+*English localization of [Liu Huipu’s Weibo post](winter-hr.jpg), November 29, 15:08; the observations and opinions are his.*
 
 **Image: Vanishing headhunters**
 
-![The Internet Winter — Impact (figure 13)](winter-headhunter.jpg)
+![Sina Finance post about a securities employee who stopped receiving headhunter calls](winter-headhunter-en.webp)
 
-**Image: Industrial electricity consumption**
+*English localization of the [Sina Finance post](winter-headhunter.jpg), December 8, 17:53; Li Ming is a pseudonym.*
 
-![The Internet Winter — Impact (figure 14)](winter-power.png)
+**Image: Industrial slowdown — coal consumption, inventories, and layoff reports**
+
+![Translated Weibo posts about economic weakness, a coal inventory and consumption chart, and a report of planned multinational layoffs](winter-power-en.webp)
+
+*English localization of the [original composite](winter-power.png). The chart shows coal stocks, days of supply, and average daily consumption at six major power groups, January–November 2018. The surrounding posts contain their authors’ claims and opinions; the final news item describes reported layoff plans.*
 
 **Image: FAANG enters bear market**
 
-![The Internet Winter — Impact (figure 15)](winter-faang.jpg)
+![FAANG declines from 52-week highs: Facebook 39.5%, Amazon 25.4%, Apple 20.5%, Netflix 35.6%, and Alphabet 20.3%](winter-faang-en.webp)
 
-**Image: Gaming industry enters industry-wide slaughter period**
+*All five stocks were at least 20% below their 52-week highs, the bear-market threshold described in the original screenshot. Original English chart by Michael Sheetz; data: FactSet.*
 
-![The Internet Winter — Impact (figure 16)](winter-game-tax.png)
+**Image: Gaming industry under pressure — reports of a possible 35% special tax**
+
+![Historical post reporting a possible 35 percent special tax on games and potential regulation of card and board games](winter-game-tax-en.webp)
+
+*English localization of the [Headline News post](winter-game-tax.png), citing Southern Metropolis Daily and industry sources. It describes a possible tax, not an enacted measure.*
 
 ## Conclusion
 

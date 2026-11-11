@@ -13,7 +13,7 @@ I recently reorganized this dataset: wrote download scripts, parsing Parser, Pos
 
 Public Demo: https://demo.pigsty.cc/ui/d/isd-overview
 
-![isd-overview.png](isd-overview.png)
+![ISD overview dashboard](isd-overview.en.webp)
 
 Project repository: https://github.com/Vonng/isd
 
@@ -29,7 +29,7 @@ Use **Grafana** to read, present, and visualize data.
 
 Small but complete, these three work together to implement a small application that can query historical meteorological elements for all weather stations. Users can explore interactively and automatically update with the latest data. More importantly, it's simple enough to conveniently demonstrate how a data application actually works.
 
-![isd-country.png](isd-country.png)
+![ISD country dashboard](isd-country.en.webp)
 
 ## Data Storage and Modeling
 
@@ -86,37 +86,37 @@ CREATE TABLE IF NOT EXISTS isd.daily
 
 Of course, there's also some metadata about weather stations in auxiliary tables: isd.station stores basic weather station information including station numbers, names, countries, locations, elevations, and service times. isd.history stores monthly statistical observation record counts. isd.world stores detailed information and geographic boundaries of countries/regions worldwide (from EU statistics). isd.china stores Chinese administrative division information. isd.mwcode stores specific interpretation entries for weather codes. isd.element stores descriptions of meteorological elements and data coverage.
 
-![isd-table.png](isd-table.png)
+![ISD schema relations](isd-table.en.webp)
 
 ## Data Acquisition and Parsing
 
 Besides auxiliary tables and dictionary tables, other data needs to be downloaded from NOAA. Here, I provide a series of wrapper scripts that allow you to complete configuration with simple commands. Especially if you're using Pigsty—an out-of-the-box PostgreSQL database distribution—PostgreSQL and Grafana are already configured during standalone installation. You only need `make all` to complete all configuration work.
 
-![intro.png](isd-intro.png)
+![ISD parser documentation](isd-intro.en.webp)
 
 In the original Daily dataset, there's a tiny amount of duplicate and dirty data that I've cleaned. You can choose to directly import our parsed and cleaned CSV dataset. If you need updates for the most recent days of this year, you can choose to use the Go Parser to directly download raw data from the NOAA website and parse it.
 
 The data parser is written in Go. You can compile it directly or download pre-compiled binaries. The parser works in pipeline mode—feed it annual data tarballs, and it automatically outputs parsed CSV data that can be directly consumed by PostgreSQL COPY commands.
 
-![parser.png](parser.png)
+![ISD quick-start commands](parser.en.webp)
 
 ## Data Analysis and Visualization
 
 Data stored in PostgreSQL can be accessed and visualized through Grafana. For example, the ISD Station panel below displays detailed information about a specific weather station (Lhasa), including observation summaries, raw data, and meteorological element visualization.
 
-![isd-station.png](isd-station.png)
+![ISD station dashboard](isd-station.png)
 
 The metadata section lists basic station information: station number, name, country, location, service time, marks the location on a map, and lists nearby stations with distances. Click to navigate to neighboring stations' detail pages.
 
-![isd-station-2.png](isd-station-2.png)
+![ISD station summary](isd-station-2.en.webp)
 
 The summary section provides monthly observation counts, historical extreme records, annual data aggregations, and monthly statistical summaries for the station, including core indicators like temperature, humidity, precipitation, wind speed, and weather. The meteorological elements section below provides charts for the selected time period.
 
-![isd-daily.png](isd-daily.png)
+![ISD weather elements](isd-daily.en.webp)
 
 If you're interested in finer granularity data, clicking month navigation automatically jumps to the ISD Detail panel, which provides daily summary-level data and sub-hourly raw observational records. Additionally, the meteorological elements section displays additional indicators, including minute-level temperature, dew point, pressure, wind speed, wind direction, cloud cover, visibility, precipitation, snowfall, and other weather condition codes.
 
-![isd-detail.webp](isd-detail.webp)
+![ISD detail dashboard](isd-detail.en.webp)
 
 ## Other Uses
 
@@ -126,4 +126,4 @@ For example, observational data is typical time-series data, so we can use it to
 
 Of course, how the dataset is used depends on the user. For example, you could ask GPT whether, based on this data, we can conclude that global temperatures are warming?
 
-![isd-question.webp](isd-question.webp)
+![PostgreSQL temperature trend analysis](isd-question.en.webp)

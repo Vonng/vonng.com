@@ -84,7 +84,9 @@ So why is the internet doomed? There are four main reasons:
 
 The first point: ideology is actually modern religion, a more advanced and widespread form of spiritual organization. Currently, there are only three mainstream ideologies: liberalism, socialism, and nationalism. These can be distinguished along two dimensions: conservative-open and equality-freedom, as shown below.
 
-![The Sorrow of the Internet — Reasons (figure 1)](reverie-ideology-triangle.png)
+![Ideological map with socialism at the upper left, liberalism at the upper right, and nationalism below, inside an inverted triangle.](reverie-ideology-triangle.en.webp)
+
+*The author's ideological map: equality–liberty on the horizontal axis, conservative–open on the vertical axis.*
 
 Since reform and opening up, our principle has been "no debate"—as long as we move toward openness, we won't debate left or right leanings. Ideological conflicts can be compared to religious conflicts. Internet companies' ideology inevitably lies in the open-freedom first quadrant, while nation-state governments usually need to stand with nationalism. Under the CW backdrop, our dynasty will unsurprisingly move toward the third quadrant, which can be said to be diametrically opposed to the internet's position.
 

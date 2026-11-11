@@ -49,15 +49,15 @@ However, Xiaomi's version could directly display which apps accessed what permis
 
 Of course, most importantly, how do you obtain your privacy data? First, you must upgrade to iOS 15 to have this functionality.
 
-![Image](640-20231108093256077.png)
+![iOS 15 Settings showing Privacy, App Store, and Wallet & Apple Pay](640-20231108093256077.en.webp)
 
-![Image](640-20231108093300030.png)
+![Record App Activity at the bottom of the iOS 15 Privacy settings](640-20231108093300030.en.webp)
 
 Then, open iPhone Settings, go to "Privacy," scroll to the bottom and enter "Record App Activity" page. There's a toggle "Record App Activity"—turn it on. Then your iPhone will **start** automatically recording details of app privacy access for the most recent 7 days.
 
-![Image](640-20231108093301424.png)
+![Record App Activity enabled, with the Save App Activity button below](640-20231108093301424.en.webp)
 
-> Storing App Activity will generate log files.
+> "Save App Activity" exports the recorded activity to a log file. These three illustrative English iOS 15.0 screenshots come from [Telstra's guide](https://mobilesupport.telstra.com.au/apple/iphone-12-pro-ios-15-0/internet-entertainment/use-recording-of-app-activity); the Settings image combines two crops. This example shows recording just enabled, while the author's original screenshot showed seven days of recorded activity.
 
 Access records cannot be directly viewed. On this page, clicking "Save App Activity" can export and save recorded app privacy activities. This is a `.ndjson` file where each line is a JSON data entry. The `accessor` field is the app name—for example, `com.tencent.xin` is WeChat. `category` is the privacy item category—for example, `photos`, `contacts`, `camera`, `microphone`, `location`, `mediaLibrary` are photos, contacts, camera, microphone, location, and media library respectively.
 

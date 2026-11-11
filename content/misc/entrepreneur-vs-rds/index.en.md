@@ -24,7 +24,9 @@ Indeed, Feng Ruohang has that adventurous spirit typical of the post-90s generat
 
 Besides this, he also has that unique "chuunibyou" spirit characteristic of the post-90s generation. He likes adding meme images to product articles. When a client said the name Pigsty (pig pen) was hard to report to leadership, he jokingly replied: "We might very well lose the Middle Eastern market."
 
-![2.png](2.png)
+![Pigsty's seven-of-hearts promotional card from MiraclePlus](2.png)
+
+> The card's tagline: “Pigsty — an easy-to-use, cost-saving, open-source database distribution.”
 
 When it comes to open source, Feng Ruohang describes himself as a "moderate," which is why he chose the Apache permissive license for Pigsty. Paradoxically, he also holds very radical open-source views, believing the community needs "radicals":
 
@@ -56,7 +58,7 @@ This [prototype](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247483915
 >
 > Pigsty is an acronym for PostgreSQL in Graphic STYle, meaning "Graphical Postgres," because initially its core was a [PG monitoring system](http://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247484189&idx=1&sn=19d4381c7ec4bc4498bd56c5ee9f916b&chksm=fe4b36c6c93cbfd06fba1c7a1ad3c5cba8d0060f82acb56e96f0e64694f79c2df9299f0b1115&scene=21#wechat_redirect). I cleverly arranged the English letters to spell "pig pen." **The logo is even more playful—since the Postgres logo is an elephant, and the Chinese saying goes "pig nose with scallion—pretending to be elephant," I cut off the PG elephant's trunk to make it look like a pig head.**
 
-![3.png](3.png)
+![Pigsty's pig-faced PostgreSQL elephant logo wearing pixelated sunglasses](3.png)
 
 > ▲ Pigsty's logo is actually a "pig with scallions in its nose"
 
@@ -92,7 +94,9 @@ Clearly, what Feng Ruohang wants to achieve is impact, industry advancement, cha
 >
 > Pigsty — Making databases easy for everyone!
 
-![4.png](4.png)
+![Feng Ruohang presenting his pitch to disrupt cloud databases](4.png)
+
+> The slide reads: “Disrupting cloud databases. One open-source player is enough to change the game!” Its market-size figures are 515.7 billion worldwide and 70 billion in China, with “×40% (cloud)” beneath them; no currency is specified on the slide.
 
 The above are Feng Ruohang's exact words from this pitch, **directly targeting cloud databases.** Specifically, his views on cloud databases include the following points:
 
@@ -134,13 +138,13 @@ After long-term iterative development, Pigsty now does many things better than c
 
 Take **observability** as an example: Alibaba-Cloud RDS for PostgreSQL provides 8 database-related monitoring metrics, commercial monitoring software DataDog provides 69, and AWS's advanced monitoring has 99 categories. But Pigsty includes 675 categories of pure database metrics, comprehensively collected, using data analysis approaches for monitoring.
 
-![5.png](5.png)
+![A collage of Pigsty's PostgreSQL monitoring dashboards](5.png)
 
 In **reliability**, Pigsty does everything cloud databases do: master-slave replication, automatic failover (RTO=30s), geo-distributed disaster recovery clusters, synchronous commit (so-called "financial-grade high availability," RPO=0), cold backup and WAL archiving. Pigsty also does what cloud vendors haven't: delayed replicas, offline ETL instances, idempotent service access, etc.
 
 **Maintainability** directly relates to user experience, so Pigsty has done extensive work on usability, aiming to be "out-of-the-box." One-click download, configuration, and installation; declare the database you want using Database as Code; one-click deployment, destruction, and scaling.
 
-![6.png](6.png)
+![A declarative pg-test configuration mapped to a three-node PostgreSQL cluster](6.png)
 
 > Making databases on physical/virtual machines feel like K8S.
 
@@ -164,7 +168,7 @@ Feng Ruohang states that cloud vendors have raised cloud service pricing far bey
 >
 > I believe in the coming years, such open-source startups will spring up like mushrooms after rain, beating cloud vendors' PaaS/SaaS to pieces. The equilibrium point of this game will be cloud vendors converging to the IaaS layer, while PaaS and SaaS layers are divided among many similar open-source software companies.
 
-![7.png](7.png)
+![Successively larger fish represent software, open source, cloud, and multi-cloud](7.png)
 
 ## **03 Open-Source is the Highest Program**
 
@@ -176,9 +180,9 @@ But Feng Ruohang is not alone. Before this, Pigsty was a purely charitable open-
 
 Now, Pigsty's features and functions continue to expand, already supporting more open-source databases and various software tools. Details: https://pigsty.cc/docs/about/feature/
 
-![8.png](8.png)
+![PostgreSQL's database ecosystem and Pigsty's surrounding software toolkit](8.png)
 
-![9.png](9.png)
+![Pigsty architecture showing database, access, monitoring, and infrastructure services](9.png)
 
 The essence of open-source software is "use at your own risk," but some users still hope commercial companies can provide some backing when using Pigsty in production environments. Therefore, Feng Ruohang began preparing and established "Pigsty Cloud Data" company to provide professional support subscriptions for users. The relationship between Pigsty Cloud Data and the PG community is like Red Hat to the Linux community: **"I contribute to the community, the community makes me money."**
 
@@ -214,7 +218,9 @@ Feng Ruohang believes that in a few years, **cloud and open source will reach a 
 
 (End)
 
-![10.png](10.png)
+![What is Pigsty: a database distribution with monitoring, automation, and lower costs](10-en.webp)
+
+> [Original English overview from Pigsty v1.5.0](https://github.com/pgsty/pigsty/blob/16503dbc1eaf575b27e7d560d9cb06fe4316769e/docs/_media/WHAT_EN.svg). The Chinese version also highlights continued service with a surviving cluster member, deployments with thousands of databases and tens of thousands of cores, and optional professional support. Its [documentation link](https://pigsty.cc/en/docs) accompanies the site, demo, and repository links below.
 
 ## References
 

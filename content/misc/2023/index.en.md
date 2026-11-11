@@ -13,13 +13,13 @@ In 2023, I turned thirty. As Confucius said, "At thirty, one establishes oneself
 
 GitHub is the spiritual home for 100 million developers worldwide, the world's largest gay dating site. On GitHub, I'm quite an active open source contributor, ranking [81st in China](https://committers.top/china) by activity at the end of 2023, [410th in China](https://wangchujiang.com/github-rank/users.china.html) by followers, and [483rd globally](https://gitstar-ranking.com/Vonng) by star count.
 
-![github.png](github.png)
+![GitHub profile, contribution statistics, and rankings at the end of 2023](github.png)
 
 As an open source contributor, my proudest project is [Pigsty](https://pigsty.cc/). It aims to create a batteries-included PostgreSQL distribution, providing a free and open-source RDS alternative - enabling everyone to truly harness the world's most advanced and popular open source database. It lets users own better quality, security, efficiency, and functionality in local database services at 1/10th the cost of cloud RDS hardware expenses!
 
 In this endeavor, I can proudly say Pigsty has performed quite well. In 2023, Pigsty's GitHub stars tripled from 719 at the beginning of the year to 2200. It made it to Hacker News front page, and growth began snowballing. In the [OSSRank open source rankings](https://ossrank.com/cat/368-postgresql-extension?page=2), Pigsty ranks 37th among PostgreSQL ecosystem projects, likely the highest-ranking Chinese-led project, bringing some honor.
 
-![pigsty.webp](pigsty.webp)
+![Pigsty on Hacker News, GitHub star growth, and the PostgreSQL ecosystem rankings in 2023](pigsty.webp)
 
 In 2023, Pigsty released its second major version with 11 total releases. Previously it only ran on CentOS7, but now covers basically all mainstream Linux distributions. It supports PostgreSQL major versions 12-16, incorporating 150+ extensions from the PG ecosystem. Some extensions not available in official repositories were compiled, packaged, tested, and maintained by me personally. Including Pigsty itself, "based on open source, giving back to open source," it contributes to the PG ecosystem.
 
@@ -31,11 +31,15 @@ Having your own open source project has many benefits - you receive thanks from 
 
 **DB4AI** refers to databases for AI: In March, I conducted in-depth research, secondary development, and evaluation of [PGVector](https://mp.weixin.qq.com/s/R4jp1uTCiLOLGsiADZ9jxQ), submitting it to the PGDG official repository, helping it become the de facto standard for vector data processing in the PG ecosystem, taking market share from specialized vector databases. I was among the first to integrate AI-related plugins like PGVector and PostgresML into Pigsty, providing vector/AI capabilities for PG services.
 
-![db4ai.png](db4ai.png)
+![PostgreSQL extensions and the 2023 vector-database landscape, with funding rounds in English](db4ai-en.webp)
+
+*English localization of the 2023 graphic; funding figures and dates are unchanged.*
 
 **AI4DB** refers to using large models to manage databases: I collaborated with Tsinghua University's database group on a [paper](https://arxiv.org/pdf/2312.01454.pdf) about using large language models to [assist database fault diagnosis](http://dbgpt.dbmind.cn/dashboard), which should appear at next year's VLDB. Because Pigsty already provides the strongest monitoring system and most comprehensive monitoring data in the PG ecosystem, and more importantly is open source, free, and standardized, it can serve as a training ground and arena for LLM as DBA.
 
-![ai4db.png](ai4db.png)
+![D-Bot research paper and database-diagnosis demo with English interface labels](ai4db-en.webp)
+
+*D-Bot paper and demo, with English interface labels. The paper, diagnostic report, and metric data are unchanged.*
 
 ### Entrepreneurship
 
@@ -43,7 +47,9 @@ In April 2022, Miracle Plus invested in the Pigsty project, giving me the opport
 
 For myself, this entrepreneurial year brought many joys and some troubles. For various reasons, I was actually the only one doing the work: from technical design and implementation to marketing, promotion, and customer service - becoming the dragon in one-stop service. Fortunately, for the internet/software industry, with the special variable of open source plus GPT assistance, individual heroism remains viable. Investing in R&D and reinventing wheels might not be as effective as deeply integrating existing open source projects. By fully leveraging the open source ecosystem, you can achieve tremendous leverage. Database distributions are exactly this kind of product: their quality mainly depends on the leader's expertise and cognition, and I'm not intimidated on this front.
 
-![bp.webp](bp.webp)
+![Pigsty pitch-deck excerpts: market timing, use cases, database niches, and competitive comparisons](bp-en.webp)
+
+*English localization of the 2023 pitch-deck excerpts. The original Hype Cycle plot and historical comparisons are retained.*
 
 In product positioning, Pigsty has secured multiple key strategic points, prioritizing user needs while considering investor hype requirements. Since 2023 saw upheaval in capital markets and VC industry, we didn't secure the next funding round. However, in this economic environment, being able to support ourselves while building something people truly need makes fundraising almost irrelevant - not taking money might even be more comfortable.
 
@@ -51,7 +57,7 @@ Projects with ecological niches similar to Pigsty include EDB's CloudNative-PG f
 
 In PostgreSQL distribution ecological competition, we chose the most reliable/performant/simple bare metal/bare OS deployment, rejecting the trendy [K8S](https://mp.weixin.qq.com/s/4a8Qy4O80xqsnytC4l9lRg) and even [Docker](https://mp.weixin.qq.com/s/kFftay1IokBDqyMuArqOpg) containerization. This indeed created much grunt work adapting different operating systems, but it was the right thing to do, and these efforts became moats: while a bunch of PG Operators compete fiercely, users who crashed out of K8S all benefited Pigsty instead.
 
-![stackgres-pigsty.png](stackgres-pigsty.png)
+![Pigsty and StackGres star histories alongside a customer inquiry about migrating to Pigsty](stackgres-pigsty.png)
 
 Another overlapping competitor is **cloud databases/RDS** - many Pigsty subscription customers self-built because cloud RDS was too expensive. Although public cloud RDS teams might have dozens of people, I'm not intimidated at all. I'm always the one poaching RDS corners, ideologically dominating and writing articles about it. This became recreational entertainment during entrepreneurship - accumulating over twenty high-quality related articles this year, compiled into a "Cloud Computing Mudslide" Cloud-Exit handbook.
 
@@ -59,13 +65,19 @@ Another overlapping competitor is **cloud databases/RDS** - many Pigsty subscrip
 
 I started a WeChat public account "[Illegal Addition Feng](https://mp.weixin.qq.com/s/p4Ys10ZdEDAuqNAiRmcnIQ)" in 2018 for fun, mainly sharing PostgreSQL technology, Pigsty news, plus some essays and travel logs, with around 1300 followers at the beginning of this year. I started getting serious this year, writing dozens of articles, and followers multiplied 13x to **18,300**. Twitter followers also multiplied several times to **eight thousand**; plus **twelve thousand** on Zhihu; total followers approaching **forty thousand**, basically covering the entire database circle - quite good for a technical blogger.
 
-![social-media.png](social-media.png)
+![2023 WeChat and Twitter analytics, follower growth, and article readership with English labels](social-media-en.webp)
+
+*English labels for the original 2023 analytics. All plotted data, follower counts, view counts, and percentages are unchanged.*
 
 Previously, I was an engineer who liked focusing on solid technical work; this year, I added a new hobby of **writing articles**. Because I believe that no matter how good or awesome your technology is, if you can't articulate or promote it, it's wasted. So I started writing articles, outputting my vision, philosophy, and viewpoints. The response has been good this year: mainly two new series "**Database Veteran**" and "**Cloud Computing Mudslide**."
 
-![heros.webp](heros.webp)
+![A montage of the original Chinese blog article covers from 2023](heros.webp)
 
-![posts.jpg](posts.jpg)
+*A montage of the original Chinese article covers, as they appeared in 2023.*
+
+![The 2023 article index in English: cloud computing, databases, PostgreSQL, Pigsty, essays, and travel](posts-en.webp)
+
+*English localization of the 2023 article index, including all 136 entries and the original QR code.*
 
 The "Database Veteran" series focuses on my primary professional domain, attempting to set the agenda for the DB technology circle: Is cloud freeloading off open source? Will RDS make DBAs unemployed? Are distributed databases fake demands? PG vs MySQL who's stronger? Do domestic DBs really create bottlenecks? Can vector databases compete? Should databases go in containers? Should databases use K8S? Several topics even had live debate streams with explosive effects. The database field actually has many clichés, stereotypes, outdated dogmas, and emperor's new clothes. One benefit of entrepreneurship is having complete freedom of expression. Not speaking falsehoods or nonsense, believing in common sense's power, telling your own story - you'll find many users share the same resonance, which is quite enjoyable.
 
@@ -73,7 +85,9 @@ The "Database Veteran" series focuses on my primary professional domain, attempt
 
 Besides writing articles, I occasionally speak at technical conferences, participate in panel discussions, or host live debates. Participating in such activities serves both evangelism and advertising while exercising eloquence and presentation skills, so I'm quite willing to participate.
 
-![conf.png](conf.png)
+![Twelve conference appearances, interviews, meetups, and livestreams in 2023](conf-en.webp)
+
+*English localization of the 2023 activity log. Original dates and URLs are retained.*
 
 ### Life Journey
 
