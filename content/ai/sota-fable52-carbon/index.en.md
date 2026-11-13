@@ -1,115 +1,115 @@
 ---
-title: "SOTA: First Impressions of Fable 5.2 and Gemini Carbon"
+title: "First Impressions of Fable 5.2 and Gemini Carbon: 20 New Bugs in Already-Audited Code"
 date: 2026-11-11
 authors: [vonng]
 summary: >
-  Fable 5.2 and Gemini Carbon found twenty more vulnerabilities in Silo on their first pass, despite repeated audits. Here is how this generation of frontier models is changing my work, from taking over PostgreSQL extensions and a database kernel to rebuilding my two-pizza team around three leading model providers.
+  On their first pass, Fable 5.2 and Gemini Carbon uncovered twenty new security vulnerabilities in Silo code that previous frontier models had already audited clean. Here's how this generation changes the solo-engineering calculus, from adopting PostgreSQL extensions and a database kernel to reorganizing my two-pizza agent team.
 tags: [AI, Agent, Software Engineering]
 images: [rank.webp]
 ---
 
-The frontier model releases have come thick and fast over the past two days: Anthropic brought out Fable 5.2, Google released Gemini Carbon, and Qwen 4 Max followed right behind. OpenAI reportedly has something coming tomorrow, too; GPT Astra 6.2 will probably get a full rollout soon. Fable handed out two Resets, and Codex will also be handing out a Banked Reset.
+Frontier model drops have come back-to-back over the past two days: Anthropic shipped Fable 5.2, Google released Gemini Carbon, and Qwen 4 Max landed right behind them. Word is OpenAI has something lined up for tomorrow too, with a full rollout of GPT Astra 6.2 likely close behind. To sweeten launch week, Anthropic handed out two free usage-quota resets for Fable, and Codex is throwing in a banked quota reset of its own.
 
-Much of this timing comes down to Anthropic filing its IPO prospectus and officially starting its roadshow today. Anthropic has pulled out the stops, putting its latest Fable 5.2 straight into the $20 Pro tier for people to try. Credit where it is due: the model is remarkably capable.
+The pileup isn't a coincidence. Anthropic filed its IPO prospectus and officially kicked off its roadshow today. Determined to make a statement, Anthropic went all in, pulling out its strongest model yet and putting Fable 5.2 straight into the $20 Pro tier so anyone can take it for a spin. Fair play to them: in practice, the model is seriously impressive.
 
-![Artificial Analysis model intelligence index compared with cost per task](rank.webp)
+![Artificial Analysis model intelligence index vs. cost per task](rank.webp)
 
-View the original charts: [AA Intelligence Index](https://artificialanalysis.ai/#artificial-analysis-intelligence-index-chart) · [Intelligence Index vs. Cost per Task](https://artificialanalysis.ai/#intelligence-index-vs-cost-per-task-chart).
+Original charts: [AA Intelligence Index](https://artificialanalysis.ai/#artificial-analysis-intelligence-index-chart) · [Intelligence Index vs. Cost per Task](https://artificialanalysis.ai/#intelligence-index-vs-cost-per-task-chart).
 
-*An unofficial leaderboard is still a leaderboard. It has at least a little signal.*
+*It's an unofficial leaderboard, sure, though not completely devoid of signal.*
 
-The other vendors were hardly going to sit quietly. In the spirit of "one company takes the stage, everyone else heckles," they are firing off new models during Anthropic's IPO roadshow, getting their punches in while everyone is watching.
+Naturally, none of the rival labs were going to sit on their hands and let Anthropic own the news cycle. Every competitor decided to counter-program Anthropic's IPO roadshow week, dropping frontier models at the exact same moment to steal the spotlight and land a few punches while everyone is watching.
 
-My reaction is equal parts excitement and resignation.
+My own reaction to all of this is equal parts excitement and resignation.
 
-## Twenty More Vulnerabilities, Just Like That
+## Twenty More Vulnerabilities Right Out of the Gate
 
-Only a few days ago, I had just come through a barrage of CVEs and bugs.
+Just a few days ago, I came through an intense stretch of CVE triage and bug hunting.
 
-Silo, the object storage project I maintain, had inherited a pile of problems from upstream MinIO. I had recently put GPT Astra and Claude Opus 5.5 to work combing through the accumulated legacy mess and security hazards. I kept fixing things until neither Astra nor Opus could find any new vulnerabilities, no matter how many times they reviewed the code. On November 9, I happily shipped a new release.
+Silo, the open-source object storage fork I maintain, got hit with a wave of issues inherited from upstream MinIO. Over the past few weeks, I pointed GPT Astra and Claude Opus 5.5 at the repo to comb through years of tangled legacy code and latent security hazards. I kept patching and re-auditing until repeated passes with both Astra and Opus came back clean with zero new findings. On November 9, I happily tagged and shipped a fresh release.
 
-[![Closed GitHub issues for Silo vulnerabilities and bug fixes](silo.webp)](https://github.com/pgsty/silo/issues?q=is%3Aissue%20state%3Aclosed)
+[![Closed vulnerability and bug issues in the Silo repository](silo.webp)](https://github.com/pgsty/silo/issues?q=is%3Aissue%20state%3Aclosed)
 
-Then, almost immediately, the new models arrived.
+Blink, and the new models arrived.
 
-I ran Fable 5.2 over the code, and out came five security vulnerabilities. I followed up with Gemini Carbon, which promptly found another fifteen. I just stared at the results. There was nothing for it but to get back to patching.
+I ran Fable 5.2 over the exact same codebase, and on its first pass it flagged 5 new security vulnerabilities. Right after that, I pointed Gemini Carbon at it—and Carbon pulled out 15 more. I just sat there staring at my terminal. You can't even get mad at that point; I just sighed and went right back to patching.
 
-![Multiple AI agents auditing Silo for security issues and fixing vulnerabilities](audit.webp)
+![Multiple AI coding agents running security audits and patching vulnerabilities in Silo](audit.webp)
 
-Seen another way, this was a concrete demonstration of the jump in model capability. Repeated reviews with the previous generation still missed things that the new frontier models spotted straight away. With each generation, I can see the quality of the software I work on improve another notch.
+Annoying as the extra work was, I couldn't ask for a clearer benchmark of the generational jump. Blind spots that the previous frontier models missed across repeated passes jumped straight out to the new ones on pass one. Every time the frontier moves forward, I can feel the quality floor of the software I maintain step up a notch with it.
 
-## The Economics Changed: Taking On Extensions and Database Kernels
+## The Math Flipped: Adopting Extensions and a Database Kernel
 
-With Opus 5.5, Fable 5.2, and Gemini Carbon, I also started working seriously on PostgreSQL kernels and extensions.
+Starting with Opus 5.5, Fable 5.2, and Gemini Carbon, I've also crossed a line I used to avoid: PostgreSQL kernel and extension development.
 
-When building the Pigsty distribution, I used to draw a clear boundary: packaging and integration, with the occasional small patch. I generally stayed away from the kernel and low-level extensions. I could do the work, but the return on the effort was too low. As one person, I could not afford that much time and energy. Once Fable 5.2 and Carbon could reliably fill the role of a seasoned kernel engineer, the economics changed completely.
+For years while building the Pigsty distribution, I kept a strict scope boundary. I handled packaging, integration, and the occasional small patch, while staying out of the database kernel and low-level extensions. Not because the work was out of reach, but because the ROI made no sense for one person; maintaining internals at that layer would swallow all my time. Once Fable 5.2 and Carbon started reliably pulling the weight of a veteran kernel engineer, that math flipped overnight.
 
-I already thought of frontier AI agents in the Fable 5.1 to 6 era as advanced specialists. With Fable 5.2 and Carbon, I would put them closer to seasoned experts. In plain terms, you can hand them database kernel development and verification.
+If frontier coding agents in the Fable 5.1 and Astra 6 era already operated like strong senior specialists, Fable 5.2 and Carbon have crossed into staff- or principal-engineer territory. Put plainly, you can now hand them database kernel development and verification work and trust the output to hold up.
 
-Recently, I have taken on a few things I would not previously have considered. First, I took over full maintenance of two extensions: the vector extension `vchord` and the analytics extension `Mooncake`. Then I decided I might as well keep going: I forked and took over `OpenHalo`, a PostgreSQL kernel compatible with MySQL's syntax and wire protocol.
+Lately I've taken on several projects I wouldn't have touched solo before. First, I stepped up to maintain two PostgreSQL extensions in full: `vchord` for vector search and `Mooncake` for analytics. Having gone that far, I figured I might as well go all the way and forked `OpenHalo`, a PostgreSQL kernel compatible with MySQL's SQL syntax and wire protocol.
 
-[![PG.CENTER's catalog of PostgreSQL kernels, including OpenHalo and other open-source projects](halo.webp)](https://doc.pg.center/#kernels)
+[![PG.CENTER catalog of PostgreSQL kernels, including OpenHalo and other open-source forks](halo.webp)](https://doc.pg.center/#kernels)
 
-That kernel had been stuck on PG 14 ever since it was open-sourced, and PG 14 reaches end of life in a few days. With Fable and Carbon, I upgraded it straight to PG 18.6 and fixed a pile of MySQL compatibility issues along the way. I plan to move it straight on to PG 19 in a few days.
+Upstream `OpenHalo` had been frozen on PostgreSQL 14 ever since its initial open-source release, and PG 14 hits end of life in just a few days. Using Fable and Carbon, I forward-ported the kernel straight to PG 18.6, fixed a pile of MySQL compatibility bugs along the way, and plan to push it up to PG 19 shortly.
 
-**Productivity to Spare: Taking Over “Legacy” Open-Source Projects in Bulk and Rebuilding the Toolchain**
+**Surplus Capacity: Adopting Orphaned Open-Source Projects and Rebuilding My Toolchain**
 
-*“When compute is your hammer, everything looks like a nail.” With the day job more than covered, I can branch out to take over core ecosystem projects and build low-level tools of my own.*
+*"When you're swinging a compute sledgehammer, everything starts looking like a nail." With my day job comfortably covered, the spillover capacity goes into adopting core ecosystem projects and building low-level infrastructure tools from scratch.*
 
-| Adopted or in-house project | Upstream background or tool replaced | Role in the infrastructure stack | Evolution and current status |
+| Adopted / In-House Project | Upstream Origin or Tool Replaced | Role in the Stack | Trajectory & Current Status |
 | --- | --- | --- | --- |
-| [Silo](https://github.com/pgsty/silo) | MinIO (abandoned by a billion-dollar unicorn) | Enterprise-grade S3-compatible open-source object storage | Branched out to take over maintenance · 4,630 ★ · nearly 8 million downloads · 240+ projects migrated |
-| [VectorChord](https://github.com/pgsty/vchord) | vchord (the original author entrusted it to me last week) | High-performance vector database extension for PostgreSQL | Popular vector extension with 2,000+ ★ · Maintaining it at the author's invitation |
-| [Mooncake](https://github.com/pgsty/pg_mooncake) | pg_mooncake (acquired by Databricks) | PostgreSQL extension for real-time columnar analytics | 2,000+ ★ · Community project left behind after the acquisition · Took over full maintenance and development |
-| [OpenHalo](https://github.com/pgsty/openhalo) | openHalo (kernel fork with an alternative wire protocol) | PostgreSQL kernel fork compatible with the MySQL protocol | Took over the kernel fork · Integrated into the standard build and upgraded to PG 18.6 |
-| [Oink](https://github.com/pgsty/oink) | Replaces the heavyweight Google Docsy | AI-native foundation for engineering documentation and static sites | Built in-house as a replacement · Knowledge management platform and SDD · Powers dozens of sites |
-| [Barn](https://github.com/pgsty/barn) | Replaces the abandoned HashiCorp Vagrant | Orchestration tool for local, multi-node VM fleets | Built in-house as a replacement · Spins up local test clusters across 16 OS variants with one command |
-| [sow](https://github.com/pgsty/sow) & [pig](https://github.com/pgsty/pig) | Replaces the cumbersome traditional APT / YUM toolchain | Software repository manager and extension package manager | Built an end-to-end repository and package management workflow · Built my own Linux distribution |
+| [Silo](https://github.com/pgsty/silo) | MinIO (abandoned by a billion-dollar unicorn) | Enterprise-grade S3-compatible open-source object storage | Adopted outside my DB turf · 4,630 ★ · ~8M downloads · 240+ migrations |
+| [VectorChord](https://github.com/pgsty/vchord) | vchord (handed over by the original author last week) | High-performance PostgreSQL vector database extension | 2,000+ ★ flagship vector extension · Adopted at the author's invitation |
+| [Mooncake](https://github.com/pgsty/pg_mooncake) | pg_mooncake (acquired by Databricks) | Real-time columnar analytics extension for PostgreSQL | 2,000+ ★ · Left behind post-acquisition · Full maintenance & ongoing evolution |
+| [OpenHalo](https://github.com/pgsty/openhalo) | openHalo (multi-protocol PG kernel fork) | MySQL protocol-compatible PostgreSQL kernel fork | Adopted kernel fork · Integrated into standard builds & upgraded to PG 18.6 |
+| [Oink](https://github.com/pgsty/oink) | Replaces heavyweight Google Docsy | AI-native engineering docs & static-site foundation | Built in-house · Knowledge platform & SDD engine powering dozens of sites |
+| [Barn](https://github.com/pgsty/barn) | Replaces abandoned HashiCorp Vagrant | Local multi-node VM fleet orchestrator | Built in-house · Spins up local test clusters across 16 OS variants in one command |
+| [sow](https://github.com/pgsty/sow) & [pig](https://github.com/pgsty/pig) | Replaces clunky legacy APT / YUM repo tooling | Software repo manager & extension package manager | Built in-house · End-to-end repo & packaging pipeline, culminating in my own Linux distro |
 
-Seeing these old projects come back to life is satisfying. The internet is full of people showing off videos and little demos made with Fable 5.2. I am not that bored, and I am too stingy with my tokens to spend them on that. Taking over and reviving demanding open-source projects with frontier models actually pushes the limits of what they can do.
+Watching neglected projects come back to life is genuinely rewarding. Social feeds right now are flooded with people burning Fable 5.2 tokens on generated videos and flashy one-shot toy demos. I don't really have the appetite for that, and I'm too stingy with my token budget to spend it on parlor tricks. Pointing frontier models at unglamorous, abandoned open-source infrastructure and bringing it back into production shape feels like a much better stress test of where the capability frontier actually sits (and frankly, it's a lot more fun).
 
-- [MinIO, One Year On: Bringing a Dead Open-Source Project Back to Life](/en/db/minio-silo-1year/)
-- [I've Taken Over Another Open-Source Project](/en/pg/maintain-vchord/)
-- [Back for Another Helping: Yesterday vchord, Today Mooncake](/en/pg/fork-pg-mooncake/)
+- [MinIO's One-Year Memorial: How to Revive a Dead Open-Source Project](/en/db/minio-silo-1year/)
+- [Why I'm Maintaining a VectorChord Fork](/en/pg/maintain-vchord/)
+- [Taking Over Another PostgreSQL Extension: vchord Yesterday, pg_mooncake Today](/en/pg/fork-pg-mooncake/)
 
 ## Reorganizing My Two-Pizza Team
 
-Judging purely by the quality of its software engineering work, Fable 5.2 is clearly the best model I have used so far. Gemini Carbon, which arrived amid rumors of "Talking to God," matches it in practice. Both are visibly ahead of the current Astra 6 in actual engineering work. Astra's rigor in backend development is still hard to beat, though. Once Astra 6.2 arrives, the three will probably draw level again, occupying the top tier with a clear gap to the rest.
+Judged strictly on real-world software engineering output, Fable 5.2 is hands-down the strongest model I've used to date. Gemini Carbon, which arrived trailing all those "Talking to God" rumors, matches it closely in practice. On actual engineering work, both have opened up a visible lead over the current Astra 6. Astra's discipline on backend systems is still formidable, though, and once Astra 6.2 lands, all three will likely pull roughly level again, holding the top tier with a clear gap over the rest of the field.
 
-At this point, the best setup is to keep each of the leading models on hand and put them to work together.
+At this stage, the optimal setup is simple: keep one top-tier subscription from each of the big three and run them side by side.
 
-I previously wrote about [the personalities of large language models](/en/ai/llm-personaility/), and those observations still hold. Until now, my main subscription mix was **10 Codex, 3 Claude, 1 Gemini, plus 1 GLM**. Manage them as people, and their strengths become quite distinct:
+I wrote recently about [the personalities of frontier AI models](/en/ai/llm-personaility/), and those observations still hold up. Through the last cycle, my daily subscription mix was **10 Codex, 3 Claude, 1 Gemini, plus 1 GLM**. Manage them like human engineers on a team, and their strengths split cleanly:
 
-- **Claude is the product manager and my second-in-command (INTP)**: creative, perceptive, good at coordinating the big picture and designing the overall architecture, and willing to make a call. I go to Claude whenever I need a direction or a design. It is an excellent architect and a reliable source of ideas.
+- **Claude is the product lead and my second-in-command (INTP)**: inventive, perceptive, strong at big-picture synthesis and top-level architecture, and willing to make a call instead of hedging. Whenever I need to set direction or work out a design, I go straight to Claude.
 
-- **Codex is the architect and workhorse (INTJ)**: dependable and tireless, extremely rigorous, sometimes to the point of being overly defensive. It tests and retests the same problem endlessly. It can be verbose, but the core code it produces is exceptionally solid. It is outstanding at backend work and state of the art at creating graphics, too.
+- **Codex is the staff architect and primary workhorse (INTJ)**: tireless, methodical, and rigorous to the point of paranoia. It will test and re-test edge cases on the same problem endlessly. It can be verbose, sure, yet the core backend code it produces is rock-solid, and its diagramming is SOTA too.
 
-- **Gemini is the writer (ENTP)**: I used to rely on it mainly for writing. It excels at technical documentation, marketing copy, and polishing articles. With Carbon, its engineering ability has caught up with the top tier, so it can finally join the main development team as well.
+- **Gemini is the chief wordsmith (ENTP)**: I used to lean on it mainly for prose: technical docs, launch copy, and essay polishing, where it's still unmatched. With Carbon, its software engineering chops have caught up to the top tier, so it can finally take a regular shift in the main coding rotation.
 
-- **Chinese models do the grunt work**: checking documentation for consistency, verifying details, and scanning huge volumes of logs. All the repetitive chores. GLM costs RMB 1,700 for a year. At that price, what more do you want?
+- **Budget open-weight models like GLM handle the high-volume grunt work**: cross-checking documentation, verifying details, and scanning mountains of logs—all the repetitive chores you don't want chewing through frontier quota. My GLM plan runs RMB 1,700 (~$240) a year flat; at that price, what more could you ask for?
 
-![Model roles, subscription allocation, and the PostgreSQL task queue scheduling architecture](team.webp)
+![Model roles, subscription allocation, and PostgreSQL task-queue scheduling architecture](team.webp)
 
-With both Fable 5.2 and Carbon making such large gains in engineering, I am changing my subscription plan. I intend to cut back from ten Codex subscriptions and move to a balanced **3-3-3 lineup**:
+With both Fable 5.2 and Carbon taking such a big leap on engineering tasks, I'm rebalancing my seats, paring back from ten Codex subscriptions to an even **3-3-3 lineup**:
 
 - 3 Codex subscriptions at the $500 tier
-- 3 Claude Ultra subscriptions at the $200 tier, potentially expanding to 6
+- 3 Claude Ultra subscriptions at the $200 tier (scaling up to 6 if needed)
 - 3 Google AI Ultra subscriptions at the $200 tier
 
-That gives each of my three main development machines one subscription from each of the big three. Add GLM and Grok for the grunt work, then me, and we have a standard **twelve-person two-pizza team**. Eleven of us are agents, **but I can eat both pizzas myself.**
+That puts one seat from each of the big three on every one of my three primary workstations. Add GLM and Grok for the grunt work, plus me at the keyboard, and you get a textbook **12-member two-pizza team**. Eleven of them are agents, **though I have no trouble finishing both pizzas myself.**
 
-The hardware behind this team is six computers on my local network plus six cloud instances: twelve machines in total, all managed through Pigsty. I eat my own dog food. Scheduling is simple, too: a shared PostgreSQL database holding a task queue.
+The hardware underneath this crew is 6 local machines on my LAN plus 6 cloud VMs: 12 hosts in total, all managed through Pigsty in a classic dogfooding setup. Dispatch is dead simple too: a shared PostgreSQL database holding a task queue.
 
-[![Monitoring dashboard for local and cloud infrastructure managed through Pigsty](workers.webp)](https://demo.pigsty.cc/)
+[![Infrastructure monitoring dashboard for the local and cloud fleet managed by Pigsty](workers.webp)](https://demo.pigsty.cc/)
 
-The lead agent inserts tasks into a table; subagents claim work from it. If they discover new problems while working, they automatically create follow-up tasks in the same table. Run these dozen or so subscriptions at full concurrency, and they can quickly fan out into dozens of workers tackling tasks in parallel.
+A lead agent inserts tasks into a table, and worker subagents claim jobs from it; whenever they uncover new issues mid-flight, they spawn follow-up tasks straight back into the same table. Crank concurrency all the way up, and those dozen-odd subscriptions quickly fan out into dozens of workers grinding through tasks in parallel.
 
-Keeping dozens of concurrent workers from going off the rails does take a few engineering tricks. I can get into those after I finish talking a big game at the China Enterprise AI Conference and Tsinghua over the next few days.
+Keeping that many concurrent workers from stepping on each other or going off the rails does take a few engineering guardrails. I'll dig into how that works after I finish running my mouth on stage at the China Enterprise AI Conference and Tsinghua over the next couple of days.
 
-## Time for a Plug
+## Shameless Plug
 
-A couple of upcoming events: the day after tomorrow, November 13, I will give a keynote at the China Enterprise AI Conference titled "One Person, One Agent Team: How Much Can One Person Get Done?" I will also join a panel debate (read: mutual roasting).
+Two talks on the calendar this week: this Friday, November 13, I'm giving a keynote at the China Enterprise AI Conference titled "One Person, One Agent Team: The Productivity Limits of a Solo Engineer," along with a panel debate (read: polite mutual roasting).
 
-![China Enterprise AI Conference keynote poster: One Person, One Agent Team: How Much Can One Person Get Done?](talk.webp)
+![China Enterprise AI Conference keynote poster: One Person, One Agent Team](talk.webp)
 
-On Sunday, I will also speak at Tsinghua University on "The Mythical Man-Month: How Far Can a One-Person Database Company Go?" Come along and share your thoughts.
+Then on Sunday, I'll be speaking at Tsinghua University on "The Mythical Man-Month: How Far Can a One-Person Database Company Go?" If you happen to be around for either one, come say hi.
