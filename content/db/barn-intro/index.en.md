@@ -3,64 +3,64 @@ title: "Goodbye Vagrant, Hello Barn"
 date: 2026-11-12
 authors: [vonng]
 summary: >
-  With HCP Vagrant and the Vagrant Public Registry shutting down, we built Barn from scratch in Go under Apache-2.0. One Ansible-compatible YAML inventory boots fixed-IP multi-node Linux clusters and clones native macOS VMs in seconds on Apple Silicon, giving database engineering and AI agents a lightweight, deterministic local VM manager.
+  HCP Vagrant and the Vagrant Public Registry are shutting down, so I wrote Barn, an Apache-2.0 local VM manager in Go. It boots multi-node Linux clusters with static private IPs from an Ansible YAML inventory and clones native macOS VMs in seconds on Apple Silicon for database testing and AI agent sandboxes.
 tags: [Pigsty, Agent, Linux, Open Source]
 ---
 
-Last week, on November 2, 2026, an old friend in the infrastructure world reached the end of the road: **HashiCorp officially ended maintenance for [HCP Vagrant and the Vagrant Public Registry](https://www.hashicorp.com/en/blog/hcp-vagrant-deprecation-important-dates-and-migration-guidance)**, announcing that its servers will shut down for good on December 31.
+On November 2, HashiCorp announced it is ending maintenance for [HCP Vagrant and the Vagrant Public Registry](https://www.hashicorp.com/en/blog/hcp-vagrant-deprecation-important-dates-and-migration-guidance), with the servers scheduled to shut down on December 31.
 
 [![HashiCorp announces the deprecation and phased shutdown of HCP Vagrant and the Vagrant Public Registry](vagrant-sunset.webp)](https://www.hashicorp.com/en/blog/hcp-vagrant-deprecation-important-dates-and-migration-guidance)
 
-The news hit close to home. For years, Vagrant was the best local VM manager around: write one declarative config file and spin up a multi-machine lab on macOS, Linux, or Windows with a single command. For local development and testing, nothing else came close. I used it on and off for seven or eight years—in fact, before [Pigsty](https://pigsty.cc/) ever had a public release, it was incubated and refined inside Vagrant VMs.
+Seeing the news gave me pause. Vagrant used to be the best local VM manager around: write one declarative config and spin up multiple VMs across macOS, Linux, or Windows. I used it on and off for seven or eight years, and [Pigsty](https://pigsty.cc/) was originally built and honed inside Vagrant VMs.
 
-In its prime, the HashiCorp stack was hard to beat: Vagrant for local VMs, Terraform for cloud provisioning, Consul for service discovery, Nomad for scheduling, and Vault for secrets management. An entire generation of engineers built their workflows around that toolkit.
+Back in its prime, the HashiCorp toolchain was genuinely great to work with: Vagrant for local VMs, Terraform for cloud provisioning, Consul for service discovery, Nomad for scheduling, and Vault for secrets management. Plenty of engineers built their workflows around that stack.
 
-It didn't last. After HashiCorp abruptly relicensed its products under BSL 1.1 in 2023 and later sold itself to IBM, the writing was on the wall for Vagrant. Its core [`vagrant-libvirt`](https://github.com/vagrant-libvirt/vagrant-libvirt) plugin stalled out, forcing well-known projects like [`netlab`](https://blog.ipspace.net/2026/09/sunsetting-vagrant-libvirt/) to drop support this fall. The Vagrant CLI froze at [`2.4.9`](https://github.com/hashicorp/vagrant/releases/tag/v2.4.9), going **over 14 months without a single release**; over the past three months a lone contributor has barely kept the repository on life support, leaving even bugs that broke `vagrant up` on newer macOS versions unshipped. Now HashiCorp is pulling the plug on the public registry hosting all those `generic/*` and `bento/*` boxes. The era that defined "local dev environments as code" is officially over.
+The turning point came in 2023. Once HashiCorp switched to BSL 1.1 and later sold to IBM, Vagrant's decline was only a matter of time. The core [`vagrant-libvirt`](https://github.com/vagrant-libvirt/vagrant-libvirt) plugin stalled out, forcing projects like [`netlab`](https://blog.ipspace.net/2026/09/sunsetting-vagrant-libvirt/) to drop support this fall. Meanwhile, the Vagrant CLI has been stuck on [`2.4.9`](https://github.com/hashicorp/vagrant/releases/tag/v2.4.9) for **over 14 months without a new release**. Commit activity over the past three months has dwindled to sporadic maintenance from a single contributor, and even `vagrant up` errors on newer macOS versions have dragged on unshipped. Now they're pulling the plug on the public registry hosting all those `generic/*` and `bento/*` boxes too.
 
-As heavy users of local VMs, the Pigsty community and I felt the impact directly.
+This hits me and the Pigsty community directly.
 
-Anyone who reads my writing knows I am an unapologetic bare-metal and VM fundamentalist when it comes to databases. Docker is great for stateless microservices. But if you are building and testing a production-grade database distribution—multi-node `systemd` service orchestration, Patroni HA failover, floating VIPs, Linux kernel parameter tuning, APT/YUM repository syncing, and dedicated `ext4`/`XFS` data-disk mounts—containers simply don't cut it. You need real Linux VMs running full kernels.
+Docker is fine for stateless services. Building and testing a production-grade database distribution is a different story: multi-node `systemd` service orchestration, Patroni HA failover, floating VIPs, Linux kernel parameter tuning, APT/YUM repository syncing, and dedicated `ext4`/`XFS` data mounts. Containers can't stand in for a full kernel; you need real Linux VMs.
 
-Over the past few years, though, spinning up test clusters for new users or for myself meant fighting Vagrant every step of the way: Ruby dependency headaches that refused to die, VirtualBox choking on Apple Silicon, `libvirt` setup friction scaring off newcomers, and now the official box registry closing shop.
+Over the past few years, though, Vagrant became a chore every time I walked a new user through setup or spun up a test cluster myself: brittle Ruby dependencies, awkward VirtualBox support on Apple Silicon, finicky `libvirt` setup for newcomers, and now the shutdown of the official box registry.
 
-If you can't rely on anyone else, you build a new one yourself.
+At some point you stop waiting for someone else to fix it and write your own.
 
-After HashiCorp changed its license, Terraform forked into [OpenTofu](https://opentofu.org/) and Vault forked into [OpenBao](https://openbao.org/), yet nobody ever picked up Vagrant. I briefly considered forking Vagrant as-is, and I even had the name picked out: **OpenWonton**, rounding out a full dim sum breakfast spread alongside tofu and steamed *bao* buns. Then I opened the codebase and looked at more than a decade of accumulated Ruby baggage. Rather than patching up a crumbling old house, it made far more sense to write a clean replacement from scratch in Go tailored to what we actually need. After all, having already taken on a codebase the size of MinIO and turned it into [Silo](/en/db/minio-silo-1year/), a local VM manager didn't seem out of reach. To borrow DHH's line: **["We can fix everything!"](/en/cloud/cloud-exit-2026/)**
+After HashiCorp changed its license, Terraform forked into [OpenTofu](https://opentofu.org/) and Vault forked into [OpenBao](https://openbao.org/), while Vagrant went unclaimed. I briefly thought about forking it myself and even had a name picked out: **OpenWonton**—tofu, *bao*, and wontons make a proper breakfast. Then I looked inside the codebase. Over a decade of accumulated Ruby technical debt made it obvious that building from scratch would beat renovating an old house. I'd already forked MinIO into [Silo](/en/db/minio-silo-1year/), so writing a fresh local VM manager in Go around my own needs felt far more straightforward. To borrow DHH's line: **["We can fix everything!"](/en/cloud/cloud-exit-2026/)**
 
-## Welcome to Barn
+## Barn: Housing Local VMs
 
-That effort became **[Barn](https://github.com/pgsty/barn)** (**B**ootstrap **A**nd **R**un **N**odes), an open-source local virtualization manager written in Go under the Apache-2.0 license. Its website and full English and Chinese documentation are now live at **[barn.pgsty.com](https://barn.pgsty.com/)**.
+The result is **[Barn](https://github.com/pgsty/barn)** (**B**ootstrap **A**nd **R**un **N**odes), an Apache-2.0 local VM manager written in Go. Its website and English/Chinese documentation are live at **[barn.pgsty.com](https://barn.pgsty.com/)**.
 
 [![Barn homepage: multi-node Linux labs and native macOS virtual machines](barn-site-en.webp)](https://barn.pgsty.com/)
 
-Readers familiar with the Pigsty ecosystem will spot the farmyard naming theme right away: **[Pigsty](https://pigsty.cc/)** is the pen where the databases live, **[Silo](https://silo.pgsty.com/)** stores the grain (object storage), **[PIG](/en/pg/pig/)** is the piglet package manager, **[Oink](/en/ai/oink-intro/)** is the voice (our docs framework), and **Barn** is **where you keep the livestock**. In cloud-native parlance, disposable instances that can be torn down and rebuilt at will are "cattle, not pets." Barn takes that literally: a sturdy, low-overhead barn for raising whole herds of Linux and native macOS VMs deterministically on your MacBook or Linux workstation.
+If you know the Pigsty ecosystem, the farmyard theme won't surprise you: **[Pigsty](https://pigsty.cc/)** is the pigpen, **[Silo](https://silo.pgsty.com/)** is the grain silo, **[PIG](/en/pg/pig/)** is the piglet package manager, **[Oink](/en/ai/oink-intro/)** is the documentation framework, and **Barn** is the livestock barn next door. Infrastructure folks like to call disposable, rebuildable servers "cattle, not pets." Barn takes that literally on your workstation: raising Linux and native macOS VMs cheaply and deterministically on a MacBook or Linux box.
 
-Barn does one thing cleanly: **take a standard Ansible-compatible YAML inventory and boot a multi-node Linux cluster with fixed private IPs locally (backed by QEMU with HVF/KVM hardware acceleration), or clone isolated native macOS VMs in seconds on an Apple Silicon Mac (backed by `Virtualization.framework`).**
+Its job is straightforward: **take a standard Ansible-compatible YAML inventory and boot a local multi-node Linux cluster with static private IPs (via QEMU with HVF/KVM hardware acceleration), or clone isolated native macOS VMs in seconds on an Apple Silicon Mac (via `Virtualization.framework`)**.
 
-[![GitHub repository pgsty/barn: Apache-2.0 licensed, written in Go with a native mac-runner](barn-github.webp)](https://github.com/pgsty/barn)
+[![GitHub repository pgsty/barn: Apache-2.0 license, Go implementation, and native mac-runner](barn-github.webp)](https://github.com/pgsty/barn)
 
-No bloated VirtualBox install, no fragile Ruby plugin chain. Three commands tell the story:
+No VirtualBox to install, no Ruby plugins to wrestle with. Install it and go:
 
 ```bash
-# 1. Install Barn (includes the signed and notarized native Barn.app on macOS)
+# 1. Install Barn (bundles the signed, notarized native Barn.app on macOS)
 brew install pgsty/infra/barn
 
 # 2. Boot the default Linux node (or a multi-node cluster from ./barn.yml) and SSH in
 barn up && barn ssh
 
-# 3. Clone an isolated macOS VM in seconds on Apple Silicon with a shared workspace
+# 3. Clone an isolated macOS VM in seconds on Apple Silicon with a shared work directory
 barn mac up dev --share ~/work
 ```
 
-## What Barn Rethinks About Vagrant
+## Five Engineering Tradeoffs
 
-Barn is not a straight port of Vagrant to Go. I laid out every pitfall I hit over a decade of using Vagrant and made five very different engineering choices:
+Barn isn't a line-for-line rewrite of Vagrant in Go. After years of hitting Vagrant's sharp edges, I made five deliberate design tradeoffs:
 
-### 1. One YAML File, Zero Split-Brain Configuration
+### 1. One Ansible YAML Inventory, Zero Config Split-Brain
 
-Running Pigsty sandboxes on Vagrant always came with an annoying chore: first you wrote a `Vagrantfile` in Ruby defining how many machines to boot, their CPU and memory specs, and their IP addresses; then you maintained a separate Ansible `pigsty.yml` inventory repeating the exact same IPs and hostnames. Change a single node, and you had to reconcile both files by hand.
+Running Pigsty sandboxes on Vagrant always meant maintaining two sources of truth: first a Ruby `Vagrantfile` declaring how many VMs to boot, their CPU and RAM, and their IPs; then a separate Ansible `pigsty.yml` inventory repeating the exact same IPs and hostnames. Change one node and you had to update both files by hand.
 
-In Barn, **there is no separate VM DSL**. [`barn.yml`](https://barn.pgsty.com/docs/reference/configuration/) is itself a valid **standard Ansible YAML inventory**:
+Barn has **no custom VM DSL**. [`barn.yml`](https://barn.pgsty.com/docs/reference/configuration/) is itself a valid **standard Ansible YAML inventory**:
 
 ```yaml
 all:
@@ -84,63 +84,61 @@ all:
           nodename: node-2
 ```
 
-Barn reads only the `vm_*` fields it cares about to create the machines (all of which have defaults and can be omitted), while Ansible and Pigsty run playbooks directly against **that exact same file** (`ansible-playbook -i barn.yml`). Infrastructure provisioning and configuration management share a single source of truth instead of fighting each other. In the newly released `1.1.0`, you don't even have to edit the file: `barn up -I el9 -A amd64` overrides the distro and architecture on the fly from the CLI, making cross-distro compatibility matrices trivial to run.
+Barn reads only the `vm_*` keys it cares about when creating VMs (all of them have defaults and can be omitted), while Ansible and Pigsty run playbooks straight against **the same file** (`ansible-playbook -i barn.yml`), with nothing to reconcile by hand. The newly released `1.1.0` also lets you override the distro and architecture from the CLI: `barn up -I el9 -A amd64` is all it takes to run cross-distro compatibility tests.
 
-### 2. One Global Deployment (`~/.barn`), No More Ghost VMs
+### 2. One Global State (`~/.barn`), No Forgotten Ghost VMs
 
-One of my least favorite parts of Vagrant's design is dropping a `.vagrant/` directory into every working folder. Use it long enough and your drive ends up littered with a dozen half-forgotten scratch directories while ghost VMs sit quietly in the background eating RAM. Worse, boot `10.10.10.10` in directory B while an old `10.10.10.10` in directory A is still running, and you get an immediate IP collision and a broken SSH `known_hosts` file.
+Use Vagrant long enough and your disk fills up with a dozen half-forgotten `.vagrant/` directories, with stray VMs idling in the background and quietly eating RAM. Worse, booting `10.10.10.10` in directory B routinely collides with an old `10.10.10.10` you forgot to shut down in directory A, trashing your SSH `known_hosts` in the process.
 
-Barn cuts out per-directory project scoping altogether: **[One Deployment, No Projects](https://barn.pgsty.com/blog/design/one-deployment-no-projects/)**. All state, SSH keys, cached base images, and VM disks are consolidated under `~/.barn`. Run `barn status` from any directory and you see the exact same globally managed local lab. If you genuinely need a second isolated environment, set the `BARN_HOME` environment variable explicitly. No hidden directory magic, no orphaned processes.
+Barn drops per-directory project scoping altogether: **[One Deployment, No Projects](https://barn.pgsty.com/blog/design/one-deployment-no-projects/)**. All state, keys, cached base images, and VM disks live under `~/.barn`. Run `barn status` from any directory and you see the same global environment; if you genuinely need a second isolated environment, set `BARN_HOME` explicitly.
 
-![Barn CLI output showing a globally managed four-node Linux cluster, dual-NIC diagnostics, and the dual-architecture static image catalog](barn-cli-linux.webp)
+![Barn CLI output: globally managed four-node Linux cluster, dual-NIC diagnostics, and dual-architecture static image catalog](barn-cli-linux.webp)
 
-### 3. Dual-NIC Decoupling: Out-of-Band Recovery + Fixed Private IPs
+### 3. Dual-NIC Decoupling: Out-of-Band SSH + Static Private IPs
 
-Dynamic DHCP is pointless for distributed systems and database experiments; cluster nodes need fixed private IPs that never move. Barn gives every Linux node a [dual-NIC topology](https://barn.pgsty.com/blog/design/fixed-ip-two-nics/):
+Distributed systems and database labs need fixed private IPs between nodes; dynamic DHCP only gets in the way. Barn wires every Linux node with a [dual-NIC topology](https://barn.pgsty.com/blog/design/fixed-ip-two-nics/):
 
-- **Management / NAT NIC**: Handles outbound internet access and exposes a dedicated management SSH port on host loopback. Even if you break the private network interface inside the guest, `barn ssh` still connects reliably, just like an out-of-band IPMI port on a physical server.
-- **Fixed Private NIC**: Backed by `socket_vmnet` on macOS and a host bridge on Linux, assigning the exact static private IPs declared in your inventory.
+- **Management / NAT NIC**: Handles outbound internet access and exposes a dedicated management SSH port on host loopback. Even if you botch the private NIC config inside the guest, `barn ssh` still gets you in—just like an out-of-band IPMI port on bare metal.
+- **Static Private NIC**: Uses `socket_vmnet` on macOS and a host bridge on Linux to assign the fixed private IPs declared in your inventory.
 
-The instant a cluster comes up, the default `dba` admin user with passwordless `sudo`, `/etc/hosts` resolution across all nodes, and **passwordless SSH trust from the control node (`admin_ip`) to every worker node** are ready out of the box. SSH into the control node and run Ansible immediately, with zero manual setup.
+At boot, Barn automatically configures the default `dba` admin user with passwordless `sudo`, `/etc/hosts` entries across every node, and **passwordless SSH access from the control node (`admin_ip`) to all worker nodes**. Log into the control node and you can run Ansible immediately.
 
-### 4. Copy-on-Write Clones and Guardrails Against Silent Destruction
+### 4. Copy-on-Write Clones and No-Surprise Convergence
 
-Nothing is worse in an infrastructure tool than cleverness you didn't ask for. In Barn, each base image is downloaded and cached once, and new nodes boot in seconds as `qcow2` copy-on-write clones. If you accidentally remove a node from `barn.yml` and run `barn up` or even `barn recreate`, Barn **[will never silently destroy that machine](https://barn.pgsty.com/blog/design/convergence-without-surprise/)**. Instead, it stops and reports a conflict; deleting a node always requires explicit authorization via `barn destroy NODE`. Dedicated data disks marked `persistent: true` are likewise preserved across routine rebuilds, so a cluster reset won't wipe out your test data.
+Nothing is worse than an infrastructure tool trying to be too clever. Barn downloads and caches each base image once, then boots new nodes in seconds via `qcow2` copy-on-write overlays. If you accidentally delete a host from `barn.yml` and run `barn up` or even `barn recreate`, Barn **[won't silently destroy that machine](https://barn.pgsty.com/blog/design/convergence-without-surprise/)**: it reports a conflict and halts. Deleting a node always requires an explicit `barn destroy NODE`. Dedicated data disks marked `persistent: true` also survive normal rebuilds, so you don't wipe out test data by mistake.
 
-### 5. Decentralized Static Image Catalogs: Never Get Unplugged Again
+### 5. Static Image Catalogs: Zero Hosted-Service Lock-In
 
-The HCP Vagrant shutdown delivered a clear lesson: **never tie the lifeline of a core developer tool to one company's centralized SaaS.**
+The HCP Vagrant shutdown drives home an old lesson: **foundational tools shouldn't tie their survival to a vendor's hosted service**.
 
-Barn provides official minimal images for major distributions (Ubuntu, Debian, Rocky Linux, and others) across both `amd64` and `arm64`. The entire image supply chain has zero dependency on a dynamic backend: it runs on **[plain static image catalogs + Ed25519 / minisign cryptographic signatures + strict SHA-256 verification](https://barn.pgsty.com/blog/design/repo-yaml-catalog-json/)**. You can mirror the whole repository to your own object storage (such as [Silo](https://silo.pgsty.com/)), an internal Nginx server, or any CDN at any time, or import custom images with `barn image import`. Even if the outside internet goes dark tomorrow, your barn stays intact.
+Barn ships slim official images for major distros (Ubuntu, Debian, Rocky Linux, and others) across both `amd64` and `arm64`, without relying on any dynamic backend. The entire catalog is just **[static manifest files + Ed25519 / minisign signatures + SHA-256 checksums](https://barn.pgsty.com/blog/design/repo-yaml-catalog-json/)**. You can mirror it to your own object storage (such as [Silo](https://silo.pgsty.com/)), an internal Nginx server, or any CDN; you can also import custom images locally with `barn image import`. Air-gapped internal networks work without a hitch.
 
-## Splitting One Mac into Three: A Safe Barn for AI Agents
+## Turning One Mac into Three: Local Sandboxes for AI Agents
 
-If you have a high-memory Apple Silicon Mac—like the 128 GB M5 Max MacBook Pro I use as my daily driver—Barn has an ace up its sleeve that Vagrant never came close to: **[`barn mac`](https://barn.pgsty.com/docs/start/macos/)**.
+If you work on a high-RAM Apple Silicon Mac (my daily driver is a 128 GB M5 Max MacBook Pro), Barn includes another practical feature: **[`barn mac`](https://barn.pgsty.com/docs/start/macos/)**.
 
 [![Barn documentation: running native macOS virtual machines on Apple Silicon via Virtualization.framework](barn-mac-docs-en.webp)](https://barn.pgsty.com/docs/start/macos/)
 
-The release package bundles an Apple-signed and notarized native **`Barn.app`**, built directly on Apple's `Virtualization.framework` and **APFS copy-on-write (CoW)**. Install the base `.ipsw` restore image once, run `barn mac up`, and within seconds you get a clean macOS guest cloned with **zero upfront disk overhead**—complete with a native desktop window, clipboard sync, preconfigured passwordless SSH, and fast **VirtioFS** directory sharing (`--share ~/work`). When you are finished, `barn mac destroy --yes` cleans everything up without leaving a crumb behind on the host.
+The release package bundles an Apple-signed and notarized native **`Barn.app`** built on Apple's `Virtualization.framework` and **APFS copy-on-write (CoW)**. You install the base `.ipsw` restore image once; after that, `barn mac up` clones a clean macOS guest in seconds with near-zero extra disk usage. Each guest gets a native desktop window, clipboard sync, preconfigured passwordless SSH, and fast **VirtioFS** directory sharing (`--share ~/work`). When you're done, `barn mac destroy --yes` cleans it right up.
 
-Under Apple's virtualization limits, a single Mac host can run two macOS VMs simultaneously, meaning **one high-memory Mac splits cleanly into three isolated Mac environments**.
+Apple's virtualization license caps each Mac host at two concurrent macOS VMs. Counting the host itself, **one high-memory Mac splits neatly into three isolated Mac environments**.
 
-That also answers a question plenty of people will ask: **in 2026, why spend the effort building a local VM manager from scratch?**
+Fair question: in 2026, why go to the trouble of writing a local VM manager?
 
-Beyond database engineering and testing, heavy daily work with coding agents turned up a use case where nothing else comes close: **[a local sandbox farm for AI agents](/ai/memory-vs-context/)**.
+Beyond database development and testing, running coding agents heavily every day pushed me straight into another hard requirement: **[local sandboxes for AI agents](/en/ai/memory-vs-context/)**.
 
-Anyone leaning heavily on autonomous coding agents like Claude Code or Codex knows the tradeoff all too well. Leave confirmation prompts enabled, and you end up babysitting a terminal mashing Enter; turn on full-auto YOLO mode directly on your host, and one rogue `rm -rf` or careless system edit can take out your primary development machine. Worse, run three separate Claude accounts at once, or multiple GUI-driving agents, and they pollute each other's environment variables, steal window focus, and fight over the mouse cursor. Put them inside Docker containers instead, and the moment an agent hits `systemd`, kernel modules, nested builds, or the native macOS toolchain, its hands are tied.
+Anyone running Claude Code or Codex all day has hit the same dilemma: leave confirmation prompts on, and you're stuck babysitting a terminal hitting Enter; flip on unattended auto-approve (YOLO mode) directly on your host, and one rogue `rm -rf` or botched system change can wreck your main workstation. Run three separate Claude accounts side by side, or multiple GUI-driving agents at once, and they trample each other's environment variables, steal window focus, and fight over the mouse cursor. Stuffing them into Docker containers doesn't cut it either: the moment an agent touches `systemd`, kernel modules, nested builds, or the native macOS toolchain, its hands are tied.
 
-**Lightweight local VMs that clone in seconds—with real kernels, full `root` access, and isolated desktops—are [the ideal sandbox for AI agents](/en/ai/agent-os/).**
+When you weigh the options, **a local VM that clones in seconds—with a full kernel, unrestricted `root` access, and its own isolated desktop—turns out to be the lowest-friction [runtime environment for agents](/en/ai/agent-os/)**.
 
-![Barn.app native macOS 27 APFS copy-on-write cloning and structured --json CLI output for AI agents](barn-cli-mac.webp)
+![Barn.app native macOS 27 copy-on-write cloning and --json structured CLI output contract for AI agents](barn-cli-mac.webp)
 
-That is why Barn treated **[structured CLI output contracts](https://barn.pgsty.com/blog/design/cli-contracts/)** as a first-class requirement from day one. Nearly every command natively supports `--json` and `--yaml` output paired with clear semantic exit codes, making it easy for humans to type and purpose-built as infrastructure primitives for AI agents. You can lock an agent inside the barn with full permissions and let it run flat out: have it call `barn up` to spin up three Linux nodes for database benchmarks, or `barn mac up` to clone a clean Mac for a full release build and verification pass. If it wrecks the guest, tear it down and start fresh in seconds, spending nothing more than idle local CPU and memory.
+That's why Barn shipped **[structured CLI output](https://barn.pgsty.com/blog/design/cli-contracts/)** from day one: core commands natively emit `--json` and `--yaml` alongside clear exit codes, so they're pleasant for humans to type and straightforward for agents to call. Put an agent inside a VM and you can hand it full permissions without sweating it: let it run `barn up` to spin up three Linux nodes for database benchmarks, or `barn mac up` to clone a clean Mac for a full build-and-verification pass. If it breaks the guest, destroying and rebuilding takes seconds, and all it costs is spare CPU and RAM already sitting on your desk.
 
-Vagrant carried us through the first decade of infrastructure automation, and it deserves a genuine thank-you and goodbye. Today, with high cloud costs, abundant local hardware performance, and the rise of AI agents, local virtualization shouldn't wither away just because an older tool aged out. It should get lighter, faster, and more deterministic.
+Vagrant carried us through the first decade of infrastructure automation. It was a good tool, but its chapter has closed. Now that cloud compute keeps getting pricier, local workstations have CPU and RAM to spare, and coding agents need isolated sandboxes of their own, an old workhorse like local virtualization is more useful than it's been in years.
 
-This newly built **Barn**, open source under Apache-2.0, is dedicated to every engineer who still loves bare metal, loves Linux, and likes having full control on their own machine.
+Barn is open source under Apache-2.0. Take it for a spin:
 
-- **Website & Documentation**: [https://barn.pgsty.com](https://barn.pgsty.com/)
+- **Website & Docs**: [https://barn.pgsty.com](https://barn.pgsty.com/)
 - **GitHub Repository**: [https://github.com/pgsty/barn](https://github.com/pgsty/barn)
 - **Quick Install (macOS)**: `brew install pgsty/infra/barn`
-
-Feel free to drop by the barn, take a look around, and leave a star if it's useful.
