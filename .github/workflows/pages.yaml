@@ -30,8 +30,6 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    env:
-      HUGO_VERSION: "0.168.0"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -41,16 +39,15 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version: 1.27.3
+          go-version: 1.27.4
           check-latest: true
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
-      - name: Install Hugo Extended
+      - name: Install Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: ${{ env.HUGO_VERSION }}
-          extended: true
+          hugo-version: latest
 
       - name: Build with Hugo
         env:

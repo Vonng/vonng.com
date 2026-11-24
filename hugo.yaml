@@ -103,9 +103,6 @@ module:
   proxy: https://proxy.golang.org,direct
   imports:
     - path: github.com/pgsty/oink
-  hugoVersion:
-    extended: true
-    min: 0.168.0
 
 # The About page reads its GitHub numbers from the live sources at build time
 # (layouts/_partials/metrics.html); this keeps a day's builds off the network

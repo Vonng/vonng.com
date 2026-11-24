@@ -1,6 +1,6 @@
 {{- /* Site override of the theme partial: the card thumbnail is cropped to
      2:1 rather than 16:9. `.td-blog-card__image` in
-     assets/scss/_styles_project.scss imposes the same frame on the images
+     assets/css/project.css imposes the same frame on the images
      Hugo cannot process (SVG, static, remote). Everything else is the
      theme's own markup. */ -}}
 {{- $manualLink := cond (isset .Params "manual_link") .Params.manual_link .RelPermalink -}}
