@@ -25,13 +25,30 @@ tags: [开源, 随笔, 旅行]
 
 项目主页与更新日志：[Silo](https://silo.pgsty.com/)
 
-![Silo 20261018 月度安全版本发布动态](silo-release.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> 本月例行 Silo 更新，又修了一堆漏洞与缺陷。发布了一个 20261018 版本，干这种硬活还是 ChatGPT Astra Max 最靠谱，烧了大概七八个周配额。另外，也达到了一个新的里程碑，4K GitHub star，以及接近四百万的 Docker Pull。[silo.pgsty.com](https://silo.pgsty.com)
+>
+> ![Silo 官方网站主页与 20261018 版本关键指标](silo-release-media.webp)
+>
+> > [!SOCIAL] PIGSTY - Free RDS for PostgreSQL `@PlGSTY`
+> >
+> > SILO 20261018 现已发布——由社区维护的开源 MinIO 分支。\
+> > • 修复 Object Lock 保留策略绕过与 IAM 认证 CVE • 可靠的 STS 凭据吊销 • 防止存储池重平衡期间的数据丢失 • 内置 Console 2.4.2 与 kes\
+> > [silo.pgsty.com](https://silo.pgsty.com)
+> {avatar="img/logo.png"}
+{avatar="img/vonng.jpg" platform="x"}
 
 ## Oink `v1.3`：新增 Expo 相册画廊
 
 除了底层的存储组件，承载我们整个文档矩阵的本地优先 Hugo 主题框架 **[Oink](/ai/oink-intro/)**，这几天也迭代到了 `v1.3`（最新小版本已到 `v1.3.2`）。这次最核心的更新，是在原有的文档（Docs）、博客（Blog）和书籍（Book）三大件之外，新增了原生的 **Expo 相册画廊** 支持：
 
-![Oink 1.3 新增 Expo 相册画廊](oink-expo.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> Oink 1.3 发布，新增了 expo 布局。同一个主题，不仅可以用来写技术文档，发博客，写书，现在还可以拿来当相册用了。[github.com/pgsty/oink](https://github.com/pgsty/oink) 。做了几个自用收藏站点。
+>
+> ![Oink 1.3 Expo 相册画廊演示：埃舍尔的视觉世界](oink-expo-media.webp)
+{avatar="img/vonng.jpg" platform="x"}
 
 - **目录即相册，拒绝繁琐配置**：秉承工程优先的思路，一个 Hugo 叶子页面包（一个 `index.md` 加上同目录的一堆图片）就是一册相册。把图片往目录里一丢就能自动渲染，不需要给每张图单独建页面或者手写一堆繁琐的 YAML。
 

@@ -14,7 +14,24 @@ It was my article, though I was not the one who submitted it. The funny part is 
 
 ![Hacker News Algolia search comparing the 200-point submission with the earlier 2-point submission](02.webp)
 
-![X notifications showing the post at #1 on Hacker News](03.webp)
+> [!SOCIAL] huizhou92 `@piaopiaopig`
+>
+> Same article—saw it on WeChat a few days ago, and this morning I saw it on Hacker News too, haha.
+{avatar="avatar-piaopiaopig.webp" platform="x"}
+
+> [!SOCIAL] Zhi Yuan Ju (琚致远) `@jjzhiyuan`
+>
+> Saw the article hit the front page first thing this morning 😄
+>
+> ![Hacker News front page showing MinIO Is Dead, Long Live MinIO at #1 with 133 points](03-hn1-a-media.webp)
+{avatar="avatar-jjzhiyuan.webp" platform="x"}
+
+> [!SOCIAL] STRRL.gpt `@strrlthedev`
+>
+> Hacker News #1 🔥
+>
+> ![Hacker News top four listing with MinIO Is Dead, Long Live MinIO at #1 with 132 points](03-hn1-b-media.webp)
+{avatar="avatar-strrlthedev.webp" platform="x"}
 
 This time, someone else submitted it without my knowing. It shot past 200 points, held the #1 spot for two hours, and is still sitting at #3 right now. What catches fire on HN really is a roll of the dice.
 

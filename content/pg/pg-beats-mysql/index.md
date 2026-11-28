@@ -8,7 +8,10 @@ tags: [PostgreSQL, MySQL, 技术评论]
 ---
 昨天在 X 上看到暴跳发了个帖。暴跳以前是 PolarDB InnoDB 引擎的负责人，现在是阿里云 RDS PG + MySQL 的头儿：
 
-![图片](01.webp)
+> [!SOCIAL] ba0tiao `@baotiao`
+>
+> 我一个曾在 AWS 工作的朋友告诉我，目前 PostgreSQL 和 MySQL 的实例比例是 6:4，PostgreSQL 在美国更受欢迎。这是真的吗？
+{avatar="avatar-baotiao.webp" platform="x"}
 
 所以虽然这是个 “我朋友说” 的疑问句式，但我也并不怀疑这个数字的真实性。大概在两年～三年前，AWS 上 PostgreSQL 的实例数量刚好超过 MySQL，而按照这两年 PG 发展的迅猛势头，从 1:1 提升到 3:2 也并不算离谱。
 

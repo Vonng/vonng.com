@@ -40,11 +40,10 @@ In barely two years, that monopoly has shattered. A technological Reformation ha
 
 For traditional programmers, that is a blunt blow to both ego and livelihood. If your sense of superiority still rests on a test-prep mindset and hand-coding fluency, consider this sobering warning from AI pioneer Ilya Sutskever:
 
-> "if you value intelligence above all other human qualities, you're gonna have a bad time"
+> [!SOCIAL] Ilya Sutskever `@ilyasut`
 >
-> — Ilya Sutskever
-
-![Ilya Sutskever's post on valuing intelligence above all other human qualities](ilya.webp)
+> if you value intelligence above all other human qualities, you're gonna have a bad time
+{avatar="avatar-ilyasut.webp" date="2023-10-07" platform="x"}
 
 **The flip side is that if you drop the ego and lean into this shift, you are not looking at doomsday—you are looking at an unprecedented era of compute leverage.**
 

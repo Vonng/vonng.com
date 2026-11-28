@@ -50,7 +50,12 @@ PostgreSQL 是一座积累了三十多年的 C 语言大山，代码质量在开
 
 还有 10 月 15 日披露的 **[`PwnEscape`（`CVE-2026-99999`，CVSS 9.3）](https://socprime.com/blog/cve-2026-99999-analysis/)**，一个在 Linux 内核 IPv4 网络栈里[潜伏了整整 18 年](https://tuxcare.com/blog/pwnescape-kvm-guest-escape/)的 `skb_checksum_help()` 越界写漏洞。各大发行版通告写得明明白白：不可信的客户虚拟机（Untrusted Guest VM）可以通过虚拟网卡发送带有畸形校验和元数据的网络包，就能直接泄漏或破坏宿主机内核内存，甚至**在宿主机上实现虚拟机逃逸并以 root 权限执行任意代码**。[AlmaLinux 的通告](https://almalinux.org/blog/2026-10-16-pwnescape-cve-2026-99999/)也确认了这个风险。不过要分清演示范围：[Vercel 披露](https://vercel.com/blog/findings-from-the-1-million-dollar-vercel-sandbox-challenge#the-kernel-zero-day)的生产环境演示是宿主机内存泄漏；宿主机崩溃与 root 代码执行，则是在研究员搭建的同配置 KVM / Firecracker 环境中完成的！
 
-![Paulos Yibelo 分享的 PwnEscape 紧急维护公告](pwnescape.webp)
+> [!SOCIAL] Paulos Yibelo `@PaulosYibelo`
+>
+> 真觉得过意不去 😭 向全球数千名 VPS 和计算基础设施工程师致歉——因为 CVE-2026-99999，大家这个周末都得忙着紧急打补丁、重启宿主机。安全漏洞可真喜欢在周末前夕披露啊。
+>
+> ![多家 VPS 与云服务商针对 PwnEscape（CVE-2026-99999）发布的紧急维护公告](pwnescape-media.webp)
+{avatar="avatar-paulosyibelo.webp" date="2026-10-17" url="https://x.com/PaulosYibelo/status/2111541156572013043" platform="x"}
 
 应用层扩展内存损坏、数据库内核 RCE、容器 Page Cache 污染、再到 KVM 虚拟机网络包逃逸……整条防线，从上到下，全在漏风。
 

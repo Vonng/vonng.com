@@ -16,9 +16,26 @@ A company that markets itself on security shipped its own wildcard certificate p
 
 > **Note**: This post is strictly a technical discussion of cybersecurity and software supply-chain safety. All paths, artifacts, and technical observations cited here come from publicly available sources or official installer packages released by the vendor. No reverse engineering, exploitation, or intrusion was involved. The analysis is based on public information and independently verifiable facts, not on speculation about intent. If the vendor has issued official remediation guidance, that should take precedence.
 
-![Disclosure screenshot](disclosure.webp)
+> [!SOCIAL] Lukasz Olejnik `@lukOlejnik`
+>
+> China's biggest cybersecurity company apparently just shipped an AI assistant with its own SSL private key sitting inside the installer. Qihoo 360, think Norton or McAfee, but dominant across the entire Chinese market
+>
+> It appears that their new AI product, 360安全龙虾 (Security Claw) bundles a wrapper on @OpenClaw. Inside the installer package - accessible to anyone who downloaded it - was a private SSL certificate key for the domain `*.myclaw.360.cn`. An SSL private key is essentially the master password to a website's encrypted connection. With it, an attacker can impersonate 360's servers, silently intercept user traffic, forge a login page that looks completely legitimate, or possibly take over the AI agent altogether. The cert is valid until April 2027 and covers every subdomain on the platform. It's now public. The founder launched the product with a promise it would "never leak passwords". It did that during release? 461 million users, a $10B valuation, and nobody checked the zip file before shipping. The cert expires April 2027.
+>
+> ![Original community disclosure showing the bundled certificate path and OpenSSL modulus match](disclosure-media.webp)
+{avatar="avatar-lukolejnik.webp" date="2026-03-16" platform="x"}
 
-![Repost screenshot](repost.webp)
+> [!SOCIAL] Viking `@vikingmute`
+>
+> Unbelievable. 360 Secure Lobster is a wrapper around OpenClaw, and anyone who downloads the installer gets direct access to the SSL private key for `*.myclaw.360.cn`—valid until April 2027 and covering every subdomain on the platform.
+>
+> At launch, 360 solemnly promised this AI assistant would never leak passwords, and then leaked its own core private key on day one? Did nobody check what was inside the installer? What an amateur operation.
+>
+> > [!SOCIAL] Lukasz Olejnik `@lukOlejnik`
+> >
+> > China's biggest cybersecurity company apparently just shipped an AI assistant with its own SSL private key sitting inside the installer. Qihoo 360, think Norton or McAfee, but dominant across the entire Chinese market
+> {avatar="avatar-lukolejnik.webp" date="2026-03-16"}
+{avatar="img/social/vikingmute.webp" date="2026-03-16" platform="x"}
 
 ## What Happened
 
@@ -42,9 +59,30 @@ According to independent validation by the security blogger "Qiufeng at Weishui,
 
 On X (formerly Twitter), several users also posted the full PEM-encoded certificate publicly, so anyone could verify it independently. The corresponding record was also visible in certificate transparency logs such as crt.sh.
 
-![Certificate PEM](pem.webp)
+> [!SOCIAL] 奶昔🥤 `@realNyarime`
+>
+> 360Claw SSL certificate leak
+>
+> ```text
+> -----BEGIN CERTIFICATE-----
+> MIIGJjCCBI6gAwIBAgIRAJjf6v3EwyNx8KtJDIo8eBkwDQYJKoZIhvcNAQELBQAw
+> SjELMAkGA1UEBhMCQ04xGjAYBgNVBAoTEVdvVHJ1cyBDQSBMaW1pdGVkMR8wHQYD
+> VQQDExZXb1RydXMgUlNBIERWIFNTTCBDQSAyMB4XDTI2MDMxMjAwMDAwMFoXDTI3
+> MDQxMjIzNTk1OVowGjEYMBYGA1UEAwwPKi5teWNsYXcuMzYwLmNuMIIBIjANBgkq
+> hkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA6GoA3XNAfUmduNst6xvYGphkmWpMKTC9
+> RCJpvKoKSuFylOwY+tGm8vmKl4Uc4SYUp3a8TdFjFtEzCuRqEo3IVYRdenk94K8G
+> ...
+> ```
+{avatar="avatar-realnyarime.webp" url="https://x.com/realNyarime/status/2033428417488757122" platform="x"}
 
-![Public reporting](report.webp)
+> [!SOCIAL] 科技圈 在花新闻 `@ZaihuaNews`
+>
+> SSL certificate leak hits 360Claw
+>
+> Users have discovered an apparent SSL certificate leak in 360Claw involving the digital certificate and matching private key for `*.myclaw.360.cn`. The leaked certificate was issued by WoTrus CA Limited and is valid from March 12, 2026 to April 12, 2027.
+>
+> The leak includes the full certificate text and private key, potentially exposing encrypted traffic for the affected domains… [crt.sh/?q=%2A.myclaw.360.cn](https://crt.sh/?q=%2A.myclaw.360.cn)
+{avatar="avatar-zaihuanews.webp" url="https://x.com/ZaihuaNews/status/2033481130532392997" platform="x"}
 
 I also repeated the OpenSSL verification locally against the certificate and key files and got the same modulus match.
 

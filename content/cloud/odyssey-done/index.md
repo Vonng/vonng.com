@@ -54,9 +54,12 @@ tags: [下云, 翻译]
 
 在过去两年里，云炒作达峰下坡，而下云运动却在蓬勃发展 —— 根据 Barclays 2024 上半年进行的 CIO 调查中，计划将负载迁回到本地部署/私有云上的 CIO 占比，从前几年的 50% - 60 飙升到 83%。下云，作为一种切实的降本增效选项，已经完全进入主流视野，并开始产生巨大的现实影响。
 
-![dell.png](dell.png)
-
-> Dell 老板：选择搬回自建/私有云的 CIO 比例
+> [!SOCIAL] Michael Dell `@MichaelDell`
+>
+> 涵盖本地部署与托管机房的多云架构已是明确趋势。在 AI 推理增长和数据引力的推动下，巴克莱调查显示 83% 的企业 CIO 计划在 2024 年将至少部分工作负载迁回本地，远高于 2020 年下半年 43% 的低点。
+>
+> ![巴克莱 CIO 调查图表：计划将工作负载从公有云迁回私有云或本地部署的受访者比例升至 83%](dell-media.webp)
+{avatar="avatar-michaeldell.webp" url="https://x.com/MichaelDell/status/1780672823167742135" platform="x"}
 
 在我的 《云计算泥石流》 系列专栏中，我已经深入剖析过云资源的成本，介绍过云背后的商业模式，并提供了下云替代的切实可行路径。
 我自己也在过去两年中帮助过不少企业从云上下来 —— 通过解决了他们下云关键卡点的数据库服务自建问题。
@@ -71,16 +74,31 @@ tags: [下云, 翻译]
 
 作为一个简单的证明，服务器托管服务商 Hentzer 提供的对象存储价格是 AWS 的 1/51 ……，他们并不需要什么高科技黑魔法，只要把硬件装上 Ceph/Minio 这样的开源软件加个 GUI，真诚地卖给客户就可以做到这个价格，还能确保自己有不错的毛利。
 
-![hetzner-s3.png](hetzner-s3.png)
-
-> Hentzer 提供价格是 AWS S3 1/50 的兼容对象存储服务
+> [!SOCIAL] Daniel Vassallo `@dvassallo`
+>
+> Hetzner 推出了兼容 S3 的对象存储服务（目前处于 Beta 阶段），和 AWS 相比价格简直疯狂。
+>
+> 存储：便宜 4 倍 —— $4.9/TB·月 vs $21/TB·月\
+> 流量：便宜 50 倍 —— $1/TB vs $51/TB
+>
+> 而且不收请求费。AWS 每百万次请求收费 $0.4–$5。
+>
+> docs.hetzner.com/storage/object...
+{avatar="avatar-dvassallo.webp" date="2024-10-18" platform="x"}
 
 不仅仅是对象存储，云上的带宽，流量，算力，存储，都贵的离谱 —— 如果你不是那种几个凑单 1c 羊毛虚拟机就能打发的用户，你真的应该好好算一算帐。
 这里的数学计算并不复杂，任何有商业常识的人只要拥有这里的信息都会产生这样的想法 —— 我为云上的服务支付几倍到几十倍的溢价，**究竟买到的是什么东西？**
 
 例如，DHH 在 Rails World 大会上的演讲就抛出了这个问题，用同样的价格，他在 Hetzner 上可以租到强大得多得多的专属服务器：
 
-![dhh1.png](dhh1.png)
+> [!SOCIAL] Hetzner `@Hetzner_Online`
+>
+> @DHH 在多伦多 #RailsWorld 大会上说得太有道理了！2 线程就要 $250/月 —— 认真的吗？明明有性价比高得多的选择，谁有功夫为昂贵的服务器买单。大家是时候停止多花冤枉钱了！💰
+>
+> ➡️ [htznr.li/DHH](https://htznr.li/DHH)
+>
+> ![DHH 在 Rails World 2024 演讲中展示云服务器 Performance M 规格：1 核 2 线程、2.5GB 内存、$250/月](dhh1-media.webp)
+{avatar="avatar-hetzner-online.webp" date="2024-09-30" platform="x"}
 
 ![hetzner.png](hetzner.png)
 

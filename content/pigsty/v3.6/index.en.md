@@ -22,7 +22,18 @@ The installation process has been further simplified: from four steps to three s
 
 Percona's `pg_tde` extension has finally reached 1.0 GA after years of development. Many "enterprise-grade" PostgreSQL distributions tout "transparent encryption" as a core selling point — `pg_tde` may be the first mature enough open-source transparent encryption extension, providing truly enterprise-grade transparent encryption for open-source PostgreSQL.
 
-![Pigsty and Percona announce pg_tde support in July 2025; the posts are in English, with Chinese interface controls.](percona-tde.jpg)
+> [!SOCIAL] PIGSTY - Free RDS for PostgreSQL `@PlGSTY`
+>
+> Now you can use @Percona Postgres Distribution alone with GA TDE extension in Pigsty. With HA, PITR, IaC, and Built-in Observability as simple as one command.\
+> Rollout in the next v3.6 release, alone with other 8 PG kernel support.
+>
+> ![Pigsty Grafana dashboard alongside Percona PG TDE configuration and terminal output](percona-tde-media.webp)
+>
+> > [!SOCIAL] Percona `@Percona`
+> >
+> > Percona is happy to announce that the pg_tde extension is now generally available! You can grab the latest Percona Distribution for PostgreSQL and jump into the quick-start guide in our docs. You'll be running fully #OpenSource TDE on #PostgreSQL: no licensing tricks, no lock-in.
+> {avatar="avatar-percona.webp" date="2025-07-01"}
+{avatar="img/logo.png" date="2025-07-05" platform="x"}
 
 Currently, this extension requires running on a patched PostgreSQL kernel — Percona's Postgres distribution. Pigsty added support immediately after the announcement — just two commands to enable and install, while enjoying Pigsty's full RDS capabilities: monitoring, high availability, PITR, IaC, and more — identical to the vanilla PG kernel.
 

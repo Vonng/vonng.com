@@ -32,7 +32,12 @@ SOA 在亚马逊的规模下很有意义，没有任何一个团队能够知道�
 >
 > 人们沉迷于这些与时髦术语绑定的热钱与炒作，因为微服务带来了大量的新开销，招聘机会与工作岗位，唯独对于解决他们的问题来说实际上并没有必要。“
 
-![微服务是不是个蠢主意？（图 2）](microservice-bad-idea-2.png)
+> [!SOCIAL] DHH `@dhh`
+>
+> “单体才是未来，因为人们试图用微服务去解决的问题根本脱离现实。”—— 我真希望自己也能像 @kelseyhightower 那样写出这么犀利毒辣的话。说得好，兄弟！😂❤️✊
+>
+> [Monoliths are the future — changelog.com](https://changelog.com/posts/monoliths-are-the-future)
+{avatar="img/dhh.jpg" platform="x"}
 
 没错，当你拥有一个连贯的单一团队与单体应用程序时，用网络调用和服务拆分取代方法调用与模块切分，在几乎所有情况下都是一个无比疯狂的想法。
 

@@ -34,7 +34,21 @@ EdgeOne 自定义 525 错误码的解释是：EdgeOne 自定义的状态码。�
 
 顺便一提，就在昨天 EdgeOne 下线了免费套餐 HTTP 防护套餐，被社区广泛吐槽。前一阵 EO 找了很多 KOL 鼓吹，碰瓷赛博佛祖 Cloudflare。结果现在没多久就 Rug-Pull 现原型了<https://www.lxs.net/read-blog/792874>
 
-![图片](05.webp)
+> [!SOCIAL] Viking `@vikingmute`
+>
+> 前一阵推上铺天盖地都是这个 EdgeOne 的广告，碰瓷CF，号称国内赛博菩萨，号称免费，但是还要各种求兑换码。前几天推友也都是推荐 EdgeOne pages，但是内心总是对腾讯有抵触。
+>
+> 如果你用过国内的云服务，其实就知道这个就是 DCDN 又起了个新名字，新瓶装旧酒。没想到免费套餐就取消了源站防护这么重要的功能，那这免费套餐要他又有何用呢？
+>
+> > [!SOCIAL] 凍檸茶走冰走檸走茶走甜唔該 `@CitronaTeo`
+> >
+> > 騰訊的這個 Cloudflare 類似物，沒多久前還在 Twitter timeline 上鋪天蓋地宣傳，這才沒幾天就下線了。\
+> > 果然遠離騰訊就是遠離不幸，試用了一下就沒繼續用了，要是上環境了現在還要遷移。\
+> > 🤡
+> >
+> > ![腾讯云 EdgeOne 关于免费套餐下线源站防护功能的通知邮件](05-media.webp)
+> {avatar="avatar-citronateo.webp" date="2025-10-15"}
+{avatar="img/social/vikingmute.webp" date="2025-10-16" platform="x"}
 
 ---
 

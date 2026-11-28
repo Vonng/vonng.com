@@ -42,7 +42,17 @@ tags: [Linux, Omarchy, 操作系统]
 
 抛开这些噪音看，Omarchy 的桌面使用体验跟 macOS 确实还有不小的差距，但这可能已经是 Linux 发行版里面的品味巅峰了。它至少是我看到的，**Linux 生态里唯一一个有精气神去追平 macOS 体验的项目**。这真的很不得了，非常有志气。DHH 直接对各路 Linux 伪君子口吐芬芳，老冯是打心底里欣赏和佩服的。
 
-![DHH 回应对 Omarchy 的嘲讽](dhh-tweet.webp)
+> [!SOCIAL] DHH `@dhh`
+>
+> Omarchy 不只是一个发行版，更是对长期困扰 Linux 的种种荒唐乱象的一记反制。自从那些老牌机构被渗透之后，Linux 政治就成了小丑当道的马戏团，而 Omarchy 就是远离这一切的避风港。QUACK THAT! 😂🦆
+>
+> > [!SOCIAL] TheStandupPod `@thestanduppod`
+> >
+> > “Linux 满地都是疯癫小丑”
+> >
+> > ![The Standup 播客视频片段：身穿 Omarchy T 恤的 DHH 怒喷“goddamn maniacs”](dhh-tweet-media.webp)
+> {avatar="avatar-thestanduppod.webp"}
+{avatar="img/dhh.jpg" platform="x"}
 
 正所谓，知之者不如好之者，好之者不如乐之者。也就是 DHH 这种已经财富自由、又真心热爱计算机的中登，才能搞出这种事情来。想做好 Linux 桌面，需要的正是这种集品味、技术、资源、影响力于一身，并且 **真的热爱它** 的人，才能成事。
 

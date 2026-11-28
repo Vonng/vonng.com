@@ -14,13 +14,41 @@ images: [featured.webp]
 
 起因是海外博主 [@elshayib_](https://x.com/elshayib_) “掀了桌子”：他[连发几帖](https://www.techmeme.com/261025/p2)，晒出一份文档截图，说这是 Kimi 发给创作者的推广需求文档（Brief）（单方表述需核实，Kimi 暂未回应）。按截图的内容，创作者发帖前要先交稿审批；[文档里给了几套现成话术](https://x.com/0xLogicrw/status/2113801452783284724)，比如“Kimi 就是便宜五倍的开源版 Opus 5.5”“中国让所有人都免费用上了 Opus 5.5”。
 
-[![Elshayib 发布的推广文档截图：发帖前需审批，并要求不标注付费合作](brief.webp)](https://x.com/elshayib_/status/2113710752741892476)
+> [!SOCIAL] Elshayib `@elshayib_`
+>
+> 这就是 Kimi AI 宣传他们新模型 Kimi K3.1 Pro 的方式。我认识所有和他们合作的博主，没有一个是诚实的。我自己也发过关于它的帖子，但我没有参与这个活动，也从未使用过他们提供的模板。
+>
+> 纯粹是公关宣传，我还有更多料要曝，这太他妈荒唐了，我会持续跟进这个话题。
+>
+> ![流出的 Kimi K3.1 Pro 推广需求文档截图：发帖前需先交稿审批，并要求不标注付费合作（paid partnership）标签](brief-media.webp)
+{avatar="avatar-elshayib.webp" date="2026-10-24" url="https://x.com/elshayib_/status/2113710752741892476" platform="x"}
 
-[![Elshayib 发布的话术截图：将 Kimi 比作更便宜的开源版 Opus 5.5](narratives.webp)](https://x.com/elshayib_/status/2113734602032312731)
+> [!SOCIAL] Elshayib `@elshayib_`
+>
+> 揭露 Kimi AI 的第 2 帖
+>
+> 这是我在 Kimi AI 发布 Kimi K3.1 Pro 后从他们那里拿到的创作者推广文档，里面就是他们希望创作者推的叙事话术。我当然退出了——我绝不会去说自己没亲自测试并给出真实看法的内容，而且我也不想卷入这种中美政治局势。
+>
+> ![流出的推广叙事话术文档截图：包含“开源版 Opus 5.5 但便宜 5 倍”“中国让所有人免费用上 Opus 5.5”等话术建议](narratives-media.webp)
+{avatar="avatar-elshayib.webp" date="2026-10-24" url="https://x.com/elshayib_/status/2113734602032312731" platform="x"}
 
-[![Elshayib 发布的私信截图：对方要求删除批评宣发文案的评论](takedown.webp)](https://x.com/elshayib_/status/2113751173476049138)
+> [!SOCIAL] Elshayib `@elshayib_`
+>
+> 揭露 Kimi AI 的第 3 帖
+>
+> 在我拒绝配合并开始批评一个帮他们发推广文案的创作者之后，他们又给我发私信，要求我删除之前发的一条评论。我简直不敢相信——你他妈算老几，凭什么让我删评论？我又不是为你工作的，也永远不会为这种骗子公司工作。
+>
+> ![私信聊天截图：对方附上 Elshayib 批评他照搬推广文档的评论，请求删除以免“毁掉这次发布”](takedown-media.webp)
+{avatar="avatar-elshayib.webp" date="2026-10-24" url="https://x.com/elshayib_/status/2113751173476049138" platform="x"}
 
-[![Elshayib 发布的对比话术截图：要求与 Opus 5.5、Astra 比较效果和成本](comparison.webp)](https://x.com/elshayib_/status/2113903850641842589)
+> [!SOCIAL] Elshayib `@elshayib_`
+>
+> 揭露 Kimi AI 的第 4 帖
+>
+> 这就是他们要求每个参与创作者推广活动的人做的事：基本上就是踩 Astra 和 Opus，哪怕根本不是事实；而且如你所见，你还可以直接从现成的演示里挑着发。我怀疑这些演示里到底有没有一个是 Kimi 实际做出来的——就算有，也绝不是大多数付费账号吹的那样一次生成的。
+>
+> ![流出的对比测试话术文档截图：要求与 Opus 5.5、Astra 对比效果，并标注“必须对比成本”](comparison-media.webp)
+{avatar="avatar-elshayib.webp" date="2026-10-24" url="https://x.com/elshayib_/status/2113903850641842589" platform="x"}
 
 而最要命的一条，是[请不要打付费合作（Paid Partnership）标签](https://www.implicator.ai/kimi-k3-1-pro-launch-hit-by-unverified-brief-telling-creators-to-skip-ad-labels/)，也不必放官网链接、不用 @ 官方账号。这么一来，一条拿了钱的推广帖，看上去就跟路人的自发分享没什么两样。
 

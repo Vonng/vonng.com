@@ -8,7 +8,15 @@ tags: [云计算, 下云, 技术评论]
 ---
 刚刚，Y Combinator 上发起的一个新的项目 Ubicloud 引起热议，旨在提供（整个） **AWS** 的开源替代方案。YC 教父 Paul Graham 转发评论。
 
-![图片](01.webp)
+> [!SOCIAL] Paul Graham `@paulg`
+>
+> 只有二次创业者的底气，才敢选这样一张图来官宣发布。
+>
+> > [!SOCIAL] Ubicloud `@UbicloudHQ`
+> >
+> > 我们正在打造一个全新的开源云平台——可以在任何地方运行，成本低至 3–10 倍。加入我们的反叛军同盟，随我们在 @ycombinator W24 正式发布！
+> {avatar="avatar-ubicloudhq.webp"}
+{avatar="img/social/paulg.webp" platform="x"}
 
 这是下云成为历史潮流的又一个代表性的事件 —— 在创业公司眼中，公有云的企业形象已经从普惠的公共存储计算基础设施，变成了剥削血汗的赛博地主，构建[**杀猪盘**](/cloud/debris/)的邪恶帝国，是亟需革命与打倒的对象。而新的勇者已经出现。
 

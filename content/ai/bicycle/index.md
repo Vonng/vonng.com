@@ -49,11 +49,24 @@ ai: true
 
 用网友的话说，这叫"用恒大冰泉洗澡"。澡是洗上了，亏也吃下了，就当交学费。
 
-![Post comparing Fable Ultracode to showering with premium bottled water](ice-water-shower.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> 上一波 Fable 用恒大冰泉洗了个澡，一个任务直接打爆5h额度，这次续的波次只舍得聊天日用和 Plan 了。
+>
+> > [!SOCIAL] Yifeng 'Evan' Wang `@ewind_dev`
+> >
+> > 今日金句： Fable 开 ultracode 相当于用恒大冰泉洗澡
+> {avatar="avatar-ewind-dev.webp" date="2026-07-08"}
+{avatar="img/vonng.jpg" date="2026-07-08" platform="x"}
 
 后面几天 Max 档也不太经造，跑了几组活额度就见了底，害得老冯连着几天没有 Fable 可用，心痒难耐。
 
-![Claude Fable usage after a long task](fable-usage.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> Fable 用的太快了，效果也确实是嘎嘎好，留点最后的额度用来日常交互了。
+>
+> ![Claude Code 中 Fable 5 的额度与费用统计截图](fable-usage-media.webp)
+{avatar="img/vonng.jpg" date="2026-07-02" platform="x"}
 
 所以我的结论是：Fable 这点宝贵额度，拿去干杂活是真浪费。正确用法是—— 日常聊天 + 项目规划。把它当导师，别当实习生。
 

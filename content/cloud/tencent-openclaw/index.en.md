@@ -21,7 +21,19 @@ Impressive. If you cite the source, it's a "mirror." If you don't, it's "origina
 
 The story first broke on X when SnowShadow (@Alfredxia) publicly asked OpenClaw founder Peter Steinberger whether he knew Tencent had copied the entire ClawHub marketplace.
 
-![SnowShadow calling Tencent out on X](callout.webp)
+> [!SOCIAL] SnowShadow `@Alfredxia`
+>
+> @steipete Do you know that Tencent created a skillhub, which scraped all the skills from clawhub and imported them into its own platform?
+>
+> ![Terminal file listing and JSON metadata pointing to clawhub.ai/api/v1/download](callout-media.webp)
+{avatar="avatar-alfredxia.webp" platform="x"}
+
+> [!SOCIAL] Peter Steinberger 🦞 `@steipete`
+>
+> Kinda... I got an email once from folks complaining that my rate limits block them from scraping fast enough.
+>
+> They copy yet they don't support the project in any way. 😞
+{avatar="avatar-steipete.webp" platform="x"}
 
 Peter's response, paraphrased:
 
@@ -31,7 +43,10 @@ That line says everything. People were not only scraping his project. They were 
 
 Peter then tagged Tencent Hunyuan directly and asked, again paraphrased, whether they would consider helping instead of driving his infrastructure costs into five digits.
 
-![Peter says Tencent pushed his server bill into five digits](bill.webp)
+> [!SOCIAL] Peter Steinberger 🦞 `@steipete`
+>
+> @TencentHunyuan would you be up for helping out a bit, instead of driving my server costs into 5 digits?
+{avatar="avatar-steipete.webp" platform="x"}
 
 That number matters. A solo developer maintaining an open-source project suddenly gets hit with a five-figure hosting bill because a giant platform decides to mirror first and talk later.
 
@@ -41,7 +56,14 @@ Tencent AI's response was textbook PR:
 
 > "In the first week, we served 180 GB of traffic for users, while only pulling 1 GB from the official source through non-concurrent requests."
 
-![Tencent AI's 180 GB response](response.webp)
+> [!SOCIAL] Tencent AI `@TencentAI_News`
+>
+> Hi Peter, we hear your concerns. SkillHub is a localized skills platform from Tencent built on the OpenClaw ecosystem, providing better availability & speed for users in China.
+>
+> We are transparent that we act as a local mirror and have always credited ClawHub as the source. In our first week, we handled 180GB of traffic (870k downloads) for users, **while only pulling 1GB** (from non-concurrent requests) from the official source.
+>
+> Many of our team members are active contributors (code & PRs), and we are eager to support the ecosystem and become a better sponsor.
+{avatar="avatar-tencentai-news.webp" date="2026-03-12" platform="x"}
 
 Translated into plain English: once Tencent moved 13,000 skills onto its own servers, Chinese traffic naturally stopped hitting ClawHub. Tencent then proudly declared that it had saved the upstream project bandwidth.
 
@@ -51,7 +73,39 @@ That logic is like opening a clone store across the street from someone else's s
 
 Andy Stewart (@manateelazycat) called out the absurdity on X: Tencent was criticized for pushing the upstream bill higher, yet its answer was not apology or sponsorship, but a calculator.
 
-![Community criticism of Tencent's response](criticism.webp)
+> [!SOCIAL] Andy Stewart `@manateelazycat`
+>
+> Tencent's move left me speechless... Scraping ClawHub's data wasn't enough—they even complained about OpenClaw founder Peter Steinberger's server rate limits??? 🤡
+>
+> Best of all, after Peter called them out, their reply in the comments never once mentioned sponsorship—just boasted that they only pulled 1 GB while serving 180 GB of traffic for users...
+>
+> Classic.
+{avatar="img/social/manateelazycat.webp" date="2026-03-12" platform="x"}
+
+> [!SOCIAL] Doiiars Fortune `@Daiiors`
+>
+> Reading the context, he didn't say Tencent was behind all of those incidents.
+{avatar="avatar-daiiors.webp" platform="x"}
+
+> [!SOCIAL] Andy Stewart `@manateelazycat`
+>
+> Look at the second screenshot—isn't it obvious who he's pointing at?
+{avatar="img/social/manateelazycat.webp" platform="x"}
+
+> [!SOCIAL] 路人M `@M4123R0`
+>
+> I don't really agree with this pile-on. By that logic, plenty of domestic mirror sites have the exact same issue...
+{avatar="avatar-m4123r0.webp" platform="x"}
+
+> [!SOCIAL] Andy Stewart `@manateelazycat`
+>
+> 🤣 Empty pleasantries don't beat writing a real check—or even having Tencent Cloud pick up part of the upstream traffic.
+{avatar="img/social/manateelazycat.webp" platform="x"}
+
+> [!SOCIAL] Benjamin Gao `@BenjaminGao2025`
+>
+> 😂 Classic Tencent—buying more shares!
+{avatar="avatar-benjamingao2025.webp" platform="x"}
 
 Peter later clarified that he was not against mirrors in principle. He objected to Tencent doing it without communication, without an official arrangement, and without even the minimal courtesy of asking first.
 
@@ -73,6 +127,20 @@ Open source does not mean "take whatever you want with zero human decency." You 
 
 Tencent says it wants to become a better ecosystem sponsor. Great. A practical first step would be paying Peter's server bill.
 
-![Peter's GitHub Sponsors page](sponsors.webp)
+> [!SOCIAL] Baidu Inc. `@Baidu_Inc`
+>
+> Our engineers were spotted outside today, setting up an OpenClaw "Lobster Market." 👀
+>
+> Nearly 1,000 visitors stopped by to get @openclaw installed, learn a few tips from the team, and check out our newly launched DuClaw.
+>
+> And if you missed it — last month we made it possible to access OpenClaw directly within Baidu App, bringing open-source agent capabilities to around 700M MAUs. Baidu AI Cloud is also among the first cloud platforms in China to support OpenClaw deployment.
+>
+> ![Four-photo collage of Baidu's outdoor OpenClaw "Lobster Market" installation event](sponsors-media.webp)
+{avatar="avatar-baidu-inc.webp" date="2026-03-11" platform="x"}
+
+> [!SOCIAL] Peter Steinberger 🦞 `@steipete`
+>
+> Amazing. We're open for maintainers or sponsorships :)
+{avatar="avatar-steipete.webp" platform="x"}
 
 All factual claims here are based on public reporting and public statements by the parties involved. Quoted remarks are paraphrased.

@@ -10,7 +10,12 @@ tags: [数据库, 文档, 翻译]
 
 ## 作为 FAANG 面试必备敲门砖，大厂入职必修课的 DDIA，我相信野猪书的大名已经在程序员中如雷贯耳，无需多言。
 
-![图片](01.webp)
+> [!SOCIAL] Никита Питонский `@nikitonsky`
+>
+> Preparing for interview to FAANG / Working in FAANG
+>
+> ![准备 FAANG 面试（DDIA 野猪书封面）与入职 FAANG 后的对比梗图](01-media.webp)
+{avatar="avatar-nikitonsky.webp" date="2023-07-22" platform="x"}
 
 ## 今天一个上午把这三章一口气读完，确实新增了许多内容，反应了这几年的新趋势，值得一看，强烈推荐。例如，第二版的第一章就完全是全新内容，提出了许多极富洞见的问题：
 

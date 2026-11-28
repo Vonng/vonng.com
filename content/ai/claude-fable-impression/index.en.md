@@ -11,7 +11,21 @@ This morning, Anthropic officially released its new **Claude Fable** model—the
 
 The short version: it really is strong, and it is the new SOTA. But it is expensive, and the way Anthropic is serving it up leaves a bad taste.
 
-![Claude Fable launch announcement](claude-x.webp)
+> [!SOCIAL] Claude `@claudeai`
+>
+> Introducing Claude Fable 5: a Mythos-class model that we’ve made safe for general use.
+>
+> Its capabilities exceed those of any model we’ve ever made generally available.
+>
+> ![Claude Fable 5 launch teaser frame](claude-x-media.webp)
+{avatar="img/social/claudeai.webp" platform="x"}
+
+> [!SOCIAL] Claude `@claudeai`
+>
+> Fable 5 is state of the art across nearly all benchmarks, excelling in software engineering, knowledge work, scientific research, and vision.
+>
+> The longer and more complex the task, the greater Fable 5’s advantage over our other models.
+{avatar="img/social/claudeai.webp" platform="x"}
 
 Two months ago, when the first word of the Mythos Preview emerged, I wrote ["AGI Is Here. Do You Have a Ticket?"](/en/ai/agi-is-coming/) about top-tier AI capabilities being locked away. That warning now looks prescient. This time, even the names make no attempt to hide it: **Mythos is kept for approved "lords"; Fable is told to the commoners.** It is the same underlying model, but Fable is the crippled, locked-down edition.
 
@@ -57,9 +71,12 @@ For example, whenever I discussed one of my earlier agent/AI topics with Claude,
 
 ![Fable dynamically downgraded to Opus 4.8](opus-fallback.webp)
 
-![SemiAnalysis on Fable's model-filtering system, with the attached explanation of its safeguards](model-filter-en.webp)
-
-*[Original English post](https://x.com/SemiAnalysis_/status/2064482714149896431), captured through a [public mirror](https://nitter.gq/SemiAnalysis_/status/2064482714149896431). June 9, 2026, 23:00 UTC is June 10, 07:00 in the original screenshot's time zone.*
+> [!SOCIAL] SemiAnalysis `@SemiAnalysis_`
+>
+> BREAKING NEWS: Anthropic's latest model will NOT help you if it thinks your ML research/ML engineering is interesting, and/or will secretly degrade its IQ so that the average engineer won't notice. We are already seeing Anthropic's latest model's moderation filters our GPU inference research and programming 😭
+>
+> ![Anthropic's documentation explaining covert safeguards on frontier LLM development requests](model-filter-media.webp)
+{avatar="avatar-semianalysis.webp" date="2026-06-09" url="https://x.com/SemiAnalysis_/status/2064482714149896431" platform="x"}
 
 **Gripe two: a 12-day trial.** Fable is not currently part of the Claude Code subscription plans. For the 12 days from today until June 22, subscribers on the $100 and $200 plans get a limited trial. After that, the only option is metered API access. The official explanation is insufficient capacity: there is not enough compute to go around. Fable may become part of the standard subscription once capacity improves, but there is no timeline.
 
@@ -85,15 +102,63 @@ That is also what I suggest you do right now: make the most of this 12-day windo
 
 ## A Few Other Interesting Cases and Updates
 
-![Deedy's collection of Claude Fable examples, including the current Community Note correcting the migration and pricing claims](fable-cases-en.webp)
+> [!SOCIAL] Deedy `@deedydas`
+>
+> Claude Fable 5 is by far the most ridiculous model that makes me genuinely afraid for the future of software engineering.
+>
+> I compiled the top 10 most unbelievable things I've seen Claude Fable 5 do today:
+>
+> — Migrate a 50M line codebase from Stripe in a day (humans take 2mos)
+> — Draw amazing 3D graphics a) Boeing 747 b) space simulations with >5000 objects c) Minecraft roller coasters d) full photorealistic forest scenes e) NYC skyline f) stormy clouds)
+> — One-shot Pokemon FireRed the game
+> — Optimize a real world proprietary interaction net evaluator 10x more than the next best model, gpt5.5
+>
+> AND it's about the same price as GPT 5.5 ($10/M input, $45/M output) vs Fable 5 ($10/M input, $50/M output) and 6x cheaper than GPT 5.5 Pro.
+{avatar="avatar-deedydas.webp" date="2026-06-10" url="https://x.com/deedydas/status/2064519826333397149" platform="x"}
 
-*[Original English post](https://x.com/deedydas/status/2064519826333397149), captured through a [public mirror](https://nitter.gq/deedydas/status/2064519826333397149). The original screenshot also contained this proposed Community Note, marked “Not shown on X · Needs ratings”:*
+> **Community Note:** Readers added context correcting both the migration and pricing claims: Fable 5 performed a codebase-wide migration *within* a 50M-line codebase in one day rather than migrating all 50M lines, and GPT-5.5 standard pricing is $5/M input and $30/M output (not the $10/$45 long-context rates), making Fable 5 ($10/$50) roughly 2x as expensive as GPT-5.5 and closer to 3–4x (rather than 6x) cheaper than GPT-5.5 Pro.
 
-![Original proposed Community Note: GPT-5.5 costs $5/M input and $30/M output; Fable 5 is about twice as expensive, and the claimed sixfold discount against GPT-5.5 Pro is closer to three to four times](fable-cases-note-en.webp)
+> [!SOCIAL] Deedy `@deedydas`
+>
+> Space simulations with >5000 objects
+>
+> > [!SOCIAL] shirish `@shiri_shh`
+> >
+> > Claude Fable 5 vs Opus 4.8
+> >
+> > ![Fable 5 and Opus 4.8 compared on a space simulation](space-simulation-media.webp)
+> {avatar="avatar-shiri-shh.webp"}
+{avatar="avatar-deedydas.webp" platform="x"}
 
-![Fable and Opus compared on a space simulation](space-simulation.webp)
+> [!SOCIAL] Deedy `@deedydas`
+>
+> NYC skyline prompt
+>
+> > [!SOCIAL] aipulsedaily `@aipulseda1ly`
+> >
+> > Fable 5 Max on the NYC skyline prompt.
+> >
+> > Best result I’ve seen to date.
+> >
+> > No other words needed
+> >
+> > ![NYC skyline prompt comparison across Fable 5, Opus 4.8, GPT-5.5 Standard, and GPT-5.5 Pro](city-simulation-nyc-media.webp)
+> {avatar="avatar-aipulseda1ly.webp"}
+{avatar="avatar-deedydas.webp" platform="x"}
 
-![Fable's New York skyline and storm-battered city examples](city-simulation.webp)
+> [!SOCIAL] Deedy `@deedydas`
+>
+> Full photorealistic city storm scene
+>
+> > [!SOCIAL] Ethan Mollick `@emollick`
+> >
+> > Fable: "create a visually interesting shader that can run in twigl-dot-app make it like an infinite city of neo-gothic towers partially drowned in a stormy ocean with large waves." "Make it better"
+> >
+> > All of this is procedurally generated.
+> >
+> > ![Procedurally generated neo-gothic stormy ocean city shader from Fable](city-simulation-storm-media.webp)
+> {avatar="avatar-emollick.webp"}
+{avatar="avatar-deedydas.webp" platform="x"}
 
 ![English translation of Tz's complete Mythos post, followed by zek's original English report](mythos-review-en.webp)
 

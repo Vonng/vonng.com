@@ -14,7 +14,24 @@ PGCon.Dev 的前身是 PGCon —— 最知名的 PostgreSQL Hacker 年度聚会�
 
 有多隆重呢？PG 核心组的 Peter Eisentraut 在会后做了一个统计，在这次 PGCon.Dev 期间 PostgreSQL 一次代码提交都没有发生，出现了[二十年来持续时间最长的停摆](https://peter.eisentraut.org/blog/2024/06/04/how-engaging-was-pgconfdev-really) —— 整整六天半！为啥，因为开发者全都来参会啦！
 
-![intro.jpg](intro.jpg)
+> [!SOCIAL] Peter Eisentraut `@petereisentraut@mastodon.social`
+>
+> How engaging was #PGConfdev? No commits to #postgresql during the entire conference.
+{avatar="avatar-petereisentraut.webp" date="2024-06-01 13:16" platform="mastodon"}
+
+> [!SOCIAL] Tomas Vondra `@tomasv@fosstodon.org`
+>
+> @alvherre @petereisentraut We should stop doing conferences. It obviously slows the development down.
+{avatar="avatar-tomasv.webp" platform="mastodon"}
+
+```text
+    hash     |       commitdate       |  gap_since_prev
+-------------+------------------------+-------------------
+ 28fad34c7bb | 1996-09-10 06:23:46+00 | 12 days 07:21:03
+ 94cb3fd8757 | 2001-07-29 22:12:23+00 | 7 days 00:11:19
+ 37168b8da43 | 2000-08-19 23:39:36+00 | 6 days 20:49:01
+ 8fea1bd5411 | 2024-06-03 17:10:43+00 | 6 days 12:49:30   -- pgconf.dev 2024
+```
 
 > 考虑到前几次中断都发生在二十年前的项目早期……
 
@@ -75,7 +92,21 @@ Yurii 和 Viggy 创办了 [Omnigres](https://omnigres.com/) ，旨在让 Postgre
 
 例如，**PostgreSQL 是可扩展性最强的 DBMS**，在全部十项扩展点上支持其中九种（紧随其后的是 DuckDB，和PG同为我最看好的两款DBMS）。根据 Kim 的统计，PG 生态有 375+ 可用扩展，远远甩开其他数据库一个数量级。
 
-![kim-extensibility.jpg](kim-extensibility.jpg)
+> [!SOCIAL] 隔壁老冯 `@GobeUncleWang`
+>
+> PGCon.Dev 2024 有一个很有意思的分享，来自 CMU 的 @abigale_kim，研究了不同数据库的可扩展性，并分享PG扩展之间的“兼容性”。当然结论是 PostgreSQL 可扩展性冠绝群雄，然后是 DuckDB。这也是目前我最看好的两个 DBMS。
+>
+> > [!SOCIAL] PGConf.dev 🐘 #PGConfdev `@PGConfdev`
+> >
+> > 数据库研究员 Abigale Kim 正在 #PGConfdev 舞台上带来一场关于扩展的精彩演讲：《Anarchy of the Database: A Survey and Evaluation of Database Management System Extensibility》
+> >
+> > \#postgresql #PGConfdev
+> >
+> > ![Abigale Kim 在 PGConf.dev 2024 演讲现场](kim-stage-media.webp)
+> {avatar="avatar-pgconfdev.webp" date="2024-05-30"}
+{avatar="img/vonng.jpg" date="2024-05-30" platform="x"}
+
+![Abigale Kim 关于 DBMS 可扩展性类型、扩展数量与灵活性/安全性对比的演讲幻灯片](kim-slides-media.webp)
 
 更有价值的是，Kim 定量分析了这些扩展之间的兼容性水平，得到了一个兼容性矩阵，并有一些有趣的发现 —— 例如，最为强大的 TimescaleDB 和 Citus 最容易与其他扩展发生冲突。而这样的信息对于用户与发行版维护者来说是非常有价值的。
 
@@ -111,7 +142,19 @@ Yurii 和 Viggy 创办了 [Omnigres](https://omnigres.com/) ，旨在让 Postgre
 
 Margo 的演讲极具激情与感染力，并一针见血地指出了数据库领域面临的几个核心问题。例如，数据库的瓶颈已经不再是磁盘的IO性能，而是主内存的速度瓶颈。而硬件领域的趋势 ——  **HBM**，**CXL** 也许是解决这些问题的答案，但具体怎么做，那就是在座的各位 PG Hacker 需要面对的挑战了。
 
-![margo.jpg](margo.jpg)
+> [!SOCIAL] 隔壁老冯 `@GobeUncleWang`
+>
+> 这位UBC教授演讲水平非常令人印象深刻，临时加塞的场次，座无虚席。石破天老爷子的弟子，分享风趣幽默，激情四射，才思敏捷，对GPU，HBM，CXL这些新硬件技术如何影响数据库带来了启发性的见解。这才是我心目中大学教授应该有的样子。
+>
+> > [!SOCIAL] PGConf.dev 🐘 #PGConfdev `@PGConfdev`
+> >
+> > 精彩的主题演讲！不列颠哥伦比亚大学计算机系主任 Margo Seltzer 正在 #PGConfdev 舞台上带来《When Hardware and Databases Collide》主题分享，全场座无虚席！
+> >
+> > ![Margo Seltzer 在 PGConf.dev 2024 演讲现场](margo-stage-media.webp)
+> {avatar="avatar-pgconfdev.webp" date="2024-05-30"}
+{avatar="img/vonng.jpg" date="2024-05-30" platform="x"}
+
+![Margo Seltzer 演讲幻灯片：内存瓶颈与 GPU 加速策略](margo-slides-media.webp)
 
 在各种国内会议听多了院士，教授念经一样的分享报告，Margo 院士的演讲风格给我带来了耳目一新的感觉，并极大地感染鼓舞了我。大会视频放出后，我强烈建议各位可以听一听她的演讲。
 

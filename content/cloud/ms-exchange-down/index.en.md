@@ -57,7 +57,15 @@ One wobble in the mail connection layer, and all the compute behind Copilot and 
 
 Talk about impeccable timing. Barely a month ago, I migrated email for my own company domain (`pgsty.com`) off iCloud and onto Exchange Online. I woke up this morning, opened my mail client, and stared at zero new messages—walking face-first into Microsoft's blackout. Email is one of the very few workloads I actively advise *against* self-hosting, simply because poor IP reputation gets outbound mail rejected outright—which leaves you stuck picking your poison.
 
-![Discussing the Microsoft email outage with other users on X](outage-reactions.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> Microsoft email just blew up—barely a month after I started using it and I already got hit. Damn...
+>
+> > [!SOCIAL] geniusvczh `@geniusvczh`
+> >
+> > No wonder my spam folder was empty when I woke up today 🤡🤡🤡 Welcome to the great vibe coding era. Office 365 is approaching 120 hours of total downtime this year—might as well rename it to Office 360 🤡🤡🤡
+> {avatar="avatar-geniusvczh.webp"}
+{avatar="img/vonng.jpg" platform="x"}
 
 ![Mail client timing out while connecting to an Exchange server](exchange-timeout.webp)
 

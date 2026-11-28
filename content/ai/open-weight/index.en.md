@@ -11,7 +11,16 @@ On July 24, Jensen Huang posted his first-ever tweet.
 
 The account was brand-new. A man who has led the world's most valuable company for more than thirty years spoke on social media for the first time. He did not show off a GPU, tease a launch, or mention earnings. He dropped a PDF of an open letter titled *Open Weights and American AI Leadership*, with one line: the world needs both frontier closed models and frontier open-source models.
 
-![Jensen Huang shares the open letter Open Weights and American AI Leadership in his first tweet](tweet.webp)
+> [!SOCIAL] Jensen Huang `@JensenHuang`
+>
+> For my first post, I'm sharing a letter @NVIDIA signed on why open models matter.
+>
+> AI will transform every industry, power every company, and be built by every country.
+>
+> Open models strengthen safety and cybersecurity, accelerate innovation and diffusion, and enable sovereignty. …
+>
+> ![Open letter "Open Weights and American AI Leadership" (July 24, 2026)](tweet-media.webp)
+{avatar="avatar-jensenhuang.webp" date="2026-07-24" platform="x"}
 
 That same morning, Satya Nadella said the same thing on X. Y Combinator reposted it. Within hours, it had millions of views.
 

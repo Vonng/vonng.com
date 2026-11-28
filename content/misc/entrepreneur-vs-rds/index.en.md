@@ -34,9 +34,8 @@ When it comes to open source, Feng Ruohang describes himself as a "moderate," wh
 
 **In his view, open source is a revolutionary movement. Previously, the target was closed-source software, but now it's cloud software.**
 
-<iframe src="//player.bilibili.com/player.html?aid=512957015&bvid=BV1o3411w7hP&cid=760975146&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-> Pigsty's pitch video from this year, packed with highlights—a must-watch series
+![Pigsty MiraclePlus Pitch Video](https://www.bilibili.com/video/BV1o3411w7hP)
+{caption="Pigsty's pitch video from this year, packed with highlights—a must-watch series"}
 
 ## 01 "Coasting" Led to Entrepreneurial Opportunity
 

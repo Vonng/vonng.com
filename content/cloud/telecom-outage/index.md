@@ -18,7 +18,22 @@ tags: [云计算, 故障复盘]
 
 ![图片](03.webp)
 
-![图片](04.webp)
+![小红书网友反馈北方联通 DNS 故障影响多家大厂与云厂商](04-xhs-media.webp)
+
+> [!SOCIAL] 郑树新
+>
+> 今晚联通DNS出问题了，把很多大站的域名解析到127.0.0.2上了，这个居然没上热搜，估计有两个重要原因，一是各主要APP都基本使用HTTP DNS了，所以对于这次联通DNS故障对主要APP影响没那么大，还有一个可能就是，那些反正也上不了网也没法发声了，自然也无法上热搜了😂
+{avatar="avatar-zhengshuxin.webp" date="2025-08-12 22:36" platform="weibo"}
+
+> [!SOCIAL] CFC4N
+>
+> 看来，你真的是受到影响了。联通DNS被污染，一大堆域名被污染解析到127.0.0.2。😳😳😳//@seu_lzd:阿里云，百度一堆网站被劫持到127.0.0.2
+>
+> > [!SOCIAL] CFC4N `@CFC4N`
+> >
+> > 为什么没人提DNS故障这事？#联通# 🐶🐶 你那dns还正常吗？
+> {avatar="avatar-cfc4n.webp"}
+{avatar="avatar-cfc4n.webp" platform="weibo"}
 
 这世上没有不崩的神话，联通崩完移动崩，这下压力给到电信了。
 

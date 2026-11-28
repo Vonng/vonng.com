@@ -125,7 +125,19 @@ Same alert, but this time the agent runs on a complete runtime — inside its ow
 
 The model might be GPT, Claude, or some open-source model — **doesn't matter.** The agent itself might just be a few simple Skills and a CLAUDE.md file — also doesn't matter. The moat in the agent era isn't a smarter brain; it's a more deterministic body. Inside this deterministic body, a simple CLAUDE.md file is enough to make a mid-tier LLM perform at a mid-level DBA's competence.
 
-![Database Needs Pyramid](db-needs-pyramid.jpg)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> Building an ops agent or SRE agent isn't actually that complicated. What's genuinely hard is preparing a standard context and runtime environment. Once that's in place, all you need is a `Claude.md` telling it what's in the environment and where to find the docs—give it a solid CLI and documentation index, and it already outperforms a mid-level DBA by a wide margin.
+>
+> ![Database Needs Pyramid](db-needs-pyramid-media.webp)
+{avatar="img/vonng.jpg" platform="x"}
+
+> [!SOCIAL] 舟方 `@zhoufan44799671`
+>
+> This feels awesome—both `CLAUDE.md` and `AGENTS.md` are already written. Whenever I hit an issue configuring Pigsty, I just hand it straight to Claude Code. It pinpointed the root cause of my Anolis OS 8 problem in minutes. You really don't realize how good it is until you try it.
+>
+> ![Claude Code diagnosing an Anolis OS 8 module conflict in the terminal](db-needs-pyramid-reply-media.webp)
+{avatar="img/social/zhoufan.webp" platform="x"}
 
 OtterTune spent $12M proving: a brain without a body doesn't work. Manus proved with a sandbox: give the brain a deterministic body, and it creates miracles. Dragons arrive one after another, each stronger than the last. But the local who's been cultivating home turf for years keeps building deeper moats.
 

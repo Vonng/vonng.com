@@ -56,11 +56,24 @@ So who will become the PGVECTOR of the PostgreSQL OLAP ecosystem? My personal ju
 
 Originally, Hydra (YC W22), which forked Citus's columnar extension, immediately abandoned its original engine after trying to build `pg_quack` and feeling DuckDB's shock, partnering with MotherDuck to create `pg_duckdb`. The extension combining Hydra's PostgreSQL ecosystem experience with the DuckDB original factory can directly read PostgreSQL data tables smoothly within the database and use the DuckDB engine for computation, while directly reading Parquet/IceBerg format files from filesystem/S3, achieving lakehouse effects.
 
-![hydra-pg-quack.png](hydra-pg-quack.png)
+> [!SOCIAL] Hydra `@hydradatabase`
+>
+> Introducing pg_quack - 🦆 duckdb in Postgres!
+>
+> pg_quack is a Postgres extension that uses DuckDB's engine to make Postgres faster than Snowflake and improves Postgres' analytical query performance by over 100X.\
+> pg_quack is an experimental project and is Apache 2.0 open source! 🎉\
+> [pgxman.com/x/pg_quack](https://pgxman.com/x/pg_quack)\
+> \#duckdb #postgres
+{avatar="avatar-hydradatabase.webp" platform="x"}
 
 Similarly, YC-funded startup database company ParadeDB (YC S23), after trying to build similar analytical products `pg_analytics` with Rust and achieving decent results, also chose to switch directions, building the `pg_lakehouse` extension based on DuckDB. Of course, founder Philippe immediately announced surrender after `pg_duckdb` was just announced, preparing to develop further based on `pg_duckdb` rather than competing.
 
-![paradedb.png](paradedb.png)
+> [!SOCIAL] Philippe Noël `@philippemnoel`
+>
+> There's some more serious performance differences. The pg_duckdb extension is more meant as a foundation for other platforms, like ParadeDB, to build on top of.
+>
+> Right now, it's a very simple feature set. It does not in-Postgres analytics, doesn't expose Postgres syntax the same way ParadeDB does, etc. We are actively considering rebasing our work on top of pg_duckdb and keeping the same feature-set, performance and experience by adding our own extension, pg_analytics, on top.
+{avatar="img/social/philippemnoel.webp" platform="x"}
 
 Domestic individual developer Li Hongyan's [`duckdb_fdw`](https://pgext.cloud/e/duckdb_fdw) is another path taking a different approach. Instead of directly using PostgreSQL's storage engine interface, it uses the Foreign Data Wrapper (FDW) infrastructure to connect PostgreSQL and DuckDB. This triggered official criticism, using it as a negative example, perhaps motivating MotherDuck to enter the field personally: "I'm still conceiving great blueprints on how to merge PostgreSQL and DuckDB's power, but you're moving too fast — let me show you some official shock."
 

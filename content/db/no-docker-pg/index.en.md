@@ -12,7 +12,35 @@ Back in 2019, I wrote about ["Is running postgres in docker a good idea?"](/en/d
 Well, users of Docker's "official" Postgres image just learned this the hard way during recent upgrades.
 Yesterday, PostgreSQL community veteran Gwen Shapira posted on X about this mess.
 
-[![twitter.jpg](twitter.jpg)](https://x.com/gwenshap/status/1990942970682749183)
+> [!SOCIAL] Gwen (Chen) Shapira `@gwenshap`
+>
+> ⚠️ PSA: Don't use Docker's official Postgres image in production.
+>
+> Or, if you do, make sure you specify your Debian image.
+>
+> The long version:  
+> Postgres minor version upgrades (17.6 -> 17.7) are generally easy, safe and recommended. They should never break anything.
+>
+> *But* if you use the official docker image and recently (since August) did a minor version upgrade, you may have seen this warning:
+>
+> "The database was created using collation version 2.36, but the operating system provides version 2.41.  
+> Rebuild all objects in this database that use the default collation and run `ALTER DATABASE "mydb" REFRESH COLLATION VERSION`, or build PostgreSQL with the right library version."
+>
+> This is because:
+>
+> - Docker only supports 2 debian versions for the PG image
+> - When a new version comes out, it automatically becomes the default unless you specify the image.
+> - Debian's new release included a new glibc, which includes new locale files.
+> - So now you are running Postgres linked against one set of locale files, but with a database with data and indexes that assume a different locale file.
+>
+> Since this situation can lead to anything from bad query results to corruption, Postgres correctly warns you to refresh the collation for the DB, which you do *after* rebuilding every object in your database (to avoid corruption).
+>
+> This is something we do on **major** upgrades, and absolutely do not expect on **minor** upgrades.
+>
+> But Docker forces this on the users of their official image.
+>
+> Be careful out there! Official image does not mean "responsible production behavior".
+{avatar="avatar-gwenshap.webp" date="2025-11-19" url="https://x.com/gwenshap/status/1990942970682749183" platform="x"}
 
 Picture this: you're using Docker's "official" postgres image, and this week's latest PostgreSQL minor version drops — so you decide to upgrade.
 PG minor upgrades are supposed to be safe and simple, right? Just pull the latest image (I bet tons of people do exactly this),

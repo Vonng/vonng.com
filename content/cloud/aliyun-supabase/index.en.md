@@ -29,7 +29,17 @@ For Supabase-the-startup, though, this is literally the founder nightmare: **“
 
 Maybe, optimists say, Alicloud worked out a partnership. I couldn’t find any public announcement, so I pinged Supabase CEO Paul Copplestone on X. His reply? “Hacker ethics, I think you are assuming this exists in that part of the world.”
 
-![x-comment.png](x-comment.png)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> So apparently @alibaba_cloud is selling “RDS Supabase ” Big cloud giants freeloading off a startup’s open-source work — is that cool under open-source licenses, trademark law, or hacker ethics? Not sure if @kiwicopple / @supabase has seen this yet…. 🧐
+{avatar="img/vonng.jpg" platform="x"}
+
+> [!SOCIAL] Paul Copplestone - e/postgres `@kiwicopple`
+>
+> \>hacker ethics
+>
+> I think you are assuming this exists in that part of the world 😅
+{avatar="img/paul-copplestone.png" platform="x"}
 
 He liked, retweeted, and replied. Translation: no partnership, just Alicloud freeloading. That comment stung. I *am* “that part of the world,” and I still couldn’t argue back. The evidence is the evidence.
 

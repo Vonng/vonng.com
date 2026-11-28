@@ -114,7 +114,12 @@ Forbes 最近引述的 Cursor 内部分析透露过一个数据：Anthropic 的 
 
 有人会说：配四台 Mac Studio Ultra，512GB 内存，跑 DeepSeek R1 671B 的量化版本不就行了？我觉得时机还没到。四台顶配 Mac Studio Ultra 加上内存升级和存储，大概需要花 40 万人民币。跑起来之后，推理速度也就那么回事，还是单路的，并发时，长上下文时速度还会大幅下降。
 
-![本地大模型部署成本估算](cluster.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> 干，内存涨价，苹果把 Mac Studio 512G 的选项给下掉了，那这么看，M5 Ultra 也很有可能会 256GB 封顶。看来咸鱼 M3 Ultra 512 的库存要涨价了。本地大模型事业受到重挫。
+>
+> ![Apple 官网 Mac Studio 内存配置页面仅保留 96GB 与 256GB 选项](cluster-media.webp)
+{avatar="img/vonng.jpg" date="2026-03-06" platform="x"}
 
 换一种花法：40 万人民币约 55,000 美元，可以买 275 个订阅·月。按前面的补贴比例换算，你薅到顶大概能获得约 **1,000 万人民币列表价** 的算力。更关键的是，云端模型在持续进化——你今天买的 M5 Ultra，三年后还是那台 M5 Ultra；但一年后的推理成本可能下降一个数量级，类似 Taalas，TPU 这种智能加速硬件也有可能会出现消费级的产品。
 

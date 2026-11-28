@@ -32,7 +32,15 @@ c6a.4xlarge, 500gb gp2 / 10亿条记录
 
 而 **DuckDB** （**x3.2**）则把 OLAP 拔高到了一个全新高度 —— 抛开 Umbra 这种学术类研究数据库的用例，DuckDB 也许是 OLAP 实战性能最快的分析数据库。虽然说它并不是 PG 的扩展插件，但它是一个嵌入式组件，而 **DuckDB FDW** 以及 **pg_quack** 这样的项目能让 PostgreSQL 充分利用到 DuckDB 带来的完整分析性能红利！
 
-![duck.jpg](duck.jpg)
+> [!SOCIAL] Steven Lee `@AliTrack`
+>
+> 谢谢你把duckdb_fdw 整合了进去
+{avatar="img/alitrack.png" platform="x"}
+
+> [!SOCIAL] Philippe Noël `@philippemnoel`
+>
+> Thank you for including us :)
+{avatar="img/social/philippemnoel.webp" date="2024-03-01" platform="x"}
 
 来自 ParadeDB 创始人与 DuckdbFDW 作者的感谢致意
 

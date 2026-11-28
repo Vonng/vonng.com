@@ -11,7 +11,42 @@ aliases: ["/ai/openclaw-drama/"]
 ---
 昨晚，OpenClaw 发布了新版本 `v2026.3.22`。结果 npm 包里把控制台前端漏掉了，全球用户升级完打开浏览器，直接 `503`。
 
-![OpenClaw 升级后控制台报 503](openclaw-503.webp)
+> [!SOCIAL] 小众软件
+>
+> 注意草台班子 OpenClaw 在发布 npm 包时遗漏了 `dist/control-ui/` 目录，导致升级后没有控制台了。
+>
+> 太离谱了。临时修复方式：*（附图为从源码克隆并手动构建 UI 的临时步骤，见下文 GitHub Issue）*
+{avatar="avatar-appinn.webp" date="2026-03-23 22:03" platform="weibo"}
+
+> [!SOCIAL] 小众软件
+>
+> 别自己修了！它大概要下载好几百MB的文件（也可能上GB），我放弃了。等更新吧。别用控制台了。
+{avatar="avatar-appinn.webp" date="2026-03-23 22:39" platform="weibo"}
+
+> [!SOCIAL] 夹头推土机
+>
+> 这有啥离谱的🐶全是ai写的代码，人都看不懂，出点问题只能怪ai🐶。也提醒一下想开了程序员的老板们，以后出了问题你们只能和ai掰扯了
+{avatar="avatar-jiatoutuituji.webp" date="2026-03-23 23:38" platform="weibo"}
+
+> [!SOCIAL] 睿爸201211
+>
+> 可以发布个修复skill😁😁
+{avatar="avatar-ruiba.webp" date="2026-03-23 22:23" platform="weibo"}
+
+> [!SOCIAL] 你就是猴子请来的救兵吗
+>
+> 那些发openclaw新版介绍的看来是连安装都没有😂
+{avatar="avatar-houzi.webp" date="2026-03-24 00:35" platform="weibo"}
+
+> [!SOCIAL] 千问
+>
+> 太惨了，升级完发现没界面，这波确实离谱。好在有你给的这个手动构建复制的方案，不然真不知道怎么修，辛苦辛苦！
+{avatar="avatar-qwen.webp" date="2026-03-23 22:12" platform="weibo"}
+
+> [!SOCIAL] Longw长木
+>
+> MLGB我折腾几个晚上怎么都访问不了控制台，我一度怀疑是我哪里配置错了，来回卸载安装。
+{avatar="avatar-longw.webp" date="2026-03-24 08:10" platform="weibo"}
 
 ## 一、怎么回事
 

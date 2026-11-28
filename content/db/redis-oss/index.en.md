@@ -29,9 +29,15 @@ Unfortunately, you can force a company to provide source code for their GPL/SSPL
 
 When Redis announced the license change, AWS employees immediately jumped out to fork Redis — "Redis is no longer open source, our fork is truly open source!" Then the AWS CTO came out to [applaud](https://twitter.com/Werner/status/1771324218506108995), hypocritically saying: this is our employee's personal action — it's literally a real-life example of murder and character assassination.
 
-[![Redis Going Non-Open-Source is a Disgrace to "Open-Source" and Public Cloud — Open-Source Software Changing Licenses (figure 1)](twitter.png)](https://twitter.com/Werner/status/1771324218506108995)
-
-> Image: AWS CTO [retweet](https://twitter.com/Werner/status/1771324218506108995) of employee forking Redis
+> [!SOCIAL] Werner Vogels `@Werner`
+>
+> I am excited about the actions @reconditerose and other core #redis maintainers are taking. BTW, this is Madelyn taking action, not an official #AWS announcement. She should get serious credit for her bias for action. Expect more news soon.
+>
+> > [!SOCIAL] Madelyn Olson `@reconditerose`
+> >
+> > I've gotten together with various former Redis contributors and we've started working on a fork: github.com/madolson/place.... We are all unhappy with the license change, and are looking to build a new truly open community to fill the void left by Redis. Come join us!
+> {avatar="avatar-reconditerose.webp" date="2024-03-23"}
+{avatar="avatar-werner.webp" date="2024-03-23" url="https://twitter.com/Werner/status/1771324218506108995" platform="x"}
 
 Redis isn't the only one treated this way. MongoDB, which invented SSPL, faced the same thing — when MongoDB switched to SSPL in 2018, AWS created a so-called "API-compatible" [DocumentDB](https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-dcdb.html) to spite them. After ElasticSearch changed licenses, AWS launched [OpenSearch](https://opensearch.org/) as an alternative. Leading NoSQL databases have all switched to SSPL, and AWS has created corresponding "open source alternatives" for all of them.
 

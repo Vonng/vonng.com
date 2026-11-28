@@ -22,7 +22,15 @@ tags: [云计算, 阿里云, 故障复盘]
 
 有网友在微博上表示这次故障的原因是域名被人拿了，解析到 SS （Shadow Server）。
 
-![图片](04.webp)
+> [!SOCIAL] 宫一鸣cn
+>
+> 今天凌晨时间开始，中国（全球）最大的某服务商.com主站开始被x国劫持到ss了.这事的重大影响才刚刚开始。中国的全球性质的公司都要开始考虑预案了。
+{avatar="avatar-gongyiming.webp" date="2025-06-06 08:07" platform="weibo"}
+
+> [!SOCIAL] RevengeRangers
+>
+> 阿里云被劫持了，
+{avatar="avatar-revengerangers.webp" date="2025-06-06 08:15" platform="weibo"}
 
 这里提一嘴，Shadowserver 相当于赛博拖车厂
 

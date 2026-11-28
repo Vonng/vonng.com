@@ -24,7 +24,16 @@ The outage lasted until 17:11 when NetEase Cloud Music recovered, and the 163 ma
 
 At 17:16, NetEase Cloud Music's Zhihu account posted an apology notice, stating that searching for "enjoy music" tomorrow would provide a 7-day Black Vinyl VIP **friend fee**.
 
-![heijiao.png](heijiao.png)
+> [!SOCIAL] NetEase Cloud Music (网易云音乐)
+>
+> Hi everyone — nobody dropped the database, and nobody ran off. Services are recovering step by step~
+>
+> As compensation, between 00:00 and 24:00 on August 20, search "畅听音乐" (Enjoy Music) in NetEase Cloud Music to claim 7 days of Black Vinyl VIP membership for your account~
+>
+> Existing Black Vinyl VIP members will automatically receive a 7-day SVIP upgrade~
+>
+> We owe you another apology — please forgive us~
+{avatar="avatar-netease-music.webp" date="2024-08-19 17:16" platform="zhihu"}
 
 ## Root Cause Analysis
 
@@ -36,7 +45,15 @@ The rumored cause relates to cloud storage issues. While I won't post the leaked
 
 We can find some public information about NetEase's cloud storage team, for example, NetEase's self-developed cloud storage solution Curve project was terminated.
 
-![author.png](author.png)
+> [!SOCIAL] DavidXu `@DavidXu68`
+>
+> *Replying to @boleban and @cloudwu*
+>
+> The open-source project we built has been killed by NetEase, and the entire team has been disbanded.
+> The prototype was actually already in great shape—it's remarkable what we managed to build with only a handful of people.
+>
+> [GitHub — opencurve/curve: Curve is a sandbox project hosted by the CNCF Foundation](https://github.com/opencurve/curve)
+{date="2024-01-15" platform="x"}
 
 Checking the [Github Curve project homepage](https://github.com/opencurve/curve), we find the project has been stagnant since early 2024:
 

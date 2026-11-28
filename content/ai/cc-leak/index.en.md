@@ -19,6 +19,25 @@ No. Today is March 31. April Fools' Day is tomorrow.
 
 What actually happened is that Anthropic's packaging pipeline tripped over itself. The Source Map **leaked again**.
 
+> [!SOCIAL] 陈成 `@chenchengpro`
+>
+> Claude Code leaked its entire source code—not from a hack, but because Anthropic shipped its own source map inside the npm release.
+>
+> A single 57 MB `cli.js.map` file contains the complete contents of 4,756 source files: 1,906 are Claude Code's own TypeScript/TSX files, and the remaining 2,850 are `node_modules` dependencies.
+>
+> Extracting it is trivial: `cli.js.map` is just JSON with two key arrays—`sources` (file paths) and `sourcesContent` (the matching full source code), aligned one-to-one by index. No decompiling, no deobfuscation: `sourcesContent` holds the verbatim original code. Extraction script at the end.
+>
+> From the reconstructed source, you can see that Claude Code builds its CLI with React + Ink around a core REPL loop supporting natural-language input and slash commands, talking to the LLM API underneath through a tool system. The architecture, system prompts, and tool-calling logic are all out in the open.
+>
+> At its core, this is a classic operational slip-up: source maps are for debugging and contain everything from variable names to comments—they never belong in a production release. Anthropic later caught it, stripped the source map, and hit the extracted GitHub repos with DMCA takedowns. But earlier npm versions were already archived, and the source is already circulating across the community.
+>
+> A reminder to everyone publishing npm packages: check your `.map` files before releasing. One `sourcesContent` field is all it takes to put your entire codebase in public.
+>
+> `gist.github.com/sorrycc/ec2968...`
+>
+> ![npm package @anthropic-ai/claude-code file listing with cli.js.map circled](leak-news-media.webp)
+{avatar="avatar-chenchengpro.webp" platform="x"}
+
 This is not Anthropic generously releasing Claude Code under Apache 2.0. Someone discovered that the published NPM package's `cli.js.map` still contained a full `sourcesContent` field. One command later, the whole codebase was reconstructed: 4,756 files, neatly arranged.
 
 ![src-tree.webp](src-tree.webp)

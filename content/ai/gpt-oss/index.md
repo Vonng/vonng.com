@@ -20,7 +20,16 @@ Hugging Face: gpt-oss-120b<sup>[3]</sup>
 
 早晨起来一看，Sam Altman 发了个推说 GPT 又双叒叕开源了，这是 OpenAI 首次提供开放权重模型，而且上次开源已经是 GPT-2 时代了。\
 
-![图片](02.webp)
+> [!SOCIAL] Sam Altman `@sama`
+>
+> gpt-oss 发布了！
+>
+> 我们做出了一个开放权重模型，性能与 o4-mini 相当，而且可以直接在高端笔记本电脑上运行（WTF!!）
+>
+> （还有一个更小的版本，可以直接在手机上运行）。
+>
+> 为团队感到无比自豪；这是一次技术的巨大胜利。
+{avatar="avatar-sama.webp" date="2025-08-06" platform="x"}
 
 在 OpenAI 的网站上也发布了公告与模型卡，而且很贴心的提供了部署运行，微调，提示词设计教程。\
 

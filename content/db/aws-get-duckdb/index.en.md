@@ -12,9 +12,22 @@ On August 26, Amazon made it official: AWS has signed a definitive agreement to 
 
 One sentence in the announcement was particularly well crafted: “We are not acquiring the DuckDB open-source project.” That is true. It is also the entire trick behind the deal: **the project stays with the foundation; the people become ours.**
 
-[![Official announcement that DuckLabs is joining AWS](acquisition-en.webp)](https://x.com/duckdb/status/2092598676439044577)
-
-*Official DuckLabs announcement ([X post](https://x.com/duckdb/status/2092598676439044577); [full announcement](https://ducklabs.com/news/2026/08/26/ducklabs-to-join-aws)).*
+> [!SOCIAL] DuckDB `@duckdb`
+>
+> Today, @ducklabs_com is joining @awscloud. The move is expected to be completed by early September.
+>
+> Joining AWS gives DuckLabs the resources and reach to bring DuckDB, DuckLake, and the Quack protocol to many more developers and organizations – and to pursue ideas at a scale that would have been difficult for us to reach alone.
+>
+> The DuckLabs team will remain together in Amsterdam and will continue working for the Duck Stack community as an AWS subsidiary.
+>
+> Most importantly, #DuckDB and the other open source components of the Duck Stack will remain free and open source under the MIT license, with the non-profit DuckDB Foundation continuing its stewardship of the projects.
+>
+> This is a significant moment for DuckLabs and the Duck Stack community. It marks the end of one chapter that we are immensely proud of, and the beginning of another that we believe will take DuckDB much further.
+>
+> Read the full announcement here: [DuckLabs to Join Amazon Web Services, Projects to Remain Open Source](https://ducklabs.com/news/2026/08/26/ducklabs-to-join-aws)
+>
+> #AWS
+{avatar="avatar-duckdb.webp" date="2026-08-26" url="https://x.com/duckdb/status/2092598676439044577" platform="x"}
 
 First, some background. DuckLabs is an academic spin-off from CWI, the Dutch national research institute for mathematics and computer science in Amsterdam. Hannes Mühleisen and Mark Raasveldt began building DuckDB at CWI in 2018, then founded the company around it.
 
@@ -26,13 +39,27 @@ The most revealing part of this acquisition is its timeline. On August 17, DuckD
 
 Those nine days say more than the announcement itself. Until now, DuckDB has been an in-process embedded library: wonderfully useful, but not something you could directly package and sell. Add a client protocol and it is no longer just a library. It becomes a server that can be hosted, metered, and dropped into a cloud console.
 
-[![DuckDB 2.0 preview](v2-preview-en.webp)](https://x.com/duckdb/status/2089411219157561779)
-
-*Official DuckDB X preview ([post](https://x.com/duckdb/status/2089411219157561779); [full DuckDB 2.0 highlights](https://duckdb.org/2026/08/17/duckdb-20-highlights)).*
-
-*My August 18, 2026 comment (translated from Chinese; [original screenshot](v2-preview.webp)):*
-
-> DuckDB 2.0 is coming. I’ve followed it closely and been optimistic about it for years. PostgreSQL is still my first choice, but DuckDB is a clear second. I see it as the only potential challenger to PostgreSQL, because it too has a thriving extension ecosystem.
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> DuckDB 2.0 is coming. I've followed it closely and been optimistic about it for years. PostgreSQL is still my first choice, but DuckDB is a clear second. I see it as the only potential challenger to PostgreSQL, because it too has a thriving extension ecosystem.
+>
+> > [!SOCIAL] DuckDB `@duckdb`
+> >
+> > Quack, quack! A DuckDB v2.0 preview is here! 🦆🦆⚡
+> >
+> > In this post, #DuckDB co-creators Mark Raasveldt and Hannes Mühleisen preview the headline features of DuckDB v2.0 (expected to arrive this autumn):
+> >
+> > - DuckDB as a server
+> > - Triggers
+> > - The VARIANT type
+> > - Asynchronous I/O
+> > - A new SQL parser
+> > - A new storage format
+> > - and much more! 🤩
+> >
+> > Dive into the details: [A Preview of DuckDB v2.0](https://duckdb.org/2026/08/17/duckdb-20-highlights)
+> {avatar="avatar-duckdb.webp" date="2026-08-17" url="https://x.com/duckdb/status/2089411219157561779"}
+{avatar="img/vonng.jpg" date="2026-08-18" platform="x"}
 
 Embedded DuckDB is a developer tool. DuckDB with a protocol is a money printer for cloud vendors. AWS chose to move just as the duck grew wings. You may call that a coincidence; I do not.
 
@@ -106,13 +133,17 @@ The second is the era itself. DuckDB gets more than three million downloads a da
 
 When I integrated DuckDB into Pigsty a few years ago, it was still a niche toy for database geeks. I argued early on that DuckDB was the most promising database after PostgreSQL. Before the words had left my mouth, AWS cast the same vote with its checkbook.
 
-[![The author's assessment of PostgreSQL and DuckDB](db-ranking-en.webp)](db-ranking.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> After PostgreSQL, DuckDB is the DBMS I'm most optimistic about—the rising star of analytics. Just as it did with last year's race to build vector extensions, the PostgreSQL ecosystem has taken an early lead in the race to integrate DuckDB. Even the DuckDB team has joined in. See: [“Whoever Integrates DuckDB Best Wins the OLAP Database World”](/en/pg/pg-duckdb/).
+{avatar="img/vonng.jpg" date="2024-08-13" platform="x"}
 
-*My August 13, 2024 post (English translation of the Chinese original; [original screenshot](db-ranking.webp)): [“Whoever Integrates DuckDB Best Wins the OLAP Database World”](/en/pg/pg-duckdb/).*
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> PGConf.dev 2024 had a fascinating talk by CMU's @abigale_kim, surveying database extensibility and compatibility between PostgreSQL extensions. Unsurprisingly, PostgreSQL leads the field in extensibility, followed by DuckDB. These are also the two DBMSs I'm most optimistic about.
+{avatar="img/vonng.jpg" date="2024-05-30" platform="x"}
 
-[![Database extensibility assessment from PGConf.dev 2024](extensibility-en.webp)](extensibility.webp)
-
-*My May 30, 2024 post (English translation of the Chinese original; [original screenshot](extensibility.webp)), referring to Abigale Kim’s [PGConf.dev session](https://www.pgevents.ca/events/pgconfdev2024/schedule/session/49-anarchy-in-the-database-a-survey-and-evaluation-of-database-management-system-extensibility/) and [slides](https://abigalekim.github.io/assets/pdf/Anarchy_in_the_Database_PGConfDev2024.pdf).*
+*Referring to Abigale Kim's [PGConf.dev session](https://www.pgevents.ca/events/pgconfdev2024/schedule/session/49-anarchy-in-the-database-a-survey-and-evaluation-of-database-management-system-extensibility/) and [slides](https://abigalekim.github.io/assets/pdf/Anarchy_in_the_Database_PGConfDev2024.pdf).*
 
 The next act is easy to predict. AWS will put a managed Duck Stack on the market. Hannes has already written the pitch: let users depend on the Duck Stack without having to operate a database themselves.
 

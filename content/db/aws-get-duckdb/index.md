@@ -12,7 +12,22 @@ tags: [DuckDB, AWS, 数据库, 开源]
 
 公告里有一句话写得很讲究：「我们并不是在收购 DuckDB 开源项目」。这话不假，但这笔交易的机关也全在这里：**项目留给基金会，人归我。**
 
-![DuckLabs 加入 AWS 的官方公告](acquisition.webp)
+> [!SOCIAL] DuckDB `@duckdb`
+>
+> 今天，@ducklabs_com 正式加入 @awscloud。此项交易预计将于 9 月初完成。
+>
+> 加入 AWS 将为 DuckLabs 带来资源与影响力，把 DuckDB、DuckLake 和 Quack 协议带给更多开发者和组织——并以我们独自难以企及的规模去实现更多想法。
+>
+> DuckLabs 团队将继续完整留在阿姆斯特丹，并作为 AWS 子公司继续服务 Duck Stack 社区。
+>
+> 最重要的是，#DuckDB 以及 Duck Stack 的其他开源组件将继续在 MIT 协议下免费开源，非营利组织 DuckDB 基金会将继续负责这些项目的托管与治理。
+>
+> 这是 DuckLabs 与 Duck Stack 社区的重要时刻。它标志着一段令我们无比自豪的篇章告一段落，也开启了我们相信将推动 DuckDB 走得更远的新篇章。
+>
+> 阅读完整公告：[DuckLabs to Join Amazon Web Services, Projects to Remain Open Source](https://ducklabs.com/news/2026/08/26/ducklabs-to-join-aws)
+>
+> #AWS
+{avatar="avatar-duckdb.webp" date="2026-08-26" url="https://x.com/duckdb/status/2092598676439044577" platform="x"}
 
 先交代一下背景。DuckLabs 是阿姆斯特丹 CWI（荷兰数学与计算机科学研究中心）的学术 spin-off，Hannes Mühleisen 和 Mark Raasveldt 两位博士 2018 年在 CWI 动手写 DuckDB，之后拉起了公司。
 
@@ -24,7 +39,27 @@ tags: [DuckDB, AWS, 数据库, 开源]
 
 这九天透露出来的信息，比公告本身还多。DuckDB 此前一直是个进程内的嵌入式库，好用，但没法直接拿去卖。有了客户端协议之后，它就不再是一个库，而是一台可以被托管、被计费、被塞进云控制台的服务器。
 
-![DuckDB 2.0 预告](v2-preview.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> DuckDB 2.0 要来了，老冯这几年来一直关注和看好的一个数据库。当然最看好的肯定是 PostgreSQL，但要说第二看好的，非 DuckDB 莫属。我认为这是唯一一个可能对 PG 构成潜在挑战的潜在竞争者 —— 因为它也有着一个繁荣的扩展生态。
+>
+> > [!SOCIAL] DuckDB `@duckdb`
+> >
+> > 嘎嘎！DuckDB v2.0 抢先预览来了！🦆🦆⚡
+> >
+> > 在这篇文章中，#DuckDB 联合创始人 Mark Raasveldt 和 Hannes Mühleisen 预告了 DuckDB v2.0（预计今年秋季发布）的重磅特性：
+> >
+> > - DuckDB 作为服务器运行
+> > - 触发器（Triggers）
+> > - `VARIANT` 类型
+> > - 异步 I/O
+> > - 全新的 SQL 解析器
+> > - 全新的存储格式
+> > - 以及更多特性！🤩
+> >
+> > 查看详情：[A Preview of DuckDB v2.0](https://duckdb.org/2026/08/17/duckdb-20-highlights)
+> {avatar="avatar-duckdb.webp" date="2026-08-17" url="https://x.com/duckdb/status/2089411219157561779"}
+{avatar="img/vonng.jpg" date="2026-08-18" platform="x"}
 
 嵌入式的 DuckDB 是开发者的工具，带协议的 DuckDB 是云厂商的印钞机。AWS 偏偏在鸭子长出翅膀这一刻出手，说是巧合，我反正不信。
 
@@ -96,9 +131,15 @@ PostgreSQL 的强健，恰恰在于核心贡献者的雇主是散的：EDB、微
 
 几年前我把 DuckDB 整合进 Pigsty 的时候，它还只是极客圈子里的小众玩具。我很早之前就觉得，除了 PostgreSQL 之外最有前景的数据库就是 DuckDB，话音未落，AWS 用支票投了同一票。
 
-![作者对 PostgreSQL 与 DuckDB 的评价](db-ranking.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> 除了 PostgreSQL，我最看好的 DBMS 是 DuckDB —— 分析领域的当红炸子鸡。就像去年的向量扩展赛马一样，PG 生态又一次抢先一步开始了 DuckDB 缝合大赛，就连 DuckDB 官方都下场了。请看：[《谁整合好 DuckDB，谁赢得 OLAP 数据库世界》](/pg/pg-duckdb/)
+{avatar="img/vonng.jpg" date="2024-08-13" platform="x"}
 
-![PGCon.Dev 2024 上的数据库可扩展性评价](extensibility.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> PGCon.Dev 2024 有一个很有意思的分享，来自 CMU 的 @abigale_kim，研究了不同数据库的可扩展性，并分享 PG 扩展之间的“兼容性”。当然结论是 PostgreSQL 可扩展性冠绝群雄，然后是 DuckDB。这也是目前我最看好的两个 DBMS。
+{avatar="img/vonng.jpg" date="2024-05-30" platform="x"}
 
 接下来的剧本不难猜：AWS 会把托管版 Duck Stack 端上货架，广告词 Hannes 已经替它写好了——让用户依赖 Duck Stack，而不必自己运维数据库。
 

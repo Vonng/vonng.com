@@ -149,10 +149,9 @@ Sacred Lake is very difficult, mostly local Tibetans go there.
 ![New Year Pilgrimage: Yubeng Mountain Circuit — D4 Ice Lake, Ninong (figure 33)](d4-9.jpg)
 ![New Year Pilgrimage: Yubeng Mountain Circuit — D4 Ice Lake, Ninong (figure 34)](d4-10.jpg)
 
-## D5 Feilai Temple, Shangri-La
+## D5 Feilai Temple, Shangri-La {#d5}
 
 ![New Year Pilgrimage: Yubeng Mountain Circuit — D5 Feilai Temple, Shangri-La (figure 35)](d5-1.jpg)
 
-<video width="320" height="240" controls>
-  <source src="/trip/20201228-yubeng/slide.mp4" type="video/mp4">
-</video>
+![Yubeng mountain circuit highlight clip](slide.mp4)
+{caption="Highlights from the five-day Meili Snow Mountain and Yubeng circuit"}

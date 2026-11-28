@@ -1,6 +1,6 @@
 # Vonng.com — Hugo site configuration
 #
-# Theme: OINK v1.5.1 (github.com/pgsty/oink)
+# Theme: OINK v1.7.0 (github.com/pgsty/oink)
 # Structure: top-level sections are blog columns; `/` is a landing page.
 
 baseURL: https://vonng.com
@@ -126,6 +126,7 @@ params:
   reading_width: normal
   time_format_blog: 2006-01-02
   time_format_default: 2006-01-02
+  video_embeds: [bilibili, youtube]
 
   # -- Local search ----------------------------------------------------------
   offline_search: true

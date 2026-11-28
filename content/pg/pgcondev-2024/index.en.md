@@ -12,7 +12,24 @@ This year marks a new chapter as the original organizer, Dan, hands over the rei
 
 How engaging was this event? [Peter Eisentraut](https://peter.eisentraut.org/), member of the PostgreSQL core team, noted that during PGCon.Dev, [there were no code commits to PostgreSQL](https://peter.eisentraut.org/blog/2024/06/04/how-engaging-was-pgconfdev-really) -- resulting in the longest pause in twenty years, a whopping week! a historic coding ceasefire! Why? Because all the developers were at the conference!
 
-![intro.jpg](intro.jpg)
+> [!SOCIAL] Peter Eisentraut `@petereisentraut@mastodon.social`
+>
+> How engaging was #PGConfdev? No commits to #postgresql during the entire conference.
+{avatar="avatar-petereisentraut.webp" date="2024-06-01 13:16" platform="mastodon"}
+
+> [!SOCIAL] Tomas Vondra `@tomasv@fosstodon.org`
+>
+> @alvherre @petereisentraut We should stop doing conferences. It obviously slows the development down.
+{avatar="avatar-tomasv.webp" platform="mastodon"}
+
+```text
+    hash     |       commitdate       |  gap_since_prev
+-------------+------------------------+-------------------
+ 28fad34c7bb | 1996-09-10 06:23:46+00 | 12 days 07:21:03
+ 94cb3fd8757 | 2001-07-29 22:12:23+00 | 7 days 00:11:19
+ 37168b8da43 | 2000-08-19 23:39:36+00 | 6 days 20:49:01
+ 8fea1bd5411 | 2024-06-03 17:10:43+00 | 6 days 12:49:30   -- pgconf.dev 2024
+```
 
 > Considering the last few interruptions, which occurred in the early days of the project twenty years ago,
 
@@ -64,7 +81,21 @@ Abigale Kim from CMU, under the mentorship of celebrity professor Andy Pavlo, de
 
 Kim’s research revealed interesting insights: **PostgreSQL is the most extensible DBMS**, supporting 9 out of 10 extensibility points, closely followed by DuckDB. With over 375+ available extensions, PostgreSQL significantly outpaces other databases.
 
-![kim-extensibility.jpg](kim-extensibility.jpg)
+> [!SOCIAL] 隔壁老冯 `@GobeUncleWang`
+>
+> A really interesting talk at PGCon.Dev 2024 by @abigale_kim from CMU on DBMS extensibility and compatibility across PostgreSQL extensions. Unsurprisingly, PostgreSQL leads the field by a wide margin, followed by DuckDB—which also happen to be the two DBMSs I'm most bullish on right now.
+>
+> > [!SOCIAL] PGConf.dev 🐘 #PGConfdev `@PGConfdev`
+> >
+> > Right now, database researcher Abigale Kim is on stage at #PGConfdev giving a lovely talk about extensions, titled “Anarchy of the Database: A Survey and Evaluation of Database Management System Extensibility”
+> >
+> > \#postgresql #PGConfdev
+> >
+> > ![Abigale Kim presenting on stage at PGConf.dev 2024](kim-stage-media.webp)
+> {avatar="avatar-pgconfdev.webp" date="2024-05-30"}
+{avatar="img/vonng.jpg" date="2024-05-30" platform="x"}
+
+![Abigale Kim's slides comparing DBMS extensibility types, extension counts, and flexibility vs. safety](kim-slides-media.webp)
 
 Kim's quantitative analysis of compatibility levels among these extensions resulted in a compatibility matrix, unveiling conflicts—most notably, powerful extensions like TimescaleDB and Citus are prone to clashes. This information is very valuable for users and distribution maintainers. [Read the detailed study](https://abigalekim.github.io/assets/pdf/Anarchy_in_the_Database_PGConfDev2024.pdf).
 
@@ -94,7 +125,19 @@ Undoubtedly, the standout presentation of the event, Margo Seltzer's talk "[When
 
 Professor Margo Seltzer, formerly of Harvard and now at UBC, a member of the National Academy of Engineering and the creator of BerkeleyDB, delivered a powerful discourse on the core challenges facing databases today. She pinpointed that the bottleneck for databases has shifted from disk I/O to main memory speed. Emerging hardware technologies like **HBM** and **CXL** could be the solution, posing new challenges for PostgreSQL hackers to tackle.
 
-![margo.jpg](margo.jpg)
+> [!SOCIAL] 隔壁老冯 `@GobeUncleWang`
+>
+> This UBC professor's talk was deeply impressive—a last-minute addition to the schedule, and the room was packed wall to wall. A student of Michael Stonebraker, she delivered a witty, energetic, razor-sharp session with illuminating insights on how new hardware like GPUs, HBM, and CXL will reshape databases. This is what a university professor ought to be.
+>
+> > [!SOCIAL] PGConf.dev 🐘 #PGConfdev `@PGConfdev`
+> >
+> > A brilliant keynote on stage at #PGConfdev: UBC Computer Science chair Margo Seltzer presenting *“When Hardware and Databases Collide”* — the room is packed!
+> >
+> > ![Margo Seltzer speaking on stage at PGConf.dev 2024](margo-stage-media.webp)
+> {avatar="avatar-pgconfdev.webp" date="2024-05-30"}
+{avatar="img/vonng.jpg" date="2024-05-30" platform="x"}
+
+![Margo Seltzer's slides on the memory bottleneck and GPU acceleration strategies](margo-slides-media.webp)
 
 This was a refreshing divergence from China's typically monotonous academic talks, leaving a profound impact and inspiration. Once the conference video is released, I highly recommend checking out her energizing presentation.
 

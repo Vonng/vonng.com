@@ -12,7 +12,12 @@ aliases: ["/db/claude-observability/"]
 昨天老冯 [发了条推特](https://x.com/RonVonng/status/2014972720489091514)：「做了个 Claude Code Grafana Dashboard，研究下它是怎么做决策、用工具、
 调 API 花钱的。」结果发现非常多的用户都对这个主题感兴趣。
 
-![推文截图](tweet-dashboard.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> 做了个 Claude Code Grafana Dashboard，研究下它是怎么做决策，用工具，调 API 花钱的。
+>
+> ![Claude Code Grafana 监控面板](tweet-dashboard-media.webp)
+{avatar="img/vonng.jpg" date="2026-01-24" url="https://x.com/RonVonng/status/2014972720489091514" platform="x"}
 
 这是我没想到的，所以今天就来聊一聊 Claude Code 的可观测性。
 
@@ -51,7 +56,17 @@ export OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE=cumulative
 
 实际上，如果你已经会用 Claude Code，并不需要了解太多细节。你只要告诉它有这么个东西、能干这么个事，并给它准备一台虚拟机，剩下的事它都能帮你自动搞定。我看有人评论留言就是这么说的，哈哈！
 
-![用户部署反馈](tweet-user-feedback.webp)
+> [!SOCIAL] 街边看漫画 `@deletexiumu`
+>
+> 多谢大佬分享，已经装上用上了，从头到尾就两句话：
+>
+> 1. 阅读《[pigsty.cc/docs/](https://pigsty.cc/docs/)》，现在要部署这个东西
+> 2. 再阅读《`github.com/pgsty/pigsty/b...`》，把这个 claude 调用信息与刚刚安装 grafana 结合一下。
+>
+> 然后整个就好了，AI 的年头都完全不用管怎么操作 😂
+>
+> ![用户部署成功的 Claude Code Grafana 监控面板](tweet-user-feedback-media.webp)
+{avatar="avatar-deletexiumu.webp" date="2026-01-25" platform="x"}
 
 ### 监控事件说明
 
@@ -110,4 +125,16 @@ PIGLET.RUN 的另一个妙处就在于，只要提供好高度确定性的基础
 扮演一个中级 DBA / 开发者的角色，直接用它来写代码、调试、测试、部署，效率会非常高。
 这一点老冯会在后面专门写一篇 DBA Agent 相关的介绍文章。
 
-![数据库需求金字塔](tweet-pyramid.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> 其实，做运维 Agent 或 SRE Agent 并没有什么特别复杂。真正复杂的是准备好标准的上下文和运行时环境。这些准备好了，你只要写个 `Claude.md` 告诉它环境里有什么东西、文档在哪里找，只要有一个足够好的命令行工具和文档索引，它的表现就已经能显著超出中等水平的 DBA 了。
+>
+> ![数据库需求金字塔](tweet-pyramid-media.webp)
+>
+> > [!SOCIAL] 舟方 `@zhoufan44799671`
+> >
+> > 爽啊，`CLAUDE.md` 和 `AGENTS.md` 都是写好的，配置 pigsty 过程中有问题直接 CC 解决，像我遇到的 anolios8 的问题，分分钟就找到原因了。真是不用不知道，一用吓一跳。
+> >
+> > ![Claude Code 定位 Anolis OS 8.10 llvm-toolset 模块冲突的终端输出](tweet-pyramid-reply-media.webp)
+> {avatar="img/social/zhoufan.webp"}
+{avatar="img/vonng.jpg" platform="x"}

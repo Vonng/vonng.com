@@ -12,7 +12,21 @@ This morning, the industry exploded with news of an acquisition. Following Datab
 
 According to insiders, this deal was priced at $250 million. While the price is 1/4 of Neon's, unlike Databricks' stock swap, this time Snowflake paid real cash, giving it a distinctly "whatever Databricks buys, I buy" confrontational flavor.
 
-![Sridhar Ramaswamy and Snowflake announce the agreement to acquire Crunchy Data](twitter.en.webp)
+> [!SOCIAL] sridhar `@RamaswmySridhar`
+>
+> Just announced: @Snowflake has agreed to acquire @crunchydata, bringing open-source Postgres tech into the AI Data Cloud.
+>
+> With this news, we will be introducing **Snowflake Postgres**: enterprise-grade, AI-ready, and fully managed.
+>
+> Run your most critical, AI-powered apps on…
+{avatar="avatar-ramaswmysridhar.webp" platform="x"}
+
+> [!SOCIAL] Snowflake `@Snowflake`
+>
+> We're thrilled to announce we've signed an agreement to acquire @crunchydata! 🚀 This strategic move will bring **Snowflake Postgres**—an AI-ready, enterprise-grade PostgreSQL database—to our AI Data Cloud. Developers will be able to leverage the full power of open source Postgres…
+>
+> ![Snowflake Postgres announcement graphic](twitter-media.webp)
+{avatar="avatar-snowflake.webp" platform="x"}
 
 But this isn't just a grudge match between two data warehouse giants - PostgreSQL has indeed captured all the favorable timing for database rise in the AI era. Combined with the industry rumors of [OpenAI acquiring Supabase](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489695&idx=1&sn=eb0aa2286ecdbb014fd6b38023ae6749&scene=21#wechat_redirect), it's clear that the common thread among these acquisitions (or potential acquisition intentions) is that these are all PostgreSQL companies - PostgreSQL companies are becoming the hottest commodities in capital markets.
 

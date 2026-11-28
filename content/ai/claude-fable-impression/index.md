@@ -11,7 +11,21 @@ ai: true
 
 先说结论，确实强，新 SOTA。但是贵，吃相也难看。
 
-![Claude Fable 发布公告](claude-x.webp)
+> [!SOCIAL] Claude `@claudeai`
+>
+> 正式推出 Claude Fable 5：一款经过安全打磨、面向大众开放的 Mythos 级别模型。
+>
+> 它的能力超越了我们此前公开发布过的任何模型。
+>
+> ![Claude Fable 5 发布预告画面](claude-x-media.webp)
+{avatar="img/social/claudeai.webp" platform="x"}
+
+> [!SOCIAL] Claude `@claudeai`
+>
+> Fable 5 在几乎所有测试基准上都处于最先进水平，在软件工程、知识工作、科学研究和视觉领域表现尤为出色。
+>
+> 任务越长且越复杂，Fable 5 相对于我们其他模型的优势就越大。
+{avatar="img/social/claudeai.webp" platform="x"}
 
 两个月前 Mythos Preview 刚放出风声时，我写过一篇《[AGI已经来了，但你有船票吗？](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247491844&idx=1&sn=0237bd818c234299a31d3bbfe91ee8f6&scene=21#wechat_redirect)》，聊的就是顶级 AI 能力正在被圈禁起来这件事。现在看来一语成谶 —— 这次连命名都懒得掩饰：**Mythos（神话）供奉给通过审查的「领主」，Fable（寓言）讲给平民听。** 同一个底层模型，Fable 是阉割加锁版。
 
@@ -51,7 +65,12 @@ ai: true
 
 ![Fable 动态降级至 Opus 4.8](opus-fallback.webp)
 
-![SemiAnalysis 对 Fable 审查机制的评价](model-filter.webp)
+> [!SOCIAL] SemiAnalysis `@SemiAnalysis_`
+>
+> 突发消息：如果 Anthropic 的最新模型觉得你的机器学习研究或工程工作「有意思」，它就不会帮你，和/或会暗中降低自身智商，让普通工程师难以察觉。我们已经看到 Anthropic 最新模型的审查过滤器拦下了我们的 GPU 推理研究与编程工作 😭
+>
+> ![Anthropic 关于 Fable 5 隐蔽限制前沿大模型研发请求的说明](model-filter-media.webp)
+{avatar="avatar-semianalysis.webp" date="2026-06-10" url="https://x.com/SemiAnalysis_/status/2064482714149896431" platform="x"}
 
 **槽点二：12 天限时体验。** Fable 目前不在 Claude Code 的订阅计划里。从今天到 22 号这 12 天，100／200 刀的订阅用户可以限时尝鲜；22 号之后，就只剩 API 按量付费一条路。官方解释是产能不足、算力不够，以后算力上来了可能进订阅标配 —— 但没有时间表。
 
@@ -77,11 +96,63 @@ API 什么价呢？老冯之前在《[AI时代的最大红利](https://mp.weixin
 
 ## 其他一些有趣的案例与消息
 
-![Claude Fable 案例汇总](fable-cases.webp)
+> [!SOCIAL] Deedy `@deedydas`
+>
+> Claude Fable 5 是迄今为止最离谱的模型，它让我真切地为软件工程的未来感到恐惧。
+>
+> 我整理了今天看到的 Claude Fable 5 做出的 10 大最不可思议的事情：
+>
+> — 一天内完成 Stripe 的 5000 万行代码库迁移（人类需要 2 个月）
+> — 绘制惊人的 3D 图形：a) 波音 747 b) 包含 >5000 个物体的太空模拟 c) Minecraft 过山车 d) 完全照片级真实的森林场景 e) 纽约天际线 f) 暴风雨云层
+> — 一击通关《宝可梦：火红》游戏
+> — 将真实世界的专有交互网络评估器优化 10 倍，远超次优模型 gpt5.5
+>
+> 而且它的价格与 GPT-5.5 差不多（$10/M 输入，$45/M 输出）对比 Fable 5（$10/M 输入，$50/M 输出），并且比 GPT-5.5 Pro 便宜 6 倍。
+{avatar="avatar-deedydas.webp" date="2026-06-10" url="https://x.com/deedydas/status/2064519826333397149" platform="x"}
 
-![Fable 与 Opus 的太空模拟对比](space-simulation.webp)
+> **社区附注（Community Note）：** 推文对迁移规模与定价存在偏差——Fable 5 是在一个 5000 万行代码库内完成了一次全库范围的迁移，而非迁移整个 5000 万行代码；GPT-5.5 的标准定价实为输入 $5/M、输出 $30/M（而非文中引用的 $10/$45 长上下文费率），因此 Fable 5（$10/$50）实际约贵 2 倍，相较 GPT-5.5 Pro 也仅便宜约 3–4 倍（而非 6 倍）。
 
-![Fable 的纽约天际线与风暴城市案例](city-simulation.webp)
+> [!SOCIAL] Deedy `@deedydas`
+>
+> 包含 >5000 个物体的太空模拟
+>
+> > [!SOCIAL] shirish `@shiri_shh`
+> >
+> > Claude Fable 5 对比 Opus 4.8
+> >
+> > ![Fable 5 与 Opus 4.8 的太空模拟对比](space-simulation-media.webp)
+> {avatar="avatar-shiri-shh.webp"}
+{avatar="avatar-deedydas.webp" platform="x"}
+
+> [!SOCIAL] Deedy `@deedydas`
+>
+> 纽约天际线提示词
+>
+> > [!SOCIAL] aipulsedaily `@aipulseda1ly`
+> >
+> > Fable 5 Max 在纽约天际线提示词上的表现。
+> >
+> > 迄今为止我见过的最佳结果。
+> >
+> > 无需多言。
+> >
+> > ![Fable 5、Opus 4.8、GPT-5.5 Standard 与 GPT-5.5 Pro 的纽约天际线生成对比](city-simulation-nyc-media.webp)
+> {avatar="avatar-aipulseda1ly.webp"}
+{avatar="avatar-deedydas.webp" platform="x"}
+
+> [!SOCIAL] Deedy `@deedydas`
+>
+> 完全照片级真实的暴风雨城市场景
+>
+> > [!SOCIAL] Ethan Mollick `@emollick`
+> >
+> > Fable：「写一个能在 twigl-dot-app 运行、视觉效果震撼的 shader，呈现出被巨浪滔天的暴风雨海洋半淹没的无尽新哥特式高塔之城。」「再做得更好一点」
+> >
+> > 这一切全部由程序化生成。
+> >
+> > ![Fable 程序化生成的新哥特式暴风雨海洋城市 shader](city-simulation-storm-media.webp)
+> {avatar="avatar-emollick.webp"}
+{avatar="avatar-deedydas.webp" platform="x"}
 
 ![Mythos 体验报告](mythos-review.webp)
 

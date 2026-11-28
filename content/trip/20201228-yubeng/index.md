@@ -150,10 +150,9 @@ tags: [旅行]
 ![跨年祈福：雨崩转山：D4 冰湖、尼农（图 33）](d4-9.jpg)
 ![跨年祈福：雨崩转山：D4 冰湖、尼农（图 34）](d4-10.jpg)
 
-## D5 飞来寺，香格里拉
+## D5 飞来寺，香格里拉 {#d5}
 
 ![跨年祈福：雨崩转山：D5 飞来寺，香格里拉（图 35）](d5-1.jpg)
 
-<video width="320" height="240" controls>
-  <source src="/trip/20201228-yubeng/slide.mp4" type="video/mp4">
-</video>
+![雨崩转山延时光影](slide.mp4)
+{caption="雨崩转山五日风光剪影"}

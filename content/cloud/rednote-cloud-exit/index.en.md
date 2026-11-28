@@ -13,7 +13,12 @@ Yesterday, I spotted a new article from RedNote's official tech blog: "[Design a
 
 I wrote a quick technical commentary on it. What I didn't expect was the firestorm that followed—my article got taken down after a complaint from Alibaba Cloud, and I was slapped with a "[rumor](https://mp.weixin.qq.com/s/3B-0BCwE8u7MoIk9Shwcxg)" label.
 
-![rumor.en.jpg](rumor.en.jpg)
+> [!SOCIAL] Alibaba Cloud (阿里云)
+>
+> This is a rumor
+>
+> ![Original WeChat article "Alibaba Cloud's Flagship Customer RedNote Has Left the Cloud" stamped with red "谣言" (RUMOR) by Alibaba Cloud](rumor-media.webp)
+{avatar="img/social/aliyun.webp" platform="weibo"}
 
 Two little characters, apparently meant to shut down a substantive discussion about a multi-billion-dollar internet giant's infrastructure pivot by reducing it to a simplistic "true vs. false" binary.
 

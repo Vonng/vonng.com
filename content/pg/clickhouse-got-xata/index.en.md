@@ -10,7 +10,12 @@ tags: [PostgreSQL, PG Ecosystem, Business]
 
 Last night on Twitter, ClickHouse posted a cryptic teaser: *"Something big is coming..."* This morning brought the reveal: ClickHouse has acquired Xata, and its own managed PostgreSQL service is now generally available (GA).
 
-![ClickHouse teasing "Something big is coming..." on Twitter](teaser.webp)
+> [!SOCIAL] ClickHouse `@ClickHouseDB`
+>
+> Something big is coming...
+>
+> ![ClickHouse livestream teaser featuring Xata CEO Monica Sarbu, ClickHouse founder Alexey Milovidov, and others](teaser-media.webp)
+{avatar="avatar-clickhousedb.webp" date="2026-11-10" platform="x"}
 
 This isn't an isolated deal. It's the latest move in a clear pattern: Postgres ate the database world, and now the industry giants are eating Postgres companies.
 

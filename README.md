@@ -12,7 +12,7 @@ This is **Ruohang Feng** / [Vonng](https://github.com/Vonng)'s blog, about Postg
 
 ## Build
 
-Requires **Hugo Extended 0.168.0** and **Go 1.27.3** (Hugo Modules pull the theme).
+Requires **Hugo 0.169+** (any edition) and **Go 1.27.4+** (Hugo Modules pull the theme).
 
 
 ```bash
@@ -21,8 +21,8 @@ make build   # production build into public/
 make check   # the strict build every change has to pass
 ```
 
-The theme is the [OINK](https://oink.pgsty.com/) Hugo Module, pinned in `go.mod`.
-`make dev` uses the current checkout at `~/pgsty/oink` with Hugo Extended 0.168.0.
+The theme is the [OINK](https://oink.pgsty.com/) Hugo Module, pinned in `go.mod` (`v1.7.0`).
+`make dev` uses the current checkout at `~/pgsty/oink`.
 Override it with `make dev OINK_LOCAL=/path/to/oink PORT=1314`. Development
 bypasses OINK vendor files and both workspaces; `make build` and `make check`
 clear local module replacements and use the pinned release.
@@ -40,9 +40,9 @@ manual deploy step, and `public/` is a local artifact only.
 hugo.yaml            # the whole site configuration: params, languages, menus
 content/<column>/    # one top-level directory per blog column (type: blog)
 content/authors/     # author profile pages — the `authors` taxonomy
-data/home/*.yaml     # the landing page's sections, one file per language
+data/home.yaml       # the landing page's sections (both languages)
 data/footer/*.yaml   # the fat footer's link grid, one file per language
-assets/scss/         # _variables_project.scss and _styles_project.scss
+assets/css/          # project.css site-level plain CSS overrides
 layouts/             # only what the theme does not already provide
 ```
 

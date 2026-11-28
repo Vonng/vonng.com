@@ -11,15 +11,42 @@ ai: true
 
 昨天晚上，我刚把三个每月 200 美元的 Claude Fable 和 Codex 订阅烧得干干净净；今天一早，特大喜报就来了——Codex 额度重置了。
 
-![Tibo 宣布取消 Codex 五小时限额并重置使用额度](tibo1.webp)
+> [!SOCIAL] Tibo `@thsottiaux`
+>
+> 早安。过去 48 小时，Codex 和 ChatGPT Work 的节奏非常紧张！三项重要更新：
+>
+> - 暂时取消所有 Plus、Business 和 Pro 订阅计划的 5 小时使用限制
+> - 正在推送多项优化，全面提升 GPT 5.6 Sol 的效率，体现为更低的额度消耗，让你的配额用得更久；具体影响将在量化后公布
+> - 我们的活跃用户突破了 600 万，并将在接下来一小时内执行一次使用额度重置
+>
+> 去大干一场吧
+{avatar="img/social/thsottiaux.webp" date="2026-07-12" url="https://x.com/thsottiaux/status/2076365965915467978" platform="x"}
 
 Claude 当然不甘示弱。官方宣布原定于今天结束的 Fable 5 访问期限再次延长至 19 日。这已经是我们第三次看到 Fable 访问延期了。
 
-![Claude 宣布延长 Fable 5 访问期限并提高每周使用额度](claude.webp)
+> [!SOCIAL] Claude `@claudeai`
+>
+> 我们将把所有付费计划的 Claude Fable 5 访问权限，以及 Claude Code 每周使用限额提高 50% 的优惠，一并延长至 7 月 19 日。
+{avatar="img/social/claudeai.webp" date="2026-07-12" url="https://x.com/claudeai/status/2076351399999557669" platform="x"}
+
+> [!SOCIAL] Claude `@claudeai`
+>
+> 和之前一样，你最多可以将每周使用限额的一半用于 Fable 5。超出之后，你可以继续使用额外额度（usage credits）调用 Fable 5，或切换到其他模型继续使用剩余限额。
+>
+> 更多详情见：[Claude Fable 5 promotional access | Claude Help Center](https://support.claude.com)
+{avatar="img/social/claudeai.webp" date="2026-07-12" url="https://x.com/claudeai/status/2076351401006154204" platform="x"}
 
 这轮竞争还不只是延长访问时间。Codex 宣布取消原有的 5 小时限额，目前只保留周限额；Claude Code 则宣布，将每周总使用额度上调 50％。双方几乎前后脚在 X 上发公告，针锋相对、贴脸开大，用户自然笑得合不拢嘴。
 
-![Tibo 转发 Claude 公告并回应 GPT-5.6 很不错](tibo2.webp)
+> [!SOCIAL] Tibo `@thsottiaux`
+>
+> I think GPT 5.6 is pretty good
+>
+> > [!SOCIAL] Claude `@claudeai`
+> >
+> > We're extending Claude Fable 5 access on all paid plans, as well as keeping Claude Code’s weekly rate limits 50% higher, through July 19.
+> {avatar="img/social/claudeai.webp" date="2026-07-12" url="https://x.com/claudeai/status/2076351399999557669"}
+{avatar="img/social/thsottiaux.webp" date="2026-07-12" platform="x"}
 
 这才叫鹬蚌相争，渔翁得利。
 
@@ -27,7 +54,12 @@ Claude 当然不甘示弱。官方宣布原定于今天结束的 Fable 5 访问�
 
 所以，老冯昨天晚上已经把 Fable 5 用到了 100％，虽然访问资格还在，却仍然得等额度恢复以后才能继续用。相比之下，Codex 这边直接重置，今天醒来又是满血复活。
 
-![Tibo 展示 Codex 使用额度重置后的负载曲线](tibo3.webp)
+> [!SOCIAL] Tibo `@thsottiaux`
+>
+> 我们办公室的新海报，展示了 Codex 使用限额重置如何影响我们的一部分系统。数据之美。
+>
+> ![展示 Codex 使用限额重置后系统负载变化的办公室海报](tibo3-media.webp)
+{avatar="img/social/thsottiaux.webp" date="2026-07-11" url="https://x.com/thsottiaux/status/2076054439140720719" platform="x"}
 
 Codex 与 ChatGPT 的负责人 Tibo 还在 X 上宣布，Codex 的活跃用户已经突破 600 万，甚至打趣说，明天就准备庆祝突破 700 万。这是一个相当夸张的增长数字。
 
@@ -37,7 +69,12 @@ Codex 与 ChatGPT 的负责人 Tibo 还在 X 上宣布，Codex 的活跃用户�
 
 也有消息说，受 Codex 压力影响，Anthropic 正在考虑将 Fable 永久加入到订阅中。
 
-![fable-in-sub.webp](fable-in-sub.webp)
+> [!SOCIAL] Ali Haider `@ggg78g89`
+>
+> 🚨 独家消息：
+>
+> 我在 Anthropic 的朋友说，公司内部气氛非常紧张。Dario 正在主持艰难的会议——GPT-5.6 Sol 很强，Grok 4.5 也紧追 Opus 不舍。7 月 12 日把 Fable 移出订阅会引发大规模退订（谁还会为了 Opus 4.8 留着 Max？），所以他们现在正推动将 Fable 5 永久纳入订阅。
+{avatar="avatar-ggg78g89.webp" date="2026-07-11" url="https://x.com/ggg78g89/status/2075962605462761953" platform="x"}
 
 这轮竞争也再次说明了一个简单的道理：市场必须有竞争，用户才能得到真正的实惠。
 

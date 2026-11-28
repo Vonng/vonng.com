@@ -43,7 +43,12 @@ aliases: ["/db/try-codex/"]
 
 整个过程我只是“出嘴”确认几个关键问题，然后不断机械地循环执行以下四轮流程：CreateStory -> DevStory -> CodeReview -> FixThis
 
-![Story 开发与审查循环](story-dev-review-fix-loop.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> 现在写代码变成机械循环了。create-story, dev-story, code-review, fix this，codex 和 claude 轮流打铁，我只要做完几个 epic 就出嘴头脑风暴一下就行了。
+>
+> ![Codex 与 Claude Code 并行执行 Story 开发与审查循环的桌面截图](story-dev-review-fix-loop-media.webp)
+{avatar="img/vonng.jpg" date="2026-02-06" platform="x"}
 
 就这样把活儿给干出来了。**在这个过程中，我没有写过一行具体的代码**。
 

@@ -18,9 +18,29 @@ V 站原贴链接：<https://www.v2ex.com/t/1105618> （顺带一提，截止至
 
 ![图片](04.webp)
 
-![图片](05.webp)
+> [!SOCIAL] 用户7908980859
+>
+> 支付宝政府补贴 bug 了吗？为啥小红书上那么多人交易直接补贴了，还有人转账居然也补贴了。#支付宝# @支付宝
+>
+> ![小红书搜索“支付宝政府补贴”的交易立减截图](05-media.webp)
+{platform="weibo"}
 
-![图片](06.webp)
+> [!SOCIAL] 互联网那些破事
+>
+> 为什么下午刷到这么多支付宝补贴的截图，是真是假？
+>
+> ![网友晒出的四张支付宝支付及转账触发“政府补贴”20% 减免截图](06-media.webp)
+{avatar="avatar-hulianwang.webp" platform="weibo"}
+
+> [!SOCIAL] 和我去海边漫步吧
+>
+> 可恶!! 今天 14:40-45 支付宝付款有政府补贴😭 完全错过啊啊啊!!!!
+{avatar="avatar-haibian.webp" platform="weibo"}
+
+> [!SOCIAL] 疯狂蹭饭中
+>
+> 不是儿，支付宝转账竟然有政府补贴20%，怎么不等我死了再给我刷到啊啊啊啊，看到有个人说白薅了2w，这钱拿……
+{avatar="avatar-cengfan.webp" platform="weibo"}
 
 ![图片](07.webp)
 

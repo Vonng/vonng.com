@@ -105,7 +105,29 @@ Marketing promises “four nines,” “global active-active,” and “enterpri
 
 “Leaving the cloud” used to sound heretical. Now it’s just risk management. Elon Musk’s X (formerly Twitter) ran fine through this AWS outage because it operates its own datacenters. Musk spent the downtime roasting AWS on X. 37signals decided in 2022 to yank Basecamp and HEY off public clouds, [projecting eight figures of savings over five years](https://mp.weixin.qq.com/s/mknFXO5DSfxw7st8hhxjBQ). Dropbox started rolling its own hardware back in 2016. That’s not regression; it’s diversification.
 
-![musk.jpg](musk.jpg)
+> [!SOCIAL] vittorio `@IterIntellectus`
+>
+> the internet just broke
+>
+> ![Downdetector outage spikes across dozens of major services](musk-downdetector-media.webp)
+{avatar="avatar-iterintellectus.webp" date="2025-10-20" platform="x"}
+
+> [!SOCIAL] Elon Musk `@elonmusk`
+>
+> Not us
+{avatar="img/social/elonmusk.webp" date="2025-10-20" platform="x"}
+
+> [!SOCIAL] Elon Musk `@elonmusk`
+>
+> You don’t say ... 🤔
+>
+> > [!SOCIAL] Pierre de Wulf `@PierreDeWulf`
+> >
+> > ![Digitally altered CNBC headline screenshot claiming AWS CEO said AI pushes 75% of production code](musk-cnbc-media.webp)
+> {avatar="img/social/pierredewulf.webp" date="2025-10-20"}
+{avatar="img/social/elonmusk.webp" date="2025-10-20" platform="x"}
+
+*X Community Note: “This image was digitally altered. There is no evidence the AWS CEO said this or something similar.”*
 
 For teams with resources, **hybrid deployment** makes sense: keep the crown jewels under your control, burst to cloud for elastic needs. Ask whether every workload truly belongs on a hyperscaler. Can your critical systems keep the lights on if the cloud disappears for a day?
 

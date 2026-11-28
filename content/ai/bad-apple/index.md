@@ -13,7 +13,12 @@ tags: [AI, 硬件, 成本, 技术评论]
 
 8 月底 M5 Ultra 发布时，512 GB 只留了句[“10 月下旬发售”](https://www.apple.com.cn/newsroom/2026/08/apple-introduces-mac-studio-with-m5-max-and-m5-ultra/)的悬念。苹果倒是很守时，28 号准点上线。但点开价格那一秒，老冯整个人顿时就感觉不美丽了。
 
-![studio-512.webp](studio-512.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> 苹果的震撼刀法，我还以为Mac Studio 256G 内存升级 512G 加个 6 万就差不多了，好家伙一口气加12万。这个加价都足够再买一台 256G 的了。我听说好像是因为通道不够，用的定制 8GB 颗粒。但对用户来说，明显买两台 256 的，双倍带宽，双倍算力用更合算…。
+>
+> ![Apple 中国官网 Mac Studio 内存选配价格（256GB +30,000 元，512GB +116,250 元）](studio-512-media.webp)
+{avatar="img/vonng.jpg" url="https://x.com/RonVonng/status/2115664708355436681" platform="x"}
 
 ## 比整机还贵的“金子内存”：把老实人当冤大头
 
@@ -73,10 +78,31 @@ tags: [AI, 硬件, 成本, 技术评论]
 
 会不会演变成“天线门”“弯曲门”级别的翻车还得看后续返修率，但三星折叠屏都出到第八代了，苹果晚了整整七年进场还栽在基础铰链上，外加保外换内屏要价 999 美元（比全新 iPhone 17 还贵 200 刀），着实够尴尬。
 
-![apple-cut.webp](apple-cut.webp)
-
-> https://x.com/mylifcc/status/2115096683662942702
+> [!SOCIAL] lifcc `@mylifcc`
 >
+> 家人们，苹果的刀法已经进化到“反人类”的境界了！
+>
+> 如果你买了 256G 或 512G 的 M4 iPad Pro，我现在告诉你一个可能会让你血压飙升的真相：
+>
+> **你手里的平板，主板上其实焊着足足 12GB 的内存！但苹果硬生生给你锁死了 4GB，只让你用 8GB！**
+>
+> 这可不是阴谋论，这是外媒 Tom's Hardware 和拆机大神实锤的硬件铁证！有人扒出了 M4 iPad Pro 主板上的镁光内存颗粒编号，发现 8GB 版本的机器里，居然塞了两颗 6GB 的内存芯片！2乘6等于12，小学数学题对吧？但你在系统里永远只能看到 8GB！
+>
+> 很多人就不理解了：内存芯片是苹果自己花真金白银买的，既然都焊上去了，做个顺水人情给用户 12GB 不香吗？
+>
+> Too young! 这就是库克最恐怖的算计：
+>
+> 第一，市面上没有符合 M4 满血带宽的单颗 4GB 内存，去定制比直接买两颗 6GB 还要贵；
+>
+> 第二，也是最扎心的——**如果入门版给你开放了 12GB，谁还愿意多花四五千块钱去买 1TB 的 16GB 顶配版？**
+>
+> 宁可自己掏钱买 12G 的硬件，再亲手废掉三分之一，也绝不能让普通用户占到一点便宜！这已经不是“精准刀法”了，这是“宁可毁掉也不给你”的物理防越级！
+>
+> 以前我们吐槽苹果“把 8G 内存当黄金卖”，现在才知道，原来黄金早就在你机身里了，只是苹果上了把锁，钥匙扔进了太平洋。
+>
+> ![M4 iPad Pro 主板拆解图，M4 芯片旁焊有两颗 6 GB 镁光内存颗粒](apple-cut-media.webp)
+{avatar="avatar-mylifcc.webp" date="2026-10-27" url="https://x.com/mylifcc/status/2115096683662942702" platform="x"}
+
 > https://www.tomshardware.com/tablets/ipads/m4-ipad-pros-with-8gb-of-ram-may-actually-have-12gb-teardowns-reveal-possible-apple-hijinks
 
 

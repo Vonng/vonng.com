@@ -10,9 +10,12 @@ Today, something straight out of magical realism unfolded in Dify's GitHub repos
 
 Why would anyone change someone else's logo? An earlier article, [Warning: Dify Has Become DeepSeek's Biggest Open-Source Casualty](https://mp.weixin.qq.com/s?__biz=MzU2NjY1ODk1Ng==&mid=2247484447&idx=1&sn=d59104d3c20e7666d988393a268616c3&scene=21#wechat_redirect), laid out the problem: some vendors of “homegrown DeepSeek appliances” quietly take Dify, reskin the UI, hide the copyright notice, scrub the logo, package it up, and call it “built in-house.” This kind of rebadging is hardly rare in China—many of the hundreds of so-called “domestic databases,” for example, are PostgreSQL underneath—but Dify has been hit especially hard.
 
-![Deng Gao's Chinese post shows a PR replacing Dify's logo with Livzon's](logo-pr.webp)
-
-*Deng Gao jokes that Livzon's logo-swapping PR ended with Dify sending a lawyer's letter.*
+> [!SOCIAL] Deng Gao `@gaodengming`
+>
+> This PR from Livzon Pharmaceutical to Dify is hilarious—they literally swapped out Dify's logo. In the end, Dify had no choice but to send them a lawyer's letter. 😂
+>
+> ![GitHub image diff showing Livzon Pharmaceutical replacing Dify's logo with its own](logo-pr-media.webp)
+{avatar="avatar-gaodengming.webp" date="2025-03-26" platform="x"}
 
 Freeloading is one thing. Quietly puffing yourself up and bragging that you built it in-house is bad enough. But barging into the upstream repository with a PR to replace the project's own logo? That is an insult delivered straight to Dify's face. It is as shameless as stealing someone else's work, claiming it as your own, then emailing the real author to demand that your name replace theirs.
 

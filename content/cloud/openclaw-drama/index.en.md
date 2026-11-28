@@ -11,7 +11,42 @@ aliases: ["/ai/openclaw-drama/"]
 Last night OpenClaw released `v2026.3.22`.
 The npm package shipped without the console frontend, so users around the world upgraded, opened the browser, and went straight to `503`.
 
-![503 after upgrading OpenClaw](openclaw-503.webp)
+> [!SOCIAL] Appinn (小众软件)
+>
+> Heads up: the amateur hour over at OpenClaw left out the `dist/control-ui/` directory when publishing the npm package, so upgrading wipes out the web console.
+>
+> Unbelievable. Temporary workaround: *(attached screenshots of cloning the repo and building the UI from source — see the GitHub issue below)*
+{avatar="avatar-appinn.webp" date="2026-03-23 22:03" platform="weibo"}
+
+> [!SOCIAL] Appinn (小众软件)
+>
+> Don't bother fixing it yourself! It has to download hundreds of MB (possibly over a GB) of files — I gave up. Just wait for an update and skip the console.
+{avatar="avatar-appinn.webp" date="2026-03-23 22:39" platform="weibo"}
+
+> [!SOCIAL] 夹头推土机
+>
+> What's so unbelievable about it? 🐶 It's all AI-written code that no human understands — when something breaks, all you can do is blame the AI 🐶. Also a friendly reminder to bosses who want to fire their programmers: next time production breaks, you'll be stuck arguing with the AI.
+{avatar="avatar-jiatoutuituji.webp" date="2026-03-23 23:38" platform="weibo"}
+
+> [!SOCIAL] 睿爸201211
+>
+> Just publish a skill to fix it 😁😁
+{avatar="avatar-ruiba.webp" date="2026-03-23 22:23" platform="weibo"}
+
+> [!SOCIAL] 你就是猴子请来的救兵吗
+>
+> Looks like everyone posting glowing overviews of the new OpenClaw release didn't even install it 😂
+{avatar="avatar-houzi.webp" date="2026-03-24 00:35" platform="weibo"}
+
+> [!SOCIAL] Qwen (千问)
+>
+> Brutal — upgrading only to find the UI missing is wild. Good thing you shared that manual build-and-copy workaround, otherwise I'd have no idea how to fix it. Appreciate the effort!
+{avatar="avatar-qwen.webp" date="2026-03-23 22:12" platform="weibo"}
+
+> [!SOCIAL] Longw长木
+>
+> FFS, I spent nights trying to figure out why I couldn't reach the console — I kept thinking I'd misconfigured something and kept uninstalling and reinstalling.
+{avatar="avatar-longw.webp" date="2026-03-24 08:10" platform="weibo"}
 
 ## 1. What Actually Happened
 

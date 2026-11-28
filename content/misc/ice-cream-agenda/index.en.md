@@ -13,7 +13,10 @@ On September 12, a celebrity who made his name campaigning for consumer rights a
 
 In parentheses, he added seven Chinese characters: **Please, don't mess with me.**
 
-![Luo Yonghao's original Weibo review of Yeren Xiansheng, with “Please, don't mess with me” in parentheses](weibo-post.webp)
+> [!SOCIAL] Luo Yonghao's Crossroads (罗永浩的十字路口)
+>
+> Tried the wildly hyped Yeren Xiansheng at the airport—pretty mediocre, and for the price, honestly awful. How did this place get so popular? [Friendly reminder: this is just a normal consumer review and question. Please, don't mess with me and then accuse me of running a hit job or anything like that.] Tastes far worse than Zhong Xue Gao—I miss Zhong Xue Gao. [Note: the latter has already gone bankrupt and been auctioned off, so spare me the idiotic conspiracy theories… so exhausting 😓]
+{avatar="avatar-luoyonghao-crossroads.webp" platform="weibo"}
 
 An ordinary consumer who eats something awful and vents on Weibo doesn't need to warn the company in advance not to hit back. He doesn't even matter enough to warrant a response: he rants, the company keeps selling, and it probably never even sees his post.
 
@@ -61,7 +64,31 @@ I don't know either. I'm even willing to believe it was a coincidence—someone 
 
 **But pay attention to those parentheses.** On September 12, before anyone had raised a question, he had already drafted a rebuttal to a conspiracy theory that did not yet exist: the latter had gone bankrupt and been auctioned off. That statement is literally true. Yet when he wrote it, the trademarks had been in new hands for three months, the new company had been registered, and the relaunch announcement was three days away.
 
-![A Zhihu contributor asks why the post devotes more space to Zhong Xue Gao than to Yeren Xiansheng](relaunch-notice.webp)
+> [!SOCIAL] Frank Yang (弗兰克扬)
+>
+> If this wasn't deliberate, all I can say is it's one hell of a coincidence.
+>
+> The moment Luo Yonghao's rant about Yeren Xiansheng hit the trending lists, one question occurred to me: why did he go out of his way to bring up Zhong Xue Gao, devoting even more words to it than to Yeren Xiansheng?
+>
+> Even during the Xibei controversy, he only brought up restaurants he frequented—like Nonggengji and wok-hei Hunan spots—during a later livestream to argue that mall restaurants could still serve tasty food.
+>
+> Coming right out of the gate with such a heavy focus on Zhong Xue Gao genuinely struck me as odd.
+>
+> Then it hit me: back when Luo first got into livestream e-commerce, one of his major brand partners was Zhong Xue Gao.
+>
+> > [!SOCIAL] Luo Yonghao (罗永浩)
+> >
+> > Eating more live on air tonight ❤️
+> >
+> > > @钟薛高 (Zhong Xue Gao): Last time you ate five and a half in one sitting—let's see how many you can finish tomorrow 😊
+> > >
+> > > Come “Be Friends” with @罗永浩 (Luo Yonghao)
+> > >
+> > > \#LuoYonghaoLivestream#
+> >
+> > ![Promotional graphic for Zhong Xue Gao's livestream partnership with Luo Yonghao: “Be Friends! I once ate five and a half in one sitting!”](relaunch-notice-media.webp)
+> {avatar="avatar-luoyonghao.webp" platform="weibo"}
+{avatar="avatar-frankyang.webp" platform="zhihu"}
 
 Did he know? I don't know. **That is precisely the problem.**
 

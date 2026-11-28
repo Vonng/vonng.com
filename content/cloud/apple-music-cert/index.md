@@ -10,7 +10,14 @@ tags: [云计算, 故障复盘, 安全]
 
 结果刚提出没多久，苹果立马就忘了更新自己的证书。属实是回旋镖正中自己的脑门，蛮丢脸的。
 
-![图片](01.webp)
+> [!SOCIAL] 蓝点网 `@landiantech`
+>
+> \#AppleMusic 等部分苹果服务发生中断，原因是苹果忘记续期TLS数字证书，该问题应该影响全球用户。
+>
+> 回旋镖：苹果此前提议将TLS证书有效期缩短至45天。
+>
+> ![Apple Music 证书失效弹窗与 SAN 域名列表](01-media.webp)
+{avatar="img/social/landiantech.webp" date="2024-11-10" platform="x"}
 
 ![图片](02.webp)
 

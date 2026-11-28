@@ -13,15 +13,19 @@ User numbers soared past ten million. Tibo, the executive responsible for Codex 
 
 Now it seems the eggs have run out. It has been more than six days since the last reset, and another is nowhere in sight. Users reverse-engineered the pattern: resets were tied to weekly active user milestones. Every additional million users triggered one, all the way to ten million.
 
-![Tibo announces three million weekly Codex users and a quota reset for every additional million up to ten million](reset-milestone-en.webp)
-
-*[Original English post](https://x.com/thsottiaux/status/2041655710346572085), April 7, 2026 (UTC), captured from the [public mirror](https://nitter.gq/thsottiaux/status/2041655710346572085).*
+> [!SOCIAL] Tibo `@thsottiaux`
+>
+> Three million people are now using Codex weekly - up from two million a little under a month ago. Incredible to see the growth. Thank you to all of you and to the ecosystem we’re part of. To celebrate, we’re resetting rate limits so you can keep building, and we’ll reset them every additional 1M users until we reach 10M, so we can keep celebrating along the way.
+>
+> Enjoy and thank you!
+{avatar="img/social/thsottiaux.webp" date="2026-04-07" url="https://x.com/thsottiaux/status/2041655710346572085" platform="x"}
 
 What happens after ten million? Someone asked Tibo on X whether Codex had crossed eleven million. He said it had done so long ago. After all these days without another reset, the conclusion is fairly clear: the promotion is over. The mass giveaway has run its course. If you want a reset now, about your only option is to DM Tibo with a useful suggestion and hope he grants you one directly.
 
-![Tibo says solid feedback or banter may earn an individual Codex quota reset](reset-dm-en.webp)
-
-*[Original English post](https://x.com/thsottiaux/status/2085221386713198988), August 6, 2026 (UTC), captured from the [public mirror](https://nitter.gq/thsottiaux/status/2085221386713198988).*
+> [!SOCIAL] Tibo `@thsottiaux`
+>
+> I asked Codex to pull up some stats and I receive on average one DM or email every 6 or so minutes to ask for a reset. I occasionally do oblige if it comes with really solid feedback or banter.
+{avatar="img/social/thsottiaux.webp" date="2026-08-06" url="https://x.com/thsottiaux/status/2085221386713198988" platform="x"}
 
 That is a shame. But the eggs themselves were never worth much. What matters is what I turned them into over that month.
 
@@ -33,9 +37,17 @@ During this month-long AI bonanza, I had seven 20× MAX subscriptions: four Chat
 
 Of course, free quota from the Reset spree was only a cost advantage. Far more important were two developments in July: GPT-5.6 Sol launched, and Fable became continuously available through Claude subscriptions, bringing both AGI-class models to a broad audience. Their leap in intelligence made burning tokens more cost-effective than ever and dramatically raised the ceiling on what they could do. Their greater autonomy magnified the leverage on human time even further: a task I once ran for an hour can now be left running for a week.
 
-![Vonng's July 14 posts describe running six subscriptions across three MacBook Pros](fable-codex-en.webp)
-
-*English translation of the original July 14 posts.*
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> Five $200 subscriptions, plus one free from an open-source program: $1,000 a month, or RMB 6,800. Sounds expensive, but these subscriptions deliver 100 times the output and efficiency of hiring someone for RMB 6,800 a month. Then you realize this is damn good value—a bargain from day one. The more you buy, the more you save. Still, running six at once has pushed me to my limit.
+>
+> > [!SOCIAL] Vonng `@RonVonng`
+> >
+> > I have three MacBook Pros—fully maxed-out 2018, 2022, and 2026 models—that I never sold and left gathering dust. Now they’re finally useful. Three laptops run three Codex accounts plus three Claude accounts, with the six subscriptions split across them and working around the clock. I also find MacBooks more convenient than Mac minis: they come with a built-in KVM and UPS.
+> >
+> > ![Desk setup with three MacBook Pros running six Codex and Claude subscriptions](fable-codex-media.webp)
+> {avatar="img/vonng.jpg" date="2026-07-14"}
+{avatar="img/vonng.jpg" date="2026-07-14" platform="x"}
 
 In short, the whole setup wrung me dry. I pedaled the machine until it smoked. Readers may have noticed that I barely published anything on my WeChat channel over the past month. I simply had no time. The occasional articles I did squeeze out were often criticized for sounding too AI-generated, because I genuinely had no time to write—much less edit and polish.
 

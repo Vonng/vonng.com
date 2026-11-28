@@ -9,7 +9,10 @@ ai: true
 ---
 Today's biggest tech drama began when Bojie Li criticized DeepSeek's interview process on Twitter. In short, he went in for an interview, was asked to solve online-judge coding problems, and was then suspected of cheating. Add the DeepSeek name, and the story exploded.
 
-![Bojie Li's complaint about the interview](interview-complaint.webp)
+> [!SOCIAL] Bojie Li `@bojie_li`
+>
+> A rant about DeepSeek's interview process. First, after I passed the written test, they dragged their feet for half a month without scheduling an interview—by then I already had offers in hand from other companies. Only after repeated follow-ups did they finally schedule one. None of the other companies I interviewed with required coding rounds, yet DeepSeek still required a written test plus coding interviews in both of the first two rounds—something I had never encountered anywhere else. In the second round, the interviewer felt that all the problems I described were research problems and couldn't follow what I was saying; he kept pushing me to talk about engineering challenges instead. During the coding interview, I have two monitors, and the interviewer claimed I kept glancing at my left screen, suspected me of copying code, told me to stop cheating, and said the interview couldn't continue unless I proved I wasn't copying. I felt deeply insulted and terminated the interview on the spot. Based on the two interviewers in rounds one and two, DeepSeek is completely different from what I imagined. I've decided to end my interview process with DeepSeek and share this on social media. Please help spread the word—feel free to share.
+{avatar="avatar-bojie-li.webp" date="2026-07-06" platform="x"}
 
 The internet is full of wild speculation. I know a little about what happened, and my own judgment is that Li's account is probably accurate: DeepSeek's interview process really was... less than respectful to the candidate. DeepSeek is a good company, and Mr. Cui is a decent, sincere person. The charitable reading is that DeepSeek had previously recruited almost exclusively on campus and was only beginning to hire experienced people. It lacked experience and botched the process. That is understandable.
 
@@ -19,9 +22,19 @@ From what I know, the process has problems, and that is not good for DeepSeek.
 
 Then people piled on Li, often viciously. What followed was even harder to keep up with. One of Bojie Li's former investors came forward with accusations; Li fired back; and the whole affair turned into an ever-larger mud fight.
 
-![A former investor's accusations](investor-accusation.webp)
+> [!SOCIAL] Du Jun `@DujunX`
+>
+> Bojie Li is the founder with the least respect for contracts we have ever worked with.
+>
+> In 2024, riding the halo of Huawei's "Genius Youth" title, Bojie Li founded Metagent and received investment from ABCDE Capital. Afterward, he refused to fulfill the basic obligations stipulated in the investment agreement—including updating investors on business progress and financials—and later went completely unreachable.
+>
+> Venture capital can accept all kinds of project failures, but it cannot accept the fraud of a founder taking the money and disappearing.
+{avatar="avatar-dujunx.webp" date="2026-07-07" platform="x"}
 
-![Bojie Li's response](founder-response.webp)
+> [!SOCIAL] Bojie Li `@bojie_li`
+>
+> Under the investment agreement, your firm committed $1.5 million, of which only $500,000 was ever wired; the remaining $1 million never arrived. Yet the company always recorded your firm's equity on the cap table at the full $1.5 million share. Because the funds kept failing to materialize, both my co-founder and I voluntarily cut our own salaries, and hiring and R&D ran into serious trouble. In October 2024, for personal family reasons I could not leave mainland China, where Web3 projects are non-compliant, so I resigned from Metagent with board approval. Up until my departure, as CTO and co-founder, I consistently fulfilled my duty to report the cap table and business status on schedule. And in accordance with the non-compete clause, I deliberately stayed away from Web3, AI infrastructure, and image generation in subsequent startups.
+{avatar="avatar-bojie-li.webp" date="2026-07-07" platform="x"}
 
 I do not know Li, and titles like Huawei's "Genius Youth" do nothing for me. But publicly pillorying someone for describing his own experience is wrong. I can understand why an expert with a proven body of work and reputation would feel insulted when a company subjects him to the same rote questions it uses for bulk résumé screening.
 
@@ -39,7 +52,20 @@ After all these years, databases, Postgres, and startups have long since filled 
 
 I do not think these useless OJ problems help identify talent. They are easy for people who know nothing but test prep to game, so the process ends up selecting a crowd of professional test takers. Just look at Shing-Tung Yau's mathematics program at Tsinghua: it too got reward-hacked.
 
-![Reward hacking in talent selection](reward-hacking.webp)
+> [!SOCIAL] 大漂亮| C Labs `@giantcutie666`
+>
+> Tsinghua's Shing-Tung Yau math program admitted a batch of students through its independent recruitment track. Yau gave them a surprise test using the Beijing Gaokao math paper, and the average score was 110 (out of 150).
+>
+> Yau was furious and wanted to expel everyone who failed and make them retake the Gaokao.
+>
+> The university leadership hasn't approved it yet out of fear of the parents' backlash 😅
+>
+> Word is this happened mainly because test-prep agencies reverse-engineered the admission playbook for Tsinghua's Leading Talent program.
+>
+> Personally I don't think it's that simple—at the very least, the exam questions leaked 😁
+>
+> ![Collage of screenshots discussing Tsinghua's Qiuzhen College admissions and parent group chats](reward-hacking-media.webp)
+{avatar="avatar-giantcutie666.webp" date="2026-07-06" platform="x"}
 
 A different evaluation would be far better. Give the candidate a terminal and have them figure out how to provision a virtual machine and configure Linux and Codex. Then give them a real task of moderate difficulty and watch how they direct Codex with prompts to get it done. Finally, have them submit the complete session and let an AI evaluate it.
 

@@ -12,7 +12,25 @@ aliases: ["/ai/ai-question/"]
 
 凯文·凯利说过：*"未来提问将比回答更有价值。当答案成为商品时，好的问题就是新的财富。"* —— 我们现在就活在这个预言成真的时刻。
 
-![bad-ai.jpg](bad-ai.jpg)
+> [!SOCIAL] pippingg `@Suyanzhenq`
+>
+> 对，去年投过一个失败的ai agent团队，失败的原因就是CTO看到一整套用户做量化策略的session，然后自己复刻了一个，辞职印钞去了。
+>
+> 别在套壳产品里聊重要的东西，后台都是明文看聊天session。
+>
+> > [!SOCIAL] Jesse Lau 遁一子 `@jesselaunz`
+> >
+> > 这是我不愿意用任何套壳或者国内AI的原因之一
+> >
+> > > 用户的prompt是金矿
+> > >
+> > > 这里面的镜头控制和Video Background Remover都是可以单独抽离成小工具，进而完善自己的产品
+> > >
+> > > 去翻翻你的用户 Prompt 吧，里面藏着的都是真需求！
+> > >
+> > > 这些东西抽出来，都是独一无二的产品力！
+> {avatar="avatar-jesselaunz.webp" date="2025-11-30"}
+{avatar="avatar-suyanzhenq.webp" date="2025-11-30" platform="x"}
 
 ## 答案的通货膨胀
 

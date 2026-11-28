@@ -28,9 +28,10 @@ Meituan then published an explanation and blamed the incident on a "third-party 
 Its customer service response pointed to this article:
 ["Meituan customer service responds to deletion of photos and data on users' phones: fixed immediately, no reading, storage, or leakage of personal information involved"](https://mp.weixin.qq.com/s?__biz=MjM5MTI3MTY3Mg==&mid=2651588304&idx=4&sn=faed212e5a7802cd40c0460eb268104a&scene=21#wechat_redirect)
 
-![Customer service response](service-response.webp)
-
-> "On some Android versions, a third-party plugin conflict caused abnormal prompts during cache cleanup. This did not involve reading, storing, or leaking personal information."
+> [!SOCIAL] Meituan Support (美团客服小美)
+>
+> Hello, we apologize for the inconvenience. After investigation, on certain Android versions, a third-party plugin conflict caused abnormal prompts during cache cleanup; this does not involve reading, storing, or leaking your personal information. We have fixed it right away. If the cleanup did affect your personal files, you can recover them from your phone's "Recycle Bin" or "Recently Deleted" folder. If you need assistance, we will provide dedicated one-on-one technical support.
+{avatar="avatar-meituan-kefu.webp" platform="weibo"}
 
 The real problem with that statement is that it tries to frame an obvious permissions incident as a harmless UI glitch.
 

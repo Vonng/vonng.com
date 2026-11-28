@@ -11,9 +11,12 @@ Due to an "***unprecedented configuration error***", Google Cloud mistakenly del
 
 The Australian pension fund executive and Google Cloud's global CEO issued a joint statement apologizing for this "extremely frustrating and disappointing" outage.
 
-![Database Deletion Supreme - Google Cloud Nuked a Major Fund's Entire Cloud Account (figure 1)](gcp-unisuper.png)
-
-> https://x.com/0xdabbad00/status/1789011008549450025
+> [!SOCIAL] Scott Piper `@0xdabbad00`
+>
+> Google Cloud accidentally deleted a company's entire cloud environment (Unisuper, an investment company, which manages $80B). The company had backups in another region, but GCP deleted those too. Luckily, they had yet more backups on another provider.
+>
+> *Link shared: theguardian.com — “Google Cloud accidentally deletes UniSuper’s online account…”*
+{avatar="avatar-0xdabbad00.webp" date="2024-05-11" url="https://x.com/0xdabbad00/status/1789011008549450025" platform="x"}
 
 Due to Google Cloud's "**peerless**" configuration mistake, Australian pension fund UniSuper's entire cloud account was accidentally deleted. Over half a million UniSuper fund members couldn't access their pension accounts for a week. After the outage, service began recovering last Thursday, with UniSuper stating they would update investment account balances as soon as possible.
 

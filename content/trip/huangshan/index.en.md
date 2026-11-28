@@ -25,13 +25,30 @@ Fortunately, with AI riding shotgun, as long as I have a laptop within reach, th
 
 Project homepage & changelog: [Silo](https://silo.pgsty.com/)
 
-![Silo 20261018 monthly security release announcement](silo-release.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> Routine monthly Silo update, fixing another batch of vulnerabilities and bugs. Shipped the 20261018 release—for heavy lifting like this, ChatGPT Astra Max is still the most reliable, burning through roughly seven or eight weekly quotas. Also hit a new milestone: 4K GitHub stars and nearly four million Docker pulls. [silo.pgsty.com](https://silo.pgsty.com)
+>
+> ![Silo homepage showing the 20261018 release and key metrics](silo-release-media.webp)
+>
+> > [!SOCIAL] PIGSTY - Free RDS for PostgreSQL `@PlGSTY`
+> >
+> > SILO 20261018 is out—our community-maintained, open-source MinIO fork.\
+> > • Fixes Object Lock retention bypass & IAM auth CVE • Reliable STS credential revocation • Prevents data loss during pool rebalance • Console 2.4.2 & kes included\
+> > [silo.pgsty.com](https://silo.pgsty.com)
+> {avatar="img/logo.png"}
+{avatar="img/vonng.jpg" platform="x"}
 
 ## Oink `v1.3`: Native Expo Photo Galleries
 
 Alongside our storage layer, **[Oink](/en/ai/oink-intro/)**, the local-first Hugo theme framework that powers our entire documentation fleet, also reached `v1.3` over the past few days (with patch releases already up to `v1.3.2`). The headline update adds a native **Expo** photo gallery layout alongside the existing **Docs**, **Blog**, and **Book** archetypes:
 
-![Oink 1.3 native Expo photo gallery](oink-expo.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> Oink 1.3 is out with a new expo layout. The same theme can now power technical docs, blogs, books, and photo galleries too. [github.com/pgsty/oink](https://github.com/pgsty/oink) Built a few personal collection sites with it.
+>
+> ![Oink 1.3 Expo photo gallery demo showcasing Escher's works](oink-expo-media.webp)
+{avatar="img/vonng.jpg" platform="x"}
 
 - **A directory is an album, zero boilerplate**: Following an engineering-first approach, a standard Hugo leaf bundle—an `index.md` plus a folder of images—is all it takes to make an album. Drop your photos into the directory and Oink renders the gallery automatically, without creating per-image pages or hand-writing piles of YAML.
 

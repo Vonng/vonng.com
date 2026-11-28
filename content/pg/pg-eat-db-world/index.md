@@ -189,7 +189,15 @@ Pigsty 六点价值主张的首字母合起来，则为 Pigsty 提供了另外�
 
 **可扩展的 PostgreSQL** 是这个发行版中最重要的价值主张。在刚刚发布的 [**Pigsty v2.6**](/pigsty/v2.6/) 中，我们整合了上面提到的 DuckdbFDW 与 ParadeDB 扩展，这两个插件让 PostgreSQL 的分析能力得到史诗级增强，而我们确保每个用户都能轻松用得上这样的能力。
 
-![regards.png](regards.png)
+> [!SOCIAL] Steven Lee `@AliTrack`
+>
+> 谢谢你把duckdb_fdw 整合了进去
+{avatar="img/alitrack.png" platform="x"}
+
+> [!SOCIAL] Philippe Noël `@philippemnoel`
+>
+> Thank you for including us :)
+{avatar="img/social/philippemnoel.webp" date="2024-03-01" platform="x"}
 
 > 来自 ParadeDB 创始人与 DuckdbFDW 作者的感谢致意
 

@@ -10,9 +10,26 @@ On February 27, 2026, U.S. President Donald Trump issued a directive on Truth So
 
 This head-on collision between the U.S. government and a frontier AI lab is redrawing the boundaries for how artificial intelligence is used in national defense.
 
-![Pete Hegseth's complete English statement on X](01-en.webp)
-
-*Original English statement by [Pete Hegseth (@SecWar)](https://x.com/SecWar/status/2027507717469049070), February 27, 2026.*
+> [!SOCIAL] Secretary of War Pete Hegseth `@SecWar`
+>
+> This week, Anthropic delivered a master class in arrogance and betrayal as well as a textbook case of how not to do business with the United States Government or the Pentagon.
+>
+> Our position has never wavered and will never waver: the Department of War must have full, unrestricted access to Anthropic’s models for every LAWFUL purpose in defense of the Republic.
+>
+> Instead, @AnthropicAI and its CEO @DarioAmodei, have chosen duplicity. Cloaked in the sanctimonious rhetoric of “effective altruism,” they have attempted to strong-arm the United States military into submission - a cowardly act of corporate virtue-signaling that places Silicon Valley ideology above American lives.
+>
+> The Terms of Service of Anthropic’s defective altruism will never outweigh the safety, the readiness, or the lives of American troops on the battlefield.
+>
+> Their true objective is unmistakable: to seize veto power over the operational decisions of the United States military. That is unacceptable.
+>
+> As President Trump stated on Truth Social, the Commander-in-Chief and the American people alone will determine the destiny of our armed forces, not unelected tech executives.
+>
+> Anthropic’s stance is fundamentally incompatible with American principles. Their relationship with the United States Armed Forces and the Federal Government has therefore been permanently altered.
+>
+> In conjunction with the President's directive for the Federal Government to cease all use of Anthropic's technology, I am directing the Department of War to designate Anthropic a Supply-Chain Risk to National Security. Effective immediately, no contractor, supplier, or partner that does business with the United States military may conduct any commercial activity with Anthropic. Anthropic will continue to provide the Department of War its services for a period of no more than six months to allow for a seamless transition to a better and more patriotic service.
+>
+> America’s warfighters will never be held hostage by the ideological whims of Big Tech. This decision is final.
+{avatar="avatar-secwar.webp" date="2026-02-27" url="https://x.com/SecWar/status/2027507717469049070" platform="x"}
 
 ## Background
 

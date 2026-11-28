@@ -11,9 +11,12 @@ tags: [下云, 云计算, 故障复盘]
 
 澳洲养老金基金负责人与 Google Cloud 全球首席执行官联合发布声明，为这一“极其令人沮丧和失望”的故障表示道歉。
 
-![删库：Google云爆破了大基金的整个云账户（图 1）](gcp-unisuper.png)
-
-> https://x.com/0xdabbad00/status/1789011008549450025
+> [!SOCIAL] Scott Piper `@0xdabbad00`
+>
+> Google Cloud 意外删除了一家公司的整个云环境（管理着 800 亿美元资产的投资机构 UniSuper）。该公司原本在另一个区域存有备份，但 GCP 把那些备份也一并删掉了。万幸的是，他们在另一家云厂商那里还有额外备份。
+>
+> *附链接：theguardian.com — “Google Cloud accidentally deletes UniSuper’s online account…”*
+{avatar="avatar-0xdabbad00.webp" date="2024-05-11" url="https://x.com/0xdabbad00/status/1789011008549450025" platform="x"}
 
 因为一次 Google Cloud “**举世无双**” 的配置失误，澳洲养老金基金 Unisuper 的整个云账户被误删了，超过五十万名 UniSuper 基金会员一周都无法访问他们的养老金账户。故障发生后，服务于上周四开始恢复，UniSuper 表示将尽快更新投资账户的余额。
 

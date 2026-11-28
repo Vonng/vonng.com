@@ -26,9 +26,19 @@ The ridiculous idea of selling cloud servers to individual users might stem from
 
 Another typical B2C scenario involves students and individual webmasters. In the past, individual webmasters running websites on small 2C 2G VMs with 3M bandwidth was quite decent — but since the arrival of Cloudflare, the cyber Buddha, forget about 99 yuan cloud servers, even 9.9 yuan isn't attractive anymore — **how can anything be cheaper than free?** — not to mention that using CF for website building provides a much better experience than cloud servers — even without considering various free plans, just the free traffic alone makes those "few megabytes of gifted bandwidth" look like garbage...
 
-![English translation of posts praising Cloudflare's free tier, with the pigsty.io dashboard showing 264 GB served and 181 GB cached](luo-live-3.en.webp)
-
-*English translation of the original posts and Cloudflare dashboard. Original plots and totals are preserved: 42.81k unique visitors, 728.59k requests, 68.34% cached, 264 GB served, and 181 GB cached.*
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> Cloudflare, the cyber Buddha: all I paid for was a domain, then ran on the free plan for a month—200 to 300 GB of traffic and not a single cent charged. Going to or leaving the cloud depends on *which* cloud we're talking about. For a fair one like this, I'm all in. Cloudflare and IDC 2.0 should take the definition of "cloud computing" away from legacy public cloud vendors.
+>
+> ![Cloudflare Free Plan overview dashboard for pigsty.io showing 42.81k unique visitors, 728.59k requests, 68.34% cached, 264 GB served, and 181 GB cached](luo-live-3-en-media.webp)
+>
+> > [!SOCIAL] Rick `@Rick5767`
+> >
+> > *Replying to @xqliu, @vercel, and 2 others*
+> >
+> > Can we call CF the cyber Buddha? Free CDN, DNS, DDNS, Pages, Workers, even free access to AI models hosted on Cloudflare—so much more, too. Too bad the CDN nodes assigned in mainland China are slower than my own server, though internationally it works great.
+> {avatar="avatar-rick5767.webp" date="2024-03-25"}
+{avatar="img/vonng.jpg" platform="x"}
 
 On one side of the IT scale spectrum — individual webmasters and small businesses — new-generation cloud services/SaaS (CF, Neon, Vercel, Supabase), these cyber bodhisattvas' free tiers, are clearly displacing and impacting public clouds. On the other side — medium and large enterprises — the emerging IDC 2.0 and open-source management software alternatives work together to bypass public cloud middlemen, leveraging [hardware Moore's law](https://mp.weixin.qq.com/s/1OSRcBfd58s0tgZTUZHB9g) accumulated advantages, becoming the [ultimate FinOps practice](https://mp.weixin.qq.com/s/Yp_PU8nmyK-NVq0clD98RQ), achieving [astonishing cost reduction capabilities](https://mp.weixin.qq.com/s/CicctyvV1xk5B-AsKfzPjw).
 

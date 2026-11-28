@@ -9,7 +9,10 @@ ai: true
 ---
 硅谷教父马克·安德森昨天发了一条推。翻译过来就是：
 
-![马克·安德森关于 AGI 定价的推文截图](agi-pricing.png)
+> [!SOCIAL] Marc Andreessen `@pmarca`
+>
+> New AGI pricing tier just dropped: negative $9 million if you're one of 11 specific companies; infinity otherwise.
+{avatar="avatar-pmarca.webp" date="2026-04-08" platform="x"}
 
 > **AGI 的最新定价出炉了：如果你是 11 家特定公司之一，价格是负 900 万美元；否则，价格是无穷大。**
 
@@ -33,7 +36,14 @@ ai: true
 
 Anthropic 没有把 Mythos 公开发布。它启动了一个叫 **Project Glasswing** 的计划，把模型交给了 12 家核心合作伙伴：亚马逊、苹果、博通、思科、CrowdStrike、谷歌、摩根大通、Linux 基金会、微软、英伟达、Palo Alto Networks，再加上 Anthropic 自己。此外，还有约 40 家维护关键基础设施的机构获得了访问权。
 
-![Project Glasswing 合作伙伴名单](glasswing-partners.png)
+> [!SOCIAL] Anthropic `@AnthropicAI`
+>
+> 隆重推出 Project Glasswing：一项旨在保护全球最关键软件的紧急计划。
+>
+> 它由我们最新的前沿模型 Claude Mythos Preview 驱动，在发现软件漏洞方面超越了除最顶尖人类专家之外的所有人。
+>
+> [Project Glasswing: Securing critical software for the AI era](https://www.anthropic.com)
+{avatar="avatar-anthropicai.webp" date="2026-04-08" platform="x"}
 
 总共大约 50 多家组织。
 
@@ -43,7 +53,32 @@ Anthropic 没有把 Mythos 公开发布。它启动了一个叫 **Project Glassw
 
 更关键的是，Anthropic 不但不收这些巨头的钱，还倒贴了 **1 亿美元的使用额度**。安德森的“负 900 万”就是这么算出来的，1 亿除以 11 家外部核心伙伴，每家约 900 万美元的算力补贴。X 上有人 @ 了 Grok，让它用“单位经济学”解释一下。Grok 的回答辛辣至极：
 
-![Grok 对“负 900 万美元”定价的解释](grok-pricing.png)
+> [!SOCIAL] Sean Fenlon `@seanfenlon`
+>
+> Hey @Grok
+>
+> Explain in unit economics. 👍
+{avatar="avatar-seanfenlon.webp" platform="x"}
+
+> [!SOCIAL] Grok `@grok`
+>
+> 当然，关于这个定价层级的单位经济学 101：
+>
+> 单位 = 1 家公司的人工通用智能（AGI）访问/许可。
+>
+> 对于 11 家特殊客户：
+>
+> - 每单位收入：-900 万美元（客户因采用而倒拿 900 万美元补贴）
+> - 每单位可变成本：巨大（计算 / 推理 / 能源，轻松超过 1000 万美元）
+> - 每单位贡献利润：深度负值（纯粹的战略补贴 / 烧钱）
+>
+> 对于其他约 80 亿人类 / 公司：
+>
+> - 每单位价格：∞（任何价格都买不到）
+> - 销售单位数：0
+>
+> 经典的赢者通吃策略：付钱给寡头以锁定分销渠道，同时让其他人喘不过气。之后再规模化，也许永远不盈利。
+{avatar="avatar-grok.webp" platform="x"}
 
 ## “这是为了安全”
 

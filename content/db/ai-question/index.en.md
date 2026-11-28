@@ -12,7 +12,25 @@ aliases: ["/ai/ai-question/"]
 
 Kevin Kelly once said: *"In the future, asking questions will be more valuable than answering them. When answers become commodities, good questions are the new wealth."* — We are living in the moment this prophecy comes true.
 
-![bad-ai-en.jpg](bad-ai-en.jpg)
+> [!SOCIAL] pippingg `@Suyanzhenq`
+>
+> Yes—I invested in a failed AI agent startup last year. It failed because the CTO saw a user's complete set of sessions building a quant trading strategy, cloned it himself, quit, and went off to print money.
+>
+> Never discuss anything sensitive in wrapper products. The backend can read every chat session in plaintext.
+>
+> > [!SOCIAL] Jesse Lau 遁一子 `@jesselaunz`
+> >
+> > This is one of the reasons I refuse to use any AI wrappers or domestic AI apps.
+> >
+> > > User prompts are a gold mine.
+> > >
+> > > Things like camera control and Video Background Remover in there can be pulled out as standalone micro-tools to improve your own product.
+> > >
+> > > Go dig through your users' prompts—that's where the real demand is hiding!
+> > >
+> > > Everything you extract from them becomes unique product edge.
+> {avatar="avatar-jesselaunz.webp" date="2025-11-30"}
+{avatar="avatar-suyanzhenq.webp" date="2025-11-30" platform="x"}
 
 ## The Inflation of Answers
 

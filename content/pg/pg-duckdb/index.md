@@ -56,11 +56,24 @@ DuckDB 是一个可以独立使用的数据库，但更是一个嵌入式的分�
 
 原本 Fork Citus 列存扩展的 Hydra （YC W22），在尝试构建 `pg_quack` 感受到 DuckDB 震撼后，立刻抛弃原有的引擎和 MotherDuck 合作，搞出来了 `pg_duckdb`。融合了 PG 生态经验的 Hydra 与 DuckDB 原厂弄的扩展，可以直接在数据库内丝滑地读取 PG 数据表，并使用 DuckDB 引擎进行计算，并且可以直接从文件系统/S3 上读取 Parquet / IceBerg 格式的文件，实现湖仓的效果。
 
-![hydra-pg-quack.png](hydra-pg-quack.png)
+> [!SOCIAL] Hydra `@hydradatabase`
+>
+> 推出 pg_quack —— 在 Postgres 中运行 🦆 DuckDB！
+>
+> pg_quack 是一个 Postgres 扩展，它使用 DuckDB 引擎让 Postgres 比 Snowflake 更快，并将 Postgres 的分析查询性能提升 100 倍以上。\
+> pg_quack 是一个实验性项目，采用 Apache 2.0 协议开源！🎉\
+> [pgxman.com/x/pg_quack](https://pgxman.com/x/pg_quack)\
+> \#duckdb #postgres
+{avatar="avatar-hydradatabase.webp" platform="x"}
 
 同样是 YC 投的初创数据库公司 ParadeDB （YC S23），在尝试了自己用 Rust 构建类似的分析产品 pg_analytics 并取得了不俗的成绩之后，也选择改换了路线，基于 DuckDB 打造 pg_lakehouse 扩展。当然，创始人 Phillipe 在 pg_duckdb 刚刚官宣之后也立刻宣布投降，准备在 `pg_duckdb` 的基础上进行进一步的开发而不是当竞品。
 
-![paradedb.png](paradedb.png)
+> [!SOCIAL] Philippe Noël `@philippemnoel`
+>
+> 还有一些更关键的性能差异。`pg_duckdb` 扩展的定位更像是供其他平台（例如 ParadeDB）在其上构建的基础底座。
+>
+> 目前它的功能集还非常简单，不支持内置 Postgres 分析，也不像 ParadeDB 那样暴露 Postgres 语法等等。我们正在积极考虑将现有工作重构到 `pg_duckdb` 之上，并通过在其上叠加我们自己的扩展 `pg_analytics`，保持同样的功能集、性能与体验。
+{avatar="img/social/philippemnoel.webp" platform="x"}
 
 国内个人开发者李红艳开发的 [`duckdb_fdw`](https://pgext.cloud/e/duckdb_fdw) 是另一条另辟蹊径的道路。不是直接利用 PG的存储引擎接口，而是直接用外部数据源包装器（FDW）的基础设施，将 PG 和 DuckDB 对接到了一起。这引发了官方亲自下场吐槽，将其作为反例批判，也许是 MotherDuck 亲自下场的一个动机：“我还在构思伟大蓝图，如何融合PG与Duck的力量，你小子动作也太快了，得给你一点官方震撼看看”。
 

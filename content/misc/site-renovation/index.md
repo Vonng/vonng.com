@@ -120,7 +120,12 @@ Next.js 视觉效果要比 Hugo 好，唯一的缺点就是太慢了。即使用
 
 不过最近刚刚发布 Pigsty v3.6，暂时没什么时间去折腾文档换框架这档子事儿了。既来之则安之吧，反正最近赛博菩萨 Vercel 送了我大几千美元的 Credit，不用也是白不用。
 
-![图片](22.webp)
+> [!SOCIAL] PostgreSQL `@PostgreSQL`
+>
+> News: [Pigsty 3.6, the meta-distribution for PostgreSQL](https://www.postgresql.org/)
+>
+> The Pigsty team is thrilled to announce **Pigsty v3.6**, our latest step toward a true **meta-PostgreSQL distribution**…
+{avatar="avatar-postgresql.webp" date="2025-08-04" platform="x"}
 
 ## 选型之旅
 

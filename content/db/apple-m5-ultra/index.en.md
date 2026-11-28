@@ -36,8 +36,12 @@ So far, we can see that the 256 GB / 16 TB configuration costs RMB 143,000. Base
 
 After Apple discontinued the previous 512 GB M3 Ultra model, the market went berserk. A machine that originally cost less than RMB 100,000 was quoted by resellers at RMB 150,000, then RMB 180,000; some reportedly asked RMB 200,000.
 
-![The author's March 6 post about Apple removing the 512 GB memory option, with an embedded Mac Studio configurator](resale-en.webp)
-{caption="English translation of the author's original Chinese post and embedded screenshot."}
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> Damn. Memory prices are rising, and Apple has removed the 512GB Mac Studio option. At this rate, the M5 Ultra may top out at 256GB too. Looks like the remaining 512GB M3 Ultra stock on Xianyu is about to get more expensive. A serious blow to running large models locally.
+>
+> ![Apple's Mac Studio configurator showing only 96GB and 256GB memory options (translated from Chinese)](resale-en-media.webp)
+{avatar="img/vonng.jpg" date="2026-03-06" platform="x"}
 
 People did not chase it because it was a Mac or because they liked the Apple logo. The machine filled a highly unusual gap in the market: **it may have been the cheapest high-memory, all-in-one local AI system that an ordinary buyer could purchase through official channels with a proper invoice.**
 

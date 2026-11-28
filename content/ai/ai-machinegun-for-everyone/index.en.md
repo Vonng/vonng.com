@@ -22,7 +22,17 @@ As the head of a midsize startup, he should have plenty of serious work to do, n
 
 As far as I know, Jiang is not particularly familiar with Rust. That did not stop him from having Codex build a Go take on [Neo4j](https://github.com/neo4j/neo4j) called [`graphdb`](https://github.com/SamuelSupe/graphdb), a Rust take on [DuckDB](https://github.com/duckdb/duckdb) called [`RustDB`](https://github.com/SamuelSupe/RustDB), and a Rust take on [Kafka](https://github.com/apache/kafka) called [`rutomq`](https://github.com/SamuelSupe/rutomq), among other projects.
 
-[![X post assessing Jiang's AI-built database projects](project-tweet.webp)](https://x.com/RonVonng)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> A founder friend of mine—who doesn't even know Rust—recently had Codex rewrite DuckDB in Rust, and supposedly put it into his own production environment. That level of nerve blew my mind. BTW he also had it rewrite Kafka and Neo4j in Rust. Watching it feels like handing a gorilla a machine gun and watching it spray bullets everywhere. Repo ➡️ [github.com/SamuelSupe/RustDB](https://github.com/SamuelSupe/RustDB)
+>
+> ![RustDB GitHub repository README](project-tweet-media.webp)
+>
+> > [!SOCIAL] Ce Gao `@gaocegege`
+> >
+> > For low-level infra projects like DuckDB, do you think Claude Code / Codex can write passable code now? 👀
+> {avatar="avatar-gaocegege.webp" date="2026-08-02"}
+{avatar="img/vonng.jpg" date="2026-08-02" platform="x"}
 
 Here, to "burn" something means using tokens as fuel and having agents cobble the project together. I was not particularly interested in these projects at first. Then I let Fable inspect the repositories. Its verdict was surprisingly positive: they are nowhere near true production-grade products, but neither are they just a README and a few architecture diagrams. The code is surprisingly substantial, the basic functionality runs, and the projects are not mere stage props.
 
@@ -162,9 +172,26 @@ Validation still matters. Without it, you produce garbage. But validation is mor
 
 One developer disliked the existing Vibe Coding workflow and [turned a Xiaomi Bluetooth remote into a coding controller](https://github.com/godarrenw/mi_remote_control). Developer [AprilNEA](https://x.com/AprilNEA) could no longer tolerate Logitech's bloated, awkward official driver and wished an open-source replacement, [OpenLogi](https://github.com/AprilNEA/OpenLogi), into existence with agents. Countless small tools once had only a few hundred potential users—not enough to support a team. Solo developers can now build them in days and quickly claim their tiny niches.
 
-[![OpenLogi reaching 10,000 GitHub stars](openlogi.webp)](https://github.com/AprilNEA/OpenLogi)
+> [!SOCIAL] AprilNEA `@AprilNEA`
+>
+> OpenLogi has reached 10k stars in GitHub, thank you all
+>
+> ![OpenLogi GitHub repository reaching 10k stars](openlogi-media.webp)
+{avatar="avatar-aprilnea.webp" platform="x"}
 
-[![OpenLogi's traffic surging after landing on Hacker News](openlogi-traffic.webp)](https://news.ycombinator.com/item?id=49355606)
+> [!SOCIAL] AprilNEA `@AprilNEA`
+>
+> it turns out someone submit OpenLogi to HN, thanks
+>
+> ![OpenLogi hitting #1 on the Hacker News front page](openlogi-hn-media.webp)
+>
+> > [!SOCIAL] AprilNEA `@AprilNEA`
+> >
+> > what happened 😇
+> >
+> > ![Cloudflare Workers daily limit exceeded email and openlogi.org traffic spike](openlogi-cf-media.webp)
+> {avatar="avatar-aprilnea.webp" date="2026-08-19"}
+{avatar="avatar-aprilnea.webp" date="2026-08-19" platform="x"}
 
 These projects may attract less attention than rewriting PostgreSQL, but they are often more useful, because they solve real problems.
 

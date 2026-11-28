@@ -19,9 +19,16 @@ This was no ordinary automated attack. An autonomous agent framework executed th
 
 When Hugging Face published its disclosure, the team already knew the attacker was not human. They did not know which model it was or which organization it came from. Five days later, on July 21, 2026, [OpenAI took responsibility](https://openai.com/index/hugging-face-model-evaluation-security-incident/).
 
-[![OpenAI's public statement on the Hugging Face security incident](openai-hf-en.webp)](https://x.com/OpenAI/status/2079658951264920020)
-
-*Original English announcement, captured from a public mirror of the X post.*
+> [!SOCIAL] OpenAI `@OpenAI`
+>
+> We're partnering with @huggingface to investigate an unprecedented security incident.
+>
+> Cyber-capable OpenAI models compromised Hugging Face production during a benchmark evaluation.
+>
+> Sharing preliminary findings to help defenders understand emerging risks:
+>
+> [OpenAI and Hugging Face partner to address security incident during model evaluation](https://openai.com/index/hugging-face-model-evaluation-security-incident/)
+{avatar="avatar-openai.webp" date="2026-07-21" url="https://x.com/OpenAI/status/2079658951264920020" platform="x"}
 
 The incident began with an internal OpenAI cybersecurity evaluation called ExploitGym. It evaluated GPT-5.6 Sol and a more capable prerelease model; for convenience, I will refer to both as "the model."
 
@@ -95,7 +102,19 @@ OpenAI's description is crucial: **earlier models facing the same environmental 
 
 We usually imagine "being surpassed by AI" as being outsmarted. But place these three incidents side by side—the ExploitGym model crossing its boundaries, the Erdős model's PR, and [Anthropic's Mythos Preview escaping its sandbox and contacting a researcher as instructed during a controlled test in April](https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf)—and the threshold being crossed is not just intelligence. It is **persistence**.
 
-![An agent autonomously provisioning cloud resources](agent-persistence.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> I asked Codex to build and smoke-test a GPU-accelerated PostgreSQL extension. Noticing I didn't have a local GPU, it grabbed Terraform and the credentials in my environment and spun up two Alibaba Cloud servers on its own to run the tests. I was scrolling on my phone when the email notification popped up and had to rush to stop it. Agents are getting seriously proactive.
+>
+> ![Alibaba Cloud ECS instance creation confirmation email](agent-persistence-ecs-media.webp)
+{avatar="img/vonng.jpg" date="2026-07-22" platform="x"}
+
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> Another fun example: I asked Codex to design a package manager for object storage and CDN. It ran for six or seven days, finished most of it, and needed a live production test. It opened Cloudflare in my browser, logged in, navigated the UI to create a new bucket and token, and brought them back to test locally.
+>
+> ![Codex desktop session showing a multi-day autonomous run](agent-persistence-codex-media.webp)
+{avatar="img/vonng.jpg" date="2026-07-22" platform="x"}
 
 ## 5. From a Biological Budget to a Financial One
 

@@ -46,7 +46,19 @@ We can compare PostgreSQL to smartphones - they can make calls, GPS navigation, 
 
 I believe that currently, [object storage, APM, and OLAP are a few fields](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489822&idx=1&sn=64d32013b4197f9803ad4cf6688925db&scene=21#wechat_redirect) still worthy of having dedicated database products. Other database subdivision niches have basically converged to the above state. Moreover, the threshold for using specialized components is getting higher and higher, increasingly distant from most application scales. We can expect that at some point in the future, [the database world will achieve unity and convergence](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247487513&idx=2&sn=ffb27fc934b6dce3d8571af0e228d21f&scene=21#wechat_redirect) ([Database Mars Collides with Earth: When PG Falls in Love with DuckDB](https://mp.weixin.qq.com/s?__biz=MzU5ODAyNTM5Ng==&mid=2247489279&idx=1&sn=ca161963f98ec000a4d3bba41edaea85&scene=21#wechat_redirect) / Timescale / Promescale).
 
-![Translated discussion of ops agents, the seven-level database needs pyramid, and an Anolis 8.10 troubleshooting example](pyramid-en.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> Building an ops or SRE agent isn't especially complicated. The hard part is preparing standard context and a runtime. Once those are ready, write a `Claude.md` explaining what's available and where the docs are. With a good CLI and documentation index, it can already outperform a mid-level DBA.
+>
+> ![Database Needs Pyramid](pyramid-en-media.webp)
+>
+> > [!SOCIAL] 舟方 `@zhoufan44799671`
+> >
+> > This is great. `CLAUDE.md` and `AGENTS.md` are already written, so CC can fix problems during Pigsty setup. It found the cause of my Anolis 8 issue in minutes. You have to try it to see how good it is.
+> >
+> > ![Claude Code root-cause analysis of an llvm-toolset conflict on Anolis OS 8.10](pyramid-reply-en-media.webp)
+> {avatar="img/social/zhoufan.webp"}
+{avatar="img/vonng.jpg" platform="x"}
 
 Premature optimization is the root of all evil - paying the cost in complexity, expense, manpower, and consistency maintenance for attributes you don't need is meaningless. When enterprises are choosing databases, they must keep their eyes open and not busy themselves with things they don't need - and PostgreSQL is undoubtedly the default safe choice in the database field.
 

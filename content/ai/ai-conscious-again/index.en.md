@@ -14,7 +14,12 @@ aliases: ["/misc/ai-conscious-again/"]
 
 The discussion began with a striking piece of news: Eon Systems reportedly loaded the full connectome of a fruit-fly brain into a computer, connected it to a simulated body, and saw behavior emerge without explicit training.
 
-![Digital fruit fly simulation](fruitfly.webp)
+> [!SOCIAL] Dr. Alex Wissner-Gross `@alexwg`
+>
+> **The First Multi-Behavior Brain Upload**
+>
+> ![Simulated fruit-fly body and simultaneous whole-brain emulation](fruitfly-media.webp)
+{avatar="avatar-alexwg.webp" platform="x"}
 
 That raises an uncomfortable question. If the right structure can produce behavior, what exactly is still missing between today's large models and what we call consciousness?
 

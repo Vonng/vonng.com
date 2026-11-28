@@ -18,7 +18,12 @@ aliases: ["/misc/ai-conscious-again/"]
 
 **Vonng**：最近有一条新闻非常震撼——Eon Systems 把果蝇的完整大脑连接组（14万个神经元、5000万个突触连接）灌进了计算机，接上物理模拟的虚拟身体，结果这只数字果蝇在没有经过任何训练的情况下，自己就开始行走、觅食、梳理，行为准确率达到了91%。没有训练数据，没有强化学习，没有梯度下降——仅仅是把生物大脑的连接结构复制进去，行为就涌现了。
 
-![数字果蝇的虚拟身体示意](fruitfly.webp)
+> [!SOCIAL] Dr. Alex Wissner-Gross `@alexwg`
+>
+> **首次多行为大脑上传**（*The First Multi-Behavior Brain Upload*）
+>
+> ![数字果蝇虚拟身体与全脑连接组仿真](fruitfly-media.webp)
+{avatar="avatar-alexwg.webp" platform="x"}
 
 这让我想到一个问题：[AI 会有自我意识吗](/misc/ai-conscious/)？你有自我意识吗？
 

@@ -8,11 +8,54 @@ tags: [PostgreSQL, MySQL, 性能]
 ---
 昨天，至少在十几个微信群里都有人 @ 我，发给我这条消息 《[有图有真相，MySQL 性能是 PG 的 360 倍，DS 还建议抛弃 PG](https://mp.weixin.qq.com/s?__biz=MjM5NzAzMTY4NQ==&mid=2653941901&idx=1&sn=455bd6f5bb5038900f98e31b19cae828&scene=21#wechat_redirect "有图有真相，MySQL性能是PG的360倍，DS还建议抛弃PG")》。大意就是推特上有个人发了个火焰图，说他有一个“秘密案例”：“PostgreSQL 比 MySQL 慢了 360 倍，难怪中国互联网公司不用 PG”，十几万的浏览。
 
-![图片](01.webp)
+> [!SOCIAL] wangbin579 `@wangbin579`
+>
+> PostgreSQL 终于完成了测试。在这个案例中，MySQL 比它快了 360 倍。下图展示了 PostgreSQL 的瓶颈——有经验的人一眼就能看出问题所在。难怪中国互联网公司很少使用它。
+>
+> ![PostgreSQL 性能瓶颈火焰图](01-media.webp)
+{avatar="avatar-wangbin579.webp" date="2025-04-13" platform="x"}
+
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> 想做真正的同类对比，去看看真正专业人士是怎么测的：[smalldatum.blogspot.com](https://smalldatum.blogspot.com/)，而不是在这里钓鱼引战。你愿意的话，我随时可以造出十个 MySQL “奇迹案例”来维持你的幻想：[pigsty.io/blog/db/bad-mysql/](https://pigsty.io/blog/db/bad-mysql/) / [MySQL is dead, Long live PostgreSQL!](https://pigsty.io/blog/db/mysql-is-dead/)
+{avatar="img/vonng.jpg" date="2025-04-14" platform="x"}
 
 于是我就去 X 上看了看原博这个帖子，挺长的一个 Thread。作为数据库老司机，我一看内容和发帖者就知道怎么回事了，这是一个很典型的伪装成技术讨论的恶意贬损。当然 MySQL / PG 国际社区可能没见过这种滚刀肉玩法，竟然还有不少人真的在尝试交流探究然后被耍的团团转。
 
-![图片](02.webp)
+> [!SOCIAL] Itay Braun `@itaybraun`
+>
+> 具体测试内容是什么？
+{avatar="avatar-itaybraun.webp" date="2025-04-13" platform="x"}
+
+> [!SOCIAL] wangbin579 `@wangbin579`
+>
+> Repeatable Read 隔离级别下的热点行更新。
+{avatar="avatar-wangbin579.webp" date="2025-04-13" platform="x"}
+
+> [!SOCIAL] Nik Samokhvalov `@samokhvalov`
+>
+> 发出来看看。
+{avatar="img/nikolay-samokhvalov.jpg" date="2025-04-14" platform="x"}
+
+> [!SOCIAL] wangbin579 `@wangbin579`
+>
+> 稍后会放出来——我现在先留着，这样才能发挥更大作用。
+{avatar="avatar-wangbin579.webp" date="2025-04-14" platform="x"}
+
+> [!SOCIAL] Nik Samokhvalov `@samokhvalov`
+>
+> 好吧，你每次在这个帖子里这么干，都是在消耗自己的信誉；你的帖子乍看挺有意思，却没有任何有用的细节，越来越不值得关注了。
+{avatar="img/nikolay-samokhvalov.jpg" date="2025-04-14" platform="x"}
+
+> [!SOCIAL] wangbin579 `@wangbin579`
+>
+> 其实我已经提供了有用的信息——热点更新、火焰图和 Repeatable Read 隔离级别——唯一缺的就是测试用例。
+{avatar="avatar-wangbin579.webp" date="2025-04-14" platform="x"}
+
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> talk is cheap, show me the code
+{avatar="img/vonng.jpg" date="2025-04-14" platform="x"}
 
 在评论区的强烈要求下，推主仍然一直都不肯放出测试代码与数据。最后被人猜出来是个什么场景，才放出一个简单示意图
 

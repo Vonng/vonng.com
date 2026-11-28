@@ -11,19 +11,42 @@ Two days ago, I wrote one line in [*Pedaling the Codex/Claude Bike Until the Whe
 
 Last night, I had just burned through three $200-a-month subscriptions across Claude Fable and Codex. Then I woke up to the jackpot: Codex had reset my quota.
 
-![Tibo announces the temporary removal of Codex's five-hour limit, Sol efficiency improvements, six million active users, and a quota reset](tibo1-en.webp)
-
-*[Original post](https://x.com/thsottiaux/status/2076365965915467978), July 12, 2026, 17:59 UTC (July 13, 01:59 in China).*
+> [!SOCIAL] Tibo `@thsottiaux`
+>
+> Morning. The last 48 hours of Codex and ChatGPT Work have been intense! Three important updates:
+>
+> - Temporarily removing the 5 hour usage limit restriction for all Plus, Business and Pro plans
+> - Rolling out changes that will make GPT 5.6 Sol more efficient across the board and that will be reflected in less usage being used so that it can take you further. Exact impact to be quantified and shared
+> - We hit 6M active users, and are landing a usage reset in the next hour
+>
+> Go do things
+{avatar="img/social/thsottiaux.webp" date="2026-07-12" url="https://x.com/thsottiaux/status/2076365965915467978" platform="x"}
 
 Claude was not about to sit still. It announced that Fable 5 access, originally due to end today, would once again be extended, this time through the 19th. This is the third Fable extension we have seen.
 
-![Claude extends Fable 5 access through July 19 and keeps Claude Code's weekly quota 50% higher; the follow-up explains Fable's half-weekly-quota limit](claude-en.webp)
+> [!SOCIAL] Claude `@claudeai`
+>
+> We're extending Claude Fable 5 access on all paid plans, as well as keeping Claude Code’s weekly rate limits 50% higher, through July 19.
+{avatar="img/social/claudeai.webp" date="2026-07-12" url="https://x.com/claudeai/status/2076351399999557669" platform="x"}
 
-*[Original announcement](https://x.com/claudeai/status/2076351399999557669) and [follow-up](https://x.com/claudeai/status/2076351401006154204), July 12, 2026, 17:02 UTC (July 13, 01:02 in China).*
+> [!SOCIAL] Claude `@claudeai`
+>
+> As before, you can use up to half of your weekly usage limit on Fable 5. After that, you can continue using Fable 5 with usage credits, or switch to another model to keep working within your remaining limits.
+>
+> More details here: [Claude Fable models on your plan | Claude Help Center](https://support.claude.com)
+{avatar="img/social/claudeai.webp" date="2026-07-12" url="https://x.com/claudeai/status/2076351401006154204" platform="x"}
 
 This round is about more than extending access. Codex temporarily removed its five-hour limit, leaving only the weekly cap. Claude Code, meanwhile, extended its 50 percent increase to the total weekly quota. The two announcements landed on X almost back to back—direct counterpunches that left users delighted.
 
-![Tibo reposts Claude's announcement and replies that GPT-5.6 is quite good](tibo2.webp)
+> [!SOCIAL] Tibo `@thsottiaux`
+>
+> I think GPT 5.6 is pretty good
+>
+> > [!SOCIAL] Claude `@claudeai`
+> >
+> > We're extending Claude Fable 5 access on all paid plans, as well as keeping Claude Code’s weekly rate limits 50% higher, through July 19.
+> {avatar="img/social/claudeai.webp" date="2026-07-12" url="https://x.com/claudeai/status/2076351399999557669"}
+{avatar="img/social/thsottiaux.webp" date="2026-07-12" platform="x"}
 
 This is competition doing its job.
 
@@ -31,9 +54,12 @@ Still, Claude's move looks a little stingy next to Codex. It extended Fable 5 ac
 
 I had already driven my Fable 5 usage to 100 percent last night. I still have access, but I have to wait for the quota to recover before I can use it again. Codex reset everything outright, so I woke up back at full charge.
 
-![Tibo's office poster shows how Codex quota resets affect system load](tibo3-en.webp)
-
-*[Original post](https://x.com/thsottiaux/status/2076054439140720719), July 11, 2026, 21:22 UTC (July 12, 05:22 in China).*
+> [!SOCIAL] Tibo `@thsottiaux`
+>
+> New poster for our office that shows how resets of the Codex usage limits affects part of our systems. Data is beautiful.
+>
+> ![Tibo's office poster showing how Codex usage limit resets affect system load](tibo3-media.webp)
+{avatar="img/social/thsottiaux.webp" date="2026-07-11" url="https://x.com/thsottiaux/status/2076054439140720719" platform="x"}
 
 Tibo, who leads Codex and ChatGPT, also announced on X that Codex's active-user count had passed six million. He even joked that they would be celebrating seven million tomorrow. That is an extraordinary growth figure.
 
@@ -43,9 +69,14 @@ Codex marketing can be gloriously uncomplicated: shower users with cash and quot
 
 There are also reports that pressure from Codex has prompted Anthropic to consider making Fable a permanent part of its subscriptions.
 
-![Ali Haider's unconfirmed report that Anthropic was considering keeping Fable 5 in subscriptions permanently](fable-in-sub-en.webp)
+> [!SOCIAL] Ali Haider `@ggg78g89`
+>
+> 🚨SCOOP:
+>
+> MY Friend at Anthropic says things are VERY tense internally. Dario's running tough meetings — GPT-5.6 Sol is strong and Grok 4.5 is right on Opus's heels. Pulling Fable from subs on July 12 would trigger mass cancellations (why keep Max for Opus 4.8?), so they're now pushing to keep Fable 5 in subs permanently.
+{avatar="avatar-ggg78g89.webp" date="2026-07-11" url="https://x.com/ggg78g89/status/2075962605462761953" platform="x"}
 
-*[Original post](https://x.com/ggg78g89/status/2075962605462761953), July 11, 2026. Posted as Ali Haider (@ggg78g89); its [public mirror](https://nitter.gq/ggg78g89/status/2075962605462761953) now displays Choblin (@choblin29).*
+*Originally posted as Ali Haider (@ggg78g89); the account was later renamed to Choblin (@choblin29).*
 
 This round demonstrates a simple truth once again: only competition delivers real benefits to users.
 

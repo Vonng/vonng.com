@@ -67,9 +67,12 @@ After four days of autonomous loops, I ran smoke tests, extracted capabilities, 
 The operating loop was mostly mechanical:
 CreateStory -> DevStory -> CodeReview -> FixThis.
 
-![Story dev/review loop](story-dev-review-fix-loop-en.webp)
-
-*AI-translated version of my Chinese post; the embedded desktop screenshot is unchanged. [Original post image](story-dev-review-fix-loop.webp).*
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> Coding has become a mechanical loop: create-story, dev-story, code-review, fix this. Codex and Claude take turns hammering away. Every few epics, I just need to talk through the next round of ideas.
+>
+> ![Desktop screenshot of Codex and Claude Code running the story dev/review loop in parallel](story-dev-review-fix-loop-media.webp)
+{avatar="img/vonng.jpg" date="2026-02-06" platform="x"}
 
 I did not write a single line of implementation code in that cycle.
 

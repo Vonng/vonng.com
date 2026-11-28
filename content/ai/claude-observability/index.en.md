@@ -8,7 +8,12 @@ aliases: ["/db/claude-observability/"]
 ---
 Yesterday I [tweeted](https://x.com/RonVonng/status/2014972720489091514): "Built a Claude Code Grafana dashboard to see how it makes decisions, uses tools, and burns through API credits." Didn't expect so much interest.
 
-![Tweet screenshot](tweet-dashboard.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> Built a Claude Code Grafana dashboard to see how it makes decisions, uses tools, and spends money calling APIs.
+>
+> ![Claude Code Grafana dashboard](tweet-dashboard-media.webp)
+{avatar="img/vonng.jpg" date="2026-01-24" url="https://x.com/RonVonng/status/2014972720489091514" platform="x"}
 
 So let's talk about Claude Code observability.
 
@@ -45,7 +50,17 @@ Grab a Linux box, run a few commands, and you get a complete Claude Code environ
 
 Here's the thing: if you already use Claude Code, you don't need to understand the details. Just tell it "there's this thing that does this" and give it a VM. It'll figure out the rest. Saw someone in the comments say exactly that:
 
-![User feedback](tweet-user-feedback.webp)
+> [!SOCIAL] 街边看漫画 `@deletexiumu`
+>
+> Thanks for sharing! Already installed and up and running—the whole thing took just two prompts from start to finish:
+>
+> 1. Read [pigsty.cc/docs/](https://pigsty.cc/docs/)—we're going to deploy this now.
+> 2. Read the Pigsty Claude Code observability doc and hook this Claude telemetry up to the Grafana instance we just installed.
+>
+> And then the whole thing just worked. In the age of AI you really don't have to worry about how to set anything up manually 😂
+>
+> ![User's deployed Claude Code Grafana dashboard](tweet-user-feedback-media.webp)
+{avatar="avatar-deletexiumu.webp" date="2026-01-25" platform="x"}
 
 ## Event Types
 
@@ -102,4 +117,16 @@ claude_env:
 
 The real power of PIGLET.RUN: provide deterministic infrastructure, and Claude Code can handle most of the work. It plays the role of a mid-level DBA or developer — writing code, debugging, testing, deploying. Extremely productive. I'll write a dedicated DBA Agent post later.
 
-![Database needs pyramid](tweet-pyramid.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> Building an ops Agent or SRE Agent isn't actually all that complicated. The genuinely hard part is preparing a standardized context and runtime environment. Once that's in place, you just write a `CLAUDE.md` telling it what's in the environment and where to find the docs. Give it a solid CLI and a good documentation index, and it already significantly outperforms a mid-level DBA.
+>
+> ![Database needs pyramid](tweet-pyramid-media.webp)
+>
+> > [!SOCIAL] 舟方 `@zhoufan44799671`
+> >
+> > This feels awesome—both `CLAUDE.md` and `AGENTS.md` are already written, so whenever I hit an issue configuring Pigsty I just hand it straight to Claude Code. Take the Anolis OS 8 conflict I ran into: it pinpointed the root cause in minutes. You really don't realize how good this is until you try it.
+> >
+> > ![Claude Code diagnosing an llvm-toolset module conflict on Anolis OS 8.10](tweet-pyramid-reply-media.webp)
+> {avatar="img/social/zhoufan.webp"}
+{avatar="img/vonng.jpg" platform="x"}

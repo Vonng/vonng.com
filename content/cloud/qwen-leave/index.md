@@ -12,7 +12,10 @@ aliases: ["/ai/qwen-leave/"]
 
 2026 年 3 月 3 日，通义千问（Qwen）技术负责人林俊旸（Justin Lin）在 X 上发布了一条简短的推文：
 
-[![林俊旸宣布离开 Qwen 的推文](farewell.webp)](https://x.com/JustinLin610/status/2028865835373359513)
+> [!SOCIAL] Junyang Lin `@JustinLin610`
+>
+> me stepping down. bye my beloved qwen.
+{avatar="avatar-justinlin610.webp" date="2026-03-04" url="https://x.com/JustinLin610/status/2028865835373359513" platform="x"}
 
 > “我要卸任了。再见，我亲爱的 qwen。” (@JustinLin610) [1]
 
@@ -26,13 +29,34 @@ aliases: ["/ai/qwen-leave/"]
 
 “**离开不是你的选择**”——这句话点燃了外界对阿里内部权力更迭的猜想。前一晚还在为 Qwen3.5 的发布通宵达旦，第二天便被解除职务。这种时间点的选择，极具戏剧性也极其冷酷。
 
-![陈诚关于离职并非本人选择的回复](heartbreak.webp)
+> [!SOCIAL] Chen Cheng `@cherry_cc12`
+>
+> 我真的心碎了。我知道离开不是你的选择。就在昨晚，我们还并肩发布了 Qwen3.5 小模型。说实话，我无法想象没有你的 Qwen 会是什么样子。
+>
+> > [!SOCIAL] Junyang Lin `@JustinLin610`
+> >
+> > me stepping down. bye my beloved qwen.
+> {avatar="avatar-justinlin610.webp" url="https://x.com/JustinLin610/status/2028865835373359513"}
+{avatar="avatar-cherry-cc12.webp" date="2026-03-04" platform="x"}
 
 **“离开不是你的选择” —— 这句话的信息量已经足够大了。前一天晚上还在一起发布 Qwen3.5 小模型，第二天人就卸任了。这不像是深思熟虑的职业规划，更像是一场突如其来的变动。**
 
 同日离职的还有研究员李凯新（Kaixin Li）和惠碧媛（Binyuan Hui, @huybery），李凯新在告别感言中提到，Qwen 原本计划在新加坡建立技术据点，但随着林俊旸的离开，这一计划已无以为继。
 
-![李凯新离职告别与新加坡计划说明](signoff.webp)
+> [!SOCIAL] Kaixin Li `@kxli_2000`
+>
+> 正式告别 @Alibaba_Qwen。很感激有机会与这么多顶尖头脑共事，为我们创造的影响力感到骄傲。继续前行！
+{avatar="avatar-kxli-2000.webp" date="2026-03-04" platform="x"}
+
+> [!SOCIAL] Kaixin Li `@kxli_2000`
+>
+> 多亏了俊旸，Qwen 本来可以在新加坡建立一个据点。但现在他走了，我也没什么理由继续留在这里了。
+{avatar="avatar-kxli-2000.webp" date="2026-03-04" platform="x"}
+
+> [!SOCIAL] Arjun `@arjunkocher`
+>
+> Qwen 明明势头正好，怎么会突然接连离职？
+{avatar="avatar-arjunkocher.webp" platform="x"}
 
 一天之内，技术领军人与数位核心骨干集体流失。这不是普通的人才流动，而是系统性的人才流失，或者说，一场组织层面的 “清洗”。
 
@@ -58,9 +82,128 @@ aliases: ["/ai/qwen-leave/"]
 3. **组织架构的频繁震荡**：从通义实验室到智能信息事业群，再到新成立的“千问事业群”，汇报关系的反复变动往往伴随着权力的重新分配。
 4. **外来空降兵的强势切入**：传闻称，接替林俊旸的可能是来自 Google DeepMind 的 **周浩（Hao Zhou）**。社区普遍担心，一位擅长强化学习的专家能否理解并延续 Qwen 珍贵的开源生态基因。
 
-![关于周浩接任的社区讨论](rumors.webp)
+> [!SOCIAL] 宝玉 `@dotey`
+>
+> Qwen 技术负责人 Junyang Lin 今天在 X 上发了一条简短的告别："me stepping down. bye my beloved qwen."（我退出了。再见，我挚爱的 Qwen。）
+>
+> 以下内容由 Grok 和 Claude 辅助整理：
+>
+> **【1】事情来得很突然**
+>
+> 就在昨天，Qwen 团队刚刚发布了 Qwen3.5 小模型系列，0.8B 到 9B 四个版本，支持视觉理解和推理切换，本地跑只要 7GB 内存，性能吊打好几倍大的模型。社区一片叫好。
+>
+> 结果今天一早，技术负责人就宣布走人了。
+>
+> 更让人意外的是，这不是他自己想走的。Qwen 贡献者 Chen Cheng 第一时间回应：
+>
+> "leaving wasn't your choice"（离开不是你的选择）
+>
+> 她说昨晚还跟 Junyang 一起发布 Qwen3.5 小模型，无法想象没有他的 Qwen 会是什么样。
+>
+> **【2】不只走了一个人**
+>
+> Junyang Lin 不是唯一离开的。Hyperbolic Labs CTO Yuchen Jin 确认，Qwen 另一位核心负责人 Binyuan Hui 也走了。这两位是那种北京时间凌晨 6 点还在协作上线模型的人。
+>
+> 随后，Qwen3.5、Qwen VL、Qwen Coder 的核心贡献者 Kaixin Li 也发了告别帖：
+>
+> "Signing off from Alibaba Qwen. Grateful for the chance... Onwards and upwards!"
+>
+> 目前确认离开的至少 3 到 4 人，全是核心骨干。
+>
+> **【3】到底发生了什么？**
+>
+> 从各方回应拼出来的图大致是这样的：
+>
+> 阿里云对 Qwen 团队的考核方式变了。Xinyu Yang 批评说，阿里云拿日活（DAU）这类消费级应用的指标来衡量基础模型团队，还用一位 Google Gemini 的非核心成员来替换 Junyang 的位置。一个做基础模型研究的团队，被当成做 App 的来管，创新自然就停了。
+>
+> You Jiacheng 说得更直接：
+>
+> "Alibaba-Cloud kicked out Qwen's tech lead"（阿里云把 Qwen 的技术负责人赶走了）
+>
+> 他提到接任者可能是 Hao Zhou，背景偏强化学习方向，社区对他能否带好 Qwen 持怀疑态度。
+>
+> 还有人透露，新领导是绕过 Junyang 直接管理团队的，等于是架空。多位知情人士都指向同一个词：内部政治。
+>
+> **【4】Qwen3 可能就是绝唱了**
+>
+> Panda (Jiaxi Cui) 的判断很悲观：Junyang 走后，Qwen3 系列可能是很长一段时间内的最后杰作，团队接下来会转向商业化。
+>
+> 这个判断不是没有道理。Qwen 虽然技术上很强，在 Hugging Face 上下载量巨大，学术界和开发者都在用，但跟字节的豆包比，在国内消费市场的存在感确实弱。阿里云高层可能就是因为这一点，决定换方向换人。
+>
+> Yuchen Jin 担心的是，Qwen 以后可能不再交付前沿开源模型，转向封闭商业化路线。
+>
+> **【5】开源社区的反应**
+>
+> X 上的讨论几乎一边倒。
+>
+> Nathan Lambert 称之为"legendary run"（传奇之旅）。Unsloth AI 感谢 Qwen 对开源的贡献。Martin Ziqiao Ma 说 Qwen 一直是前沿实验室和外部社区之间的桥梁，这个桥可能要断了。
+>
+> 批评声音也很多。Maziyar PANAHI 说希望他们出去建个新实验室，然后被阿里巴巴花 20 亿美元收购回来长个教训。Hugo Pinheiro 问了一个很多人想问的问题：为什么商业决策者总是在事情做得好的时候把它毁掉？
+>
+> 社区里流传最广的一句话是："Qwen is nothing without its people."（Qwen 离开了做事的人，什么都不是。）
+>
+> **【6】他们会去哪？**
+>
+> 目前没有确切消息。社区猜测的方向包括：自己创办新实验室、加入 DeepSeek 这类开源友好的团队，甚至有人喊话马斯克的 xAI 和 Hugging Face 赶紧把人抢了。
+>
+> 不管去哪，这些人的能力摆在那里。Qwen 从小模型到大模型、从文本到多模态，能做出这样的成绩，靠的就是这批人。
+>
+> **【最后】**
+>
+> 这件事是大公司里开源理想和商业化诉求的老矛盾。Qwen 团队用开源模型攒下了巨大的行业影响力和开发者口碑，但在公司内部的评价体系里，这些可能都不算 KPI。
+>
+> > [!SOCIAL] Junyang Lin `@JustinLin610`
+> >
+> > me stepping down. bye my beloved qwen.
+> {avatar="avatar-justinlin610.webp" url="https://x.com/JustinLin610/status/2028865835373359513"}
+{avatar="avatar-dotey.webp" date="2026-03-04" platform="x"}
 
-![关于阿里内部考核与算力分配的讨论](backlash.webp)
+> [!SOCIAL] Rainier `@mtrainier2020`
+>
+> 我艹！还是没有放下外来的和尚会念经这个执念。
+>
+> > [!SOCIAL] TVA Trader `@tvatrader`
+> >
+> > *回复 @mtrainier2020*
+> >
+> > 傻逼空降了一个Deepmind的人来
+> {avatar="avatar-tvatrader.webp"}
+{avatar="avatar-mtrainier2020.webp" platform="x"}
+
+> [!SOCIAL] Rainier `@mtrainier2020`
+>
+> FYI
+>
+> > [!SOCIAL] Yuchen Jin `@Yuchenj_UW`
+> >
+> > 一个时代结束了，Qwen 失去了它的技术负责人。
+> >
+> > 当初我们和俊旸及其团队在 Hyperbolic 上线 Qwen 3 Next 接口时，他们北京时间凌晨 6 点还在在线支持！……
+> {avatar="avatar-yuchenj-uw.webp"}
+{avatar="avatar-mtrainier2020.webp" platform="x"}
+
+> [!SOCIAL] Rainier `@mtrainier2020`
+>
+> 不像，那个leader貌似是被拿下的。昨天晚上还在讨论问题干活，第二天就没了。
+>
+> > [!SOCIAL] 咸角鱼 `@Wm8Bp`
+> >
+> > *回复 @mtrainier2020*
+> >
+> > qwen虽然没有强力大模型，但是做的也挺好的，怎么人事变动那么大，难道是打算自己创业了？
+{avatar="avatar-mtrainier2020.webp" platform="x"}
+
+> [!SOCIAL] Rainier `@mtrainier2020`
+>
+> 千问貌似出现人事动荡啊，有不少人同时离开了。
+>
+> > [!SOCIAL] Kaixin Li `@kxli_2000`
+> >
+> > *回复 @kxli_2000 和 @Alibaba_Qwen*
+> >
+> > 多亏了俊旸，Qwen 本来可以在新加坡建立一个据点。但现在他走了，我也没什么理由继续留在这里了。
+> {avatar="avatar-kxli-2000.webp"}
+{avatar="avatar-mtrainier2020.webp" platform="x"}
 
 ## 四、 老冯评论：技术灵魂不可替代
 
@@ -90,7 +233,23 @@ aliases: ["/ai/qwen-leave/"]
 
 Qwen 的全球影响力，很大程度上是靠林俊旸撑起来的。他在 X 上发布模型更新、分享基准测试结果、回应全球开发者的问题——在中国 AI 项目普遍不擅长国际社区运营的环境里，林俊旸几乎是唯一能跟全球开发者直接对话的“人格化”代言人。
 
-![林俊旸在国际社区中的公开形象](editorial.webp)
+> [!SOCIAL] Aakash Gupta `@aakashgupta`
+>
+> 林俊旸将 Qwen 从阿里巴巴通义实验室的一个边缘项目，做成了 Hugging Face 上衍生数量最多的开源模型家族：超过 3 亿次下载、超过 10 万个衍生模型，Qwen3.5 的基准测试表现堪比 Claude Sonnet 4.5 和 GPT-5-mini，推理成本却只有零头。而这一切，是在阿里巴巴本质上仍是一家把 AI 当作云服务附加项的电商公司时完成的。
+>
+> 其实他一个月前就点破了症结。在一次行业活动上，林俊旸坦言算力约束正在吞噬 Qwen 的研究能力，因为资源“越来越多地被用于日常交付，而不是前沿研发”。团队原本制定了参数规模突破 10 万亿的路线图，这需要海量 GPU；而阿里云的 GPU 分配优先级，是由一家市值 4000 亿美元的电商巨头决定的，而不是由一家 AI-first 实验室决定的。
+>
+> 这次离场的时机极为精准：Qwen3.5 小模型昨天刚发布，中型模型上周交付，完整的 397B 旗舰版两周前开源。林俊旸亲手把整个 3.5 代模型交付完毕，然后转身离开。
+>
+> 这正是技术领袖完成承诺的产品周期后，意识到下一个周期所需的资源或组织架构在这里根本拿不到时的典型写照。DeepSeek 之所以突围，是因为它在对冲基金体系内给了研究员不受掣肘的算力预算；月之暗面（Moonshot）专门募资数十亿美元用于前沿训练；而 Qwen 研究团队却要和阿里的推荐引擎、搜索基础设施以及云客户业务争抢 GPU 机时。
+>
+> 摆在阿里巴巴面前的问题很简单：你是把 Qwen 拆分成一家拥有独立算力预算的实体，还是继续把它当成补贴云计算营收的部门？林俊旸的离开说明，他心里已经有答案了。
+>
+> > [!SOCIAL] Junyang Lin `@JustinLin610`
+> >
+> > me stepping down. bye my beloved qwen.
+> {avatar="avatar-justinlin610.webp" url="https://x.com/JustinLin610/status/2028865835373359513"}
+{avatar="avatar-aakashgupta.webp" platform="x"}
 
 现在这个人走了。阿里至今没有宣布谁来接替他的公众角色。Qwen 在国际开源社区中的“人格”，出现了空白。技术上 Qwen 短期内可能不会受重大影响——模型基础已经建好了，Qwen3.5 也发布了。但开源的竞争不只是模型好不好的问题，更是社区信不信你的问题。**你把自己的灵魂人物逼走了，社区凭什么继续相信你？**
 

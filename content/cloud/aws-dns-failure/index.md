@@ -147,7 +147,29 @@ AWS 最终被迫手动介入，通过人工限流来控制局面 —— 这种�
 知名 SaaS 厂商 37signals 则早在 2022 年就决定将 Basecamp 和 HEY 邮件服务迁出公有云，[预计五年内节省约超过千万万美元云开支](/cloud/odyssey-done/)。
 Dropbox 更是在 2016 年便开始逐步减少对 AWS 的依赖，重返自建数据中心。这并不是技术倒退，而是对过度集中化风险的理性校正。
 
-![musk.jpg](musk.jpg)
+> [!SOCIAL] vittorio `@IterIntellectus`
+>
+> the internet just broke
+>
+> ![Downdetector 多项互联网服务同时出现故障峰值](musk-downdetector-media.webp)
+{avatar="avatar-iterintellectus.webp" date="2025-10-20" platform="x"}
+
+> [!SOCIAL] Elon Musk `@elonmusk`
+>
+> Not us
+{avatar="img/social/elonmusk.webp" date="2025-10-20" platform="x"}
+
+> [!SOCIAL] Elon Musk `@elonmusk`
+>
+> You don’t say ... 🤔
+>
+> > [!SOCIAL] Pierre de Wulf `@PierreDeWulf`
+> >
+> > ![被篡改标题的 CNBC 报道截图](musk-cnbc-media.webp)
+> {avatar="img/social/pierredewulf.webp" date="2025-10-20"}
+{avatar="img/social/elonmusk.webp" date="2025-10-20" platform="x"}
+
+*X 读者背景信息（Community Note）：该图片经过数字篡改，没有证据表明 AWS CEO 说过此话或类似言论。*
 
 对于有能力的企业来说，**混合部署**——将核心系统自主可控部署，本地掌握底线，而将弹性扩展需求交给云端处理，可能是更明智的选择。
 每一家依赖云的公司都需要认真思考：是否所有工作负载都必须上云？那些关键系统是否应该保留独立运行的能力，以在云崩溃时维持最基本的服务？

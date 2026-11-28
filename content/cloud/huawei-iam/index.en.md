@@ -16,7 +16,15 @@ The first dense cluster of third-party signals appeared on StatusGator at 03:32.
 
 Third-party and social reports described failed sign-ins, broken console or management operations, resources shown as “frozen,” unresponsive servers, and connectivity failures. I found no reports concerning regions on Huawei Cloud's China site in the material collected at the time.
 
-![Two social-media reports about the Huawei Cloud International Site incident](social-reports.webp)
+> [!SOCIAL] 37度 `@hibtc37`
+>
+> Huawei Cloud’s international services just went down—showing accounts as frozen, and every company website and app running on it simply vanished. The same thing happened on AWS a couple of weeks ago. For developers this is devastating—nearly fatal—it really hurts like hell! And you can’t get any compensation out of them 🤬🤬🤬🤬🤬
+{avatar="avatar-hibtc37.webp" platform="x"}
+
+> [!SOCIAL] plantegg `@plantegg`
+>
+> Global major outage on Huawei Cloud—all host machines are powered off and cannot be restarted.
+{avatar="img/social/plantegg.webp" platform="x"}
 
 The evidence layers matter. Huawei Cloud officially confirmed only that a portion of International Site accounts were abnormal and that access to related services was affected. StatusGator's figures and the country-level posts are third-party or user reports. They show a multi-market signal, but they do not prove that every report had the same cause, establish the exact blast radius of a “global outage,” or identify a root cause.
 

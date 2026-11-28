@@ -12,7 +12,21 @@ aliases: ["/ai/db-for-ai/"]
 
 据知情人士透露，这笔交易的价格为 2.5 亿美元。虽然价格是 Neon 的 1/4，但不同于 DataBricks 股票置换，这次 SnowFlake 是真金白银出了钱的，颇有 “Databricks 买啥我买啥” 针锋相对的意味。
 
-![twitter.webp](twitter.webp)
+> [!SOCIAL] sridhar `@RamaswmySridhar`
+>
+> 刚刚宣布：@Snowflake 已同意收购 @crunchydata，将开源 Postgres 技术引入 AI Data Cloud。
+>
+> 借此消息，我们将推出 **Snowflake Postgres**：企业级、AI 就绪、全托管。
+>
+> 在上面运行你最关键的 AI 驱动应用…
+{avatar="avatar-ramaswmysridhar.webp" platform="x"}
+
+> [!SOCIAL] Snowflake `@Snowflake`
+>
+> 我们非常高兴地宣布，已签署收购 @crunchydata 的协议！🚀 这一战略举措将把 **Snowflake Postgres**——一款 AI 就绪、企业级的 PostgreSQL 数据库——引入我们的 AI Data Cloud。开发者将能够充分发挥开源 Postgres 的全部威力…
+>
+> ![Snowflake Postgres 官宣海报](twitter-media.webp)
+{avatar="avatar-snowflake.webp" platform="x"}
 
 但这并非两家数仓巨头的意气之争，而是 PostgreSQL 确实占尽了 AI 时代数据库崛起的天时 —— 加上业界正在流传的 [OpenAI 将收购 Supabase](/db/openai-supabase-rumor/)，不难发现，这些收购案（或者潜在收购意向）的共同点是 —— 这些都是做 PostgreSQL 的公司 —— PostgreSQL 公司正在成为资本市场最抢手的香饽饽。
 

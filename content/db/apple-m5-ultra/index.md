@@ -33,7 +33,12 @@ tags: [Apple, Mac Studio, 本地 AI]
 
 上一代 M3 Ultra 的 512 GB 机型停售之后，市场上出现过一段非常离谱的行情。原本不到十万元的机器，渠道报价一路被抬到十五万、十八万，据说还有喊到二十万的。
 
-![作者 3 月 6 日关于苹果下架 512 GB 内存选项的帖子，内嵌 Mac Studio 配置页面](resale.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> 干，内存涨价，苹果把 Mac Studio 512G 的选项给下掉了，那这么看，M5 Ultra 也很有可能会 256GB 封顶。看来咸鱼 M3 Ultra 512 的库存要涨价了。本地大模型事业受到重挫。
+>
+> ![苹果官网 Mac Studio 内存配置页面仅提供 96GB 和 256GB 选项](resale-media.webp)
+{avatar="img/vonng.jpg" date="2026-03-06" platform="x"}
 
 有人愿意追，不是因为它叫 Mac，也不是因为苹果标好看，而是因为它卡住了一个非常特殊的空位：**它可能是普通人能够正常购买、正常开票的、最便宜的大容量本地 AI 一体机**。
 

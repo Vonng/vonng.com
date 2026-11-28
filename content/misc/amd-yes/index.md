@@ -18,7 +18,31 @@ tags: [硬件, 随笔]
 
 ![图片](01.webp)
 
-![图片](02.webp)
+> [!SOCIAL] DHH `@dhh`
+>
+> 如果说有一款迷你主机我看到大家反复选择，那就是 @Beelinkofficial SER8。永远别低估卡准价位段的威力！499 美元就能买到 32GB 内存 / 1TB 硬盘和一颗非常出色的 AMD Zen4 8745HS，对大多数开发者来说基本已经完全够用了。
+{avatar="img/dhh.jpg" date="2025-07-07" platform="x"}
+
+> [!SOCIAL] DHH `@dhh`
+>
+> 最后还有顶配选手 @FrameworkPuter Desktop。1,799 美元就能拿下强到离谱的 AMD 395+（64GB 内存 / 1TB 硬盘）。这或许稍微拉宽了“迷你”的定义，但 4.5L 的体积依然相当小巧。
+>
+> [Configure Framework Desktop DIY Edition (frame.work)](https://frame.work/)
+{avatar="img/dhh.jpg" date="2025-07-07" platform="x"}
+
+> [!SOCIAL] DHH `@dhh`
+>
+> 对开发者而言，把它们放在一起对比的一个好办法，就是我一直在跑的这套 HEY App 测试套件基准测试。它使用原生 Ruby，并通过 Docker 运行 MySQL/Redis/ElasticSearch 等依赖，方便跨项目控制版本需求。
+>
+> ![HEY App 测试套件（time bin/rails test --seed 22557）在各款 Apple Silicon 与 AMD 迷你主机上的耗时对比](02-bench-media.webp)
+{avatar="img/dhh.jpg" date="2025-07-07" platform="x"}
+
+> [!SOCIAL] DHH `@dhh`
+>
+> 迷你主机的一大优势就是低功耗。@Beelinkofficial SER9 HX370 待机功耗仅 8W（满载最高 90W），这和 Mac Mini 差不多，只是带独立显卡的传统台式机（待机 70W、峰值 500W+！）的零头（图表来自 @RobtechYT）。
+>
+> ![各款迷你主机待机墙插功耗对比柱状图（@RobtechYT）](02-power-media.webp)
+{avatar="img/dhh.jpg" date="2025-07-06" platform="x"}
 
 但老冯看着看着就发现，既然都有这么好的 CPU，可以用来跑 Linux 虚拟机了，为啥不能用来打游戏呢？我挺想要一个小巧的 mini PC，不仅可以跑 Linux 虚拟化 / 数据库，还可以打游戏！
 

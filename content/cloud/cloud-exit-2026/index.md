@@ -12,7 +12,12 @@ tags: [下云, 云计算, 数据主权]
 
 今天早上老冯刷推，看到 DHH 发了条凡尔赛：
 
-![DHH 回顾从 AWS S3 下云时采购的 19 PB 全闪存储](dhh-s3-tweet.webp)
+> [!SOCIAL] DHH `@dhh`
+>
+> 2025 年为了迁出 AWS S3，我们花了大约 150 万美元买下 19 PB 全闪存储。今天同样这套配置的标价已经涨到了 1900 万美元 🤑。我这辈子恐怕再也没做过时机踩得这么准的交易了。
+>
+> [It's five grand a day to miss our S3 exit — world.hey.com](https://world.hey.com/dhh/it-s-five-grand-a-day-to-miss-our-s3-exit-b8293563)
+{avatar="img/dhh.jpg" date="2026-08-15" url="https://x.com/dhh/status/2088326278659092646" platform="x"}
 
 “我这辈子就没做过时机踩得这么准的交易。”150 万美元变 1900 万美元，一年出头，十几倍。
 
@@ -20,7 +25,15 @@ tags: [下云, 云计算, 数据主权]
 
 省钱的人发了财，观望的人拍大腿——这就是 2026 年存储市场的魔幻现实。这条推文背后的账，值得所有还在云上交租的朋友仔细看一遍。
 
-![老冯转发 DHH 推文并回顾下云建议](cloud-exit-tweet.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> 老冯最近这几年一直都在大力呼吁下云，有不少朋友听了老冯之前采购服务器自建的，现在都赚麻了。哭晕的都是那些原本够一够，不说当个赛博地主，至少还能当个赛博自耕农的朋友，被上云派一忽悠啊什么换盘麻烦人力贵不敢行动，现在可能一辈子就锁死在佃户农奴层次了。
+>
+> > [!SOCIAL] DHH `@dhh`
+> >
+> > 2025 年为了迁出 AWS S3，我们花了大约 150 万美元买下 19 PB 全闪存储。今天同样这套配置的标价已经涨到了 1900 万美元 🤑。我这辈子恐怕再也没做过时机踩得这么准的交易了。[world.hey.com/dhh/it-s-five-…](https://world.hey.com/dhh/it-s-five-grand-a-day-to-miss-our-s3-exit-b8293563)
+> {avatar="img/dhh.jpg" date="2026-08-15" url="https://x.com/dhh/status/2088326278659092646"}
+{avatar="img/vonng.jpg" date="2026-08-15" platform="x"}
 
 ## 二、一本翻了三年的账
 

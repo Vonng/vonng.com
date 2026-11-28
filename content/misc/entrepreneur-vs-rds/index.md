@@ -31,9 +31,8 @@ tags: [随笔]
 
 **在他看来，开源是一场革命运动，以前的革命对象是闭源软件，而现在则是云软件。**
 
-<iframe src="//player.bilibili.com/player.html?aid=512957015&bvid=BV1o3411w7hP&cid=760975146&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-> Pigsty 今年的路演宣传视频，重点超多，不看吃亏系列
+![Pigsty 奇绩创坛路演宣传视频](https://www.bilibili.com/video/BV1o3411w7hP)
+{caption="Pigsty 今年的路演宣传视频，重点超多，不看吃亏系列"}
 
 ## 01 “摸鱼” 摸出创业机会
 

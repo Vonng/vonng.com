@@ -29,9 +29,15 @@ Redis 切换为更为严格的 SSPL 协议的核心原因，用 Redis Labs CEO �
 
 当 Redis 宣布更改协议后，马上就有 AWS 员工跳出来 Fork Redis —— “Redis 不开源了，我们的分叉才是真开源！” 然后 AWS CTO 出来[叫好](https://twitter.com/Werner/status/1771324218506108995)，并假惺惺的说：这是我们员工的个人行为 —— 堪称是现实版杀人诛心。
 
-[![twitter](twitter.png)](https://twitter.com/Werner/status/1771324218506108995)
-
-> 图：AWS CTO [转评](https://twitter.com/Werner/status/1771324218506108995)员工 Fork Redis
+> [!SOCIAL] Werner Vogels `@Werner`
+>
+> 我对 @reconditerose 及其他核心 #redis 维护者采取的行动感到非常振奋。顺带一提，这是 Madelyn 的个人行动，并非 #AWS 官方公告。她展现出的行动力值得大加赞赏。更多消息敬请期待。
+>
+> > [!SOCIAL] Madelyn Olson `@reconditerose`
+> >
+> > 我已经和几位前 Redis 贡献者聚到一起，开始着手做一个分支：`github.com/madolson/place...`。我们都对这次许可证变更感到不满，希望共建一个真正开放的新社区来填补 Redis 留下的空白。欢迎加入我们！
+> {avatar="avatar-reconditerose.webp" date="2024-03-23"}
+{avatar="avatar-werner.webp" date="2024-03-23" url="https://twitter.com/Werner/status/1771324218506108995" platform="x"}
 
 被这样搞过的并非只有 Redis 一家。发明 SSPL 的 MongoDB 也是这个样子 —— 当 2018 年 MongoDB 切换至 SSPL 时，AWS 就搞了一个所谓 “API 兼容“ 的 [DocumentDB](https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-dcdb.html) 来恶心它。ElasticSearch 修改协议后，AWS 就推出了 [OpenSearch](https://opensearch.org/) 作为替代。头部 NoSQL 数据库都已经切换到了 SSPL，而 AWS 也都搞出了相应的“开源替代”。
 

@@ -32,7 +32,15 @@ This chart shows PostgreSQL and its ecosystem extensions' performance. Native un
 
 And **DuckDB** (**x3.2**) elevates OLAP to an entirely new level — setting aside academic databases like Umbra, DuckDB may be the fastest practical analytics database. While not a PG extension itself, it's an embeddable component, and projects like **DuckDB FDW** and **pg_quack** let PostgreSQL fully leverage DuckDB's complete analytical performance!
 
-![Steven Lee and Philippe Noël thanking Pigsty for including DuckDB FDW and ParadeDB](duck-en.webp)
+> [!SOCIAL] Steven Lee `@AliTrack`
+>
+> Thank you for including duckdb_fdw.
+{avatar="img/alitrack.png" platform="x"}
+
+> [!SOCIAL] Philippe Noël `@philippemnoel`
+>
+> Thank you for including us :)
+{avatar="img/social/philippemnoel.webp" date="2024-03-01" platform="x"}
 
 Appreciation from ParadeDB's founder and DuckDB FDW's author (Steven Lee’s reply translated from Chinese).
 

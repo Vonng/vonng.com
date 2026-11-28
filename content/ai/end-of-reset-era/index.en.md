@@ -32,9 +32,10 @@ Today is November 7. The evidence that the reset era is over is far more concret
 - Wall Street institutions have marked down Anthropic’s expected IPO valuation from \$2 trillion to \$1.5–1.6 trillion.
 - Elon Musk stated bluntly on X that Grok Bot’s serving costs were “unsustainably high relative to revenue,” and tightened usage quotas shortly afterward.
 
-[![Musk says Grok Bot’s service costs are unsustainably high](grok-en.webp)](https://x.com/elonmusk/status/2116992258520064397?lang=en)
-
-*Original English post by Elon Musk.*
+> [!SOCIAL] Elon Musk `@elonmusk`
+>
+> The cost of serving Grok Bot was unsustainably high relative to revenue
+{avatar="img/social/elonmusk.webp" date="2026-11-02" url="https://x.com/elonmusk/status/2116992258520064397" platform="x"}
 
 My takeaway is straightforward: **The era of across-the-board, no-strings-attached subsidies is over. Subsidies themselves have not disappeared, though—they are shifting from loss-leader giveaways at the door to a Costco-style membership model.**
 
@@ -50,7 +51,17 @@ At the same time, OpenAI’s Help Center rolled out card and device limits: bind
 
 *Related documentation: [OpenAI’s card and device limits](https://help.openai.com/en/articles/20001559-understanding-card-and-device-limits-in-chatgpt).*
 
-![A user reports that their ChatGPT account has been deactivated](account-ban-en.webp)
+> [!SOCIAL] Landian Tech `@landiantech`
+>
+> A lot of ChatGPT accounts were banned today. What's going on?
+>
+> > [!SOCIAL] Vincent Yang `@missuo`
+> >
+> > Wait, ChatGPT bans accounts too? I just renewed on Nov 2. I've already filed a dispute with Amex.
+> >
+> > ![ChatGPT Authentication Error screen showing error_code: account_deactivated](account-ban-media.webp)
+> {avatar="avatar-missuo.webp"}
+{avatar="img/social/landiantech.webp" platform="x"}
 
 Put both providers’ moves together, and **how many accounts can one person still run while staying strictly within the terms of service?**
 

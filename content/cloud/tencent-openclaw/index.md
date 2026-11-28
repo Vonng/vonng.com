@@ -21,7 +21,19 @@ aliases: ["/ai/tencent-openclaw/"]
 
 事情是 X 平台用户 SnowShadow（@Alfredxia）首先曝出来的：他直接 @ 了 OpenClaw 创始人 Peter Steinberger，质问他是否知道腾讯建了个 SkillHub 把 ClawHub 的技能全搬了过去。
 
-![SnowShadow 在 X 上公开质问](callout.webp)
+> [!SOCIAL] SnowShadow `@Alfredxia`
+>
+> @steipete 你知道腾讯做了个 SkillHub，把 ClawHub 上所有的技能都爬过去导入自家平台了吗？
+>
+> ![终端文件时间戳与指向 clawhub.ai/api/v1/download 的 JSON 元数据截图](callout-media.webp)
+{avatar="avatar-alfredxia.webp" platform="x"}
+
+> [!SOCIAL] Peter Steinberger 🦞 `@steipete`
+>
+> 差不多吧……我曾经收到过一些邮件，有人抱怨我的速率限制挡着他们抓数据抓得不够快。
+>
+> 他们直接照搬，却不以任何方式支持这个项目。😞
+{avatar="avatar-steipete.webp" platform="x"}
 
 Peter 的回应堪称经典（大意）：
 
@@ -31,7 +43,10 @@ Peter 的回应堪称经典（大意）：
 
 Peter 随后直接 @ 了腾讯混元的官方账号，质问（大意）：“你们愿意帮帮忙吗？而不是把我的服务器成本飙升到五位数？”
 
-![Peter 指出服务器成本被拉高](bill.webp)
+> [!SOCIAL] Peter Steinberger 🦞 `@steipete`
+>
+> @TencentHunyuan 你们愿意帮帮忙吗？而不是把我的服务器成本推高到五位数？
+{avatar="avatar-steipete.webp" platform="x"}
 
 注意，**五位数美元**。一个独立开发者维护的开源项目，因为大规模抓取等行为，服务器账单直奔五位数。
 
@@ -41,7 +56,14 @@ Peter 随后直接 @ 了腾讯混元的官方账号，质问（大意）：“�
 
 > “在第一周，我们为用户处理了 180GB 的流量（87 万次下载），而仅从官方来源拉取了 1GB（来自非并发请求）。”
 
-![腾讯 AI 对 180GB 流量的回应](response.webp)
+> [!SOCIAL] Tencent AI `@TencentAI_News`
+>
+> 你好 Peter，我们理解你的顾虑。SkillHub 是腾讯基于 OpenClaw 生态打造的本地化技能平台，旨在为中国用户提供更好的可用性和下载速度。
+>
+> 我们一直透明地表明自己是本地镜像，并始终注明 ClawHub 为数据来源。在上线第一周，我们为用户处理了 180GB 的流量（87 万次下载），同时**仅从官方源站拉取了 1GB**（来自非并发请求）。
+>
+> 我们团队的许多成员都是活跃的贡献者（代码和 PR），我们非常希望能支持这个生态，成为更好的赞助商。
+{avatar="avatar-tencentai-news.webp" date="2026-03-12" platform="x"}
 
 来，做道数学题：把人家 13,000 个技能包全搬到自己服务器之后，中国用户的请求自然就不再走 ClawHub 了。于是腾讯得意地宣布——**看，我只从上游拉了 1GB，但为用户服务了 180GB！**
 
@@ -55,7 +77,39 @@ Peter 随后直接 @ 了腾讯混元的官方账号，质问（大意）：“�
 
 **太典了**——被人指着鼻子说“你把我服务器成本推到五位数了”，回应不是道歉、不是谈赞助，而是掏出计算器说：我帮你省流量了呢。
 
-![社区对腾讯回应的批评](criticism.webp)
+> [!SOCIAL] Andy Stewart `@manateelazycat`
+>
+> 腾讯的做法看得我目瞪口呆……扒取ClawHub 的数据就算了，还嫌 OpenClaw 创始人 Peter Steinberger 的服务器限速？？？🤡
+>
+> 关键是被 Peter 吐槽后，在评论区回应也是绝口不谈赞助，只说我们只拉取了 1GB 的数据，反而为用户处理了 180GB 流量呢……
+>
+> 太典了。
+{avatar="img/social/manateelazycat.webp" date="2026-03-12" platform="x"}
+
+> [!SOCIAL] Doiiars Fortune `@Daiiors`
+>
+> 结合上下文，并没有说这些事都是腾讯做的。
+{avatar="avatar-daiiors.webp" platform="x"}
+
+> [!SOCIAL] Andy Stewart `@manateelazycat`
+>
+> 你看第二张图，指向还不明确吗？
+{avatar="img/social/manateelazycat.webp" platform="x"}
+
+> [!SOCIAL] 路人M `@M4123R0`
+>
+> 我不太认同这个diss，按这样说，国内很多镜像站，都是这个问题……
+{avatar="avatar-m4123r0.webp" platform="x"}
+
+> [!SOCIAL] Andy Stewart `@manateelazycat`
+>
+> 🤣嘘寒问暖不如打笔巨款，甚至让自家的腾讯云出面承接一部分流量也没问题的
+{avatar="img/social/manateelazycat.webp" platform="x"}
+
+> [!SOCIAL] Benjamin Gao `@BenjaminGao2025`
+>
+> 😂不愧是腾讯，加仓！
+{avatar="avatar-benjamingao2025.webp" platform="x"}
 
 Peter 后来也把话说明白了：他并非反对做镜像，而是指出腾讯完全可以先沟通、做个官方认可的镜像站、双向同步下载统计。合规是一回事，**礼貌是另一回事**。一家万亿市值的公司，连提前发封邮件打个招呼的基本体面都没有。
 
@@ -79,7 +133,21 @@ Peter 后来也把话说明白了：他并非反对做镜像，而是指出腾�
 
 既然腾讯说“我们渴望支持生态系统，成为更好的赞助商”——那建议从给 Peter 的服务器账单报销开始？五位数美元，对鹅厂来说大概也就是个食堂午餐的预算。GitHub Sponsors 链接在那里摆着呢。
 
-![Peter 的 GitHub Sponsors 页面](sponsors.webp)
+> [!SOCIAL] Baidu Inc. `@Baidu_Inc`
+>
+> 我们的工程师今天被拍到在户外摆起了 OpenClaw“龙虾市集”。👀
+>
+> 近千名访客前来现场安装 @openclaw、向团队讨教使用技巧，并体验我们最新推出的 DuClaw。
+>
+> 如果你错过了——上个月我们已经支持在百度 App 内直接调用 OpenClaw，把开源 Agent 能力带给了约 7 亿月活用户。百度智能云也是国内首批支持 OpenClaw 部署的云平台之一。
+>
+> ![百度总部户外举办 OpenClaw“龙虾市集”现场照片四宫格](sponsors-media.webp)
+{avatar="avatar-baidu-inc.webp" date="2026-03-11" platform="x"}
+
+> [!SOCIAL] Peter Steinberger 🦞 `@steipete`
+>
+> 太棒了。我们非常欢迎维护者或赞助商加入 :)
+{avatar="avatar-steipete.webp" platform="x"}
 
 **声明：本文所有事实均来源于公开报道及当事人在 X 等公开平台的发言，引用部分均为大意转述。本文仅代表个人观点，如有事实错误，欢迎指正。**
 

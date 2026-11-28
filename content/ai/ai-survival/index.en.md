@@ -70,7 +70,16 @@ Think again.
 - 10 years experience × AI = devastating output
 - 1 year experience × AI = still junior, just faster at being junior
 
-![cc-exp.webp](cc-exp.webp)
+> [!SOCIAL] 象牙山刘能 `@disksing`
+>
+> How much AI helps with coding efficiency (by feel):
+>
+> Domains you understand inside out: 20x speed to 70%, 10x speed to 100%.
+>
+> Domains where you only know the fundamentals: 20x speed to 60%, slow grinding to 90%, then figure out some compromise for the last 10% and call it a day.
+>
+> Domains you barely know: 20x speed to 50%, slow grinding to 70%, and then you hit a brick wall and can't push it any further.
+{avatar="avatar-disksing.webp" platform="x"}
 
 I've been averaging 3,800 lines of code per day this past month. For database-level work, I used to consider 200-300 lines of solid code per day a good pace. Now? 10x+ that.
 

@@ -22,7 +22,19 @@ tags: [下云, 阿里云]
 
 另一种 ToC 的典型场景是学生和个人站长。在以前，个人站长拿个 2C 2G 3M带宽的小虚拟机弄个网站还是挺不错的 —— 但是自从有了赛博佛祖 Cloudflare，别说 99 块钱的云服务器了，9块9 都不香了 —— **再便宜能便宜过免费吗？**  —— 何况用 CF 建站的体验比云服务器要好太多了 —— 都不用说各种Free Plan，就凭流量免费这一点，就足以让“送的几兆带宽”都统统变垃圾……
 
-![罗永浩救不了牙膏云？：云计算可以2C吗？（图 3）](luo-live-3.jpg)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> 赛博佛祖 Cloudflare，就买个域名花了点钱，用了一个月免费套餐，两三百GB流量愣是没收我一分钱。所以说啊，上云下云也要看什么云，要是上这种良心云，我举双手支持。Cloudflare 和 IDC2.0 应该去和传统公有云云厂商抢一下云计算的定义权。
+>
+> ![pigsty.io 的 Cloudflare 免费套餐用量面板，30 天总流量 264 GB、缓存 181 GB](luo-live-3-media.webp)
+>
+> > [!SOCIAL] Rick `@Rick5767`
+> >
+> > *回复 @xqliu @vercel 等*
+> >
+> > cf可称赛博佛祖吧？免费cdn，dns，ddns，pages，worker，甚至还能免费用部署在cloudflare的AI模型。等等太多了。可惜分配给国内的cdn 还没我自己的服务器快，国际上还是非常可以的。
+> {avatar="avatar-rick5767.webp" date="2024-03-25"}
+{avatar="img/vonng.jpg" platform="x"}
 
 在 IT 规模光谱的一侧 —— 个人站长与小微企业上，新一代云服务/SaaS（CF，Neon，Vercel，Supabase），赛博菩萨们的免费套餐，对公有云产生了明显的替代与冲击；在光谱的另一侧 —— 中大型企业组织中，新出现的 IDC 2.0 与开源管控软件替代合流，短路掉公有云这个中间商，利用好[硬件摩尔定律](https://mp.weixin.qq.com/s/1OSRcBfd58s0tgZTUZHB9g)的累积优势，成为[终极FinOps实践](https://mp.weixin.qq.com/s/Yp_PU8nmyK-NVq0clD98RQ)，实现极为[惊人的降本增效能力](https://mp.weixin.qq.com/s/CicctyvV1xk5B-AsKfzPjw)。
 

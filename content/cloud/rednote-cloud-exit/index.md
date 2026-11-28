@@ -10,7 +10,12 @@ tags: [下云, 阿里云, 商业]
 昨天，老冯看到小红书技术公众号发了篇新文章《[小红书混合云架构下自用数据中心设计实践与探索](https://mp.weixin.qq.com/s/pCDobFG3uSWRO_7ZXSCBgQ)》，
 写了一篇简单的技术评论，没想到文章发出后反响激烈，不仅被阿里云投诉删除，还被扣了个 [“谣言”](https://mp.weixin.qq.com/s/3B-0BCwE8u7MoIk9Shwcxg) 的帽子。
 
-![rumor.webp](rumor.webp)
+> [!SOCIAL] 阿里云
+>
+> 这是谣言
+>
+> ![阿里云在微博中将作者原文章《阿里云的标杆客户小红书下云了》打上红色“谣言”印章](rumor-media.webp)
+{avatar="img/social/aliyun.webp" platform="weibo"}
 
 短短二字，似乎想把一场关乎百亿级互联网巨头基础设施战略转向的深刻讨论，封杀在“真与假”的二元对立之中。
 

@@ -24,7 +24,16 @@ tags: [故障复盘]
 
 17:16 分，网易云音乐知乎账号发布通知致歉，并表示明天搜“畅听音乐”可以领取 7 天黑胶 VIP 的 **朋友费**。
 
-![heijiao.png](heijiao.png)
+> [!SOCIAL] 网易云音乐
+>
+> 大家好，没有删库，没有跑路，故障已陆续修复~
+>
+> 作为补偿，8月20日0-24时，大家上网易云音乐搜索“畅听音乐”，可领取7天黑胶VIP会员到您的账户~
+>
+> 黑胶VIP会员将直接升级获赠7天SVIP服务~
+>
+> 抱歉必须再说一遍，请您息怒~
+{avatar="avatar-netease-music.webp" date="2024-08-19 17:16" platform="zhihu"}
 
 ## 原因推断
 
@@ -36,7 +45,15 @@ tags: [故障复盘]
 
 我们可以找到一些关于网易云存储团队的公开信息，例如，网易自研的云存储方案 Curve 项目被枪毙了。
 
-![author.png](author.png)
+> [!SOCIAL] DavidXu `@DavidXu68`
+>
+> *回复 @boleban 和 @cloudwu*
+>
+> 我们做的开源项目，已经被网易枪毙了，全项目组解散。
+> 这个项目其实雏形已经很不错了，项目组也没几个人，居然能做成这样。
+>
+> [GitHub — opencurve/curve: Curve is a sandbox project hosted by the CNCF Foundation](https://github.com/opencurve/curve)
+{date="2024-01-15" platform="x"}
 
 查阅 [Github Curve 项目主页](https://github.com/opencurve/curve)，发现项目在 2024 年初后就陷入停滞状态：
 

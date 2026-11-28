@@ -81,9 +81,12 @@ On the other hand, such disasters cannot be avoided simply through hard work and
 
 The average age of Chinese internet workers is about 28. Today's internet backbone is basically post-80s and post-90s generations. These people share a characteristic: born after reform and opening up, growing up in a world with peace and development as the main theme after the Cold War's end, receiving depoliticized education. Compared to predecessors, post-80s and post-90s often live materially abundant, happy, peaceful lives, but this also makes them take these for granted, becoming so-called "three-season people" who can only use recent experiences to predict the future but cannot draw any lessons from previous history, ignoring history's spirals and cycles on macro scales.
 
-![Sina Finance post questioning reports of Shenzhen mortgage defaults and homes auctioned at 30 percent off](winter-duangong-en.webp)
-
-*English localization of the [Sina Finance post](winter-duangong.jpg), November 11, 13:15. The original thumbnail asks: “Many Shenzhen homes auctioned at 30% off? Luxury homes worth tens of millions of yuan in a fire sale? Don’t be misled.”*
+> [!SOCIAL] Sina Finance (新浪财经)
+>
+> **[Mortgage defaults: are Shenzhen homes really being auctioned off at 30% off?]** Has a wave of mortgage defaults actually arrived? Real estate agents confirm that some buyers who took on heavy leverage over the past two years have defaulted in the market downturn, leading banks to force-auction their properties.
+>
+> *Linked article: “Many Shenzhen homes auctioned at 30% off? Tens-of-millions luxury homes in a fire sale? Don't fall for the hype”*
+{avatar="avatar-sinafinance.webp" date="2018-11-11 13:15" platform="weibo"}
 
 For example, with today's abnormally high housing prices, among ordinary industries, basically only IT and finance have conditions to massively leverage and buy houses. Six wallets scraped together for down payments, taking on twenty to thirty years of debt to satisfy so-called "rigid demand." I don't understand why these people have such confidence in the future. As Master Roshi said: "Business requires capital, borrowed money must be repaid, investment carries risk, and wrongdoing comes with consequences." When facing food and survival, what kind of rigid demand is housing?
 
@@ -105,33 +108,78 @@ Saying more would be playing with fire—let's return to the internet. From a lo
 
 *English localization of [Jiemian News’s table](winter-rumor.jpg), compiled from public information. Rumors, denials, and the absence of a response remain distinct.*
 
-**Image: Zhihu layoff reports and the company’s denial**
+**Zhihu layoffs**
 
-![A repost alleging 300 Zhihu layoffs, an employee’s account, and Zhihu’s denial of large-scale layoffs](winter-zhihu-en.webp)
-
-*English localization of the [original social post](winter-zhihu.png), including its December 11 reference and the embedded PegasusWang post.*
+> [!SOCIAL] Zeng Jia (曾加)
+>
+> **[Repost]** On December 11, reports surfaced that Zhihu was about to lay off 300 employees. A marketing employee who had just been let go told *Shijie*, “Layoffs are definitely happening, though I'm not sure how many.” She joined Zhihu in June, had just reached the end of her six-month probation, and was paid half a month's severance.
+>
+> “There was zero warning. Everyone was called in one by one—they talked to you yesterday, and by today your exit paperwork was done and you were out the door.” She said the layoffs came out of nowhere, with the stated reason being “budget cuts and restructuring.”
+>
+> Zhihu told reporters today that “large-scale layoffs” were a rumor—without directly denying that layoffs had occurred.
+>
+> Zhihu is cutting staff even as users and traffic keep growing. What happens when there aren't enough people left to run it?
+>
+> The co-founder has shown by his actions that old hands still know all the tricks.
+>
+> > [!SOCIAL] PegasusWang
+> >
+> > Got shown the door. Goodbye, Zhihu. Anyone hiring?
+> {avatar="avatar-pegasuswang.webp"}
+{avatar="avatar-zengjia.webp" platform="zhihu"}
 
 ![36Kr report on roughly 70 affected Douyu overseas-business staff and the company’s explanation of a normal team adjustment](winter-douyu-en.webp)
 
 *English localization of the [36Kr / Baijiahao excerpt](winter-douyu.png), December 6, 11:57.*
 
-**Image: HR discusses recruitment**
+**HR on the hiring market**
 
-![Liu Huipu’s account of laid-off job applicants, salary expectations, and an engineering team with frozen pay rises](winter-hr-en.webp)
+> [!SOCIAL] Liu Huipu (刘惠璞\_河马哥)
+>
+> I interviewed several candidates over the past two days. Unlike before, every single one had left because of layoffs or organizational restructuring.
+>
+> When I asked about salary expectations, one asked to match their previous pay; the rest still expected a raise.
+>
+> Honestly, I was caught off guard. In sixteen years of HR, this is the first time every candidate I interviewed had been laid off.
+>
+> What didn't surprise me was that most still expected higher pay at their next job.
+>
+> Winter has quietly arrived, yet most people still haven't adjusted mentally. In forty years of reform and opening up, we've never really lived through a winter like this.
+>
+> Over dinner tonight, a friend told me he couldn't bring himself to lay people off, so he froze all raises for his engineering team and even suspended quarterly bonuses.
+>
+> Six months later, not a single person has quit. This was a team he once couldn't keep even with raises.
+>
+> I looked out the window. It's only November.
+>
+> It's only early winter.
+{avatar="avatar-liuhuipu.webp" date="2018-11-29 15:08" platform="weibo"}
 
-*English localization of [Liu Huipu’s Weibo post](winter-hr.jpg), November 29, 15:08; the observations and opinions are his.*
+**Vanishing headhunters**
 
-**Image: Vanishing headhunters**
+> [!SOCIAL] Sina Finance (新浪财经)
+>
+> **[Vanishing headhunter calls: internet and finance hit hardest]** Li Ming (a pseudonym), who works in M&A at a small-to-midsize brokerage, was getting ready to look for a new job when he ran into an awkward reality: he hadn't heard from a headhunter in ages. “I used to get calls every day—sometimes several a day, practically spam. Now that I actually need them, I haven't received a single headhunter call in over a month.”…
+{avatar="avatar-sinafinance.webp" date="2018-12-08 17:53" platform="weibo"}
 
-![Sina Finance post about a securities employee who stopped receiving headhunter calls](winter-headhunter-en.webp)
+**Industrial slowdown — coal consumption, inventories, and layoff reports**
 
-*English localization of the [Sina Finance post](winter-headhunter.jpg), December 8, 17:53; Li Ming is a pseudonym.*
+> [!SOCIAL] Shouyeyeye (兽爷爷爷)
+>
+> Coal consumption at China's six major power groups fell 11.3% in September, and the decline widened to 19% in October. October auto sales dropped 11.7%—a fourth consecutive monthly decline. With the broader economy like this, private firms are hurting too. Yesterday the president of an A-share-listed property developer told me they dissolved an entire subsidiary on the spot—except it's not called “layoffs,” it's called “optimization.” Another A-share developer just “optimized” its headquarters from 200 people down to 90. Today the boss of a Hong Kong-listed developer told me they're preparing to “optimize” as well. Yesterday's news said Foxconn “optimized” hundreds of thousands—that's practically a massacre. Year-end is here: what other companies do you know of that are “optimizing”?
+{avatar="avatar-shouyeyeye.webp" platform="weibo"}
 
-**Image: Industrial slowdown — coal consumption, inventories, and layoff reports**
+> [!SOCIAL] Investment Sentiment (投资舆情)
+>
+> Two things you're not allowed to say: first, companies can't say “layoffs” or “hiring freeze”—they have to say “bottom-tier performance cuts,” “headcount optimization,” or “only hiring experts at general-manager level and above.” Second, property developers can't say “home prices are falling”—they have to say “interior finishing removed” or “a special promotion for existing customers.” (From January through October, domestic smartphone shipments totaled 343 million units, down 15.3% year on year.)
+{avatar="avatar-touziyuqing.webp" platform="weibo"}
 
-![Translated Weibo posts about economic weakness, a coal inventory and consumption chart, and a report of planned multinational layoffs](winter-power-en.webp)
+![Fig. 29: Coal stocks, days of supply, and average daily consumption at China's six major power groups, January–November 2018 (Source: Wind; Industrial Securities)](winter-power-en-media.webp)
 
-*English localization of the [original composite](winter-power.png). The chart shows coal stocks, days of supply, and average daily consumption at six major power groups, January–November 2018. The surrounding posts contain their authors’ claims and opinions; the final news item describes reported layoff plans.*
+> [!SOCIAL] China Economic Net (中国经济网)
+>
+> **[A global layoff wave? Ten multinationals make their move, affecting over 100,000 families]** The chill has hit, and the giants are cutting jobs. So far, at least ten major multinationals worldwide have announced layoff plans expected to put roughly 160,000 employees out of work—affecting about 160,000 households at one family per worker. Foxconn, IKEA, Ford, Volkswagen, Verizon, Bombardier, and General Motors have all been linked to job cuts, as household-name industry leaders brace for a global economic freeze.
+{avatar="avatar-cecn.webp" platform="weibo"}
 
 **Image: FAANG enters bear market**
 
@@ -139,11 +187,14 @@ Saying more would be playing with fire—let's return to the internet. From a lo
 
 *All five stocks were at least 20% below their 52-week highs, the bear-market threshold described in the original screenshot. Original English chart by Michael Sheetz; data: FactSet.*
 
-**Image: Gaming industry under pressure — reports of a possible 35% special tax**
+**Gaming industry under pressure — reports of a possible 35% special tax**
 
-![Historical post reporting a possible 35 percent special tax on games and potential regulation of card and board games](winter-game-tax-en.webp)
-
-*English localization of the [Headline News post](winter-game-tax.png), citing Southern Metropolis Daily and industry sources. It describes a possible tax, not an enacted measure.*
+> [!SOCIAL] Headline News (头条新闻)
+>
+> **[Every game may face a 35% special tax; card and board games first in line for regulation]** According to *Southern Metropolis Daily*, beyond caps on the total number of games, authorities may introduce a license-quota system and a special industry tax modeled on tobacco taxes. Industry sources say each game could be taxed at 35%, with card and board games targeted first.
+>
+> ![Illustration of gaming restrictions and a sharp downward trend](winter-game-tax-media.webp)
+{platform="weibo"}
 
 ## Conclusion
 

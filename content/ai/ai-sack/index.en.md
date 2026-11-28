@@ -18,7 +18,17 @@ But look more closely. Block had just 3,800 employees at the end of 2019. Its he
 
 This is not AI replacing people. It looks much more like the pandemic bubble finally coming due.
 
-![reason.webp](reason.webp)
+> [!SOCIAL] jack `@jack`
+>
+> yes we over-hired during covid because i incorrectly built 2 separate company structures (square & cash app) rather than 1, which we corrected mid 2024. but this misses all the complexity we took on through lending, banking, and BNPL. and that we're now targeting $2M+ gross profit per person, 4x our pre-covid efficiency, which stayed flat at ~$500k from 2019 until 2024. we have and do run an efficient company... better than most.
+>
+> > [!SOCIAL] Will Slaughter `@BamaBonds`
+> >
+> > In 3 years from December 2019 to December 2022, Block $XYZ more than tripled its headcount from 3,900 to 12,500.
+> >
+> > Unwinding less than half an insane COVID overhiring binge has much more to do with Jack Dorsey's managerial incompetence than whether AI is going to ...
+> {avatar="avatar-bamabonds.webp"}
+{avatar="avatar-jack.webp" date="2026-02-27" platform="x"}
 
 AI merely gave management a respectable story to tell. Not "we screwed up," but "the times have changed."
 
@@ -44,7 +54,14 @@ This is the Jevons paradox. When steam engines became more efficient, coal consu
 
 AI is doing the same thing to programming. As the cost of producing software approaches zero, demand does not disappear. Instead, it is unleashed at massive scale.
 
-![jws.webp](jws.webp)
+> [!SOCIAL] indigo
+>
+> The Jevons paradox of software engineering! When you drive down the price of a previously supply-constrained good, demand for it rises. AI agents have now brought down the cost of software engineering. Every SMB and IT team realizes that engineering can now dramatically boost output, so they are starting to build and automate capabilities in-house that previously only big companies with lavish engineering teams could afford.
+>
+> Now that approach is working—except they are discovering that automation still takes plenty of maintenance, so they are hiring more engineers to keep it running. Software engineers laid off by tech companies can move into other industries that need them, though roles replaced directly by automation won't be as lucky. Likewise, plenty of SaaS products will be replaced by SMBs building their own agents, because AI can tailor software directly to their exact needs.
+>
+> This afternoon I spoke with the owner of a traditional lending company: a business with zero technical staff is now looking to hire an AI technical consultant to build automation agents to cut costs and boost efficiency—which completely bears out the trend in this chart 🤔
+{avatar="avatar-indigo.webp" date="2026-02-27 16:07" platform="weibo"}
 
 The Citadel report makes another apt comparison. In 1930, Keynes predicted that rapid productivity growth would leave humans working just 15 hours a week.
 

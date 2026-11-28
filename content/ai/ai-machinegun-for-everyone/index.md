@@ -22,7 +22,17 @@ images: [apes.webp]
 
 据我所知，蒋老板本人应该并不熟悉 Rust，但这并不妨碍他让 Codex 照着 [Neo4j](https://github.com/neo4j/neo4j) 的方向写出 Go 版的 [`graphdb`](https://github.com/SamuelSupe/graphdb)，照着 [DuckDB](https://github.com/duckdb/duckdb) 写出 Rust 版的 [`RustDB`](https://github.com/SamuelSupe/RustDB)，再照着 [Kafka](https://github.com/apache/kafka) 写出 Rust 版的 [`rutomq`](https://github.com/SamuelSupe/rutomq) 等项目。
 
-[![老冯评价蒋老板用 AI 重写数据库项目](project-tweet.webp)](https://x.com/RonVonng)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> 俺有一个老板朋友，也不懂 Rust，最近让 Codex 用 Rust 重写了 DuckDB，然后据他说上了自己的生产环境。胆儿这么肥，我大为震撼。BTW 它还用 Rust 重写了 Kafka 和 Neo4j。给我的观感就是大猩猩拿着机关枪疯狂扫射。Repo ➡️ [github.com/SamuelSupe/RustDB](https://github.com/SamuelSupe/RustDB)
+>
+> ![RustDB GitHub 仓库主页](project-tweet-media.webp)
+>
+> > [!SOCIAL] Ce Gao `@gaocegege`
+> >
+> > DuckDB 这样的 low level infra 项目，你觉得现在 claude code /codex 能写出来合格的代码了么👀
+> {avatar="avatar-gaocegege.webp" date="2026-08-02"}
+{avatar="img/vonng.jpg" date="2026-08-02" platform="x"}
 
 所谓“烧”，就是把 Token 当燃料，让 Agent 把项目糊出来。老实说，我原本对这几个项目没什么兴趣。后来顺手让 Fable 把仓库扒了一遍，鉴定结果居然还不错：虽然距离真正的生产级产品差得很远，但也并非只有一个 README 和几张架构图。代码确实有模有样，基本功能也能跑起来，不完全是花架子。
 
@@ -162,9 +172,26 @@ AI 很容易把一个项目从零推到“看起来有模有样”，推到 80 �
 
 有人觉得现有的 Vibe Coding 操作方式不舒服，就把[小米蓝牙遥控器改造成编程遥控器](https://github.com/godarrenw/mi_remote_control)；开发者 [AprilNEA](https://x.com/AprilNEA) 实在受不了罗技那个又大又难用的官方驱动，直接让 Agent 许愿许出了开源替代品 [OpenLogi](https://github.com/AprilNEA/OpenLogi)；还有大量过去只有几百个潜在用户、根本养不起一支团队的小工具，如今被个人开发者在几天内做出来，迅速占领自己的小生态位。
 
-[![OpenLogi 在 GitHub 达到一万颗 Star](openlogi.webp)](https://github.com/AprilNEA/OpenLogi)
+> [!SOCIAL] AprilNEA `@AprilNEA`
+>
+> OpenLogi has reached 10k stars in GitHub, thank you all
+>
+> ![OpenLogi GitHub 仓库达到 10k Stars](openlogi-media.webp)
+{avatar="avatar-aprilnea.webp" platform="x"}
 
-[![OpenLogi 登上 Hacker News 后流量快速增长](openlogi-traffic.webp)](https://news.ycombinator.com/item?id=49355606)
+> [!SOCIAL] AprilNEA `@AprilNEA`
+>
+> it turns out someone submit OpenLogi to HN, thanks
+>
+> ![OpenLogi 登上 Hacker News 首页第一](openlogi-hn-media.webp)
+>
+> > [!SOCIAL] AprilNEA `@AprilNEA`
+> >
+> > what happened 😇
+> >
+> > ![Cloudflare Workers 每日请求限额超限提醒邮件与 openlogi.org 流量监控](openlogi-cf-media.webp)
+> {avatar="avatar-aprilnea.webp" date="2026-08-19"}
+{avatar="avatar-aprilnea.webp" date="2026-08-19" platform="x"}
 
 这些项目未必像重写 PostgreSQL 那么轰动，但往往比重写 PostgreSQL 更有实际价值。因为它们解决的是真问题。
 

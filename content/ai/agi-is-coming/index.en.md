@@ -7,11 +7,12 @@ summary: >
 tags: [AI, Claude]
 ai: true
 ---
-On April 8, 2026, Marc Andreessen posted a tweet that, translated loosely, said:
+On April 8, 2026, Marc Andreessen posted:
 
-![Screenshot of Marc Andreessen's tweet about AGI pricing](agi-pricing.png)
-
-> **The latest AGI pricing is out: if you are one of 11 specific companies, the price is negative $9 million. Otherwise, the price is infinity.**
+> [!SOCIAL] Marc Andreessen `@pmarca`
+>
+> New AGI pricing tier just dropped: negative $9 million if you're one of 11 specific companies; infinity otherwise.
+{avatar="avatar-pmarca.webp" date="2026-04-08" platform="x"}
 
 Negative $9 million means not only do they not charge you, they pay you to use it. Infinity means no amount of money will buy access.
 
@@ -33,7 +34,14 @@ But this post is not about how strong the model is. It is about something else: 
 
 Anthropic did not release Mythos publicly. Instead it launched **Project Glasswing**, giving the model to 12 core partners: Amazon, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorgan Chase, the Linux Foundation, Microsoft, Nvidia, Palo Alto Networks, plus Anthropic itself. On top of that, about 40 organizations that maintain critical infrastructure also received access.
 
-![Project Glasswing partner list](glasswing-partners.png)
+> [!SOCIAL] Anthropic `@AnthropicAI`
+>
+> Introducing Project Glasswing: an urgent initiative to help secure the world's most critical software.
+>
+> It's powered by our newest frontier model, Claude Mythos Preview, which can find software vulnerabilities better than all but the most skilled humans.
+>
+> [Project Glasswing: Securing critical software for the AI era](https://www.anthropic.com)
+{avatar="avatar-anthropicai.webp" date="2026-04-08" platform="x"}
 
 Call it roughly 50 organizations in total.
 
@@ -42,6 +50,33 @@ Sounds like a lot? Against the real denominator, it rounds to zero. How many tec
 ![Illustration of Project Glasswing's audience scale](glasswing-scale.png)
 
 More importantly, Anthropic is not charging these giants. It is subsidizing them with **$100 million in usage credits**. Andreessen's "negative $9 million" is just the arithmetic: $100 million divided by 11 outside core partners is about $9 million in compute subsidy per company. Someone on X even asked Grok to explain the pricing in unit-economics terms. Grok's answer was razor sharp:
+
+> [!SOCIAL] Sean Fenlon `@seanfenlon`
+>
+> Hey @Grok
+>
+> Explain in unit economics. 👍
+{avatar="avatar-seanfenlon.webp" platform="x"}
+
+> [!SOCIAL] Grok `@grok`
+>
+> Sure. Unit Economics 101 for that tier:
+>
+> Unit = 1 company's AGI access/license.
+>
+> For the 11 special customers:
+>
+> - Revenue per unit: -$9 million (customers are paid $9M to adopt)
+> - Variable cost per unit: massive (compute/inference/energy, easily over $10 million)
+> - Contribution margin per unit: deeply negative (pure strategic subsidy / cash burn)
+>
+> For the other ~8 billion humans/companies:
+>
+> - Price per unit: ∞ (unavailable at any price)
+> - Units sold: 0
+>
+> Classic winner-take-all playbook: pay the oligopoly to lock in distribution while starving everyone else out. Scale later, maybe never profit.
+{avatar="avatar-grok.webp" platform="x"}
 
 ## "This is for safety"
 

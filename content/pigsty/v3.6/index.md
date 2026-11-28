@@ -22,7 +22,18 @@ Pigsty v3.6 正式发布。历经两个月的精心打磨，这将是 v4.0 之�
 
 Percona 的 `pg_tde` 扩展经过数年长跑，终于正式发布 1.0 GA 版本。许多"企业级" PostgreSQL 发行版以"透明加解密"作为核心卖点，而 `pg_tde` 可能是第一个足够成熟的开源透明加密扩展，为开源 PostgreSQL 提供了真正意义上的企业级透明加密解决方案。
 
-![Pigsty v3.6：全能PG发行版的关键一步：全新内核支持：Percona PG TDE（图 2）](percona-tde.jpg)
+> [!SOCIAL] PIGSTY - Free RDS for PostgreSQL `@PlGSTY`
+>
+> 现在你可以在 Pigsty 中直接部署 @Percona Postgres 发行版及正式 GA 的 TDE 扩展，一条命令即可获得高可用、PITR、IaC 与内置可观测性。\
+> 将在下一个 v3.6 版本中推出，同时支持另外 8 款 PG 内核。
+>
+> ![Pigsty 监控面板与 Percona PG TDE 配置及终端运行界面](percona-tde-media.webp)
+>
+> > [!SOCIAL] Percona `@Percona`
+> >
+> > Percona 很高兴地宣布，`pg_tde` 扩展现已正式 GA！你可以获取最新的 Percona Distribution for PostgreSQL，并参考文档中的快速上手指南，在 #PostgreSQL 上运行完全 #OpenSource 的透明数据加密（TDE）：没有许可套路，没有厂商锁定。
+> {avatar="avatar-percona.webp" date="2025-07-01"}
+{avatar="img/logo.png" date="2025-07-05" platform="x"}
 
 目前该扩展需要运行在打过补丁的 PostgreSQL 内核上 —— 即 Percona 的 Postgres 发行版。Pigsty 在官宣后即刻完成了支持，只需两行命令即可启用并安装，同时享受 Pigsty 提供的完整 RDS 能力：监控、高可用、PITR、IaC 等，与原生 PG 内核别无二致。
 

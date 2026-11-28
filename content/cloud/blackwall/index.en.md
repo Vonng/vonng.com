@@ -50,9 +50,12 @@ Look at the recent wave of **Linux kernel exploits and container or VM escapes**
 
 Then there is **[`PwnEscape` (`CVE-2026-99999`, CVSS 9.3)](https://socprime.com/blog/cve-2026-99999-analysis/)**, disclosed on October 15: an out-of-bounds write in `skb_checksum_help()` that had [lurked in the Linux kernel's IPv4 networking stack for 18 years](https://tuxcare.com/blog/pwnescape-kvm-guest-escape/). Distribution advisories state the risk plainly: an untrusted guest VM can send packets with malformed checksum metadata over its virtual NIC to leak or corrupt host kernel memory, and potentially **achieve a VM escape to execute arbitrary code as root on the host**. [AlmaLinux's advisory](https://almalinux.org/blog/2026-10-16-pwnescape-cve-2026-99999/) confirmed the severity. It is worth keeping the demonstration scope clear: [Vercel's disclosure](https://vercel.com/blog/findings-from-the-1-million-dollar-vercel-sandbox-challenge#the-kernel-zero-day) demonstrated host memory disclosure in production, while the host crash and root code execution were completed in a matching KVM / Firecracker environment built by the researchers.
 
-![PwnEscape emergency maintenance notices shared by Paulos Yibelo](pwnescape-en.webp)
-
-*Source: [Paulos Yibelo on X, October 17, 2026](https://x.com/PaulosYibelo/status/2111541156572013043).*
+> [!SOCIAL] Paulos Yibelo `@PaulosYibelo`
+>
+> I feel bad man 😭 Apologies to the thousands of VPS and compute engineers worldwide spending their weekend emergency patching and rebooting hypervisors because of CVE-2026-99999. Security bugs really do love getting disclosed right before the weekend.
+>
+> ![Emergency maintenance notices from eight VPS and cloud providers for CVE-2026-99999 (PwnEscape)](pwnescape-media.webp)
+{avatar="avatar-paulosyibelo.webp" date="2026-10-17" url="https://x.com/PaulosYibelo/status/2111541156572013043" platform="x"}
 
 Memory corruption in application-layer extensions, RCE in the database engine, page-cache poisoning in containers, and network-packet escapes from KVM guests—the entire defensive stack is leaking from top to bottom.
 

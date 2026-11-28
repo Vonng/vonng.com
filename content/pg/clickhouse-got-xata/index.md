@@ -10,7 +10,12 @@ tags: [PostgreSQL, PG生态, 商业]
 
 昨晚 ClickHouse 在 Twitter 上神秘兮兮地预告 *“大的要来了”*。今早揭晓：ClickHouse 收购 Xata，同时自家的托管 PostgreSQL 服务正式 GA。
 
-![ClickHouse 在 Twitter 上预告“大的要来了”](teaser.webp)
+> [!SOCIAL] ClickHouse `@ClickHouseDB`
+>
+> Something big is coming...
+>
+> ![ClickHouse 直播预告截帧，Xata CEO Monica Sarbu、ClickHouse 创始人 Alexey Milovidov 等人同框出镜](teaser-media.webp)
+{avatar="avatar-clickhousedb.webp" date="2026-11-10" platform="x"}
 
 这已经不是一条孤立的新闻，而是一个趋势：PG 吞噬了数据库世界，现在轮到巨头来吞噬 PG 公司了。
 

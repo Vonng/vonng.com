@@ -16,9 +16,26 @@ aliases: ["/ai/claude-360-claw/"]
 
 > **声明**：本文仅作为网络安全技术探讨与供应链安全案例分析。文中引用的技术数据及文件路径均来自公开网络渠道及官方公开发布的软件安装包，不涉及任何逆向工程、破解或入侵行为。本文所述内容均基于公开信息与可独立验证的技术事实，不构成对任何公司的主观评价。如相关厂商已发布官方修复公告，请以官方信息为准。
 
-![泄露披露截图](disclosure.webp)
+> [!SOCIAL] Lukasz Olejnik `@lukOlejnik`
+>
+> 中国最大的网络安全公司奇虎 360 显然刚发布了一款 AI 助手，安装包里竟然直接内置了自己的 SSL 私钥。奇虎 360 类似于诺顿或迈克菲，但在整个中国市场占据主导地位。
+>
+> 他们的新款 AI 产品“360安全龙虾（Security Claw）”似乎是对 @OpenClaw 做的一层封装。任何下载安装包的人都能直接拿到其中用于 `*.myclaw.360.cn` 域名的 SSL 证书私钥。SSL 私钥本质上是网站加密连接的主密码：攻击者拿到它可以冒充 360 的服务器、静默拦截用户流量、伪造看起来完全合法的登录页面，甚至可能完全接管这个 AI Agent。该证书有效期至 2027 年 4 月，覆盖平台上的所有子域名，如今已经公之于众。创始人发布产品时还承诺“绝不泄露密码”，结果发布时就自己泄了？坐拥 4.61 亿用户、100 亿美元估值，发版前竟然没人检查一下压缩包。这张证书要到 2027 年 4 月才到期。
+>
+> ![社区原始披露截图，展示内置证书路径与 OpenSSL Modulus 校验结果](disclosure-media.webp)
+{avatar="avatar-lukolejnik.webp" date="2026-03-16" platform="x"}
 
-![转发评论截图](repost.webp)
+> [!SOCIAL] Viking `@vikingmute`
+>
+> 笑死我了，360安全龙虾是基于 OpenClaw 做的一个封装，结果在安装包里，任何人下载后都能直接访问到一个用于域名 `*.myclaw.360.cn` 的 SSL私钥，这个证书有效期到2027年4月，覆盖了该平台所有子域名。
+>
+> 360在产品发布时信誓旦旦地承诺，这个AI助手永远不会泄露密码。结果刚上线就直接把自己的核心私钥泄露了？没人检查一下检查安装包里的内容吗？什么草台班子
+>
+> > [!SOCIAL] Lukasz Olejnik `@lukOlejnik`
+> >
+> > 中国最大的网络安全公司奇虎 360 显然刚发布了一款 AI 助手，安装包里竟然直接内置了自己的 SSL 私钥。奇虎 360 类似于诺顿或迈克菲，但在整个中国市场占据主导地位。
+> {avatar="avatar-lukolejnik.webp" date="2026-03-16"}
+{avatar="img/social/vikingmute.webp" date="2026-03-16" platform="x"}
 
 ## 发生了什么
 
@@ -42,9 +59,30 @@ aliases: ["/ai/claude-360-claw/"]
 
 此外，X（原 Twitter）上多位用户已公开贴出该证书的完整 PEM 编码内容，任何人均可自行下载验证。证书透明度日志（crt.sh）中亦可查询到对应记录。
 
-![证书 PEM 编码](pem.webp)
+> [!SOCIAL] 奶昔🥤 `@realNyarime`
+>
+> 360Claw的SSL证书泄漏
+>
+> ```text
+> -----BEGIN CERTIFICATE-----
+> MIIGJjCCBI6gAwIBAgIRAJjf6v3EwyNx8KtJDIo8eBkwDQYJKoZIhvcNAQELBQAw
+> SjELMAkGA1UEBhMCQ04xGjAYBgNVBAoTEVdvVHJ1cyBDQSBMaW1pdGVkMR8wHQYD
+> VQQDExZXb1RydXMgUlNBIERWIFNTTCBDQSAyMB4XDTI2MDMxMjAwMDAwMFoXDTI3
+> MDQxMjIzNTk1OVowGjEYMBYGA1UEAwwPKi5teWNsYXcuMzYwLmNuMIIBIjANBgkq
+> hkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA6GoA3XNAfUmduNst6xvYGphkmWpMKTC9
+> RCJpvKoKSuFylOwY+tGm8vmKl4Uc4SYUp3a8TdFjFtEzCuRqEo3IVYRdenk94K8G
+> ...
+> ```
+{avatar="avatar-realnyarime.webp" url="https://x.com/realNyarime/status/2033428417488757122" platform="x"}
 
-![事件公开报道](report.webp)
+> [!SOCIAL] 科技圈 在花新闻 `@ZaihuaNews`
+>
+> 360Claw 出现 SSL 证书泄露事件
+>
+> 有网友发现 360Claw 疑似出现 SSL 证书泄露事件，涉及域名为 `*.myclaw.360.cn` 的数字证书及配套私钥。泄露的证书由 WoTrus CA Limited 签发，有效期从 2026 年 3 月 12 日至 2027 年 4 月 12 日。
+>
+> 此次泄露包含完整的证书文本与私钥内容，可能导致相关域名的加… [crt.sh/?q=%2A.myclaw.360.cn](https://crt.sh/?q=%2A.myclaw.360.cn)
+{avatar="avatar-zaihuanews.webp" url="https://x.com/ZaihuaNews/status/2033481130532392997" platform="x"}
 
 老冯也在本地使用 OpenSSL 对上述证书和私钥文件进行了独立验证，Modulus 哈希比对结果与上述报告一致。
 

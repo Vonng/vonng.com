@@ -42,7 +42,17 @@ At the other extreme, some fans market it as an “agent-native operating system
 
 Set that noise aside: Omarchy's desktop still falls well short of macOS, but its taste and ambition may already set the high-water mark for Linux distributions. It is, at least from what I have seen, **the only project in the Linux ecosystem with the drive to chase macOS-level polish**. That takes real nerve. DHH happily unloads on Linux hypocrites, and I admire him for it.
 
-![DHH responds to criticism of Omarchy](dhh-tweet.webp)
+> [!SOCIAL] DHH `@dhh`
+>
+> Omarchy is not just a distribution, but it's also a counterweight to all the nonsense that has plagued Linux for far too long. It's a refuge from the clowns and the circus that has been Linux politics since the old institutions got infiltrated. QUACK THAT! 😂🦆
+>
+> > [!SOCIAL] TheStandupPod `@thestanduppod`
+> >
+> > 'Linux is full of crazy clowns'
+> >
+> > ![Video clip from The Standup Podcast showing DHH in an Omarchy shirt saying "goddamn maniacs"](dhh-tweet-media.webp)
+> {avatar="avatar-thestanduppod.webp"}
+{avatar="img/dhh.jpg" platform="x"}
 
 As Confucius put it, understanding is no match for loving, and loving no match for delighting. Only someone like DHH—a middle-aged computer nerd who is already financially independent and truly loves computers—can pull off something like this. To make desktop Linux good, you need someone with taste, technical skill, resources, influence, and a **genuine love for it**.
 

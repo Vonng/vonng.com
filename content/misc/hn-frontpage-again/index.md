@@ -14,7 +14,25 @@ tags: [开源, 随笔]
 
 ![图片](02.webp)
 
-![图片](03.webp)
+> [!SOCIAL] huizhou92 `@piaopiaopig`
+>
+> 同一篇文章，前几天在公众号中看到，今天一大早又在 hacker news 中看到，哈哈
+{avatar="avatar-piaopiaopig.webp" platform="x"}
+
+> [!SOCIAL] Zhi Yuan Ju (琚致远) `@jjzhiyuan`
+>
+> 一早看到文章登榜了 😄
+>
+> ![Hacker News 首页榜首截图：MinIO Is Dead, Long Live MinIO（133 points）](03-hn1-a-media.webp)
+{avatar="avatar-jjzhiyuan.webp" platform="x"}
+
+> [!SOCIAL] STRRL.gpt `@strrlthedev`
+>
+> Hacker News #1 🔥
+>
+> ![Hacker News 首页前四截图：MinIO Is Dead, Long Live MinIO 位列第一（132 points）](03-hn1-b-media.webp)
+{avatar="avatar-strrlthedev.webp" platform="x"}
+
 这次别人转发我压根不知道，一下子冲到 200+ Points，在榜首待了两个小时，现在还挂在 \#3 —— 所以说这玩意太玄学邪乎了。
 
 ![图片](04.webp)

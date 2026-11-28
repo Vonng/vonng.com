@@ -44,8 +44,23 @@ Another saved its users' conversations and coding sessions with its own model, t
 
 Then come the relay services. The report describes a secondary market: proxy networks that sell Claude access to users in unsupported regions while saving their conversations with Claude and selling them to labs. One lab's distillation pipeline included user conversations purchased from “third-party data providers.” Another set up its own relay service through a shell company with no apparent connection to the parent. It sold only Anthropic and OpenAI models, no Chinese models—not even its own. I hardly need to explain what that relay service was for.
 
-<blockquote class="twitter-tweet" data-lang="en" data-dnt="true"><p lang="en" dir="ltr">I bought a Fable dataset from one of the top Chinese LLM routers yesterday. <br><br>With just 6TB data, I can take over 7 Chinese/CIS gov entities &amp; 19 top Chinese firms like Xiaomi, Huawei, NIO, Minimax using SSH keys, VPN configs, Aliyun keys, GitLab tokens sent to the router. <a href="https://t.co/SpX9zDJ9zJ">https://t.co/SpX9zDJ9zJ</a> <a href="https://t.co/n6Xln0ROei">pic.twitter.com/n6Xln0ROei</a></p>&mdash; Chaofan Shou (@shoucccc) <a href="https://x.com/shoucccc/status/2098169782541631871">September 10, 2026</a></blockquote>
-<script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
+> [!SOCIAL] Chaofan Shou `@shoucccc`
+>
+> I bought a Fable dataset from one of the top Chinese LLM routers yesterday.
+>
+> With just 6TB data, I can take over 7 Chinese/CIS gov entities & 19 top Chinese firms like Xiaomi, Huawei, NIO, Minimax using SSH keys, VPN configs, Aliyun keys, GitLab tokens sent to the router.
+>
+> ![Redacted sample of leaked hosts and GitLab tokens from the purchased LLM router dataset](buy-att1.webp)
+>
+> > [!SOCIAL] Chaofan Shou `@shoucccc`
+> >
+> > 26 LLM routers are secretly injecting malicious tool calls and stealing creds. One drained our client $500k wallet.
+> >
+> > We also managed to poison routers to forward traffic to us. Within several hours, we can directly take over ~400 hosts. ...
+> >
+> > ![Figure 1 from "Your Agent Is Mine: Measuring Malicious Intermediary Attacks on the LLM Supply Chain" illustrating multi-hop LLM router taint propagation](buy-att2.webp)
+> {avatar="avatar-shoucccc.webp" date="2026-04-10"}
+{avatar="avatar-shoucccc.webp" date="2026-09-10" url="https://x.com/shoucccc/status/2098169782541631871" platform="x"}
 
 Who were the victims? These forwarded, replayed, and resold interactions contained sensitive information belonging to individuals and large multinational corporations: names, email addresses, and company data from hundreds of end users, in at least twelve languages.
 

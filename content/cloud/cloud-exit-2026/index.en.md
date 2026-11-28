@@ -12,7 +12,12 @@ Leaving the cloud has never been just about saving money. It is about buying bac
 
 This morning, I spotted a spectacular humblebrag from DHH on X:
 
-[![DHH looks back at the 19 PB all-flash system bought for the AWS S3 exit](dhh-s3-tweet-en.webp)](https://x.com/dhh/status/2088326278659092646)
+> [!SOCIAL] DHH `@dhh`
+>
+> We bought 19 PB of flash storage for our AWS S3 exit in 2025 for about $1.5m. The list price for this setup today would be $19 MILLION 🤑. Don't know if I've ever timed a trade this well in my life.
+>
+> [It's five grand a day to miss our S3 exit — world.hey.com](https://world.hey.com/dhh/it-s-five-grand-a-day-to-miss-our-s3-exit-b8293563)
+{avatar="img/dhh.jpg" date="2026-08-14" url="https://x.com/dhh/status/2088326278659092646" platform="x"}
 
 “Don’t know if I’ve ever timed a trade this well in my life.” A system bought for $1.5 million carried a $19 million list price just over a year later—more than 12×.
 
@@ -20,7 +25,15 @@ But this was never meant as an investment. DHH simply thought the S3 bill was to
 
 The people trying to save money got rich; the fence-sitters are kicking themselves. That is the surreal reality of the 2026 storage market. Anyone still paying rent in the cloud should study the numbers behind that post.
 
-![My follow-up post on DHH’s cloud-exit trade](cloud-exit-tweet.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> I've spent the past few years urging people to leave the cloud, and plenty of friends who listened, bought their own servers, and self-hosted are making a killing now. The ones kicking themselves are those who could have stretched to become cyber smallholders—if not landlords—but let the pro-cloud crowd scare them off with talk of disk swaps and staffing costs. Now they may be locked in as tenant farmers or serfs for life.
+>
+> > [!SOCIAL] DHH `@dhh`
+> >
+> > We bought 19 PB of flash storage for our AWS S3 exit in 2025 for about $1.5m. The list price for this setup today would be $19 MILLION 🤑. Don't know if I've ever timed a trade this well in my life. [world.hey.com/dhh/it-s-five-…](https://world.hey.com/dhh/it-s-five-grand-a-day-to-miss-our-s3-exit-b8293563)
+> {avatar="img/dhh.jpg" date="2026-08-14" url="https://x.com/dhh/status/2088326278659092646"}
+{avatar="img/vonng.jpg" date="2026-08-15" platform="x"}
 
 ## 2. Three Years of Receipts
 

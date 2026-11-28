@@ -156,7 +156,19 @@ Pigsty 与 K8s 的区别：**没有不必要的抽象层。** Agent 直接面对
 模型可能是 GPT，可能是 Claude，可能是某个开源模型，**这不重要。** Agent 本身可能就是几个简单的 Skills 和 Claude.md ，这也不重要。
 Agent 时代的护城河不是更聪明的大脑，而是更确定的身体。在这个确定性的身体中，一个简单的 CLAUDE.md 文件，就足够让中等智能水准的 LLM 表现出 中级 DBA 的水平来。
 
-![数据库需求金字塔](db-needs-pyramid.jpg)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> 其实，做运维 Agent 或 SRE Agent 并没有什么特别复杂。真正复杂的是准备好标准的上下文和运行时环境。这些准备好了，你只要写个 Claude.md 告诉它环境里有什么东西、文档在哪里找，只要有一个足够好的命令行工具和文档索引，它的表现就已经能显著超出中等水平的 DBA 了。
+>
+> ![数据库需求金字塔](db-needs-pyramid-media.webp)
+{avatar="img/vonng.jpg" platform="x"}
+
+> [!SOCIAL] 舟方 `@zhoufan44799671`
+>
+> 爽啊，CLAUDE.md和AGENTS.md都是写好的，配置pigsty过程中有问题直接CC解决，像我遇到的anolios8的问题，分分钟就找到原因了。真是不用不知道，一用吓一跳。
+>
+> ![Claude Code 排查 Anolis OS 8 模块冲突的终端输出](db-needs-pyramid-reply-media.webp)
+{avatar="img/social/zhoufan.webp" platform="x"}
 
 OtterTune 用 1200 万美元证明了：没有身体的大脑走不通。Manus 用一个沙箱证明了：给大脑一个确定性的身体，它就能创造奇迹。
 强龙来了一条又一条，每条都比上一条更强。但地头蛇在自己的地盘上深耕日久，壁垒越积越厚。

@@ -19,13 +19,34 @@ It requires no authentication and no prior privileges. A single crafted request 
 
 How bad did it get? Japanese Prime Minister Sanae Takaichi posted a warning on X herself[^2] urging site operators to patch. As one commenter put it: “Never thought I'd live to see a head of state tell me to install a patch.” Many assumed it was a parody. It wasn't—her own official PHP site had just been compromised.
 
-[![Japanese Prime Minister Sanae Takaichi warning website operators about a critical PHP vulnerability](php-en.webp)](https://x.com/takaichi_sanae/status/2112890642590564386)
+> [!SOCIAL] Sanae Takaichi `@takaichi_sanae`
+>
+> Everyone, this is an urgent request that needs your attention tonight.
+>
+> The PHP security team has issued an alert about two serious vulnerabilities in PHP, a language used by many websites.
+>
+> Please check whether your public website uses PHP and prepare to apply the fixes scheduled for release at 11 p.m. tonight (Japan time), so you can deploy them promptly.
+>
+> If you cannot apply the fixes quickly, temporarily taking the website offline, for example, is also an effective measure for reducing risk.
+>
+> The National Cybersecurity Office's X account will also post related information. Please refer to it as well.
+> National Cybersecurity Office (Warning Information) (@cyber_forecast)
+{avatar="avatar-takaichi-sanae.webp" date="2026-10-21" url="https://x.com/takaichi_sanae/status/2112890642590564386" platform="x"}
 
 PHP2Shell was just one piece of a brutal week. Put the past few days' security advisories side by side, and the entire foundation of modern software is taking fire at once:
 
 First, **core infrastructure was breached**. A few days ago, `CVE-2026-99999` (not a joke—that is the actual CVE ID) hit major virtualization vendors across the board. Next, Node.js shipped emergency security releases[^3] patching more than a dozen vulnerabilities, including remote code execution. Then GitLab disclosed its **third** CVSS 10.0 vulnerability in six weeks (`CVE-2026-110264`)[^4]—another unauthenticated RCE granting full server takeover. The blast radius spans **12 years**: every self-hosted GitLab instance since version 7.0, released in 2014, has to be upgraded. Every single one.
 
-![GitLab advisory for a CVSS 10.0 vulnerability allowing unauthenticated remote code execution](gitlab.webp)
+> [!SOCIAL] International Cyber Digest `@IntCyberDigest`
+>
+> ‼️ GitLab patched a critical CVSS 10 flaw that lets attackers run code on self-managed servers without logging in.
+>
+> The Ruby regex engine GitLab bundles is vulnerable, and affects every version since 7.0 from 2014.
+>
+> Servers patched for a similar bug on Oct 12 are vulnerable.
+>
+> ![GitLab logo and the Ruby regexp repeat ID overflow patch diff](gitlab-media.webp)
+{avatar="avatar-intcyberdigest.webp" platform="x"}
 
 Second, **the emerging AI toolchain showed that it is held together with duct tape**. LiteLLM, a staple of LLM application development, suffered a supply-chain compromise in version `1.107.0` that bundled credential-stealing malware into the official release package. Meanwhile, OpenCode Console was breached[^5], leaking users' OpenAI, Anthropic, and Google API keys.
 

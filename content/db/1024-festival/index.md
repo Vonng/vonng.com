@@ -44,7 +44,10 @@ images: [computers.webp]
 >
 > —— Ilya Sutskever
 
-![Ilya Sutskever 关于智力与其他人类品质的推文](ilya.webp)
+> [!SOCIAL] Ilya Sutskever `@ilyasut`
+>
+> if you value intelligence above all other human qualities, you're gonna have a bad time
+{avatar="avatar-ilyasut.webp" date="2023-10-07" platform="x"}
 
 **然而硬币的另一面是：如果你愿意放下身段、拥抱这股力量，你迎来的不是末日，而是一个算力杠杆前所未有的黄金时代。**
 

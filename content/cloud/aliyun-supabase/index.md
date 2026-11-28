@@ -37,7 +37,17 @@ Supabase 是一个开箱即用的 BaaS，在 PostgreSQL 基础上提供了数据
 但是为了确认一下，老冯在 X 上 @ 了 Supabase 的 CEO Paul Copplestone，问问他怎么看这件事。
 结果 Paul 评论了一句： “Hacker ethics，I think you are assuming this exists in that part of the world”。（极客道德？我觉得你预设了这东西在那个部分的世界真的存在）。
 
-![x-comment.png](x-comment.png)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> So apparently @alibaba_cloud is selling “RDS Supabase ” Big cloud giants freeloading off a startup’s open-source work — is that cool under open-source licenses, trademark law, or hacker ethics? Not sure if @kiwicopple / @supabase has seen this yet…. 🧐
+{avatar="img/vonng.jpg" platform="x"}
+
+> [!SOCIAL] Paul Copplestone - e/postgres `@kiwicopple`
+>
+> \>hacker ethics
+>
+> I think you are assuming this exists in that part of the world 😅
+{avatar="img/paul-copplestone.png" platform="x"}
 
 Paul 点赞转发评论三连，这种回应也就说明了其实也没什么合作，就是阿里云自己搞的花活。
 老实说，这可真是一句辛辣的评论，老冯看到这个回复心里五味杂陈，感觉脸上火辣辣，因为我也算在 “That part of the world” 里。

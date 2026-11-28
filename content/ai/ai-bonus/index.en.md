@@ -81,7 +81,12 @@ Whatever happens politically, one thing seems clear: **this unusually favorable 
 
 I am very interested in local inference, especially on Apple Silicon. But my current conclusion is simple: local models are not yet a full replacement for the best cloud coding-agent experience.
 
-![Cost estimate for local large-model clusters](cluster.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> Damn—with memory prices surging, Apple pulled the 512GB option from the Mac Studio configurator. At this rate, the M5 Ultra will likely cap out at 256GB too. Looks like second-hand M3 Ultra 512GB units on Xianyu are about to jump in price. A heavy blow to local LLM setups.
+>
+> ![Apple Store Mac Studio configurator showing only 96GB and 256GB memory options](cluster-media.webp)
+{avatar="img/vonng.jpg" date="2026-03-06" platform="x"}
 
 Local models are improving fast, and the privacy benefits are real. But if your job depends on high-end coding agents today, the strongest cloud subscriptions still dominate on output quality, reliability, and end-to-end task completion.
 

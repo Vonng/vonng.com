@@ -12,7 +12,17 @@ tags: [云计算, 故障复盘, 成本]
 
 **一个 10 万+用户的产品就此无了。**
 
-![图片](01.webp)
+> [!SOCIAL] 数码荔枝 `@DIGITALYCHEE`
+>
+> 今天一个软件开发者找我们下架软件，原因大致为：
+>
+> 一、他们把所有的代码 + 数据库都托管在腾讯云上。\
+> 二、腾讯云欠费 2 元后发通知，但开发者手机开了免干扰没注意；\
+> 三、约 7 天后，腾讯云将他们的数据都删除，且无法恢复；\
+> 四、开发者没做数据备份，现在连用户是谁都不知道了。
+>
+> **一个 10 万+用户的产品就此无了。**
+{avatar="avatar-digitalychee.webp" date="2025-04-28" platform="x"}
 
 这条推引起了很大的反响，已经七十多万阅读了，同时下面还有许多的评论。各种群里有不少朋友 @我，问老冯怎么看。那么今天我们就来聊聊这件事中开发者与腾讯云的责任与问题，以及其他开发者应该从中吸取什么经验教训？
 
@@ -44,7 +54,31 @@ tags: [云计算, 故障复盘, 成本]
 - 通知跟骚扰一样，怪不得别人给屏蔽了
 - 最离谱可能是：从 “删了就没有办法恢复” 到舆情发酵后 “问题解决”
 
-![图片](06.webp)
+> [!SOCIAL] 数码荔枝 `@DIGITALYCHEE`
+>
+> 要说这个事情给我们的启发，**至少有 3 点**：
+>
+> 1. 开发者如果跑出稳定业务后，最好将数据托管在自建的服务器上，安全可控；
+> 2. 无论如何，一定要做数据备份；
+> 3. 如果一定要用云服务的话，记得预留的手机 / 邮箱真的可以联系到你。
+{avatar="avatar-digitalychee.webp" date="2025-04-28" platform="x"}
+
+> [!SOCIAL] 数码荔枝 `@DIGITALYCHEE`
+>
+> 不过我发现腾讯云也有一些问题，比如：
+>
+> 1. 云数据库欠费的第三天就会删除数据，且也只会在这一刻推送通知给用户；
+> 2. 是否能在删除数据之前，人工电话通知一下用户？
+{avatar="avatar-digitalychee.webp" platform="x"}
+
+> [!SOCIAL] 数码荔枝 `@DIGITALYCHEE`
+>
+> 最新进展：开发者给我们留言，说腾讯云团队已经为他解决了问题。
+>
+> 希望腾讯云团队未来加强在极端情况下对用户的强提醒。
+>
+> 当然，也希望每个开发者重视自己的数据安全。
+{avatar="avatar-digitalychee.webp" platform="x"}
 
 ### 欠费直接停服
 
@@ -74,7 +108,23 @@ tags: [云计算, 故障复盘, 成本]
 
 > 最新进展：开发者给我们留言，说腾讯云团队已经为他解决了问题。希望腾讯云团队未来加强在极端情况下对用户的强提醒。当然，也希望每个开发者重视自己的数据安全。
 
-![图片](09.webp)
+> [!SOCIAL] 数码荔枝 `@DIGITALYCHEE`
+>
+> 刚刚开发者给我们留言，说腾讯云团队已经为他解决了问题。
+>
+> 希望腾讯云团队未来加强在极端情况下对用户的强提醒。
+>
+> 当然，也希望每个开发者重视自己的数据安全。
+>
+> > [!SOCIAL] 数码荔枝 `@DIGITALYCHEE`
+> >
+> > 今天一个软件开发者找我们下架软件，原因大致为：
+> >
+> > 一、他们把所有的代码 + 数据库都托管在腾讯云上。\
+> > 二、腾讯云欠费 2 元后发通知，但开发者手机开了免干扰没注意；\
+> > 三、约 7 天后，腾讯云将他们的数据都删除，且无法恢复；……
+> {avatar="avatar-digitalychee.webp" date="2025-04-28"}
+{avatar="avatar-digitalychee.webp" date="2025-04-28" platform="x"}
 
 **这个 “解决了” 问题如果指的是恢复了数据，那么这才是最离谱的事情**。在腾讯云的文档上，说道 “若您的云服务器在停服后 7 天内（包括第 7 天）未进行续费，系统将在停服 7 天后约 24 小时内对资源进行释放，**到期服务器中的数据将被清除且不可恢复**。”
 
@@ -96,11 +146,128 @@ tags: [云计算, 故障复盘, 成本]
 
 后来我发现推上也有不少人有类似的经历：
 
-![图片](12.webp)
+> [!SOCIAL] Andy Stewart `@manateelazycat`
+>
+> **创业者远离腾讯云，保平安，跟大家分享我们腾讯黑的经历：**
+>
+> 去年懒猫微服发布之前，我们就选择了腾讯云，原因主要有两个：
+>
+> 1. 腾讯毕竟大公司，虽然不如亚马逊，最起码有保障
+> 2. 腾讯云当时全球CDN的报价狠便宜啊，最后发现我是傻逼
+>
+> 我们用了腾讯云后，发生了几件离奇的事情，朋友们看我们是不是傻逼？
+>
+> 懒猫微服去年发布的时候很快做到了14个国家，今年已经20多个国家了，所以全球CDN对于全世界的用户非常重要。
+>
+> 最开始，我们接到某些国家的用户半夜反馈说，我们商店访问不了，下载App很慢，最后发现腾讯云溯源90%几率会挂，不挂的几率基本上没有，当时我们快急死了，跟腾讯云发工单，永远都是回复“稍等我们马上看”，2个小时问了我们一个细节，然后继续“稍等我们马上看”，尼玛，就这样折腾了一晚上，问题没解决，世界的尽头不是铁岭，而是腾讯云的两个小时。
+>
+> 我们实在等不及了，我们自己在海外买了腾讯云的VPS做了反代，顶了几天。你说气人不？腾讯云自己的VPS可以正常访问，腾讯云号称牛逼的全球CDN还不如自己的VPS。
+>
+> 就这样，我们一边被用户骂，一边做代码迁移，一边被腾讯云气哭了，等了2天，最后回复的结论是，“海外CDN有30%概率不溯源是正常的。”你知道吗？我第一次听到这里都气炸了，CDN没有效果，我用CDN干嘛？我不知道自己在全世界建自己的服务器吗？
+>
+> 就这样气炸的情况下，我们用阿里云和各种技巧顶了2天，决心替换腾讯云的时候，一个朋友说可以加腾讯云CDN负责人的微信。果然拉了一个群，我想，终于找到组织了，只要可以解决，就不换吧，换也要各种写代码折腾。
+>
+> 进了群，各种大佬一番介绍，像那么回事，大老板，二老板，三老板都在，工程师也在。我当时想，你们老板在群里督战，工程师该不敢甩锅了吧？然后就是一番解释，说清楚事情的来龙去脉，讲了为什么全球CDN对于懒猫微服用户下载应用是多么重要，咱有问题没关系，有问题能否和我们一起分析，快速解决？……那时候我要上飞机了，一堆商务礼仪的话先说了，把态度摆端正。
+>
+> 我下飞机的时候想，终于创业路上少了一个坑，一打开微信，你猜怎么着？在那么多老板在的群里，腾讯云的工程师说：“尊敬的用户您好，我们在微信群会实时响应的，您的问题，请提交工单”，“提交工单后请耐心等待”……你知道吗？那时候，我觉得不是世界的尽头，而是宇宙的尽头都是你们腾讯云牛逼的工单，你都微信群了，你还让我从微信群提交工单，是不是有病？你们知道线上云服务器炸了，有多着急吗？
+>
+> 我从机场出来，我就给我们CTO发消息说，腾讯云这个公司没救了，老板在群里都敢这样敷衍用户，多大代价，周末加班写迁移代码都要把腾讯云换掉！最后我们花了一个周末的时间，所有线上服务都从腾讯云迁移走了。
+>
+> 上面就是我被腾讯云气炸的过程，推友们，你们说我是不是傻逼？我是不是活该？
+>
+> 我们微服现在在全球20多个国家（马上快30个）用的金山云，虽然金山云产品细节差强人意，但是别人给我们建了VIP群，啥问题都可以马上沟通，哪些文件要部署CDN，哪个域名要配置缓存策略的，群里说一声，马上就搞好了。
+>
+> 创业重要的不是多大队伍，而是态度，遇到事情，马上向客户承认错误，马上改，下次避免，这才是对客户负责任的态度。
+>
+> > [!SOCIAL] 数码荔枝 `@DIGITALYCHEE`
+> >
+> > 今天一个软件开发者找我们下架软件，原因大致为：……
+> {avatar="avatar-digitalychee.webp" date="2025-04-28"}
+{avatar="img/social/manateelazycat.webp" platform="x"}
 
-![图片](13.webp)
+> [!SOCIAL] Andy Stewart `@manateelazycat`
+>
+> 省流回复：为啥不用CloudFlare?
+>
+> 我们懒猫微服需要全球搭建内网穿透服务，CloudFlare 的策略和我们不一样，不允许我们自定义搭建，导致没法用他们牛逼的服务
+{avatar="img/social/manateelazycat.webp" platform="x"}
 
-![图片](14.webp)
+> [!SOCIAL] plantegg `@plantegg`
+>
+> 腾讯云不至于这么渣吧，听下来不可思议，另外金山云还真有人用
+{avatar="img/social/plantegg.webp" platform="x"}
+
+> [!SOCIAL] Andy Stewart `@manateelazycat`
+>
+> 亲身经历，垃圾的要死
+>
+> 金山云海外还是可以的，主要态度好，响应快
+{avatar="img/social/manateelazycat.webp" platform="x"}
+
+> [!SOCIAL] Laisky `@LaiskyCai`
+>
+> 腾讯云海外解析有 20% 左右的失败率，它旗下的 dnspod 也是这样
+{avatar="avatar-laiskycai.webp" platform="x"}
+
+> [!SOCIAL] Mr Panda `@PandaTalk8`
+>
+> 腾讯云的特点就是出了问题找不到客服
+{avatar="avatar-pandatalk8.webp" platform="x"}
+
+> [!SOCIAL] Andy Stewart `@manateelazycat`
+>
+> 找得到，机器人客服，只会回答“2个小时以后”
+{avatar="img/social/manateelazycat.webp" platform="x"}
+
+> [!SOCIAL] IronFeet `@ironfeet`
+>
+> 想起了帮你们在新加坡 ping 懒猫域名的那个周末 🤣
+{avatar="avatar-ironfeet.webp" platform="x"}
+
+> [!SOCIAL] Andy Stewart `@manateelazycat`
+>
+> 感谢老板的包容
+{avatar="img/social/manateelazycat.webp" platform="x"}
+
+> [!SOCIAL] 阿崔cxr `@cuixr1314`
+>
+> 一直在用腾讯云 吓尿了
+{avatar="avatar-cuixr1314.webp" platform="x"}
+
+> [!SOCIAL] Andy Stewart `@manateelazycat`
+>
+> 大佬，帮宝适尿布好使，哈哈哈哈
+{avatar="img/social/manateelazycat.webp" platform="x"}
+
+> [!SOCIAL] Aoi `@Alizestl`
+>
+> 有一说一，金山云和腾讯云的校招面试我都面过，感觉也是金山云体验更好😆
+{avatar="avatar-alizestl.webp" platform="x"}
+
+> [!SOCIAL] Andy Stewart `@manateelazycat`
+>
+> 是的
+{avatar="img/social/manateelazycat.webp" platform="x"}
+
+> [!SOCIAL] jason lee `@luobusili`
+>
+> 腾讯云真的垃圾，以前官网服挂了一晚上第二天好了，问客服说，我们这边没问题啊，发生了好几次，服了
+{avatar="avatar-luobusili.webp" platform="x"}
+
+> [!SOCIAL] Andy Stewart `@manateelazycat`
+>
+> 离谱
+{avatar="img/social/manateelazycat.webp" platform="x"}
+
+> [!SOCIAL] frankie `@frankie17867563`
+>
+> 无他，你们这个消费在腾讯云应该还不到VIP客户级别，这要是大客户级别，老马早亲自给你干了
+{avatar="avatar-frankie17867563.webp" platform="x"}
+
+> [!SOCIAL] Andy Stewart `@manateelazycat`
+>
+> 是的，我们是nobody
+{avatar="img/social/manateelazycat.webp" platform="x"}
 
 总的来说呢，使用 Cloudflare 给我的感觉就是如沐春风：我对 CF 闪电般的速度，还有分文不取的流量计费策略高度满意 —— 尽管不用钱也能用的挺好，但我很乐意买点什么，Shut up and take my money。而用腾讯云给我的感觉就是：这做的是什么 X 玩意。
 

@@ -30,7 +30,10 @@ images: [featured.webp]
 - Anthropic 的 IPO 估值预期，被华尔街机构从 2 万亿压到 1.5–1.6 万亿。
 - 马斯克直接发推摊牌，说 Grok Bot 的服务成本“相对收入高得不可持续”，随后收紧了额度。
 
-![马斯克表示 Grok Bot 的服务成本高得不可持续](grok.webp)
+> [!SOCIAL] Elon Musk `@elonmusk`
+>
+> 提供 Grok Bot 的成本相对于收入来说高得不可持续。
+{avatar="img/social/elonmusk.webp" date="2026-11-02" url="https://x.com/elonmusk/status/2116992258520064397" platform="x"}
 
 老冯的结论很明确：**阳光普照、大锅饭式的补贴确实结束了。但补贴本身没有消失，它正在从“街头送鸡蛋”变成“Costco 会员制”。**
 
@@ -46,7 +49,17 @@ images: [featured.webp]
 
 ![ChatGPT 提示此设备的付费账户数量已达上限](device-limit.webp)
 
-![用户反馈 ChatGPT 账号被停用](account-ban.webp)
+> [!SOCIAL] 蓝点网 (科技资讯) `@landiantech`
+>
+> 今天很多 chatgpt 账号被封了，这是咋回事
+>
+> > [!SOCIAL] Vincent Yang `@missuo`
+> >
+> > 不是哥们，ChatGPT 也封号吗？11/02 刚续费。已经在 Amex submit dispute。
+> >
+> > ![ChatGPT 提示账号已被停用（account_deactivated）的登录报错页面](account-ban-media.webp)
+> {avatar="avatar-missuo.webp"}
+{avatar="img/social/landiantech.webp" platform="x"}
 
 两家动作拼在一起，在合规合法的前提下，**以后一个人到底还能有几个号？**
 

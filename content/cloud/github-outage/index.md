@@ -16,7 +16,12 @@ tags: [云计算, 故障复盘]
 
 根据 GitHub Status 的消息，这次故障与**数据库基础设施上的变更**有关。
 
-![图片](03.webp)
+> [!SOCIAL] GitHub Status `@githubstatus`
+>
+> 我们的多个公共 GitHub 服务出现中断。我们怀疑此次影响与数据库基础设施相关变更有关，目前正在回滚该变更。
+>
+> [githubstatus.com — Incident with Pull Requests, Pages and Actions](https://www.githubstatus.com/)
+{avatar="avatar-githubstatus.webp" platform="x"}
 
 无状态的服务有许多恢复手段，即时挂了也比较容易恢复。而有状态的数据库一旦出问题，就是大问题。我们尚不知道是哪种数据库故障，与哪种数据库基础设施变更导致的故障。
 

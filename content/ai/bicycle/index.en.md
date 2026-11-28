@@ -49,11 +49,24 @@ I couldn't resist turning on Ultrathink, wiring it into a Workflow, and giving i
 
 As one commenter put it, this is like showering in premium bottled water. The shower felt great; the bill didn't. Call it tuition.
 
-![Post comparing Fable Ultracode to showering with premium bottled water](ice-water-shower.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> Last round I showered with Evergrande Spring bottled water on Fable—one task wiped out my entire 5-hour quota. With this reset, I can only bring myself to use it for daily chat and planning.
+>
+> > [!SOCIAL] Yifeng 'Evan' Wang `@ewind_dev`
+> >
+> > Quote of the day: running Fable in ultracode mode is like showering in Evergrande Spring bottled water.
+> {avatar="avatar-ewind-dev.webp" date="2026-07-08"}
+{avatar="img/vonng.jpg" date="2026-07-08" platform="x"}
 
 Over the next few days, even the Max quota couldn't take much abuse. A few batches of work drained it, leaving me without Fable for several days and itching to get it back.
 
-![Claude Fable usage after a long task](fable-usage.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> Fable burns through quota way too fast, though the quality really is ridiculously good. Saving the last sliver of quota for everyday conversation.
+>
+> ![Claude Code usage panel showing $74.95 session cost and 94% of weekly Fable quota consumed](fable-usage-media.webp)
+{avatar="img/vonng.jpg" date="2026-07-02" platform="x"}
 
 My conclusion: spending Fable's precious quota on grunt work is a terrible waste. The right uses are everyday conversation and project planning. Treat it as a mentor, not an intern.
 

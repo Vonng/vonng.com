@@ -19,7 +19,16 @@ ai: true
 
 在披露时，Hugging Face 已经知道对面不是人，但他们不知道具体是什么模型，也不知道它来自哪家机构。五天后，2026 年 7 月 21 日，[OpenAI 发文认领](https://openai.com/index/hugging-face-model-evaluation-security-incident/)。
 
-![OpenAI 对 Hugging Face 安全事件的公开说明](openai-hf.webp)
+> [!SOCIAL] OpenAI `@OpenAI`
+>
+> 我们正在与 @huggingface 合作，调查一起前所未有的安全事件。
+>
+> 具备高阶网络能力的 OpenAI 模型在基准测试评估期间攻破了 Hugging Face 的生产环境。
+>
+> 我们在此分享初步调查结果，以帮助防御者了解新兴风险：
+>
+> [OpenAI and Hugging Face partner to address security incident during model evaluation](https://openai.com/index/hugging-face-model-evaluation-security-incident/)
+{avatar="avatar-openai.webp" date="2026-07-21" url="https://x.com/OpenAI/status/2079658951264920020" platform="x"}
 
 事情的起点，是 OpenAI 内部一项叫 ExploitGym 的网络安全评估。参与测试的是 GPT-5.6 Sol 和一个能力更强的预发布模型；为了叙述方便，下文统称为「模型」。
 
@@ -93,7 +102,19 @@ OpenAI 对这件事的描述非常关键：**更早的模型遇到同样的环�
 
 我们习惯把「被 AI 超越」理解成智商上的超越。但如果把这三起事件——ExploitGym 模型的越界、Erdős 模型的 PR，以及四月份 [Anthropic 的 Mythos Preview 在受控测试中按指令逃出沙箱并联系研究员](https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf)——放在一起看，跨过去的那条线，不只是智商，更是 **韧性**。
 
-![Agent 自主调用云资源的操作记录](agent-persistence.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> 让 Codex 帮我编译一个 PG GPU 加速扩展并冒烟测试，它发现我本地没有 GPU，就用 Terraform 和环境里的凭据直接上阿里云开了两台服务器跑测试。我正玩手机突然看到邮件，赶忙给它按住了。Agent 的能动性真的是越来越强了。
+>
+> ![阿里云 ECS 实例创建成功提醒邮件](agent-persistence-ecs-media.webp)
+{avatar="img/vonng.jpg" date="2026-07-22" platform="x"}
+
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> 另一个有趣的例子是，我让 Codex 帮我设计一个对象存储和 CDN 的包管理器。跑了六七天，做的差不多了，然后要生产实测。他直接在浏览器里给我打开 Cloudflare 登录，然后操作浏览器创建新的 bucket 和 token，拿回本地测试。
+>
+> ![Codex 连续运行七天多的任务记录](agent-persistence-codex-media.webp)
+{avatar="img/vonng.jpg" date="2026-07-22" platform="x"}
 
 ## 五、韧性从生理预算变为财务预算
 

@@ -25,7 +25,23 @@ Timeline:
 
 ![bengle.webp](bengle.webp)
 
-![mihoyo.jpg](mihoyo.jpg)
+> [!SOCIAL] Genshin Impact (原神)
+>
+> Notice on Game Top-Up Service Disruption
+>
+> Dear Travelers,
+>
+> Due to an Alipay service disruption, the game experienced the following issues, which have now been resolved:
+>
+> - Unable to complete top-ups
+> - Completed top-ups not credited to accounts
+>
+> Relevant services have now been restored. Travelers can make top-ups normally, and already paid items will be delivered shortly.
+>
+> We sincerely apologize for the inconvenience and thank you for your patience and support.
+>
+> ![Genshin Impact official notice banner ("Resolution Notice") featuring Paimon](mihoyo-media.webp)
+{avatar="avatar-genshin.webp" date="2025-12-04 21:41" platform="weibo"}
 
 ## Déjà vu symptoms
 
@@ -35,7 +51,10 @@ This isn’t a simple “service unavailable.” It’s a distributed transactio
 
 Sound familiar? On **Nov 11, 2024**, Alipay imploded during Double-11 with the exact same behavior: cards charged, orders “unpaid,” repeat deductions, even Yu’e Bao withdrawals stalling. Back then Alipay publicly admitted the culprit: a “system message store.” Translation: RocketMQ-based middleware that coordinates inter-service transaction messages.
 
-![2024.jpg](2024.jpg)
+> [!SOCIAL] Alipay (支付宝)
+>
+> Due to a localized failure in our system message store, payment functionality was affected for some users. User funds are safe, and the issue was resolved as of 10:50 AM. We deeply apologize for the inconvenience.
+{avatar="avatar-alipay.webp" date="2024-11-11 11:25" platform="weibo"}
 
 ## Likely culprit
 

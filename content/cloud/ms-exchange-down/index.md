@@ -57,7 +57,15 @@ Exchange 断连 → M365 与外部 AI 级联瘫痪
 
 说来也是真够寸的。老冯自己的企业域名邮箱（`pgsty.com`）前阵子刚从 iCloud 迁移到微软企业邮箱，满打满算才用了一个月，结果今早一睁眼打开客户端，一条新邮件也没有，结结实实挨了微软这一记闷棍。毕竟邮件是少数几个老冯不建议自建的服务，因为邮箱信誉不足会被拒收，所以确实没有啥好办法。
 
-![老冯与网友在 X 上讨论微软邮箱宕机](outage-reactions.webp)
+> [!SOCIAL] Vonng `@RonVonng`
+>
+> 微软邮箱炸了，老冯才用这玩意一月就中招了。Damn...
+>
+> > [!SOCIAL] geniusvczh `@geniusvczh`
+> >
+> > 我说今天怎么起床一看垃圾邮箱里面没东西🤡🤡🤡这就是大vibe coding时代，office365今年总宕机时间逼近120hr，可以改名office 360了🤡🤡🤡
+> {avatar="avatar-geniusvczh.webp"}
+{avatar="img/vonng.jpg" platform="x"}
 
 ![邮件客户端连接 Exchange 服务器超时](exchange-timeout.webp)
 

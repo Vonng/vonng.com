@@ -14,21 +14,41 @@ On paper, it was a strong release: its Artificial Analysis (AA) Intelligence Ind
 
 It started when creator [@elshayib_](https://x.com/elshayib_) blew the whistle. In [a series of posts](https://x.com/elshayib_/status/2113710752741892476), he shared screenshots of what he said was a promotional brief Kimi sent to creators (this is a one-sided account that remains unverified, and Kimi has not responded). According to the screenshots, creators had to submit drafts for approval before publishing, and [the brief supplied ready-made talking points](https://x.com/elshayib_/status/2113734602032312731) such as "Kimi is an open-source Opus 5.5 at one-fifth the price" and "China just gave everyone Opus 5.5 for free."
 
-[![Elshayib's post showing a promotional brief requiring draft approval and instructing creators to omit the paid partnership label](brief-en.webp)](https://x.com/elshayib_/status/2113710752741892476)
+> [!SOCIAL] Elshayib `@elshayib_`
+>
+> That's how Kimi AI are promoting their new model Kimi K3.1 pro and I know all the influencers working with them and none of them are honest,I have posted about it myself but I didn't join this and never used their templates that they provide.
+>
+> PROPAGANDA, I have more to share…
+>
+> ![Leaked promotional brief requiring draft approval before posting and instructing creators not to add the paid partnership label](brief-media.webp)
+{avatar="avatar-elshayib.webp" date="2026-10-24" url="https://x.com/elshayib_/status/2113710752741892476" platform="x"}
 
-Source: [Original post by @elshayib_](https://x.com/elshayib_/status/2113710752741892476).
+> [!SOCIAL] Elshayib `@elshayib_`
+>
+> Post 2 exposing Kimi AI
+>
+> That's the creators campaign docs I got from Kimi AI after their Kimi K3.1 pro release and thats the narrative they want creators to push, of course I'm out and I'm never gonna say something I don't test myself and give my honest opinion about and I don't…
+>
+> ![Leaked campaign document listing suggested narratives framing Kimi K3.1 as a 5x cheaper open-source Opus 5.5](narratives-media.webp)
+{avatar="avatar-elshayib.webp" date="2026-10-24" url="https://x.com/elshayib_/status/2113734602032312731" platform="x"}
 
-[![Elshayib's post showing suggested talking points framing Kimi as a cheaper open-source alternative to Opus 5.5](narratives-en.webp)](https://x.com/elshayib_/status/2113734602032312731)
+> [!SOCIAL] Elshayib `@elshayib_`
+>
+> Post 3 Exposing Kimi AI
+>
+> Here after I refused to comply and started criticizing a creator who's spreading their propaganda they texted me again asking to delete a comment I had i couldn't even believe it like who the F are you to ask me to delete a comment I don't work for you…
+>
+> ![Direct message screenshot asking Elshayib to delete a reply calling out copy-pasted campaign copy because it could ruin the launch](takedown-media.webp)
+{avatar="avatar-elshayib.webp" date="2026-10-24" url="https://x.com/elshayib_/status/2113751173476049138" platform="x"}
 
-Source: [Original post by @elshayib_](https://x.com/elshayib_/status/2113734602032312731).
-
-[![Elshayib's post showing a direct message asking him to delete a comment criticizing the promotional brief](takedown-en.webp)](https://x.com/elshayib_/status/2113751173476049138)
-
-Source: [Original post by @elshayib_](https://x.com/elshayib_/status/2113751173476049138).
-
-[![Elshayib's post showing instructions to compare Kimi with Opus 5.5 and Astra on performance and cost](comparison-en.webp)](https://x.com/elshayib_/status/2113903850641842589)
-
-Source: [Original post by @elshayib_](https://x.com/elshayib_/status/2113903850641842589).
+> [!SOCIAL] Elshayib `@elshayib_`
+>
+> Post 4 Exposing Kimi AI
+>
+> This is what they require each one participating in their creators campaign to do, basically trash talk Astra and Opus even tho it's not true and as you can see you pick from already existing demos and share them and I doubt any of it is actually made by…
+>
+> ![Leaked brief section instructing creators to benchmark Kimi against Opus 5.5 and Astra and emphasizing mandatory cost comparisons](comparison-media.webp)
+{avatar="avatar-elshayib.webp" date="2026-10-24" url="https://x.com/elshayib_/status/2113903850641842589" platform="x"}
 
 The most damning instruction was [to skip the Paid Partnership label](https://x.com/elshayib_/status/2113710752741892476), omit links to the official website, and avoid tagging the official account. That way, a paid promotional post would look indistinguishable from an organic recommendation by an ordinary user.
 
