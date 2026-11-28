@@ -127,6 +127,14 @@ params:
   time_format_blog: 2006-01-02
   time_format_default: 2006-01-02
   video_embeds: [bilibili, youtube]
+  map:
+    enable: true
+    tiles: https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png
+    subdomains: abc
+    max_zoom: 17
+    attribution: "© OpenTopoMap (CC-BY-SA), © OpenStreetMap contributors"
+    attribution_url: https://www.openstreetmap.org/copyright
+    loading: lazy
 
   # -- Local search ----------------------------------------------------------
   offline_search: true
