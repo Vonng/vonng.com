@@ -35,7 +35,125 @@ This route has both light-pack and heavy-pack groups. Light trekking allows tent
 
 Looking back after completion, difficulty was actually manageable, and the journey was relatively fortunate overall, especially the weather along the way being just right: caught a snowy night at Heavenly Lake, seeing two different landscapes; weather was decent when crossing snow mountain passes; strong winds and heavy snow concentrated in the last three days. One day earlier or later and the entire trip experience would've been greatly diminished. Alright, enough chatter, here's the journal~
 
-## D0 Preparation
+## Wusun Ancient Trail Photo Map {#photo-map}
+
+This interactive topographic map plots 12 waypoints and photos from the seven-day Tianshan crossing in chronological order, using the original WGS 84 EXIF GPS coordinates from the trip's photo library. Click any numbered marker or list entry to preview the photo and jump straight to that day's account, or switch to "North-to-South Crossing" to see the full span from Yining and Tekes Bagua City across the range into southern Xinjiang.
+
+```map {tab="Trek Route & Photos" group="wusun" value="trek" caption="Seven-day Wusun Ancient Trail trek and photo log: Qiongkushitai → Shamu's Home → Baozhadun Pass → Koksu Zipline → Akbulak Forest Station → Heavenly Lake → Akbulak Pass → Bozokelik Valley → Heiying Pass" route=true height="460px"}
+- name: "D1 Start · Qiongkushitai Village (2,040 m)"
+  lat: 42.9044
+  lng: 82.2024
+  text: Alpine pasture village in Tekes County; road paving delayed our arrival past 5 PM before starting the 130+ km Tianshan traverse.
+  image: /trip/20201001-wusun/7.jpg
+  link: "#d1"
+- name: "D1 Camp · Shamu's Home (2,449 m)"
+  lat: 42.8626
+  lng: 82.2501
+  text: Warm-up hike of over 10 km to our Kazakh guide's homestead for Mid-Autumn mutton skewers and the last solar charging outlet on the trail.
+  image: /trip/20201001-wusun/8.jpg
+  link: "#d1"
+- name: "D2 Ascent · Baozhadun Valley (2,956 m)"
+  lat: 42.8030
+  lng: 82.2739
+  text: Start of a brutal 28 km day climbing boulder-strewn valleys into biting wind after falling behind the lead group.
+  image: /trip/20201001-wusun/10.jpg
+  link: "#d2"
+- name: "D2 Pass · Baozhadun Pass (3,720 m)"
+  lat: 42.7535
+  lng: 82.2775
+  text: First high mountain pass on the route, opening onto sweeping snow-covered Tianshan ridges before a long descent.
+  image: /trip/20201001-wusun/11.jpg
+  link: "#d2"
+- name: "D2 Camp · Hillside Wooden Cabin (2,434 m)"
+  lat: 42.7127
+  lng: 82.3457
+  text: Reached the sloped pasture cabin at dusk for a 50-yuan communal bunk—warm enough, though the fire burned a hole in my camp pants.
+  image: /trip/20201001-wusun/13.jpg
+  link: "#d2"
+- name: "D3 Crossing · Koksu River Zipline (1,981 m)"
+  lat: 42.6685
+  lng: 82.3265
+  text: Followed the turquoise Koksu River to the cable basket crossing, fueling up on Wusu beer and instant noodles at the trailside shack.
+  image: /trip/20201001-wusun/18.jpg
+  link: "#d3"
+- name: "D3 Camp · Akbulak Forest Station (2,366 m)"
+  lat: 42.6534
+  lng: 82.3853
+  text: Eight horseback river fords through conifer forest led to the final yurt camp on the trail, filled with late-night songs and games.
+  image: /trip/20201001-wusun/20.jpg
+  link: "#d3"
+- name: "D4 Camp · Heavenly Lake / Ak Kul (3,050 m)"
+  lat: 42.5937
+  lng: 82.4000
+  text: Crown jewel of the Wusun trail; sang Les Misérables duets in the tent before an overnight snowfall turned the shoreline into golden-sunrise splendor.
+  image: /trip/20201001-wusun/35.jpg
+  link: "#d4"
+- name: "D5 High Point · Akbulak Pass (3,950 m)"
+  lat: 42.5461
+  lng: 82.3967
+  text: Past Tiger's Mouth and the rock tunnel, an 800 m snowy climb topped the highest pass, looking back at Heavenly Lake and the ice lake forming an exclamation mark.
+  image: /trip/20201001-wusun/43.jpg
+  link: "#d5"
+- name: "D5 Snow Camp · Bozokelik Valley (2,771 m)"
+  lat: 42.5041
+  lng: 82.4566
+  text: Descended into snowfall and stone-hopped icy streams to pitch camp on the valley floor, passing Trekking China's storm-hit camp the next noon.
+  image: /trip/20201001-wusun/47.jpg
+  link: "#d5"
+- name: "D6 Camp · Bozokelik Forest Valley (2,134 m)"
+  lat: 42.3765
+  lng: 82.4681
+  text: Dropped 25 km back into evergreens where force 6–7 gales flattened the mess tent; cooked ramen and tuna safely inside our own tent.
+  image: /trip/20201001-wusun/50.jpg
+  link: "#d6"
+- name: "D7 Finish · Heiying Pass (1,921 m)"
+  lat: 42.3229
+  lng: 82.5050
+  text: Under wind-scoured blue skies, more than a dozen final river crossings brought us through the canyon mouth and Liu Pingguo Stele into southern Xinjiang.
+  image: /trip/20201001-wusun/58.jpg
+  link: "#d7"
+```
+
+```map {tab="North-to-South Crossing" value="xinjiang" caption="Full Xinjiang crossing from Ili to Aksu: Yining → Tekes Bagua City → Qiongkushitai → Heavenly Lake & Tiger's Mouth → Heiying Pass → Southern Foothills" route=true height="460px"}
+- name: "D0 Assembly · Yining (637 m)"
+  lat: 43.9271
+  lng: 81.2734
+  text: Flew from Beijing via Korla and Aksu into Yining on September 30, gazing down at the Tianshan spine before assembling with the team.
+  image: /trip/20201001-wusun/5.jpg
+  link: "#d0"
+- name: "D1 Aerial · Tekes Bagua City"
+  lat: 43.2145
+  lng: 81.8296
+  text: Launched the drone over Tekes's radial Bagua street grid and stocked up on naan, produce, and cookware before heading into the mountains.
+  image: /trip/20201001-wusun/6.jpg
+  link: "#d1"
+- name: "D1 Trailhead · Qiongkushitai Village (2,040 m)"
+  lat: 42.9044
+  lng: 82.2024
+  text: Northern gateway to the Wusun Ancient Trail past the Kalajun grasslands, marking the start of the southward mountain crossing.
+  image: /trip/20201001-wusun/7.jpg
+  link: "#d1"
+- name: "D4–D5 Core · Heavenly Lake & Tiger's Mouth (3,059 m)"
+  lat: 42.5782
+  lng: 82.3851
+  text: Ak Kul Lake and its famed Tiger's Mouth cliff overlook—transformed overnight by snow, and the final resting place of my crashed drone.
+  image: featured.jpg
+  link: "#d5"
+- name: "D7 Exit · Heiying Pass (1,921 m)"
+  lat: 42.3229
+  lng: 82.5050
+  text: Southern canyon portal in Baicheng County after seven days and nearly 150 km on foot, guarded by the Eastern Han Liu Pingguo Stele.
+  image: /trip/20201001-wusun/59.jpg
+  link: "#d7"
+- name: "D7 Southern Xinjiang · Baicheng Foothills (1,370 m)"
+  lat: 41.9576
+  lng: 82.5565
+  text: Boarded the pickup convoy out of the gorge toward southern Xinjiang's oases and the northern rim of the Taklamakan Desert.
+  image: /trip/20201001-wusun/53.jpg
+  link: "#d7"
+```
+
+## D0 Preparation {#d0}
 
 To accomplish great things, one must first prepare proper tools. For trekking, physical fitness and endurance are crucial, but equipment is also indispensable. This route has many rivers to cross, so a waterproof dry bag is essential - if clothes and sleeping bag get soaked, it's game over. Some medicines, trail food energy bars, daily supplies and handheld gimbal were carried personally. Thanks to UL equipment, these two big packs together were only 15-16 kilograms - not even more than the fat I carry around. I SF Express shipped the big red pack directly to the starting point hotel, no need to lug it on the way. Note that drones cannot be mailed to Xinjiang - must be hand-carried.
 
@@ -49,7 +167,7 @@ October 1st formal assembly and departure. I took the morning flight on the 30th
 
 > Who commands this vast earth in its ups and downs?
 
-## D1 Departure
+## D1 Departure {#d1}
 
 October 1st, clear. Today is National Day, Mid-Autumn Festival, and the first day of trekking. The plan was departing from Yining, going to Tekes County to purchase pots, pans, rice, oil, salt for the journey, then sitting several hours by car to the trekking starting point Qiongkushitai Village, walking 10km to stay overnight at Kazakh guide Shalang's house.
 
@@ -83,7 +201,7 @@ Speaking of which, I discovered the guy sleeping next to me (Hai-ge) brought alm
 
 > Gear enthusiast and mechanic (self-proclaimed) group photo
 
-## D2 Mountain Crossing
+## D2 Mountain Crossing {#d2}
 
 October 2nd, clear. Morning packing and preparation, beginning the second day's journey. Today was rather brutal - if yesterday's 10km walk was just warm-up, today difficulty jumped directly to walking 28km, crossing 3720m elevation pass. Getting red-faced and sweaty. I'd walked much more brutal routes before, but past glory doesn't count - times have changed, and this day's route still brutalized me.
 
@@ -117,7 +235,7 @@ Today crossed the first pass. When crossing the second pass on day five, though 
 
 Evening ate hand-grabbed rice; Dahai's cooking skills were quite excellent - though possibly because hunger is the best seasoning... That night by the fire burned a big hole in the camp cotton pants, quite depressing...
 
-## D3 River Crossing
+## D3 River Crossing {#d3}
 
 October 3rd, clear. Today departing the small cabin, following the Koksu River, taking a zip line across the big river then crossing eight smaller rivers. Today's unexpected surprise: reportedly there'd be a small store along the route (by the zip line)! We all eagerly anticipated drinking a bottle of happy cola in the mountains.
 
@@ -169,7 +287,7 @@ Today's camp had a forest station yurt, probably the last accommodation point on
 
 Evening passed happily with taking turns singing and truth-or-dare games. Sanitary pads became our hard currency gambling stakes as scarce strategic resources for absorbing foot sweat and preventing shoe moisture, while guessing Little Fairy's weight became our joyful source.
 
-## D4 Heavenly Lake
+## D4 Heavenly Lake {#d4}
 
 October 4th frost/snow, clear. Today walking 8km, crossing one pass to Heavenly Lake. Could reach camp by afternoon - relatively easy.
 
@@ -257,7 +375,7 @@ At such times only cameras work; fortunately teammate Dahai left behind a night 
 
 Tomorrow's journey even more anticipated.
 
-## D5 Snow Mountain Valley
+## D5 Snow Mountain Valley {#d5}
 
 October 5th heavy snow. Today was the most scenic day, also the most brutal. We'd circle Heavenly Lake to the opposite shore, passing the famous Tiger's Mouth. Then climb 800m to cross 3950m Akbulak Pass, descending over 1000m into Bozokelik River valley.
 
@@ -363,7 +481,7 @@ Hai-ge and I continued sharing his Hubba double tent, while my single tent went 
 
 Around midnight, Trekking China's horse teams passed our camp - at least they wouldn't freeze to death in the mountains. But thinking of a group of people waiting hungry and cold in wind and snow for 6-7 hours, squeezing into remaining tents shivering until 3-4 AM was indeed quite miserable...
 
-## D6 Wind and Snow
+## D6 Wind and Snow {#d6}
 
 October 6th snow. Today still over 40km from exit, continuing 25km downstream along valley.
 
@@ -405,7 +523,7 @@ Strong winds weren't entirely useless - though no campfire for drying shoes, at 
 
 Got up at night, saw the Milky Way, brilliant stars - but such beautiful scenery obviously exceeded phone capabilities. All the night scenes reminded me to hurry and replace my iPhone.
 
-## D7 Exodus
+## D7 Exodus {#d7}
 
 October 7th strong winds. Today we'd exit the mountains following the valley, cross rivers over ten times, exit Heiying Pass.
 

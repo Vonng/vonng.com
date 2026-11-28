@@ -10,7 +10,50 @@ Taking advantage of attending the 2020 PostgreSQL China Conference, I toured Gua
 
 Among the four first-tier cities, only Guangzhou remained unvisited. This time, leveraging the PG conference opportunity, I booked a flight one day later to remedy this regret. Though making it literary would be nice, it's too time-consuming, so I'll just keep a journal.
 
-## Prelude: PG Conference
+## Guangzhou Photo Map {#photo-map}
+
+This interactive map plots the 6 stops and photos from my Guangzhou trip in chronological order (combining original Mac Photos EXIF GPS with OpenStreetMap WGS 84 landmark coordinates). Click any numbered marker or list entry to preview the photo and jump straight to that section.
+
+```map {caption="Guangzhou route and photos: Hilton Guangzhou Baiyun (PGConf China) → Shamian Island → Pearl River Night Cruise → Guangdong Museum & Huacheng Square → Canton Tower Summit" route=true height="460px"}
+- name: "Jan 14–16 · Hilton Guangzhou Baiyun (PGConf China)"
+  lat: 23.1785
+  lng: 113.2633
+  text: Venue for the 2020 PostgreSQL China Conference; got drafted into check-in and track-chair duty before presenting my open-source PostgreSQL monitoring system, Pigsty.
+  image: pger.jpg
+  link: "#pg-conf"
+- name: "Jan 16 Evening · Shamian Island & Lourdes Chapel"
+  lat: 23.1099
+  lng: 113.2431
+  text: Former British-French concession of tree-lined European architecture; strolled past Our Lady of Lourdes Chapel, dined at Orient Express, stayed at Shamian Hotel, and returned next morning for dim sum, the Canton Custom House, and the Thirteen Hongs Museum.
+  image: church.jpeg
+  link: "#shamian"
+- name: "Jan 16 Night · Pearl River & Jiefang Bridge"
+  lat: 23.1130
+  lng: 113.2560
+  text: Boarded the 7:30 PM Pearl River night cruise heading east past Yanjiang West Road and Jiefang Bridge, with both riverbanks lit up in gold.
+  image: river.jpeg
+  link: "#shamian"
+- name: "Jan 16 Night · Canton Tower from the River"
+  lat: 23.1115
+  lng: 113.3295
+  text: Reached the eastern turnaround near Liede Bridge for waterfront views of the neon-lit Canton Tower before cruising back to Shamian for the night.
+  image: guangzhou-tower.jpeg
+  link: "#shamian"
+- name: "Jan 17 Morning · Guangdong Museum & Huacheng Square"
+  lat: 23.1174
+  lng: 113.3214
+  text: Headed east to Zhujiang New Town after the Thirteen Hongs Museum; saw the woodcarving and silk exhibitions, picked up 500 g of polished minerals at the museum shop, and stepped out onto Huacheng Square.
+  image: guangdong-museum.jpeg
+  link: "#museum"
+- name: "Jan 17 Afternoon · Canton Tower Observation Deck"
+  lat: 23.1092
+  lng: 113.3191
+  text: Crossed the river to ascend Canton Tower (~496 m GPS altitude) for sweeping views over Huacheng Square and the Guangzhou skyline before heading out at 3 PM for the flight home.
+  image: overlook.jpeg
+  link: "#museum"
+```
+
+## Prelude: PG Conference {#pg-conf}
 
 Arrived in Guangzhou on January 14th, staying at the conference venue hotel Wanfu Hilton. During the pandemic, inspections along the way were quite strict, forming sharp contrast with Beijing's sheep-herding style management. During check-in, they required scanning health codes first, then communication big data travel cards, plus filling out a paper registration form with personal information. Next came scanning a "Sanyuanli Police Station" mini-program to declare purpose of coming to Guangzhou, itinerary, household registration and other miscellaneous related information. Finally...
 
@@ -28,7 +71,7 @@ I shared a presentation called "Pigsty," mainly introducing the world's stronges
 
 Anyway, after presenting, the PG conference was winding down. Already 6 PM on the 16th, I'd booked a 6 AM flight on the 17th, leaving me exactly one whole hour. So where to have some fun?
 
-## Shamian: European Style
+## Shamian: European Style {#shamian}
 
 Chatting with taxi drivers, I already had a rough idea of Guangzhou's worth-visiting places. So I went directly to **Shamian**. Shamian is a fascinating place - the Opium War cannons were fired here too. Formerly British-French concession territory, it's a living European architecture museum.
 
@@ -103,7 +146,7 @@ Most atmosphere-destroying on Shamian Island were propaganda slogans everywhere 
 ![church-2.jpeg](church-2.jpeg)
 > Yesterday's church - looks very different in daylight
 
-## Museum Tour
+## Museum Tour {#museum}
 
 Morning's first stop was Thirteen Hongs Museum - the former monopoly trade institution with many Qing dynasty artifacts. Besides pots and pans, many Western treasures and interesting imported items - among museums I've visited, quite interesting.
 

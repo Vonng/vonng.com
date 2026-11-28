@@ -10,7 +10,123 @@ The disaster-filled year 2020 required proper blessings. Completed the Meili inn
 
 Preface: As the saying goes: "If not going to paradise, go to Yubeng." Going to Yubeng usually means heading for the Meili Snow Mountain circuit. My good brother Hai-ge and I planned to take advantage of the Christmas-New Year holiday to go to Yubeng for mountain pilgrimage blessings, also to train our physical fitness. It was a very memorable journey.
 
-## Itinerary
+## Yubeng Photo Map {#photo-map}
+
+This interactive topographic map plots 12 chronological waypoints and field photos across the Yubeng inner circuit and Feilai Temple (built from raw WGS 84 EXIF GPS coordinates in Apple Photos). Click any marker or list entry to preview the shot and jump to that day's log, or switch to the NW Yunnan Road Trip tab for the full drive from Lijiang through Shangri-La to Meili.
+
+```map {tab="Yubeng Circuit Trek" group="yubeng" value="trek" caption="Three-day Yubeng inner circuit and New Year's Day sunrise: Lancang Gorge → Xidang Hot Springs → Nanzong Pass → Lower Yubeng → Sacred Waterfall → Sacred Lake → Ice Lake → Ninong Canyon → Feilai Temple" route=true height="460px"}
+- name: "D2 Dawn · Meili Sunrise on the Road (2,345 m)"
+  lat: 28.3935
+  lng: 98.8898
+  text: Left Deqin at 7 AM for Xidang; caught golden alpenglow lighting up Meili's peaks from the Lancang gorge road at 8 AM.
+  image: d2-1.jpg
+  link: "#d2"
+- name: "D2 Trailhead · Xidang Hot Springs (2,658 m)"
+  lat: 28.4258
+  lng: 98.8120
+  text: Main Yubeng trailhead and free parking lot; bought tickets and started the three-hour dirt-road hike in on foot.
+  image: sphere-1-begin.jpg
+  link: "#d2"
+- name: "D2 Pass · Nanzong Pass (3,762 m)"
+  lat: 28.3938
+  lng: 98.8177
+  text: Climbed over 1,100 m from Xidang to cross the entry pass, then dropped past the ridge overlook framing Upper and Lower Yubeng below the peaks.
+  image: sphere-2-yubeng.jpg
+  link: "#d2"
+- name: "D2 Base · Lower Yubeng Village (3,060 m)"
+  lat: 28.3910
+  lng: 98.7923
+  text: Two-night Tibetan village base beneath the peaks, close to Sacred Waterfall, Sacred Lake, and the Ninong exit, with glassy dawn temple reflections.
+  image: d3-2.jpg
+  link: "#d2"
+- name: "D2 Afternoon · Sacred Waterfall (3,634 m)"
+  lat: 28.3676
+  lng: 98.7566
+  text: Paired the Xidang entry with the Sacred Waterfall trail the same afternoon, winding past dense prayer flags to walk beneath the cliffside cascade.
+  image: d2-3.jpg
+  link: "#d2"
+- name: "D3 Ascent · Sacred Lake Ridge (4,174 m)"
+  lat: 28.3716
+  lng: 98.7939
+  text: Broke above the steep snowy forest onto the 4,174 m alpine ridge, opening wide views straight across to Kawagebo and its hanging glaciers.
+  image: d3-46.jpg
+  link: "#d3"
+- name: "D3 High Point · Sacred Lake (4,431 m)"
+  lat: 28.3606
+  lng: 98.7874
+  text: Demanding Tibetan pilgrimage trail climbing from 3,000 m to a GPS-measured 4,431 m; in winter the alpine basin sits frozen beneath mani cairns and crisp sun.
+  image: d3-49.jpg
+  link: "#d3"
+- name: "D4 En Route · Xiaonong Base Camp Area (3,530 m)"
+  lat: 28.3981
+  lng: 98.7681
+  text: Followed the Ice Lake trail out of Upper Yubeng along clear glacial streams through mossy spruce forest and the Xiaonong meadow.
+  image: d4-3.jpg
+  link: "#d4"
+- name: "D4 Morning · Ice Lake (3,897 m)"
+  lat: 28.4079
+  lng: 98.7472
+  text: Moraine-rimmed glacial lake frozen solid right beneath Kawagebo's hanging icefalls; turned around before noon to make the canyon exit.
+  image: d4-7.jpg
+  link: "#d4"
+- name: "D4 Exit · Ninong Canyon (2,374 m)"
+  lat: 28.3581
+  lng: 98.8454
+  text: Afternoon 14 km downhill trek along cliff-carved ledges dropping straight toward the turquoise Lancang River far below.
+  image: d4-6.jpg
+  link: "#d4"
+- name: "D4 Finish · Ninong Village Exit (2,115 m)"
+  lat: 28.3560
+  lng: 98.8659
+  text: Reached the Ninong archway at dusk after packing Sacred Waterfall, Sacred Lake, and Ice Lake into three days, then arranged a local ride back to the rental car at Xidang.
+  image: d4-8.jpg
+  link: "#d4"
+- name: "D5 Sunrise · Feilai Temple (3,469 m)"
+  lat: 28.4432
+  lng: 98.8759
+  text: Drove up to Feilai Temple on New Year's Eve and woke on January 1 to a cloudless golden sunrise across the entire Meili ridge with the moon still overhead.
+  image: d5-1.jpg
+  link: "#d5"
+```
+
+```map {tab="NW Yunnan Road Trip" value="roadtrip" caption="Five-day northwestern Yunnan drive and return: Lijiang Sanyi Airport → Jade Dragon Snow Mountain → Xiaozhongdian → Shangri-La → Baima Snow Mountain → Yubeng & Feilai Temple" route=true height="460px"}
+- name: "D1 Arrival · Lijiang Sanyi Airport (2,256 m)"
+  lat: 26.6682
+  lng: 100.2507
+  text: Flew in from Beijing, picked up a 600-yuan weekly rental by the airport, and hit Highway G214 northwest at noon.
+  image: route.jpg
+  link: "#d1"
+- name: "D1 En Route · Jade Dragon Snow Mountain (2,666 m)"
+  lat: 26.8597
+  lng: 100.0369
+  text: Cleared Lijiang with Jade Dragon Snow Mountain gleaming straight ahead on G214 before climbing out of the Jinsha River valley.
+  image: d1-3.jpg
+  link: "#d1"
+- name: "D1 En Route · Xiaozhongdian Plateau (3,138 m)"
+  lat: 27.3642
+  lng: 99.9049
+  text: Climbed rapidly above 3,100 m onto the Xiaozhongdian plateau along G214 on the push north to Shangri-La.
+  link: "#d1"
+- name: "D1/D5 Hub · Shangri-La (3,282 m)"
+  lat: 27.7952
+  lng: 99.6994
+  text: Main gateway to Yubeng; passed through at 4 PM on Day 1 and returned here on Day 5 to catch the flight back to Beijing.
+  link: "#d5"
+- name: "D1 Pass · Baima Snow Mountain (3,590 m)"
+  lat: 28.3109
+  lng: 99.1322
+  text: Climbed the sweeping G214 switchbacks across Baima Snow Mountain at dusk before dropping into Deqin County town for the night.
+  image: d1-1.jpg
+  link: "#d1"
+- name: "D2–D5 Core · Yubeng & Feilai Temple (3,060 m)"
+  lat: 28.3910
+  lng: 98.7923
+  text: Packed Xidang entry, Sacred Waterfall, Sacred Lake, Ice Lake, and the Ninong exit into three days, capped by New Year's Day sunrise at Feilai Temple.
+  image: d3-1.jpg
+  link: "#d2"
+```
+
+## Itinerary {#itinerary}
 
 There are many Meili Yubeng circuit guides online, but the itinerary sections are written terribly. However, I completely understand - I'm also really lazy about writing such things. But since I promised someone to write a travel journal as reference, I'll write it properly.
 
@@ -80,7 +196,7 @@ We took the beast approach, adding Sacred Lake, compressing 5 days into 3 days 2
 
 ![New Year Pilgrimage: Yubeng Mountain Circuit — Itinerary (figure 1)](route.jpg)
 
-## D1 Lijiang-Diqing-Deqin
+## D1 Lijiang-Diqing-Deqin {#d1}
 
 Morning flight from Beijing to Lijiang, rented a car right at the airport, 600 yuan for a week. Since last year's epic journey, when I can self-drive I absolutely don't take transport.
 
@@ -104,7 +220,7 @@ Evening arrived Deqin County town, stayed at a Tibetan-style guesthouse, ate hot
 ![New Year Pilgrimage: Yubeng Mountain Circuit — D1 Lijiang-Diqing-Deqin (figure 3)](d1-2.jpg)
 ![New Year Pilgrimage: Yubeng Mountain Circuit — D1 Lijiang-Diqing-Deqin (figure 4)](d1-3.jpg)
 
-## D2 Xidang Entry, Sacred Waterfall
+## D2 Xidang Entry, Sacred Waterfall {#d2}
 
 Woke up 7 AM, still dark, ate a bowl of rice noodles at the downstairs snack shop. Prepared to drive to the starting point - Xidang Hot Springs.
 
@@ -120,7 +236,7 @@ Woke up 7 AM, still dark, ate a bowl of rice noodles at the downstairs snack sho
 ![New Year Pilgrimage: Yubeng Mountain Circuit — D2 Xidang Entry, Sacred Waterfall (figure 12)](d2-10.jpg)
 ![New Year Pilgrimage: Yubeng Mountain Circuit — D2 Xidang Entry, Sacred Waterfall (figure 13)](d2-11.jpg)
 
-## D3 Sacred Lake Day Trip
+## D3 Sacred Lake Day Trip {#d3}
 
 Sacred Lake is very difficult, mostly local Tibetans go there.
 
@@ -138,7 +254,7 @@ Sacred Lake is very difficult, mostly local Tibetans go there.
 ![New Year Pilgrimage: Yubeng Mountain Circuit — D3 Sacred Lake Day Trip (figure 25)](d3-48.jpg)
 ![New Year Pilgrimage: Yubeng Mountain Circuit — D3 Sacred Lake Day Trip (figure 26)](d3-49.jpg)
 
-## D4 Ice Lake, Ninong
+## D4 Ice Lake, Ninong {#d4}
 
 ![New Year Pilgrimage: Yubeng Mountain Circuit — D4 Ice Lake, Ninong (figure 27)](d4-3.jpg)
 ![New Year Pilgrimage: Yubeng Mountain Circuit — D4 Ice Lake, Ninong (figure 28)](d4-4.jpg)
