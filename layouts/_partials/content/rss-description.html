@@ -1,0 +1,13 @@
+{{- /* Render an RSS-safe summary without crossing a manual summary divider.
+       Do not mutate $page.Store "tdOutputFormat" here: the Store is shared
+       across concurrent HTML/RSS/Markdown renders and mutating it to "rss"
+       poisons cached HTML .Content (stripping interactive maps and image zoom).
+       Render hooks detect RSS mode via hugo.Context.MarkupScope == "td-rss-summary". */ -}}
+{{- $page := . -}}
+{{- $markup := $page.Markup "td-rss-summary" -}}
+{{- $render := $markup.Render -}}
+{{- $summary := $render.Summary -}}
+{{- $description := printf "%s" $summary.Text -}}
+{{- $description = partial "content/static-image-output.html" $description -}}
+{{- if eq $page.Type "expo" }}{{ $description = printf "%s%s" $description (partial "expo/static.html" $page) }}{{ end -}}
+{{- return $description -}}

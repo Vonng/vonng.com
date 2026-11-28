@@ -48,7 +48,6 @@
       {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{ end }}
     {{ range $pages }}
-      {{- .Store.Set "tdOutputFormat" "rss" -}}
       {{- $description := partial "content/rss-description.html" . -}}
       <item>
         <title>{{ .Title }}</title>
