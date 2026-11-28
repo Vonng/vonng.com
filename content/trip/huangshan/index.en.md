@@ -9,6 +9,43 @@ tags: [Open Source, Essay, Travel]
 
 Over the past couple of days, I drove from Shanghai through Hangzhou down to Huangshan. We spent this morning around Hongcun and checked into an inn at the foot of Mount Huangshan for the night—stealing two days away to show the family around and catch a breather.
 
+## Huangshan Photo Map {#photo-map}
+
+This interactive map plots our southern Anhui stops and the next-day Mount Huangshan ascent in chronological order from raw Apple Photos EXIF GPS (WGS 84) coordinates—from Tachuan Academy and Hongcun to our guesthouse by the East Gate and up the newly opened Donghai Cableway. Click any numbered marker or list entry to preview photos and jump straight to the travel notes below.
+
+```map {caption="Two-day southern Anhui and Mount Huangshan itinerary: Tachuan Academy → Hongcun → Huangshan East Gate → Donghai Cableway → Donghai & Beihai → Tianhai & Guangmingding" route=true height="460px"}
+- name: "Oct 18–19 · Tachuan Academy (350 m)"
+  lat: 30.0174
+  lng: 118.0061
+  text: Boutique streamside inn overlooking rice paddies in Yi County after the drive from Shanghai via Hangzhou; morning coffee, friendly resident cats, and a lunch of chouguiyu and hairy tofu.
+  image: featured.jpg
+  link: "#hongcun-tachuan"
+- name: "Oct 19 Afternoon · Hongcun Village (296 m)"
+  lat: 30.0039
+  lng: 117.9839
+  text: First visit to the 5A-rated ancient village—ancient entrance tree and Huizhou houses along the water; well-maintained, though more touristy than the open countryside outside.
+  image: hongcun-houses.jpg
+  link: "#hongcun-tachuan"
+- name: "Oct 19 Night · Huangshan East Gate Inn (421 m)"
+  lat: 30.1290
+  lng: 118.2284
+  text: Checked into a guesthouse in Tanjiaqiao at Mount Huangshan's eastern foot instead of the usual Tangkou Town, staging for the new East Gate and Donghai Cableway the next morning.
+  link: "#hongcun-tachuan"
+- name: "Oct 20 Morning · Donghai Cableway Lower Station (563 m)"
+  lat: 30.1445
+  lng: 118.2365
+  text: Boarded the newly opened 6.6 km Donghai Cableway at 8:30 AM from the East Gate, riding straight up into the Donghai Scenic Area.
+  link: "#hongcun-tachuan"
+- name: "Oct 20 Morning · Donghai & Beihai Area (1,507 m)"
+  lat: 30.1442
+  lng: 118.1776
+  text: Climbed from 563 m to over 1,500 m on the eastern ridge, walking across the Donghai, Shixin Peak, and Beihai ridgelines starting around 9 AM.
+- name: "Oct 20 Afternoon · Tianhai & Guangmingding Area (1,756 m)"
+  lat: 30.1325
+  lng: 118.1633
+  text: Crossed Xihai to the Tianhai and Guangmingding (Bright Summit) highlands at 1,756 m before returning to the East Gate by 4 PM for the drive back to Shanghai.
+```
+
 Things really have been hectic lately. I have a batch of commercial contracts up for renewal, three slide decks to put together for November talks (one at Tsinghua University, one at the China Enterprise AI Conference, and another at PGConf.Asia), adaptation work lined up for next month's PostgreSQL 19 GA release, plus a dozen new fronts opened up by AI coding. All of it takes serious bandwidth.
 
 Fortunately, with AI riding shotgun, as long as I have a laptop within reach, the wheels keep turning even when I am on the road. None of our open-source product lines have missed a beat on their release cadence. Over the last few days, I shipped updates to two projects along the way:
@@ -62,7 +99,7 @@ Since I took plenty of good photos on this trip through southern Anhui, Oink's n
 
 ![Desert poplars and sand dunes in an Oink Expo gallery](desert-gallery.webp)
 
-## Hongcun and Tachuan Academy
+## Hongcun and Tachuan Academy {#hongcun-tachuan}
 
 We woke up in Hongcun at Tachuan Academy, a wonderful boutique inn looking out over a beautiful stretch of rice paddies.
 
