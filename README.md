@@ -21,7 +21,7 @@ make build   # production build into public/
 make check   # the strict build every change has to pass
 ```
 
-The theme is the [OINK](https://oink.pgsty.com/) Hugo Module, pinned in `go.mod` (`v1.7.0`).
+The theme is the [OINK](https://oink.pgsty.com/) Hugo Module, pinned in `go.mod` (`v1.8.0`).
 `make dev` uses the current checkout at `~/pgsty/oink`.
 Override it with `make dev OINK_LOCAL=/path/to/oink PORT=1314`. Development
 bypasses OINK vendor files and both workspaces; `make build` and `make check`
