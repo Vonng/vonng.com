@@ -12,7 +12,131 @@ tags: [Travel]
 
 After anticipating this for half a year, the Luoke Line trek is finally complete. Still feeling a bit surreal. On the last day in the mountains, I ran out of cold medicine, and two consecutive days of heavy rain soaked my clothes and tent. Nearly perished on the mountain, but fortunately made it through in the end. **Three and a half days**, **solo**, **heavy pack** - completing the Luoke Line. This accomplishment I can brag about for a lifetime.
 
-## Itinerary Overview
+## Luoke Line Photo Map {#photo-map}
+
+This interactive topographic map combines raw WGS 84 EXIF GPS coordinates from the photo library with OpenStreetMap trail waypoints to plot 12 stops and field photos along the 3.5-day solo Luoke Line crossing; click any numbered marker or legend entry to preview a shot and jump to that day's log, or switch to "Western Sichuan Loop" for the full Chengdu–Xichang–Muli–Yading–G318 circuit.
+
+```map {tab="Luoke Line Trek" group="lock2017" value="trek" caption="3.5-day solo heavy-pack Luoke Line crossing and photo log: Shuiluo Gold Mine → Zangbie → Wanhuachi → Zabala Pass → Xinguo → Snake Lake → Milk Lake → Yading" route=true height="460px"}
+- name: "D1 Start · Shuiluo Gold Mine (2,200 m)"
+  lat: 28.3973
+  lng: 100.6002
+  text: Departed the herder's farmhouse at 7:45 AM on October 1 beneath a blazing crimson dawn that foretold days of heavy rain, walking 4 km up the road to the trailhead.
+  image: d1-morning.jpg
+  link: "#day1"
+- name: "D1 Forest Detour · Sulang Valley (3,370 m)"
+  lat: 28.3924
+  lng: 100.4959
+  text: Climbing 1,800 m through dense forest, GPS drift pulled me across the river; half an hour of bushwhacking ended on a slippery fallen log that snapped my left trekking pole tip.
+  image: d1-wood.jpg
+  link: "#day1"
+- name: "D1 Camp · Zangbie Pasture (4,005 m)"
+  lat: 28.3720
+  lng: 100.4494
+  text: Reached Mancuo Pasture at 3 PM and pushed past Zangbie Pasture to pitch my Hilleberg Enan alone on an open riverside plain at 4,005 m.
+  image: d1-camp.jpg
+  link: "#day1"
+- name: "D2 Trail · Wanhuachi Pasture (4,200 m)"
+  lat: 28.3647
+  lng: 100.4286
+  text: Passed Caotang and Wanhuachi pastures on Day 2, catching a glimpse of cloud-wrapped snow peaks through lichen-draped spruce trees.
+  image: d2-wood.jpg
+  link: "#day2"
+- name: "D2 Pass · Zabala Pass (4,534 m)"
+  lat: 28.3604
+  lng: 100.4038
+  text: Steep ascent to the 4,500 m pass where clear skies suddenly broke into a torrential downpour, snapping the left pole clean and forcing shelter beneath a rock wall.
+  image: d2-pass.jpg
+  link: "#day2"
+- name: "D2 Canyon · Niangxi Valley (4,350 m)"
+  lat: 28.3486
+  lng: 100.3736
+  text: Slogged down the deep canyon in soaked clothes through intermittent downpours, thighs burning—one step, two gasps.
+  image: d2-canyon.jpg
+  link: "#day2"
+- name: "D2 Camp · Xinguo Pasture (4,270 m)"
+  lat: 28.3314
+  lng: 100.3428
+  text: Camped beneath sheer cliff walls with wet clothes hung on poles; headache and cold symptoms set in with almost no cold medicine left.
+  image: d2-camp.jpg
+  link: "#day2"
+- name: "D3 Traverse · Jiadu & 4,700 m Pass"
+  lat: 28.3331
+  lng: 100.3165
+  text: Traversed two long slopes past Jiadu Pasture; two borrowed tubes of glucose powered me over the 4,700 m pass into stark, vegetation-free rock walls.
+  image: d3.jpg
+  link: "#day3"
+- name: "D3 Camp · Snake Lake (4,500 m)"
+  lat: 28.3608
+  lng: 100.3288
+  text: Pitched camp on the treeless far shore of Snake Lake (Lexicuo) after just two hours of afternoon sun; severe altitude sickness hit overnight with vomiting and diarrhea.
+  image: snake-lake.jpg
+  link: "#day3"
+- name: "D4 Lake · Milk Lake (4,600 m)"
+  lat: 28.3752
+  lng: 100.3458
+  text: Pale and depleted after a brutal night, climbed the last big uphill over Songduo Pass on Day 4 morning to reach turquoise Milk Lake.
+  image: me.jpg
+  link: "#day4"
+- name: "D4 Exit · Above Luorong Pasture (4,150 m)"
+  lat: 28.3840
+  lng: 100.3712
+  text: Dropped from Milk Lake into Yading Scenic Area overlooking golden Luorong Pasture, stumbling down a far longer exit walk than expected.
+  image: d4-entrance.jpg
+  link: "#day4"
+- name: "D4 Finish · Yading Village (3,900 m)"
+  lat: 28.4576
+  lng: 100.3385
+  text: Made it out the Yading Scenic Area gate by noon on October 4, spending half an hour on oxygen at the medical station to wrap up the 3.5-day solo crossing.
+  link: "#day4"
+```
+
+```map {tab="Western Sichuan Loop" value="overview" caption="10-day Western Sichuan transit and road loop: Chengdu → Xichang → Muli → Muli–Dulu Road → Luoke Line / Yading → Daocheng → Litang (G318) → Kangding" route=true height="460px"}
+- name: "Chengdu (Start)"
+  lat: 30.6599
+  lng: 104.0633
+  text: Flew in from Beijing on September 28, visited Wuhou Temple and Chengdu Museum, then boarded overnight train T8869 south to Xichang.
+  link: "#itinerary"
+- name: "Xichang (Bus Transfer)"
+  lat: 27.8748
+  lng: 102.2622
+  text: Arrived before dawn on September 29 and caught the morning coach near Torch Square into the mountains of Liangshan.
+  link: "#itinerary"
+- name: "Muli County (2,225 m · Staging)"
+  lat: 27.9328
+  lng: 101.2789
+  text: Reached Muli in the afternoon for a guesthouse stay; unable to restock cold medicine here, leaving only a single pack for the mountains.
+  link: "#itinerary"
+- name: "Muli–Dulu Road (Chartered Ride)"
+  lat: 28.1181
+  lng: 100.9260
+  text: Shared a hired car on September 30 with two couples through steep valleys toward Dulu Village and Shuiluo Gold Mine; cliffs along the road looked like a macOS wallpaper.
+  image: yosemite.jpg
+  link: "#before-departure"
+- name: "Luoke Line · Daocheng Yading (4,600 m)"
+  lat: 28.3752
+  lng: 100.3458
+  text: Solo heavy-pack crossing from Shuiluo Gold Mine over Zabala and Snake Lake passes between October 1 and 4, exiting via Milk Lake and Yading.
+  image: d3-morning.jpg
+  link: "#route"
+- name: "Daocheng County (3,724 m · Recovery)"
+  lat: 29.0394
+  lng: 100.2955
+  text: Took a hired car from Yading to Daocheng on the evening of October 4 to rest overnight before driving north over Haizishan.
+  link: "#itinerary"
+- name: "Litang · Highway G318 (3,923 m)"
+  lat: 29.9939
+  lng: 100.2736
+  text: Crossed 4,600 m Haizishan via Routes 216/217 to join China's famed Highway G318 at Litang, rolling east across sun-drenched plateau meadows.
+  image: 318.jpg
+  link: "#return"
+- name: "Kangding (2,560 m · Return Stop)"
+  lat: 30.0548
+  lng: 101.9631
+  text: Stayed a night in Kangding before crawling through brutal National Day traffic on G318 to Chengdu on October 6, flying home via Guiyang the next day.
+  link: "#return"
+```
+
+## Itinerary Overview {#itinerary}
 
 Originally planned to complete the Luoke Line in 5 days, ended up finishing in three and a half days, exiting the Yading scenic area gate at noon on October 4th. Exhausted to death, went straight home. Stayed an extra day each in Daocheng County and Kangding on the way back.
 
@@ -37,7 +161,7 @@ Originally planned to complete the Luoke Line in 5 days, ended up finishing in t
 | 10-07                     | Guiyang | Beijing |                             |
 {.wide .expand}
 
-## Route
+## Route {#route}
 
 ![Shangri-La: Luoke Line Trekking Journal — Route (figure 1)](lock-map.jpg)
 
@@ -90,13 +214,13 @@ Food preparation was adequate, water sources in the mountains were extremely abu
 | Other food, four instant noodle packs, small bag of noodles | 500      |
 | Water                             | 500~1500 |
 
-## Before Departure
+## Before Departure {#before-departure}
 
 On the way, I shared a hired car with a married couple and another couple from Muli County to Dulu Village. The scenery along the road was quite beautiful. This shot I thought looked particularly like a Mac desktop wallpaper.
 
 ![Shangri-La: Luoke Line Trekking Journal — Before Departure (figure 3)](yosemite.jpg)
 
-## Day One
+## Day One {#day1}
 
 First day morning, departing from Shuilo Gold Mine, red sky at dawn brings no delight - the crimson dawn predicted heavy rain throughout the trek...
 
@@ -115,6 +239,8 @@ Reached the planned campsite at Mancuo Pasture by 3 PM on the first day, figured
 I walked quite fast the first day, most of the time encountering no one else on the trail. This open camping area had only me.
 
 ![Shangri-La: Luoke Line Trekking Journal — Day One (figure 7)](d1-camp2.jpg)
+
+## Day Two {#day2}
 
 Too lazy to write more below, will fill in details later. Day two passed through Caotang Pasture and Wanhua Pool Pasture.
 
@@ -142,6 +268,8 @@ Felt dizzy and headaches in the evening, seemed like coming down with a cold. Ha
 Day two camp:
 ![Shangri-La: Luoke Line Trekking Journal — Day One (figure 12)](d2-camp.jpg)
 
+## Day Three {#day3}
+
 Day three morning:
 ![Shangri-La: Luoke Line Trekking Journal — Day One (figure 13)](d3-morning.jpg)
 
@@ -160,11 +288,15 @@ Camped at Snake Lake in the evening, rained all day with only two brief hours of
 
 Severe altitude sickness that night - vomiting and diarrhea, couldn't keep anything down.
 
+## Day Four {#day4}
+
 Day four, Milk Lake - looked pale and gaunt, incredibly weak. But fortunately the last day's route wasn't long - just one major uphill section to reach Milk Lake.
 
 ![Shangri-La: Luoke Line Trekking Journal — Day One (figure 16)](me.jpg)
 
 Just didn't expect there'd be such a long trail inside the scenic area... stumbled down in a daze all the way, finally made it to the scenic area entrance, spent half an hour breathing oxygen at the medical station.
+
+## Return via Highway G318 {#return}
 
 The return route was China's most famous scenic highway 318, packed with self-driving tourists and cyclists everywhere... traffic jams beyond belief... and no cell signal.
 

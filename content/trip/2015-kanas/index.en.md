@@ -10,7 +10,114 @@ I never expected my first outdoor trekking experience would be in Kanas.
 
 <!--more-->
 
-## Kanas Route
+## Kanas Photo Map {#photo-map}
+
+This interactive topographic map offers two views: "Actual Trek & Photos" plots the four-day route from Jiadengyu through Bulalehan Bridge, the Two Rivers Confluence, and Hemu Village to Fish Watching Platform, Kanas Lake, and the Three Bays using raw EXIF GPS coordinates (WGS 84) from Apple Photos; "Classic East-Line Waypoints" maps the handheld WGS 84 trail waypoints listed below—over the 2,350 m pass via Little Black Lake and Black Lake—for direct comparison. Click any numbered marker or legend entry to preview photos and jump to the matching section.
+
+```map {tab="Actual Trek & Photos" group="kanas2015" value="actual" caption="Four-day Kanas route from raw EXIF GPS (WGS 84): Jiadengyu → Bulalehan Bridge → Two Rivers Confluence → Hemu Valley → Hemu Village → Fish Watching Platform → Kanas Old Village → Moon & Wolong Bays" route=true height="460px"}
+- name: "D1 Start · Jiadengyu (1,632 m)"
+  lat: 48.4777
+  lng: 87.1518
+  text: Arrived from Burqin at Jiadengyu, the trekking gateway to Kanas, packed five naan flatbreads as trail rations, and headed onto the eastern horse trail.
+  image: 1.jpeg
+  link: "#kanas-photos"
+- name: "D1 Crossing · Bulalehan Bridge (1,114 m)"
+  lat: 48.5222
+  lng: 87.2116
+  text: Crossed the ridge and dropped 500 m into the Kanas River gorge; after Bulalehan Pine Bridge, turned east along the left-bank horse trail.
+  link: "#kanas-route"
+- name: "D1 Camp · Two Rivers Confluence (1,036 m)"
+  lat: 48.5073
+  lng: 87.3248
+  text: Reached Halfway Lodge at the Kanas–Hemu river delta by dusk to stay overnight; from the rocky bluff above, two distinct shades of glacial water meet.
+  image: 5.jpeg
+  link: "#kanas-photos"
+- name: "D2 Valley · Hemu River Forest (1,049 m)"
+  lat: 48.5407
+  lng: 87.3728
+  text: Turned north upstream along the Hemu River the next day, hiking past autumn birch groves, spruce forest, and clear boulder-strewn mountain streams.
+  image: 7.jpeg
+  link: "#kanas-photos"
+- name: "D2 Village · Hemu Village (1,087 m)"
+  lat: 48.5722
+  lng: 87.4276
+  text: After roughly four hours up the valley, emerged from the birch woods across Hemu Bridge into the log-cabin Tuva village for the night.
+  link: "#kanas-route"
+- name: "D3 Snow Climb · Fish Watching Platform (2,033 m)"
+  lat: 48.7252
+  lng: 86.9906
+  text: Transferred by road from Hemu around to Kanas on day three and scrambled up the wild mountainside to the 2,033 m summit overlook just as early autumn snow fell.
+  image: 4.jpeg
+  link: "#kanas-photos"
+- name: "D4 Lake Outlet · Kanas Old Village (1,356 m)"
+  lat: 48.6930
+  lng: 87.0266
+  text: Spent the morning along the Kanas Lake shoreline before walking down to the lake outlet and log cabins of Kanas Old Village beneath snow-dusted pines.
+  link: "#kanas-route"
+- name: "D4 Three Bays · Moon & Wolong Bays (1,380 m)"
+  lat: 48.6364
+  lng: 87.0446
+  text: Followed the Kanas River valley south past the turquoise S-curve of Moon Bay and Wolong Bay before catching the evening ride back out to Burqin.
+  link: "#kanas-photos"
+```
+
+```map {tab="Classic East-Line Waypoints" value="waypoints" caption="Classic Kanas East-Line trekking waypoints (WGS 84 coordinates from the log below): Jiadengyu → Bulalehan Bridge → Confluence → Hemu → Water Point → Wooden Hut → Little Black Lake → Black Lake → Kanas Lake Head → Fish Watching Platform" route=true height="460px"}
+- name: "Jiadengyu (Trailhead)"
+  lat: 48.4901
+  lng: 87.1404
+  text: "Classic Kanas East-Line trailhead (N48°29.408' E87°08.424'); walk east to the end of the cement road bypassing the scenic gate to pick up the horse trail."
+  image: 2.jpeg
+  link: "#kanas-route"
+- name: "Bulalehan Bridge"
+  lat: 48.5282
+  lng: 87.2079
+  text: "Pine footbridge across the river (N48°31.692' E87°12.475'); buy tickets, cross, and turn right to follow the Kanas River's left bank east for ~16 km."
+  link: "#kanas-route"
+- name: "Kanas–Hemu River Confluence"
+  lat: 48.5137
+  lng: 87.3212
+  text: "River delta and Halfway Lodge waypoint (N48°30.824' E87°19.273'), where two differently colored rivers converge; the standard first-night stop."
+  image: 6.jpeg
+  link: "#kanas-photos"
+- name: "Hemu Village"
+  lat: 48.5695
+  lng: 87.4291
+  text: "Reached after ~15 km north up the Hemu River (N48°34.168' E87°25.745'), crossing Hemu Bridge past white birches; the main mid-route resupply stop."
+  link: "#kanas-route"
+- name: "Valley Water Point (Red Bucket)"
+  lat: 48.6187
+  lng: 87.3548
+  text: "First marked water refill after heading northwest out of Hemu (N48°37.121' E87°21.287'), followed by a sustained climb up the right side of the valley."
+  link: "#kanas-route"
+- name: "Trailside Wooden Hut"
+  lat: 48.6276
+  lng: 87.2840
+  text: "Roughly two-thirds of the way from Hemu to Little Black Lake (N48°37.653' E87°17.038'), where pine cover thins near sheep pens ahead of the river fork."
+  link: "#kanas-route"
+- name: "Little Black Lake (2,350 m Pass)"
+  lat: 48.6458
+  lng: 87.2479
+  text: "Reached right after crossing the route's 2,350 m high pass (N48°38.750' E87°14.875'), the signature alpine meadow and high-camp waypoint on the East Line."
+  link: "#kanas-route"
+- name: "Black Lake"
+  lat: 48.6672
+  lng: 87.2015
+  text: "Alpine lake west of Little Black Lake (N48°40.029' E87°12.090'); beyond here the valley opens up, descends steadily, and pine forests return."
+  link: "#kanas-route"
+- name: "Kanas Lake Head"
+  lat: 48.6981
+  lng: 87.0345
+  text: "Emerged from dense pine forest past Kaqingge'er and Kanas Village to the lake outlet (N48°41.888' E87°02.071'), where the view opens onto Kanas Lake."
+  link: "#kanas-route"
+- name: "Fish Watching Platform (2,033 m)"
+  lat: 48.7252
+  lng: 86.9906
+  text: The summit pavilion overlooking Kanas Lake noted at the end of the route guide—and climbed in falling snow during the actual trip.
+  image: 4.jpeg
+  link: "#kanas-photos"
+```
+
+## Kanas Route {#kanas-route}
 
 Jiadengyu - Hemu - Black Lake - Kanas - Baihaba
 
@@ -52,7 +159,7 @@ Kanas Lake head N48'41.888 E087'02.071
 
 I personally think the best way to explore the Kanas region is on foot. Take a bus from Burqin to Hemu and trek from there.
 
-### Kanas
+### Kanas {#kanas-photos}
 
 No time to write a proper travel journal, just sharing some photos.
 
